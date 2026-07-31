@@ -8,9 +8,13 @@
 
 ## 1. Purpose
 
-A theme is a versioned presentation package that controls visual identity and rendering without owning business rules. It may provide Blade layouts, views, components, Livewire presentation components, JavaScript, CSS, fonts, images, logos, icons, and video. Themes consume documented module view models and extension points.
+A theme is a versioned Composer presentation package that controls visual identity and rendering without owning business rules. It may provide Blade layouts, views, components, Livewire presentation components, JavaScript, CSS, fonts, images, logos, icons, and video. Themes consume documented module view models and extension points.
 
 Modules own behavior and functional defaults. Themes own composition, styling, branded assets, and presentation overrides. A theme must never query module tables, bypass policies, or duplicate domain workflows.
+
+Themes use a unified design, manifest, installation, inheritance, testing, and documentation approach. They may be mixed into different repository-based projects as needed. A theme may be designed and optimized for a specific Liberu repository to produce the best result, but it should remain installable and reasonably compatible with other Liberu repositories or compatible Laravel projects. Outside its optimized hosts, some views or integrations may be unavailable or imperfect; those limitations must be declared and must fail or fall back safely.
+
+Each theme is developed and released from an independent GitHub repository under the [`liberusoftware`](https://github.com/liberusoftware) organization. Composer resolves theme versions, while the custom Liberu Composer installer places theme packages in the host application's `/themes` directory instead of `/vendor`.
 
 ## 2. Theme types
 
@@ -25,9 +29,10 @@ A deployment may select different themes by site, tenant, brand, locale, or surf
 
 ## 3. Standard theme layout
 
+The source repository is rooted at the theme package itself:
+
 ```text
-themes/
-└── Corporate/
+github.com/liberusoftware/theme-corporate/
     ├── composer.json
     ├── theme.json
     ├── README.md
@@ -66,7 +71,30 @@ themes/
     └── vite.config.js
 ```
 
-Create only directories the theme uses. Generated build output is not committed unless a distribution package explicitly requires it.
+Composer installs that repository as `<project-root>/themes/corporate`. Create only directories the theme uses. Generated build output is not committed unless a distribution/release package explicitly requires it.
+
+## 3.1 Composer installation policy
+
+Themes declare `"type": "liberu-theme"` in `composer.json` and a stable installer name in Composer `extra` metadata. The canonical `liberu/composer-installer` plugin installs them to `<project-root>/themes/{theme-name}` and also handles `liberu-module` packages as defined in `MODULES.md`.
+
+The installer must validate names, reject absolute paths/path traversal, detect collisions, install deterministically, support install/update/remove, and remain compatible with Composer 2 plugin security. Normal PHP/npm dependencies remain in their standard dependency locations; only the Liberu theme package is relocated to `/themes`.
+
+Applications explicitly require selected themes and the installer plugin, authorize the plugin through Composer `allow-plugins`, and commit `composer.json` and `composer.lock`. Production builds use a non-interactive locked install and fail if the expected theme path cannot be reproduced.
+
+## 3.2 Independent repositories and tracked `/themes`
+
+One independent theme repository normally contains one primary theme package. It owns its releases, issues, assets, licenses, tests, coverage, documentation, compatibility matrix, build tooling, and changelog.
+
+The current decision, matching `/modules`, is **not to add `/themes` to `.gitignore`**. Installed theme contents are committed in each consuming application repository.
+
+- Make changes in the theme's source repository, release a version, then update consuming applications through Composer.
+- Do not edit an installed `/themes/{theme-name}` copy directly in an application.
+- Commit `composer.json`, `composer.lock`, and resulting `/themes` changes together.
+- Review theme source, compiled/distributable assets where included, licenses, and release notes during updates.
+- CI performs a clean locked install/build and fails when it produces an unexpected `/themes` diff.
+- Resolve conflicts by selecting the intended lockfile version and reinstalling, not by hand-merging installed theme code.
+
+This tracked-directory policy may change only through an ADR and migration plan. The independent theme repository remains authoritative.
 
 ## 4. Manifest contract
 
@@ -81,6 +109,8 @@ Every theme provides `theme.json`:
   "provider": "Liberu\\Themes\\Corporate\\CorporateThemeServiceProvider",
   "type": "public",
   "parent": "liberu-base",
+  "optimized_for": ["liberu-cms/cms-laravel"],
+  "tested_with": ["liberu-cms/cms-laravel", "liberu/boilerplate-laravel"],
   "supports": ["cms.pages", "cms.posts", "search"],
   "assets": {
     "css": ["resources/css/app.css"],
@@ -89,7 +119,9 @@ Every theme provides `theme.json`:
 }
 ```
 
-The manifest declares compatibility, parent theme, supported module extension points, asset entry points, and safe fallback. CI validates its schema, paths, unique name, dependency versions, and inheritance cycles.
+The manifest declares compatibility, optimized/tested host repositories, parent theme, required and optional capabilities, supported module extension points, asset entry points, and safe fallback. CI validates its schema, paths, unique name, dependency versions, capabilities, and inheritance cycles.
+
+`optimized_for` is informative and identifies where the theme delivers its intended complete experience. `tested_with` records verified hosts and version ranges in the full schema. Neither field creates a hidden dependency. Required capabilities fail installation/activation clearly; missing optional capabilities omit the relevant UI and use documented fallbacks.
 
 ## 5. Resolution and inheritance
 
@@ -100,6 +132,7 @@ Theme resolution follows: configured surface/tenant/site theme → parent theme 
 - Parent chains are finite, deterministic, and cached in production.
 - Missing or incompatible themes fall back to a configured safe theme and emit an operational alert.
 - Themes cannot replace authorization, validation, routes, actions, or domain services.
+- Cross-repository use resolves only declared extension points; repository-specific overrides must be isolated, capability-checked, and documented.
 
 ## 6. Design tokens
 
@@ -206,12 +239,16 @@ Every theme includes:
 - asset build, broken-link, missing-translation, and manifest validation;
 - performance checks against agreed budgets;
 - compatibility tests against supported module and framework versions.
+- clean Composer-install tests proving the theme resolves to `/themes/{theme-name}` in each declared tested host;
+- graceful-degradation tests for missing optional modules and at least one compatible non-optimized host where practical.
 
 ## 19. Versioning and documentation
 
 Themes use semantic versioning. Stable surfaces include manifest fields, token names, component names/props/slots, Livewire aliases/events, view override names, and asset entry points. Breaking changes require a major release and migration guide.
 
-The README documents installation, selection, parent theme, supported surfaces/modules, build commands, tokens, component inventory, extension points, asset licenses, browser support, accessibility notes, and upgrade instructions.
+Every independent theme repository contains a professionally written `README.md` documenting purpose, visual examples/screenshots, optimized and tested repositories, known limitations outside those hosts, Composer installation and `/themes` path behavior, selection, parent theme, required/optional modules, supported surfaces, build commands, design tokens, component/view/Livewire inventory, extension points, assets and licenses, responsive/browser support, accessibility, localization/RTL, performance budgets, security/privacy notes, testing, coverage, contribution, release, upgrade, and uninstall instructions.
+
+Theme CI generates test coverage for PHP/Livewire behavior where meaningful, plus accessibility, visual-regression, asset-build, and performance results. The README displays current CI/coverage status and explains local test/build commands. Generated reports and screenshots are retained as CI artifacts or approved release assets rather than normally committed as raw test output. CSS or static templates that do not produce meaningful line coverage document the applicable alternative quality evidence.
 
 ## 20. Definition of done
 
@@ -223,6 +260,9 @@ A theme is ready when:
 - accessibility, visual, functional, security, and performance tests pass;
 - fallback behavior works without optional assets or providers;
 - asset rights, documentation, changelog, and migration guidance are complete.
+- its independent `liberusoftware` repository, README, tagged release, CI results, generated meaningful coverage/quality reports, and host compatibility evidence are available;
+- a clean locked Composer install places it in `/themes`, and the consuming repository has no unexpected generated diff;
+- optimized hosts render the complete intended experience and compatible non-optimized hosts degrade according to documented limitations and fallbacks.
 
 ## 21. GitHub issue mapping
 

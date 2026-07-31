@@ -9,7 +9,9 @@
 
 ## 1. Purpose
 
-Liberu is a composable Laravel ecosystem built from independently reusable Composer packages. A repository is a development and product boundary; it is not automatically one package or one runtime module. A product repository may contain many cohesive packages plus a reference Laravel application that composes them.
+Liberu is a composable Laravel ecosystem built from independently reusable Composer packages. Modules use one unified design approach and may be mixed into different repository-based projects whenever their capabilities are required. Applications remain independent, while their modules are designed—within declared dependencies and compatibility constraints—to work in any Liberu repository and, where practical, any compatible Laravel application.
+
+Each module is developed and released from an independent GitHub repository under the [`liberusoftware`](https://github.com/liberusoftware) organization. Composer resolves module versions, while the custom Liberu Composer installer places module packages in the host application's `/modules` directory instead of `/vendor`.
 
 This document defines how Liberu capabilities are decomposed, packaged, named, discovered, installed, integrated, presented, tested, versioned, and operated. Product scopes define *what* to build. This document defines *where behavior belongs and how its boundaries interact*.
 
@@ -21,7 +23,7 @@ The governing principle is:
 
 | Term | Meaning |
 |---|---|
-| Repository | Development, governance, and release workspace containing one or more packages and optionally a reference application |
+| Repository | Independent development, governance, and release workspace for an application, module, theme, or distribution |
 | Composer package | Smallest independently versioned, installable, dependency-declaring code unit |
 | Capability | Cohesive business or platform responsibility exposed through a stable public boundary |
 | Module | An installed package capability represented in the runtime registry and subject to enablement/lifecycle rules |
@@ -33,6 +35,8 @@ The governing principle is:
 | Theme | Presentation assets and rendering overrides governed by `THEMES.md`; never a domain capability |
 
 These terms are not interchangeable. In particular, installing code with Composer does not automatically enable or entitle its runtime capability.
+
+For the standard module model, one independent GitHub repository contains one primary module Composer package. Aggregate/distribution and contract-only repositories are permitted where their category requires a different shape.
 
 ## 3. Architectural hierarchy
 
@@ -76,6 +80,9 @@ An application consumes the lowest-level package that provides what it needs. It
 13. Disabling or uninstalling a module never silently deletes data.
 14. Side effects are authorized, auditable, idempotent, observable, and recoverable.
 15. Shared foundation behavior is consumed from `BOILERPLATE.md`, not reimplemented by products.
+16. Modules follow the same manifest, lifecycle, extension, testing, and documentation approach across all repositories.
+17. A module must not assume which Liberu product application hosts it; product-specific optimization is declared without creating an unnecessary hard dependency.
+18. Every module has an independent `liberusoftware` GitHub repository and a complete README unless an approved ADR documents an exception.
 
 ## 5. Package categories
 
@@ -127,33 +134,79 @@ An aggregate such as `liberu/ecommerce` may require a supported set of packages 
 
 ## 6. Repository design
 
-A product repository is a package ecosystem and reference integration environment:
+Applications and modules are independent repositories. An application repository composes released module packages; a module repository owns one cohesive capability and can be installed into multiple applications.
+
+Application repository:
 
 ```text
 cms-laravel/
-├── packages/
+├── modules/             # Composer-installed Liberu modules; tracked in Git
 │   ├── cms-core/
 │   ├── cms-content/
 │   ├── cms-pages/
-│   ├── cms-media/
-│   ├── cms-publishing/
 │   └── cms-filament/
 ├── app/                 # application-specific composition only
 ├── bootstrap/
 ├── config/
 ├── routes/
 ├── tests/               # cross-package/application tests
-└── composer.json        # path repositories and application dependencies
+├── composer.json        # module requirements + Liberu installer plugin
+└── composer.lock
 ```
 
-The root application owns Laravel bootstrapping, environment/deployment configuration, package selection, panel composition, application routes, and integration tests. Reusable domain behavior does not remain under root `app/`.
+Module source repository:
 
-Packages may begin in a product monorepo and later move to a dedicated repository without changing their Composer name, namespace, contracts, or consumers. Repository location is a governance choice, not a public architecture boundary.
+```text
+github.com/liberusoftware/cms-content/
+├── composer.json
+├── module.json
+├── README.md
+├── CHANGELOG.md
+├── src/
+├── database/
+├── resources/
+└── tests/
+```
+
+The root application owns Laravel bootstrapping, environment/deployment configuration, package selection, panel composition, application routes, and cross-module integration tests. Reusable domain behavior does not remain under root `app/`.
+
+The independent module repository owns implementation, releases, issues, tests, coverage, documentation, and its compatibility matrix. Product repositories consume tagged versions and contribute generic fixes back to the module repository rather than maintaining divergent copies.
+
+## 6.1 Composer installation policy
+
+The canonical custom installer package is `liberu/composer-installer`. It is a Composer plugin trusted through Composer's `allow-plugins` configuration and handles at least these package types:
+
+| Composer package type | Install location |
+|---|---|
+| `liberu-module` | `<project-root>/modules/{module-name}` |
+| `liberu-theme` | `<project-root>/themes/{theme-name}` |
+
+Module `composer.json` files declare `"type": "liberu-module"` and a stable installer name in Composer `extra` metadata. The plugin must validate names, reject absolute paths and traversal, detect collisions, install deterministically, support install/update/remove, and remain compatible with Composer 2 security and plugin APIs.
+
+Only Liberu module/theme package code uses the custom locations. Composer itself, Laravel/framework packages, vendor SDKs, and ordinary third-party libraries remain under `/vendor`. Modules continue to use Composer-generated autoloading; applications must not create a competing manual class scanner.
+
+An application must explicitly require both the selected modules and the installer plugin. `composer.lock` remains authoritative for resolved versions. Production builds use non-interactive, locked, reproducible Composer installation and fail if the installer plugin or declared path policy is unavailable.
+
+## 6.2 Tracked `/modules` policy
+
+The current decision is **not to add `/modules` to `.gitignore`**. Installed module contents are committed in each consuming application repository alongside `composer.json` and `composer.lock`.
+
+This policy provides visible and reviewable module changes, deterministic deployment inputs, and an application-level record of the exact composed code. It also requires discipline:
+
+- run Composer commands to add/update/remove modules; never edit installed module files directly in a consuming application;
+- make source changes in the module's independent repository, release a version, then update the consuming application;
+- commit `composer.json`, `composer.lock`, and the corresponding `/modules` changes together;
+- review installed-code diffs and release notes during dependency updates;
+- CI performs a clean locked install and fails if it produces an uncommitted `/modules` diff;
+- security/dependency tooling scans both `/vendor` and `/modules` as appropriate;
+- merge conflicts in generated installed content are resolved by Composer from the intended lockfile, not by hand-merging module code.
+
+This is an explicit current policy and may change only through an ADR with a migration plan. Regardless of tracking policy, the independent module repository remains the source of truth.
 
 ## 7. Standard package layout
 
 ```text
-packages/payment-core/
+payment-core/             # root of its independent GitHub repository
 ├── composer.json
 ├── module.json
 ├── README.md
@@ -188,7 +241,7 @@ packages/payment-core/
     └── Unit/
 ```
 
-Create only directories the package uses. `src/` is its PSR-4 root. Filament classes belong in a separate presentation package rather than a `src/Filament` directory in the domain package.
+Create only directories the package uses. `src/` is its PSR-4 root. Filament classes belong in a separate presentation package rather than a `src/Filament` directory in the domain package. Composer installs this repository under `/modules/payment-core` in a consuming project.
 
 ## 8. Package independence
 
@@ -200,6 +253,7 @@ Every package that represents an architectural boundary must, where technically 
 - boot in a clean supported Laravel host with only declared requirements installed;
 - expose safe extension points instead of requiring source publication or copying;
 - be independently testable and versionable even when released with a coordinated repository version.
+- publish tagged releases from its independent `liberusoftware` repository and declare which applications/framework versions are tested.
 
 Do not create a package for every class or table. Split when responsibility, dependency direction, optional installation, release cadence, provider isolation, ownership, or reuse requires a boundary.
 
@@ -232,7 +286,7 @@ Released names are public contracts. Renaming requires compatibility aliases or 
 
 ## 10. Composer and manifest contracts
 
-Composer is authoritative for code installation and static dependency resolution. Each runtime-capable package also contains `module.json`:
+Composer is authoritative for code installation and static dependency resolution. Module packages declare `"type": "liberu-module"`, require the appropriate installer compatibility, and contain `module.json`:
 
 ```json
 {
@@ -257,6 +311,8 @@ Composer is authoritative for code installation and static dependency resolution
 The manifest describes runtime capability, lifecycle, compatibility, and optional relationships; it does not replace Composer. Contract-only packages and metapackages need no runtime provider or enablement entry unless they expose runtime capability.
 
 CI validates the versioned schema, Composer/manifest consistency, dependency ranges, unique names/capabilities, category rules, cycles, providers, and referenced resources. Deployment configuration—not the package manifest—decides enablement.
+
+The manifest also declares tested host families and any intentional product optimization. Compatibility is capability-based: a module may be installed in another repository when required contracts and versions are present. Missing optional capabilities disable the related integration gracefully; missing required capabilities fail dependency validation with an actionable message.
 
 ## 11. Installation, enablement, and entitlement
 
@@ -487,7 +543,7 @@ Packages use semantic versioning. Their public surface includes documented PHP c
 - Major releases contain incompatible changes with migration documentation.
 - Deprecations identify replacement and planned removal version.
 
-A monorepo may coordinate releases while preserving package-specific changelogs and compatibility. A package may move repositories without changing its Composer identity. Compatibility matrices record supported PHP, Laravel, Filament/Livewire where relevant, database, package, and provider versions.
+Each module repository releases independently while applications coordinate compatible version sets through Composer constraints and lockfiles. Compatibility matrices record supported PHP, Laravel, Filament/Livewire where relevant, database, package, provider, and tested Liberu application versions. Compatibility is not assumed merely because code can be installed.
 
 ## 27. Worked composition examples
 
@@ -559,7 +615,9 @@ The application is the composition root. It selects bindings, panels, enabled mo
 
 ## 29. Documentation requirements
 
-Every package README states purpose, category, ownership, dependencies, installation, enablement, entitlement expectations, configuration, permissions, public contracts/events, data ownership, routes/commands/jobs, extension points, provider behavior, security/data classification, telemetry, failure recovery, examples, and upgrade instructions.
+Every module repository contains a professionally written `README.md` stating purpose, screenshots/examples where useful, category, ownership/maintainers, Composer installation, `/modules` install behavior, dependencies, supported/tested applications, enablement, entitlement expectations, configuration, migrations, permissions, public contracts/events, data ownership, routes/commands/jobs, extension points, provider behavior, security/data classification, telemetry, failure recovery, testing, coverage, changelog/releases, contribution guidance, and upgrade/uninstall instructions.
+
+Module CI generates test coverage in a machine-readable format and a browsable report where the test framework supports it. The README displays the current CI and coverage status/badge and explains how to run the tests locally. Coverage is evidence, not a substitute for meaningful unit, feature, contract, architecture, integration, security, and failure-path tests. Generated HTML coverage output is retained as a CI artifact or release asset and is not normally committed to source.
 
 Repositories document the package map and dependency diagram. Applications document selected packages, bindings, enabled capabilities, panels, providers, themes, and deliberate exclusions. Significant boundary decisions use ADRs.
 
@@ -576,6 +634,8 @@ A package is complete when:
 - presentation is optional and complies with `THEMES.md`;
 - architecture, security, compatibility, migration, and product-composition tests pass;
 - logs, metrics, health checks, alerts, runbooks, changelog, and upgrade notes are available.
+- the independent GitHub repository, README, CI workflow, generated coverage report, release tag, and tested-host compatibility evidence are available;
+- a clean locked install places the module in `/modules`, and the consuming repository has no unexpected Composer-generated diff.
 
 ## 31. GitHub issue mapping
 
