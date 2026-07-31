@@ -52,6 +52,9 @@ The boilerplate is a runnable reference application and package integration test
 | API Access | Optional | Token/personal-access policy, scopes, service identities, rate limits, versioning, idempotency, and revocation |
 | Webhooks | Optional | Endpoint registrations, signing, delivery attempts, backoff, rotation, replay, event filtering, and logs |
 | Integrations | Optional | Provider credentials, capability discovery, OAuth callbacks, secret rotation, connection tests, sync status, and reconciliation |
+| Analytics Core | Optional | Provider-neutral event schema, identity/consent context, destinations, routing, deduplication, queues, redaction, diagnostics, and delivery audit |
+| Google Analytics | Optional | Google Analytics server/browser event mapping, property and stream configuration, consent-aware delivery, ecommerce parameters, validation, and diagnostics |
+| Meta Server-Side Tracking | Optional | Meta server-side event mapping and delivery, browser/server deduplication, dataset/pixel configuration, consent enforcement, customer-data normalization/hashing, and diagnostics |
 | Import and Export | Optional | Schemas, mapping, dry runs, validation, queued execution, progress, error reports, authorization, and retention |
 | Activity and Comments | Optional | Generic activity timeline primitives, mentions, subscriptions, internal comments, attachments, and visibility controls |
 | Settings | Required | Typed application/organization/team/user settings, precedence, validation, secrets separation, audit, and cache invalidation |
@@ -169,13 +172,86 @@ Product modules define their translatable domain strings/resources but do not bu
 
 Accounting, Billing, and Ecommerce own domain calculations and postings; they reuse foundation currency types, context, formatting, and rate contracts.
 
-## 12. Settings and precedence
+## 12. Analytics and server-side tracking
+
+Analytics is split into a provider-neutral `analytics-core` capability and independently installable provider adapters. Product modules publish meaningful domain events; they must not call Google or Meta SDKs/APIs directly or embed provider identifiers in domain models.
+
+```text
+Product domain event
+        |
+Analytics Core
+        |
+Consent, policy, mapping, redaction, deduplication, routing
+        |
+        +-- Google Analytics adapter
+        `-- Meta server-side tracking adapter
+```
+
+### 12.1 Analytics Core
+
+- Define a versioned canonical event envelope containing event name/version, occurrence time, source, stable event ID, actor/session pseudonymous references where permitted, tenant/site, locale/currency context, and typed properties.
+- Maintain an event catalog with owner, purpose, trigger, allowed properties, data classification, consent category, destinations, retention, and tests.
+- Separate business events from analytics events through explicit mapping; analytics delivery must never control or block the originating business transaction.
+- Route events by environment, tenant/site, brand, region, consent, feature policy, and configured destination.
+- Queue outbound delivery with idempotency, bounded retry/backoff, rate-limit handling, batch support, failure storage, replay, and expiry.
+- Deduplicate by stable event ID and destination while retaining enough evidence to diagnose accepted, rejected, suppressed, expired, and retried deliveries.
+- Apply allowlisted properties, minimization, redaction, normalization, and destination-specific policy before an event leaves the application.
+- Support browser-originated context only through validated first-party input; never trust a client to define price, currency, user identity, order state, or conversion value.
+- Provide a no-op/local diagnostic driver for development and automated tests.
+- Expose delivery health, latency, suppression reasons, mapping versions, destination responses, and queue backlog without exposing tokens or unhashed personal data.
+
+### 12.2 Google Analytics module
+
+- Configure Google Analytics destinations per environment and site/brand using protected property, stream, and server-side credential settings.
+- Support consent-aware browser measurement where selected and server-side event delivery through the adapter; prevent unintended duplicate delivery when both paths report the same interaction.
+- Map canonical events to reviewed Google event names and parameters without leaking provider terminology into product modules.
+- Provide standard mappings for relevant acquisition, engagement, search, signup, login, lead, content, checkout, purchase, refund, subscription, and service events; install only mappings relevant to the consuming product.
+- Preserve transaction identifiers, monetary currency/precision, item arrays, campaign attribution, session context, and timestamps where policy permits.
+- Validate required/recommended fields, parameter types, lengths, reserved names, payload limits, and destination configuration before dispatch.
+- Support debug/validation mode outside production and surface actionable rejected-event diagnostics.
+- Respect consent changes and regional policy; advertising-related signals and user-provided data require an explicit lawful configuration and must remain disabled by default.
+- Never treat provider acceptance as proof of business completion; authoritative conversion state remains in the owning product module.
+
+### 12.3 Meta server-side tracking module
+
+- Implement Meta server-side tracking as an adapter isolated from product and Analytics Core packages.
+- Configure dataset/pixel identifiers, access credentials, API behavior, test-event settings, and site/brand routing through protected integration settings.
+- Map canonical events to reviewed standard or custom Meta events, including only product-relevant page/content, lead, registration, cart, checkout, purchase, subscription, and other conversion events.
+- Generate or propagate one stable event ID across permitted browser and server deliveries so Meta can deduplicate the same real-world event.
+- Normalize and hash allowed customer matching values immediately before provider delivery; never hash as a substitute for consent, minimization, or authorization.
+- Capture permitted first-party browser identifiers, source URL, user agent, and network context through validated request context with explicit retention and proxy-awareness rules.
+- Send accurate event time, action source, currency/value, order reference, and contents derived from authoritative server records rather than client-submitted totals.
+- Support test/diagnostic delivery, destination response logging, quality warnings, retry/backoff, rate limits, replay, and reconciliation of failed conversions.
+- Suppress events when consent, regional policy, data quality, event age, or destination configuration does not permit delivery and record the reason.
+- Keep browser pixel support optional and theme-managed; server-side tracking must operate independently and share the same consent and deduplication policy when both are enabled.
+
+### 12.4 Consent, privacy, and security controls
+
+- Define analytics and advertising consent categories separately and resolve consent before collection and again before delivery.
+- Store proof/version of applicable consent or policy context without copying unnecessary personal data into analytics queues.
+- Honor withdrawal prospectively, stop queued disallowed delivery, and support provider/data-subject workflows required by configured policy.
+- Do not send passwords, secrets, payment credentials, health/genetic data, message content, uploaded documents, precise location, or unrestricted free text.
+- Treat URLs, search terms, campaign fields, and custom properties as possible personal-data sources and sanitize them through allowlists.
+- Keep provider credentials encrypted, scoped by destination/environment, rotatable, redacted, and inaccessible to themes or client JavaScript.
+- Prevent production events from reaching development/test destinations and vice versa through environment guards and tests.
+- Document controller/processor roles, lawful basis, data residency/transfer considerations, retention, provider terms, and regional enablement before production activation.
+
+### 12.5 Analytics testing and acceptance
+
+- Contract-test every adapter against shared event, consent, suppression, retry, and diagnostic behavior.
+- Test event mapping, monetary precision, timestamps, identity normalization/hashing, browser/server deduplication, duplicates, ordering, queue retry, expiry, and provider errors.
+- Verify tenant/site/environment isolation and that disabled, unconfigured, or non-consented destinations receive no events.
+- Provide deterministic fake providers and assert analytics asynchronously so product tests do not contact external services.
+- Reconcile representative conversions against authoritative product records and alert on sustained delivery, rejection, duplication, or value discrepancies.
+- Include operational dashboards and runbooks for credential failure, schema rejection, consent-policy changes, queue backlog, provider outage, and replay.
+
+## 13. Settings and precedence
 
 Settings use typed definitions with owner, scope, default, validation, sensitivity, and change effects. Standard precedence is application → organization → team/site → user, but a setting may restrict supported scopes.
 
 Secrets use a secret store or encrypted credential module and are never returned through generic settings APIs. Updates are authorized and audited; cache invalidation is deterministic; invalid configuration fails during deployment or before affected work begins.
 
-## 13. Foundation UI surfaces
+## 14. Foundation UI surfaces
 
 Where applicable, the boilerplate provides theme-ready and accessible screens/components for:
 
@@ -184,11 +260,12 @@ Where applicable, the boilerplate provides theme-ready and accessible screens/co
 - organization/team creation, switching, member invitations, roles, ownership, and lifecycle;
 - locale, timezone, currency, appearance, notification, and privacy preferences;
 - API tokens, integrations, webhooks, audit history, account export, and account deletion;
+- analytics event catalog, destinations, consent routing, mapping versions, test events, delivery diagnostics, failures, and replay for authorized staff;
 - operational health, failed jobs, scheduled tasks, feature flags, settings, and module diagnostics for authorized staff.
 
 Modules expose functional Blade/Livewire/Filament defaults; themes own final layouts and brand presentation.
 
-## 14. Cross-repository implementation instructions
+## 15. Cross-repository implementation instructions
 
 When adding a foundation concern to any Liberu repository:
 
@@ -200,10 +277,11 @@ When adding a foundation concern to any Liberu repository:
 6. Register module UI through documented Filament, Livewire, Blade, and theme extension points.
 7. Add contract and compatibility tests in both the module and a representative host application.
 8. Document configuration, optional dependencies, data ownership, permissions, events, upgrade path, and excluded functionality.
+9. Publish product conversions through Analytics Core and install destination adapters explicitly; never call analytics providers from domain modules.
 
 If a product needs behavior that is broadly reusable, extend the boilerplate contract first. If the behavior encodes product terminology or business rules, keep it in the product module.
 
-## 15. Security and privacy baseline
+## 16. Security and privacy baseline
 
 - Secure defaults, least privilege, CSRF protection, output escaping, validation, rate limits, and safe redirect handling.
 - Passwords use Laravel's supported adaptive hashing; credentials and tokens are encrypted/hashed and displayed only when necessary.
@@ -213,7 +291,7 @@ If a product needs behavior that is broadly reusable, extend the boilerplate con
 - Provide consent, classification, retention, export, deletion, legal-hold, and incident-response extension points.
 - Dependency, secret, static-analysis, and security tests run in CI; high-risk modules receive explicit threat models.
 
-## 16. Testing and compatibility
+## 17. Testing and compatibility
 
 The reference application must test:
 
@@ -221,26 +299,29 @@ The reference application must test:
 - registration/login/recovery, two-factor enforcement/recovery, session/device revocation, token lifecycle, and account deletion;
 - organization/team invitations, switching, ownership transfer, membership removal, roles, permissions, and tenant isolation;
 - locale/timezone propagation, RTL rendering hooks, currency precision/formatting/rates, and notification localization;
+- analytics event schemas, consent suppression, environment/site routing, provider mappings, deduplication, retries, credential redaction, and diagnostic replay;
 - denial paths across Filament, Livewire, Blade routes, APIs, jobs, search, exports, and bulk actions;
 - supported minimum/latest versions of Laravel, Filament, Livewire, Jetstream when enabled, and all foundation packages.
 
 CI also runs formatting, static analysis, architecture rules, dependency audit, migration tests, accessibility checks, and representative performance tests.
 
-## 17. Delivery phases
+## 18. Delivery phases
 
 1. Application Core, Module Manager, Settings, Developer Experience, Observability, and Audit.
 2. Identity, Profiles, Two-Factor Authentication, Sessions/Devices, and Jetstream Bridge.
 3. Organizations/Teams, Roles/Permissions, contextual authorization, and foundation administration.
 4. Localization, Currency Context, Notifications, Files/Media, Search, queues, and scheduled work.
-5. API Access, Webhooks, Integrations, Import/Export, Feature Flags, and reusable activity components.
-6. Portfolio adoption, compatibility automation, upgrade tooling, and reference themes.
+5. API Access, Webhooks, Integrations, Analytics Core, Google Analytics, Meta server-side tracking, Import/Export, Feature Flags, and reusable activity components.
+6. Portfolio adoption, analytics event-catalog adoption, compatibility automation, upgrade tooling, and reference themes.
 
-## 18. Definition of done
+## 19. Definition of done
 
-The boilerplate is ready when a new repository can select relevant modules, install without copying source, pass security/tenant/compatibility tests, render theme-ready accessible screens, and upgrade through documented version constraints and migrations. Every module is independently documented, observable, and suitable for a GitHub epic.
+The boilerplate is ready when a new repository can select relevant modules, install without copying source, pass security/tenant/compatibility tests, render theme-ready accessible screens, deliver consent-governed analytics through replaceable adapters, and upgrade through documented version constraints and migrations. Every module is independently documented, observable, and suitable for a GitHub epic.
 
-## 19. GitHub issue mapping
+## 20. GitHub issue mapping
 
 Create one epic per foundation module. Each epic should include package/manifest work, contracts, domain/actions, migrations, policies, Filament/Livewire/Blade surfaces, theme extension points, events/jobs, security/privacy behavior, tests, telemetry, documentation, compatibility matrix, adoption example, and upgrade notes.
+
+Analytics delivery should use separate epics for Analytics Core, Google Analytics, and Meta server-side tracking. Provider epics depend on the core event/consent contracts and include destination configuration, mappings, credentials, deduplication, validation/test mode, retries, diagnostics, privacy review, reconciliation, and product-adoption examples.
 
 Repository adoption issues must list selected modules, excluded modules, configuration, domain-specific permissions/translations, integration tests, migration from local equivalents, and removal of duplicated foundation code.
