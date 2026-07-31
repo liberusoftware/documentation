@@ -1,677 +1,74 @@
-# Ecommerce Platform Development Scope
-## Enterprise Open-Source Ecommerce System (Corporate + User-Friendly)
+# Liberu Ecommerce
 
-### Technology Stack
+## Product Scope
 
-- Laravel 13
-- PHP 8.5
-- Filament 5.x
-- Livewire 4
-- PostgreSQL / MySQL support
-- Queue-driven architecture
-- Event-driven architecture
-- API-first design
-- Modular package ecosystem
-- Headless + traditional ecommerce support
+**Purpose:** Composable commerce for physical, digital, subscription, service, and marketplace products.
+**Architecture:** Modules follow [MODULES.md](MODULES.md); storefronts and portal presentation follow [THEMES.md](THEMES.md).
 
-Repository:
+**Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines commerce behavior only.
 
-https://github.com/liberu-ecommerce/ecommerce-laravel
+## Outcomes
 
-### Feature Inspiration
+- Provide reliable catalog-to-fulfillment and return/refund journeys across channels.
+- Keep pricing, stock, payment, tax, and order state authoritative and auditable.
+- Support independent provider drivers and integration with CMS, CRM, Billing, and Accounting.
 
-- WooCommerce
-- Magento / Adobe Commerce
-- CubeCart
-- Shopify (UX patterns)
+## Module plan
 
----
+| Module | Responsibilities |
+|---|---|
+| Catalog | Products, variants, bundles, options, categories, attributes, media, channels, and lifecycle |
+| Pricing | Price lists, currencies, customer groups, tiers, schedules, tax mode, and price snapshots |
+| Inventory | Locations, stock ledger, reservations, transfers, adjustments, availability, and low-stock rules |
+| Cart | Guest/customer carts, line configuration, validation, recalculation, persistence, and merge |
+| Promotions | Coupons, automatic rules, eligibility, stacking, budgets, limits, and attribution |
+| Checkout | Address, delivery, tax, payment, consent, fraud checks, idempotency, and order placement |
+| Orders | Immutable commercial snapshots, status machine, edits, notes, documents, and audit |
+| Payments | Authorize/capture, alternative methods, refunds, disputes, webhooks, and reconciliation |
+| Fulfillment | Shipments, digital delivery, service fulfillment, split orders, tracking, and proof |
+| Shipping | Zones, packages, rates, carrier drivers, labels, manifests, and tracking updates |
+| Tax | Nexus/registration settings, calculation drivers, exemptions, evidence, rounding, and reports |
+| Returns | Requests, authorization, receipts, inspection, restock, exchange, refund, and reasons |
+| Customers | Commerce profiles, addresses, preferences, groups, wishlists, and order self-service |
+| Marketplace | Sellers, offers, commissions, moderation, split settlements, and seller portal (optional) |
+| Reporting | Sales, margin, tax, stock, fulfillment, returns, promotion, and cohort metrics |
 
-# 1. Core Platform Architecture
+## Required workflows
 
-## Modular Ecommerce System
+1. **Purchase:** browse → price/availability → cart → checkout → authorize payment → commit order/reservation → confirm.
+2. **Fulfill:** allocate → pick/prepare → ship or deliver digitally → track → confirm completion.
+3. **Payment failure:** preserve idempotent checkout → classify result → retry or select method → release expired stock safely.
+4. **Return:** request → eligibility → authorize → receive/inspect → restock/dispose → refund/exchange → accounting event.
+5. **Catalog change:** draft → validate channel/pricing/stock dependencies → approve → publish → reindex/invalidate caches.
 
-The platform must be fully modular so ecommerce capabilities can be:
+## Product requirements
 
-- Installed independently
-- Embedded into CMS, CRM, ERP systems
-- Extended via marketplace modules
-- Combined with billing, control panel, and CMS modules
+- Support multi-channel, multi-currency, localization, guest checkout, saved carts, quotes, and customer portals.
+- Snapshot product, price, discount, tax, address, and terms on the order.
+- Use stock ledgers and timed reservations; never infer stock only from mutable counters.
+- Enforce payment and webhook idempotency and reconcile provider state.
+- Support partial capture, fulfillment, cancellation, refund, return, and backorder.
+- Provide accessible Filament operations and theme-ready storefront components.
+- Expose versioned APIs/events for catalogs, carts, orders, payments, fulfillment, stock, and returns.
 
-### Core Modules
+## Integrations
 
-- Product catalog module
-- Cart & checkout module
-- Orders module
-- Payments module
-- Shipping module
-- Tax module
-- Promotions module
-- Customer module
-- Inventory module
-- API integration layer
+Payment gateways, tax engines, carriers, warehouses, fraud services, search, CMS, CRM, Billing, Accounting, Notifications, and analytics use documented adapters/events. PCI-sensitive data stays with certified providers wherever possible.
 
----
+## Quality gates
 
-## Multi-Tenant Architecture (Optional)
+- Test concurrency for stock, promotions, checkout, webhooks, captures, refunds, and returns.
+- Verify authorization, tenant/channel scope, monetary precision, rounding, tax evidence, and audit history.
+- Meet accessibility and performance budgets for browse, cart, checkout, account, and order tracking.
+- Provide reconciliation, dead-letter replay, provider outage behavior, and operational alerts.
 
-- Single store mode
-- Multi-store mode
-- Marketplace mode
-- Franchise store networks
-- White-label ecommerce instances
+## Delivery phases
 
----
+1. Catalog, Pricing, Inventory, Cart, Checkout, Orders, and one payment driver.
+2. Fulfillment, Shipping, Tax, customer portal, notifications, and reporting.
+3. Promotions, Returns, multiple providers, multi-channel/localization, and integrations.
+4. Marketplace and advanced optimization where required.
 
-# 2. Product Management System
+## Definition of done
 
-## Product Types
-
-- Simple products
-- Variable products
-- Configurable products
-- Digital products
-- Subscription products
-- Bundle products
-- Service products
-- Downloadable products
-
----
-
-## Product Features
-
-- SKU management
-- Stock tracking
-- Product variants
-- Attributes & options
-- Categories & collections
-- Tags
-- Related products
-- Upselling & cross-selling
-
----
-
-## Media & Content
-
-- Product image galleries
-- Video embeds
-- 360-degree product views (optional)
-- Downloadable assets
-
----
-
-## Testing
-
-- Product lifecycle tests
-- Variant handling tests
-- Stock validation tests
-
----
-
-# 3. Inventory Management
-
-## Stock System
-
-- Stock levels per product
-- Stock per variant
-- Warehouse support (optional)
-- Backorder support
-- Low stock alerts
-
-## Stock Operations
-
-- Stock adjustments
-- Stock reservations (cart locking)
-- Stock deductions on order placement
-
----
-
-# 4. Cart System
-
-## Cart Features
-
-- Persistent carts
-- Guest carts
-- Multi-device syncing
-- Saved carts
-- Abandoned cart tracking
-
-## Cart Operations
-
-- Add/remove items
-- Quantity updates
-- Coupon application
-- Shipping estimation
-- Tax calculation preview
-
----
-
-## Testing
-
-- Cart persistence tests
-- Pricing calculation tests
-- Session integrity tests
-
----
-
-# 5. Checkout System
-
-## Checkout Flow
-
-- Guest checkout
-- Registered user checkout
-- One-page checkout (optional)
-- Multi-step checkout
-- Express checkout
-
----
-
-## Checkout Features
-
-- Address validation
-- Shipping method selection
-- Payment method selection
-- Order review step
-- Fraud detection hooks
-- Order confirmation page
-
----
-
-## UX Requirements
-
-- Clean, minimal UI
-- Mobile-first design
-- Fast loading (<2s target checkout load)
-- Reduced friction checkout path
-
----
-
-# 6. Order Management System
-
-## Order Lifecycle
-
-- Pending
-- Processing
-- On hold
-- Completed
-- Cancelled
-- Refunded
-- Failed
-
----
-
-## Order Features
-
-- Order editing (admin)
-- Partial refunds
-- Full refunds
-- Order notes
-- Order timeline
-- Customer communication log
-
----
-
-## Testing
-
-- Order state machine tests
-- Refund logic tests
-- Lifecycle transition tests
-
----
-
-# 7. Payment System
-
-## Payment Methods (Full Support Requirement)
-
-### Card Payments
-
-- Stripe
-- Braintree
-- Authorize.net
-- Adyen
-
----
-
-### Alternative Payments
-
-- PayPal
-- Apple Pay
-- Google Pay
-- Klarna (Buy Now Pay Later)
-- Afterpay / Clearpay
-- Amazon Pay
-
----
-
-### Bank Payments
-
-- SEPA
-- ACH
-- Open Banking APIs
-- Wire transfers
-
----
-
-### Crypto (Optional Module)
-
-- Bitcoin
-- Ethereum
-- Stablecoin gateways
-
----
-
-## Payment Features
-
-- Multi-gateway support
-- Payment retries
-- Partial payments
-- Refund system
-- Subscription billing support
-- Payment tokenisation
-- PCI compliance-ready architecture
-
----
-
-## Testing
-
-- Payment gateway mocks
-- Transaction state validation
-- Refund lifecycle tests
-
----
-
-# 8. Shipping System
-
-## Shipping Providers
-
-- DHL
-- UPS
-- FedEx
-- Royal Mail
-- USPS
-- DPD
-- Local courier APIs
-
----
-
-## Shipping Features
-
-- Real-time rate calculation
-- Shipping zones
-- Weight-based shipping
-- Dimension-based shipping
-- Flat rate shipping
-- Free shipping rules
-- Pickup options
-
----
-
-## Tracking
-
-- Shipment tracking API
-- Delivery status updates
-- Notifications on status change
-
----
-
-## Testing
-
-- Rate calculation tests
-- Label generation tests
-- Tracking sync tests
-
----
-
-# 9. Tax System
-
-## Features
-
-- Multi-region tax rules
-- VAT support
-- GST support
-- Sales tax support
-- Tax exemptions
-- Tax-inclusive pricing
-- Tax-exclusive pricing
-
----
-
-## Compliance
-
-- EU VAT rules
-- UK VAT rules
-- US state tax rules
-- Digital goods taxation
-
----
-
-# 10. Customer System
-
-## Customer Features
-
-- Customer accounts
-- Guest checkout conversion
-- Address book
-- Order history
-- Wishlist
-- Saved payment methods
-
----
-
-## Customer Groups
-
-- Retail customers
-- Wholesale customers
-- VIP customers
-- B2B accounts
-
----
-
-# 11. Promotions & Marketing
-
-## Discount System
-
-- Percentage discounts
-- Fixed discounts
-- Buy X get Y
-- Cart-level discounts
-- Product-level discounts
-
----
-
-## Coupon System
-
-- Single-use coupons
-- Multi-use coupons
-- Expiry rules
-- Usage limits
-
----
-
-## Marketing Tools
-
-- Abandoned cart emails
-- Product recommendation engine
-- Email marketing hooks
-
----
-
-# 12. SEO & Content System
-
-## SEO Features
-
-- Meta titles & descriptions
-- OpenGraph support
-- SEO-friendly URLs
-- Sitemap generation
-- Schema.org structured data
-
----
-
-## Content Integration
-
-- CMS integration support
-- Blog integration
-- Landing page support
-
----
-
-# 13. API Platform
-
-## Ecommerce API
-
-- REST API
-- GraphQL API (optional)
-- OAuth2 authentication
-- API token system
-- Rate limiting
-
----
-
-## Webhooks
-
-- Order created
-- Order paid
-- Product updated
-- Customer created
-- Refund processed
-
----
-
-# 14. CMS / CRM / ERP Integration Layer
-
-## Integration Requirements
-
-The ecommerce system must seamlessly integrate with:
-
-- CMS system (content pages, landing pages)
-- CRM system (customer & lead syncing)
-- Billing system (subscription products)
-- Control panel (hosting product provisioning)
-
----
-
-## Features
-
-- Shared customer model
-- Shared product catalog (optional)
-- Cross-module events
-- Unified authentication layer
-- Shared media library (optional)
-
----
-
-# 15. Admin Panel (Filament-Based)
-
-## Features
-
-- Product management
-- Order management
-- Customer management
-- Payment tracking
-- Shipping configuration
-- Promotions management
-- Analytics dashboard
-
----
-
-## UX Requirements
-
-- Clean corporate UI
-- Fast navigation
-- Role-based dashboards
-- Action shortcuts
-
----
-
-# 16. Analytics & Reporting
-
-## Sales Analytics
-
-- Revenue tracking
-- Conversion rates
-- Average order value
-- Customer lifetime value
-
----
-
-## Inventory Analytics
-
-- Stock movement
-- Product performance
-- Low stock alerts
-
----
-
-## Marketing Analytics
-
-- Coupon usage
-- Campaign performance
-- Abandoned cart metrics
-
----
-
-# 17. Notification System
-
-## Channels
-
-- Email
-- SMS
-- Push notifications
-- Webhooks
-
----
-
-## Events
-
-- Order placed
-- Payment received
-- Shipment dispatched
-- Order delivered
-
----
-
-# 18. Performance & Scalability
-
-## Performance Requirements
-
-- Sub-second product page load target
-- Optimised checkout flow
-- Cached catalog browsing
-- Queue-based order processing
-
----
-
-## Scalability
-
-- Horizontal scaling support
-- Queue workers for order/payment processing
-- CDN integration for media
-
----
-
-# 19. Security & Compliance
-
-## Security Features
-
-- PCI DSS readiness architecture
-- CSRF protection
-- XSS protection
-- Secure payment token handling
-- Rate limiting
-
----
-
-## Compliance
-
-- GDPR compliance tools
-- Cookie consent management
-- Data export/delete tools
-
----
-
-# 20. Modular Architecture Requirements
-
-## Package-Based System
-
-Each subsystem must be independently installable:
-
-- ecommerce-core
-- ecommerce-products
-- ecommerce-cart
-- ecommerce-checkout
-- ecommerce-payments
-- ecommerce-shipping
-- ecommerce-tax
-- ecommerce-promotions
-- ecommerce-customers
-- ecommerce-api
-
----
-
-# 21. Testing Requirements
-
-## Unit Testing (PHPUnit)
-
-- Product logic
-- Pricing engine
-- Tax calculations
-- Inventory logic
-
-Target:
-
-- 90%+ coverage
-
----
-
-## Feature Testing (Pest)
-
-- Checkout flows
-- Cart workflows
-- Payment flows
-- Order lifecycle
-
----
-
-## Browser Testing
-
-- Checkout UX
-- Admin workflows
-- Product browsing
-- Cart interactions
-
----
-
-## Integration Testing
-
-- Payment gateways
-- Shipping APIs
-- Tax APIs
-- CRM/CMS integrations
-
----
-
-## Quality Assurance Gates
-
-- PHPStan max level
-- Laravel Pint
-- Rector
-- Infection Mutation Testing
-- CI/CD pipeline validation
-- Security scanning
-- Load testing
-
----
-
-# Strategic Vision
-
-## Mission Statement
-
-To create a **modern, modular, enterprise ecommerce platform** that is:
-
-- Simple enough for small businesses
-- Powerful enough for enterprise commerce
-- Flexible enough to embed into CMS, CRM, ERP, and billing systems
-
----
-
-## Key Differentiators
-
-Unlike WooCommerce, Magento, or Shopify:
-
-- Fully modular Laravel-native architecture
-- API-first and headless-ready
-- Designed for ecosystem integration (CMS, CRM, Billing, Control Panel)
-- Enterprise-grade testing and architecture standards
-- Clean UX with minimal operational complexity
-
----
-
-## Ecosystem Vision
-
-The ecommerce system becomes a core commerce layer across the Liberu ecosystem:
-
-- CMS → content-driven storefronts
-- CRM → customer intelligence & segmentation
-- Billing → subscription commerce
-- Control Panel → hosting product provisioning
+Critical commerce journeys are authorized, idempotent, concurrency-safe, traceable, accessible, reconciled, recoverable, and tested across provider failures. Each module is independently scoped for a GitHub epic.

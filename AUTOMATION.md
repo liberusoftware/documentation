@@ -1,116 +1,73 @@
-# automation-laravel — Feature Scopes Document
+# Liberu Automation
 
-**Stack:** Laravel 13 · PHP 8.5 · Filament 5 · Livewire 4
-**Status:** Draft v0.1
-**Owner:** Liberu Group Engineering
+## Product Scope
 
----
+**Purpose:** Provider-neutral automation and AI capabilities for Liberu products.
+**Architecture:** Implement every capability as modules conforming to [MODULES.md](MODULES.md); presentation follows [THEMES.md](THEMES.md).
 
-## 1. Purpose
+**Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines automation behavior only.
 
-`automation-laravel` is a lean, shared **AI services package** that plugs into the other Liberu repositories ([`cms-laravel`](https://github.com/liberusoftware/cms-laravel), [`crm-laravel`](https://github.com/liberusoftware/crm-laravel), [`billing-laravel`](https://github.com/liberusoftware/billing-laravel), [`accounting-laravel`](https://github.com/liberusoftware/accounting-laravel), [`control-panel-laravel`](https://github.com/liberusoftware/control-panel-laravel)) and gives them a single, consistent way to call AI.
+## Outcomes
 
-It is **not** a full platform — no CRM, billing, or telephony logic lives here. Its only job is: receive an AI task from a consuming app, route it to the right provider/model, run it, and return a structured result. Everything domain-specific (leads, tickets, invoices, content) stays in the app that owns that domain.
+- Build governed workflows from triggers, conditions, approvals, actions, delays, and failure paths.
+- Offer text, reasoning, extraction, voice, image, and video capabilities without coupling products to one provider.
+- Make every automated decision reviewable, measurable, cost-controlled, and safe to retry.
 
----
+## Module plan
 
-## 2. Design Principles
-
-- **Provider-agnostic:** consuming apps ask for a *capability* ("summarise", "transcribe", "generate image"), not a specific vendor.
-- **Composable package, not a platform:** installable via Composer into any Liberu app; ships a small Filament panel for configuration/monitoring only.
-- **Modular, not monolithic:** the core package only provides the provider contract, queue/callback plumbing, and config/monitoring UI. Each capability (thinking, data processing, voice, imagery, video) and each provider driver (OpenAI, Claude, Gemini) ships as its **own sub-package/module**, installed and enabled independently. A consuming app that only needs text/thinking capability shouldn't have to pull in voice or video dependencies, and a new capability or provider should be addable without touching existing modules.
-- **Stateless core:** no business data stored long-term — jobs, inputs, and outputs pass through, with only logs/usage metadata retained.
-- **Queue-first:** every AI call runs as a queued job so slow/voice/video tasks never block the calling app's request cycle.
-- **Fail safe:** provider errors, timeouts, and rate limits degrade gracefully (retry, fallback provider, or clear failure callback) rather than silently hanging.
-
----
-
-## 3. Supported AI Providers
-
-| Provider | Used for |
+| Module | Responsibilities |
 |---|---|
-| **OpenAI / ChatGPT** | Text/chat, function calling, image generation, transcription |
-| **Anthropic Claude** | Text/chat, reasoning/thinking tasks, long-document analysis |
-| **Google Gemini** | Text/chat, multimodal (image/video understanding), transcription |
+| Automation Core | Workflow definitions, versions, triggers, state, runs, variables, schedules, retries, cancellation, and compensation |
+| Rules | Typed conditions, expressions, validation, simulation, and reusable decision tables |
+| Approvals | Human review queues, separation of duties, expiry, escalation, delegation, and evidence |
+| AI Gateway | Provider contracts, model catalog, routing, fallback, structured output, tool policy, and usage metering |
+| Prompt Registry | Versioned prompts, variables, evaluation sets, brand/tenant overrides, approvals, and rollback |
+| Data Processing | Classification, extraction, summarization, translation, enrichment, redaction, and batch processing |
+| Voice | Speech-to-text, text-to-speech, streaming sessions, interruption, transcripts, and consent controls |
+| Image | Generation/editing requests, source assets, moderation, provenance, variants, and delivery |
+| Video | Generation/editing jobs, scripts, captions, audio, moderation, provenance, and delivery |
+| Connectors | Authenticated triggers/actions, webhooks, rate limits, cursor sync, replay, and reconciliation |
+| Evaluation | Quality suites, regression comparison, latency/cost metrics, safety checks, and release gates |
 
-- Common `AiProvider` contract; each vendor is a **separate driver module** behind it, published/enabled independently (e.g., `liberu/automation-openai`, `liberu/automation-claude`, `liberu/automation-gemini`) rather than bundled into the core.
-- Per-capability default provider, configurable in Filament, with automatic fallback to a secondary provider on failure — fallback only engages providers that are actually installed/enabled.
-- API keys and per-provider rate/cost limits managed centrally so every consuming app benefits without re-implementing it.
-- Adding a fourth provider in future means adding a new driver module, not modifying the core or existing drivers.
+## Required workflows
 
----
+1. **Design and publish:** draft workflow → validate dependencies and permissions → simulate → approve → version and publish.
+2. **Execute:** receive trigger → deduplicate → evaluate rules → obtain approvals → perform actions → record outputs and cost.
+3. **Provider failure:** classify error → retry/back off → route to permitted fallback → pause or request operator action.
+4. **Model change:** evaluate candidate → compare quality, safety, latency, and cost → approve rollout → monitor → roll back if thresholds fail.
+5. **Sensitive-data handling:** classify input → minimize/redact → enforce provider/region policy → process → apply retention/deletion rules.
 
-## 4. Core Capabilities
+## Product requirements
 
-Kept intentionally broad-but-shallow — a small, well-defined set of task types rather than dozens of bespoke endpoints. Each capability below is its **own module**, installed only where needed, so a consuming app's dependency footprint matches what it actually uses:
+- Support event, webhook, schedule, manual, and data-change triggers.
+- Provide sync and queued actions, parallel branches, waits, timeouts, loops with limits, sub-workflows, and compensating actions.
+- Require schemas for workflow inputs/outputs and validate structured AI responses.
+- Enforce per-workflow provider, model, tool, budget, rate, region, retention, and human-approval policies.
+- Prevent AI tools from exceeding the initiating actor's permissions.
+- Store run timelines, prompt/model versions, provider request identifiers, approvals, errors, tokens, duration, and estimated cost.
+- Provide test mode, fixtures, deterministic stubs, replay with redaction, and side-effect-free simulation.
+- Expose APIs, events, Filament operations, and embeddable approval/run-status Livewire components.
 
-### 4.1 Thinking / Reasoning Tasks
-- Summarisation, classification, extraction (e.g., "what's this support ticket about?")
-- Structured-output generation (JSON) for the calling app to consume directly
-- Multi-step reasoning chains for tasks like lead scoring or ticket triage, with the *decision logic* owned by the calling app and the *reasoning* delegated here
+## Integrations
 
-### 4.2 Data Processing
-- Cleaning, tagging, and enriching structured or semi-structured data passed in from a consuming app (e.g., CRM contact enrichment, CMS content tagging)
-- Batch mode for bulk jobs (e.g., re-tag all existing records) alongside single-record calls
+Initial drivers may cover OpenAI, Anthropic, Google, local models, email, SMS, telephony, storage, HTTP/webhooks, and Liberu module events. Each driver declares capabilities and compliance constraints; provider availability is configuration, not a domain assumption.
 
-### 4.3 Voice
-- Speech-to-text (calls, voicemail, voice notes)
-- Text-to-speech for AI-driven replies (e.g., an AI receptionist in another app)
-- Designed to accept an audio stream/file reference and return transcript + optional synthesized audio, so calling apps don't need their own voice pipeline
+## Quality and safety gates
 
-### 4.4 Imagery
-- Image generation from a text prompt
-- Image understanding/description (e.g., "what's in this uploaded photo?")
+- Defend against prompt injection, unsafe tool use, secret disclosure, malformed structured output, excessive spend, and unbounded execution.
+- Obtain explicit consent for recording, biometric processing, or sensitive-media use where required.
+- Record provenance and usage rights for generated media; watermark or label output when policy requires it.
+- Test duplicate triggers, partial failures, fallback, cancellation, approval races, tenant isolation, quotas, and provider outages.
+- Alert on failure rate, queue delay, quality regression, policy violation, abnormal cost, and exhausted budget.
 
-### 4.5 Video
-- Short video generation from a prompt/brief, where the selected provider supports it
-- Video understanding (summarise/describe a video clip) where supported
+## Delivery phases
 
----
+1. Automation Core, Rules, run history, scheduling, and approvals.
+2. AI Gateway, Prompt Registry, text/data processing, metering, and evaluation.
+3. Connectors and governed product-module actions.
+4. Voice and real-time sessions.
+5. Image/video pipelines, provenance, and advanced evaluations.
 
-## 5. Integration Model
+## Definition of done
 
-- **Package install:** consuming apps `composer require liberu/automation-laravel` for the core, then add only the capability and provider modules they need (e.g., a CMS site might install `automation-laravel` + `automation-openai` + `automation-imagery` only).
-- **Module registration:** each capability/provider module self-registers with the core on boot (service provider), so the core never needs to know in advance which modules exist — new modules plug in without core changes.
-- **Dispatch:** calling app dispatches an `AiTaskRequest` (capability + payload + callback) to the shared queue; the core routes it to whichever capability/provider modules are installed and configured.
-- **Callback/event:** on completion, an event/webhook fires back to the calling app with the result, so the calling app decides what to do with it (save to CRM, attach to a CMS post, etc.).
-- **Filament panel (this repo only):** provider configuration, per-capability routing rules, job monitoring/retry, and usage/cost dashboards — no domain-specific UI. The panel lists only the modules currently installed/enabled.
-
----
-
-## 6. Cross-Cutting
-
-- **Usage tracking:** per app, per capability, per provider — token/cost counts surfaced for Finance without needing access to Accounting internals.
-- **Guardrails:** basic content-safety checks and optional human-approval flag on a task (calling app can mark a task as "requires review before use").
-- **Privacy:** configurable redaction/minimisation step before payloads leave for an external provider, and no persistent storage of raw inputs/outputs beyond a short retention window for debugging.
-- **Observability:** logging and basic metrics (latency, error rate, fallback rate) per provider/capability.
-
----
-
-## 7. Explicit Non-Goals
-
-To keep this package lean, it deliberately does **not** include:
-
-- CRM, billing, accounting, or provisioning logic (lives in the respective repos)
-- Telephony/switchboard, social media scheduling, or marketplace integrations (belong in whichever app owns those channels)
-- Long-term storage of business data — this is a processing layer, not a system of record
-
----
-
-## 8. Suggested Phasing
-
-1. Core package scaffold + `AiProvider` contract + OpenAI driver
-2. Add Claude and Gemini drivers + fallback routing
-3. Thinking/data-processing capability + queue/callback pattern proven with one consuming app (e.g., CRM lead enrichment)
-4. Voice capability (speech-to-text/text-to-speech)
-5. Imagery capability (generation + understanding)
-6. Video capability (generation + understanding, provider-dependent)
-7. Usage/cost dashboard and guardrail/approval flag polish
-
----
-
-## 9. Open Questions
-
-- Sync vs. async API surface for consuming apps — always queue, or allow a fast synchronous path for short "thinking" calls?
-- Where does redaction policy live — centrally in `automation-laravel`, or configured per calling app?
-- Which providers support video generation/understanding well enough today, and should that capability start as an OpenAI/Gemini-only feature until parity improves?
+The product is ready when workflows are versioned, authorized, tenant-safe, idempotent, observable, recoverable, budget-enforced, provider-replaceable, and covered by evaluation and failure-path tests. Each module must be independently installable and documented for conversion into a GitHub epic.
