@@ -1,301 +1,593 @@
-# Liberu Module Architecture
+# Liberu Composable Package and Module Architecture
 
 ## Canonical Implementation Specification
 
 **Status:** Source of truth
-**Applies to:** All Liberu Laravel applications and reusable packages
+**Applies to:** All Liberu repositories, Composer packages, applications, and distributions
 **Target stack:** Laravel 13, PHP 8.5, Filament 5, Livewire 4
+**Related specifications:** [BOILERPLATE.md](BOILERPLATE.md) and [THEMES.md](THEMES.md)
 
 ## 1. Purpose
 
-This document defines how Liberu modules are named, structured, discovered, installed, configured, integrated, tested, versioned, and removed. Product scopes define *what* to build; this document defines *how functional boundaries are packaged*.
+Liberu is a composable Laravel ecosystem built from independently reusable Composer packages. A repository is a development and product boundary; it is not automatically one package or one runtime module. A product repository may contain many cohesive packages plus a reference Laravel application that composes them.
 
-A module is a self-contained business or platform capability with explicit ownership, public contracts, dependencies, lifecycle, resources, and tests. The module manager discovers and boots modules but does not contain domain-specific behavior.
+This document defines how Liberu capabilities are decomposed, packaged, named, discovered, installed, integrated, presented, tested, versioned, and operated. Product scopes define *what* to build. This document defines *where behavior belongs and how its boundaries interact*.
 
-## 2. Architectural rules
+The governing principle is:
 
-1. One module owns each business capability and its authoritative writes.
-2. Modules communicate through public contracts, commands, queries, and versioned domain events.
-3. A module must not query or mutate another module's tables directly.
-4. Dependencies must be declared, directional, and free of cycles.
-5. Optional integrations are implemented through adapters and capability checks.
-6. Framework-facing code stays at module edges; domain rules remain usable without Filament or HTTP.
-7. All tenant-owned queries and uniqueness rules include tenant scope.
-8. Side effects are authorized, auditable, retry-safe, and observable.
-9. Disabling or uninstalling a module must be explicit; data is never silently deleted.
-10. Themes may render module output but must not own domain logic.
+> Build a capability once, package it independently, and compose it into every application that needs it.
 
-## 3. Standard module layout
+## 2. Architectural vocabulary
+
+| Term | Meaning |
+|---|---|
+| Repository | Development, governance, and release workspace containing one or more packages and optionally a reference application |
+| Composer package | Smallest independently versioned, installable, dependency-declaring code unit |
+| Capability | Cohesive business or platform responsibility exposed through a stable public boundary |
+| Module | An installed package capability represented in the runtime registry and subject to enablement/lifecycle rules |
+| Product | A domain ecosystem such as CMS, Billing, or Ecommerce, normally composed from several packages |
+| Application | Deployable Laravel host that selects packages, panels, routes, infrastructure, configuration, and enabled capabilities |
+| Distribution package | Implementation-free Composer metapackage that installs a supported package set for convenience |
+| Provider adapter | Package implementing a provider-neutral contract for one external system or regional implementation |
+| Presentation package | Optional Filament, Livewire, API, or other interface adapter built on domain packages |
+| Theme | Presentation assets and rendering overrides governed by `THEMES.md`; never a domain capability |
+
+These terms are not interchangeable. In particular, installing code with Composer does not automatically enable or entitle its runtime capability.
+
+## 3. Architectural hierarchy
+
+Dependencies point downward toward more stable and reusable abstractions:
 
 ```text
-modules/
-└── Blog/
-    ├── composer.json
-    ├── module.json
-    ├── README.md
-    ├── CHANGELOG.md
-    ├── config/blog.php
-    ├── database/
-    │   ├── factories/
-    │   ├── migrations/
-    │   └── seeders/
-    ├── resources/
-    │   ├── lang/
-    │   └── views/
-    ├── routes/
-    │   ├── api.php
-    │   ├── console.php
-    │   └── web.php
-    ├── src/
-    │   ├── Actions/
-    │   ├── Contracts/
-    │   ├── Data/
-    │   ├── Domain/
-    │   ├── Events/
-    │   ├── Exceptions/
-    │   ├── Filament/
-    │   │   ├── Clusters/
-    │   │   ├── Pages/
-    │   │   ├── Resources/
-    │   │   └── Widgets/
-    │   ├── Http/
-    │   │   ├── Controllers/
-    │   │   ├── Middleware/
-    │   │   ├── Requests/
-    │   │   └── Resources/
-    │   ├── Jobs/
-    │   ├── Listeners/
-    │   ├── Livewire/
-    │   ├── Models/
-    │   ├── Notifications/
-    │   ├── Policies/
-    │   ├── Providers/
-    │   ├── Queries/
-    │   ├── Services/
-    │   └── BlogServiceProvider.php
-    └── tests/
-        ├── Architecture/
-        ├── Feature/
-        └── Unit/
+Application / Distribution
+           |
+Product and Presentation Packages
+           |
+Reusable Capability Core + Provider Adapters
+           |
+Domain Contracts and Shared Value Types
+           |
+Boilerplate Foundation
 ```
 
-Only create directories a module uses. `src/` is the PSR-4 root. Database, configuration, routes, translations, and views are module-owned resources outside that root.
+The four functional levels are:
 
-## 4. Naming conventions
+1. **Foundation:** generic application infrastructure defined by `BOILERPLATE.md`.
+2. **Reusable capabilities:** provider-neutral business capabilities usable by several products.
+3. **Product capabilities:** behavior genuinely specific to one product domain.
+4. **Applications and distributions:** deployable compositions and convenience dependency sets.
+
+An application consumes the lowest-level package that provides what it needs. It must not install an entire product repository to obtain one capability.
+
+## 4. Mandatory architecture rules
+
+1. A repository is not automatically a package.
+2. A product is not automatically a capability or module.
+3. One package has one cohesive primary responsibility and one authoritative owner.
+4. Reusable behavior is extracted only when it has a stable boundary and genuine reuse; speculative abstractions are avoided.
+5. Applications compose packages; packages never depend on an application's `App\\` classes.
+6. Dependencies point toward reusable contracts and foundation, never toward a consuming product.
+7. Provider-neutral core packages never depend on provider adapters or vendor SDKs.
+8. Provider-specific data and SDK usage remain inside the corresponding adapter package.
+9. Domain packages never depend on Filament, themes, or another optional presentation layer.
+10. Modules communicate through public contracts, commands, queries, events, registries, or stable identifiers—not another package's internal classes or tables.
+11. Required dependencies are explicit, directional, version-constrained, and cycle-free.
+12. Installation, runtime enablement, authorization, and commercial entitlement are distinct concerns.
+13. Disabling or uninstalling a module never silently deletes data.
+14. Side effects are authorized, auditable, idempotent, observable, and recoverable.
+15. Shared foundation behavior is consumed from `BOILERPLATE.md`, not reimplemented by products.
+
+## 5. Package categories
+
+Every package declares exactly one primary category.
+
+### 5.1 Foundation packages
+
+Foundation packages implement cross-repository application infrastructure: module management, identity, organizations, authorization, audit, settings, localization, currency context, notifications, files, queues, and observability. Their canonical feature boundaries are defined only in `BOILERPLATE.md`.
+
+Foundation must not become a miscellaneous shared-code layer. A class belongs here only when it is domain-neutral and broadly reusable.
+
+### 5.2 Contract packages
+
+Contract packages define stable boundaries for capabilities with several consumers or implementations. They contain interfaces, immutable DTOs/value objects, enums, capability descriptors, and shared exceptions. They do not contain provider SDKs, Eloquent models, migrations, UI, or orchestration.
+
+Examples: `liberu/payment-contracts`, `liberu/tax-contracts`, `liberu/search-contracts`, and `liberu/ai-contracts`.
+
+Use a separate contract package only when consumers need the abstraction without the core implementation. Otherwise, keep the public contracts in the capability package to avoid package fragmentation.
+
+### 5.3 Capability core packages
+
+Capability packages own provider-neutral business behavior, orchestration, persistence, policies, and events reusable across products. Examples include `liberu/payment-core`, `liberu/subscription-core`, `liberu/media-core`, and `liberu/customer-core`.
+
+A core package depends on contracts but not on an external provider implementation. It discovers optional implementations through explicit registration.
+
+### 5.4 Provider and regional adapter packages
+
+An adapter connects one contract to one external provider, protocol, jurisdiction, or platform. Examples include `liberu/payment-stripe`, `liberu/storage-s3`, `liberu/ai-openai`, and `liberu/tax-uk`.
+
+Each adapter owns its SDK, credentials/configuration, provider identifiers, webhook receipts, mappings, rate-limit behavior, retries, sandbox support, and reconciliation logic. A provider adapter can be installed without changing the consuming domain.
+
+### 5.5 Product packages
+
+Product packages contain behavior specific to a product ecosystem, such as `liberu/cms-publishing`, `liberu/ecommerce-cart`, `liberu/crm-opportunities`, or `liberu/billing-invoices`. They may consume foundation and reusable capabilities but cannot duplicate them.
+
+### 5.6 Presentation packages
+
+Presentation is an optional adapter over domain packages. Typical packages include `liberu/cms-filament`, `liberu/ecommerce-filament`, or more granular packages where independent installation warrants it.
+
+- A Filament package may provide plugins, resources, pages, widgets, forms, tables, actions, and navigation.
+- A Livewire presentation package may provide interactive application components.
+- An API presentation package may provide controllers, requests, resources, and route registration.
+- Presentation packages depend on the domain contracts/actions they expose; domain packages never depend on them.
+- Blade/CSS/JavaScript/assets and theme overrides also comply with `THEMES.md`.
+
+### 5.7 Aggregate distribution packages
+
+An aggregate such as `liberu/ecommerce` may require a supported set of packages for convenient installation. It contains no domain implementation, migrations, or provider assumptions. Users remain free to install only `liberu/ecommerce-catalog` or another subset.
+
+## 6. Repository design
+
+A product repository is a package ecosystem and reference integration environment:
+
+```text
+cms-laravel/
+├── packages/
+│   ├── cms-core/
+│   ├── cms-content/
+│   ├── cms-pages/
+│   ├── cms-media/
+│   ├── cms-publishing/
+│   └── cms-filament/
+├── app/                 # application-specific composition only
+├── bootstrap/
+├── config/
+├── routes/
+├── tests/               # cross-package/application tests
+└── composer.json        # path repositories and application dependencies
+```
+
+The root application owns Laravel bootstrapping, environment/deployment configuration, package selection, panel composition, application routes, and integration tests. Reusable domain behavior does not remain under root `app/`.
+
+Packages may begin in a product monorepo and later move to a dedicated repository without changing their Composer name, namespace, contracts, or consumers. Repository location is a governance choice, not a public architecture boundary.
+
+## 7. Standard package layout
+
+```text
+packages/payment-core/
+├── composer.json
+├── module.json
+├── README.md
+├── CHANGELOG.md
+├── config/payment.php
+├── database/
+│   ├── factories/
+│   ├── migrations/
+│   └── seeders/
+├── resources/
+│   ├── lang/
+│   └── views/           # functional defaults only, if needed
+├── routes/              # only routes owned by this package
+├── src/
+│   ├── Actions/
+│   ├── Contracts/
+│   ├── Data/
+│   ├── Domain/
+│   ├── Events/
+│   ├── Exceptions/
+│   ├── Jobs/
+│   ├── Listeners/
+│   ├── Models/
+│   ├── Policies/
+│   ├── Providers/
+│   ├── Queries/
+│   ├── Services/
+│   └── PaymentServiceProvider.php
+└── tests/
+    ├── Architecture/
+    ├── Feature/
+    └── Unit/
+```
+
+Create only directories the package uses. `src/` is its PSR-4 root. Filament classes belong in a separate presentation package rather than a `src/Filament` directory in the domain package.
+
+## 8. Package independence
+
+Every package that represents an architectural boundary must, where technically meaningful:
+
+- have its own Composer metadata, namespace, service provider, manifest, configuration, migrations, tests, changelog, and documentation;
+- declare PHP, Laravel, Liberu, framework, and extension dependencies explicitly;
+- avoid unrelated product dependencies and application-specific helpers/configuration;
+- boot in a clean supported Laravel host with only declared requirements installed;
+- expose safe extension points instead of requiring source publication or copying;
+- be independently testable and versionable even when released with a coordinated repository version.
+
+Do not create a package for every class or table. Split when responsibility, dependency direction, optional installation, release cadence, provider isolation, ownership, or reuse requires a boundary.
+
+## 9. Naming conventions
+
+Composer names communicate domain, capability, and role:
+
+| Package role | Convention | Example |
+|---|---|---|
+| Product capability | `liberu/{product}-{capability}` | `liberu/cms-publishing` |
+| Shared contract | `liberu/{capability}-contracts` | `liberu/payment-contracts` |
+| Shared core | `liberu/{capability}-core` | `liberu/payment-core` |
+| Provider adapter | `liberu/{capability}-{provider}` | `liberu/payment-stripe` |
+| Presentation adapter | `liberu/{product-or-capability}-{surface}` | `liberu/cms-filament` |
+| Aggregate distribution | `liberu/{product}` | `liberu/ecommerce` |
+
+Additional conventions:
 
 | Item | Convention | Example |
 |---|---|---|
-| Directory and PHP module name | Singular PascalCase | `Billing`, `Media` |
-| Composer package | `liberu/{kebab-name}` | `liberu/order-management` |
-| Namespace | `Liberu\\Modules\\{Name}` | `Liberu\\Modules\\Billing` |
-| Manifest name | Stable kebab-case | `order-management` |
-| Configuration key | snake_case or short lowercase | `order_management` |
-| Database tables | module-prefixed snake_case | `billing_invoices` |
-| Routes | module-prefixed names | `billing.invoices.show` |
+| Namespace | `Liberu\\{Domain}\\{Capability}` | `Liberu\\Payment\\Core` |
+| Manifest name | Stable Composer-aligned kebab-case | `payment-core` |
+| Database tables | Package-owned prefix where useful | `payment_transactions` |
+| Routes | Package-prefixed names | `billing.invoices.show` |
 | Permissions | `{module}.{resource}.{action}` | `billing.invoices.refund` |
-| Events | Past-tense domain fact | `InvoiceIssued` |
-| Commands/actions | Imperative intent | `IssueInvoice` |
+| Events | Past-tense domain fact | `PaymentCaptured` |
+| Commands/actions | Imperative intent | `CapturePayment` |
 
-Names are public contracts after release. Renaming requires aliases or a documented migration.
+Released names are public contracts. Renaming requires compatibility aliases or a documented migration.
 
-## 5. Manifest contract
+## 10. Composer and manifest contracts
 
-Every module contains `module.json` with this minimum shape:
+Composer is authoritative for code installation and static dependency resolution. Each runtime-capable package also contains `module.json`:
 
 ```json
 {
   "$schema": "https://schemas.liberu.dev/module/v1.json",
-  "name": "blog",
-  "display_name": "Blog",
-  "description": "Editorial posts and publication workflows.",
+  "name": "payment-core",
+  "display_name": "Payments",
+  "description": "Provider-neutral payment orchestration.",
   "version": "1.0.0",
-  "provider": "Liberu\\Modules\\Blog\\BlogServiceProvider",
+  "category": "capability",
+  "provider": "Liberu\\Payment\\Core\\PaymentServiceProvider",
   "requires": {
     "php": "^8.5",
     "laravel": "^13.0",
-    "modules": { "identity": "^1.0" }
+    "packages": { "liberu/payment-contracts": "^1.0" }
   },
-  "suggests": { "media": "^1.0" },
-  "capabilities": ["blog.posts", "blog.publication"],
+  "suggests": { "liberu/payment-stripe": "^1.0" },
+  "capabilities": ["payments.orchestrate"],
   "default_enabled": false
 }
 ```
 
-The JSON schema is versioned. CI rejects unknown required fields, invalid dependency ranges, duplicate names/capabilities, cycles, and providers that cannot be resolved. Deployment configuration—not the manifest—decides whether a module is enabled.
+The manifest describes runtime capability, lifecycle, compatibility, and optional relationships; it does not replace Composer. Contract-only packages and metapackages need no runtime provider or enablement entry unless they expose runtime capability.
 
-## 6. Discovery and boot process
+CI validates the versioned schema, Composer/manifest consistency, dependency ranges, unique names/capabilities, category rules, cycles, providers, and referenced resources. Deployment configuration—not the package manifest—decides enablement.
+
+## 11. Installation, enablement, and entitlement
+
+```text
+Installed  -> code is present through Composer
+Enabled    -> capability is active in this application/deployment
+Entitled   -> actor, tenant, site, or plan may use the enabled capability
+Authorized -> current actor may perform this operation on this record
+```
+
+These gates are evaluated independently. An installed Stripe adapter may be enabled for one site, commercially entitled for one plan, and still unavailable to an actor lacking refund permission.
+
+Feature flags control rollout behavior inside an enabled capability. They do not substitute for Composer dependencies, installation migrations, entitlement, or authorization.
+
+## 12. Discovery and lifecycle
 
 The module manager performs deterministic startup:
 
-1. Discover configured local and Composer-installed manifests.
-2. Validate manifests and application compatibility.
-3. Resolve required dependencies and detect cycles.
-4. Read enabled state from deployment configuration/cache.
-5. Sort enabled modules topologically, then by stable name.
-6. Register service providers and bindings.
-7. Boot routes, views, translations, policies, commands, schedules, events, and UI extensions.
-8. Cache the resolved registry in production and invalidate it on deploy or configuration change.
+1. Read manifests from Composer package metadata and configured local paths.
+2. Validate manifest, Composer, application, and framework compatibility.
+3. Resolve required dependencies, capabilities, and cycles.
+4. Read installed version and deployment enablement state.
+5. Sort enabled modules topologically with a stable tie-breaker.
+6. Register service providers and cache the resolved registry in production.
+7. Boot routes, policies, commands, events, schedules, views, and presentation plugins.
 
-Discovery must not scan arbitrary classes on every request. A broken optional module must produce an actionable deployment error without corrupting installed state.
+The lifecycle is:
 
-## 7. Module lifecycle
-
-| State/action | Required behavior |
+| Action | Required behavior |
 |---|---|
-| Available | Manifest is discoverable and compatible |
-| Install | Validate dependencies, publish/configure resources where needed, run migrations, record version |
-| Enable | Confirm installation and dependencies, then expose runtime capability |
-| Disable | Stop new entry points and scheduled work without deleting records |
-| Upgrade | Run ordered, idempotent migrations and upgrade hooks with rollback guidance |
-| Uninstall | Require explicit confirmation and retention/export choice; default to preserving data |
+| Install | Validate dependencies, run idempotent migrations/hooks, and record version |
+| Enable | Confirm installation/dependencies and expose capability entry points |
+| Disable | Stop new entry points and schedules while retaining data and safe background handling |
+| Upgrade | Run ordered migrations/hooks with compatibility and recovery guidance |
+| Uninstall | Require explicit retention/export choice; preserve data by default |
 
-Production lifecycle changes must be deploy-time operations or privileged, audited jobs. They must use locks, report progress, recover safely after interruption, and never run schema changes inside a web request.
+Production lifecycle changes use deployments or privileged audited jobs, locks, progress reporting, and interruption recovery. Schema changes never run inside an ordinary web request.
 
-## 8. Service provider responsibilities
+## 13. Dependency inversion and provider adapters
 
-`register()` binds contracts, merges configuration, and registers other providers without reading request state or performing I/O. `boot()` registers routes, policies, commands, events, schedules, views, translations, and publishable resources.
+The required direction is:
 
-Providers must be idempotent, safe during config/route caching, and compatible with CLI, queue, scheduler, test, and HTTP runtimes. Application-specific overrides use container bindings or configuration, not edits inside the module.
+```text
+Consuming product -> capability contract <- capability core
+                                         <- provider adapter -> vendor SDK/API
+```
 
-## 9. Public boundaries
+For payments:
 
-A module may expose:
+```text
+ecommerce-checkout -> payment-contracts <- payment-core
+                                        <- payment-stripe -> Stripe SDK
+                                        <- payment-paypal -> PayPal SDK
+```
 
-- contracts for replaceable behavior;
-- immutable DTOs for supported input/output;
-- command handlers for requested state changes;
-- query services or authorized read models;
-- versioned events describing completed domain facts;
-- routes and API resources documented as public endpoints;
-- capabilities that optional consumers can detect.
+Ecommerce and Billing depend on provider-neutral payment contracts/core. They never call a Stripe class, persist a Stripe intent identifier, or switch on provider names. `payment-stripe` alone uses the Stripe SDK and owns Stripe identifiers/webhook mappings.
 
-Models, repositories, internal services, migrations, and tables are private unless explicitly documented. Cross-module foreign keys should reference stable platform identifiers and must not force an optional module to be installed.
+This is dependency inversion: high-level domain policy and low-level adapters both depend on stable abstractions. Laravel container bindings or explicit registries connect them at application composition time.
 
-## 10. Events, queues, and workflows
+## 14. Registries, strategies, and factories
 
-- Events contain stable identifiers and necessary facts, not serialized Eloquent models.
-- Consumers are idempotent and tolerate duplicate or out-of-order delivery where relevant.
+Use an explicit capability registry when multiple implementations may coexist or be selected per tenant/site/context:
+
+```text
+PaymentGateway contract
+        |
+PaymentGatewayRegistry
+        |-- StripePaymentGateway
+        |-- PayPalPaymentGateway
+        `-- AdyenPaymentGateway
+```
+
+- **Registry:** discovers named implementations and their declared capabilities.
+- **Strategy:** selects behavior through a common contract without provider conditionals in consumers.
+- **Factory/resolver:** creates a correctly configured implementation for trusted context.
+- **Adapter:** translates provider concepts into domain contracts and back.
+
+Registrations are explicit, collision-checked, cacheable, and inspectable. Resolution failures are actionable. Do not use a service locator throughout domain code; inject the narrow contract or an orchestration service.
+
+## 15. Other required design patterns
+
+- **Ports and adapters:** domain actions/contracts are ports; HTTP, Filament, queues, persistence, and providers are adapters.
+- **Application service/action:** one use case coordinates authorization, domain objects, persistence, and events without embedding logic in controllers/components.
+- **Command/query separation:** mutations express intent; authorized queries return purpose-built read models without exposing internal repositories.
+- **Domain events:** immutable, past-tense facts decouple downstream work and projections.
+- **Outbox/inbox:** transactionally publish events and deduplicate asynchronous consumption.
+- **State machine:** model valid lifecycle transitions, guards, side effects, and terminal states explicitly.
+- **Saga/process manager:** coordinate long-running cross-package workflows with recorded state and compensation.
+- **Anti-corruption layer:** translate external or legacy terminology at the adapter boundary rather than leaking it into the domain.
+- **Specification/policy:** encapsulate reusable eligibility and authorization rules with testable inputs.
+- **Decorator/middleware:** add telemetry, caching, retries, or policy around contracts without changing domain implementations.
+
+Patterns solve demonstrated design forces; they are not mandatory ceremony. Public abstractions must earn their maintenance cost through clarity, substitution, testing, or reuse.
+
+## 16. Public package boundaries
+
+A package may expose only documented surfaces:
+
+- contracts and immutable DTOs/value objects;
+- actions/commands for requested state changes;
+- authorized queries or read models;
+- versioned domain events describing completed facts;
+- registries and capability descriptors;
+- documented routes, APIs, commands, permissions, and extension points.
+
+Models, migrations, tables, repositories, internal services, framework listeners, and provider payloads are private unless explicitly documented. Consumers must not instantiate another package's concrete internals merely because Composer autoloading makes them visible.
+
+## 17. Data and database ownership
+
+Each package owns its schema and authoritative writes. For example:
+
+```text
+payment-core       -> payments, payment_transactions
+payment-stripe     -> stripe_payment_intents, stripe_webhook_receipts
+ecommerce-orders   -> orders, order_items
+billing-invoices   -> invoices, invoice_items
+```
+
+- Provider identifiers live in provider adapter tables, never consuming product tables.
+- Cross-package references use stable platform identifiers, normally ULIDs, plus documented contracts.
+- Direct cross-package foreign keys are used only for an explicit required dependency and cannot force an optional package to exist.
+- A package never queries or mutates another package's tables directly.
+- Shared concepts such as identity have one explicit owner; product packages add domain profiles keyed to that owner.
+- Cross-product reporting consumes governed events/read models rather than coupling transactional schemas.
+- Expand schema before new code depends on it and contract only after old consumers retire.
+- Uninstall does not drop production data automatically.
+
+## 18. Events, queues, and workflows
+
+- Events carry stable identifiers and necessary facts, not serialized Eloquent models or provider payloads.
+- Schemas are versioned; breaking changes publish a new version with a transition plan.
+- Consumers are idempotent and account for duplicates and relevant out-of-order delivery.
 - External calls, bulk work, file processing, and slow projections use queued jobs.
-- Jobs define timeout, retry, backoff, uniqueness, and failure handling.
-- Multi-step workflows record state and support compensation or operator recovery.
-- Transactional event publication uses an outbox or after-commit dispatch.
-- Event schemas include a version; breaking changes introduce a new version.
+- Jobs declare actor/tenant context, timeout, retry, backoff, uniqueness, cancellation, and failure behavior.
+- Publish transactional events through an outbox or after-commit mechanism; consumers persist inbox/deduplication state where needed.
+- Long-running cross-package workflows record state and provide compensation or operator recovery.
 
-## 11. Persistence and migrations
+Synchronous calls are appropriate for validation or queries that must complete inside one request and have a required dependency. Events are appropriate for facts and optional/asynchronous reactions. Do not use events to hide a required response or transactional invariant.
 
-- Prefix tables by module unless a documented shared-core table is used.
-- Use portable migrations supported by the product's declared databases.
-- Expand schema before code depends on it; contract only after old code is retired.
-- Avoid irreversible data transforms without backup, validation, and recovery instructions.
-- Seeders are repeatable; factories generate tenant-correct data.
-- Encrypt classified fields and never place secrets in module configuration committed to source control.
-- Uninstall migrations do not drop production data automatically.
+## 19. Service providers and application composition
 
-## 12. Identity, tenancy, and authorization
+`register()` binds contracts and merges configuration without request state or side effects. `boot()` registers package-owned routes, policies, commands, events, schedules, views, and publishable resources. Providers are idempotent and safe during configuration/route caching, CLI, queue, scheduler, test, and HTTP runtimes.
 
-- Identity and organization modules own users, organizations, memberships, and service principals.
-- Domain modules reference stable IDs and own their domain-specific profiles.
-- Tenant context is resolved once at a trusted boundary and cannot be selected through unvalidated input.
-- Policies authorize every UI, HTTP, API, console, and queued entry point.
-- Background jobs carry signed or validated tenant and actor context.
-- Permission names follow the module convention and are declared centrally by the owning module.
-- Privileged actions support re-authentication, approval, and audit where risk warrants it.
+The application composition root selects:
 
-## 13. Web, API, Filament, and Livewire
+- installed packages and provider adapters;
+- enabled runtime modules and site/tenant configuration;
+- concrete contract bindings and registry selections;
+- Filament panels and presentation plugins;
+- queue, cache, storage, database, broadcast, and observability infrastructure;
+- deployment-specific security and entitlement policy.
 
-- Controllers and Livewire components orchestrate validated actions; domain logic resides in actions/services.
-- Route names and URLs are module-prefixed and collision-tested.
-- APIs use versioned resources, consistent errors, pagination, idempotency keys for retried writes, and explicit rate limits.
-- Filament resources use policies and tenant scopes for all pages, actions, relation managers, exports, and global search.
-- Modules register Filament components through a plugin or documented panel extension, not by modifying panel providers.
-- Blade and Livewire presentation follows `THEMES.md`; module-provided views are functional defaults and publish stable extension points.
+Packages supply safe defaults and extension points. They do not inspect the host application's concrete classes or silently override unrelated bindings.
 
-## 14. Configuration and feature flags
+## 20. Filament, Livewire, API, and themes
 
-- Configuration files contain safe defaults and document every key.
-- Secrets are referenced through environment-backed secret stores, never exposed by config endpoints or logs.
-- Runtime feature flags control behavior, not module dependency resolution or schema installation.
-- Flags define owner, default, rollout strategy, telemetry, and removal date.
-- Configuration is validated during deployment and compatible with Laravel configuration caching.
+Filament is an integration layer, not a domain dependency:
 
-## 15. External integrations
+```text
+Application panel
+    `-- CMS Filament plugin -> CMS domain packages
 
-Integrations use a contract plus one or more provider drivers. Each driver defines authentication, supported capabilities, webhook verification, rate limits, retries, idempotency, sandbox behavior, and reconciliation.
+CMS domain packages -X-> Filament
+```
 
-Webhook ingestion must verify authenticity, persist a receipt before processing, deduplicate provider event IDs, return promptly, and process asynchronously. Synchronizations use cursors/checkpoints and provide operator-visible replay and reconciliation tools.
+The root application defines panels. Presentation packages contribute explicit plugins. Domain packages remain usable through APIs, console commands, jobs, custom Livewire applications, or third-party Laravel applications without Filament installed.
 
-## 16. Observability and operations
+- Controllers, Livewire components, and Filament actions invoke authorized application actions; they do not own domain rules.
+- APIs use versioned resources, consistent errors, pagination, rate limits, and idempotency keys for retried writes.
+- Filament resources apply policies and tenant scope to pages, actions, relation managers, exports, and global search.
+- Themes may override stable views and assets but cannot replace routes, validation, policies, or business actions.
+- CSS, JavaScript, Blade, layout, media, and Livewire presentation requirements follow `THEMES.md`.
 
-Each module supplies:
+## 21. External integrations and webhooks
 
-- structured logs with correlation, tenant, actor, module, and operation identifiers;
-- counters and timings for critical workflows and external providers;
-- health/readiness checks that distinguish required from optional dependencies;
-- failed-job and dead-letter visibility with safe replay;
-- runbooks for expected failure modes, recovery, migration, and rollback;
-- redaction rules preventing credentials, payment data, or sensitive personal data from entering telemetry.
+Each provider adapter documents authentication, capabilities, provider mapping, webhook verification, rate limits, timeouts, retries, idempotency, sandbox behavior, observability, data residency, and reconciliation.
 
-## 17. Testing requirements
+Webhook ingestion verifies authenticity, persists a receipt before processing, deduplicates provider event IDs, returns promptly, and processes asynchronously. Synchronizations use cursors/checkpoints with operator-visible replay and reconciliation. Provider outages degrade only dependent capabilities where possible.
 
-Every module requires:
+## 22. Identity, tenancy, authorization, and configuration
+
+Foundation behavior is consumed from `BOILERPLATE.md`. Domain packages:
+
+- reference stable identity/organization/team identifiers and own only domain-specific profiles;
+- accept trusted tenant/actor context through contracts rather than resolving it independently;
+- declare permissions following `{module}.{resource}.{action}` and enforce policies at every entry point;
+- keep configuration typed, validated, cache-compatible, and free of committed secrets;
+- treat feature flags as temporary rollout controls with owner, telemetry, and removal date;
+- require recent authentication, approval, or separation of duties where domain risk warrants it.
+
+## 23. Observability and operations
+
+Every runtime package supplies structured logs with correlation/module/tenant/actor identifiers, critical workflow metrics, required-versus-optional health checks, failed-job visibility, safe replay, and redaction rules. Operational packages include runbooks for expected failures, migrations, rollback, reconciliation, and provider outage.
+
+Applications establish SLOs and alerts for end-to-end workflows; package telemetry provides the attributable signals without requiring knowledge of a specific monitoring vendor.
+
+## 24. Testing strategy
+
+Every package requires:
 
 - unit tests for domain rules and value objects;
-- feature tests for actions, policies, validation, tenant isolation, routes, Filament, and Livewire surfaces;
-- contract tests for public APIs, events, and provider drivers;
-- migration tests from every supported released version;
-- architecture tests preventing forbidden namespace and model/table dependencies;
-- failure tests covering retries, duplicates, authorization denial, provider errors, and partial workflows;
-- a minimal host-application test proving standalone installation and boot.
+- feature tests for actions, policies, validation, persistence, and tenant isolation;
+- contract tests shared by every implementation of a public contract;
+- event/API schema compatibility tests;
+- migration and upgrade tests from supported released versions;
+- architecture tests preventing forbidden dependency directions, `App\\` coupling, domain-to-Filament dependencies, provider SDK leakage, and cross-package table access;
+- failure tests for retries, duplicates, concurrency, partial workflows, authorization denial, and provider errors;
+- an independent-install test in a minimal Laravel application.
 
-Tests run with dependencies at minimum and supported-latest versions where practical.
+Product repositories add composition tests proving their selected packages, provider adapters, plugins, and cross-package workflows work together. Distribution packages test dependency resolution but contain no implementation tests of their own.
 
-## 18. Security and compliance
+## 25. Security and compliance
 
-- Validate input at every trust boundary and encode output for its context.
-- Protect state-changing browser routes with CSRF and APIs with appropriate authentication/scopes.
-- Apply least privilege to database, queue, storage, provider, and operator access.
-- Audit security-sensitive reads and all privileged mutations.
-- Define data classification, purpose, consent, retention, export, deletion, and legal-hold behavior.
-- Scan dependencies and assets; establish an update and vulnerability-response policy.
-- Threat-model authentication, payments, file upload, webhooks, automation, and infrastructure modules.
+- Validate input at trust boundaries and encode output for its context.
+- Apply least privilege to database, queue, storage, provider, package, and operator access.
+- Audit security-sensitive reads and privileged mutations without logging secrets or regulated payloads.
+- Define data classification, purpose, consent, retention, export, deletion, legal hold, and residency behavior per owning package.
+- Scan Composer/npm dependencies and assets and maintain a vulnerability-response policy.
+- Threat-model authentication, payments, files, webhooks, automation, and infrastructure capabilities.
+- Prevent an optional module, adapter, or presentation package from widening authorization granted by its owning domain.
 
-## 19. Versioning and compatibility
+## 26. Versioning and release lifecycle
 
-Modules use semantic versioning. The supported surface includes public PHP contracts, configuration keys, commands, routes, API schemas, events, permissions, extension points, and documented view/component identifiers.
+Packages use semantic versioning. Their public surface includes documented PHP contracts, configuration keys, commands, routes, APIs, events, permissions, manifest capabilities, registry keys, and extension points.
 
-- Patch: compatible fixes.
-- Minor: backward-compatible capabilities and deprecations.
-- Major: incompatible changes with upgrade documentation.
+- Patch releases contain compatible fixes.
+- Minor releases add backward-compatible behavior and may deprecate surfaces.
+- Major releases contain incompatible changes with migration documentation.
+- Deprecations identify replacement and planned removal version.
 
-Deprecations identify a replacement and removal version. A compatibility matrix records supported PHP, Laravel, Filament, Livewire, module, database, and provider versions.
+A monorepo may coordinate releases while preserving package-specific changelogs and compatibility. A package may move repositories without changing its Composer identity. Compatibility matrices record supported PHP, Laravel, Filament/Livewire where relevant, database, package, and provider versions.
 
-## 20. Documentation requirements
+## 27. Worked composition examples
 
-Every module README includes purpose, ownership, dependencies, installation, configuration, permissions, capabilities, public contracts/events, routes/commands, scheduled work, data classification, operational notes, extension points, and examples. Significant design decisions use ADRs; user-visible changes use the changelog.
+### 27.1 Payments shared by products
 
-## 21. Definition of done
+```text
+liberu/payment-contracts
+          |
+liberu/payment-core
+          |
+    +-----+----------------+
+    |                      |
+payment-stripe       payment-paypal
+    |                      |
+    +----------+-----------+
+               |
+        application registry
+          /            \
+ecommerce-checkout   billing-invoices
+```
 
-A module is complete when:
+No product owns Stripe. Ecommerce owns cart/checkout/order policy. Billing owns invoice/collection policy. Payments owns authorization/capture/refund orchestration. Stripe owns translation to and from Stripe.
 
-- its boundary, owner, dependencies, and manifest are approved;
-- install, enable, disable, upgrade, and failure paths work;
-- domain behavior and all entry points are authorized and tenant-safe;
-- public contracts and events are versioned and documented;
-- UI extension points comply with `THEMES.md`;
-- tests, static analysis, security checks, and compatibility CI pass;
-- logs, metrics, health checks, alerts, and runbooks are available;
-- migrations, rollback/recovery, retention, and upgrade notes are reviewed.
+### 27.2 CMS product ecosystem
 
-## 22. GitHub issue mapping
+```text
+cms-laravel
+├── cms-core
+├── cms-content
+├── cms-pages
+├── cms-media
+├── cms-navigation
+├── cms-publishing
+├── cms-workflows
+├── cms-api
+└── cms-filament
+```
 
-Create one epic per module. Recommended child issues:
+A custom application may install content, pages, and API without navigation, workflows, the complete CMS aggregate, or Filament.
 
-1. Define boundary, owner, terminology, manifest, and dependency ADR.
-2. Scaffold package, provider, configuration, and lifecycle support.
-3. Implement domain model, actions, persistence, policies, and audit events.
-4. Implement API, Filament, Livewire, console, and scheduled entry points as applicable.
-5. Add integrations, webhooks, queues, reconciliation, and failure recovery.
-6. Add complete tests, fixtures, architecture rules, and compatibility matrix.
-7. Add telemetry, health checks, operational runbook, and documentation.
+### 27.3 Full application composition
 
-Each issue should state user outcome, module owner, dependencies, requirements, acceptance criteria, tests, observability, security/data considerations, and explicit exclusions.
+```text
+Hosting commerce application
+├── boilerplate foundation packages
+├── cms-content + cms-media + cms-filament
+├── ecommerce-catalog + ecommerce-cart + ecommerce-checkout
+├── billing-subscriptions + billing-invoices
+├── payment-core + payment-stripe
+├── control-panel-provisioning
+└── selected themes
+```
+
+The application is the composition root. It selects bindings, panels, enabled modules, entitlements, providers, and themes while all reusable behavior remains in packages.
+
+## 28. Package implementation process
+
+1. Define one capability, its terminology, owner, data, invariants, consumers, and exclusions.
+2. Decide whether it belongs to foundation, shared capability, product, provider, presentation, or distribution.
+3. Record dependency direction and package split in an ADR; reject cycles and speculative abstractions.
+4. Extract the smallest provider-neutral contract needed by real consumers.
+5. Implement core behavior without provider, application, or presentation dependencies.
+6. Implement each provider or regional adapter separately and apply shared contract tests.
+7. Add presentation packages independently where a surface is required.
+8. Add Composer metadata, manifest/lifecycle, migrations, events, policies, telemetry, and documentation.
+9. Test installation and operation in a clean Laravel application.
+10. Compose and test the package in its primary product repository.
+11. Add it to an aggregate distribution only when a supported convenience set is useful.
+
+## 29. Documentation requirements
+
+Every package README states purpose, category, ownership, dependencies, installation, enablement, entitlement expectations, configuration, permissions, public contracts/events, data ownership, routes/commands/jobs, extension points, provider behavior, security/data classification, telemetry, failure recovery, examples, and upgrade instructions.
+
+Repositories document the package map and dependency diagram. Applications document selected packages, bindings, enabled capabilities, panels, providers, themes, and deliberate exclusions. Significant boundary decisions use ADRs.
+
+## 30. Definition of done
+
+A package is complete when:
+
+- its capability, category, owner, exclusions, dependencies, and manifest are approved;
+- it is independently installable and does not depend on `App\\`, an unrelated product, provider implementation, or presentation framework;
+- install, enable, disable, upgrade, failure, and recovery paths work where applicable;
+- persistence and provider data remain inside their owning package;
+- domain behavior and entry points are authorized, tenant-safe, idempotent, and auditable;
+- public contracts/events are versioned, documented, and covered by consumer/implementation tests;
+- presentation is optional and complies with `THEMES.md`;
+- architecture, security, compatibility, migration, and product-composition tests pass;
+- logs, metrics, health checks, alerts, runbooks, changelog, and upgrade notes are available.
+
+## 31. GitHub issue mapping
+
+Create one epic per package boundary—not automatically one epic per repository. Recommended child issues:
+
+1. Approve capability ownership, package category, terminology, dependency ADR, and exclusions.
+2. Scaffold Composer package, namespace, manifest, provider, configuration, and lifecycle.
+3. Define public contracts, DTOs, registries, events, and contract tests.
+4. Implement domain rules, actions, persistence, policies, audit, and failure behavior.
+5. Implement provider/regional adapters with webhook, retry, idempotency, and reconciliation support.
+6. Implement optional Filament, Livewire, API, console, and theme extension packages.
+7. Add independent-install, architecture, migration, compatibility, security, and product-composition tests.
+8. Add telemetry, health checks, operational runbook, README, changelog, adoption example, and upgrade guide.
+
+Each issue states user outcome, owning package, category, dependencies, public surfaces, requirements, acceptance criteria, tests, observability, security/data considerations, migration impact, and explicit exclusions.
