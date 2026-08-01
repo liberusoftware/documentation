@@ -1,0 +1,58 @@
+# CRM: Knowledge Filament
+
+## Canonical one-to-one Filament 5 implementation
+
+**Filament package:** `module-crm-knowledge-filament`  
+**Matching domain module:** `crm-knowledge`  
+**Application:** CRM  
+**Source feature:** [Knowledge](../../features/crm/knowledge.md)  
+**Architecture:** [FILAMENT.md](../../FILAMENT.md) · [MODULES.md](../../MODULES.md) · [TESTING.md](../../TESTING.md)
+
+## 1. Purpose and ownership
+
+This optional Filament 5 presentation package presents exactly one independent domain module. It contributes reusable resources, pages, widgets, schemas, tables, infolists, and actions to application-owned panels while delegating authorization, validation, tenancy, persistence, and business rules to the `crm-knowledge` public boundary. It must not contain another module's UI or depend on application `App\` classes.
+
+## 2. Module-specific surfaces
+
+- **Internal/public articles:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Categories:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Versions:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Review/approval:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Localization:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Search:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Feedback:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Case linking:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Suggested answers:** resource/table/form/action or page behavior for this module's authorized workflow.
+- **Stale-content controls:** resource/table/form/action or page behavior for this module's authorized workflow.
+
+## 3. Filament 5 implementation
+
+- Register a stable `module-crm-knowledge-filament` plugin and discover only classes in this package's namespace; applications attach it explicitly to each eligible panel.
+- Keep resources under `src/Resources`, resource pages and relation managers beneath their resource, and shared module-local widgets/pages under `src/Widgets` and `src/Pages`.
+- Use Filament 5 schemas, tables, infolists, actions, notifications, authorization hooks, and panel configuration as adapters over domain queries/actions; never duplicate domain invariants in form validation.
+- Resolve actor, tenant, locale, and sensitive-field visibility through trusted application context and fail closed when required context is missing.
+
+### Capability mapping
+
+- `internal/public-articles`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `categories`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `versions`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `review/approval`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `localization`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `search`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `feedback`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `case-linking`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `suggested-answers`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+- `stale-content-controls`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+
+## 4. Security and verification
+
+- Prove allowed, denied, wrong-tenant, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
+- Add plugin discovery/collision, architecture-boundary, authorization, tenancy, accessibility, localization, and minimal-host installation tests.
+- Test observable Filament behavior with Pest 5 and the supported Filament 5/Livewire 4 stack; domain behavior remains covered by the owning module.
+
+## 5. Definition of done
+
+- Package identity, namespace, plugin ID, and dependency match `crm-knowledge` one-to-one.
+- Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
+- Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.

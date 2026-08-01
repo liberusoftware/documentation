@@ -27,6 +27,8 @@ The generated documentation hierarchy expands every independent module listed by
 
 - [Feature specifications](features/README.md) — 517 detailed module documents covering full scope, implementation, security, operations, and verification.
 - [API module specifications](api/README.md) — 517 matching `module-{independent-module-name}-api` documents covering contracts, audiences, implementation, and API verification.
+- [Filament 5 implementations](filament/README.md) — 517 matching `module-{independent-module-name}-filament` presentation implementations with panel/resource/page/widget mappings.
+- [Livewire 4 implementations](livewire/README.md) — 517 matching `module-{independent-module-name}-livewire` presentation implementations with component/state/interaction mappings.
 
 Every feature and API document links back to its authoritative application scope. Feature packages remain presentation-neutral; Filament, Livewire, and API behavior belongs in matching optional presentation packages.
 
@@ -34,19 +36,21 @@ Every feature and API document links back to its authoritative application scope
 
 | Application | Detailed features | API modules |
 |---|---|---|
-| [Accounting](ACCOUNTING.md) | [105 modules](features/accounting/README.md) | [105 API modules](api/accounting/README.md) |
-| [Automation](AUTOMATION.md) | [11 modules](features/automation/README.md) | [11 API modules](api/automation/README.md) |
-| [Billing](BILLING.md) | [16 modules](features/billing/README.md) | [16 API modules](api/billing/README.md) |
-| [Browser Game](BROWSER-GAME.md) | [15 modules](features/browser-game/README.md) | [15 API modules](api/browser-game/README.md) |
-| [CMS](CMS.md) | [81 modules](features/cms/README.md) | [81 API modules](api/cms/README.md) |
-| [Control Panel](CONTROL-PANEL.md) | [15 modules](features/control-panel/README.md) | [15 API modules](api/control-panel/README.md) |
-| [CRM](CRM.md) | [95 modules](features/crm/README.md) | [95 API modules](api/crm/README.md) |
-| [Ecommerce](ECOMMERCE.md) | [105 modules](features/ecommerce/README.md) | [105 API modules](api/ecommerce/README.md) |
-| [Genealogy](GENEALOGY.md) | [14 modules](features/genealogy/README.md) | [14 API modules](api/genealogy/README.md) |
-| [Maintenance](MAINTENANCE.md) | [14 modules](features/maintenance/README.md) | [14 API modules](api/maintenance/README.md) |
-| [Real Estate](REAL-ESTATE.md) | [15 modules](features/real-estate/README.md) | [15 API modules](api/real-estate/README.md) |
-| [SAP-style Enterprise Suite](SAP.md) | [16 domains](features/sap/README.md) | [16 API modules](api/sap/README.md) |
-| [Social Network](SOCIAL-NETWORK.md) | [15 modules](features/social-network/README.md) | [15 API modules](api/social-network/README.md) |
+| Application | Domain modules | API modules | Filament 5 | Livewire 4 |
+|---|---:|---:|---:|---:|
+| [Accounting](ACCOUNTING.md) | [105](features/accounting/README.md) | [105](api/accounting/README.md) | [105](filament/accounting/README.md) | [105](livewire/accounting/README.md) |
+| [Automation](AUTOMATION.md) | [11](features/automation/README.md) | [11](api/automation/README.md) | [11](filament/automation/README.md) | [11](livewire/automation/README.md) |
+| [Billing](BILLING.md) | [16](features/billing/README.md) | [16](api/billing/README.md) | [16](filament/billing/README.md) | [16](livewire/billing/README.md) |
+| [Browser Game](BROWSER-GAME.md) | [15](features/browser-game/README.md) | [15](api/browser-game/README.md) | [15](filament/browser-game/README.md) | [15](livewire/browser-game/README.md) |
+| [CMS](CMS.md) | [81](features/cms/README.md) | [81](api/cms/README.md) | [81](filament/cms/README.md) | [81](livewire/cms/README.md) |
+| [Control Panel](CONTROL-PANEL.md) | [15](features/control-panel/README.md) | [15](api/control-panel/README.md) | [15](filament/control-panel/README.md) | [15](livewire/control-panel/README.md) |
+| [CRM](CRM.md) | [95](features/crm/README.md) | [95](api/crm/README.md) | [95](filament/crm/README.md) | [95](livewire/crm/README.md) |
+| [Ecommerce](ECOMMERCE.md) | [105](features/ecommerce/README.md) | [105](api/ecommerce/README.md) | [105](filament/ecommerce/README.md) | [105](livewire/ecommerce/README.md) |
+| [Genealogy](GENEALOGY.md) | [14](features/genealogy/README.md) | [14](api/genealogy/README.md) | [14](filament/genealogy/README.md) | [14](livewire/genealogy/README.md) |
+| [Maintenance](MAINTENANCE.md) | [14](features/maintenance/README.md) | [14](api/maintenance/README.md) | [14](filament/maintenance/README.md) | [14](livewire/maintenance/README.md) |
+| [Real Estate](REAL-ESTATE.md) | [15](features/real-estate/README.md) | [15](api/real-estate/README.md) | [15](filament/real-estate/README.md) | [15](livewire/real-estate/README.md) |
+| [SAP-style Enterprise Suite](SAP.md) | [16](features/sap/README.md) | [16](api/sap/README.md) | [16](filament/sap/README.md) | [16](livewire/sap/README.md) |
+| [Social Network](SOCIAL-NETWORK.md) | [15](features/social-network/README.md) | [15](api/social-network/README.md) | [15](filament/social-network/README.md) | [15](livewire/social-network/README.md) |
 
 ## Supporting specifications
 
