@@ -35,6 +35,12 @@ The source repository is rooted at the theme package itself:
 
 ```text
 github.com/liberusoftware/theme-corporate/
+    ├── .github/
+    │   └── workflows/
+    │       ├── compatibility.yml
+    │       ├── install.yml
+    │       ├── tests.yml
+    │       └── visual.yml
     ├── composer.json
     ├── theme.json
     ├── README.md
@@ -83,6 +89,37 @@ The installer must validate names, reject absolute paths/path traversal, detect 
 
 Applications explicitly require selected themes and the installer plugin, authorize the plugin through Composer `allow-plugins`, and commit `composer.json` and `composer.lock`. Production builds use a non-interactive locked install and fail if the expected theme path cannot be reproduced.
 
+The application root is the single owner of `liberu/composer-installer` and its `allow-plugins` entry. Individual themes declare their package type and installer name but do not repeat the installer plugin as a runtime requirement.
+
+### 3.1.1 Canonical Composer test setup
+
+Theme repositories target stable Pest 5 and declare test tooling only under `require-dev`:
+
+```json
+{
+  "require-dev": {
+    "liberu/package-testbench": "^1.0",
+    "pestphp/pest": "^5.0",
+    "pestphp/pest-plugin-laravel": "^5.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Liberu\\Themes\\Corporate\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "pest --ci",
+    "test:feature": "pest tests/Feature",
+    "test:coverage": "pest --ci --coverage --min=100 --coverage-clover=build/coverage/clover.xml --coverage-html=build/coverage/html",
+    "test:parallel": "pest --parallel"
+  }
+}
+```
+
+Use the theme's real namespace and only define commands for suites it contains. Pest-maintained plugins use compatible `^5.0` constraints. Browser, Livewire or other plugins are required only when the theme uses their evidence. Do not require `phpunit/phpunit` separately when Pest supplies the compatible PHPUnit runtime.
+
+`liberu/package-testbench` is the single shared bootstrap for independently running module and theme package suites. Each theme still owns its tests, `Pest.php`, `phpunit.xml` or `phpunit.xml.dist`, Composer command aliases, and GitHub workflows. Themes must not require a second scripts/tooling package that duplicates or proxies those responsibilities.
+
 ## 3.2 Independent repositories and tracked `/themes`
 
 One independent theme repository normally contains one primary theme package. It owns its releases, issues, assets, licenses, tests, coverage, documentation, compatibility matrix, build tooling, and changelog.
@@ -123,6 +160,8 @@ Every theme provides `theme.json`:
 
 The manifest declares compatibility, optimized/tested host repositories, parent theme, required and optional capabilities, supported module extension points, asset entry points, and safe fallback. CI validates its schema, paths, unique name, dependency versions, capabilities, and inheritance cycles.
 
+Installed theme discovery and application asset composition are manifest-driven. Applications read validated `theme.json` files instead of maintaining parallel literal theme or entry-point arrays. Manifest paths are package-relative, normalized, collision-checked, and verified to exist before activation or build.
+
 `optimized_for` is informative and identifies where the theme delivers its intended complete experience. `tested_with` records verified hosts and version ranges in the full schema. Neither field creates a hidden dependency. Required capabilities fail installation/activation clearly; missing optional capabilities omit the relevant UI and use documented fallbacks.
 
 ## 5. Resolution and inheritance
@@ -132,6 +171,7 @@ Theme resolution follows: configured surface/tenant/site theme → parent theme 
 - Overrides use stable names such as `modules.cms.pages.show`.
 - A child theme overrides only what differs and inherits all other assets and views.
 - Parent chains are finite, deterministic, and cached in production.
+- Every declared parent resolves to an installed compatible theme; missing parents and inheritance cycles fail validation before activation.
 - Missing or incompatible themes fall back to a configured safe theme and emit an operational alert.
 - Themes cannot replace authorization, validation, routes, actions, or domain services.
 - Cross-repository use resolves only declared extension points; repository-specific overrides must be isolated, capability-checked, and documented.
@@ -194,6 +234,8 @@ Theme Livewire components may manage presentation state such as menus, dialogs, 
 
 Vite resolves theme entry points and produces versioned, cacheable assets. Builds must be deterministic and fail on missing manifest paths, unresolved imports, oversized assets beyond budget, or incompatible dependencies.
 
+The application Vite configuration discovers installed `themes/*/theme.json` manifests and derives entry points exclusively from each manifest's `assets.css` and `assets.js` declarations. It must not repeat installed themes or their asset paths in a maintained literal list. Theme packages use the same manifest contract in independent builds so package and host results cannot drift.
+
 Production uses long-lived caching for hashed files and appropriate CDN headers. Runtime-generated brand tokens or tenant assets must use controlled storage URLs and cannot trigger arbitrary source compilation.
 
 ## 13. Filament integration
@@ -232,7 +274,7 @@ Navigation, authentication, checkout, forms, and core portal tasks must remain u
 
 ## 18. Testing
 
-Every theme includes:
+Every theme follows `TESTING.md`, uses stable Pest 5 as its primary PHP/Livewire runner, and includes:
 
 - render tests for layouts, components, module extension points, and fallback behavior;
 - Livewire tests for state, validation, authorization, and events;
@@ -244,6 +286,25 @@ Every theme includes:
 - clean Composer-install tests proving the theme resolves to `/themes/{theme-name}` in each declared tested host;
 - graceful-degradation tests for missing optional modules and at least one compatible non-optimized host where practical.
 
+Every theme suite runs independently from its source repository with `composer install` and `composer test`; it must not extend the consuming application's `Tests\\TestCase`. Tests use correctly cased, Composer-autoloadable PSR-4 namespaces and the canonical `liberu/package-testbench` bootstrap.
+
+A shared `ThemeBoundariesTest` contract, supplied by the package testbench and executed by every theme, verifies manifest completeness, confirms the declared provider is a real Laravel service provider, resolves every parent, rejects cycles, and verifies every declared asset path exists. A render contract also proves that a child without `layouts/app.blade.php` falls back to its parent implementation.
+
+Meaningful owned PHP and Livewire code targets 100% line coverage. `composer test:coverage` enforces `--min=100` and produces Clover and HTML reports. CSS, images and static templates use render, accessibility, visual-regression, asset-build and performance evidence instead of misleading executable coverage. Files are not excluded merely to reach the target.
+
+### 18.1 Required repository workflows
+
+Each independent theme repository owns these GitHub Actions workflows:
+
+| Workflow | Required evidence |
+|---|---|
+| `install.yml` | Clean Composer dependency resolution/install, manifest/provider validation, independent bootstrap, asset dependency install, build, and documented quick start |
+| `tests.yml` | Pest 5 feature/Livewire/boundary/security suites, static analysis, asset validation, and 100% meaningful-PHP coverage reports |
+| `visual.yml` | Accessibility and visual regression across representative viewports, locales, directions, color modes, parent fallback, and supported hosts |
+| `compatibility.yml` | Declared minimum/current PHP, Laravel, Livewire/Filament where used, parent-theme, and representative optimized/non-optimized hosts |
+
+Performance or broad browser matrices may be scheduled or release-gated, but required release evidence must complete before publication. Workflows invoke repository-owned Composer/npm scripts directly and must not require a duplicated scripts package. Generated coverage, screenshots and reports are retained as protected CI artifacts.
+
 ## 19. Versioning and documentation
 
 Themes use semantic versioning. Stable surfaces include manifest fields, token names, component names/props/slots, Livewire aliases/events, view override names, and asset entry points. Breaking changes require a major release and migration guide.
@@ -251,6 +312,8 @@ Themes use semantic versioning. Stable surfaces include manifest fields, token n
 Every independent theme repository contains a professionally written `README.md` documenting purpose, visual examples/screenshots, optimized and tested repositories, known limitations outside those hosts, Composer installation and `/themes` path behavior, selection, parent theme, required/optional modules, supported surfaces, build commands, design tokens, component/view/Livewire inventory, extension points, assets and licenses, responsive/browser support, accessibility, localization/RTL, performance budgets, security/privacy notes, testing, coverage, contribution, release, upgrade, and uninstall instructions.
 
 Theme CI generates test coverage for PHP/Livewire behavior where meaningful, plus accessibility, visual-regression, asset-build, and performance results. The README displays current CI/coverage status and explains local test/build commands. Generated reports and screenshots are retained as CI artifacts or approved release assets rather than normally committed as raw test output. CSS or static templates that do not produce meaningful line coverage document the applicable alternative quality evidence.
+
+The README states that Pest 5 is the canonical PHP/Livewire runner, lists local Composer and asset commands, identifies the shared package-testbench version, and links the install, tests, visual, compatibility, coverage and build evidence.
 
 ## 20. Definition of done
 
@@ -261,7 +324,8 @@ A theme is ready when:
 - light/dark, responsive, localization, RTL, and brand behavior are verified as applicable;
 - accessibility, visual, functional, security, and performance tests pass;
 - fallback behavior works without optional assets or providers;
-- asset rights, documentation, changelog, and migration guidance are complete.
+- its independent Pest 5 suite passes, meaningful PHP/Livewire reaches the 100% coverage target, and non-executable assets have equivalent quality evidence;
+- asset rights, documentation, changelog, and migration guidance are complete;
 - its independent `liberusoftware` repository, README, tagged release, CI results, generated meaningful coverage/quality reports, and host compatibility evidence are available;
 - a clean locked Composer install places it in `/themes`, and the consuming repository has no unexpected generated diff;
 - optimized hosts render the complete intended experience and compatible non-optimized hosts degrade according to documented limitations and fallbacks.
@@ -271,6 +335,3 @@ A theme is ready when:
 Create one theme epic, then child issues for: manifest and inheritance; tokens and typography; layouts and navigation; Blade components; Livewire interactions; module view integrations; CSS/JavaScript pipeline; imagery/logos/icons/video; localization/RTL; accessibility; visual regression; performance/security; documentation and release.
 
 Each issue identifies target surfaces, supported modules, affected extension points, assets, responsive states, accessibility criteria, tests, performance budget, and explicit exclusions.
-
-## Important notes to follow 
-Replace the three literal lists with reads of the manifests that already exist. vite.config.js globs themes/*/theme.json and takes assets.css / assets.js. phpunit.xml collapses 44 lines to <directory>modules/*/src</directory>. config/modules.php keeps the env override but drops the hardcoded array, letting default_enabled carry the default — which means flipping it to true on the 41 modules that are meant to boot.

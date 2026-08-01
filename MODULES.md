@@ -83,6 +83,8 @@ An application consumes the lowest-level package that provides what it needs. It
 16. Modules follow the same manifest, lifecycle, extension, testing, and documentation approach across all repositories.
 17. A module must not assume which Liberu product application hosts it; product-specific optimization is declared without creating an unnecessary hard dependency.
 18. Every module has an independent `liberusoftware` GitHub repository and a complete README unless an approved ADR documents an exception.
+19. Every module test suite runs from its own repository through the canonical shared package testbench; tests must not depend on a host application's `Tests\\TestCase`.
+20. Test bootstrap is shared once, while each repository owns its Composer command aliases and CI workflows; a second scripts/tooling package must not duplicate or proxy those responsibilities.
 
 ## 5. Package categories
 
@@ -120,7 +122,7 @@ Product packages contain behavior specific to a product ecosystem, such as `libe
 
 ### 5.6 Presentation packages
 
-Presentation is an optional adapter over domain packages. Typical packages include `liberu/cms-filament`, `liberu/ecommerce-filament`, or more granular packages where independent installation warrants it.
+Presentation is an optional adapter over domain packages. Reusable presentation packages follow their surface specifications, including `liberu/module-cms-filament`, `liberu/module-ecommerce-filament`, `liberu/module-cms-livewire`, or more granular packages where independent installation warrants it.
 
 - A Filament package may provide plugins, resources, pages, widgets, forms, tables, actions, and navigation.
 - A Livewire presentation package may provide interactive application components.
@@ -144,7 +146,7 @@ cms-laravel/
 │   ├── cms-core/
 │   ├── cms-content/
 │   ├── cms-pages/
-│   └── cms-filament/
+│   └── module-cms-filament/
 ├── app/                 # application-specific composition only
 ├── bootstrap/
 ├── config/
@@ -187,6 +189,8 @@ Only Liberu module/theme package code uses the custom locations. Composer itself
 
 An application must explicitly require both the selected modules and the installer plugin. `composer.lock` remains authoritative for resolved versions. Production builds use non-interactive, locked, reproducible Composer installation and fail if the installer plugin or declared path policy is unavailable.
 
+The application root is the single owner of `liberu/composer-installer` and its `allow-plugins` entry. Individual modules declare their package type and installer name but do not repeat the installer plugin as a runtime requirement. This avoids several packages imposing or duplicating a root-only Composer plugin decision.
+
 ## 6.2 Tracked `/modules` policy
 
 The current decision is **not to add `/modules` to `.gitignore`**. Installed module contents are committed in each consuming application repository alongside `composer.json` and `composer.lock`.
@@ -207,6 +211,11 @@ This is an explicit current policy and may change only through an ADR with a mig
 
 ```text
 payment-core/             # root of its independent GitHub repository
+├── .github/
+│   └── workflows/
+│       ├── compatibility.yml
+│       ├── install.yml
+│       └── tests.yml
 ├── composer.json
 ├── module.json
 ├── README.md
@@ -254,6 +263,7 @@ Every package that represents an architectural boundary must, where technically 
 - expose safe extension points instead of requiring source publication or copying;
 - be independently testable and versionable even when released with a coordinated repository version.
 - publish tagged releases from its independent `liberusoftware` repository and declare which applications/framework versions are tested.
+- provide an independently runnable Pest 5 suite using the shared Liberu package testbench rather than a consuming application's test case.
 
 Do not create a package for every class or table. Split when responsibility, dependency direction, optional installation, release cadence, provider isolation, ownership, or reuse requires a boundary.
 
@@ -267,7 +277,8 @@ Composer names communicate domain, capability, and role:
 | Shared contract | `liberu/{capability}-contracts` | `liberu/payment-contracts` |
 | Shared core | `liberu/{capability}-core` | `liberu/payment-core` |
 | Provider adapter | `liberu/{capability}-{provider}` | `liberu/payment-stripe` |
-| Presentation adapter | `liberu/{product-or-capability}-{surface}` | `liberu/cms-filament` |
+| Filament presentation adapter | `liberu/module-{product-or-capability}-filament` | `liberu/module-cms-filament` |
+| Livewire presentation adapter | `liberu/module-{product-or-capability}-livewire` | `liberu/module-cms-livewire` |
 | Aggregate distribution | `liberu/{product}` | `liberu/ecommerce` |
 
 Additional conventions:
@@ -286,7 +297,7 @@ Released names are public contracts. Renaming requires compatibility aliases or 
 
 ## 10. Composer and manifest contracts
 
-Composer is authoritative for code installation and static dependency resolution. Module packages declare `"type": "liberu-module"`, require the appropriate installer compatibility, and contain `module.json`:
+Composer is authoritative for code installation and static dependency resolution. Module packages declare `"type": "liberu-module"`, expose a stable installer name, and contain `module.json`. The application root requires the compatible installer plugin as defined in section 6.1:
 
 ```json
 {
@@ -314,6 +325,36 @@ CI validates the versioned schema, Composer/manifest consistency, dependency ran
 
 The manifest also declares tested host families and any intentional product optimization. Compatibility is capability-based: a module may be installed in another repository when required contracts and versions are present. Missing optional capabilities disable the related integration gracefully; missing required capabilities fail dependency validation with an actionable message.
 
+### 10.1 Canonical Composer test setup
+
+Module repositories target the stable Pest 5 line and declare testing dependencies only under `require-dev`. The canonical baseline is:
+
+```json
+{
+  "require-dev": {
+    "liberu/package-testbench": "^1.0",
+    "pestphp/pest": "^5.0",
+    "pestphp/pest-plugin-laravel": "^5.0"
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Liberu\\PaymentCore\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "pest --ci",
+    "test:unit": "pest tests/Unit",
+    "test:feature": "pest tests/Feature",
+    "test:coverage": "pest --ci --coverage --min=100 --coverage-clover=build/coverage/clover.xml --coverage-html=build/coverage/html",
+    "test:parallel": "pest --parallel"
+  }
+}
+```
+
+Use the package's real namespace and only include scripts for suites it provides. Pest 5 and Pest-maintained plugins use compatible `^5.0` constraints and run on the PHP 8.5 target. Do not require `phpunit/phpunit` separately when Pest supplies the compatible PHPUnit runtime. Optional Pest plugins are added only when their evidence is used.
+
+`liberu/package-testbench` is the one reusable test bootstrap for module and theme packages. It owns the common Orchestra Testbench application, shared package-loading helpers, deterministic fakes, and reusable boundary assertions. It must not own module-specific behavior tests. Repositories do not create or require a parallel scripts package: their short Composer aliases remain local and invoke the installed Pest binary directly.
+
 ## 11. Installation, enablement, and entitlement
 
 ```text
@@ -338,6 +379,8 @@ The module manager performs deterministic startup:
 5. Sort enabled modules topologically with a stable tie-breaker.
 6. Register service providers and cache the resolved registry in production.
 7. Boot routes, policies, commands, events, schedules, views, and presentation plugins.
+
+Application discovery configuration is derived from validated installed manifests rather than maintained literal package lists. `config/modules.php` may retain an environment override, but its default set comes from manifest `default_enabled` values. A production capability intended to boot by default declares that intent in its own manifest; demo/reference modules are never enabled or required in production unless explicitly selected.
 
 The lifecycle is:
 
@@ -503,6 +546,8 @@ Foundation behavior is consumed from `BOILERPLATE.md`. Domain packages:
 - treat feature flags as temporary rollout controls with owner, telemetry, and removal date;
 - require recent authentication, approval, or separation of duties where domain risk warrants it.
 
+Team-agnostic privileged-role lookup belongs to the `roles-permissions` capability as a small service exposed through the existing `PrivilegedActor` seam. Its public operation answers whether an actor holds any requested role in any team without leaking the roles package's storage model. When Filament, Telescope, or Pulse require framework-defined host method names, the application retains the three expected methods only as one-line delegations to that service; it must not duplicate lookup rules in the host.
+
 ## 23. Observability and operations
 
 Every runtime package supplies structured logs with correlation/module/tenant/actor identifiers, critical workflow metrics, required-versus-optional health checks, failed-job visibility, safe replay, and redaction rules. Operational packages include runbooks for expected failures, migrations, rollback, reconciliation, and provider outage.
@@ -511,7 +556,7 @@ Applications establish SLOs and alerts for end-to-end workflows; package telemet
 
 ## 24. Testing strategy
 
-Every package requires:
+Every package follows `TESTING.md`, uses stable Pest 5 as the primary runner, and requires:
 
 - unit tests for domain rules and value objects;
 - feature tests for actions, policies, validation, persistence, and tenant isolation;
@@ -522,7 +567,27 @@ Every package requires:
 - failure tests for retries, duplicates, concurrency, partial workflows, authorization denial, and provider errors;
 - an independent-install test in a minimal Laravel application.
 
+Every published package's tests execute from that package repository with `composer install` followed by its own `composer test`; they must not import or extend the host application's `Tests\\TestCase`. Test classes use an autoloadable, correctly cased PSR-4 namespace declared in `autoload-dev`. The canonical `liberu/package-testbench` supplies shared Laravel bootstrapping so behavior tests can remain with their owner without becoming host-coupled.
+
+Architecture tests inspect every owned production PHP file and catch `App\\` dependencies expressed through imports, inheritance, implementation, instantiation, static references, strings/configuration, and other resolvable class references—not only a narrow source regex. Equivalent rules prevent domain-to-presentation dependencies, provider SDK leakage, and cross-package private access.
+
+Meaningful owned PHP targets 100% line coverage. `composer test:coverage` enforces `--min=100`, produces Clover and HTML reports, and fails when the target is missed. Exclusions are limited to vendor/generated output and files that cannot yield meaningful executable coverage; difficult code is never excluded to improve the number. The 100% result complements rather than replaces assertions, branch/failure tests, mutation testing where valuable, and security/composition evidence.
+
 Product repositories add composition tests proving their selected packages, provider adapters, plugins, and cross-package workflows work together. Distribution packages test dependency resolution but contain no implementation tests of their own.
+
+Host coverage configuration uses one maintained source rule for composed module code, such as a supported `modules/*/src` directory pattern, instead of one hardcoded entry per installed module. Package suites remain authoritative; host aggregation supplies composition evidence and must not become the only place module code is tested.
+
+### 24.1 Required repository workflows
+
+Each independent module repository owns these GitHub Actions workflows:
+
+| Workflow | Required evidence |
+|---|---|
+| `install.yml` | Clean Composer dependency resolution/install, package bootstrap, manifest validation, minimal-host install, and documented quick start |
+| `tests.yml` | Pest 5 unit/feature/contract/integration suites, architecture and security checks, static analysis, and 100% owned-PHP coverage reports |
+| `compatibility.yml` | Declared minimum/current PHP, Laravel, database, Filament/Livewire where applicable, and representative host combinations |
+
+Provider sandbox, browser, mutation, performance, migration and full composition jobs may be scheduled or release-gated when expensive, but required evidence completes before release. Workflows call the repository's Composer scripts; they do not require a duplicated scripts package. Coverage reports are uploaded as protected artifacts and the default-branch badge links to maintained results.
 
 ## 25. Security and compliance
 
@@ -579,7 +644,7 @@ cms-laravel
 ├── cms-publishing
 ├── cms-workflows
 ├── cms-api
-└── cms-filament
+└── module-cms-filament
 ```
 
 A custom application may install content, pages, and API without navigation, workflows, the complete CMS aggregate, or Filament.
@@ -589,7 +654,7 @@ A custom application may install content, pages, and API without navigation, wor
 ```text
 Hosting commerce application
 ├── boilerplate foundation packages
-├── cms-content + cms-media + cms-filament
+├── cms-content + cms-media + module-cms-filament
 ├── ecommerce-catalog + ecommerce-cart + ecommerce-checkout
 ├── billing-subscriptions + billing-invoices
 ├── payment-core + payment-stripe
@@ -619,6 +684,8 @@ Every module repository contains a professionally written `README.md` stating pu
 
 Module CI generates test coverage in a machine-readable format and a browsable report where the test framework supports it. The README displays the current CI and coverage status/badge and explains how to run the tests locally. Coverage is evidence, not a substitute for meaningful unit, feature, contract, architecture, integration, security, and failure-path tests. Generated HTML coverage output is retained as a CI artifact or release asset and is not normally committed to source.
 
+The README also states that Pest 5 is the canonical runner, lists the local Composer test commands, identifies the shared package-testbench version, and links the install, tests, compatibility, and coverage workflows. Coverage documentation distinguishes the 100% meaningful-PHP target from alternative evidence for non-executable files.
+
 Repositories document the package map and dependency diagram. Applications document selected packages, bindings, enabled capabilities, panels, providers, themes, and deliberate exclusions. Significant boundary decisions use ADRs.
 
 ## 30. Definition of done
@@ -633,7 +700,8 @@ A package is complete when:
 - public contracts/events are versioned, documented, and covered by consumer/implementation tests;
 - presentation is optional and complies with `THEMES.md`;
 - architecture, security, compatibility, migration, and product-composition tests pass;
-- logs, metrics, health checks, alerts, runbooks, changelog, and upgrade notes are available.
+- its independent Pest 5 suite runs without a host application and meaningful owned PHP reaches the 100% coverage target;
+- logs, metrics, health checks, alerts, runbooks, changelog, and upgrade notes are available;
 - the independent GitHub repository, README, CI workflow, generated coverage report, release tag, and tested-host compatibility evidence are available;
 - a clean locked install places the module in `/modules`, and the consuming repository has no unexpected Composer-generated diff.
 
@@ -651,32 +719,3 @@ Create one epic per package boundary—not automatically one epic per repository
 8. Add telemetry, health checks, operational runbook, README, changelog, adoption example, and upgrade guide.
 
 Each issue states user outcome, owning package, category, dependencies, public surfaces, requirements, acceptance criteria, tests, observability, security/data considerations, migration impact, and explicit exclusions.
-
-## Important notes
-Move the team-agnostic role lookup into roles-permissions as a small service — "does this actor hold any of these roles in any team" — exposed through the existing PrivilegedActor seam. The host keeps the three method names as one-line delegations, since Filament, Telescope, and Pulse all call them by name.
-
-Solution
-
-A ThemeBoundariesTest mirroring the module one: manifest completeness, provider is a real ServiceProvider, every parent resolves to an installed theme, no cycles, every path in assets exists on disk, and a rendering test proving a child theme with no layouts/app.blade.php falls back to its parent's.
-
-## Test notes
-Candidate 1 — extract the testbench
-Everything else on this list is either downstream of it or independent of it. Candidate 4 (behaviour tests) is strictly blocked — writing them today would anchor 44 more files to the host's Tests\TestCase and make the eventual extraction more expensive, not less. Candidate 5 (theme enforcement) wants somewhere to live that is not the host suite.
-
-It is also the claim with the widest gap between the README and the disk. "Independent … release lifecycle … and tests" is currently true for the first half and false for the second: every one of the 44 published repositories ships a tests/ directory that cannot run in it. That is the one thing standing between this and a genuinely composable package architecture — and the fix is a single small package plus a four-line file per module.
-
-If you want the cheap win first
-
-Candidate 2's phpunit.xml line — 44 hardcoded <directory> entries collapse to one modules/*/src glob. Five minutes, removes one of the three drift surfaces, and the other two follow the same shape.
-
-The host-leak rule is narrower than it looks
-
-It regexes use|new|extends|implements App\ over src/*.php only — a string class reference, a config value, or a migration would slip through. There are currently zero leaks, so tightening it is cheap insurance.
-
-Module test namespaces are not autoloadable
-
-namespace Modules\search\tests\Integration; — lowercase segments, matching no PSR-4 entry. It works only because PHPUnit loads by file path. Falls out of Candidate 1.
-
-A demo module is a hard dependency
-
-search-demo ("runnable reference records") sits in require, not require-dev, and is listed in config/modules.php — so a production install boots it.
