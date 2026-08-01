@@ -651,3 +651,6 @@ Create one epic per package boundary—not automatically one epic per repository
 8. Add telemetry, health checks, operational runbook, README, changelog, adoption example, and upgrade guide.
 
 Each issue states user outcome, owning package, category, dependencies, public surfaces, requirements, acceptance criteria, tests, observability, security/data considerations, migration impact, and explicit exclusions.
+
+## Important notes
+Move the team-agnostic role lookup into roles-permissions as a small service — "does this actor hold any of these roles in any team" — exposed through the existing PrivilegedActor seam. The host keeps the three method names as one-line delegations, since Filament, Telescope, and Pulse all call them by name.
