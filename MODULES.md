@@ -668,3 +668,15 @@ It is also the claim with the widest gap between the README and the disk. "Indep
 If you want the cheap win first
 
 Candidate 2's phpunit.xml line — 44 hardcoded <directory> entries collapse to one modules/*/src glob. Five minutes, removes one of the three drift surfaces, and the other two follow the same shape.
+
+The host-leak rule is narrower than it looks
+
+It regexes use|new|extends|implements App\ over src/*.php only — a string class reference, a config value, or a migration would slip through. There are currently zero leaks, so tightening it is cheap insurance.
+
+Module test namespaces are not autoloadable
+
+namespace Modules\search\tests\Integration; — lowercase segments, matching no PSR-4 entry. It works only because PHPUnit loads by file path. Falls out of Candidate 1.
+
+A demo module is a hard dependency
+
+search-demo ("runnable reference records") sits in require, not require-dev, and is listed in config/modules.php — so a production install boots it.
