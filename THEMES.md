@@ -271,3 +271,6 @@ A theme is ready when:
 Create one theme epic, then child issues for: manifest and inheritance; tokens and typography; layouts and navigation; Blade components; Livewire interactions; module view integrations; CSS/JavaScript pipeline; imagery/logos/icons/video; localization/RTL; accessibility; visual regression; performance/security; documentation and release.
 
 Each issue identifies target surfaces, supported modules, affected extension points, assets, responsive states, accessibility criteria, tests, performance budget, and explicit exclusions.
+
+## Important notes to follow 
+Replace the three literal lists with reads of the manifests that already exist. vite.config.js globs themes/*/theme.json and takes assets.css / assets.js. phpunit.xml collapses 44 lines to <directory>modules/*/src</directory>. config/modules.php keeps the env override but drops the hardcoded array, letting default_enabled carry the default — which means flipping it to true on the 41 modules that are meant to boot.
