@@ -3,7 +3,7 @@
 ## Canonical PHPUnit, Pest, and Coverage Specification
 
 **Applies to:** Laravel applications, modules, themes, APIs, connectors, Composer packages, and distributions
-**Related standards:** [MODULES.md](MODULES.md) · [THEMES.md](THEMES.md) · [API.md](API.md) · [BOILERPLATE.md](BOILERPLATE.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [README.md](README.md)
+**Related standards:** [MODULES.md](MODULES.md) · [THEMES.md](THEMES.md) · [API.md](API.md) · [BOILERPLATE.md](BOILERPLATE.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [REPOSITORIES.md](REPOSITORIES.md)
 
 ## 1. Purpose
 
@@ -199,7 +199,7 @@ Coverage answers “which executable lines or branches ran?” It does not answe
 - Treat uncovered high-risk paths as explicit review findings; a high percentage never waives required contract, failure, security, migration, or composition tests.
 - Do not write empty, redundant, or implementation-coupled tests solely to increase coverage.
 
-CI produces a machine-readable report such as Clover or Cobertura for quality services and an HTML report for diagnosis. Publish reports as protected CI artifacts or approved release assets; do not normally commit generated coverage output. The README badge must reflect the default branch and link to its maintained report, as required by [README.md](README.md).
+CI produces a machine-readable report such as Clover or Cobertura for quality services and an HTML report for diagnosis. Publish reports as protected CI artifacts or approved release assets; do not normally commit generated coverage output. The README badge must reflect the default branch and link to its maintained report, as required by [REPOSITORIES.md](REPOSITORIES.md).
 
 ## 14. Local commands
 
@@ -232,7 +232,7 @@ Pull-request CI should run formatting/linting, static analysis, architecture rul
 
 Use separate jobs or schedules for expensive compatibility matrices, real database families, browser/visual tests, mutation tests, performance tests, provider sandboxes, and full upgrade paths. Required release evidence must still complete before publication.
 
-The canonical workflows described by [README.md](README.md) are:
+The canonical workflows described by [REPOSITORIES.md](REPOSITORIES.md) are:
 
 | Workflow | Required testing evidence |
 |---|---|

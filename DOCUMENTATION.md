@@ -3,7 +3,7 @@
 ## Canonical Writing and Maintenance Specification
 
 **Applies to:** Repository documentation, architecture and product scopes, developer guides, API documentation, runbooks, changelogs, migration guides, tutorials, and in-code documentation
-**Related standards:** [README.md](README.md) · [MODULES.md](MODULES.md) · [THEMES.md](THEMES.md) · [API.md](API.md) · [TESTING.md](TESTING.md)
+**Related standards:** [REPOSITORIES.md](REPOSITORIES.md) · [MODULES.md](MODULES.md) · [THEMES.md](THEMES.md) · [API.md](API.md) · [TESTING.md](TESTING.md)
 
 ## 1. Purpose
 
@@ -30,7 +30,7 @@ Each subject has one authoritative home:
 
 | Subject | Source of truth |
 |---|---|
-| Repository landing page and standard README content | [README.md](README.md) and the repository root `README.md` |
+| Repository landing page and standard README content | [REPOSITORIES.md](REPOSITORIES.md) and the repository root `README.md` |
 | Package boundaries, dependencies, installation, and lifecycle | [MODULES.md](MODULES.md) and module documentation |
 | Theme resources, rendering, assets, and compatibility | [THEMES.md](THEMES.md) and theme documentation |
 | API, connector, webhook, and marketplace contracts | [API.md](API.md) and generated API documentation |
