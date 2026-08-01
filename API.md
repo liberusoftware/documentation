@@ -25,12 +25,13 @@ This document defines the shared API contract. Product scopes define which resou
 10. **Backward compatible:** released contracts are versioned, tested, documented, and deprecated before removal.
 11. **Privacy-aware:** APIs minimize, classify, authorize, retain, and redact data by purpose.
 12. **Accessible documentation:** every public API provides useful examples, schemas, errors, and a tested quick start.
+13. **One module, one API adapter:** every independent domain module requiring HTTP API access has its own matching API presentation module; product-wide API packages do not absorb several independent module APIs.
 
 ## 3. API categories
 
 | Category | Purpose | Ownership |
 |---|---|---|
-| Module API | Exposes one module's supported resources, queries, and actions | Owning module's optional API presentation package |
+| Module API | Exposes exactly one independent module's supported resources, queries, and actions | That module's matching optional API presentation package |
 | Application API | Curates module APIs into a coherent product/project surface | Host application's composition layer |
 | Internal contract API | Synchronous PHP contract or private service endpoint used between required capabilities | Owning contract/core package |
 | Connector API | Connects a Liberu contract to an external provider | Independent provider-adapter module |
@@ -43,17 +44,36 @@ An application may expose a smaller curated surface than the sum of installed mo
 
 ## 4. Package and repository design
 
-Domain packages do not depend on Laravel HTTP controllers, OpenAPI tools, or a specific transport. Public API surfaces are separate presentation packages where independent installation is useful:
+Domain packages do not depend on Laravel HTTP controllers, OpenAPI tools, or a specific transport. Every independent domain module requiring an HTTP API has one matching API presentation package. The package name starts with `module-`, contains the complete independent domain module name, and ends with `-api`:
+
+```text
+module-{independent-module-name}-api
+```
+
+Examples:
+
+| Domain module | Matching API module |
+|---|---|
+| `cms-content` | `module-cms-content-api` |
+| `cms-pages` | `module-cms-pages-api` |
+| `billing-invoices` | `module-billing-invoices-api` |
+| `payment-core` | `module-payment-core-api` |
+
+The rule applies to the GitHub repository, Composer package basename, installer name, manifest identity, and installed directory. For example, `liberu/module-cms-content-api` installs to `/modules/module-cms-content-api`.
 
 ```text
 liberu/payment-contracts
         ^
 liberu/payment-core
         ^
-liberu/payment-api       # requests, resources, routes, OpenAPI fragment
+liberu/module-payment-core-api  # requests, resources, routes, OpenAPI fragment
 ```
 
-API packages are Composer modules installed under `/modules` according to `MODULES.md`. They invoke public domain actions/queries and policies; they never reimplement business rules or query another module's private tables.
+API packages are Composer modules installed under `/modules` according to `MODULES.md`. Each API module declares its one matching domain module as a required dependency, invokes only that module's public domain actions/queries and policies, and owns only that module's HTTP contract. It never reimplements business rules, queries another module's private tables, or exposes another independent module's resources for convenience.
+
+An umbrella API package such as `module-cms-api` must not own endpoints for content, pages, media, navigation, publishing, and workflows when those are independent domain modules. The application composes the matching API modules and may publish a unified external specification or façade without changing their ownership.
+
+One matching API module covers all required audiences and route groups for its domain module—public, customer, partner, staff, management, internal service, or other HTTP surfaces. It documents an audience-to-operation matrix and applies distinct authentication, scopes, policies, rate limits, and exposure rules as required.
 
 Each independent API or connector repository includes:
 
@@ -62,6 +82,8 @@ Each independent API or connector repository includes:
 - an OpenAPI fragment and examples;
 - scope and permission declarations;
 - changelog, migration/deprecation notes, README, generated test coverage, and operational runbook.
+
+CI fails when an API module does not match exactly one independent domain module, declares operations owned by another module, or omits a declared audience/operation mapping. Cross-module endpoints belong to the host application's composition layer and delegate to each owning module rather than moving ownership into either API package.
 
 ## 5. Protocols and formats
 
@@ -390,7 +412,7 @@ Bulk APIs require bounded batch size, per-item identifiers/results, validation/d
 
 Each module API specification states:
 
-- capability owner, audience, resources, actions, exclusions, and source-of-truth boundaries;
+- its one matching independent domain module, audiences, resources, actions, exclusions, and source-of-truth boundaries;
 - package and route prefix;
 - required foundation modules and optional integrations;
 - resource schemas, field classification, relationships, state machines, invariants, and permissions;
@@ -398,6 +420,8 @@ Each module API specification states:
 - commands, events, webhooks, asynchronous operations, and idempotency policy;
 - errors, rate limits, SLO, telemetry, retention, and compatibility;
 - examples and tests for allowed, denied, invalid, duplicate, stale, concurrent, and failed-provider paths.
+
+The specification includes an audience-to-operation matrix covering public, customer, partner, staff, management, internal-service, or other required API access. Every declared operation maps to a controller/handler and OpenAPI operation in this package, or to an explicit approved exclusion. No row may map to another independent module's implementation.
 
 API resource classes map domain DTOs/read models to the wire contract. They must not serialize Eloquent models automatically or expose columns merely because they exist.
 
@@ -539,6 +563,8 @@ Define availability, latency, error-rate, freshness, and processing-time objecti
 
 Required tests include:
 
+- one-to-one boundary tests proving the API package presents exactly its matching independent domain module and contains no other module's controllers, resources, routes, schemas, or operations;
+- audience-to-operation matrix tests proving all declared API surfaces are implemented and exposed only through their intended authentication, scope, policy, tenant, and rate-limit rules;
 - OpenAPI/schema linting, examples, implementation drift, and breaking-change detection;
 - authentication, scope, policy, tenant/site/field authorization, entitlement, and concealment;
 - validation/property tests for identifiers, money, dates, enums, pagination, filtering, and state transitions;
@@ -586,6 +612,8 @@ Examples run in CI or contract tests where practical. Do not publish working sec
 
 An API is ready when:
 
+- it is named `module-{independent-module-name}-api`, depends on exactly its matching domain module for presentation ownership, and contains no other independent module's API logic;
+- its audience-to-operation matrix is complete and enforced in CI;
 - its owner, audience, contract, source-of-truth boundary, version, scopes, and exclusions are approved;
 - OpenAPI/event schemas, implementation, examples, SDKs, and documentation agree;
 - authentication, authorization, tenant/field isolation, consent, limits, and audit hold on every path;
@@ -598,9 +626,9 @@ An API is ready when:
 
 ## 32. GitHub issue mapping
 
-Create one API epic per cohesive module/application/connector surface. Recommended child issues:
+Create one API epic for each independent domain module requiring API access, plus separate epics for application façades and connectors. Recommended child issues:
 
-1. Ownership, audience, threat/data assessment, and API ADR.
+1. Matching domain-module ownership, audience-to-operation matrix, threat/data assessment, and API ADR.
 2. OpenAPI/event schemas, examples, scopes, permissions, and breaking-change baseline.
 3. Domain actions/queries, policies, and resource mapping.
 4. Authentication, tenancy, idempotency, concurrency, rate limits, and operations.

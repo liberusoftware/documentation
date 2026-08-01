@@ -28,7 +28,7 @@ All reusable Filament 5 logic is modular and its package/repository installer na
 The canonical pattern is:
 
 ```text
-module-{product-or-capability}-filament
+module-{independent-module-name}-filament
 theme-{theme-name}-filament
 ```
 
@@ -36,29 +36,30 @@ Examples:
 
 | Aim | Valid name | Invalid names |
 |---|---|---|
-| CMS administration | `module-cms-filament` | `cms-filament`, `filament-cms` |
-| Billing administration | `module-billing-filament` | `billing-admin`, `module-billing` |
+| CMS content administration | `module-cms-content-filament` | `module-cms-filament`, `cms-content-filament` |
+| Billing invoice administration | `module-billing-invoices-filament` | `module-billing-filament`, `billing-admin` |
 | Corporate admin styling | `theme-corporate-filament` | `corporate-filament`, `theme-corporate` |
 
-This rule applies to the independent GitHub repository name, Composer package basename, Liberu installer name, and installed directory. Composer examples are `liberu/module-cms-filament` and `liberu/theme-corporate-filament`.
+This rule applies to the independent GitHub repository name, Composer package basename, Liberu installer name, and installed directory. Composer examples are `liberu/module-cms-content-filament` and `liberu/theme-corporate-filament`.
 
 PHP symbols use StudlyCase equivalents:
 
 ```text
-Liberu\Modules\Cms\Filament\CmsFilamentPlugin
-Liberu\Modules\Cms\Filament\CmsFilamentServiceProvider
+Liberu\Modules\CmsContent\Filament\CmsContentFilamentPlugin
+Liberu\Modules\CmsContent\Filament\CmsContentFilamentServiceProvider
 Liberu\Themes\Corporate\Filament\CorporateFilamentPlugin
 Liberu\Themes\Corporate\Filament\CorporateFilamentServiceProvider
 ```
 
-Plugin IDs are stable kebab-case identifiers equal to the installer name, for example `module-cms-filament`. Panel IDs are application-owned names such as `admin`, `staff`, or `operations` and do not use this package naming rule unless the panel itself is distributed as reusable modular logic.
+Plugin IDs are stable kebab-case identifiers equal to the installer name, for example `module-cms-content-filament`. Panel IDs are application-owned names such as `admin`, `staff`, or `operations` and do not use this package naming rule unless the panel itself is distributed as reusable modular logic.
 
 ## 3. Ownership and dependency direction
 
 ```text
 Application panel
-├── module-cms-filament plugin ─────> CMS domain contracts/actions
-├── module-billing-filament plugin ─> Billing domain contracts/actions
+├── module-cms-content-filament plugin ─> CMS Content contracts/actions
+├── module-cms-pages-filament plugin ───> CMS Pages contracts/actions
+├── module-billing-invoices-filament ───> Billing Invoices contracts/actions
 └── theme-corporate-filament plugin ─> supported Filament theme hooks/assets
 
 Domain packages -X-> Filament
@@ -75,13 +76,38 @@ Responsibilities are divided as follows:
 | Domain module | Models, policies, authorized actions/queries, persistence, events and business rules | Filament dependencies or Filament classes |
 | `theme-*-filament` | Supported CSS/JS assets, colors, icons, render hooks and presentation-only panel configuration | Resources, business actions, policy replacement, validation replacement |
 
-Dependencies point from a module Filament package to the narrow domain packages or contracts it presents. A theme Filament package depends on the theme and supported Filament contracts, not on domain implementations. The root application may depend on all selected packages because it is the composition root.
+Each module Filament package depends on the public contracts/actions of its one matching domain module plus shared foundation contracts where required. It must not depend on another independent domain module merely to present that module's UI. A theme Filament package depends on the theme and supported Filament contracts, not on domain implementations. The root application may depend on all selected packages because it is the composition root.
+
+### 3.1 One-to-one module ownership
+
+Every independent domain module that requires Filament access has its own matching Filament presentation module. The relationship is one-to-one:
+
+```text
+cms-content     -> module-cms-content-filament
+cms-pages       -> module-cms-pages-filament
+billing-invoices -> module-billing-invoices-filament
+```
+
+An umbrella product package such as `module-cms-filament` must not own the Filament logic for several independent CMS modules. Keeping the same boundary on both sides preserves independent installation, enablement, dependencies, ownership, testing, release cadence, and reuse.
+
+The matching Filament module supplies every Filament surface its one domain module requires across administration, authenticated application, staff, operations, tenant, customer, partner, or any other panel. It may contribute different resources, pages, widgets, actions, navigation and configuration to different panels, but it must not contain another independent module's Filament implementation.
+
+Each domain module documents whether it requires Filament access. When it does, its matching `module-{independent-module-name}-filament` package must:
+
+- depend only on that domain module's public contracts/actions and shared foundation contracts;
+- maintain a documented matrix of the panels required by that module and the components contributed to each panel;
+- implement every declared panel surface or record an explicit, approved exclusion;
+- fail CI when a declared panel requirement has no mapped implementation;
+- test every panel mapping independently and in representative application compositions.
+
+The application composes as many independent Filament plugins as its selected domain modules require. Attaching a plugin does not bypass module enablement, compatibility, entitlement, authorization, or tenancy rules.
 
 ## 4. Package and installation model
 
 Every reusable Filament integration is developed and released from an independent repository under `liberusoftware`.
 
 - A `module-*-filament` package declares Composer type `liberu-module` and installs to `/modules/{installer-name}`.
+- Its Composer and module manifests declare its matching domain module as a required dependency and identify no second domain module as presentation ownership.
 - A `theme-*-filament` package declares Composer type `liberu-theme` and installs to `/themes/{installer-name}`.
 - `liberu/composer-installer` performs deterministic installation as specified by `MODULES.md` and `THEMES.md`.
 - Composer autoloading is authoritative; the application must not scan `/modules` or `/themes` to invent an alternative PHP autoloader.
@@ -90,7 +116,7 @@ Every reusable Filament integration is developed and released from an independen
 Example installation results:
 
 ```text
-modules/module-cms-filament/
+modules/module-cms-content-filament/
 themes/theme-corporate-filament/
 ```
 
@@ -99,7 +125,7 @@ Installing a package, enabling its runtime module, attaching its plugin to a pan
 ## 5. Standard module Filament layout
 
 ```text
-github.com/liberusoftware/module-cms-filament/
+github.com/liberusoftware/module-cms-content-filament/
 ├── composer.json
 ├── module.json
 ├── README.md
@@ -119,8 +145,8 @@ github.com/liberusoftware/module-cms-filament/
 │   │       ├── Schemas/
 │   │       └── Tables/
 │   ├── Widgets/
-│   ├── CmsFilamentPlugin.php
-│   └── CmsFilamentServiceProvider.php
+│   ├── CmsContentFilamentPlugin.php
+│   └── CmsContentFilamentServiceProvider.php
 └── tests/
     ├── Architecture/
     ├── Compatibility/
@@ -170,6 +196,8 @@ The root application defines each `PanelProvider`. A panel owns deployment-speci
 - plugin ordering and panel-specific configuration;
 - global navigation, notifications, branding fallback and operational policy.
 
+For every selected `module-*-filament` plugin, the application maps the plugin's declared surfaces to the appropriate panels. A single plugin may contribute different components to `admin`, `app`, `staff`, `operations`, tenant, or other panels through typed configuration; it must not assume that all components belong in an admin panel or that every panel exposes the same capabilities.
+
 A reusable package supplies a Filament plugin, not a panel provider. An exception requires an ADR and is appropriate only when the package intentionally distributes a complete application surface. Even then, its reusable package name follows the required `module-` or `theme-` prefix and `-filament` suffix.
 
 Conceptual application composition:
@@ -181,8 +209,9 @@ public function panel(Panel $panel): Panel
         ->id('admin')
         ->path('admin')
         ->plugins([
-            CmsFilamentPlugin::make(),
-            BillingFilamentPlugin::make(),
+            CmsContentFilamentPlugin::make(),
+            CmsPagesFilamentPlugin::make(),
+            BillingInvoicesFilamentPlugin::make(),
             CorporateFilamentPlugin::make(),
         ]);
 }
@@ -214,10 +243,10 @@ Auto-discovery is package-local, bounded and deterministic. It reduces registrat
 A module plugin may use Filament 5 discovery APIs to discover only classes beneath its own Composer namespace and package path:
 
 ```text
-Resources: Liberu\Modules\Cms\Filament\Resources     -> src/Resources
-Pages:     Liberu\Modules\Cms\Filament\Pages         -> src/Pages
-Widgets:   Liberu\Modules\Cms\Filament\Widgets       -> src/Widgets
-Clusters:  Liberu\Modules\Cms\Filament\Clusters      -> src/Clusters
+Resources: Liberu\Modules\CmsContent\Filament\Resources -> src/Resources
+Pages:     Liberu\Modules\CmsContent\Filament\Pages     -> src/Pages
+Widgets:   Liberu\Modules\CmsContent\Filament\Widgets   -> src/Widgets
+Clusters:  Liberu\Modules\CmsContent\Filament\Clusters  -> src/Clusters
 ```
 
 It must not recursively scan the application, all of `/modules`, all of `/themes`, or `/vendor`. Composer and the Liberu module registry determine which packages exist; the application determines which plugins are attached; the plugin discovers only its own internal Filament classes.
@@ -238,7 +267,9 @@ Filament applies authorization, tenancy, navigation and panel configuration
 Filament caches the resolved production component registry
 ```
 
-Disabled modules do not contribute plugins. Theme activation is resolved through trusted application/theme configuration before its presentation plugin is attached. Production deployment clears and rebuilds relevant Laravel/Filament caches after package or enablement changes.
+Disabled Filament presentation modules do not contribute plugins. A matching plugin contributes no components when its one domain module is disabled. Theme activation is resolved through trusted application/theme configuration before its presentation plugin is attached. Production deployment clears and rebuilds relevant Laravel/Filament caches after package or enablement changes.
+
+Package-local discovery is filtered by the domain-module-to-panel matrix. Discovery must not expose a component merely because its class exists: the matching domain module and target panel surface must both be enabled for that plugin instance.
 
 ### 9.3 Explicit registration exceptions
 
@@ -379,6 +410,9 @@ Filament testing follows [TESTING.md](TESTING.md). Tests assert observable behav
 Every `module-*-filament` package includes, where relevant:
 
 - architecture tests preventing domain-to-Filament dependencies, `App\\` coupling and cross-module internal access;
+- boundary tests proving the package presents exactly one matching independent domain module and does not contain another module's Filament logic;
+- panel-matrix tests proving every declared admin, app, staff, operations, tenant, or other surface is implemented and registered only on its intended panels;
+- conditional-registration tests proving the enabled matching module appears only on declared panels and disabled, missing, incompatible or unauthorized capabilities do not leak UI;
 - plugin registration and package-local discovery tests;
 - collision tests for plugin/component IDs, routes and aliases;
 - resource/page/widget tests for authorization, tenant isolation, validation and empty/error states;
@@ -413,6 +447,9 @@ Each repository README documents:
 - supported Laravel, PHP, Filament, Livewire and host versions;
 - plugin registration and all typed configuration options;
 - resource, page, widget and navigation inventory;
+- the identity of its one matching independent domain module;
+- the complete panel matrix for that module, including admin, app, staff, operations, tenant and other supported panels;
+- approved panel exclusions and optional integrations;
 - discovery namespaces/paths and explicit-registration exceptions;
 - panels and tenancy modes tested;
 - authorization, security and accessibility behavior;
@@ -427,6 +464,8 @@ A Filament 5 integration is ready when:
 - it is independently packaged, versioned, documented and installed in the correct `/modules` or `/themes` location;
 - domain logic remains outside Filament and dependency direction is enforced;
 - the application explicitly owns panels and selects plugins;
+- it presents exactly one matching independent domain module and contains no other module's Filament logic;
+- the matching domain module's panel matrix is complete, capability-aware and enforced in CI;
 - package-local discovery is bounded, deterministic, collision-checked and cacheable;
 - resources, pages, widgets and actions enforce policy and tenant scope and delegate to domain boundaries;
 - theme behavior uses only supported visual extension points;
@@ -438,6 +477,6 @@ A Filament 5 integration is ready when:
 
 ## 22. GitHub issue mapping
 
-Create one Filament integration epic, then child issues for: package/manifest scaffolding; plugin contract; panel composition; resource discovery; pages and navigation; widgets; forms/tables/infolists/actions; authorization and tenancy; theme integration; localization/accessibility; discovery/cache collisions; security/performance; compatibility tests; documentation and release.
+Create one Filament integration epic for each independent domain module requiring Filament access, then child issues for: matching package/manifest scaffolding; panel matrix; plugin contract; admin/app/staff/operations/tenant panel composition as applicable; resource discovery; pages and navigation; widgets; forms/tables/infolists/actions; authorization and tenancy; theme integration; localization/accessibility; discovery/cache collisions; security/performance; compatibility tests; documentation and release.
 
 Each issue identifies the owning `module-*-filament` or `theme-*-filament` package, target panels, domain contracts, discovered and explicitly registered components, authorization/tenant rules, extension points, acceptance criteria, tests and explicit exclusions.

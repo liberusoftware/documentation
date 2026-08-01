@@ -122,11 +122,12 @@ Product packages contain behavior specific to a product ecosystem, such as `libe
 
 ### 5.6 Presentation packages
 
-Presentation is an optional adapter over domain packages. Reusable presentation packages follow their surface specifications, including `liberu/module-cms-filament`, `liberu/module-ecommerce-filament`, `liberu/module-cms-livewire`, or more granular packages where independent installation warrants it.
+Presentation is an optional adapter over domain packages. Reusable presentation packages follow their surface specifications, including `liberu/module-cms-content-filament`, `liberu/module-cms-pages-filament`, `liberu/module-cms-content-api`, and `liberu/module-cms-livewire`.
 
 - A Filament package may provide plugins, resources, pages, widgets, forms, tables, actions, and navigation.
+- Every independent domain module requiring admin, application, staff, operations, tenant, or other Filament panel access has one matching `module-{independent-module-name}-filament` package. That package presents only its matching domain module, covers all panels that module requires, and follows `FILAMENT.md`; umbrella product Filament packages must not combine several independent modules.
 - A Livewire presentation package may provide interactive application components.
-- An API presentation package may provide controllers, requests, resources, and route registration.
+- Every independent domain module requiring HTTP API access has one matching `module-{independent-module-name}-api` package. It presents only that domain module, covers all required API audiences, and follows `API.md`; application façades compose APIs without absorbing their ownership.
 - Presentation packages depend on the domain contracts/actions they expose; domain packages never depend on them.
 - Blade/CSS/JavaScript/assets and theme overrides also comply with `THEMES.md`.
 
@@ -145,8 +146,9 @@ cms-laravel/
 ├── modules/             # Composer-installed Liberu modules; tracked in Git
 │   ├── cms-core/
 │   ├── cms-content/
+│   ├── module-cms-content-filament/
 │   ├── cms-pages/
-│   └── module-cms-filament/
+│   └── module-cms-pages-filament/
 ├── app/                 # application-specific composition only
 ├── bootstrap/
 ├── config/
@@ -277,8 +279,9 @@ Composer names communicate domain, capability, and role:
 | Shared contract | `liberu/{capability}-contracts` | `liberu/payment-contracts` |
 | Shared core | `liberu/{capability}-core` | `liberu/payment-core` |
 | Provider adapter | `liberu/{capability}-{provider}` | `liberu/payment-stripe` |
-| Filament presentation adapter | `liberu/module-{product-or-capability}-filament` | `liberu/module-cms-filament` |
+| Filament presentation adapter | `liberu/module-{independent-module-name}-filament` | `liberu/module-cms-content-filament` |
 | Livewire presentation adapter | `liberu/module-{product-or-capability}-livewire` | `liberu/module-cms-livewire` |
+| API presentation adapter | `liberu/module-{independent-module-name}-api` | `liberu/module-cms-content-api` |
 | Aggregate distribution | `liberu/{product}` | `liberu/ecommerce` |
 
 Additional conventions:
@@ -516,7 +519,8 @@ Filament is an integration layer, not a domain dependency:
 
 ```text
 Application panel
-    `-- CMS Filament plugin -> CMS domain packages
+    |-- CMS Content Filament plugin -> CMS Content domain package
+    `-- CMS Pages Filament plugin -> CMS Pages domain package
 
 CMS domain packages -X-> Filament
 ```
@@ -643,8 +647,18 @@ cms-laravel
 ├── cms-navigation
 ├── cms-publishing
 ├── cms-workflows
-├── cms-api
-└── module-cms-filament
+├── module-cms-content-api
+├── module-cms-pages-api
+├── module-cms-media-api
+├── module-cms-navigation-api
+├── module-cms-publishing-api
+├── module-cms-workflows-api
+├── module-cms-content-filament
+├── module-cms-pages-filament
+├── module-cms-media-filament
+├── module-cms-navigation-filament
+├── module-cms-publishing-filament
+└── module-cms-workflows-filament
 ```
 
 A custom application may install content, pages, and API without navigation, workflows, the complete CMS aggregate, or Filament.
@@ -654,7 +668,8 @@ A custom application may install content, pages, and API without navigation, wor
 ```text
 Hosting commerce application
 ├── boilerplate foundation packages
-├── cms-content + cms-media + module-cms-filament
+├── cms-content + module-cms-content-filament
+├── cms-media + module-cms-media-filament
 ├── ecommerce-catalog + ecommerce-cart + ecommerce-checkout
 ├── billing-subscriptions + billing-invoices
 ├── payment-core + payment-stripe
