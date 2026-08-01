@@ -4,7 +4,7 @@
 
 **Applies to:** Main application repositories, module repositories, theme repositories, and reusable packages under Liberu organizations
 **Reference implementation:** [`liberusoftware/boilerplate-laravel`](https://github.com/liberusoftware/boilerplate-laravel)
-**Related standards:** [MODULES.md](MODULES.md) · [THEMES.md](THEMES.md) · [BOILERPLATE.md](BOILERPLATE.md) · [API.md](API.md)
+**Related standards:** [MODULES.md](MODULES.md) · [THEMES.md](THEMES.md) · [BOILERPLATE.md](BOILERPLATE.md) · [API.md](API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
 
 ## 1. Purpose
 

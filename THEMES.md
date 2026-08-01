@@ -4,7 +4,7 @@
 
 **Status:** Source of truth
 **Applies to:** Public sites, customer portals, application shells, and Filament panels
-**Related architecture:** [MODULES.md](MODULES.md) · [API.md](API.md)
+**Related architecture:** [MODULES.md](MODULES.md) · [API.md](API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
 
 ## 1. Purpose
 

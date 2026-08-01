@@ -3,7 +3,7 @@
 ## Canonical Design and Implementation Specification
 
 **Applies to:** Module APIs, project/application APIs, marketplace apps, provider connectors, webhooks, generated SDKs, and internal service integrations
-**Related standards:** [MODULES.md](MODULES.md) · [BOILERPLATE.md](BOILERPLATE.md) · [THEMES.md](THEMES.md) · [README.md](README.md)
+**Related standards:** [MODULES.md](MODULES.md) · [BOILERPLATE.md](BOILERPLATE.md) · [THEMES.md](THEMES.md) · [README.md](README.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
 
 ## 1. Purpose
 

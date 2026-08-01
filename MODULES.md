@@ -5,7 +5,7 @@
 **Status:** Source of truth
 **Applies to:** All Liberu repositories, Composer packages, applications, and distributions
 **Target stack:** Laravel 13, PHP 8.5, Filament 5, Livewire 4
-**Related specifications:** [BOILERPLATE.md](BOILERPLATE.md), [THEMES.md](THEMES.md), and [API.md](API.md)
+**Related specifications:** [BOILERPLATE.md](BOILERPLATE.md) · [THEMES.md](THEMES.md) · [API.md](API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
 
 ## 1. Purpose
 
