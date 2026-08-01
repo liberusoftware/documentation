@@ -20,6 +20,14 @@ Start with [Liberu architecture](LIBERU.md) for the portfolio view or [Module ar
 | [Testing](TESTING.md) | Pest/PHPUnit suites, ownership, coverage, compatibility, and CI evidence |
 | [Documentation](DOCUMENTATION.md) | Documentation structure, quality, validation, and maintenance |
 | [Repository README standard](REPOSITORIES.md) | Required landing-page content for Liberu repositories |
+| [Jetstream](JETSTREAM.md) | Authentication, security features, and Jetstream team integration |
+| [Socialstream](SOCIALSTREAM.md) | OAuth provider integration for Jetstream and Filament |
+| [Policy and permissions](POLICY.md) | Laravel policies, Spatie Permission, and Filament Shield boundaries |
+| [Teams](TEAMS.md) | Team context, membership, invitations, and authorization rules |
+| [Installation](INSTALL.md) | Supported prerequisites and local installation workflow |
+| [Deployment](deployment/README.md) | Standalone, Docker Compose, and Kubernetes deployment paths |
+| [Contributing](CONTRIBUTING.md) | Contribution workflow and engineering quality gates |
+| [Security](SECURITY.md) | Vulnerability reporting and security response process |
 
 ## Detailed module documentation
 
@@ -68,3 +76,9 @@ Every feature and API document links back to its authoritative application scope
 5. Implement and verify the package using `TESTING.md`, `DOCUMENTATION.md`, and the module's definition of done.
 
 Changes to package boundaries, public contracts, ownership, or cross-repository policy require corresponding documentation updates and an architecture decision record where specified by the relevant standard.
+
+## Project governance
+
+- [License](LICENSE.md)
+- [Contributing](CONTRIBUTING.md)
+- [Security policy](SECURITY.md)
