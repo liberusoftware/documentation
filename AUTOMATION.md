@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Provider-neutral automation and AI capabilities for Liberu products.
-**Architecture:** Implement every capability as modules conforming to [MODULES.md](MODULES.md); presentation follows [THEMES.md](THEMES.md).
+**Architecture:** Implement every capability as modules conforming to [MODULES.md](MODULES.md); APIs, connectors, triggers, and webhooks follow [API.md](API.md); presentation follows [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines automation behavior only.
 

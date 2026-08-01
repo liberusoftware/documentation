@@ -4,13 +4,15 @@
 
 **Status:** Source of truth
 **Applies to:** Public sites, customer portals, application shells, and Filament panels
-**Related architecture:** [MODULES.md](MODULES.md)
+**Related architecture:** [MODULES.md](MODULES.md) · [API.md](API.md)
 
 ## 1. Purpose
 
 A theme is a versioned Composer presentation package that controls visual identity and rendering without owning business rules. It may provide Blade layouts, views, components, Livewire presentation components, JavaScript, CSS, fonts, images, logos, icons, and video. Themes consume documented module view models and extension points.
 
 Modules own behavior and functional defaults. Themes own composition, styling, branded assets, and presentation overrides. A theme must never query module tables, bypass policies, or duplicate domain workflows.
+
+Themes consume APIs only through documented application or module contracts governed by [API.md](API.md). They must not embed provider credentials, invent private endpoints, or make a remote API the source of presentation-specific business rules.
 
 Themes use a unified design, manifest, installation, inheritance, testing, and documentation approach. They may be mixed into different repository-based projects as needed. A theme may be designed and optimized for a specific Liberu repository to produce the best result, but it should remain installable and reasonably compatible with other Liberu repositories or compatible Laravel projects. Outside its optimized hosts, some views or integrations may be unavailable or imperfect; those limitations must be declared and must fail or fall back safely.
 

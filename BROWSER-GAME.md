@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Persistent browser-based role-playing game with progression, world simulation, economy, social play, competition, and live operations.
-**Architecture:** Game capabilities follow [MODULES.md](MODULES.md); player/admin presentation and media follow [THEMES.md](THEMES.md).
+**Architecture:** Game capabilities follow [MODULES.md](MODULES.md); game, administration, and integration APIs follow [API.md](API.md); player/admin presentation and media follow [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines game behavior only.
 

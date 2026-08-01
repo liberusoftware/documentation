@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Composable content and digital-experience platform for websites, portals, applications, and headless delivery.
-**Architecture:** Packages and extensions follow [MODULES.md](MODULES.md); rendering, themes, layouts, and assets follow [THEMES.md](THEMES.md).
+**Architecture:** Packages and extensions follow [MODULES.md](MODULES.md); headless delivery, federation, connectors, and webhooks follow [API.md](API.md); rendering, themes, layouts, and assets follow [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md). Identity, teams, authorization, localization primitives, files, audit, queues, integrations, and observability are not reimplemented here.
 

@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Composable cloud accounting and financial-management platform for sole traders, growing businesses, accountants, and multi-entity organizations.
-**Architecture:** Packages and provider adapters follow [MODULES.md](MODULES.md); business, accountant, approval, and portal interfaces follow [THEMES.md](THEMES.md).
+**Architecture:** Packages and provider adapters follow [MODULES.md](MODULES.md); APIs, connectors, and webhooks follow [API.md](API.md); business, accountant, approval, and portal interfaces follow [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md). Identity, organizations/teams, authorization, localization, currency value types, files, audit infrastructure, analytics adapters, integrations, and queues are not reimplemented here.
 

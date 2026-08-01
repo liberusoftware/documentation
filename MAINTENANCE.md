@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Asset, work order, preventative maintenance, inspection, field service, inventory, contract, and compliance management.
-**Architecture:** Modules follow [MODULES.md](MODULES.md); office, engineer, and customer experiences follow [THEMES.md](THEMES.md).
+**Architecture:** Modules follow [MODULES.md](MODULES.md); field, customer, provider, and device APIs follow [API.md](API.md); office, engineer, and customer experiences follow [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines maintenance behavior only.
 

@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Configurable private, public, and federated communities with profiles, content, groups, messaging, discovery, and moderation.
-**Architecture:** Modules follow [MODULES.md](MODULES.md); community experiences and branding follow [THEMES.md](THEMES.md).
+**Architecture:** Modules follow [MODULES.md](MODULES.md); public, application, moderation, and federation APIs follow [API.md](API.md); community experiences and branding follow [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines social-network behavior only.
 

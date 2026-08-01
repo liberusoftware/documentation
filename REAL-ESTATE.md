@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Residential and commercial agency operations covering listings, sales, lettings, progression, property management, maintenance, and portals.
-**Architecture:** Modules follow [MODULES.md](MODULES.md); agent, vendor, landlord, tenant, and applicant interfaces follow [THEMES.md](THEMES.md).
+**Architecture:** Modules follow [MODULES.md](MODULES.md); portal, property, and marketplace connector APIs follow [API.md](API.md); agent, vendor, landlord, tenant, and applicant interfaces follow [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines real-estate behavior only.
 

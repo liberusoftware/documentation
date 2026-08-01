@@ -5,7 +5,7 @@
 **Repository:** `liberusoftware/boilerplate-laravel`
 **Purpose:** Reusable application foundation for every Liberu Laravel repository.
 **Target stack:** Laravel 13, PHP 8.5, Filament 5, Livewire 4
-**Architecture:** Modules conform to [MODULES.md](MODULES.md); foundation UI and assets conform to [THEMES.md](THEMES.md).
+**Architecture:** Modules conform to [MODULES.md](MODULES.md); API access, integrations, and webhooks conform to [API.md](API.md); foundation UI and assets conform to [THEMES.md](THEMES.md).
 
 ## 1. Ownership and adoption
 

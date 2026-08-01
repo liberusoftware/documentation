@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Billing, subscription, ordering, payment, provisioning, domain, hosting, ISP, and service automation.
-**Architecture:** Modules follow [MODULES.md](MODULES.md); storefront and portal presentation follows [THEMES.md](THEMES.md).
+**Architecture:** Modules follow [MODULES.md](MODULES.md); APIs, payment/provisioning connectors, and webhooks follow [API.md](API.md); storefront and portal presentation follows [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines billing and service behavior only.
 

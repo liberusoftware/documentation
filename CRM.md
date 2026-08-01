@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Composable customer platform for data, demand generation, sales, marketing, service, customer success, partner operations, and agency delivery.
-**Architecture:** Packages and provider adapters follow [MODULES.md](MODULES.md); staff, partner, and customer experiences follow [THEMES.md](THEMES.md).
+**Architecture:** Packages and provider adapters follow [MODULES.md](MODULES.md); APIs, marketplace connectors, and webhooks follow [API.md](API.md); staff, partner, and customer experiences follow [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines CRM-domain behavior only. Reuse CMS, Automation, Billing, Ecommerce, Accounting, and other Liberu contracts instead of duplicating their authoritative capabilities.
 

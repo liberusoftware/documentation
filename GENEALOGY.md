@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Evidence-based family history, relationship, DNA, research, and collaboration platform.
-**Architecture:** Functional modules follow [MODULES.md](MODULES.md); tree, research, and portal experiences follow [THEMES.md](THEMES.md).
+**Architecture:** Functional modules follow [MODULES.md](MODULES.md); data exchange, integration APIs, and webhooks follow [API.md](API.md); tree, research, and portal experiences follow [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines genealogy behavior only.
 

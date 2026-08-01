@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Composable commerce platform for direct-to-consumer, B2B, retail/POS, marketplace, subscription, digital, and service business models.
-**Architecture:** Packages and provider adapters follow [MODULES.md](MODULES.md); storefront, account, checkout, and POS experiences follow [THEMES.md](THEMES.md).
+**Architecture:** Packages and provider adapters follow [MODULES.md](MODULES.md); storefront APIs, marketplace connectors, and webhooks follow [API.md](API.md); storefront, account, checkout, and POS experiences follow [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md). Reuse CMS content, CRM relationships, Billing subscriptions/invoices, Accounting postings, and shared payment/tax/shipping contracts rather than duplicating authoritative capabilities.
 

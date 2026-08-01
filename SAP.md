@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** SAP-style modular ERP for multi-company software, hosting, managed-service, consulting, SaaS, and hybrid enterprises.
-**Architecture:** This product composes modules under [MODULES.md](MODULES.md); all experiences follow [THEMES.md](THEMES.md). [LIBERU.md](LIBERU.md) remains the platform overview.
+**Architecture:** This product composes modules under [MODULES.md](MODULES.md); enterprise APIs, integrations, and events follow [API.md](API.md); all experiences follow [THEMES.md](THEMES.md). [LIBERU.md](LIBERU.md) remains the platform overview.
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope composes enterprise domain behavior only.
 

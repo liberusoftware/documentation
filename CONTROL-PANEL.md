@@ -3,7 +3,7 @@
 ## Product Scope
 
 **Purpose:** Secure management of hosting, servers, containers, Kubernetes, DNS, mail, databases, backups, and customer/reseller services.
-**Architecture:** Modules follow [MODULES.md](MODULES.md); operational and customer interfaces follow [THEMES.md](THEMES.md).
+**Architecture:** Modules follow [MODULES.md](MODULES.md); management APIs, agents, automation, and provider connectors follow [API.md](API.md); operational and customer interfaces follow [THEMES.md](THEMES.md).
 
 **Foundation:** Consume relevant modules from [BOILERPLATE.md](BOILERPLATE.md); this scope defines infrastructure behavior only.
 
