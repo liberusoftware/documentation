@@ -654,3 +654,17 @@ Each issue states user outcome, owning package, category, dependencies, public s
 
 ## Important notes
 Move the team-agnostic role lookup into roles-permissions as a small service — "does this actor hold any of these roles in any team" — exposed through the existing PrivilegedActor seam. The host keeps the three method names as one-line delegations, since Filament, Telescope, and Pulse all call them by name.
+
+Solution
+
+A ThemeBoundariesTest mirroring the module one: manifest completeness, provider is a real ServiceProvider, every parent resolves to an installed theme, no cycles, every path in assets exists on disk, and a rendering test proving a child theme with no layouts/app.blade.php falls back to its parent's.
+
+## Test notes
+Candidate 1 — extract the testbench
+Everything else on this list is either downstream of it or independent of it. Candidate 4 (behaviour tests) is strictly blocked — writing them today would anchor 44 more files to the host's Tests\TestCase and make the eventual extraction more expensive, not less. Candidate 5 (theme enforcement) wants somewhere to live that is not the host suite.
+
+It is also the claim with the widest gap between the README and the disk. "Independent … release lifecycle … and tests" is currently true for the first half and false for the second: every one of the 44 published repositories ships a tests/ directory that cannot run in it. That is the one thing standing between this and a genuinely composable package architecture — and the fix is a single small package plus a four-line file per module.
+
+If you want the cheap win first
+
+Candidate 2's phpunit.xml line — 44 hardcoded <directory> entries collapse to one modules/*/src glob. Five minutes, removes one of the three drift surfaces, and the other two follow the same shape.
