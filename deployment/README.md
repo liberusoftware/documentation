@@ -10,6 +10,14 @@ This guide indexes the supported deployment shapes. The application repository's
 | Docker Compose | You need reproducible application, worker, database, cache, and frontend services on one host or development environment | Pinned images, non-root containers, persistent volumes, secrets, health checks, resource limits, backups, and migration ordering |
 | Kubernetes (k3s or k8s) | You need declarative reconciliation, rolling releases, horizontal scaling, or multi-node operation | Namespaces, RBAC, NetworkPolicies, Secrets, probes, resource requests/limits, persistent storage, ingress/TLS, PodDisruptionBudgets, observability, and restore-tested backups |
 
+## Deployment guides
+
+- [Docker](DOCKER.md) — build a small, reproducible, production-ready application image.
+- [Docker Compose](DOCKER-COMPOSE.md) — run the application stack on one host or in CI.
+- [Kubernetes](KUBERNETES.md) — deploy to either a standard Kubernetes cluster (`k8s`) or lightweight K3s cluster.
+- [NGINX](NGINX.md) — serve Laravel through NGINX and PHP-FPM.
+- [Apache](APACHE.md) — serve Laravel through Apache HTTP Server and PHP-FPM.
+
 ## Common release sequence
 
 1. Build and scan an immutable artifact from the reviewed commit.
@@ -41,5 +49,10 @@ Provisioning must be authenticated, least-privilege, idempotent, observable, and
 - [Laravel deployment](https://laravel.com/docs/13.x/deployment)
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Kubernetes overview](https://kubernetes.io/docs/concepts/overview/)
+- [Docker](DOCKER.md)
+- [Docker Compose](DOCKER-COMPOSE.md)
+- [Kubernetes](KUBERNETES.md)
+- [NGINX](NGINX.md)
+- [Apache](APACHE.md)
 - [Installation](../INSTALL.md)
 - [Security policy](../SECURITY.md)
