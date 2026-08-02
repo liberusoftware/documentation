@@ -4,6 +4,12 @@
 
 Each document specifies the `React 19.2 + Inertia 3` implementation package matching exactly one independent domain module. Feature specifications remain framework-neutral; these packages own presentation adapters and depend on the matching module's public contracts.
 
+## Implementation plan
+
+For every listed module, implement `module-{independent-module-name}-react-inertia` as the React 19.2/Inertia 3 presentation adapter over the matching Laravel core and API contracts. Keep domain decisions, authorization, validation, persistence, and transactions server-side; pages, components, typed props, forms, navigation, optimistic UI, and error rendering consume documented actions and resources rather than private models or ad hoc endpoints.
+
+Use strict TypeScript types generated or checked against the API contract, CSRF/authentication and authorization-aware requests, accessible components, progressive loading, resilient empty/error/offline states, localized formatting, and safe handling of sensitive data. Test page props, forms, navigation, authorization outcomes, validation, API error mapping, accessibility, and representative end-to-end workflows while keeping core behavior covered by the core repository.
+
 | Application                                                     | Implementations | Standard                                          |
 | --------------------------------------------------------------- | --------------: | ------------------------------------------------- |
 | [Accounting](../../projects/accounting/react/README.md)         |             105 | [architecture/REACT.md](../../standards/REACT.md) |

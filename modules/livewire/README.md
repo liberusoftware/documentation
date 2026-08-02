@@ -4,6 +4,12 @@
 
 Each document specifies the `Livewire 4` implementation package matching exactly one independent domain module. Feature specifications remain framework-neutral; these packages own only presentation adapters and depend on the matching module's public contracts.
 
+## Implementation plan
+
+For every listed module, implement `module-{independent-module-name}-livewire` as a Livewire 4 adapter over the matching core package. Components coordinate validated state, actions, queries, authorization, loading, pagination, events, and errors; they do not contain domain invariants, direct private-table queries, or provider integrations. Use Laravel 13/PHP 8.5 typed properties and methods, Form Requests or dedicated validators, policies, locked/validated component state, and explicit tenant/team context.
+
+Keep browser-facing state minimal and non-sensitive, translate core events into user feedback, make retries and queued work observable, and provide accessible keyboard/focus/error/empty states with localization and timezone/currency formatting. Test component behavior, validation, authorization, tenancy, events, loading, failure, idempotency, and core action contracts; never treat a rendered snapshot as proof of domain correctness.
+
 | Application                                                        | Implementations | Standard                                                |
 | ------------------------------------------------------------------ | --------------: | ------------------------------------------------------- |
 | [Accounting](../../projects/accounting/livewire/README.md)         |             105 | [architecture/LIVEWIRE.md](../../standards/LIVEWIRE.md) |

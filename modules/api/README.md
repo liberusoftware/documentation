@@ -6,6 +6,12 @@ Each API document describes the optional `module-{independent-module-name}-api` 
 
 Nuxt clients consume these API contracts through the matching one-to-one packages under [Nuxt 4 implementations](../nuxt/README.md). They must use documented routes, schemas, authentication, permissions, tenant/team context, pagination, errors, idempotency, and versioning; they must not call private Laravel implementation details.
 
+## Implementation plan
+
+For every listed module, implement `module-{independent-module-name}-api` as a thin Laravel 13 transport adapter over the matching `module-{independent-module-name}` core package. Keep controllers and route registration small; delegate writes to typed core actions, reads to core queries/read models, and authorization to the core policy boundary after request validation. Define OpenAPI 3.1 schemas, operation IDs, audiences, scopes, rate limits, pagination, field visibility, errors, idempotency, optimistic concurrency, and deprecation metadata as versioned contracts.
+
+Use PHP 8.5 strict types, Form Requests or dedicated validators, API Resources/DTOs, Sanctum or approved service identity, and RFC 9457 Problem Details. Resolve tenant/team context from trusted authentication and enforce concealment-safe authorization. Queue slow, bulk, provider-dependent, and retryable work through idempotent operation resources. Test allowed and denied access, wrong tenant, scopes, validation, hidden fields, concurrency, throttling, contracts, schema drift, and failure recovery without querying core-private tables.
+
 ## Sanctum authentication
 
 Third-party clients authenticate with Laravel Sanctum personal access tokens. First-party SPAs should use Sanctum's cookie-based SPA authentication instead of storing API tokens in browser code. See the [Laravel Sanctum documentation](https://laravel.com/docs/13.x/sanctum) for the complete configuration reference.

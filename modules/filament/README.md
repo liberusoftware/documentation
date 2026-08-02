@@ -4,6 +4,12 @@
 
 Each document specifies the `Filament 5` implementation package matching exactly one independent domain module. Feature specifications remain framework-neutral; these packages own only presentation adapters and depend on the matching module's public contracts.
 
+## Implementation plan
+
+For every listed module, implement `module-{independent-module-name}-filament` as a Filament 5 adapter over the matching Laravel 13/PHP 8.5 core package. Put resources, pages, widgets, schemas, tables, filters, actions, policies, navigation, and notifications in the presentation package; keep domain rules, transactions, persistence, authorization decisions, and lifecycle transitions in core actions and policies. Every panel surface must respect tenant/team scope, field sensitivity, audit requirements, and the module's public contracts.
+
+Use typed form state and validation, explicit authorization on records and actions, accessible labels and failure states, localized dates/numbers/currency, safe destructive-action confirmation, pagination, query limits, and queued exports or bulk work. Test resources, schemas, actions, policies, tenancy, validation, loading/error/empty states, accessibility-critical behavior, and the core contract without coupling core code to Filament.
+
 | Application                                                        | Implementations | Standard                                                |
 | ------------------------------------------------------------------ | --------------: | ------------------------------------------------------- |
 | [Accounting](../../projects/accounting/filament/README.md)         |             105 | [architecture/FILAMENT.md](../../standards/FILAMENT.md) |

@@ -4,6 +4,12 @@
 
 Each document specifies the `Vue 3 + Inertia 3` implementation package matching exactly one independent domain module. Feature specifications remain framework-neutral; these packages own Vue pages, components, composables, typed adapters, forms, and Inertia navigation over the matching API contract.
 
+## Implementation plan
+
+For every listed module, implement `module-{independent-module-name}-vue-inertia` as the Vue 3/Inertia 3 adapter over the matching Laravel core and API contracts. Keep business rules, authorization, validation, persistence, and transactions in the server-side core; use typed pages, composables, forms, components, and navigation only to present public resources and invoke documented actions.
+
+Use strict TypeScript contracts, CSRF/authentication, explicit error and validation mapping, tenant-safe requests, accessible keyboard/focus/label behavior, localized dates/numbers/currency, and resilient loading/empty/offline states. Test composables, page props, forms, authorization outcomes, API errors, accessibility-critical flows, and representative user journeys without duplicating core tests.
+
 | Application                                                    | Implementations | Scope index                                              |
 | -------------------------------------------------------------- | --------------: | -------------------------------------------------------- |
 | [Accounting](../../projects/accounting/vue/README.md)          |             105 | [Vue scope](../../projects/accounting/vue/README.md)     |
