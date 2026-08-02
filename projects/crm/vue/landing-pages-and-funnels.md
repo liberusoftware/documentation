@@ -6,7 +6,7 @@
 **Matching domain module:** `crm-landing-pages-and-funnels`
 **Application:** CRM
 **Source feature:** [Landing Pages and Funnels](../features/landing-pages-and-funnels.md)
-**Architecture:** [VUE-INERTIA.md](../../../architecture/VUE-INERTIA.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/landing-pages-and-funnels.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../architecture/TESTING.md)
+**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/landing-pages-and-funnels.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

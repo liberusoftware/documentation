@@ -6,7 +6,7 @@
 **Matching domain module:** `ecommerce-b2b-self-service`
 **Application:** Ecommerce
 **Source feature:** [B2B Self-Service](../features/b2b-self-service.md)
-**Architecture:** [VUE-INERTIA.md](../../../architecture/VUE-INERTIA.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/b2b-self-service.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../architecture/TESTING.md)
+**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/b2b-self-service.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

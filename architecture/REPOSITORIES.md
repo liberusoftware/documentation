@@ -4,7 +4,7 @@
 
 **Applies to:** Main application repositories, module repositories, theme repositories, and reusable packages under Liberu organizations
 **Reference implementation:** [`liberusoftware/boilerplate-laravel`](https://github.com/liberusoftware/boilerplate-laravel)
-**Related standards:** [MODULES.md](MODULES.md) · [THEMES.md](THEMES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [API.md](API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
+**Related standards:** [MODULES.md](MODULES.md) · [THEMES.md](../standards/THEMES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [API.md](API.md) · [DOCUMENTATION.md](../standards/DOCUMENTATION.md) · [TESTING.md](../standards/TESTING.md)
 
 ## 1. Purpose
 
@@ -310,7 +310,7 @@ Feedback and contributions are welcome. You can help by reporting reproducible
 bugs, proposing focused enhancements, improving documentation or translations,
 and submitting tested code changes.
 
-Before contributing, please read [CONTRIBUTING.md](CONTRIBUTING.md) and our
+Before contributing, please read [CONTRIBUTING.md](../standards/CONTRIBUTING.md) and our
 [Code of Conduct](CODE_OF_CONDUCT.md). Search existing issues first, then use
 the appropriate issue template. Pull requests should explain the problem and
 approach, remain focused, include or update tests, pass the required workflows,

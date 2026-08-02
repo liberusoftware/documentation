@@ -1,0 +1,7 @@
+# Liberu platform Filament 5 implementations\n\nThese admin packages present only the new Liberu cross-product modules. They do not duplicate product resources.\n\n- [Platform Orchestration Filament](platform-orchestration.md) — `module-liberu-platform-orchestration-filament`\n- [Executive Insights Filament](executive-insights.md) — `module-liberu-executive-insights-filament`\n- [Business Workflow Reconciliation Filament](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-filament`\n\nThese admin packages present only the new Liberu cross-product modules. They do not duplicate product resources.\n\n- [Platform Orchestration Filament](platform-orchestration.md) — `module-liberu-platform-orchestration-filament`\n- [Executive Insights Filament](executive-insights.md) — `module-liberu-executive-insights-filament`\n- [Business Workflow Reconciliation Filament](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-filament`
+
+These admin packages present only the new Liberu cross-product modules. They do not duplicate product resources.
+
+- [Platform Orchestration Filament](platform-orchestration.md) — `module-liberu-platform-orchestration-filament`
+- [Executive Insights Filament](executive-insights.md) — `module-liberu-executive-insights-filament`
+- [Business Workflow Reconciliation Filament](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-filament`

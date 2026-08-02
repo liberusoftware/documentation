@@ -6,7 +6,7 @@
 **Matching domain module:** `accounting-bank-reconciliation`
 **Application:** Accounting
 **Source feature:** [Bank Reconciliation](../features/bank-reconciliation.md)
-**Architecture:** [VUE-INERTIA.md](../../../architecture/VUE-INERTIA.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/bank-reconciliation.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../architecture/TESTING.md)
+**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/bank-reconciliation.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

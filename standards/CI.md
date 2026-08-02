@@ -1,6 +1,6 @@
 # Continuous integration and delivery
 
-This document defines the GitHub Actions workflow policy for Liberu repositories. It complements [Testing](TESTING.md), [Repository standards](REPOSITORIES.md), [Security](SECURITY.md), and [Deployment](../deployment/README.md).
+This document defines the GitHub Actions workflow policy for Liberu repositories. It complements [Testing](TESTING.md), [Repository standards](../architecture/REPOSITORIES.md), [Security](../architecture/SECURITY.md), and [Deployment](../deployment/README.md).
 
 ## Release policy
 

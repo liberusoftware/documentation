@@ -1,7 +1,7 @@
 # Accounting Vue 3 + Inertia 3 Implementations
 
 **Source:** [ACCOUNTING.md](../ACCOUNTING.md)
-**Architecture:** [VUE-INERTIA.md](../../../architecture/VUE-INERTIA.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../architecture/TESTING.md)
+**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
 

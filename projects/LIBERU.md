@@ -4,7 +4,7 @@
 
 **Status:** Canonical Liberu deployment plan
 **Target stack:** Laravel 13, PHP 8.5, Filament 5, Livewire 4
-**Architecture:** [MODULES.md](MODULES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [THEMES.md](THEMES.md) · [API.md](API.md)
+**Architecture:** [MODULES.md](../architecture/MODULES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [THEMES.md](../standards/THEMES.md) · [API.md](../architecture/API.md)
 
 ## 1. Purpose
 
@@ -25,10 +25,10 @@ Liberu's deployment must provide:
 
 | Concern | Source of truth |
 |---|---|
-| Composer packages, module boundaries, dependencies, adapters, lifecycle | [MODULES.md](MODULES.md) |
+| Composer packages, module boundaries, dependencies, adapters, lifecycle | [MODULES.md](../architecture/MODULES.md) |
 | Shared application foundation | [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) |
-| Blade, Livewire, layouts, components, CSS, JavaScript, and media | [THEMES.md](THEMES.md) |
-| Module, application, connector, marketplace, and webhook APIs | [API.md](API.md) |
+| Blade, Livewire, layouts, components, CSS, JavaScript, and media | [THEMES.md](../standards/THEMES.md) |
+| Module, application, connector, marketplace, and webhook APIs | [API.md](../architecture/API.md) |
 | Product behavior | The corresponding product `.md` scope listed below |
 | Liberu-specific composition, rollout, and cross-product acceptance | This document |
 

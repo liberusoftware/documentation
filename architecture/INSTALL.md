@@ -29,7 +29,7 @@ Set database, cache, queue, mail, OAuth, and filesystem values in `.env` before 
 - Install [Jetstream](JETSTREAM.md) in a new application and choose Livewire or Inertia once.
 - Install [Socialstream](SOCIALSTREAM.md) from `bursteri/socialstream`; configure OAuth credentials through a secret store.
 - Configure [Spatie Permission and Filament Shield](POLICY.md) for application/panel permissions only.
-- Follow [TESTING.md](TESTING.md) for formatting, static analysis, architecture, security, and test commands.
+- Follow [TESTING.md](../standards/TESTING.md) for formatting, static analysis, architecture, security, and test commands.
 
 ## Verification and failure recovery
 
@@ -39,4 +39,4 @@ Confirm migrations, queues, mail, storage, OAuth callbacks, health checks, and a
 
 - [Deployment guide](../deployment/README.md)
 - [Repository standards](REPOSITORIES.md)
-- [Contributing](CONTRIBUTING.md)
+- [Contributing](../standards/CONTRIBUTING.md)

@@ -42,7 +42,7 @@ PSR-12 is mandatory for PHP source, tests, migrations, configuration classes, an
 - keep one class/interface/trait/enum per file unless a tightly coupled private exception is documented;
 - do not rely on deprecated PSR-0/PSR-2 formatting or underscore autoloading.
 
-PSR-12 does not define architecture, security, validation, tenancy, or test quality. Those remain governed by [MODULES.md](MODULES.md), [SECURITY.md](SECURITY.md), [TENANCY.md](TENANCY.md), and [TESTING.md](TESTING.md).
+PSR-12 does not define architecture, security, validation, tenancy, or test quality. Those remain governed by [MODULES.md](../architecture/MODULES.md), [SECURITY.md](../architecture/SECURITY.md), [TENANCY.md](../architecture/TENANCY.md), and [TESTING.md](TESTING.md).
 
 ## Package boundaries
 
@@ -63,10 +63,10 @@ Reusable modules must:
 | PSR-2 | Deprecated | Use PSR-12, which supersedes it |
 | PSR-5 | Draft | PHPDoc style may follow current tooling, but PSR-5 is not a release contract |
 | PSR-8 | Abandoned | No implementation requirement |
-| PSR-9 | Abandoned | Use [SECURITY.md](SECURITY.md) and repository-specific disclosure procedures |
+| PSR-9 | Abandoned | Use [SECURITY.md](../architecture/SECURITY.md) and repository-specific disclosure procedures |
 | PSR-10 | Abandoned | Use repository security policy and current PHP-FIG guidance |
 | PSR-19 | Draft | Use project localization contracts and [DOCUMENTATION.md](DOCUMENTATION.md) until accepted |
-| PSR-21 | Draft | Use explicit tracing/correlation contracts defined by [API.md](API.md) and observability documentation |
+| PSR-21 | Draft | Use explicit tracing/correlation contracts defined by [API.md](../architecture/API.md) and observability documentation |
 | PSR-22 | Draft | Use the repository's supported tracing implementation until the PSR is accepted |
 
 Draft PSRs may inform design reviews but must not be cited as stable compatibility promises. The PSR index is the source for status changes.

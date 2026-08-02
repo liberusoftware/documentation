@@ -6,7 +6,7 @@
 **Matching domain module:** `ecommerce-back-in-stock-and-price-alerts`
 **Application:** Ecommerce
 **Source feature:** [Back-in-Stock and Price Alerts](../features/back-in-stock-and-price-alerts.md)
-**Architecture:** [VUE-INERTIA.md](../../../architecture/VUE-INERTIA.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/back-in-stock-and-price-alerts.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../architecture/TESTING.md)
+**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/back-in-stock-and-price-alerts.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

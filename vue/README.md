@@ -20,4 +20,4 @@ Each document specifies the `Vue 3 + Inertia 3` implementation package matching 
 | [SAP-style Enterprise Suite](../projects/sap/vue/README.md) | 16 | [Vue scope](../projects/sap/vue/README.md) |
 | [Social Network](../projects/social-network/vue/README.md) | 15 | [Vue scope](../projects/social-network/vue/README.md) |
 
-The package naming rule is `module-{independent-module-name}-vue-inertia`. Applications compose only packages required by enabled modules. See [Vue + Inertia architecture](../architecture/VUE-INERTIA.md), [technology map](../TECHNOLOGIES.md), and [theme architecture](../architecture/THEMES.md).
+The package naming rule is `module-{independent-module-name}-vue-inertia`. Applications compose only packages required by enabled modules. See [Vue + Inertia architecture](../standards/VUE.md), [technology map](../TECHNOLOGIES.md), and [theme architecture](../standards/THEMES.md).

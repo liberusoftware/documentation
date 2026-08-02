@@ -6,7 +6,7 @@
 **Matching domain module:** `ecommerce-b2b-purchasing-rules`
 **Application:** Ecommerce
 **Source feature:** [B2B Purchasing Rules](../features/b2b-purchasing-rules.md)
-**Architecture:** [VUE-INERTIA.md](../../../architecture/VUE-INERTIA.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/b2b-purchasing-rules.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../architecture/TESTING.md)
+**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/b2b-purchasing-rules.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

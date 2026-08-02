@@ -4,7 +4,7 @@
 
 **Status:** Source of truth
 **Applies to:** Public sites, customer portals, application shells, Filament panels, Livewire, React/Inertia, Vue/Inertia, and Nuxt surfaces
-**Related architecture:** [MODULES.md](MODULES.md) · [API.md](API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md) · [TECHNOLOGIES.md](../TECHNOLOGIES.md)
+**Related architecture:** [MODULES.md](../architecture/MODULES.md) · [API.md](../architecture/API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md) · [TECHNOLOGIES.md](../TECHNOLOGIES.md)
 
 ## 1. Purpose
 
@@ -12,7 +12,7 @@ A theme is a versioned presentation package that controls visual identity and re
 
 Modules own behavior and functional defaults. Themes own composition, styling, branded assets, and presentation overrides. A theme must never query module tables, bypass policies, or duplicate domain workflows.
 
-Themes consume APIs only through documented application or module contracts governed by [API.md](API.md). They must not embed provider credentials, invent private endpoints, or make a remote API the source of presentation-specific business rules.
+Themes consume APIs only through documented application or module contracts governed by [API.md](../architecture/API.md). They must not embed provider credentials, invent private endpoints, or make a remote API the source of presentation-specific business rules.
 
 Themes use a unified design, manifest, installation, inheritance, testing, and documentation approach. They may be mixed into different repository-based projects as needed. A theme may be designed and optimized for a specific Liberu repository to produce the best result, but it should remain installable and reasonably compatible with other Liberu repositories or compatible Laravel projects. Outside its optimized hosts, some views or integrations may be unavailable or imperfect; those limitations must be declared and must fail or fall back safely.
 

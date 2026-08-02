@@ -6,7 +6,7 @@
 **Matching domain module:** `ecommerce-gift-cards-and-store-credit`
 **Application:** Ecommerce
 **Source feature:** [Gift Cards and Store Credit](../features/gift-cards-and-store-credit.md)
-**Architecture:** [VUE-INERTIA.md](../../../architecture/VUE-INERTIA.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/gift-cards-and-store-credit.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../architecture/TESTING.md)
+**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/gift-cards-and-store-credit.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

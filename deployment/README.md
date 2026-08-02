@@ -36,7 +36,7 @@ Do not run destructive migrations, expose databases publicly, bake credentials i
 
 ## Automated deployment policy
 
-See [CI](../architecture/CI.md) for the workflow contract. Every push to `main` runs required checks and may publish an immutable staging artifact or deploy staging. Production is never deployed directly from `main`; it is deployed only from a protected version tag or GitHub Release after all checks, the 100% release-scope coverage gate, artifact scanning, smoke tests, and production environment approval pass.
+See [CI](../standards/CI.md) for the workflow contract. Every push to `main` runs required checks and may publish an immutable staging artifact or deploy staging. Production is never deployed directly from `main`; it is deployed only from a protected version tag or GitHub Release after all checks, the 100% release-scope coverage gate, artifact scanning, smoke tests, and production environment approval pass.
 
 ## Control Panel provisioning
 
@@ -68,6 +68,6 @@ Provisioning must be authenticated, least-privilege, idempotent, observable, and
 - [Reverb](REVERB.md)
 - [Horizon](HORIZON.md)
 - [Telescope](TELESCOPE.md)
-- [CI](../architecture/CI.md)
+- [CI](../standards/CI.md)
 - [Installation](../architecture/INSTALL.md)
 - [Security policy](../architecture/SECURITY.md)

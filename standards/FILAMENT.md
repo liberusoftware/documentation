@@ -5,7 +5,7 @@
 **Status:** Source of truth  
 **Applies to:** All Liberu Filament 5 panels, plugins, resources, pages, widgets, actions, forms, tables, infolists, and admin-theme integrations  
 **Target stack:** Laravel 13, PHP 8.5, Filament 5, Livewire 4  
-**Related specifications:** [MODULES.md](MODULES.md) · [THEMES.md](THEMES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [API.md](API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
+**Related specifications:** [MODULES.md](../architecture/MODULES.md) · [THEMES.md](THEMES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [API.md](../architecture/API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
 
 ## 1. Purpose
 

@@ -5,7 +5,7 @@
 **Status:** Source of truth  
 **Applies to:** All Liberu Livewire 4 components, full-page components, forms, actions, events, navigation, islands, and theme integrations  
 **Target stack:** Laravel 13, PHP 8.5, Filament 5, Livewire 4  
-**Related specifications:** [MODULES.md](MODULES.md) · [THEMES.md](THEMES.md) · [FILAMENT.md](FILAMENT.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [API.md](API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
+**Related specifications:** [MODULES.md](../architecture/MODULES.md) · [THEMES.md](THEMES.md) · [FILAMENT.md](FILAMENT.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [API.md](../architecture/API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
 
 ## 1. Purpose
 

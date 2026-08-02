@@ -25,11 +25,11 @@ Maintainers will acknowledge a report when received, validate scope and severity
 
 ## Secure contribution rules
 
-Never commit credentials, tokens, private keys, personal data, unredacted OAuth payloads, database dumps, or production identifiers. Follow [CONTRIBUTING.md](CONTRIBUTING.md), use least privilege, pin or lock dependencies, review generated changes, and run the security checks in [TESTING.md](TESTING.md).
+Never commit credentials, tokens, private keys, personal data, unredacted OAuth payloads, database dumps, or production identifiers. Follow [CONTRIBUTING.md](../standards/CONTRIBUTING.md), use least privilege, pin or lock dependencies, review generated changes, and run the security checks in [TESTING.md](../standards/TESTING.md).
 
 ## Related guidance
 
 - [Laravel security](https://laravel.com/docs/13.x/security)
 - [Policies and permissions](POLICY.md)
 - [Deployment](../deployment/README.md)
-- [Contributing](CONTRIBUTING.md)
+- [Contributing](../standards/CONTRIBUTING.md)

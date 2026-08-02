@@ -1,6 +1,6 @@
 # Contributing
 
-Liberu documentation and code changes should be small, reviewable, evidence-based, and safe to operate. Read [DOCUMENTATION.md](DOCUMENTATION.md), [MODULES.md](MODULES.md), [TESTING.md](TESTING.md), and [SECURITY.md](SECURITY.md) before starting.
+Liberu documentation and code changes should be small, reviewable, evidence-based, and safe to operate. Read [DOCUMENTATION.md](DOCUMENTATION.md), [MODULES.md](../architecture/MODULES.md), [TESTING.md](TESTING.md), and [SECURITY.md](../architecture/SECURITY.md) before starting.
 
 ## Before you change anything
 
@@ -41,4 +41,4 @@ Use clear imperative commit subjects, keep each commit coherent, and do not mix 
 
 ## Reporting problems
 
-Use a public issue for ordinary bugs, documentation errors, and feature proposals. Follow [SECURITY.md](SECURITY.md) for vulnerabilities; do not publish exploitable details publicly.
+Use a public issue for ordinary bugs, documentation errors, and feature proposals. Follow [SECURITY.md](../architecture/SECURITY.md) for vulnerabilities; do not publish exploitable details publicly.

@@ -1,92 +1,101 @@
-# Liberu Documentation
+# Liberu documentation
 
-## Architecture, application scopes, feature specifications, and API contracts
+This repository is the documentation hub for the Liberu ecosystem: Laravel applications, independent domain modules, APIs, presentation adapters, themes, engineering standards, deployment, and product scopes.
 
-This repository is the canonical documentation hub for the Liberu ecosystem. It defines how independently versioned Laravel modules, presentation packages, themes, APIs, applications, testing, and operations fit together.
+If you are new, start with [GETTING-STARTED.md](GETTING-STARTED.md). If you already know the solution or technology you need, use the indexes below.
 
-Start with [Liberu architecture](architecture/LIBERU.md) for the portfolio view or [Module architecture](architecture/MODULES.md) when implementing a package.
+## Choose your path
 
-## Architecture standards
-
-| Standard | Purpose |
+| You want to… | Start here |
 |---|---|
-| [Liberu](architecture/LIBERU.md) | Ecosystem composition, application boundaries, and portfolio adoption |
-| [Modules](architecture/MODULES.md) | Independent Composer packages, dependency direction, lifecycle, and implementation process |
-| [Boilerplate](projects/boilerplate/BOILERPLATE.md) | Shared Laravel application foundation and cross-repository services |
-| [Themes](architecture/THEMES.md) | Theme packaging, inheritance, assets, accessibility, and visual integration |
-| [Filament](architecture/FILAMENT.md) | One-to-one Filament presentation modules, panels, plugins, resources, pages, and widgets |
-| [Livewire](architecture/LIVEWIRE.md) | Livewire 4 component packaging, state, security, registration, and interaction |
-| [Nuxt](architecture/NUXT.md) | Nuxt 4 API-consuming presentation packages, SSR, routing, typed clients, and deployment |
-| [React + Inertia](architecture/REACT.md) | React 19.2 and Inertia 3 API-consuming presentation packages, pages, forms, hooks, SSR, and deployment |
-| [Vue + Inertia](architecture/VUE-INERTIA.md) | Vue 3 and Inertia 3 API-consuming presentation packages, pages, forms, composables, SSR, and deployment |
-| [API](architecture/API.md) | One-to-one API presentation modules, contracts, security, versioning, and composition |
-| [Testing](architecture/TESTING.md) | Pest/PHPUnit suites, ownership, coverage, compatibility, and CI evidence |
-| [CI](architecture/CI.md) | GitHub Actions workflows, required checks, release gates, environments, and deployment automation |
-| [Documentation](architecture/DOCUMENTATION.md) | Documentation structure, quality, validation, and maintenance |
-| [Repository README standard](architecture/REPOSITORIES.md) | Required landing-page content for Liberu repositories |
-| [Jetstream](architecture/JETSTREAM.md) | Authentication, security features, and Jetstream team integration |
-| [Socialstream](architecture/SOCIALSTREAM.md) | OAuth provider integration for Jetstream and Filament |
-| [Policy and permissions](architecture/POLICY.md) | Laravel policies, Spatie Permission, and Filament Shield boundaries |
-| [Teams](architecture/TEAMS.md) | Team context, membership, invitations, and authorization rules |
-| [Tenancy](architecture/TENANCY.md) | Tenant boundaries, team isolation, context lifecycle, jobs, APIs, and verification |
-| [Settings](architecture/SETTINGS.md) | Typed, encrypted, multi-scope settings with optional API and presentation adapters |
-| [PSR standards](architecture/PSR.md) | PHP-FIG interoperability, coding, autoloading, HTTP, cache, events, and clock standards |
-| [Installation](architecture/INSTALL.md) | Supported prerequisites and local installation workflow |
-| [Deployment](deployment/README.md) | Standalone, Docker Compose, and Kubernetes deployment paths |
-| [Contributing](architecture/CONTRIBUTING.md) | Contribution workflow and engineering quality gates |
-| [Security](architecture/SECURITY.md) | Vulnerability reporting and security response process |
+| Understand the whole Liberu platform | [Liberu platform scope](projects/LIBERU.md) · [Technology and solution map](TECHNOLOGIES.md) |
+| Build a new application or package | [Modules](architecture/MODULES.md) · [Laravel standard](standards/LARAVEL.md) · [Coding guidelines](standards/GUIDELINES.md) |
+| Find a product capability | [Application scopes](#application-scopes) · [Feature indexes](features/README.md) |
+| Add an API or UI adapter | [API index](api/README.md) · [Presentation indexes](#presentation-indexes) |
+| Choose React, Vue, Nuxt, Livewire, or Filament | [Technology standards](#technology-standards) · [Technology map](TECHNOLOGIES.md) |
+| Design or extend a theme | [Theme standard](standards/THEMES.md) |
+| Run tests, CI, or a release | [Testing](standards/TESTING.md) · [CI](standards/CI.md) · [Deployment](deployment/README.md) |
+| Contribute or report a vulnerability | [Contributing](standards/CONTRIBUTING.md) · [Security](architecture/SECURITY.md) |
 
-## Detailed module documentation
+## How the documentation fits together
 
-The generated documentation hierarchy expands every independent module listed by an application scope:
+Liberu separates concerns so the same domain capability can be used by multiple applications and interfaces:
 
-- [Feature specifications](features/README.md) — 517 detailed module documents covering full scope, implementation, security, operations, and verification.
-- [API module specifications](api/README.md) — 517 matching `module-{independent-module-name}-api` documents covering contracts, audiences, implementation, and API verification.
-- [Filament 5 implementations](filament/README.md) — 517 matching `module-{independent-module-name}-filament` presentation implementations with panel/resource/page/widget mappings.
-- [Livewire 4 implementations](livewire/README.md) — 517 matching `module-{independent-module-name}-livewire` presentation implementations with component/state/interaction mappings.
-- [Nuxt 4 implementations](nuxt/README.md) — 517 matching `module-{independent-module-name}-nuxt` presentation implementations consuming the corresponding API modules.
-- [React 19.2 + Inertia 3 implementations](react/README.md) — 517 matching `module-{independent-module-name}-react-inertia` presentation implementations consuming the corresponding API modules.
-- [Vue 3 + Inertia 3 implementations](vue/README.md) — 517 matching `module-{independent-module-name}-vue-inertia` presentation implementations consuming the corresponding API modules.
+```text
+Application composition
+        ↓
+Domain module → API contract → React/Vue/Nuxt/Livewire/Filament adapter
+        ↓                         ↓
+Persistence, policies, events     Theme and design-system adapter
+```
 
-Every feature and API document links back to its authoritative application scope. Feature packages remain presentation-neutral; Filament, Livewire, and API behavior belongs in matching optional presentation packages.
+- **Architecture** records boundaries and decisions: [architecture/README.md](architecture/README.md), [modules](architecture/MODULES.md), [API contracts](architecture/API.md), tenancy, teams, policies, repositories, and security.
+- **Standards** define implementation quality: [standards/README.md](standards/README.md), coding, PHP, Laravel, frontend frameworks, database, themes, testing, documentation, and operations.
+- **Technologies** provide language references: [technologies/README.md](technologies/README.md), [JavaScript](technologies/JAVASCRIPT.md), [TypeScript](technologies/TYPESCRIPT.md), [PHP](technologies/PHP.md), and the root [technology map](TECHNOLOGIES.md).
+- **Projects** define product and application scope. Feature documents are framework-neutral; API and presentation documents are optional one-to-one adapters.
+
+## Technology standards
+
+Use the latest stable versions supported by the ecosystem and the consuming repository’s lock file and CI matrix. The current documentation baseline is PHP 8.5, Laravel 13, Filament 5, Livewire 4, React 19.2, Inertia 3, Vue 3, Nuxt 4, and Node.js 22+.
+
+| Technology | Liberu standard | Official documentation |
+|---|---|---|
+| PHP and PSR | [PHP](standards/PHP.md) · [PSR](standards/PSR.md) | [PHP](https://www.php.net/docs.php) · [PHP-FIG](https://www.php-fig.org/psr/) |
+| Laravel | [Laravel](standards/LARAVEL.md) | [Laravel 13 docs](https://laravel.com/docs/13.x) · [Laravel GitHub](https://github.com/laravel/laravel) |
+| Filament | [Filament](standards/FILAMENT.md) | [Filament 5 docs](https://filamentphp.com/docs/5.x) · [GitHub](https://github.com/filamentphp/filament) |
+| Livewire | [Livewire](standards/LIVEWIRE.md) | [Documentation](https://livewire.laravel.com/docs) · [GitHub](https://github.com/livewire/livewire) |
+| React | [React](standards/REACT.md) | [React docs](https://react.dev/) · [GitHub](https://github.com/facebook/react) |
+| Inertia | [Inertia](standards/INERTIA.md) | [Inertia 3 docs](https://inertiajs.com/docs/v3) · [GitHub](https://github.com/inertiajs/inertia) |
+| Vue | [Vue](standards/VUE.md) | [Vue docs](https://vuejs.org/) · [GitHub](https://github.com/vuejs/core) |
+| Nuxt | [Nuxt](standards/NUXT.md) | [Nuxt 4 docs](https://nuxt.com/docs/4.x) · [GitHub](https://github.com/nuxt/nuxt) |
+| JavaScript and TypeScript | [JavaScript](technologies/JAVASCRIPT.md) · [TypeScript](technologies/TYPESCRIPT.md) | [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) · [TypeScript](https://www.typescriptlang.org/docs/) |
 
 ## Application scopes
 
-| Application | Domain modules | API modules | Filament 5 | Livewire 4 | React + Inertia | Vue + Inertia |
-|---|---:|---:|---:|---:|---:|
-| [Accounting](projects/accounting/ACCOUNTING.md) | [105](projects/accounting/features/README.md) | [105](projects/accounting/api/README.md) | [105](projects/accounting/filament/README.md) | [105](projects/accounting/livewire/README.md) | [105](projects/accounting/react/README.md)  | [105](projects/accounting/vue/README.md) |
-| [Automation](projects/automation/AUTOMATION.md) | [11](projects/automation/features/README.md) | [11](projects/automation/api/README.md) | [11](projects/automation/filament/README.md) | [11](projects/automation/livewire/README.md) | [11](projects/automation/react/README.md)  | [11](projects/automation/vue/README.md) |
-| [Billing](projects/billing/BILLING.md) | [16](projects/billing/features/README.md) | [16](projects/billing/api/README.md) | [16](projects/billing/filament/README.md) | [16](projects/billing/livewire/README.md) | [16](projects/billing/react/README.md)  | [16](projects/billing/vue/README.md) |
-| [Browser Game](projects/browser-game/BROWSER-GAME.md) | [15](projects/browser-game/features/README.md) | [15](projects/browser-game/api/README.md) | [15](projects/browser-game/filament/README.md) | [15](projects/browser-game/livewire/README.md) | [15](projects/browser-game/react/README.md)  | [15](projects/browser-game/vue/README.md) |
-| [CMS](projects/cms/CMS.md) | [81](projects/cms/features/README.md) | [81](projects/cms/api/README.md) | [81](projects/cms/filament/README.md) | [81](projects/cms/livewire/README.md) | [81](projects/cms/react/README.md)  | [81](projects/cms/vue/README.md) |
-| [Control Panel](projects/control-panel/CONTROL-PANEL.md) | [15](projects/control-panel/features/README.md) | [15](projects/control-panel/api/README.md) | [15](projects/control-panel/filament/README.md) | [15](projects/control-panel/livewire/README.md) | [15](projects/control-panel/react/README.md)  | [15](projects/control-panel/vue/README.md) |
-| [CRM](projects/crm/CRM.md) | [95](projects/crm/features/README.md) | [95](projects/crm/api/README.md) | [95](projects/crm/filament/README.md) | [95](projects/crm/livewire/README.md) | [95](projects/crm/react/README.md)  | [95](projects/crm/vue/README.md) |
-| [Ecommerce](projects/ecommerce/ECOMMERCE.md) | [105](projects/ecommerce/features/README.md) | [105](projects/ecommerce/api/README.md) | [105](projects/ecommerce/filament/README.md) | [105](projects/ecommerce/livewire/README.md) | [105](projects/ecommerce/react/README.md)  | [105](projects/ecommerce/vue/README.md) |
-| [Genealogy](projects/genealogy/GENEALOGY.md) | [14](projects/genealogy/features/README.md) | [14](projects/genealogy/api/README.md) | [14](projects/genealogy/filament/README.md) | [14](projects/genealogy/livewire/README.md) | [14](projects/genealogy/react/README.md)  | [14](projects/genealogy/vue/README.md) |
-| [Maintenance](projects/maintenance/MAINTENANCE.md) | [14](projects/maintenance/features/README.md) | [14](projects/maintenance/api/README.md) | [14](projects/maintenance/filament/README.md) | [14](projects/maintenance/livewire/README.md) | [14](projects/maintenance/react/README.md)  | [14](projects/maintenance/vue/README.md) |
-| [Real Estate](projects/real-estate/REAL-ESTATE.md) | [15](projects/real-estate/features/README.md) | [15](projects/real-estate/api/README.md) | [15](projects/real-estate/filament/README.md) | [15](projects/real-estate/livewire/README.md) | [15](projects/real-estate/react/README.md)  | [15](projects/real-estate/vue/README.md) |
-| [SAP-style Enterprise Suite](projects/sap/SAP.md) | [16](projects/sap/features/README.md) | [16](projects/sap/api/README.md) | [16](projects/sap/filament/README.md) | [16](projects/sap/livewire/README.md) | [16](projects/sap/react/README.md)  | [16](projects/sap/vue/README.md) |
-| [Social Network](projects/social-network/SOCIAL-NETWORK.md) | [15](projects/social-network/features/README.md) | [15](projects/social-network/api/README.md) | [15](projects/social-network/filament/README.md) | [15](projects/social-network/livewire/README.md) | [15](projects/social-network/react/README.md)  | [15](projects/social-network/vue/README.md) |
+Each application scope identifies its domain modules and links to the corresponding API and presentation indexes.
 
-## Supporting specifications
+| Application | Modules | API | Filament | Livewire | React | Vue |
+|---|---:|---:|---:|---:|---:|---:|
+| [Accounting](projects/accounting/ACCOUNTING.md) | [105](projects/accounting/features/README.md) | [105](projects/accounting/api/README.md) | [105](projects/accounting/filament/README.md) | [105](projects/accounting/livewire/README.md) | [105](projects/accounting/react/README.md) | [105](projects/accounting/vue/README.md) |
+| [Automation](projects/automation/AUTOMATION.md) | [11](projects/automation/features/README.md) | [11](projects/automation/api/README.md) | [11](projects/automation/filament/README.md) | [11](projects/automation/livewire/README.md) | [11](projects/automation/react/README.md) | [11](projects/automation/vue/README.md) |
+| [Billing](projects/billing/BILLING.md) | [16](projects/billing/features/README.md) | [16](projects/billing/api/README.md) | [16](projects/billing/filament/README.md) | [16](projects/billing/livewire/README.md) | [16](projects/billing/react/README.md) | [16](projects/billing/vue/README.md) |
+| [Browser Game](projects/browser-game/BROWSER-GAME.md) | [15](projects/browser-game/features/README.md) | [15](projects/browser-game/api/README.md) | [15](projects/browser-game/filament/README.md) | [15](projects/browser-game/livewire/README.md) | [15](projects/browser-game/react/README.md) | [15](projects/browser-game/vue/README.md) |
+| [CMS](projects/cms/CMS.md) | [81](projects/cms/features/README.md) | [81](projects/cms/api/README.md) | [81](projects/cms/filament/README.md) | [81](projects/cms/livewire/README.md) | [81](projects/cms/react/README.md) | [81](projects/cms/vue/README.md) |
+| [Control Panel](projects/control-panel/CONTROL-PANEL.md) | [15](projects/control-panel/features/README.md) | [15](projects/control-panel/api/README.md) | [15](projects/control-panel/filament/README.md) | [15](projects/control-panel/livewire/README.md) | [15](projects/control-panel/react/README.md) | [15](projects/control-panel/vue/README.md) |
+| [CRM](projects/crm/CRM.md) | [95](projects/crm/features/README.md) | [95](projects/crm/api/README.md) | [95](projects/crm/filament/README.md) | [95](projects/crm/livewire/README.md) | [95](projects/crm/react/README.md) | [95](projects/crm/vue/README.md) |
+| [Ecommerce](projects/ecommerce/ECOMMERCE.md) | [105](projects/ecommerce/features/README.md) | [105](projects/ecommerce/api/README.md) | [105](projects/ecommerce/filament/README.md) | [105](projects/ecommerce/livewire/README.md) | [105](projects/ecommerce/react/README.md) | [105](projects/ecommerce/vue/README.md) |
+| [Genealogy](projects/genealogy/GENEALOGY.md) | [14](projects/genealogy/features/README.md) | [14](projects/genealogy/api/README.md) | [14](projects/genealogy/filament/README.md) | [14](projects/genealogy/livewire/README.md) | [14](projects/genealogy/react/README.md) | [14](projects/genealogy/vue/README.md) |
+| [Maintenance](projects/maintenance/MAINTENANCE.md) | [14](projects/maintenance/features/README.md) | [14](projects/maintenance/api/README.md) | [14](projects/maintenance/filament/README.md) | [14](projects/maintenance/livewire/README.md) | [14](projects/maintenance/react/README.md) | [14](projects/maintenance/vue/README.md) |
+| [Real Estate](projects/real-estate/REAL-ESTATE.md) | [15](projects/real-estate/features/README.md) | [15](projects/real-estate/api/README.md) | [15](projects/real-estate/filament/README.md) | [15](projects/real-estate/livewire/README.md) | [15](projects/real-estate/react/README.md) | [15](projects/real-estate/vue/README.md) |
+| [SAP-style Enterprise Suite](projects/sap/SAP.md) | [16](projects/sap/features/README.md) | [16](projects/sap/api/README.md) | [16](projects/sap/filament/README.md) | [16](projects/sap/livewire/README.md) | [16](projects/sap/react/README.md) | [16](projects/sap/vue/README.md) |
+| [Social Network](projects/social-network/SOCIAL-NETWORK.md) | [15](projects/social-network/features/README.md) | [15](projects/social-network/api/README.md) | [15](projects/social-network/filament/README.md) | [15](projects/social-network/livewire/README.md) | [15](projects/social-network/react/README.md) | [15](projects/social-network/vue/README.md) |
 
-- [Maintenance](projects/maintenance/MAINTENANCE.md) defines field-service and asset-maintenance scope.
-- [Real Estate](projects/real-estate/REAL-ESTATE.md) defines agency, property, sales, and lettings scope.
-- [Browser Game](projects/browser-game/BROWSER-GAME.md), [Genealogy](projects/genealogy/GENEALOGY.md), and [Social Network](projects/social-network/SOCIAL-NETWORK.md) are independent application scopes.
-- [Control Panel](projects/control-panel/CONTROL-PANEL.md) covers infrastructure and hosting operations.
+The Liberu platform adds only new cross-product capabilities under [projects/liberu/features](projects/liberu/features/README.md): [Platform Orchestration](projects/liberu/features/platform-orchestration.md), [Executive Insights](projects/liberu/features/executive-insights.md), and [Business Workflow Reconciliation](projects/liberu/features/business-workflow-reconciliation.md), with matching API, Filament, Livewire, React, Vue, and Nuxt indexes.
 
-## How to use this repository
+## Presentation indexes
 
-1. Select the application scope and identify the independent module.
-2. Use its document under `features/` as the detailed capability and implementation specification.
-3. Apply `MODULES.md` for package boundaries and lifecycle.
-4. Add only the required one-to-one presentation packages using `FILAMENT.md`, `LIVEWIRE.md`, and `API.md`.
-5. Implement and verify the package using `TESTING.md`, `DOCUMENTATION.md`, and the module's definition of done.
+These root indexes cover the complete existing module matrix. Select only the adapters needed by an application surface.
 
-Changes to package boundaries, public contracts, ownership, or cross-repository policy require corresponding documentation updates and an architecture decision record where specified by the relevant standard.
+- [Feature specifications](features/README.md) — framework-neutral domain capability.
+- [API modules](api/README.md) — HTTP/API contracts and adapters.
+- [Filament implementations](filament/README.md) — administrative and operational UI.
+- [Livewire implementations](livewire/README.md) — server-driven Laravel UI.
+- [React + Inertia implementations](react/README.md) — React application UI over Laravel routes.
+- [Vue + Inertia implementations](vue/README.md) — Vue application UI over Laravel routes.
+- [Nuxt implementations](nuxt/README.md) — Vue SSR/API-consuming applications.
 
-## Project governance
+## Operating and contributing
+
+- Read [GETTING-STARTED.md](GETTING-STARTED.md) for the recommended workflow.
+- Use [DATABASE.md](standards/DATABASE.md) for migrations, seeders, factories, ownership, and database operations.
+- Use [TRANSLATIONS.md](standards/TRANSLATIONS.md) for localization ownership, catalogs, formatting, and RTL behavior.
+- Use [deployment documentation](deployment/README.md) for Docker, Kubernetes, web servers, queues, workers, and observability.
+- Update the relevant source-of-truth document in the same change as code or contract changes.
+- Keep examples safe: never commit secrets, production data, or private identifiers.
+
+## Governance
 
 - [License](LICENSE.md)
-- [Contributing](architecture/CONTRIBUTING.md)
+- [Contributing](standards/CONTRIBUTING.md)
 - [Security policy](architecture/SECURITY.md)
+- [Documentation standard](standards/DOCUMENTATION.md)

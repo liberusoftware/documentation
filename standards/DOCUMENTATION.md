@@ -3,7 +3,7 @@
 ## Canonical Writing and Maintenance Specification
 
 **Applies to:** Repository documentation, architecture and product scopes, developer guides, API documentation, runbooks, changelogs, migration guides, tutorials, and in-code documentation
-**Related standards:** [REPOSITORIES.md](REPOSITORIES.md) · [MODULES.md](MODULES.md) · [THEMES.md](THEMES.md) · [API.md](API.md) · [TESTING.md](TESTING.md)
+**Related standards:** [REPOSITORIES.md](../architecture/REPOSITORIES.md) · [MODULES.md](../architecture/MODULES.md) · [THEMES.md](THEMES.md) · [API.md](../architecture/API.md) · [TESTING.md](TESTING.md)
 
 ## 1. Purpose
 
@@ -30,10 +30,10 @@ Each subject has one authoritative home:
 
 | Subject | Source of truth |
 |---|---|
-| Repository landing page and standard README content | [REPOSITORIES.md](REPOSITORIES.md) and the repository root `README.md` |
-| Package boundaries, dependencies, installation, and lifecycle | [MODULES.md](MODULES.md) and module documentation |
+| Repository landing page and standard README content | [REPOSITORIES.md](../architecture/REPOSITORIES.md) and the repository root `README.md` |
+| Package boundaries, dependencies, installation, and lifecycle | [MODULES.md](../architecture/MODULES.md) and module documentation |
 | Theme resources, rendering, assets, and compatibility | [THEMES.md](THEMES.md) and theme documentation |
-| API, connector, webhook, and marketplace contracts | [API.md](API.md) and generated API documentation |
+| API, connector, webhook, and marketplace contracts | [API.md](../architecture/API.md) and generated API documentation |
 | Shared Laravel foundation behavior | [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) |
 | Product capabilities and implementation scope | The relevant product scope Markdown file |
 | Test strategy, suites, tools, and coverage | [TESTING.md](TESTING.md) |
@@ -122,7 +122,7 @@ Prefer a paragraph for explanation, a numbered list for ordered actions, bullets
 
 ## 8. Architecture and module documentation
 
-Module documentation must describe purpose, ownership, boundaries, dependencies, installation under `/modules`, configuration, data ownership, public contracts, permissions, events, jobs, extension points, failure recovery, compatibility, testing, upgrade, and uninstall behavior as required by [MODULES.md](MODULES.md).
+Module documentation must describe purpose, ownership, boundaries, dependencies, installation under `/modules`, configuration, data ownership, public contracts, permissions, events, jobs, extension points, failure recovery, compatibility, testing, upgrade, and uninstall behavior as required by [MODULES.md](../architecture/MODULES.md).
 
 Explain decisions through dependencies and observable behavior. Do not expose private tables or classes as public extension points merely because they exist. Use a small dependency diagram only when it clarifies three or more relationships, and provide an accompanying textual explanation.
 
@@ -130,7 +130,7 @@ Theme documentation must cover installation under `/themes`, optimized and teste
 
 ## 9. API and connector documentation
 
-API documentation follows [API.md](API.md) and must be generated from or checked against the versioned contract. Document:
+API documentation follows [API.md](../architecture/API.md) and must be generated from or checked against the versioned contract. Document:
 
 - base URL, versions, authentication, scopes, permissions, tenancy, and rate limits;
 - resources, operations, fields, validation, pagination, filtering, errors, idempotency, and concurrency behavior;

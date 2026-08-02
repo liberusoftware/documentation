@@ -5,7 +5,7 @@
 **Status:** Source of truth
 **Applies to:** React pages, layouts, components, hooks, typed API clients, Inertia forms, navigation, SSR, and frontend builds
 **Target stack:** React 19.2, Inertia.js 3, `@inertiajs/react`, TypeScript, Vite, Node.js 22+, Laravel 13, PHP 8.5, and Liberu API modules
-**Related specifications:** [MODULES.md](MODULES.md) · [API.md](API.md) · [THEMES.md](THEMES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
+**Related specifications:** [MODULES.md](../architecture/MODULES.md) · [API.md](../architecture/API.md) · [THEMES.md](THEMES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
 
 ## Purpose
 
@@ -74,7 +74,7 @@ The application owns `createInertiaApp`, root layouts, authentication integratio
 - Use partial reloads, deferred props, polling, remembered state, and optimistic UI only when their authorization, freshness, rollback, and failure semantics are explicit.
 - Treat page props, form data, query strings, headers, events, and uploaded files as untrusted input. Validate at the server boundary and again in the authoritative domain action.
 - Use Sanctum cookie authentication for same-site first-party Inertia applications. Never store long-lived tokens in local storage, URLs, source, SSR payloads, or logs.
-- Preserve team context, correlation IDs, idempotency keys, ETags/`If-Match`, pagination, and RFC 9457 errors defined by [API.md](API.md).
+- Preserve team context, correlation IDs, idempotency keys, ETags/`If-Match`, pagination, and RFC 9457 errors defined by [API.md](../architecture/API.md).
 - Do not expose protected props through public caching or prerendering. Use explicit shared props and redact sensitive fields.
 
 ## React quality and accessibility
@@ -98,4 +98,4 @@ Deploy the compiled Vite assets with the Laravel application and serve them thro
 - [Inertia React adapter](https://inertiajs.com/docs/v3/installation/react)
 - [Inertia Laravel adapter](https://inertiajs.com/docs/v3/installation/server-side)
 - [Vite](https://vite.dev/guide/)
-- [Liberu API architecture](API.md)
+- [Liberu API architecture](../architecture/API.md)

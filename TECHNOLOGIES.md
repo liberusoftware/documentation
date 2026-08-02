@@ -29,13 +29,13 @@ The [repository standard](architecture/REPOSITORIES.md) is the source of truth f
 
 | Technology solution | Best fit | Repository/documentation links |
 |---|---|---|
-| Laravel + PHP | Application composition, domain integration, HTTP, queues, authorization, persistence, and APIs | [Laravel GitHub](https://github.com/laravel/laravel) · [Modules](architecture/MODULES.md) · [Liberu architecture](architecture/LIBERU.md) |
-| Filament 5 | Administrative panels, resources, pages, widgets, tables, forms, and operational dashboards | [Filament GitHub](https://github.com/filamentphp/filament) · [Filament architecture](architecture/FILAMENT.md) · [Filament indexes](filament/README.md) |
-| Livewire 4 | Server-driven interactive Laravel UI and presentation-state components | [Livewire GitHub](https://github.com/livewire/livewire) · [Livewire architecture](architecture/LIVEWIRE.md) · [Livewire indexes](livewire/README.md) |
-| React 19.2 + Inertia 3 | Rich Laravel-driven application shells with React components, typed hooks, forms, and SSR | [React GitHub](https://github.com/facebook/react) · [Inertia GitHub](https://github.com/inertiajs/inertia) · [React architecture](architecture/REACT.md) · [React indexes](react/README.md) |
-| Vue 3 + Inertia 3 | Rich Laravel-driven application shells with Vue SFCs, typed composables, forms, and SSR | [Vue GitHub](https://github.com/vuejs/core) · [Inertia GitHub](https://github.com/inertiajs/inertia) · [Vue/Inertia architecture](architecture/VUE-INERTIA.md) · [Vue indexes](vue/README.md) |
-| Nuxt 4 | Vue SSR/API-consuming applications, public sites, file-based routing, and deliberate BFF layers | [Nuxt GitHub](https://github.com/nuxt/nuxt) · [Nuxt architecture](architecture/NUXT.md) · [Nuxt indexes](nuxt/README.md) |
-| Vite | Shared asset compilation for Laravel, React/Inertia, Vue/Inertia, and theme adapters | [Vite GitHub](https://github.com/vitejs/vite) · [Theme architecture](architecture/THEMES.md) |
+| Laravel + PHP | Application composition, domain integration, HTTP, queues, authorization, persistence, and APIs | [Laravel GitHub](https://github.com/laravel/laravel) · [Modules](architecture/MODULES.md) · [Liberu architecture](projects/LIBERU.md) |
+| Filament 5 | Administrative panels, resources, pages, widgets, tables, forms, and operational dashboards | [Filament GitHub](https://github.com/filamentphp/filament) · [Filament architecture](standards/FILAMENT.md) · [Filament indexes](filament/README.md) |
+| Livewire 4 | Server-driven interactive Laravel UI and presentation-state components | [Livewire GitHub](https://github.com/livewire/livewire) · [Livewire architecture](standards/LIVEWIRE.md) · [Livewire indexes](livewire/README.md) |
+| React 19.2 + Inertia 3 | Rich Laravel-driven application shells with React components, typed hooks, forms, and SSR | [React GitHub](https://github.com/facebook/react) · [Inertia GitHub](https://github.com/inertiajs/inertia) · [React architecture](standards/REACT.md) · [React indexes](react/README.md) |
+| Vue 3 + Inertia 3 | Rich Laravel-driven application shells with Vue SFCs, typed composables, forms, and SSR | [Vue GitHub](https://github.com/vuejs/core) · [Inertia GitHub](https://github.com/inertiajs/inertia) · [Vue/Inertia architecture](standards/VUE.md) · [Vue indexes](vue/README.md) |
+| Nuxt 4 | Vue SSR/API-consuming applications, public sites, file-based routing, and deliberate BFF layers | [Nuxt GitHub](https://github.com/nuxt/nuxt) · [Nuxt architecture](standards/NUXT.md) · [Nuxt indexes](nuxt/README.md) |
+| Vite | Shared asset compilation for Laravel, React/Inertia, Vue/Inertia, and theme adapters | [Vite GitHub](https://github.com/vitejs/vite) · [Theme architecture](standards/THEMES.md) |
 
 ## Package and scope matrix
 
@@ -66,7 +66,7 @@ The complete Vue/Inertia matrix covers all 13 application scopes and 517 modules
 - Domain modules own business rules, persistence, policies, contracts, events, jobs, and recovery semantics.
 - Presentation packages consume only the matching module contract and never access private Laravel models or another module's internals.
 - Laravel owns authorization, validation, team/tenant context, and composition even when the browser uses React, Vue, or Nuxt.
-- Themes use one technology-neutral identity, manifest, token vocabulary, accessibility contract, and extension-point model. Framework-specific theme adapters are optional; see [THEMES.md](architecture/THEMES.md).
+- Themes use one technology-neutral identity, manifest, token vocabulary, accessibility contract, and extension-point model. Framework-specific theme adapters are optional; see [THEMES.md](standards/THEMES.md).
 - The same feature must preserve permissions, tenancy, localization, loading/error/empty states, and API semantics across every adapter.
 
 ## Choosing a solution path
@@ -74,7 +74,7 @@ The complete Vue/Inertia matrix covers all 13 application scopes and 517 modules
 1. Choose the application solution and read its scope document.
 2. Select the independent feature under `projects/{solution}/features/`.
 3. Add the matching API and only the presentation adapters required by the surface.
-4. Select a compatible theme and technology adapter using [THEMES.md](architecture/THEMES.md).
-5. Verify contracts, accessibility, security, compatibility, and deployment using [TESTING.md](architecture/TESTING.md).
+4. Select a compatible theme and technology adapter using [THEMES.md](standards/THEMES.md).
+5. Verify contracts, accessibility, security, compatibility, and deployment using [TESTING.md](standards/TESTING.md).
 
 External technology links identify the upstream projects Liberu builds on; Liberu application and package repositories remain the authoritative sources for Liberu-specific behavior.

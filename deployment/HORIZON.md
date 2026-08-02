@@ -20,11 +20,11 @@ Run Horizon under [Supervisor](SUPERVISORD.md), a container restart policy, or a
 
 ## CI and release deployment
 
-Every push to `main` runs [CI](../architecture/CI.md) and may deploy Horizon configuration to staging. Production supervisors and Horizon workers must not be restarted automatically from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy only after the 100% release-scope coverage gate, queue/configuration checks, smoke tests, and production approval pass. Terminate or restart supervisors gracefully and verify queue throughput and failures.
+Every push to `main` runs [CI](../standards/CI.md) and may deploy Horizon configuration to staging. Production supervisors and Horizon workers must not be restarted automatically from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy only after the 100% release-scope coverage gate, queue/configuration checks, smoke tests, and production approval pass. Terminate or restart supervisors gracefully and verify queue throughput and failures.
 
 ## References
 
-- [CI and release policy](../architecture/CI.md)
+- [CI and release policy](../standards/CI.md)
 - [Laravel Horizon](https://laravel.com/docs/13.x/horizon)
 - [Laravel queues](https://laravel.com/docs/13.x/queues)
 - [Deployment index](README.md)

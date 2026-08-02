@@ -6,7 +6,7 @@
 **Matching domain module:** `ecommerce-commerce-automation-pack`
 **Application:** Ecommerce
 **Source feature:** [Commerce Automation Pack](../features/commerce-automation-pack.md)
-**Architecture:** [VUE-INERTIA.md](../../../architecture/VUE-INERTIA.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/commerce-automation-pack.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../architecture/TESTING.md)
+**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/commerce-automation-pack.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

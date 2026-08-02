@@ -5,7 +5,7 @@
 **Status:** Source of truth
 **Applies to:** Nuxt 4 applications, pages, layouts, components, composables, typed API clients, server routes, and deployment adapters
 **Target stack:** Nuxt 4, Vue 3, TypeScript, Node.js 22+, and Liberu API modules
-**Related specifications:** [MODULES.md](MODULES.md) · [API.md](API.md) · [THEMES.md](THEMES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
+**Related specifications:** [MODULES.md](../architecture/MODULES.md) · [API.md](../architecture/API.md) · [THEMES.md](THEMES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
 
 ## Purpose
 
@@ -60,7 +60,7 @@ Each Nuxt package depends on exactly one matching API presentation package or it
 - Use Sanctum cookie authentication for a first-party same-site SPA where appropriate. Never place long-lived personal access tokens in browser source, local storage, URLs, or logs.
 - If a server-side proxy/BFF is required, forward only allowlisted headers/cookies and preserve authorization, tenant/team context, timeouts, correlation IDs, and error semantics.
 - Map API errors into accessible, typed UI states. Never treat client-side route guards or hidden controls as authorization.
-- Use API pagination, filters, idempotency keys, ETags, and operation resources as defined by [API.md](API.md); do not recreate server-side business workflows in the client.
+- Use API pagination, filters, idempotency keys, ETags, and operation resources as defined by [API.md](../architecture/API.md); do not recreate server-side business workflows in the client.
 
 ## Nuxt structure and quality
 
@@ -89,4 +89,4 @@ Deploy the generated Nuxt server as an immutable Node artifact behind TLS and a 
 - [`useFetch`](https://nuxt.com/docs/4.x/api/composables/use-fetch)
 - [Nuxt 4 server routes](https://nuxt.com/docs/4.x/directory-structure/server)
 - [Nuxt 4 deployment](https://nuxt.com/docs/4.x/getting-started/deployment)
-- [Liberu API architecture](API.md)
+- [Liberu API architecture](../architecture/API.md)

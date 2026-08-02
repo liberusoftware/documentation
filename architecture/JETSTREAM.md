@@ -36,7 +36,7 @@ When API access is enabled, use Laravel Sanctum through Jetstream. Every request
 
 ## Verification
 
-Test registration, verification, password reset, two-factor enrollment/recovery, session revocation, account deletion, team switching, invitations, policy denial, API ability checks, and rate limits. Run the repository checks defined in [TESTING.md](TESTING.md).
+Test registration, verification, password reset, two-factor enrollment/recovery, session revocation, account deletion, team switching, invitations, policy denial, API ability checks, and rate limits. Run the repository checks defined in [TESTING.md](../standards/TESTING.md).
 
 ## References
 

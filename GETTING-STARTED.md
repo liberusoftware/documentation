@@ -12,13 +12,13 @@ This guide gives you the shortest safe path through the Liberu documentation rep
 
 ## Core links
 
-- [Liberu architecture](architecture/LIBERU.md) — ecosystem boundaries and application composition.
+- [Liberu architecture](projects/LIBERU.md) — ecosystem boundaries and application composition.
 - [Modules](architecture/MODULES.md) — package ownership, dependencies, lifecycle, and installation.
 - [Technologies](TECHNOLOGIES.md) — solution catalogue, GitHub repositories, and adapter selection.
-- [Themes](architecture/THEMES.md) — shared tokens, theme manifests, inheritance, and all framework adapters.
+- [Themes](standards/THEMES.md) — shared tokens, theme manifests, inheritance, and all framework adapters.
 - [API](architecture/API.md) — contracts, authentication, tenancy, errors, pagination, and versioning.
-- [Testing](architecture/TESTING.md) — required suites, quality gates, coverage, and CI evidence.
-- [Documentation](architecture/DOCUMENTATION.md) — writing, ownership, links, examples, and review standards.
+- [Testing](standards/TESTING.md) — required suites, quality gates, coverage, and CI evidence.
+- [Documentation](standards/DOCUMENTATION.md) — writing, ownership, links, examples, and review standards.
 - [Installation](architecture/INSTALL.md) — local Laravel setup and verification.
 - [Deployment](deployment/README.md) — Docker, Kubernetes, queues, workers, and production operations.
 
@@ -26,12 +26,12 @@ This guide gives you the shortest safe path through the Liberu documentation rep
 
 | Need | Read |
 |---|---|
-| Laravel application foundation and domain composition | [Liberu](architecture/LIBERU.md) · [Modules](architecture/MODULES.md) |
-| Administrative panels | [Filament architecture](architecture/FILAMENT.md) · [Filament indexes](filament/README.md) |
-| Server-driven interactive UI | [Livewire architecture](architecture/LIVEWIRE.md) · [Livewire indexes](livewire/README.md) |
-| React application UI over Laravel routes | [React + Inertia](architecture/REACT.md) · [React indexes](react/README.md) |
-| Vue application UI over Laravel routes | [Vue + Inertia](architecture/VUE-INERTIA.md) · [Vue indexes](vue/README.md) |
-| Vue SSR/API-consuming application | [Nuxt](architecture/NUXT.md) · [Nuxt indexes](nuxt/README.md) |
+| Laravel application foundation and domain composition | [Liberu](projects/LIBERU.md) · [Modules](architecture/MODULES.md) |
+| Administrative panels | [Filament architecture](standards/FILAMENT.md) · [Filament indexes](filament/README.md) |
+| Server-driven interactive UI | [Livewire architecture](standards/LIVEWIRE.md) · [Livewire indexes](livewire/README.md) |
+| React application UI over Laravel routes | [React + Inertia](standards/REACT.md) · [React indexes](react/README.md) |
+| Vue application UI over Laravel routes | [Vue + Inertia](standards/VUE.md) · [Vue indexes](vue/README.md) |
+| Vue SSR/API-consuming application | [Nuxt](standards/NUXT.md) · [Nuxt indexes](nuxt/README.md) |
 
 Use one matching presentation package per domain module. Presentation packages consume the module API/public contracts; they do not duplicate authorization, persistence, or domain rules.
 

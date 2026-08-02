@@ -17,11 +17,11 @@ Monitor queue depth, oldest age, throughput, retries, failures, execution time, 
 
 ## CI and release deployment
 
-Every push to `main` runs [CI](../architecture/CI.md) and may deploy queue changes to staging. Production workers must not be restarted or replaced automatically from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy queue code only after the 100% release-scope coverage gate, worker and migration checks, smoke tests, and production approval pass. Drain workers gracefully and verify queue health before declaring the release successful.
+Every push to `main` runs [CI](../standards/CI.md) and may deploy queue changes to staging. Production workers must not be restarted or replaced automatically from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy queue code only after the 100% release-scope coverage gate, worker and migration checks, smoke tests, and production approval pass. Drain workers gracefully and verify queue health before declaring the release successful.
 
 ## References
 
-- [CI and release policy](../architecture/CI.md)
+- [CI and release policy](../standards/CI.md)
 - [Laravel queues](https://laravel.com/docs/13.x/queues)
 - [Laravel scheduling](https://laravel.com/docs/13.x/scheduling)
 - [Deployment index](README.md)

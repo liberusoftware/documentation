@@ -7,20 +7,22 @@ Refactor the repository into a complete Liberu Laravel application based on `lib
 
 Work on a new branch named `development`. Create the branch first, then replace its contents with a complete copy of `liberusoftware/boilerplate-laravel`. Preserve the repository history where practical, but do not modify `main` unless explicitly required.
 
-Follow these documentation standards from github.com/liberusoftware/documentation :
+Follow these architecture decisions and implementation standards from github.com/liberusoftware/documentation :
 
-- `MODULES.md`
-- `THEMES.md`
-- `TENANCY.md`
-- `JETSTREAM.md`
-- `SOCIALSTREAM.md`
-- `TESTING.md`
-- `CI.md`
+- `architecture/README.md` and `architecture/MODULES.md`
+- `architecture/API.md`
+- `architecture/TENANCY.md`, `architecture/TEAMS.md`, `architecture/POLICY.md`, and `architecture/SETTINGS.md`
+- `architecture/JETSTREAM.md` and `architecture/SOCIALSTREAM.md`
+- `architecture/REPOSITORIES.md` and `architecture/SECURITY.md`
+- `standards/README.md` and `standards/GUIDELINES.md`
+- `standards/PHP.md`, `standards/PSR.md`, `standards/LARAVEL.md`, and `standards/DATABASE.md`
+- `standards/THEMES.md`, `standards/TESTING.md`, `standards/CI.md`, `standards/DOCUMENTATION.md`, and `standards/CONTRIBUTING.md`
+- `standards/FILAMENT.md`, `standards/LIVEWIRE.md`, `standards/REACT.md`, `standards/INERTIA.md`, `standards/VUE.md`, and `standards/NUXT.md`
+- `standards/JOBS.md`, `standards/QUEUES.md`, `standards/SERVICES.md`, `standards/CONTROLLERS.md`, `standards/MODELS.md`, `standards/VIEWS.md`, `standards/BLADE.md`, `standards/CONCERNS.md`, `standards/CONTRACTS.md`, `standards/CLASSES.md`, `standards/OBJECT-ORIENTED-PROGRAMMING.md`, `standards/DOMAIN-DRIVEN-DESIGN-PATTERNS.md`, and `standards/TRANSLATIONS.md`
+- `technologies/README.md`, `technologies/PHP.md`, `technologies/JAVASCRIPT.md`, and `technologies/TYPESCRIPT.md`
 - `deployment/README.md`
-- `API.md`
-- `POLICY.md`
-- `TEAMS.md`
-- `SETTINGS.md`
+
+The portfolio composition scope is [projects/LIBERU.md](projects/LIBERU.md). New Liberu-only cross-product modules are indexed under `projects/liberu/`; do not duplicate capabilities already owned by another `projects/*` scope.
 
 If the documentation conflicts with the existing implementation, follow the documentation. If this causes breakage, diagnose and fix the breakage while preserving the documented design principles. Do not silently omit or simplify required functionality.
 
@@ -38,7 +40,7 @@ At this stage:
 - Use Jetstream teams for team membership and context; do not introduce Spatie teams or roles where the documentation prohibits them.
 - Implement the settings architecture, including encrypted secrets and tenant-aware settings.
 - Generate and implement the required themes according to `THEMES.md`.
-- Implement the API, Filament, and Livewire foundations.
+- Implement the API, Filament, Livewire, React/Inertia, Vue/Inertia, and Nuxt foundations according to their standards.
 - Preserve Laravel, PHP, PSR, and framework best practices.
 - Add or update configuration, migrations, seeders, factories, routes, resources, components, services, and tests as required.
 - Ensure all generated code follows the existing repository conventions.
@@ -50,6 +52,9 @@ Treat this as a repeatable loop. For every module directory listed under each re
 - `api/`
 - `livewire/`
 - `filament/`
+- `react/`
+- `vue/`
+- `nuxt/`
 
 Implement the corresponding module completely.
 
@@ -67,7 +72,7 @@ For each module:
 10. Keep public contracts stable unless the documentation explicitly requires a breaking change.
 11. If exact implementation instructions cause breakage, make the smallest well-designed correction, document the reason, and continue.
 
-Repeat this loop until every documented module under the relevant application directories has been implemented and verified.
+Repeat this loop until every documented module under the relevant application directories has been implemented and verified. For the new cross-product Liberu features, also process `projects/liberu/features/`, `projects/liberu/api/`, `projects/liberu/filament/`, `projects/liberu/livewire/`, `projects/liberu/react/`, `projects/liberu/vue/`, and `projects/liberu/nuxt/`. Implement only the new Liberu capabilities documented there; do not copy or reimplement existing product modules.
 
 ## Goal 3: Repository and package publishing
 

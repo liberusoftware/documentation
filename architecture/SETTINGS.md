@@ -4,7 +4,7 @@
 
 **Status:** Source of truth
 **Applies to:** Laravel 13, PHP 8.5, independent modules, APIs, Filament, Livewire, React/Inertia, Nuxt, workers, and multi-tenant applications
-**Related specifications:** [MODULES.md](MODULES.md) · [TENANCY.md](TENANCY.md) · [API.md](API.md) · [FILAMENT.md](FILAMENT.md) · [LIVEWIRE.md](LIVEWIRE.md) · [REACT.md](REACT.md) · [NUXT.md](NUXT.md) · [PSR.md](PSR.md)
+**Related specifications:** [MODULES.md](MODULES.md) · [TENANCY.md](TENANCY.md) · [API.md](API.md) · [FILAMENT.md](../standards/FILAMENT.md) · [LIVEWIRE.md](../standards/LIVEWIRE.md) · [REACT.md](../standards/REACT.md) · [NUXT.md](../standards/NUXT.md) · [PSR.md](../standards/PSR.md)
 
 ## Decision
 
