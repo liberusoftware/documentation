@@ -1,4 +1,65 @@
-# Control Panel: Web Hosting React + Inertia\n\n## Canonical one-to-one React/Inertia implementation\n\n**Package:** `module-control-panel-web-hosting-react-inertia`\n**Matching domain module:** `control-panel-web-hosting`\n**Application:** Control Panel\n**Source feature:** [Web Hosting](../features/web-hosting.md)\n**Architecture:** [REACT.md](../CONTROL-PANEL.md) · [API.md](../CONTROL-PANEL.md) · [Matching API module](../api/web-hosting.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)\n\n## 1. Purpose and ownership\n\nThis optional React 19.2 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, React components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.\n\n## 2. Module-specific surfaces\n\n- **Domains:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Virtual hosts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **PHP/runtime versions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Web servers:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **SSL:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Logs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Redirects:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Applications:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n\n## 3. React 19.2 + Inertia 3 implementation\n\n- Register a stable `module-control-panel-web-hosting-react-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.\n- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, hooks under `resources/js/hooks`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.\n- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.\n- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.\n\n### Capability mapping\n\n- `domains`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `virtual-hosts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `php-runtime-versions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `web-servers`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `ssl`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `logs`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `redirects`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `applications`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n\n## 4. API contract and Inertia consumption\n\n- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.\n- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.\n- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.\n- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.\n- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.\n\n## 5. Security and verification\n\n- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.\n- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.\n- Test observable behavior with TypeScript, ESLint, Vitest, React Testing Library, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.\n\n## 6. Definition of done\n\n- Package identity, public exports, API dependency, and module dependency match `control-panel-web-hosting` one-to-one.\n- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.\n- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+# Control Panel: Web Hosting React + Inertia
+
+## Canonical one-to-one React/Inertia implementation
+
+**Package:** `module-control-panel-web-hosting-react-inertia`
+**Matching domain module:** `control-panel-web-hosting`
+**Application:** Control Panel
+**Source feature:** [Web Hosting](../features/web-hosting.md)
+**Architecture:** [REACT.md](../CONTROL-PANEL.md) · [API.md](../CONTROL-PANEL.md) · [Matching API module](../api/web-hosting.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+
+## 1. Purpose and ownership
+
+This optional React 19.2 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, React components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+
+## 2. Module-specific surfaces
+
+- **Domains:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Virtual hosts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **PHP/runtime versions:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Web servers:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **SSL:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Logs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Redirects:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Applications:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+
+## 3. React 19.2 + Inertia 3 implementation
+
+- Register a stable `module-control-panel-web-hosting-react-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
+- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, hooks under `resources/js/hooks`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
+- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
+- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+
+### Capability mapping
+
+- `domains`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `virtual-hosts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `php-runtime-versions`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `web-servers`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `ssl`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `logs`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `redirects`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `applications`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+
+## 4. API contract and Inertia consumption
+
+- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
+- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
+- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
+- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
+- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+
+## 5. Security and verification
+
+- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
+- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
+- Test observable behavior with TypeScript, ESLint, Vitest, React Testing Library, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
+
+## 6. Definition of done
+
+- Package identity, public exports, API dependency, and module dependency match `control-panel-web-hosting` one-to-one.
+- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
+- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
 
 ## Canonical one-to-one React/Inertia implementation
 

@@ -1,4 +1,16 @@
-# Liberu platform Vue + Inertia implementations\n\nThese packages present only the new Liberu cross-product modules using Vue 3 and Inertia 3.\n\n- [Platform Orchestration Vue + Inertia](platform-orchestration.md) — `module-liberu-platform-orchestration-vue-inertia`\n- [Executive Insights Vue + Inertia](executive-insights.md) — `module-liberu-executive-insights-vue-inertia`\n- [Business Workflow Reconciliation Vue + Inertia](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-vue-inertia`\n\nThese packages present only the new Liberu cross-product modules using Vue 3 and Inertia 3.\n\n- [Platform Orchestration Vue + Inertia](platform-orchestration.md) — `module-liberu-platform-orchestration-vue-inertia`\n- [Executive Insights Vue + Inertia](executive-insights.md) — `module-liberu-executive-insights-vue-inertia`\n- [Business Workflow Reconciliation Vue + Inertia](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-vue-inertia`
+# Liberu platform Vue + Inertia implementations
+
+These packages present only the new Liberu cross-product modules using Vue 3 and Inertia 3.
+
+- [Platform Orchestration Vue + Inertia](platform-orchestration.md) — `module-liberu-platform-orchestration-vue-inertia`
+- [Executive Insights Vue + Inertia](executive-insights.md) — `module-liberu-executive-insights-vue-inertia`
+- [Business Workflow Reconciliation Vue + Inertia](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-vue-inertia`
+
+These packages present only the new Liberu cross-product modules using Vue 3 and Inertia 3.
+
+- [Platform Orchestration Vue + Inertia](platform-orchestration.md) — `module-liberu-platform-orchestration-vue-inertia`
+- [Executive Insights Vue + Inertia](executive-insights.md) — `module-liberu-executive-insights-vue-inertia`
+- [Business Workflow Reconciliation Vue + Inertia](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-vue-inertia`
 
 These packages present only the new Liberu cross-product modules using Vue 3 and Inertia 3.
 

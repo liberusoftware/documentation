@@ -1,4 +1,193 @@
-# Billing: Subscriptions API\n\n## Canonical one-to-one API module specification\n\n**API package:** `module-billing-subscriptions-api` \n**Matching domain module:** `billing-subscriptions` \n**Application:** Billing \n**Source feature:** [Subscriptions](../features/subscriptions.md) \n**Architecture:** [API.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)\n\n## 1. Purpose and ownership\n\nThis optional API presentation package exposes approved HTTP operations for the Subscriptions domain module. It presents exactly one independent module, delegates all authoritative behavior to that module's public actions/queries/policies, and contains no other module's API logic.\n\nThe domain capability includes:\n\n- Activation\n- renewal\n- trial\n- upgrade/downgrade\n- pause\n- cancellation\n- entitlement state\n\nInstallation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.\n\n## 2. Contract design\n\n- Publish an OpenAPI 3.1 fragment with stable operation IDs, schemas, examples, scopes, errors, pagination, rate limits, idempotency, and deprecation metadata.\n- Use `/api/v1/billing/subscriptions` as the default module route prefix unless the application owns and documents a compatible façade path.\n- Represent resources through explicit API DTOs/resources rather than automatic Eloquent serialization.\n- Use lowercase kebab-case paths, snake_case JSON fields, opaque identifiers, ISO 8601 timestamps, explicit money objects, and RFC 9457 Problem Details errors.\n- Compatible additions remain within the major version; removals or semantic breaks require a new major version or approved migration path.\n\n## 3. Endpoint examples\n\n**Base path:** `/api/v1/billing/subscriptions`\n\nThese examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.\n\n| Method | Endpoint | Purpose | Possible request data |\n|---|---|---|---|\n| `GET` | `/api/v1/billing/subscriptions?page[size]=25&sort=-created_at` | List authorized resources | Query parameters for pagination, filtering, sorting, field selection, and documented includes |\n| `GET` | `/api/v1/billing/subscriptions/{id}` | Retrieve one resource | Opaque resource `id` in the path; no request body |\n| `POST` | `/api/v1/billing/subscriptions` | Create a resource | JSON body using the module schema and required team/context fields |\n| `PATCH` | `/api/v1/billing/subscriptions/{id}` | Update permitted fields | JSON body containing changed fields and `If-Match` when concurrency is supported |\n| `DELETE` | `/api/v1/billing/subscriptions/{id}` | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted |\n| `POST` | `/api/v1/billing/subscriptions/{id}/<explicit-action>` | Execute a documented domain action | Action-specific JSON body and `Idempotency-Key` for retryable writes |\n\nExample create request (illustrative fields only):\n\n`json\n{\n  "activation": "example-value",\n  "renewal": "example-value",\n  "trial": "example-value"\n}\n`\n\nExample request headers:\n\n`http\nAccept: application/json\nAuthorization: Bearer YOUR_SANCTUM_TOKEN\nContent-Type: application/json\nIdempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY\nX-Request-ID: 01JEXAMPLEREQUESTID\n`\n\nSuccessful reads and writes return the standard `data` envelope from [API.md](../BILLING.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.\n\n## 4. OpenAPI schema\n\nThis module owns a versioned OpenAPI 3.1 fragment for `billing-subscriptions`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/billing-subscriptions.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.\n\n### Required schema elements\n\n- Use stable operation IDs such as `billing.subscriptions.list`, `billing.subscriptions.get`, `billing.subscriptions.create`, `billing.subscriptions.update`, and `billing.subscriptions.delete`; use an explicit domain action ID when applicable.\n- Define the module's resource schema as `BillingSubscriptionsResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.\n- Document possible module fields including `activation`, `renewal`, `trial`, `upgrade_downgrade`, `pause`, `cancellation`; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.\n- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.\n- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../BILLING.md); do not serialize Eloquent models automatically.\n\n### Minimal fragment example\n\n`yaml\nopenapi: 3.1.0\ninfo:\n  title: billing subscriptions API\n  version: 1.0.0\npaths:\n  /api/v1/billing/subscriptions:\n    get:\n      operationId: billing.subscriptions.list\n      security:\n        - sanctum: []\n      parameters:\n        - $ref: '#/components/parameters/PageSize'\n      responses:\n        '200':\n          $ref: '#/components/responses/ResourceCollection'\ncomponents:\n  parameters:\n    PageSize:\n      name: page[size]\n      in: query\n      schema:\n        type: integer\n        minimum: 1\n        maximum: 100\n  securitySchemes:\n    sanctum:\n      type: http\n      scheme: bearer\n      bearerFormat: Sanctum\n  schemas:\n    BillingSubscriptionsResource:\n      type: object\n      required: [id, type, attributes]\n      properties:\n        id:\n          type: string\n          description: Opaque Liberu resource identifier.\n        type:\n          type: string\n          const: billing-subscriptions\n        attributes:\n          type: object\n          additionalProperties: true\n    ResourceCollection:\n      type: object\n      required: [data]\n      properties:\n        data:\n          type: array\n          items:\n            $ref: '#/components/schemas/BillingSubscriptionsResource'\n  responses:\n    ResourceCollection:\n      description: Authorized paginated resources.\n      content:\n        application/json:\n          schema:\n            $ref: '#/components/schemas/ResourceCollection'\n`\n\nThe example is a contract outline, not a substitute for the complete module schema: replace `additionalProperties` with explicit fields and add create/update/action schemas before release. Validate the fragment, bundle it into the application specification, run breaking-change detection against the supported release, and generate typed clients only from the released specification.\n\n**References:** [OpenAPI 3.1 specification](https://spec.openapis.org/oas/v3.1.0) · [OpenAPI and contract registry](../../../architecture/API.md#8-openapi-and-contract-registry) · [Module API design](../../../architecture/API.md#19-module-api-design) · [Response conventions](../../../architecture/API.md#10-response-conventions)\n\n## 5. Audience and operation matrix\n\n| Audience | Default exposure | Required controls |\n|---|---|---|\n| Public/anonymous | Disabled unless explicitly required | Enumeration resistance, strict rate limits, field minimization, abuse controls |\n| Authenticated customer/partner | Explicit allowlist | Tenant/resource ownership, purpose-specific scopes, field policy |\n| Staff/administrator | Explicit allowlist | Role/permission policy, tenant context, recent authentication for risky actions, audit |\n| Service/integration client | Explicit allowlist | Service identity, least-privilege scopes, expiry/rotation, idempotency, quotas |\n\nEvery exposed operation must map to one audience, domain query/action, permission/scope, request/response schema, rate limit, idempotency/concurrency policy, audit event, and test set. Unmapped operations fail CI.\n\n## 6. Implementation strategy\n\n- Keep routes, controllers/handlers, requests, API resources, OpenAPI fragments, and transport tests in this API package.\n- Validate shape at the request boundary and enforce authoritative invariants again in the domain action.\n- Resolve tenant and actor context from trusted authentication/application routing; never grant context from a caller-supplied tenant identifier alone.\n- Authorize field visibility as well as record/action access, and return concealment-safe errors where enumeration is a risk.\n- Use idempotency keys for retryable writes, ETags/`If-Match` for relevant concurrent updates, and asynchronous operation resources for slow/bulk/provider-dependent work.\n- Compose cross-module workflo…91793 tokens truncated…ING.md) · [TESTING.md](../BILLING.md)\n\nEach file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.\n\n## Module plan\n\n- [Billing Core React + Inertia](billing-core.md) — `module-billing-core-react-inertia`\n- [Catalog React + Inertia](catalog.md) — `module-billing-catalog-react-inertia`\n- [Pricing React + Inertia](pricing.md) — `module-billing-pricing-react-inertia`\n- [Orders React + Inertia](orders.md) — `module-billing-orders-react-inertia`\n- [Subscriptions React + Inertia](subscriptions.md) — `module-billing-subscriptions-react-inertia`\n- [Usage React + Inertia](usage.md) — `module-billing-usage-react-inertia`\n- [Invoicing React + Inertia](invoicing.md) — `module-billing-invoicing-react-inertia`\n- [Payments React + Inertia](payments.md) — `module-billing-payments-react-inertia`\n- [Collections React + Inertia](collections.md) — `module-billing-collections-react-inertia`\n- [Provisioning React + Inertia](provisioning.md) — `module-billing-provisioning-react-inertia`\n- [Hosting React + Inertia](hosting.md) — `module-billing-hosting-react-inertia`\n- [Domains React + Inertia](domains.md) — `module-billing-domains-react-inertia`\n- [ISP React + Inertia](isp.md) — `module-billing-isp-react-inertia`\n- [Communications React + Inertia](communications.md) — `module-billing-communications-react-inertia`\n- [Customer Portal React + Inertia](customer-portal.md) — `module-billing-customer-portal-react-inertia`\n- [Reporting React + Inertia](reporting.md) — `module-billing-reporting-react-inertia`
+# Billing: Subscriptions API
+
+## Canonical one-to-one API module specification
+
+**API package:** `module-billing-subscriptions-api`
+**Matching domain module:** `billing-subscriptions`
+**Application:** Billing
+**Source feature:** [Subscriptions](../features/subscriptions.md)
+**Architecture:** [API.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+
+## 1. Purpose and ownership
+
+This optional API presentation package exposes approved HTTP operations for the Subscriptions domain module. It presents exactly one independent module, delegates all authoritative behavior to that module's public actions/queries/policies, and contains no other module's API logic.
+
+The domain capability includes:
+
+- Activation
+- renewal
+- trial
+- upgrade/downgrade
+- pause
+- cancellation
+- entitlement state
+
+Installation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.
+
+## 2. Contract design
+
+- Publish an OpenAPI 3.1 fragment with stable operation IDs, schemas, examples, scopes, errors, pagination, rate limits, idempotency, and deprecation metadata.
+- Use `/api/v1/billing/subscriptions` as the default module route prefix unless the application owns and documents a compatible façade path.
+- Represent resources through explicit API DTOs/resources rather than automatic Eloquent serialization.
+- Use lowercase kebab-case paths, snake_case JSON fields, opaque identifiers, ISO 8601 timestamps, explicit money objects, and RFC 9457 Problem Details errors.
+- Compatible additions remain within the major version; removals or semantic breaks require a new major version or approved migration path.
+
+## 3. Endpoint examples
+
+**Base path:** `/api/v1/billing/subscriptions`
+
+These examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.
+
+| Method   | Endpoint                                                       | Purpose                                       | Possible request data                                                                         |
+| -------- | -------------------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `GET`    | `/api/v1/billing/subscriptions?page[size]=25&sort=-created_at` | List authorized resources                     | Query parameters for pagination, filtering, sorting, field selection, and documented includes |
+| `GET`    | `/api/v1/billing/subscriptions/{id}`                           | Retrieve one resource                         | Opaque resource `id` in the path; no request body                                             |
+| `POST`   | `/api/v1/billing/subscriptions`                                | Create a resource                             | JSON body using the module schema and required team/context fields                            |
+| `PATCH`  | `/api/v1/billing/subscriptions/{id}`                           | Update permitted fields                       | JSON body containing changed fields and `If-Match` when concurrency is supported              |
+| `DELETE` | `/api/v1/billing/subscriptions/{id}`                           | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted           |
+| `POST`   | `/api/v1/billing/subscriptions/{id}/<explicit-action>`         | Execute a documented domain action            | Action-specific JSON body and `Idempotency-Key` for retryable writes                          |
+
+Example create request (illustrative fields only):
+
+`json
+{
+  "activation": "example-value",
+  "renewal": "example-value",
+  "trial": "example-value"
+}
+`
+
+Example request headers:
+
+`http
+Accept: application/json
+Authorization: Bearer YOUR_SANCTUM_TOKEN
+Content-Type: application/json
+Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
+X-Request-ID: 01JEXAMPLEREQUESTID
+`
+
+Successful reads and writes return the standard `data` envelope from [API.md](../BILLING.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
+
+## 4. OpenAPI schema
+
+This module owns a versioned OpenAPI 3.1 fragment for `billing-subscriptions`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/billing-subscriptions.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.
+
+### Required schema elements
+
+- Use stable operation IDs such as `billing.subscriptions.list`, `billing.subscriptions.get`, `billing.subscriptions.create`, `billing.subscriptions.update`, and `billing.subscriptions.delete`; use an explicit domain action ID when applicable.
+- Define the module's resource schema as `BillingSubscriptionsResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.
+- Document possible module fields including `activation`, `renewal`, `trial`, `upgrade_downgrade`, `pause`, `cancellation`; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.
+- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.
+- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../BILLING.md); do not serialize Eloquent models automatically.
+
+### Minimal fragment example
+
+`yaml
+openapi: 3.1.0
+info:
+  title: billing subscriptions API
+  version: 1.0.0
+paths:
+  /api/v1/billing/subscriptions:
+    get:
+      operationId: billing.subscriptions.list
+      security:
+        - sanctum: []
+      parameters:
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          $ref: '#/components/responses/ResourceCollection'
+components:
+  parameters:
+    PageSize:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+  securitySchemes:
+    sanctum:
+      type: http
+      scheme: bearer
+      bearerFormat: Sanctum
+  schemas:
+    BillingSubscriptionsResource:
+      type: object
+      required: [id, type, attributes]
+      properties:
+        id:
+          type: string
+          description: Opaque Liberu resource identifier.
+        type:
+          type: string
+          const: billing-subscriptions
+        attributes:
+          type: object
+          additionalProperties: true
+    ResourceCollection:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/BillingSubscriptionsResource'
+  responses:
+    ResourceCollection:
+      description: Authorized paginated resources.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResourceCollection'
+`
+
+The example is a contract outline, not a substitute for the complete module schema: replace `additionalProperties` with explicit fields and add create/update/action schemas before release. Validate the fragment, bundle it into the application specification, run breaking-change detection against the supported release, and generate typed clients only from the released specification.
+
+**References:** [OpenAPI 3.1 specification](https://spec.openapis.org/oas/v3.1.0) · [OpenAPI and contract registry](../../../architecture/API.md#8-openapi-and-contract-registry) · [Module API design](../../../architecture/API.md#19-module-api-design) · [Response conventions](../../../architecture/API.md#10-response-conventions)
+
+## 5. Audience and operation matrix
+
+| Audience                       | Default exposure                    | Required controls                                                                      |
+| ------------------------------ | ----------------------------------- | -------------------------------------------------------------------------------------- |
+| Public/anonymous               | Disabled unless explicitly required | Enumeration resistance, strict rate limits, field minimization, abuse controls         |
+| Authenticated customer/partner | Explicit allowlist                  | Tenant/resource ownership, purpose-specific scopes, field policy                       |
+| Staff/administrator            | Explicit allowlist                  | Role/permission policy, tenant context, recent authentication for risky actions, audit |
+| Service/integration client     | Explicit allowlist                  | Service identity, least-privilege scopes, expiry/rotation, idempotency, quotas         |
+
+Every exposed operation must map to one audience, domain query/action, permission/scope, request/response schema, rate limit, idempotency/concurrency policy, audit event, and test set. Unmapped operations fail CI.
+
+## 6. Implementation strategy
+
+- Keep routes, controllers/handlers, requests, API resources, OpenAPI fragments, and transport tests in this API package.
+- Validate shape at the request boundary and enforce authoritative invariants again in the domain action.
+- Resolve tenant and actor context from trusted authentication/application routing; never grant context from a caller-supplied tenant identifier alone.
+- Authorize field visibility as well as record/action access, and return concealment-safe errors where enumeration is a risk.
+- Use idempotency keys for retryable writes, ETags/`If-Match` for relevant concurrent updates, and asynchronous operation resources for slow/bulk/provider-dependent work.
+- Compose cross-module workflo…91793 tokens truncated…ING.md) · [TESTING.md](../BILLING.md)
+
+Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
+
+## Module plan
+
+- [Billing Core React + Inertia](billing-core.md) — `module-billing-core-react-inertia`
+- [Catalog React + Inertia](catalog.md) — `module-billing-catalog-react-inertia`
+- [Pricing React + Inertia](pricing.md) — `module-billing-pricing-react-inertia`
+- [Orders React + Inertia](orders.md) — `module-billing-orders-react-inertia`
+- [Subscriptions React + Inertia](subscriptions.md) — `module-billing-subscriptions-react-inertia`
+- [Usage React + Inertia](usage.md) — `module-billing-usage-react-inertia`
+- [Invoicing React + Inertia](invoicing.md) — `module-billing-invoicing-react-inertia`
+- [Payments React + Inertia](payments.md) — `module-billing-payments-react-inertia`
+- [Collections React + Inertia](collections.md) — `module-billing-collections-react-inertia`
+- [Provisioning React + Inertia](provisioning.md) — `module-billing-provisioning-react-inertia`
+- [Hosting React + Inertia](hosting.md) — `module-billing-hosting-react-inertia`
+- [Domains React + Inertia](domains.md) — `module-billing-domains-react-inertia`
+- [ISP React + Inertia](isp.md) — `module-billing-isp-react-inertia`
+- [Communications React + Inertia](communications.md) — `module-billing-communications-react-inertia`
+- [Customer Portal React + Inertia](customer-portal.md) — `module-billing-customer-portal-react-inertia`
+- [Reporting React + Inertia](reporting.md) — `module-billing-reporting-react-inertia`
 
 ## Canonical one-to-one API module specification
 

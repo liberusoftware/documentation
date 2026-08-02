@@ -1,4 +1,67 @@
-# Browser Game: Combat React + Inertia\n\n## Canonical one-to-one React/Inertia implementation\n\n**Package:** `module-browser-game-combat-react-inertia`\n**Matching domain module:** `browser-game-combat`\n**Application:** Browser Game\n**Source feature:** [Combat](../features/combat.md)\n**Architecture:** [REACT.md](../BROWSER-GAME.md) · [API.md](../BROWSER-GAME.md) · [Matching API module](../api/combat.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)\n\n## 1. Purpose and ownership\n\nThis optional React 19.2 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, React components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.\n\n## 2. Module-specific surfaces\n\n- **Turn/action rules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Abilities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Effects:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Cooldowns:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Enemies:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Bosses:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Loot:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Logs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n- **Simulation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.\n\n## 3. React 19.2 + Inertia 3 implementation\n\n- Register a stable `module-browser-game-combat-react-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.\n- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, hooks under `resources/js/hooks`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.\n- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.\n- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.\n\n### Capability mapping\n\n- `turn-action-rules`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `abilities`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `effects`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `cooldowns`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `enemies`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `bosses`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `loot`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `logs`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n- `simulation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.\n\n## 4. API contract and Inertia consumption\n\n- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.\n- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.\n- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.\n- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.\n- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.\n\n## 5. Security and verification\n\n- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.\n- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.\n- Test observable behavior with TypeScript, ESLint, Vitest, React Testing Library, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.\n\n## 6. Definition of done\n\n- Package identity, public exports, API dependency, and module dependency match `browser-game-combat` one-to-one.\n- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.\n- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+# Browser Game: Combat React + Inertia
+
+## Canonical one-to-one React/Inertia implementation
+
+**Package:** `module-browser-game-combat-react-inertia`
+**Matching domain module:** `browser-game-combat`
+**Application:** Browser Game
+**Source feature:** [Combat](../features/combat.md)
+**Architecture:** [REACT.md](../BROWSER-GAME.md) · [API.md](../BROWSER-GAME.md) · [Matching API module](../api/combat.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)
+
+## 1. Purpose and ownership
+
+This optional React 19.2 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, React components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+
+## 2. Module-specific surfaces
+
+- **Turn/action rules:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Abilities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Effects:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Cooldowns:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Enemies:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Bosses:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Loot:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Logs:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+- **Simulation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+
+## 3. React 19.2 + Inertia 3 implementation
+
+- Register a stable `module-browser-game-combat-react-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
+- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, hooks under `resources/js/hooks`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
+- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
+- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+
+### Capability mapping
+
+- `turn-action-rules`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `abilities`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `effects`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `cooldowns`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `enemies`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `bosses`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `loot`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `logs`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+- `simulation`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+
+## 4. API contract and Inertia consumption
+
+- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
+- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
+- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
+- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
+- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+
+## 5. Security and verification
+
+- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
+- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
+- Test observable behavior with TypeScript, ESLint, Vitest, React Testing Library, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
+
+## 6. Definition of done
+
+- Package identity, public exports, API dependency, and module dependency match `browser-game-combat` one-to-one.
+- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
+- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
 
 ## Canonical one-to-one React/Inertia implementation
 

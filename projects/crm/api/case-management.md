@@ -1,11 +1,143 @@
-# CRM: Case Management API\n\n## Canonical one-to-one API module specification\n\n**API package:** `module-crm-case-management-api` \n**Matching domain module:** `crm-case-management` \n**Application:** CRM \n**Source feature:** [Case Management](../features/case-management.md) \n**Architecture:** [API.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)\n\n## 1. Purpose and ownership\n\nThis optional API presentation package exposes approved HTTP operations for the Case Management domain module. It presents exactly one independent module, delegates all authoritative behavior to that module's public actions/queries/policies, and contains no other module's API logic.\n\nThe domain capability includes:\n\n- Tickets/cases\n- types\n- pipelines\n- statuses\n- priorities\n- ownership\n- parent/child cases\n- related assets/orders\n- entitlements\n- escalation\n- audit\n\nInstallation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.\n\n## 2. Contract design\n\n- Publish an OpenAPI 3.1 fragment with stable operation IDs, schemas, examples, scopes, errors, pagination, rate limits, idempotency, and deprecation metadata.\n- Use `/api/v1/crm/case-management` as the default module route prefix unless the application owns and documents a compatible façade path.\n- Represent resources through explicit API DTOs/resources rather than automatic Eloquent serialization.\n- Use lowercase kebab-case paths, snake_case JSON fields, opaque identifiers, ISO 8601 timestamps, explicit money objects, and RFC 9457 Problem Details errors.\n- Compatible additions remain within the major version; removals or semantic breaks require a new major version or approved migration path.\n\n## 3. Endpoint examples\n\n**Base path:** `/api/v1/crm/case-management`\n\nThese examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.\n\n| Method | Endpoint | Purpose | Possible request data |\n|---|---|---|---|\n| `GET` | `/api/v1/crm/case-management?page[size]=25&sort=-created_at` | List authorized resources | Query parameters for pagination, filtering, sorting, field selection, and documented includes |\n| `GET` | `/api/v1/crm/case-management/{id}` | Retrieve one resource | Opaque resource `id` in the path; no request body |\n| `POST` | `/api/v1/crm/case-management` | Create a resource | JSON body using the module schema and required team/context fields |\n| `PATCH` | `/api/v1/crm/case-management/{id}` | Update permitted fields | JSON body containing changed fields and `If-Match` when concurrency is supported |\n| `DELETE` | `/api/v1/crm/case-management/{id}` | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted |\n| `POST` | `/api/v1/crm/case-management/{id}/<explicit-action>` | Execute a documented domain action | Action-specific JSON body and `Idempotency-Key` for retryable writes |\n\nExample create request (illustrative fields only):\n\n`json\n{\n  "tickets_cases": "example-value",\n  "types": "example-value",\n  "pipelines": "example-value"\n}\n`\n\nExample request headers:\n\n`http\nAccept: application/json\nAuthorization: Bearer YOUR_SANCTUM_TOKEN\nContent-Type: application/json\nIdempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY\nX-Request-ID: 01JEXAMPLEREQUESTID\n`\n\nSuccessful reads and writes return the standard `data` envelope from [API.md](../CRM.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.\n\n## 4. OpenAPI schema\n\nThis module owns a versioned OpenAPI 3.1 fragment for `crm-case-management`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/crm-case-management.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.\n\n### Required schema elements\n\n- Use stable operation IDs such as `crm.case.management.list`, `crm.case.management.get`, `crm.case.management.create`, `crm.case.management.update`, and `crm.case.management.delete`; use an explicit domain action ID when applicable.\n- Define the module's resource schema as `CrmCaseManagementResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.\n- Document possible module fields including `tickets_cases`, `types`, `pipelines`, `statuses`, `priorities`, `ownership`; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.\n- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.\n- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../CRM.md); do not serialize Eloquent models automatically.\n\n### Minimal fragment example\n\n```yaml\nopenapi: 3.1.0\ninfo:\n  title: crm case management API\n  version: 1.0.0\npaths:\n  /api/v1/crm/case-management:\n    get:\n      operationId: crm.case.management.…172152 tokens truncated…cations compose it explicitly.\n- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, composables under `resources/js/composables`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.\n- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.\n- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.\n\n### Capability mapping\n\n- `lead-opportunity-scoring`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.\n- `churn-renewal-risk`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.\n- `next-action-product`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.\n- `forecast`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.\n- `routing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.\n- `model-registry`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.\n- `evaluation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.\n- `drift`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.\n- `explanations`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.\n\n## 4. API contract and Inertia consumption\n\n- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.\n- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router`for mutations, preserving server validation and redirect semantics.\n- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.\n- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.\n- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.\n\n## 5. Security and verification\n\n- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.\n- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.\n- Test observable behavior with TypeScript, ESLint, Vitest, Vue Test Utils, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.\n\n## 6. Definition of done\n\n- Package identity, public exports, API dependency, and module dependency match`crm-predictive-models` one-to-one.\n- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.\n- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+# CRM: Case Management API
 
 ## Canonical one-to-one API module specification
 
-**API package:** `module-crm-case-management-api`  
-**Matching domain module:** `crm-case-management`  
-**Application:** CRM  
-**Source feature:** [Case Management](../features/case-management.md)  
+**API package:** `module-crm-case-management-api`
+**Matching domain module:** `crm-case-management`
+**Application:** CRM
+**Source feature:** [Case Management](../features/case-management.md)
+**Architecture:** [API.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+
+## 1. Purpose and ownership
+
+This optional API presentation package exposes approved HTTP operations for the Case Management domain module. It presents exactly one independent module, delegates all authoritative behavior to that module's public actions/queries/policies, and contains no other module's API logic.
+
+The domain capability includes:
+
+- Tickets/cases
+- types
+- pipelines
+- statuses
+- priorities
+- ownership
+- parent/child cases
+- related assets/orders
+- entitlements
+- escalation
+- audit
+
+Installation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.
+
+## 2. Contract design
+
+- Publish an OpenAPI 3.1 fragment with stable operation IDs, schemas, examples, scopes, errors, pagination, rate limits, idempotency, and deprecation metadata.
+- Use `/api/v1/crm/case-management` as the default module route prefix unless the application owns and documents a compatible façade path.
+- Represent resources through explicit API DTOs/resources rather than automatic Eloquent serialization.
+- Use lowercase kebab-case paths, snake_case JSON fields, opaque identifiers, ISO 8601 timestamps, explicit money objects, and RFC 9457 Problem Details errors.
+- Compatible additions remain within the major version; removals or semantic breaks require a new major version or approved migration path.
+
+## 3. Endpoint examples
+
+**Base path:** `/api/v1/crm/case-management`
+
+These examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.
+
+| Method   | Endpoint                                                     | Purpose                                       | Possible request data                                                                         |
+| -------- | ------------------------------------------------------------ | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `GET`    | `/api/v1/crm/case-management?page[size]=25&sort=-created_at` | List authorized resources                     | Query parameters for pagination, filtering, sorting, field selection, and documented includes |
+| `GET`    | `/api/v1/crm/case-management/{id}`                           | Retrieve one resource                         | Opaque resource `id` in the path; no request body                                             |
+| `POST`   | `/api/v1/crm/case-management`                                | Create a resource                             | JSON body using the module schema and required team/context fields                            |
+| `PATCH`  | `/api/v1/crm/case-management/{id}`                           | Update permitted fields                       | JSON body containing changed fields and `If-Match` when concurrency is supported              |
+| `DELETE` | `/api/v1/crm/case-management/{id}`                           | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted           |
+| `POST`   | `/api/v1/crm/case-management/{id}/<explicit-action>`         | Execute a documented domain action            | Action-specific JSON body and `Idempotency-Key` for retryable writes                          |
+
+Example create request (illustrative fields only):
+
+`json
+{
+  "tickets_cases": "example-value",
+  "types": "example-value",
+  "pipelines": "example-value"
+}
+`
+
+Example request headers:
+
+`http
+Accept: application/json
+Authorization: Bearer YOUR_SANCTUM_TOKEN
+Content-Type: application/json
+Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
+X-Request-ID: 01JEXAMPLEREQUESTID
+`
+
+Successful reads and writes return the standard `data` envelope from [API.md](../CRM.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
+
+## 4. OpenAPI schema
+
+This module owns a versioned OpenAPI 3.1 fragment for `crm-case-management`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/crm-case-management.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.
+
+### Required schema elements
+
+- Use stable operation IDs such as `crm.case.management.list`, `crm.case.management.get`, `crm.case.management.create`, `crm.case.management.update`, and `crm.case.management.delete`; use an explicit domain action ID when applicable.
+- Define the module's resource schema as `CrmCaseManagementResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.
+- Document possible module fields including `tickets_cases`, `types`, `pipelines`, `statuses`, `priorities`, `ownership`; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.
+- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.
+- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../CRM.md); do not serialize Eloquent models automatically.
+
+### Minimal fragment example
+
+````yaml
+openapi: 3.1.0
+info:
+  title: crm case management API
+  version: 1.0.0
+paths:
+  /api/v1/crm/case-management:
+    get:
+      operationId: crm.case.management.…172152 tokens truncated…cations compose it explicitly.
+- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, composables under `resources/js/composables`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
+- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
+- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+
+### Capability mapping
+
+- `lead-opportunity-scoring`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `churn-renewal-risk`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `next-action-product`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `forecast`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `routing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `model-registry`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `evaluation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `drift`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+- `explanations`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+
+## 4. API contract and Inertia consumption
+
+- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
+- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router`for mutations, preserving server validation and redirect semantics.
+- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
+- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
+- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+
+## 5. Security and verification
+
+- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
+- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
+- Test observable behavior with TypeScript, ESLint, Vitest, Vue Test Utils, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
+
+## 6. Definition of done
+
+- Package identity, public exports, API dependency, and module dependency match`crm-predictive-models` one-to-one.
+- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
+- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+## Canonical one-to-one API module specification
+
+**API package:** `module-crm-case-management-api`
+**Matching domain module:** `crm-case-management`
+**Application:** CRM
+**Source feature:** [Case Management](../features/case-management.md)
 **Architecture:** [API.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
 
 ## 1. Purpose and ownership
@@ -59,7 +191,7 @@ Example create request (illustrative fields only):
   "types": "example-value",
   "pipelines": "example-value"
 }
-```
+````
 
 Example request headers:
 
