@@ -13,7 +13,7 @@ Liberu is a composable Laravel ecosystem built from independently reusable Compo
 
 Each module is developed and released from an independent GitHub repository under the [`liberusoftware`](https://github.com/liberusoftware) organization. Composer resolves module versions, while the custom Liberu Composer installer places module packages in the host application's `/modules` directory instead of `/vendor`.
 
-This document defines how Liberu capabilities are decomposed, packaged, named, discovered, installed, integrated, presented, tested, versioned, and operated. Product scopes define *what* to build. This document defines *where behavior belongs and how its boundaries interact*.
+This document defines how Liberu capabilities are decomposed, packaged, named, discovered, installed, integrated, presented, tested, versioned, and operated. Product scopes define _what_ to build. This document defines _where behavior belongs and how its boundaries interact_.
 
 The governing principle is:
 
@@ -21,18 +21,18 @@ The governing principle is:
 
 ## 2. Architectural vocabulary
 
-| Term | Meaning |
-|---|---|
-| Repository | Independent development, governance, and release workspace for an application, module, theme, or distribution |
-| Composer package | Smallest independently versioned, installable, dependency-declaring code unit |
-| Capability | Cohesive business or platform responsibility exposed through a stable public boundary |
-| Module | An installed package capability represented in the runtime registry and subject to enablement/lifecycle rules |
-| Product | A domain ecosystem such as CMS, Billing, or Ecommerce, normally composed from several packages |
-| Application | Deployable Laravel host that selects packages, panels, routes, infrastructure, configuration, and enabled capabilities |
-| Distribution package | Implementation-free Composer metapackage that installs a supported package set for convenience |
-| Provider adapter | Package implementing a provider-neutral contract for one external system or regional implementation |
-| Presentation package | Optional Filament, Livewire, API, or other interface adapter built on domain packages |
-| Theme | Presentation assets and rendering overrides governed by `THEMES.md`; never a domain capability |
+| Term                 | Meaning                                                                                                                |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Repository           | Independent development, governance, and release workspace for an application, module, theme, or distribution          |
+| Composer package     | Smallest independently versioned, installable, dependency-declaring code unit                                          |
+| Capability           | Cohesive business or platform responsibility exposed through a stable public boundary                                  |
+| Module               | An installed package capability represented in the runtime registry and subject to enablement/lifecycle rules          |
+| Product              | A domain ecosystem such as CMS, Billing, or Ecommerce, normally composed from several packages                         |
+| Application          | Deployable Laravel host that selects packages, panels, routes, infrastructure, configuration, and enabled capabilities |
+| Distribution package | Implementation-free Composer metapackage that installs a supported package set for convenience                         |
+| Provider adapter     | Package implementing a provider-neutral contract for one external system or regional implementation                    |
+| Presentation package | Optional Filament, Livewire, API, or other interface adapter built on domain packages                                  |
+| Theme                | Presentation assets and rendering overrides governed by `THEMES.md`; never a domain capability                         |
 
 These terms are not interchangeable. In particular, installing code with Composer does not automatically enable or entitle its runtime capability.
 
@@ -180,10 +180,10 @@ The independent module repository owns implementation, releases, issues, tests, 
 
 The canonical custom installer package is `liberu/composer-installer`. It is a Composer plugin trusted through Composer's `allow-plugins` configuration and handles at least these package types:
 
-| Composer package type | Install location |
-|---|---|
-| `liberu-module` | `<project-root>/modules/{module-name}` |
-| `liberu-theme` | `<project-root>/themes/{theme-name}` |
+| Composer package type | Install location                       |
+| --------------------- | -------------------------------------- |
+| `liberu-module`       | `<project-root>/modules/{module-name}` |
+| `liberu-theme`        | `<project-root>/themes/{theme-name}`   |
 
 Module `composer.json` files declare `"type": "liberu-module"` and a stable installer name in Composer `extra` metadata. The plugin must validate names, reject absolute paths and traversal, detect collisions, install deterministically, support install/update/remove, and remain compatible with Composer 2 security and plugin APIs.
 
@@ -273,28 +273,28 @@ Do not create a package for every class or table. Split when responsibility, dep
 
 Composer names communicate domain, capability, and role:
 
-| Package role | Convention | Example |
-|---|---|---|
-| Product capability | `liberu/{product}-{capability}` | `liberu/cms-publishing` |
-| Shared contract | `liberu/{capability}-contracts` | `liberu/payment-contracts` |
-| Shared core | `liberu/{capability}-core` | `liberu/payment-core` |
-| Provider adapter | `liberu/{capability}-{provider}` | `liberu/payment-stripe` |
+| Package role                  | Convention                                         | Example                              |
+| ----------------------------- | -------------------------------------------------- | ------------------------------------ |
+| Product capability            | `liberu/{product}-{capability}`                    | `liberu/cms-publishing`              |
+| Shared contract               | `liberu/{capability}-contracts`                    | `liberu/payment-contracts`           |
+| Shared core                   | `liberu/{capability}-core`                         | `liberu/payment-core`                |
+| Provider adapter              | `liberu/{capability}-{provider}`                   | `liberu/payment-stripe`              |
 | Filament presentation adapter | `liberu/module-{independent-module-name}-filament` | `liberu/module-cms-content-filament` |
-| Livewire presentation adapter | `liberu/module-{product-or-capability}-livewire` | `liberu/module-cms-livewire` |
-| API presentation adapter | `liberu/module-{independent-module-name}-api` | `liberu/module-cms-content-api` |
-| Aggregate distribution | `liberu/{product}` | `liberu/ecommerce` |
+| Livewire presentation adapter | `liberu/module-{product-or-capability}-livewire`   | `liberu/module-cms-livewire`         |
+| API presentation adapter      | `liberu/module-{independent-module-name}-api`      | `liberu/module-cms-content-api`      |
+| Aggregate distribution        | `liberu/{product}`                                 | `liberu/ecommerce`                   |
 
 Additional conventions:
 
-| Item | Convention | Example |
-|---|---|---|
-| Namespace | `Liberu\\{Domain}\\{Capability}` | `Liberu\\Payment\\Core` |
-| Manifest name | Stable Composer-aligned kebab-case | `payment-core` |
-| Database tables | Package-owned prefix where useful | `payment_transactions` |
-| Routes | Package-prefixed names | `billing.invoices.show` |
-| Permissions | `{module}.{resource}.{action}` | `billing.invoices.refund` |
-| Events | Past-tense domain fact | `PaymentCaptured` |
-| Commands/actions | Imperative intent | `CapturePayment` |
+| Item             | Convention                         | Example                   |
+| ---------------- | ---------------------------------- | ------------------------- |
+| Namespace        | `Liberu\\{Domain}\\{Capability}`   | `Liberu\\Payment\\Core`   |
+| Manifest name    | Stable Composer-aligned kebab-case | `payment-core`            |
+| Database tables  | Package-owned prefix where useful  | `payment_transactions`    |
+| Routes           | Package-prefixed names             | `billing.invoices.show`   |
+| Permissions      | `{module}.{resource}.{action}`     | `billing.invoices.refund` |
+| Events           | Past-tense domain fact             | `PaymentCaptured`         |
+| Commands/actions | Imperative intent                  | `CapturePayment`          |
 
 Released names are public contracts. Renaming requires compatibility aliases or a documented migration.
 
@@ -387,13 +387,13 @@ Application discovery configuration is derived from validated installed manifest
 
 The lifecycle is:
 
-| Action | Required behavior |
-|---|---|
-| Install | Validate dependencies, run idempotent migrations/hooks, and record version |
-| Enable | Confirm installation/dependencies and expose capability entry points |
-| Disable | Stop new entry points and schedules while retaining data and safe background handling |
-| Upgrade | Run ordered migrations/hooks with compatibility and recovery guidance |
-| Uninstall | Require explicit retention/export choice; preserve data by default |
+| Action    | Required behavior                                                                     |
+| --------- | ------------------------------------------------------------------------------------- |
+| Install   | Validate dependencies, run idempotent migrations/hooks, and record version            |
+| Enable    | Confirm installation/dependencies and expose capability entry points                  |
+| Disable   | Stop new entry points and schedules while retaining data and safe background handling |
+| Upgrade   | Run ordered migrations/hooks with compatibility and recovery guidance                 |
+| Uninstall | Require explicit retention/export choice; preserve data by default                    |
 
 Production lifecycle changes use deployments or privileged audited jobs, locks, progress reporting, and interruption recovery. Schema changes never run inside an ordinary web request.
 
@@ -585,11 +585,11 @@ Host coverage configuration uses one maintained source rule for composed module 
 
 Each independent module repository owns these GitHub Actions workflows:
 
-| Workflow | Required evidence |
-|---|---|
-| `install.yml` | Clean Composer dependency resolution/install, package bootstrap, manifest validation, minimal-host install, and documented quick start |
-| `tests.yml` | Pest 5 unit/feature/contract/integration suites, architecture and security checks, static analysis, and 100% owned-PHP coverage reports |
-| `compatibility.yml` | Declared minimum/current PHP, Laravel, database, Filament/Livewire where applicable, and representative host combinations |
+| Workflow            | Required evidence                                                                                                                       |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| `install.yml`       | Clean Composer dependency resolution/install, package bootstrap, manifest validation, minimal-host install, and documented quick start  |
+| `tests.yml`         | Pest 5 unit/feature/contract/integration suites, architecture and security checks, static analysis, and 100% owned-PHP coverage reports |
+| `compatibility.yml` | Declared minimum/current PHP, Laravel, database, Filament/Livewire where applicable, and representative host combinations               |
 
 Provider sandbox, browser, mutation, performance, migration and full composition jobs may be scheduled or release-gated when expensive, but required evidence completes before release. Workflows call the repository's Composer scripts; they do not require a duplicated scripts package. Coverage reports are uploaded as protected artifacts and the default-branch badge links to maintained results.
 

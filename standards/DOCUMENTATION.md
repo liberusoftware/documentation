@@ -28,18 +28,18 @@ Documentation is part of the product. A feature, public contract, release, or op
 
 Each subject has one authoritative home:
 
-| Subject | Source of truth |
-|---|---|
-| Repository landing page and standard README content | [REPOSITORIES.md](../architecture/REPOSITORIES.md) and the repository root `README.md` |
-| Package boundaries, dependencies, installation, and lifecycle | [MODULES.md](../architecture/MODULES.md) and module documentation |
-| Theme resources, rendering, assets, and compatibility | [THEMES.md](THEMES.md) and theme documentation |
-| API, connector, webhook, and marketplace contracts | [API.md](../architecture/API.md) and generated API documentation |
-| Shared Laravel foundation behavior | [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) |
-| Product capabilities and implementation scope | The relevant product scope Markdown file |
-| Test strategy, suites, tools, and coverage | [TESTING.md](TESTING.md) |
-| Architectural decisions and trade-offs | Versioned ADRs in `/docs/adr` |
-| Operational diagnosis and recovery | Versioned runbooks in `/docs/runbooks` |
-| Released changes | `CHANGELOG.md`, release notes, and migration/upgrade guides |
+| Subject                                                       | Source of truth                                                                        |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Repository landing page and standard README content           | [REPOSITORIES.md](../architecture/REPOSITORIES.md) and the repository root `README.md` |
+| Package boundaries, dependencies, installation, and lifecycle | [MODULES.md](../architecture/MODULES.md) and module documentation                      |
+| Theme resources, rendering, assets, and compatibility         | [THEMES.md](THEMES.md) and theme documentation                                         |
+| API, connector, webhook, and marketplace contracts            | [API.md](../architecture/API.md) and generated API documentation                       |
+| Shared Laravel foundation behavior                            | [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md)          |
+| Product capabilities and implementation scope                 | The relevant product scope Markdown file                                               |
+| Test strategy, suites, tools, and coverage                    | [TESTING.md](TESTING.md)                                                               |
+| Architectural decisions and trade-offs                        | Versioned ADRs in `/docs/adr`                                                          |
+| Operational diagnosis and recovery                            | Versioned runbooks in `/docs/runbooks`                                                 |
+| Released changes                                              | `CHANGELOG.md`, release notes, and migration/upgrade guides                            |
 
 Do not duplicate a feature catalogue, API schema, configuration reference, or architecture rule across repositories. Summarize only what is needed for context and link to the owning source.
 

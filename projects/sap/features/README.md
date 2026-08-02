@@ -23,4 +23,3 @@ Each file defines one independent module. Modules remain independently installab
 - [Governance, Risk and Compliance](governance-risk-and-compliance.md) — `sap-governance-risk-and-compliance`
 - [Partners and Portals](partners-and-portals.md) — `sap-partners-and-portals`
 - [Data and Intelligence](data-and-intelligence.md) — `sap-data-and-intelligence`
-

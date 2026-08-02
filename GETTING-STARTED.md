@@ -24,14 +24,14 @@ This guide gives you the shortest safe path through the Liberu documentation rep
 
 ## Choose a presentation technology
 
-| Need | Read |
-|---|---|
-| Laravel application foundation and domain composition | [Liberu](projects/LIBERU.md) · [Modules](architecture/MODULES.md) |
-| Administrative panels | [Filament architecture](standards/FILAMENT.md) · [Filament indexes](modules/filament/README.md) |
-| Server-driven interactive UI | [Livewire architecture](standards/LIVEWIRE.md) · [Livewire indexes](modules/livewire/README.md) |
-| React application UI over Laravel routes | [React + Inertia](standards/REACT.md) · [React indexes](modules/react/README.md) |
-| Vue application UI over Laravel routes | [Vue + Inertia](standards/VUE.md) · [Vue indexes](modules/vue/README.md) |
-| Vue SSR/API-consuming application | [Nuxt](standards/NUXT.md) · [Nuxt indexes](modules/nuxt/README.md) |
+| Need                                                  | Read                                                                                            |
+| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| Laravel application foundation and domain composition | [Liberu](projects/LIBERU.md) · [Modules](architecture/MODULES.md)                               |
+| Administrative panels                                 | [Filament architecture](standards/FILAMENT.md) · [Filament indexes](modules/filament/README.md) |
+| Server-driven interactive UI                          | [Livewire architecture](standards/LIVEWIRE.md) · [Livewire indexes](modules/livewire/README.md) |
+| React application UI over Laravel routes              | [React + Inertia](standards/REACT.md) · [React indexes](modules/react/README.md)                |
+| Vue application UI over Laravel routes                | [Vue + Inertia](standards/VUE.md) · [Vue indexes](modules/vue/README.md)                        |
+| Vue SSR/API-consuming application                     | [Nuxt](standards/NUXT.md) · [Nuxt indexes](modules/nuxt/README.md)                              |
 
 Use one matching presentation package per domain module. Presentation packages consume the module API/public contracts; they do not duplicate authorization, persistence, or domain rules.
 
@@ -40,6 +40,7 @@ Use one matching presentation package per domain module. Presentation packages c
 The links below include every `README.md` index currently under `projects/`. Application scope documents are linked from [README.md](README.md) and [TECHNOLOGIES.md](TECHNOLOGIES.md).
 
 ### Accounting
+
 - [API modules](projects/accounting/api/README.md)
 - [Feature specifications](projects/accounting/features/README.md)
 - [Filament 5](projects/accounting/filament/README.md)
@@ -49,6 +50,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/accounting/vue/README.md)
 
 ### Automation
+
 - [API modules](projects/automation/api/README.md)
 - [Feature specifications](projects/automation/features/README.md)
 - [Filament 5](projects/automation/filament/README.md)
@@ -58,6 +60,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/automation/vue/README.md)
 
 ### Billing
+
 - [API modules](projects/billing/api/README.md)
 - [Feature specifications](projects/billing/features/README.md)
 - [Filament 5](projects/billing/filament/README.md)
@@ -67,6 +70,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/billing/vue/README.md)
 
 ### Browser Game
+
 - [API modules](projects/browser-game/api/README.md)
 - [Feature specifications](projects/browser-game/features/README.md)
 - [Filament 5](projects/browser-game/filament/README.md)
@@ -76,6 +80,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/browser-game/vue/README.md)
 
 ### Cms
+
 - [API modules](projects/cms/api/README.md)
 - [Feature specifications](projects/cms/features/README.md)
 - [Filament 5](projects/cms/filament/README.md)
@@ -85,6 +90,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/cms/vue/README.md)
 
 ### Control Panel
+
 - [API modules](projects/control-panel/api/README.md)
 - [Feature specifications](projects/control-panel/features/README.md)
 - [Filament 5](projects/control-panel/filament/README.md)
@@ -94,6 +100,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/control-panel/vue/README.md)
 
 ### Crm
+
 - [API modules](projects/crm/api/README.md)
 - [Feature specifications](projects/crm/features/README.md)
 - [Filament 5](projects/crm/filament/README.md)
@@ -103,6 +110,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/crm/vue/README.md)
 
 ### Ecommerce
+
 - [API modules](projects/ecommerce/api/README.md)
 - [Feature specifications](projects/ecommerce/features/README.md)
 - [Filament 5](projects/ecommerce/filament/README.md)
@@ -112,6 +120,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/ecommerce/vue/README.md)
 
 ### Genealogy
+
 - [API modules](projects/genealogy/api/README.md)
 - [Feature specifications](projects/genealogy/features/README.md)
 - [Filament 5](projects/genealogy/filament/README.md)
@@ -121,6 +130,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/genealogy/vue/README.md)
 
 ### Maintenance
+
 - [API modules](projects/maintenance/api/README.md)
 - [Feature specifications](projects/maintenance/features/README.md)
 - [Filament 5](projects/maintenance/filament/README.md)
@@ -130,6 +140,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/maintenance/vue/README.md)
 
 ### Real Estate
+
 - [API modules](projects/real-estate/api/README.md)
 - [Feature specifications](projects/real-estate/features/README.md)
 - [Filament 5](projects/real-estate/filament/README.md)
@@ -139,6 +150,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/real-estate/vue/README.md)
 
 ### Sap
+
 - [API modules](projects/sap/api/README.md)
 - [Feature specifications](projects/sap/features/README.md)
 - [Filament 5](projects/sap/filament/README.md)
@@ -148,6 +160,7 @@ The links below include every `README.md` index currently under `projects/`. App
 - [Vue + Inertia](projects/sap/vue/README.md)
 
 ### Social Network
+
 - [API modules](projects/social-network/api/README.md)
 - [Feature specifications](projects/social-network/features/README.md)
 - [Filament 5](projects/social-network/filament/README.md)

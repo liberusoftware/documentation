@@ -4,20 +4,20 @@ This folder contains reusable coding, framework, frontend, design, testing, and 
 
 ## Technology standards
 
-| Standard | Scope |
-|---|---|
-| [PHP](PHP.md) | PHP 8.5 language, Composer, typing, errors, security, and runtime practices |
-| [PSR](PSR.md) | PHP-FIG interoperability and PSR-12 coding baseline |
-| [Pint](PINT.md) | Maximum-strictness PHP formatting and CI enforcement |
-| [Laravel](LARAVEL.md) | Laravel 13 application conventions and official framework integrations |
-| [Livewire](LIVEWIRE.md) | Livewire 4 server-driven interfaces |
-| [Filament](FILAMENT.md) | Filament 5 panels, resources, schemas, tables, widgets, and plugins |
-| [React](REACT.md) | React 19.2 presentation packages and Inertia integration |
-| [Inertia](INERTIA.md) | Inertia 3 server/client bridge and page protocol |
-| [Vue](VUE.md) | Vue 3 presentation packages and Inertia integration |
-| [Nuxt](NUXT.md) | Nuxt 4 SSR and API-consuming applications |
-| [JavaScript](../technologies/JAVASCRIPT.md) | JavaScript language and browser-runtime standards |
-| [TypeScript](../technologies/TYPESCRIPT.md) | TypeScript contracts, strictness, and build standards |
+| Standard                                    | Scope                                                                       |
+| ------------------------------------------- | --------------------------------------------------------------------------- |
+| [PHP](PHP.md)                               | PHP 8.5 language, Composer, typing, errors, security, and runtime practices |
+| [PSR](PSR.md)                               | PHP-FIG interoperability and PSR-12 coding baseline                         |
+| [Pint](PINT.md)                             | Maximum-strictness PHP formatting and CI enforcement                        |
+| [Laravel](LARAVEL.md)                       | Laravel 13 application conventions and official framework integrations      |
+| [Livewire](LIVEWIRE.md)                     | Livewire 4 server-driven interfaces                                         |
+| [Filament](FILAMENT.md)                     | Filament 5 panels, resources, schemas, tables, widgets, and plugins         |
+| [React](REACT.md)                           | React 19.2 presentation packages and Inertia integration                    |
+| [Inertia](INERTIA.md)                       | Inertia 3 server/client bridge and page protocol                            |
+| [Vue](VUE.md)                               | Vue 3 presentation packages and Inertia integration                         |
+| [Nuxt](NUXT.md)                             | Nuxt 4 SSR and API-consuming applications                                   |
+| [JavaScript](../technologies/JAVASCRIPT.md) | JavaScript language and browser-runtime standards                           |
+| [TypeScript](../technologies/TYPESCRIPT.md) | TypeScript contracts, strictness, and build standards                       |
 
 ## Design and implementation standards
 
@@ -32,13 +32,13 @@ This folder contains reusable coding, framework, frontend, design, testing, and 
 
 [Laravel](LARAVEL.md) is the host framework. Use the following focused standards when designing a feature:
 
-| Area | Standard |
-|---|---|
+| Area                     | Standard                                                                                                                          |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------- |
 | Domain and object design | [Object-oriented programming](OBJECT-ORIENTED-PROGRAMMING.md) · [Domain-driven design patterns](DOMAIN-DRIVEN-DESIGN-PATTERNS.md) |
-| Application boundaries | [Services](SERVICES.md) · [Contracts](CONTRACTS.md) · [Classes](CLASSES.md) · [Concerns](CONCERNS.md) |
-| HTTP and presentation | [Controllers](CONTROLLERS.md) · [API](../architecture/API.md) · [Views](VIEWS.md) · [Blade](BLADE.md) |
-| Async and operations | [Jobs](JOBS.md) · [Queues](QUEUES.md) |
-| Persistence | [Models](MODELS.md) |
+| Application boundaries   | [Services](SERVICES.md) · [Contracts](CONTRACTS.md) · [Classes](CLASSES.md) · [Concerns](CONCERNS.md)                             |
+| HTTP and presentation    | [Controllers](CONTROLLERS.md) · [API](../architecture/API.md) · [Views](VIEWS.md) · [Blade](BLADE.md)                             |
+| Async and operations     | [Jobs](JOBS.md) · [Queues](QUEUES.md)                                                                                             |
+| Persistence              | [Models](MODELS.md)                                                                                                               |
 
 ## Version policy
 

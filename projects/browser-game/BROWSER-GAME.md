@@ -15,23 +15,23 @@
 
 ## Module plan
 
-| Module | Responsibilities |
-|---|---|
-| Game Core | Worlds/shards, game clock, rulesets, content versions, feature flags, and maintenance state |
-| Accounts | Player identity, sessions, age/region policy, bans, recovery, privacy, and account lifecycle |
-| Characters | Creation, race/class/background, statistics, skills, experience, level, health, and respec |
-| World | Regions, locations, maps, travel, encounters, NPCs, resources, weather, and unlocks |
-| Combat | Turn/action rules, abilities, effects, cooldowns, enemies, bosses, loot, logs, and simulation |
-| Quests | Storylines, objectives, prerequisites, branching, dialogue, rewards, repeatability, and progress |
-| Items | Definitions, inventory, equipment, durability, binding, containers, stack rules, and provenance |
-| Crafting | Recipes, professions, resources, quality, queues, discovery, salvage, and outputs |
-| Economy | Currencies, faucets/sinks, vendors, pricing, trading, auction house, fees, and anti-abuse controls |
-| Social | Friends, parties, chat, mail, guilds, alliances, permissions, activity, and reporting |
-| Competition | PvP modes, matchmaking, seasons, rankings, leaderboards, rewards, and anti-collusion |
-| Collections | Achievements, titles, reputation, pets, mounts, housing, cosmetics, and collection progress |
-| Live Ops | Daily activities, events, seasons, content schedules, announcements, grants, and rollback |
-| Commerce | Premium membership, entitlements, store, regional pricing, receipts, refunds, and parental controls |
-| Moderation and Analytics | Reports, sanctions, appeals, telemetry, funnels, balance, economy, fraud, and health |
+| Module                   | Responsibilities                                                                                    |
+| ------------------------ | --------------------------------------------------------------------------------------------------- |
+| Game Core                | Worlds/shards, game clock, rulesets, content versions, feature flags, and maintenance state         |
+| Accounts                 | Player identity, sessions, age/region policy, bans, recovery, privacy, and account lifecycle        |
+| Characters               | Creation, race/class/background, statistics, skills, experience, level, health, and respec          |
+| World                    | Regions, locations, maps, travel, encounters, NPCs, resources, weather, and unlocks                 |
+| Combat                   | Turn/action rules, abilities, effects, cooldowns, enemies, bosses, loot, logs, and simulation       |
+| Quests                   | Storylines, objectives, prerequisites, branching, dialogue, rewards, repeatability, and progress    |
+| Items                    | Definitions, inventory, equipment, durability, binding, containers, stack rules, and provenance     |
+| Crafting                 | Recipes, professions, resources, quality, queues, discovery, salvage, and outputs                   |
+| Economy                  | Currencies, faucets/sinks, vendors, pricing, trading, auction house, fees, and anti-abuse controls  |
+| Social                   | Friends, parties, chat, mail, guilds, alliances, permissions, activity, and reporting               |
+| Competition              | PvP modes, matchmaking, seasons, rankings, leaderboards, rewards, and anti-collusion                |
+| Collections              | Achievements, titles, reputation, pets, mounts, housing, cosmetics, and collection progress         |
+| Live Ops                 | Daily activities, events, seasons, content schedules, announcements, grants, and rollback           |
+| Commerce                 | Premium membership, entitlements, store, regional pricing, receipts, refunds, and parental controls |
+| Moderation and Analytics | Reports, sanctions, appeals, telemetry, funnels, balance, economy, fraud, and health                |
 
 ## Required workflows
 

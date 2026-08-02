@@ -23,4 +23,3 @@ Each file defines one independent module. Modules remain independently installab
 - [Communications](communications.md) — `billing-communications`
 - [Customer Portal](customer-portal.md) — `billing-customer-portal`
 - [Reporting](reporting.md) — `billing-reporting`
-

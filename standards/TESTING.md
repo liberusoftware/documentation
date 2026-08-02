@@ -58,19 +58,19 @@ Create only suites the repository needs. Test namespaces and paths must be disco
 
 ## 5. Test types and ownership
 
-| Test type | Proves | Primary owner |
-|---|---|---|
-| Unit | Pure rules, value objects, calculations, specifications, and state transitions | Owning package |
-| Feature | Laravel actions, validation, policies, persistence, jobs, events, commands, and HTTP/Livewire behavior | Owning package/application |
-| Contract | Every implementation satisfies the same provider-neutral behavior | Contract/core package; run by adapters |
-| Integration | Real boundaries between selected packages or controlled infrastructure | Adapter or host application |
-| Composition/end-to-end | A complete user workflow works across installed modules and presentation | Host application |
-| Architecture | Forbidden dependencies, namespaces, SDK leakage, and private data access cannot occur | Every package/application |
-| Migration/upgrade | Fresh install, supported upgrade, rollback policy, and data transformation work | Package owning migrations |
-| Compatibility | Declared framework, package, database, provider, and host combinations work | Independent repository and host CI |
-| Security | Authentication, authorization, isolation, abuse, secrets, and threat-model controls hold | Owning package plus application |
-| Performance | Critical budgets and abusive patterns remain within explicit thresholds | Relevant package/application |
-| Visual/accessibility | Theme and interactive UI remain usable and visually intentional | Theme/presentation package and host |
+| Test type              | Proves                                                                                                 | Primary owner                          |
+| ---------------------- | ------------------------------------------------------------------------------------------------------ | -------------------------------------- |
+| Unit                   | Pure rules, value objects, calculations, specifications, and state transitions                         | Owning package                         |
+| Feature                | Laravel actions, validation, policies, persistence, jobs, events, commands, and HTTP/Livewire behavior | Owning package/application             |
+| Contract               | Every implementation satisfies the same provider-neutral behavior                                      | Contract/core package; run by adapters |
+| Integration            | Real boundaries between selected packages or controlled infrastructure                                 | Adapter or host application            |
+| Composition/end-to-end | A complete user workflow works across installed modules and presentation                               | Host application                       |
+| Architecture           | Forbidden dependencies, namespaces, SDK leakage, and private data access cannot occur                  | Every package/application              |
+| Migration/upgrade      | Fresh install, supported upgrade, rollback policy, and data transformation work                        | Package owning migrations              |
+| Compatibility          | Declared framework, package, database, provider, and host combinations work                            | Independent repository and host CI     |
+| Security               | Authentication, authorization, isolation, abuse, secrets, and threat-model controls hold               | Owning package plus application        |
+| Performance            | Critical budgets and abusive patterns remain within explicit thresholds                                | Relevant package/application           |
+| Visual/accessibility   | Theme and interactive UI remain usable and visually intentional                                        | Theme/presentation package and host    |
 
 Distribution packages test dependency resolution and installation. They do not duplicate implementation suites owned by their dependencies.
 
@@ -234,11 +234,11 @@ Use separate jobs or schedules for expensive compatibility matrices, real databa
 
 The canonical workflows described by [REPOSITORIES.md](../architecture/REPOSITORIES.md) are:
 
-| Workflow | Required testing evidence |
-|---|---|
+| Workflow      | Required testing evidence                                                               |
+| ------------- | --------------------------------------------------------------------------------------- |
 | `install.yml` | Clean install, dependency resolution, migrations, bootstrap, and documented quick start |
-| `tests.yml` | Automated suites, static/architecture/security checks, coverage generation and upload |
-| `docker.yml` | Image build, container boot/health, migration smoke test, and relevant scan |
+| `tests.yml`   | Automated suites, static/architecture/security checks, coverage generation and upload   |
+| `docker.yml`  | Image build, container boot/health, migration smoke test, and relevant scan             |
 
 CI fails on test failures, prohibited warnings/deprecations according to repository policy, coverage regression beyond policy, schema drift, broken architecture constraints, or unexpected generated `/modules` and `/themes` changes.
 

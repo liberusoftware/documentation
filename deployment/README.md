@@ -4,11 +4,11 @@ This guide indexes the supported deployment shapes. The application repository's
 
 ## Choose a target
 
-| Target | Use when | Required operational controls |
-|---|---|---|
-| Standalone host | You need a conventional PHP deployment on a managed VM or bare-metal host | PHP-FPM/web server, queue and scheduler supervision, TLS, backups, health checks, and rollback |
-| Docker Compose | You need reproducible application, worker, database, cache, and frontend services on one host or development environment | Pinned images, non-root containers, persistent volumes, secrets, health checks, resource limits, backups, and migration ordering |
-| Kubernetes (k3s or k8s) | You need declarative reconciliation, rolling releases, horizontal scaling, or multi-node operation | Namespaces, RBAC, NetworkPolicies, Secrets, probes, resource requests/limits, persistent storage, ingress/TLS, PodDisruptionBudgets, observability, and restore-tested backups |
+| Target                  | Use when                                                                                                                 | Required operational controls                                                                                                                                                  |
+| ----------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Standalone host         | You need a conventional PHP deployment on a managed VM or bare-metal host                                                | PHP-FPM/web server, queue and scheduler supervision, TLS, backups, health checks, and rollback                                                                                 |
+| Docker Compose          | You need reproducible application, worker, database, cache, and frontend services on one host or development environment | Pinned images, non-root containers, persistent volumes, secrets, health checks, resource limits, backups, and migration ordering                                               |
+| Kubernetes (k3s or k8s) | You need declarative reconciliation, rolling releases, horizontal scaling, or multi-node operation                       | Namespaces, RBAC, NetworkPolicies, Secrets, probes, resource requests/limits, persistent storage, ingress/TLS, PodDisruptionBudgets, observability, and restore-tested backups |
 
 ## Deployment guides
 

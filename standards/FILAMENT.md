@@ -34,11 +34,11 @@ theme-{theme-name}-filament
 
 Examples:
 
-| Aim | Valid name | Invalid names |
-|---|---|---|
-| CMS content administration | `module-cms-content-filament` | `module-cms-filament`, `cms-content-filament` |
-| Billing invoice administration | `module-billing-invoices-filament` | `module-billing-filament`, `billing-admin` |
-| Corporate admin styling | `theme-corporate-filament` | `corporate-filament`, `theme-corporate` |
+| Aim                            | Valid name                         | Invalid names                                 |
+| ------------------------------ | ---------------------------------- | --------------------------------------------- |
+| CMS content administration     | `module-cms-content-filament`      | `module-cms-filament`, `cms-content-filament` |
+| Billing invoice administration | `module-billing-invoices-filament` | `module-billing-filament`, `billing-admin`    |
+| Corporate admin styling        | `theme-corporate-filament`         | `corporate-filament`, `theme-corporate`       |
 
 This rule applies to the independent GitHub repository name, Composer package basename, Liberu installer name, and installed directory. Composer examples are `liberu/module-cms-content-filament` and `liberu/theme-corporate-filament`.
 
@@ -69,12 +69,12 @@ Theme packages  -X-> domain internals
 
 Responsibilities are divided as follows:
 
-| Owner | Owns | Must not own |
-|---|---|---|
-| Root application | Panel providers, panel URLs/IDs, authentication, middleware, tenancy composition, plugin selection and ordering | Reusable module resources or duplicated package UI |
+| Owner               | Owns                                                                                                                         | Must not own                                                                        |
+| ------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| Root application    | Panel providers, panel URLs/IDs, authentication, middleware, tenancy composition, plugin selection and ordering              | Reusable module resources or duplicated package UI                                  |
 | `module-*-filament` | Plugins, resources, relation managers, pages, widgets, clusters, actions, forms, tables, infolists, navigation contributions | Domain rules, direct cross-module table access, application-specific panel creation |
-| Domain module | Models, policies, authorized actions/queries, persistence, events and business rules | Filament dependencies or Filament classes |
-| `theme-*-filament` | Supported CSS/JS assets, colors, icons, render hooks and presentation-only panel configuration | Resources, business actions, policy replacement, validation replacement |
+| Domain module       | Models, policies, authorized actions/queries, persistence, events and business rules                                         | Filament dependencies or Filament classes                                           |
+| `theme-*-filament`  | Supported CSS/JS assets, colors, icons, render hooks and presentation-only panel configuration                               | Resources, business actions, policy replacement, validation replacement             |
 
 Each module Filament package depends on the public contracts/actions of its one matching domain module plus shared foundation contracts where required. It must not depend on another independent domain module merely to present that module's UI. A theme Filament package depends on the theme and supported Filament contracts, not on domain implementations. The root application may depend on all selected packages because it is the composition root.
 
@@ -399,13 +399,13 @@ Consumers must not subclass internal classes, replace private container bindings
 
 Filament testing follows [TESTING.md](TESTING.md). Tests assert observable behavior through public plugin and component boundaries, use the smallest layer that supplies the required evidence, and remain deterministic, isolated and parallel-safe. Package behavior is proven by its owning package; the root application proves panel composition and representative cross-module journeys.
 
-| Evidence | Primary owner |
-|---|---|
+| Evidence                                                             | Primary owner                                     |
+| -------------------------------------------------------------------- | ------------------------------------------------- |
 | Plugin options, registration, local discovery and component behavior | `module-*-filament` or `theme-*-filament` package |
-| Domain invariants invoked by Filament | Owning domain package |
-| Panel/plugin/theme composition and cross-module workflows | Root application |
-| Visual identity, assets and supported presentation hooks | `theme-*-filament` plus representative host |
-| Minimum/current Filament, Livewire, Laravel and PHP compatibility | Independent package CI and host CI |
+| Domain invariants invoked by Filament                                | Owning domain package                             |
+| Panel/plugin/theme composition and cross-module workflows            | Root application                                  |
+| Visual identity, assets and supported presentation hooks             | `theme-*-filament` plus representative host       |
+| Minimum/current Filament, Livewire, Laravel and PHP compatibility    | Independent package CI and host CI                |
 
 Every `module-*-filament` package includes, where relevant:
 

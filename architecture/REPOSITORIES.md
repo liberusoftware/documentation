@@ -140,11 +140,11 @@ Show passing state for the default branch using the exact workflow filenames:
 
 Required workflow meaning:
 
-| Workflow | Expected validation |
-|---|---|
+| Workflow      | Expected validation                                                                                       |
+| ------------- | --------------------------------------------------------------------------------------------------------- |
 | `install.yml` | Clean supported installation, dependency lock, migrations, module/theme paths, and basic application boot |
-| `tests.yml` | Automated tests, static analysis, formatting checks, architecture/security checks, and coverage upload |
-| `docker.yml` | Reproducible image build, container boot/health, migration smoke test, and relevant vulnerability scan |
+| `tests.yml`   | Automated tests, static analysis, formatting checks, architecture/security checks, and coverage upload    |
+| `docker.yml`  | Reproducible image build, container boot/health, migration smoke test, and relevant vulnerability scan    |
 
 Only display a workflow badge when that workflow exists. Package-only or theme repositories may replace `docker.yml` with the relevant compatibility/build workflow.
 
@@ -257,16 +257,16 @@ Applications should include a curated table of the primary ecosystem. Modules an
 ```markdown
 ## Liberu ecosystem
 
-| Project | Repository | Purpose |
-|---|---|---|
-| Boilerplate | [liberusoftware/boilerplate-laravel](https://github.com/liberusoftware/boilerplate-laravel) | Shared Laravel application foundation and reference composition |
-| CMS | [liberu-cms/cms-laravel](https://github.com/liberu-cms/cms-laravel) | Structured content, publishing, media, multisite, and headless delivery |
-| CRM | [liberu-crm/crm-laravel](https://github.com/liberu-crm/crm-laravel) | Customer data, sales, marketing, service, and customer success |
-| Billing | [liberu-billing/billing-laravel](https://github.com/liberu-billing/billing-laravel) | Products, subscriptions, invoicing, payments, and provisioning |
-| Accounting | [liberu-accounting/accounting-laravel](https://github.com/liberu-accounting/accounting-laravel) | Ledgers, banking, tax, expenses, close, and financial reporting |
-| Ecommerce | [liberu-ecommerce/ecommerce-laravel](https://github.com/liberu-ecommerce/ecommerce-laravel) | Catalog, checkout, orders, fulfillment, returns, B2B, and omnichannel commerce |
+| Project       | Repository                                                                                                  | Purpose                                                                         |
+| ------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| Boilerplate   | [liberusoftware/boilerplate-laravel](https://github.com/liberusoftware/boilerplate-laravel)                 | Shared Laravel application foundation and reference composition                 |
+| CMS           | [liberu-cms/cms-laravel](https://github.com/liberu-cms/cms-laravel)                                         | Structured content, publishing, media, multisite, and headless delivery         |
+| CRM           | [liberu-crm/crm-laravel](https://github.com/liberu-crm/crm-laravel)                                         | Customer data, sales, marketing, service, and customer success                  |
+| Billing       | [liberu-billing/billing-laravel](https://github.com/liberu-billing/billing-laravel)                         | Products, subscriptions, invoicing, payments, and provisioning                  |
+| Accounting    | [liberu-accounting/accounting-laravel](https://github.com/liberu-accounting/accounting-laravel)             | Ledgers, banking, tax, expenses, close, and financial reporting                 |
+| Ecommerce     | [liberu-ecommerce/ecommerce-laravel](https://github.com/liberu-ecommerce/ecommerce-laravel)                 | Catalog, checkout, orders, fulfillment, returns, B2B, and omnichannel commerce  |
 | Control Panel | [liberu-control-panel/control-panel-laravel](https://github.com/liberu-control-panel/control-panel-laravel) | Hosting, infrastructure, DNS, mail, databases, backups, and security operations |
-| Automation | [liberu-automation/automation-laravel](https://github.com/liberu-automation/automation-laravel) | Governed workflows, provider-neutral AI, approvals, and connectors |
+| Automation    | [liberu-automation/automation-laravel](https://github.com/liberu-automation/automation-laravel)             | Governed workflows, provider-neutral AI, approvals, and connectors              |
 ```
 
 Descriptions should be one sentence, factual, and updated centrally when names or ownership change. Avoid listing every experimental repository.
@@ -343,14 +343,14 @@ Thank you to everyone who helps improve Liberu.
 
 ## 17. Repository-type adjustments
 
-| Repository type | Required emphasis |
-|---|---|
-| Main application | User outcomes, screenshots/video, install paths, composed modules, operations, and deployment docs |
-| Module | One capability, Composer command, `/modules` path, contracts, dependencies, permissions, migrations, events, compatibility, tests, and coverage |
-| Theme | Visual preview, Composer command, `/themes` path, optimized/tested hosts, supported modules, build, assets/licenses, accessibility, visual tests, and fallbacks |
-| Contract package | Public interfaces/value types, supported implementations, versioning, examples, and contract tests |
-| Provider adapter | Provider prerequisites, credentials, capabilities, sandbox, webhooks, rate limits, reconciliation, security, and core contract dependency |
-| Distribution | Included packages, version policy, installation, exclusions, and links to package documentation; no duplicated feature manuals |
+| Repository type  | Required emphasis                                                                                                                                               |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Main application | User outcomes, screenshots/video, install paths, composed modules, operations, and deployment docs                                                              |
+| Module           | One capability, Composer command, `/modules` path, contracts, dependencies, permissions, migrations, events, compatibility, tests, and coverage                 |
+| Theme            | Visual preview, Composer command, `/themes` path, optimized/tested hosts, supported modules, build, assets/licenses, accessibility, visual tests, and fallbacks |
+| Contract package | Public interfaces/value types, supported implementations, versioning, examples, and contract tests                                                              |
+| Provider adapter | Provider prerequisites, credentials, capabilities, sandbox, webhooks, rate limits, reconciliation, security, and core contract dependency                       |
+| Distribution     | Included packages, version policy, installation, exclusions, and links to package documentation; no duplicated feature manuals                                  |
 
 ## 18. Maintenance and validation
 

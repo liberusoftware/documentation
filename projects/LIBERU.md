@@ -23,25 +23,25 @@ Liberu's deployment must provide:
 
 ## 2. Scope precedence
 
-| Concern | Source of truth |
-|---|---|
-| Composer packages, module boundaries, dependencies, adapters, lifecycle | [MODULES.md](../architecture/MODULES.md) |
-| Shared application foundation | [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) |
-| Blade, Livewire, layouts, components, CSS, JavaScript, and media | [THEMES.md](../standards/THEMES.md) |
-| Module, application, connector, marketplace, and webhook APIs | [API.md](../architecture/API.md) |
-| Product behavior | The corresponding product `.md` scope listed below |
-| Liberu-specific composition, rollout, and cross-product acceptance | This document |
+| Concern                                                                 | Source of truth                                                               |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Composer packages, module boundaries, dependencies, adapters, lifecycle | [MODULES.md](../architecture/MODULES.md)                                      |
+| Shared application foundation                                           | [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) |
+| Blade, Livewire, layouts, components, CSS, JavaScript, and media        | [THEMES.md](../standards/THEMES.md)                                           |
+| Module, application, connector, marketplace, and webhook APIs           | [API.md](../architecture/API.md)                                              |
+| Product behavior                                                        | The corresponding product `.md` scope listed below                            |
+| Liberu-specific composition, rollout, and cross-product acceptance      | This document                                                                 |
 
 If this document lists a module, its linked scope supplies the implementation detail. Do not copy that module into a platform-specific package.
 
 ## 3. Business structure and experience surfaces
 
-| Brand/division | Primary surface | Business purpose |
-|---|---|---|
-| Liberu Software | `liberusoftware.com` | Products, repositories, documentation, releases, roadmap, support, sponsorship, and software services |
-| Liberu Hosting | `liberuhosting.com` | Hosting/domain catalog, checkout, service portal, provisioning, usage, incidents, and renewals |
+| Brand/division  | Primary surface      | Business purpose                                                                                        |
+| --------------- | -------------------- | ------------------------------------------------------------------------------------------------------- |
+| Liberu Software | `liberusoftware.com` | Products, repositories, documentation, releases, roadmap, support, sponsorship, and software services   |
+| Liberu Hosting  | `liberuhosting.com`  | Hosting/domain catalog, checkout, service portal, provisioning, usage, incidents, and renewals          |
 | Liberu Services | `liberuservices.com` | Consulting, enquiries, bookings, proposals, contracts, projects, client collaboration, and case studies |
-| Liberu Group | `liberugroup.com` | Corporate information, brands, leadership, governance, careers, partners, press, and policies |
+| Liberu Group    | `liberugroup.com`    | Corporate information, brands, leadership, governance, careers, partners, press, and policies           |
 
 One organization model represents legal entities, brands, divisions, departments, teams, cost/profit centers, projects, sites, and infrastructure locations. A single identity may hold different roles and visibility in each context.
 
@@ -53,47 +53,47 @@ Module names below are installation targets. Responsibilities remain in the link
 
 Source: [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md)
 
-| Delivery | Modules |
-|---|---|
-| Required | Application Core; Module Manager; Identity; Two-Factor Authentication; Sessions and Devices; Profiles; Organizations and Teams; Roles and Permissions; Localization; Currency Context; Settings; Audit; Notifications; Files and Media; Scheduler and Queues; Observability; Developer Experience |
-| Required for integration | API Access; Webhooks; Integrations; Import and Export; Feature Flags; Search |
-| Required for measurement | Analytics Core; Google Analytics; Meta Server-Side Tracking |
-| Optional | Jetstream Bridge; Activity and Comments |
+| Delivery                 | Modules                                                                                                                                                                                                                                                                                           |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Required                 | Application Core; Module Manager; Identity; Two-Factor Authentication; Sessions and Devices; Profiles; Organizations and Teams; Roles and Permissions; Localization; Currency Context; Settings; Audit; Notifications; Files and Media; Scheduler and Queues; Observability; Developer Experience |
+| Required for integration | API Access; Webhooks; Integrations; Import and Export; Feature Flags; Search                                                                                                                                                                                                                      |
+| Required for measurement | Analytics Core; Google Analytics; Meta Server-Side Tracking                                                                                                                                                                                                                                       |
+| Optional                 | Jetstream Bridge; Activity and Comments                                                                                                                                                                                                                                                           |
 
 ### 4.2 Public sites and content operations
 
 Source: [projects/cms/CMS.md](../projects/cms/CMS.md)
 
-| Delivery | Modules |
-|---|---|
-| Required | CMS Core; Content Entities; Field System; Metadata; Taxonomy; Pages; Editorial Content; Structured Collections; Rich Text Editor; Block Editor; Revisions; Editorial Workflow; Publishing; Content Calendar; Media Library; Image Processing; Digital Asset Management; Navigation; Regions and Widgets; SEO; Redirects; Sitemaps; Content Search; Theme Integration; Web Delivery; Form Builder; Form Operations |
-| Multi-brand and developer content | Multisite; Site Factory; Localization; Translation Management; Content Access; Content Governance; Configuration Management; Headless API; Syndication and Feeds; Static Publishing; Knowledge Base; Events Content; Analytics Integration |
-| Operational | Backup and Restore; Cache and Performance; Content Integrity; Security Operations; Extension Manager; Site Recipes; Integration Directory |
-| Later | Layout Builder; Views and Query Builder; Personalization; Experimentation; Recommendations; CMS Copilot; Content Intelligence |
+| Delivery                          | Modules                                                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Required                          | CMS Core; Content Entities; Field System; Metadata; Taxonomy; Pages; Editorial Content; Structured Collections; Rich Text Editor; Block Editor; Revisions; Editorial Workflow; Publishing; Content Calendar; Media Library; Image Processing; Digital Asset Management; Navigation; Regions and Widgets; SEO; Redirects; Sitemaps; Content Search; Theme Integration; Web Delivery; Form Builder; Form Operations |
+| Multi-brand and developer content | Multisite; Site Factory; Localization; Translation Management; Content Access; Content Governance; Configuration Management; Headless API; Syndication and Feeds; Static Publishing; Knowledge Base; Events Content; Analytics Integration                                                                                                                                                                        |
+| Operational                       | Backup and Restore; Cache and Performance; Content Integrity; Security Operations; Extension Manager; Site Recipes; Integration Directory                                                                                                                                                                                                                                                                         |
+| Later                             | Layout Builder; Views and Query Builder; Personalization; Experimentation; Recommendations; CMS Copilot; Content Intelligence                                                                                                                                                                                                                                                                                     |
 
 ### 4.3 Customer, sales, marketing, support, and delivery
 
 Source: [projects/crm/CRM.md](../projects/crm/CRM.md)
 
-| Delivery | Modules |
-|---|---|
-| Customer foundation | CRM Core; Customer Data Model; Data Operations; Consent and Preferences; Territories and Ownership; CRM Search; CRM Documents; Collaboration |
-| Demand and sales | Lead Capture; Web Intent; Enrichment; Lead Qualification; Routing; Sales Pipelines; Sales Workspace; Activities; Scheduling; Sales Engagement; Email Productivity; Playbooks and Enablement; Forecasting; Revenue Intelligence; Account Planning |
-| Commercial | CRM Product Workspace; CPQ; Proposals and Quotes; Contracts; Orders and Payments Workspace; Revenue Lifecycle |
-| Marketing | Segmentation; Campaigns; Journey Orchestration; Email Marketing; Mobile Messaging; Advertising; Account-Based Marketing; Attribution; Events and Webinars; Landing Pages and Funnels; Conversion Optimization |
+| Delivery                   | Modules                                                                                                                                                                                                                                                  |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Customer foundation        | CRM Core; Customer Data Model; Data Operations; Consent and Preferences; Territories and Ownership; CRM Search; CRM Documents; Collaboration                                                                                                             |
+| Demand and sales           | Lead Capture; Web Intent; Enrichment; Lead Qualification; Routing; Sales Pipelines; Sales Workspace; Activities; Scheduling; Sales Engagement; Email Productivity; Playbooks and Enablement; Forecasting; Revenue Intelligence; Account Planning         |
+| Commercial                 | CRM Product Workspace; CPQ; Proposals and Quotes; Contracts; Orders and Payments Workspace; Revenue Lifecycle                                                                                                                                            |
+| Marketing                  | Segmentation; Campaigns; Journey Orchestration; Email Marketing; Mobile Messaging; Advertising; Account-Based Marketing; Attribution; Events and Webinars; Landing Pages and Funnels; Conversion Optimization                                            |
 | Communications and service | Unified Conversations; Channel Gateway; Telephony; AI Reception and Conversation; Case Management; Omnichannel Service; SLA and Entitlements; Knowledge; Customer Self-Service; Feedback and Voice of Customer; Reputation Management; Service Analytics |
-| Customer growth | Customer Success; Communities; Learning and Courses; Memberships; Referrals; Affiliate Management; Advocacy |
-| Delivery and partners | Projects; Resource Planning; Work Management; Business Process Management; Partner Relationship Management; Deal Registration; Channel Sales; Client Onboarding |
-| Later/optional | Prospecting; Dialer and Outreach; Contact Center; Quotas and Incentives; Loyalty; Marketing Development Funds; Agency Workspace; White Label; SaaS Packaging; Templates and Snapshots; CRM Copilot; Predictive Models |
+| Customer growth            | Customer Success; Communities; Learning and Courses; Memberships; Referrals; Affiliate Management; Advocacy                                                                                                                                              |
+| Delivery and partners      | Projects; Resource Planning; Work Management; Business Process Management; Partner Relationship Management; Deal Registration; Channel Sales; Client Onboarding                                                                                          |
+| Later/optional             | Prospecting; Dialer and Outreach; Contact Center; Quotas and Incentives; Loyalty; Marketing Development Funds; Agency Workspace; White Label; SaaS Packaging; Templates and Snapshots; CRM Copilot; Predictive Models                                    |
 
 ### 4.4 Hosting, domains, subscriptions, and customer billing
 
 Source: [projects/billing/BILLING.md](../projects/billing/BILLING.md)
 
-| Delivery | Modules |
-|---|---|
-| Required | Billing Core; Catalog; Pricing; Orders; Subscriptions; Usage; Invoicing; Payments; Collections; Provisioning; Hosting; Domains; Customer Portal; Reporting |
-| Where required | ISP; Communications |
+| Delivery       | Modules                                                                                                                                                    |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Required       | Billing Core; Catalog; Pricing; Orders; Subscriptions; Usage; Invoicing; Payments; Collections; Provisioning; Hosting; Domains; Customer Portal; Reporting |
+| Where required | ISP; Communications                                                                                                                                        |
 
 Billing owns commercial service state. It invokes Control Panel provisioning through contracts/events and sends governed postings to Accounting.
 
@@ -101,10 +101,10 @@ Billing owns commercial service state. It invokes Control Panel provisioning thr
 
 Source: [projects/control-panel/CONTROL-PANEL.md](../projects/control-panel/CONTROL-PANEL.md)
 
-| Delivery | Modules |
-|---|---|
-| Required | Control Core; OS Adapters; Accounts; Web Hosting; Mail; Databases; DNS; Files; Certificates; Backups; Security; Monitoring; API and Automation |
-| Platform expansion | Containers; Kubernetes |
+| Delivery           | Modules                                                                                                                                        |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Required           | Control Core; OS Adapters; Accounts; Web Hosting; Mail; Databases; DNS; Files; Certificates; Backups; Security; Monitoring; API and Automation |
+| Platform expansion | Containers; Kubernetes                                                                                                                         |
 
 Only Control Panel packages execute infrastructure changes. Billing, CRM, and portals submit authorized requests and consume operation status.
 
@@ -112,25 +112,25 @@ Only Control Panel packages execute infrastructure changes. Billing, CRM, and po
 
 Source: [projects/accounting/ACCOUNTING.md](../projects/accounting/ACCOUNTING.md)
 
-| Delivery | Modules |
-|---|---|
-| Foundation | Accounting Core; Financial Master Data; Chart of Accounts; General Ledger; Dimensions and Tracking; Accounting Periods; Accounting Policies |
-| Income and cash | Sales Invoicing; Credit Notes and Adjustments; Customer Payments; Accounts Receivable; Collections; Bank Accounts; Bank Feeds; Bank Rules; Bank Reconciliation; Payment Reconciliation; Cash Position; Cash-Flow Forecasting |
-| Spend and purchasing | Purchase Requisitions; Purchase Orders; Goods and Service Receipts; Supplier Bills; Three-Way Matching; Accounts Payable; Bill Payments; Document Capture; Receipt Management; Employee Expenses; Corporate Cards; Mileage; Time Tracking; Reimbursements |
-| Compliance and assets | Tax Core; VAT; Tax Returns; E-Invoicing; Contractor Compliance; Fixed Assets; Depreciation; Asset Events; Inventory Accounting |
-| Projects and workforce | Projects and Jobs; Project Costing; Project Billing; Project Profitability; Payroll Integration; Payroll Journals; Payroll Liabilities; Payroll Payments; Workforce Costing |
-| Planning and control | Financial Statements; Operational Reports; Custom Report Builder; Dashboards; Budgets; Forecasts; Management Reporting; Close Management; Account Reconciliations; Journal Approvals; Accounting Review; Accountant Workspace; Year End; Audit Support |
-| As organization grows | Multi-Currency; Multi-Entity; Intercompany; Consolidation; Regional Packs; Accounting Automation Pack; Business Insights |
+| Delivery               | Modules                                                                                                                                                                                                                                                   |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Foundation             | Accounting Core; Financial Master Data; Chart of Accounts; General Ledger; Dimensions and Tracking; Accounting Periods; Accounting Policies                                                                                                               |
+| Income and cash        | Sales Invoicing; Credit Notes and Adjustments; Customer Payments; Accounts Receivable; Collections; Bank Accounts; Bank Feeds; Bank Rules; Bank Reconciliation; Payment Reconciliation; Cash Position; Cash-Flow Forecasting                              |
+| Spend and purchasing   | Purchase Requisitions; Purchase Orders; Goods and Service Receipts; Supplier Bills; Three-Way Matching; Accounts Payable; Bill Payments; Document Capture; Receipt Management; Employee Expenses; Corporate Cards; Mileage; Time Tracking; Reimbursements |
+| Compliance and assets  | Tax Core; VAT; Tax Returns; E-Invoicing; Contractor Compliance; Fixed Assets; Depreciation; Asset Events; Inventory Accounting                                                                                                                            |
+| Projects and workforce | Projects and Jobs; Project Costing; Project Billing; Project Profitability; Payroll Integration; Payroll Journals; Payroll Liabilities; Payroll Payments; Workforce Costing                                                                               |
+| Planning and control   | Financial Statements; Operational Reports; Custom Report Builder; Dashboards; Budgets; Forecasts; Management Reporting; Close Management; Account Reconciliations; Journal Approvals; Accounting Review; Accountant Workspace; Year End; Audit Support    |
+| As organization grows  | Multi-Currency; Multi-Entity; Intercompany; Consolidation; Regional Packs; Accounting Automation Pack; Business Insights                                                                                                                                  |
 
 ### 4.7 Storefront and digital commerce
 
 Source: [projects/ecommerce/ECOMMERCE.md](../projects/ecommerce/ECOMMERCE.md)
 
-| Delivery | Modules |
-|---|---|
+| Delivery                                              | Modules                                                                                                                                                                                                                                                                                           |
+| ----------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Required for software, merchandise, and digital sales | Commerce Core; Product Information Management; Catalog; Product Types; Pricing; Promotions; Availability; Inventory Ledger; Cart; Checkout; Orders; Payments; Tax; Shipping; Fulfillment; Digital Fulfillment; Returns; Refunds; Commerce Customers; Customer Accounts; Attribution and Analytics |
-| Useful extensions | Bundles and Kits; Gift Cards and Store Credit; Search and Discovery; Recommendations; Reviews and Ratings; Loyalty; Referrals; Subscription Commerce; Membership Commerce; Bookings and Appointments; Markets; Sales Channels |
-| Optional | Point of Sale; Marketplace Channels; Seller Marketplace; App Marketplace |
+| Useful extensions                                     | Bundles and Kits; Gift Cards and Store Credit; Search and Discovery; Recommendations; Reviews and Ratings; Loyalty; Referrals; Subscription Commerce; Membership Commerce; Bookings and Appointments; Markets; Sales Channels                                                                     |
+| Optional                                              | Point of Sale; Marketplace Channels; Seller Marketplace; App Marketplace                                                                                                                                                                                                                          |
 
 For hosting subscriptions, Billing remains authoritative; Ecommerce supplies storefront/cart/checkout experience and hands off the accepted order.
 
@@ -138,10 +138,10 @@ For hosting subscriptions, Billing remains authoritative; Ecommerce supplies sto
 
 Source: [projects/automation/AUTOMATION.md](../projects/automation/AUTOMATION.md)
 
-| Delivery | Modules |
-|---|---|
-| Required | Automation Core; Rules; Approvals; AI Gateway; Prompt Registry; Data Processing; Connectors; Evaluation |
-| Channel/content expansion | Voice; Image; Video |
+| Delivery                  | Modules                                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------------------------- |
+| Required                  | Automation Core; Rules; Approvals; AI Gateway; Prompt Registry; Data Processing; Connectors; Evaluation |
+| Channel/content expansion | Voice; Image; Video                                                                                     |
 
 AI may draft, classify, summarize, recommend, or perform approved low-risk actions. Financial disbursement, contracts, bulk outreach, publication, access changes, and infrastructure destruction retain explicit policy and human approval.
 
@@ -149,8 +149,8 @@ AI may draft, classify, summarize, recommend, or perform approved low-risk actio
 
 Source: [projects/maintenance/MAINTENANCE.md](../projects/maintenance/MAINTENANCE.md)
 
-| Delivery | Modules |
-|---|---|
+| Delivery                                        | Modules                                                                                                                                                                                           |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Required for managed infrastructure and offices | Maintenance Core; Customers and Sites; Assets; Work Orders; Scheduling; Preventative Maintenance; Inspections; Inventory; Procurement; Labor and Time; Commercial; Compliance; Portals; Reporting |
 
 Use these packages for physical servers, networking equipment, offices, tools, vehicles, and customer-site maintenance. Control Panel remains authoritative for digital infrastructure operations.
@@ -159,9 +159,9 @@ Use these packages for physical servers, networking equipment, offices, tools, v
 
 Source: [projects/sap/SAP.md](../projects/sap/SAP.md)
 
-| Delivery | Modules/domains |
-|---|---|
-| Required as the business grows | People; Procurement; Product and Engineering; Governance, Risk and Compliance; Data and Intelligence; Partners and Portals |
+| Delivery                         | Modules/domains                                                                                                                              |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Required as the business grows   | People; Procurement; Product and Engineering; Governance, Risk and Compliance; Data and Intelligence; Partners and Portals                   |
 | Compose from specialist products | Finance; Controlling; Sales and CRM; Revenue Operations; Projects and Services; Service Management; Hosting and Cloud; Assets and Facilities |
 
 The second row is a cross-functional ERP composition, not authorization to duplicate Accounting, CRM, Billing, Control Panel, or Maintenance records.
@@ -172,36 +172,36 @@ The browser game, genealogy, real-estate, and social-network scopes are independ
 
 ## 5. Authoritative records
 
-| Record | Owning product/module family | Consumers |
-|---|---|---|
-| Login, person identity, organization/team membership | Boilerplate | Every application |
-| CRM contact/account relationship and consent | CRM | CMS, Billing, Ecommerce, Support, Automation |
-| Public/editorial content and media | CMS | CRM campaigns, storefronts, public sites |
-| Product/service commercial definition | Billing for services; Ecommerce for goods/storefront assortment | CRM sales workspace, CMS presentation |
-| Subscription, service entitlement, invoice, payment allocation | Billing | CRM, Control Panel, Accounting, portals |
-| Ecommerce order and fulfillment | Ecommerce | CRM, Accounting, support |
-| Provisioned hosting/infrastructure observed state | Control Panel | Billing, CRM, support, monitoring |
-| Journal, subledger, tax, bank, close, financial report | Accounting | Management, ERP reporting |
-| Project/customer delivery state | CRM Projects initially; specialist project package when extracted | Billing, Accounting, customer portal |
-| Physical asset and maintenance history | Maintenance | Accounting assets, service/support |
-| Employee/contractor workforce record | SAP People | Boilerplate identity, CRM projects, Accounting payroll integration |
-| AI prompt/run/evaluation/cost | Automation | Finance, management, originating product |
+| Record                                                         | Owning product/module family                                      | Consumers                                                          |
+| -------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Login, person identity, organization/team membership           | Boilerplate                                                       | Every application                                                  |
+| CRM contact/account relationship and consent                   | CRM                                                               | CMS, Billing, Ecommerce, Support, Automation                       |
+| Public/editorial content and media                             | CMS                                                               | CRM campaigns, storefronts, public sites                           |
+| Product/service commercial definition                          | Billing for services; Ecommerce for goods/storefront assortment   | CRM sales workspace, CMS presentation                              |
+| Subscription, service entitlement, invoice, payment allocation | Billing                                                           | CRM, Control Panel, Accounting, portals                            |
+| Ecommerce order and fulfillment                                | Ecommerce                                                         | CRM, Accounting, support                                           |
+| Provisioned hosting/infrastructure observed state              | Control Panel                                                     | Billing, CRM, support, monitoring                                  |
+| Journal, subledger, tax, bank, close, financial report         | Accounting                                                        | Management, ERP reporting                                          |
+| Project/customer delivery state                                | CRM Projects initially; specialist project package when extracted | Billing, Accounting, customer portal                               |
+| Physical asset and maintenance history                         | Maintenance                                                       | Accounting assets, service/support                                 |
+| Employee/contractor workforce record                           | SAP People                                                        | Boilerplate identity, CRM projects, Accounting payroll integration |
+| AI prompt/run/evaluation/cost                                  | Automation                                                        | Finance, management, originating product                           |
 
 Cross-product references use stable identifiers and contracts/events. No package reads or writes another package's private tables.
 
 ## 6. Required business workflows
 
-| Workflow | Package chain | Business result |
-|---|---|---|
-| Open-source release | Product/Engineering → GitHub adapter → CMS Publishing → Campaigns → Analytics | Release notes, documentation, announcements, adoption, and support context stay synchronized |
-| Lead to consulting revenue | CMS/Form or campaign → CRM Lead/Sales → Proposal/Contract → Project/Time/Expense → Billing → Accounting | Complete services pipeline and profitability |
-| Hosting order to active service | CMS/Ecommerce storefront → Billing Order/Subscription/Payment → Provisioning → Control Panel → Customer Portal → Accounting | Paid service is provisioned, monitored, renewed, suspended, or cancelled safely |
-| Support to resolution | Unified Conversations/Telephony → Case/SLA/Knowledge → Control Panel or Project work → Feedback → Customer Success | Omnichannel support with ownership, escalation, evidence, and retention signals |
-| Procure to pay | Purchase Requisition → approval → Purchase Order/Receipt → Supplier Bill/Match → Bill Payment → Bank Reconciliation | Controlled company spending with supplier and cash visibility |
-| Hire/onboard to offboard | People → identity/team/roles → equipment/assets → learning → time/expense/payroll integration → access and asset recovery | Staff and contractors receive and lose access/resources reliably |
-| Month-end management | Billing/Ecommerce/Payroll/Maintenance events → Accounting subledgers → reconciliations/close → budget/forecast/report pack | Management sees cash, revenue, cost, tax, margin, runway, and risks |
-| Partner/affiliate growth | Partner/affiliate onboarding → campaign/referral/deal registration → sale → commission approval → Accounting export | Channel growth is attributable, governed, and payable |
-| Incident and continuity | Monitoring → Service incident → customer communication/status content → remediation → problem/change → GRC evidence | Operational incidents produce learning, controls, and transparent communications |
+| Workflow                        | Package chain                                                                                                               | Business result                                                                              |
+| ------------------------------- | --------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| Open-source release             | Product/Engineering → GitHub adapter → CMS Publishing → Campaigns → Analytics                                               | Release notes, documentation, announcements, adoption, and support context stay synchronized |
+| Lead to consulting revenue      | CMS/Form or campaign → CRM Lead/Sales → Proposal/Contract → Project/Time/Expense → Billing → Accounting                     | Complete services pipeline and profitability                                                 |
+| Hosting order to active service | CMS/Ecommerce storefront → Billing Order/Subscription/Payment → Provisioning → Control Panel → Customer Portal → Accounting | Paid service is provisioned, monitored, renewed, suspended, or cancelled safely              |
+| Support to resolution           | Unified Conversations/Telephony → Case/SLA/Knowledge → Control Panel or Project work → Feedback → Customer Success          | Omnichannel support with ownership, escalation, evidence, and retention signals              |
+| Procure to pay                  | Purchase Requisition → approval → Purchase Order/Receipt → Supplier Bill/Match → Bill Payment → Bank Reconciliation         | Controlled company spending with supplier and cash visibility                                |
+| Hire/onboard to offboard        | People → identity/team/roles → equipment/assets → learning → time/expense/payroll integration → access and asset recovery   | Staff and contractors receive and lose access/resources reliably                             |
+| Month-end management            | Billing/Ecommerce/Payroll/Maintenance events → Accounting subledgers → reconciliations/close → budget/forecast/report pack  | Management sees cash, revenue, cost, tax, margin, runway, and risks                          |
+| Partner/affiliate growth        | Partner/affiliate onboarding → campaign/referral/deal registration → sale → commission approval → Accounting export         | Channel growth is attributable, governed, and payable                                        |
+| Incident and continuity         | Monitoring → Service incident → customer communication/status content → remediation → problem/change → GRC evidence         | Operational incidents produce learning, controls, and transparent communications             |
 
 Each workflow must have one accountable owner, versioned contracts/events, idempotency keys, explicit approvals, compensation/recovery, audit, service levels, and business metrics.
 

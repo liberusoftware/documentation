@@ -28,155 +28,155 @@
 
 ## 3. Customer data and platform modules
 
-| Module | Responsibilities |
-|---|---|
-| CRM Core | Contacts, organizations, households, relationships, owners, teams, tags, notes, attachments, favorites, record lifecycle, and unified timeline |
-| Customer Data Model | Standard/custom objects, fields, relationships, layouts, validation, calculated fields, required-by-stage fields, and schema versioning |
-| Customer Data Platform | Source profiles, identity resolution, unified profiles, audience activation, event ingestion, consent-aware calculated attributes, and profile lineage |
-| Data Operations | Imports/exports, field mapping, normalization, enrichment orchestration, duplicate detection/merge, formatting, quality rules, schedules, and exception queues |
-| Consent and Preferences | Lawful basis, subscriptions, channel/topic preferences, suppression, quiet hours, recording consent, proof, expiry, withdrawal, and policy evaluation |
-| Territories and Ownership | Territories, books of business, teams, queues, assignment rules, round-robin/capacity routing, temporary coverage, and ownership history |
-| CRM Search | Permission-aware global search, saved views, filters, related-record search, recents, suggestions, and index reconciliation |
-| CRM Documents | Sales/service files, templates, folders, links, access, engagement tracking, versioning, retention, and external-storage adapters |
-| Collaboration | Record comments, mentions, followers, shared work queues, approvals, handoffs, internal channels, and collaboration-provider adapters |
+| Module                    | Responsibilities                                                                                                                                               |
+| ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CRM Core                  | Contacts, organizations, households, relationships, owners, teams, tags, notes, attachments, favorites, record lifecycle, and unified timeline                 |
+| Customer Data Model       | Standard/custom objects, fields, relationships, layouts, validation, calculated fields, required-by-stage fields, and schema versioning                        |
+| Customer Data Platform    | Source profiles, identity resolution, unified profiles, audience activation, event ingestion, consent-aware calculated attributes, and profile lineage         |
+| Data Operations           | Imports/exports, field mapping, normalization, enrichment orchestration, duplicate detection/merge, formatting, quality rules, schedules, and exception queues |
+| Consent and Preferences   | Lawful basis, subscriptions, channel/topic preferences, suppression, quiet hours, recording consent, proof, expiry, withdrawal, and policy evaluation          |
+| Territories and Ownership | Territories, books of business, teams, queues, assignment rules, round-robin/capacity routing, temporary coverage, and ownership history                       |
+| CRM Search                | Permission-aware global search, saved views, filters, related-record search, recents, suggestions, and index reconciliation                                    |
+| CRM Documents             | Sales/service files, templates, folders, links, access, engagement tracking, versioning, retention, and external-storage adapters                              |
+| Collaboration             | Record comments, mentions, followers, shared work queues, approvals, handoffs, internal channels, and collaboration-provider adapters                          |
 
 ## 4. Demand generation and acquisition modules
 
-| Module | Responsibilities |
-|---|---|
-| Lead Capture | Leads inbox, manual/import/API capture, forms, surveys, QR codes, chat, calls, advertisements, events, referrals, and source metadata |
-| Prospecting | Ideal-customer profiles, prospect searches, list building, research queues, contact reveal/credits, provider provenance, and compliant export/outreach handoff |
-| Enrichment | Company/contact firmographic, demographic, technographic, social, verification, change monitoring, confidence, field-level provenance, and provider adapters |
-| Web Intent | First-party visits, account identification adapters, page/content engagement, scoring signals, alerts, buyer intent, consent, and lead/account conversion |
-| Lead Qualification | Lifecycle stages, fit/engagement scoring, MQL/PQL/SQL/service-qualified rules, qualification frameworks, disqualification, nurture, and conversion |
-| Routing | Rule, territory, skill, language, availability, workload, value, SLA, and round-robin assignment with fallback and acceptance timers |
-| Forms and Surveys | Drag-and-drop schemas, conditional fields, progressive profiling, validation, spam controls, consent, hidden attribution, embedding, submissions, and follow-up |
-| Chat and Bots | Web chat, bot/playbook builder, qualification, knowledge answers, meeting booking, live-agent handoff, office hours, transcripts, and channel identity |
-| Landing Pages and Funnels | Multi-step funnels, landing/thank-you pages, templates, domains, SEO metadata, personalization, forms, order links, preview, publish, and conversion tracking |
-| Conversion Optimization | A/B and multivariate tests, traffic allocation, goals, statistical policy, popups, banners, CTAs, personalization rules, and experiment reporting |
-| Events and Webinars | Physical/virtual events, registration, capacity, tickets/attendance, sessions, speakers, reminders, check-in, recording links, follow-up, and provider adapters |
+| Module                    | Responsibilities                                                                                                                                                |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Lead Capture              | Leads inbox, manual/import/API capture, forms, surveys, QR codes, chat, calls, advertisements, events, referrals, and source metadata                           |
+| Prospecting               | Ideal-customer profiles, prospect searches, list building, research queues, contact reveal/credits, provider provenance, and compliant export/outreach handoff  |
+| Enrichment                | Company/contact firmographic, demographic, technographic, social, verification, change monitoring, confidence, field-level provenance, and provider adapters    |
+| Web Intent                | First-party visits, account identification adapters, page/content engagement, scoring signals, alerts, buyer intent, consent, and lead/account conversion       |
+| Lead Qualification        | Lifecycle stages, fit/engagement scoring, MQL/PQL/SQL/service-qualified rules, qualification frameworks, disqualification, nurture, and conversion              |
+| Routing                   | Rule, territory, skill, language, availability, workload, value, SLA, and round-robin assignment with fallback and acceptance timers                            |
+| Forms and Surveys         | Drag-and-drop schemas, conditional fields, progressive profiling, validation, spam controls, consent, hidden attribution, embedding, submissions, and follow-up |
+| Chat and Bots             | Web chat, bot/playbook builder, qualification, knowledge answers, meeting booking, live-agent handoff, office hours, transcripts, and channel identity          |
+| Landing Pages and Funnels | Multi-step funnels, landing/thank-you pages, templates, domains, SEO metadata, personalization, forms, order links, preview, publish, and conversion tracking   |
+| Conversion Optimization   | A/B and multivariate tests, traffic allocation, goals, statistical policy, popups, banners, CTAs, personalization rules, and experiment reporting               |
+| Events and Webinars       | Physical/virtual events, registration, capacity, tickets/attendance, sessions, speakers, reminders, check-in, recording links, follow-up, and provider adapters |
 
 ## 5. Sales execution modules
 
-| Module | Responsibilities |
-|---|---|
-| Sales Pipelines | Multiple pipelines, stages, opportunities, products, values, probabilities, close dates, competitors, dependencies, stage history, rotting, and loss reasons |
-| Sales Workspace | Prioritized seller feed, leads/deals inbox, overdue/risk indicators, next best action, daily agenda, quick updates, and contextual customer history |
-| Activities | Tasks, calls, meetings, emails, deadlines, recurrence, queues, bulk completion, reminders, outcomes, goals, and activity reporting |
-| Scheduling | Personal/team/round-robin links, availability, buffers, minimum notice, questions, reminders, reschedule/cancel, no-show, routing, and calendar adapters |
-| Sales Engagement | Sequences/cadences, multi-channel steps, templates/snippets, task queues, enrollment/re-entry, throttles, timezone windows, reply/meeting stop rules, and experiments |
-| Email Productivity | Mailbox sync, send/log, templates, snippets, scheduling, open/click/reply tracking policy, shared/team inbox, signatures, sidebars, and Gmail/Outlook adapters |
-| Conversation Intelligence | Call/meeting recording, transcription, summaries, topics, questions, objections, competitors, sentiment policy, action items, highlights, and searchable evidence |
-| Playbooks and Enablement | Guided scripts, qualification cards, battlecards, onboarding content, required evidence, coaching checklists, document/content recommendations, and usage analytics |
-| Forecasting | Forecast categories, rollups, manager adjustments, commit/best-case/pipeline views, coverage, trend, scenario, history, accuracy, and submission workflow |
-| Revenue Intelligence | Pipeline inspection, health/risk, engagement gaps, opportunity scoring, relationship maps, white-space/next-product suggestions, anomaly detection, and alerts |
-| Goals and Performance | Individual/team/company goals, activity/outcome targets, scorecards, leaderboards, reviews, coaching plans, and performance history |
-| Quotas and Incentives | Quotas, ramps, crediting, splits, territories, attainment, commission plans, accelerators, adjustments, disputes, approvals, and payroll/export adapters |
-| Account Planning | Account hierarchies, stakeholders, influence maps, whitespace, account plans, objectives, risks, mutual action plans, and account-based coordination |
+| Module                    | Responsibilities                                                                                                                                                      |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sales Pipelines           | Multiple pipelines, stages, opportunities, products, values, probabilities, close dates, competitors, dependencies, stage history, rotting, and loss reasons          |
+| Sales Workspace           | Prioritized seller feed, leads/deals inbox, overdue/risk indicators, next best action, daily agenda, quick updates, and contextual customer history                   |
+| Activities                | Tasks, calls, meetings, emails, deadlines, recurrence, queues, bulk completion, reminders, outcomes, goals, and activity reporting                                    |
+| Scheduling                | Personal/team/round-robin links, availability, buffers, minimum notice, questions, reminders, reschedule/cancel, no-show, routing, and calendar adapters              |
+| Sales Engagement          | Sequences/cadences, multi-channel steps, templates/snippets, task queues, enrollment/re-entry, throttles, timezone windows, reply/meeting stop rules, and experiments |
+| Email Productivity        | Mailbox sync, send/log, templates, snippets, scheduling, open/click/reply tracking policy, shared/team inbox, signatures, sidebars, and Gmail/Outlook adapters        |
+| Conversation Intelligence | Call/meeting recording, transcription, summaries, topics, questions, objections, competitors, sentiment policy, action items, highlights, and searchable evidence     |
+| Playbooks and Enablement  | Guided scripts, qualification cards, battlecards, onboarding content, required evidence, coaching checklists, document/content recommendations, and usage analytics   |
+| Forecasting               | Forecast categories, rollups, manager adjustments, commit/best-case/pipeline views, coverage, trend, scenario, history, accuracy, and submission workflow             |
+| Revenue Intelligence      | Pipeline inspection, health/risk, engagement gaps, opportunity scoring, relationship maps, white-space/next-product suggestions, anomaly detection, and alerts        |
+| Goals and Performance     | Individual/team/company goals, activity/outcome targets, scorecards, leaderboards, reviews, coaching plans, and performance history                                   |
+| Quotas and Incentives     | Quotas, ramps, crediting, splits, territories, attainment, commission plans, accelerators, adjustments, disputes, approvals, and payroll/export adapters              |
+| Account Planning          | Account hierarchies, stakeholders, influence maps, whitespace, account plans, objectives, risks, mutual action plans, and account-based coordination                  |
 
 ## 6. Revenue and commercial modules
 
-| Module | Responsibilities |
-|---|---|
-| CRM Product Workspace | Sales-facing catalog projections, bundles, entitlements, price-book references, product eligibility, and governed Billing/Ecommerce synchronization |
-| CPQ | Guided configuration, compatibility rules, price books, tiers, discounts, approvals, margin guardrails, amendments, renewals, and authoritative pricing adapters |
-| Proposals and Quotes | Branded templates, sections, scope, line items, optional choices, versions, comments, approvals, delivery, engagement, acceptance, and expiry |
-| Contracts | Parties, terms, clauses, obligations, versions, negotiation, approvals, signatures, amendments, renewals, notices, repository links, and compliance dates |
-| Orders and Payments Workspace | Payment links, deposits, order/subscription references, invoice/payment status, refunds/disputes visibility, and Billing/Ecommerce handoff |
-| Revenue Lifecycle | Opportunity-to-order orchestration, assets/installed products, entitlements, renewals, upgrades, downgrades, cancellation, usage signals, and fallout queues |
+| Module                        | Responsibilities                                                                                                                                                 |
+| ----------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CRM Product Workspace         | Sales-facing catalog projections, bundles, entitlements, price-book references, product eligibility, and governed Billing/Ecommerce synchronization              |
+| CPQ                           | Guided configuration, compatibility rules, price books, tiers, discounts, approvals, margin guardrails, amendments, renewals, and authoritative pricing adapters |
+| Proposals and Quotes          | Branded templates, sections, scope, line items, optional choices, versions, comments, approvals, delivery, engagement, acceptance, and expiry                    |
+| Contracts                     | Parties, terms, clauses, obligations, versions, negotiation, approvals, signatures, amendments, renewals, notices, repository links, and compliance dates        |
+| Orders and Payments Workspace | Payment links, deposits, order/subscription references, invoice/payment status, refunds/disputes visibility, and Billing/Ecommerce handoff                       |
+| Revenue Lifecycle             | Opportunity-to-order orchestration, assets/installed products, entitlements, renewals, upgrades, downgrades, cancellation, usage signals, and fallout queues     |
 
 These modules never duplicate authoritative pricing, payment, subscription, invoice, order, or accounting ledgers.
 
 ## 7. Marketing modules
 
-| Module | Responsibilities |
-|---|---|
-| Segmentation | Static/dynamic audiences, nested conditions, behavioral events, calculated attributes, exclusions, estimated counts, refresh, and lineage |
-| Campaigns | Campaign hierarchy, briefs, objectives, budget, assets, channels, audience, owners, calendar, tasks, costs, responses, influence, and ROI |
-| Journey Orchestration | Triggered/scheduled journeys, branching, waits, goals, re-entry, suppression, frequency caps, experiments, stop-on-response, and versioned publication |
-| Email Marketing | Drag-and-drop and code templates, personalization, dynamic content, test sends, inbox previews, deliverability controls, scheduling, throttling, and analytics |
-| Mobile Messaging | Consent-aware SMS/MMS/WhatsApp/push campaigns, templates, short links, keywords, opt-in/out, quiet hours, sender governance, and delivery/reply handling |
-| Advertising | Ad-account connections, campaign visibility, lead-ad ingestion, CRM audiences, offline/server conversions, spend/performance sync, and attribution |
-| Account-Based Marketing | Target accounts, tiers, buying committees, intent, engagement rollups, account audiences, plays, coverage, pipeline influence, and measurement |
-| Personalization | Rules and decisioning for content, offer, channel, send time, locale, lifecycle, and customer attributes with holdouts and fallback |
-| Marketing Resources | Brand kits, reusable content blocks, campaign files, templates, approvals, usage rights, and CMS/media references |
-| Attribution | First/last/multi-touch models, campaign members, source normalization, UTM/click IDs, offline conversions, influence, cost allocation, and model comparison |
+| Module                  | Responsibilities                                                                                                                                               |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Segmentation            | Static/dynamic audiences, nested conditions, behavioral events, calculated attributes, exclusions, estimated counts, refresh, and lineage                      |
+| Campaigns               | Campaign hierarchy, briefs, objectives, budget, assets, channels, audience, owners, calendar, tasks, costs, responses, influence, and ROI                      |
+| Journey Orchestration   | Triggered/scheduled journeys, branching, waits, goals, re-entry, suppression, frequency caps, experiments, stop-on-response, and versioned publication         |
+| Email Marketing         | Drag-and-drop and code templates, personalization, dynamic content, test sends, inbox previews, deliverability controls, scheduling, throttling, and analytics |
+| Mobile Messaging        | Consent-aware SMS/MMS/WhatsApp/push campaigns, templates, short links, keywords, opt-in/out, quiet hours, sender governance, and delivery/reply handling       |
+| Advertising             | Ad-account connections, campaign visibility, lead-ad ingestion, CRM audiences, offline/server conversions, spend/performance sync, and attribution             |
+| Account-Based Marketing | Target accounts, tiers, buying committees, intent, engagement rollups, account audiences, plays, coverage, pipeline influence, and measurement                 |
+| Personalization         | Rules and decisioning for content, offer, channel, send time, locale, lifecycle, and customer attributes with holdouts and fallback                            |
+| Marketing Resources     | Brand kits, reusable content blocks, campaign files, templates, approvals, usage rights, and CMS/media references                                              |
+| Attribution             | First/last/multi-touch models, campaign members, source normalization, UTM/click IDs, offline conversions, influence, cost allocation, and model comparison    |
 
 ## 8. Communications and contact-center modules
 
-| Module | Responsibilities |
-|---|---|
-| Unified Conversations | Omnichannel threads, participants, identity matching, assignments, collision detection, drafts, internal notes, attachments, delivery/read state, and timeline |
-| Channel Gateway | Provider-neutral email, SMS/MMS, WhatsApp, web chat, social messaging, and push contracts, routing, templates, health, and provider selection |
-| Telephony | Numbers, caller ID, IVR, queues, business hours, skills, recording, voicemail, transfers, dispositions, click-to-call, call logging, and provider adapters |
-| Dialer and Outreach | Power/preview/progressive dialing, prioritized lists, scripts, local-time policy, retries, voicemail drop, answer detection adapters, outcomes, and compliance controls |
-| Contact Center | Agent presence, capacity, skills, routing, supervisor views, whisper/barge policy, quality review, workforce demand, queue SLA, and overflow |
-| AI Reception and Conversation | Governed chat/voice agents, approved knowledge/tools, qualification, booking, summaries, confidence, live handoff, testing, and human-approval policy |
+| Module                        | Responsibilities                                                                                                                                                        |
+| ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unified Conversations         | Omnichannel threads, participants, identity matching, assignments, collision detection, drafts, internal notes, attachments, delivery/read state, and timeline          |
+| Channel Gateway               | Provider-neutral email, SMS/MMS, WhatsApp, web chat, social messaging, and push contracts, routing, templates, health, and provider selection                           |
+| Telephony                     | Numbers, caller ID, IVR, queues, business hours, skills, recording, voicemail, transfers, dispositions, click-to-call, call logging, and provider adapters              |
+| Dialer and Outreach           | Power/preview/progressive dialing, prioritized lists, scripts, local-time policy, retries, voicemail drop, answer detection adapters, outcomes, and compliance controls |
+| Contact Center                | Agent presence, capacity, skills, routing, supervisor views, whisper/barge policy, quality review, workforce demand, queue SLA, and overflow                            |
+| AI Reception and Conversation | Governed chat/voice agents, approved knowledge/tools, qualification, booking, summaries, confidence, live handoff, testing, and human-approval policy                   |
 
 ## 9. Service, success, and experience modules
 
-| Module | Responsibilities |
-|---|---|
-| Case Management | Tickets/cases, types, pipelines, statuses, priorities, ownership, parent/child cases, related assets/orders, entitlements, escalation, and audit |
-| Omnichannel Service | Email/chat/social/phone intake, routing, agent workspace, macros, suggested replies, swarming, collision control, and complete interaction history |
-| SLA and Entitlements | Service contracts, coverage, business calendars, response/resolution targets, milestones, pauses, warnings, breaches, escalations, and exceptions |
-| Knowledge | Internal/public articles, categories, versions, review/approval, localization, search, feedback, case linking, suggested answers, and stale-content controls |
-| Customer Self-Service | Customer portal, case submission/status, knowledge search, community links, appointments, documents, invoices/orders references, profile, and preferences |
-| Customer Success | Customer segments, lifecycle, onboarding plans, success plans, objectives, health scores, product/usage signals, risks, playbooks, touchpoints, and renewals |
-| Feedback and Voice of Customer | CSAT, NPS, CES, custom surveys, sampling, delivery, responses, text analysis, alerts, close-the-loop cases, and trend reporting |
-| Reputation Management | Review requests, review-site connections, monitoring, response workflow, templates, escalation, sentiment, location rollups, and reputation reporting |
-| Field Service Coordination | Work types, service appointments, dispatch references, technician/contractor visibility, asset/service history, and Maintenance module handoff |
-| Service Analytics | Volume, backlog, deflection, first response, resolution, reopen, transfer, SLA, satisfaction, quality, staffing, and cost-to-serve |
+| Module                         | Responsibilities                                                                                                                                             |
+| ------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Case Management                | Tickets/cases, types, pipelines, statuses, priorities, ownership, parent/child cases, related assets/orders, entitlements, escalation, and audit             |
+| Omnichannel Service            | Email/chat/social/phone intake, routing, agent workspace, macros, suggested replies, swarming, collision control, and complete interaction history           |
+| SLA and Entitlements           | Service contracts, coverage, business calendars, response/resolution targets, milestones, pauses, warnings, breaches, escalations, and exceptions            |
+| Knowledge                      | Internal/public articles, categories, versions, review/approval, localization, search, feedback, case linking, suggested answers, and stale-content controls |
+| Customer Self-Service          | Customer portal, case submission/status, knowledge search, community links, appointments, documents, invoices/orders references, profile, and preferences    |
+| Customer Success               | Customer segments, lifecycle, onboarding plans, success plans, objectives, health scores, product/usage signals, risks, playbooks, touchpoints, and renewals |
+| Feedback and Voice of Customer | CSAT, NPS, CES, custom surveys, sampling, delivery, responses, text analysis, alerts, close-the-loop cases, and trend reporting                              |
+| Reputation Management          | Review requests, review-site connections, monitoring, response workflow, templates, escalation, sentiment, location rollups, and reputation reporting        |
+| Field Service Coordination     | Work types, service appointments, dispatch references, technician/contractor visibility, asset/service history, and Maintenance module handoff               |
+| Service Analytics              | Volume, backlog, deflection, first response, resolution, reopen, transfer, SLA, satisfaction, quality, staffing, and cost-to-serve                           |
 
 ## 10. Community, learning, loyalty, and growth modules
 
-| Module | Responsibilities |
-|---|---|
-| Communities | Customer/partner groups, spaces, memberships, posts, comments, events, moderation, gamification, knowledge links, and CRM profile activity |
-| Learning and Courses | Courses, lessons, media, cohorts, enrollment, access, progress, assessments, certificates, drip schedules, and product/contract entitlements |
-| Memberships | Membership plans, gated resources, lifecycle, access grants, renewal references, community/course bundles, and member portal |
-| Loyalty | Programs, tiers, points ledger, earning/redemption rules, rewards, expiry, partner activity, liabilities export, fraud controls, and member statements |
-| Referrals | Referral programs, links/codes, advocates, prospects, qualification, rewards, fraud/duplicate controls, status, and attribution |
-| Affiliate Management | Affiliates, applications, links, campaigns, clicks, conversions, commission rules, payout approvals/exports, disputes, assets, and portal |
-| Advocacy | References, testimonials, reviews, case-study consent, speakers, advisory boards, nominations, requests, and recognition history |
+| Module               | Responsibilities                                                                                                                                       |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Communities          | Customer/partner groups, spaces, memberships, posts, comments, events, moderation, gamification, knowledge links, and CRM profile activity             |
+| Learning and Courses | Courses, lessons, media, cohorts, enrollment, access, progress, assessments, certificates, drip schedules, and product/contract entitlements           |
+| Memberships          | Membership plans, gated resources, lifecycle, access grants, renewal references, community/course bundles, and member portal                           |
+| Loyalty              | Programs, tiers, points ledger, earning/redemption rules, rewards, expiry, partner activity, liabilities export, fraud controls, and member statements |
+| Referrals            | Referral programs, links/codes, advocates, prospects, qualification, rewards, fraud/duplicate controls, status, and attribution                        |
+| Affiliate Management | Affiliates, applications, links, campaigns, clicks, conversions, commission rules, payout approvals/exports, disputes, assets, and portal              |
+| Advocacy             | References, testimonials, reviews, case-study consent, speakers, advisory boards, nominations, requests, and recognition history                       |
 
 ## 11. Partner and agency modules
 
-| Module | Responsibilities |
-|---|---|
-| Partner Relationship Management | Partner accounts, contacts, tiers, recruitment, onboarding, competencies, agreements, enablement, certification, plans, and performance |
-| Deal Registration | Partner-submitted leads/deals, duplicate/conflict checks, territory rules, approval, protection windows, collaboration, and attribution |
-| Channel Sales | Partner opportunities, shared pipelines, referrals, reseller pricing references, quotes/orders handoff, commissions, forecasts, and partner portal |
-| Marketing Development Funds | Requests, budgets, plans, approvals, evidence, claims, reimbursements, and ROI |
-| Agency Workspace | Agency/client hierarchy, sub-accounts, delegated administration, usage visibility, support access, branding, and cross-account operations |
-| White Label | Brand/domain/email/application settings, theme selection, custom client experience, provider abstraction, and safe platform attribution policy |
-| SaaS Packaging | Plans, feature/module entitlements, limits, trials, signup provisioning, upgrade/downgrade, suspension, cancellation, and Billing integration |
-| Usage Wallet and Rebilling | Provider usage imports, wallets/credits, threshold reloads, cost/markup rules, client charges, exceptions, reconciliation, and Billing/Accounting handoff |
-| Templates and Snapshots | Versioned bundles of fields, pipelines, workflows, forms, funnels, calendars, templates, dashboards, and settings with preview, protected sharing, install, update, and rollback |
-| Client Onboarding | Intake, domain/provider connections, data import, snapshot application, verification, launch checklist, training, handoff, and health |
+| Module                          | Responsibilities                                                                                                                                                                 |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Partner Relationship Management | Partner accounts, contacts, tiers, recruitment, onboarding, competencies, agreements, enablement, certification, plans, and performance                                          |
+| Deal Registration               | Partner-submitted leads/deals, duplicate/conflict checks, territory rules, approval, protection windows, collaboration, and attribution                                          |
+| Channel Sales                   | Partner opportunities, shared pipelines, referrals, reseller pricing references, quotes/orders handoff, commissions, forecasts, and partner portal                               |
+| Marketing Development Funds     | Requests, budgets, plans, approvals, evidence, claims, reimbursements, and ROI                                                                                                   |
+| Agency Workspace                | Agency/client hierarchy, sub-accounts, delegated administration, usage visibility, support access, branding, and cross-account operations                                        |
+| White Label                     | Brand/domain/email/application settings, theme selection, custom client experience, provider abstraction, and safe platform attribution policy                                   |
+| SaaS Packaging                  | Plans, feature/module entitlements, limits, trials, signup provisioning, upgrade/downgrade, suspension, cancellation, and Billing integration                                    |
+| Usage Wallet and Rebilling      | Provider usage imports, wallets/credits, threshold reloads, cost/markup rules, client charges, exceptions, reconciliation, and Billing/Accounting handoff                        |
+| Templates and Snapshots         | Versioned bundles of fields, pipelines, workflows, forms, funnels, calendars, templates, dashboards, and settings with preview, protected sharing, install, update, and rollback |
+| Client Onboarding               | Intake, domain/provider connections, data import, snapshot application, verification, launch checklist, training, handoff, and health                                            |
 
 ## 12. Delivery, productivity, and operations modules
 
-| Module | Responsibilities |
-|---|---|
-| Projects | Post-sale projects, templates, milestones, tasks, dependencies, owners, time, files, status, risks, client visibility, and opportunity handoff |
-| Resource Planning | Skills, capacity, allocation, utilization, tentative/confirmed bookings, conflicts, rates, and staffing forecasts |
-| Work Management | Cross-record task boards, queues, recurring work, checklists, approvals, workload, dependencies, and personal/team views |
-| Business Process Management | Guided stages, required steps/data, approvals, validations, service processes, exception routing, and process versioning |
-| CRM Automation Pack | CRM triggers/actions/conditions, recipes, enrollment history, versioning, simulation, approval gates, and generic Automation module adapters |
-| Sandbox and Release Management | Configuration snapshots, test data policy, change sets, validation, dependency analysis, promotion, rollback, and environment comparison |
+| Module                         | Responsibilities                                                                                                                               |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Projects                       | Post-sale projects, templates, milestones, tasks, dependencies, owners, time, files, status, risks, client visibility, and opportunity handoff |
+| Resource Planning              | Skills, capacity, allocation, utilization, tentative/confirmed bookings, conflicts, rates, and staffing forecasts                              |
+| Work Management                | Cross-record task boards, queues, recurring work, checklists, approvals, workload, dependencies, and personal/team views                       |
+| Business Process Management    | Guided stages, required steps/data, approvals, validations, service processes, exception routing, and process versioning                       |
+| CRM Automation Pack            | CRM triggers/actions/conditions, recipes, enrollment history, versioning, simulation, approval gates, and generic Automation module adapters   |
+| Sandbox and Release Management | Configuration snapshots, test data policy, change sets, validation, dependency analysis, promotion, rollback, and environment comparison       |
 
 ## 13. Intelligence and AI modules
 
-| Module | Responsibilities |
-|---|---|
-| CRM Analytics | Governed datasets, dashboards, reports, pivots, funnels, cohorts, goals, schedules, exports, row-level access, and metric lineage |
-| Predictive Models | Lead/opportunity scoring, churn/renewal risk, next action/product, forecast, routing, model registry, evaluation, drift, and explanations |
-| CRM Copilot | Permission-bounded search, summaries, preparation, drafting, record updates, task creation, and action confirmation using the Automation AI Gateway |
-| Prospecting Agent | Approved research, target selection, personalization, sequence preparation, engagement monitoring, and policy-based review/dispatch |
-| Service Agent | Case classification, knowledge retrieval, response drafts, resolution plans, tool use, confidence, escalation, and quality review |
-| Marketing Agent | Audience/campaign/content assistance, variations, journey recommendations, brand/consent checks, experiments, and approval workflow |
-| Conversation Analytics | Topics, objections, competitors, talk ratios, questions, outcomes, coaching moments, quality scorecards, and trend comparison |
+| Module                 | Responsibilities                                                                                                                                    |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| CRM Analytics          | Governed datasets, dashboards, reports, pivots, funnels, cohorts, goals, schedules, exports, row-level access, and metric lineage                   |
+| Predictive Models      | Lead/opportunity scoring, churn/renewal risk, next action/product, forecast, routing, model registry, evaluation, drift, and explanations           |
+| CRM Copilot            | Permission-bounded search, summaries, preparation, drafting, record updates, task creation, and action confirmation using the Automation AI Gateway |
+| Prospecting Agent      | Approved research, target selection, personalization, sequence preparation, engagement monitoring, and policy-based review/dispatch                 |
+| Service Agent          | Case classification, knowledge retrieval, response drafts, resolution plans, tool use, confidence, escalation, and quality review                   |
+| Marketing Agent        | Audience/campaign/content assistance, variations, journey recommendations, brand/consent checks, experiments, and approval workflow                 |
+| Conversation Analytics | Topics, objections, competitors, talk ratios, questions, outcomes, coaching moments, quality scorecards, and trend comparison                       |
 
 AI modules must expose sources, confidence, model/prompt versions, cost, approvals, and audit. They cannot widen access, silently make contractual commitments, or autonomously contact people outside configured consent and risk policy.
 
@@ -197,22 +197,22 @@ The Marketplace manages first-party and third-party apps, provider adapters, aut
 
 Build these as provider-neutral contracts plus separate adapters; product modules consume the contract, never a named vendor SDK.
 
-| Pack | Common capabilities represented |
-|---|---|
-| Productivity | Google Workspace and Microsoft 365 email, calendar, contacts, files, meetings, and identity connections |
-| Team Collaboration | Slack and Microsoft Teams notifications, record unfurls, commands, approvals, and conversation linking |
-| Scheduling and Meetings | Calendly-style schedulers plus Zoom, Teams, and Meet conference creation, attendance, and recording metadata |
-| Sales Intelligence | LinkedIn Sales Navigator-style context and Apollo/ZoomInfo/Clearbit-style prospecting, enrichment, intent, and verification |
-| Documents and E-signature | DocuSign/PandaDoc-style document generation, negotiation, signatures, status, evidence, and storage |
-| Telephony and Messaging | Twilio, Aircall, RingCentral and similar calling, numbers, recording, SMS, WhatsApp, and event adapters |
-| Marketing and Advertising | Google/Meta/LinkedIn ad leads, audiences, campaign performance, offline conversions, and consent signals |
-| Customer Service | Intercom/Zendesk-style case, conversation, knowledge, customer, and status synchronization |
-| Finance | Stripe/PayPal payment links/status plus QuickBooks/Xero accounting customer, invoice, payment, and reconciliation adapters |
-| Commerce | Shopify/WooCommerce-style customer, catalog, cart, order, fulfillment, and lifecycle synchronization |
-| Delivery | Jira/GitHub/Linear-style issue, project, milestone, deployment, status, and customer-visible progress adapters |
-| Integration Automation | Zapier/Make-style triggers/actions, inbound/outbound webhooks, recipes, polling, replay, and connection diagnostics |
-| Data Warehouse and BI | Governed batch/stream export, reverse ETL, semantic metrics, warehouse/lake connections, and dashboard embedding |
-| Migration | HubSpot, Salesforce, Pipedrive, and HighLevel import adapters with dry run, object/field mapping, identity matching, attachments, activities, ownership, and reconciliation |
+| Pack                      | Common capabilities represented                                                                                                                                             |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Productivity              | Google Workspace and Microsoft 365 email, calendar, contacts, files, meetings, and identity connections                                                                     |
+| Team Collaboration        | Slack and Microsoft Teams notifications, record unfurls, commands, approvals, and conversation linking                                                                      |
+| Scheduling and Meetings   | Calendly-style schedulers plus Zoom, Teams, and Meet conference creation, attendance, and recording metadata                                                                |
+| Sales Intelligence        | LinkedIn Sales Navigator-style context and Apollo/ZoomInfo/Clearbit-style prospecting, enrichment, intent, and verification                                                 |
+| Documents and E-signature | DocuSign/PandaDoc-style document generation, negotiation, signatures, status, evidence, and storage                                                                         |
+| Telephony and Messaging   | Twilio, Aircall, RingCentral and similar calling, numbers, recording, SMS, WhatsApp, and event adapters                                                                     |
+| Marketing and Advertising | Google/Meta/LinkedIn ad leads, audiences, campaign performance, offline conversions, and consent signals                                                                    |
+| Customer Service          | Intercom/Zendesk-style case, conversation, knowledge, customer, and status synchronization                                                                                  |
+| Finance                   | Stripe/PayPal payment links/status plus QuickBooks/Xero accounting customer, invoice, payment, and reconciliation adapters                                                  |
+| Commerce                  | Shopify/WooCommerce-style customer, catalog, cart, order, fulfillment, and lifecycle synchronization                                                                        |
+| Delivery                  | Jira/GitHub/Linear-style issue, project, milestone, deployment, status, and customer-visible progress adapters                                                              |
+| Integration Automation    | Zapier/Make-style triggers/actions, inbound/outbound webhooks, recipes, polling, replay, and connection diagnostics                                                         |
+| Data Warehouse and BI     | Governed batch/stream export, reverse ETL, semantic metrics, warehouse/lake connections, and dashboard embedding                                                            |
+| Migration                 | HubSpot, Salesforce, Pipedrive, and HighLevel import adapters with dry run, object/field mapping, identity matching, attachments, activities, ownership, and reconciliation |
 
 Vendor names illustrate expected interoperability, not embedded dependencies or guaranteed provider availability.
 

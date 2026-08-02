@@ -15,23 +15,23 @@
 
 ## Module plan
 
-| Module | Responsibilities |
-|---|---|
-| Social Core | Network settings, deployment mode, terminology, feature policy, shared IDs, and events |
-| Profiles | Handles, bios, attributes, avatars, verification, visibility, blocking, and profile lifecycle |
-| Social Graph | Follow/friend models, requests, lists, suggestions, blocks, and relationship visibility |
-| Publishing | Posts, articles, drafts, audiences, edits, mentions, hashtags, polls, links, and schedules |
-| Feed | Candidate generation, ranking, chronological mode, filters, pagination, explanations, and controls |
-| Engagement | Reactions, comments, replies, sharing, bookmarks, counters, and abuse limits |
-| Media | Images, video, audio, files, processing, alt text, captions, rights, and delivery |
-| Communities | Groups/pages, memberships, roles, rules, feeds, files, questions, and moderation |
-| Events | Events, invitations, attendance, capacity, schedules, locations, reminders, and updates |
-| Messaging | Conversations, membership, delivery/read state, attachments, requests, safety, and retention |
-| Notifications | Preferences, in-app/email/push delivery, grouping, digests, quiet hours, and read state |
-| Discovery | Search, hashtags, trends, recommendations, directories, and privacy-aware indexing |
-| Moderation | Reports, queues, policy/rules, evidence, actions, appeals, sanctions, and transparency |
-| Federation | ActivityPub identities, inbox/outbox, signatures, delivery, mapping, moderation, and reconciliation |
-| Analytics | Growth, engagement, retention, health, moderation, delivery, and privacy-governed insights |
+| Module        | Responsibilities                                                                                    |
+| ------------- | --------------------------------------------------------------------------------------------------- |
+| Social Core   | Network settings, deployment mode, terminology, feature policy, shared IDs, and events              |
+| Profiles      | Handles, bios, attributes, avatars, verification, visibility, blocking, and profile lifecycle       |
+| Social Graph  | Follow/friend models, requests, lists, suggestions, blocks, and relationship visibility             |
+| Publishing    | Posts, articles, drafts, audiences, edits, mentions, hashtags, polls, links, and schedules          |
+| Feed          | Candidate generation, ranking, chronological mode, filters, pagination, explanations, and controls  |
+| Engagement    | Reactions, comments, replies, sharing, bookmarks, counters, and abuse limits                        |
+| Media         | Images, video, audio, files, processing, alt text, captions, rights, and delivery                   |
+| Communities   | Groups/pages, memberships, roles, rules, feeds, files, questions, and moderation                    |
+| Events        | Events, invitations, attendance, capacity, schedules, locations, reminders, and updates             |
+| Messaging     | Conversations, membership, delivery/read state, attachments, requests, safety, and retention        |
+| Notifications | Preferences, in-app/email/push delivery, grouping, digests, quiet hours, and read state             |
+| Discovery     | Search, hashtags, trends, recommendations, directories, and privacy-aware indexing                  |
+| Moderation    | Reports, queues, policy/rules, evidence, actions, appeals, sanctions, and transparency              |
+| Federation    | ActivityPub identities, inbox/outbox, signatures, delivery, mapping, moderation, and reconciliation |
+| Analytics     | Growth, engagement, retention, health, moderation, delivery, and privacy-governed insights          |
 
 ## Required workflows
 

@@ -15,22 +15,22 @@
 
 ## Module plan
 
-| Module | Responsibilities |
-|---|---|
-| Genealogy Core | Trees, ownership, identifiers, privacy defaults, terminology, and shared events |
-| People | Names, identities, attributes, life events, living/deceased status, and merge candidates |
-| Relationships | Parent, partner, household, adoption, guardianship, uncertain links, and graph validation |
-| Evidence | Sources, repositories, citations, extracts, assertions, confidence, and proof conclusions |
-| Research | Questions, plans, tasks, logs, correspondence, negative searches, and findings |
-| Places | Historical/current place hierarchy, names over time, coordinates, jurisdictions, and maps |
-| Timeline | Personal/family timelines, historical context, conflicts, and chronological navigation |
-| Tree Viewer | Pedigree, descendants, fan/chart views, navigation, filters, and large-tree rendering |
-| Import Export | GEDCOM and GRAMPS mapping, validation, dry run, duplicate detection, reports, and round trip |
-| DNA | Kits, providers, consent, match segments, relationships, groups, notes, and revocation |
-| Media | Documents, photographs, audio/video, transcription, rights, links, and preservation metadata |
-| Collaboration | Invitations, roles, branch/change proposals, review, discussions, watch lists, and attribution |
-| Discovery | Person/place/source search, hints, duplicates, relationship paths, and privacy-aware indexes |
-| Reports | Family groups, pedigrees, descendants, timelines, research, sources, and exportable charts |
+| Module         | Responsibilities                                                                               |
+| -------------- | ---------------------------------------------------------------------------------------------- |
+| Genealogy Core | Trees, ownership, identifiers, privacy defaults, terminology, and shared events                |
+| People         | Names, identities, attributes, life events, living/deceased status, and merge candidates       |
+| Relationships  | Parent, partner, household, adoption, guardianship, uncertain links, and graph validation      |
+| Evidence       | Sources, repositories, citations, extracts, assertions, confidence, and proof conclusions      |
+| Research       | Questions, plans, tasks, logs, correspondence, negative searches, and findings                 |
+| Places         | Historical/current place hierarchy, names over time, coordinates, jurisdictions, and maps      |
+| Timeline       | Personal/family timelines, historical context, conflicts, and chronological navigation         |
+| Tree Viewer    | Pedigree, descendants, fan/chart views, navigation, filters, and large-tree rendering          |
+| Import Export  | GEDCOM and GRAMPS mapping, validation, dry run, duplicate detection, reports, and round trip   |
+| DNA            | Kits, providers, consent, match segments, relationships, groups, notes, and revocation         |
+| Media          | Documents, photographs, audio/video, transcription, rights, links, and preservation metadata   |
+| Collaboration  | Invitations, roles, branch/change proposals, review, discussions, watch lists, and attribution |
+| Discovery      | Person/place/source search, hints, duplicates, relationship paths, and privacy-aware indexes   |
+| Reports        | Family groups, pedigrees, descendants, timelines, research, sources, and exportable charts     |
 
 ## Required workflows
 

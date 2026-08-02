@@ -151,4 +151,3 @@ Each file defines one independent module. Modules remain independently installab
 - [Commerce Copilot](commerce-copilot.md) — `ecommerce-commerce-copilot`
 - [Migration Framework](migration-framework.md) — `ecommerce-migration-framework`
 - [Sandbox and Release](sandbox-and-release.md) — `ecommerce-sandbox-and-release`
-

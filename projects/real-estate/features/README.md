@@ -22,4 +22,3 @@ Each file defines one independent module. Modules remain independently installab
 - [Property Management](property-management.md) — `real-estate-property-management`
 - [Marketing](marketing.md) — `real-estate-marketing`
 - [Portals and Reporting](portals-and-reporting.md) — `real-estate-portals-and-reporting`
-

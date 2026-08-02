@@ -15,19 +15,19 @@
 
 ## Module plan
 
-| Module | Responsibilities |
-|---|---|
+| Module          | Responsibilities                                                                                                     |
+| --------------- | -------------------------------------------------------------------------------------------------------------------- |
 | Automation Core | Workflow definitions, versions, triggers, state, runs, variables, schedules, retries, cancellation, and compensation |
-| Rules | Typed conditions, expressions, validation, simulation, and reusable decision tables |
-| Approvals | Human review queues, separation of duties, expiry, escalation, delegation, and evidence |
-| AI Gateway | Provider contracts, model catalog, routing, fallback, structured output, tool policy, and usage metering |
-| Prompt Registry | Versioned prompts, variables, evaluation sets, brand/tenant overrides, approvals, and rollback |
-| Data Processing | Classification, extraction, summarization, translation, enrichment, redaction, and batch processing |
-| Voice | Speech-to-text, text-to-speech, streaming sessions, interruption, transcripts, and consent controls |
-| Image | Generation/editing requests, source assets, moderation, provenance, variants, and delivery |
-| Video | Generation/editing jobs, scripts, captions, audio, moderation, provenance, and delivery |
-| Connectors | Authenticated triggers/actions, webhooks, rate limits, cursor sync, replay, and reconciliation |
-| Evaluation | Quality suites, regression comparison, latency/cost metrics, safety checks, and release gates |
+| Rules           | Typed conditions, expressions, validation, simulation, and reusable decision tables                                  |
+| Approvals       | Human review queues, separation of duties, expiry, escalation, delegation, and evidence                              |
+| AI Gateway      | Provider contracts, model catalog, routing, fallback, structured output, tool policy, and usage metering             |
+| Prompt Registry | Versioned prompts, variables, evaluation sets, brand/tenant overrides, approvals, and rollback                       |
+| Data Processing | Classification, extraction, summarization, translation, enrichment, redaction, and batch processing                  |
+| Voice           | Speech-to-text, text-to-speech, streaming sessions, interruption, transcripts, and consent controls                  |
+| Image           | Generation/editing requests, source assets, moderation, provenance, variants, and delivery                           |
+| Video           | Generation/editing jobs, scripts, captions, audio, moderation, provenance, and delivery                              |
+| Connectors      | Authenticated triggers/actions, webhooks, rate limits, cursor sync, replay, and reconciliation                       |
+| Evaluation      | Quality suites, regression comparison, latency/cost metrics, safety checks, and release gates                        |
 
 ## Required workflows
 

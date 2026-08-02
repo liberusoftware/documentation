@@ -34,10 +34,10 @@ theme-{theme-name}-livewire
 
 Examples:
 
-| Aim | Valid name | Invalid names |
-|---|---|---|
-| CMS interactive UI | `module-cms-livewire` | `cms-livewire`, `livewire-cms` |
-| Billing customer UI | `module-billing-livewire` | `billing-components`, `module-billing` |
+| Aim                         | Valid name                 | Invalid names                           |
+| --------------------------- | -------------------------- | --------------------------------------- |
+| CMS interactive UI          | `module-cms-livewire`      | `cms-livewire`, `livewire-cms`          |
+| Billing customer UI         | `module-billing-livewire`  | `billing-components`, `module-billing`  |
 | Corporate theme interaction | `theme-corporate-livewire` | `corporate-livewire`, `theme-corporate` |
 
 This rule applies to the independent GitHub repository name, Composer package basename, Liberu installer name, manifest identity, and installed directory. Composer examples are `liberu/module-cms-livewire` and `liberu/theme-corporate-livewire`.
@@ -89,12 +89,12 @@ Theme packages  -X-> domain internals
 
 Responsibilities are divided as follows:
 
-| Owner | Owns | Must not own |
-|---|---|---|
-| Root application | Route composition, layouts, authentication, middleware, tenant resolution, enabled packages, global navigation and cross-module pages | Duplicated reusable components or package domain behavior |
+| Owner               | Owns                                                                                                                                   | Must not own                                                                       |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Root application    | Route composition, layouts, authentication, middleware, tenant resolution, enabled packages, global navigation and cross-module pages  | Duplicated reusable components or package domain behavior                          |
 | `module-*-livewire` | Functional components, component forms, full-page component definitions, presentation validation, view models and interaction adapters | Domain rules, application-specific composition or direct cross-module table access |
-| Domain module | Models, policies, authorized actions/queries, persistence, events and business rules | Livewire dependencies, components or hydrated UI state |
-| `theme-*-livewire` | Presentation-state components, layouts, styling hooks and supported JavaScript/Alpine integration | Domain mutations, policies, domain resources or validation replacement |
+| Domain module       | Models, policies, authorized actions/queries, persistence, events and business rules                                                   | Livewire dependencies, components or hydrated UI state                             |
+| `theme-*-livewire`  | Presentation-state components, layouts, styling hooks and supported JavaScript/Alpine integration                                      | Domain mutations, policies, domain resources or validation replacement             |
 
 Dependencies point from a module Livewire package to the narrow domain contracts, queries and actions it presents. Theme Livewire packages depend on their theme and presentation contracts, not on private domain implementations. The application may depend on all selected packages because it is the composition root.
 
@@ -475,13 +475,13 @@ Packages use semantic versioning and release independently. Breaking changes to 
 
 Livewire testing follows `TESTING.md`. Tests assert observable behavior through public component boundaries, use the smallest layer that supplies the required evidence, and remain deterministic, isolated and parallel-safe.
 
-| Evidence | Primary owner |
-|---|---|
+| Evidence                                                               | Primary owner                                     |
+| ---------------------------------------------------------------------- | ------------------------------------------------- |
 | Component rendering, state, actions, events and namespace registration | `module-*-livewire` or `theme-*-livewire` package |
-| Domain invariants invoked by a component | Owning domain package |
-| Routes, layouts, theme composition and cross-module workflows | Root application |
-| Visual identity, assets and presentation overrides | `theme-*-livewire` plus representative host |
-| Minimum/current Livewire, Laravel and PHP compatibility | Independent package CI and host CI |
+| Domain invariants invoked by a component                               | Owning domain package                             |
+| Routes, layouts, theme composition and cross-module workflows          | Root application                                  |
+| Visual identity, assets and presentation overrides                     | `theme-*-livewire` plus representative host       |
+| Minimum/current Livewire, Laravel and PHP compatibility                | Independent package CI and host CI                |
 
 Every `module-*-livewire` package includes, where relevant:
 

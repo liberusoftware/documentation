@@ -1,4 +1,5 @@
 # Genealogy Feature Specifications
+
 **Source:** [GENEALOGY.md](../GENEALOGY.md)  
 **Architecture:** [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md) · [DOCUMENTATION.md](../GENEALOGY.md)
 

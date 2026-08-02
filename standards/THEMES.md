@@ -20,11 +20,11 @@ Each theme is developed and released from an independent GitHub repository under
 
 ## 2. Theme types
 
-| Type | Intended surface |
-|---|---|
-| Public | Marketing sites, publishing, ecommerce storefronts, and public product pages |
-| Portal | Authenticated customer, partner, member, or staff experiences |
-| Admin | Filament panels and operational dashboards |
+| Type   | Intended surface                                                                            |
+| ------ | ------------------------------------------------------------------------------------------- |
+| Public | Marketing sites, publishing, ecommerce storefronts, and public product pages                |
+| Portal | Authenticated customer, partner, member, or staff experiences                               |
+| Admin  | Filament panels and operational dashboards                                                  |
 | Shared | Design tokens, primitives, icons, fonts, and cross-surface assets inherited by other themes |
 
 A deployment may select different themes by site, tenant, brand, locale, or surface. Theme selection must use trusted configuration and fall back safely.
@@ -165,11 +165,24 @@ Every theme provides `theme.json`:
   "tested_with": ["liberu-cms/cms-laravel", "liberu/boilerplate-laravel"],
   "supports": ["cms.pages", "cms.posts", "search"],
   "adapters": {
-    "blade": { "entrypoints": ["resources/css/app.css", "resources/js/app.js"] },
-    "livewire": { "entrypoints": ["resources/css/app.css", "resources/js/app.js"] },
-    "react-inertia": { "package": "theme-corporate-react-inertia", "entrypoints": ["adapters/react-inertia/index.ts"] },
-    "vue-inertia": { "package": "theme-corporate-vue-inertia", "entrypoints": ["adapters/vue-inertia/index.ts"] },
-    "nuxt": { "package": "theme-corporate-nuxt", "layer": "adapters/nuxt/layer" }
+    "blade": {
+      "entrypoints": ["resources/css/app.css", "resources/js/app.js"]
+    },
+    "livewire": {
+      "entrypoints": ["resources/css/app.css", "resources/js/app.js"]
+    },
+    "react-inertia": {
+      "package": "theme-corporate-react-inertia",
+      "entrypoints": ["adapters/react-inertia/index.ts"]
+    },
+    "vue-inertia": {
+      "package": "theme-corporate-vue-inertia",
+      "entrypoints": ["adapters/vue-inertia/index.ts"]
+    },
+    "nuxt": {
+      "package": "theme-corporate-nuxt",
+      "layer": "adapters/nuxt/layer"
+    }
   },
   "assets": {
     "css": ["resources/css/app.css"],
@@ -206,13 +219,13 @@ Tokens must cover light, dark, high-contrast, error, warning, success, disabled,
 
 The theme identity, semantic token names, component states, content regions, asset roles, accessibility behavior, and module extension-point names are shared across technologies. The adapter translates that contract into its framework's rendering and build system.
 
-| Shared contract | Laravel/Blade | Livewire | React/Inertia | Vue/Inertia | Nuxt |
-|---|---|---|---|---|---|
-| Layout regions | Blade layouts/components | Blade layouts + Livewire views | Inertia layouts/components | Inertia layouts/SFCs | Nuxt layouts/components |
-| Presentation state | progressive JS | Livewire state | hooks/local state | composables/local state | composables/local state |
-| Tokens | CSS custom properties | CSS custom properties | CSS custom properties or typed exports | CSS custom properties or typed exports | CSS custom properties or typed exports |
-| Module extension | documented view names/slots | documented view/component hooks | typed component/page slots | typed component/page slots | typed component/slot props |
-| Server boundary | Laravel view model | Livewire public state | Inertia props/API contract | Inertia props/API contract | API contract/runtime config |
+| Shared contract    | Laravel/Blade               | Livewire                        | React/Inertia                          | Vue/Inertia                            | Nuxt                                   |
+| ------------------ | --------------------------- | ------------------------------- | -------------------------------------- | -------------------------------------- | -------------------------------------- |
+| Layout regions     | Blade layouts/components    | Blade layouts + Livewire views  | Inertia layouts/components             | Inertia layouts/SFCs                   | Nuxt layouts/components                |
+| Presentation state | progressive JS              | Livewire state                  | hooks/local state                      | composables/local state                | composables/local state                |
+| Tokens             | CSS custom properties       | CSS custom properties           | CSS custom properties or typed exports | CSS custom properties or typed exports | CSS custom properties or typed exports |
+| Module extension   | documented view names/slots | documented view/component hooks | typed component/page slots             | typed component/page slots             | typed component/slot props             |
+| Server boundary    | Laravel view model          | Livewire public state           | Inertia props/API contract             | Inertia props/API contract             | API contract/runtime config            |
 
 Adapters must not change token meaning, responsive states, focus behavior, copy, permission semantics, or required loading/error/empty states. If a framework cannot support a capability, the manifest declares the limitation and uses the documented fallback.
 
@@ -345,12 +358,12 @@ Meaningful owned PHP and Livewire code targets 100% line coverage. `composer tes
 
 Each independent theme repository owns these GitHub Actions workflows:
 
-| Workflow | Required evidence |
-|---|---|
-| `install.yml` | Clean Composer dependency resolution/install, manifest/provider validation, independent bootstrap, asset dependency install, build, and documented quick start |
-| `tests.yml` | Pest 5 feature/Livewire/boundary/security suites, static analysis, asset validation, and 100% meaningful-PHP coverage reports |
-| `visual.yml` | Accessibility and visual regression across representative viewports, locales, directions, color modes, parent fallback, and supported hosts |
-| `compatibility.yml` | Declared minimum/current PHP, Laravel, Livewire/Filament where used, parent-theme, and representative optimized/non-optimized hosts |
+| Workflow            | Required evidence                                                                                                                                              |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `install.yml`       | Clean Composer dependency resolution/install, manifest/provider validation, independent bootstrap, asset dependency install, build, and documented quick start |
+| `tests.yml`         | Pest 5 feature/Livewire/boundary/security suites, static analysis, asset validation, and 100% meaningful-PHP coverage reports                                  |
+| `visual.yml`        | Accessibility and visual regression across representative viewports, locales, directions, color modes, parent fallback, and supported hosts                    |
+| `compatibility.yml` | Declared minimum/current PHP, Laravel, Livewire/Filament where used, parent-theme, and representative optimized/non-optimized hosts                            |
 
 Performance or broad browser matrices may be scheduled or release-gated, but required release evidence must complete before publication. Workflows invoke repository-owned Composer/npm scripts directly and must not require a duplicated scripts package. Generated coverage, screenshots and reports are retained as protected CI artifacts.
 

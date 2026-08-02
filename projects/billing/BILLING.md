@@ -15,24 +15,24 @@
 
 ## Module plan
 
-| Module | Responsibilities |
-|---|---|
-| Billing Core | Accounts, contacts, currencies, tax profiles, sequences, terms, and billing settings |
-| Catalog | Products, plans, add-ons, bundles, configurable options, eligibility, channels, and lifecycle |
-| Pricing | Recurring/one-time/usage/tiered pricing, contracts, discounts, proration, and snapshots |
-| Orders | Quotes, carts, checkout, fraud review, agreements, order state, and change orders |
-| Subscriptions | Activation, renewal, trial, upgrade/downgrade, pause, cancellation, and entitlement state |
-| Usage | Meter definitions, ingestion, deduplication, aggregation, rating, corrections, and thresholds |
-| Invoicing | Schedules, line generation, tax, credits, adjustments, PDFs, delivery, and finalization |
-| Payments | Methods, mandates, gateway drivers, capture, allocation, refunds, disputes, and reconciliation |
-| Collections | Retries, dunning, reminders, promises, credit control, suspension, write-off, and recovery |
-| Provisioning | Service state machine, provider drivers, queued operations, rollback, polling, and reconciliation |
-| Hosting | Hosting accounts, plans, control-panel adapters, SSL, resources, and lifecycle operations |
-| Domains | Search, contacts, registration, transfer, renewal, redemption, EPP, DNS, and registrar adapters |
-| ISP | Access services, coverage, installation, RADIUS/AAA, usage, equipment, and network adapters |
-| Communications | VoIP/SMS service inventory, number lifecycle, usage/rating imports, and provider adapters |
-| Customer Portal | Profile, orders, services, usage, invoices, payments, tickets, changes, and cancellation |
-| Reporting | MRR/ARR, churn, aging, revenue, tax, usage, provisioning, collection, and provider metrics |
+| Module          | Responsibilities                                                                                  |
+| --------------- | ------------------------------------------------------------------------------------------------- |
+| Billing Core    | Accounts, contacts, currencies, tax profiles, sequences, terms, and billing settings              |
+| Catalog         | Products, plans, add-ons, bundles, configurable options, eligibility, channels, and lifecycle     |
+| Pricing         | Recurring/one-time/usage/tiered pricing, contracts, discounts, proration, and snapshots           |
+| Orders          | Quotes, carts, checkout, fraud review, agreements, order state, and change orders                 |
+| Subscriptions   | Activation, renewal, trial, upgrade/downgrade, pause, cancellation, and entitlement state         |
+| Usage           | Meter definitions, ingestion, deduplication, aggregation, rating, corrections, and thresholds     |
+| Invoicing       | Schedules, line generation, tax, credits, adjustments, PDFs, delivery, and finalization           |
+| Payments        | Methods, mandates, gateway drivers, capture, allocation, refunds, disputes, and reconciliation    |
+| Collections     | Retries, dunning, reminders, promises, credit control, suspension, write-off, and recovery        |
+| Provisioning    | Service state machine, provider drivers, queued operations, rollback, polling, and reconciliation |
+| Hosting         | Hosting accounts, plans, control-panel adapters, SSL, resources, and lifecycle operations         |
+| Domains         | Search, contacts, registration, transfer, renewal, redemption, EPP, DNS, and registrar adapters   |
+| ISP             | Access services, coverage, installation, RADIUS/AAA, usage, equipment, and network adapters       |
+| Communications  | VoIP/SMS service inventory, number lifecycle, usage/rating imports, and provider adapters         |
+| Customer Portal | Profile, orders, services, usage, invoices, payments, tickets, changes, and cancellation          |
+| Reporting       | MRR/ARR, churn, aging, revenue, tax, usage, provisioning, collection, and provider metrics        |
 
 ## Required workflows
 

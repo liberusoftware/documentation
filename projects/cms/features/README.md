@@ -118,4 +118,3 @@ Each file defines one independent module. Modules remain independently installab
 - [Translation Assistant](translation-assistant.md) — `cms-translation-assistant`
 - [Media Assistant](media-assistant.md) — `cms-media-assistant`
 - [Experience Assistant](experience-assistant.md) — `cms-experience-assistant`
-

@@ -36,16 +36,16 @@ This is a deliberate architectural choice, not a claim that Spatie is unsuitable
 
 Every setting has:
 
-| Field | Requirement |
-|---|---|
-| Key | Stable lowercase dot notation such as `billing.invoice.prefix`; never expose a mutable database ID as the contract |
-| Type | Registered scalar, enum, date/time, list, map, DTO, JSON schema, or secret type |
-| Scope kind | Explicit discriminator such as `global`, `application`, `team`, `user`, `site`, `organization`, or `module` |
-| Scope ID | Stable owner identifier, null only for global scope; never accepted as authorization by itself |
-| Version | Contract/schema version used by migrations and readers |
-| Sensitivity | `public`, `internal`, `personal`, `confidential`, or `secret` |
-| Policy | Read, write, reveal, and inheritance rules owned by the module |
-| Default | Typed safe default or an explicit “unset”; secrets must not have committed production defaults |
+| Field       | Requirement                                                                                                        |
+| ----------- | ------------------------------------------------------------------------------------------------------------------ |
+| Key         | Stable lowercase dot notation such as `billing.invoice.prefix`; never expose a mutable database ID as the contract |
+| Type        | Registered scalar, enum, date/time, list, map, DTO, JSON schema, or secret type                                    |
+| Scope kind  | Explicit discriminator such as `global`, `application`, `team`, `user`, `site`, `organization`, or `module`        |
+| Scope ID    | Stable owner identifier, null only for global scope; never accepted as authorization by itself                     |
+| Version     | Contract/schema version used by migrations and readers                                                             |
+| Sensitivity | `public`, `internal`, `personal`, `confidential`, or `secret`                                                      |
+| Policy      | Read, write, reveal, and inheritance rules owned by the module                                                     |
+| Default     | Typed safe default or an explicit “unset”; secrets must not have committed production defaults                     |
 
 The canonical persisted identity is `(scope_kind, scope_id, key)`. Use a scope registry rather than arbitrary PHP class names in client input. A composite context is represented by an explicit scope resource or a documented scope tuple, not by ambiguous concatenated strings.
 
@@ -131,13 +131,13 @@ The settings service must fail closed when scope or actor context is missing. A 
 
 The API adapter is optional but follows [API.md](API.md) and OpenAPI 3.1. It exposes definitions and values only through authorized, versioned module routes, for example:
 
-| Method | Endpoint | Purpose |
-|---|---|---|
-| `GET` | `/api/v1/settings/definitions` | List definitions visible to the actor, without secret values |
-| `GET` | `/api/v1/settings/{scope}/{key}` | Read one resolved or raw authorized value; secrets are redacted by default |
-| `PUT` | `/api/v1/settings/{scope}/{key}` | Replace a value with `If-Match`/version and idempotency support |
-| `DELETE` | `/api/v1/settings/{scope}/{key}` | Clear an allowed override and reveal the inherited value |
-| `POST` | `/api/v1/settings/{scope}/{key}/rotate` | Replace a secret through an audited rotation operation |
+| Method   | Endpoint                                | Purpose                                                                    |
+| -------- | --------------------------------------- | -------------------------------------------------------------------------- |
+| `GET`    | `/api/v1/settings/definitions`          | List definitions visible to the actor, without secret values               |
+| `GET`    | `/api/v1/settings/{scope}/{key}`        | Read one resolved or raw authorized value; secrets are redacted by default |
+| `PUT`    | `/api/v1/settings/{scope}/{key}`        | Replace a value with `If-Match`/version and idempotency support            |
+| `DELETE` | `/api/v1/settings/{scope}/{key}`        | Clear an allowed override and reveal the inherited value                   |
+| `POST`   | `/api/v1/settings/{scope}/{key}/rotate` | Replace a secret through an audited rotation operation                     |
 
 Responses use the standard `data`, `meta`, and RFC 9457 Problem Details shapes. Never serialize the internal ciphertext, encryption key version, policy object, or unauthorized scopes. Generated clients must use the released OpenAPI contract.
 

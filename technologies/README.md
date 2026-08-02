@@ -2,9 +2,9 @@
 
 This directory complements [TECHNOLOGIES.md](../TECHNOLOGIES.md) with language-level standards. The root index explains which Liberu solutions use each technology; these files explain how to use the language safely and consistently.
 
-| Technology | Standard |
-|---|---|
-| PHP | [PHP.md](PHP.md) |
+| Technology | Standard                       |
+| ---------- | ------------------------------ |
+| PHP        | [PHP.md](PHP.md)               |
 | JavaScript | [JAVASCRIPT.md](JAVASCRIPT.md) |
 | TypeScript | [TYPESCRIPT.md](TYPESCRIPT.md) |
 

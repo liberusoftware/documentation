@@ -22,4 +22,3 @@ Each file defines one independent module. Modules remain independently installab
 - [Live Ops](live-ops.md) — `browser-game-live-ops`
 - [Commerce](commerce.md) — `browser-game-commerce`
 - [Moderation and Analytics](moderation-and-analytics.md) — `browser-game-moderation-and-analytics`
-

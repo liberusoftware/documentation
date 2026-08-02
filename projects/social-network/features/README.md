@@ -22,4 +22,3 @@ Each file defines one independent module. Modules remain independently installab
 - [Moderation](moderation.md) — `social-network-moderation`
 - [Federation](federation.md) — `social-network-federation`
 - [Analytics](analytics.md) — `social-network-analytics`
-

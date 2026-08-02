@@ -151,4 +151,3 @@ Each file defines one independent module. Modules remain independently installab
 - [Sage Accounting Migration](sage-accounting-migration.md) — `accounting-sage-accounting-migration`
 - [Xero Migration](xero-migration.md) — `accounting-xero-migration`
 - [Spreadsheet Migration](spreadsheet-migration.md) — `accounting-spreadsheet-migration`
-

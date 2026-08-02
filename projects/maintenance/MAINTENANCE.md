@@ -15,22 +15,22 @@
 
 ## Module plan
 
-| Module | Responsibilities |
-|---|---|
-| Maintenance Core | Organizations, service settings, statuses, numbering, priorities, and shared events |
-| Customers and Sites | Customers, contacts, sites, locations, access details, hazards, and service windows |
-| Assets | Hierarchies, categories, specifications, meters, warranties, condition, QR/barcodes, and history |
-| Work Orders | Requests, triage, jobs, tasks, status machine, dependencies, notes, evidence, and completion |
-| Scheduling | Calendars, skills, territories, shifts, availability, travel, dispatch, and conflict handling |
-| Preventative Maintenance | Plans, triggers, frequencies, meter rules, forecasts, generation, and optimization |
-| Inspections | Templates, conditional checklists, readings, failures, signatures, certificates, and follow-up |
-| Inventory | Parts, warehouses/vans, stock ledger, reservations, issues/returns, transfers, reorder, and counts |
-| Procurement | Suppliers, requests, approvals, purchase orders, receipts, returns, and cost allocation |
-| Labor and Time | Engineer skills, attendance, time entries, rates, expenses, and approval |
-| Commercial | Quotes, contracts, covered assets/services, rates, renewals, SLA, and billable lines |
-| Compliance | Requirements, permits, risk assessments, incidents, corrective actions, evidence, and expiry |
-| Portals | Customer requests/approvals/status and engineer schedule/work/offline capture |
-| Reporting | Backlog, response, first-time fix, downtime, cost, utilization, stock, SLA, and compliance metrics |
+| Module                   | Responsibilities                                                                                   |
+| ------------------------ | -------------------------------------------------------------------------------------------------- |
+| Maintenance Core         | Organizations, service settings, statuses, numbering, priorities, and shared events                |
+| Customers and Sites      | Customers, contacts, sites, locations, access details, hazards, and service windows                |
+| Assets                   | Hierarchies, categories, specifications, meters, warranties, condition, QR/barcodes, and history   |
+| Work Orders              | Requests, triage, jobs, tasks, status machine, dependencies, notes, evidence, and completion       |
+| Scheduling               | Calendars, skills, territories, shifts, availability, travel, dispatch, and conflict handling      |
+| Preventative Maintenance | Plans, triggers, frequencies, meter rules, forecasts, generation, and optimization                 |
+| Inspections              | Templates, conditional checklists, readings, failures, signatures, certificates, and follow-up     |
+| Inventory                | Parts, warehouses/vans, stock ledger, reservations, issues/returns, transfers, reorder, and counts |
+| Procurement              | Suppliers, requests, approvals, purchase orders, receipts, returns, and cost allocation            |
+| Labor and Time           | Engineer skills, attendance, time entries, rates, expenses, and approval                           |
+| Commercial               | Quotes, contracts, covered assets/services, rates, renewals, SLA, and billable lines               |
+| Compliance               | Requirements, permits, risk assessments, incidents, corrective actions, evidence, and expiry       |
+| Portals                  | Customer requests/approvals/status and engineer schedule/work/offline capture                      |
+| Reporting                | Backlog, response, first-time fix, downtime, cost, utilization, stock, SLA, and compliance metrics |
 
 ## Required workflows
 

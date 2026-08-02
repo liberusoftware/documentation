@@ -12,13 +12,13 @@ Production deployment is release-based. A protected version tag such as `v1.2.3`
 
 The exact workflow filenames may vary by application, but responsibilities remain consistent:
 
-| Workflow | Responsibility |
-|---|---|
-| `install.yml` | Verify supported PHP and Node versions, lock files, package installation, and application bootstrap. |
-| `tests.yml` | Run formatting, static analysis, architecture checks, unit and feature tests, API/OpenAPI checks, security checks, and coverage. |
-| `docker.yml` | Build, scan, and publish immutable container artifacts where applicable. |
-| `deploy-staging.yml` | Optionally deploy the successful `main` artifact to staging and run smoke checks. |
-| `release.yml` | Validate a protected version tag or release, obtain production approval, deploy, and verify or roll back. |
+| Workflow             | Responsibility                                                                                                                   |
+| -------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| `install.yml`        | Verify supported PHP and Node versions, lock files, package installation, and application bootstrap.                             |
+| `tests.yml`          | Run formatting, static analysis, architecture checks, unit and feature tests, API/OpenAPI checks, security checks, and coverage. |
+| `docker.yml`         | Build, scan, and publish immutable container artifacts where applicable.                                                         |
+| `deploy-staging.yml` | Optionally deploy the successful `main` artifact to staging and run smoke checks.                                                |
+| `release.yml`        | Validate a protected version tag or release, obtain production approval, deploy, and verify or roll back.                        |
 
 Keep workflows small and composable. A reusable workflow should own repeated setup and gate logic; application repositories remain responsible for their deployment manifests and environment-specific commands.
 
@@ -73,7 +73,7 @@ on:
     branches: [main]
   push:
     branches: [main]
-    tags: ['v*.*.*']
+    tags: ["v*.*.*"]
   workflow_dispatch:
 
 permissions:

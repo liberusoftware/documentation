@@ -29,16 +29,16 @@ This document defines the shared API contract. Product scopes define which resou
 
 ## 3. API categories
 
-| Category | Purpose | Ownership |
-|---|---|---|
-| Module API | Exposes exactly one independent module's supported resources, queries, and actions | That module's matching optional API presentation package |
-| Application API | Curates module APIs into a coherent product/project surface | Host application's composition layer |
-| Internal contract API | Synchronous PHP contract or private service endpoint used between required capabilities | Owning contract/core package |
-| Connector API | Connects a Liberu contract to an external provider | Independent provider-adapter module |
-| Marketplace API | Installs, authorizes, configures, meters, and monitors third-party apps | Boilerplate marketplace/integration capabilities |
-| Webhook API | Receives external facts or delivers Liberu domain events | Owning connector/module plus shared webhook infrastructure |
-| Management API | Operates modules, jobs, integrations, health, and deployment-safe lifecycle | Boilerplate/authorized operations packages |
-| Headless/Storefront API | Delivers purpose-specific public/customer content and commerce experiences | CMS/Ecommerce presentation packages |
+| Category                | Purpose                                                                                 | Ownership                                                  |
+| ----------------------- | --------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Module API              | Exposes exactly one independent module's supported resources, queries, and actions      | That module's matching optional API presentation package   |
+| Application API         | Curates module APIs into a coherent product/project surface                             | Host application's composition layer                       |
+| Internal contract API   | Synchronous PHP contract or private service endpoint used between required capabilities | Owning contract/core package                               |
+| Connector API           | Connects a Liberu contract to an external provider                                      | Independent provider-adapter module                        |
+| Marketplace API         | Installs, authorizes, configures, meters, and monitors third-party apps                 | Boilerplate marketplace/integration capabilities           |
+| Webhook API             | Receives external facts or delivers Liberu domain events                                | Owning connector/module plus shared webhook infrastructure |
+| Management API          | Operates modules, jobs, integrations, health, and deployment-safe lifecycle             | Boilerplate/authorized operations packages                 |
+| Headless/Storefront API | Delivers purpose-specific public/customer content and commerce experiences              | CMS/Ecommerce presentation packages                        |
 
 An application may expose a smaller curated surface than the sum of installed module APIs. Private/internal endpoints must not become publicly reachable through routing accidents.
 
@@ -52,12 +52,12 @@ module-{independent-module-name}-api
 
 Examples:
 
-| Domain module | Matching API module |
-|---|---|
-| `cms-content` | `module-cms-content-api` |
-| `cms-pages` | `module-cms-pages-api` |
+| Domain module      | Matching API module           |
+| ------------------ | ----------------------------- |
+| `cms-content`      | `module-cms-content-api`      |
+| `cms-pages`        | `module-cms-pages-api`        |
 | `billing-invoices` | `module-billing-invoices-api` |
-| `payment-core` | `module-payment-core-api` |
+| `payment-core`     | `module-payment-core-api`     |
 
 The rule applies to the GitHub repository, Composer package basename, installer name, manifest identity, and installed directory. For example, `liberu/module-cms-content-api` installs to `/modules/module-cms-content-api`.
 
@@ -181,15 +181,15 @@ An API catalog records owner, repository, version, audience, data classification
 
 Use as applicable:
 
-| Header | Purpose |
-|---|---|
-| `Authorization` | Bearer access token or approved service credential |
-| `Accept` | Expected JSON/problem/media representation |
-| `Content-Type` | Request representation, normally `application/json` |
-| `Idempotency-Key` | Deduplicates retryable state-changing requests |
-| `If-Match` | Optimistic concurrency using the current ETag |
+| Header             | Purpose                                                             |
+| ------------------ | ------------------------------------------------------------------- |
+| `Authorization`    | Bearer access token or approved service credential                  |
+| `Accept`           | Expected JSON/problem/media representation                          |
+| `Content-Type`     | Request representation, normally `application/json`                 |
+| `Idempotency-Key`  | Deduplicates retryable state-changing requests                      |
+| `If-Match`         | Optimistic concurrency using the current ETag                       |
 | `X-Correlation-ID` | Caller-supplied trace identifier; validated or replaced when unsafe |
-| `X-Request-ID` | Unique request identifier returned/generated by the platform |
+| `X-Request-ID`     | Unique request identifier returned/generated by the platform        |
 
 Do not put secrets, access tokens, personal data, tenant IDs, or mutable authorization context in URLs.
 
@@ -245,22 +245,22 @@ Collection responses use `data` as a list and include `links`/`meta` for paginat
 
 Use HTTP status semantics consistently:
 
-| Code | Meaning |
-|---|---|
-| `200` | Successful query or action with a response |
-| `201` | Resource created; include `Location` where meaningful |
-| `202` | Accepted for asynchronous processing; return operation location |
-| `204` | Successful action with no response body |
-| `400` | Malformed request or unsupported request semantics |
-| `401` | Authentication missing/invalid |
-| `403` | Authenticated but not authorized |
-| `404` | Resource unavailable, including concealment policy where required |
-| `409` | State/idempotency/uniqueness conflict |
-| `412` | Conditional request/ETag precondition failed |
-| `422` | Well-formed request failed field/domain validation |
-| `429` | Rate or quota limit exceeded |
-| `500` | Unexpected platform failure |
-| `502`/`503`/`504` | Dependency unavailable, service unavailable, or timeout |
+| Code              | Meaning                                                           |
+| ----------------- | ----------------------------------------------------------------- |
+| `200`             | Successful query or action with a response                        |
+| `201`             | Resource created; include `Location` where meaningful             |
+| `202`             | Accepted for asynchronous processing; return operation location   |
+| `204`             | Successful action with no response body                           |
+| `400`             | Malformed request or unsupported request semantics                |
+| `401`             | Authentication missing/invalid                                    |
+| `403`             | Authenticated but not authorized                                  |
+| `404`             | Resource unavailable, including concealment policy where required |
+| `409`             | State/idempotency/uniqueness conflict                             |
+| `412`             | Conditional request/ETag precondition failed                      |
+| `422`             | Well-formed request failed field/domain validation                |
+| `429`             | Rate or quota limit exceeded                                      |
+| `500`             | Unexpected platform failure                                       |
+| `502`/`503`/`504` | Dependency unavailable, service unavailable, or timeout           |
 
 Do not return `200` with an embedded error status.
 
@@ -322,14 +322,14 @@ Responses provide opaque next/previous cursors. Offset/page pagination is permit
 
 ## 13. Authentication and credentials
 
-| Client | Preferred mechanism |
-|---|---|
+| Client                     | Preferred mechanism                                                                          |
+| -------------------------- | -------------------------------------------------------------------------------------------- |
 | First-party browser/mobile | Shared identity session or short-lived scoped token with CSRF/PKCE protections as applicable |
-| Personal automation | Revocable personal access token with explicit scopes and expiry policy |
-| Marketplace/public app | OAuth 2 authorization code with PKCE and refresh-token rotation |
-| Server-to-server | OAuth client credentials, workload identity, or short-lived service credential |
-| Incoming webhook | Provider signature verification, timestamp/replay controls, and source policy |
-| Internal trusted service | Service identity with mutual trust/short-lived credentials, never a shared user token |
+| Personal automation        | Revocable personal access token with explicit scopes and expiry policy                       |
+| Marketplace/public app     | OAuth 2 authorization code with PKCE and refresh-token rotation                              |
+| Server-to-server           | OAuth client credentials, workload identity, or short-lived service credential               |
+| Incoming webhook           | Provider signature verification, timestamp/replay controls, and source policy                |
+| Internal trusted service   | Service identity with mutual trust/short-lived credentials, never a shared user token        |
 
 - Tokens are displayed only when required, stored hashed/encrypted as appropriate, scoped, expiring, rotatable, and revocable.
 - API keys in query strings are prohibited.
@@ -461,13 +461,13 @@ Product modules never branch on provider name or store provider payloads/identif
 
 ### Sync modes
 
-| Mode | Use |
-|---|---|
-| Webhook-first | Near-real-time provider facts, followed by queued processing and reconciliation |
-| Incremental pull | Provider changes obtained through cursor/watermark |
-| Outbound push | Liberu changes delivered with idempotency and provider result tracking |
-| Full reconciliation | Periodic comparison to detect missing, duplicate, stale, or divergent records |
-| Backfill/import | Bounded historical load with dry run, mapping, progress, and sign-off |
+| Mode                | Use                                                                             |
+| ------------------- | ------------------------------------------------------------------------------- |
+| Webhook-first       | Near-real-time provider facts, followed by queued processing and reconciliation |
+| Incremental pull    | Provider changes obtained through cursor/watermark                              |
+| Outbound push       | Liberu changes delivered with idempotency and provider result tracking          |
+| Full reconciliation | Periodic comparison to detect missing, duplicate, stale, or divergent records   |
+| Backfill/import     | Bounded historical load with dry run, mapping, progress, and sign-off           |
 
 Every connector defines its source-of-truth and conflict policy per field/object. “Last write wins” is not an acceptable undocumented default.
 

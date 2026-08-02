@@ -15,24 +15,24 @@
 
 ## Module plan
 
-| Domain | Modules and responsibilities |
-|---|---|
-| Enterprise Foundation | Organization hierarchy, legal entities, master data, dimensions, workflow, approvals, documents, audit, and localization |
-| Finance | General ledger, receivables, payables, banking, tax, assets, budgets, treasury, consolidation, close, and statements |
-| Controlling | Cost/profit centers, internal orders, allocation, planning, variance, unit economics, and profitability |
-| Sales and CRM | Accounts, leads, opportunities, quotes, contracts, orders, customer success, communications, and forecasts |
-| Revenue Operations | Catalog, pricing, subscriptions, usage, licensing, billing, payments, collections, and revenue schedules |
-| Procurement | Requisitions, sourcing, suppliers, approvals, purchase orders, receipts, invoices, contracts, and spend analysis |
-| Inventory and Logistics | Items, warehouses, stock ledger, lots/serials, transfers, reservations, fulfillment, and valuation |
-| Projects and Services | Portfolios, projects, resources, skills, time, expenses, milestones, risks, delivery, and profitability |
-| Service Management | Catalog, requests, incidents, problems, changes, knowledge, CMDB, SLA, and field service |
-| Hosting and Cloud | Services, subscriptions, provisioning, infrastructure inventory, domains/DNS, capacity, usage, and operations |
-| Product and Engineering | Products, roadmaps, requirements, releases, licenses, repositories, issues, CI/CD links, and support feedback |
-| People | Workforce records, recruitment, onboarding, skills, absence, performance, learning, compensation, and payroll interfaces |
-| Assets and Facilities | Asset lifecycle, maintenance, leases, locations, facilities, energy, safety, and disposal |
-| Governance, Risk and Compliance | Policies, controls, risks, audits, evidence, incidents, privacy, security, continuity, and regulatory obligations |
-| Partners and Portals | Suppliers, resellers, partners, customers, employees, delegated self-service, documents, and collaboration |
-| Data and Intelligence | Governed metrics, semantic models, reports, planning, forecasts, data quality, lineage, exports, and AI assistance |
+| Domain                          | Modules and responsibilities                                                                                             |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Enterprise Foundation           | Organization hierarchy, legal entities, master data, dimensions, workflow, approvals, documents, audit, and localization |
+| Finance                         | General ledger, receivables, payables, banking, tax, assets, budgets, treasury, consolidation, close, and statements     |
+| Controlling                     | Cost/profit centers, internal orders, allocation, planning, variance, unit economics, and profitability                  |
+| Sales and CRM                   | Accounts, leads, opportunities, quotes, contracts, orders, customer success, communications, and forecasts               |
+| Revenue Operations              | Catalog, pricing, subscriptions, usage, licensing, billing, payments, collections, and revenue schedules                 |
+| Procurement                     | Requisitions, sourcing, suppliers, approvals, purchase orders, receipts, invoices, contracts, and spend analysis         |
+| Inventory and Logistics         | Items, warehouses, stock ledger, lots/serials, transfers, reservations, fulfillment, and valuation                       |
+| Projects and Services           | Portfolios, projects, resources, skills, time, expenses, milestones, risks, delivery, and profitability                  |
+| Service Management              | Catalog, requests, incidents, problems, changes, knowledge, CMDB, SLA, and field service                                 |
+| Hosting and Cloud               | Services, subscriptions, provisioning, infrastructure inventory, domains/DNS, capacity, usage, and operations            |
+| Product and Engineering         | Products, roadmaps, requirements, releases, licenses, repositories, issues, CI/CD links, and support feedback            |
+| People                          | Workforce records, recruitment, onboarding, skills, absence, performance, learning, compensation, and payroll interfaces |
+| Assets and Facilities           | Asset lifecycle, maintenance, leases, locations, facilities, energy, safety, and disposal                                |
+| Governance, Risk and Compliance | Policies, controls, risks, audits, evidence, incidents, privacy, security, continuity, and regulatory obligations        |
+| Partners and Portals            | Suppliers, resellers, partners, customers, employees, delegated self-service, documents, and collaboration               |
+| Data and Intelligence           | Governed metrics, semantic models, reports, planning, forecasts, data quality, lineage, exports, and AI assistance       |
 
 ## Enterprise model and master data
 

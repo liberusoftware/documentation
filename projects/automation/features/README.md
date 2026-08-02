@@ -1,4 +1,5 @@
 # Automation Feature Specifications
+
 **Source:** [AUTOMATION.md](../AUTOMATION.md)  
 **Architecture:** [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md) · [DOCUMENTATION.md](../AUTOMATION.md)
 

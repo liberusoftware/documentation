@@ -11,14 +11,14 @@
 
 Liberu uses the Jetstream `Team` model as the customer/workspace tenant. A user's membership, selected team, and authorization in that team are separate concerns:
 
-| Concern | Authority | Meaning |
-|---|---|---|
-| Identity and authentication | Jetstream/Fortify/Sanctum | Who is acting and how the request is authenticated |
-| Tenant identity | `App\Models\Team` | Which workspace owns the data |
-| Membership | Jetstream `team_user` | Whether the actor can enter the workspace |
-| Collaboration tier | Jetstream membership `role` | What a member may do to that team's records |
+| Concern                          | Authority                                                   | Meaning                                                       |
+| -------------------------------- | ----------------------------------------------------------- | ------------------------------------------------------------- |
+| Identity and authentication      | Jetstream/Fortify/Sanctum                                   | Who is acting and how the request is authenticated            |
+| Tenant identity                  | `App\Models\Team`                                           | Which workspace owns the data                                 |
+| Membership                       | Jetstream `team_user`                                       | Whether the actor can enter the workspace                     |
+| Collaboration tier               | Jetstream membership `role`                                 | What a member may do to that team's records                   |
 | Application/global authorization | Laravel policies, gates, Spatie Permission, Filament Shield | Global administration, panel access, and explicit permissions |
-| Record isolation | `team_id` plus policies/scopes | Which rows, files, jobs, and events belong to the workspace |
+| Record isolation                 | `team_id` plus policies/scopes                              | Which rows, files, jobs, and events belong to the workspace   |
 
 “Tenant”, “workspace”, and “team” may be used as presentation synonyms, but the persisted and public contract is `teams.id`. Do not introduce a second organization, tenant, or role system for a module.
 
@@ -77,12 +77,12 @@ Team ownership controls membership administration: owners may rename/delete thei
 
 Collaboration tiers are the least-privilege record capability ladder:
 
-| Tier | Allowed team-record capabilities |
-|---|---|
-| `viewer` | Read |
-| `contributor` | Read, create, update |
-| `editor` | Read, create, update, delete |
-| `admin` | Editor capabilities plus team management |
+| Tier          | Allowed team-record capabilities         |
+| ------------- | ---------------------------------------- |
+| `viewer`      | Read                                     |
+| `contributor` | Read, create, update                     |
+| `editor`      | Read, create, update, delete             |
+| `admin`       | Editor capabilities plus team management |
 
 Every resource, relation manager, Livewire action, API operation, queued command, import/export, upload/download, and broadcast must authorize the actual operation. Hidden buttons, navigation, route guards, and global scopes are not authorization. Unknown actions default to deny.
 

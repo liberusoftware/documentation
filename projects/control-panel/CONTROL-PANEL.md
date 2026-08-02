@@ -15,23 +15,23 @@
 
 ## Module plan
 
-| Module | Responsibilities |
-|---|---|
-| Control Core | Nodes, capabilities, credentials, task engine, inventory, desired state, locks, and audit |
-| OS Adapters | Detection, packages, services, firewall, users, filesystems, repositories, and support matrix |
-| Accounts | Admin/reseller/customer hierarchy, packages, quotas, delegation, branding, and suspension |
-| Web Hosting | Domains, virtual hosts, PHP/runtime versions, web servers, SSL, logs, redirects, and applications |
-| Mail | Domains, mailboxes, aliases, routing, quotas, spam/virus controls, DKIM, and delivery diagnostics |
-| Databases | Engines, databases, users, privileges, backups, upgrades, health, and remote access |
-| DNS | Zones, records, templates, DNSSEC, validation, providers, and propagation checks |
-| Files | Home directories, permissions, SFTP, file operations, quotas, scanning, and retention |
-| Certificates | ACME accounts, issuance, deployment, renewal, revocation, and expiry monitoring |
-| Backups | Policies, snapshots, application-consistent backup, encryption, off-site storage, restore, and verification |
-| Security | Hardening, patching, MFA/RBAC, secrets, malware, intrusion controls, vulnerability and compliance status |
-| Monitoring | Metrics, logs, uptime, capacity, alerts, incidents, maintenance windows, and status |
-| Containers | Images, registries, workloads, networks, volumes, secrets, limits, and lifecycle |
-| Kubernetes | Clusters, nodes, namespaces, RBAC, workloads, ingress, Helm, storage, autoscaling, upgrades, and multi-cluster views |
-| API and Automation | Scoped API, webhooks, CLI, templates, schedules, orchestration, and billing/provisioning events |
+| Module             | Responsibilities                                                                                                     |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------- |
+| Control Core       | Nodes, capabilities, credentials, task engine, inventory, desired state, locks, and audit                            |
+| OS Adapters        | Detection, packages, services, firewall, users, filesystems, repositories, and support matrix                        |
+| Accounts           | Admin/reseller/customer hierarchy, packages, quotas, delegation, branding, and suspension                            |
+| Web Hosting        | Domains, virtual hosts, PHP/runtime versions, web servers, SSL, logs, redirects, and applications                    |
+| Mail               | Domains, mailboxes, aliases, routing, quotas, spam/virus controls, DKIM, and delivery diagnostics                    |
+| Databases          | Engines, databases, users, privileges, backups, upgrades, health, and remote access                                  |
+| DNS                | Zones, records, templates, DNSSEC, validation, providers, and propagation checks                                     |
+| Files              | Home directories, permissions, SFTP, file operations, quotas, scanning, and retention                                |
+| Certificates       | ACME accounts, issuance, deployment, renewal, revocation, and expiry monitoring                                      |
+| Backups            | Policies, snapshots, application-consistent backup, encryption, off-site storage, restore, and verification          |
+| Security           | Hardening, patching, MFA/RBAC, secrets, malware, intrusion controls, vulnerability and compliance status             |
+| Monitoring         | Metrics, logs, uptime, capacity, alerts, incidents, maintenance windows, and status                                  |
+| Containers         | Images, registries, workloads, networks, volumes, secrets, limits, and lifecycle                                     |
+| Kubernetes         | Clusters, nodes, namespaces, RBAC, workloads, ingress, Helm, storage, autoscaling, upgrades, and multi-cluster views |
+| API and Automation | Scoped API, webhooks, CLI, templates, schedules, orchestration, and billing/provisioning events                      |
 
 ## Supported platforms
 

@@ -39,14 +39,14 @@ Installation does not expose every capability automatically. The host applicatio
 
 These examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.
 
-| Method | Endpoint | Purpose | Possible request data |
-|---|---|---|---|
-| `GET` | `/api/v1/ecommerce/transfers-and-replenishment?page[size]=25&sort=-created_at` | List authorized resources | Query parameters for pagination, filtering, sorting, field selection, and documented includes |
-| `GET` | `/api/v1/ecommerce/transfers-and-replenishment/{id}` | Retrieve one resource | Opaque resource `id` in the path; no request body |
-| `POST` | `/api/v1/ecommerce/transfers-and-replenishment` | Create a resource | JSON body using the module schema and required team/context fields |
-| `PATCH` | `/api/v1/ecommerce/transfers-and-replenishment/{id}` | Update permitted fields | JSON body containing changed fields and `If-Match` when concurrency is supported |
-| `DELETE` | `/api/v1/ecommerce/transfers-and-replenishment/{id}` | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted |
-| `POST` | `/api/v1/ecommerce/transfers-and-replenishment/{id}/<explicit-action>` | Execute a documented domain action | Action-specific JSON body and `Idempotency-Key` for retryable writes |
+| Method   | Endpoint                                                                       | Purpose                                       | Possible request data                                                                         |
+| -------- | ------------------------------------------------------------------------------ | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
+| `GET`    | `/api/v1/ecommerce/transfers-and-replenishment?page[size]=25&sort=-created_at` | List authorized resources                     | Query parameters for pagination, filtering, sorting, field selection, and documented includes |
+| `GET`    | `/api/v1/ecommerce/transfers-and-replenishment/{id}`                           | Retrieve one resource                         | Opaque resource `id` in the path; no request body                                             |
+| `POST`   | `/api/v1/ecommerce/transfers-and-replenishment`                                | Create a resource                             | JSON body using the module schema and required team/context fields                            |
+| `PATCH`  | `/api/v1/ecommerce/transfers-and-replenishment/{id}`                           | Update permitted fields                       | JSON body containing changed fields and `If-Match` when concurrency is supported              |
+| `DELETE` | `/api/v1/ecommerce/transfers-and-replenishment/{id}`                           | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted           |
+| `POST`   | `/api/v1/ecommerce/transfers-and-replenishment/{id}/<explicit-action>`         | Execute a documented domain action            | Action-specific JSON body and `Idempotency-Key` for retryable writes                          |
 
 Example create request (illustrative fields only):
 
@@ -96,10 +96,10 @@ paths:
       security:
         - sanctum: []
       parameters:
-        - $ref: '#/components/parameters/PageSize'
+        - $ref: "#/components/parameters/PageSize"
       responses:
-        '200':
-          $ref: '#/components/responses/ResourceCollection'
+        "200":
+          $ref: "#/components/responses/ResourceCollection"
 components:
   parameters:
     PageSize:
@@ -135,14 +135,14 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/EcommerceTransfersAndReplenishmentResource'
+            $ref: "#/components/schemas/EcommerceTransfersAndReplenishmentResource"
   responses:
     ResourceCollection:
       description: Authorized paginated resources.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ResourceCollection'
+            $ref: "#/components/schemas/ResourceCollection"
 ```
 
 The example is a contract outline, not a substitute for the complete module schema: replace `additionalProperties` with explicit fields and add create/update/action schemas before release. Validate the fragment, bundle it into the application specification, run breaking-change detection against the supported release, and generate typed clients only from the released specification.
@@ -151,12 +151,12 @@ The example is a contract outline, not a substitute for the complete module sche
 
 ## 5. Audience and operation matrix
 
-| Audience | Default exposure | Required controls |
-|---|---|---|
-| Public/anonymous | Disabled unless explicitly required | Enumeration resistance, strict rate limits, field minimization, abuse controls |
-| Authenticated customer/partner | Explicit allowlist | Tenant/resource ownership, purpose-specific scopes, field policy |
-| Staff/administrator | Explicit allowlist | Role/permission policy, tenant context, recent authentication for risky actions, audit |
-| Service/integration client | Explicit allowlist | Service identity, least-privilege scopes, expiry/rotation, idempotency, quotas |
+| Audience                       | Default exposure                    | Required controls                                                                      |
+| ------------------------------ | ----------------------------------- | -------------------------------------------------------------------------------------- |
+| Public/anonymous               | Disabled unless explicitly required | Enumeration resistance, strict rate limits, field minimization, abuse controls         |
+| Authenticated customer/partner | Explicit allowlist                  | Tenant/resource ownership, purpose-specific scopes, field policy                       |
+| Staff/administrator            | Explicit allowlist                  | Role/permission policy, tenant context, recent authentication for risky actions, audit |
+| Service/integration client     | Explicit allowlist                  | Service identity, least-privilege scopes, expiry/rotation, idempotency, quotas         |
 
 Every exposed operation must map to one audience, domain query/action, permission/scope, request/response schema, rate limit, idempotency/concurrency policy, audit event, and test set. Unmapped operations fail CI.
 

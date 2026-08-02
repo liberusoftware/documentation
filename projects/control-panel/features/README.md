@@ -22,4 +22,3 @@ Each file defines one independent module. Modules remain independently installab
 - [Containers](containers.md) — `control-panel-containers`
 - [Kubernetes](kubernetes.md) — `control-panel-kubernetes`
 - [API and Automation](api-and-automation.md) — `control-panel-api-and-automation`
-

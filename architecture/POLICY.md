@@ -6,13 +6,13 @@ Liberu separates resource authorization from team context. Laravel policies and 
 
 ## Boundaries
 
-| Concern | Authority |
-|---|---|
-| Resource/action authorization | Laravel policies and gates |
-| Application roles and permissions | `spatie/laravel-permission` |
-| Filament resource/page/widget permissions | `bezhansalleh/filament-shield` |
-| Workspace membership and current context | Jetstream teams; see [TEAMS.md](TEAMS.md) |
-| Team membership roles/permissions | Jetstream team roles and `hasTeamPermission` |
+| Concern                                   | Authority                                    |
+| ----------------------------------------- | -------------------------------------------- |
+| Resource/action authorization             | Laravel policies and gates                   |
+| Application roles and permissions         | `spatie/laravel-permission`                  |
+| Filament resource/page/widget permissions | `bezhansalleh/filament-shield`               |
+| Workspace membership and current context  | Jetstream teams; see [TEAMS.md](TEAMS.md)    |
+| Team membership roles/permissions         | Jetstream team roles and `hasTeamPermission` |
 
 Spatie Permission and Shield must not replace Jetstream teams, team membership, current-team resolution, or Jetstream team roles. A user may have an application permission and still lack access to a particular team resource.
 

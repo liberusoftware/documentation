@@ -8,22 +8,22 @@ Liberu follows accepted PHP-FIG standards at interoperability boundaries and use
 
 ## Accepted standards we follow
 
-| PSR | Standard | Liberu application |
-|---|---|---|
-| [PSR-1](https://www.php-fig.org/psr/psr-1/) | Basic Coding Standard | UTF-8 PHP-only files, declarations/imports, class naming, constants, and method naming |
-| [PSR-3](https://www.php-fig.org/psr/psr-3/) | Logger Interface | Package and infrastructure services type against `Psr\\Log\\LoggerInterface` when they accept a logger; contextual structured logging remains required |
-| [PSR-4](https://www.php-fig.org/psr/psr-4/) | Autoloading Standard | Composer namespace-to-path mapping for applications, modules, themes, tests, and generated clients |
-| [PSR-6](https://www.php-fig.org/psr/psr-6/) | Caching Interface | Cache-pool integrations where a PSR-6 library boundary is used; cache keys remain scope-qualified and values must not leak secrets |
-| [PSR-7](https://www.php-fig.org/psr/psr-7/) | HTTP Message Interface | HTTP middleware, adapters, and integrations that exchange PSR HTTP messages |
-| [PSR-11](https://www.php-fig.org/psr/psr-11/) | Container Interface | Libraries consume a PSR container only when they need container interoperability; application services use Laravel's composition root |
-| [PSR-12](https://www.php-fig.org/psr/psr-12/) | Extended Coding Style Guide | PHP formatting, file endings, imports, indentation, braces, declarations, visibility, and line whitespace; enforced by the repository formatter |
-| [PSR-13](https://www.php-fig.org/psr/psr-13/) | Hypermedia Links | Hypermedia link objects when a package exposes link-rich HTTP representations; ordinary Laravel URLs need not invent links |
-| [PSR-14](https://www.php-fig.org/psr/psr-14/) | Event Dispatcher | Event package boundaries use `Psr\\EventDispatcher\\EventDispatcherInterface` where decoupling is needed; Laravel events remain the application adapter |
-| [PSR-15](https://www.php-fig.org/psr/psr-15/) | HTTP Handlers | Middleware/handler packages that expose PSR-15 pipelines; Laravel middleware remains the host integration |
-| [PSR-16](https://www.php-fig.org/psr/psr-16/) | Simple Cache | Small cache consumers that need a key/value cache independent of a full PSR-6 pool |
-| [PSR-17](https://www.php-fig.org/psr/psr-17/) | HTTP Factories | Portable creation of PSR-7 requests, responses, streams, and URIs in reusable HTTP integrations |
-| [PSR-18](https://www.php-fig.org/psr/psr-18/) | HTTP Client | Reusable outbound HTTP clients accept `Psr\\Http\\Client\\ClientInterface` where transport substitution matters |
-| [PSR-20](https://www.php-fig.org/psr/psr-20/) | Clock | Time-sensitive domain services accept `Psr\\Clock\\ClockInterface` rather than calling wall-clock time directly, especially for expiry, retries, invitations, settings, and security |
+| PSR                                           | Standard                    | Liberu application                                                                                                                                                                   |
+| --------------------------------------------- | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [PSR-1](https://www.php-fig.org/psr/psr-1/)   | Basic Coding Standard       | UTF-8 PHP-only files, declarations/imports, class naming, constants, and method naming                                                                                               |
+| [PSR-3](https://www.php-fig.org/psr/psr-3/)   | Logger Interface            | Package and infrastructure services type against `Psr\\Log\\LoggerInterface` when they accept a logger; contextual structured logging remains required                               |
+| [PSR-4](https://www.php-fig.org/psr/psr-4/)   | Autoloading Standard        | Composer namespace-to-path mapping for applications, modules, themes, tests, and generated clients                                                                                   |
+| [PSR-6](https://www.php-fig.org/psr/psr-6/)   | Caching Interface           | Cache-pool integrations where a PSR-6 library boundary is used; cache keys remain scope-qualified and values must not leak secrets                                                   |
+| [PSR-7](https://www.php-fig.org/psr/psr-7/)   | HTTP Message Interface      | HTTP middleware, adapters, and integrations that exchange PSR HTTP messages                                                                                                          |
+| [PSR-11](https://www.php-fig.org/psr/psr-11/) | Container Interface         | Libraries consume a PSR container only when they need container interoperability; application services use Laravel's composition root                                                |
+| [PSR-12](https://www.php-fig.org/psr/psr-12/) | Extended Coding Style Guide | PHP formatting, file endings, imports, indentation, braces, declarations, visibility, and line whitespace; enforced by the repository formatter                                      |
+| [PSR-13](https://www.php-fig.org/psr/psr-13/) | Hypermedia Links            | Hypermedia link objects when a package exposes link-rich HTTP representations; ordinary Laravel URLs need not invent links                                                           |
+| [PSR-14](https://www.php-fig.org/psr/psr-14/) | Event Dispatcher            | Event package boundaries use `Psr\\EventDispatcher\\EventDispatcherInterface` where decoupling is needed; Laravel events remain the application adapter                              |
+| [PSR-15](https://www.php-fig.org/psr/psr-15/) | HTTP Handlers               | Middleware/handler packages that expose PSR-15 pipelines; Laravel middleware remains the host integration                                                                            |
+| [PSR-16](https://www.php-fig.org/psr/psr-16/) | Simple Cache                | Small cache consumers that need a key/value cache independent of a full PSR-6 pool                                                                                                   |
+| [PSR-17](https://www.php-fig.org/psr/psr-17/) | HTTP Factories              | Portable creation of PSR-7 requests, responses, streams, and URIs in reusable HTTP integrations                                                                                      |
+| [PSR-18](https://www.php-fig.org/psr/psr-18/) | HTTP Client                 | Reusable outbound HTTP clients accept `Psr\\Http\\Client\\ClientInterface` where transport substitution matters                                                                      |
+| [PSR-20](https://www.php-fig.org/psr/psr-20/) | Clock                       | Time-sensitive domain services accept `Psr\\Clock\\ClockInterface` rather than calling wall-clock time directly, especially for expiry, retries, invitations, settings, and security |
 
 These standards complement, rather than replace, Laravel contracts. For example, an application may adapt Laravel's request/response, cache, event, container, and HTTP client services to PSR interfaces at a package boundary while keeping Laravel-specific composition in the host application.
 
@@ -57,17 +57,17 @@ Reusable modules must:
 
 ## Statuses we do not adopt as normative standards
 
-| PSR | Status | Policy |
-|---|---|---|
-| PSR-0 | Deprecated | Do not add underscore-based autoloading; use PSR-4 |
-| PSR-2 | Deprecated | Use PSR-12, which supersedes it |
-| PSR-5 | Draft | PHPDoc style may follow current tooling, but PSR-5 is not a release contract |
-| PSR-8 | Abandoned | No implementation requirement |
-| PSR-9 | Abandoned | Use [SECURITY.md](../architecture/SECURITY.md) and repository-specific disclosure procedures |
-| PSR-10 | Abandoned | Use repository security policy and current PHP-FIG guidance |
-| PSR-19 | Draft | Use project localization contracts and [DOCUMENTATION.md](DOCUMENTATION.md) until accepted |
-| PSR-21 | Draft | Use explicit tracing/correlation contracts defined by [API.md](../architecture/API.md) and observability documentation |
-| PSR-22 | Draft | Use the repository's supported tracing implementation until the PSR is accepted |
+| PSR    | Status     | Policy                                                                                                                 |
+| ------ | ---------- | ---------------------------------------------------------------------------------------------------------------------- |
+| PSR-0  | Deprecated | Do not add underscore-based autoloading; use PSR-4                                                                     |
+| PSR-2  | Deprecated | Use PSR-12, which supersedes it                                                                                        |
+| PSR-5  | Draft      | PHPDoc style may follow current tooling, but PSR-5 is not a release contract                                           |
+| PSR-8  | Abandoned  | No implementation requirement                                                                                          |
+| PSR-9  | Abandoned  | Use [SECURITY.md](../architecture/SECURITY.md) and repository-specific disclosure procedures                           |
+| PSR-10 | Abandoned  | Use repository security policy and current PHP-FIG guidance                                                            |
+| PSR-19 | Draft      | Use project localization contracts and [DOCUMENTATION.md](DOCUMENTATION.md) until accepted                             |
+| PSR-21 | Draft      | Use explicit tracing/correlation contracts defined by [API.md](../architecture/API.md) and observability documentation |
+| PSR-22 | Draft      | Use the repository's supported tracing implementation until the PSR is accepted                                        |
 
 Draft PSRs may inform design reviews but must not be cited as stable compatibility promises. The PSR index is the source for status changes.
 

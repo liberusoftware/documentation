@@ -132,4 +132,3 @@ Each file defines one independent module. Modules remain independently installab
 - [Service Agent](service-agent.md) — `crm-service-agent`
 - [Marketing Agent](marketing-agent.md) — `crm-marketing-agent`
 - [Conversation Analytics](conversation-analytics.md) — `crm-conversation-analytics`
-

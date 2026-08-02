@@ -15,22 +15,22 @@
 
 ## Module plan
 
-| Module | Responsibilities |
-|---|---|
-| Real Estate Core | Agencies, branches, teams, territories, terminology, statuses, numbering, and audit |
-| Parties | Applicants, vendors, landlords, tenants, buyers, solicitors, contractors, relationships, and consent |
-| Properties | Address/location, units, characteristics, tenure, utilities, features, status, history, and keys |
-| Media and Documents | Photos, floorplans, video, certificates, rights, ordering, brochures, and retention |
-| Valuations | Appraisals, comparables, pricing, fees, recommendations, follow-up, and conversion |
-| Instructions | Agency agreements, ownership checks, terms, disclosures, approvals, and withdrawal |
-| Listings | Channel content, pricing, availability, publication rules, portal feeds, and reconciliation |
-| Matching | Applicant requirements, affordability, preferences, scoring, alerts, feedback, and exclusions |
-| Viewings | Availability, booking, confirmation, access, accompaniment, reminders, feedback, and no-shows |
-| Offers | Terms, qualification, negotiation, proof, decision history, and accepted-offer controls |
-| Sales Progression | Chain, milestones, memoranda, legal/finance contacts, dependencies, risks, and completion |
-| Lettings | Applications, referencing, deposits, agreements, move-in/out, renewals, rent changes, and notices |
-| Property Management | Rent schedule, statements, inspections, compliance, maintenance, contractors, and owner approvals |
-| Marketing | Campaigns, boards, brochures, portals, website, social/email, attribution, and consent |
+| Module                | Responsibilities                                                                                               |
+| --------------------- | -------------------------------------------------------------------------------------------------------------- |
+| Real Estate Core      | Agencies, branches, teams, territories, terminology, statuses, numbering, and audit                            |
+| Parties               | Applicants, vendors, landlords, tenants, buyers, solicitors, contractors, relationships, and consent           |
+| Properties            | Address/location, units, characteristics, tenure, utilities, features, status, history, and keys               |
+| Media and Documents   | Photos, floorplans, video, certificates, rights, ordering, brochures, and retention                            |
+| Valuations            | Appraisals, comparables, pricing, fees, recommendations, follow-up, and conversion                             |
+| Instructions          | Agency agreements, ownership checks, terms, disclosures, approvals, and withdrawal                             |
+| Listings              | Channel content, pricing, availability, publication rules, portal feeds, and reconciliation                    |
+| Matching              | Applicant requirements, affordability, preferences, scoring, alerts, feedback, and exclusions                  |
+| Viewings              | Availability, booking, confirmation, access, accompaniment, reminders, feedback, and no-shows                  |
+| Offers                | Terms, qualification, negotiation, proof, decision history, and accepted-offer controls                        |
+| Sales Progression     | Chain, milestones, memoranda, legal/finance contacts, dependencies, risks, and completion                      |
+| Lettings              | Applications, referencing, deposits, agreements, move-in/out, renewals, rent changes, and notices              |
+| Property Management   | Rent schedule, statements, inspections, compliance, maintenance, contractors, and owner approvals              |
+| Marketing             | Campaigns, boards, brochures, portals, website, social/email, attribution, and consent                         |
 | Portals and Reporting | Party self-service plus pipeline, conversion, source, fee, time-to-complete, occupancy, and compliance metrics |
 
 ## Required workflows

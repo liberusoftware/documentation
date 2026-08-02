@@ -23,141 +23,141 @@
 
 ## 3. Content modeling modules
 
-| Module | Responsibilities |
-|---|---|
-| CMS Core | Sites, channels, content identity, aliases, ownership, shared terminology, settings, and domain events |
-| Content Entities | Typed entities, bundles/content types, lifecycle, authorship, status, cloning, relationships, and canonical identifiers |
-| Field System | Reusable typed fields, cardinality, defaults, validation, computed fields, conditional fields, field groups, and schema migrations |
-| Metadata | Arbitrary governed metadata, definitions, inheritance, validation, provenance, indexing, and API exposure |
-| Taxonomy | Vocabularies, hierarchical terms, synonyms, relationships, ordering, permissions, localization, and term merging |
-| Pages | Hierarchy, slugs, routing, home/error pages, aliases, redirects, breadcrumbs, templates, and previews |
-| Editorial Content | Posts/articles, authors, excerpts, series, categories, tags, featured content, related content, and archives |
-| Structured Collections | Reusable records, directories, FAQs, testimonials, profiles, locations, datasets, and custom collection types |
+| Module                 | Responsibilities                                                                                                                   |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| CMS Core               | Sites, channels, content identity, aliases, ownership, shared terminology, settings, and domain events                             |
+| Content Entities       | Typed entities, bundles/content types, lifecycle, authorship, status, cloning, relationships, and canonical identifiers            |
+| Field System           | Reusable typed fields, cardinality, defaults, validation, computed fields, conditional fields, field groups, and schema migrations |
+| Metadata               | Arbitrary governed metadata, definitions, inheritance, validation, provenance, indexing, and API exposure                          |
+| Taxonomy               | Vocabularies, hierarchical terms, synonyms, relationships, ordering, permissions, localization, and term merging                   |
+| Pages                  | Hierarchy, slugs, routing, home/error pages, aliases, redirects, breadcrumbs, templates, and previews                              |
+| Editorial Content      | Posts/articles, authors, excerpts, series, categories, tags, featured content, related content, and archives                       |
+| Structured Collections | Reusable records, directories, FAQs, testimonials, profiles, locations, datasets, and custom collection types                      |
 
 ## 4. Authoring and editorial modules
 
-| Module | Responsibilities |
-|---|---|
-| Rich Text Editor | Semantic rich text, links, tables, embeds, code, paste cleanup, accessibility hints, formats, and sanitization |
-| Block Editor | Typed content blocks, nesting rules, patterns, reusable/global blocks, locking, transforms, previews, and revision-safe data |
-| Layout Builder | Regions, grids, sections, drag/drop composition, type defaults, per-record overrides, responsive settings, and permissions |
-| Content Templates | Starter content, presets, default fields/blocks/layouts, template locking, versioning, and controlled rollout |
-| Revisions | Immutable revisions, autosave, compare, restore, branching, attribution, retention, and published-versus-working copies |
-| Editorial Workflow | Configurable states/transitions, assignments, review, approvals, rejection, delegation, separation of duties, and evidence |
-| Publishing | Immediate/scheduled publishing, embargo, expiry, unpublish/archive, recurring review, atomic release, and cache/index events |
-| Content Calendar | Editorial calendar, campaigns, deadlines, assignments, conflicts, drag/drop rescheduling, and channel/site filters |
-| Content Locking | Optimistic concurrency, edit presence, takeover policy, conflict comparison, merge, and recovery |
-| Accessibility Assistant | Authoring checks for headings, links, tables, alternatives, contrast metadata, language, captions, and exceptions |
+| Module                  | Responsibilities                                                                                                             |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Rich Text Editor        | Semantic rich text, links, tables, embeds, code, paste cleanup, accessibility hints, formats, and sanitization               |
+| Block Editor            | Typed content blocks, nesting rules, patterns, reusable/global blocks, locking, transforms, previews, and revision-safe data |
+| Layout Builder          | Regions, grids, sections, drag/drop composition, type defaults, per-record overrides, responsive settings, and permissions   |
+| Content Templates       | Starter content, presets, default fields/blocks/layouts, template locking, versioning, and controlled rollout                |
+| Revisions               | Immutable revisions, autosave, compare, restore, branching, attribution, retention, and published-versus-working copies      |
+| Editorial Workflow      | Configurable states/transitions, assignments, review, approvals, rejection, delegation, separation of duties, and evidence   |
+| Publishing              | Immediate/scheduled publishing, embargo, expiry, unpublish/archive, recurring review, atomic release, and cache/index events |
+| Content Calendar        | Editorial calendar, campaigns, deadlines, assignments, conflicts, drag/drop rescheduling, and channel/site filters           |
+| Content Locking         | Optimistic concurrency, edit presence, takeover policy, conflict comparison, merge, and recovery                             |
+| Accessibility Assistant | Authoring checks for headings, links, tables, alternatives, contrast metadata, language, captions, and exceptions            |
 
 ## 5. Media and asset modules
 
-| Module | Responsibilities |
-|---|---|
-| Media Library | Files/media entities, folders, tags, collections, metadata, usage references, search, bulk operations, and replacement |
-| Image Processing | Validation, orientation, crops/focal points, responsive variants, format conversion, quality, optimization, and CDN URLs |
-| Video and Audio | Upload/remote media, transcoding adapters, posters, chapters, captions, transcripts, streaming, and playback metadata |
-| Digital Asset Management | Rights, licenses, attribution, consent/model releases, expiry, brand assets, renditions, approvals, and distribution |
-| Document Management | Documents, previews, OCR/text extraction adapters, versions, access, downloads, watermarks, and retention |
-| Embeds | Provider allowlists, normalized embed records, privacy modes, consent, responsive rendering, fallback, and provider adapters |
+| Module                   | Responsibilities                                                                                                             |
+| ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| Media Library            | Files/media entities, folders, tags, collections, metadata, usage references, search, bulk operations, and replacement       |
+| Image Processing         | Validation, orientation, crops/focal points, responsive variants, format conversion, quality, optimization, and CDN URLs     |
+| Video and Audio          | Upload/remote media, transcoding adapters, posters, chapters, captions, transcripts, streaming, and playback metadata        |
+| Digital Asset Management | Rights, licenses, attribution, consent/model releases, expiry, brand assets, renditions, approvals, and distribution         |
+| Document Management      | Documents, previews, OCR/text extraction adapters, versions, access, downloads, watermarks, and retention                    |
+| Embeds                   | Provider allowlists, normalized embed records, privacy modes, consent, responsive rendering, fallback, and provider adapters |
 
 ## 6. Information architecture and display modules
 
-| Module | Responsibilities |
-|---|---|
-| Navigation | Unlimited menus, nested items, content/custom/system links, menu variants, visibility rules, active trails, and validation |
-| Regions and Widgets | Theme regions, reusable widgets, placement, ordering, visibility by route/context/audience, schedules, and caching |
+| Module                  | Responsibilities                                                                                                                             |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| Navigation              | Unlimited menus, nested items, content/custom/system links, menu variants, visibility rules, active trails, and validation                   |
+| Regions and Widgets     | Theme regions, reusable widgets, placement, ordering, visibility by route/context/audience, schedules, and caching                           |
 | Views and Query Builder | Permission-safe listings from content/fields/relationships with filters, sorting, grouping, exposed filters, pagination, feeds, and displays |
-| Display Modes | Named view/form modes, field formatters, per-type display configuration, responsive variants, and API projections |
-| Related Content | Manual/rule/search-driven relationships, similarity, recency, taxonomy, exclusions, explainability, and fallback |
-| Content Search | Authorized indexing, facets, spelling, synonyms, relevance, autocomplete, federated sources, reindex, and search analytics |
-| Comments and Discussion | Threaded comments, guest/member policy, moderation, subscriptions, mentions, spam control, editing, reports, and retention |
-| Contact Directory | People/departments/contact records, categories, locations, contact forms, protected fields, and directory views |
+| Display Modes           | Named view/form modes, field formatters, per-type display configuration, responsive variants, and API projections                            |
+| Related Content         | Manual/rule/search-driven relationships, similarity, recency, taxonomy, exclusions, explainability, and fallback                             |
+| Content Search          | Authorized indexing, facets, spelling, synonyms, relevance, autocomplete, federated sources, reindex, and search analytics                   |
+| Comments and Discussion | Threaded comments, guest/member policy, moderation, subscriptions, mentions, spam control, editing, reports, and retention                   |
+| Contact Directory       | People/departments/contact records, categories, locations, contact forms, protected fields, and directory views                              |
 
 ## 7. Sites, localization, and governance modules
 
-| Module | Responsibilities |
-|---|---|
-| Multisite | Site network, shared/isolated content, domains, site admins, quotas, site lifecycle, network operations, and safe cross-site references |
-| Site Factory | Site templates/recipes, provisioning, domain verification, initial content/configuration, cloning, suspension, archival, and teardown |
-| Localization | Content/configuration/menu/taxonomy translation, locale variants, fallback, localized slugs, direction, and completeness |
-| Translation Management | Jobs, source changes, assignments, vendor adapters, machine translation, review, memory/glossaries, status, cost, and reconciliation |
-| Content Access | Per-site/type/record/field visibility, audience rules, scheduled access, private links, content partitioning, and preview authorization |
-| Configuration Management | Exportable versioned CMS configuration, environment comparison, dependency validation, promotion, secrets exclusion, and rollback |
-| Content Governance | Owners/stewards, policy labels, review cycles, retention, legal hold, sensitive-content classification, and compliance evidence |
-| Audit and History | Content/configuration change history, publication evidence, privileged reads/actions, exports, and tamper-aware retention |
+| Module                   | Responsibilities                                                                                                                        |
+| ------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Multisite                | Site network, shared/isolated content, domains, site admins, quotas, site lifecycle, network operations, and safe cross-site references |
+| Site Factory             | Site templates/recipes, provisioning, domain verification, initial content/configuration, cloning, suspension, archival, and teardown   |
+| Localization             | Content/configuration/menu/taxonomy translation, locale variants, fallback, localized slugs, direction, and completeness                |
+| Translation Management   | Jobs, source changes, assignments, vendor adapters, machine translation, review, memory/glossaries, status, cost, and reconciliation    |
+| Content Access           | Per-site/type/record/field visibility, audience rules, scheduled access, private links, content partitioning, and preview authorization |
+| Configuration Management | Exportable versioned CMS configuration, environment comparison, dependency validation, promotion, secrets exclusion, and rollback       |
+| Content Governance       | Owners/stewards, policy labels, review cycles, retention, legal hold, sensitive-content classification, and compliance evidence         |
+| Audit and History        | Content/configuration change history, publication evidence, privileged reads/actions, exports, and tamper-aware retention               |
 
 ## 8. Delivery and experience modules
 
-| Module | Responsibilities |
-|---|---|
-| Theme Integration | Theme selection by site/channel, regions, view contracts, component registry, inheritance, preview, and safe fallback |
-| Web Delivery | Canonical route rendering, response metadata, cache tags, preview mode, redirects, errors, maintenance, and edge invalidation |
-| Headless API | Versioned REST/GraphQL-style delivery, sparse fields, includes, filters, pagination, locales, previews, persisted queries, and rate limits |
-| Content Federation | Content APIs, remote-source adapters, normalized references, cache/revalidation, source health, and failure fallbacks |
-| Syndication and Feeds | RSS/Atom and structured feeds, outbound syndication, inbound feed imports, mappings, deduplication, attribution, and schedules |
-| Static Publishing | Full/incremental builds, route manifests, cache invalidation, deployment adapters, preview builds, rollback, and build diagnostics |
-| Offline and PWA | Manifest/service-worker integration points, content caching policy, offline pages, update behavior, and install metadata |
-| Personalization | Audience/context rules, variants, eligibility, priority, fallback, consent, holdouts, and decision evidence |
-| Experimentation | A/B/multivariate content tests, allocation, goals, guardrails, analysis policy, winner promotion, and history |
+| Module                | Responsibilities                                                                                                                           |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Theme Integration     | Theme selection by site/channel, regions, view contracts, component registry, inheritance, preview, and safe fallback                      |
+| Web Delivery          | Canonical route rendering, response metadata, cache tags, preview mode, redirects, errors, maintenance, and edge invalidation              |
+| Headless API          | Versioned REST/GraphQL-style delivery, sparse fields, includes, filters, pagination, locales, previews, persisted queries, and rate limits |
+| Content Federation    | Content APIs, remote-source adapters, normalized references, cache/revalidation, source health, and failure fallbacks                      |
+| Syndication and Feeds | RSS/Atom and structured feeds, outbound syndication, inbound feed imports, mappings, deduplication, attribution, and schedules             |
+| Static Publishing     | Full/incremental builds, route manifests, cache invalidation, deployment adapters, preview builds, rollback, and build diagnostics         |
+| Offline and PWA       | Manifest/service-worker integration points, content caching policy, offline pages, update behavior, and install metadata                   |
+| Personalization       | Audience/context rules, variants, eligibility, priority, fallback, consent, holdouts, and decision evidence                                |
+| Experimentation       | A/B/multivariate content tests, allocation, goals, guardrails, analysis policy, winner promotion, and history                              |
 
 ## 9. Discovery, SEO, and audience modules
 
-| Module | Responsibilities |
-|---|---|
-| SEO | Titles/descriptions, canonical URLs, robots, structured data, social cards, hreflang, index controls, and content checks |
-| Redirects | Redirect records, imports, automatic slug-change redirects, chains/loops, hit counts, expiry, and 404 suggestions |
-| Sitemaps | Site/type/locale-aware indexes, exclusions, images/video/news extensions, chunking, cache, and search-engine notification adapters |
-| Analytics Integration | Canonical content/view/conversion events, consent-aware analytics mappings, dashboards, and Boilerplate analytics adapters |
-| Recommendations | Popular/latest/related/trending/editorial lists, pluggable ranking, audience context, exclusions, and explanation |
-| Notifications and Subscriptions | Follow content/terms/authors, publication/update digests, frequency, channel preferences, unsubscribe, and delivery state |
+| Module                          | Responsibilities                                                                                                                   |
+| ------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| SEO                             | Titles/descriptions, canonical URLs, robots, structured data, social cards, hreflang, index controls, and content checks           |
+| Redirects                       | Redirect records, imports, automatic slug-change redirects, chains/loops, hit counts, expiry, and 404 suggestions                  |
+| Sitemaps                        | Site/type/locale-aware indexes, exclusions, images/video/news extensions, chunking, cache, and search-engine notification adapters |
+| Analytics Integration           | Canonical content/view/conversion events, consent-aware analytics mappings, dashboards, and Boilerplate analytics adapters         |
+| Recommendations                 | Popular/latest/related/trending/editorial lists, pluggable ranking, audience context, exclusions, and explanation                  |
+| Notifications and Subscriptions | Follow content/terms/authors, publication/update digests, frequency, channel preferences, unsubscribe, and delivery state          |
 
 ## 10. Forms, community, and application modules
 
-| Module | Responsibilities |
-|---|---|
-| Form Builder | Typed/conditional multi-step forms, reusable fields, uploads, validation, calculations, drafts, confirmations, and embedding |
-| Form Operations | Spam/rate controls, consent, submissions, encryption, retention, notifications, exports, workflow actions, and CRM adapters |
-| Polls and Surveys | Questions, branching, anonymous/authenticated response policy, schedules, results, exports, and privacy controls |
-| Membership Content | Gated content, access rules, memberships/entitlement references, drip schedules, downloads, and portal integration |
-| Events Content | Event/session/speaker/venue content, calendars, registration-provider references, archives, and structured data |
-| Knowledge Base | Article hierarchies, versions, feedback, review cycles, search tuning, related articles, and support integration |
-| Forums Integration | Forum/community provider contracts, content/profile references, recent discussions, moderation links, and SSO context |
+| Module             | Responsibilities                                                                                                             |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| Form Builder       | Typed/conditional multi-step forms, reusable fields, uploads, validation, calculations, drafts, confirmations, and embedding |
+| Form Operations    | Spam/rate controls, consent, submissions, encryption, retention, notifications, exports, workflow actions, and CRM adapters  |
+| Polls and Surveys  | Questions, branching, anonymous/authenticated response policy, schedules, results, exports, and privacy controls             |
+| Membership Content | Gated content, access rules, memberships/entitlement references, drip schedules, downloads, and portal integration           |
+| Events Content     | Event/session/speaker/venue content, calendars, registration-provider references, archives, and structured data              |
+| Knowledge Base     | Article hierarchies, versions, feedback, review cycles, search tuning, related articles, and support integration             |
+| Forums Integration | Forum/community provider contracts, content/profile references, recent discussions, moderation links, and SSO context        |
 
 ## 11. Extension ecosystem modules
 
-| Module | Responsibilities |
-|---|---|
-| Extension Manager | Install/enable/disable/update/uninstall, dependencies, compatibility, permissions, configuration, migrations, health, and rollback |
-| Extension Marketplace | Publishers, listings, categories, versions, signing, reviews, licensing, trials, security status, support, and distribution |
-| Hook and Event SDK | Stable content/editor/render/admin/CLI events, typed extension points, priorities, isolation, diagnostics, and deprecation |
-| Theme Marketplace | Theme manifests, compatibility, previews, licenses, child themes, installation, updates, security review, and ratings |
-| Site Recipes | Versioned bundles of modules, configuration, content types, workflows, menus, blocks, themes, and starter content |
-| Integration Directory | Provider connections, capability discovery, credentials, configuration tests, sync health, and extension links |
+| Module                | Responsibilities                                                                                                                   |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Extension Manager     | Install/enable/disable/update/uninstall, dependencies, compatibility, permissions, configuration, migrations, health, and rollback |
+| Extension Marketplace | Publishers, listings, categories, versions, signing, reviews, licensing, trials, security status, support, and distribution        |
+| Hook and Event SDK    | Stable content/editor/render/admin/CLI events, typed extension points, priorities, isolation, diagnostics, and deprecation         |
+| Theme Marketplace     | Theme manifests, compatibility, previews, licenses, child themes, installation, updates, security review, and ratings              |
+| Site Recipes          | Versioned bundles of modules, configuration, content types, workflows, menus, blocks, themes, and starter content                  |
+| Integration Directory | Provider connections, capability discovery, credentials, configuration tests, sync health, and extension links                     |
 
 Extensions cannot patch core files, bypass policies, query private package tables, or execute arbitrary unsigned code through an admin upload. Composer/deployment installation is the production default.
 
 ## 12. Operations and migration modules
 
-| Module | Responsibilities |
-|---|---|
-| Migration Framework | Source adapters, inventories, mapping, dry run, transforms, identity/media/link resolution, batches, resume, and reconciliation |
-| WordPress Migration | Posts/pages/custom types, taxonomies, metadata, users/authors, comments, media, menus, redirects, and source identifiers |
-| Drupal Migration | Entity/bundle/field data, revisions, moderation, taxonomy, media, menus, views mapping, translations, and configuration evidence |
-| Joomla Migration | Articles/categories, custom fields, contacts, menus, modules/positions, media, users/authors, tags, languages, and redirects |
-| Backup and Restore | Content/configuration/database/file backup contracts, schedules, encryption, retention, verification, restore preview, and evidence |
-| Cache and Performance | Page/render/query/object cache contracts, cache tags, warming, invalidation, asset optimization hooks, and diagnostics |
-| Content Integrity | Broken links/embeds/media, orphan detection, schema validation, duplicate content, scheduled scans, repair queues, and reports |
-| Security Operations | Update inventory, extension provenance, content integrity, upload scanning, security headers integration, advisories, and incident aids |
+| Module                | Responsibilities                                                                                                                        |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Migration Framework   | Source adapters, inventories, mapping, dry run, transforms, identity/media/link resolution, batches, resume, and reconciliation         |
+| WordPress Migration   | Posts/pages/custom types, taxonomies, metadata, users/authors, comments, media, menus, redirects, and source identifiers                |
+| Drupal Migration      | Entity/bundle/field data, revisions, moderation, taxonomy, media, menus, views mapping, translations, and configuration evidence        |
+| Joomla Migration      | Articles/categories, custom fields, contacts, menus, modules/positions, media, users/authors, tags, languages, and redirects            |
+| Backup and Restore    | Content/configuration/database/file backup contracts, schedules, encryption, retention, verification, restore preview, and evidence     |
+| Cache and Performance | Page/render/query/object cache contracts, cache tags, warming, invalidation, asset optimization hooks, and diagnostics                  |
+| Content Integrity     | Broken links/embeds/media, orphan detection, schema validation, duplicate content, scheduled scans, repair queues, and reports          |
+| Security Operations   | Update inventory, extension provenance, content integrity, upload scanning, security headers integration, advisories, and incident aids |
 
 ## 13. Intelligence modules
 
-| Module | Responsibilities |
-|---|---|
-| Content Intelligence | Inventory, quality, readability, accessibility, SEO, freshness, duplication, gaps, performance, and improvement queues |
-| CMS Copilot | Permission-bounded search, summaries, drafting, transforms, metadata, internal links, and action confirmation via Automation |
-| Translation Assistant | Draft translations, glossary/style enforcement, confidence, review, and provider/model provenance |
-| Media Assistant | Alt-text/caption/transcript suggestions, tagging, crops, rights warnings, and human review |
-| Experience Assistant | Layout/block suggestions, brand/design constraints, responsive/accessibility checks, preview, and approval |
+| Module                | Responsibilities                                                                                                             |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Content Intelligence  | Inventory, quality, readability, accessibility, SEO, freshness, duplication, gaps, performance, and improvement queues       |
+| CMS Copilot           | Permission-bounded search, summaries, drafting, transforms, metadata, internal links, and action confirmation via Automation |
+| Translation Assistant | Draft translations, glossary/style enforcement, confidence, review, and provider/model provenance                            |
+| Media Assistant       | Alt-text/caption/transcript suggestions, tagging, crops, rights warnings, and human review                                   |
+| Experience Assistant  | Layout/block suggestions, brand/design constraints, responsive/accessibility checks, preview, and approval                   |
 
 Generated content remains attributable, reviewable, versioned, and subject to the same workflow, rights, policy, and accessibility gates as human-authored content.
 
