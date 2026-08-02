@@ -4,6 +4,8 @@
 
 Each API document describes the optional `module-{independent-module-name}-api` presentation package matching exactly one independent domain module. Applications compose these packages into unified external APIs without moving ownership.
 
+Nuxt clients consume these API contracts through the matching one-to-one packages under [Nuxt 4 implementations](../nuxt/README.md). They must use documented routes, schemas, authentication, permissions, tenant/team context, pagination, errors, idempotency, and versioning; they must not call private Laravel implementation details.
+
 ## Sanctum authentication
 
 Third-party clients authenticate with Laravel Sanctum personal access tokens. First-party SPAs should use Sanctum's cookie-based SPA authentication instead of storing API tokens in browser code. See the [Laravel Sanctum documentation](https://laravel.com/docs/13.x/sanctum) for the complete configuration reference.

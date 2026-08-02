@@ -16,6 +16,7 @@ Start with [Liberu architecture](LIBERU.md) for the portfolio view or [Module ar
 | [Themes](THEMES.md) | Theme packaging, inheritance, assets, accessibility, and visual integration |
 | [Filament](FILAMENT.md) | One-to-one Filament presentation modules, panels, plugins, resources, pages, and widgets |
 | [Livewire](LIVEWIRE.md) | Livewire 4 component packaging, state, security, registration, and interaction |
+| [Nuxt](NUXT.md) | Nuxt 4 API-consuming presentation packages, SSR, routing, typed clients, and deployment |
 | [API](API.md) | One-to-one API presentation modules, contracts, security, versioning, and composition |
 | [Testing](TESTING.md) | Pest/PHPUnit suites, ownership, coverage, compatibility, and CI evidence |
 | [Documentation](DOCUMENTATION.md) | Documentation structure, quality, validation, and maintenance |
@@ -37,6 +38,7 @@ The generated documentation hierarchy expands every independent module listed by
 - [API module specifications](api/README.md) — 517 matching `module-{independent-module-name}-api` documents covering contracts, audiences, implementation, and API verification.
 - [Filament 5 implementations](filament/README.md) — 517 matching `module-{independent-module-name}-filament` presentation implementations with panel/resource/page/widget mappings.
 - [Livewire 4 implementations](livewire/README.md) — 517 matching `module-{independent-module-name}-livewire` presentation implementations with component/state/interaction mappings.
+- [Nuxt 4 implementations](nuxt/README.md) — 517 matching `module-{independent-module-name}-nuxt` presentation implementations consuming the corresponding API modules.
 
 Every feature and API document links back to its authoritative application scope. Feature packages remain presentation-neutral; Filament, Livewire, and API behavior belongs in matching optional presentation packages.
 
