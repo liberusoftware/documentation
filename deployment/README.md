@@ -17,6 +17,11 @@ This guide indexes the supported deployment shapes. The application repository's
 - [Kubernetes](KUBERNETES.md) — deploy to either a standard Kubernetes cluster (`k8s`) or lightweight K3s cluster.
 - [NGINX](NGINX.md) — serve Laravel through NGINX and PHP-FPM.
 - [Apache](APACHE.md) — serve Laravel through Apache HTTP Server and PHP-FPM.
+- [Queues](QUEUES.md) — design, operate, retry, and observe asynchronous jobs.
+- [Supervisor](SUPERVISORD.md) — supervise workers, schedulers, Reverb, and SSR on standalone hosts.
+- [Reverb](REVERB.md) — operate Laravel WebSockets behind a trusted TLS proxy.
+- [Horizon](HORIZON.md) — manage Redis queue supervisors and metrics.
+- [Telescope](TELESCOPE.md) — use application diagnostics safely with retention and access controls.
 
 ## Common release sequence
 
@@ -54,5 +59,10 @@ Provisioning must be authenticated, least-privilege, idempotent, observable, and
 - [Kubernetes](KUBERNETES.md)
 - [NGINX](NGINX.md)
 - [Apache](APACHE.md)
+- [Queues](QUEUES.md)
+- [Supervisor](SUPERVISORD.md)
+- [Reverb](REVERB.md)
+- [Horizon](HORIZON.md)
+- [Telescope](TELESCOPE.md)
 - [Installation](../INSTALL.md)
 - [Security policy](../SECURITY.md)
