@@ -77,6 +77,7 @@ The Liberu platform adds only new cross-product capabilities under [projects/lib
 These root indexes cover the complete existing module matrix. Select only the adapters needed by an application surface.
 
 - [Feature specifications](features/README.md) — framework-neutral domain capability.
+- [Module indexes](modules/README.md) · [Generic domain feature scopes](modules/features/README.md) — domain-to-implementation mapping.
 - [API modules](modules/api/README.md) — HTTP/API contracts and adapters.
 - [Filament implementations](modules/filament/README.md) — administrative and operational UI.
 - [Livewire implementations](modules/livewire/README.md) — server-driven Laravel UI.

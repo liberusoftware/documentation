@@ -54,6 +54,7 @@ At this stage:
 
 Treat this as a repeatable loop. Use the root implementation indexes below to discover the supported scopes:
 
+- [`modules/features/README.md`](modules/features/README.md) — generic domain-level feature scopes and their canonical specifications.
 - [`modules/api/README.md`](modules/api/README.md)
 - [`modules/filament/README.md`](modules/filament/README.md)
 - [`modules/livewire/README.md`](modules/livewire/README.md)

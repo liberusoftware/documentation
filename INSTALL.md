@@ -32,7 +32,7 @@ Start with the framework-neutral feature specification, then add only the matchi
 
 | Need | Index | Standard |
 |---|---|---|
-| Domain capabilities | [Feature specifications](features/README.md) | [Modules architecture](architecture/MODULES.md) |
+| Domain capabilities | [Feature specifications](features/README.md) · [Module indexes](modules/features/README.md) | [Modules architecture](architecture/MODULES.md) |
 | HTTP/API contracts | [API implementations](modules/api/README.md) | [API architecture](architecture/API.md) |
 | Administration | [Filament implementations](modules/filament/README.md) | [Filament](standards/FILAMENT.md) |
 | Server-driven UI | [Livewire implementations](modules/livewire/README.md) | [Livewire](standards/LIVEWIRE.md) |

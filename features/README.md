@@ -15,6 +15,7 @@ Each application directory contains one specification for every independent modu
 | [CRM](../projects/crm/features/README.md) | 95 | [CRM.md](../projects/crm/CRM.md) |
 | [Ecommerce](../projects/ecommerce/features/README.md) | 105 | [ECOMMERCE.md](../projects/ecommerce/ECOMMERCE.md) |
 | [Genealogy](../projects/genealogy/features/README.md) | 14 | [GENEALOGY.md](../projects/genealogy/GENEALOGY.md) |
+| [Liberu platform](../projects/liberu/features/README.md) | 3 | [LIBERU.md](../projects/LIBERU.md) |
 | [Maintenance](../projects/maintenance/features/README.md) | 14 | [MAINTENANCE.md](../projects/maintenance/MAINTENANCE.md) |
 | [Real Estate](../projects/real-estate/features/README.md) | 15 | [REAL-ESTATE.md](../projects/real-estate/REAL-ESTATE.md) |
 | [SAP](../projects/sap/features/README.md) | 16 | [SAP.md](../projects/sap/SAP.md) |
