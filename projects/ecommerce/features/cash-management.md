@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-cash-management`  
+**Domain module:** `module-ecommerce-cash-management`
 **Application:** Ecommerce  
 **Capability group:** Retail and POS modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

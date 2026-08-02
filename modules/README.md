@@ -5,6 +5,7 @@ This directory maps Liberu’s reusable module scopes. The indexes separate fram
 ## Indexes
 
 - [Generic domain feature scopes](features/README.md) — framework-neutral capabilities and links to their canonical specifications.
+- [Core module implementations](core/README.md) — domain-driven Composer packages containing reusable business logic and persistence.
 - [API implementations](api/README.md) — HTTP contracts and API adapters.
 - [Filament implementations](filament/README.md) — administrative and operational UI.
 - [Livewire implementations](livewire/README.md) — server-driven Laravel UI.

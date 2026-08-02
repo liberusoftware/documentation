@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `genealogy-collaboration`
+**Domain module:** `module-genealogy-collaboration`
 **Application:** Genealogy
 **Capability group:** Module plan
 **Source scope:** [GENEALOGY.md](../GENEALOGY.md)
@@ -98,13 +98,13 @@ The Collaboration module owns Invitations, roles, branch/change proposals, revie
 
 ## 6. Definition of done
 
-- Package identity, public exports, API dependency, and module dependency match `genealogy-places` one-to-one.
+- Package identity, public exports, API dependency, and module dependency match `module-genealogy-places` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
 
 ## Canonical independent module specification
 
-**Domain module:** `genealogy-collaboration`  
+**Domain module:** `module-genealogy-collaboration`
 **Application:** Genealogy  
 **Capability group:** Module plan  
 **Source scope:** [GENEALOGY.md](../GENEALOGY.md)  

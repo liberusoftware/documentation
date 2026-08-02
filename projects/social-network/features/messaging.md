@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `social-network-messaging`  
+**Domain module:** `module-social-network-messaging`
 **Application:** Social Network  
 **Capability group:** Module plan  
 **Source scope:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)  

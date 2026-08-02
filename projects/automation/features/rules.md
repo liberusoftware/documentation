@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-rules`  
+**Domain module:** `module-automation-rules`
 **Application:** Automation  
 **Capability group:** Module plan  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  

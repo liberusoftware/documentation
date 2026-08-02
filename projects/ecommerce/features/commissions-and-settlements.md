@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-commissions-and-settlements`  
+**Domain module:** `module-ecommerce-commissions-and-settlements`
 **Application:** Ecommerce  
 **Capability group:** Marketplace and platform modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

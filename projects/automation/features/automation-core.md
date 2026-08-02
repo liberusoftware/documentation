@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-core`
+**Domain module:** `module-automation-core`
 **Application:** Automation
 **Capability group:** Module plan
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)
@@ -95,7 +95,7 @@ The Automation Core module owns Workflow definitions, versions, triggers, state,
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-core`  
+**Domain module:** `module-automation-core`
 **Application:** Automation  
 **Capability group:** Module plan  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  

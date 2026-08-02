@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `sap-product-and-engineering`  
+**Domain module:** `module-sap-product-and-engineering`
 **Application:** SAP  
 **Capability group:** Module plan  
 **Source scope:** [SAP.md](../SAP.md)  

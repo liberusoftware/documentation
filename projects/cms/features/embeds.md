@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-embeds`  
+**Domain module:** `module-cms-embeds`
 **Application:** CMS  
 **Capability group:** Media and asset modules  
 **Source scope:** [CMS.md](../CMS.md)  

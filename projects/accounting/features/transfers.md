@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-transfers`  
+**Domain module:** `module-accounting-transfers`
 **Application:** Accounting  
 **Capability group:** Banking, treasury, and cash modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

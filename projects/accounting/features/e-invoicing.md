@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-e-invoicing`  
+**Domain module:** `module-accounting-e-invoicing`
 **Application:** Accounting  
 **Capability group:** Tax and regulatory modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

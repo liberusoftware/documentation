@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-search`  
+**Domain module:** `module-crm-search`
 **Application:** CRM  
 **Capability group:** Customer data and platform modules  
 **Source scope:** [CRM.md](../CRM.md)  

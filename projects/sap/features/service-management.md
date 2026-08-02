@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `sap-service-management`  
+**Domain module:** `module-sap-service-management`
 **Application:** SAP  
 **Capability group:** Module plan  
 **Source scope:** [SAP.md](../SAP.md)  

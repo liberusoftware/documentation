@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-tax`  
+**Domain module:** `module-ecommerce-tax`
 **Application:** Ecommerce  
 **Capability group:** Tax, shipping, and fulfillment modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-copilot`  
+**Domain module:** `module-accounting-copilot`
 **Application:** Accounting  
 **Capability group:** Automation and intelligence modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-orders-and-payments-workspace`  
+**Domain module:** `module-crm-orders-and-payments-workspace`
 **Application:** CRM  
 **Capability group:** Revenue and commercial modules  
 **Source scope:** [CRM.md](../CRM.md)  

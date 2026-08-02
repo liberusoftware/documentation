@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-accounts-receivable`  
+**Domain module:** `module-accounting-accounts-receivable`
 **Application:** Accounting  
 **Capability group:** Sales and receivables modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

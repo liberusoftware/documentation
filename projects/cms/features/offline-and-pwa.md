@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-offline-and-pwa`  
+**Domain module:** `module-cms-offline-and-pwa`
 **Application:** CMS  
 **Capability group:** Delivery and experience modules  
 **Source scope:** [CMS.md](../CMS.md)  

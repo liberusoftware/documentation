@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-lead-qualification`  
+**Domain module:** `module-crm-lead-qualification`
 **Application:** CRM  
 **Capability group:** Demand generation and acquisition modules  
 **Source scope:** [CRM.md](../CRM.md)  

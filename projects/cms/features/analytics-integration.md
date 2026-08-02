@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-analytics-integration`  
+**Domain module:** `module-cms-analytics-integration`
 **Application:** CMS  
 **Capability group:** Discovery, SEO, and audience modules  
 **Source scope:** [CMS.md](../CMS.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-evaluation`
+**Domain module:** `module-automation-evaluation`
 **Application:** Automation
 **Capability group:** Module plan
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)
@@ -31,7 +31,7 @@ The Evaluation module owns Quality suites, regression comparison, latency/cost m
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-evaluation`  
+**Domain module:** `module-automation-evaluation`
 **Application:** Automation  
 **Capability group:** Module plan  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  

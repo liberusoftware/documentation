@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-deal-registration`  
+**Domain module:** `module-crm-deal-registration`
 **Application:** CRM  
 **Capability group:** Partner and agency modules  
 **Source scope:** [CRM.md](../CRM.md)  

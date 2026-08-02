@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `sap-people`  
+**Domain module:** `module-sap-people`
 **Application:** SAP  
 **Capability group:** Module plan  
 **Source scope:** [SAP.md](../SAP.md)  

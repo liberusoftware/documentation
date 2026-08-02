@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `control-panel-kubernetes`  
+**Domain module:** `module-control-panel-kubernetes`
 **Application:** Control Panel  
 **Capability group:** Module plan  
 **Source scope:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)  

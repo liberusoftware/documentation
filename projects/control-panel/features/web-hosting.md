@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `control-panel-web-hosting`  
+**Domain module:** `module-control-panel-web-hosting`
 **Application:** Control Panel  
 **Capability group:** Module plan  
 **Source scope:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)  

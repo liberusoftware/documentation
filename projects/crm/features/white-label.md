@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-white-label`  
+**Domain module:** `module-crm-white-label`
 **Application:** CRM  
 **Capability group:** Partner and agency modules  
 **Source scope:** [CRM.md](../CRM.md)  

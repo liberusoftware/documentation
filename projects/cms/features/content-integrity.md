@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-content-integrity`  
+**Domain module:** `module-cms-content-integrity`
 **Application:** CMS  
 **Capability group:** Operations and migration modules  
 **Source scope:** [CMS.md](../CMS.md)  

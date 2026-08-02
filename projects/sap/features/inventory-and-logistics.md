@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `sap-inventory-and-logistics`  
+**Domain module:** `module-sap-inventory-and-logistics`
 **Application:** SAP  
 **Capability group:** Module plan  
 **Source scope:** [SAP.md](../SAP.md)  

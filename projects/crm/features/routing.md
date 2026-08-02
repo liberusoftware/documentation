@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-routing`  
+**Domain module:** `module-crm-routing`
 **Application:** CRM  
 **Capability group:** Demand generation and acquisition modules  
 **Source scope:** [CRM.md](../CRM.md)  

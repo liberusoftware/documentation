@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-content-federation`  
+**Domain module:** `module-cms-content-federation`
 **Application:** CMS  
 **Capability group:** Delivery and experience modules  
 **Source scope:** [CMS.md](../CMS.md)  

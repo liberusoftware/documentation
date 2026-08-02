@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-email-marketing`  
+**Domain module:** `module-crm-email-marketing`
 **Application:** CRM  
 **Capability group:** Marketing modules  
 **Source scope:** [CRM.md](../CRM.md)  

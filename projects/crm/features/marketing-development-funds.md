@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-marketing-development-funds`  
+**Domain module:** `module-crm-marketing-development-funds`
 **Application:** CRM  
 **Capability group:** Partner and agency modules  
 **Source scope:** [CRM.md](../CRM.md)  

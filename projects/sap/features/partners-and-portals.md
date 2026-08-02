@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `sap-partners-and-portals`  
+**Domain module:** `module-sap-partners-and-portals`
 **Application:** SAP  
 **Capability group:** Module plan  
 **Source scope:** [SAP.md](../SAP.md)  

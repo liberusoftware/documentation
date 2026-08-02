@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-contractor-compliance`  
+**Domain module:** `module-accounting-contractor-compliance`
 **Application:** Accounting  
 **Capability group:** Purchasing and payables modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

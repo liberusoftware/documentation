@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-usage-wallet-and-rebilling`  
+**Domain module:** `module-crm-usage-wallet-and-rebilling`
 **Application:** CRM  
 **Capability group:** Partner and agency modules  
 **Source scope:** [CRM.md](../CRM.md)  

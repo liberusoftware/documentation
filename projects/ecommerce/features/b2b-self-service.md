@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-b2b-self-service`  
+**Domain module:** `module-ecommerce-b2b-self-service`
 **Application:** Ecommerce  
 **Capability group:** B2B and wholesale modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

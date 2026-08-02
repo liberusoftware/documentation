@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-events-content`  
+**Domain module:** `module-cms-events-content`
 **Application:** CMS  
 **Capability group:** Forms, community, and application modules  
 **Source scope:** [CMS.md](../CMS.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-financial-statements`  
+**Domain module:** `module-accounting-financial-statements`
 **Application:** Accounting  
 **Capability group:** Planning, reporting, and advisory modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

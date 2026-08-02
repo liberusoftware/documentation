@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-sandbox-and-release-management`  
+**Domain module:** `module-crm-sandbox-and-release-management`
 **Application:** CRM  
 **Capability group:** Delivery, productivity, and operations modules  
 **Source scope:** [CRM.md](../CRM.md)  

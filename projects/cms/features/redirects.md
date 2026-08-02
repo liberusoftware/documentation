@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-redirects`  
+**Domain module:** `module-cms-redirects`
 **Application:** CMS  
 **Capability group:** Discovery, SEO, and audience modules  
 **Source scope:** [CMS.md](../CMS.md)  

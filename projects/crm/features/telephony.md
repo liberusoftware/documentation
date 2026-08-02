@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-telephony`  
+**Domain module:** `module-crm-telephony`
 **Application:** CRM  
 **Capability group:** Communications and contact-center modules  
 **Source scope:** [CRM.md](../CRM.md)  

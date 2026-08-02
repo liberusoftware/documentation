@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-vat`  
+**Domain module:** `module-accounting-vat`
 **Application:** Accounting  
 **Capability group:** Tax and regulatory modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

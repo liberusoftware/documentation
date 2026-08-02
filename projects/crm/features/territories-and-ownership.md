@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-territories-and-ownership`  
+**Domain module:** `module-crm-territories-and-ownership`
 **Application:** CRM  
 **Capability group:** Customer data and platform modules  
 **Source scope:** [CRM.md](../CRM.md)  

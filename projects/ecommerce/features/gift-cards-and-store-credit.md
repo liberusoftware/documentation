@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-gift-cards-and-store-credit`  
+**Domain module:** `module-ecommerce-gift-cards-and-store-credit`
 **Application:** Ecommerce  
 **Capability group:** Pricing and merchandising modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-voice`  
+**Domain module:** `module-automation-voice`
 **Application:** Automation  
 **Capability group:** Module plan  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-media-library`  
+**Domain module:** `module-cms-media-library`
 **Application:** CMS  
 **Capability group:** Media and asset modules  
 **Source scope:** [CMS.md](../CMS.md)  

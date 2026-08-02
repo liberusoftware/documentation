@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-navigation`  
+**Domain module:** `module-cms-navigation`
 **Application:** CMS  
 **Capability group:** Information architecture and display modules  
 **Source scope:** [CMS.md](../CMS.md)  

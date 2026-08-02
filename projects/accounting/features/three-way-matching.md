@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-three-way-matching`  
+**Domain module:** `module-accounting-three-way-matching`
 **Application:** Accounting  
 **Capability group:** Purchasing and payables modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

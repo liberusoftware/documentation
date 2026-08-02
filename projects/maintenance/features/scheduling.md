@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `maintenance-scheduling`  
+**Domain module:** `module-maintenance-scheduling`
 **Application:** Maintenance  
 **Capability group:** Module plan  
 **Source scope:** [MAINTENANCE.md](../MAINTENANCE.md)  

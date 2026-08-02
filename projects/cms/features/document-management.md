@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-document-management`  
+**Domain module:** `module-cms-document-management`
 **Application:** CMS  
 **Capability group:** Media and asset modules  
 **Source scope:** [CMS.md](../CMS.md)  

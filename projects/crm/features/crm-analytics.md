@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-analytics`  
+**Domain module:** `module-crm-analytics`
 **Application:** CRM  
 **Capability group:** Intelligence and AI modules  
 **Source scope:** [CRM.md](../CRM.md)  

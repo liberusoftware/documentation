@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-cart`  
+**Domain module:** `module-ecommerce-cart`
 **Application:** Ecommerce  
 **Capability group:** Cart and checkout modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

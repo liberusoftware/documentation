@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-personalization`  
+**Domain module:** `module-cms-personalization`
 **Application:** CMS  
 **Capability group:** Delivery and experience modules  
 **Source scope:** [CMS.md](../CMS.md)  

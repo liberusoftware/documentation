@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-wordpress-migration`  
+**Domain module:** `module-cms-wordpress-migration`
 **Application:** CMS  
 **Capability group:** Operations and migration modules  
 **Source scope:** [CMS.md](../CMS.md)  

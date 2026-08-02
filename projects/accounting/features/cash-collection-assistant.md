@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-cash-collection-assistant`  
+**Domain module:** `module-accounting-cash-collection-assistant`
 **Application:** Accounting  
 **Capability group:** Automation and intelligence modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

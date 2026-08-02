@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `real-estate-parties`  
+**Domain module:** `module-real-estate-parties`
 **Application:** Real Estate  
 **Capability group:** Module plan  
 **Source scope:** [REAL-ESTATE.md](../REAL-ESTATE.md)  

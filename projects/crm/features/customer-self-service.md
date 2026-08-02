@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-customer-self-service`  
+**Domain module:** `module-crm-customer-self-service`
 **Application:** CRM  
 **Capability group:** Service, success, and experience modules  
 **Source scope:** [CRM.md](../CRM.md)  

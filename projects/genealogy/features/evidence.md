@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `genealogy-evidence`  
+**Domain module:** `module-genealogy-evidence`
 **Application:** Genealogy  
 **Capability group:** Module plan  
 **Source scope:** [GENEALOGY.md](../GENEALOGY.md)  

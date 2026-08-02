@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-markets`  
+**Domain module:** `module-ecommerce-markets`
 **Application:** Ecommerce  
 **Capability group:** International and channel modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

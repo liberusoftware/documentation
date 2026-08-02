@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-core`  
+**Domain module:** `module-cms-core`
 **Application:** CMS  
 **Capability group:** Content modeling modules  
 **Source scope:** [CMS.md](../CMS.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `maintenance-portals`  
+**Domain module:** `module-maintenance-portals`
 **Application:** Maintenance  
 **Capability group:** Module plan  
 **Source scope:** [MAINTENANCE.md](../MAINTENANCE.md)  

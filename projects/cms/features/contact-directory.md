@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-contact-directory`  
+**Domain module:** `module-cms-contact-directory`
 **Application:** CMS  
 **Capability group:** Information architecture and display modules  
 **Source scope:** [CMS.md](../CMS.md)  

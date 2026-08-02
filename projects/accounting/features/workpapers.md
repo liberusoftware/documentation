@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-workpapers`  
+**Domain module:** `module-accounting-workpapers`
 **Application:** Accounting  
 **Capability group:** Close, controls, and accountant-practice modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

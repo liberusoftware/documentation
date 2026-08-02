@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-xero-migration`  
+**Domain module:** `module-accounting-xero-migration`
 **Application:** Accounting  
 **Capability group:** Migration modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

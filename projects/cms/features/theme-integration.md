@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-theme-integration`  
+**Domain module:** `module-cms-theme-integration`
 **Application:** CMS  
 **Capability group:** Delivery and experience modules  
 **Source scope:** [CMS.md](../CMS.md)  

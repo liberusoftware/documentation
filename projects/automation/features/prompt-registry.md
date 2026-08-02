@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-prompt-registry`  
+**Domain module:** `module-automation-prompt-registry`
 **Application:** Automation  
 **Capability group:** Module plan  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  

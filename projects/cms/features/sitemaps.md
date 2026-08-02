@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-sitemaps`  
+**Domain module:** `module-cms-sitemaps`
 **Application:** CMS  
 **Capability group:** Discovery, SEO, and audience modules  
 **Source scope:** [CMS.md](../CMS.md)  

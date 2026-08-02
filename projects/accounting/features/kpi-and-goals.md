@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-kpi-and-goals`  
+**Domain module:** `module-accounting-kpi-and-goals`
 **Application:** Accounting  
 **Capability group:** Planning, reporting, and advisory modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

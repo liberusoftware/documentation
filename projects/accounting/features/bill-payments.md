@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-bill-payments`  
+**Domain module:** `module-accounting-bill-payments`
 **Application:** Accounting  
 **Capability group:** Purchasing and payables modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

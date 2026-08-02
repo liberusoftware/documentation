@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-loyalty`  
+**Domain module:** `module-ecommerce-loyalty`
 **Application:** Ecommerce  
 **Capability group:** Customer and retention modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

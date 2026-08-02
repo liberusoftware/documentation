@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-hook-and-event-sdk`  
+**Domain module:** `module-cms-hook-and-event-sdk`
 **Application:** CMS  
 **Capability group:** Extension ecosystem modules  
 **Source scope:** [CMS.md](../CMS.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-views-and-query-builder`  
+**Domain module:** `module-cms-views-and-query-builder`
 **Application:** CMS  
 **Capability group:** Information architecture and display modules  
 **Source scope:** [CMS.md](../CMS.md)  

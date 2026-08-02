@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-display-modes`  
+**Domain module:** `module-cms-display-modes`
 **Application:** CMS  
 **Capability group:** Information architecture and display modules  
 **Source scope:** [CMS.md](../CMS.md)  

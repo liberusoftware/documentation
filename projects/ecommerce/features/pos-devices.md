@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-pos-devices`  
+**Domain module:** `module-ecommerce-pos-devices`
 **Application:** Ecommerce  
 **Capability group:** Retail and POS modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

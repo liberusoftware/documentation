@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-feedback-and-voice-of-customer`  
+**Domain module:** `module-crm-feedback-and-voice-of-customer`
 **Application:** CRM  
 **Capability group:** Service, success, and experience modules  
 **Source scope:** [CRM.md](../CRM.md)  

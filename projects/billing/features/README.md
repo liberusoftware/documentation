@@ -7,19 +7,19 @@ Each file defines one independent module. Modules remain independently installab
 
 ## Module plan
 
-- [Billing Core](billing-core.md) — `billing-core`
-- [Catalog](catalog.md) — `billing-catalog`
-- [Pricing](pricing.md) — `billing-pricing`
-- [Orders](orders.md) — `billing-orders`
-- [Subscriptions](subscriptions.md) — `billing-subscriptions`
-- [Usage](usage.md) — `billing-usage`
-- [Invoicing](invoicing.md) — `billing-invoicing`
-- [Payments](payments.md) — `billing-payments`
-- [Collections](collections.md) — `billing-collections`
-- [Provisioning](provisioning.md) — `billing-provisioning`
-- [Hosting](hosting.md) — `billing-hosting`
-- [Domains](domains.md) — `billing-domains`
-- [ISP](isp.md) — `billing-isp`
-- [Communications](communications.md) — `billing-communications`
-- [Customer Portal](customer-portal.md) — `billing-customer-portal`
-- [Reporting](reporting.md) — `billing-reporting`
+- [Billing Core](billing-core.md) — `module-billing-core`
+- [Catalog](catalog.md) — `module-billing-catalog`
+- [Pricing](pricing.md) — `module-billing-pricing`
+- [Orders](orders.md) — `module-billing-orders`
+- [Subscriptions](subscriptions.md) — `module-billing-subscriptions`
+- [Usage](usage.md) — `module-billing-usage`
+- [Invoicing](invoicing.md) — `module-billing-invoicing`
+- [Payments](payments.md) — `module-billing-payments`
+- [Collections](collections.md) — `module-billing-collections`
+- [Provisioning](provisioning.md) — `module-billing-provisioning`
+- [Hosting](hosting.md) — `module-billing-hosting`
+- [Domains](domains.md) — `module-billing-domains`
+- [ISP](isp.md) — `module-billing-isp`
+- [Communications](communications.md) — `module-billing-communications`
+- [Customer Portal](customer-portal.md) — `module-billing-customer-portal`
+- [Reporting](reporting.md) — `module-billing-reporting`

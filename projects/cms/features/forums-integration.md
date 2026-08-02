@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-forums-integration`  
+**Domain module:** `module-cms-forums-integration`
 **Application:** CMS  
 **Capability group:** Forms, community, and application modules  
 **Source scope:** [CMS.md](../CMS.md)  

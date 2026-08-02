@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-content-calendar`  
+**Domain module:** `module-cms-content-calendar`
 **Application:** CMS  
 **Capability group:** Authoring and editorial modules  
 **Source scope:** [CMS.md](../CMS.md)  

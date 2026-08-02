@@ -4,10 +4,10 @@ Generic feature specifications define domain behavior, ownership, invariants, co
 
 ## Package boundary
 
-Each independent feature is implemented as a cohesive domain module. The domain module owns its business rules and persistence; presentation packages depend on it and never the other way around.
+Each independent feature is implemented as a cohesive core domain module. The core Composer package is named `module-{independent-module-name}`, owns its business rules and persistence, and is consumed by optional presentation packages. Presentation packages depend on the core module and never the other way around.
 
 ```text
-module-{feature}/
+module-{independent-module-name}/
 ├── src/
 │   ├── Domain/          # entities, value objects, events, policies, contracts
 │   ├── Application/     # actions, services, commands, queries, DTOs
@@ -21,7 +21,7 @@ module-{feature}/
 └── module.json
 ```
 
-The exact directories may be reduced when a feature does not need a layer. Do not create empty layers or move reusable domain behavior into an application’s root `app/` directory. Module packages are installed under `/modules/{module-name}` according to [MODULES.md](../../architecture/MODULES.md).
+The exact directories may be reduced when a feature does not need a layer. Do not create empty layers or move reusable domain behavior into an application’s root `app/` directory. Core module packages are installed under `/modules/{module-name}` according to [MODULES.md](../../architecture/MODULES.md).
 
 ## Laravel responsibilities
 
@@ -38,7 +38,7 @@ Use the following implementation responsibilities when a feature requires them:
 | Views and assets                | Blade views and theme assets in the relevant presentation package    | Follow the shared theme tokens and accessibility rules.        |
 | Verification                    | Unit, feature, integration, presentation, and contract tests         | Test domain behavior and each exposed adapter.                 |
 
-Do not add controllers, Filament resources, or Livewire components directly to the generic domain package. Put them in the matching `api/`, `filament/`, or `livewire/` presentation package under the relevant project scope.
+Do not add controllers, Filament resources, Livewire components, React/Vue/Nuxt pages, or theme assets directly to the core package. Put them in the matching `api/`, `filament/`, `livewire/`, `react/`, `vue/`, or `nuxt/` presentation package under the relevant project scope.
 
 ## Required design checks
 
@@ -46,4 +46,4 @@ Before implementation, confirm the feature’s [domain specification](../../feat
 
 Apply the relevant [Laravel](../../standards/LARAVEL.md), [domain-driven design](../../standards/DOMAIN-DRIVEN-DESIGN-PATTERNS.md), [services](../../standards/SERVICES.md), [controllers](../../standards/CONTROLLERS.md), [models](../../standards/MODELS.md), [jobs](../../standards/JOBS.md), [queues](../../standards/QUEUES.md), [database](../../standards/DATABASE.md), [API](../../architecture/API.md), [Filament](../../standards/FILAMENT.md), [Livewire](../../standards/LIVEWIRE.md), [themes](../../standards/THEMES.md), and [testing](../../standards/TESTING.md) standards.
 
-The project’s `features/`, `api/`, `filament/`, and `livewire/` README files remain the implementation indexes for that product. This guide explains how they fit together; it does not duplicate their feature definitions.
+The project’s `features/` README remains the domain scope index, while `core/` is the core implementation index and `api/`, `filament/`, `livewire/`, `react/`, `vue/`, and `nuxt/` are presentation indexes. This guide explains how they fit together; it does not duplicate their feature definitions.

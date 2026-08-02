@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-reservations`  
+**Domain module:** `module-ecommerce-reservations`
 **Application:** Ecommerce  
 **Capability group:** Inventory and availability modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

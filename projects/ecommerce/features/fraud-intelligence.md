@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-fraud-intelligence`  
+**Domain module:** `module-ecommerce-fraud-intelligence`
 **Application:** Ecommerce  
 **Capability group:** Operations, analytics, and intelligence modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

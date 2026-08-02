@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-recommendations`  
+**Domain module:** `module-ecommerce-recommendations`
 **Application:** Ecommerce  
 **Capability group:** Pricing and merchandising modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

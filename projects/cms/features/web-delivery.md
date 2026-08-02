@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-web-delivery`  
+**Domain module:** `module-cms-web-delivery`
 **Application:** CMS  
 **Capability group:** Delivery and experience modules  
 **Source scope:** [CMS.md](../CMS.md)  

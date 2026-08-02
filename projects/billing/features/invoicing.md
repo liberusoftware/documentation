@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `billing-invoicing`  
+**Domain module:** `module-billing-invoicing`
 **Application:** Billing  
 **Capability group:** Module plan  
 **Source scope:** [BILLING.md](../BILLING.md)  

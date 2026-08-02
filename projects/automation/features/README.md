@@ -7,14 +7,14 @@ Each file defines one independent module. Modules remain independently installab
 
 ## Module plan
 
-- [Automation Core](automation-core.md) — `automation-core`
-- [Rules](rules.md) — `automation-rules`
-- [Approvals](approvals.md) — `automation-approvals`
-- [AI Gateway](ai-gateway.md) — `automation-ai-gateway`
-- [Prompt Registry](prompt-registry.md) — `automation-prompt-registry`
-- [Data Processing](data-processing.md) — `automation-data-processing`
-- [Voice](voice.md) — `automation-voice`
-- [Image](image.md) — `automation-image`
-- [Video](video.md) — `automation-video`
-- [Connectors](connectors.md) — `automation-connectors`
-- [Evaluation](evaluation.md) — `automation-evaluation`
+- [Automation Core](automation-core.md) — `module-automation-core`
+- [Rules](rules.md) — `module-automation-rules`
+- [Approvals](approvals.md) — `module-automation-approvals`
+- [AI Gateway](ai-gateway.md) — `module-automation-ai-gateway`
+- [Prompt Registry](prompt-registry.md) — `module-automation-prompt-registry`
+- [Data Processing](data-processing.md) — `module-automation-data-processing`
+- [Voice](voice.md) — `module-automation-voice`
+- [Image](image.md) — `module-automation-image`
+- [Video](video.md) — `module-automation-video`
+- [Connectors](connectors.md) — `module-automation-connectors`
+- [Evaluation](evaluation.md) — `module-automation-evaluation`

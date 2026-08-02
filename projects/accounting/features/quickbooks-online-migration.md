@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-quickbooks-online-migration`  
+**Domain module:** `module-accounting-quickbooks-online-migration`
 **Application:** Accounting  
 **Capability group:** Migration modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

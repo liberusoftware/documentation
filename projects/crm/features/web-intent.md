@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-web-intent`  
+**Domain module:** `module-crm-web-intent`
 **Application:** CRM  
 **Capability group:** Demand generation and acquisition modules  
 **Source scope:** [CRM.md](../CRM.md)  

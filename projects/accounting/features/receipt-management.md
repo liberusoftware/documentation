@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-receipt-management`  
+**Domain module:** `module-accounting-receipt-management`
 **Application:** Accounting  
 **Capability group:** Capture, expenses, cards, time, and mileage modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-automation-pack`  
+**Domain module:** `module-accounting-automation-pack`
 **Application:** Accounting  
 **Capability group:** Automation and intelligence modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `maintenance-reporting`  
+**Domain module:** `module-maintenance-reporting`
 **Application:** Maintenance  
 **Capability group:** Module plan  
 **Source scope:** [MAINTENANCE.md](../MAINTENANCE.md)  

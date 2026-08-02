@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-customer-data-model`  
+**Domain module:** `module-crm-customer-data-model`
 **Application:** CRM  
 **Capability group:** Customer data and platform modules  
 **Source scope:** [CRM.md](../CRM.md)  

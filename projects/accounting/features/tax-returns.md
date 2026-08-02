@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-tax-returns`  
+**Domain module:** `module-accounting-tax-returns`
 **Application:** Accounting  
 **Capability group:** Tax and regulatory modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

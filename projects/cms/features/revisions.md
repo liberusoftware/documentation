@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-revisions`  
+**Domain module:** `module-cms-revisions`
 **Application:** CMS  
 **Capability group:** Authoring and editorial modules  
 **Source scope:** [CMS.md](../CMS.md)  

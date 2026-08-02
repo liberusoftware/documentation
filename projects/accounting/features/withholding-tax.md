@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-withholding-tax`  
+**Domain module:** `module-accounting-withholding-tax`
 **Application:** Accounting  
 **Capability group:** Tax and regulatory modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

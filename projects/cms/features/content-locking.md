@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-content-locking`  
+**Domain module:** `module-cms-content-locking`
 **Application:** CMS  
 **Capability group:** Authoring and editorial modules  
 **Source scope:** [CMS.md](../CMS.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-mileage`  
+**Domain module:** `module-accounting-mileage`
 **Application:** Accounting  
 **Capability group:** Capture, expenses, cards, time, and mileage modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-carbon-accounting`  
+**Domain module:** `module-accounting-carbon-accounting`
 **Application:** Accounting  
 **Capability group:** Tax and regulatory modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

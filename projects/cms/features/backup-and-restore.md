@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-backup-and-restore`  
+**Domain module:** `module-cms-backup-and-restore`
 **Application:** CMS  
 **Capability group:** Operations and migration modules  
 **Source scope:** [CMS.md](../CMS.md)  

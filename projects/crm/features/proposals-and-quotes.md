@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-proposals-and-quotes`  
+**Domain module:** `module-crm-proposals-and-quotes`
 **Application:** CRM  
 **Capability group:** Revenue and commercial modules  
 **Source scope:** [CRM.md](../CRM.md)  

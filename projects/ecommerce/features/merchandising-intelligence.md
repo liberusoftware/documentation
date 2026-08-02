@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-merchandising-intelligence`  
+**Domain module:** `module-ecommerce-merchandising-intelligence`
 **Application:** Ecommerce  
 **Capability group:** Operations, analytics, and intelligence modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

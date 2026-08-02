@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-enrichment`  
+**Domain module:** `module-crm-enrichment`
 **Application:** CRM  
 **Capability group:** Demand generation and acquisition modules  
 **Source scope:** [CRM.md](../CRM.md)  

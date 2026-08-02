@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-editorial-workflow`  
+**Domain module:** `module-cms-editorial-workflow`
 **Application:** CMS  
 **Capability group:** Authoring and editorial modules  
 **Source scope:** [CMS.md](../CMS.md)  

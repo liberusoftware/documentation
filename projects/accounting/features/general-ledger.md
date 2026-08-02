@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-general-ledger`  
+**Domain module:** `module-accounting-general-ledger`
 **Application:** Accounting  
 **Capability group:** Accounting foundation modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

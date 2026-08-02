@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-payroll-integration`  
+**Domain module:** `module-accounting-payroll-integration`
 **Application:** Accounting  
 **Capability group:** Payroll accounting modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

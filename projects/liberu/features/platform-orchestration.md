@@ -2,7 +2,7 @@
 
 ## Canonical independent feature specification
 
-**Domain module:** `liberu-platform-orchestration`
+**Domain module:** `module-liberu-platform-orchestration`
 **Application:** Liberu Business Platform
 **Status:** New cross-product capability; does not replace Module Manager or any product module
 **Architecture:** [MODULES](../../../architecture/MODULES.md) · [LIBERU](../../LIBERU.md) · [Standards](../../../standards/README.md)
@@ -25,7 +25,7 @@ The module stores only platform composition metadata and evidence. It consumes p
 
 ## Canonical independent feature specification
 
-**Domain module:** `liberu-platform-orchestration`
+**Domain module:** `module-liberu-platform-orchestration`
 **Application:** Liberu Business Platform
 **Status:** New cross-product capability; does not replace Module Manager or any product module
 **Architecture:** [MODULES](../../../architecture/MODULES.md) · [LIBERU](../../LIBERU.md) · [Standards](../../../standards/README.md)
@@ -48,7 +48,7 @@ The module stores only platform composition metadata and evidence. It consumes p
 
 ## Canonical independent feature specification
 
-**Domain module:** `liberu-platform-orchestration`  
+**Domain module:** `module-liberu-platform-orchestration`
 **Application:** Liberu Business Platform  
 **Status:** New cross-product capability; does not replace Module Manager or any product module  
 **Architecture:** [MODULES](../../../architecture/MODULES.md) · [LIBERU](../../LIBERU.md) · [Standards](../../../standards/README.md)

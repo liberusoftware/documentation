@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `social-network-social-core`  
+**Domain module:** `module-social-network-social-core`
 **Application:** Social Network  
 **Capability group:** Module plan  
 **Source scope:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)  

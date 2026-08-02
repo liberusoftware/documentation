@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-post-purchase-experience`  
+**Domain module:** `module-ecommerce-post-purchase-experience`
 **Application:** Ecommerce  
 **Capability group:** Returns and post-purchase modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

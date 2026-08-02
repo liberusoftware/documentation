@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-memberships`  
+**Domain module:** `module-crm-memberships`
 **Application:** CRM  
 **Capability group:** Community, learning, loyalty, and growth modules  
 **Source scope:** [CRM.md](../CRM.md)  

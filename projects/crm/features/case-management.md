@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-case-management`  
+**Domain module:** `module-crm-case-management`
 **Application:** CRM  
 **Capability group:** Service, success, and experience modules  
 **Source scope:** [CRM.md](../CRM.md)  

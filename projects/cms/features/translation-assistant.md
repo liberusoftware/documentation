@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-translation-assistant`  
+**Domain module:** `module-cms-translation-assistant`
 **Application:** CMS  
 **Capability group:** Intelligence modules  
 **Source scope:** [CMS.md](../CMS.md)  

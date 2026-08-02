@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-inventory-accounting`  
+**Domain module:** `module-accounting-inventory-accounting`
 **Application:** Accounting  
 **Capability group:** Inventory, assets, and specialized accounting modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-bank-reconciliation`  
+**Domain module:** `module-accounting-bank-reconciliation`
 **Application:** Accounting  
 **Capability group:** Banking, treasury, and cash modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-content-intelligence`  
+**Domain module:** `module-cms-content-intelligence`
 **Application:** CMS  
 **Capability group:** Intelligence modules  
 **Source scope:** [CMS.md](../CMS.md)  

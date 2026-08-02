@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-client-collaboration`  
+**Domain module:** `module-accounting-client-collaboration`
 **Application:** Accounting  
 **Capability group:** Close, controls, and accountant-practice modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

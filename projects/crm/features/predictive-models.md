@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-predictive-models`  
+**Domain module:** `module-crm-predictive-models`
 **Application:** CRM  
 **Capability group:** Intelligence and AI modules  
 **Source scope:** [CRM.md](../CRM.md)  

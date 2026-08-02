@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-quick-order`  
+**Domain module:** `module-ecommerce-quick-order`
 **Application:** Ecommerce  
 **Capability group:** B2B and wholesale modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

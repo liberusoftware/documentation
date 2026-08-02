@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-multi-entity`  
+**Domain module:** `module-accounting-multi-entity`
 **Application:** Accounting  
 **Capability group:** Multi-entity and international modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

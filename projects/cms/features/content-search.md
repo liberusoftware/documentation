@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-content-search`  
+**Domain module:** `module-cms-content-search`
 **Application:** CMS  
 **Capability group:** Information architecture and display modules  
 **Source scope:** [CMS.md](../CMS.md)  

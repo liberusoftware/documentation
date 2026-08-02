@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-cash-position`  
+**Domain module:** `module-accounting-cash-position`
 **Application:** Accounting  
 **Capability group:** Banking, treasury, and cash modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

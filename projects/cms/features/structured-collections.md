@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-structured-collections`  
+**Domain module:** `module-cms-structured-collections`
 **Application:** CMS  
 **Capability group:** Content modeling modules  
 **Source scope:** [CMS.md](../CMS.md)  

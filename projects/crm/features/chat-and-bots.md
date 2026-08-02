@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-chat-and-bots`  
+**Domain module:** `module-crm-chat-and-bots`
 **Application:** CRM  
 **Capability group:** Demand generation and acquisition modules  
 **Source scope:** [CRM.md](../CRM.md)  

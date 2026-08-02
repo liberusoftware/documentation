@@ -7,18 +7,18 @@ Each file defines one independent module. Modules remain independently installab
 
 ## Module plan
 
-- [Game Core](game-core.md) — `browser-game-game-core`
-- [Accounts](accounts.md) — `browser-game-accounts`
-- [Characters](characters.md) — `browser-game-characters`
-- [World](world.md) — `browser-game-world`
-- [Combat](combat.md) — `browser-game-combat`
-- [Quests](quests.md) — `browser-game-quests`
-- [Items](items.md) — `browser-game-items`
-- [Crafting](crafting.md) — `browser-game-crafting`
-- [Economy](economy.md) — `browser-game-economy`
-- [Social](social.md) — `browser-game-social`
-- [Competition](competition.md) — `browser-game-competition`
-- [Collections](collections.md) — `browser-game-collections`
-- [Live Ops](live-ops.md) — `browser-game-live-ops`
-- [Commerce](commerce.md) — `browser-game-commerce`
-- [Moderation and Analytics](moderation-and-analytics.md) — `browser-game-moderation-and-analytics`
+- [Game Core](game-core.md) — `module-browser-game-game-core`
+- [Accounts](accounts.md) — `module-browser-game-accounts`
+- [Characters](characters.md) — `module-browser-game-characters`
+- [World](world.md) — `module-browser-game-world`
+- [Combat](combat.md) — `module-browser-game-combat`
+- [Quests](quests.md) — `module-browser-game-quests`
+- [Items](items.md) — `module-browser-game-items`
+- [Crafting](crafting.md) — `module-browser-game-crafting`
+- [Economy](economy.md) — `module-browser-game-economy`
+- [Social](social.md) — `module-browser-game-social`
+- [Competition](competition.md) — `module-browser-game-competition`
+- [Collections](collections.md) — `module-browser-game-collections`
+- [Live Ops](live-ops.md) — `module-browser-game-live-ops`
+- [Commerce](commerce.md) — `module-browser-game-commerce`
+- [Moderation and Analytics](moderation-and-analytics.md) — `module-browser-game-moderation-and-analytics`

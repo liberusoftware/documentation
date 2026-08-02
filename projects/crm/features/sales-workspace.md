@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-sales-workspace`  
+**Domain module:** `module-crm-sales-workspace`
 **Application:** CRM  
 **Capability group:** Sales execution modules  
 **Source scope:** [CRM.md](../CRM.md)  

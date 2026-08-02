@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `genealogy-discovery`  
+**Domain module:** `module-genealogy-discovery`
 **Application:** Genealogy  
 **Capability group:** Module plan  
 **Source scope:** [GENEALOGY.md](../GENEALOGY.md)  

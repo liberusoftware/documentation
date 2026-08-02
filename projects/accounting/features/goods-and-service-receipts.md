@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-goods-and-service-receipts`  
+**Domain module:** `module-accounting-goods-and-service-receipts`
 **Application:** Accounting  
 **Capability group:** Purchasing and payables modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

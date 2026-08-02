@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-cache-and-performance`  
+**Domain module:** `module-cms-cache-and-performance`
 **Application:** CMS  
 **Capability group:** Operations and migration modules  
 **Source scope:** [CMS.md](../CMS.md)  

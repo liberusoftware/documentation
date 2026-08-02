@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-audit-support`  
+**Domain module:** `module-accounting-audit-support`
 **Application:** Accounting  
 **Capability group:** Close, controls, and accountant-practice modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

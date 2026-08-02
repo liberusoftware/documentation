@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-project-costing`  
+**Domain module:** `module-accounting-project-costing`
 **Application:** Accounting  
 **Capability group:** Projects, jobs, and profitability modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

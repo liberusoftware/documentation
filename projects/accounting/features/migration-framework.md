@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-migration-framework`  
+**Domain module:** `module-accounting-migration-framework`
 **Application:** Accounting  
 **Capability group:** Migration modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

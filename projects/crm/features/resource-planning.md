@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-resource-planning`  
+**Domain module:** `module-crm-resource-planning`
 **Application:** CRM  
 **Capability group:** Delivery, productivity, and operations modules  
 **Source scope:** [CRM.md](../CRM.md)  

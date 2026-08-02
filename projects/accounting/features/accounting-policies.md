@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-policies`  
+**Domain module:** `module-accounting-policies`
 **Application:** Accounting  
 **Capability group:** Accounting foundation modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

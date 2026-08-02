@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-scheduling`  
+**Domain module:** `module-crm-scheduling`
 **Application:** CRM  
 **Capability group:** Sales execution modules  
 **Source scope:** [CRM.md](../CRM.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-journey-orchestration`  
+**Domain module:** `module-crm-journey-orchestration`
 **Application:** CRM  
 **Capability group:** Marketing modules  
 **Source scope:** [CRM.md](../CRM.md)  

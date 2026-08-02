@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-asset-events`  
+**Domain module:** `module-accounting-asset-events`
 **Application:** Accounting  
 **Capability group:** Inventory, assets, and specialized accounting modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

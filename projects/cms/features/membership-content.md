@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-membership-content`  
+**Domain module:** `module-cms-membership-content`
 **Application:** CMS  
 **Capability group:** Forms, community, and application modules  
 **Source scope:** [CMS.md](../CMS.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-sla-and-entitlements`  
+**Domain module:** `module-crm-sla-and-entitlements`
 **Application:** CRM  
 **Capability group:** Service, success, and experience modules  
 **Source scope:** [CRM.md](../CRM.md)  

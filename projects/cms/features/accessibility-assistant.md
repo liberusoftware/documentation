@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-accessibility-assistant`  
+**Domain module:** `module-cms-accessibility-assistant`
 **Application:** CMS  
 **Capability group:** Authoring and editorial modules  
 **Source scope:** [CMS.md](../CMS.md)  

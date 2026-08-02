@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-core`  
+**Domain module:** `module-accounting-core`
 **Application:** Accounting  
 **Capability group:** Accounting foundation modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

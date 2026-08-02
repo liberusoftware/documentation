@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-revenue-intelligence`  
+**Domain module:** `module-crm-revenue-intelligence`
 **Application:** CRM  
 **Capability group:** Sales execution modules  
 **Source scope:** [CRM.md](../CRM.md)  

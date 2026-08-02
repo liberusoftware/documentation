@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-orders`  
+**Domain module:** `module-ecommerce-orders`
 **Application:** Ecommerce  
 **Capability group:** Order and payment modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

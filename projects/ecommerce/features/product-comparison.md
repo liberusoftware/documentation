@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-product-comparison`  
+**Domain module:** `module-ecommerce-product-comparison`
 **Application:** Ecommerce  
 **Capability group:** Pricing and merchandising modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

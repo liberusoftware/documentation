@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-business-insights`  
+**Domain module:** `module-accounting-business-insights`
 **Application:** Accounting  
 **Capability group:** Planning, reporting, and advisory modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

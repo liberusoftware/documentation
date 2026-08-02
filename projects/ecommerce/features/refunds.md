@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-refunds`  
+**Domain module:** `module-ecommerce-refunds`
 **Application:** Ecommerce  
 **Capability group:** Returns and post-purchase modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

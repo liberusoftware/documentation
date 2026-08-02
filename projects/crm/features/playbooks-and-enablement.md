@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-playbooks-and-enablement`  
+**Domain module:** `module-crm-playbooks-and-enablement`
 **Application:** CRM  
 **Capability group:** Sales execution modules  
 **Source scope:** [CRM.md](../CRM.md)  

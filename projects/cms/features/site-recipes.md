@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-site-recipes`  
+**Domain module:** `module-cms-site-recipes`
 **Application:** CMS  
 **Capability group:** Extension ecosystem modules  
 **Source scope:** [CMS.md](../CMS.md)  

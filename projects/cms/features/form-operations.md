@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-form-operations`  
+**Domain module:** `module-cms-form-operations`
 **Application:** CMS  
 **Capability group:** Forms, community, and application modules  
 **Source scope:** [CMS.md](../CMS.md)  

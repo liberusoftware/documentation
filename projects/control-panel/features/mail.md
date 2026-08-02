@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `control-panel-mail`  
+**Domain module:** `module-control-panel-mail`
 **Application:** Control Panel  
 **Capability group:** Module plan  
 **Source scope:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)  

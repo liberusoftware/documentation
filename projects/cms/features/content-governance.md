@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-content-governance`  
+**Domain module:** `module-cms-content-governance`
 **Application:** CMS  
 **Capability group:** Sites, localization, and governance modules  
 **Source scope:** [CMS.md](../CMS.md)  

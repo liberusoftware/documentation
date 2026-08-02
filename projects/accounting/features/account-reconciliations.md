@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-account-reconciliations`  
+**Domain module:** `module-accounting-account-reconciliations`
 **Application:** Accounting  
 **Capability group:** Close, controls, and accountant-practice modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

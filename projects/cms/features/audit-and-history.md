@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-audit-and-history`  
+**Domain module:** `module-cms-audit-and-history`
 **Application:** CMS  
 **Capability group:** Sites, localization, and governance modules  
 **Source scope:** [CMS.md](../CMS.md)  

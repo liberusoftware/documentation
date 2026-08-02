@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-cross-border`  
+**Domain module:** `module-ecommerce-cross-border`
 **Application:** Ecommerce  
 **Capability group:** International and channel modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

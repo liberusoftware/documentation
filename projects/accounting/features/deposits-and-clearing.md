@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-deposits-and-clearing`  
+**Domain module:** `module-accounting-deposits-and-clearing`
 **Application:** Accounting  
 **Capability group:** Banking, treasury, and cash modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

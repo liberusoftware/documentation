@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `browser-game-crafting`  
+**Domain module:** `module-browser-game-crafting`
 **Application:** Browser Game  
 **Capability group:** Module plan  
 **Source scope:** [BROWSER-GAME.md](../BROWSER-GAME.md)  

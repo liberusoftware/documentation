@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-recurring-transactions`  
+**Domain module:** `module-accounting-recurring-transactions`
 **Application:** Accounting  
 **Capability group:** Accounting foundation modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

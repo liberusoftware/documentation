@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-attribution-and-analytics`  
+**Domain module:** `module-ecommerce-attribution-and-analytics`
 **Application:** Ecommerce  
 **Capability group:** Operations, analytics, and intelligence modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

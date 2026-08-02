@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-exchanges`  
+**Domain module:** `module-ecommerce-exchanges`
 **Application:** Ecommerce  
 **Capability group:** Returns and post-purchase modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

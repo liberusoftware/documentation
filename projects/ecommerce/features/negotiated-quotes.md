@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-negotiated-quotes`  
+**Domain module:** `module-ecommerce-negotiated-quotes`
 **Application:** Ecommerce  
 **Capability group:** B2B and wholesale modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-security-operations`  
+**Domain module:** `module-cms-security-operations`
 **Application:** CMS  
 **Capability group:** Operations and migration modules  
 **Source scope:** [CMS.md](../CMS.md)  

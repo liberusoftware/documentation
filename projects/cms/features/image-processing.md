@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-image-processing`  
+**Domain module:** `module-cms-image-processing`
 **Application:** CMS  
 **Capability group:** Media and asset modules  
 **Source scope:** [CMS.md](../CMS.md)  

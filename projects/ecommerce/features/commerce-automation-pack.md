@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-commerce-automation-pack`  
+**Domain module:** `module-ecommerce-commerce-automation-pack`
 **Application:** Ecommerce  
 **Capability group:** Operations, analytics, and intelligence modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

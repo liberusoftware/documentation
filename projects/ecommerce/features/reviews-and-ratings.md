@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-reviews-and-ratings`  
+**Domain module:** `module-ecommerce-reviews-and-ratings`
 **Application:** Ecommerce  
 **Capability group:** Customer and retention modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

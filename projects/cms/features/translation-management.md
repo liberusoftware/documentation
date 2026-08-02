@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-translation-management`  
+**Domain module:** `module-cms-translation-management`
 **Application:** CMS  
 **Capability group:** Sites, localization, and governance modules  
 **Source scope:** [CMS.md](../CMS.md)  

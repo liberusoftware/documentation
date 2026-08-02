@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-ai-reception-and-conversation`  
+**Domain module:** `module-crm-ai-reception-and-conversation`
 **Application:** CRM  
 **Capability group:** Communications and contact-center modules  
 **Source scope:** [CRM.md](../CRM.md)  

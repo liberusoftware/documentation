@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-service-analytics`  
+**Domain module:** `module-crm-service-analytics`
 **Application:** CRM  
 **Capability group:** Service, success, and experience modules  
 **Source scope:** [CRM.md](../CRM.md)  

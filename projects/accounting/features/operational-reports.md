@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-operational-reports`  
+**Domain module:** `module-accounting-operational-reports`
 **Application:** Accounting  
 **Capability group:** Planning, reporting, and advisory modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-copilot`  
+**Domain module:** `module-cms-copilot`
 **Application:** CMS  
 **Capability group:** Intelligence modules  
 **Source scope:** [CMS.md](../CMS.md)  

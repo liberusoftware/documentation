@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-donations`  
+**Domain module:** `module-ecommerce-donations`
 **Application:** Ecommerce  
 **Capability group:** Recurring, service, and access modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

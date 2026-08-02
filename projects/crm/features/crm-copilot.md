@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-copilot`  
+**Domain module:** `module-crm-copilot`
 **Application:** CRM  
 **Capability group:** Intelligence and AI modules  
 **Source scope:** [CRM.md](../CRM.md)  

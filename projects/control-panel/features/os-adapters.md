@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `control-panel-os-adapters`  
+**Domain module:** `module-control-panel-os-adapters`
 **Application:** Control Panel  
 **Capability group:** Module plan  
 **Source scope:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)  

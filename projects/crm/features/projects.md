@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-projects`  
+**Domain module:** `module-crm-projects`
 **Application:** CRM  
 **Capability group:** Delivery, productivity, and operations modules  
 **Source scope:** [CRM.md](../CRM.md)  

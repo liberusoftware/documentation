@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-dialer-and-outreach`  
+**Domain module:** `module-crm-dialer-and-outreach`
 **Application:** CRM  
 **Capability group:** Communications and contact-center modules  
 **Source scope:** [CRM.md](../CRM.md)  

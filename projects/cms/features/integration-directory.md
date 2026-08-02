@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-integration-directory`  
+**Domain module:** `module-cms-integration-directory`
 **Application:** CMS  
 **Capability group:** Extension ecosystem modules  
 **Source scope:** [CMS.md](../CMS.md)  

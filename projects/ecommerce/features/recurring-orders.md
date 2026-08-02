@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-recurring-orders`  
+**Domain module:** `module-ecommerce-recurring-orders`
 **Application:** Ecommerce  
 **Capability group:** Recurring, service, and access modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

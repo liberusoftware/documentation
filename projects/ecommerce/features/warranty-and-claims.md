@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-warranty-and-claims`  
+**Domain module:** `module-ecommerce-warranty-and-claims`
 **Application:** Ecommerce  
 **Capability group:** Returns and post-purchase modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-approvals`
+**Domain module:** `module-automation-approvals`
 **Application:** Automation
 **Capability group:** Module plan
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)
@@ -87,7 +87,7 @@ The Approvals module owns Human review queues, separation of duties, expiry, esc
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-approvals`  
+**Domain module:** `module-automation-approvals`
 **Application:** Automation  
 **Capability group:** Module plan  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  

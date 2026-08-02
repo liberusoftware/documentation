@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-polls-and-surveys`  
+**Domain module:** `module-cms-polls-and-surveys`
 **Application:** CMS  
 **Capability group:** Forms, community, and application modules  
 **Source scope:** [CMS.md](../CMS.md)  

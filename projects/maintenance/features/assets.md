@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `maintenance-assets`
+**Domain module:** `module-maintenance-assets`
 **Application:** Maintenance
 **Capability group:** Module plan
 **Source scope:** [MAINTENANCE.md](../MAINTENANCE.md)
@@ -60,7 +60,7 @@ The Assets module owns Hierarchies, categories, specifications, meters, warranti
 
 ## 5. Security, privacy, and operations
 
-- Apply least privilege, tenant isolation, field-level sensitivity, recent authentication/approval f…70722 tokens truncated…tional Nuxt 4 presentation package presents exactly one matching API module. It contributes reusable pages, layouts, components, composables, typed API clients, and actions to application-owned Nuxt applications while delegating authorization, validation, team context, persistence, and business rules to the `maintenance-procurement` public API boundary. It must not contain another module's UI or depend on application `App\` classes.
+- Apply least privilege, tenant isolation, field-level sensitivity, recent authentication/approval f…70722 tokens truncated…tional Nuxt 4 presentation package presents exactly one matching API module. It contributes reusable pages, layouts, components, composables, typed API clients, and actions to application-owned Nuxt applications while delegating authorization, validation, team context, persistence, and business rules to the `module-maintenance-procurement` public API boundary. It must not contain another module's UI or depend on application `App\` classes.
 
 ## 2. Module-specific surfaces
 
@@ -105,13 +105,13 @@ The Assets module owns Hierarchies, categories, specifications, meters, warranti
 
 ## 6. Definition of done
 
-- Package identity, public exports, API dependency, and module dependency match `maintenance-procurement` one-to-one.
+- Package identity, public exports, API dependency, and module dependency match `module-maintenance-procurement` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
 
 ## Canonical independent module specification
 
-**Domain module:** `maintenance-assets`  
+**Domain module:** `module-maintenance-assets`
 **Application:** Maintenance  
 **Capability group:** Module plan  
 **Source scope:** [MAINTENANCE.md](../MAINTENANCE.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-connectors`
+**Domain module:** `module-automation-connectors`
 **Application:** Automation
 **Capability group:** Module plan
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)
@@ -87,7 +87,7 @@ The Connectors module owns Authenticated triggers/actions, webhooks, rate limits
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-connectors`  
+**Domain module:** `module-automation-connectors`
 **Application:** Automation  
 **Capability group:** Module plan  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  

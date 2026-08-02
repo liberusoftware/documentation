@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-channel-gateway`  
+**Domain module:** `module-crm-channel-gateway`
 **Application:** CRM  
 **Capability group:** Communications and contact-center modules  
 **Source scope:** [CRM.md](../CRM.md)  

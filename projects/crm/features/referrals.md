@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-referrals`  
+**Domain module:** `module-crm-referrals`
 **Application:** CRM  
 **Capability group:** Community, learning, loyalty, and growth modules  
 **Source scope:** [CRM.md](../CRM.md)  

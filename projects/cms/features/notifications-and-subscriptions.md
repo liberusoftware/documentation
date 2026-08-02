@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-notifications-and-subscriptions`  
+**Domain module:** `module-cms-notifications-and-subscriptions`
 **Application:** CMS  
 **Capability group:** Discovery, SEO, and audience modules  
 **Source scope:** [CMS.md](../CMS.md)  

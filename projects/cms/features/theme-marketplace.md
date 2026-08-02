@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-theme-marketplace`  
+**Domain module:** `module-cms-theme-marketplace`
 **Application:** CMS  
 **Capability group:** Extension ecosystem modules  
 **Source scope:** [CMS.md](../CMS.md)  

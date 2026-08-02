@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-automation-pack`  
+**Domain module:** `module-crm-automation-pack`
 **Application:** CRM  
 **Capability group:** Delivery, productivity, and operations modules  
 **Source scope:** [CRM.md](../CRM.md)  

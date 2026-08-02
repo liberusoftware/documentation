@@ -7,18 +7,18 @@ Each file defines one independent module. Modules remain independently installab
 
 ## Module plan
 
-- [Social Core](social-core.md) — `social-network-social-core`
-- [Profiles](profiles.md) — `social-network-profiles`
-- [Social Graph](social-graph.md) — `social-network-social-graph`
-- [Publishing](publishing.md) — `social-network-publishing`
-- [Feed](feed.md) — `social-network-feed`
-- [Engagement](engagement.md) — `social-network-engagement`
-- [Media](media.md) — `social-network-media`
-- [Communities](communities.md) — `social-network-communities`
-- [Events](events.md) — `social-network-events`
-- [Messaging](messaging.md) — `social-network-messaging`
-- [Notifications](notifications.md) — `social-network-notifications`
-- [Discovery](discovery.md) — `social-network-discovery`
-- [Moderation](moderation.md) — `social-network-moderation`
-- [Federation](federation.md) — `social-network-federation`
-- [Analytics](analytics.md) — `social-network-analytics`
+- [Social Core](social-core.md) — `module-social-network-social-core`
+- [Profiles](profiles.md) — `module-social-network-profiles`
+- [Social Graph](social-graph.md) — `module-social-network-social-graph`
+- [Publishing](publishing.md) — `module-social-network-publishing`
+- [Feed](feed.md) — `module-social-network-feed`
+- [Engagement](engagement.md) — `module-social-network-engagement`
+- [Media](media.md) — `module-social-network-media`
+- [Communities](communities.md) — `module-social-network-communities`
+- [Events](events.md) — `module-social-network-events`
+- [Messaging](messaging.md) — `module-social-network-messaging`
+- [Notifications](notifications.md) — `module-social-network-notifications`
+- [Discovery](discovery.md) — `module-social-network-discovery`
+- [Moderation](moderation.md) — `module-social-network-moderation`
+- [Federation](federation.md) — `module-social-network-federation`
+- [Analytics](analytics.md) — `module-social-network-analytics`

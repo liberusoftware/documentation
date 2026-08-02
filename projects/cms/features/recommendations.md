@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-recommendations`  
+**Domain module:** `module-cms-recommendations`
 **Application:** CMS  
 **Capability group:** Discovery, SEO, and audience modules  
 **Source scope:** [CMS.md](../CMS.md)  

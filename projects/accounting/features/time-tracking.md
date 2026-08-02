@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-time-tracking`  
+**Domain module:** `module-accounting-time-tracking`
 **Application:** Accounting  
 **Capability group:** Capture, expenses, cards, time, and mileage modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-commerce-customers`  
+**Domain module:** `module-ecommerce-commerce-customers`
 **Application:** Ecommerce  
 **Capability group:** Customer and retention modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

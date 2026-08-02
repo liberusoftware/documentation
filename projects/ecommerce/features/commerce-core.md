@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-commerce-core`  
+**Domain module:** `module-ecommerce-commerce-core`
 **Application:** Ecommerce  
 **Capability group:** Product information and catalog modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

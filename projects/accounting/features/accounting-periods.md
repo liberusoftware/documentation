@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-periods`  
+**Domain module:** `module-accounting-periods`
 **Application:** Accounting  
 **Capability group:** Accounting foundation modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

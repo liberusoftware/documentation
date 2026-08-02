@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-debt-and-loans`  
+**Domain module:** `module-accounting-debt-and-loans`
 **Application:** Accounting  
 **Capability group:** Banking, treasury, and cash modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

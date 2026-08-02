@@ -7,18 +7,18 @@ Each file defines one independent module. Modules remain independently installab
 
 ## Module plan
 
-- [Control Core](control-core.md) — `control-panel-control-core`
-- [OS Adapters](os-adapters.md) — `control-panel-os-adapters`
-- [Accounts](accounts.md) — `control-panel-accounts`
-- [Web Hosting](web-hosting.md) — `control-panel-web-hosting`
-- [Mail](mail.md) — `control-panel-mail`
-- [Databases](databases.md) — `control-panel-databases`
-- [DNS](dns.md) — `control-panel-dns`
-- [Files](files.md) — `control-panel-files`
-- [Certificates](certificates.md) — `control-panel-certificates`
-- [Backups](backups.md) — `control-panel-backups`
-- [Security](security.md) — `control-panel-security`
-- [Monitoring](monitoring.md) — `control-panel-monitoring`
-- [Containers](containers.md) — `control-panel-containers`
-- [Kubernetes](kubernetes.md) — `control-panel-kubernetes`
-- [API and Automation](api-and-automation.md) — `control-panel-api-and-automation`
+- [Control Core](control-core.md) — `module-control-panel-control-core`
+- [OS Adapters](os-adapters.md) — `module-control-panel-os-adapters`
+- [Accounts](accounts.md) — `module-control-panel-accounts`
+- [Web Hosting](web-hosting.md) — `module-control-panel-web-hosting`
+- [Mail](mail.md) — `module-control-panel-mail`
+- [Databases](databases.md) — `module-control-panel-databases`
+- [DNS](dns.md) — `module-control-panel-dns`
+- [Files](files.md) — `module-control-panel-files`
+- [Certificates](certificates.md) — `module-control-panel-certificates`
+- [Backups](backups.md) — `module-control-panel-backups`
+- [Security](security.md) — `module-control-panel-security`
+- [Monitoring](monitoring.md) — `module-control-panel-monitoring`
+- [Containers](containers.md) — `module-control-panel-containers`
+- [Kubernetes](kubernetes.md) — `module-control-panel-kubernetes`
+- [API and Automation](api-and-automation.md) — `module-control-panel-api-and-automation`

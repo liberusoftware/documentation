@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-ai-gateway`
+**Domain module:** `module-automation-ai-gateway`
 **Application:** Automation
 **Capability group:** Module plan
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)
@@ -89,7 +89,7 @@ The AI Gateway module owns Provider contracts, model catalog, routing, fallback,
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-ai-gateway`  
+**Domain module:** `module-automation-ai-gateway`
 **Application:** Automation  
 **Capability group:** Module plan  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  

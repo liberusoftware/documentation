@@ -7,17 +7,17 @@ Each file defines one independent module. Modules remain independently installab
 
 ## Module plan
 
-- [Genealogy Core](genealogy-core.md) — `genealogy-core`
-- [People](people.md) — `genealogy-people`
-- [Relationships](relationships.md) — `genealogy-relationships`
-- [Evidence](evidence.md) — `genealogy-evidence`
-- [Research](research.md) — `genealogy-research`
-- [Places](places.md) — `genealogy-places`
-- [Timeline](timeline.md) — `genealogy-timeline`
-- [Tree Viewer](tree-viewer.md) — `genealogy-tree-viewer`
-- [Import Export](import-export.md) — `genealogy-import-export`
-- [DNA](dna.md) — `genealogy-dna`
-- [Media](media.md) — `genealogy-media`
-- [Collaboration](collaboration.md) — `genealogy-collaboration`
-- [Discovery](discovery.md) — `genealogy-discovery`
-- [Reports](reports.md) — `genealogy-reports`
+- [Genealogy Core](genealogy-core.md) — `module-genealogy-core`
+- [People](people.md) — `module-genealogy-people`
+- [Relationships](relationships.md) — `module-genealogy-relationships`
+- [Evidence](evidence.md) — `module-genealogy-evidence`
+- [Research](research.md) — `module-genealogy-research`
+- [Places](places.md) — `module-genealogy-places`
+- [Timeline](timeline.md) — `module-genealogy-timeline`
+- [Tree Viewer](tree-viewer.md) — `module-genealogy-tree-viewer`
+- [Import Export](import-export.md) — `module-genealogy-import-export`
+- [DNA](dna.md) — `module-genealogy-dna`
+- [Media](media.md) — `module-genealogy-media`
+- [Collaboration](collaboration.md) — `module-genealogy-collaboration`
+- [Discovery](discovery.md) — `module-genealogy-discovery`
+- [Reports](reports.md) — `module-genealogy-reports`

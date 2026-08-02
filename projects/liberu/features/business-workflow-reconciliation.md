@@ -2,7 +2,7 @@
 
 ## Canonical independent feature specification
 
-**Domain module:** `liberu-business-workflow-reconciliation`
+**Domain module:** `module-liberu-business-workflow-reconciliation`
 **Application:** Liberu Business Platform
 **Status:** New cross-product capability; it does not replace Billing, Control Panel, CRM, Ecommerce, Accounting, Automation, or Maintenance workflows
 **Architecture:** [MODULES](../../../architecture/MODULES.md) · [LIBERU](../../LIBERU.md) · [Standards](../../../standards/README.md)
@@ -25,7 +25,7 @@ This module coordinates and reports; it does not mutate another module's private
 
 ## Canonical independent feature specification
 
-**Domain module:** `liberu-business-workflow-reconciliation`
+**Domain module:** `module-liberu-business-workflow-reconciliation`
 **Application:** Liberu Business Platform
 **Status:** New cross-product capability; it does not replace Billing, Control Panel, CRM, Ecommerce, Accounting, Automation, or Maintenance workflows
 **Architecture:** [MODULES](../../../architecture/MODULES.md) · [LIBERU](../../LIBERU.md) · [Standards](../../../standards/README.md)
@@ -48,7 +48,7 @@ This module coordinates and reports; it does not mutate another module's private
 
 ## Canonical independent feature specification
 
-**Domain module:** `liberu-business-workflow-reconciliation`  
+**Domain module:** `module-liberu-business-workflow-reconciliation`
 **Application:** Liberu Business Platform  
 **Status:** New cross-product capability; it does not replace Billing, Control Panel, CRM, Ecommerce, Accounting, Automation, or Maintenance workflows  
 **Architecture:** [MODULES](../../../architecture/MODULES.md) · [LIBERU](../../LIBERU.md) · [Standards](../../../standards/README.md)

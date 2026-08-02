@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-workforce-costing`  
+**Domain module:** `module-accounting-workforce-costing`
 **Application:** Accounting  
 **Capability group:** Payroll accounting modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

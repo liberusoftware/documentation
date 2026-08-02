@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `crm-cpq`  
+**Domain module:** `module-crm-cpq`
 **Application:** CRM  
 **Capability group:** Revenue and commercial modules  
 **Source scope:** [CRM.md](../CRM.md)  

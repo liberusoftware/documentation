@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `cms-media-assistant`  
+**Domain module:** `module-cms-media-assistant`
 **Application:** CMS  
 **Capability group:** Intelligence modules  
 **Source scope:** [CMS.md](../CMS.md)  

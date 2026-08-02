@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `ecommerce-transfers-and-replenishment`  
+**Domain module:** `module-ecommerce-transfers-and-replenishment`
 **Application:** Ecommerce  
 **Capability group:** Inventory and availability modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-sage-accounting-migration`  
+**Domain module:** `module-accounting-sage-accounting-migration`
 **Application:** Accounting  
 **Capability group:** Migration modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-data-processing`
+**Domain module:** `module-automation-data-processing`
 **Application:** Automation
 **Capability group:** Module plan
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)
@@ -89,7 +89,7 @@ The Data Processing module owns Classification, extraction, summarization, trans
 
 ## Canonical independent module specification
 
-**Domain module:** `automation-data-processing`  
+**Domain module:** `module-automation-data-processing`
 **Application:** Automation  
 **Capability group:** Module plan  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  

@@ -2,7 +2,7 @@
 
 ## Canonical independent feature specification
 
-**Domain module:** `liberu-executive-insights`
+**Domain module:** `module-liberu-executive-insights`
 **Application:** Liberu Business Platform
 **Status:** New cross-product capability; it does not replace Accounting, CRM, SAP Data and Intelligence, or product analytics modules
 **Architecture:** [MODULES](../../../architecture/MODULES.md) · [LIBERU](../../LIBERU.md) · [Standards](../../../standards/README.md)
@@ -25,7 +25,7 @@ The module never becomes the owner of invoices, customers, tickets, jobs, assets
 
 ## Canonical independent feature specification
 
-**Domain module:** `liberu-executive-insights`
+**Domain module:** `module-liberu-executive-insights`
 **Application:** Liberu Business Platform
 **Status:** New cross-product capability; it does not replace Accounting, CRM, SAP Data and Intelligence, or product analytics modules
 **Architecture:** [MODULES](../../../architecture/MODULES.md) · [LIBERU](../../LIBERU.md) · [Standards](../../../standards/README.md)
@@ -48,7 +48,7 @@ The module never becomes the owner of invoices, customers, tickets, jobs, assets
 
 ## Canonical independent feature specification
 
-**Domain module:** `liberu-executive-insights`  
+**Domain module:** `module-liberu-executive-insights`
 **Application:** Liberu Business Platform  
 **Status:** New cross-product capability; it does not replace Accounting, CRM, SAP Data and Intelligence, or product analytics modules  
 **Architecture:** [MODULES](../../../architecture/MODULES.md) · [LIBERU](../../LIBERU.md) · [Standards](../../../standards/README.md)

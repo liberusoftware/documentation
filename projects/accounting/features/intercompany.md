@@ -2,7 +2,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `accounting-intercompany`  
+**Domain module:** `module-accounting-intercompany`
 **Application:** Accounting  
 **Capability group:** Multi-entity and international modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  
