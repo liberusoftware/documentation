@@ -26,6 +26,7 @@ Start with [Liberu architecture](LIBERU.md) for the portfolio view or [Module ar
 | [Socialstream](SOCIALSTREAM.md) | OAuth provider integration for Jetstream and Filament |
 | [Policy and permissions](POLICY.md) | Laravel policies, Spatie Permission, and Filament Shield boundaries |
 | [Teams](TEAMS.md) | Team context, membership, invitations, and authorization rules |
+| [Tenancy](TENANCY.md) | Tenant boundaries, team isolation, context lifecycle, jobs, APIs, and verification |
 | [Installation](INSTALL.md) | Supported prerequisites and local installation workflow |
 | [Deployment](deployment/README.md) | Standalone, Docker Compose, and Kubernetes deployment paths |
 | [Contributing](CONTRIBUTING.md) | Contribution workflow and engineering quality gates |
