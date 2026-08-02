@@ -20,6 +20,7 @@ Start with [Liberu architecture](LIBERU.md) for the portfolio view or [Module ar
 | [React + Inertia](REACT.md) | React 19.2 and Inertia 3 API-consuming presentation packages, pages, forms, hooks, SSR, and deployment |
 | [API](API.md) | One-to-one API presentation modules, contracts, security, versioning, and composition |
 | [Testing](TESTING.md) | Pest/PHPUnit suites, ownership, coverage, compatibility, and CI evidence |
+| [CI](CI.md) | GitHub Actions workflows, required checks, release gates, environments, and deployment automation |
 | [Documentation](DOCUMENTATION.md) | Documentation structure, quality, validation, and maintenance |
 | [Repository README standard](REPOSITORIES.md) | Required landing-page content for Liberu repositories |
 | [Jetstream](JETSTREAM.md) | Authentication, security features, and Jetstream team integration |

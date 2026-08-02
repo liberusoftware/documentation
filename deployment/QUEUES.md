@@ -15,8 +15,13 @@ Run workers as supervised, replaceable processes using [Supervisor](SUPERVISORD.
 
 Monitor queue depth, oldest age, throughput, retries, failures, execution time, provider throttling, and memory. Use `php artisan queue:failed`, a reviewed retry policy, and tested replay/deletion procedures.
 
+## CI and release deployment
+
+Every push to `main` runs [CI](../CI.md) and may deploy queue changes to staging. Production workers must not be restarted or replaced automatically from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy queue code only after the 100% release-scope coverage gate, worker and migration checks, smoke tests, and production approval pass. Drain workers gracefully and verify queue health before declaring the release successful.
+
 ## References
 
+- [CI and release policy](../CI.md)
 - [Laravel queues](https://laravel.com/docs/13.x/queues)
 - [Laravel scheduling](https://laravel.com/docs/13.x/scheduling)
 - [Deployment index](README.md)

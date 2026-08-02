@@ -27,8 +27,13 @@ sudo supervisorctl status
 
 Verify boot after restart, graceful deployment, log rotation, failed jobs, queue health, scheduler ticks, realtime connections, and SSR behavior.
 
+## CI and release deployment
+
+Every push to `main` runs [CI](../CI.md) and may deploy process configuration to staging. Production Supervisor configuration and processes must not be restarted automatically from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy only after the 100% release-scope coverage gate, worker checks, smoke tests, and production approval pass. Reload configuration and restart processes gracefully, then verify every program.
+
 ## References
 
+- [CI and release policy](../CI.md)
 - [Supervisor documentation](http://supervisord.org/)
 - [Laravel queue workers](https://laravel.com/docs/13.x/queues#supervisor-configuration)
 - [Deployment index](README.md)

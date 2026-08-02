@@ -34,6 +34,10 @@ This guide indexes the supported deployment shapes. The application repository's
 
 Do not run destructive migrations, expose databases publicly, bake credentials into images, or use an unreviewed `latest` image tag.
 
+## Automated deployment policy
+
+See [CI](../CI.md) for the workflow contract. Every push to `main` runs required checks and may publish an immutable staging artifact or deploy staging. Production is never deployed directly from `main`; it is deployed only from a protected version tag or GitHub Release after all checks, the 100% release-scope coverage gate, artifact scanning, smoke tests, and production environment approval pass.
+
 ## Control Panel provisioning
 
 When Liberu Control Panel provisions the environment, use its documented desired-state and reconciliation workflows rather than ad-hoc remote commands. Relevant modules are:
@@ -64,5 +68,6 @@ Provisioning must be authenticated, least-privilege, idempotent, observable, and
 - [Reverb](REVERB.md)
 - [Horizon](HORIZON.md)
 - [Telescope](TELESCOPE.md)
+- [CI](../CI.md)
 - [Installation](../INSTALL.md)
 - [Security policy](../SECURITY.md)

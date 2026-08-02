@@ -50,8 +50,13 @@ Run migrations as an approved, observable release Job before switching traffic w
 
 Test rollout, rollback, failed probes, pod rescheduling, node drain, secret rotation, wrong-namespace access, network isolation, queue recovery, storage recovery, and database restore on both the declared k8s and K3s targets.
 
+## CI and release deployment
+
+Every push to `main` runs [CI](../CI.md) and may update a staging namespace or GitOps revision after checks pass. Production manifests or image digests must not be changed automatically from `main`. A protected `vX.Y.Z` tag or GitHub Release may reconcile production only after all required checks, the 100% release-scope coverage gate, image and manifest scans, rollout/smoke checks, and production environment approval pass. The release must reference the exact tested commit and artifact.
+
 ## References
 
+- [CI and release policy](../CI.md)
 - [Kubernetes overview](https://kubernetes.io/docs/concepts/overview/)
 - [Kubernetes security](https://kubernetes.io/docs/concepts/security/)
 - [Kubernetes probes](https://kubernetes.io/docs/concepts/workloads/pods/probes/)

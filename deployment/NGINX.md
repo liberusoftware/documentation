@@ -46,8 +46,13 @@ Use the correct PHP-FPM socket for the host. Terminate HTTPS with a valid certif
 
 Check the TLS certificate, application health endpoint, static assets, PHP execution, queue/realtime routes, upload limits, denied dotfiles, Laravel storage link, logs, and graceful reload behavior.
 
+## CI and release deployment
+
+Every push to `main` runs [CI](../CI.md) and may deploy the tested artifact to staging. Production NGINX configuration and application artifacts must not be changed directly from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy only after the 100% release-scope coverage gate, configuration and security checks, PHP-FPM/NGINX syntax checks, smoke tests, and production approval pass. Reload NGINX only after validation succeeds.
+
 ## References
 
+- [CI and release policy](../CI.md)
 - [NGINX documentation](https://nginx.org/en/docs/)
 - [NGINX FastCGI module](https://nginx.org/en/docs/http/ngx_http_fastcgi_module.html)
 - [Laravel deployment](https://laravel.com/docs/13.x/deployment)

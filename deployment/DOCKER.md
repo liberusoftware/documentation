@@ -39,8 +39,13 @@ Use a deployment-specific process command and port. Do not use `latest` for rele
 
 Test a clean image build, container boot, health endpoint, read-only filesystem behavior, storage mounts, queue/scheduler commands, migrations, graceful termination, and vulnerability scan. Rebuild regularly to receive base-image security updates.
 
+## CI and release deployment
+
+Every push to `main` runs [CI](../CI.md) and may build, scan, and publish an immutable staging image. Do not deploy that push directly to production. A protected `vX.Y.Z` tag or GitHub Release can promote the exact tested image digest only after all required checks, the 100% release-scope coverage gate, image scanning, smoke tests, and production environment approval pass.
+
 ## References
 
+- [CI and release policy](../CI.md)
 - [Docker build best practices](https://docs.docker.com/build/building/best-practices/)
 - [Dockerfile overview](https://docs.docker.com/build/concepts/dockerfile/)
 - [Deployment index](README.md)
