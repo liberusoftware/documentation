@@ -1,8 +1,8 @@
 # Crm Core Modules
 
-One presentation-neutral implementation plan per domain module. Packages use module-crm-{module-name}; presentation adapters consume the core package.
+This index covers the Laravel 13/PHP 8.5 core Composer packages for the Crm domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
 
-| Module                                                                | Package                                    | Specification                                             |
+| Module                                                                | Core package                               | Domain specification                                      |
 | --------------------------------------------------------------------- | ------------------------------------------ | --------------------------------------------------------- |
 | [Account Based Marketing](account-based-marketing.md)                 | module-crm-account-based-marketing         | [Feature](../features/account-based-marketing.md)         |
 | [Account Planning](account-planning.md)                               | module-crm-account-planning                | [Feature](../features/account-planning.md)                |
@@ -99,3 +99,7 @@ One presentation-neutral implementation plan per domain module. Packages use mod
 | [Web Intent](web-intent.md)                                           | module-crm-web-intent                      | [Feature](../features/web-intent.md)                      |
 | [White Label](white-label.md)                                         | module-crm-white-label                     | [Feature](../features/white-label.md)                     |
 | [Work Management](work-management.md)                                 | module-crm-work-management                 | [Feature](../features/work-management.md)                 |
+
+## Shared implementation contract
+
+Every core package applies the DDD, Laravel, PHP, database, security, services, jobs, documentation, and testing standards linked from [MODULES.md](../../../architecture/MODULES.md), [Laravel 13](../../../standards/LARAVEL.md), [PHP 8.5](../../../standards/PHP.md), [domain-driven design](../../../standards/DOMAIN-DRIVEN-DESIGN-PATTERNS.md), and [testing](../../../standards/TESTING.md). It owns its domain model, application use cases, policies, persistence, events, jobs, contracts, lifecycle, recovery, and user-safe operational behavior. API, Filament, Livewire, React, Vue, and Nuxt packages depend on the public core boundary and never reimplement it.

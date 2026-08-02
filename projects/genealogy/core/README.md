@@ -1,8 +1,8 @@
 # Genealogy Core Modules
 
-One presentation-neutral implementation plan per domain module. Packages use module-genealogy-{module-name}; presentation adapters consume the core package.
+This index covers the Laravel 13/PHP 8.5 core Composer packages for the Genealogy domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
 
-| Module                              | Package                         | Specification                            |
+| Module                              | Core package                    | Domain specification                     |
 | ----------------------------------- | ------------------------------- | ---------------------------------------- |
 | [Collaboration](collaboration.md)   | module-genealogy-collaboration  | [Feature](../features/collaboration.md)  |
 | [Discovery](discovery.md)           | module-genealogy-discovery      | [Feature](../features/discovery.md)      |
@@ -18,3 +18,7 @@ One presentation-neutral implementation plan per domain module. Packages use mod
 | [Research](research.md)             | module-genealogy-research       | [Feature](../features/research.md)       |
 | [Timeline](timeline.md)             | module-genealogy-timeline       | [Feature](../features/timeline.md)       |
 | [Tree Viewer](tree-viewer.md)       | module-genealogy-tree-viewer    | [Feature](../features/tree-viewer.md)    |
+
+## Shared implementation contract
+
+Every core package applies the DDD, Laravel, PHP, database, security, services, jobs, documentation, and testing standards linked from [MODULES.md](../../../architecture/MODULES.md), [Laravel 13](../../../standards/LARAVEL.md), [PHP 8.5](../../../standards/PHP.md), [domain-driven design](../../../standards/DOMAIN-DRIVEN-DESIGN-PATTERNS.md), and [testing](../../../standards/TESTING.md). It owns its domain model, application use cases, policies, persistence, events, jobs, contracts, lifecycle, recovery, and user-safe operational behavior. API, Filament, Livewire, React, Vue, and Nuxt packages depend on the public core boundary and never reimplement it.
