@@ -69,5 +69,5 @@ Provisioning must be authenticated, least-privilege, idempotent, observable, and
 - [Horizon](HORIZON.md)
 - [Telescope](TELESCOPE.md)
 - [CI](../standards/CI.md)
-- [Installation](../architecture/INSTALL.md)
+- [Installation](../INSTALL.md)
 - [Security policy](../architecture/SECURITY.md)

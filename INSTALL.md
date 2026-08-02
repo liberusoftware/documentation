@@ -22,14 +22,14 @@ npm run build
 php artisan test
 ```
 
-Set database, cache, queue, mail, OAuth, and filesystem values in `.env` before using the application. Never commit `.env` or credentials. If the application uses Jetstream teams, install the feature during application scaffolding and follow [JETSTREAM.md](JETSTREAM.md) and [TEAMS.md](TEAMS.md).
+Set database, cache, queue, mail, OAuth, and filesystem values in `.env` before using the application. Never commit `.env` or credentials. If the application uses Jetstream teams, install the feature during application scaffolding and follow [JETSTREAM.md](architecture/JETSTREAM.md) and [TEAMS.md](architecture/TEAMS.md).
 
 ## Dependency-specific setup
 
-- Install [Jetstream](JETSTREAM.md) in a new application and choose Livewire or Inertia once.
-- Install [Socialstream](SOCIALSTREAM.md) from `bursteri/socialstream`; configure OAuth credentials through a secret store.
-- Configure [Spatie Permission and Filament Shield](POLICY.md) for application/panel permissions only.
-- Follow [TESTING.md](../standards/TESTING.md) for formatting, static analysis, architecture, security, and test commands.
+- Install [Jetstream](architecture/JETSTREAM.md) in a new application and choose Livewire or Inertia once.
+- Install [Socialstream](architecture/SOCIALSTREAM.md) from `bursteri/socialstream`; configure OAuth credentials through a secret store.
+- Configure [Spatie Permission and Filament Shield](architecture/POLICY.md) for application/panel permissions only.
+- Follow [TESTING.md](standards/TESTING.md) for formatting, static analysis, architecture, security, and test commands.
 
 ## Verification and failure recovery
 
@@ -37,6 +37,6 @@ Confirm migrations, queues, mail, storage, OAuth callbacks, health checks, and a
 
 ## Next steps
 
-- [Deployment guide](../deployment/README.md)
-- [Repository standards](REPOSITORIES.md)
-- [Contributing](../standards/CONTRIBUTING.md)
+- [Deployment guide](deployment/README.md)
+- [Repository standards](architecture/REPOSITORIES.md)
+- [Contributing](standards/CONTRIBUTING.md)

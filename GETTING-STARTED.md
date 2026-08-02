@@ -19,7 +19,7 @@ This guide gives you the shortest safe path through the Liberu documentation rep
 - [API](architecture/API.md) — contracts, authentication, tenancy, errors, pagination, and versioning.
 - [Testing](standards/TESTING.md) — required suites, quality gates, coverage, and CI evidence.
 - [Documentation](standards/DOCUMENTATION.md) — writing, ownership, links, examples, and review standards.
-- [Installation](architecture/INSTALL.md) — local Laravel setup and verification.
+- [Installation](INSTALL.md) — local Laravel setup and verification.
 - [Deployment](deployment/README.md) — Docker, Kubernetes, queues, workers, and production operations.
 
 ## Choose a presentation technology

@@ -44,4 +44,4 @@ Test registration, verification, password reset, two-factor enrollment/recovery,
 - [Jetstream installation](https://jetstream.laravel.com/installation.html)
 - [Jetstream teams](https://jetstream.laravel.com/features/teams.html)
 - [Boilerplate foundation](../projects/boilerplate/BOILERPLATE.md)
-- [Installation](INSTALL.md)
+- [Installation](../INSTALL.md)
