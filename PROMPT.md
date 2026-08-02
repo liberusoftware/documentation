@@ -1,9 +1,9 @@
-# Repository refactoring prompt
+# Liberu API, Filament, and Livewire implementation prompt
 
 ```text
 /goal
 
-Refactor the repository into a complete Liberu Laravel application based on `liberusoftware/boilerplate-laravel`.
+Refactor the repository into a complete Liberu Laravel application based on `liberusoftware/boilerplate-laravel`. Generate implementation code only for API, Filament, and Livewire scopes.
 
 Work on a new branch named `development`. Create the branch first, then replace its contents with a complete copy of `liberusoftware/boilerplate-laravel`. Preserve the repository history where practical, but do not modify `main` unless explicitly required.
 
@@ -15,12 +15,16 @@ Follow these architecture decisions and implementation standards from github.com
 - `architecture/JETSTREAM.md` and `architecture/SOCIALSTREAM.md`
 - `architecture/REPOSITORIES.md` and `architecture/SECURITY.md`
 - `standards/README.md` and `standards/GUIDELINES.md`
-- `standards/PHP.md`, `standards/PSR.md`, `standards/LARAVEL.md`, and `standards/DATABASE.md`
+- `standards/PHP.md`, `standards/PSR.md`, `standards/PINT.md`, `standards/LARAVEL.md`, and `standards/DATABASE.md`
 - `standards/THEMES.md`, `standards/TESTING.md`, `standards/CI.md`, `standards/DOCUMENTATION.md`, and `standards/CONTRIBUTING.md`
-- `standards/FILAMENT.md`, `standards/LIVEWIRE.md`, `standards/REACT.md`, `standards/INERTIA.md`, `standards/VUE.md`, and `standards/NUXT.md`
+- `standards/FILAMENT.md` and `standards/LIVEWIRE.md`
 - `standards/JOBS.md`, `standards/QUEUES.md`, `standards/SERVICES.md`, `standards/CONTROLLERS.md`, `standards/MODELS.md`, `standards/VIEWS.md`, `standards/BLADE.md`, `standards/CONCERNS.md`, `standards/CONTRACTS.md`, `standards/CLASSES.md`, `standards/OBJECT-ORIENTED-PROGRAMMING.md`, `standards/DOMAIN-DRIVEN-DESIGN-PATTERNS.md`, and `standards/TRANSLATIONS.md`
-- `technologies/README.md`, `technologies/PHP.md`, `technologies/JAVASCRIPT.md`, and `technologies/TYPESCRIPT.md`
+- `technologies/README.md`, `technologies/PHP.md`, `technologies/DATABASE.md`, `technologies/JAVASCRIPT.md`, and `technologies/TYPESCRIPT.md`
 - `deployment/README.md`
+
+The complete standards index is [standards/README.md](standards/README.md). It is authoritative for coding, design, testing, documentation, delivery, persistence, jobs, queues, services, controllers, models, views, Blade, concerns, contracts, classes, object-oriented programming, domain-driven design, and translations. Read every relevant standard before implementation and do not bypass a standard because it is not repeated in this prompt.
+
+Read the frontend standards (`standards/REACT.md`, `standards/INERTIA.md`, `standards/VUE.md`, and `standards/NUXT.md`) when they define an integration boundary or compatibility constraint, but do not generate code for those technologies.
 
 The portfolio composition scope is [projects/LIBERU.md](projects/LIBERU.md). New Liberu-only cross-product modules are indexed under `projects/liberu/`; do not duplicate capabilities already owned by another `projects/*` scope.
 
@@ -40,39 +44,39 @@ At this stage:
 - Use Jetstream teams for team membership and context; do not introduce Spatie teams or roles where the documentation prohibits them.
 - Implement the settings architecture, including encrypted secrets and tenant-aware settings.
 - Generate and implement the required themes according to `THEMES.md`.
-- Implement the API, Filament, Livewire, React/Inertia, Vue/Inertia, and Nuxt foundations according to their standards.
+- Implement the API, Filament, and Livewire foundations according to their standards.
+- Do not generate React, Vue, Nuxt, Inertia, frontend JavaScript, or frontend TypeScript implementation code. Mention those technologies only when documenting boundaries or preventing accidental duplication.
 - Preserve Laravel, PHP, PSR, and framework best practices.
 - Add or update configuration, migrations, seeders, factories, routes, resources, components, services, and tests as required.
 - Ensure all generated code follows the existing repository conventions.
 
-## Goal 2: Implement every documented module
+## Goal 2: Implement every documented API, Filament, and Livewire module
 
-Treat this as a repeatable loop. For every module directory listed under each relevant application directory in:
+Treat this as a repeatable loop. Use the root implementation indexes below to discover the supported scopes:
 
-- `api/`
-- `livewire/`
-- `filament/`
-- `react/`
-- `vue/`
-- `nuxt/`
+- [`modules/api/README.md`](modules/api/README.md)
+- [`modules/filament/README.md`](modules/filament/README.md)
+- [`modules/livewire/README.md`](modules/livewire/README.md)
+
+The implementation documentation for each product remains under `projects/<project>/api/`, `projects/<project>/filament/`, and `projects/<project>/livewire/`. Do not rename files or directories under `projects/`. Do not use the React, Vue, or Nuxt indexes as implementation targets in this prompt.
 
 Implement the corresponding module completely.
 
 For each module:
 
-1. Read the relevant feature, API, Filament, Livewire, tenancy, policy, teams, settings, testing, CI, and deployment documentation.
+1. Read the relevant feature, API, Filament, Livewire, tenancy, policy, teams, settings, database, testing, CI, deployment, and all applicable standards documentation.
 2. Implement the required domain logic, models, migrations, services, actions, validation, authorization, policies, routes, API resources, events, jobs, notifications, and configuration.
-3. Implement the matching API presentation module.
-4. Implement the matching Filament presentation module.
-5. Implement the matching Livewire presentation module.
-6. Implement or update the corresponding theme integration where required.
-7. Add factories, seeders, fixtures, tests, documentation links, and OpenAPI coverage.
+3. Implement the API contract and presentation module where the documented scope requires it.
+4. Implement the matching Filament presentation module where the documented scope requires it.
+5. Implement the matching Livewire presentation module where the documented scope requires it.
+6. Implement or update the corresponding Blade/theme integration where required by `standards/THEMES.md`.
+7. Add migrations, factories, seeders, fixtures, tests, documentation links, and OpenAPI coverage.
 8. Verify tenant isolation, team authorization, policy enforcement, encrypted settings, validation, queues, events, and failure handling.
 9. Do not duplicate existing functionality. If multiple modules provide overlapping behavior, unify them into one coherent, reusable implementation.
 10. Keep public contracts stable unless the documentation explicitly requires a breaking change.
 11. If exact implementation instructions cause breakage, make the smallest well-designed correction, document the reason, and continue.
 
-Repeat this loop until every documented module under the relevant application directories has been implemented and verified. For the new cross-product Liberu features, also process `projects/liberu/features/`, `projects/liberu/api/`, `projects/liberu/filament/`, `projects/liberu/livewire/`, `projects/liberu/react/`, `projects/liberu/vue/`, and `projects/liberu/nuxt/`. Implement only the new Liberu capabilities documented there; do not copy or reimplement existing product modules.
+Repeat this loop until every documented API, Filament, and Livewire module has been implemented and verified. For the new cross-product Liberu features, process `projects/liberu/features/`, `projects/liberu/api/`, `projects/liberu/filament/`, and `projects/liberu/livewire/`. Implement only the new Liberu capabilities documented there; do not copy or reimplement existing product modules.
 
 ## Goal 3: Repository and package publishing
 
@@ -139,7 +143,7 @@ The `/goal` is complete only when:
 
 - The `development` branch exists and contains the refactored application.
 - Boilerplate functionality and all documented foundations are implemented.
-- Themes are generated and integrated.
+- API, Filament, and Livewire themes are generated and integrated where required by `standards/THEMES.md`.
 - Every documented API, Livewire, and Filament module is implemented or deliberately unified with a documented reason.
 - The Liberu Composer plugin is installed and loaded successfully.
 - Tests, builds, static analysis, security checks, API validation, and deployment validation pass.
