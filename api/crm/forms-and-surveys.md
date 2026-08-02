@@ -72,7 +72,86 @@ X-Request-ID: 01JEXAMPLEREQUESTID
 
 Successful reads and writes return the standard `data` envelope from [API.md](../../API.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
 
-## 4. Audience and operation matrix
+## 4. OpenAPI schema
+
+This module owns a versioned OpenAPI 3.1 fragment for `crm-forms-and-surveys`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/crm-forms-and-surveys.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.
+
+### Required schema elements
+
+- Use stable operation IDs such as `crm.forms.and.surveys.list`, `crm.forms.and.surveys.get`, `crm.forms.and.surveys.create`, `crm.forms.and.surveys.update`, and `crm.forms.and.surveys.delete`; use an explicit domain action ID when applicable.
+- Define the module's resource schema as `CrmFormsAndSurveysResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.
+- Document possible module fields including `drag_and_drop_schemas`, `conditional_fields`, `progressive_profiling`, `validation`, `spam_controls`, `consent`; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.
+- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.
+- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../../API.md); do not serialize Eloquent models automatically.
+
+### Minimal fragment example
+
+```yaml
+openapi: 3.1.0
+info:
+  title: crm forms and surveys API
+  version: 1.0.0
+paths:
+  /api/v1/crm/forms-and-surveys:
+    get:
+      operationId: crm.forms.and.surveys.list
+      security:
+        - sanctum: []
+      parameters:
+        - $ref: '#/components/parameters/PageSize'
+      responses:
+        '200':
+          $ref: '#/components/responses/ResourceCollection'
+components:
+  parameters:
+    PageSize:
+      name: page[size]
+      in: query
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 100
+  securitySchemes:
+    sanctum:
+      type: http
+      scheme: bearer
+      bearerFormat: Sanctum
+  schemas:
+    CrmFormsAndSurveysResource:
+      type: object
+      required: [id, type, attributes]
+      properties:
+        id:
+          type: string
+          description: Opaque Liberu resource identifier.
+        type:
+          type: string
+          const: crm-forms-and-surveys
+        attributes:
+          type: object
+          additionalProperties: true
+    ResourceCollection:
+      type: object
+      required: [data]
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/CrmFormsAndSurveysResource'
+  responses:
+    ResourceCollection:
+      description: Authorized paginated resources.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ResourceCollection'
+```
+
+The example is a contract outline, not a substitute for the complete module schema: replace `additionalProperties` with explicit fields and add create/update/action schemas before release. Validate the fragment, bundle it into the application specification, run breaking-change detection against the supported release, and generate typed clients only from the released specification.
+
+**References:** [OpenAPI 3.1 specification](https://spec.openapis.org/oas/v3.1.0) · [OpenAPI and contract registry](../../API.md#8-openapi-and-contract-registry) · [Module API design](../../API.md#19-module-api-design) · [Response conventions](../../API.md#10-response-conventions)
+
+## 5. Audience and operation matrix
 
 | Audience | Default exposure | Required controls |
 |---|---|---|
@@ -83,7 +162,7 @@ Successful reads and writes return the standard `data` envelope from [API.md](..
 
 Every exposed operation must map to one audience, domain query/action, permission/scope, request/response schema, rate limit, idempotency/concurrency policy, audit event, and test set. Unmapped operations fail CI.
 
-## 5. Implementation strategy
+## 6. Implementation strategy
 
 - Keep routes, controllers/handlers, requests, API resources, OpenAPI fragments, and transport tests in this API package.
 - Validate shape at the request boundary and enforce authoritative invariants again in the domain action.
@@ -92,14 +171,14 @@ Every exposed operation must map to one audience, domain query/action, permissio
 - Use idempotency keys for retryable writes, ETags/`If-Match` for relevant concurrent updates, and asynchronous operation resources for slow/bulk/provider-dependent work.
 - Compose cross-module workflows in the application layer; do not query or mutate another module's private storage from this API package.
 
-## 6. Security, resilience, and observability
+## 7. Security, resilience, and observability
 
 - Threat-model authentication, authorization, tenant isolation, mass assignment, object references, abusive queries, uploads/downloads, webhooks, and sensitive data.
 - Bound pagination, filters, includes, payloads, batch sizes, timeouts, and retry budgets.
 - Redact credentials and protected data from logs and errors while recording request, correlation, API/module/version, tenant, principal, operation, status, latency, rate-limit, and idempotency outcomes.
 - Define availability, latency, error-rate and queued-operation objectives plus alerts and recovery/reconciliation runbooks.
 
-## 7. Verification strategy
+## 8. Verification strategy
 
 - Lint OpenAPI, validate examples, detect implementation drift and breaking changes, and reject path/schema/operation-ID collisions during application aggregation.
 - Test every operation for allowed, unauthenticated, wrong-tenant, insufficient-scope, insufficient-permission, hidden-field, invalid, missing, duplicate, stale, concurrent, throttled, and failure/recovery paths as applicable.
@@ -108,7 +187,7 @@ Every exposed operation must map to one audience, domain query/action, permissio
 - Run independent installation, minimum/current compatibility, security, performance, generated-client smoke, and representative host-composition tests.
 - Run Pest 5 with meaningful owned PHP targeting 100% line coverage; coverage complements contract, mutation, security, and failure assertions.
 
-## 8. Definition of done
+## 9. Definition of done
 
 - The package name, manifest, Composer dependency, namespace, route prefix, and OpenAPI ownership all match `crm-forms-and-surveys`.
 - The audience/operation matrix is complete, least-privilege, documented, and enforced in CI.
