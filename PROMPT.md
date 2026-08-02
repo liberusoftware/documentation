@@ -113,6 +113,21 @@ The final verification must require 100% coverage for the configured owned execu
 - Protect production secrets with GitHub Environments or the appropriate deployment secret manager.
 - Configure concurrency, rollback, health checks, migration safety, and deployment observability.
 
+## Final branch and release promotion
+
+This is the final goal and must be completed after all implementation, testing, publishing, and verification work:
+
+1. Ensure the completed work is committed on `development` and pushed to the remote.
+2. Preserve the current `main` branch by renaming it to `old`. Keep `old` available as a historical fallback unless repository policy explicitly requires its later removal.
+3. Rename `development` to `main` locally and remotely.
+4. Use the GitHub CLI to set `main` as the repository default branch.
+5. Confirm branch protection, required status checks, workflows, links, and release configuration now target `main`.
+6. Remove the obsolete remote `development` reference only after the new `main` branch is confirmed and protected.
+7. Determine the latest major version from existing Git tags and GitHub Releases. If no major version exists, use `v1.0.0`; otherwise increment the major component and reset minor and patch components to zero. For example, `v2.4.1` becomes `v3.0.0`.
+8. Use the GitHub CLI to publish that new major GitHub Release from the final `main` branch, with release notes describing the completed refactor, module and theme implementation, compatibility changes, verification results, and any documented limitations.
+
+The final repository state must have `main` as the default branch, `old` as the preserved former branch, the new major release published, and all changes committed and pushed.
+
 ## Completion criteria
 
 The `/goal` is complete only when:
@@ -128,6 +143,9 @@ The `/goal` is complete only when:
 - Public GitHub repositories are created under `liberusoftware`.
 - Packages are correctly published or submitted to Packagist.
 - Documentation indexes and links are valid.
-- Changes are committed and pushed to the `development` branch.
+- Changes are committed and pushed to the final `main` branch after branch promotion.
+- The former `main` branch is preserved as `old`.
+- The repository default branch is `main`.
+- A new major GitHub Release has been published with `gh` above the previous major version.
 - Provide a final report listing implemented foundations, modules, unified duplicates, generated themes, repositories, Packagist packages, verification commands, coverage results, and any remaining documented limitations.
 ```
