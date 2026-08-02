@@ -40,7 +40,7 @@ Use the latest stable versions supported by the ecosystem and the consuming repo
 
 | Technology | Liberu standard | Official documentation |
 |---|---|---|
-| PHP and PSR | [PHP](standards/PHP.md) · [PSR](standards/PSR.md) | [PHP](https://www.php.net/docs.php) · [PHP-FIG](https://www.php-fig.org/psr/) |
+| PHP and PSR | [PHP](standards/PHP.md) · [PSR](standards/PSR.md) · [Pint](standards/PINT.md) | [PHP](https://www.php.net/docs.php) · [PHP-FIG](https://www.php-fig.org/psr/) |
 | Laravel | [Laravel](standards/LARAVEL.md) | [Laravel 13 docs](https://laravel.com/docs/13.x) · [Laravel GitHub](https://github.com/laravel/laravel) |
 | Filament | [Filament](standards/FILAMENT.md) | [Filament 5 docs](https://filamentphp.com/docs/5.x) · [GitHub](https://github.com/filamentphp/filament) |
 | Livewire | [Livewire](standards/LIVEWIRE.md) | [Documentation](https://livewire.laravel.com/docs) · [GitHub](https://github.com/livewire/livewire) |

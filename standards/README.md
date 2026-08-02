@@ -8,6 +8,7 @@ This folder contains reusable coding, framework, frontend, design, testing, and 
 |---|---|
 | [PHP](PHP.md) | PHP 8.5 language, Composer, typing, errors, security, and runtime practices |
 | [PSR](PSR.md) | PHP-FIG interoperability and PSR-12 coding baseline |
+| [Pint](PINT.md) | Maximum-strictness PHP formatting and CI enforcement |
 | [Laravel](LARAVEL.md) | Laravel 13 application conventions and official framework integrations |
 | [Livewire](LIVEWIRE.md) | Livewire 4 server-driven interfaces |
 | [Filament](FILAMENT.md) | Filament 5 panels, resources, schemas, tables, widgets, and plugins |
