@@ -3,12 +3,12 @@
 ## Canonical Implementation Specification
 
 **Status:** Source of truth
-**Applies to:** Public sites, customer portals, application shells, and Filament panels
-**Related architecture:** [MODULES.md](MODULES.md) · [API.md](API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md)
+**Applies to:** Public sites, customer portals, application shells, Filament panels, Livewire, React/Inertia, Vue/Inertia, and Nuxt surfaces
+**Related architecture:** [MODULES.md](MODULES.md) · [API.md](API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md) · [TECHNOLOGIES.md](../TECHNOLOGIES.md)
 
 ## 1. Purpose
 
-A theme is a versioned Composer presentation package that controls visual identity and rendering without owning business rules. It may provide Blade layouts, views, components, Livewire presentation components, JavaScript, CSS, fonts, images, logos, icons, and video. Themes consume documented module view models and extension points.
+A theme is a versioned presentation package that controls visual identity and rendering without owning business rules. Its canonical identity is technology-neutral; optional adapters may provide Blade views, Livewire components, React/Inertia pages, Vue/Inertia SFCs, Nuxt layers/components, JavaScript, CSS, fonts, images, logos, icons, and video. Themes consume documented module view models and extension points.
 
 Modules own behavior and functional defaults. Themes own composition, styling, branded assets, and presentation overrides. A theme must never query module tables, bypass policies, or duplicate domain workflows.
 
@@ -16,7 +16,7 @@ Themes consume APIs only through documented application or module contracts gove
 
 Themes use a unified design, manifest, installation, inheritance, testing, and documentation approach. They may be mixed into different repository-based projects as needed. A theme may be designed and optimized for a specific Liberu repository to produce the best result, but it should remain installable and reasonably compatible with other Liberu repositories or compatible Laravel projects. Outside its optimized hosts, some views or integrations may be unavailable or imperfect; those limitations must be declared and must fail or fall back safely.
 
-Each theme is developed and released from an independent GitHub repository under the [`liberusoftware`](https://github.com/liberusoftware) organization. Composer resolves theme versions, while the custom Liberu Composer installer places theme packages in the host application's `/themes` directory instead of `/vendor`.
+Each theme is developed and released from an independent GitHub repository under the [`liberusoftware`](https://github.com/liberusoftware) organization. Composer resolves Laravel/theme packages, while the custom Liberu Composer installer places them in `/themes`; Node-based adapters use the same identity and manifest through the consuming Vite/Nuxt build.
 
 ## 2. Theme types
 
@@ -65,6 +65,19 @@ github.com/liberusoftware/theme-corporate/
     │       ├── livewire/
     │       ├── modules/
     │       └── pages/
+    ├── adapters/
+    │   ├── react-inertia/
+    │   │   ├── Pages/
+    │   │   ├── Components/
+    │   │   └── index.ts
+    │   ├── vue-inertia/
+    │   │   ├── Pages/
+    │   │   ├── Components/
+    │   │   └── index.ts
+    │   └── nuxt/
+    │       ├── components/
+    │       ├── layouts/
+    │       └── layer/
     ├── src/
     │   ├── Livewire/
     │   ├── Providers/
@@ -151,6 +164,13 @@ Every theme provides `theme.json`:
   "optimized_for": ["liberu-cms/cms-laravel"],
   "tested_with": ["liberu-cms/cms-laravel", "liberu/boilerplate-laravel"],
   "supports": ["cms.pages", "cms.posts", "search"],
+  "adapters": {
+    "blade": { "entrypoints": ["resources/css/app.css", "resources/js/app.js"] },
+    "livewire": { "entrypoints": ["resources/css/app.css", "resources/js/app.js"] },
+    "react-inertia": { "package": "theme-corporate-react-inertia", "entrypoints": ["adapters/react-inertia/index.ts"] },
+    "vue-inertia": { "package": "theme-corporate-vue-inertia", "entrypoints": ["adapters/vue-inertia/index.ts"] },
+    "nuxt": { "package": "theme-corporate-nuxt", "layer": "adapters/nuxt/layer" }
+  },
   "assets": {
     "css": ["resources/css/app.css"],
     "js": ["resources/js/app.js"]
@@ -160,7 +180,7 @@ Every theme provides `theme.json`:
 
 The manifest declares compatibility, optimized/tested host repositories, parent theme, required and optional capabilities, supported module extension points, asset entry points, and safe fallback. CI validates its schema, paths, unique name, dependency versions, capabilities, and inheritance cycles.
 
-Installed theme discovery and application asset composition are manifest-driven. Applications read validated `theme.json` files instead of maintaining parallel literal theme or entry-point arrays. Manifest paths are package-relative, normalized, collision-checked, and verified to exist before activation or build.
+Installed theme discovery and application asset composition are manifest-driven. Applications read validated `theme.json` files instead of maintaining parallel literal theme or entry-point arrays. Manifest paths are package-relative, normalized, collision-checked, and verified to exist before activation or build. Technology adapters are optional and may be selected only when the host uses that technology.
 
 `optimized_for` is informative and identifies where the theme delivers its intended complete experience. `tested_with` records verified hosts and version ranges in the full schema. Neither field creates a hidden dependency. Required capabilities fail installation/activation clearly; missing optional capabilities omit the relevant UI and use documented fallbacks.
 
@@ -181,6 +201,34 @@ Theme resolution follows: configured surface/tenant/site theme → parent theme 
 All themes define or inherit semantic tokens for color, typography, spacing, radius, elevation, borders, motion, breakpoints, focus, and layering. Components consume semantic tokens such as `--color-surface` and `--color-action-primary`, not brand-specific raw values.
 
 Tokens must cover light, dark, high-contrast, error, warning, success, disabled, and focus states. A brand override changes tokens before it forks component markup.
+
+### 6.1 Technology-neutral theme contract
+
+The theme identity, semantic token names, component states, content regions, asset roles, accessibility behavior, and module extension-point names are shared across technologies. The adapter translates that contract into its framework's rendering and build system.
+
+| Shared contract | Laravel/Blade | Livewire | React/Inertia | Vue/Inertia | Nuxt |
+|---|---|---|---|---|---|
+| Layout regions | Blade layouts/components | Blade layouts + Livewire views | Inertia layouts/components | Inertia layouts/SFCs | Nuxt layouts/components |
+| Presentation state | progressive JS | Livewire state | hooks/local state | composables/local state | composables/local state |
+| Tokens | CSS custom properties | CSS custom properties | CSS custom properties or typed exports | CSS custom properties or typed exports | CSS custom properties or typed exports |
+| Module extension | documented view names/slots | documented view/component hooks | typed component/page slots | typed component/page slots | typed component/slot props |
+| Server boundary | Laravel view model | Livewire public state | Inertia props/API contract | Inertia props/API contract | API contract/runtime config |
+
+Adapters must not change token meaning, responsive states, focus behavior, copy, permission semantics, or required loading/error/empty states. If a framework cannot support a capability, the manifest declares the limitation and uses the documented fallback.
+
+### 6.2 Theme adapter packages
+
+Use one technology adapter package per supported framework when framework code is non-trivial:
+
+```text
+theme-{name}                         # shared identity, tokens, assets, Blade defaults
+theme-{name}-livewire                # optional Livewire presentation adapter
+theme-{name}-react-inertia            # optional React/Inertia adapter
+theme-{name}-vue-inertia              # optional Vue/Inertia adapter
+theme-{name}-nuxt                     # optional Nuxt adapter
+```
+
+The shared theme owns the contract and brand assets. An adapter may add framework-specific composition and tests, but it must not fork domain behavior or redefine the theme identity.
 
 ## 7. Blade views and layouts
 
@@ -283,6 +331,7 @@ Every theme follows `TESTING.md`, uses stable Pest 5 as its primary PHP/Livewire
 - asset build, broken-link, missing-translation, and manifest validation;
 - performance checks against agreed budgets;
 - compatibility tests against supported module and framework versions.
+- cross-adapter contract tests proving token names, required states, extension-point names, and fallback behavior are equivalent across declared adapters.
 - clean Composer-install tests proving the theme resolves to `/themes/{theme-name}` in each declared tested host;
 - graceful-degradation tests for missing optional modules and at least one compatible non-optimized host where practical.
 
@@ -332,6 +381,6 @@ A theme is ready when:
 
 ## 21. GitHub issue mapping
 
-Create one theme epic, then child issues for: manifest and inheritance; tokens and typography; layouts and navigation; Blade components; Livewire interactions; module view integrations; CSS/JavaScript pipeline; imagery/logos/icons/video; localization/RTL; accessibility; visual regression; performance/security; documentation and release.
+Create one theme epic, then child issues for: manifest and inheritance; shared tokens and typography; technology adapter matrix; layouts and navigation; Blade components; Livewire interactions; React/Inertia components; Vue/Inertia components; Nuxt layer/components; module view integrations; CSS/JavaScript pipeline; imagery/logos/icons/video; localization/RTL; accessibility; visual regression; performance/security; documentation and release.
 
 Each issue identifies target surfaces, supported modules, affected extension points, assets, responsive states, accessibility criteria, tests, performance budget, and explicit exclusions.
