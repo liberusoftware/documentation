@@ -7,7 +7,7 @@ Refactor the repository into a complete Liberu Laravel application based on `lib
 
 Work on a new branch named `development`. Create the branch first, then replace its contents with a complete copy of `liberusoftware/boilerplate-laravel`. Preserve the repository history where practical, but do not modify `main` unless explicitly required.
 
-Follow these documentation standards exactly:
+Follow these documentation standards from github.com/liberusoftware/documentation :
 
 - `MODULES.md`
 - `THEMES.md`
