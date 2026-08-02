@@ -6,18 +6,18 @@ Each document specifies the `Nuxt 4` implementation package matching exactly one
 
 | Application | Implementations | Standard |
 |---|---:|---|
-| [Accounting](accounting/README.md) | 105 | [../NUXT.md](../NUXT.md) |
-| [Automation](automation/README.md) | 11 | [../NUXT.md](../NUXT.md) |
-| [Billing](billing/README.md) | 16 | [../NUXT.md](../NUXT.md) |
-| [Browser-Game](browser-game/README.md) | 15 | [../NUXT.md](../NUXT.md) |
-| [Cms](cms/README.md) | 81 | [../NUXT.md](../NUXT.md) |
-| [Control-Panel](control-panel/README.md) | 15 | [../NUXT.md](../NUXT.md) |
-| [Crm](crm/README.md) | 95 | [../NUXT.md](../NUXT.md) |
-| [Ecommerce](ecommerce/README.md) | 105 | [../NUXT.md](../NUXT.md) |
-| [Genealogy](genealogy/README.md) | 14 | [../NUXT.md](../NUXT.md) |
-| [Maintenance](maintenance/README.md) | 14 | [../NUXT.md](../NUXT.md) |
-| [Real-Estate](real-estate/README.md) | 15 | [../NUXT.md](../NUXT.md) |
-| [Sap](sap/README.md) | 16 | [../NUXT.md](../NUXT.md) |
-| [Social-Network](social-network/README.md) | 15 | [../NUXT.md](../NUXT.md) |
+| [Accounting](../projects/accounting/nuxt/README.md) | 105 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Automation](../projects/automation/nuxt/README.md) | 11 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Billing](../projects/billing/nuxt/README.md) | 16 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Browser-Game](../projects/browser-game/nuxt/README.md) | 15 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Cms](../projects/cms/nuxt/README.md) | 81 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Control-Panel](../projects/control-panel/nuxt/README.md) | 15 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Crm](../projects/crm/nuxt/README.md) | 95 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Ecommerce](../projects/ecommerce/nuxt/README.md) | 105 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Genealogy](../projects/genealogy/nuxt/README.md) | 14 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Maintenance](../projects/maintenance/nuxt/README.md) | 14 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Real-Estate](../projects/real-estate/nuxt/README.md) | 15 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Sap](../projects/sap/nuxt/README.md) | 16 | [architecture/NUXT.md](../architecture/NUXT.md) |
+| [Social-Network](../projects/social-network/nuxt/README.md) | 15 | [architecture/NUXT.md](../architecture/NUXT.md) |
 
 The package naming rule is `module-{independent-module-name}-nuxt`. Applications compose only the packages required by enabled modules, and themes style supported extension points without taking ownership of functional components.

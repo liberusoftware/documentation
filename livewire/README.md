@@ -6,18 +6,18 @@ Each document specifies the `Livewire 4` implementation package matching exactly
 
 | Application | Implementations | Standard |
 |---|---:|---|
-| [Accounting](accounting/README.md) | 105 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Automation](automation/README.md) | 11 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Billing](billing/README.md) | 16 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Browser-Game](browser-game/README.md) | 15 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Cms](cms/README.md) | 81 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Control-Panel](control-panel/README.md) | 15 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Crm](crm/README.md) | 95 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Ecommerce](ecommerce/README.md) | 105 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Genealogy](genealogy/README.md) | 14 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Maintenance](maintenance/README.md) | 14 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Real-Estate](real-estate/README.md) | 15 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Sap](sap/README.md) | 16 | [../LIVEWIRE.md](../LIVEWIRE.md) |
-| [Social-Network](social-network/README.md) | 15 | [../LIVEWIRE.md](../LIVEWIRE.md) |
+| [Accounting](../projects/accounting/livewire/README.md) | 105 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Automation](../projects/automation/livewire/README.md) | 11 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Billing](../projects/billing/livewire/README.md) | 16 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Browser-Game](../projects/browser-game/livewire/README.md) | 15 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Cms](../projects/cms/livewire/README.md) | 81 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Control-Panel](../projects/control-panel/livewire/README.md) | 15 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Crm](../projects/crm/livewire/README.md) | 95 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Ecommerce](../projects/ecommerce/livewire/README.md) | 105 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Genealogy](../projects/genealogy/livewire/README.md) | 14 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Maintenance](../projects/maintenance/livewire/README.md) | 14 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Real-Estate](../projects/real-estate/livewire/README.md) | 15 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Sap](../projects/sap/livewire/README.md) | 16 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
+| [Social-Network](../projects/social-network/livewire/README.md) | 15 | [architecture/LIVEWIRE.md](../architecture/LIVEWIRE.md) |
 
 The package naming rule is `module-{independent-module-name}-livewire`. Applications compose only the packages required by enabled modules, and themes style supported extension points without taking ownership of functional components.

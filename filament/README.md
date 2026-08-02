@@ -6,18 +6,18 @@ Each document specifies the `Filament 5` implementation package matching exactly
 
 | Application | Implementations | Standard |
 |---|---:|---|
-| [Accounting](accounting/README.md) | 105 | [../FILAMENT.md](../FILAMENT.md) |
-| [Automation](automation/README.md) | 11 | [../FILAMENT.md](../FILAMENT.md) |
-| [Billing](billing/README.md) | 16 | [../FILAMENT.md](../FILAMENT.md) |
-| [Browser-Game](browser-game/README.md) | 15 | [../FILAMENT.md](../FILAMENT.md) |
-| [Cms](cms/README.md) | 81 | [../FILAMENT.md](../FILAMENT.md) |
-| [Control-Panel](control-panel/README.md) | 15 | [../FILAMENT.md](../FILAMENT.md) |
-| [Crm](crm/README.md) | 95 | [../FILAMENT.md](../FILAMENT.md) |
-| [Ecommerce](ecommerce/README.md) | 105 | [../FILAMENT.md](../FILAMENT.md) |
-| [Genealogy](genealogy/README.md) | 14 | [../FILAMENT.md](../FILAMENT.md) |
-| [Maintenance](maintenance/README.md) | 14 | [../FILAMENT.md](../FILAMENT.md) |
-| [Real-Estate](real-estate/README.md) | 15 | [../FILAMENT.md](../FILAMENT.md) |
-| [Sap](sap/README.md) | 16 | [../FILAMENT.md](../FILAMENT.md) |
-| [Social-Network](social-network/README.md) | 15 | [../FILAMENT.md](../FILAMENT.md) |
+| [Accounting](../projects/accounting/filament/README.md) | 105 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Automation](../projects/automation/filament/README.md) | 11 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Billing](../projects/billing/filament/README.md) | 16 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Browser-Game](../projects/browser-game/filament/README.md) | 15 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Cms](../projects/cms/filament/README.md) | 81 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Control-Panel](../projects/control-panel/filament/README.md) | 15 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Crm](../projects/crm/filament/README.md) | 95 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Ecommerce](../projects/ecommerce/filament/README.md) | 105 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Genealogy](../projects/genealogy/filament/README.md) | 14 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Maintenance](../projects/maintenance/filament/README.md) | 14 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Real-Estate](../projects/real-estate/filament/README.md) | 15 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Sap](../projects/sap/filament/README.md) | 16 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
+| [Social-Network](../projects/social-network/filament/README.md) | 15 | [architecture/FILAMENT.md](../architecture/FILAMENT.md) |
 
 The package naming rule is `module-{independent-module-name}-filament`. Applications compose only the packages required by enabled modules, and themes style supported extension points without taking ownership of functional components.

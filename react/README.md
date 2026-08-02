@@ -6,18 +6,18 @@ Each document specifies the `React 19.2 + Inertia 3` implementation package matc
 
 | Application | Implementations | Standard |
 |---|---:|---|
-| [Accounting](accounting/README.md) | 105 | [../REACT.md](../REACT.md) |
-| [Automation](automation/README.md) | 11 | [../REACT.md](../REACT.md) |
-| [Billing](billing/README.md) | 16 | [../REACT.md](../REACT.md) |
-| [Browser-Game](browser-game/README.md) | 15 | [../REACT.md](../REACT.md) |
-| [Cms](cms/README.md) | 81 | [../REACT.md](../REACT.md) |
-| [Control-Panel](control-panel/README.md) | 15 | [../REACT.md](../REACT.md) |
-| [Crm](crm/README.md) | 95 | [../REACT.md](../REACT.md) |
-| [Ecommerce](ecommerce/README.md) | 105 | [../REACT.md](../REACT.md) |
-| [Genealogy](genealogy/README.md) | 14 | [../REACT.md](../REACT.md) |
-| [Maintenance](maintenance/README.md) | 14 | [../REACT.md](../REACT.md) |
-| [Real-Estate](real-estate/README.md) | 15 | [../REACT.md](../REACT.md) |
-| [Sap](sap/README.md) | 16 | [../REACT.md](../REACT.md) |
-| [Social-Network](social-network/README.md) | 15 | [../REACT.md](../REACT.md) |
+| [Accounting](../projects/accounting/react/README.md) | 105 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Automation](../projects/automation/react/README.md) | 11 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Billing](../projects/billing/react/README.md) | 16 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Browser-Game](../projects/browser-game/react/README.md) | 15 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Cms](../projects/cms/react/README.md) | 81 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Control-Panel](../projects/control-panel/react/README.md) | 15 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Crm](../projects/crm/react/README.md) | 95 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Ecommerce](../projects/ecommerce/react/README.md) | 105 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Genealogy](../projects/genealogy/react/README.md) | 14 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Maintenance](../projects/maintenance/react/README.md) | 14 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Real-Estate](../projects/real-estate/react/README.md) | 15 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Sap](../projects/sap/react/README.md) | 16 | [architecture/REACT.md](../architecture/REACT.md) |
+| [Social-Network](../projects/social-network/react/README.md) | 15 | [architecture/REACT.md](../architecture/REACT.md) |
 
 The package naming rule is `module-{independent-module-name}-react-inertia`. Applications compose only the packages required by enabled modules, and themes style supported React/Inertia extension points without taking ownership of functional components.

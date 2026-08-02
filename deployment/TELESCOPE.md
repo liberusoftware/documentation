@@ -18,12 +18,12 @@ Review captured queries, jobs, exceptions, mail, notifications, dumps, and model
 
 ## CI and release deployment
 
-Every push to `main` runs [CI](../CI.md) and may deploy Telescope configuration to staging. Production Telescope changes must not be applied automatically from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy only after the 100% release-scope coverage gate, access-control and configuration checks, smoke tests, and production approval pass. Verify authorization and retention after deployment; never expose Telescope as a substitute for application monitoring.
+Every push to `main` runs [CI](../architecture/CI.md) and may deploy Telescope configuration to staging. Production Telescope changes must not be applied automatically from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy only after the 100% release-scope coverage gate, access-control and configuration checks, smoke tests, and production approval pass. Verify authorization and retention after deployment; never expose Telescope as a substitute for application monitoring.
 
 ## References
 
-- [CI and release policy](../CI.md)
+- [CI and release policy](../architecture/CI.md)
 - [Laravel Telescope](https://laravel.com/docs/13.x/telescope)
 - [Laravel logging](https://laravel.com/docs/13.x/logging)
-- [Security policy](../SECURITY.md)
+- [Security policy](../architecture/SECURITY.md)
 - [Deployment index](README.md)

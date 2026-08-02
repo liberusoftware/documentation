@@ -49,11 +49,11 @@ Check configuration syntax, TLS, Laravel routes, PHP-FPM execution, static files
 
 ## CI and release deployment
 
-Every push to `main` runs [CI](../CI.md) and may deploy the tested artifact to staging. Production Apache configuration and application artifacts must not be changed directly from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy only after the 100% release-scope coverage gate, configuration and security checks, Apache/PHP-FPM syntax checks, smoke tests, and production approval pass. Reload Apache only after validation succeeds.
+Every push to `main` runs [CI](../architecture/CI.md) and may deploy the tested artifact to staging. Production Apache configuration and application artifacts must not be changed directly from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy only after the 100% release-scope coverage gate, configuration and security checks, Apache/PHP-FPM syntax checks, smoke tests, and production approval pass. Reload Apache only after validation succeeds.
 
 ## References
 
-- [CI and release policy](../CI.md)
+- [CI and release policy](../architecture/CI.md)
 - [Apache HTTP Server documentation](https://httpd.apache.org/docs/2.4/)
 - [Apache `mod_proxy_fcgi`](https://httpd.apache.org/docs/2.4/mod/mod_proxy_fcgi.html)
 - [Apache `mod_proxy` security warning](https://httpd.apache.org/docs/2.4/mod/mod_proxy.html)

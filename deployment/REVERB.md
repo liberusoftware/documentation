@@ -18,11 +18,11 @@ Supervise the process with [Supervisor](SUPERVISORD.md), containers, or Kubernet
 
 ## CI and release deployment
 
-Every push to `main` runs [CI](../CI.md) and may deploy Reverb changes to staging. Production Reverb processes and proxy configuration must not be restarted from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy only after the 100% release-scope coverage gate, configuration checks, connection smoke tests, and production approval pass. Restart or drain the process gracefully and verify client connectivity.
+Every push to `main` runs [CI](../architecture/CI.md) and may deploy Reverb changes to staging. Production Reverb processes and proxy configuration must not be restarted from `main`. A protected `vX.Y.Z` tag or GitHub Release may deploy only after the 100% release-scope coverage gate, configuration checks, connection smoke tests, and production approval pass. Restart or drain the process gracefully and verify client connectivity.
 
 ## References
 
-- [CI and release policy](../CI.md)
+- [CI and release policy](../architecture/CI.md)
 - [Laravel Broadcasting](https://laravel.com/docs/13.x/broadcasting)
 - [Laravel Reverb](https://laravel.com/docs/13.x/reverb)
 - [NGINX](NGINX.md)

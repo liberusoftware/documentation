@@ -43,11 +43,11 @@ Keep the previous image tag available, record the deployed Compose files and env
 
 ## CI and release deployment
 
-Every push to `main` runs [CI](../CI.md) and may update a staging Compose deployment with a pinned image digest. Production must not follow `main` automatically. A protected `vX.Y.Z` tag or GitHub Release promotes the exact tested digest only after the required checks, 100% release-scope coverage gate, scans, smoke tests, and production environment approval pass.
+Every push to `main` runs [CI](../architecture/CI.md) and may update a staging Compose deployment with a pinned image digest. Production must not follow `main` automatically. A protected `vX.Y.Z` tag or GitHub Release promotes the exact tested digest only after the required checks, 100% release-scope coverage gate, scans, smoke tests, and production environment approval pass.
 
 ## References
 
-- [CI and release policy](../CI.md)
+- [CI and release policy](../architecture/CI.md)
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Compose in production](https://docs.docker.com/compose/how-tos/production/)
 - [Deployment index](README.md)

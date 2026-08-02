@@ -36,20 +36,20 @@ Do not run destructive migrations, expose databases publicly, bake credentials i
 
 ## Automated deployment policy
 
-See [CI](../CI.md) for the workflow contract. Every push to `main` runs required checks and may publish an immutable staging artifact or deploy staging. Production is never deployed directly from `main`; it is deployed only from a protected version tag or GitHub Release after all checks, the 100% release-scope coverage gate, artifact scanning, smoke tests, and production environment approval pass.
+See [CI](../architecture/CI.md) for the workflow contract. Every push to `main` runs required checks and may publish an immutable staging artifact or deploy staging. Production is never deployed directly from `main`; it is deployed only from a protected version tag or GitHub Release after all checks, the 100% release-scope coverage gate, artifact scanning, smoke tests, and production environment approval pass.
 
 ## Control Panel provisioning
 
 When Liberu Control Panel provisions the environment, use its documented desired-state and reconciliation workflows rather than ad-hoc remote commands. Relevant modules are:
 
-- [Control Panel scope](../CONTROL-PANEL.md)
-- [Web Hosting](../features/control-panel/web-hosting.md) and [Web Hosting API](../api/control-panel/web-hosting.md)
-- [Containers](../features/control-panel/containers.md) and [Containers API](../api/control-panel/containers.md)
-- [Kubernetes](../features/control-panel/kubernetes.md) and [Kubernetes API](../api/control-panel/kubernetes.md)
-- [Certificates](../features/control-panel/certificates.md) for TLS
-- [Databases](../features/control-panel/databases.md) and [Backups](../features/control-panel/backups.md)
-- [Control Panel API and Automation](../features/control-panel/api-and-automation.md)
-- [Billing provisioning](../features/billing/provisioning.md) for service lifecycle integration
+- [Control Panel scope](../projects/control-panel/CONTROL-PANEL.md)
+- [Web Hosting](../projects/control-panel/features/web-hosting.md) and [Web Hosting API](../projects/control-panel/api/web-hosting.md)
+- [Containers](../projects/control-panel/features/containers.md) and [Containers API](../projects/control-panel/api/containers.md)
+- [Kubernetes](../projects/control-panel/features/kubernetes.md) and [Kubernetes API](../projects/control-panel/api/kubernetes.md)
+- [Certificates](../projects/control-panel/features/certificates.md) for TLS
+- [Databases](../projects/control-panel/features/databases.md) and [Backups](../projects/control-panel/features/backups.md)
+- [Control Panel API and Automation](../projects/control-panel/features/api-and-automation.md)
+- [Billing provisioning](../projects/billing/features/provisioning.md) for service lifecycle integration
 
 Provisioning must be authenticated, least-privilege, idempotent, observable, and recoverable. Keep application secrets in the control plane's secret mechanism and inject them at runtime.
 
@@ -68,6 +68,6 @@ Provisioning must be authenticated, least-privilege, idempotent, observable, and
 - [Reverb](REVERB.md)
 - [Horizon](HORIZON.md)
 - [Telescope](TELESCOPE.md)
-- [CI](../CI.md)
-- [Installation](../INSTALL.md)
-- [Security policy](../SECURITY.md)
+- [CI](../architecture/CI.md)
+- [Installation](../architecture/INSTALL.md)
+- [Security policy](../architecture/SECURITY.md)
