@@ -27,6 +27,8 @@ Start with [Liberu architecture](LIBERU.md) for the portfolio view or [Module ar
 | [Policy and permissions](POLICY.md) | Laravel policies, Spatie Permission, and Filament Shield boundaries |
 | [Teams](TEAMS.md) | Team context, membership, invitations, and authorization rules |
 | [Tenancy](TENANCY.md) | Tenant boundaries, team isolation, context lifecycle, jobs, APIs, and verification |
+| [Settings](SETTINGS.md) | Typed, encrypted, multi-scope settings with optional API and presentation adapters |
+| [PSR standards](PSR.md) | PHP-FIG interoperability, coding, autoloading, HTTP, cache, events, and clock standards |
 | [Installation](INSTALL.md) | Supported prerequisites and local installation workflow |
 | [Deployment](deployment/README.md) | Standalone, Docker Compose, and Kubernetes deployment paths |
 | [Contributing](CONTRIBUTING.md) | Contribution workflow and engineering quality gates |
