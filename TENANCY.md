@@ -2,9 +2,9 @@
 
 ## Canonical tenancy specification
 
-**Status:** Source of truth  
-**Applies to:** Laravel 13 applications, PHP 8.5 modules, Jetstream teams, Filament tenants, APIs, jobs, storage, and presentation layers  
-**Reference implementation:** [`liberusoftware/genealogy-laravel`](https://github.com/liberusoftware/genealogy-laravel)  
+**Status:** Source of truth
+**Applies to:** Laravel 13 applications, PHP 8.5 modules, Jetstream teams, Filament tenants, APIs, jobs, storage, and presentation layers
+**Reference implementation:** [`liberusoftware/genealogy-laravel`](https://github.com/liberusoftware/genealogy-laravel)
 **Related specifications:** [JETSTREAM.md](JETSTREAM.md) · [TEAMS.md](TEAMS.md) · [POLICY.md](POLICY.md) · [API.md](API.md) · [MODULES.md](MODULES.md) · [SECURITY.md](SECURITY.md)
 
 ## Decision
