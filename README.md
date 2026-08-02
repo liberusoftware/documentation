@@ -11,7 +11,7 @@ If you are new, start with [GETTING-STARTED.md](GETTING-STARTED.md). If you alre
 | Understand the whole Liberu platform | [Liberu platform scope](projects/LIBERU.md) · [Technology and solution map](TECHNOLOGIES.md) |
 | Build a new application or package | [Modules](architecture/MODULES.md) · [Laravel standard](standards/LARAVEL.md) · [Coding guidelines](standards/GUIDELINES.md) |
 | Find a product capability | [Application scopes](#application-scopes) · [Feature indexes](features/README.md) |
-| Add an API or UI adapter | [API index](api/README.md) · [Presentation indexes](#presentation-indexes) |
+| Add an API or UI adapter | [API index](modules/api/README.md) · [Presentation indexes](#presentation-indexes) |
 | Choose React, Vue, Nuxt, Livewire, or Filament | [Technology standards](#technology-standards) · [Technology map](TECHNOLOGIES.md) |
 | Design or extend a theme | [Theme standard](standards/THEMES.md) |
 | Run tests, CI, or a release | [Testing](standards/TESTING.md) · [CI](standards/CI.md) · [Deployment](deployment/README.md) |
@@ -77,12 +77,12 @@ The Liberu platform adds only new cross-product capabilities under [projects/lib
 These root indexes cover the complete existing module matrix. Select only the adapters needed by an application surface.
 
 - [Feature specifications](features/README.md) — framework-neutral domain capability.
-- [API modules](api/README.md) — HTTP/API contracts and adapters.
-- [Filament implementations](filament/README.md) — administrative and operational UI.
-- [Livewire implementations](livewire/README.md) — server-driven Laravel UI.
-- [React + Inertia implementations](react/README.md) — React application UI over Laravel routes.
-- [Vue + Inertia implementations](vue/README.md) — Vue application UI over Laravel routes.
-- [Nuxt implementations](nuxt/README.md) — Vue SSR/API-consuming applications.
+- [API modules](modules/api/README.md) — HTTP/API contracts and adapters.
+- [Filament implementations](modules/filament/README.md) — administrative and operational UI.
+- [Livewire implementations](modules/livewire/README.md) — server-driven Laravel UI.
+- [React + Inertia implementations](modules/react/README.md) — React application UI over Laravel routes.
+- [Vue + Inertia implementations](modules/vue/README.md) — Vue application UI over Laravel routes.
+- [Nuxt implementations](modules/nuxt/README.md) — Vue SSR/API-consuming applications.
 
 ## Operating and contributing
 

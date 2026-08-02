@@ -33,12 +33,12 @@ Start with the framework-neutral feature specification, then add only the matchi
 | Need | Index | Standard |
 |---|---|---|
 | Domain capabilities | [Feature specifications](features/README.md) | [Modules architecture](architecture/MODULES.md) |
-| HTTP/API contracts | [API implementations](api/README.md) | [API architecture](architecture/API.md) |
-| Administration | [Filament implementations](filament/README.md) | [Filament](standards/FILAMENT.md) |
-| Server-driven UI | [Livewire implementations](livewire/README.md) | [Livewire](standards/LIVEWIRE.md) |
-| React application UI | [React + Inertia implementations](react/README.md) | [React](standards/REACT.md) · [Inertia](standards/INERTIA.md) |
-| Vue application UI | [Vue + Inertia implementations](vue/README.md) | [Vue](standards/VUE.md) · [Inertia](standards/INERTIA.md) |
-| Vue SSR/API application | [Nuxt implementations](nuxt/README.md) | [Nuxt](standards/NUXT.md) |
+| HTTP/API contracts | [API implementations](modules/api/README.md) | [API architecture](architecture/API.md) |
+| Administration | [Filament implementations](modules/filament/README.md) | [Filament](standards/FILAMENT.md) |
+| Server-driven UI | [Livewire implementations](modules/livewire/README.md) | [Livewire](standards/LIVEWIRE.md) |
+| React application UI | [React + Inertia implementations](modules/react/README.md) | [React](standards/REACT.md) · [Inertia](standards/INERTIA.md) |
+| Vue application UI | [Vue + Inertia implementations](modules/vue/README.md) | [Vue](standards/VUE.md) · [Inertia](standards/INERTIA.md) |
+| Vue SSR/API application | [Nuxt implementations](modules/nuxt/README.md) | [Nuxt](standards/NUXT.md) |
 
 The same module may have API, Filament, Livewire, React, Vue, and Nuxt adapters. Each adapter presents only its matching module and never duplicates its domain rules or private data.
 

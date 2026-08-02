@@ -27,11 +27,11 @@ This guide gives you the shortest safe path through the Liberu documentation rep
 | Need | Read |
 |---|---|
 | Laravel application foundation and domain composition | [Liberu](projects/LIBERU.md) · [Modules](architecture/MODULES.md) |
-| Administrative panels | [Filament architecture](standards/FILAMENT.md) · [Filament indexes](filament/README.md) |
-| Server-driven interactive UI | [Livewire architecture](standards/LIVEWIRE.md) · [Livewire indexes](livewire/README.md) |
-| React application UI over Laravel routes | [React + Inertia](standards/REACT.md) · [React indexes](react/README.md) |
-| Vue application UI over Laravel routes | [Vue + Inertia](standards/VUE.md) · [Vue indexes](vue/README.md) |
-| Vue SSR/API-consuming application | [Nuxt](standards/NUXT.md) · [Nuxt indexes](nuxt/README.md) |
+| Administrative panels | [Filament architecture](standards/FILAMENT.md) · [Filament indexes](modules/filament/README.md) |
+| Server-driven interactive UI | [Livewire architecture](standards/LIVEWIRE.md) · [Livewire indexes](modules/livewire/README.md) |
+| React application UI over Laravel routes | [React + Inertia](standards/REACT.md) · [React indexes](modules/react/README.md) |
+| Vue application UI over Laravel routes | [Vue + Inertia](standards/VUE.md) · [Vue indexes](modules/vue/README.md) |
+| Vue SSR/API-consuming application | [Nuxt](standards/NUXT.md) · [Nuxt indexes](modules/nuxt/README.md) |
 
 Use one matching presentation package per domain module. Presentation packages consume the module API/public contracts; they do not duplicate authorization, persistence, or domain rules.
 

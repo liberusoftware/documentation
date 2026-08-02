@@ -52,7 +52,7 @@ curl --fail-with-body \\
   https://api.example.test/api/v1/trees
 ```
 
-The route middleware verifies authentication and token ability. The controller or domain action must still apply the relevant [policy and team checks](../architecture/POLICY.md), including resource ownership and current-team membership. A valid token alone never grants access to every resource.
+The route middleware verifies authentication and token ability. The controller or domain action must still apply the relevant [policy and team checks](../../architecture/POLICY.md), including resource ownership and current-team membership. A valid token alone never grants access to every resource.
 
 ### Revoke and expire tokens
 
@@ -62,16 +62,16 @@ For a first-party SPA, use `/sanctum/csrf-cookie`, session login, and `auth:sanc
 
 | Application | API modules | Source |
 |---|---:|---|
-| [Accounting](../projects/accounting/api/README.md) | 105 | [ACCOUNTING.md](../projects/accounting/ACCOUNTING.md) |
-| [Automation](../projects/automation/api/README.md) | 11 | [AUTOMATION.md](../projects/automation/AUTOMATION.md) |
-| [Billing](../projects/billing/api/README.md) | 16 | [BILLING.md](../projects/billing/BILLING.md) |
-| [Browser Game](../projects/browser-game/api/README.md) | 15 | [BROWSER-GAME.md](../projects/browser-game/BROWSER-GAME.md) |
-| [CMS](../projects/cms/api/README.md) | 81 | [CMS.md](../projects/cms/CMS.md) |
-| [Control Panel](../projects/control-panel/api/README.md) | 15 | [CONTROL-PANEL.md](../projects/control-panel/CONTROL-PANEL.md) |
-| [CRM](../projects/crm/api/README.md) | 95 | [CRM.md](../projects/crm/CRM.md) |
-| [Ecommerce](../projects/ecommerce/api/README.md) | 105 | [ECOMMERCE.md](../projects/ecommerce/ECOMMERCE.md) |
-| [Genealogy](../projects/genealogy/api/README.md) | 14 | [GENEALOGY.md](../projects/genealogy/GENEALOGY.md) |
-| [Maintenance](../projects/maintenance/api/README.md) | 14 | [MAINTENANCE.md](../projects/maintenance/MAINTENANCE.md) |
-| [Real Estate](../projects/real-estate/api/README.md) | 15 | [REAL-ESTATE.md](../projects/real-estate/REAL-ESTATE.md) |
-| [SAP](../projects/sap/api/README.md) | 16 | [SAP.md](../projects/sap/SAP.md) |
-| [Social Network](../projects/social-network/api/README.md) | 15 | [SOCIAL-NETWORK.md](../projects/social-network/SOCIAL-NETWORK.md) |
+| [Accounting](../../projects/accounting/api/README.md) | 105 | [ACCOUNTING.md](../../projects/accounting/ACCOUNTING.md) |
+| [Automation](../../projects/automation/api/README.md) | 11 | [AUTOMATION.md](../../projects/automation/AUTOMATION.md) |
+| [Billing](../../projects/billing/api/README.md) | 16 | [BILLING.md](../../projects/billing/BILLING.md) |
+| [Browser Game](../../projects/browser-game/api/README.md) | 15 | [BROWSER-GAME.md](../../projects/browser-game/BROWSER-GAME.md) |
+| [CMS](../../projects/cms/api/README.md) | 81 | [CMS.md](../../projects/cms/CMS.md) |
+| [Control Panel](../../projects/control-panel/api/README.md) | 15 | [CONTROL-PANEL.md](../../projects/control-panel/CONTROL-PANEL.md) |
+| [CRM](../../projects/crm/api/README.md) | 95 | [CRM.md](../../projects/crm/CRM.md) |
+| [Ecommerce](../../projects/ecommerce/api/README.md) | 105 | [ECOMMERCE.md](../../projects/ecommerce/ECOMMERCE.md) |
+| [Genealogy](../../projects/genealogy/api/README.md) | 14 | [GENEALOGY.md](../../projects/genealogy/GENEALOGY.md) |
+| [Maintenance](../../projects/maintenance/api/README.md) | 14 | [MAINTENANCE.md](../../projects/maintenance/MAINTENANCE.md) |
+| [Real Estate](../../projects/real-estate/api/README.md) | 15 | [REAL-ESTATE.md](../../projects/real-estate/REAL-ESTATE.md) |
+| [SAP](../../projects/sap/api/README.md) | 16 | [SAP.md](../../projects/sap/SAP.md) |
+| [Social Network](../../projects/social-network/api/README.md) | 15 | [SOCIAL-NETWORK.md](../../projects/social-network/SOCIAL-NETWORK.md) |
