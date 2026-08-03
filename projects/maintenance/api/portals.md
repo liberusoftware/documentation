@@ -43,21 +43,21 @@ These examples show the normal REST shape. The matching OpenAPI fragment remains
 
 Example create request (illustrative fields only):
 
-`json
+```json
 {
   "customer_requests_approvals_status_and_engineer_schedule_work_offline_capture": "example-value"
 }
-`
+```
 
 Example request headers:
 
-`http
+```http
 Accept: application/json
 Authorization: Bearer YOUR_SANCTUM_TOKEN
 Content-Type: application/json
 Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
 X-Request-ID: 01JEXAMPLEREQUESTID
-`
+```
 
 Successful reads and writes return the standard `data` envelope from [API.md](../MAINTENANCE.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
 
@@ -75,7 +75,7 @@ This module owns a versioned OpenAPI 3.1 fragment for `maintenance-portals`. Kee
 
 ### Minimal fragment example
 
-`yaml
+```yaml
 openapi: 3.1.0
 info:
   title: maintenance portals API
@@ -87,10 +87,10 @@ paths:
       security:
         - sanctum: []
       parameters:
-        - $ref: '#/components/parameters/PageSize'
+        - $ref: "#/components/parameters/PageSize"
       responses:
-        '200':
-          $ref: '#/components/responses/ResourceCollection'
+        "200":
+          $ref: "#/components/responses/ResourceCollection"
 components:
   parameters:
     PageSize:
@@ -126,15 +126,15 @@ components:
         data:
           type: array
           items:
-            $ref: '#/components/schemas/MaintenancePortalsResource'
+            $ref: "#/components/schemas/MaintenancePortalsResource"
   responses:
     ResourceCollection:
       description: Authorized paginated resources.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/ResourceCollection'
-`
+            $ref: "#/components/schemas/ResourceCollection"
+```
 
 The example is a contract outline, not a substitute for the complete module schema: replace `additionalProperties` with explicit fields and add create/update/action schemas before release. Validate the fragment, bundle it into the application specification, run breaking-change detection against the supported release, and generate typed clients only from the released specification.
 

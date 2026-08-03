@@ -20,6 +20,30 @@ This optional API package presents exactly one new Liberu cross-product module. 
 - localization, accessibility, audit context, and operational telemetry;
 - explicit loading, empty, stale, validation, unauthorized, forbidden, offline, and server-error states where applicable.
 
+## 3. Endpoint examples
+
+Base path: `/api/v1/liberu/business-workflow-reconciliation`
+
+| Method  | Endpoint                                                        | Purpose                                  |
+| ------- | --------------------------------------------------------------- | ---------------------------------------- |
+| `GET`   | `/api/v1/liberu/business-workflow-reconciliation?page[size]=25` | List authorized reconciliation resources |
+| `GET`   | `/api/v1/liberu/business-workflow-reconciliation/{id}`          | Retrieve one reconciliation              |
+| `POST`  | `/api/v1/liberu/business-workflow-reconciliation`               | Start a reconciliation workflow          |
+| `PATCH` | `/api/v1/liberu/business-workflow-reconciliation/{id}`          | Update permitted state or metadata       |
+| `POST`  | `/api/v1/liberu/business-workflow-reconciliation/{id}/<action>` | Execute a documented workflow action     |
+
+Example request:
+
+```http
+POST /api/v1/liberu/business-workflow-reconciliation HTTP/1.1
+Accept: application/json
+Authorization: Bearer YOUR_SANCTUM_TOKEN
+Content-Type: application/json
+Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
+```
+
+The API returns the standard `data`, `links`, and `meta` envelope or RFC 9457 Problem Details. Enforce the matching core policy, tenant/team context, evidence/audit requirements, idempotency, and queued-operation rules before exposing a workflow.
+
 ## 3. Boundary rules
 
 - The matching domain module owns invariants, persistence, policies, actions, events, and recovery semantics.

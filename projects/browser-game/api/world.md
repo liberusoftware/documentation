@@ -51,23 +51,23 @@ These examples show the normal REST shape. The matching OpenAPI fragment remains
 
 Example create request (illustrative fields only):
 
-`json
+```json
 {
   "regions": "example-value",
   "locations": "example-value",
   "maps": "example-value"
 }
-`
+```
 
 Example request headers:
 
-`http
+```http
 Accept: application/json
 Authorization: Bearer YOUR_SANCTUM_TOKEN
 Content-Type: application/json
 Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
 X-Request-ID: 01JEXAMPLEREQUESTID
-`
+```
 
 Successful reads and writes return the standard `data` envelope from [API.md](../BROWSER-GAME.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
 

@@ -20,6 +20,30 @@ This optional API package presents exactly one new Liberu cross-product module. 
 - localization, accessibility, audit context, and operational telemetry;
 - explicit loading, empty, stale, validation, unauthorized, forbidden, offline, and server-error states where applicable.
 
+## 3. Endpoint examples
+
+Base path: `/api/v1/liberu/platform-orchestration`
+
+| Method  | Endpoint                                              | Purpose                                   |
+| ------- | ----------------------------------------------------- | ----------------------------------------- |
+| `GET`   | `/api/v1/liberu/platform-orchestration?page[size]=25` | List authorized orchestration resources   |
+| `GET`   | `/api/v1/liberu/platform-orchestration/{id}`          | Retrieve one resource                     |
+| `POST`  | `/api/v1/liberu/platform-orchestration`               | Start an authorized orchestration request |
+| `PATCH` | `/api/v1/liberu/platform-orchestration/{id}`          | Update permitted state or metadata        |
+| `POST`  | `/api/v1/liberu/platform-orchestration/{id}/<action>` | Execute a documented lifecycle action     |
+
+Example request:
+
+```http
+POST /api/v1/liberu/platform-orchestration HTTP/1.1
+Accept: application/json
+Authorization: Bearer YOUR_SANCTUM_TOKEN
+Content-Type: application/json
+Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
+```
+
+The API returns the standard `data`, `links`, and `meta` envelope or RFC 9457 Problem Details. Apply the matching core policy, tenant/team context, idempotency, audit, and queued-operation rules before exposing an operation.
+
 ## 3. Boundary rules
 
 - The matching domain module owns invariants, persistence, policies, actions, events, and recovery semantics.
