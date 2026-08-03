@@ -565,7 +565,7 @@ Applications establish SLOs and alerts for end-to-end workflows; package telemet
 
 ## 24. Testing strategy
 
-Every package follows `TESTING.md`, uses stable Pest 5 as the primary runner, and requires:
+Every package follows [TESTING.md](../standards/TESTING.md#13-coverage-policy), uses stable Pest 5 as the primary runner, and requires:
 
 - unit tests for domain rules and value objects;
 - feature tests for actions, policies, validation, persistence, and tenant isolation;
@@ -593,7 +593,7 @@ Each independent module repository owns these GitHub Actions workflows:
 | Workflow            | Required evidence                                                                                                                       |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `install.yml`       | Clean Composer dependency resolution/install, package bootstrap, manifest validation, minimal-host install, and documented quick start  |
-| `tests.yml`         | Pest 5 unit/feature/contract/integration suites, architecture and security checks, static analysis, and 100% owned-PHP coverage reports |
+| `tests.yml`         | Pest 5 unit/feature/contract/integration suites, architecture and security checks, static analysis, and 100% meaningful owned PHP coverage reports |
 | `compatibility.yml` | Declared minimum/current PHP, Laravel, database, Filament/Livewire where applicable, and representative host combinations               |
 
 Provider sandbox, browser, mutation, performance, migration and full composition jobs may be scheduled or release-gated when expensive, but required evidence completes before release. Workflows call the repository's Composer scripts; they do not require a duplicated scripts package. Coverage reports are uploaded as protected artifacts and the default-branch badge links to maintained results.
@@ -704,7 +704,7 @@ Every module repository contains a professionally written `README.md` stating pu
 
 Module CI generates test coverage in a machine-readable format and a browsable report where the test framework supports it. The README displays the current CI and coverage status/badge and explains how to run the tests locally. Coverage is evidence, not a substitute for meaningful unit, feature, contract, architecture, integration, security, and failure-path tests. Generated HTML coverage output is retained as a CI artifact or release asset and is not normally committed to source.
 
-The README also states that Pest 5 is the canonical runner, lists the local Composer test commands, identifies the shared package-testbench version, and links the install, tests, compatibility, and coverage workflows. Coverage documentation distinguishes the 100% meaningful-PHP target from alternative evidence for non-executable files.
+The README also states that Pest 5 is the canonical runner, lists the local Composer test commands, identifies the shared package-testbench version, and links the install, tests, compatibility, and coverage workflows. Coverage documentation links the [coverage policy](../standards/TESTING.md#13-coverage-policy) and distinguishes the 100% meaningful owned PHP target from alternative evidence for non-executable files.
 
 Repositories document the package map and dependency diagram. Applications document selected packages, bindings, enabled capabilities, panels, providers, themes, and deliberate exclusions. Significant boundary decisions use ADRs.
 
@@ -720,7 +720,7 @@ A package is complete when:
 - public contracts/events are versioned, documented, and covered by consumer/implementation tests;
 - presentation is optional and complies with `THEMES.md`;
 - architecture, security, compatibility, migration, and product-composition tests pass;
-- its independent Pest 5 suite runs without a host application and meaningful owned PHP reaches the 100% coverage target;
+- its independent Pest 5 suite runs without a host application and meaningful owned PHP reaches the [100% coverage target](../standards/TESTING.md#13-coverage-policy);
 - logs, metrics, health checks, alerts, runbooks, changelog, and upgrade notes are available;
 - the independent GitHub repository, README, CI workflow, generated coverage report, release tag, and tested-host compatibility evidence are available;
 - a clean locked install places the module in `/modules`, and the consuming repository has no unexpected Composer-generated diff.

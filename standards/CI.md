@@ -8,7 +8,7 @@ This document defines the GitHub Actions workflow policy for Liberu repositories
 
 Every pull request and every push to `main` runs the required validation suite. A successful `main` build may publish an immutable artifact and deploy a non-production environment. It must not deploy production automatically.
 
-Production deployment is release-based. A protected version tag such as `v1.2.3`, or the corresponding GitHub Release, may deploy only after the tagged commit has passed all required checks, including the 100% coverage gate for the configured release scope, artifact and dependency security checks, deployment verification, and production environment approval. Tags must not be moved or force-updated.
+Production deployment is release-based. A protected version tag such as `v1.2.3`, or the corresponding GitHub Release, may deploy only after the tagged commit has passed all required checks, including the [100% release-scope coverage gate](TESTING.md#13-coverage-policy), artifact and dependency security checks, deployment verification, and production environment approval. Tags must not be moved or force-updated.
 
 ## Workflow responsibilities
 
@@ -35,7 +35,7 @@ The required checks must cover, as applicable:
 - Dependency, secret, container, and supported security scans.
 - Coverage reports with no unreviewed regression.
 
-The production release gate requires 100% line coverage for owned executable code in the configured release scope, plus the required branch/path coverage for critical code where supported. Vendor code, generated artifacts, static assets, and explicitly documented configuration-only paths are outside that scope. A failed gate blocks the release. Any exception requires protected maintainer approval and a recorded architecture decision; it must never be hidden by changing the threshold in the workflow.
+The production release gate requires 100% line coverage of the release scope, plus the required branch/path coverage for critical code where supported. [TESTING.md](TESTING.md#13-coverage-policy) defines the release scope, the meaningful owned PHP it is built from, and the exclusions. A failed gate blocks the release. Any exception requires protected maintainer approval and a recorded architecture decision; it must never be hidden by changing the threshold in the workflow.
 
 The release workflow must test the exact commit and artifact that it deploys. Do not rebuild from a different commit after approval.
 
