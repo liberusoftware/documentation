@@ -2,6 +2,8 @@
 
 These guidelines are the default for every application, module, package, theme, and presentation adapter. A local exception requires a documented reason, owner, tests, and an upgrade or removal condition.
 
+Apply the [progressive delivery standard](ADOPTION.md): simplify infrastructure for personal or SME installations only when the same security, authorization, data ownership, recovery, and public-contract baseline remains intact.
+
 ## Before coding
 
 - Identify the owning application, domain module, public contract, tenant boundary, and presentation adapter.

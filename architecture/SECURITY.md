@@ -4,6 +4,8 @@
 
 This repository contains architecture and operational documentation for Liberu applications. Report vulnerabilities in documented implementations, dependency guidance, deployment examples, authentication/authorization design, secret handling, or repository automation privately.
 
+Security is profile-independent: a personal or SME installation may have fewer servers and integrations, but it must not relax authentication, authorization, validation, secret protection, tenant isolation, secure transport, updates, backups, or privacy obligations. Enterprise deployments add centralized control, retention, monitoring, and response evidence according to risk.
+
 ## Report a vulnerability
 
 Do not open a public issue, pull request, or discussion for a suspected vulnerability. Use the repository's [GitHub Security Advisories](https://github.com/liberusoftware/documentation/security/advisories/new) form. If that form is unavailable, contact the maintainers through the private security channel listed in the repository's GitHub security settings.

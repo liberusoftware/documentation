@@ -21,6 +21,7 @@ This folder contains reusable coding, framework, frontend, design, testing, and 
 
 ## Design and implementation standards
 
+- [Progressive delivery](ADOPTION.md) — enterprise-quality behavior with practical personal and SME operating profiles.
 - [Guidelines](GUIDELINES.md) — daily coding, review, naming, security, and documentation rules.
 - [Themes](THEMES.md) — technology-neutral design tokens, theme adapters, assets, and accessibility.
 - [Testing](TESTING.md) — test ownership, quality gates, coverage, compatibility, and CI evidence.

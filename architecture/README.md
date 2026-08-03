@@ -4,6 +4,7 @@ This folder records Liberu’s ecosystem architecture: ownership, package bounda
 
 ## Core architecture
 
+- [Adoption profiles](ADOPTION.md) — progressive deployment and operating choices for personal users, SMEs, and enterprise organizations.
 - [Modules](MODULES.md) — package boundaries, dependencies, lifecycle, and composition.
 - [API](API.md) — public contracts, authentication, tenancy, errors, and versioning.
 - [Repositories](REPOSITORIES.md) — repository ownership and README expectations.

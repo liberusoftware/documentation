@@ -2,6 +2,8 @@
 
 ## Canonical PHPUnit, Pest, and Coverage Specification
 
+Testing scales with the adoption profile. Every installation proves core behavior, authorization, data safety, migrations, and recovery; SME and enterprise profiles add operational, compatibility, failover, and SLO evidence appropriate to their topology. See [progressive delivery](ADOPTION.md).
+
 **Applies to:** Laravel applications, modules, themes, APIs, connectors, Composer packages, and distributions
 **Related standards:** [MODULES.md](../architecture/MODULES.md) · [THEMES.md](THEMES.md) · [API.md](../architecture/API.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [REPOSITORIES.md](../architecture/REPOSITORIES.md)
 

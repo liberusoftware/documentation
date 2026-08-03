@@ -15,6 +15,8 @@ Each module is developed and released from an independent GitHub repository unde
 
 This document defines how Liberu capabilities are decomposed, packaged, named, discovered, installed, integrated, presented, tested, versioned, and operated. Product scopes define _what_ to build. This document defines _where behavior belongs and how its boundaries interact_.
 
+Adoption is progressive: personal users and SMEs may run a smaller topology, but they use the same core packages, authorization, data ownership, migrations, contracts, and recovery rules as enterprise installations. See [ADOPTION.md](ADOPTION.md) for profile-specific infrastructure and evidence.
+
 The governing principle is:
 
 > Build a capability once, package it independently, and compose it into every application that needs it.

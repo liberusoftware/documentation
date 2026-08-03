@@ -1,5 +1,7 @@
 # Continuous integration and delivery
 
+CI must enforce the shared quality baseline for every package and application. Personal and SME deployments may use a smaller execution topology, but they still need locked dependencies, formatting, static/architecture/security checks, migrations, tests, and a verified release path. Enterprise profiles add matrix, provenance, environment protection, DR, and compliance evidence; see [progressive delivery](ADOPTION.md).
+
 This document defines the GitHub Actions workflow policy for Liberu repositories. It complements [Testing](TESTING.md), [Repository standards](../architecture/REPOSITORIES.md), [Security](../architecture/SECURITY.md), and [Deployment](../deployment/README.md).
 
 ## Release policy
