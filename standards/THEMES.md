@@ -335,7 +335,7 @@ Navigation, authentication, checkout, forms, and core portal tasks must remain u
 
 ## 18. Testing
 
-Every theme follows `TESTING.md`, uses stable Pest 5 as its primary PHP/Livewire runner, and includes:
+Every theme follows [TESTING.md](TESTING.md#13-coverage-policy), uses stable Pest 5 as its primary PHP/Livewire runner, and includes:
 
 - render tests for layouts, components, module extension points, and fallback behavior;
 - Livewire tests for state, validation, authorization, and events;
@@ -361,7 +361,7 @@ Each independent theme repository owns these GitHub Actions workflows:
 | Workflow            | Required evidence                                                                                                                                              |
 | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `install.yml`       | Clean Composer dependency resolution/install, manifest/provider validation, independent bootstrap, asset dependency install, build, and documented quick start |
-| `tests.yml`         | Pest 5 feature/Livewire/boundary/security suites, static analysis, asset validation, and 100% meaningful-PHP coverage reports                                  |
+| `tests.yml`         | Pest 5 feature/Livewire/boundary/security suites, static analysis, asset validation, and 100% meaningful owned PHP coverage reports                                  |
 | `visual.yml`        | Accessibility and visual regression across representative viewports, locales, directions, color modes, parent fallback, and supported hosts                    |
 | `compatibility.yml` | Declared minimum/current PHP, Laravel, Livewire/Filament where used, parent-theme, and representative optimized/non-optimized hosts                            |
 
@@ -386,7 +386,7 @@ A theme is ready when:
 - light/dark, responsive, localization, RTL, and brand behavior are verified as applicable;
 - accessibility, visual, functional, security, and performance tests pass;
 - fallback behavior works without optional assets or providers;
-- its independent Pest 5 suite passes, meaningful PHP/Livewire reaches the 100% coverage target, and non-executable assets have equivalent quality evidence;
+- its independent Pest 5 suite passes, meaningful owned PHP reaches the [100% coverage target](TESTING.md#13-coverage-policy), and non-executable assets have equivalent quality evidence;
 - asset rights, documentation, changelog, and migration guidance are complete;
 - its independent `liberusoftware` repository, README, tagged release, CI results, generated meaningful coverage/quality reports, and host compatibility evidence are available;
 - a clean locked Composer install places it in `/themes`, and the consuming repository has no unexpected generated diff;

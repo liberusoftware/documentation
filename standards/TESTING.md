@@ -29,7 +29,8 @@ PHPUnit is the underlying test runner and assertion ecosystem. Pest is the prefe
 ## 3. Tooling policy
 
 - Use a Composer-managed version of PHPUnit compatible with the repository's Laravel and PHP constraints.
-- Pest repositories install compatible `pestphp/pest` and Laravel/plugin packages; Pest still runs on PHPUnit.
+- The documentation baseline is the stable **Pest 5** line on the PHP 8.5 target. New Liberu modules, themes, and applications declare `pestphp/pest` under `require-dev` with a `^5.0` constraint, and Pest-maintained plugins use compatible `^5.0` constraints. Do not require `phpunit/phpunit` separately when Pest supplies the compatible PHPUnit runtime.
+- Pest still runs on PHPUnit; an existing repository on an earlier line follows the same suites, isolation rules, and coverage policy until it upgrades.
 - Use Laravel testing helpers and Orchestra Testbench for independently tested Laravel packages where appropriate.
 - Use architecture tooling, static analysis, mutation testing, browser tooling, accessibility tooling, and visual regression only where each supplies evidence not covered by ordinary tests.
 - Keep `phpunit.xml` or `phpunit.xml.dist`, Pest configuration, bootstrap files, and Composer scripts versioned.
@@ -168,7 +169,7 @@ Theme and presentation evidence follows [THEMES.md](THEMES.md):
 - JavaScript/CSS build, asset existence, CSP compatibility, and performance-budget checks;
 - graceful degradation with optional modules absent and compatibility with at least one declared non-optimized host where practical.
 
-Line coverage is required for meaningful PHP and Livewire behavior. Static CSS, imagery, and templates may use render, accessibility, visual, build, and performance evidence instead of misleading line-coverage targets.
+Line coverage is required for meaningful owned PHP as defined in section 13. Static CSS, imagery, and templates are outside that scope and use render, accessibility, visual, build, and performance evidence instead of misleading line-coverage targets.
 
 ## 11. Security and tenant isolation
 
@@ -193,13 +194,30 @@ Compatibility claims in manifests and documentation must be generated from or ve
 
 Coverage answers “which executable lines or branches ran?” It does not answer whether assertions are correct, requirements are complete, boundaries are secure, or failures recover safely.
 
-- Generate line coverage and branch/path coverage where the selected driver and toolchain support it reliably.
-- Include owned production source and exclude vendor code, generated files, views/cache, bootstrap output, configuration-only files, migrations when not meaningfully executable, and test support code.
-- Do not exclude difficult domain code merely to improve the percentage.
-- Set repository thresholds from risk and current evidence, then raise them deliberately. New or changed critical behavior must be thoroughly tested even when the global threshold passes.
-- Prefer changed-code and critical-package gates alongside a realistic repository threshold.
-- Treat uncovered high-risk paths as explicit review findings; a high percentage never waives required contract, failure, security, migration, or composition tests.
-- Do not write empty, redundant, or implementation-coupled tests solely to increase coverage.
+This section is the single source of truth for the coverage scope, the target, and the gate. Every other Liberu document links here instead of restating them. Do not introduce an alternative percentage, scope name, or exclusion list elsewhere.
+
+### Covered scope
+
+**Meaningful owned PHP** is the one measured scope. It is the repository's own executable PHP and Livewire source, and it excludes:
+
+- vendor code and any dependency the repository does not own;
+- generated files, compiled views, cache, and bootstrap output;
+- configuration-only files that declare values without behavior;
+- migrations that are not meaningfully executable;
+- test support code such as factories, fixtures, stubs, and test cases.
+
+Do not exclude difficult domain code merely to improve the percentage. Static CSS, imagery, Blade templates, and other non-executable assets are out of scope and supply render, accessibility, visual, build, and performance evidence instead, as described in section 10.
+
+**Release scope** is the union of the meaningful owned PHP of every package included in a release. Deployment documents gate on release scope; a single package repository gates on its own meaningful owned PHP.
+
+### Target and gate
+
+- The target is **100% line coverage of meaningful owned PHP**. Generate branch/path coverage as well where the selected driver and toolchain support it reliably.
+- A release must not publish below 100% of release scope. This is the `100% release-scope coverage gate` referenced by [CI](CI.md) and the [deployment documentation](../deployment/README.md).
+- A repository that is not yet at the target sets its CI threshold from current evidence and raises it deliberately toward 100%. A threshold below 100% is a migration state, not a policy.
+- Prefer changed-code and critical-package gates alongside the repository threshold. New or changed critical behavior must be thoroughly tested even when the global threshold passes.
+- Treat uncovered high-risk paths as explicit review findings; 100% never waives required contract, failure, security, migration, or composition tests.
+- Do not write empty, redundant, or implementation-coupled tests solely to reach the number. Coverage complements contract, mutation, security, and failure assertions; it does not substitute for them.
 
 CI produces a machine-readable report such as Clover or Cobertura for quality services and an HTML report for diagnosis. Publish reports as protected CI artifacts or approved release assets; do not normally commit generated coverage output. The README badge must reflect the default branch and link to its maintained report, as required by [REPOSITORIES.md](../architecture/REPOSITORIES.md).
 
