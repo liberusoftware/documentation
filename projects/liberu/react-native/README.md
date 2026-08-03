@@ -22,3 +22,13 @@ This index defines the optional React Native + Expo adapter boundary for the Lib
 - [React Native + Expo module standard](../../../modules/react-native/README.md)
 
 This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
+
+## Complete module index
+
+The following 3 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
+
+| Module                                                                  | Package                                                     | Core                                                | API                                               |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------- |
+| [Business Workflow Reconciliation](business-workflow-reconciliation.md) | module-liberu-business-workflow-reconciliation-react-native | [Core](../core/business-workflow-reconciliation.md) | [API](../api/business-workflow-reconciliation.md) |
+| [Executive Insights](executive-insights.md)                             | module-liberu-executive-insights-react-native               | [Core](../core/executive-insights.md)               | [API](../api/executive-insights.md)               |
+| [Platform Orchestration](platform-orchestration.md)                     | module-liberu-platform-orchestration-react-native           | [Core](../core/platform-orchestration.md)           | [API](../api/platform-orchestration.md)           |

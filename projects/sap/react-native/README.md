@@ -22,3 +22,26 @@ This index defines the optional React Native + Expo adapter boundary for the SAP
 - [React Native + Expo module standard](../../../modules/react-native/README.md)
 
 This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
+
+## Complete module index
+
+The following 16 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
+
+| Module                                                              | Package                                                | Core                                              | API                                             |
+| ------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------- | ----------------------------------------------- |
+| [Assets And Facilities](assets-and-facilities.md)                   | module-sap-assets-and-facilities-react-native          | [Core](../core/assets-and-facilities.md)          | [API](../api/assets-and-facilities.md)          |
+| [Controlling](controlling.md)                                       | module-sap-controlling-react-native                    | [Core](../core/controlling.md)                    | [API](../api/controlling.md)                    |
+| [Data And Intelligence](data-and-intelligence.md)                   | module-sap-data-and-intelligence-react-native          | [Core](../core/data-and-intelligence.md)          | [API](../api/data-and-intelligence.md)          |
+| [Enterprise Foundation](enterprise-foundation.md)                   | module-sap-enterprise-foundation-react-native          | [Core](../core/enterprise-foundation.md)          | [API](../api/enterprise-foundation.md)          |
+| [Finance](finance.md)                                               | module-sap-finance-react-native                        | [Core](../core/finance.md)                        | [API](../api/finance.md)                        |
+| [Governance Risk And Compliance](governance-risk-and-compliance.md) | module-sap-governance-risk-and-compliance-react-native | [Core](../core/governance-risk-and-compliance.md) | [API](../api/governance-risk-and-compliance.md) |
+| [Hosting And Cloud](hosting-and-cloud.md)                           | module-sap-hosting-and-cloud-react-native              | [Core](../core/hosting-and-cloud.md)              | [API](../api/hosting-and-cloud.md)              |
+| [Inventory And Logistics](inventory-and-logistics.md)               | module-sap-inventory-and-logistics-react-native        | [Core](../core/inventory-and-logistics.md)        | [API](../api/inventory-and-logistics.md)        |
+| [Partners And Portals](partners-and-portals.md)                     | module-sap-partners-and-portals-react-native           | [Core](../core/partners-and-portals.md)           | [API](../api/partners-and-portals.md)           |
+| [People](people.md)                                                 | module-sap-people-react-native                         | [Core](../core/people.md)                         | [API](../api/people.md)                         |
+| [Procurement](procurement.md)                                       | module-sap-procurement-react-native                    | [Core](../core/procurement.md)                    | [API](../api/procurement.md)                    |
+| [Product And Engineering](product-and-engineering.md)               | module-sap-product-and-engineering-react-native        | [Core](../core/product-and-engineering.md)        | [API](../api/product-and-engineering.md)        |
+| [Projects And Services](projects-and-services.md)                   | module-sap-projects-and-services-react-native          | [Core](../core/projects-and-services.md)          | [API](../api/projects-and-services.md)          |
+| [Revenue Operations](revenue-operations.md)                         | module-sap-revenue-operations-react-native             | [Core](../core/revenue-operations.md)             | [API](../api/revenue-operations.md)             |
+| [Sales And Crm](sales-and-crm.md)                                   | module-sap-sales-and-crm-react-native                  | [Core](../core/sales-and-crm.md)                  | [API](../api/sales-and-crm.md)                  |
+| [Service Management](service-management.md)                         | module-sap-service-management-react-native             | [Core](../core/service-management.md)             | [API](../api/service-management.md)             |

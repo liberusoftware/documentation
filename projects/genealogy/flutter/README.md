@@ -22,3 +22,24 @@ This index defines the optional Flutter + Dart adapter boundary for the Genealog
 - [Flutter + Dart module standard](../../../modules/flutter/README.md)
 
 This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
+
+## Complete module index
+
+The following 14 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
+
+| Module                              | Package                                 | Core                              | API                             |
+| ----------------------------------- | --------------------------------------- | --------------------------------- | ------------------------------- |
+| [Collaboration](collaboration.md)   | module-genealogy-collaboration-flutter  | [Core](../core/collaboration.md)  | [API](../api/collaboration.md)  |
+| [Discovery](discovery.md)           | module-genealogy-discovery-flutter      | [Core](../core/discovery.md)      | [API](../api/discovery.md)      |
+| [Dna](dna.md)                       | module-genealogy-dna-flutter            | [Core](../core/dna.md)            | [API](../api/dna.md)            |
+| [Evidence](evidence.md)             | module-genealogy-evidence-flutter       | [Core](../core/evidence.md)       | [API](../api/evidence.md)       |
+| [Genealogy Core](genealogy-core.md) | module-genealogy-genealogy-core-flutter | [Core](../core/genealogy-core.md) | [API](../api/genealogy-core.md) |
+| [Import Export](import-export.md)   | module-genealogy-import-export-flutter  | [Core](../core/import-export.md)  | [API](../api/import-export.md)  |
+| [Media](media.md)                   | module-genealogy-media-flutter          | [Core](../core/media.md)          | [API](../api/media.md)          |
+| [People](people.md)                 | module-genealogy-people-flutter         | [Core](../core/people.md)         | [API](../api/people.md)         |
+| [Places](places.md)                 | module-genealogy-places-flutter         | [Core](../core/places.md)         | [API](../api/places.md)         |
+| [Relationships](relationships.md)   | module-genealogy-relationships-flutter  | [Core](../core/relationships.md)  | [API](../api/relationships.md)  |
+| [Reports](reports.md)               | module-genealogy-reports-flutter        | [Core](../core/reports.md)        | [API](../api/reports.md)        |
+| [Research](research.md)             | module-genealogy-research-flutter       | [Core](../core/research.md)       | [API](../api/research.md)       |
+| [Timeline](timeline.md)             | module-genealogy-timeline-flutter       | [Core](../core/timeline.md)       | [API](../api/timeline.md)       |
+| [Tree Viewer](tree-viewer.md)       | module-genealogy-tree-viewer-flutter    | [Core](../core/tree-viewer.md)    | [API](../api/tree-viewer.md)    |

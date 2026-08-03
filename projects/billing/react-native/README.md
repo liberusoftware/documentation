@@ -22,3 +22,26 @@ This index defines the optional React Native + Expo adapter boundary for the Bil
 - [React Native + Expo module standard](../../../modules/react-native/README.md)
 
 This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
+
+## Complete module index
+
+The following 16 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
+
+| Module                                | Package                                     | Core                               | API                              |
+| ------------------------------------- | ------------------------------------------- | ---------------------------------- | -------------------------------- |
+| [Billing Core](billing-core.md)       | module-billing-billing-core-react-native    | [Core](../core/billing-core.md)    | [API](../api/billing-core.md)    |
+| [Catalog](catalog.md)                 | module-billing-catalog-react-native         | [Core](../core/catalog.md)         | [API](../api/catalog.md)         |
+| [Collections](collections.md)         | module-billing-collections-react-native     | [Core](../core/collections.md)     | [API](../api/collections.md)     |
+| [Communications](communications.md)   | module-billing-communications-react-native  | [Core](../core/communications.md)  | [API](../api/communications.md)  |
+| [Customer Portal](customer-portal.md) | module-billing-customer-portal-react-native | [Core](../core/customer-portal.md) | [API](../api/customer-portal.md) |
+| [Domains](domains.md)                 | module-billing-domains-react-native         | [Core](../core/domains.md)         | [API](../api/domains.md)         |
+| [Hosting](hosting.md)                 | module-billing-hosting-react-native         | [Core](../core/hosting.md)         | [API](../api/hosting.md)         |
+| [Invoicing](invoicing.md)             | module-billing-invoicing-react-native       | [Core](../core/invoicing.md)       | [API](../api/invoicing.md)       |
+| [Isp](isp.md)                         | module-billing-isp-react-native             | [Core](../core/isp.md)             | [API](../api/isp.md)             |
+| [Orders](orders.md)                   | module-billing-orders-react-native          | [Core](../core/orders.md)          | [API](../api/orders.md)          |
+| [Payments](payments.md)               | module-billing-payments-react-native        | [Core](../core/payments.md)        | [API](../api/payments.md)        |
+| [Pricing](pricing.md)                 | module-billing-pricing-react-native         | [Core](../core/pricing.md)         | [API](../api/pricing.md)         |
+| [Provisioning](provisioning.md)       | module-billing-provisioning-react-native    | [Core](../core/provisioning.md)    | [API](../api/provisioning.md)    |
+| [Reporting](reporting.md)             | module-billing-reporting-react-native       | [Core](../core/reporting.md)       | [API](../api/reporting.md)       |
+| [Subscriptions](subscriptions.md)     | module-billing-subscriptions-react-native   | [Core](../core/subscriptions.md)   | [API](../api/subscriptions.md)   |
+| [Usage](usage.md)                     | module-billing-usage-react-native           | [Core](../core/usage.md)           | [API](../api/usage.md)           |
