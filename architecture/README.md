@@ -11,5 +11,6 @@ This folder records Liberu’s ecosystem architecture: ownership, package bounda
 - [Tenancy](TENANCY.md) · [Teams](TEAMS.md) · [Policy](POLICY.md) — context and authorization boundaries.
 - [Settings](SETTINGS.md) · [Jetstream](JETSTREAM.md) · [Socialstream](SOCIALSTREAM.md) — shared application capabilities.
 - [Security](SECURITY.md) · [Installation](../INSTALL.md) — security policy and environment setup.
+- [Mobile](MOBILE.md) — mobile application boundaries, offline behavior, device security, and release architecture.
 
 For language/framework/design standards, start with [standards/README.md](../standards/README.md). For solution selection, see [TECHNOLOGIES.md](../TECHNOLOGIES.md) and [GETTING-STARTED.md](../GETTING-STARTED.md).

@@ -40,16 +40,18 @@ This guide gives you the shortest safe path through the Liberu documentation rep
 
 ## Choose a presentation technology
 
-| Need                                                  | Read                                                                                            |
-| ----------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
-| Laravel application foundation and domain composition | [Liberu](projects/LIBERU.md) · [Modules](architecture/MODULES.md)                               |
-| Administrative panels                                 | [Filament architecture](standards/FILAMENT.md) · [Filament indexes](modules/filament/README.md) |
-| Server-driven interactive UI                          | [Livewire architecture](standards/LIVEWIRE.md) · [Livewire indexes](modules/livewire/README.md) |
-| React application UI over Laravel routes              | [React + Inertia](standards/REACT.md) · [React indexes](modules/react/README.md)                |
-| Vue application UI over Laravel routes                | [Vue + Inertia](standards/VUE.md) · [Vue indexes](modules/vue/README.md)                        |
-| Vue SSR/API-consuming application                     | [Nuxt](standards/NUXT.md) · [Nuxt indexes](modules/nuxt/README.md)                              |
+| Need                                                  | Read                                                                                               |
+| ----------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Laravel application foundation and domain composition | [Liberu](projects/LIBERU.md) · [Modules](architecture/MODULES.md)                                  |
+| Administrative panels                                 | [Filament architecture](standards/FILAMENT.md) · [Filament indexes](modules/filament/README.md)    |
+| Server-driven interactive UI                          | [Livewire architecture](standards/LIVEWIRE.md) · [Livewire indexes](modules/livewire/README.md)    |
+| React application UI over Laravel routes              | [React + Inertia](standards/REACT.md) · [React indexes](modules/react/README.md)                   |
+| Vue application UI over Laravel routes                | [Vue + Inertia](standards/VUE.md) · [Vue indexes](modules/vue/README.md)                           |
+| Vue SSR/API-consuming application                     | [Nuxt](standards/NUXT.md) · [Nuxt indexes](modules/nuxt/README.md)                                 |
+| iOS/Android client with React skills                  | [React Native](standards/REACT-NATIVE.md) · [React Native indexes](modules/react-native/README.md) |
+| iOS/Android client with Dart/Flutter skills           | [Flutter](standards/FLUTTER.md) · [Flutter indexes](modules/flutter/README.md)                     |
 
-Use one matching presentation package per domain module. Presentation packages consume the module API/public contracts; they do not duplicate authorization, persistence, or domain rules.
+Use one matching presentation package per domain module. Presentation packages consume the module API/public contracts; they do not duplicate authorization, persistence, or domain rules. For mobile-specific offline, device-security, and release decisions, read [mobile architecture](architecture/MOBILE.md) and [mobile standards](standards/MOBILE.md).
 
 ## Application and module indexes
 

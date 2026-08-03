@@ -124,11 +124,12 @@ Product packages contain behavior specific to a product ecosystem, such as `libe
 
 ### 5.6 Presentation packages
 
-Presentation is an optional adapter over domain packages. Reusable presentation packages follow their surface specifications, including `liberu/module-cms-content-filament`, `liberu/module-cms-pages-filament`, `liberu/module-cms-content-api`, and `liberu/module-cms-livewire`.
+Presentation is an optional adapter over domain packages. Reusable presentation packages follow their surface specifications, including `liberu/module-cms-content-filament`, `liberu/module-cms-pages-filament`, `liberu/module-cms-content-api`, `liberu/module-cms-livewire`, `liberu/module-cms-content-react-native`, and `liberu/module-cms-content-flutter`.
 
 - A Filament package may provide plugins, resources, pages, widgets, forms, tables, actions, and navigation.
 - Every independent domain module requiring admin, application, staff, operations, tenant, or other Filament panel access has one matching `module-{independent-module-name}-filament` package. That package presents only its matching domain module, covers all panels that module requires, and follows `FILAMENT.md`; umbrella product Filament packages must not combine several independent modules.
 - A Livewire presentation package may provide interactive application components.
+- A React Native or Flutter presentation package may provide mobile screens, device integrations, offline UX, and platform release configuration.
 - Every independent domain module requiring HTTP API access has one matching `module-{independent-module-name}-api` package. It presents only that domain module, covers all required API audiences, and follows `API.md`; application façades compose APIs without absorbing their ownership.
 - Presentation packages depend on the domain contracts/actions they expose; domain packages never depend on them.
 - Blade/CSS/JavaScript/assets and theme overrides also comply with `THEMES.md`.
@@ -275,16 +276,18 @@ Do not create a package for every class or table. Split when responsibility, dep
 
 Composer names communicate domain, capability, and role:
 
-| Package role                  | Convention                                         | Example                              |
-| ----------------------------- | -------------------------------------------------- | ------------------------------------ |
-| Product capability            | `liberu/{product}-{capability}`                    | `liberu/cms-publishing`              |
-| Shared contract               | `liberu/{capability}-contracts`                    | `liberu/payment-contracts`           |
-| Shared core                   | `liberu/{capability}-core`                         | `liberu/payment-core`                |
-| Provider adapter              | `liberu/{capability}-{provider}`                   | `liberu/payment-stripe`              |
-| Filament presentation adapter | `liberu/module-{independent-module-name}-filament` | `liberu/module-cms-content-filament` |
-| Livewire presentation adapter | `liberu/module-{product-or-capability}-livewire`   | `liberu/module-cms-livewire`         |
-| API presentation adapter      | `liberu/module-{independent-module-name}-api`      | `liberu/module-cms-content-api`      |
-| Aggregate distribution        | `liberu/{product}`                                 | `liberu/ecommerce`                   |
+| Package role                      | Convention                                             | Example                                  |
+| --------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
+| Product capability                | `liberu/{product}-{capability}`                        | `liberu/cms-publishing`                  |
+| Shared contract                   | `liberu/{capability}-contracts`                        | `liberu/payment-contracts`               |
+| Shared core                       | `liberu/{capability}-core`                             | `liberu/payment-core`                    |
+| Provider adapter                  | `liberu/{capability}-{provider}`                       | `liberu/payment-stripe`                  |
+| Filament presentation adapter     | `liberu/module-{independent-module-name}-filament`     | `liberu/module-cms-content-filament`     |
+| Livewire presentation adapter     | `liberu/module-{product-or-capability}-livewire`       | `liberu/module-cms-livewire`             |
+| API presentation adapter          | `liberu/module-{independent-module-name}-api`          | `liberu/module-cms-content-api`          |
+| React Native presentation adapter | `liberu/module-{independent-module-name}-react-native` | `liberu/module-cms-content-react-native` |
+| Flutter presentation adapter      | `liberu/module-{independent-module-name}-flutter`      | `liberu/module-cms-content-flutter`      |
+| Aggregate distribution            | `liberu/{product}`                                     | `liberu/ecommerce`                       |
 
 Additional conventions:
 

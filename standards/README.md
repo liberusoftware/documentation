@@ -16,6 +16,9 @@ This folder contains reusable coding, framework, frontend, design, testing, and 
 | [Inertia](INERTIA.md)                       | Inertia 3 server/client bridge and page protocol                            |
 | [Vue](VUE.md)                               | Vue 3 presentation packages and Inertia integration                         |
 | [Nuxt](NUXT.md)                             | Nuxt 4 SSR and API-consuming applications                                   |
+| [React Native](REACT-NATIVE.md)             | React Native and Expo mobile clients                                        |
+| [Flutter](FLUTTER.md)                       | Flutter and Dart mobile clients                                             |
+| [Mobile](MOBILE.md)                         | Cross-platform mobile UX, security, offline, and release practices          |
 | [JavaScript](../technologies/JAVASCRIPT.md) | JavaScript language and browser-runtime standards                           |
 | [TypeScript](../technologies/TYPESCRIPT.md) | TypeScript contracts, strictness, and build standards                       |
 
@@ -47,8 +50,9 @@ Use the latest stable releases supported by the ecosystem and the application lo
 
 ## Official references
 
-- [PHP](https://www.php.net/docs.php) · [Composer](https://getcomposer.org/doc/)
+- [PHP](https://www.php.net/docs.php) · [Composer](https://getcomposer.org/doc/) · [Dart](https://dart.dev/)
 - [Laravel](https://laravel.com/docs/13.x) · [Livewire](https://livewire.laravel.com/docs)
 - [Filament](https://filamentphp.com/docs/5.x) · [Inertia](https://inertiajs.com/docs/v3)
 - [React](https://react.dev/) · [Vue](https://vuejs.org/) · [Nuxt](https://nuxt.com/docs/4.x)
+- [React Native](https://reactnative.dev/docs/getting-started) · [Expo](https://docs.expo.dev/) · [Flutter](https://docs.flutter.dev/)
 - [PHP-FIG](https://www.php-fig.org/psr/) · [TypeScript](https://www.typescriptlang.org/docs/) · [MDN JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)

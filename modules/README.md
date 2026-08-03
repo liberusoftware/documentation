@@ -12,5 +12,8 @@ This directory maps Liberu’s reusable module scopes. The indexes separate fram
 - [React + Inertia implementations](react/README.md) — React presentation adapters.
 - [Vue + Inertia implementations](vue/README.md) — Vue presentation adapters.
 - [Nuxt implementations](nuxt/README.md) — Nuxt application adapters.
+- [Mobile implementations](mobile/README.md) — shared mobile boundaries and platform adapters.
+- [React Native + Expo implementations](react-native/README.md) — React Native mobile adapters.
+- [Flutter implementations](flutter/README.md) — Flutter/Dart mobile adapters.
 
-The generic domain specifications are not duplicated here. Their canonical index is [features/README.md](features/README.md), with product-specific scopes under `projects/<project>/features/`. Technology-specific indexes link to the matching API, Filament, Livewire, React, Vue, and Nuxt scope documentation under each project.
+The generic domain specifications are not duplicated here. Their canonical index is [features/README.md](features/README.md), with product-specific scopes under `projects/<project>/features/`. Technology-specific indexes link to the matching API, Filament, Livewire, React, Vue, Nuxt, React Native, and Flutter scope documentation under each project.

@@ -6,16 +6,16 @@ If you are new, start with [GETTING-STARTED.md](GETTING-STARTED.md). If you alre
 
 ## Choose your path
 
-| You want to…                                   | Start here                                                                                                                   |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Understand the whole Liberu platform           | [Liberu platform scope](projects/LIBERU.md) · [Technology and solution map](TECHNOLOGIES.md)                                 |
-| Build a new application or package             | [Modules](architecture/MODULES.md) · [Laravel standard](standards/LARAVEL.md) · [Coding guidelines](standards/GUIDELINES.md) |
-| Find a product capability                      | [Application scopes](#application-scopes) · [Feature indexes](features/README.md)                                            |
-| Add an API or UI adapter                       | [API index](modules/api/README.md) · [Presentation indexes](#presentation-indexes)                                           |
-| Choose React, Vue, Nuxt, Livewire, or Filament | [Technology standards](#technology-standards) · [Technology map](TECHNOLOGIES.md)                                            |
-| Design or extend a theme                       | [Theme standard](standards/THEMES.md)                                                                                        |
-| Run tests, CI, or a release                    | [Testing](standards/TESTING.md) · [CI](standards/CI.md) · [Deployment](deployment/README.md)                                 |
-| Contribute or report a vulnerability           | [Contributing](standards/CONTRIBUTING.md) · [Security](architecture/SECURITY.md)                                             |
+| You want to…                                                          | Start here                                                                                                                   |
+| --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Understand the whole Liberu platform                                  | [Liberu platform scope](projects/LIBERU.md) · [Technology and solution map](TECHNOLOGIES.md)                                 |
+| Build a new application or package                                    | [Modules](architecture/MODULES.md) · [Laravel standard](standards/LARAVEL.md) · [Coding guidelines](standards/GUIDELINES.md) |
+| Find a product capability                                             | [Application scopes](#application-scopes) · [Feature indexes](features/README.md)                                            |
+| Add an API or UI adapter                                              | [API index](modules/api/README.md) · [Presentation indexes](#presentation-indexes)                                           |
+| Choose React, Vue, Nuxt, Livewire, Filament, React Native, or Flutter | [Technology standards](#technology-standards) · [Technology map](TECHNOLOGIES.md)                                            |
+| Design or extend a theme                                              | [Theme standard](standards/THEMES.md)                                                                                        |
+| Run tests, CI, or a release                                           | [Testing](standards/TESTING.md) · [CI](standards/CI.md) · [Deployment](deployment/README.md)                                 |
+| Contribute or report a vulnerability                                  | [Contributing](standards/CONTRIBUTING.md) · [Security](architecture/SECURITY.md)                                             |
 
 ## How the documentation fits together
 
@@ -24,7 +24,7 @@ Liberu separates concerns so the same domain capability can be used by multiple 
 ```text
 Application composition
         ↓
-Domain module → API contract → React/Vue/Nuxt/Livewire/Filament adapter
+Domain module → API contract → web or mobile presentation adapter
         ↓                         ↓
 Persistence, policies, events     Theme and design-system adapter
 ```
@@ -84,6 +84,8 @@ These root indexes cover the complete existing module matrix. Select only the ad
 - [React + Inertia implementations](modules/react/README.md) — React application UI over Laravel routes.
 - [Vue + Inertia implementations](modules/vue/README.md) — Vue application UI over Laravel routes.
 - [Nuxt implementations](modules/nuxt/README.md) — Vue SSR/API-consuming applications.
+- [React Native + Expo implementations](modules/react-native/README.md) — iOS and Android clients.
+- [Flutter implementations](modules/flutter/README.md) — Dart/Flutter clients for mobile and other supported platforms.
 
 ## Operating and contributing
 

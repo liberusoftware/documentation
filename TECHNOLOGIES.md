@@ -27,15 +27,17 @@ The [repository standard](architecture/REPOSITORIES.md) is the source of truth f
 
 ## Delivery technologies
 
-| Technology solution    | Best fit                                                                                        | Repository/documentation links                                                                                                                                                                   |
-| ---------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Laravel + PHP          | Application composition, domain integration, HTTP, queues, authorization, persistence, and APIs | [Laravel GitHub](https://github.com/laravel/laravel) · [Modules](architecture/MODULES.md) · [Liberu architecture](projects/LIBERU.md)                                                            |
-| Filament 5             | Administrative panels, resources, pages, widgets, tables, forms, and operational dashboards     | [Filament GitHub](https://github.com/filamentphp/filament) · [Filament architecture](standards/FILAMENT.md) · [Filament indexes](modules/filament/README.md)                                     |
-| Livewire 4             | Server-driven interactive Laravel UI and presentation-state components                          | [Livewire GitHub](https://github.com/livewire/livewire) · [Livewire architecture](standards/LIVEWIRE.md) · [Livewire indexes](modules/livewire/README.md)                                        |
-| React 19.2 + Inertia 3 | Rich Laravel-driven application shells with React components, typed hooks, forms, and SSR       | [React GitHub](https://github.com/facebook/react) · [Inertia GitHub](https://github.com/inertiajs/inertia) · [React architecture](standards/REACT.md) · [React indexes](modules/react/README.md) |
-| Vue 3 + Inertia 3      | Rich Laravel-driven application shells with Vue SFCs, typed composables, forms, and SSR         | [Vue GitHub](https://github.com/vuejs/core) · [Inertia GitHub](https://github.com/inertiajs/inertia) · [Vue/Inertia architecture](standards/VUE.md) · [Vue indexes](modules/vue/README.md)       |
-| Nuxt 4                 | Vue SSR/API-consuming applications, public sites, file-based routing, and deliberate BFF layers | [Nuxt GitHub](https://github.com/nuxt/nuxt) · [Nuxt architecture](standards/NUXT.md) · [Nuxt indexes](modules/nuxt/README.md)                                                                    |
-| Vite                   | Shared asset compilation for Laravel, React/Inertia, Vue/Inertia, and theme adapters            | [Vite GitHub](https://github.com/vitejs/vite) · [Theme architecture](standards/THEMES.md)                                                                                                        |
+| Technology solution    | Best fit                                                                                        | Repository/documentation links                                                                                                                                                                             |
+| ---------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Laravel + PHP          | Application composition, domain integration, HTTP, queues, authorization, persistence, and APIs | [Laravel GitHub](https://github.com/laravel/laravel) · [Modules](architecture/MODULES.md) · [Liberu architecture](projects/LIBERU.md)                                                                      |
+| Filament 5             | Administrative panels, resources, pages, widgets, tables, forms, and operational dashboards     | [Filament GitHub](https://github.com/filamentphp/filament) · [Filament architecture](standards/FILAMENT.md) · [Filament indexes](modules/filament/README.md)                                               |
+| Livewire 4             | Server-driven interactive Laravel UI and presentation-state components                          | [Livewire GitHub](https://github.com/livewire/livewire) · [Livewire architecture](standards/LIVEWIRE.md) · [Livewire indexes](modules/livewire/README.md)                                                  |
+| React 19.2 + Inertia 3 | Rich Laravel-driven application shells with React components, typed hooks, forms, and SSR       | [React GitHub](https://github.com/facebook/react) · [Inertia GitHub](https://github.com/inertiajs/inertia) · [React architecture](standards/REACT.md) · [React indexes](modules/react/README.md)           |
+| Vue 3 + Inertia 3      | Rich Laravel-driven application shells with Vue SFCs, typed composables, forms, and SSR         | [Vue GitHub](https://github.com/vuejs/core) · [Inertia GitHub](https://github.com/inertiajs/inertia) · [Vue/Inertia architecture](standards/VUE.md) · [Vue indexes](modules/vue/README.md)                 |
+| Nuxt 4                 | Vue SSR/API-consuming applications, public sites, file-based routing, and deliberate BFF layers | [Nuxt GitHub](https://github.com/nuxt/nuxt) · [Nuxt architecture](standards/NUXT.md) · [Nuxt indexes](modules/nuxt/README.md)                                                                              |
+| Vite                   | Shared asset compilation for Laravel, React/Inertia, Vue/Inertia, and theme adapters            | [Vite GitHub](https://github.com/vitejs/vite) · [Theme architecture](standards/THEMES.md)                                                                                                                  |
+| React Native + Expo    | iOS, Android, and optional web clients consuming Liberu APIs                                    | [React Native docs](https://reactnative.dev/docs/getting-started) · [Expo docs](https://docs.expo.dev/) · [Mobile architecture](architecture/MOBILE.md) · [Mobile modules](modules/react-native/README.md) |
+| Flutter + Dart         | iOS, Android, and optional desktop/web clients consuming Liberu APIs                            | [Flutter docs](https://docs.flutter.dev/) · [Dart docs](https://dart.dev/) · [Mobile architecture](architecture/MOBILE.md) · [Flutter modules](modules/flutter/README.md)                                  |
 
 ## Package and scope matrix
 
@@ -52,14 +54,16 @@ module-{module}-nuxt
 
 The complete Vue/Inertia matrix covers all 13 application scopes and 517 modules:
 
-| Adapter index   | Scope                                                             |
-| --------------- | ----------------------------------------------------------------- |
-| React + Inertia | [517 React module implementations](modules/react/README.md)       |
-| Vue + Inertia   | [517 Vue module implementations](modules/vue/README.md)           |
-| Nuxt            | [517 Nuxt module implementations](modules/nuxt/README.md)         |
-| API             | [517 API module implementations](modules/api/README.md)           |
-| Livewire        | [517 Livewire module implementations](modules/livewire/README.md) |
-| Filament        | [517 Filament module implementations](modules/filament/README.md) |
+| Adapter index   | Scope                                                                        |
+| --------------- | ---------------------------------------------------------------------------- |
+| React + Inertia | [517 React module implementations](modules/react/README.md)                  |
+| Vue + Inertia   | [517 Vue module implementations](modules/vue/README.md)                      |
+| Nuxt            | [517 Nuxt module implementations](modules/nuxt/README.md)                    |
+| API             | [517 API module implementations](modules/api/README.md)                      |
+| Livewire        | [517 Livewire module implementations](modules/livewire/README.md)            |
+| Filament        | [517 Filament module implementations](modules/filament/README.md)            |
+| React Native    | [Mobile React Native module implementations](modules/react-native/README.md) |
+| Flutter         | [Mobile Flutter module implementations](modules/flutter/README.md)           |
 
 ## Shared design and architecture rules
 

@@ -32,7 +32,7 @@ For those planning scopes, begin with [Liberu platform](projects/LIBERU.md) or [
 
 Start with the framework-neutral feature specification, then add only the matching adapters required by the application.
 
-For each selected feature, install its presentation-neutral core package first, named `module-{independent-module-name}`. Add only the adapters required by the chosen surfaces, such as `module-{independent-module-name}-api`, `-filament`, `-livewire`, `-react-inertia`, `-vue-inertia`, or `-nuxt`. Core packages own domain rules, persistence, policies, events, jobs, and contracts; adapters must not duplicate them.
+For each selected feature, install its presentation-neutral core package first, named `module-{independent-module-name}`. Add only the adapters required by the chosen surfaces, such as `module-{independent-module-name}-api`, `-filament`, `-livewire`, `-react-inertia`, `-vue-inertia`, `-nuxt`, `-react-native`, or `-flutter`. Core packages own domain rules, persistence, policies, events, jobs, and contracts; adapters must not duplicate them.
 
 | Need                    | Index                                                                                       | Standard                                                      |
 | ----------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -44,7 +44,7 @@ For each selected feature, install its presentation-neutral core package first, 
 | Vue application UI      | [Vue + Inertia implementations](modules/vue/README.md)                                      | [Vue](standards/VUE.md) · [Inertia](standards/INERTIA.md)     |
 | Vue SSR/API application | [Nuxt implementations](modules/nuxt/README.md)                                              | [Nuxt](standards/NUXT.md)                                     |
 
-The same module may have API, Filament, Livewire, React, Vue, and Nuxt adapters. Each adapter presents only its matching module and never duplicates its domain rules or private data.
+The same module may have API, Filament, Livewire, React, Vue, Nuxt, React Native, and Flutter adapters. Each adapter presents only its matching module and never duplicates its domain rules or private data. Mobile installations must also follow [mobile architecture](architecture/MOBILE.md), including credential storage, offline policy, device permissions, release signing, and supported OS documentation.
 
 Choose an [adoption profile](architecture/ADOPTION.md) before selecting infrastructure. Personal installations can use a single host and the simplest supported queue/storage setup; SMEs should add staging, supervised workers, managed data services, monitoring, and restore tests; enterprise installations add centralized identity, HA/DR, immutable audit, SLOs, and formal release controls. The security, authorization, migration, backup, and recovery baseline remains the same in every profile.
 
