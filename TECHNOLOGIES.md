@@ -23,7 +23,7 @@ These are the current application solutions. Each solution has framework-neutral
 | SAP-style Enterprise Suite | Finance, controlling, procurement, inventory, projects, service, people, assets, and governance    | [LiberuSoftware GitHub organization](https://github.com/liberusoftware)                                     | [SAP](projects/sap/SAP.md)                                  |
 | Social Network             | Profiles, graph, publishing, feeds, communities, messaging, moderation, federation, and analytics  | [LiberuSoftware GitHub organization](https://github.com/liberusoftware)                                     | [Social Network](projects/social-network/SOCIAL-NETWORK.md) |
 
-The [repository standard](architecture/REPOSITORIES.md) is the source of truth for canonical application repository names. Where a dedicated repository is not yet published, the organization link is intentional and avoids inventing a repository URL.
+The [projects index](projects/README.md) provides the complete local scope directory. The [repository standard](architecture/REPOSITORIES.md) is the source of truth for canonical application repository names. Where a dedicated repository is not yet published, the organization link is intentional and avoids inventing a repository URL.
 
 ## Delivery technologies
 
