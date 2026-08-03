@@ -294,3 +294,9 @@ Liberu uses CRM as the owner of customer relationships and conversations, while 
 Liberu websites should use CMS/CRM contracts for accessible, mobile-first conversion surfaces: progressive forms, clear service status and support entry points, authenticated self-service deep links, resilient chat-to-human handoff, consent-aware analytics, and Core Web Vitals budgets. Staff mobile clients should provide a daily queue, guarded click-to-call, push alerts for SLA/incident/approval risk, offline-safe notes, and conflict-aware retry; sensitive customer data must not use an unencrypted cache.
 
 See the [feature](liberu/features/revenue-and-care-orchestration.md), [core contract](liberu/core/revenue-and-care-orchestration.md), [API contract](liberu/api/revenue-and-care-orchestration.md), and [presentation indexes](liberu/filament/README.md).
+
+## 13. Official websites and staff app implementation
+
+The build-ready guide for the four official websites and staff mobile apps is [Liberu official websites and staff apps — implementation guide](liberu/implementation/README.md). It is the concise composition plan for the codebase and links the [custom module index](liberu/implementation/CUSTOM-MODULES.md), [required project modules](liberu/implementation/DEPENDENCIES.md), [official website plan](liberu/implementation/OFFICIAL-WEBSITES.md), [staff mobile plan](liberu/implementation/STAFF-MOBILE.md), and [delivery checklist](liberu/implementation/DELIVERY-CHECKLIST.md).
+
+Implementation starts with the shared foundation and the Hosting vertical slice. New custom modules are composition boundaries only; they must not become duplicate CRM, CMS, Billing, Ecommerce, Control Panel, Accounting, Maintenance, or Automation owners. Every site and staff-app capability must be represented in the manifest, API contract, user journey, test plan, runbook, and release evidence before it is enabled.

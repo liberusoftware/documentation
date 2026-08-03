@@ -3,6 +3,7 @@
 **Experience area:** Cross-product platform
 **Canonical developer scope:** [LIBERU.md](../../../projects/LIBERU.md)
 **All module journeys:** [Module guides](modules/README.md)
+**Build guide:** [Official websites and staff apps implementation](../../../projects/liberu/implementation/README.md)
 
 ## What users should feel
 
