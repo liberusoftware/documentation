@@ -9,4 +9,15 @@ Liberu uses strict TypeScript for React, Vue, Nuxt, Inertia, and shared frontend
 - Export only intentional package contracts and keep generated types tied to a versioned API schema.
 - Test loading, empty, error, unauthorized, stale, offline, and success states in addition to the happy path.
 
-See [React](../standards/REACT.md), [Vue](../standards/VUE.md), [Nuxt](../standards/NUXT.md), and [Inertia](../standards/INERTIA.md).
+## Liberu usage
+
+Validate data at the network boundary and then narrow it before rendering. Prefer discriminated unions for state machines:
+
+```ts
+type LoadState<T> =
+  | { status: "loading" }
+  | { status: "ready"; data: T }
+  | { status: "error"; message: string };
+```
+
+Generated API types must be tied to the versioned contract and must not replace server-side authorization. See [React](../standards/REACT.md), [Vue](../standards/VUE.md), [Nuxt](../standards/NUXT.md), [Inertia](../standards/INERTIA.md), and the [API architecture](../architecture/API.md).
