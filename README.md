@@ -9,6 +9,7 @@ If you are new, start with [GETTING-STARTED.md](GETTING-STARTED.md). If you alre
 | You want to…                                                          | Start here                                                                                                                   |
 | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | Understand the whole Liberu platform                                  | [Liberu platform scope](projects/LIBERU.md) · [Technology and solution map](TECHNOLOGIES.md)                                 |
+| Read what an installed product feels like to an end user               | [End-user interface guides](user-guides/README.md) · [Web and mobile standard](user-guides/WEB-AND-MOBILE.md)                 |
 | Build a new application or package                                    | [Modules](architecture/MODULES.md) · [Laravel standard](standards/LARAVEL.md) · [Coding guidelines](standards/GUIDELINES.md) |
 | Find a product capability                                             | [Application scopes](#application-scopes) · [Feature indexes](features/README.md)                                            |
 | Add an API or UI adapter                                              | [API index](modules/api/README.md) · [Presentation indexes](#presentation-indexes)                                           |
