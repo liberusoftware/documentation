@@ -13,4 +13,4 @@ Use TypeScript strict mode, typed navigation, schema-validated API responses, se
 | API schema and error contract                           | Matching API package    |
 | Device release, signing, store metadata                 | Host mobile application |
 
-See [React Native technology](../../technologies/REACT-NATIVE.md), [React Native standard](../../standards/REACT-NATIVE.md), [mobile architecture](../../architecture/MOBILE.md), and [project indexes](../mobile/README.md).
+See [React Native technology](../../technologies/REACT-NATIVE.md), [Expo build and publishing](../../technologies/EXPO.md), [frontend testing](../../technologies/FRONTEND-TESTING.md), [React Native standard](../../standards/REACT-NATIVE.md), [mobile architecture](../../architecture/MOBILE.md), and [project indexes](../mobile/README.md).

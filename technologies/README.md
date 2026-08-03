@@ -27,29 +27,30 @@ This directory is the practical technology map for Liberu. It explains the langu
 
 ## Frameworks and build tools
 
-| Technology          | Reference                       | Liberu standard                                        |
-| ------------------- | ------------------------------- | ------------------------------------------------------ |
-| Laravel 13          | [Laravel](LARAVEL.md)           | [Laravel standard](../standards/LARAVEL.md)            |
-| Filament 5          | [Filament](FILAMENT.md)         | [Filament standard](../standards/FILAMENT.md)          |
-| Livewire 4          | [Livewire](LIVEWIRE.md)         | [Livewire standard](../standards/LIVEWIRE.md)          |
-| React 19.2          | [React](REACT.md)               | [React standard](../standards/REACT.md)                |
-| Inertia 3           | [Inertia](INERTIA.md)           | [Inertia standard](../standards/INERTIA.md)            |
-| Vue 3               | [Vue](VUE.md)                   | [Vue standard](../standards/VUE.md)                    |
-| Nuxt 4              | [Nuxt](NUXT.md)                 | [Nuxt standard](../standards/NUXT.md)                  |
-| Vite                | [Vite](VITE.md)                 | [Theme and asset architecture](../standards/THEMES.md) |
-| React Native + Expo | [React Native](REACT-NATIVE.md) | [React Native standard](../standards/REACT-NATIVE.md)  |
-| Flutter + Dart      | [Flutter](FLUTTER.md)           | [Flutter standard](../standards/FLUTTER.md)            |
+| Technology          | Reference                                                              | Liberu standard                                        |
+| ------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------ |
+| Laravel 13          | [Laravel](LARAVEL.md)                                                  | [Laravel standard](../standards/LARAVEL.md)            |
+| Filament 5          | [Filament](FILAMENT.md)                                                | [Filament standard](../standards/FILAMENT.md)          |
+| Livewire 4          | [Livewire](LIVEWIRE.md)                                                | [Livewire standard](../standards/LIVEWIRE.md)          |
+| React 19.2          | [React](REACT.md)                                                      | [React standard](../standards/REACT.md)                |
+| Inertia 3           | [Inertia](INERTIA.md)                                                  | [Inertia standard](../standards/INERTIA.md)            |
+| Vue 3               | [Vue](VUE.md)                                                          | [Vue standard](../standards/VUE.md)                    |
+| Nuxt 4              | [Nuxt](NUXT.md)                                                        | [Nuxt standard](../standards/NUXT.md)                  |
+| Vite                | [Vite](VITE.md)                                                        | [Theme and asset architecture](../standards/THEMES.md) |
+| React Native + Expo | [React Native](REACT-NATIVE.md) · [Expo build and publishing](EXPO.md) | [React Native standard](../standards/REACT-NATIVE.md)  |
+| Flutter + Dart      | [Flutter](FLUTTER.md)                                                  | [Flutter standard](../standards/FLUTTER.md)            |
 
 ## Web platform, data, and delivery
 
-| Technology                    | Reference                                                               |
-| ----------------------------- | ----------------------------------------------------------------------- |
-| HTML                          | [HTML](HTML.md)                                                         |
-| CSS                           | [CSS](CSS.md)                                                           |
-| Accessibility                 | [Web accessibility](ACCESSIBILITY.md)                                   |
-| Relational databases          | [Database](DATABASE.md) · [database standard](../standards/DATABASE.md) |
-| Containers and local services | [Containers](CONTAINERS.md)                                             |
-| Automated testing             | [Testing](TESTING.md) · [testing standard](../standards/TESTING.md)     |
-| Mobile delivery               | [Mobile](MOBILE.md) · [mobile architecture](../architecture/MOBILE.md)  |
+| Technology                    | Reference                                                                                               |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------- |
+| HTML                          | [HTML](HTML.md)                                                                                         |
+| CSS                           | [CSS](CSS.md)                                                                                           |
+| Accessibility                 | [Web accessibility](ACCESSIBILITY.md)                                                                   |
+| Relational databases          | [Database](DATABASE.md) · [database standard](../standards/DATABASE.md)                                 |
+| Containers and local services | [Containers](CONTAINERS.md)                                                                             |
+| Automated testing             | [Testing](TESTING.md) · [testing standard](../standards/TESTING.md)                                     |
+| Mobile delivery               | [Mobile](MOBILE.md) · [mobile architecture](../architecture/MOBILE.md)                                  |
+| JavaScript presentation tests | [Frontend testing](FRONTEND-TESTING.md) · [frontend testing standard](../standards/FRONTEND-TESTING.md) |
 
 Every guide includes official documentation, a small usage example, and links to a representative Liberu implementation or governing standard. Pin exact versions in the consuming repository's lockfiles and CI matrix; this directory records the portfolio baseline, not a substitute for dependency resolution.

@@ -19,6 +19,7 @@ This folder contains reusable coding, framework, frontend, design, testing, and 
 | [React Native](REACT-NATIVE.md)             | React Native and Expo mobile clients                                        |
 | [Flutter](FLUTTER.md)                       | Flutter and Dart mobile clients                                             |
 | [Mobile](MOBILE.md)                         | Cross-platform mobile UX, security, offline, and release practices          |
+| [Frontend testing](FRONTEND-TESTING.md)     | Testing JavaScript presentation layers and mobile clients                   |
 | [JavaScript](../technologies/JAVASCRIPT.md) | JavaScript language and browser-runtime standards                           |
 | [TypeScript](../technologies/TYPESCRIPT.md) | TypeScript contracts, strictness, and build standards                       |
 

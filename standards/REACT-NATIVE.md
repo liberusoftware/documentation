@@ -21,4 +21,4 @@ const response = await fetch(apiBaseUrl + "/api/v1/records", {
 if (!response.ok) throw new Error("Unable to load records");
 ```
 
-Review [MOBILE.md](MOBILE.md), [security architecture](../architecture/SECURITY.md), [API architecture](../architecture/API.md), [React Native technology reference](../technologies/REACT-NATIVE.md), and [Expo documentation](https://docs.expo.dev/).
+Review [MOBILE.md](MOBILE.md), [frontend testing](FRONTEND-TESTING.md), [security architecture](../architecture/SECURITY.md), [API architecture](../architecture/API.md), [React Native technology reference](../technologies/REACT-NATIVE.md), [Expo build and publishing guide](../technologies/EXPO.md), and [Expo documentation](https://docs.expo.dev/).
