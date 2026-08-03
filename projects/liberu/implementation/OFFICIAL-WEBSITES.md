@@ -30,6 +30,8 @@ Request domain → site/brand resolver → public theme recipe → CMS content/A
 - Show queued states for provisioning, proposals, support, publishing, and AI; provide status URLs or portal deep links.
 - Set budgets for Core Web Vitals, image weight, JavaScript, accessibility, cache freshness, and error rates; measure by site recipe.
 - Define canonical URLs, redirects, sitemap ownership, robots policy, structured data, localization, cookie/consent behavior, and incident/status messaging per site.
+- Connect approved AI website chat/voice, CRM forms, email follow-up, social messaging/comment response, post scheduling, and advertising plans through the [AI/channel contract](AI-CHANNELS.md); every public AI surface must offer human escalation.
+- Publish browser events through the GTM data layer only after consent and send authoritative server events through Analytics Core to GA4 and Meta CAPI; share event IDs with optional client/pixel delivery for deduplication.
 
 ## Public acceptance journey
 
@@ -39,3 +41,5 @@ Discover → understand value → consent-aware form or checkout → confirm req
 ```
 
 Test anonymous, mobile, keyboard, screen-reader, blocked-cookie, slow-network, duplicate-submit, invalid-form, unavailable-provider, and handoff-recovery paths for every first-release journey.
+
+Test AI low-confidence responses, explicit human requests, callback queueing, reply/opt-out suppression, public comment moderation, scheduled-post cancellation, advertising approval, GTM consent mode, GA4/Meta client-server deduplication, and attribution reconciliation.

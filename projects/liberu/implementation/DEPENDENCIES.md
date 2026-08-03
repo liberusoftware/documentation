@@ -14,6 +14,17 @@ Install the Boilerplate foundation first, then enable only the rows required by 
 | Accounting | Accounting Core, Financial Master Data, Chart of Accounts, General Ledger, Dimensions and Tracking, Accounting Periods, Policies, Sales Invoicing, Customer Payments, AR, AP, Bank Feeds, Bank Reconciliation, Tax Core, Reporting, Audit Support | Multi-entity, Intercompany, Consolidation, Payroll, Fixed Assets | Ledger, postings, reconciliation, tax, and financial reporting |
 | Maintenance | Maintenance Core, Customers and Sites, Assets, Work Orders, Scheduling, Inspections, Inventory, Portals | Procurement, Commercial, Compliance, Field Service | Physical asset and maintenance records where enabled |
 
+## AI, communications, and measurement dependencies
+
+| Dependency | Required modules/adapters | Liberu configuration |
+| --- | --- | --- |
+| AI runtime | Automation Core, Rules, Approvals, AI Gateway, Prompt Registry, Data Processing, Connectors, Evaluation | Provider allowlist, model/prompt versions, spend limits, confidence thresholds, human approval, redaction, and audit |
+| CRM channels | Channel Gateway, Unified Conversations, Telephony, AI Reception and Conversation, Omnichannel Service, SLA and Entitlements, Routing, Contact Center where enabled, Email Productivity/Marketing, Mobile Messaging, Campaigns, Journey Orchestration, Advertising, Attribution | Human escalation route, consent/suppression, contact cooling-off, business hours, recording policy, provider numbers/accounts, stop rules, approval matrix |
+| Sales knowledge | Approved importer for `liberusoftware/sales` | Pin commit SHA, allowlisted directories, provenance/citations, template review/expiry, webhook/pull reconciliation, prompt-injection quarantine |
+| Measurement | Boilerplate Analytics Core, Google Analytics/GA4 adapter, Google Tag Manager browser/theme adapter, Meta client/pixel adapter, Meta Server-Side Tracking/CAPI adapter | Shared event catalog, consent routing, event IDs, browser/server deduplication, UTM/click IDs, test destinations, replay, drift dashboard |
+
+GTM, GA4, Meta, telephony, messaging, social, and AI providers remain replaceable adapters. No CRM domain model or Liberu custom module may depend directly on a provider SDK or provider-specific event as its source of truth.
+
 ## Dependency rules
 
 1. Pin compatible versions in the application manifest; do not install a presentation package without its matching core/API contract.

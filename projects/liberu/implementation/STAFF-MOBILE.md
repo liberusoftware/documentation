@@ -16,7 +16,7 @@ Every detail screen presents context, freshness, one next action, evidence, and 
 | Role | Mobile-first tasks | Required controls |
 | --- | --- | --- |
 | Sales | view prioritized leads/deals, guarded click-to-call, log outcome, schedule next action | CRM policy, consent/contact cooling-off, no force-contact path |
-| Support | claim case, read knowledge, reply/escalate, view SLA, link incident | field sensitivity, recording/communication consent, audit |
+| Support | claim case, read knowledge, reply/escalate, view SLA, link incident, accept AI voice/message handoff | field sensitivity, recording/communication consent, audit, human takeover |
 | Delivery | view project/work item, update status, add note/evidence, request help | team/project authorization, offline draft, conflict review |
 | On-call | inspect alert, acknowledge, open runbook, request recovery, communicate status | Control Panel action scopes, recent auth, approval/break-glass audit |
 | Finance/manager | approve queued work, inspect governed insight, review exception | approval policy, masked financial fields, idempotency |
@@ -28,6 +28,7 @@ Every detail screen presents context, freshness, one next action, evidence, and 
 - Offline writes become local drafts with explicit “not synced” state. Retry through idempotent API actions; show conflicts instead of overwriting.
 - Request microphone, contacts, camera, notifications, or location only at the moment of need with a purpose explanation and a denied-permission fallback.
 - Push notifications contain minimal data and deep-link to an authorized screen; revocation and logout invalidate routes and cached data.
+- Voice/message handoff notifications identify only the queue, urgency, and safe reference; staff can accept, callback, pause AI, or reassign without exposing a raw transcript in the notification.
 
 ## Release matrix
 

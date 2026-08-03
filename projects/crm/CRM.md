@@ -310,6 +310,16 @@ Create one epic for each module table row rather than combining a whole section 
 
 Create separate adapter issues for each external provider and separate adoption issues for each product/application. Marketplace-add-on parity belongs in the relevant provider adapter or capability module; it must not introduce vendor-specific behavior into CRM Core.
 
+## 23. Liberu AI-assisted communications profile
+
+Liberu CRM uses AI across voice calls, SMS/WhatsApp/web messaging, email, social direct messages/comments/posts, scheduled social content, and advertising plans. The [Liberu AI/channel implementation](../liberu/implementation/AI-CHANNELS.md) defines the cross-product contract; this CRM scope owns the customer-facing conversation, case, channel, consent, routing, approval, and audit behavior.
+
+- Voice and messaging must provide a clear **Talk to a person** or **Request a callback** method. Explicit requests, low confidence, complaints, sensitive/legal/financial/security topics, repeated misunderstanding, payment/entitlement disputes, and configured SLA/VIP risks stop AI automation and route a CRM conversation/case to a human queue.
+- The human receives a policy-safe summary, identity confidence, intent, urgency/SLA, consent/recording state, callback preference, citations, correlation ID, and AI/prompt versions. AI stops replying after handoff until a human resumes it.
+- Email and social AI may triage, draft, translate, summarize, suggest cases, propose comments/posts, schedule approved content, and prepare advertising/audience/UTM plans. Public posting, replying, advertising spend, claims, sensitive messages, and schedule publication require approval unless an explicitly reviewed low-risk policy applies.
+- Campaign, journey, reply, opt-out, complaint, conversion, and handoff state must suppress linked later outreach. The dialer `next_contact_at` and consent/contact-protection rules apply to AI calls and sequences.
+- CRM publishes canonical, consent-filtered events to Analytics Core. GTM/browser GA4, server GA4, Meta client/pixel, and Meta CAPI share event IDs for deduplication; server events reference authoritative CRM/Billing/Ecommerce outcomes and never contain message bodies or transcripts.
+
 ## Product Scope
 
 **Purpose:** Composable customer platform for data, demand generation, sales, marketing, service, customer success, partner operations, and agency delivery.

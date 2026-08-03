@@ -18,6 +18,7 @@ For the public-facing behavior expected after installation, pair this guide with
 3. [Official website plan](OFFICIAL-WEBSITES.md) — brand/site composition and public-to-portal journeys.
 4. [Staff mobile plan](STAFF-MOBILE.md) — staff tasks, offline policy, device permissions, and release boundaries.
 5. [Build and documentation checklist](DELIVERY-CHECKLIST.md) — the evidence required before each release.
+6. [AI and channel integration](AI-CHANNELS.md) — sales-repository templates, voice/human handoff, email/social/advertising, and synchronized measurement.
 
 ## Repository/application shape
 
