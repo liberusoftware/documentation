@@ -14,3 +14,7 @@ Laravel is the application composition framework. Use the latest stable Laravel 
 ## Official references
 
 [Installation](https://laravel.com/docs/13.x/installation) · [Architecture concepts](https://laravel.com/docs/13.x/container) · [Controllers](https://laravel.com/docs/13.x/controllers) · [Validation](https://laravel.com/docs/13.x/validation) · [Authorization](https://laravel.com/docs/13.x/authorization) · [Queues](https://laravel.com/docs/13.x/queues) · [Testing](https://laravel.com/docs/13.x/testing)
+
+## Delivery checklist
+
+Choose the simplest Laravel composition that meets the workload, but keep module boundaries, policies, validation, migrations, events, jobs, and tests identical across deployment profiles. Record configuration defaults, environment secrets, queue/storage/mail requirements, health checks, update procedure, backup/restore evidence, and the point at which a single process must become supervised or distributed.

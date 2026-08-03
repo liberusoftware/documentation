@@ -6,14 +6,17 @@ This guide gives you the shortest safe path through the Liberu documentation rep
 
 1. Read the [technology and solution map](TECHNOLOGIES.md) to choose a solution and delivery technology.
 2. Open the application scope and identify the feature or module you need.
-3. Read the matching feature specification, then its API contract and selected presentation adapter.
-4. Apply the package, theme, security, tenancy, and testing rules before implementation.
-5. Verify the result with the repository checks and document any new public contract.
+3. Read the matching feature specification, then its [core implementation plan](modules/core/README.md), API contract, and selected presentation adapter.
+4. Choose an [adoption profile](architecture/ADOPTION.md) that matches the user's scale and recovery needs.
+5. Apply the package, theme, security, tenancy, and testing rules before implementation.
+6. Verify the result with the repository checks and document any new public contract.
 
 ## Core links
 
 - [Liberu architecture](projects/LIBERU.md) — ecosystem boundaries and application composition.
 - [Modules](architecture/MODULES.md) — package ownership, dependencies, lifecycle, and installation.
+- [Core module implementations](modules/core/README.md) — domain-driven package plans for every project module.
+- [Adoption profiles](architecture/ADOPTION.md) — practical personal, SME, and enterprise deployment choices.
 - [Technologies](TECHNOLOGIES.md) — solution catalogue, GitHub repositories, and adapter selection.
 - [Themes](standards/THEMES.md) — shared tokens, theme manifests, inheritance, and all framework adapters.
 - [API](architecture/API.md) — contracts, authentication, tenancy, errors, pagination, and versioning.
@@ -21,6 +24,19 @@ This guide gives you the shortest safe path through the Liberu documentation rep
 - [Documentation](standards/DOCUMENTATION.md) — writing, ownership, links, examples, and review standards.
 - [Installation](INSTALL.md) — local Laravel setup and verification.
 - [Deployment](deployment/README.md) — Docker, Kubernetes, queues, workers, and production operations.
+
+## Read by task
+
+| If you are…                        | Start with                                                | Then read                                                                                                                                                                        |
+| ---------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| New to the repository              | [Technology map](TECHNOLOGIES.md)                         | [Architecture index](architecture/README.md), [Standards index](standards/README.md), [Installation](INSTALL.md)                                                                 |
+| Designing a domain module          | [Feature specifications](features/README.md)              | [Core module plans](modules/core/README.md), [Modules architecture](architecture/MODULES.md), [DDD](standards/DOMAIN-DRIVEN-DESIGN-PATTERNS.md), [Testing](standards/TESTING.md) |
+| Adding an API                      | [API module index](modules/api/README.md)                 | [API architecture](architecture/API.md), [API standard](standards/API.md), [Policies](architecture/POLICY.md), [Security](architecture/SECURITY.md)                              |
+| Building a UI                      | [Presentation indexes](#choose-a-presentation-technology) | [Views](standards/VIEWS.md), [Themes](standards/THEMES.md), [Accessibility and testing](standards/TESTING.md)                                                                    |
+| Supporting teams or tenants        | [Tenancy](architecture/TENANCY.md)                        | [Teams](architecture/TEAMS.md), [Policies](architecture/POLICY.md), [Settings](architecture/SETTINGS.md)                                                                         |
+| Operating a small deployment       | [Adoption profiles](architecture/ADOPTION.md)             | [Database](standards/DATABASE.md), [Queues](standards/QUEUES.md), [Deployment](deployment/README.md), [Testing](standards/TESTING.md)                                            |
+| Operating an enterprise deployment | [Modules architecture](architecture/MODULES.md)           | [Security](architecture/SECURITY.md), [CI](standards/CI.md), [Repositories](architecture/REPOSITORIES.md), [Deployment](deployment/README.md)                                    |
+| Contributing documentation or code | [Contributing](standards/CONTRIBUTING.md)                 | [Guidelines](standards/GUIDELINES.md), [Documentation](standards/DOCUMENTATION.md), [Testing](standards/TESTING.md)                                                              |
 
 ## Choose a presentation technology
 
@@ -139,6 +155,30 @@ The links below include every `README.md` index currently under `projects/`. App
 - [React + Inertia](projects/maintenance/react/README.md)
 - [Vue + Inertia](projects/maintenance/vue/README.md)
 
+### Liberu platform
+
+- [Platform scope](projects/LIBERU.md)
+- [Feature specifications](projects/liberu/features/README.md)
+- [Core modules](projects/liberu/core/README.md)
+- [API modules](projects/liberu/api/README.md)
+- [Filament 5](projects/liberu/filament/README.md)
+- [Livewire 4](projects/liberu/livewire/README.md)
+- [Nuxt 4](projects/liberu/nuxt/README.md)
+- [React + Inertia](projects/liberu/react/README.md)
+- [Vue + Inertia](projects/liberu/vue/README.md)
+
+### SAP-style Enterprise Suite
+
+- [Platform scope](projects/sap/SAP.md)
+- [Feature specifications](projects/sap/features/README.md)
+- [Core modules](projects/sap/core/README.md)
+- [API modules](projects/sap/api/README.md)
+- [Filament 5](projects/sap/filament/README.md)
+- [Livewire 4](projects/sap/livewire/README.md)
+- [Nuxt 4](projects/sap/nuxt/README.md)
+- [React + Inertia](projects/sap/react/README.md)
+- [Vue + Inertia](projects/sap/vue/README.md)
+
 ### Real Estate
 
 - [API modules](projects/real-estate/api/README.md)
@@ -173,4 +213,6 @@ The links below include every `README.md` index currently under `projects/`. App
 
 - For security-sensitive changes, follow [SECURITY.md](architecture/SECURITY.md) and the private reporting process.
 - For tenancy and team-aware features, read [TENANCY.md](architecture/TENANCY.md), [TEAMS.md](architecture/TEAMS.md), and [POLICY.md](architecture/POLICY.md).
+- For persistence and asynchronous work, read [DATABASE.md](standards/DATABASE.md), [MODELS.md](standards/MODELS.md), [JOBS.md](standards/JOBS.md), and [QUEUES.md](standards/QUEUES.md).
+- For public boundaries, read [CONTRACTS.md](standards/CONTRACTS.md), [CONTROLLERS.md](standards/CONTROLLERS.md), and [API.md](standards/API.md).
 - For a new package or presentation adapter, use the relevant issue mapping in its architecture standard and update documentation in the same change.

@@ -9,3 +9,7 @@ Services coordinate a cohesive use case or integration. They are not a dumping g
 - Keep external calls behind provider-neutral adapters with timeouts, retries, rate limits, reconciliation, and audit evidence.
 
 See [CONTRACTS.md](CONTRACTS.md), [CLASSES.md](CLASSES.md), and [Domain-driven design patterns](DOMAIN-DRIVEN-DESIGN-PATTERNS.md).
+
+## Delivery checklist
+
+Name the use case, owner, authorization point, transaction boundary, collaborators, expected failures, and observable result. Keep services composable and testable, avoid god services and hidden queries, and separate provider calls behind contracts with timeout, retry, reconciliation, and audit behavior.

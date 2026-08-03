@@ -16,3 +16,7 @@ Liberu applications and packages target PHP 8.5 and Composer 2, with exact patch
 ## Quality
 
 Format with PHP-CS-Fixer or Laravel Pint according to the repository configuration, analyze with the supported static-analysis level, and test public contracts at unit, integration, and feature boundaries. See [PSR.md](PSR.md), [GUIDELINES.md](GUIDELINES.md), and the [PHP-FIG PSR index](https://www.php-fig.org/psr/).
+
+## Delivery checklist
+
+Keep the PHP 8.5 baseline explicit in Composer and CI, review deprecations before patch upgrades, and prove behavior at public boundaries. Prefer readable typed code over clever metaprogramming; document interoperability assumptions, resource limits, error handling, and security-sensitive operations. A smaller deployment may run fewer workers, but it must not use weaker code or dependency controls.

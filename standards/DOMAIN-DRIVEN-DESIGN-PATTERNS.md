@@ -9,3 +9,7 @@ Use domain-driven design to make ownership, language, invariants, and integratio
 - Keep aggregates small, enforce consistency boundaries, and never expose private persistence as a cross-module contract.
 
 See [MODULES.md](../architecture/MODULES.md), [API.md](../architecture/API.md), and [Martin Fowler's DDD bliki](https://martinfowler.com/tags/domain%20driven%20design.html).
+
+## Delivery checklist
+
+Name the bounded context, owner, aggregates, consistency boundary, public commands/queries/events, persistence owner, policies, and excluded behavior. Keep aggregates small and transactions local. Use events and explicit compensation across modules, and verify that API/UI adapters consume public actions rather than private models or tables.

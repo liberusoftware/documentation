@@ -9,3 +9,7 @@ APIs expose stable contracts over authorized domain capabilities. The API layer 
 - Generate or contract-test references from the versioned schema and keep examples executable.
 
 See [architecture/API.md](../architecture/API.md), [OpenAPI](https://spec.openapis.org/oas/latest.html), and [Laravel API resources](https://laravel.com/docs/13.x/eloquent-resources).
+
+## Delivery checklist
+
+Before release, record the owning core module, audience, data classification, route prefix, operation IDs, authentication, scopes, policy, tenant/team behavior, limits, error contract, idempotency, concurrency, and deprecation plan. Test the happy path, denial, wrong tenant, invalid input, duplicate/replay, timeout, partial failure, and recovery path. Keep the same contract usable by personal, SME, and enterprise deployments; scale infrastructure without changing domain ownership.

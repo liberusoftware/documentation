@@ -11,3 +11,7 @@ Liberu targets Vue 3 with TypeScript and Vite. For Laravel-driven pages use Iner
 - Use semantic HTML, keyboard operation, focus management, localization, RTL, reduced motion, and automated accessibility checks.
 
 See [INERTIA.md](INERTIA.md), [NUXT.md](NUXT.md), [TypeScript](../technologies/TYPESCRIPT.md), and [Vue style guide](https://vuejs.org/style-guide/).
+
+## Delivery checklist
+
+For each page or component, document its core action/query contract, typed props and emits, loading/error/empty states, authorization source, and accessibility behavior. Keep business invariants server-side, avoid duplicated validation, test SSR/hydration where applicable, and keep build, browser, and dependency requirements explicit for personal, SME, and enterprise deployments.

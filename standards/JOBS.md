@@ -9,3 +9,7 @@ Jobs represent asynchronous application work with explicit ownership, input, aut
 - Dispatch after commit when a job depends on committed state; redact secrets and personal data from payloads and logs.
 
 See [QUEUES.md](QUEUES.md), [Laravel queues](https://laravel.com/docs/13.x/queues), and [Horizon](https://laravel.com/docs/13.x/horizon).
+
+## Delivery checklist
+
+Document the job owner, payload classification, tenant/team context, trigger, queue, timeout, backoff, attempts, uniqueness/deduplication, authorization, idempotency key, failure state, alert, replay, and discard procedure. Test retries, duplicate delivery, missing records, revoked access, dependency outages, and recovery without exposing secrets or personal data.

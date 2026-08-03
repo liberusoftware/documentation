@@ -9,3 +9,7 @@ Use object-oriented design to model cohesive responsibilities and explicit colla
 - Separate domain policy, application orchestration, infrastructure adapters, and presentation concerns.
 
 See [PHP classes and objects](https://www.php.net/manual/en/language.oop5.php) and [Domain-driven design patterns](DOMAIN-DRIVEN-DESIGN-PATTERNS.md).
+
+## Delivery checklist
+
+Choose an abstraction because a real boundary, variation point, or test seam requires it. Keep domain objects independent of Laravel, inject collaborators, make side effects explicit, and avoid inheritance hierarchies that hide policy or persistence. Review coupling, lifecycle, error behavior, and public API compatibility before release.

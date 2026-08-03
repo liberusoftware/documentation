@@ -8,3 +8,7 @@ Traits and concerns are for small, cohesive cross-cutting behavior with a clear 
 - Test the concern through representative owners and document required methods, properties, events, and conflicts.
 
 See [PHP traits](https://www.php.net/manual/en/language.oop5.traits.php) and [CLASSES.md](CLASSES.md).
+
+## Delivery checklist
+
+Before adding a trait, show at least two real owners with the same small behavior and no hidden lifecycle assumptions. Document required methods/properties, boot order, conflicts, serialization effects, authorization implications, and tests. Replace the trait with composition when it needs I/O, transactions, policy decisions, or several collaborators.

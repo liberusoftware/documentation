@@ -9,3 +9,7 @@ Classes should have one cohesive responsibility, explicit dependencies, stable n
 - Test public behavior rather than private implementation details and document exceptions to the standard.
 
 See [PHP](PHP.md), [Object-oriented programming](OBJECT-ORIENTED-PROGRAMMING.md), and [PSR.md](PSR.md).
+
+## Delivery checklist
+
+Every class should have a named owner, one reason to change, explicit collaborators, a stable input/output contract, and a test boundary. Separate domain rules, application orchestration, persistence, transport, and presentation. Reject invalid state at construction or the owning action, and document intentional exceptions to the layering rules.

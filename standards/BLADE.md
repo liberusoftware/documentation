@@ -9,3 +9,7 @@ Blade is Laravel's server-rendered view layer. Use it for document structure, ac
 - Follow [THEMES.md](THEMES.md) for tokens, assets, inheritance, CSP, accessibility, and overrides.
 
 See [Blade templates](https://laravel.com/docs/13.x/blade) and [Laravel views](https://laravel.com/docs/13.x/views).
+
+## Delivery checklist
+
+For each view, identify its owner, required data, authorization boundary, empty/loading/error states, localization needs, and accessibility path. Prefer reusable components and theme tokens over copied markup. Verify output escaping, CSRF, links, forms, keyboard/focus behavior, responsive behavior, and the no-JavaScript fallback where the workflow is business-critical.

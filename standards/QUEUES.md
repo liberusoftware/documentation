@@ -9,3 +9,7 @@ Queues are for work that can be delayed, retried, distributed, or isolated from 
 - Monitor age, throughput, failure rate, retries, dead letters, and saturation; document safe replay and discard procedures.
 
 See [JOBS.md](JOBS.md), [deployment queues](../deployment/QUEUES.md), and [Laravel queues](https://laravel.com/docs/13.x/queues).
+
+## Delivery checklist
+
+Start with the simplest supported driver that meets the workload, including a database-backed queue for personal or small installations. Move to supervised workers, Horizon, separate queues, or managed infrastructure when measurements justify it. In every profile, retain bounded retries, idempotency, visibility, alerts, and a safe replay/discard runbook.

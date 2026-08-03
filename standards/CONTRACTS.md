@@ -9,3 +9,7 @@ Contracts are stable boundaries for replaceable behavior and public package inte
 - Test the contract against the concrete adapter and meaningful alternate/fake implementations.
 
 See [Laravel contracts](https://laravel.com/docs/13.x/contracts), [PSR.md](PSR.md), and [API.md](../architecture/API.md).
+
+## Delivery checklist
+
+Define ownership, inputs, outputs, errors, authorization, tenancy, consistency, retry/idempotency, lifecycle, observability, and compatibility before publishing a contract. Keep consumer-facing DTOs immutable and version changes deliberately. Provide a real implementation, a deterministic test fake, contract tests, and migration guidance for breaking changes.
