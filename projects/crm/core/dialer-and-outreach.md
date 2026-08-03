@@ -30,6 +30,12 @@ This package is the authoritative, provider-neutral implementation of Dialer And
 
 Expose only stable contracts, actions, queries, events, resource data, and capability metadata needed by consumers. Keep provider SDKs, credentials, webhook mappings, and provider identifiers in separate adapter packages. Presentation packages may add validation at their boundary, but the core revalidates invariants and authorization and remains free of presentation dependencies.
 
+## Liberu contact-protection invariant
+
+The core must expose an eligibility query and an atomic `RecordAttempt` action. `RecordAttempt` writes the outcome, `next_contact_at`, policy reason, and audit event in one transaction. Automated dispatch may only claim records returned by the eligibility query, and the action rechecks the guard under a lock to prevent concurrent workers from contacting the same person.
+
+Minimum rules: `next_contact_at` blocks automated contact until reached; opt-out/complaint/legal suppression is terminal until an authorized consent change; inbound reply, meeting booking, conversion, or explicit contact request may reset cooling-off; provider retries do not. Store policy version, timezone, channel, and correlation ID. Test clock boundaries, duplicate jobs, concurrent claims, timezone changes, consent withdrawal, and authorized exceptions.
+
 ## Verification and delivery plan
 
 - Use unit tests for value objects, entities, aggregates, policies, and pure rules; feature/integration tests for actions, persistence, validation, tenancy, events, jobs, commands, migrations, upgrades, and recovery; and shared contract tests for adapters.

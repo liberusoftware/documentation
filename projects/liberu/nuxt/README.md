@@ -5,6 +5,7 @@ These packages present only the new Liberu cross-product modules using Nuxt 4 an
 - [Platform Orchestration Nuxt](platform-orchestration.md) — `module-liberu-platform-orchestration-nuxt`
 - [Executive Insights Nuxt](executive-insights.md) — `module-liberu-executive-insights-nuxt`
 - [Business Workflow Reconciliation Nuxt](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-nuxt`
+- [Revenue and Care Orchestration Nuxt](revenue-and-care-orchestration.md) — `module-liberu-revenue-and-care-orchestration-nuxt`
 
 These packages present only the new Liberu cross-product modules using Nuxt 4 and Vue 3.
 

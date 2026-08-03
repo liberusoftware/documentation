@@ -25,10 +25,11 @@ This project may ship no mobile client, one mobile client, or both. A missing ad
 
 ## Complete module index
 
-The following 3 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
+The following 4 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
 
 | Module                                                                  | Package                                                | Core                                                | API                                               |
 | ----------------------------------------------------------------------- | ------------------------------------------------------ | --------------------------------------------------- | ------------------------------------------------- |
 | [Business Workflow Reconciliation](business-workflow-reconciliation.md) | module-liberu-business-workflow-reconciliation-flutter | [Core](../core/business-workflow-reconciliation.md) | [API](../api/business-workflow-reconciliation.md) |
 | [Executive Insights](executive-insights.md)                             | module-liberu-executive-insights-flutter               | [Core](../core/executive-insights.md)               | [API](../api/executive-insights.md)               |
 | [Platform Orchestration](platform-orchestration.md)                     | module-liberu-platform-orchestration-flutter           | [Core](../core/platform-orchestration.md)           | [API](../api/platform-orchestration.md)           |
+| [Revenue and Care Orchestration](revenue-and-care-orchestration.md)     | module-liberu-revenue-and-care-orchestration-flutter   | [Core](../core/revenue-and-care-orchestration.md)   | [API](../api/revenue-and-care-orchestration.md)   |

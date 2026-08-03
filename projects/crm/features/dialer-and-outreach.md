@@ -32,6 +32,18 @@ The Dialer and Outreach module owns Power/preview/progressive dialing, prioritiz
 - Never depend on an application's `App\` classes, another module's private tables/models, a provider SDK in provider-neutral code, or an optional presentation framework.
 - Keep Filament, Livewire, and HTTP API logic in matching one-to-one presentation packages when those surfaces are required.
 
+## 3a. Liberu contact-protection profile
+
+Liberu installations use this module's standard dialer with a mandatory contact-protection policy. The policy is part of eligibility, not a UI hint:
+
+- After an initial call attempt, persist `next_contact_at`, the attempt outcome, and the policy reason before the lead can return to an automated queue.
+- Do not dial or send another automated outreach step while `now < next_contact_at`; the scheduler must filter it out and the domain action must reject a bypass.
+- Clear cooling-off only for an explicit inbound reply, booked meeting, conversion, contact request, or separately authorized staff exception. A failed provider retry does not clear it.
+- Apply opt-out, complaint, suppression, legal restriction, per-channel consent, local-time windows, and frequency caps before every attempt. The strictest rule wins.
+- Keep the decision explainable in the activity timeline and expose the next eligible time to sales staff without exposing protected consent evidence to unauthorized users.
+
+This profile works with [Sales Engagement](sales-engagement.md), [Consent and Preferences](consent-and-preferences.md), and Liberu's [Revenue and Care Orchestration](../../liberu/features/revenue-and-care-orchestration.md); it does not duplicate those modules.
+
 ## 4. Implementation strategy
 
 ### Domain model

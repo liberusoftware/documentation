@@ -40,6 +40,16 @@ Installation does not expose every capability automatically. The host applicatio
 
 These examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.
 
+Liberu hosts additionally expose these explicit actions when enabled:
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `GET` | `/api/v1/crm/dialer-and-outreach/eligibility?contact_id={id}&channel=voice` | Return eligibility, next eligible time, and safe reason code |
+| `POST` | `/api/v1/crm/dialer-and-outreach/{id}/record-attempt` | Atomically record outcome and cooling-off period using `Idempotency-Key` |
+| `POST` | `/api/v1/crm/dialer-and-outreach/{id}/request-exception` | Submit an auditable staff exception for policy review |
+
+The API must never offer a `force=true` bypass. A successful attempt response includes `next_contact_at`, `suppression_state`, and a non-sensitive `policy_reason`; consent evidence and protected phone data remain field-authorized.
+
 | Method   | Endpoint                                                         | Purpose                                       | Possible request data                                                                         |
 | -------- | ---------------------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
 | `GET`    | `/api/v1/crm/dialer-and-outreach?page[size]=25&sort=-created_at` | List authorized resources                     | Query parameters for pagination, filtering, sorting, field selection, and documented includes |

@@ -5,6 +5,7 @@ These packages present only the new Liberu cross-product modules using React 19.
 - [Platform Orchestration React + Inertia](platform-orchestration.md) — `module-liberu-platform-orchestration-react-inertia`
 - [Executive Insights React + Inertia](executive-insights.md) — `module-liberu-executive-insights-react-inertia`
 - [Business Workflow Reconciliation React + Inertia](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-react-inertia`
+- [Revenue and Care Orchestration React + Inertia](revenue-and-care-orchestration.md) — `module-liberu-revenue-and-care-orchestration-react-inertia`
 
 These packages present only the new Liberu cross-product modules using React 19.2 and Inertia 3.
 

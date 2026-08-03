@@ -7,6 +7,7 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Liberu d
 | [Business Workflow Reconciliation](business-workflow-reconciliation.md) | module-liberu-business-workflow-reconciliation | [Feature](../features/business-workflow-reconciliation.md) |
 | [Executive Insights](executive-insights.md)                             | module-liberu-executive-insights               | [Feature](../features/executive-insights.md)               |
 | [Platform Orchestration](platform-orchestration.md)                     | module-liberu-platform-orchestration           | [Feature](../features/platform-orchestration.md)           |
+| [Revenue and Care Orchestration](revenue-and-care-orchestration.md)     | module-liberu-revenue-and-care-orchestration   | [Feature](../features/revenue-and-care-orchestration.md)   |
 
 ## Shared implementation contract
 

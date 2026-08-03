@@ -5,6 +5,7 @@ These packages present only the new Liberu cross-product modules using Vue 3 and
 - [Platform Orchestration Vue + Inertia](platform-orchestration.md) — `module-liberu-platform-orchestration-vue-inertia`
 - [Executive Insights Vue + Inertia](executive-insights.md) — `module-liberu-executive-insights-vue-inertia`
 - [Business Workflow Reconciliation Vue + Inertia](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-vue-inertia`
+- [Revenue and Care Orchestration Vue + Inertia](revenue-and-care-orchestration.md) — `module-liberu-revenue-and-care-orchestration-vue-inertia`
 
 These packages present only the new Liberu cross-product modules using Vue 3 and Inertia 3.
 

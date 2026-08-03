@@ -5,6 +5,7 @@ These packages provide focused server-driven operational UI for the new Liberu c
 - [Platform Orchestration Livewire](platform-orchestration.md) — `module-liberu-platform-orchestration-livewire`
 - [Executive Insights Livewire](executive-insights.md) — `module-liberu-executive-insights-livewire`
 - [Business Workflow Reconciliation Livewire](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation-livewire`
+- [Revenue and Care Orchestration Livewire](revenue-and-care-orchestration.md) — `module-liberu-revenue-and-care-orchestration-livewire`
 
 These packages provide focused server-driven operational UI for the new Liberu cross-product modules only.
 

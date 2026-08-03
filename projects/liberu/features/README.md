@@ -5,5 +5,6 @@ These are new cross-product capabilities required by the Liberu business platfor
 - [Platform Orchestration](platform-orchestration.md) — `module-liberu-platform-orchestration`
 - [Executive Insights](executive-insights.md) — `module-liberu-executive-insights`
 - [Business Workflow Reconciliation](business-workflow-reconciliation.md) — `module-liberu-business-workflow-reconciliation`
+- [Revenue and Care Orchestration](revenue-and-care-orchestration.md) — `module-liberu-revenue-and-care-orchestration`
 
 Product-specific behavior remains owned by the existing application scope and module that supplies it.

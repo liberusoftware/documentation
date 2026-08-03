@@ -276,3 +276,21 @@ The Liberu business platform is ready when:
 - backups restore, provider outages degrade safely, failed workflows can be replayed, and releases can roll back.
 
 Each composition table row maps to repository adoption issues. Each workflow maps to a cross-repository epic with child issues in the owning package repositories.
+
+## 12. Liberu customer lifecycle and care profile
+
+Liberu uses CRM as the owner of customer relationships and conversations, while the [Revenue and Care Orchestration](liberu/features/revenue-and-care-orchestration.md) module composes signals from CRM, CMS, Billing, Control Panel, Ecommerce, Maintenance, Projects, and Automation. This is a Liberu-specific composition boundary; it does not create a second CRM, ticketing system, dialer, billing ledger, or AI runtime.
+
+### High-value business logic
+
+- **Customer health constellation:** project an explainable health view from service incidents, hosting capacity, support/SLA risk, invoice state, product adoption, renewal proximity, website intent, and delivery milestones. Every signal has an owner, timestamp, confidence, source reference, and expiry.
+- **Revenue-aware service recovery:** when an entitled customer is affected by an incident or failed provisioning job, create or update the owning CRM case with the correct SLA, customer-facing status update, technical evidence, and next action. Never expose raw infrastructure data to customers or overwrite Control Panel state.
+- **Contact protection ledger:** after an initial call, record `next_contact_at` and a reason. No automated call, sequence step, SMS, email, or AI outreach is eligible before that time unless the contact explicitly replies, books a meeting, converts, requests contact, or a staff member records an approved exception. Opt-out, complaint, suppression, and legal restrictions always win.
+- **Cross-brand consent:** consent and quiet hours are evaluated for the person, brand, domain, topic, channel, and purpose. A form submission on one Liberu website cannot silently authorize unrelated brand marketing.
+- **AI action envelope:** AI may summarize, classify, recommend, draft, or propose a recovery play. Sending, calling, changing entitlements, waiving charges, publishing status content, and closing a case remain policy-controlled actions.
+
+### Official website and mobile experience
+
+Liberu websites should use CMS/CRM contracts for accessible, mobile-first conversion surfaces: progressive forms, clear service status and support entry points, authenticated self-service deep links, resilient chat-to-human handoff, consent-aware analytics, and Core Web Vitals budgets. Staff mobile clients should provide a daily queue, guarded click-to-call, push alerts for SLA/incident/approval risk, offline-safe notes, and conflict-aware retry; sensitive customer data must not use an unencrypted cache.
+
+See the [feature](liberu/features/revenue-and-care-orchestration.md), [core contract](liberu/core/revenue-and-care-orchestration.md), [API contract](liberu/api/revenue-and-care-orchestration.md), and [presentation indexes](liberu/filament/README.md).
