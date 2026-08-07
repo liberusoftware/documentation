@@ -160,10 +160,16 @@ Every theme provides `theme.json`:
   "version": "1.0.0",
   "provider": "Liberu\\Themes\\Corporate\\CorporateThemeServiceProvider",
   "type": "public",
-  "parent": "liberu-base",
+  "parent": "base",
   "optimized_for": ["liberu-cms/cms-laravel"],
   "tested_with": ["liberu-cms/cms-laravel", "liberusoftware/boilerplate-laravel"],
+  "required_capabilities": ["cms.pages"],
+  "optional_capabilities": ["foundation.localization"],
   "supports": ["cms.pages", "cms.posts", "search"],
+  "colors": {
+    "primary": "teal",
+    "secondary": "slate"
+  },
   "adapters": {
     "blade": {
       "entrypoints": ["resources/css/app.css", "resources/js/app.js"]
@@ -191,7 +197,7 @@ Every theme provides `theme.json`:
 }
 ```
 
-The manifest declares compatibility, optimized/tested host repositories, parent theme, required and optional capabilities, supported module extension points, asset entry points, and safe fallback. CI validates its schema, paths, unique name, dependency versions, capabilities, and inheritance cycles.
+The manifest declares compatibility, optimized/tested host repositories, parent theme, required and optional capabilities, supported module extension points, asset entry points, and safe fallback. `required_capabilities` and `optional_capabilities` are manifest keys, named here so the example and this paragraph agree. CI validates its schema, paths, unique name, dependency versions, capabilities, and inheritance cycles.
 
 Installed theme discovery and application asset composition are manifest-driven. Applications read validated `theme.json` files instead of maintaining parallel literal theme or entry-point arrays. Manifest paths are package-relative, normalized, collision-checked, and verified to exist before activation or build. Technology adapters are optional and may be selected only when the host uses that technology.
 
@@ -214,6 +220,8 @@ Theme resolution follows: configured surface/tenant/site theme → parent theme 
 All themes define or inherit semantic tokens for color, typography, spacing, radius, elevation, borders, motion, breakpoints, focus, and layering. Components consume semantic tokens such as `--color-surface` and `--color-action-primary`, not brand-specific raw values.
 
 Tokens must cover light, dark, high-contrast, error, warning, success, disabled, and focus states. A brand override changes tokens before it forks component markup.
+
+The manifest's `colors` block is the exception that proves this rule, and it is not a token store. It names a **palette** — `teal`, `slate` — which an administrative panel resolves to its own colour scale when it composes. It carries no raw values, defines no component styling, and is read before any theme provider has necessarily booted, which is why it is manifest data rather than provider registration. CSS still consumes semantic tokens and never this block.
 
 ### 6.1 Technology-neutral theme contract
 
