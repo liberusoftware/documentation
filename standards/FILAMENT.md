@@ -40,7 +40,7 @@ Examples:
 | Billing invoice administration | `module-billing-invoices-filament` | `module-billing-filament`, `billing-admin`    |
 | Corporate admin styling        | `theme-corporate-filament`         | `corporate-filament`, `theme-corporate`       |
 
-This rule applies to the independent GitHub repository name, Composer package basename, Liberu installer name, and installed directory. Composer examples are `liberu/module-cms-content-filament` and `liberu/theme-corporate-filament`.
+This rule applies to the independent GitHub repository name, Composer package basename, Liberu installer name, and installed directory. Composer examples are `liberusoftware/module-cms-content-filament` and `liberusoftware/theme-corporate-filament`.
 
 PHP symbols use StudlyCase equivalents:
 
@@ -109,7 +109,7 @@ Every reusable Filament integration is developed and released from an independen
 - A `module-*-filament` package declares Composer type `liberu-module` and installs to `/modules/{installer-name}`.
 - Its Composer and module manifests declare its matching domain module as a required dependency and identify no second domain module as presentation ownership.
 - A `theme-*-filament` package declares Composer type `liberu-theme` and installs to `/themes/{installer-name}`.
-- `liberu/composer-installer` performs deterministic installation as specified by `MODULES.md` and `THEMES.md`.
+- `liberusoftware/composer-installer` performs deterministic installation as specified by `MODULES.md` and `THEMES.md`.
 - Composer autoloading is authoritative; the application must not scan `/modules` or `/themes` to invent an alternative PHP autoloader.
 - Installed module and theme directories are committed under the tracked-directory policies in the related specifications.
 

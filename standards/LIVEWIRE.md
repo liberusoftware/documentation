@@ -40,7 +40,7 @@ Examples:
 | Billing customer UI         | `module-billing-livewire`  | `billing-components`, `module-billing`  |
 | Corporate theme interaction | `theme-corporate-livewire` | `corporate-livewire`, `theme-corporate` |
 
-This rule applies to the independent GitHub repository name, Composer package basename, Liberu installer name, manifest identity, and installed directory. Composer examples are `liberu/module-cms-livewire` and `liberu/theme-corporate-livewire`.
+This rule applies to the independent GitHub repository name, Composer package basename, Liberu installer name, manifest identity, and installed directory. Composer examples are `liberusoftware/module-cms-livewire` and `liberusoftware/theme-corporate-livewire`.
 
 PHP symbols use StudlyCase equivalents:
 
@@ -104,7 +104,7 @@ Every reusable Livewire integration is developed and released from an independen
 
 - A `module-*-livewire` package declares Composer type `liberu-module` and installs to `/modules/{installer-name}`.
 - A `theme-*-livewire` package declares Composer type `liberu-theme` and installs to `/themes/{installer-name}`.
-- `liberu/composer-installer` performs deterministic installation as specified by `MODULES.md` and `THEMES.md`.
+- `liberusoftware/composer-installer` performs deterministic installation as specified by `MODULES.md` and `THEMES.md`.
 - Composer autoloading is authoritative; the application must not create a competing class or filesystem scanner.
 - Installed module and theme directories follow the tracked-directory policies in the related specifications.
 

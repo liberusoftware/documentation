@@ -96,13 +96,13 @@ Composer installs that repository as `<project-root>/themes/corporate`. Create o
 
 ## 3.1 Composer installation policy
 
-Themes declare `"type": "liberu-theme"` in `composer.json` and a stable installer name in Composer `extra` metadata. The canonical `liberu/composer-installer` plugin installs them to `<project-root>/themes/{theme-name}` and also handles `liberu-module` packages as defined in `MODULES.md`.
+Themes declare `"type": "liberu-theme"` in `composer.json` and a stable installer name in Composer `extra` metadata. The canonical `liberusoftware/composer-installer` plugin installs them to `<project-root>/themes/{theme-name}` and also handles `liberu-module` packages as defined in `MODULES.md`.
 
 The installer must validate names, reject absolute paths/path traversal, detect collisions, install deterministically, support install/update/remove, and remain compatible with Composer 2 plugin security. Normal PHP/npm dependencies remain in their standard dependency locations; only the Liberu theme package is relocated to `/themes`.
 
 Applications explicitly require selected themes and the installer plugin, authorize the plugin through Composer `allow-plugins`, and commit `composer.json` and `composer.lock`. Production builds use a non-interactive locked install and fail if the expected theme path cannot be reproduced.
 
-The application root is the single owner of `liberu/composer-installer` and its `allow-plugins` entry. Individual themes declare their package type and installer name but do not repeat the installer plugin as a runtime requirement.
+The application root is the single owner of `liberusoftware/composer-installer` and its `allow-plugins` entry. Individual themes declare their package type and installer name but do not repeat the installer plugin as a runtime requirement.
 
 ### 3.1.1 Canonical Composer test setup
 
@@ -111,7 +111,7 @@ Theme repositories target stable Pest 5 and declare test tooling only under `req
 ```json
 {
   "require-dev": {
-    "liberu/package-testbench": "^1.0",
+    "liberusoftware/package-testbench": "^1.0",
     "pestphp/pest": "^5.0",
     "pestphp/pest-plugin-laravel": "^5.0"
   },
@@ -131,7 +131,7 @@ Theme repositories target stable Pest 5 and declare test tooling only under `req
 
 Use the theme's real namespace and only define commands for suites it contains. Pest-maintained plugins use compatible `^5.0` constraints. Browser, Livewire or other plugins are required only when the theme uses their evidence. Do not require `phpunit/phpunit` separately when Pest supplies the compatible PHPUnit runtime.
 
-`liberu/package-testbench` is the single shared bootstrap for independently running module and theme package suites. Each theme still owns its tests, `Pest.php`, `phpunit.xml` or `phpunit.xml.dist`, Composer command aliases, and GitHub workflows. Themes must not require a second scripts/tooling package that duplicates or proxies those responsibilities.
+`liberusoftware/package-testbench` is the single shared bootstrap for independently running module and theme package suites. Each theme still owns its tests, `Pest.php`, `phpunit.xml` or `phpunit.xml.dist`, Composer command aliases, and GitHub workflows. Themes must not require a second scripts/tooling package that duplicates or proxies those responsibilities.
 
 ## 3.2 Independent repositories and tracked `/themes`
 
@@ -162,7 +162,7 @@ Every theme provides `theme.json`:
   "type": "public",
   "parent": "liberu-base",
   "optimized_for": ["liberu-cms/cms-laravel"],
-  "tested_with": ["liberu-cms/cms-laravel", "liberu/boilerplate-laravel"],
+  "tested_with": ["liberu-cms/cms-laravel", "liberusoftware/boilerplate-laravel"],
   "supports": ["cms.pages", "cms.posts", "search"],
   "adapters": {
     "blade": {
@@ -348,7 +348,7 @@ Every theme follows [TESTING.md](TESTING.md#13-coverage-policy), uses stable Pes
 - clean Composer-install tests proving the theme resolves to `/themes/{theme-name}` in each declared tested host;
 - graceful-degradation tests for missing optional modules and at least one compatible non-optimized host where practical.
 
-Every theme suite runs independently from its source repository with `composer install` and `composer test`; it must not extend the consuming application's `Tests\\TestCase`. Tests use correctly cased, Composer-autoloadable PSR-4 namespaces and the canonical `liberu/package-testbench` bootstrap.
+Every theme suite runs independently from its source repository with `composer install` and `composer test`; it must not extend the consuming application's `Tests\\TestCase`. Tests use correctly cased, Composer-autoloadable PSR-4 namespaces and the canonical `liberusoftware/package-testbench` bootstrap.
 
 A shared `ThemeBoundariesTest` contract, supplied by the package testbench and executed by every theme, verifies manifest completeness, confirms the declared provider is a real Laravel service provider, resolves every parent, rejects cycles, and verifies every declared asset path exists. A render contract also proves that a child without `layouts/app.blade.php` falls back to its parent implementation.
 
