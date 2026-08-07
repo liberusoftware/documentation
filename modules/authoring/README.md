@@ -31,4 +31,4 @@ This guide is derived from bringing 44 packages and 4 themes onto these conventi
 
 ## A known inconsistency
 
-MODULES.md §10.1 writes the test bootstrap as `liberu/package-testbench`. The published package is **`liberusoftware/package-testbench`**, and `liberu/package-testbench` does not resolve. This guide uses the name that installs, so that every command in it runs. Reconciling the vendor prefix across the specification and the fleet is an open decision, not a licence to write either name at will — until it is settled, copy the name from an existing package's `composer.json` rather than from prose.
+The Composer vendor is **`liberusoftware/`** throughout. MODULES.md and four sibling standards once wrote `liberu/*`, which does not resolve — `PROMPT.md` had always said `liberusoftware/`, so the specification disagreed with itself. Corrected in [#16](https://github.com/liberusoftware/documentation/pull/16). If you meet a `liberu/*` name anywhere, it is stale: copy the name from an existing package's `composer.json` rather than from prose.
