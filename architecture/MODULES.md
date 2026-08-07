@@ -102,29 +102,29 @@ Foundation must not become a miscellaneous shared-code layer. A class belongs he
 
 Contract packages define stable boundaries for capabilities with several consumers or implementations. They contain interfaces, immutable DTOs/value objects, enums, capability descriptors, and shared exceptions. They do not contain provider SDKs, Eloquent models, migrations, UI, or orchestration.
 
-Examples: `liberu/payment-contracts`, `liberu/tax-contracts`, `liberu/search-contracts`, and `liberu/ai-contracts`.
+Examples: `liberusoftware/payment-contracts`, `liberusoftware/tax-contracts`, `liberusoftware/search-contracts`, and `liberusoftware/ai-contracts`.
 
 Use a separate contract package only when consumers need the abstraction without the core implementation. Otherwise, keep the public contracts in the capability package to avoid package fragmentation.
 
 ### 5.3 Capability core packages
 
-Capability packages own provider-neutral business behavior, orchestration, persistence, policies, and events reusable across products. Examples include `liberu/payment-core`, `liberu/subscription-core`, `liberu/media-core`, and `liberu/customer-core`.
+Capability packages own provider-neutral business behavior, orchestration, persistence, policies, and events reusable across products. Examples include `liberusoftware/payment-core`, `liberusoftware/subscription-core`, `liberusoftware/media-core`, and `liberusoftware/customer-core`.
 
 A core package depends on contracts but not on an external provider implementation. It discovers optional implementations through explicit registration.
 
 ### 5.4 Provider and regional adapter packages
 
-An adapter connects one contract to one external provider, protocol, jurisdiction, or platform. Examples include `liberu/payment-stripe`, `liberu/storage-s3`, `liberu/ai-openai`, and `liberu/tax-uk`.
+An adapter connects one contract to one external provider, protocol, jurisdiction, or platform. Examples include `liberusoftware/payment-stripe`, `liberusoftware/storage-s3`, `liberusoftware/ai-openai`, and `liberusoftware/tax-uk`.
 
 Each adapter owns its SDK, credentials/configuration, provider identifiers, webhook receipts, mappings, rate-limit behavior, retries, sandbox support, and reconciliation logic. A provider adapter can be installed without changing the consuming domain.
 
 ### 5.5 Product packages
 
-Product packages contain behavior specific to a product ecosystem, such as `liberu/cms-publishing`, `liberu/ecommerce-cart`, `liberu/crm-opportunities`, or `liberu/billing-invoices`. They may consume foundation and reusable capabilities but cannot duplicate them.
+Product packages contain behavior specific to a product ecosystem, such as `liberusoftware/cms-publishing`, `liberusoftware/ecommerce-cart`, `liberusoftware/crm-opportunities`, or `liberusoftware/billing-invoices`. They may consume foundation and reusable capabilities but cannot duplicate them.
 
 ### 5.6 Presentation packages
 
-Presentation is an optional adapter over domain packages. Reusable presentation packages follow their surface specifications, including `liberu/module-cms-content-filament`, `liberu/module-cms-pages-filament`, `liberu/module-cms-content-api`, `liberu/module-cms-livewire`, `liberu/module-cms-content-react-native`, and `liberu/module-cms-content-flutter`.
+Presentation is an optional adapter over domain packages. Reusable presentation packages follow their surface specifications, including `liberusoftware/module-cms-content-filament`, `liberusoftware/module-cms-pages-filament`, `liberusoftware/module-cms-content-api`, `liberusoftware/module-cms-livewire`, `liberusoftware/module-cms-content-react-native`, and `liberusoftware/module-cms-content-flutter`.
 
 - A Filament package may provide plugins, resources, pages, widgets, forms, tables, actions, and navigation.
 - Every independent domain module requiring admin, application, staff, operations, tenant, or other Filament panel access has one matching `module-{independent-module-name}-filament` package. That package presents only its matching domain module, covers all panels that module requires, and follows `FILAMENT.md`; umbrella product Filament packages must not combine several independent modules.
@@ -136,7 +136,7 @@ Presentation is an optional adapter over domain packages. Reusable presentation 
 
 ### 5.7 Aggregate distribution packages
 
-An aggregate such as `liberu/ecommerce` may require a supported set of packages for convenient installation. It contains no domain implementation, migrations, or provider assumptions. Users remain free to install only `liberu/ecommerce-catalog` or another subset.
+An aggregate such as `liberusoftware/ecommerce` may require a supported set of packages for convenient installation. It contains no domain implementation, migrations, or provider assumptions. Users remain free to install only `liberusoftware/ecommerce-catalog` or another subset.
 
 ## 6. Repository design
 
@@ -181,7 +181,7 @@ The independent module repository owns implementation, releases, issues, tests, 
 
 ## 6.1 Composer installation policy
 
-The canonical custom installer package is `liberu/composer-installer`. It is a Composer plugin trusted through Composer's `allow-plugins` configuration and handles at least these package types:
+The canonical custom installer package is `liberusoftware/composer-installer`. It is a Composer plugin trusted through Composer's `allow-plugins` configuration and handles at least these package types:
 
 | Composer package type | Install location                       |
 | --------------------- | -------------------------------------- |
@@ -194,7 +194,7 @@ Only Liberu module/theme package code uses the custom locations. Composer itself
 
 An application must explicitly require both the selected modules and the installer plugin. `composer.lock` remains authoritative for resolved versions. Production builds use non-interactive, locked, reproducible Composer installation and fail if the installer plugin or declared path policy is unavailable.
 
-The application root is the single owner of `liberu/composer-installer` and its `allow-plugins` entry. Individual modules declare their package type and installer name but do not repeat the installer plugin as a runtime requirement. This avoids several packages imposing or duplicating a root-only Composer plugin decision.
+The application root is the single owner of `liberusoftware/composer-installer` and its `allow-plugins` entry. Individual modules declare their package type and installer name but do not repeat the installer plugin as a runtime requirement. This avoids several packages imposing or duplicating a root-only Composer plugin decision.
 
 ## 6.2 Tracked `/modules` policy
 
@@ -278,16 +278,16 @@ Composer names communicate domain, capability, and role:
 
 | Package role                      | Convention                                             | Example                                  |
 | --------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
-| Product capability                | `liberu/{product}-{capability}`                        | `liberu/cms-publishing`                  |
-| Shared contract                   | `liberu/{capability}-contracts`                        | `liberu/payment-contracts`               |
-| Shared core                       | `liberu/{capability}-core`                             | `liberu/payment-core`                    |
-| Provider adapter                  | `liberu/{capability}-{provider}`                       | `liberu/payment-stripe`                  |
-| Filament presentation adapter     | `liberu/module-{independent-module-name}-filament`     | `liberu/module-cms-content-filament`     |
-| Livewire presentation adapter     | `liberu/module-{product-or-capability}-livewire`       | `liberu/module-cms-livewire`             |
-| API presentation adapter          | `liberu/module-{independent-module-name}-api`          | `liberu/module-cms-content-api`          |
-| React Native presentation adapter | `liberu/module-{independent-module-name}-react-native` | `liberu/module-cms-content-react-native` |
-| Flutter presentation adapter      | `liberu/module-{independent-module-name}-flutter`      | `liberu/module-cms-content-flutter`      |
-| Aggregate distribution            | `liberu/{product}`                                     | `liberu/ecommerce`                       |
+| Product capability                | `liberusoftware/{product}-{capability}`                        | `liberusoftware/cms-publishing`                  |
+| Shared contract                   | `liberusoftware/{capability}-contracts`                        | `liberusoftware/payment-contracts`               |
+| Shared core                       | `liberusoftware/{capability}-core`                             | `liberusoftware/payment-core`                    |
+| Provider adapter                  | `liberusoftware/{capability}-{provider}`                       | `liberusoftware/payment-stripe`                  |
+| Filament presentation adapter     | `liberusoftware/module-{independent-module-name}-filament`     | `liberusoftware/module-cms-content-filament`     |
+| Livewire presentation adapter     | `liberusoftware/module-{product-or-capability}-livewire`       | `liberusoftware/module-cms-livewire`             |
+| API presentation adapter          | `liberusoftware/module-{independent-module-name}-api`          | `liberusoftware/module-cms-content-api`          |
+| React Native presentation adapter | `liberusoftware/module-{independent-module-name}-react-native` | `liberusoftware/module-cms-content-react-native` |
+| Flutter presentation adapter      | `liberusoftware/module-{independent-module-name}-flutter`      | `liberusoftware/module-cms-content-flutter`      |
+| Aggregate distribution            | `liberusoftware/{product}`                                     | `liberusoftware/ecommerce`                       |
 
 Additional conventions:
 
@@ -319,9 +319,9 @@ Composer is authoritative for code installation and static dependency resolution
   "requires": {
     "php": "^8.5",
     "laravel": "^13.0",
-    "packages": { "liberu/payment-contracts": "^1.0" }
+    "packages": { "liberusoftware/payment-contracts": "^1.0" }
   },
-  "suggests": { "liberu/payment-stripe": "^1.0" },
+  "suggests": { "liberusoftware/payment-stripe": "^1.0" },
   "capabilities": ["payments.orchestrate"],
   "default_enabled": false
 }
@@ -340,7 +340,7 @@ Module repositories target the stable Pest 5 line and declare testing dependenci
 ```json
 {
   "require-dev": {
-    "liberu/package-testbench": "^1.0",
+    "liberusoftware/package-testbench": "^1.0",
     "pestphp/pest": "^5.0",
     "pestphp/pest-plugin-laravel": "^5.0"
   },
@@ -361,7 +361,7 @@ Module repositories target the stable Pest 5 line and declare testing dependenci
 
 Use the package's real namespace and only include scripts for suites it provides. Pest 5 and Pest-maintained plugins use compatible `^5.0` constraints and run on the PHP 8.5 target. Do not require `phpunit/phpunit` separately when Pest supplies the compatible PHPUnit runtime. Optional Pest plugins are added only when their evidence is used.
 
-`liberu/package-testbench` is the one reusable test bootstrap for module and theme packages. It owns the common Orchestra Testbench application, shared package-loading helpers, deterministic fakes, and reusable boundary assertions. It must not own module-specific behavior tests. Repositories do not create or require a parallel scripts package: their short Composer aliases remain local and invoke the installed Pest binary directly.
+`liberusoftware/package-testbench` is the one reusable test bootstrap for module and theme packages. It owns the common Orchestra Testbench application, shared package-loading helpers, deterministic fakes, and reusable boundary assertions. It must not own module-specific behavior tests. Repositories do not create or require a parallel scripts package: their short Composer aliases remain local and invoke the installed Pest binary directly.
 
 ## 11. Installation, enablement, and entitlement
 
@@ -576,7 +576,7 @@ Every package follows [TESTING.md](../standards/TESTING.md#13-coverage-policy), 
 - failure tests for retries, duplicates, concurrency, partial workflows, authorization denial, and provider errors;
 - an independent-install test in a minimal Laravel application.
 
-Every published package's tests execute from that package repository with `composer install` followed by its own `composer test`; they must not import or extend the host application's `Tests\\TestCase`. Test classes use an autoloadable, correctly cased PSR-4 namespace declared in `autoload-dev`. The canonical `liberu/package-testbench` supplies shared Laravel bootstrapping so behavior tests can remain with their owner without becoming host-coupled.
+Every published package's tests execute from that package repository with `composer install` followed by its own `composer test`; they must not import or extend the host application's `Tests\\TestCase`. Test classes use an autoloadable, correctly cased PSR-4 namespace declared in `autoload-dev`. The canonical `liberusoftware/package-testbench` supplies shared Laravel bootstrapping so behavior tests can remain with their owner without becoming host-coupled.
 
 Architecture tests inspect every owned production PHP file and catch `App\\` dependencies expressed through imports, inheritance, implementation, instantiation, static references, strings/configuration, and other resolvable class references—not only a narrow source regex. Equivalent rules prevent domain-to-presentation dependencies, provider SDK leakage, and cross-package private access.
 
@@ -624,9 +624,9 @@ Each module repository releases independently while applications coordinate comp
 ### 27.1 Payments shared by products
 
 ```text
-liberu/payment-contracts
+liberusoftware/payment-contracts
           |
-liberu/payment-core
+liberusoftware/payment-core
           |
     +-----+----------------+
     |                      |

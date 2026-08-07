@@ -59,14 +59,14 @@ Examples:
 | `billing-invoices` | `module-billing-invoices-api` |
 | `payment-core`     | `module-payment-core-api`     |
 
-The rule applies to the GitHub repository, Composer package basename, installer name, manifest identity, and installed directory. For example, `liberu/module-cms-content-api` installs to `/modules/module-cms-content-api`.
+The rule applies to the GitHub repository, Composer package basename, installer name, manifest identity, and installed directory. For example, `liberusoftware/module-cms-content-api` installs to `/modules/module-cms-content-api`.
 
 ```text
-liberu/payment-contracts
+liberusoftware/payment-contracts
         ^
-liberu/payment-core
+liberusoftware/payment-core
         ^
-liberu/module-payment-core-api  # requests, resources, routes, OpenAPI fragment
+liberusoftware/module-payment-core-api  # requests, resources, routes, OpenAPI fragment
 ```
 
 API packages are Composer modules installed under `/modules` according to `MODULES.md`. Each API module declares its one matching domain module as a required dependency, invokes only that module's public domain actions/queries and policies, and owns only that module's HTTP contract. It never reimplements business rules, queries another module's private tables, or exposes another independent module's resources for convenience.
