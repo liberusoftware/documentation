@@ -2,6 +2,10 @@
 
 This directory maps Liberu’s reusable module scopes. The indexes separate framework-neutral domain capabilities from technology-specific implementations.
 
+## Guides
+
+- [Authoring a module](authoring/README.md) — the step-by-step sequence for creating a package, its tests, its presentation companion, and its release.
+
 ## Indexes
 
 - [Generic domain feature scopes](features/README.md) — framework-neutral capabilities and links to their canonical specifications.
