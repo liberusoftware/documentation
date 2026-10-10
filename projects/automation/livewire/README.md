@@ -1,20 +1,50 @@
-# Automation Livewire 4 Implementations
+# Automation Livewire Implementations
 
-**Source:** [AUTOMATION.md](../AUTOMATION.md)  
-**Architecture:** [LIVEWIRE.md](../AUTOMATION.md) · [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md)
+Each file defines the optional Livewire 4 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Livewire 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Automation Core Livewire](automation-core.md) — `module-automation-core-livewire`
-- [Rules Livewire](rules.md) — `module-automation-rules-livewire`
-- [Approvals Livewire](approvals.md) — `module-automation-approvals-livewire`
-- [AI Gateway Livewire](ai-gateway.md) — `module-automation-ai-gateway-livewire`
-- [Prompt Registry Livewire](prompt-registry.md) — `module-automation-prompt-registry-livewire`
-- [Data Processing Livewire](data-processing.md) — `module-automation-data-processing-livewire`
-- [Voice Livewire](voice.md) — `module-automation-voice-livewire`
-- [Image Livewire](image.md) — `module-automation-image-livewire`
-- [Video Livewire](video.md) — `module-automation-video-livewire`
-- [Connectors Livewire](connectors.md) — `module-automation-connectors-livewire`
-- [Evaluation Livewire](evaluation.md) — `module-automation-evaluation-livewire`
+- [Activity Comments Livewire](activity-comments.md) — `module-automation-activity-comments-livewire`
+- [Analytics Core Livewire](analytics-core.md) — `module-automation-analytics-core-livewire`
+- [Analytics Google Livewire](analytics-google.md) — `module-automation-analytics-google-livewire`
+- [Analytics Meta Livewire](analytics-meta.md) — `module-automation-analytics-meta-livewire`
+- [Api Access Livewire](api-access.md) — `module-automation-api-access-livewire`
+- [Application Livewire](application.md) — `module-automation-application-livewire`
+- [Audit Livewire](audit.md) — `module-automation-audit-livewire`
+- [Currency Context Livewire](currency-context.md) — `module-automation-currency-context-livewire`
+- [Developer Experience Livewire](developer-experience.md) — `module-automation-developer-experience-livewire`
+- [Feature Flags Livewire](feature-flags.md) — `module-automation-feature-flags-livewire`
+- [Files Media Livewire](files-media.md) — `module-automation-files-media-livewire`
+- [Identity Core Livewire](identity-core.md) — `module-automation-identity-core-livewire`
+- [Identity Socialstream Livewire](identity-socialstream.md) — `module-automation-identity-socialstream-livewire`
+- [Import Export Livewire](import-export.md) — `module-automation-import-export-livewire`
+- [Integrations Livewire](integrations.md) — `module-automation-integrations-livewire`
+- [Jetstream Bridge Livewire](jetstream-bridge.md) — `module-automation-jetstream-bridge-livewire`
+- [Liberu Business Workflow Reconciliation Livewire](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-livewire`
+- [Liberu Executive Insights Livewire](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-livewire`
+- [Liberu Platform Orchestration Livewire](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-livewire`
+- [Liberu Revenue And Care Orchestration Livewire](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-livewire`
+- [Localization Core Livewire](localization-core.md) — `module-automation-localization-core-livewire`
+- [Localization Mymemory Livewire](localization-mymemory.md) — `module-automation-localization-mymemory-livewire`
+- [Module Automation Ai Gateway Livewire](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-livewire`
+- [Module Automation Approvals Livewire](module-automation-approvals.md) — `module-automation-module-automation-approvals-livewire`
+- [Module Automation Automation Core Livewire](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-livewire`
+- [Module Automation Connectors Livewire](module-automation-connectors.md) — `module-automation-module-automation-connectors-livewire`
+- [Module Automation Data Processing Livewire](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-livewire`
+- [Module Automation Evaluation Livewire](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-livewire`
+- [Module Automation Image Livewire](module-automation-image.md) — `module-automation-module-automation-image-livewire`
+- [Module Automation Prompt Registry Livewire](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-livewire`
+- [Module Automation Rules Livewire](module-automation-rules.md) — `module-automation-module-automation-rules-livewire`
+- [Module Automation Video Livewire](module-automation-video.md) — `module-automation-module-automation-video-livewire`
+- [Module Automation Voice Livewire](module-automation-voice.md) — `module-automation-module-automation-voice-livewire`
+- [Module Manager Livewire](module-manager.md) — `module-automation-module-manager-livewire`
+- [Notifications Livewire](notifications.md) — `module-automation-notifications-livewire`
+- [Observability Livewire](observability.md) — `module-automation-observability-livewire`
+- [Organizations Teams Livewire](organizations-teams.md) — `module-automation-organizations-teams-livewire`
+- [Profiles Livewire](profiles.md) — `module-automation-profiles-livewire`
+- [Roles Permissions Livewire](roles-permissions.md) — `module-automation-roles-permissions-livewire`
+- [Scheduler Queues Livewire](scheduler-queues.md) — `module-automation-scheduler-queues-livewire`
+- [Search Livewire](search.md) — `module-automation-search-livewire`
+- [Sessions Devices Livewire](sessions-devices.md) — `module-automation-sessions-devices-livewire`
+- [Settings Livewire](settings.md) — `module-automation-settings-livewire`
+- [Theme Support Livewire](theme-support.md) — `module-automation-theme-support-livewire`
+- [Two Factor Authentication Livewire](two-factor-authentication.md) — `module-automation-two-factor-authentication-livewire`
+- [Webhooks Livewire](webhooks.md) — `module-automation-webhooks-livewire`

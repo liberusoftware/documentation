@@ -1,45 +1,50 @@
-# Maintenance React 19.2 + Inertia 3 Implementations
+# Maintenance React + Inertia Implementations
 
-**Source:** [MAINTENANCE.md](../MAINTENANCE.md)
-**Architecture:** [REACT.md](../MAINTENANCE.md) · [API module index](../api/README.md) · [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md)
+Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Maintenance Core React + Inertia](maintenance-core.md) — `module-maintenance-core-react-inertia`
-- [Customers and Sites React + Inertia](customers-and-sites.md) — `module-maintenance-customers-and-sites-react-inertia`
-- [Assets React + Inertia](assets.md) — `module-maintenance-assets-react-inertia`
-- [Work Orders React + Inertia](work-orders.md) — `module-maintenance-work-orders-react-inertia`
-- [Scheduling React + Inertia](scheduling.md) — `module-maintenance-scheduling-react-inertia`
-- [Preventative Maintenance React + Inertia](preventative-maintenance.md) — `module-maintenance-preventative-maintenance-react-inertia`
-- [Inspections React + Inertia](inspections.md) — `module-maintenance-inspections-react-inertia`
-- [Inventory React + Inertia](inventory.md) — `module-maintenance-inventory-react-inertia`
-- [Procurement React + Inertia](procurement.md) — `module-maintenance-procurement-react-inertia`
-- [Labor and Time React + Inertia](labor-and-time.md) — `module-maintenance-labor-and-time-react-inertia`
-- [Commercial React + Inertia](commercial.md) — `module-maintenance-commercial-react-inertia`
-- [Compliance React + Inertia](compliance.md) — `module-maintenance-compliance-react-inertia`
-- [Portals React + Inertia](portals.md) — `module-maintenance-portals-react-inertia`
-- [Reporting React + Inertia](reporting.md) — `module-maintenance-reporting-react-inertia`
-
-**Source:** [MAINTENANCE.md](../MAINTENANCE.md)
-**Architecture:** [REACT.md](../MAINTENANCE.md) · [API module index](../api/README.md) · [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md)
-
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Maintenance Core React + Inertia](maintenance-core.md) — `module-maintenance-core-react-inertia`
-- [Customers and Sites React + Inertia](customers-and-sites.md) — `module-maintenance-customers-and-sites-react-inertia`
-- [Assets React + Inertia](assets.md) — `module-maintenance-assets-react-inertia`
-- [Work Orders React + Inertia](work-orders.md) — `module-maintenance-work-orders-react-inertia`
-- [Scheduling React + Inertia](scheduling.md) — `module-maintenance-scheduling-react-inertia`
-- [Preventative Maintenance React + Inertia](preventative-maintenance.md) — `module-maintenance-preventative-maintenance-react-inertia`
-- [Inspections React + Inertia](inspections.md) — `module-maintenance-inspections-react-inertia`
-- [Inventory React + Inertia](inventory.md) — `module-maintenance-inventory-react-inertia`
-- [Procurement React + Inertia](procurement.md) — `module-maintenance-procurement-react-inertia`
-- [Labor and Time React + Inertia](labor-and-time.md) — `module-maintenance-labor-and-time-react-inertia`
-- [Commercial React + Inertia](commercial.md) — `module-maintenance-commercial-react-inertia`
-- [Compliance React + Inertia](compliance.md) — `module-maintenance-compliance-react-inertia`
-- [Portals React + Inertia](portals.md) — `module-maintenance-portals-react-inertia`
-- [Reporting React + Inertia](reporting.md) — `module-maintenance-reporting-react-inertia`
+- [Activity Comments React](activity-comments.md) — `module-maintenance-activity-comments-react-inertia`
+- [Analytics Core React](analytics-core.md) — `module-maintenance-analytics-core-react-inertia`
+- [Analytics Google React](analytics-google.md) — `module-maintenance-analytics-google-react-inertia`
+- [Analytics Meta React](analytics-meta.md) — `module-maintenance-analytics-meta-react-inertia`
+- [Api Access React](api-access.md) — `module-maintenance-api-access-react-inertia`
+- [Application React](application.md) — `module-maintenance-application-react-inertia`
+- [Audit React](audit.md) — `module-maintenance-audit-react-inertia`
+- [Currency Context React](currency-context.md) — `module-maintenance-currency-context-react-inertia`
+- [Developer Experience React](developer-experience.md) — `module-maintenance-developer-experience-react-inertia`
+- [Feature Flags React](feature-flags.md) — `module-maintenance-feature-flags-react-inertia`
+- [Files Media React](files-media.md) — `module-maintenance-files-media-react-inertia`
+- [Identity Core React](identity-core.md) — `module-maintenance-identity-core-react-inertia`
+- [Identity Socialstream React](identity-socialstream.md) — `module-maintenance-identity-socialstream-react-inertia`
+- [Import Export React](import-export.md) — `module-maintenance-import-export-react-inertia`
+- [Integrations React](integrations.md) — `module-maintenance-integrations-react-inertia`
+- [Jetstream Bridge React](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-react-inertia`
+- [Localization Core React](localization-core.md) — `module-maintenance-localization-core-react-inertia`
+- [Localization Mymemory React](localization-mymemory.md) — `module-maintenance-localization-mymemory-react-inertia`
+- [Maintenance Maintenance Core React](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-react-inertia`
+- [Module Maintenance Assets React](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-react-inertia`
+- [Module Maintenance Commercial React](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-react-inertia`
+- [Module Maintenance Compliance React](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-react-inertia`
+- [Module Maintenance Core React](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-react-inertia`
+- [Module Maintenance Customers And Sites React](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-react-inertia`
+- [Module Maintenance Inspections React](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-react-inertia`
+- [Module Maintenance Inventory React](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-react-inertia`
+- [Module Maintenance Labor And Time React](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-react-inertia`
+- [Module Maintenance Portals React](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-react-inertia`
+- [Module Maintenance Preventative Maintenance React](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-react-inertia`
+- [Module Maintenance Procurement React](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-react-inertia`
+- [Module Maintenance Reporting React](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-react-inertia`
+- [Module Maintenance Scheduling React](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-react-inertia`
+- [Module Maintenance Work Orders React](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-react-inertia`
+- [Module Manager React](module-manager.md) — `module-maintenance-module-manager-react-inertia`
+- [Notifications React](notifications.md) — `module-maintenance-notifications-react-inertia`
+- [Observability React](observability.md) — `module-maintenance-observability-react-inertia`
+- [Organizations Teams React](organizations-teams.md) — `module-maintenance-organizations-teams-react-inertia`
+- [Profiles React](profiles.md) — `module-maintenance-profiles-react-inertia`
+- [Roles Permissions React](roles-permissions.md) — `module-maintenance-roles-permissions-react-inertia`
+- [Scheduler Queues React](scheduler-queues.md) — `module-maintenance-scheduler-queues-react-inertia`
+- [Search React](search.md) — `module-maintenance-search-react-inertia`
+- [Sessions Devices React](sessions-devices.md) — `module-maintenance-sessions-devices-react-inertia`
+- [Settings React](settings.md) — `module-maintenance-settings-react-inertia`
+- [Theme Support React](theme-support.md) — `module-maintenance-theme-support-react-inertia`
+- [Two Factor Authentication React](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-react-inertia`
+- [Webhooks React](webhooks.md) — `module-maintenance-webhooks-react-inertia`

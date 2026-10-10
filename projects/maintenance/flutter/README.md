@@ -1,45 +1,50 @@
-# Maintenance Flutter + Dart implementations
+# Maintenance Flutter + Dart Implementations
 
-**Scope:** [Maintenance](../MAINTENANCE.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [Flutter technology](../../../technologies/FLUTTER.md) · [Flutter standard](../../../standards/FLUTTER.md)
+Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-This index defines the optional Flutter + Dart adapter boundary for the Maintenance project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-flutter`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [Flutter + Dart module standard](../../../modules/flutter/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 14 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                                                  | Package                                             | Core                                        | API                                       |
-| ------------------------------------------------------- | --------------------------------------------------- | ------------------------------------------- | ----------------------------------------- |
-| [Assets](assets.md)                                     | module-maintenance-assets-flutter                   | [Core](../core/assets.md)                   | [API](../api/assets.md)                   |
-| [Commercial](commercial.md)                             | module-maintenance-commercial-flutter               | [Core](../core/commercial.md)               | [API](../api/commercial.md)               |
-| [Compliance](compliance.md)                             | module-maintenance-compliance-flutter               | [Core](../core/compliance.md)               | [API](../api/compliance.md)               |
-| [Customers And Sites](customers-and-sites.md)           | module-maintenance-customers-and-sites-flutter      | [Core](../core/customers-and-sites.md)      | [API](../api/customers-and-sites.md)      |
-| [Inspections](inspections.md)                           | module-maintenance-inspections-flutter              | [Core](../core/inspections.md)              | [API](../api/inspections.md)              |
-| [Inventory](inventory.md)                               | module-maintenance-inventory-flutter                | [Core](../core/inventory.md)                | [API](../api/inventory.md)                |
-| [Labor And Time](labor-and-time.md)                     | module-maintenance-labor-and-time-flutter           | [Core](../core/labor-and-time.md)           | [API](../api/labor-and-time.md)           |
-| [Maintenance Core](maintenance-core.md)                 | module-maintenance-maintenance-core-flutter         | [Core](../core/maintenance-core.md)         | [API](../api/maintenance-core.md)         |
-| [Portals](portals.md)                                   | module-maintenance-portals-flutter                  | [Core](../core/portals.md)                  | [API](../api/portals.md)                  |
-| [Preventative Maintenance](preventative-maintenance.md) | module-maintenance-preventative-maintenance-flutter | [Core](../core/preventative-maintenance.md) | [API](../api/preventative-maintenance.md) |
-| [Procurement](procurement.md)                           | module-maintenance-procurement-flutter              | [Core](../core/procurement.md)              | [API](../api/procurement.md)              |
-| [Reporting](reporting.md)                               | module-maintenance-reporting-flutter                | [Core](../core/reporting.md)                | [API](../api/reporting.md)                |
-| [Scheduling](scheduling.md)                             | module-maintenance-scheduling-flutter               | [Core](../core/scheduling.md)               | [API](../api/scheduling.md)               |
-| [Work Orders](work-orders.md)                           | module-maintenance-work-orders-flutter              | [Core](../core/work-orders.md)              | [API](../api/work-orders.md)              |
+- [Activity Comments Flutter](activity-comments.md) — `module-maintenance-activity-comments-flutter`
+- [Analytics Core Flutter](analytics-core.md) — `module-maintenance-analytics-core-flutter`
+- [Analytics Google Flutter](analytics-google.md) — `module-maintenance-analytics-google-flutter`
+- [Analytics Meta Flutter](analytics-meta.md) — `module-maintenance-analytics-meta-flutter`
+- [Api Access Flutter](api-access.md) — `module-maintenance-api-access-flutter`
+- [Application Flutter](application.md) — `module-maintenance-application-flutter`
+- [Audit Flutter](audit.md) — `module-maintenance-audit-flutter`
+- [Currency Context Flutter](currency-context.md) — `module-maintenance-currency-context-flutter`
+- [Developer Experience Flutter](developer-experience.md) — `module-maintenance-developer-experience-flutter`
+- [Feature Flags Flutter](feature-flags.md) — `module-maintenance-feature-flags-flutter`
+- [Files Media Flutter](files-media.md) — `module-maintenance-files-media-flutter`
+- [Identity Core Flutter](identity-core.md) — `module-maintenance-identity-core-flutter`
+- [Identity Socialstream Flutter](identity-socialstream.md) — `module-maintenance-identity-socialstream-flutter`
+- [Import Export Flutter](import-export.md) — `module-maintenance-import-export-flutter`
+- [Integrations Flutter](integrations.md) — `module-maintenance-integrations-flutter`
+- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-flutter`
+- [Localization Core Flutter](localization-core.md) — `module-maintenance-localization-core-flutter`
+- [Localization Mymemory Flutter](localization-mymemory.md) — `module-maintenance-localization-mymemory-flutter`
+- [Maintenance Maintenance Core Flutter](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-flutter`
+- [Module Maintenance Assets Flutter](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-flutter`
+- [Module Maintenance Commercial Flutter](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-flutter`
+- [Module Maintenance Compliance Flutter](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-flutter`
+- [Module Maintenance Core Flutter](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-flutter`
+- [Module Maintenance Customers And Sites Flutter](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-flutter`
+- [Module Maintenance Inspections Flutter](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-flutter`
+- [Module Maintenance Inventory Flutter](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-flutter`
+- [Module Maintenance Labor And Time Flutter](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-flutter`
+- [Module Maintenance Portals Flutter](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-flutter`
+- [Module Maintenance Preventative Maintenance Flutter](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-flutter`
+- [Module Maintenance Procurement Flutter](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-flutter`
+- [Module Maintenance Reporting Flutter](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-flutter`
+- [Module Maintenance Scheduling Flutter](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-flutter`
+- [Module Maintenance Work Orders Flutter](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-flutter`
+- [Module Manager Flutter](module-manager.md) — `module-maintenance-module-manager-flutter`
+- [Notifications Flutter](notifications.md) — `module-maintenance-notifications-flutter`
+- [Observability Flutter](observability.md) — `module-maintenance-observability-flutter`
+- [Organizations Teams Flutter](organizations-teams.md) — `module-maintenance-organizations-teams-flutter`
+- [Profiles Flutter](profiles.md) — `module-maintenance-profiles-flutter`
+- [Roles Permissions Flutter](roles-permissions.md) — `module-maintenance-roles-permissions-flutter`
+- [Scheduler Queues Flutter](scheduler-queues.md) — `module-maintenance-scheduler-queues-flutter`
+- [Search Flutter](search.md) — `module-maintenance-search-flutter`
+- [Sessions Devices Flutter](sessions-devices.md) — `module-maintenance-sessions-devices-flutter`
+- [Settings Flutter](settings.md) — `module-maintenance-settings-flutter`
+- [Theme Support Flutter](theme-support.md) — `module-maintenance-theme-support-flutter`
+- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-flutter`
+- [Webhooks Flutter](webhooks.md) — `module-maintenance-webhooks-flutter`

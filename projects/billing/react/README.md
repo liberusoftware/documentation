@@ -1,25 +1,70 @@
-# Billing React 19.2 + Inertia 3 Implementations
+# Billing React + Inertia Implementations
 
-**Source:** [BILLING.md](../BILLING.md)
-**Architecture:** [REACT.md](../BILLING.md) · [API module index](../api/README.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Billing Core React + Inertia](billing-core.md) — `module-billing-core-react-inertia`
-- [Catalog React + Inertia](catalog.md) — `module-billing-catalog-react-inertia`
-- [Pricing React + Inertia](pricing.md) — `module-billing-pricing-react-inertia`
-- [Orders React + Inertia](orders.md) — `module-billing-orders-react-inertia`
-- [Subscriptions React + Inertia](subscriptions.md) — `module-billing-subscriptions-react-inertia`
-- [Usage React + Inertia](usage.md) — `module-billing-usage-react-inertia`
-- [Invoicing React + Inertia](invoicing.md) — `module-billing-invoicing-react-inertia`
-- [Payments React + Inertia](payments.md) — `module-billing-payments-react-inertia`
-- [Collections React + Inertia](collections.md) — `module-billing-collections-react-inertia`
-- [Provisioning React + Inertia](provisioning.md) — `module-billing-provisioning-react-inertia`
-- [Hosting React + Inertia](hosting.md) — `module-billing-hosting-react-inertia`
-- [Domains React + Inertia](domains.md) — `module-billing-domains-react-inertia`
-- [ISP React + Inertia](isp.md) — `module-billing-isp-react-inertia`
-- [Communications React + Inertia](communications.md) — `module-billing-communications-react-inertia`
-- [Customer Portal React + Inertia](customer-portal.md) — `module-billing-customer-portal-react-inertia`
-- [Reporting React + Inertia](reporting.md) — `module-billing-reporting-react-inertia`
+- [Activity Comments React](activity-comments.md) — `module-billing-activity-comments-react-inertia`
+- [Analytics Core React](analytics-core.md) — `module-billing-analytics-core-react-inertia`
+- [Analytics Google React](analytics-google.md) — `module-billing-analytics-google-react-inertia`
+- [Analytics Meta React](analytics-meta.md) — `module-billing-analytics-meta-react-inertia`
+- [Api Access React](api-access.md) — `module-billing-api-access-react-inertia`
+- [Application React](application.md) — `module-billing-application-react-inertia`
+- [Audit React](audit.md) — `module-billing-audit-react-inertia`
+- [Billing Core React](billing-core.md) — `module-billing-billing-core-react-inertia`
+- [Currency Context React](currency-context.md) — `module-billing-currency-context-react-inertia`
+- [Developer Experience React](developer-experience.md) — `module-billing-developer-experience-react-inertia`
+- [Feature Flags React](feature-flags.md) — `module-billing-feature-flags-react-inertia`
+- [Files Media React](files-media.md) — `module-billing-files-media-react-inertia`
+- [Identity Core React](identity-core.md) — `module-billing-identity-core-react-inertia`
+- [Identity Socialstream React](identity-socialstream.md) — `module-billing-identity-socialstream-react-inertia`
+- [Import Export React](import-export.md) — `module-billing-import-export-react-inertia`
+- [Integrations React](integrations.md) — `module-billing-integrations-react-inertia`
+- [Jetstream Bridge React](jetstream-bridge.md) — `module-billing-jetstream-bridge-react-inertia`
+- [Liberu Business Workflow Reconciliation React](liberu-business-workflow-reconciliation.md) — `module-billing-liberu-business-workflow-reconciliation-react-inertia`
+- [Liberu Executive Insights React](liberu-executive-insights.md) — `module-billing-liberu-executive-insights-react-inertia`
+- [Liberu Platform Orchestration React](liberu-platform-orchestration.md) — `module-billing-liberu-platform-orchestration-react-inertia`
+- [Liberu Revenue And Care Orchestration React](liberu-revenue-and-care-orchestration.md) — `module-billing-liberu-revenue-and-care-orchestration-react-inertia`
+- [Localization Core React](localization-core.md) — `module-billing-localization-core-react-inertia`
+- [Localization Mymemory React](localization-mymemory.md) — `module-billing-localization-mymemory-react-inertia`
+- [Module Billing Billing Core React](module-billing-billing-core.md) — `module-billing-module-billing-billing-core-react-inertia`
+- [Module Billing Catalog React](module-billing-catalog.md) — `module-billing-module-billing-catalog-react-inertia`
+- [Module Billing Collections React](module-billing-collections.md) — `module-billing-module-billing-collections-react-inertia`
+- [Module Billing Communications React](module-billing-communications.md) — `module-billing-module-billing-communications-react-inertia`
+- [Module Billing Core React](module-billing-core.md) — `module-billing-module-billing-core-react-inertia`
+- [Module Billing Cpanel React](module-billing-cpanel.md) — `module-billing-module-billing-cpanel-react-inertia`
+- [Module Billing Customer Portal React](module-billing-customer-portal.md) — `module-billing-module-billing-customer-portal-react-inertia`
+- [Module Billing Directadmin React](module-billing-directadmin.md) — `module-billing-module-billing-directadmin-react-inertia`
+- [Module Billing Domains React](module-billing-domains.md) — `module-billing-module-billing-domains-react-inertia`
+- [Module Billing Enom React](module-billing-enom.md) — `module-billing-module-billing-enom-react-inertia`
+- [Module Billing Hosting React](module-billing-hosting.md) — `module-billing-module-billing-hosting-react-inertia`
+- [Module Billing Invoicing React](module-billing-invoicing.md) — `module-billing-module-billing-invoicing-react-inertia`
+- [Module Billing Isp React](module-billing-isp.md) — `module-billing-module-billing-isp-react-inertia`
+- [Module Billing Liberu Control Panel React](module-billing-liberu-control-panel.md) — `module-billing-module-billing-liberu-control-panel-react-inertia`
+- [Module Billing Orders React](module-billing-orders.md) — `module-billing-module-billing-orders-react-inertia`
+- [Module Billing Paddle React](module-billing-paddle.md) — `module-billing-module-billing-paddle-react-inertia`
+- [Module Billing Payments React](module-billing-payments.md) — `module-billing-module-billing-payments-react-inertia`
+- [Module Billing Plesk React](module-billing-plesk.md) — `module-billing-module-billing-plesk-react-inertia`
+- [Module Billing Pricing React](module-billing-pricing.md) — `module-billing-module-billing-pricing-react-inertia`
+- [Module Billing Provisioning React](module-billing-provisioning.md) — `module-billing-module-billing-provisioning-react-inertia`
+- [Module Billing Reporting React](module-billing-reporting.md) — `module-billing-module-billing-reporting-react-inertia`
+- [Module Billing Resellerclub React](module-billing-resellerclub.md) — `module-billing-module-billing-resellerclub-react-inertia`
+- [Module Billing Stripe React](module-billing-stripe.md) — `module-billing-module-billing-stripe-react-inertia`
+- [Module Billing Subscriptions React](module-billing-subscriptions.md) — `module-billing-module-billing-subscriptions-react-inertia`
+- [Module Billing Usage React](module-billing-usage.md) — `module-billing-module-billing-usage-react-inertia`
+- [Module Billing Virtualmin React](module-billing-virtualmin.md) — `module-billing-module-billing-virtualmin-react-inertia`
+- [Module Liberu Business Workflow Reconciliation React](module-liberu-business-workflow-reconciliation.md) — `module-billing-module-liberu-business-workflow-reconciliation-react-inertia`
+- [Module Liberu Executive Insights React](module-liberu-executive-insights.md) — `module-billing-module-liberu-executive-insights-react-inertia`
+- [Module Liberu Platform Orchestration React](module-liberu-platform-orchestration.md) — `module-billing-module-liberu-platform-orchestration-react-inertia`
+- [Module Liberu Revenue And Care Orchestration React](module-liberu-revenue-and-care-orchestration.md) — `module-billing-module-liberu-revenue-and-care-orchestration-react-inertia`
+- [Module Manager React](module-manager.md) — `module-billing-module-manager-react-inertia`
+- [Notifications React](notifications.md) — `module-billing-notifications-react-inertia`
+- [Observability React](observability.md) — `module-billing-observability-react-inertia`
+- [Organizations Teams React](organizations-teams.md) — `module-billing-organizations-teams-react-inertia`
+- [Profiles React](profiles.md) — `module-billing-profiles-react-inertia`
+- [Roles Permissions React](roles-permissions.md) — `module-billing-roles-permissions-react-inertia`
+- [Scheduler Queues React](scheduler-queues.md) — `module-billing-scheduler-queues-react-inertia`
+- [Search React](search.md) — `module-billing-search-react-inertia`
+- [Sessions Devices React](sessions-devices.md) — `module-billing-sessions-devices-react-inertia`
+- [Settings React](settings.md) — `module-billing-settings-react-inertia`
+- [Theme Support React](theme-support.md) — `module-billing-theme-support-react-inertia`
+- [Two Factor Authentication React](two-factor-authentication.md) — `module-billing-two-factor-authentication-react-inertia`
+- [Webhooks React](webhooks.md) — `module-billing-webhooks-react-inertia`

@@ -1,153 +1,146 @@
 # Accounting API Module Specifications
 
-**Source:** [ACCOUNTING.md](../ACCOUNTING.md)
-**Architecture:** [API.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
-
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-## Accounting foundation modules
-
-- [Accounting Core API](accounting-core.md) — `module-accounting-core-api`
-- [Financial Master Data API](financial-master-data.md) — `module-accounting-financial-master-data-api`
-- [Chart of Accounts API](chart-of-accounts.md) — `module-accounting-chart-of-accounts-api`
-- [General Ledger API](general-ledger.md) — `module-accounting-general-ledger-api`
-- [Dimensions and Tracking API](dimensions-and-tracking.md) — `module-accounting-dimensions-and-tracking-api`
-- [Opening Balances API](opening-balances.md) — `module-accounting-opening-balances-api`
-- [Recurring Transactions API](recurring-transactions.md) — `module-accounting-recurring-transactions-api`
-- [Accounting Periods API](accounting-periods.md) — `module-accounting-periods-api`
-- [Accounting Policies API](accounting-policies.md) — `module-accounting-policies-api`
-
-## Sales and receivables modules
-
-- [Estimates and Quotes API](estimates-and-quotes.md) — `module-accounting-estimates-and-quotes-api`
-- [Sales Orders API](sales-orders.md) — `module-accounting-sales-orders-api`
-- [Sales Invoicing API](sales-invoicing.md) — `module-accounting-sales-invoicing-api`
-- [Credit Notes and Adjustments API](credit-notes-and-adjustments.md) — `module-accounting-credit-notes-and-adjustments-api`
-- [Customer Payments API](customer-payments.md) — `module-accounting-customer-payments-api`
-- [Accounts Receivable API](accounts-receivable.md) — `module-accounting-accounts-receivable-api`
-- [Collections API](collections.md) — `module-accounting-collections-api`
-- [Customer Portal API](customer-portal.md) — `module-accounting-customer-portal-api`
-
-## Purchasing and payables modules
-
-- [Purchase Requisitions API](purchase-requisitions.md) — `module-accounting-purchase-requisitions-api`
-- [Purchase Orders API](purchase-orders.md) — `module-accounting-purchase-orders-api`
-- [Goods and Service Receipts API](goods-and-service-receipts.md) — `module-accounting-goods-and-service-receipts-api`
-- [Supplier Bills API](supplier-bills.md) — `module-accounting-supplier-bills-api`
-- [Three-Way Matching API](three-way-matching.md) — `module-accounting-three-way-matching-api`
-- [Accounts Payable API](accounts-payable.md) — `module-accounting-accounts-payable-api`
-- [Bill Payments API](bill-payments.md) — `module-accounting-bill-payments-api`
-- [Supplier Portal API](supplier-portal.md) — `module-accounting-supplier-portal-api`
-- [Contractor Compliance API](contractor-compliance.md) — `module-accounting-contractor-compliance-api`
-
-## Capture, expenses, cards, time, and mileage modules
-
-- [Document Capture API](document-capture.md) — `module-accounting-document-capture-api`
-- [Receipt Management API](receipt-management.md) — `module-accounting-receipt-management-api`
-- [Employee Expenses API](employee-expenses.md) — `module-accounting-employee-expenses-api`
-- [Corporate Cards API](corporate-cards.md) — `module-accounting-corporate-cards-api`
-- [Mileage API](mileage.md) — `module-accounting-mileage-api`
-- [Time Tracking API](time-tracking.md) — `module-accounting-time-tracking-api`
-- [Reimbursements API](reimbursements.md) — `module-accounting-reimbursements-api`
-
-## Banking, treasury, and cash modules
-
-- [Bank Accounts API](bank-accounts.md) — `module-accounting-bank-accounts-api`
-- [Bank Feeds API](bank-feeds.md) — `module-accounting-bank-feeds-api`
-- [Bank Rules API](bank-rules.md) — `module-accounting-bank-rules-api`
-- [Cash Coding API](cash-coding.md) — `module-accounting-cash-coding-api`
-- [Bank Reconciliation API](bank-reconciliation.md) — `module-accounting-bank-reconciliation-api`
-- [Deposits and Clearing API](deposits-and-clearing.md) — `module-accounting-deposits-and-clearing-api`
-- [Transfers API](transfers.md) — `module-accounting-transfers-api`
-- [Payment Reconciliation API](payment-reconciliation.md) — `module-accounting-payment-reconciliation-api`
-- [Cash Position API](cash-position.md) — `module-accounting-cash-position-api`
-- [Cash-Flow Forecasting API](cash-flow-forecasting.md) — `module-accounting-cash-flow-forecasting-api`
-- [Debt and Loans API](debt-and-loans.md) — `module-accounting-debt-and-loans-api`
-
-## Tax and regulatory modules
-
-- [Tax Core API](tax-core.md) — `module-accounting-tax-core-api`
-- [Sales Tax and GST API](sales-tax-and-gst.md) — `module-accounting-sales-tax-and-gst-api`
-- [VAT API](vat.md) — `module-accounting-vat-api`
-- [Tax Returns API](tax-returns.md) — `module-accounting-tax-returns-api`
-- [E-Invoicing API](e-invoicing.md) — `module-accounting-e-invoicing-api`
-- [Withholding Tax API](withholding-tax.md) — `module-accounting-withholding-tax-api`
-- [Construction Tax API](construction-tax.md) — `module-accounting-construction-tax-api`
-- [Contractor Reporting API](contractor-reporting.md) — `module-accounting-contractor-reporting-api`
-- [Carbon Accounting API](carbon-accounting.md) — `module-accounting-carbon-accounting-api`
-- [Regional Packs API](regional-packs.md) — `module-accounting-regional-packs-api`
-
-## Inventory, assets, and specialized accounting modules
-
-- [Inventory Accounting API](inventory-accounting.md) — `module-accounting-inventory-accounting-api`
-- [Product and Service Items API](product-and-service-items.md) — `module-accounting-product-and-service-items-api`
-- [Fixed Assets API](fixed-assets.md) — `module-accounting-fixed-assets-api`
-- [Depreciation API](depreciation.md) — `module-accounting-depreciation-api`
-- [Asset Events API](asset-events.md) — `module-accounting-asset-events-api`
-- [Leases API](leases.md) — `module-accounting-leases-api`
-- [Revenue Recognition API](revenue-recognition.md) — `module-accounting-revenue-recognition-api`
-
-## Projects, jobs, and profitability modules
-
-- [Projects and Jobs API](projects-and-jobs.md) — `module-accounting-projects-and-jobs-api`
-- [Project Costing API](project-costing.md) — `module-accounting-project-costing-api`
-- [Project Billing API](project-billing.md) — `module-accounting-project-billing-api`
-- [Project Profitability API](project-profitability.md) — `module-accounting-project-profitability-api`
-- [Job Estimates API](job-estimates.md) — `module-accounting-job-estimates-api`
-
-## Payroll accounting modules
-
-- [Payroll Integration API](payroll-integration.md) — `module-accounting-payroll-integration-api`
-- [Payroll Journals API](payroll-journals.md) — `module-accounting-payroll-journals-api`
-- [Payroll Liabilities API](payroll-liabilities.md) — `module-accounting-payroll-liabilities-api`
-- [Payroll Payments API](payroll-payments.md) — `module-accounting-payroll-payments-api`
-- [Workforce Costing API](workforce-costing.md) — `module-accounting-workforce-costing-api`
-
-## Planning, reporting, and advisory modules
-
-- [Financial Statements API](financial-statements.md) — `module-accounting-financial-statements-api`
-- [Operational Reports API](operational-reports.md) — `module-accounting-operational-reports-api`
-- [Custom Report Builder API](custom-report-builder.md) — `module-accounting-custom-report-builder-api`
-- [Dashboards API](dashboards.md) — `module-accounting-dashboards-api`
-- [Budgets API](budgets.md) — `module-accounting-budgets-api`
-- [Forecasts API](forecasts.md) — `module-accounting-forecasts-api`
-- [Management Reporting API](management-reporting.md) — `module-accounting-management-reporting-api`
-- [Business Insights API](business-insights.md) — `module-accounting-business-insights-api`
-- [KPI and Goals API](kpi-and-goals.md) — `module-accounting-kpi-and-goals-api`
-
-## Multi-entity and international modules
-
-- [Multi-Currency API](multi-currency.md) — `module-accounting-multi-currency-api`
-- [Multi-Entity API](multi-entity.md) — `module-accounting-multi-entity-api`
-- [Intercompany API](intercompany.md) — `module-accounting-intercompany-api`
-- [Consolidation API](consolidation.md) — `module-accounting-consolidation-api`
-- [Branch and Location Accounting API](branch-and-location-accounting.md) — `module-accounting-branch-and-location-accounting-api`
-
-## Close, controls, and accountant-practice modules
-
-- [Close Management API](close-management.md) — `module-accounting-close-management-api`
-- [Account Reconciliations API](account-reconciliations.md) — `module-accounting-account-reconciliations-api`
-- [Journal Approvals API](journal-approvals.md) — `module-accounting-journal-approvals-api`
-- [Accounting Review API](accounting-review.md) — `module-accounting-review-api`
-- [Accountant Workspace API](accountant-workspace.md) — `module-accounting-accountant-workspace-api`
-- [Client Collaboration API](client-collaboration.md) — `module-accounting-client-collaboration-api`
-- [Workpapers API](workpapers.md) — `module-accounting-workpapers-api`
-- [Year End API](year-end.md) — `module-accounting-year-end-api`
-- [Audit Support API](audit-support.md) — `module-accounting-audit-support-api`
-
-## Automation and intelligence modules
-
-- [Accounting Automation Pack API](accounting-automation-pack.md) — `module-accounting-automation-pack-api`
-- [Coding Suggestions API](coding-suggestions.md) — `module-accounting-coding-suggestions-api`
-- [Matching Intelligence API](matching-intelligence.md) — `module-accounting-matching-intelligence-api`
-- [Anomaly Detection API](anomaly-detection.md) — `module-accounting-anomaly-detection-api`
-- [Cash Collection Assistant API](cash-collection-assistant.md) — `module-accounting-cash-collection-assistant-api`
-- [Accounting Copilot API](accounting-copilot.md) — `module-accounting-copilot-api`
-
-## Migration modules
-
-- [Migration Framework API](migration-framework.md) — `module-accounting-migration-framework-api`
-- [QuickBooks Online Migration API](quickbooks-online-migration.md) — `module-accounting-quickbooks-online-migration-api`
-- [Sage Accounting Migration API](sage-accounting-migration.md) — `module-accounting-sage-accounting-migration-api`
-- [Xero Migration API](xero-migration.md) — `module-accounting-xero-migration-api`
-- [Spreadsheet Migration API](spreadsheet-migration.md) — `module-accounting-spreadsheet-migration-api`
+- [Accounting Account Reconciliations API](accounting-account-reconciliations.md) — `module-accounting-accounting-account-reconciliations-api`
+- [Accounting Accountant Workspace API](accounting-accountant-workspace.md) — `module-accounting-accounting-accountant-workspace-api`
+- [Accounting Accounts Payable API](accounting-accounts-payable.md) — `module-accounting-accounting-accounts-payable-api`
+- [Accounting Accounts Receivable API](accounting-accounts-receivable.md) — `module-accounting-accounting-accounts-receivable-api`
+- [Accounting Anomaly Detection API](accounting-anomaly-detection.md) — `module-accounting-accounting-anomaly-detection-api`
+- [Accounting Asset Events API](accounting-asset-events.md) — `module-accounting-accounting-asset-events-api`
+- [Accounting Audit Support API](accounting-audit-support.md) — `module-accounting-accounting-audit-support-api`
+- [Accounting Automation Pack API](accounting-automation-pack.md) — `module-accounting-accounting-automation-pack-api`
+- [Accounting Bank Accounts API](accounting-bank-accounts.md) — `module-accounting-accounting-bank-accounts-api`
+- [Accounting Bank Feeds API](accounting-bank-feeds.md) — `module-accounting-accounting-bank-feeds-api`
+- [Accounting Bank Reconciliation API](accounting-bank-reconciliation.md) — `module-accounting-accounting-bank-reconciliation-api`
+- [Accounting Bank Rules API](accounting-bank-rules.md) — `module-accounting-accounting-bank-rules-api`
+- [Accounting Bill Payments API](accounting-bill-payments.md) — `module-accounting-accounting-bill-payments-api`
+- [Accounting Branch And Location Accounting API](accounting-branch-and-location-accounting.md) — `module-accounting-accounting-branch-and-location-accounting-api`
+- [Accounting Budgets API](accounting-budgets.md) — `module-accounting-accounting-budgets-api`
+- [Accounting Business Insights API](accounting-business-insights.md) — `module-accounting-accounting-business-insights-api`
+- [Accounting Carbon Accounting API](accounting-carbon-accounting.md) — `module-accounting-accounting-carbon-accounting-api`
+- [Accounting Cash Coding API](accounting-cash-coding.md) — `module-accounting-accounting-cash-coding-api`
+- [Accounting Cash Collection Assistant API](accounting-cash-collection-assistant.md) — `module-accounting-accounting-cash-collection-assistant-api`
+- [Accounting Cash Flow Forecasting API](accounting-cash-flow-forecasting.md) — `module-accounting-accounting-cash-flow-forecasting-api`
+- [Accounting Cash Position API](accounting-cash-position.md) — `module-accounting-accounting-cash-position-api`
+- [Accounting Chart Of Accounts API](accounting-chart-of-accounts.md) — `module-accounting-accounting-chart-of-accounts-api`
+- [Accounting Client Collaboration API](accounting-client-collaboration.md) — `module-accounting-accounting-client-collaboration-api`
+- [Accounting Close Management API](accounting-close-management.md) — `module-accounting-accounting-close-management-api`
+- [Accounting Coding Suggestions API](accounting-coding-suggestions.md) — `module-accounting-accounting-coding-suggestions-api`
+- [Accounting Collections API](accounting-collections.md) — `module-accounting-accounting-collections-api`
+- [Accounting Consolidation API](accounting-consolidation.md) — `module-accounting-accounting-consolidation-api`
+- [Accounting Construction Tax API](accounting-construction-tax.md) — `module-accounting-accounting-construction-tax-api`
+- [Accounting Contractor Compliance API](accounting-contractor-compliance.md) — `module-accounting-accounting-contractor-compliance-api`
+- [Accounting Contractor Reporting API](accounting-contractor-reporting.md) — `module-accounting-accounting-contractor-reporting-api`
+- [Accounting Copilot API](accounting-copilot.md) — `module-accounting-accounting-copilot-api`
+- [Accounting Core API](accounting-core.md) — `module-accounting-accounting-core-api`
+- [Accounting Corporate Cards API](accounting-corporate-cards.md) — `module-accounting-accounting-corporate-cards-api`
+- [Accounting Credit Notes And Adjustments API](accounting-credit-notes-and-adjustments.md) — `module-accounting-accounting-credit-notes-and-adjustments-api`
+- [Accounting Custom Report Builder API](accounting-custom-report-builder.md) — `module-accounting-accounting-custom-report-builder-api`
+- [Accounting Customer Payments API](accounting-customer-payments.md) — `module-accounting-accounting-customer-payments-api`
+- [Accounting Customer Portal API](accounting-customer-portal.md) — `module-accounting-accounting-customer-portal-api`
+- [Accounting Dashboards API](accounting-dashboards.md) — `module-accounting-accounting-dashboards-api`
+- [Accounting Debt And Loans API](accounting-debt-and-loans.md) — `module-accounting-accounting-debt-and-loans-api`
+- [Accounting Deposits And Clearing API](accounting-deposits-and-clearing.md) — `module-accounting-accounting-deposits-and-clearing-api`
+- [Accounting Depreciation API](accounting-depreciation.md) — `module-accounting-accounting-depreciation-api`
+- [Accounting Dimensions And Tracking API](accounting-dimensions-and-tracking.md) — `module-accounting-accounting-dimensions-and-tracking-api`
+- [Accounting Document Capture API](accounting-document-capture.md) — `module-accounting-accounting-document-capture-api`
+- [Accounting E Invoicing API](accounting-e-invoicing.md) — `module-accounting-accounting-e-invoicing-api`
+- [Accounting Employee Expenses API](accounting-employee-expenses.md) — `module-accounting-accounting-employee-expenses-api`
+- [Accounting Estimates And Quotes API](accounting-estimates-and-quotes.md) — `module-accounting-accounting-estimates-and-quotes-api`
+- [Accounting Financial Master Data API](accounting-financial-master-data.md) — `module-accounting-accounting-financial-master-data-api`
+- [Accounting Financial Statements API](accounting-financial-statements.md) — `module-accounting-accounting-financial-statements-api`
+- [Accounting Fixed Assets API](accounting-fixed-assets.md) — `module-accounting-accounting-fixed-assets-api`
+- [Accounting Forecasts API](accounting-forecasts.md) — `module-accounting-accounting-forecasts-api`
+- [Accounting General Ledger API](accounting-general-ledger.md) — `module-accounting-accounting-general-ledger-api`
+- [Accounting Goods And Service Receipts API](accounting-goods-and-service-receipts.md) — `module-accounting-accounting-goods-and-service-receipts-api`
+- [Accounting Intercompany API](accounting-intercompany.md) — `module-accounting-accounting-intercompany-api`
+- [Accounting Inventory Accounting API](accounting-inventory-accounting.md) — `module-accounting-accounting-inventory-accounting-api`
+- [Accounting Job Estimates API](accounting-job-estimates.md) — `module-accounting-accounting-job-estimates-api`
+- [Accounting Journal Approvals API](accounting-journal-approvals.md) — `module-accounting-accounting-journal-approvals-api`
+- [Accounting Kpi And Goals API](accounting-kpi-and-goals.md) — `module-accounting-accounting-kpi-and-goals-api`
+- [Accounting Leases API](accounting-leases.md) — `module-accounting-accounting-leases-api`
+- [Accounting Management Reporting API](accounting-management-reporting.md) — `module-accounting-accounting-management-reporting-api`
+- [Accounting Matching Intelligence API](accounting-matching-intelligence.md) — `module-accounting-accounting-matching-intelligence-api`
+- [Accounting Migration Framework API](accounting-migration-framework.md) — `module-accounting-accounting-migration-framework-api`
+- [Accounting Mileage API](accounting-mileage.md) — `module-accounting-accounting-mileage-api`
+- [Accounting Multi Currency API](accounting-multi-currency.md) — `module-accounting-accounting-multi-currency-api`
+- [Accounting Multi Entity API](accounting-multi-entity.md) — `module-accounting-accounting-multi-entity-api`
+- [Accounting Opening Balances API](accounting-opening-balances.md) — `module-accounting-accounting-opening-balances-api`
+- [Accounting Operational Reports API](accounting-operational-reports.md) — `module-accounting-accounting-operational-reports-api`
+- [Accounting Payment Reconciliation API](accounting-payment-reconciliation.md) — `module-accounting-accounting-payment-reconciliation-api`
+- [Accounting Payroll Integration API](accounting-payroll-integration.md) — `module-accounting-accounting-payroll-integration-api`
+- [Accounting Payroll Journals API](accounting-payroll-journals.md) — `module-accounting-accounting-payroll-journals-api`
+- [Accounting Payroll Liabilities API](accounting-payroll-liabilities.md) — `module-accounting-accounting-payroll-liabilities-api`
+- [Accounting Payroll Payments API](accounting-payroll-payments.md) — `module-accounting-accounting-payroll-payments-api`
+- [Accounting Periods API](accounting-periods.md) — `module-accounting-accounting-periods-api`
+- [Accounting Plaid API](accounting-plaid.md) — `module-accounting-accounting-plaid-api`
+- [Accounting Policies API](accounting-policies.md) — `module-accounting-accounting-policies-api`
+- [Accounting Product And Service Items API](accounting-product-and-service-items.md) — `module-accounting-accounting-product-and-service-items-api`
+- [Accounting Project Billing API](accounting-project-billing.md) — `module-accounting-accounting-project-billing-api`
+- [Accounting Project Costing API](accounting-project-costing.md) — `module-accounting-accounting-project-costing-api`
+- [Accounting Project Profitability API](accounting-project-profitability.md) — `module-accounting-accounting-project-profitability-api`
+- [Accounting Projects And Jobs API](accounting-projects-and-jobs.md) — `module-accounting-accounting-projects-and-jobs-api`
+- [Accounting Purchase Orders API](accounting-purchase-orders.md) — `module-accounting-accounting-purchase-orders-api`
+- [Accounting Purchase Requisitions API](accounting-purchase-requisitions.md) — `module-accounting-accounting-purchase-requisitions-api`
+- [Accounting Quickbooks Online Migration API](accounting-quickbooks-online-migration.md) — `module-accounting-accounting-quickbooks-online-migration-api`
+- [Accounting Receipt Management API](accounting-receipt-management.md) — `module-accounting-accounting-receipt-management-api`
+- [Accounting Recurring Transactions API](accounting-recurring-transactions.md) — `module-accounting-accounting-recurring-transactions-api`
+- [Accounting Regional Packs API](accounting-regional-packs.md) — `module-accounting-accounting-regional-packs-api`
+- [Accounting Reimbursements API](accounting-reimbursements.md) — `module-accounting-accounting-reimbursements-api`
+- [Accounting Revenue Recognition API](accounting-revenue-recognition.md) — `module-accounting-accounting-revenue-recognition-api`
+- [Accounting Review API](accounting-review.md) — `module-accounting-accounting-review-api`
+- [Accounting Revolut API](accounting-revolut.md) — `module-accounting-accounting-revolut-api`
+- [Accounting Sage Accounting Migration API](accounting-sage-accounting-migration.md) — `module-accounting-accounting-sage-accounting-migration-api`
+- [Accounting Sales Invoicing API](accounting-sales-invoicing.md) — `module-accounting-accounting-sales-invoicing-api`
+- [Accounting Sales Orders API](accounting-sales-orders.md) — `module-accounting-accounting-sales-orders-api`
+- [Accounting Sales Tax And Gst API](accounting-sales-tax-and-gst.md) — `module-accounting-accounting-sales-tax-and-gst-api`
+- [Accounting Spreadsheet Migration API](accounting-spreadsheet-migration.md) — `module-accounting-accounting-spreadsheet-migration-api`
+- [Accounting Supplier Bills API](accounting-supplier-bills.md) — `module-accounting-accounting-supplier-bills-api`
+- [Accounting Supplier Portal API](accounting-supplier-portal.md) — `module-accounting-accounting-supplier-portal-api`
+- [Accounting Tax Core API](accounting-tax-core.md) — `module-accounting-accounting-tax-core-api`
+- [Accounting Tax Returns API](accounting-tax-returns.md) — `module-accounting-accounting-tax-returns-api`
+- [Accounting Three Way Matching API](accounting-three-way-matching.md) — `module-accounting-accounting-three-way-matching-api`
+- [Accounting Time Tracking API](accounting-time-tracking.md) — `module-accounting-accounting-time-tracking-api`
+- [Accounting Transfers API](accounting-transfers.md) — `module-accounting-accounting-transfers-api`
+- [Accounting Vat API](accounting-vat.md) — `module-accounting-accounting-vat-api`
+- [Accounting Wise API](accounting-wise.md) — `module-accounting-accounting-wise-api`
+- [Accounting Withholding Tax API](accounting-withholding-tax.md) — `module-accounting-accounting-withholding-tax-api`
+- [Accounting Workforce Costing API](accounting-workforce-costing.md) — `module-accounting-accounting-workforce-costing-api`
+- [Accounting Workpapers API](accounting-workpapers.md) — `module-accounting-accounting-workpapers-api`
+- [Accounting Xero Migration API](accounting-xero-migration.md) — `module-accounting-accounting-xero-migration-api`
+- [Accounting Year End API](accounting-year-end.md) — `module-accounting-accounting-year-end-api`
+- [Activity Comments API](activity-comments.md) — `module-accounting-activity-comments-api`
+- [Analytics Core API](analytics-core.md) — `module-accounting-analytics-core-api`
+- [Analytics Google API](analytics-google.md) — `module-accounting-analytics-google-api`
+- [Analytics Meta API](analytics-meta.md) — `module-accounting-analytics-meta-api`
+- [Api Access API](api-access.md) — `module-accounting-api-access-api`
+- [Application API](application.md) — `module-accounting-application-api`
+- [Audit API](audit.md) — `module-accounting-audit-api`
+- [Currency Context API](currency-context.md) — `module-accounting-currency-context-api`
+- [Developer Experience API](developer-experience.md) — `module-accounting-developer-experience-api`
+- [Feature Flags API](feature-flags.md) — `module-accounting-feature-flags-api`
+- [Files Media API](files-media.md) — `module-accounting-files-media-api`
+- [Identity Core API](identity-core.md) — `module-accounting-identity-core-api`
+- [Identity Socialstream API](identity-socialstream.md) — `module-accounting-identity-socialstream-api`
+- [Import Export API](import-export.md) — `module-accounting-import-export-api`
+- [Integrations API](integrations.md) — `module-accounting-integrations-api`
+- [Jetstream Bridge API](jetstream-bridge.md) — `module-accounting-jetstream-bridge-api`
+- [Liberu Business Workflow Reconciliation API](liberu-business-workflow-reconciliation.md) — `module-accounting-liberu-business-workflow-reconciliation-api`
+- [Liberu Executive Insights API](liberu-executive-insights.md) — `module-accounting-liberu-executive-insights-api`
+- [Liberu Platform Orchestration API](liberu-platform-orchestration.md) — `module-accounting-liberu-platform-orchestration-api`
+- [Localization Core API](localization-core.md) — `module-accounting-localization-core-api`
+- [Localization Mymemory API](localization-mymemory.md) — `module-accounting-localization-mymemory-api`
+- [Module Manager API](module-manager.md) — `module-accounting-module-manager-api`
+- [Notifications API](notifications.md) — `module-accounting-notifications-api`
+- [Observability API](observability.md) — `module-accounting-observability-api`
+- [Organizations Teams API](organizations-teams.md) — `module-accounting-organizations-teams-api`
+- [Profiles API](profiles.md) — `module-accounting-profiles-api`
+- [Roles Permissions API](roles-permissions.md) — `module-accounting-roles-permissions-api`
+- [Scheduler Queues API](scheduler-queues.md) — `module-accounting-scheduler-queues-api`
+- [Search API](search.md) — `module-accounting-search-api`
+- [Sessions Devices API](sessions-devices.md) — `module-accounting-sessions-devices-api`
+- [Settings API](settings.md) — `module-accounting-settings-api`
+- [Theme Support API](theme-support.md) — `module-accounting-theme-support-api`
+- [Two Factor Authentication API](two-factor-authentication.md) — `module-accounting-two-factor-authentication-api`
+- [Webhooks API](webhooks.md) — `module-accounting-webhooks-api`

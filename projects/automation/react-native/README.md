@@ -1,42 +1,50 @@
-# Automation React Native + Expo implementations
+# Automation React Native + Expo Implementations
 
-**Scope:** [Automation](../AUTOMATION.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [React Native technology](../../../technologies/REACT-NATIVE.md) · [React Native standard](../../../standards/REACT-NATIVE.md)
+Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-This index defines the optional React Native + Expo adapter boundary for the Automation project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-react-native`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [React Native + Expo module standard](../../../modules/react-native/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 11 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                                | Package                                        | Core                               | API                              |
-| ------------------------------------- | ---------------------------------------------- | ---------------------------------- | -------------------------------- |
-| [Ai Gateway](ai-gateway.md)           | module-automation-ai-gateway-react-native      | [Core](../core/ai-gateway.md)      | [API](../api/ai-gateway.md)      |
-| [Approvals](approvals.md)             | module-automation-approvals-react-native       | [Core](../core/approvals.md)       | [API](../api/approvals.md)       |
-| [Automation Core](automation-core.md) | module-automation-automation-core-react-native | [Core](../core/automation-core.md) | [API](../api/automation-core.md) |
-| [Connectors](connectors.md)           | module-automation-connectors-react-native      | [Core](../core/connectors.md)      | [API](../api/connectors.md)      |
-| [Data Processing](data-processing.md) | module-automation-data-processing-react-native | [Core](../core/data-processing.md) | [API](../api/data-processing.md) |
-| [Evaluation](evaluation.md)           | module-automation-evaluation-react-native      | [Core](../core/evaluation.md)      | [API](../api/evaluation.md)      |
-| [Image](image.md)                     | module-automation-image-react-native           | [Core](../core/image.md)           | [API](../api/image.md)           |
-| [Prompt Registry](prompt-registry.md) | module-automation-prompt-registry-react-native | [Core](../core/prompt-registry.md) | [API](../api/prompt-registry.md) |
-| [Rules](rules.md)                     | module-automation-rules-react-native           | [Core](../core/rules.md)           | [API](../api/rules.md)           |
-| [Video](video.md)                     | module-automation-video-react-native           | [Core](../core/video.md)           | [API](../api/video.md)           |
-| [Voice](voice.md)                     | module-automation-voice-react-native           | [Core](../core/voice.md)           | [API](../api/voice.md)           |
+- [Activity Comments React Native](activity-comments.md) — `module-automation-activity-comments-react-native`
+- [Analytics Core React Native](analytics-core.md) — `module-automation-analytics-core-react-native`
+- [Analytics Google React Native](analytics-google.md) — `module-automation-analytics-google-react-native`
+- [Analytics Meta React Native](analytics-meta.md) — `module-automation-analytics-meta-react-native`
+- [Api Access React Native](api-access.md) — `module-automation-api-access-react-native`
+- [Application React Native](application.md) — `module-automation-application-react-native`
+- [Audit React Native](audit.md) — `module-automation-audit-react-native`
+- [Currency Context React Native](currency-context.md) — `module-automation-currency-context-react-native`
+- [Developer Experience React Native](developer-experience.md) — `module-automation-developer-experience-react-native`
+- [Feature Flags React Native](feature-flags.md) — `module-automation-feature-flags-react-native`
+- [Files Media React Native](files-media.md) — `module-automation-files-media-react-native`
+- [Identity Core React Native](identity-core.md) — `module-automation-identity-core-react-native`
+- [Identity Socialstream React Native](identity-socialstream.md) — `module-automation-identity-socialstream-react-native`
+- [Import Export React Native](import-export.md) — `module-automation-import-export-react-native`
+- [Integrations React Native](integrations.md) — `module-automation-integrations-react-native`
+- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-automation-jetstream-bridge-react-native`
+- [Liberu Business Workflow Reconciliation React Native](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-react-native`
+- [Liberu Executive Insights React Native](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-react-native`
+- [Liberu Platform Orchestration React Native](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-react-native`
+- [Liberu Revenue And Care Orchestration React Native](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-react-native`
+- [Localization Core React Native](localization-core.md) — `module-automation-localization-core-react-native`
+- [Localization Mymemory React Native](localization-mymemory.md) — `module-automation-localization-mymemory-react-native`
+- [Module Automation Ai Gateway React Native](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-react-native`
+- [Module Automation Approvals React Native](module-automation-approvals.md) — `module-automation-module-automation-approvals-react-native`
+- [Module Automation Automation Core React Native](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-react-native`
+- [Module Automation Connectors React Native](module-automation-connectors.md) — `module-automation-module-automation-connectors-react-native`
+- [Module Automation Data Processing React Native](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-react-native`
+- [Module Automation Evaluation React Native](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-react-native`
+- [Module Automation Image React Native](module-automation-image.md) — `module-automation-module-automation-image-react-native`
+- [Module Automation Prompt Registry React Native](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-react-native`
+- [Module Automation Rules React Native](module-automation-rules.md) — `module-automation-module-automation-rules-react-native`
+- [Module Automation Video React Native](module-automation-video.md) — `module-automation-module-automation-video-react-native`
+- [Module Automation Voice React Native](module-automation-voice.md) — `module-automation-module-automation-voice-react-native`
+- [Module Manager React Native](module-manager.md) — `module-automation-module-manager-react-native`
+- [Notifications React Native](notifications.md) — `module-automation-notifications-react-native`
+- [Observability React Native](observability.md) — `module-automation-observability-react-native`
+- [Organizations Teams React Native](organizations-teams.md) — `module-automation-organizations-teams-react-native`
+- [Profiles React Native](profiles.md) — `module-automation-profiles-react-native`
+- [Roles Permissions React Native](roles-permissions.md) — `module-automation-roles-permissions-react-native`
+- [Scheduler Queues React Native](scheduler-queues.md) — `module-automation-scheduler-queues-react-native`
+- [Search React Native](search.md) — `module-automation-search-react-native`
+- [Sessions Devices React Native](sessions-devices.md) — `module-automation-sessions-devices-react-native`
+- [Settings React Native](settings.md) — `module-automation-settings-react-native`
+- [Theme Support React Native](theme-support.md) — `module-automation-theme-support-react-native`
+- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-automation-two-factor-authentication-react-native`
+- [Webhooks React Native](webhooks.md) — `module-automation-webhooks-react-native`

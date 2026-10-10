@@ -1,47 +1,50 @@
-# Control-Panel React 19.2 + Inertia 3 Implementations
+# Control Panel React + Inertia Implementations
 
-**Source:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)
-**Architecture:** [REACT.md](../CONTROL-PANEL.md) · [API module index](../api/README.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Control Core React + Inertia](control-core.md) — `module-control-panel-control-core-react-inertia`
-- [OS Adapters React + Inertia](os-adapters.md) — `module-control-panel-os-adapters-react-inertia`
-- [Accounts React + Inertia](accounts.md) — `module-control-panel-accounts-react-inertia`
-- [Web Hosting React + Inertia](web-hosting.md) — `module-control-panel-web-hosting-react-inertia`
-- [Mail React + Inertia](mail.md) — `module-control-panel-mail-react-inertia`
-- [Databases React + Inertia](databases.md) — `module-control-panel-databases-react-inertia`
-- [DNS React + Inertia](dns.md) — `module-control-panel-dns-react-inertia`
-- [Files React + Inertia](files.md) — `module-control-panel-files-react-inertia`
-- [Certificates React + Inertia](certificates.md) — `module-control-panel-certificates-react-inertia`
-- [Backups React + Inertia](backups.md) — `module-control-panel-backups-react-inertia`
-- [Security React + Inertia](security.md) — `module-control-panel-security-react-inertia`
-- [Monitoring React + Inertia](monitoring.md) — `module-control-panel-monitoring-react-inertia`
-- [Containers React + Inertia](containers.md) — `module-control-panel-containers-react-inertia`
-- [Kubernetes React + Inertia](kubernetes.md) — `module-control-panel-kubernetes-react-inertia`
-- [API and Automation React + Inertia](api-and-automation.md) — `module-control-panel-api-and-automation-react-inertia`
-
-**Source:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)
-**Architecture:** [REACT.md](../CONTROL-PANEL.md) · [API module index](../api/README.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
-
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Control Core React + Inertia](control-core.md) — `module-control-panel-control-core-react-inertia`
-- [OS Adapters React + Inertia](os-adapters.md) — `module-control-panel-os-adapters-react-inertia`
-- [Accounts React + Inertia](accounts.md) — `module-control-panel-accounts-react-inertia`
-- [Web Hosting React + Inertia](web-hosting.md) — `module-control-panel-web-hosting-react-inertia`
-- [Mail React + Inertia](mail.md) — `module-control-panel-mail-react-inertia`
-- [Databases React + Inertia](databases.md) — `module-control-panel-databases-react-inertia`
-- [DNS React + Inertia](dns.md) — `module-control-panel-dns-react-inertia`
-- [Files React + Inertia](files.md) — `module-control-panel-files-react-inertia`
-- [Certificates React + Inertia](certificates.md) — `module-control-panel-certificates-react-inertia`
-- [Backups React + Inertia](backups.md) — `module-control-panel-backups-react-inertia`
-- [Security React + Inertia](security.md) — `module-control-panel-security-react-inertia`
-- [Monitoring React + Inertia](monitoring.md) — `module-control-panel-monitoring-react-inertia`
-- [Containers React + Inertia](containers.md) — `module-control-panel-containers-react-inertia`
-- [Kubernetes React + Inertia](kubernetes.md) — `module-control-panel-kubernetes-react-inertia`
-- [API and Automation React + Inertia](api-and-automation.md) — `module-control-panel-api-and-automation-react-inertia`
+- [Activity Comments React](activity-comments.md) — `module-control-panel-activity-comments-react-inertia`
+- [Analytics Core React](analytics-core.md) — `module-control-panel-analytics-core-react-inertia`
+- [Analytics Google React](analytics-google.md) — `module-control-panel-analytics-google-react-inertia`
+- [Analytics Meta React](analytics-meta.md) — `module-control-panel-analytics-meta-react-inertia`
+- [Api Access React](api-access.md) — `module-control-panel-api-access-react-inertia`
+- [Application React](application.md) — `module-control-panel-application-react-inertia`
+- [Audit React](audit.md) — `module-control-panel-audit-react-inertia`
+- [Control Panel Accounts React](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-react-inertia`
+- [Control Panel Api And Automation React](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-react-inertia`
+- [Control Panel Backups React](control-panel-backups.md) — `module-control-panel-control-panel-backups-react-inertia`
+- [Control Panel Certificates React](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-react-inertia`
+- [Control Panel Containers React](control-panel-containers.md) — `module-control-panel-control-panel-containers-react-inertia`
+- [Control Panel Control Core React](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-react-inertia`
+- [Control Panel Databases React](control-panel-databases.md) — `module-control-panel-control-panel-databases-react-inertia`
+- [Control Panel Dns React](control-panel-dns.md) — `module-control-panel-control-panel-dns-react-inertia`
+- [Control Panel Files React](control-panel-files.md) — `module-control-panel-control-panel-files-react-inertia`
+- [Control Panel Kubernetes React](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-react-inertia`
+- [Control Panel Mail React](control-panel-mail.md) — `module-control-panel-control-panel-mail-react-inertia`
+- [Control Panel Monitoring React](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-react-inertia`
+- [Control Panel Os Adapters React](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-react-inertia`
+- [Control Panel Security React](control-panel-security.md) — `module-control-panel-control-panel-security-react-inertia`
+- [Control Panel Web Hosting React](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-react-inertia`
+- [Currency Context React](currency-context.md) — `module-control-panel-currency-context-react-inertia`
+- [Developer Experience React](developer-experience.md) — `module-control-panel-developer-experience-react-inertia`
+- [Feature Flags React](feature-flags.md) — `module-control-panel-feature-flags-react-inertia`
+- [Files Media React](files-media.md) — `module-control-panel-files-media-react-inertia`
+- [Identity Core React](identity-core.md) — `module-control-panel-identity-core-react-inertia`
+- [Identity Socialstream React](identity-socialstream.md) — `module-control-panel-identity-socialstream-react-inertia`
+- [Import Export React](import-export.md) — `module-control-panel-import-export-react-inertia`
+- [Integrations React](integrations.md) — `module-control-panel-integrations-react-inertia`
+- [Jetstream Bridge React](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-react-inertia`
+- [Localization Core React](localization-core.md) — `module-control-panel-localization-core-react-inertia`
+- [Localization Mymemory React](localization-mymemory.md) — `module-control-panel-localization-mymemory-react-inertia`
+- [Module Manager React](module-manager.md) — `module-control-panel-module-manager-react-inertia`
+- [Notifications React](notifications.md) — `module-control-panel-notifications-react-inertia`
+- [Observability React](observability.md) — `module-control-panel-observability-react-inertia`
+- [Organizations Teams React](organizations-teams.md) — `module-control-panel-organizations-teams-react-inertia`
+- [Profiles React](profiles.md) — `module-control-panel-profiles-react-inertia`
+- [Roles Permissions React](roles-permissions.md) — `module-control-panel-roles-permissions-react-inertia`
+- [Scheduler Queues React](scheduler-queues.md) — `module-control-panel-scheduler-queues-react-inertia`
+- [Search React](search.md) — `module-control-panel-search-react-inertia`
+- [Sessions Devices React](sessions-devices.md) — `module-control-panel-sessions-devices-react-inertia`
+- [Settings React](settings.md) — `module-control-panel-settings-react-inertia`
+- [Theme Support React](theme-support.md) — `module-control-panel-theme-support-react-inertia`
+- [Two Factor Authentication React](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-react-inertia`
+- [Webhooks React](webhooks.md) — `module-control-panel-webhooks-react-inertia`

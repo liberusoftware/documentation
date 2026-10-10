@@ -1,24 +1,50 @@
-# Browser-Game Nuxt 4 Implementations
+# Browser Game Nuxt Implementations
 
-**Source:** [BROWSER-GAME.md](../BROWSER-GAME.md)
-**Architecture:** [NUXT.md](../BROWSER-GAME.md) · [API module index](../api/README.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)
+Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-Each file defines the optional `Nuxt 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Game Core Nuxt](game-core.md) — `module-browser-game-game-core-nuxt`
-- [Accounts Nuxt](accounts.md) — `module-browser-game-accounts-nuxt`
-- [Characters Nuxt](characters.md) — `module-browser-game-characters-nuxt`
-- [World Nuxt](world.md) — `module-browser-game-world-nuxt`
-- [Combat Nuxt](combat.md) — `module-browser-game-combat-nuxt`
-- [Quests Nuxt](quests.md) — `module-browser-game-quests-nuxt`
-- [Items Nuxt](items.md) — `module-browser-game-items-nuxt`
-- [Crafting Nuxt](crafting.md) — `module-browser-game-crafting-nuxt`
-- [Economy Nuxt](economy.md) — `module-browser-game-economy-nuxt`
-- [Social Nuxt](social.md) — `module-browser-game-social-nuxt`
-- [Competition Nuxt](competition.md) — `module-browser-game-competition-nuxt`
-- [Collections Nuxt](collections.md) — `module-browser-game-collections-nuxt`
-- [Live Ops Nuxt](live-ops.md) — `module-browser-game-live-ops-nuxt`
-- [Commerce Nuxt](commerce.md) — `module-browser-game-commerce-nuxt`
-- [Moderation and Analytics Nuxt](moderation-and-analytics.md) — `module-browser-game-moderation-and-analytics-nuxt`
+- [Activity Comments Nuxt](activity-comments.md) — `module-browser-game-activity-comments-nuxt`
+- [Analytics Core Nuxt](analytics-core.md) — `module-browser-game-analytics-core-nuxt`
+- [Analytics Google Nuxt](analytics-google.md) — `module-browser-game-analytics-google-nuxt`
+- [Analytics Meta Nuxt](analytics-meta.md) — `module-browser-game-analytics-meta-nuxt`
+- [Api Access Nuxt](api-access.md) — `module-browser-game-api-access-nuxt`
+- [Application Nuxt](application.md) — `module-browser-game-application-nuxt`
+- [Audit Nuxt](audit.md) — `module-browser-game-audit-nuxt`
+- [Browser Game Accounts Nuxt](browser-game-accounts.md) — `module-browser-game-browser-game-accounts-nuxt`
+- [Browser Game Characters Nuxt](browser-game-characters.md) — `module-browser-game-browser-game-characters-nuxt`
+- [Browser Game Collections Nuxt](browser-game-collections.md) — `module-browser-game-browser-game-collections-nuxt`
+- [Browser Game Combat Nuxt](browser-game-combat.md) — `module-browser-game-browser-game-combat-nuxt`
+- [Browser Game Commerce Nuxt](browser-game-commerce.md) — `module-browser-game-browser-game-commerce-nuxt`
+- [Browser Game Competition Nuxt](browser-game-competition.md) — `module-browser-game-browser-game-competition-nuxt`
+- [Browser Game Crafting Nuxt](browser-game-crafting.md) — `module-browser-game-browser-game-crafting-nuxt`
+- [Browser Game Economy Nuxt](browser-game-economy.md) — `module-browser-game-browser-game-economy-nuxt`
+- [Browser Game Game Core Nuxt](browser-game-game-core.md) — `module-browser-game-browser-game-game-core-nuxt`
+- [Browser Game Items Nuxt](browser-game-items.md) — `module-browser-game-browser-game-items-nuxt`
+- [Browser Game Live Ops Nuxt](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops-nuxt`
+- [Browser Game Moderation And Analytics Nuxt](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics-nuxt`
+- [Browser Game Quests Nuxt](browser-game-quests.md) — `module-browser-game-browser-game-quests-nuxt`
+- [Browser Game Social Nuxt](browser-game-social.md) — `module-browser-game-browser-game-social-nuxt`
+- [Browser Game World Nuxt](browser-game-world.md) — `module-browser-game-browser-game-world-nuxt`
+- [Currency Context Nuxt](currency-context.md) — `module-browser-game-currency-context-nuxt`
+- [Developer Experience Nuxt](developer-experience.md) — `module-browser-game-developer-experience-nuxt`
+- [Feature Flags Nuxt](feature-flags.md) — `module-browser-game-feature-flags-nuxt`
+- [Files Media Nuxt](files-media.md) — `module-browser-game-files-media-nuxt`
+- [Identity Core Nuxt](identity-core.md) — `module-browser-game-identity-core-nuxt`
+- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-browser-game-identity-socialstream-nuxt`
+- [Import Export Nuxt](import-export.md) — `module-browser-game-import-export-nuxt`
+- [Integrations Nuxt](integrations.md) — `module-browser-game-integrations-nuxt`
+- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-browser-game-jetstream-bridge-nuxt`
+- [Localization Core Nuxt](localization-core.md) — `module-browser-game-localization-core-nuxt`
+- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-browser-game-localization-mymemory-nuxt`
+- [Module Manager Nuxt](module-manager.md) — `module-browser-game-module-manager-nuxt`
+- [Notifications Nuxt](notifications.md) — `module-browser-game-notifications-nuxt`
+- [Observability Nuxt](observability.md) — `module-browser-game-observability-nuxt`
+- [Organizations Teams Nuxt](organizations-teams.md) — `module-browser-game-organizations-teams-nuxt`
+- [Profiles Nuxt](profiles.md) — `module-browser-game-profiles-nuxt`
+- [Roles Permissions Nuxt](roles-permissions.md) — `module-browser-game-roles-permissions-nuxt`
+- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-browser-game-scheduler-queues-nuxt`
+- [Search Nuxt](search.md) — `module-browser-game-search-nuxt`
+- [Sessions Devices Nuxt](sessions-devices.md) — `module-browser-game-sessions-devices-nuxt`
+- [Settings Nuxt](settings.md) — `module-browser-game-settings-nuxt`
+- [Theme Support Nuxt](theme-support.md) — `module-browser-game-theme-support-nuxt`
+- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-browser-game-two-factor-authentication-nuxt`
+- [Webhooks Nuxt](webhooks.md) — `module-browser-game-webhooks-nuxt`

@@ -1,21 +1,50 @@
-# Liberu Browser Game — module journeys
+# Browser Game — Module User Guides
 
-These pages describe what an end user sees when this module is enabled. They are shared by public web, authenticated portal, staff web, and mobile experiences where applicable.
+End-user guides for each Browser Game module.
 
-| Module | User guide | Developer source |
-| --- | --- | --- |
-| Accounts | [Guide](accounts.md) | [features](../../../../projects/browser-game/features/accounts.md) |
-| Characters | [Guide](characters.md) | [features](../../../../projects/browser-game/features/characters.md) |
-| Collections | [Guide](collections.md) | [features](../../../../projects/browser-game/features/collections.md) |
-| Combat | [Guide](combat.md) | [features](../../../../projects/browser-game/features/combat.md) |
-| Commerce | [Guide](commerce.md) | [features](../../../../projects/browser-game/features/commerce.md) |
-| Competition | [Guide](competition.md) | [features](../../../../projects/browser-game/features/competition.md) |
-| Crafting | [Guide](crafting.md) | [features](../../../../projects/browser-game/features/crafting.md) |
-| Economy | [Guide](economy.md) | [features](../../../../projects/browser-game/features/economy.md) |
-| Game Core | [Guide](game-core.md) | [features](../../../../projects/browser-game/features/game-core.md) |
-| Items | [Guide](items.md) | [features](../../../../projects/browser-game/features/items.md) |
-| Live OPS | [Guide](live-ops.md) | [features](../../../../projects/browser-game/features/live-ops.md) |
-| Moderation AND Analytics | [Guide](moderation-and-analytics.md) | [features](../../../../projects/browser-game/features/moderation-and-analytics.md) |
-| Quests | [Guide](quests.md) | [features](../../../../projects/browser-game/features/quests.md) |
-| Social | [Guide](social.md) | [features](../../../../projects/browser-game/features/social.md) |
-| World | [Guide](world.md) | [features](../../../../projects/browser-game/features/world.md) |
+- [Activity Comments](activity-comments.md)
+- [Analytics Core](analytics-core.md)
+- [Analytics Google](analytics-google.md)
+- [Analytics Meta](analytics-meta.md)
+- [Api Access](api-access.md)
+- [Application](application.md)
+- [Audit](audit.md)
+- [Browser Game Accounts](browser-game-accounts.md)
+- [Browser Game Characters](browser-game-characters.md)
+- [Browser Game Collections](browser-game-collections.md)
+- [Browser Game Combat](browser-game-combat.md)
+- [Browser Game Commerce](browser-game-commerce.md)
+- [Browser Game Competition](browser-game-competition.md)
+- [Browser Game Crafting](browser-game-crafting.md)
+- [Browser Game Economy](browser-game-economy.md)
+- [Browser Game Game Core](browser-game-game-core.md)
+- [Browser Game Items](browser-game-items.md)
+- [Browser Game Live Ops](browser-game-live-ops.md)
+- [Browser Game Moderation And Analytics](browser-game-moderation-and-analytics.md)
+- [Browser Game Quests](browser-game-quests.md)
+- [Browser Game Social](browser-game-social.md)
+- [Browser Game World](browser-game-world.md)
+- [Currency Context](currency-context.md)
+- [Developer Experience](developer-experience.md)
+- [Feature Flags](feature-flags.md)
+- [Files Media](files-media.md)
+- [Identity Core](identity-core.md)
+- [Identity Socialstream](identity-socialstream.md)
+- [Import Export](import-export.md)
+- [Integrations](integrations.md)
+- [Jetstream Bridge](jetstream-bridge.md)
+- [Localization Core](localization-core.md)
+- [Localization Mymemory](localization-mymemory.md)
+- [Module Manager](module-manager.md)
+- [Notifications](notifications.md)
+- [Observability](observability.md)
+- [Organizations Teams](organizations-teams.md)
+- [Profiles](profiles.md)
+- [Roles Permissions](roles-permissions.md)
+- [Scheduler Queues](scheduler-queues.md)
+- [Search](search.md)
+- [Sessions Devices](sessions-devices.md)
+- [Settings](settings.md)
+- [Theme Support](theme-support.md)
+- [Two Factor Authentication](two-factor-authentication.md)
+- [Webhooks](webhooks.md)

@@ -1,24 +1,50 @@
-# Control-Panel Nuxt 4 Implementations
+# Control Panel Nuxt Implementations
 
-**Source:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)
-**Architecture:** [NUXT.md](../CONTROL-PANEL.md) · [API module index](../api/README.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-Each file defines the optional `Nuxt 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Control Core Nuxt](control-core.md) — `module-control-panel-control-core-nuxt`
-- [OS Adapters Nuxt](os-adapters.md) — `module-control-panel-os-adapters-nuxt`
-- [Accounts Nuxt](accounts.md) — `module-control-panel-accounts-nuxt`
-- [Web Hosting Nuxt](web-hosting.md) — `module-control-panel-web-hosting-nuxt`
-- [Mail Nuxt](mail.md) — `module-control-panel-mail-nuxt`
-- [Databases Nuxt](databases.md) — `module-control-panel-databases-nuxt`
-- [DNS Nuxt](dns.md) — `module-control-panel-dns-nuxt`
-- [Files Nuxt](files.md) — `module-control-panel-files-nuxt`
-- [Certificates Nuxt](certificates.md) — `module-control-panel-certificates-nuxt`
-- [Backups Nuxt](backups.md) — `module-control-panel-backups-nuxt`
-- [Security Nuxt](security.md) — `module-control-panel-security-nuxt`
-- [Monitoring Nuxt](monitoring.md) — `module-control-panel-monitoring-nuxt`
-- [Containers Nuxt](containers.md) — `module-control-panel-containers-nuxt`
-- [Kubernetes Nuxt](kubernetes.md) — `module-control-panel-kubernetes-nuxt`
-- [API and Automation Nuxt](api-and-automation.md) — `module-control-panel-api-and-automation-nuxt`
+- [Activity Comments Nuxt](activity-comments.md) — `module-control-panel-activity-comments-nuxt`
+- [Analytics Core Nuxt](analytics-core.md) — `module-control-panel-analytics-core-nuxt`
+- [Analytics Google Nuxt](analytics-google.md) — `module-control-panel-analytics-google-nuxt`
+- [Analytics Meta Nuxt](analytics-meta.md) — `module-control-panel-analytics-meta-nuxt`
+- [Api Access Nuxt](api-access.md) — `module-control-panel-api-access-nuxt`
+- [Application Nuxt](application.md) — `module-control-panel-application-nuxt`
+- [Audit Nuxt](audit.md) — `module-control-panel-audit-nuxt`
+- [Control Panel Accounts Nuxt](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-nuxt`
+- [Control Panel Api And Automation Nuxt](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-nuxt`
+- [Control Panel Backups Nuxt](control-panel-backups.md) — `module-control-panel-control-panel-backups-nuxt`
+- [Control Panel Certificates Nuxt](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-nuxt`
+- [Control Panel Containers Nuxt](control-panel-containers.md) — `module-control-panel-control-panel-containers-nuxt`
+- [Control Panel Control Core Nuxt](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-nuxt`
+- [Control Panel Databases Nuxt](control-panel-databases.md) — `module-control-panel-control-panel-databases-nuxt`
+- [Control Panel Dns Nuxt](control-panel-dns.md) — `module-control-panel-control-panel-dns-nuxt`
+- [Control Panel Files Nuxt](control-panel-files.md) — `module-control-panel-control-panel-files-nuxt`
+- [Control Panel Kubernetes Nuxt](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-nuxt`
+- [Control Panel Mail Nuxt](control-panel-mail.md) — `module-control-panel-control-panel-mail-nuxt`
+- [Control Panel Monitoring Nuxt](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-nuxt`
+- [Control Panel Os Adapters Nuxt](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-nuxt`
+- [Control Panel Security Nuxt](control-panel-security.md) — `module-control-panel-control-panel-security-nuxt`
+- [Control Panel Web Hosting Nuxt](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-nuxt`
+- [Currency Context Nuxt](currency-context.md) — `module-control-panel-currency-context-nuxt`
+- [Developer Experience Nuxt](developer-experience.md) — `module-control-panel-developer-experience-nuxt`
+- [Feature Flags Nuxt](feature-flags.md) — `module-control-panel-feature-flags-nuxt`
+- [Files Media Nuxt](files-media.md) — `module-control-panel-files-media-nuxt`
+- [Identity Core Nuxt](identity-core.md) — `module-control-panel-identity-core-nuxt`
+- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-control-panel-identity-socialstream-nuxt`
+- [Import Export Nuxt](import-export.md) — `module-control-panel-import-export-nuxt`
+- [Integrations Nuxt](integrations.md) — `module-control-panel-integrations-nuxt`
+- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-nuxt`
+- [Localization Core Nuxt](localization-core.md) — `module-control-panel-localization-core-nuxt`
+- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-control-panel-localization-mymemory-nuxt`
+- [Module Manager Nuxt](module-manager.md) — `module-control-panel-module-manager-nuxt`
+- [Notifications Nuxt](notifications.md) — `module-control-panel-notifications-nuxt`
+- [Observability Nuxt](observability.md) — `module-control-panel-observability-nuxt`
+- [Organizations Teams Nuxt](organizations-teams.md) — `module-control-panel-organizations-teams-nuxt`
+- [Profiles Nuxt](profiles.md) — `module-control-panel-profiles-nuxt`
+- [Roles Permissions Nuxt](roles-permissions.md) — `module-control-panel-roles-permissions-nuxt`
+- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-control-panel-scheduler-queues-nuxt`
+- [Search Nuxt](search.md) — `module-control-panel-search-nuxt`
+- [Sessions Devices Nuxt](sessions-devices.md) — `module-control-panel-sessions-devices-nuxt`
+- [Settings Nuxt](settings.md) — `module-control-panel-settings-nuxt`
+- [Theme Support Nuxt](theme-support.md) — `module-control-panel-theme-support-nuxt`
+- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-nuxt`
+- [Webhooks Nuxt](webhooks.md) — `module-control-panel-webhooks-nuxt`

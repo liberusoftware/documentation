@@ -1,120 +1,177 @@
 # CMS Feature Specifications
 
-**Source:** [CMS.md](../CMS.md)  
-**Architecture:** [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md) · [DOCUMENTATION.md](../CMS.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Content modeling modules
-
-- [CMS Core](cms-core.md) — `module-cms-core`
-- [Content Entities](content-entities.md) — `module-cms-content-entities`
-- [Field System](field-system.md) — `module-cms-field-system`
-- [Metadata](metadata.md) — `module-cms-metadata`
-- [Taxonomy](taxonomy.md) — `module-cms-taxonomy`
-- [Pages](pages.md) — `module-cms-pages`
-- [Editorial Content](editorial-content.md) — `module-cms-editorial-content`
-- [Structured Collections](structured-collections.md) — `module-cms-structured-collections`
-
-## Authoring and editorial modules
-
-- [Rich Text Editor](rich-text-editor.md) — `module-cms-rich-text-editor`
-- [Block Editor](block-editor.md) — `module-cms-block-editor`
-- [Layout Builder](layout-builder.md) — `module-cms-layout-builder`
-- [Content Templates](content-templates.md) — `module-cms-content-templates`
-- [Revisions](revisions.md) — `module-cms-revisions`
-- [Editorial Workflow](editorial-workflow.md) — `module-cms-editorial-workflow`
-- [Publishing](publishing.md) — `module-cms-publishing`
-- [Content Calendar](content-calendar.md) — `module-cms-content-calendar`
-- [Content Locking](content-locking.md) — `module-cms-content-locking`
-- [Accessibility Assistant](accessibility-assistant.md) — `module-cms-accessibility-assistant`
-
-## Media and asset modules
-
-- [Media Library](media-library.md) — `module-cms-media-library`
-- [Image Processing](image-processing.md) — `module-cms-image-processing`
-- [Video and Audio](video-and-audio.md) — `module-cms-video-and-audio`
-- [Digital Asset Management](digital-asset-management.md) — `module-cms-digital-asset-management`
-- [Document Management](document-management.md) — `module-cms-document-management`
-- [Embeds](embeds.md) — `module-cms-embeds`
-
-## Information architecture and display modules
-
-- [Navigation](navigation.md) — `module-cms-navigation`
-- [Regions and Widgets](regions-and-widgets.md) — `module-cms-regions-and-widgets`
-- [Views and Query Builder](views-and-query-builder.md) — `module-cms-views-and-query-builder`
-- [Display Modes](display-modes.md) — `module-cms-display-modes`
-- [Related Content](related-content.md) — `module-cms-related-content`
-- [Content Search](content-search.md) — `module-cms-content-search`
-- [Comments and Discussion](comments-and-discussion.md) — `module-cms-comments-and-discussion`
-- [Contact Directory](contact-directory.md) — `module-cms-contact-directory`
-
-## Sites, localization, and governance modules
-
-- [Multisite](multisite.md) — `module-cms-multisite`
-- [Site Factory](site-factory.md) — `module-cms-site-factory`
-- [Localization](localization.md) — `module-cms-localization`
-- [Translation Management](translation-management.md) — `module-cms-translation-management`
-- [Content Access](content-access.md) — `module-cms-content-access`
-- [Configuration Management](configuration-management.md) — `module-cms-configuration-management`
-- [Content Governance](content-governance.md) — `module-cms-content-governance`
-- [Audit and History](audit-and-history.md) — `module-cms-audit-and-history`
-
-## Delivery and experience modules
-
-- [Theme Integration](theme-integration.md) — `module-cms-theme-integration`
-- [Web Delivery](web-delivery.md) — `module-cms-web-delivery`
-- [Headless API](headless-api.md) — `module-cms-headless-api`
-- [Content Federation](content-federation.md) — `module-cms-content-federation`
-- [Syndication and Feeds](syndication-and-feeds.md) — `module-cms-syndication-and-feeds`
-- [Static Publishing](static-publishing.md) — `module-cms-static-publishing`
-- [Offline and PWA](offline-and-pwa.md) — `module-cms-offline-and-pwa`
-- [Personalization](personalization.md) — `module-cms-personalization`
-- [Experimentation](experimentation.md) — `module-cms-experimentation`
-
-## Discovery, SEO, and audience modules
-
-- [SEO](seo.md) — `module-cms-seo`
-- [Redirects](redirects.md) — `module-cms-redirects`
-- [Sitemaps](sitemaps.md) — `module-cms-sitemaps`
-- [Analytics Integration](analytics-integration.md) — `module-cms-analytics-integration`
-- [Recommendations](recommendations.md) — `module-cms-recommendations`
-- [Notifications and Subscriptions](notifications-and-subscriptions.md) — `module-cms-notifications-and-subscriptions`
-
-## Forms, community, and application modules
-
-- [Form Builder](form-builder.md) — `module-cms-form-builder`
-- [Form Operations](form-operations.md) — `module-cms-form-operations`
-- [Polls and Surveys](polls-and-surveys.md) — `module-cms-polls-and-surveys`
-- [Membership Content](membership-content.md) — `module-cms-membership-content`
-- [Events Content](events-content.md) — `module-cms-events-content`
-- [Knowledge Base](knowledge-base.md) — `module-cms-knowledge-base`
-- [Forums Integration](forums-integration.md) — `module-cms-forums-integration`
-
-## Extension ecosystem modules
-
-- [Extension Manager](extension-manager.md) — `module-cms-extension-manager`
-- [Extension Marketplace](extension-marketplace.md) — `module-cms-extension-marketplace`
-- [Hook and Event SDK](hook-and-event-sdk.md) — `module-cms-hook-and-event-sdk`
-- [Theme Marketplace](theme-marketplace.md) — `module-cms-theme-marketplace`
-- [Site Recipes](site-recipes.md) — `module-cms-site-recipes`
-- [Integration Directory](integration-directory.md) — `module-cms-integration-directory`
-
-## Operations and migration modules
-
-- [Migration Framework](migration-framework.md) — `module-cms-migration-framework`
-- [WordPress Migration](wordpress-migration.md) — `module-cms-wordpress-migration`
-- [Drupal Migration](drupal-migration.md) — `module-cms-drupal-migration`
-- [Joomla Migration](joomla-migration.md) — `module-cms-joomla-migration`
-- [Backup and Restore](backup-and-restore.md) — `module-cms-backup-and-restore`
-- [Cache and Performance](cache-and-performance.md) — `module-cms-cache-and-performance`
-- [Content Integrity](content-integrity.md) — `module-cms-content-integrity`
-- [Security Operations](security-operations.md) — `module-cms-security-operations`
-
-## Intelligence modules
-
-- [Content Intelligence](content-intelligence.md) — `module-cms-content-intelligence`
-- [CMS Copilot](cms-copilot.md) — `module-cms-copilot`
-- [Translation Assistant](translation-assistant.md) — `module-cms-translation-assistant`
-- [Media Assistant](media-assistant.md) — `module-cms-media-assistant`
-- [Experience Assistant](experience-assistant.md) — `module-cms-experience-assistant`
+- [Api](api.md) — `module-cms-api`
+- [Cms](cms.md) — `module-cms-cms`
+- [Cms Accessibility Assistant](cms-accessibility-assistant.md) — `module-cms-cms-accessibility-assistant`
+- [Cms Admin](cms-admin.md) — `module-cms-cms-admin`
+- [Cms Analytics Integration](cms-analytics-integration.md) — `module-cms-cms-analytics-integration`
+- [Cms Audit](cms-audit.md) — `module-cms-cms-audit`
+- [Cms Backup And Restore](cms-backup-and-restore.md) — `module-cms-cms-backup-and-restore`
+- [Cms Block Editor](cms-block-editor.md) — `module-cms-cms-block-editor`
+- [Cms Blocks](cms-blocks.md) — `module-cms-cms-blocks`
+- [Cms Cache And Performance](cms-cache-and-performance.md) — `module-cms-cms-cache-and-performance`
+- [Cms Collections](cms-collections.md) — `module-cms-cms-collections`
+- [Cms Comments And Discussion](cms-comments-and-discussion.md) — `module-cms-cms-comments-and-discussion`
+- [Cms Configuration Management](cms-configuration-management.md) — `module-cms-cms-configuration-management`
+- [Cms Contact Directory](cms-contact-directory.md) — `module-cms-cms-contact-directory`
+- [Cms Content](cms-content.md) — `module-cms-cms-content`
+- [Cms Content Access](cms-content-access.md) — `module-cms-cms-content-access`
+- [Cms Content Calendar](cms-content-calendar.md) — `module-cms-cms-content-calendar`
+- [Cms Content Federation](cms-content-federation.md) — `module-cms-cms-content-federation`
+- [Cms Content Governance](cms-content-governance.md) — `module-cms-cms-content-governance`
+- [Cms Content Integrity](cms-content-integrity.md) — `module-cms-cms-content-integrity`
+- [Cms Content Intelligence](cms-content-intelligence.md) — `module-cms-cms-content-intelligence`
+- [Cms Content Locking](cms-content-locking.md) — `module-cms-cms-content-locking`
+- [Cms Content Templates](cms-content-templates.md) — `module-cms-cms-content-templates`
+- [Cms Content Types](cms-content-types.md) — `module-cms-cms-content-types`
+- [Cms Contracts](cms-contracts.md) — `module-cms-cms-contracts`
+- [Cms Copilot](cms-copilot.md) — `module-cms-cms-copilot`
+- [Cms Core](cms-core.md) — `module-cms-cms-core`
+- [Cms Digital Asset Management](cms-digital-asset-management.md) — `module-cms-cms-digital-asset-management`
+- [Cms Display Modes](cms-display-modes.md) — `module-cms-cms-display-modes`
+- [Cms Document Management](cms-document-management.md) — `module-cms-cms-document-management`
+- [Cms Drupal Migration](cms-drupal-migration.md) — `module-cms-cms-drupal-migration`
+- [Cms Embeds](cms-embeds.md) — `module-cms-cms-embeds`
+- [Cms Events Content](cms-events-content.md) — `module-cms-cms-events-content`
+- [Cms Experimentation](cms-experimentation.md) — `module-cms-cms-experimentation`
+- [Cms Extension Manager](cms-extension-manager.md) — `module-cms-cms-extension-manager`
+- [Cms Extension Marketplace](cms-extension-marketplace.md) — `module-cms-cms-extension-marketplace`
+- [Cms Field System](cms-field-system.md) — `module-cms-cms-field-system`
+- [Cms Forms](cms-forms.md) — `module-cms-cms-forms`
+- [Cms Hello](cms-hello.md) — `module-cms-cms-hello`
+- [Cms Integration Directory](cms-integration-directory.md) — `module-cms-cms-integration-directory`
+- [Cms Joomla Migration](cms-joomla-migration.md) — `module-cms-cms-joomla-migration`
+- [Cms Layout Builder](cms-layout-builder.md) — `module-cms-cms-layout-builder`
+- [Cms Media](cms-media.md) — `module-cms-cms-media`
+- [Cms Menus](cms-menus.md) — `module-cms-cms-menus`
+- [Cms Metadata](cms-metadata.md) — `module-cms-cms-metadata`
+- [Cms Migration Framework](cms-migration-framework.md) — `module-cms-cms-migration-framework`
+- [Cms Multisite](cms-multisite.md) — `module-cms-cms-multisite`
+- [Cms Notifications](cms-notifications.md) — `module-cms-cms-notifications`
+- [Cms Notifications And Subscriptions](cms-notifications-and-subscriptions.md) — `module-cms-cms-notifications-and-subscriptions`
+- [Cms Observability](cms-observability.md) — `module-cms-cms-observability`
+- [Cms Offline And Pwa](cms-offline-and-pwa.md) — `module-cms-cms-offline-and-pwa`
+- [Cms Pages](cms-pages.md) — `module-cms-cms-pages`
+- [Cms Personalization](cms-personalization.md) — `module-cms-cms-personalization`
+- [Cms Polls And Surveys](cms-polls-and-surveys.md) — `module-cms-cms-polls-and-surveys`
+- [Cms Posts](cms-posts.md) — `module-cms-cms-posts`
+- [Cms Publishing](cms-publishing.md) — `module-cms-cms-publishing`
+- [Cms Recommendations](cms-recommendations.md) — `module-cms-cms-recommendations`
+- [Cms Redirects](cms-redirects.md) — `module-cms-cms-redirects`
+- [Cms Regions And Widgets](cms-regions-and-widgets.md) — `module-cms-cms-regions-and-widgets`
+- [Cms Related Content](cms-related-content.md) — `module-cms-cms-related-content`
+- [Cms Revisions](cms-revisions.md) — `module-cms-cms-revisions`
+- [Cms Rich Text Editor](cms-rich-text-editor.md) — `module-cms-cms-rich-text-editor`
+- [Cms Search](cms-search.md) — `module-cms-cms-search`
+- [Cms Security Operations](cms-security-operations.md) — `module-cms-cms-security-operations`
+- [Cms Seo](cms-seo.md) — `module-cms-cms-seo`
+- [Cms Site Factory](cms-site-factory.md) — `module-cms-cms-site-factory`
+- [Cms Site Recipes](cms-site-recipes.md) — `module-cms-cms-site-recipes`
+- [Cms Sitemaps](cms-sitemaps.md) — `module-cms-cms-sitemaps`
+- [Cms Static Publishing](cms-static-publishing.md) — `module-cms-cms-static-publishing`
+- [Cms Structured Collections](cms-structured-collections.md) — `module-cms-cms-structured-collections`
+- [Cms Syndication And Feeds](cms-syndication-and-feeds.md) — `module-cms-cms-syndication-and-feeds`
+- [Cms Taxonomy](cms-taxonomy.md) — `module-cms-cms-taxonomy`
+- [Cms Theme Integration](cms-theme-integration.md) — `module-cms-cms-theme-integration`
+- [Cms Theme Marketplace](cms-theme-marketplace.md) — `module-cms-cms-theme-marketplace`
+- [Cms Themes](cms-themes.md) — `module-cms-cms-themes`
+- [Cms Translation Assistant](cms-translation-assistant.md) — `module-cms-cms-translation-assistant`
+- [Cms Translation Management](cms-translation-management.md) — `module-cms-cms-translation-management`
+- [Cms Users](cms-users.md) — `module-cms-cms-users`
+- [Cms Video And Audio](cms-video-and-audio.md) — `module-cms-cms-video-and-audio`
+- [Cms Views And Query Builder](cms-views-and-query-builder.md) — `module-cms-cms-views-and-query-builder`
+- [Cms Web Delivery](cms-web-delivery.md) — `module-cms-cms-web-delivery`
+- [Cms Widgets](cms-widgets.md) — `module-cms-cms-widgets`
+- [Cms Wordpress Migration](cms-wordpress-migration.md) — `module-cms-cms-wordpress-migration`
+- [Core](core.md) — `module-cms-core`
+- [Features](features.md) — `module-cms-features`
+- [Filament](filament.md) — `module-cms-filament`
+- [Livewire](livewire.md) — `module-cms-livewire`
+- [Module Cms](module-cms.md) — `module-cms-module-cms`
+- [Module Cms Accessibility Assistant](module-cms-accessibility-assistant.md) — `module-cms-module-cms-accessibility-assistant`
+- [Module Cms Admin](module-cms-admin.md) — `module-cms-module-cms-admin`
+- [Module Cms Analytics Integration](module-cms-analytics-integration.md) — `module-cms-module-cms-analytics-integration`
+- [Module Cms Audit](module-cms-audit.md) — `module-cms-module-cms-audit`
+- [Module Cms Backup And Restore](module-cms-backup-and-restore.md) — `module-cms-module-cms-backup-and-restore`
+- [Module Cms Block Editor](module-cms-block-editor.md) — `module-cms-module-cms-block-editor`
+- [Module Cms Blocks](module-cms-blocks.md) — `module-cms-module-cms-blocks`
+- [Module Cms Cache And Performance](module-cms-cache-and-performance.md) — `module-cms-module-cms-cache-and-performance`
+- [Module Cms Cms Copilot](module-cms-cms-copilot.md) — `module-cms-module-cms-cms-copilot`
+- [Module Cms Collections](module-cms-collections.md) — `module-cms-module-cms-collections`
+- [Module Cms Comments And Discussion](module-cms-comments-and-discussion.md) — `module-cms-module-cms-comments-and-discussion`
+- [Module Cms Configuration Management](module-cms-configuration-management.md) — `module-cms-module-cms-configuration-management`
+- [Module Cms Contact Directory](module-cms-contact-directory.md) — `module-cms-module-cms-contact-directory`
+- [Module Cms Content](module-cms-content.md) — `module-cms-module-cms-content`
+- [Module Cms Content Access](module-cms-content-access.md) — `module-cms-module-cms-content-access`
+- [Module Cms Content Calendar](module-cms-content-calendar.md) — `module-cms-module-cms-content-calendar`
+- [Module Cms Content Entities](module-cms-content-entities.md) — `module-cms-module-cms-content-entities`
+- [Module Cms Content Federation](module-cms-content-federation.md) — `module-cms-module-cms-content-federation`
+- [Module Cms Content Governance](module-cms-content-governance.md) — `module-cms-module-cms-content-governance`
+- [Module Cms Content Integrity](module-cms-content-integrity.md) — `module-cms-module-cms-content-integrity`
+- [Module Cms Content Intelligence](module-cms-content-intelligence.md) — `module-cms-module-cms-content-intelligence`
+- [Module Cms Content Locking](module-cms-content-locking.md) — `module-cms-module-cms-content-locking`
+- [Module Cms Content Search](module-cms-content-search.md) — `module-cms-module-cms-content-search`
+- [Module Cms Content Templates](module-cms-content-templates.md) — `module-cms-module-cms-content-templates`
+- [Module Cms Content Types](module-cms-content-types.md) — `module-cms-module-cms-content-types`
+- [Module Cms Contracts](module-cms-contracts.md) — `module-cms-module-cms-contracts`
+- [Module Cms Copilot](module-cms-copilot.md) — `module-cms-module-cms-copilot`
+- [Module Cms Core](module-cms-core.md) — `module-cms-module-cms-core`
+- [Module Cms Digital Asset Management](module-cms-digital-asset-management.md) — `module-cms-module-cms-digital-asset-management`
+- [Module Cms Display Modes](module-cms-display-modes.md) — `module-cms-module-cms-display-modes`
+- [Module Cms Document Management](module-cms-document-management.md) — `module-cms-module-cms-document-management`
+- [Module Cms Drupal Migration](module-cms-drupal-migration.md) — `module-cms-module-cms-drupal-migration`
+- [Module Cms Embeds](module-cms-embeds.md) — `module-cms-module-cms-embeds`
+- [Module Cms Events Content](module-cms-events-content.md) — `module-cms-module-cms-events-content`
+- [Module Cms Experimentation](module-cms-experimentation.md) — `module-cms-module-cms-experimentation`
+- [Module Cms Extension Manager](module-cms-extension-manager.md) — `module-cms-module-cms-extension-manager`
+- [Module Cms Extension Marketplace](module-cms-extension-marketplace.md) — `module-cms-module-cms-extension-marketplace`
+- [Module Cms Field System](module-cms-field-system.md) — `module-cms-module-cms-field-system`
+- [Module Cms Forms](module-cms-forms.md) — `module-cms-module-cms-forms`
+- [Module Cms Hello](module-cms-hello.md) — `module-cms-module-cms-hello`
+- [Module Cms Integration Directory](module-cms-integration-directory.md) — `module-cms-module-cms-integration-directory`
+- [Module Cms Joomla Migration](module-cms-joomla-migration.md) — `module-cms-module-cms-joomla-migration`
+- [Module Cms Layout Builder](module-cms-layout-builder.md) — `module-cms-module-cms-layout-builder`
+- [Module Cms Media](module-cms-media.md) — `module-cms-module-cms-media`
+- [Module Cms Menus](module-cms-menus.md) — `module-cms-module-cms-menus`
+- [Module Cms Metadata](module-cms-metadata.md) — `module-cms-module-cms-metadata`
+- [Module Cms Migration Framework](module-cms-migration-framework.md) — `module-cms-module-cms-migration-framework`
+- [Module Cms Multisite](module-cms-multisite.md) — `module-cms-module-cms-multisite`
+- [Module Cms Navigation](module-cms-navigation.md) — `module-cms-module-cms-navigation`
+- [Module Cms Notifications](module-cms-notifications.md) — `module-cms-module-cms-notifications`
+- [Module Cms Notifications And Subscriptions](module-cms-notifications-and-subscriptions.md) — `module-cms-module-cms-notifications-and-subscriptions`
+- [Module Cms Observability](module-cms-observability.md) — `module-cms-module-cms-observability`
+- [Module Cms Offline And Pwa](module-cms-offline-and-pwa.md) — `module-cms-module-cms-offline-and-pwa`
+- [Module Cms Pages](module-cms-pages.md) — `module-cms-module-cms-pages`
+- [Module Cms Personalization](module-cms-personalization.md) — `module-cms-module-cms-personalization`
+- [Module Cms Polls And Surveys](module-cms-polls-and-surveys.md) — `module-cms-module-cms-polls-and-surveys`
+- [Module Cms Posts](module-cms-posts.md) — `module-cms-module-cms-posts`
+- [Module Cms Publishing](module-cms-publishing.md) — `module-cms-module-cms-publishing`
+- [Module Cms Recommendations](module-cms-recommendations.md) — `module-cms-module-cms-recommendations`
+- [Module Cms Redirects](module-cms-redirects.md) — `module-cms-module-cms-redirects`
+- [Module Cms Regions And Widgets](module-cms-regions-and-widgets.md) — `module-cms-module-cms-regions-and-widgets`
+- [Module Cms Related Content](module-cms-related-content.md) — `module-cms-module-cms-related-content`
+- [Module Cms Revisions](module-cms-revisions.md) — `module-cms-module-cms-revisions`
+- [Module Cms Rich Text Editor](module-cms-rich-text-editor.md) — `module-cms-module-cms-rich-text-editor`
+- [Module Cms Search](module-cms-search.md) — `module-cms-module-cms-search`
+- [Module Cms Security Operations](module-cms-security-operations.md) — `module-cms-module-cms-security-operations`
+- [Module Cms Seo](module-cms-seo.md) — `module-cms-module-cms-seo`
+- [Module Cms Site Factory](module-cms-site-factory.md) — `module-cms-module-cms-site-factory`
+- [Module Cms Site Recipes](module-cms-site-recipes.md) — `module-cms-module-cms-site-recipes`
+- [Module Cms Sitemaps](module-cms-sitemaps.md) — `module-cms-module-cms-sitemaps`
+- [Module Cms Static Publishing](module-cms-static-publishing.md) — `module-cms-module-cms-static-publishing`
+- [Module Cms Structured Collections](module-cms-structured-collections.md) — `module-cms-module-cms-structured-collections`
+- [Module Cms Syndication And Feeds](module-cms-syndication-and-feeds.md) — `module-cms-module-cms-syndication-and-feeds`
+- [Module Cms Taxonomy](module-cms-taxonomy.md) — `module-cms-module-cms-taxonomy`
+- [Module Cms Theme Integration](module-cms-theme-integration.md) — `module-cms-module-cms-theme-integration`
+- [Module Cms Theme Marketplace](module-cms-theme-marketplace.md) — `module-cms-module-cms-theme-marketplace`
+- [Module Cms Themes](module-cms-themes.md) — `module-cms-module-cms-themes`
+- [Module Cms Translation Assistant](module-cms-translation-assistant.md) — `module-cms-module-cms-translation-assistant`
+- [Module Cms Translation Management](module-cms-translation-management.md) — `module-cms-module-cms-translation-management`
+- [Module Cms Users](module-cms-users.md) — `module-cms-module-cms-users`
+- [Module Cms Video And Audio](module-cms-video-and-audio.md) — `module-cms-module-cms-video-and-audio`
+- [Module Cms Views And Query Builder](module-cms-views-and-query-builder.md) — `module-cms-module-cms-views-and-query-builder`
+- [Module Cms Web Delivery](module-cms-web-delivery.md) — `module-cms-module-cms-web-delivery`
+- [Module Cms Widgets](module-cms-widgets.md) — `module-cms-module-cms-widgets`
+- [Module Cms Wordpress Migration](module-cms-wordpress-migration.md) — `module-cms-module-cms-wordpress-migration`

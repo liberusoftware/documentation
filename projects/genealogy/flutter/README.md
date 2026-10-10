@@ -1,45 +1,54 @@
-# Genealogy Flutter + Dart implementations
+# Genealogy Flutter + Dart Implementations
 
-**Scope:** [Genealogy](../GENEALOGY.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [Flutter technology](../../../technologies/FLUTTER.md) · [Flutter standard](../../../standards/FLUTTER.md)
+Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-This index defines the optional Flutter + Dart adapter boundary for the Genealogy project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-flutter`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [Flutter + Dart module standard](../../../modules/flutter/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 14 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                              | Package                                 | Core                              | API                             |
-| ----------------------------------- | --------------------------------------- | --------------------------------- | ------------------------------- |
-| [Collaboration](collaboration.md)   | module-genealogy-collaboration-flutter  | [Core](../core/collaboration.md)  | [API](../api/collaboration.md)  |
-| [Discovery](discovery.md)           | module-genealogy-discovery-flutter      | [Core](../core/discovery.md)      | [API](../api/discovery.md)      |
-| [Dna](dna.md)                       | module-genealogy-dna-flutter            | [Core](../core/dna.md)            | [API](../api/dna.md)            |
-| [Evidence](evidence.md)             | module-genealogy-evidence-flutter       | [Core](../core/evidence.md)       | [API](../api/evidence.md)       |
-| [Genealogy Core](genealogy-core.md) | module-genealogy-genealogy-core-flutter | [Core](../core/genealogy-core.md) | [API](../api/genealogy-core.md) |
-| [Import Export](import-export.md)   | module-genealogy-import-export-flutter  | [Core](../core/import-export.md)  | [API](../api/import-export.md)  |
-| [Media](media.md)                   | module-genealogy-media-flutter          | [Core](../core/media.md)          | [API](../api/media.md)          |
-| [People](people.md)                 | module-genealogy-people-flutter         | [Core](../core/people.md)         | [API](../api/people.md)         |
-| [Places](places.md)                 | module-genealogy-places-flutter         | [Core](../core/places.md)         | [API](../api/places.md)         |
-| [Relationships](relationships.md)   | module-genealogy-relationships-flutter  | [Core](../core/relationships.md)  | [API](../api/relationships.md)  |
-| [Reports](reports.md)               | module-genealogy-reports-flutter        | [Core](../core/reports.md)        | [API](../api/reports.md)        |
-| [Research](research.md)             | module-genealogy-research-flutter       | [Core](../core/research.md)       | [API](../api/research.md)       |
-| [Timeline](timeline.md)             | module-genealogy-timeline-flutter       | [Core](../core/timeline.md)       | [API](../api/timeline.md)       |
-| [Tree Viewer](tree-viewer.md)       | module-genealogy-tree-viewer-flutter    | [Core](../core/tree-viewer.md)    | [API](../api/tree-viewer.md)    |
+- [Activity Comments Flutter](activity-comments.md) — `module-genealogy-activity-comments-flutter`
+- [Analytics Core Flutter](analytics-core.md) — `module-genealogy-analytics-core-flutter`
+- [Analytics Google Flutter](analytics-google.md) — `module-genealogy-analytics-google-flutter`
+- [Analytics Meta Flutter](analytics-meta.md) — `module-genealogy-analytics-meta-flutter`
+- [Api Access Flutter](api-access.md) — `module-genealogy-api-access-flutter`
+- [Application Flutter](application.md) — `module-genealogy-application-flutter`
+- [Audit Flutter](audit.md) — `module-genealogy-audit-flutter`
+- [Currency Context Flutter](currency-context.md) — `module-genealogy-currency-context-flutter`
+- [Developer Experience Flutter](developer-experience.md) — `module-genealogy-developer-experience-flutter`
+- [Feature Flags Flutter](feature-flags.md) — `module-genealogy-feature-flags-flutter`
+- [Files Media Flutter](files-media.md) — `module-genealogy-files-media-flutter`
+- [Genealogy Collaboration Flutter](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-flutter`
+- [Genealogy Core Flutter](genealogy-core.md) — `module-genealogy-genealogy-core-flutter`
+- [Genealogy Discovery Flutter](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-flutter`
+- [Genealogy Dna Flutter](genealogy-dna.md) — `module-genealogy-genealogy-dna-flutter`
+- [Genealogy Evidence Flutter](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-flutter`
+- [Genealogy Gamification Flutter](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-flutter`
+- [Genealogy Import Export Flutter](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-flutter`
+- [Genealogy Media Flutter](genealogy-media.md) — `module-genealogy-genealogy-media-flutter`
+- [Genealogy People Flutter](genealogy-people.md) — `module-genealogy-genealogy-people-flutter`
+- [Genealogy Places Flutter](genealogy-places.md) — `module-genealogy-genealogy-places-flutter`
+- [Genealogy Relationships Flutter](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-flutter`
+- [Genealogy Reports Flutter](genealogy-reports.md) — `module-genealogy-genealogy-reports-flutter`
+- [Genealogy Research Flutter](genealogy-research.md) — `module-genealogy-genealogy-research-flutter`
+- [Genealogy Timeline Flutter](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-flutter`
+- [Genealogy Tree Viewer Flutter](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-flutter`
+- [Identity Core Flutter](identity-core.md) — `module-genealogy-identity-core-flutter`
+- [Identity Socialstream Flutter](identity-socialstream.md) — `module-genealogy-identity-socialstream-flutter`
+- [Import Export Flutter](import-export.md) — `module-genealogy-import-export-flutter`
+- [Integrations Flutter](integrations.md) — `module-genealogy-integrations-flutter`
+- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-flutter`
+- [Liberu Business Workflow Reconciliation Flutter](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-flutter`
+- [Liberu Executive Insights Flutter](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-flutter`
+- [Liberu Platform Orchestration Flutter](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-flutter`
+- [Liberu Revenue And Care Orchestration Flutter](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-flutter`
+- [Localization Core Flutter](localization-core.md) — `module-genealogy-localization-core-flutter`
+- [Localization Mymemory Flutter](localization-mymemory.md) — `module-genealogy-localization-mymemory-flutter`
+- [Module Manager Flutter](module-manager.md) — `module-genealogy-module-manager-flutter`
+- [Notifications Flutter](notifications.md) — `module-genealogy-notifications-flutter`
+- [Observability Flutter](observability.md) — `module-genealogy-observability-flutter`
+- [Organizations Teams Flutter](organizations-teams.md) — `module-genealogy-organizations-teams-flutter`
+- [Profiles Flutter](profiles.md) — `module-genealogy-profiles-flutter`
+- [Roles Permissions Flutter](roles-permissions.md) — `module-genealogy-roles-permissions-flutter`
+- [Scheduler Queues Flutter](scheduler-queues.md) — `module-genealogy-scheduler-queues-flutter`
+- [Search Flutter](search.md) — `module-genealogy-search-flutter`
+- [Sessions Devices Flutter](sessions-devices.md) — `module-genealogy-sessions-devices-flutter`
+- [Settings Flutter](settings.md) — `module-genealogy-settings-flutter`
+- [Theme Support Flutter](theme-support.md) — `module-genealogy-theme-support-flutter`
+- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-flutter`
+- [Webhooks Flutter](webhooks.md) — `module-genealogy-webhooks-flutter`

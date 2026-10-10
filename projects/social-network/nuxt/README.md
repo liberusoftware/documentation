@@ -1,24 +1,50 @@
-# Social-Network Nuxt 4 Implementations
+# Social Network Nuxt Implementations
 
-**Source:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)
-**Architecture:** [NUXT.md](../SOCIAL-NETWORK.md) · [API module index](../api/README.md) · [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md)
+Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-Each file defines the optional `Nuxt 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Social Core Nuxt](social-core.md) — `module-social-network-social-core-nuxt`
-- [Profiles Nuxt](profiles.md) — `module-social-network-profiles-nuxt`
-- [Social Graph Nuxt](social-graph.md) — `module-social-network-social-graph-nuxt`
-- [Publishing Nuxt](publishing.md) — `module-social-network-publishing-nuxt`
-- [Feed Nuxt](feed.md) — `module-social-network-feed-nuxt`
-- [Engagement Nuxt](engagement.md) — `module-social-network-engagement-nuxt`
-- [Media Nuxt](media.md) — `module-social-network-media-nuxt`
-- [Communities Nuxt](communities.md) — `module-social-network-communities-nuxt`
-- [Events Nuxt](events.md) — `module-social-network-events-nuxt`
-- [Messaging Nuxt](messaging.md) — `module-social-network-messaging-nuxt`
+- [Activity Comments Nuxt](activity-comments.md) — `module-social-network-activity-comments-nuxt`
+- [Analytics Core Nuxt](analytics-core.md) — `module-social-network-analytics-core-nuxt`
+- [Analytics Google Nuxt](analytics-google.md) — `module-social-network-analytics-google-nuxt`
+- [Analytics Meta Nuxt](analytics-meta.md) — `module-social-network-analytics-meta-nuxt`
+- [Api Access Nuxt](api-access.md) — `module-social-network-api-access-nuxt`
+- [Application Nuxt](application.md) — `module-social-network-application-nuxt`
+- [Audit Nuxt](audit.md) — `module-social-network-audit-nuxt`
+- [Currency Context Nuxt](currency-context.md) — `module-social-network-currency-context-nuxt`
+- [Developer Experience Nuxt](developer-experience.md) — `module-social-network-developer-experience-nuxt`
+- [Feature Flags Nuxt](feature-flags.md) — `module-social-network-feature-flags-nuxt`
+- [Files Media Nuxt](files-media.md) — `module-social-network-files-media-nuxt`
+- [Identity Core Nuxt](identity-core.md) — `module-social-network-identity-core-nuxt`
+- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-social-network-identity-socialstream-nuxt`
+- [Import Export Nuxt](import-export.md) — `module-social-network-import-export-nuxt`
+- [Integrations Nuxt](integrations.md) — `module-social-network-integrations-nuxt`
+- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-social-network-jetstream-bridge-nuxt`
+- [Localization Core Nuxt](localization-core.md) — `module-social-network-localization-core-nuxt`
+- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-social-network-localization-mymemory-nuxt`
+- [Module Manager Nuxt](module-manager.md) — `module-social-network-module-manager-nuxt`
 - [Notifications Nuxt](notifications.md) — `module-social-network-notifications-nuxt`
-- [Discovery Nuxt](discovery.md) — `module-social-network-discovery-nuxt`
-- [Moderation Nuxt](moderation.md) — `module-social-network-moderation-nuxt`
-- [Federation Nuxt](federation.md) — `module-social-network-federation-nuxt`
-- [Analytics Nuxt](analytics.md) — `module-social-network-analytics-nuxt`
+- [Observability Nuxt](observability.md) — `module-social-network-observability-nuxt`
+- [Organizations Teams Nuxt](organizations-teams.md) — `module-social-network-organizations-teams-nuxt`
+- [Profiles Nuxt](profiles.md) — `module-social-network-profiles-nuxt`
+- [Roles Permissions Nuxt](roles-permissions.md) — `module-social-network-roles-permissions-nuxt`
+- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-social-network-scheduler-queues-nuxt`
+- [Search Nuxt](search.md) — `module-social-network-search-nuxt`
+- [Sessions Devices Nuxt](sessions-devices.md) — `module-social-network-sessions-devices-nuxt`
+- [Settings Nuxt](settings.md) — `module-social-network-settings-nuxt`
+- [Social Network Analytics Nuxt](social-network-analytics.md) — `module-social-network-social-network-analytics-nuxt`
+- [Social Network Communities Nuxt](social-network-communities.md) — `module-social-network-social-network-communities-nuxt`
+- [Social Network Discovery Nuxt](social-network-discovery.md) — `module-social-network-social-network-discovery-nuxt`
+- [Social Network Engagement Nuxt](social-network-engagement.md) — `module-social-network-social-network-engagement-nuxt`
+- [Social Network Events Nuxt](social-network-events.md) — `module-social-network-social-network-events-nuxt`
+- [Social Network Federation Nuxt](social-network-federation.md) — `module-social-network-social-network-federation-nuxt`
+- [Social Network Feed Nuxt](social-network-feed.md) — `module-social-network-social-network-feed-nuxt`
+- [Social Network Media Nuxt](social-network-media.md) — `module-social-network-social-network-media-nuxt`
+- [Social Network Messaging Nuxt](social-network-messaging.md) — `module-social-network-social-network-messaging-nuxt`
+- [Social Network Moderation Nuxt](social-network-moderation.md) — `module-social-network-social-network-moderation-nuxt`
+- [Social Network Notifications Nuxt](social-network-notifications.md) — `module-social-network-social-network-notifications-nuxt`
+- [Social Network Profiles Nuxt](social-network-profiles.md) — `module-social-network-social-network-profiles-nuxt`
+- [Social Network Publishing Nuxt](social-network-publishing.md) — `module-social-network-social-network-publishing-nuxt`
+- [Social Network Social Core Nuxt](social-network-social-core.md) — `module-social-network-social-network-social-core-nuxt`
+- [Social Network Social Graph Nuxt](social-network-social-graph.md) — `module-social-network-social-network-social-graph-nuxt`
+- [Theme Support Nuxt](theme-support.md) — `module-social-network-theme-support-nuxt`
+- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-social-network-two-factor-authentication-nuxt`
+- [Webhooks Nuxt](webhooks.md) — `module-social-network-webhooks-nuxt`

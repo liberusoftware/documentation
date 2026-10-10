@@ -1,46 +1,50 @@
-# Social Network Flutter + Dart implementations
+# Social Network Flutter + Dart Implementations
 
-**Scope:** [Social Network](../SOCIAL-NETWORK.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [Flutter technology](../../../technologies/FLUTTER.md) · [Flutter standard](../../../standards/FLUTTER.md)
+Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-This index defines the optional Flutter + Dart adapter boundary for the Social Network project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-flutter`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [Flutter + Dart module standard](../../../modules/flutter/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 15 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                            | Package                                     | Core                             | API                            |
-| --------------------------------- | ------------------------------------------- | -------------------------------- | ------------------------------ |
-| [Analytics](analytics.md)         | module-social-network-analytics-flutter     | [Core](../core/analytics.md)     | [API](../api/analytics.md)     |
-| [Communities](communities.md)     | module-social-network-communities-flutter   | [Core](../core/communities.md)   | [API](../api/communities.md)   |
-| [Discovery](discovery.md)         | module-social-network-discovery-flutter     | [Core](../core/discovery.md)     | [API](../api/discovery.md)     |
-| [Engagement](engagement.md)       | module-social-network-engagement-flutter    | [Core](../core/engagement.md)    | [API](../api/engagement.md)    |
-| [Events](events.md)               | module-social-network-events-flutter        | [Core](../core/events.md)        | [API](../api/events.md)        |
-| [Federation](federation.md)       | module-social-network-federation-flutter    | [Core](../core/federation.md)    | [API](../api/federation.md)    |
-| [Feed](feed.md)                   | module-social-network-feed-flutter          | [Core](../core/feed.md)          | [API](../api/feed.md)          |
-| [Media](media.md)                 | module-social-network-media-flutter         | [Core](../core/media.md)         | [API](../api/media.md)         |
-| [Messaging](messaging.md)         | module-social-network-messaging-flutter     | [Core](../core/messaging.md)     | [API](../api/messaging.md)     |
-| [Moderation](moderation.md)       | module-social-network-moderation-flutter    | [Core](../core/moderation.md)    | [API](../api/moderation.md)    |
-| [Notifications](notifications.md) | module-social-network-notifications-flutter | [Core](../core/notifications.md) | [API](../api/notifications.md) |
-| [Profiles](profiles.md)           | module-social-network-profiles-flutter      | [Core](../core/profiles.md)      | [API](../api/profiles.md)      |
-| [Publishing](publishing.md)       | module-social-network-publishing-flutter    | [Core](../core/publishing.md)    | [API](../api/publishing.md)    |
-| [Social Core](social-core.md)     | module-social-network-social-core-flutter   | [Core](../core/social-core.md)   | [API](../api/social-core.md)   |
-| [Social Graph](social-graph.md)   | module-social-network-social-graph-flutter  | [Core](../core/social-graph.md)  | [API](../api/social-graph.md)  |
+- [Activity Comments Flutter](activity-comments.md) — `module-social-network-activity-comments-flutter`
+- [Analytics Core Flutter](analytics-core.md) — `module-social-network-analytics-core-flutter`
+- [Analytics Google Flutter](analytics-google.md) — `module-social-network-analytics-google-flutter`
+- [Analytics Meta Flutter](analytics-meta.md) — `module-social-network-analytics-meta-flutter`
+- [Api Access Flutter](api-access.md) — `module-social-network-api-access-flutter`
+- [Application Flutter](application.md) — `module-social-network-application-flutter`
+- [Audit Flutter](audit.md) — `module-social-network-audit-flutter`
+- [Currency Context Flutter](currency-context.md) — `module-social-network-currency-context-flutter`
+- [Developer Experience Flutter](developer-experience.md) — `module-social-network-developer-experience-flutter`
+- [Feature Flags Flutter](feature-flags.md) — `module-social-network-feature-flags-flutter`
+- [Files Media Flutter](files-media.md) — `module-social-network-files-media-flutter`
+- [Identity Core Flutter](identity-core.md) — `module-social-network-identity-core-flutter`
+- [Identity Socialstream Flutter](identity-socialstream.md) — `module-social-network-identity-socialstream-flutter`
+- [Import Export Flutter](import-export.md) — `module-social-network-import-export-flutter`
+- [Integrations Flutter](integrations.md) — `module-social-network-integrations-flutter`
+- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-social-network-jetstream-bridge-flutter`
+- [Localization Core Flutter](localization-core.md) — `module-social-network-localization-core-flutter`
+- [Localization Mymemory Flutter](localization-mymemory.md) — `module-social-network-localization-mymemory-flutter`
+- [Module Manager Flutter](module-manager.md) — `module-social-network-module-manager-flutter`
+- [Notifications Flutter](notifications.md) — `module-social-network-notifications-flutter`
+- [Observability Flutter](observability.md) — `module-social-network-observability-flutter`
+- [Organizations Teams Flutter](organizations-teams.md) — `module-social-network-organizations-teams-flutter`
+- [Profiles Flutter](profiles.md) — `module-social-network-profiles-flutter`
+- [Roles Permissions Flutter](roles-permissions.md) — `module-social-network-roles-permissions-flutter`
+- [Scheduler Queues Flutter](scheduler-queues.md) — `module-social-network-scheduler-queues-flutter`
+- [Search Flutter](search.md) — `module-social-network-search-flutter`
+- [Sessions Devices Flutter](sessions-devices.md) — `module-social-network-sessions-devices-flutter`
+- [Settings Flutter](settings.md) — `module-social-network-settings-flutter`
+- [Social Network Analytics Flutter](social-network-analytics.md) — `module-social-network-social-network-analytics-flutter`
+- [Social Network Communities Flutter](social-network-communities.md) — `module-social-network-social-network-communities-flutter`
+- [Social Network Discovery Flutter](social-network-discovery.md) — `module-social-network-social-network-discovery-flutter`
+- [Social Network Engagement Flutter](social-network-engagement.md) — `module-social-network-social-network-engagement-flutter`
+- [Social Network Events Flutter](social-network-events.md) — `module-social-network-social-network-events-flutter`
+- [Social Network Federation Flutter](social-network-federation.md) — `module-social-network-social-network-federation-flutter`
+- [Social Network Feed Flutter](social-network-feed.md) — `module-social-network-social-network-feed-flutter`
+- [Social Network Media Flutter](social-network-media.md) — `module-social-network-social-network-media-flutter`
+- [Social Network Messaging Flutter](social-network-messaging.md) — `module-social-network-social-network-messaging-flutter`
+- [Social Network Moderation Flutter](social-network-moderation.md) — `module-social-network-social-network-moderation-flutter`
+- [Social Network Notifications Flutter](social-network-notifications.md) — `module-social-network-social-network-notifications-flutter`
+- [Social Network Profiles Flutter](social-network-profiles.md) — `module-social-network-social-network-profiles-flutter`
+- [Social Network Publishing Flutter](social-network-publishing.md) — `module-social-network-social-network-publishing-flutter`
+- [Social Network Social Core Flutter](social-network-social-core.md) — `module-social-network-social-network-social-core-flutter`
+- [Social Network Social Graph Flutter](social-network-social-graph.md) — `module-social-network-social-network-social-graph-flutter`
+- [Theme Support Flutter](theme-support.md) — `module-social-network-theme-support-flutter`
+- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-social-network-two-factor-authentication-flutter`
+- [Webhooks Flutter](webhooks.md) — `module-social-network-webhooks-flutter`

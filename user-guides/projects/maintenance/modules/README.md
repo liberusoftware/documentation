@@ -1,20 +1,50 @@
-# Liberu Maintenance — module journeys
+# Maintenance — Module User Guides
 
-These pages describe what an end user sees when this module is enabled. They are shared by public web, authenticated portal, staff web, and mobile experiences where applicable.
+End-user guides for each Maintenance module.
 
-| Module | User guide | Developer source |
-| --- | --- | --- |
-| Assets | [Guide](assets.md) | [features](../../../../projects/maintenance/features/assets.md) |
-| Commercial | [Guide](commercial.md) | [features](../../../../projects/maintenance/features/commercial.md) |
-| Compliance | [Guide](compliance.md) | [features](../../../../projects/maintenance/features/compliance.md) |
-| Customers AND Sites | [Guide](customers-and-sites.md) | [features](../../../../projects/maintenance/features/customers-and-sites.md) |
-| Inspections | [Guide](inspections.md) | [features](../../../../projects/maintenance/features/inspections.md) |
-| Inventory | [Guide](inventory.md) | [features](../../../../projects/maintenance/features/inventory.md) |
-| Labor AND Time | [Guide](labor-and-time.md) | [features](../../../../projects/maintenance/features/labor-and-time.md) |
-| Maintenance Core | [Guide](maintenance-core.md) | [features](../../../../projects/maintenance/features/maintenance-core.md) |
-| Portals | [Guide](portals.md) | [features](../../../../projects/maintenance/features/portals.md) |
-| Preventative Maintenance | [Guide](preventative-maintenance.md) | [features](../../../../projects/maintenance/features/preventative-maintenance.md) |
-| Procurement | [Guide](procurement.md) | [features](../../../../projects/maintenance/features/procurement.md) |
-| Reporting | [Guide](reporting.md) | [features](../../../../projects/maintenance/features/reporting.md) |
-| Scheduling | [Guide](scheduling.md) | [features](../../../../projects/maintenance/features/scheduling.md) |
-| Work Orders | [Guide](work-orders.md) | [features](../../../../projects/maintenance/features/work-orders.md) |
+- [Activity Comments](activity-comments.md)
+- [Analytics Core](analytics-core.md)
+- [Analytics Google](analytics-google.md)
+- [Analytics Meta](analytics-meta.md)
+- [Api Access](api-access.md)
+- [Application](application.md)
+- [Audit](audit.md)
+- [Currency Context](currency-context.md)
+- [Developer Experience](developer-experience.md)
+- [Feature Flags](feature-flags.md)
+- [Files Media](files-media.md)
+- [Identity Core](identity-core.md)
+- [Identity Socialstream](identity-socialstream.md)
+- [Import Export](import-export.md)
+- [Integrations](integrations.md)
+- [Jetstream Bridge](jetstream-bridge.md)
+- [Localization Core](localization-core.md)
+- [Localization Mymemory](localization-mymemory.md)
+- [Maintenance Maintenance Core](maintenance-maintenance-core.md)
+- [Module Maintenance Assets](module-maintenance-assets.md)
+- [Module Maintenance Commercial](module-maintenance-commercial.md)
+- [Module Maintenance Compliance](module-maintenance-compliance.md)
+- [Module Maintenance Core](module-maintenance-core.md)
+- [Module Maintenance Customers And Sites](module-maintenance-customers-and-sites.md)
+- [Module Maintenance Inspections](module-maintenance-inspections.md)
+- [Module Maintenance Inventory](module-maintenance-inventory.md)
+- [Module Maintenance Labor And Time](module-maintenance-labor-and-time.md)
+- [Module Maintenance Portals](module-maintenance-portals.md)
+- [Module Maintenance Preventative Maintenance](module-maintenance-preventative-maintenance.md)
+- [Module Maintenance Procurement](module-maintenance-procurement.md)
+- [Module Maintenance Reporting](module-maintenance-reporting.md)
+- [Module Maintenance Scheduling](module-maintenance-scheduling.md)
+- [Module Maintenance Work Orders](module-maintenance-work-orders.md)
+- [Module Manager](module-manager.md)
+- [Notifications](notifications.md)
+- [Observability](observability.md)
+- [Organizations Teams](organizations-teams.md)
+- [Profiles](profiles.md)
+- [Roles Permissions](roles-permissions.md)
+- [Scheduler Queues](scheduler-queues.md)
+- [Search](search.md)
+- [Sessions Devices](sessions-devices.md)
+- [Settings](settings.md)
+- [Theme Support](theme-support.md)
+- [Two Factor Authentication](two-factor-authentication.md)
+- [Webhooks](webhooks.md)

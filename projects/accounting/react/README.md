@@ -1,153 +1,146 @@
-# Accounting React 19.2 + Inertia 3 Implementations
+# Accounting React + Inertia Implementations
 
-**Source:** [ACCOUNTING.md](../ACCOUNTING.md)
-**Architecture:** [REACT.md](../ACCOUNTING.md) · [API module index](../api/README.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Accounting foundation modules
-
-- [Accounting Core React + Inertia](accounting-core.md) — `module-accounting-core-react-inertia`
-- [Financial Master Data React + Inertia](financial-master-data.md) — `module-accounting-financial-master-data-react-inertia`
-- [Chart of Accounts React + Inertia](chart-of-accounts.md) — `module-accounting-chart-of-accounts-react-inertia`
-- [General Ledger React + Inertia](general-ledger.md) — `module-accounting-general-ledger-react-inertia`
-- [Dimensions and Tracking React + Inertia](dimensions-and-tracking.md) — `module-accounting-dimensions-and-tracking-react-inertia`
-- [Opening Balances React + Inertia](opening-balances.md) — `module-accounting-opening-balances-react-inertia`
-- [Recurring Transactions React + Inertia](recurring-transactions.md) — `module-accounting-recurring-transactions-react-inertia`
-- [Accounting Periods React + Inertia](accounting-periods.md) — `module-accounting-periods-react-inertia`
-- [Accounting Policies React + Inertia](accounting-policies.md) — `module-accounting-policies-react-inertia`
-
-## Sales and receivables modules
-
-- [Estimates and Quotes React + Inertia](estimates-and-quotes.md) — `module-accounting-estimates-and-quotes-react-inertia`
-- [Sales Orders React + Inertia](sales-orders.md) — `module-accounting-sales-orders-react-inertia`
-- [Sales Invoicing React + Inertia](sales-invoicing.md) — `module-accounting-sales-invoicing-react-inertia`
-- [Credit Notes and Adjustments React + Inertia](credit-notes-and-adjustments.md) — `module-accounting-credit-notes-and-adjustments-react-inertia`
-- [Customer Payments React + Inertia](customer-payments.md) — `module-accounting-customer-payments-react-inertia`
-- [Accounts Receivable React + Inertia](accounts-receivable.md) — `module-accounting-accounts-receivable-react-inertia`
-- [Collections React + Inertia](collections.md) — `module-accounting-collections-react-inertia`
-- [Customer Portal React + Inertia](customer-portal.md) — `module-accounting-customer-portal-react-inertia`
-
-## Purchasing and payables modules
-
-- [Purchase Requisitions React + Inertia](purchase-requisitions.md) — `module-accounting-purchase-requisitions-react-inertia`
-- [Purchase Orders React + Inertia](purchase-orders.md) — `module-accounting-purchase-orders-react-inertia`
-- [Goods and Service Receipts React + Inertia](goods-and-service-receipts.md) — `module-accounting-goods-and-service-receipts-react-inertia`
-- [Supplier Bills React + Inertia](supplier-bills.md) — `module-accounting-supplier-bills-react-inertia`
-- [Three-Way Matching React + Inertia](three-way-matching.md) — `module-accounting-three-way-matching-react-inertia`
-- [Accounts Payable React + Inertia](accounts-payable.md) — `module-accounting-accounts-payable-react-inertia`
-- [Bill Payments React + Inertia](bill-payments.md) — `module-accounting-bill-payments-react-inertia`
-- [Supplier Portal React + Inertia](supplier-portal.md) — `module-accounting-supplier-portal-react-inertia`
-- [Contractor Compliance React + Inertia](contractor-compliance.md) — `module-accounting-contractor-compliance-react-inertia`
-
-## Capture, expenses, cards, time, and mileage modules
-
-- [Document Capture React + Inertia](document-capture.md) — `module-accounting-document-capture-react-inertia`
-- [Receipt Management React + Inertia](receipt-management.md) — `module-accounting-receipt-management-react-inertia`
-- [Employee Expenses React + Inertia](employee-expenses.md) — `module-accounting-employee-expenses-react-inertia`
-- [Corporate Cards React + Inertia](corporate-cards.md) — `module-accounting-corporate-cards-react-inertia`
-- [Mileage React + Inertia](mileage.md) — `module-accounting-mileage-react-inertia`
-- [Time Tracking React + Inertia](time-tracking.md) — `module-accounting-time-tracking-react-inertia`
-- [Reimbursements React + Inertia](reimbursements.md) — `module-accounting-reimbursements-react-inertia`
-
-## Banking, treasury, and cash modules
-
-- [Bank Accounts React + Inertia](bank-accounts.md) — `module-accounting-bank-accounts-react-inertia`
-- [Bank Feeds React + Inertia](bank-feeds.md) — `module-accounting-bank-feeds-react-inertia`
-- [Bank Rules React + Inertia](bank-rules.md) — `module-accounting-bank-rules-react-inertia`
-- [Cash Coding React + Inertia](cash-coding.md) — `module-accounting-cash-coding-react-inertia`
-- [Bank Reconciliation React + Inertia](bank-reconciliation.md) — `module-accounting-bank-reconciliation-react-inertia`
-- [Deposits and Clearing React + Inertia](deposits-and-clearing.md) — `module-accounting-deposits-and-clearing-react-inertia`
-- [Transfers React + Inertia](transfers.md) — `module-accounting-transfers-react-inertia`
-- [Payment Reconciliation React + Inertia](payment-reconciliation.md) — `module-accounting-payment-reconciliation-react-inertia`
-- [Cash Position React + Inertia](cash-position.md) — `module-accounting-cash-position-react-inertia`
-- [Cash-Flow Forecasting React + Inertia](cash-flow-forecasting.md) — `module-accounting-cash-flow-forecasting-react-inertia`
-- [Debt and Loans React + Inertia](debt-and-loans.md) — `module-accounting-debt-and-loans-react-inertia`
-
-## Tax and regulatory modules
-
-- [Tax Core React + Inertia](tax-core.md) — `module-accounting-tax-core-react-inertia`
-- [Sales Tax and GST React + Inertia](sales-tax-and-gst.md) — `module-accounting-sales-tax-and-gst-react-inertia`
-- [VAT React + Inertia](vat.md) — `module-accounting-vat-react-inertia`
-- [Tax Returns React + Inertia](tax-returns.md) — `module-accounting-tax-returns-react-inertia`
-- [E-Invoicing React + Inertia](e-invoicing.md) — `module-accounting-e-invoicing-react-inertia`
-- [Withholding Tax React + Inertia](withholding-tax.md) — `module-accounting-withholding-tax-react-inertia`
-- [Construction Tax React + Inertia](construction-tax.md) — `module-accounting-construction-tax-react-inertia`
-- [Contractor Reporting React + Inertia](contractor-reporting.md) — `module-accounting-contractor-reporting-react-inertia`
-- [Carbon Accounting React + Inertia](carbon-accounting.md) — `module-accounting-carbon-accounting-react-inertia`
-- [Regional Packs React + Inertia](regional-packs.md) — `module-accounting-regional-packs-react-inertia`
-
-## Inventory, assets, and specialized accounting modules
-
-- [Inventory Accounting React + Inertia](inventory-accounting.md) — `module-accounting-inventory-accounting-react-inertia`
-- [Product and Service Items React + Inertia](product-and-service-items.md) — `module-accounting-product-and-service-items-react-inertia`
-- [Fixed Assets React + Inertia](fixed-assets.md) — `module-accounting-fixed-assets-react-inertia`
-- [Depreciation React + Inertia](depreciation.md) — `module-accounting-depreciation-react-inertia`
-- [Asset Events React + Inertia](asset-events.md) — `module-accounting-asset-events-react-inertia`
-- [Leases React + Inertia](leases.md) — `module-accounting-leases-react-inertia`
-- [Revenue Recognition React + Inertia](revenue-recognition.md) — `module-accounting-revenue-recognition-react-inertia`
-
-## Projects, jobs, and profitability modules
-
-- [Projects and Jobs React + Inertia](projects-and-jobs.md) — `module-accounting-projects-and-jobs-react-inertia`
-- [Project Costing React + Inertia](project-costing.md) — `module-accounting-project-costing-react-inertia`
-- [Project Billing React + Inertia](project-billing.md) — `module-accounting-project-billing-react-inertia`
-- [Project Profitability React + Inertia](project-profitability.md) — `module-accounting-project-profitability-react-inertia`
-- [Job Estimates React + Inertia](job-estimates.md) — `module-accounting-job-estimates-react-inertia`
-
-## Payroll accounting modules
-
-- [Payroll Integration React + Inertia](payroll-integration.md) — `module-accounting-payroll-integration-react-inertia`
-- [Payroll Journals React + Inertia](payroll-journals.md) — `module-accounting-payroll-journals-react-inertia`
-- [Payroll Liabilities React + Inertia](payroll-liabilities.md) — `module-accounting-payroll-liabilities-react-inertia`
-- [Payroll Payments React + Inertia](payroll-payments.md) — `module-accounting-payroll-payments-react-inertia`
-- [Workforce Costing React + Inertia](workforce-costing.md) — `module-accounting-workforce-costing-react-inertia`
-
-## Planning, reporting, and advisory modules
-
-- [Financial Statements React + Inertia](financial-statements.md) — `module-accounting-financial-statements-react-inertia`
-- [Operational Reports React + Inertia](operational-reports.md) — `module-accounting-operational-reports-react-inertia`
-- [Custom Report Builder React + Inertia](custom-report-builder.md) — `module-accounting-custom-report-builder-react-inertia`
-- [Dashboards React + Inertia](dashboards.md) — `module-accounting-dashboards-react-inertia`
-- [Budgets React + Inertia](budgets.md) — `module-accounting-budgets-react-inertia`
-- [Forecasts React + Inertia](forecasts.md) — `module-accounting-forecasts-react-inertia`
-- [Management Reporting React + Inertia](management-reporting.md) — `module-accounting-management-reporting-react-inertia`
-- [Business Insights React + Inertia](business-insights.md) — `module-accounting-business-insights-react-inertia`
-- [KPI and Goals React + Inertia](kpi-and-goals.md) — `module-accounting-kpi-and-goals-react-inertia`
-
-## Multi-entity and international modules
-
-- [Multi-Currency React + Inertia](multi-currency.md) — `module-accounting-multi-currency-react-inertia`
-- [Multi-Entity React + Inertia](multi-entity.md) — `module-accounting-multi-entity-react-inertia`
-- [Intercompany React + Inertia](intercompany.md) — `module-accounting-intercompany-react-inertia`
-- [Consolidation React + Inertia](consolidation.md) — `module-accounting-consolidation-react-inertia`
-- [Branch and Location Accounting React + Inertia](branch-and-location-accounting.md) — `module-accounting-branch-and-location-accounting-react-inertia`
-
-## Close, controls, and accountant-practice modules
-
-- [Close Management React + Inertia](close-management.md) — `module-accounting-close-management-react-inertia`
-- [Account Reconciliations React + Inertia](account-reconciliations.md) — `module-accounting-account-reconciliations-react-inertia`
-- [Journal Approvals React + Inertia](journal-approvals.md) — `module-accounting-journal-approvals-react-inertia`
-- [Accounting Review React + Inertia](accounting-review.md) — `module-accounting-review-react-inertia`
-- [Accountant Workspace React + Inertia](accountant-workspace.md) — `module-accounting-accountant-workspace-react-inertia`
-- [Client Collaboration React + Inertia](client-collaboration.md) — `module-accounting-client-collaboration-react-inertia`
-- [Workpapers React + Inertia](workpapers.md) — `module-accounting-workpapers-react-inertia`
-- [Year End React + Inertia](year-end.md) — `module-accounting-year-end-react-inertia`
-- [Audit Support React + Inertia](audit-support.md) — `module-accounting-audit-support-react-inertia`
-
-## Automation and intelligence modules
-
-- [Accounting Automation Pack React + Inertia](accounting-automation-pack.md) — `module-accounting-automation-pack-react-inertia`
-- [Coding Suggestions React + Inertia](coding-suggestions.md) — `module-accounting-coding-suggestions-react-inertia`
-- [Matching Intelligence React + Inertia](matching-intelligence.md) — `module-accounting-matching-intelligence-react-inertia`
-- [Anomaly Detection React + Inertia](anomaly-detection.md) — `module-accounting-anomaly-detection-react-inertia`
-- [Cash Collection Assistant React + Inertia](cash-collection-assistant.md) — `module-accounting-cash-collection-assistant-react-inertia`
-- [Accounting Copilot React + Inertia](accounting-copilot.md) — `module-accounting-copilot-react-inertia`
-
-## Migration modules
-
-- [Migration Framework React + Inertia](migration-framework.md) — `module-accounting-migration-framework-react-inertia`
-- [QuickBooks Online Migration React + Inertia](quickbooks-online-migration.md) — `module-accounting-quickbooks-online-migration-react-inertia`
-- [Sage Accounting Migration React + Inertia](sage-accounting-migration.md) — `module-accounting-sage-accounting-migration-react-inertia`
-- [Xero Migration React + Inertia](xero-migration.md) — `module-accounting-xero-migration-react-inertia`
-- [Spreadsheet Migration React + Inertia](spreadsheet-migration.md) — `module-accounting-spreadsheet-migration-react-inertia`
+- [Accounting Account Reconciliations React](accounting-account-reconciliations.md) — `module-accounting-accounting-account-reconciliations-react-inertia`
+- [Accounting Accountant Workspace React](accounting-accountant-workspace.md) — `module-accounting-accounting-accountant-workspace-react-inertia`
+- [Accounting Accounts Payable React](accounting-accounts-payable.md) — `module-accounting-accounting-accounts-payable-react-inertia`
+- [Accounting Accounts Receivable React](accounting-accounts-receivable.md) — `module-accounting-accounting-accounts-receivable-react-inertia`
+- [Accounting Anomaly Detection React](accounting-anomaly-detection.md) — `module-accounting-accounting-anomaly-detection-react-inertia`
+- [Accounting Asset Events React](accounting-asset-events.md) — `module-accounting-accounting-asset-events-react-inertia`
+- [Accounting Audit Support React](accounting-audit-support.md) — `module-accounting-accounting-audit-support-react-inertia`
+- [Accounting Automation Pack React](accounting-automation-pack.md) — `module-accounting-accounting-automation-pack-react-inertia`
+- [Accounting Bank Accounts React](accounting-bank-accounts.md) — `module-accounting-accounting-bank-accounts-react-inertia`
+- [Accounting Bank Feeds React](accounting-bank-feeds.md) — `module-accounting-accounting-bank-feeds-react-inertia`
+- [Accounting Bank Reconciliation React](accounting-bank-reconciliation.md) — `module-accounting-accounting-bank-reconciliation-react-inertia`
+- [Accounting Bank Rules React](accounting-bank-rules.md) — `module-accounting-accounting-bank-rules-react-inertia`
+- [Accounting Bill Payments React](accounting-bill-payments.md) — `module-accounting-accounting-bill-payments-react-inertia`
+- [Accounting Branch And Location Accounting React](accounting-branch-and-location-accounting.md) — `module-accounting-accounting-branch-and-location-accounting-react-inertia`
+- [Accounting Budgets React](accounting-budgets.md) — `module-accounting-accounting-budgets-react-inertia`
+- [Accounting Business Insights React](accounting-business-insights.md) — `module-accounting-accounting-business-insights-react-inertia`
+- [Accounting Carbon Accounting React](accounting-carbon-accounting.md) — `module-accounting-accounting-carbon-accounting-react-inertia`
+- [Accounting Cash Coding React](accounting-cash-coding.md) — `module-accounting-accounting-cash-coding-react-inertia`
+- [Accounting Cash Collection Assistant React](accounting-cash-collection-assistant.md) — `module-accounting-accounting-cash-collection-assistant-react-inertia`
+- [Accounting Cash Flow Forecasting React](accounting-cash-flow-forecasting.md) — `module-accounting-accounting-cash-flow-forecasting-react-inertia`
+- [Accounting Cash Position React](accounting-cash-position.md) — `module-accounting-accounting-cash-position-react-inertia`
+- [Accounting Chart Of Accounts React](accounting-chart-of-accounts.md) — `module-accounting-accounting-chart-of-accounts-react-inertia`
+- [Accounting Client Collaboration React](accounting-client-collaboration.md) — `module-accounting-accounting-client-collaboration-react-inertia`
+- [Accounting Close Management React](accounting-close-management.md) — `module-accounting-accounting-close-management-react-inertia`
+- [Accounting Coding Suggestions React](accounting-coding-suggestions.md) — `module-accounting-accounting-coding-suggestions-react-inertia`
+- [Accounting Collections React](accounting-collections.md) — `module-accounting-accounting-collections-react-inertia`
+- [Accounting Consolidation React](accounting-consolidation.md) — `module-accounting-accounting-consolidation-react-inertia`
+- [Accounting Construction Tax React](accounting-construction-tax.md) — `module-accounting-accounting-construction-tax-react-inertia`
+- [Accounting Contractor Compliance React](accounting-contractor-compliance.md) — `module-accounting-accounting-contractor-compliance-react-inertia`
+- [Accounting Contractor Reporting React](accounting-contractor-reporting.md) — `module-accounting-accounting-contractor-reporting-react-inertia`
+- [Accounting Copilot React](accounting-copilot.md) — `module-accounting-accounting-copilot-react-inertia`
+- [Accounting Core React](accounting-core.md) — `module-accounting-accounting-core-react-inertia`
+- [Accounting Corporate Cards React](accounting-corporate-cards.md) — `module-accounting-accounting-corporate-cards-react-inertia`
+- [Accounting Credit Notes And Adjustments React](accounting-credit-notes-and-adjustments.md) — `module-accounting-accounting-credit-notes-and-adjustments-react-inertia`
+- [Accounting Custom Report Builder React](accounting-custom-report-builder.md) — `module-accounting-accounting-custom-report-builder-react-inertia`
+- [Accounting Customer Payments React](accounting-customer-payments.md) — `module-accounting-accounting-customer-payments-react-inertia`
+- [Accounting Customer Portal React](accounting-customer-portal.md) — `module-accounting-accounting-customer-portal-react-inertia`
+- [Accounting Dashboards React](accounting-dashboards.md) — `module-accounting-accounting-dashboards-react-inertia`
+- [Accounting Debt And Loans React](accounting-debt-and-loans.md) — `module-accounting-accounting-debt-and-loans-react-inertia`
+- [Accounting Deposits And Clearing React](accounting-deposits-and-clearing.md) — `module-accounting-accounting-deposits-and-clearing-react-inertia`
+- [Accounting Depreciation React](accounting-depreciation.md) — `module-accounting-accounting-depreciation-react-inertia`
+- [Accounting Dimensions And Tracking React](accounting-dimensions-and-tracking.md) — `module-accounting-accounting-dimensions-and-tracking-react-inertia`
+- [Accounting Document Capture React](accounting-document-capture.md) — `module-accounting-accounting-document-capture-react-inertia`
+- [Accounting E Invoicing React](accounting-e-invoicing.md) — `module-accounting-accounting-e-invoicing-react-inertia`
+- [Accounting Employee Expenses React](accounting-employee-expenses.md) — `module-accounting-accounting-employee-expenses-react-inertia`
+- [Accounting Estimates And Quotes React](accounting-estimates-and-quotes.md) — `module-accounting-accounting-estimates-and-quotes-react-inertia`
+- [Accounting Financial Master Data React](accounting-financial-master-data.md) — `module-accounting-accounting-financial-master-data-react-inertia`
+- [Accounting Financial Statements React](accounting-financial-statements.md) — `module-accounting-accounting-financial-statements-react-inertia`
+- [Accounting Fixed Assets React](accounting-fixed-assets.md) — `module-accounting-accounting-fixed-assets-react-inertia`
+- [Accounting Forecasts React](accounting-forecasts.md) — `module-accounting-accounting-forecasts-react-inertia`
+- [Accounting General Ledger React](accounting-general-ledger.md) — `module-accounting-accounting-general-ledger-react-inertia`
+- [Accounting Goods And Service Receipts React](accounting-goods-and-service-receipts.md) — `module-accounting-accounting-goods-and-service-receipts-react-inertia`
+- [Accounting Intercompany React](accounting-intercompany.md) — `module-accounting-accounting-intercompany-react-inertia`
+- [Accounting Inventory Accounting React](accounting-inventory-accounting.md) — `module-accounting-accounting-inventory-accounting-react-inertia`
+- [Accounting Job Estimates React](accounting-job-estimates.md) — `module-accounting-accounting-job-estimates-react-inertia`
+- [Accounting Journal Approvals React](accounting-journal-approvals.md) — `module-accounting-accounting-journal-approvals-react-inertia`
+- [Accounting Kpi And Goals React](accounting-kpi-and-goals.md) — `module-accounting-accounting-kpi-and-goals-react-inertia`
+- [Accounting Leases React](accounting-leases.md) — `module-accounting-accounting-leases-react-inertia`
+- [Accounting Management Reporting React](accounting-management-reporting.md) — `module-accounting-accounting-management-reporting-react-inertia`
+- [Accounting Matching Intelligence React](accounting-matching-intelligence.md) — `module-accounting-accounting-matching-intelligence-react-inertia`
+- [Accounting Migration Framework React](accounting-migration-framework.md) — `module-accounting-accounting-migration-framework-react-inertia`
+- [Accounting Mileage React](accounting-mileage.md) — `module-accounting-accounting-mileage-react-inertia`
+- [Accounting Multi Currency React](accounting-multi-currency.md) — `module-accounting-accounting-multi-currency-react-inertia`
+- [Accounting Multi Entity React](accounting-multi-entity.md) — `module-accounting-accounting-multi-entity-react-inertia`
+- [Accounting Opening Balances React](accounting-opening-balances.md) — `module-accounting-accounting-opening-balances-react-inertia`
+- [Accounting Operational Reports React](accounting-operational-reports.md) — `module-accounting-accounting-operational-reports-react-inertia`
+- [Accounting Payment Reconciliation React](accounting-payment-reconciliation.md) — `module-accounting-accounting-payment-reconciliation-react-inertia`
+- [Accounting Payroll Integration React](accounting-payroll-integration.md) — `module-accounting-accounting-payroll-integration-react-inertia`
+- [Accounting Payroll Journals React](accounting-payroll-journals.md) — `module-accounting-accounting-payroll-journals-react-inertia`
+- [Accounting Payroll Liabilities React](accounting-payroll-liabilities.md) — `module-accounting-accounting-payroll-liabilities-react-inertia`
+- [Accounting Payroll Payments React](accounting-payroll-payments.md) — `module-accounting-accounting-payroll-payments-react-inertia`
+- [Accounting Periods React](accounting-periods.md) — `module-accounting-accounting-periods-react-inertia`
+- [Accounting Plaid React](accounting-plaid.md) — `module-accounting-accounting-plaid-react-inertia`
+- [Accounting Policies React](accounting-policies.md) — `module-accounting-accounting-policies-react-inertia`
+- [Accounting Product And Service Items React](accounting-product-and-service-items.md) — `module-accounting-accounting-product-and-service-items-react-inertia`
+- [Accounting Project Billing React](accounting-project-billing.md) — `module-accounting-accounting-project-billing-react-inertia`
+- [Accounting Project Costing React](accounting-project-costing.md) — `module-accounting-accounting-project-costing-react-inertia`
+- [Accounting Project Profitability React](accounting-project-profitability.md) — `module-accounting-accounting-project-profitability-react-inertia`
+- [Accounting Projects And Jobs React](accounting-projects-and-jobs.md) — `module-accounting-accounting-projects-and-jobs-react-inertia`
+- [Accounting Purchase Orders React](accounting-purchase-orders.md) — `module-accounting-accounting-purchase-orders-react-inertia`
+- [Accounting Purchase Requisitions React](accounting-purchase-requisitions.md) — `module-accounting-accounting-purchase-requisitions-react-inertia`
+- [Accounting Quickbooks Online Migration React](accounting-quickbooks-online-migration.md) — `module-accounting-accounting-quickbooks-online-migration-react-inertia`
+- [Accounting Receipt Management React](accounting-receipt-management.md) — `module-accounting-accounting-receipt-management-react-inertia`
+- [Accounting Recurring Transactions React](accounting-recurring-transactions.md) — `module-accounting-accounting-recurring-transactions-react-inertia`
+- [Accounting Regional Packs React](accounting-regional-packs.md) — `module-accounting-accounting-regional-packs-react-inertia`
+- [Accounting Reimbursements React](accounting-reimbursements.md) — `module-accounting-accounting-reimbursements-react-inertia`
+- [Accounting Revenue Recognition React](accounting-revenue-recognition.md) — `module-accounting-accounting-revenue-recognition-react-inertia`
+- [Accounting Review React](accounting-review.md) — `module-accounting-accounting-review-react-inertia`
+- [Accounting Revolut React](accounting-revolut.md) — `module-accounting-accounting-revolut-react-inertia`
+- [Accounting Sage Accounting Migration React](accounting-sage-accounting-migration.md) — `module-accounting-accounting-sage-accounting-migration-react-inertia`
+- [Accounting Sales Invoicing React](accounting-sales-invoicing.md) — `module-accounting-accounting-sales-invoicing-react-inertia`
+- [Accounting Sales Orders React](accounting-sales-orders.md) — `module-accounting-accounting-sales-orders-react-inertia`
+- [Accounting Sales Tax And Gst React](accounting-sales-tax-and-gst.md) — `module-accounting-accounting-sales-tax-and-gst-react-inertia`
+- [Accounting Spreadsheet Migration React](accounting-spreadsheet-migration.md) — `module-accounting-accounting-spreadsheet-migration-react-inertia`
+- [Accounting Supplier Bills React](accounting-supplier-bills.md) — `module-accounting-accounting-supplier-bills-react-inertia`
+- [Accounting Supplier Portal React](accounting-supplier-portal.md) — `module-accounting-accounting-supplier-portal-react-inertia`
+- [Accounting Tax Core React](accounting-tax-core.md) — `module-accounting-accounting-tax-core-react-inertia`
+- [Accounting Tax Returns React](accounting-tax-returns.md) — `module-accounting-accounting-tax-returns-react-inertia`
+- [Accounting Three Way Matching React](accounting-three-way-matching.md) — `module-accounting-accounting-three-way-matching-react-inertia`
+- [Accounting Time Tracking React](accounting-time-tracking.md) — `module-accounting-accounting-time-tracking-react-inertia`
+- [Accounting Transfers React](accounting-transfers.md) — `module-accounting-accounting-transfers-react-inertia`
+- [Accounting Vat React](accounting-vat.md) — `module-accounting-accounting-vat-react-inertia`
+- [Accounting Wise React](accounting-wise.md) — `module-accounting-accounting-wise-react-inertia`
+- [Accounting Withholding Tax React](accounting-withholding-tax.md) — `module-accounting-accounting-withholding-tax-react-inertia`
+- [Accounting Workforce Costing React](accounting-workforce-costing.md) — `module-accounting-accounting-workforce-costing-react-inertia`
+- [Accounting Workpapers React](accounting-workpapers.md) — `module-accounting-accounting-workpapers-react-inertia`
+- [Accounting Xero Migration React](accounting-xero-migration.md) — `module-accounting-accounting-xero-migration-react-inertia`
+- [Accounting Year End React](accounting-year-end.md) — `module-accounting-accounting-year-end-react-inertia`
+- [Activity Comments React](activity-comments.md) — `module-accounting-activity-comments-react-inertia`
+- [Analytics Core React](analytics-core.md) — `module-accounting-analytics-core-react-inertia`
+- [Analytics Google React](analytics-google.md) — `module-accounting-analytics-google-react-inertia`
+- [Analytics Meta React](analytics-meta.md) — `module-accounting-analytics-meta-react-inertia`
+- [Api Access React](api-access.md) — `module-accounting-api-access-react-inertia`
+- [Application React](application.md) — `module-accounting-application-react-inertia`
+- [Audit React](audit.md) — `module-accounting-audit-react-inertia`
+- [Currency Context React](currency-context.md) — `module-accounting-currency-context-react-inertia`
+- [Developer Experience React](developer-experience.md) — `module-accounting-developer-experience-react-inertia`
+- [Feature Flags React](feature-flags.md) — `module-accounting-feature-flags-react-inertia`
+- [Files Media React](files-media.md) — `module-accounting-files-media-react-inertia`
+- [Identity Core React](identity-core.md) — `module-accounting-identity-core-react-inertia`
+- [Identity Socialstream React](identity-socialstream.md) — `module-accounting-identity-socialstream-react-inertia`
+- [Import Export React](import-export.md) — `module-accounting-import-export-react-inertia`
+- [Integrations React](integrations.md) — `module-accounting-integrations-react-inertia`
+- [Jetstream Bridge React](jetstream-bridge.md) — `module-accounting-jetstream-bridge-react-inertia`
+- [Liberu Business Workflow Reconciliation React](liberu-business-workflow-reconciliation.md) — `module-accounting-liberu-business-workflow-reconciliation-react-inertia`
+- [Liberu Executive Insights React](liberu-executive-insights.md) — `module-accounting-liberu-executive-insights-react-inertia`
+- [Liberu Platform Orchestration React](liberu-platform-orchestration.md) — `module-accounting-liberu-platform-orchestration-react-inertia`
+- [Localization Core React](localization-core.md) — `module-accounting-localization-core-react-inertia`
+- [Localization Mymemory React](localization-mymemory.md) — `module-accounting-localization-mymemory-react-inertia`
+- [Module Manager React](module-manager.md) — `module-accounting-module-manager-react-inertia`
+- [Notifications React](notifications.md) — `module-accounting-notifications-react-inertia`
+- [Observability React](observability.md) — `module-accounting-observability-react-inertia`
+- [Organizations Teams React](organizations-teams.md) — `module-accounting-organizations-teams-react-inertia`
+- [Profiles React](profiles.md) — `module-accounting-profiles-react-inertia`
+- [Roles Permissions React](roles-permissions.md) — `module-accounting-roles-permissions-react-inertia`
+- [Scheduler Queues React](scheduler-queues.md) — `module-accounting-scheduler-queues-react-inertia`
+- [Search React](search.md) — `module-accounting-search-react-inertia`
+- [Sessions Devices React](sessions-devices.md) — `module-accounting-sessions-devices-react-inertia`
+- [Settings React](settings.md) — `module-accounting-settings-react-inertia`
+- [Theme Support React](theme-support.md) — `module-accounting-theme-support-react-inertia`
+- [Two Factor Authentication React](two-factor-authentication.md) — `module-accounting-two-factor-authentication-react-inertia`
+- [Webhooks React](webhooks.md) — `module-accounting-webhooks-react-inertia`

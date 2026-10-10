@@ -1,24 +1,60 @@
 # Real Estate API Module Specifications
 
-**Source:** [REAL-ESTATE.md](../REAL-ESTATE.md)
-**Architecture:** [API.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
-
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-## Module plan
-
-- [Real Estate Core API](real-estate-core.md) — `module-real-estate-core-api`
-- [Parties API](parties.md) — `module-real-estate-parties-api`
-- [Properties API](properties.md) — `module-real-estate-properties-api`
-- [Media and Documents API](media-and-documents.md) — `module-real-estate-media-and-documents-api`
-- [Valuations API](valuations.md) — `module-real-estate-valuations-api`
-- [Instructions API](instructions.md) — `module-real-estate-instructions-api`
-- [Listings API](listings.md) — `module-real-estate-listings-api`
-- [Matching API](matching.md) — `module-real-estate-matching-api`
-- [Viewings API](viewings.md) — `module-real-estate-viewings-api`
-- [Offers API](offers.md) — `module-real-estate-offers-api`
-- [Sales Progression API](sales-progression.md) — `module-real-estate-sales-progression-api`
-- [Lettings API](lettings.md) — `module-real-estate-lettings-api`
-- [Property Management API](property-management.md) — `module-real-estate-property-management-api`
-- [Marketing API](marketing.md) — `module-real-estate-marketing-api`
-- [Portals and Reporting API](portals-and-reporting.md) — `module-real-estate-portals-and-reporting-api`
+- [.graphify API](.graphify.md) — `module-real-estate-.graphify-api`
+- [Activity Comments API](activity-comments.md) — `module-real-estate-activity-comments-api`
+- [Analytics Core API](analytics-core.md) — `module-real-estate-analytics-core-api`
+- [Analytics Google API](analytics-google.md) — `module-real-estate-analytics-google-api`
+- [Analytics Meta API](analytics-meta.md) — `module-real-estate-analytics-meta-api`
+- [Api API](api.md) — `module-real-estate-api-api`
+- [Api Access API](api-access.md) — `module-real-estate-api-access-api`
+- [Application API](application.md) — `module-real-estate-application-api`
+- [Audit API](audit.md) — `module-real-estate-audit-api`
+- [Core API](core.md) — `module-real-estate-core-api`
+- [Currency Context API](currency-context.md) — `module-real-estate-currency-context-api`
+- [Developer Experience API](developer-experience.md) — `module-real-estate-developer-experience-api`
+- [Feature Flags API](feature-flags.md) — `module-real-estate-feature-flags-api`
+- [Features API](features.md) — `module-real-estate-features-api`
+- [Filament API](filament.md) — `module-real-estate-filament-api`
+- [Files Media API](files-media.md) — `module-real-estate-files-media-api`
+- [Identity Core API](identity-core.md) — `module-real-estate-identity-core-api`
+- [Identity Socialstream API](identity-socialstream.md) — `module-real-estate-identity-socialstream-api`
+- [Import Export API](import-export.md) — `module-real-estate-import-export-api`
+- [Integrations API](integrations.md) — `module-real-estate-integrations-api`
+- [Jetstream Bridge API](jetstream-bridge.md) — `module-real-estate-jetstream-bridge-api`
+- [Livewire API](livewire.md) — `module-real-estate-livewire-api`
+- [Localization Core API](localization-core.md) — `module-real-estate-localization-core-api`
+- [Localization Mymemory API](localization-mymemory.md) — `module-real-estate-localization-mymemory-api`
+- [Module Manager API](module-manager.md) — `module-real-estate-module-manager-api`
+- [Notifications API](notifications.md) — `module-real-estate-notifications-api`
+- [Observability API](observability.md) — `module-real-estate-observability-api`
+- [Organizations Teams API](organizations-teams.md) — `module-real-estate-organizations-teams-api`
+- [Profiles API](profiles.md) — `module-real-estate-profiles-api`
+- [Real Estate Core API](real-estate-core.md) — `module-real-estate-real-estate-core-api`
+- [Real Estate Instructions API](real-estate-instructions.md) — `module-real-estate-real-estate-instructions-api`
+- [Real Estate Lettings API](real-estate-lettings.md) — `module-real-estate-real-estate-lettings-api`
+- [Real Estate Listings API](real-estate-listings.md) — `module-real-estate-real-estate-listings-api`
+- [Real Estate Marketing API](real-estate-marketing.md) — `module-real-estate-real-estate-marketing-api`
+- [Real Estate Matching API](real-estate-matching.md) — `module-real-estate-real-estate-matching-api`
+- [Real Estate Media And Documents API](real-estate-media-and-documents.md) — `module-real-estate-real-estate-media-and-documents-api`
+- [Real Estate Offers API](real-estate-offers.md) — `module-real-estate-real-estate-offers-api`
+- [Real Estate Onthemarket API](real-estate-onthemarket.md) — `module-real-estate-real-estate-onthemarket-api`
+- [Real Estate Parties API](real-estate-parties.md) — `module-real-estate-real-estate-parties-api`
+- [Real Estate Portals Reporting API](real-estate-portals-reporting.md) — `module-real-estate-real-estate-portals-reporting-api`
+- [Real Estate Properties API](real-estate-properties.md) — `module-real-estate-real-estate-properties-api`
+- [Real Estate Property Management API](real-estate-property-management.md) — `module-real-estate-real-estate-property-management-api`
+- [Real Estate Rightmove API](real-estate-rightmove.md) — `module-real-estate-real-estate-rightmove-api`
+- [Real Estate Sales Progression API](real-estate-sales-progression.md) — `module-real-estate-real-estate-sales-progression-api`
+- [Real Estate Valuations API](real-estate-valuations.md) — `module-real-estate-real-estate-valuations-api`
+- [Real Estate Viewings API](real-estate-viewings.md) — `module-real-estate-real-estate-viewings-api`
+- [Real Estate Vr Design API](real-estate-vr-design.md) — `module-real-estate-real-estate-vr-design-api`
+- [Real Estate Zoopla API](real-estate-zoopla.md) — `module-real-estate-real-estate-zoopla-api`
+- [Roles Permissions API](roles-permissions.md) — `module-real-estate-roles-permissions-api`
+- [Scheduler Queues API](scheduler-queues.md) — `module-real-estate-scheduler-queues-api`
+- [Search API](search.md) — `module-real-estate-search-api`
+- [Sessions Devices API](sessions-devices.md) — `module-real-estate-sessions-devices-api`
+- [Settings API](settings.md) — `module-real-estate-settings-api`
+- [Theme Support API](theme-support.md) — `module-real-estate-theme-support-api`
+- [Two Factor Authentication API](two-factor-authentication.md) — `module-real-estate-two-factor-authentication-api`
+- [Webhooks API](webhooks.md) — `module-real-estate-webhooks-api`

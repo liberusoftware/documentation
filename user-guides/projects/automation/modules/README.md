@@ -1,17 +1,50 @@
-# Liberu Automation — module journeys
+# Automation — Module User Guides
 
-These pages describe what an end user sees when this module is enabled. They are shared by public web, authenticated portal, staff web, and mobile experiences where applicable.
+End-user guides for each Automation module.
 
-| Module | User guide | Developer source |
-| --- | --- | --- |
-| AI Gateway | [Guide](ai-gateway.md) | [features](../../../../projects/automation/features/ai-gateway.md) |
-| Approvals | [Guide](approvals.md) | [features](../../../../projects/automation/features/approvals.md) |
-| Automation Core | [Guide](automation-core.md) | [features](../../../../projects/automation/features/automation-core.md) |
-| Connectors | [Guide](connectors.md) | [features](../../../../projects/automation/features/connectors.md) |
-| Data Processing | [Guide](data-processing.md) | [features](../../../../projects/automation/features/data-processing.md) |
-| Evaluation | [Guide](evaluation.md) | [features](../../../../projects/automation/features/evaluation.md) |
-| Image | [Guide](image.md) | [features](../../../../projects/automation/features/image.md) |
-| Prompt Registry | [Guide](prompt-registry.md) | [features](../../../../projects/automation/features/prompt-registry.md) |
-| Rules | [Guide](rules.md) | [features](../../../../projects/automation/features/rules.md) |
-| Video | [Guide](video.md) | [features](../../../../projects/automation/features/video.md) |
-| Voice | [Guide](voice.md) | [features](../../../../projects/automation/features/voice.md) |
+- [Activity Comments](activity-comments.md)
+- [Analytics Core](analytics-core.md)
+- [Analytics Google](analytics-google.md)
+- [Analytics Meta](analytics-meta.md)
+- [Api Access](api-access.md)
+- [Application](application.md)
+- [Audit](audit.md)
+- [Currency Context](currency-context.md)
+- [Developer Experience](developer-experience.md)
+- [Feature Flags](feature-flags.md)
+- [Files Media](files-media.md)
+- [Identity Core](identity-core.md)
+- [Identity Socialstream](identity-socialstream.md)
+- [Import Export](import-export.md)
+- [Integrations](integrations.md)
+- [Jetstream Bridge](jetstream-bridge.md)
+- [Liberu Business Workflow Reconciliation](liberu-business-workflow-reconciliation.md)
+- [Liberu Executive Insights](liberu-executive-insights.md)
+- [Liberu Platform Orchestration](liberu-platform-orchestration.md)
+- [Liberu Revenue And Care Orchestration](liberu-revenue-and-care-orchestration.md)
+- [Localization Core](localization-core.md)
+- [Localization Mymemory](localization-mymemory.md)
+- [Module Automation Ai Gateway](module-automation-ai-gateway.md)
+- [Module Automation Approvals](module-automation-approvals.md)
+- [Module Automation Automation Core](module-automation-automation-core.md)
+- [Module Automation Connectors](module-automation-connectors.md)
+- [Module Automation Data Processing](module-automation-data-processing.md)
+- [Module Automation Evaluation](module-automation-evaluation.md)
+- [Module Automation Image](module-automation-image.md)
+- [Module Automation Prompt Registry](module-automation-prompt-registry.md)
+- [Module Automation Rules](module-automation-rules.md)
+- [Module Automation Video](module-automation-video.md)
+- [Module Automation Voice](module-automation-voice.md)
+- [Module Manager](module-manager.md)
+- [Notifications](notifications.md)
+- [Observability](observability.md)
+- [Organizations Teams](organizations-teams.md)
+- [Profiles](profiles.md)
+- [Roles Permissions](roles-permissions.md)
+- [Scheduler Queues](scheduler-queues.md)
+- [Search](search.md)
+- [Sessions Devices](sessions-devices.md)
+- [Settings](settings.md)
+- [Theme Support](theme-support.md)
+- [Two Factor Authentication](two-factor-authentication.md)
+- [Webhooks](webhooks.md)

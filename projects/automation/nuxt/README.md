@@ -1,39 +1,50 @@
-# Automation Nuxt 4 Implementations
+# Automation Nuxt Implementations
 
-**Source:** [AUTOMATION.md](../AUTOMATION.md)
-**Architecture:** [NUXT.md](../AUTOMATION.md) · [API module index](../api/README.md) · [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md)
+Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-Each file defines the optional `Nuxt 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Automation Core Nuxt](automation-core.md) — `module-automation-core-nuxt`
-- [Rules Nuxt](rules.md) — `module-automation-rules-nuxt`
-- [Approvals Nuxt](approvals.md) — `module-automation-approvals-nuxt`
-- [AI Gateway Nuxt](ai-gateway.md) — `module-automation-ai-gateway-nuxt`
-- [Prompt Registry Nuxt](prompt-registry.md) — `module-automation-prompt-registry-nuxt`
-- [Data Processing Nuxt](data-processing.md) — `module-automation-data-processing-nuxt`
-- [Voice Nuxt](voice.md) — `module-automation-voice-nuxt`
-- [Image Nuxt](image.md) — `module-automation-image-nuxt`
-- [Video Nuxt](video.md) — `module-automation-video-nuxt`
-- [Connectors Nuxt](connectors.md) — `module-automation-connectors-nuxt`
-- [Evaluation Nuxt](evaluation.md) — `module-automation-evaluation-nuxt`
-
-**Source:** [AUTOMATION.md](../AUTOMATION.md)
-**Architecture:** [NUXT.md](../AUTOMATION.md) · [API module index](../api/README.md) · [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md)
-
-Each file defines the optional `Nuxt 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Automation Core Nuxt](automation-core.md) — `module-automation-core-nuxt`
-- [Rules Nuxt](rules.md) — `module-automation-rules-nuxt`
-- [Approvals Nuxt](approvals.md) — `module-automation-approvals-nuxt`
-- [AI Gateway Nuxt](ai-gateway.md) — `module-automation-ai-gateway-nuxt`
-- [Prompt Registry Nuxt](prompt-registry.md) — `module-automation-prompt-registry-nuxt`
-- [Data Processing Nuxt](data-processing.md) — `module-automation-data-processing-nuxt`
-- [Voice Nuxt](voice.md) — `module-automation-voice-nuxt`
-- [Image Nuxt](image.md) — `module-automation-image-nuxt`
-- [Video Nuxt](video.md) — `module-automation-video-nuxt`
-- [Connectors Nuxt](connectors.md) — `module-automation-connectors-nuxt`
-- [Evaluation Nuxt](evaluation.md) — `module-automation-evaluation-nuxt`
+- [Activity Comments Nuxt](activity-comments.md) — `module-automation-activity-comments-nuxt`
+- [Analytics Core Nuxt](analytics-core.md) — `module-automation-analytics-core-nuxt`
+- [Analytics Google Nuxt](analytics-google.md) — `module-automation-analytics-google-nuxt`
+- [Analytics Meta Nuxt](analytics-meta.md) — `module-automation-analytics-meta-nuxt`
+- [Api Access Nuxt](api-access.md) — `module-automation-api-access-nuxt`
+- [Application Nuxt](application.md) — `module-automation-application-nuxt`
+- [Audit Nuxt](audit.md) — `module-automation-audit-nuxt`
+- [Currency Context Nuxt](currency-context.md) — `module-automation-currency-context-nuxt`
+- [Developer Experience Nuxt](developer-experience.md) — `module-automation-developer-experience-nuxt`
+- [Feature Flags Nuxt](feature-flags.md) — `module-automation-feature-flags-nuxt`
+- [Files Media Nuxt](files-media.md) — `module-automation-files-media-nuxt`
+- [Identity Core Nuxt](identity-core.md) — `module-automation-identity-core-nuxt`
+- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-automation-identity-socialstream-nuxt`
+- [Import Export Nuxt](import-export.md) — `module-automation-import-export-nuxt`
+- [Integrations Nuxt](integrations.md) — `module-automation-integrations-nuxt`
+- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-automation-jetstream-bridge-nuxt`
+- [Liberu Business Workflow Reconciliation Nuxt](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-nuxt`
+- [Liberu Executive Insights Nuxt](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-nuxt`
+- [Liberu Platform Orchestration Nuxt](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-nuxt`
+- [Liberu Revenue And Care Orchestration Nuxt](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-nuxt`
+- [Localization Core Nuxt](localization-core.md) — `module-automation-localization-core-nuxt`
+- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-automation-localization-mymemory-nuxt`
+- [Module Automation Ai Gateway Nuxt](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-nuxt`
+- [Module Automation Approvals Nuxt](module-automation-approvals.md) — `module-automation-module-automation-approvals-nuxt`
+- [Module Automation Automation Core Nuxt](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-nuxt`
+- [Module Automation Connectors Nuxt](module-automation-connectors.md) — `module-automation-module-automation-connectors-nuxt`
+- [Module Automation Data Processing Nuxt](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-nuxt`
+- [Module Automation Evaluation Nuxt](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-nuxt`
+- [Module Automation Image Nuxt](module-automation-image.md) — `module-automation-module-automation-image-nuxt`
+- [Module Automation Prompt Registry Nuxt](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-nuxt`
+- [Module Automation Rules Nuxt](module-automation-rules.md) — `module-automation-module-automation-rules-nuxt`
+- [Module Automation Video Nuxt](module-automation-video.md) — `module-automation-module-automation-video-nuxt`
+- [Module Automation Voice Nuxt](module-automation-voice.md) — `module-automation-module-automation-voice-nuxt`
+- [Module Manager Nuxt](module-manager.md) — `module-automation-module-manager-nuxt`
+- [Notifications Nuxt](notifications.md) — `module-automation-notifications-nuxt`
+- [Observability Nuxt](observability.md) — `module-automation-observability-nuxt`
+- [Organizations Teams Nuxt](organizations-teams.md) — `module-automation-organizations-teams-nuxt`
+- [Profiles Nuxt](profiles.md) — `module-automation-profiles-nuxt`
+- [Roles Permissions Nuxt](roles-permissions.md) — `module-automation-roles-permissions-nuxt`
+- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-automation-scheduler-queues-nuxt`
+- [Search Nuxt](search.md) — `module-automation-search-nuxt`
+- [Sessions Devices Nuxt](sessions-devices.md) — `module-automation-sessions-devices-nuxt`
+- [Settings Nuxt](settings.md) — `module-automation-settings-nuxt`
+- [Theme Support Nuxt](theme-support.md) — `module-automation-theme-support-nuxt`
+- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-automation-two-factor-authentication-nuxt`
+- [Webhooks Nuxt](webhooks.md) — `module-automation-webhooks-nuxt`

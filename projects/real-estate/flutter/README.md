@@ -1,46 +1,60 @@
-# Real Estate Flutter + Dart implementations
+# Real Estate Flutter + Dart Implementations
 
-**Scope:** [Real Estate](../REAL-ESTATE.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [Flutter technology](../../../technologies/FLUTTER.md) · [Flutter standard](../../../standards/FLUTTER.md)
+Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-This index defines the optional Flutter + Dart adapter boundary for the Real Estate project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-flutter`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [Flutter + Dart module standard](../../../modules/flutter/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 15 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                                            | Package                                          | Core                                     | API                                    |
-| ------------------------------------------------- | ------------------------------------------------ | ---------------------------------------- | -------------------------------------- |
-| [Instructions](instructions.md)                   | module-real-estate-instructions-flutter          | [Core](../core/instructions.md)          | [API](../api/instructions.md)          |
-| [Lettings](lettings.md)                           | module-real-estate-lettings-flutter              | [Core](../core/lettings.md)              | [API](../api/lettings.md)              |
-| [Listings](listings.md)                           | module-real-estate-listings-flutter              | [Core](../core/listings.md)              | [API](../api/listings.md)              |
-| [Marketing](marketing.md)                         | module-real-estate-marketing-flutter             | [Core](../core/marketing.md)             | [API](../api/marketing.md)             |
-| [Matching](matching.md)                           | module-real-estate-matching-flutter              | [Core](../core/matching.md)              | [API](../api/matching.md)              |
-| [Media And Documents](media-and-documents.md)     | module-real-estate-media-and-documents-flutter   | [Core](../core/media-and-documents.md)   | [API](../api/media-and-documents.md)   |
-| [Offers](offers.md)                               | module-real-estate-offers-flutter                | [Core](../core/offers.md)                | [API](../api/offers.md)                |
-| [Parties](parties.md)                             | module-real-estate-parties-flutter               | [Core](../core/parties.md)               | [API](../api/parties.md)               |
-| [Portals And Reporting](portals-and-reporting.md) | module-real-estate-portals-and-reporting-flutter | [Core](../core/portals-and-reporting.md) | [API](../api/portals-and-reporting.md) |
-| [Properties](properties.md)                       | module-real-estate-properties-flutter            | [Core](../core/properties.md)            | [API](../api/properties.md)            |
-| [Property Management](property-management.md)     | module-real-estate-property-management-flutter   | [Core](../core/property-management.md)   | [API](../api/property-management.md)   |
-| [Real Estate Core](real-estate-core.md)           | module-real-estate-real-estate-core-flutter      | [Core](../core/real-estate-core.md)      | [API](../api/real-estate-core.md)      |
-| [Sales Progression](sales-progression.md)         | module-real-estate-sales-progression-flutter     | [Core](../core/sales-progression.md)     | [API](../api/sales-progression.md)     |
-| [Valuations](valuations.md)                       | module-real-estate-valuations-flutter            | [Core](../core/valuations.md)            | [API](../api/valuations.md)            |
-| [Viewings](viewings.md)                           | module-real-estate-viewings-flutter              | [Core](../core/viewings.md)              | [API](../api/viewings.md)              |
+- [.graphify Flutter](.graphify.md) — `module-real-estate-.graphify-flutter`
+- [Activity Comments Flutter](activity-comments.md) — `module-real-estate-activity-comments-flutter`
+- [Analytics Core Flutter](analytics-core.md) — `module-real-estate-analytics-core-flutter`
+- [Analytics Google Flutter](analytics-google.md) — `module-real-estate-analytics-google-flutter`
+- [Analytics Meta Flutter](analytics-meta.md) — `module-real-estate-analytics-meta-flutter`
+- [Api Flutter](api.md) — `module-real-estate-api-flutter`
+- [Api Access Flutter](api-access.md) — `module-real-estate-api-access-flutter`
+- [Application Flutter](application.md) — `module-real-estate-application-flutter`
+- [Audit Flutter](audit.md) — `module-real-estate-audit-flutter`
+- [Core Flutter](core.md) — `module-real-estate-core-flutter`
+- [Currency Context Flutter](currency-context.md) — `module-real-estate-currency-context-flutter`
+- [Developer Experience Flutter](developer-experience.md) — `module-real-estate-developer-experience-flutter`
+- [Feature Flags Flutter](feature-flags.md) — `module-real-estate-feature-flags-flutter`
+- [Features Flutter](features.md) — `module-real-estate-features-flutter`
+- [Filament Flutter](filament.md) — `module-real-estate-filament-flutter`
+- [Files Media Flutter](files-media.md) — `module-real-estate-files-media-flutter`
+- [Identity Core Flutter](identity-core.md) — `module-real-estate-identity-core-flutter`
+- [Identity Socialstream Flutter](identity-socialstream.md) — `module-real-estate-identity-socialstream-flutter`
+- [Import Export Flutter](import-export.md) — `module-real-estate-import-export-flutter`
+- [Integrations Flutter](integrations.md) — `module-real-estate-integrations-flutter`
+- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-real-estate-jetstream-bridge-flutter`
+- [Livewire Flutter](livewire.md) — `module-real-estate-livewire-flutter`
+- [Localization Core Flutter](localization-core.md) — `module-real-estate-localization-core-flutter`
+- [Localization Mymemory Flutter](localization-mymemory.md) — `module-real-estate-localization-mymemory-flutter`
+- [Module Manager Flutter](module-manager.md) — `module-real-estate-module-manager-flutter`
+- [Notifications Flutter](notifications.md) — `module-real-estate-notifications-flutter`
+- [Observability Flutter](observability.md) — `module-real-estate-observability-flutter`
+- [Organizations Teams Flutter](organizations-teams.md) — `module-real-estate-organizations-teams-flutter`
+- [Profiles Flutter](profiles.md) — `module-real-estate-profiles-flutter`
+- [Real Estate Core Flutter](real-estate-core.md) — `module-real-estate-real-estate-core-flutter`
+- [Real Estate Instructions Flutter](real-estate-instructions.md) — `module-real-estate-real-estate-instructions-flutter`
+- [Real Estate Lettings Flutter](real-estate-lettings.md) — `module-real-estate-real-estate-lettings-flutter`
+- [Real Estate Listings Flutter](real-estate-listings.md) — `module-real-estate-real-estate-listings-flutter`
+- [Real Estate Marketing Flutter](real-estate-marketing.md) — `module-real-estate-real-estate-marketing-flutter`
+- [Real Estate Matching Flutter](real-estate-matching.md) — `module-real-estate-real-estate-matching-flutter`
+- [Real Estate Media And Documents Flutter](real-estate-media-and-documents.md) — `module-real-estate-real-estate-media-and-documents-flutter`
+- [Real Estate Offers Flutter](real-estate-offers.md) — `module-real-estate-real-estate-offers-flutter`
+- [Real Estate Onthemarket Flutter](real-estate-onthemarket.md) — `module-real-estate-real-estate-onthemarket-flutter`
+- [Real Estate Parties Flutter](real-estate-parties.md) — `module-real-estate-real-estate-parties-flutter`
+- [Real Estate Portals Reporting Flutter](real-estate-portals-reporting.md) — `module-real-estate-real-estate-portals-reporting-flutter`
+- [Real Estate Properties Flutter](real-estate-properties.md) — `module-real-estate-real-estate-properties-flutter`
+- [Real Estate Property Management Flutter](real-estate-property-management.md) — `module-real-estate-real-estate-property-management-flutter`
+- [Real Estate Rightmove Flutter](real-estate-rightmove.md) — `module-real-estate-real-estate-rightmove-flutter`
+- [Real Estate Sales Progression Flutter](real-estate-sales-progression.md) — `module-real-estate-real-estate-sales-progression-flutter`
+- [Real Estate Valuations Flutter](real-estate-valuations.md) — `module-real-estate-real-estate-valuations-flutter`
+- [Real Estate Viewings Flutter](real-estate-viewings.md) — `module-real-estate-real-estate-viewings-flutter`
+- [Real Estate Vr Design Flutter](real-estate-vr-design.md) — `module-real-estate-real-estate-vr-design-flutter`
+- [Real Estate Zoopla Flutter](real-estate-zoopla.md) — `module-real-estate-real-estate-zoopla-flutter`
+- [Roles Permissions Flutter](roles-permissions.md) — `module-real-estate-roles-permissions-flutter`
+- [Scheduler Queues Flutter](scheduler-queues.md) — `module-real-estate-scheduler-queues-flutter`
+- [Search Flutter](search.md) — `module-real-estate-search-flutter`
+- [Sessions Devices Flutter](sessions-devices.md) — `module-real-estate-sessions-devices-flutter`
+- [Settings Flutter](settings.md) — `module-real-estate-settings-flutter`
+- [Theme Support Flutter](theme-support.md) — `module-real-estate-theme-support-flutter`
+- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-real-estate-two-factor-authentication-flutter`
+- [Webhooks Flutter](webhooks.md) — `module-real-estate-webhooks-flutter`

@@ -1,20 +1,54 @@
-# Liberu Genealogy — module journeys
+# Genealogy — Module User Guides
 
-These pages describe what an end user sees when this module is enabled. They are shared by public web, authenticated portal, staff web, and mobile experiences where applicable.
+End-user guides for each Genealogy module.
 
-| Module | User guide | Developer source |
-| --- | --- | --- |
-| Collaboration | [Guide](collaboration.md) | [features](../../../../projects/genealogy/features/collaboration.md) |
-| Discovery | [Guide](discovery.md) | [features](../../../../projects/genealogy/features/discovery.md) |
-| DNA | [Guide](dna.md) | [features](../../../../projects/genealogy/features/dna.md) |
-| Evidence | [Guide](evidence.md) | [features](../../../../projects/genealogy/features/evidence.md) |
-| Genealogy Core | [Guide](genealogy-core.md) | [features](../../../../projects/genealogy/features/genealogy-core.md) |
-| Import Export | [Guide](import-export.md) | [features](../../../../projects/genealogy/features/import-export.md) |
-| Media | [Guide](media.md) | [features](../../../../projects/genealogy/features/media.md) |
-| People | [Guide](people.md) | [features](../../../../projects/genealogy/features/people.md) |
-| Places | [Guide](places.md) | [features](../../../../projects/genealogy/features/places.md) |
-| Relationships | [Guide](relationships.md) | [features](../../../../projects/genealogy/features/relationships.md) |
-| Reports | [Guide](reports.md) | [features](../../../../projects/genealogy/features/reports.md) |
-| Research | [Guide](research.md) | [features](../../../../projects/genealogy/features/research.md) |
-| Timeline | [Guide](timeline.md) | [features](../../../../projects/genealogy/features/timeline.md) |
-| Tree Viewer | [Guide](tree-viewer.md) | [features](../../../../projects/genealogy/features/tree-viewer.md) |
+- [Activity Comments](activity-comments.md)
+- [Analytics Core](analytics-core.md)
+- [Analytics Google](analytics-google.md)
+- [Analytics Meta](analytics-meta.md)
+- [Api Access](api-access.md)
+- [Application](application.md)
+- [Audit](audit.md)
+- [Currency Context](currency-context.md)
+- [Developer Experience](developer-experience.md)
+- [Feature Flags](feature-flags.md)
+- [Files Media](files-media.md)
+- [Genealogy Collaboration](genealogy-collaboration.md)
+- [Genealogy Core](genealogy-core.md)
+- [Genealogy Discovery](genealogy-discovery.md)
+- [Genealogy Dna](genealogy-dna.md)
+- [Genealogy Evidence](genealogy-evidence.md)
+- [Genealogy Gamification](genealogy-gamification.md)
+- [Genealogy Import Export](genealogy-import-export.md)
+- [Genealogy Media](genealogy-media.md)
+- [Genealogy People](genealogy-people.md)
+- [Genealogy Places](genealogy-places.md)
+- [Genealogy Relationships](genealogy-relationships.md)
+- [Genealogy Reports](genealogy-reports.md)
+- [Genealogy Research](genealogy-research.md)
+- [Genealogy Timeline](genealogy-timeline.md)
+- [Genealogy Tree Viewer](genealogy-tree-viewer.md)
+- [Identity Core](identity-core.md)
+- [Identity Socialstream](identity-socialstream.md)
+- [Import Export](import-export.md)
+- [Integrations](integrations.md)
+- [Jetstream Bridge](jetstream-bridge.md)
+- [Liberu Business Workflow Reconciliation](liberu-business-workflow-reconciliation.md)
+- [Liberu Executive Insights](liberu-executive-insights.md)
+- [Liberu Platform Orchestration](liberu-platform-orchestration.md)
+- [Liberu Revenue And Care Orchestration](liberu-revenue-and-care-orchestration.md)
+- [Localization Core](localization-core.md)
+- [Localization Mymemory](localization-mymemory.md)
+- [Module Manager](module-manager.md)
+- [Notifications](notifications.md)
+- [Observability](observability.md)
+- [Organizations Teams](organizations-teams.md)
+- [Profiles](profiles.md)
+- [Roles Permissions](roles-permissions.md)
+- [Scheduler Queues](scheduler-queues.md)
+- [Search](search.md)
+- [Sessions Devices](sessions-devices.md)
+- [Settings](settings.md)
+- [Theme Support](theme-support.md)
+- [Two Factor Authentication](two-factor-authentication.md)
+- [Webhooks](webhooks.md)

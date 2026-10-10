@@ -1,45 +1,54 @@
-# Genealogy React 19.2 + Inertia 3 Implementations
+# Genealogy React + Inertia Implementations
 
-**Source:** [GENEALOGY.md](../GENEALOGY.md)
-**Architecture:** [REACT.md](../GENEALOGY.md) · [API module index](../api/README.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Genealogy Core React + Inertia](genealogy-core.md) — `module-genealogy-core-react-inertia`
-- [People React + Inertia](people.md) — `module-genealogy-people-react-inertia`
-- [Relationships React + Inertia](relationships.md) — `module-genealogy-relationships-react-inertia`
-- [Evidence React + Inertia](evidence.md) — `module-genealogy-evidence-react-inertia`
-- [Research React + Inertia](research.md) — `module-genealogy-research-react-inertia`
-- [Places React + Inertia](places.md) — `module-genealogy-places-react-inertia`
-- [Timeline React + Inertia](timeline.md) — `module-genealogy-timeline-react-inertia`
-- [Tree Viewer React + Inertia](tree-viewer.md) — `module-genealogy-tree-viewer-react-inertia`
-- [Import Export React + Inertia](import-export.md) — `module-genealogy-import-export-react-inertia`
-- [DNA React + Inertia](dna.md) — `module-genealogy-dna-react-inertia`
-- [Media React + Inertia](media.md) — `module-genealogy-media-react-inertia`
-- [Collaboration React + Inertia](collaboration.md) — `module-genealogy-collaboration-react-inertia`
-- [Discovery React + Inertia](discovery.md) — `module-genealogy-discovery-react-inertia`
-- [Reports React + Inertia](reports.md) — `module-genealogy-reports-react-inertia`
-
-**Source:** [GENEALOGY.md](../GENEALOGY.md)
-**Architecture:** [REACT.md](../GENEALOGY.md) · [API module index](../api/README.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
-
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Genealogy Core React + Inertia](genealogy-core.md) — `module-genealogy-core-react-inertia`
-- [People React + Inertia](people.md) — `module-genealogy-people-react-inertia`
-- [Relationships React + Inertia](relationships.md) — `module-genealogy-relationships-react-inertia`
-- [Evidence React + Inertia](evidence.md) — `module-genealogy-evidence-react-inertia`
-- [Research React + Inertia](research.md) — `module-genealogy-research-react-inertia`
-- [Places React + Inertia](places.md) — `module-genealogy-places-react-inertia`
-- [Timeline React + Inertia](timeline.md) — `module-genealogy-timeline-react-inertia`
-- [Tree Viewer React + Inertia](tree-viewer.md) — `module-genealogy-tree-viewer-react-inertia`
-- [Import Export React + Inertia](import-export.md) — `module-genealogy-import-export-react-inertia`
-- [DNA React + Inertia](dna.md) — `module-genealogy-dna-react-inertia`
-- [Media React + Inertia](media.md) — `module-genealogy-media-react-inertia`
-- [Collaboration React + Inertia](collaboration.md) — `module-genealogy-collaboration-react-inertia`
-- [Discovery React + Inertia](discovery.md) — `module-genealogy-discovery-react-inertia`
-- [Reports React + Inertia](reports.md) — `module-genealogy-reports-react-inertia`
+- [Activity Comments React](activity-comments.md) — `module-genealogy-activity-comments-react-inertia`
+- [Analytics Core React](analytics-core.md) — `module-genealogy-analytics-core-react-inertia`
+- [Analytics Google React](analytics-google.md) — `module-genealogy-analytics-google-react-inertia`
+- [Analytics Meta React](analytics-meta.md) — `module-genealogy-analytics-meta-react-inertia`
+- [Api Access React](api-access.md) — `module-genealogy-api-access-react-inertia`
+- [Application React](application.md) — `module-genealogy-application-react-inertia`
+- [Audit React](audit.md) — `module-genealogy-audit-react-inertia`
+- [Currency Context React](currency-context.md) — `module-genealogy-currency-context-react-inertia`
+- [Developer Experience React](developer-experience.md) — `module-genealogy-developer-experience-react-inertia`
+- [Feature Flags React](feature-flags.md) — `module-genealogy-feature-flags-react-inertia`
+- [Files Media React](files-media.md) — `module-genealogy-files-media-react-inertia`
+- [Genealogy Collaboration React](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-react-inertia`
+- [Genealogy Core React](genealogy-core.md) — `module-genealogy-genealogy-core-react-inertia`
+- [Genealogy Discovery React](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-react-inertia`
+- [Genealogy Dna React](genealogy-dna.md) — `module-genealogy-genealogy-dna-react-inertia`
+- [Genealogy Evidence React](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-react-inertia`
+- [Genealogy Gamification React](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-react-inertia`
+- [Genealogy Import Export React](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-react-inertia`
+- [Genealogy Media React](genealogy-media.md) — `module-genealogy-genealogy-media-react-inertia`
+- [Genealogy People React](genealogy-people.md) — `module-genealogy-genealogy-people-react-inertia`
+- [Genealogy Places React](genealogy-places.md) — `module-genealogy-genealogy-places-react-inertia`
+- [Genealogy Relationships React](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-react-inertia`
+- [Genealogy Reports React](genealogy-reports.md) — `module-genealogy-genealogy-reports-react-inertia`
+- [Genealogy Research React](genealogy-research.md) — `module-genealogy-genealogy-research-react-inertia`
+- [Genealogy Timeline React](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-react-inertia`
+- [Genealogy Tree Viewer React](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-react-inertia`
+- [Identity Core React](identity-core.md) — `module-genealogy-identity-core-react-inertia`
+- [Identity Socialstream React](identity-socialstream.md) — `module-genealogy-identity-socialstream-react-inertia`
+- [Import Export React](import-export.md) — `module-genealogy-import-export-react-inertia`
+- [Integrations React](integrations.md) — `module-genealogy-integrations-react-inertia`
+- [Jetstream Bridge React](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-react-inertia`
+- [Liberu Business Workflow Reconciliation React](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-react-inertia`
+- [Liberu Executive Insights React](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-react-inertia`
+- [Liberu Platform Orchestration React](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-react-inertia`
+- [Liberu Revenue And Care Orchestration React](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-react-inertia`
+- [Localization Core React](localization-core.md) — `module-genealogy-localization-core-react-inertia`
+- [Localization Mymemory React](localization-mymemory.md) — `module-genealogy-localization-mymemory-react-inertia`
+- [Module Manager React](module-manager.md) — `module-genealogy-module-manager-react-inertia`
+- [Notifications React](notifications.md) — `module-genealogy-notifications-react-inertia`
+- [Observability React](observability.md) — `module-genealogy-observability-react-inertia`
+- [Organizations Teams React](organizations-teams.md) — `module-genealogy-organizations-teams-react-inertia`
+- [Profiles React](profiles.md) — `module-genealogy-profiles-react-inertia`
+- [Roles Permissions React](roles-permissions.md) — `module-genealogy-roles-permissions-react-inertia`
+- [Scheduler Queues React](scheduler-queues.md) — `module-genealogy-scheduler-queues-react-inertia`
+- [Search React](search.md) — `module-genealogy-search-react-inertia`
+- [Sessions Devices React](sessions-devices.md) — `module-genealogy-sessions-devices-react-inertia`
+- [Settings React](settings.md) — `module-genealogy-settings-react-inertia`
+- [Theme Support React](theme-support.md) — `module-genealogy-theme-support-react-inertia`
+- [Two Factor Authentication React](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-react-inertia`
+- [Webhooks React](webhooks.md) — `module-genealogy-webhooks-react-inertia`

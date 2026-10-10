@@ -1,24 +1,50 @@
 # Social Network Feature Specifications
 
-**Source:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)  
-**Architecture:** [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md) · [DOCUMENTATION.md](../SOCIAL-NETWORK.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Module plan
-
-- [Social Core](social-core.md) — `module-social-network-social-core`
-- [Profiles](profiles.md) — `module-social-network-profiles`
-- [Social Graph](social-graph.md) — `module-social-network-social-graph`
-- [Publishing](publishing.md) — `module-social-network-publishing`
-- [Feed](feed.md) — `module-social-network-feed`
-- [Engagement](engagement.md) — `module-social-network-engagement`
-- [Media](media.md) — `module-social-network-media`
-- [Communities](communities.md) — `module-social-network-communities`
-- [Events](events.md) — `module-social-network-events`
-- [Messaging](messaging.md) — `module-social-network-messaging`
+- [Activity Comments](activity-comments.md) — `module-social-network-activity-comments`
+- [Analytics Core](analytics-core.md) — `module-social-network-analytics-core`
+- [Analytics Google](analytics-google.md) — `module-social-network-analytics-google`
+- [Analytics Meta](analytics-meta.md) — `module-social-network-analytics-meta`
+- [Api Access](api-access.md) — `module-social-network-api-access`
+- [Application](application.md) — `module-social-network-application`
+- [Audit](audit.md) — `module-social-network-audit`
+- [Currency Context](currency-context.md) — `module-social-network-currency-context`
+- [Developer Experience](developer-experience.md) — `module-social-network-developer-experience`
+- [Feature Flags](feature-flags.md) — `module-social-network-feature-flags`
+- [Files Media](files-media.md) — `module-social-network-files-media`
+- [Identity Core](identity-core.md) — `module-social-network-identity-core`
+- [Identity Socialstream](identity-socialstream.md) — `module-social-network-identity-socialstream`
+- [Import Export](import-export.md) — `module-social-network-import-export`
+- [Integrations](integrations.md) — `module-social-network-integrations`
+- [Jetstream Bridge](jetstream-bridge.md) — `module-social-network-jetstream-bridge`
+- [Localization Core](localization-core.md) — `module-social-network-localization-core`
+- [Localization Mymemory](localization-mymemory.md) — `module-social-network-localization-mymemory`
+- [Module Manager](module-manager.md) — `module-social-network-module-manager`
 - [Notifications](notifications.md) — `module-social-network-notifications`
-- [Discovery](discovery.md) — `module-social-network-discovery`
-- [Moderation](moderation.md) — `module-social-network-moderation`
-- [Federation](federation.md) — `module-social-network-federation`
-- [Analytics](analytics.md) — `module-social-network-analytics`
+- [Observability](observability.md) — `module-social-network-observability`
+- [Organizations Teams](organizations-teams.md) — `module-social-network-organizations-teams`
+- [Profiles](profiles.md) — `module-social-network-profiles`
+- [Roles Permissions](roles-permissions.md) — `module-social-network-roles-permissions`
+- [Scheduler Queues](scheduler-queues.md) — `module-social-network-scheduler-queues`
+- [Search](search.md) — `module-social-network-search`
+- [Sessions Devices](sessions-devices.md) — `module-social-network-sessions-devices`
+- [Settings](settings.md) — `module-social-network-settings`
+- [Social Network Analytics](social-network-analytics.md) — `module-social-network-social-network-analytics`
+- [Social Network Communities](social-network-communities.md) — `module-social-network-social-network-communities`
+- [Social Network Discovery](social-network-discovery.md) — `module-social-network-social-network-discovery`
+- [Social Network Engagement](social-network-engagement.md) — `module-social-network-social-network-engagement`
+- [Social Network Events](social-network-events.md) — `module-social-network-social-network-events`
+- [Social Network Federation](social-network-federation.md) — `module-social-network-social-network-federation`
+- [Social Network Feed](social-network-feed.md) — `module-social-network-social-network-feed`
+- [Social Network Media](social-network-media.md) — `module-social-network-social-network-media`
+- [Social Network Messaging](social-network-messaging.md) — `module-social-network-social-network-messaging`
+- [Social Network Moderation](social-network-moderation.md) — `module-social-network-social-network-moderation`
+- [Social Network Notifications](social-network-notifications.md) — `module-social-network-social-network-notifications`
+- [Social Network Profiles](social-network-profiles.md) — `module-social-network-social-network-profiles`
+- [Social Network Publishing](social-network-publishing.md) — `module-social-network-social-network-publishing`
+- [Social Network Social Core](social-network-social-core.md) — `module-social-network-social-network-social-core`
+- [Social Network Social Graph](social-network-social-graph.md) — `module-social-network-social-network-social-graph`
+- [Theme Support](theme-support.md) — `module-social-network-theme-support`
+- [Two Factor Authentication](two-factor-authentication.md) — `module-social-network-two-factor-authentication`
+- [Webhooks](webhooks.md) — `module-social-network-webhooks`

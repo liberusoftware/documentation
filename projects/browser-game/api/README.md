@@ -1,24 +1,50 @@
 # Browser Game API Module Specifications
 
-**Source:** [BROWSER-GAME.md](../BROWSER-GAME.md)
-**Architecture:** [API.md](../BROWSER-GAME.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)
-
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-## Module plan
-
-- [Game Core API](game-core.md) — `module-browser-game-game-core-api`
-- [Accounts API](accounts.md) — `module-browser-game-accounts-api`
-- [Characters API](characters.md) — `module-browser-game-characters-api`
-- [World API](world.md) — `module-browser-game-world-api`
-- [Combat API](combat.md) — `module-browser-game-combat-api`
-- [Quests API](quests.md) — `module-browser-game-quests-api`
-- [Items API](items.md) — `module-browser-game-items-api`
-- [Crafting API](crafting.md) — `module-browser-game-crafting-api`
-- [Economy API](economy.md) — `module-browser-game-economy-api`
-- [Social API](social.md) — `module-browser-game-social-api`
-- [Competition API](competition.md) — `module-browser-game-competition-api`
-- [Collections API](collections.md) — `module-browser-game-collections-api`
-- [Live Ops API](live-ops.md) — `module-browser-game-live-ops-api`
-- [Commerce API](commerce.md) — `module-browser-game-commerce-api`
-- [Moderation and Analytics API](moderation-and-analytics.md) — `module-browser-game-moderation-and-analytics-api`
+- [Activity Comments API](activity-comments.md) — `module-browser-game-activity-comments-api`
+- [Analytics Core API](analytics-core.md) — `module-browser-game-analytics-core-api`
+- [Analytics Google API](analytics-google.md) — `module-browser-game-analytics-google-api`
+- [Analytics Meta API](analytics-meta.md) — `module-browser-game-analytics-meta-api`
+- [Api Access API](api-access.md) — `module-browser-game-api-access-api`
+- [Application API](application.md) — `module-browser-game-application-api`
+- [Audit API](audit.md) — `module-browser-game-audit-api`
+- [Browser Game Accounts API](browser-game-accounts.md) — `module-browser-game-browser-game-accounts-api`
+- [Browser Game Characters API](browser-game-characters.md) — `module-browser-game-browser-game-characters-api`
+- [Browser Game Collections API](browser-game-collections.md) — `module-browser-game-browser-game-collections-api`
+- [Browser Game Combat API](browser-game-combat.md) — `module-browser-game-browser-game-combat-api`
+- [Browser Game Commerce API](browser-game-commerce.md) — `module-browser-game-browser-game-commerce-api`
+- [Browser Game Competition API](browser-game-competition.md) — `module-browser-game-browser-game-competition-api`
+- [Browser Game Crafting API](browser-game-crafting.md) — `module-browser-game-browser-game-crafting-api`
+- [Browser Game Economy API](browser-game-economy.md) — `module-browser-game-browser-game-economy-api`
+- [Browser Game Game Core API](browser-game-game-core.md) — `module-browser-game-browser-game-game-core-api`
+- [Browser Game Items API](browser-game-items.md) — `module-browser-game-browser-game-items-api`
+- [Browser Game Live Ops API](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops-api`
+- [Browser Game Moderation And Analytics API](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics-api`
+- [Browser Game Quests API](browser-game-quests.md) — `module-browser-game-browser-game-quests-api`
+- [Browser Game Social API](browser-game-social.md) — `module-browser-game-browser-game-social-api`
+- [Browser Game World API](browser-game-world.md) — `module-browser-game-browser-game-world-api`
+- [Currency Context API](currency-context.md) — `module-browser-game-currency-context-api`
+- [Developer Experience API](developer-experience.md) — `module-browser-game-developer-experience-api`
+- [Feature Flags API](feature-flags.md) — `module-browser-game-feature-flags-api`
+- [Files Media API](files-media.md) — `module-browser-game-files-media-api`
+- [Identity Core API](identity-core.md) — `module-browser-game-identity-core-api`
+- [Identity Socialstream API](identity-socialstream.md) — `module-browser-game-identity-socialstream-api`
+- [Import Export API](import-export.md) — `module-browser-game-import-export-api`
+- [Integrations API](integrations.md) — `module-browser-game-integrations-api`
+- [Jetstream Bridge API](jetstream-bridge.md) — `module-browser-game-jetstream-bridge-api`
+- [Localization Core API](localization-core.md) — `module-browser-game-localization-core-api`
+- [Localization Mymemory API](localization-mymemory.md) — `module-browser-game-localization-mymemory-api`
+- [Module Manager API](module-manager.md) — `module-browser-game-module-manager-api`
+- [Notifications API](notifications.md) — `module-browser-game-notifications-api`
+- [Observability API](observability.md) — `module-browser-game-observability-api`
+- [Organizations Teams API](organizations-teams.md) — `module-browser-game-organizations-teams-api`
+- [Profiles API](profiles.md) — `module-browser-game-profiles-api`
+- [Roles Permissions API](roles-permissions.md) — `module-browser-game-roles-permissions-api`
+- [Scheduler Queues API](scheduler-queues.md) — `module-browser-game-scheduler-queues-api`
+- [Search API](search.md) — `module-browser-game-search-api`
+- [Sessions Devices API](sessions-devices.md) — `module-browser-game-sessions-devices-api`
+- [Settings API](settings.md) — `module-browser-game-settings-api`
+- [Theme Support API](theme-support.md) — `module-browser-game-theme-support-api`
+- [Two Factor Authentication API](two-factor-authentication.md) — `module-browser-game-two-factor-authentication-api`
+- [Webhooks API](webhooks.md) — `module-browser-game-webhooks-api`

@@ -1,46 +1,50 @@
-# Browser Game React Native + Expo implementations
+# Browser Game React Native + Expo Implementations
 
-**Scope:** [Browser Game](../BROWSER-GAME.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [React Native technology](../../../technologies/REACT-NATIVE.md) · [React Native standard](../../../standards/REACT-NATIVE.md)
+Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-This index defines the optional React Native + Expo adapter boundary for the Browser Game project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-react-native`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [React Native + Expo module standard](../../../modules/react-native/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 15 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                                                  | Package                                                   | Core                                        | API                                       |
-| ------------------------------------------------------- | --------------------------------------------------------- | ------------------------------------------- | ----------------------------------------- |
-| [Accounts](accounts.md)                                 | module-browser-game-accounts-react-native                 | [Core](../core/accounts.md)                 | [API](../api/accounts.md)                 |
-| [Characters](characters.md)                             | module-browser-game-characters-react-native               | [Core](../core/characters.md)               | [API](../api/characters.md)               |
-| [Collections](collections.md)                           | module-browser-game-collections-react-native              | [Core](../core/collections.md)              | [API](../api/collections.md)              |
-| [Combat](combat.md)                                     | module-browser-game-combat-react-native                   | [Core](../core/combat.md)                   | [API](../api/combat.md)                   |
-| [Commerce](commerce.md)                                 | module-browser-game-commerce-react-native                 | [Core](../core/commerce.md)                 | [API](../api/commerce.md)                 |
-| [Competition](competition.md)                           | module-browser-game-competition-react-native              | [Core](../core/competition.md)              | [API](../api/competition.md)              |
-| [Crafting](crafting.md)                                 | module-browser-game-crafting-react-native                 | [Core](../core/crafting.md)                 | [API](../api/crafting.md)                 |
-| [Economy](economy.md)                                   | module-browser-game-economy-react-native                  | [Core](../core/economy.md)                  | [API](../api/economy.md)                  |
-| [Game Core](game-core.md)                               | module-browser-game-game-core-react-native                | [Core](../core/game-core.md)                | [API](../api/game-core.md)                |
-| [Items](items.md)                                       | module-browser-game-items-react-native                    | [Core](../core/items.md)                    | [API](../api/items.md)                    |
-| [Live Ops](live-ops.md)                                 | module-browser-game-live-ops-react-native                 | [Core](../core/live-ops.md)                 | [API](../api/live-ops.md)                 |
-| [Moderation And Analytics](moderation-and-analytics.md) | module-browser-game-moderation-and-analytics-react-native | [Core](../core/moderation-and-analytics.md) | [API](../api/moderation-and-analytics.md) |
-| [Quests](quests.md)                                     | module-browser-game-quests-react-native                   | [Core](../core/quests.md)                   | [API](../api/quests.md)                   |
-| [Social](social.md)                                     | module-browser-game-social-react-native                   | [Core](../core/social.md)                   | [API](../api/social.md)                   |
-| [World](world.md)                                       | module-browser-game-world-react-native                    | [Core](../core/world.md)                    | [API](../api/world.md)                    |
+- [Activity Comments React Native](activity-comments.md) — `module-browser-game-activity-comments-react-native`
+- [Analytics Core React Native](analytics-core.md) — `module-browser-game-analytics-core-react-native`
+- [Analytics Google React Native](analytics-google.md) — `module-browser-game-analytics-google-react-native`
+- [Analytics Meta React Native](analytics-meta.md) — `module-browser-game-analytics-meta-react-native`
+- [Api Access React Native](api-access.md) — `module-browser-game-api-access-react-native`
+- [Application React Native](application.md) — `module-browser-game-application-react-native`
+- [Audit React Native](audit.md) — `module-browser-game-audit-react-native`
+- [Browser Game Accounts React Native](browser-game-accounts.md) — `module-browser-game-browser-game-accounts-react-native`
+- [Browser Game Characters React Native](browser-game-characters.md) — `module-browser-game-browser-game-characters-react-native`
+- [Browser Game Collections React Native](browser-game-collections.md) — `module-browser-game-browser-game-collections-react-native`
+- [Browser Game Combat React Native](browser-game-combat.md) — `module-browser-game-browser-game-combat-react-native`
+- [Browser Game Commerce React Native](browser-game-commerce.md) — `module-browser-game-browser-game-commerce-react-native`
+- [Browser Game Competition React Native](browser-game-competition.md) — `module-browser-game-browser-game-competition-react-native`
+- [Browser Game Crafting React Native](browser-game-crafting.md) — `module-browser-game-browser-game-crafting-react-native`
+- [Browser Game Economy React Native](browser-game-economy.md) — `module-browser-game-browser-game-economy-react-native`
+- [Browser Game Game Core React Native](browser-game-game-core.md) — `module-browser-game-browser-game-game-core-react-native`
+- [Browser Game Items React Native](browser-game-items.md) — `module-browser-game-browser-game-items-react-native`
+- [Browser Game Live Ops React Native](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops-react-native`
+- [Browser Game Moderation And Analytics React Native](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics-react-native`
+- [Browser Game Quests React Native](browser-game-quests.md) — `module-browser-game-browser-game-quests-react-native`
+- [Browser Game Social React Native](browser-game-social.md) — `module-browser-game-browser-game-social-react-native`
+- [Browser Game World React Native](browser-game-world.md) — `module-browser-game-browser-game-world-react-native`
+- [Currency Context React Native](currency-context.md) — `module-browser-game-currency-context-react-native`
+- [Developer Experience React Native](developer-experience.md) — `module-browser-game-developer-experience-react-native`
+- [Feature Flags React Native](feature-flags.md) — `module-browser-game-feature-flags-react-native`
+- [Files Media React Native](files-media.md) — `module-browser-game-files-media-react-native`
+- [Identity Core React Native](identity-core.md) — `module-browser-game-identity-core-react-native`
+- [Identity Socialstream React Native](identity-socialstream.md) — `module-browser-game-identity-socialstream-react-native`
+- [Import Export React Native](import-export.md) — `module-browser-game-import-export-react-native`
+- [Integrations React Native](integrations.md) — `module-browser-game-integrations-react-native`
+- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-browser-game-jetstream-bridge-react-native`
+- [Localization Core React Native](localization-core.md) — `module-browser-game-localization-core-react-native`
+- [Localization Mymemory React Native](localization-mymemory.md) — `module-browser-game-localization-mymemory-react-native`
+- [Module Manager React Native](module-manager.md) — `module-browser-game-module-manager-react-native`
+- [Notifications React Native](notifications.md) — `module-browser-game-notifications-react-native`
+- [Observability React Native](observability.md) — `module-browser-game-observability-react-native`
+- [Organizations Teams React Native](organizations-teams.md) — `module-browser-game-organizations-teams-react-native`
+- [Profiles React Native](profiles.md) — `module-browser-game-profiles-react-native`
+- [Roles Permissions React Native](roles-permissions.md) — `module-browser-game-roles-permissions-react-native`
+- [Scheduler Queues React Native](scheduler-queues.md) — `module-browser-game-scheduler-queues-react-native`
+- [Search React Native](search.md) — `module-browser-game-search-react-native`
+- [Sessions Devices React Native](sessions-devices.md) — `module-browser-game-sessions-devices-react-native`
+- [Settings React Native](settings.md) — `module-browser-game-settings-react-native`
+- [Theme Support React Native](theme-support.md) — `module-browser-game-theme-support-react-native`
+- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-browser-game-two-factor-authentication-react-native`
+- [Webhooks React Native](webhooks.md) — `module-browser-game-webhooks-react-native`

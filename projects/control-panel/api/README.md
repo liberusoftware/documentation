@@ -1,24 +1,50 @@
 # Control Panel API Module Specifications
 
-**Source:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)
-**Architecture:** [API.md](../CONTROL-PANEL.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
-
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-## Module plan
-
-- [Control Core API](control-core.md) — `module-control-panel-control-core-api`
-- [OS Adapters API](os-adapters.md) — `module-control-panel-os-adapters-api`
-- [Accounts API](accounts.md) — `module-control-panel-accounts-api`
-- [Web Hosting API](web-hosting.md) — `module-control-panel-web-hosting-api`
-- [Mail API](mail.md) — `module-control-panel-mail-api`
-- [Databases API](databases.md) — `module-control-panel-databases-api`
-- [DNS API](dns.md) — `module-control-panel-dns-api`
-- [Files API](files.md) — `module-control-panel-files-api`
-- [Certificates API](certificates.md) — `module-control-panel-certificates-api`
-- [Backups API](backups.md) — `module-control-panel-backups-api`
-- [Security API](security.md) — `module-control-panel-security-api`
-- [Monitoring API](monitoring.md) — `module-control-panel-monitoring-api`
-- [Containers API](containers.md) — `module-control-panel-containers-api`
-- [Kubernetes API](kubernetes.md) — `module-control-panel-kubernetes-api`
-- [API and Automation API](api-and-automation.md) — `module-control-panel-api-and-automation-api`
+- [Activity Comments API](activity-comments.md) — `module-control-panel-activity-comments-api`
+- [Analytics Core API](analytics-core.md) — `module-control-panel-analytics-core-api`
+- [Analytics Google API](analytics-google.md) — `module-control-panel-analytics-google-api`
+- [Analytics Meta API](analytics-meta.md) — `module-control-panel-analytics-meta-api`
+- [Api Access API](api-access.md) — `module-control-panel-api-access-api`
+- [Application API](application.md) — `module-control-panel-application-api`
+- [Audit API](audit.md) — `module-control-panel-audit-api`
+- [Control Panel Accounts API](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-api`
+- [Control Panel Api And Automation API](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-api`
+- [Control Panel Backups API](control-panel-backups.md) — `module-control-panel-control-panel-backups-api`
+- [Control Panel Certificates API](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-api`
+- [Control Panel Containers API](control-panel-containers.md) — `module-control-panel-control-panel-containers-api`
+- [Control Panel Control Core API](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-api`
+- [Control Panel Databases API](control-panel-databases.md) — `module-control-panel-control-panel-databases-api`
+- [Control Panel Dns API](control-panel-dns.md) — `module-control-panel-control-panel-dns-api`
+- [Control Panel Files API](control-panel-files.md) — `module-control-panel-control-panel-files-api`
+- [Control Panel Kubernetes API](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-api`
+- [Control Panel Mail API](control-panel-mail.md) — `module-control-panel-control-panel-mail-api`
+- [Control Panel Monitoring API](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-api`
+- [Control Panel Os Adapters API](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-api`
+- [Control Panel Security API](control-panel-security.md) — `module-control-panel-control-panel-security-api`
+- [Control Panel Web Hosting API](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-api`
+- [Currency Context API](currency-context.md) — `module-control-panel-currency-context-api`
+- [Developer Experience API](developer-experience.md) — `module-control-panel-developer-experience-api`
+- [Feature Flags API](feature-flags.md) — `module-control-panel-feature-flags-api`
+- [Files Media API](files-media.md) — `module-control-panel-files-media-api`
+- [Identity Core API](identity-core.md) — `module-control-panel-identity-core-api`
+- [Identity Socialstream API](identity-socialstream.md) — `module-control-panel-identity-socialstream-api`
+- [Import Export API](import-export.md) — `module-control-panel-import-export-api`
+- [Integrations API](integrations.md) — `module-control-panel-integrations-api`
+- [Jetstream Bridge API](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-api`
+- [Localization Core API](localization-core.md) — `module-control-panel-localization-core-api`
+- [Localization Mymemory API](localization-mymemory.md) — `module-control-panel-localization-mymemory-api`
+- [Module Manager API](module-manager.md) — `module-control-panel-module-manager-api`
+- [Notifications API](notifications.md) — `module-control-panel-notifications-api`
+- [Observability API](observability.md) — `module-control-panel-observability-api`
+- [Organizations Teams API](organizations-teams.md) — `module-control-panel-organizations-teams-api`
+- [Profiles API](profiles.md) — `module-control-panel-profiles-api`
+- [Roles Permissions API](roles-permissions.md) — `module-control-panel-roles-permissions-api`
+- [Scheduler Queues API](scheduler-queues.md) — `module-control-panel-scheduler-queues-api`
+- [Search API](search.md) — `module-control-panel-search-api`
+- [Sessions Devices API](sessions-devices.md) — `module-control-panel-sessions-devices-api`
+- [Settings API](settings.md) — `module-control-panel-settings-api`
+- [Theme Support API](theme-support.md) — `module-control-panel-theme-support-api`
+- [Two Factor Authentication API](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-api`
+- [Webhooks API](webhooks.md) — `module-control-panel-webhooks-api`

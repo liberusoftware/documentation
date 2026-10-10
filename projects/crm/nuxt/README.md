@@ -1,134 +1,134 @@
-# Crm Nuxt 4 Implementations
+# CRM Nuxt Implementations
 
-**Source:** [CRM.md](../CRM.md)
-**Architecture:** [NUXT.md](../CRM.md) · [API module index](../api/README.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-Each file defines the optional `Nuxt 4` presentation package for exactly one matching domain module.
-
-## Customer data and platform modules
-
-- [CRM Core Nuxt](crm-core.md) — `module-crm-core-nuxt`
-- [Customer Data Model Nuxt](customer-data-model.md) — `module-crm-customer-data-model-nuxt`
-- [Customer Data Platform Nuxt](customer-data-platform.md) — `module-crm-customer-data-platform-nuxt`
-- [Data Operations Nuxt](data-operations.md) — `module-crm-data-operations-nuxt`
-- [Consent and Preferences Nuxt](consent-and-preferences.md) — `module-crm-consent-and-preferences-nuxt`
-- [Territories and Ownership Nuxt](territories-and-ownership.md) — `module-crm-territories-and-ownership-nuxt`
-- [CRM Search Nuxt](crm-search.md) — `module-crm-search-nuxt`
-- [CRM Documents Nuxt](crm-documents.md) — `module-crm-documents-nuxt`
-- [Collaboration Nuxt](collaboration.md) — `module-crm-collaboration-nuxt`
-
-## Demand generation and acquisition modules
-
-- [Lead Capture Nuxt](lead-capture.md) — `module-crm-lead-capture-nuxt`
-- [Prospecting Nuxt](prospecting.md) — `module-crm-prospecting-nuxt`
-- [Enrichment Nuxt](enrichment.md) — `module-crm-enrichment-nuxt`
-- [Web Intent Nuxt](web-intent.md) — `module-crm-web-intent-nuxt`
-- [Lead Qualification Nuxt](lead-qualification.md) — `module-crm-lead-qualification-nuxt`
-- [Routing Nuxt](routing.md) — `module-crm-routing-nuxt`
-- [Forms and Surveys Nuxt](forms-and-surveys.md) — `module-crm-forms-and-surveys-nuxt`
-- [Chat and Bots Nuxt](chat-and-bots.md) — `module-crm-chat-and-bots-nuxt`
-- [Landing Pages and Funnels Nuxt](landing-pages-and-funnels.md) — `module-crm-landing-pages-and-funnels-nuxt`
-- [Conversion Optimization Nuxt](conversion-optimization.md) — `module-crm-conversion-optimization-nuxt`
-- [Events and Webinars Nuxt](events-and-webinars.md) — `module-crm-events-and-webinars-nuxt`
-
-## Sales execution modules
-
-- [Sales Pipelines Nuxt](sales-pipelines.md) — `module-crm-sales-pipelines-nuxt`
-- [Sales Workspace Nuxt](sales-workspace.md) — `module-crm-sales-workspace-nuxt`
-- [Activities Nuxt](activities.md) — `module-crm-activities-nuxt`
-- [Scheduling Nuxt](scheduling.md) — `module-crm-scheduling-nuxt`
-- [Sales Engagement Nuxt](sales-engagement.md) — `module-crm-sales-engagement-nuxt`
-- [Email Productivity Nuxt](email-productivity.md) — `module-crm-email-productivity-nuxt`
-- [Conversation Intelligence Nuxt](conversation-intelligence.md) — `module-crm-conversation-intelligence-nuxt`
-- [Playbooks and Enablement Nuxt](playbooks-and-enablement.md) — `module-crm-playbooks-and-enablement-nuxt`
-- [Forecasting Nuxt](forecasting.md) — `module-crm-forecasting-nuxt`
-- [Revenue Intelligence Nuxt](revenue-intelligence.md) — `module-crm-revenue-intelligence-nuxt`
-- [Goals and Performance Nuxt](goals-and-performance.md) — `module-crm-goals-and-performance-nuxt`
-- [Quotas and Incentives Nuxt](quotas-and-incentives.md) — `module-crm-quotas-and-incentives-nuxt`
-- [Account Planning Nuxt](account-planning.md) — `module-crm-account-planning-nuxt`
-
-## Revenue and commercial modules
-
-- [CRM Product Workspace Nuxt](crm-product-workspace.md) — `module-crm-product-workspace-nuxt`
-- [CPQ Nuxt](cpq.md) — `module-crm-cpq-nuxt`
-- [Proposals and Quotes Nuxt](proposals-and-quotes.md) — `module-crm-proposals-and-quotes-nuxt`
-- [Contracts Nuxt](contracts.md) — `module-crm-contracts-nuxt`
-- [Orders and Payments Workspace Nuxt](orders-and-payments-workspace.md) — `module-crm-orders-and-payments-workspace-nuxt`
-- [Revenue Lifecycle Nuxt](revenue-lifecycle.md) — `module-crm-revenue-lifecycle-nuxt`
-
-## Marketing modules
-
-- [Segmentation Nuxt](segmentation.md) — `module-crm-segmentation-nuxt`
-- [Campaigns Nuxt](campaigns.md) — `module-crm-campaigns-nuxt`
-- [Journey Orchestration Nuxt](journey-orchestration.md) — `module-crm-journey-orchestration-nuxt`
-- [Email Marketing Nuxt](email-marketing.md) — `module-crm-email-marketing-nuxt`
-- [Mobile Messaging Nuxt](mobile-messaging.md) — `module-crm-mobile-messaging-nuxt`
-- [Advertising Nuxt](advertising.md) — `module-crm-advertising-nuxt`
-- [Account-Based Marketing Nuxt](account-based-marketing.md) — `module-crm-account-based-marketing-nuxt`
-- [Personalization Nuxt](personalization.md) — `module-crm-personalization-nuxt`
-- [Marketing Resources Nuxt](marketing-resources.md) — `module-crm-marketing-resources-nuxt`
-- [Attribution Nuxt](attribution.md) — `module-crm-attribution-nuxt`
-
-## Communications and contact-center modules
-
-- [Unified Conversations Nuxt](unified-conversations.md) — `module-crm-unified-conversations-nuxt`
-- [Channel Gateway Nuxt](channel-gateway.md) — `module-crm-channel-gateway-nuxt`
-- [Telephony Nuxt](telephony.md) — `module-crm-telephony-nuxt`
-- [Dialer and Outreach Nuxt](dialer-and-outreach.md) — `module-crm-dialer-and-outreach-nuxt`
-- [Contact Center Nuxt](contact-center.md) — `module-crm-contact-center-nuxt`
-- [AI Reception and Conversation Nuxt](ai-reception-and-conversation.md) — `module-crm-ai-reception-and-conversation-nuxt`
-
-## Service, success, and experience modules
-
-- [Case Management Nuxt](case-management.md) — `module-crm-case-management-nuxt`
-- [Omnichannel Service Nuxt](omnichannel-service.md) — `module-crm-omnichannel-service-nuxt`
-- [SLA and Entitlements Nuxt](sla-and-entitlements.md) — `module-crm-sla-and-entitlements-nuxt`
-- [Knowledge Nuxt](knowledge.md) — `module-crm-knowledge-nuxt`
-- [Customer Self-Service Nuxt](customer-self-service.md) — `module-crm-customer-self-service-nuxt`
-- [Customer Success Nuxt](customer-success.md) — `module-crm-customer-success-nuxt`
-- [Feedback and Voice of Customer Nuxt](feedback-and-voice-of-customer.md) — `module-crm-feedback-and-voice-of-customer-nuxt`
-- [Reputation Management Nuxt](reputation-management.md) — `module-crm-reputation-management-nuxt`
-- [Field Service Coordination Nuxt](field-service-coordination.md) — `module-crm-field-service-coordination-nuxt`
-- [Service Analytics Nuxt](service-analytics.md) — `module-crm-service-analytics-nuxt`
-
-## Community, learning, loyalty, and growth modules
-
-- [Communities Nuxt](communities.md) — `module-crm-communities-nuxt`
-- [Learning and Courses Nuxt](learning-and-courses.md) — `module-crm-learning-and-courses-nuxt`
-- [Memberships Nuxt](memberships.md) — `module-crm-memberships-nuxt`
-- [Loyalty Nuxt](loyalty.md) — `module-crm-loyalty-nuxt`
-- [Referrals Nuxt](referrals.md) — `module-crm-referrals-nuxt`
-- [Affiliate Management Nuxt](affiliate-management.md) — `module-crm-affiliate-management-nuxt`
-- [Advocacy Nuxt](advocacy.md) — `module-crm-advocacy-nuxt`
-
-## Partner and agency modules
-
-- [Partner Relationship Management Nuxt](partner-relationship-management.md) — `module-crm-partner-relationship-management-nuxt`
-- [Deal Registration Nuxt](deal-registration.md) — `module-crm-deal-registration-nuxt`
-- [Channel Sales Nuxt](channel-sales.md) — `module-crm-channel-sales-nuxt`
-- [Marketing Development Funds Nuxt](marketing-development-funds.md) — `module-crm-marketing-development-funds-nuxt`
-- [Agency Workspace Nuxt](agency-workspace.md) — `module-crm-agency-workspace-nuxt`
-- [White Label Nuxt](white-label.md) — `module-crm-white-label-nuxt`
-- [SaaS Packaging Nuxt](saas-packaging.md) — `module-crm-saas-packaging-nuxt`
-- [Usage Wallet and Rebilling Nuxt](usage-wallet-and-rebilling.md) — `module-crm-usage-wallet-and-rebilling-nuxt`
-- [Templates and Snapshots Nuxt](templates-and-snapshots.md) — `module-crm-templates-and-snapshots-nuxt`
-- [Client Onboarding Nuxt](client-onboarding.md) — `module-crm-client-onboarding-nuxt`
-
-## Delivery, productivity, and operations modules
-
-- [Projects Nuxt](projects.md) — `module-crm-projects-nuxt`
-- [Resource Planning Nuxt](resource-planning.md) — `module-crm-resource-planning-nuxt`
-- [Work Management Nuxt](work-management.md) — `module-crm-work-management-nuxt`
-- [Business Process Management Nuxt](business-process-management.md) — `module-crm-business-process-management-nuxt`
-- [CRM Automation Pack Nuxt](crm-automation-pack.md) — `module-crm-automation-pack-nuxt`
-- [Sandbox and Release Management Nuxt](sandbox-and-release-management.md) — `module-crm-sandbox-and-release-management-nuxt`
-
-## Intelligence and AI modules
-
-- [CRM Analytics Nuxt](crm-analytics.md) — `module-crm-analytics-nuxt`
-- [Predictive Models Nuxt](predictive-models.md) — `module-crm-predictive-models-nuxt`
-- [CRM Copilot Nuxt](crm-copilot.md) — `module-crm-copilot-nuxt`
-- [Prospecting Agent Nuxt](prospecting-agent.md) — `module-crm-prospecting-agent-nuxt`
-- [Service Agent Nuxt](service-agent.md) — `module-crm-service-agent-nuxt`
-- [Marketing Agent Nuxt](marketing-agent.md) — `module-crm-marketing-agent-nuxt`
-- [Conversation Analytics Nuxt](conversation-analytics.md) — `module-crm-conversation-analytics-nuxt`
+- [Activity Comments Nuxt](activity-comments.md) — `module-crm-activity-comments-nuxt`
+- [Analytics Contracts Nuxt](analytics-contracts.md) — `module-crm-analytics-contracts-nuxt`
+- [Analytics Core Nuxt](analytics-core.md) — `module-crm-analytics-core-nuxt`
+- [Analytics Google Nuxt](analytics-google.md) — `module-crm-analytics-google-nuxt`
+- [Analytics Meta Nuxt](analytics-meta.md) — `module-crm-analytics-meta-nuxt`
+- [Api Access Nuxt](api-access.md) — `module-crm-api-access-nuxt`
+- [Application Nuxt](application.md) — `module-crm-application-nuxt`
+- [Audit Nuxt](audit.md) — `module-crm-audit-nuxt`
+- [Crm Account Based Marketing Nuxt](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing-nuxt`
+- [Crm Account Planning Nuxt](crm-account-planning.md) — `module-crm-crm-account-planning-nuxt`
+- [Crm Activities Nuxt](crm-activities.md) — `module-crm-crm-activities-nuxt`
+- [Crm Advertising Nuxt](crm-advertising.md) — `module-crm-crm-advertising-nuxt`
+- [Crm Advocacy Nuxt](crm-advocacy.md) — `module-crm-crm-advocacy-nuxt`
+- [Crm Affiliate Management Nuxt](crm-affiliate-management.md) — `module-crm-crm-affiliate-management-nuxt`
+- [Crm Agency Workspace Nuxt](crm-agency-workspace.md) — `module-crm-crm-agency-workspace-nuxt`
+- [Crm Ai Reception And Conversation Nuxt](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation-nuxt`
+- [Crm Analytics Nuxt](crm-analytics.md) — `module-crm-crm-analytics-nuxt`
+- [Crm Attribution Nuxt](crm-attribution.md) — `module-crm-crm-attribution-nuxt`
+- [Crm Automation Pack Nuxt](crm-automation-pack.md) — `module-crm-crm-automation-pack-nuxt`
+- [Crm Business Process Management Nuxt](crm-business-process-management.md) — `module-crm-crm-business-process-management-nuxt`
+- [Crm Campaigns Nuxt](crm-campaigns.md) — `module-crm-crm-campaigns-nuxt`
+- [Crm Case Management Nuxt](crm-case-management.md) — `module-crm-crm-case-management-nuxt`
+- [Crm Channel Gateway Nuxt](crm-channel-gateway.md) — `module-crm-crm-channel-gateway-nuxt`
+- [Crm Channel Sales Nuxt](crm-channel-sales.md) — `module-crm-crm-channel-sales-nuxt`
+- [Crm Chat And Bots Nuxt](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots-nuxt`
+- [Crm Client Onboarding Nuxt](crm-client-onboarding.md) — `module-crm-crm-client-onboarding-nuxt`
+- [Crm Collaboration Nuxt](crm-collaboration.md) — `module-crm-crm-collaboration-nuxt`
+- [Crm Communities Nuxt](crm-communities.md) — `module-crm-crm-communities-nuxt`
+- [Crm Consent And Preferences Nuxt](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences-nuxt`
+- [Crm Contact Center Nuxt](crm-contact-center.md) — `module-crm-crm-contact-center-nuxt`
+- [Crm Contracts Nuxt](crm-contracts.md) — `module-crm-crm-contracts-nuxt`
+- [Crm Conversation Analytics Nuxt](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics-nuxt`
+- [Crm Conversation Intelligence Nuxt](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence-nuxt`
+- [Crm Conversion Optimization Nuxt](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization-nuxt`
+- [Crm Copilot Nuxt](crm-copilot.md) — `module-crm-crm-copilot-nuxt`
+- [Crm Core Nuxt](crm-core.md) — `module-crm-crm-core-nuxt`
+- [Crm Cpq Nuxt](crm-cpq.md) — `module-crm-crm-cpq-nuxt`
+- [Crm Customer Data Model Nuxt](crm-customer-data-model.md) — `module-crm-crm-customer-data-model-nuxt`
+- [Crm Customer Data Platform Nuxt](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform-nuxt`
+- [Crm Customer Self Service Nuxt](crm-customer-self-service.md) — `module-crm-crm-customer-self-service-nuxt`
+- [Crm Customer Success Nuxt](crm-customer-success.md) — `module-crm-crm-customer-success-nuxt`
+- [Crm Data Operations Nuxt](crm-data-operations.md) — `module-crm-crm-data-operations-nuxt`
+- [Crm Deal Registration Nuxt](crm-deal-registration.md) — `module-crm-crm-deal-registration-nuxt`
+- [Crm Dialer And Outreach Nuxt](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach-nuxt`
+- [Crm Documents Nuxt](crm-documents.md) — `module-crm-crm-documents-nuxt`
+- [Crm Email Marketing Nuxt](crm-email-marketing.md) — `module-crm-crm-email-marketing-nuxt`
+- [Crm Email Productivity Nuxt](crm-email-productivity.md) — `module-crm-crm-email-productivity-nuxt`
+- [Crm Enrichment Nuxt](crm-enrichment.md) — `module-crm-crm-enrichment-nuxt`
+- [Crm Events And Webinars Nuxt](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars-nuxt`
+- [Crm Feedback And Voice Of Customer Nuxt](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer-nuxt`
+- [Crm Field Service Coordination Nuxt](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination-nuxt`
+- [Crm Forecasting Nuxt](crm-forecasting.md) — `module-crm-crm-forecasting-nuxt`
+- [Crm Forms And Surveys Nuxt](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys-nuxt`
+- [Crm Goals And Performance Nuxt](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance-nuxt`
+- [Crm Journey Orchestration Nuxt](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration-nuxt`
+- [Crm Knowledge Nuxt](crm-knowledge.md) — `module-crm-crm-knowledge-nuxt`
+- [Crm Landing Pages And Funnels Nuxt](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels-nuxt`
+- [Crm Lead Capture Nuxt](crm-lead-capture.md) — `module-crm-crm-lead-capture-nuxt`
+- [Crm Lead Qualification Nuxt](crm-lead-qualification.md) — `module-crm-crm-lead-qualification-nuxt`
+- [Crm Learning And Courses Nuxt](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses-nuxt`
+- [Crm Loyalty Nuxt](crm-loyalty.md) — `module-crm-crm-loyalty-nuxt`
+- [Crm Marketing Agent Nuxt](crm-marketing-agent.md) — `module-crm-crm-marketing-agent-nuxt`
+- [Crm Marketing Development Funds Nuxt](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds-nuxt`
+- [Crm Marketing Resources Nuxt](crm-marketing-resources.md) — `module-crm-crm-marketing-resources-nuxt`
+- [Crm Memberships Nuxt](crm-memberships.md) — `module-crm-crm-memberships-nuxt`
+- [Crm Mobile Messaging Nuxt](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging-nuxt`
+- [Crm Omnichannel Service Nuxt](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service-nuxt`
+- [Crm Orders And Payments Workspace Nuxt](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace-nuxt`
+- [Crm Partner Relationship Management Nuxt](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management-nuxt`
+- [Crm Personalization Nuxt](crm-personalization.md) — `module-crm-crm-personalization-nuxt`
+- [Crm Playbooks And Enablement Nuxt](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement-nuxt`
+- [Crm Predictive Models Nuxt](crm-predictive-models.md) — `module-crm-crm-predictive-models-nuxt`
+- [Crm Product Workspace Nuxt](crm-product-workspace.md) — `module-crm-crm-product-workspace-nuxt`
+- [Crm Projects Nuxt](crm-projects.md) — `module-crm-crm-projects-nuxt`
+- [Crm Proposals And Quotes Nuxt](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes-nuxt`
+- [Crm Prospecting Nuxt](crm-prospecting.md) — `module-crm-crm-prospecting-nuxt`
+- [Crm Prospecting Agent Nuxt](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent-nuxt`
+- [Crm Quotas And Incentives Nuxt](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives-nuxt`
+- [Crm Referrals Nuxt](crm-referrals.md) — `module-crm-crm-referrals-nuxt`
+- [Crm Reputation Management Nuxt](crm-reputation-management.md) — `module-crm-crm-reputation-management-nuxt`
+- [Crm Resource Planning Nuxt](crm-resource-planning.md) — `module-crm-crm-resource-planning-nuxt`
+- [Crm Revenue Intelligence Nuxt](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence-nuxt`
+- [Crm Revenue Lifecycle Nuxt](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle-nuxt`
+- [Crm Routing Nuxt](crm-routing.md) — `module-crm-crm-routing-nuxt`
+- [Crm Saas Packaging Nuxt](crm-saas-packaging.md) — `module-crm-crm-saas-packaging-nuxt`
+- [Crm Sales Engagement Nuxt](crm-sales-engagement.md) — `module-crm-crm-sales-engagement-nuxt`
+- [Crm Sales Pipelines Nuxt](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines-nuxt`
+- [Crm Sales Workspace Nuxt](crm-sales-workspace.md) — `module-crm-crm-sales-workspace-nuxt`
+- [Crm Sandbox And Release Management Nuxt](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management-nuxt`
+- [Crm Sandbox Release Nuxt](crm-sandbox-release.md) — `module-crm-crm-sandbox-release-nuxt`
+- [Crm Scheduling Nuxt](crm-scheduling.md) — `module-crm-crm-scheduling-nuxt`
+- [Crm Search Nuxt](crm-search.md) — `module-crm-crm-search-nuxt`
+- [Crm Segmentation Nuxt](crm-segmentation.md) — `module-crm-crm-segmentation-nuxt`
+- [Crm Service Agent Nuxt](crm-service-agent.md) — `module-crm-crm-service-agent-nuxt`
+- [Crm Service Analytics Nuxt](crm-service-analytics.md) — `module-crm-crm-service-analytics-nuxt`
+- [Crm Sla And Entitlements Nuxt](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements-nuxt`
+- [Crm Telephony Nuxt](crm-telephony.md) — `module-crm-crm-telephony-nuxt`
+- [Crm Template Snapshots Nuxt](crm-template-snapshots.md) — `module-crm-crm-template-snapshots-nuxt`
+- [Crm Templates And Snapshots Nuxt](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots-nuxt`
+- [Crm Territories And Ownership Nuxt](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership-nuxt`
+- [Crm Unified Conversations Nuxt](crm-unified-conversations.md) — `module-crm-crm-unified-conversations-nuxt`
+- [Crm Usage Wallet And Rebilling Nuxt](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling-nuxt`
+- [Crm Web Intent Nuxt](crm-web-intent.md) — `module-crm-crm-web-intent-nuxt`
+- [Crm White Label Nuxt](crm-white-label.md) — `module-crm-crm-white-label-nuxt`
+- [Crm Work Management Nuxt](crm-work-management.md) — `module-crm-crm-work-management-nuxt`
+- [Currency Context Nuxt](currency-context.md) — `module-crm-currency-context-nuxt`
+- [Developer Experience Nuxt](developer-experience.md) — `module-crm-developer-experience-nuxt`
+- [Feature Flags Nuxt](feature-flags.md) — `module-crm-feature-flags-nuxt`
+- [Files Media Nuxt](files-media.md) — `module-crm-files-media-nuxt`
+- [Identity Core Nuxt](identity-core.md) — `module-crm-identity-core-nuxt`
+- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-crm-identity-socialstream-nuxt`
+- [Import Export Nuxt](import-export.md) — `module-crm-import-export-nuxt`
+- [Integrations Nuxt](integrations.md) — `module-crm-integrations-nuxt`
+- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-crm-jetstream-bridge-nuxt`
+- [Localization Contracts Nuxt](localization-contracts.md) — `module-crm-localization-contracts-nuxt`
+- [Localization Core Nuxt](localization-core.md) — `module-crm-localization-core-nuxt`
+- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-crm-localization-mymemory-nuxt`
+- [Module Manager Nuxt](module-manager.md) — `module-crm-module-manager-nuxt`
+- [Notifications Nuxt](notifications.md) — `module-crm-notifications-nuxt`
+- [Observability Nuxt](observability.md) — `module-crm-observability-nuxt`
+- [Organizations Teams Nuxt](organizations-teams.md) — `module-crm-organizations-teams-nuxt`
+- [Profiles Nuxt](profiles.md) — `module-crm-profiles-nuxt`
+- [Roles Permissions Nuxt](roles-permissions.md) — `module-crm-roles-permissions-nuxt`
+- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-crm-scheduler-queues-nuxt`
+- [Search Nuxt](search.md) — `module-crm-search-nuxt`
+- [Sessions Devices Nuxt](sessions-devices.md) — `module-crm-sessions-devices-nuxt`
+- [Settings Nuxt](settings.md) — `module-crm-settings-nuxt`
+- [Theme Support Nuxt](theme-support.md) — `module-crm-theme-support-nuxt`
+- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-crm-two-factor-authentication-nuxt`
+- [Webhooks Nuxt](webhooks.md) — `module-crm-webhooks-nuxt`

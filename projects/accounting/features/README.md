@@ -1,153 +1,146 @@
 # Accounting Feature Specifications
 
-**Source:** [ACCOUNTING.md](../ACCOUNTING.md)  
-**Architecture:** [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md) · [DOCUMENTATION.md](../ACCOUNTING.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Accounting foundation modules
-
-- [Accounting Core](accounting-core.md) — `module-accounting-core`
-- [Financial Master Data](financial-master-data.md) — `module-accounting-financial-master-data`
-- [Chart of Accounts](chart-of-accounts.md) — `module-accounting-chart-of-accounts`
-- [General Ledger](general-ledger.md) — `module-accounting-general-ledger`
-- [Dimensions and Tracking](dimensions-and-tracking.md) — `module-accounting-dimensions-and-tracking`
-- [Opening Balances](opening-balances.md) — `module-accounting-opening-balances`
-- [Recurring Transactions](recurring-transactions.md) — `module-accounting-recurring-transactions`
-- [Accounting Periods](accounting-periods.md) — `module-accounting-periods`
-- [Accounting Policies](accounting-policies.md) — `module-accounting-policies`
-
-## Sales and receivables modules
-
-- [Estimates and Quotes](estimates-and-quotes.md) — `module-accounting-estimates-and-quotes`
-- [Sales Orders](sales-orders.md) — `module-accounting-sales-orders`
-- [Sales Invoicing](sales-invoicing.md) — `module-accounting-sales-invoicing`
-- [Credit Notes and Adjustments](credit-notes-and-adjustments.md) — `module-accounting-credit-notes-and-adjustments`
-- [Customer Payments](customer-payments.md) — `module-accounting-customer-payments`
-- [Accounts Receivable](accounts-receivable.md) — `module-accounting-accounts-receivable`
-- [Collections](collections.md) — `module-accounting-collections`
-- [Customer Portal](customer-portal.md) — `module-accounting-customer-portal`
-
-## Purchasing and payables modules
-
-- [Purchase Requisitions](purchase-requisitions.md) — `module-accounting-purchase-requisitions`
-- [Purchase Orders](purchase-orders.md) — `module-accounting-purchase-orders`
-- [Goods and Service Receipts](goods-and-service-receipts.md) — `module-accounting-goods-and-service-receipts`
-- [Supplier Bills](supplier-bills.md) — `module-accounting-supplier-bills`
-- [Three-Way Matching](three-way-matching.md) — `module-accounting-three-way-matching`
-- [Accounts Payable](accounts-payable.md) — `module-accounting-accounts-payable`
-- [Bill Payments](bill-payments.md) — `module-accounting-bill-payments`
-- [Supplier Portal](supplier-portal.md) — `module-accounting-supplier-portal`
-- [Contractor Compliance](contractor-compliance.md) — `module-accounting-contractor-compliance`
-
-## Capture, expenses, cards, time, and mileage modules
-
-- [Document Capture](document-capture.md) — `module-accounting-document-capture`
-- [Receipt Management](receipt-management.md) — `module-accounting-receipt-management`
-- [Employee Expenses](employee-expenses.md) — `module-accounting-employee-expenses`
-- [Corporate Cards](corporate-cards.md) — `module-accounting-corporate-cards`
-- [Mileage](mileage.md) — `module-accounting-mileage`
-- [Time Tracking](time-tracking.md) — `module-accounting-time-tracking`
-- [Reimbursements](reimbursements.md) — `module-accounting-reimbursements`
-
-## Banking, treasury, and cash modules
-
-- [Bank Accounts](bank-accounts.md) — `module-accounting-bank-accounts`
-- [Bank Feeds](bank-feeds.md) — `module-accounting-bank-feeds`
-- [Bank Rules](bank-rules.md) — `module-accounting-bank-rules`
-- [Cash Coding](cash-coding.md) — `module-accounting-cash-coding`
-- [Bank Reconciliation](bank-reconciliation.md) — `module-accounting-bank-reconciliation`
-- [Deposits and Clearing](deposits-and-clearing.md) — `module-accounting-deposits-and-clearing`
-- [Transfers](transfers.md) — `module-accounting-transfers`
-- [Payment Reconciliation](payment-reconciliation.md) — `module-accounting-payment-reconciliation`
-- [Cash Position](cash-position.md) — `module-accounting-cash-position`
-- [Cash-Flow Forecasting](cash-flow-forecasting.md) — `module-accounting-cash-flow-forecasting`
-- [Debt and Loans](debt-and-loans.md) — `module-accounting-debt-and-loans`
-
-## Tax and regulatory modules
-
-- [Tax Core](tax-core.md) — `module-accounting-tax-core`
-- [Sales Tax and GST](sales-tax-and-gst.md) — `module-accounting-sales-tax-and-gst`
-- [VAT](vat.md) — `module-accounting-vat`
-- [Tax Returns](tax-returns.md) — `module-accounting-tax-returns`
-- [E-Invoicing](e-invoicing.md) — `module-accounting-e-invoicing`
-- [Withholding Tax](withholding-tax.md) — `module-accounting-withholding-tax`
-- [Construction Tax](construction-tax.md) — `module-accounting-construction-tax`
-- [Contractor Reporting](contractor-reporting.md) — `module-accounting-contractor-reporting`
-- [Carbon Accounting](carbon-accounting.md) — `module-accounting-carbon-accounting`
-- [Regional Packs](regional-packs.md) — `module-accounting-regional-packs`
-
-## Inventory, assets, and specialized accounting modules
-
-- [Inventory Accounting](inventory-accounting.md) — `module-accounting-inventory-accounting`
-- [Product and Service Items](product-and-service-items.md) — `module-accounting-product-and-service-items`
-- [Fixed Assets](fixed-assets.md) — `module-accounting-fixed-assets`
-- [Depreciation](depreciation.md) — `module-accounting-depreciation`
-- [Asset Events](asset-events.md) — `module-accounting-asset-events`
-- [Leases](leases.md) — `module-accounting-leases`
-- [Revenue Recognition](revenue-recognition.md) — `module-accounting-revenue-recognition`
-
-## Projects, jobs, and profitability modules
-
-- [Projects and Jobs](projects-and-jobs.md) — `module-accounting-projects-and-jobs`
-- [Project Costing](project-costing.md) — `module-accounting-project-costing`
-- [Project Billing](project-billing.md) — `module-accounting-project-billing`
-- [Project Profitability](project-profitability.md) — `module-accounting-project-profitability`
-- [Job Estimates](job-estimates.md) — `module-accounting-job-estimates`
-
-## Payroll accounting modules
-
-- [Payroll Integration](payroll-integration.md) — `module-accounting-payroll-integration`
-- [Payroll Journals](payroll-journals.md) — `module-accounting-payroll-journals`
-- [Payroll Liabilities](payroll-liabilities.md) — `module-accounting-payroll-liabilities`
-- [Payroll Payments](payroll-payments.md) — `module-accounting-payroll-payments`
-- [Workforce Costing](workforce-costing.md) — `module-accounting-workforce-costing`
-
-## Planning, reporting, and advisory modules
-
-- [Financial Statements](financial-statements.md) — `module-accounting-financial-statements`
-- [Operational Reports](operational-reports.md) — `module-accounting-operational-reports`
-- [Custom Report Builder](custom-report-builder.md) — `module-accounting-custom-report-builder`
-- [Dashboards](dashboards.md) — `module-accounting-dashboards`
-- [Budgets](budgets.md) — `module-accounting-budgets`
-- [Forecasts](forecasts.md) — `module-accounting-forecasts`
-- [Management Reporting](management-reporting.md) — `module-accounting-management-reporting`
-- [Business Insights](business-insights.md) — `module-accounting-business-insights`
-- [KPI and Goals](kpi-and-goals.md) — `module-accounting-kpi-and-goals`
-
-## Multi-entity and international modules
-
-- [Multi-Currency](multi-currency.md) — `module-accounting-multi-currency`
-- [Multi-Entity](multi-entity.md) — `module-accounting-multi-entity`
-- [Intercompany](intercompany.md) — `module-accounting-intercompany`
-- [Consolidation](consolidation.md) — `module-accounting-consolidation`
-- [Branch and Location Accounting](branch-and-location-accounting.md) — `module-accounting-branch-and-location-accounting`
-
-## Close, controls, and accountant-practice modules
-
-- [Close Management](close-management.md) — `module-accounting-close-management`
-- [Account Reconciliations](account-reconciliations.md) — `module-accounting-account-reconciliations`
-- [Journal Approvals](journal-approvals.md) — `module-accounting-journal-approvals`
-- [Accounting Review](accounting-review.md) — `module-accounting-review`
-- [Accountant Workspace](accountant-workspace.md) — `module-accounting-accountant-workspace`
-- [Client Collaboration](client-collaboration.md) — `module-accounting-client-collaboration`
-- [Workpapers](workpapers.md) — `module-accounting-workpapers`
-- [Year End](year-end.md) — `module-accounting-year-end`
-- [Audit Support](audit-support.md) — `module-accounting-audit-support`
-
-## Automation and intelligence modules
-
-- [Accounting Automation Pack](accounting-automation-pack.md) — `module-accounting-automation-pack`
-- [Coding Suggestions](coding-suggestions.md) — `module-accounting-coding-suggestions`
-- [Matching Intelligence](matching-intelligence.md) — `module-accounting-matching-intelligence`
-- [Anomaly Detection](anomaly-detection.md) — `module-accounting-anomaly-detection`
-- [Cash Collection Assistant](cash-collection-assistant.md) — `module-accounting-cash-collection-assistant`
-- [Accounting Copilot](accounting-copilot.md) — `module-accounting-copilot`
-
-## Migration modules
-
-- [Migration Framework](migration-framework.md) — `module-accounting-migration-framework`
-- [QuickBooks Online Migration](quickbooks-online-migration.md) — `module-accounting-quickbooks-online-migration`
-- [Sage Accounting Migration](sage-accounting-migration.md) — `module-accounting-sage-accounting-migration`
-- [Xero Migration](xero-migration.md) — `module-accounting-xero-migration`
-- [Spreadsheet Migration](spreadsheet-migration.md) — `module-accounting-spreadsheet-migration`
+- [Accounting Account Reconciliations](accounting-account-reconciliations.md) — `module-accounting-accounting-account-reconciliations`
+- [Accounting Accountant Workspace](accounting-accountant-workspace.md) — `module-accounting-accounting-accountant-workspace`
+- [Accounting Accounts Payable](accounting-accounts-payable.md) — `module-accounting-accounting-accounts-payable`
+- [Accounting Accounts Receivable](accounting-accounts-receivable.md) — `module-accounting-accounting-accounts-receivable`
+- [Accounting Anomaly Detection](accounting-anomaly-detection.md) — `module-accounting-accounting-anomaly-detection`
+- [Accounting Asset Events](accounting-asset-events.md) — `module-accounting-accounting-asset-events`
+- [Accounting Audit Support](accounting-audit-support.md) — `module-accounting-accounting-audit-support`
+- [Accounting Automation Pack](accounting-automation-pack.md) — `module-accounting-accounting-automation-pack`
+- [Accounting Bank Accounts](accounting-bank-accounts.md) — `module-accounting-accounting-bank-accounts`
+- [Accounting Bank Feeds](accounting-bank-feeds.md) — `module-accounting-accounting-bank-feeds`
+- [Accounting Bank Reconciliation](accounting-bank-reconciliation.md) — `module-accounting-accounting-bank-reconciliation`
+- [Accounting Bank Rules](accounting-bank-rules.md) — `module-accounting-accounting-bank-rules`
+- [Accounting Bill Payments](accounting-bill-payments.md) — `module-accounting-accounting-bill-payments`
+- [Accounting Branch And Location Accounting](accounting-branch-and-location-accounting.md) — `module-accounting-accounting-branch-and-location-accounting`
+- [Accounting Budgets](accounting-budgets.md) — `module-accounting-accounting-budgets`
+- [Accounting Business Insights](accounting-business-insights.md) — `module-accounting-accounting-business-insights`
+- [Accounting Carbon Accounting](accounting-carbon-accounting.md) — `module-accounting-accounting-carbon-accounting`
+- [Accounting Cash Coding](accounting-cash-coding.md) — `module-accounting-accounting-cash-coding`
+- [Accounting Cash Collection Assistant](accounting-cash-collection-assistant.md) — `module-accounting-accounting-cash-collection-assistant`
+- [Accounting Cash Flow Forecasting](accounting-cash-flow-forecasting.md) — `module-accounting-accounting-cash-flow-forecasting`
+- [Accounting Cash Position](accounting-cash-position.md) — `module-accounting-accounting-cash-position`
+- [Accounting Chart Of Accounts](accounting-chart-of-accounts.md) — `module-accounting-accounting-chart-of-accounts`
+- [Accounting Client Collaboration](accounting-client-collaboration.md) — `module-accounting-accounting-client-collaboration`
+- [Accounting Close Management](accounting-close-management.md) — `module-accounting-accounting-close-management`
+- [Accounting Coding Suggestions](accounting-coding-suggestions.md) — `module-accounting-accounting-coding-suggestions`
+- [Accounting Collections](accounting-collections.md) — `module-accounting-accounting-collections`
+- [Accounting Consolidation](accounting-consolidation.md) — `module-accounting-accounting-consolidation`
+- [Accounting Construction Tax](accounting-construction-tax.md) — `module-accounting-accounting-construction-tax`
+- [Accounting Contractor Compliance](accounting-contractor-compliance.md) — `module-accounting-accounting-contractor-compliance`
+- [Accounting Contractor Reporting](accounting-contractor-reporting.md) — `module-accounting-accounting-contractor-reporting`
+- [Accounting Copilot](accounting-copilot.md) — `module-accounting-accounting-copilot`
+- [Accounting Core](accounting-core.md) — `module-accounting-accounting-core`
+- [Accounting Corporate Cards](accounting-corporate-cards.md) — `module-accounting-accounting-corporate-cards`
+- [Accounting Credit Notes And Adjustments](accounting-credit-notes-and-adjustments.md) — `module-accounting-accounting-credit-notes-and-adjustments`
+- [Accounting Custom Report Builder](accounting-custom-report-builder.md) — `module-accounting-accounting-custom-report-builder`
+- [Accounting Customer Payments](accounting-customer-payments.md) — `module-accounting-accounting-customer-payments`
+- [Accounting Customer Portal](accounting-customer-portal.md) — `module-accounting-accounting-customer-portal`
+- [Accounting Dashboards](accounting-dashboards.md) — `module-accounting-accounting-dashboards`
+- [Accounting Debt And Loans](accounting-debt-and-loans.md) — `module-accounting-accounting-debt-and-loans`
+- [Accounting Deposits And Clearing](accounting-deposits-and-clearing.md) — `module-accounting-accounting-deposits-and-clearing`
+- [Accounting Depreciation](accounting-depreciation.md) — `module-accounting-accounting-depreciation`
+- [Accounting Dimensions And Tracking](accounting-dimensions-and-tracking.md) — `module-accounting-accounting-dimensions-and-tracking`
+- [Accounting Document Capture](accounting-document-capture.md) — `module-accounting-accounting-document-capture`
+- [Accounting E Invoicing](accounting-e-invoicing.md) — `module-accounting-accounting-e-invoicing`
+- [Accounting Employee Expenses](accounting-employee-expenses.md) — `module-accounting-accounting-employee-expenses`
+- [Accounting Estimates And Quotes](accounting-estimates-and-quotes.md) — `module-accounting-accounting-estimates-and-quotes`
+- [Accounting Financial Master Data](accounting-financial-master-data.md) — `module-accounting-accounting-financial-master-data`
+- [Accounting Financial Statements](accounting-financial-statements.md) — `module-accounting-accounting-financial-statements`
+- [Accounting Fixed Assets](accounting-fixed-assets.md) — `module-accounting-accounting-fixed-assets`
+- [Accounting Forecasts](accounting-forecasts.md) — `module-accounting-accounting-forecasts`
+- [Accounting General Ledger](accounting-general-ledger.md) — `module-accounting-accounting-general-ledger`
+- [Accounting Goods And Service Receipts](accounting-goods-and-service-receipts.md) — `module-accounting-accounting-goods-and-service-receipts`
+- [Accounting Intercompany](accounting-intercompany.md) — `module-accounting-accounting-intercompany`
+- [Accounting Inventory Accounting](accounting-inventory-accounting.md) — `module-accounting-accounting-inventory-accounting`
+- [Accounting Job Estimates](accounting-job-estimates.md) — `module-accounting-accounting-job-estimates`
+- [Accounting Journal Approvals](accounting-journal-approvals.md) — `module-accounting-accounting-journal-approvals`
+- [Accounting Kpi And Goals](accounting-kpi-and-goals.md) — `module-accounting-accounting-kpi-and-goals`
+- [Accounting Leases](accounting-leases.md) — `module-accounting-accounting-leases`
+- [Accounting Management Reporting](accounting-management-reporting.md) — `module-accounting-accounting-management-reporting`
+- [Accounting Matching Intelligence](accounting-matching-intelligence.md) — `module-accounting-accounting-matching-intelligence`
+- [Accounting Migration Framework](accounting-migration-framework.md) — `module-accounting-accounting-migration-framework`
+- [Accounting Mileage](accounting-mileage.md) — `module-accounting-accounting-mileage`
+- [Accounting Multi Currency](accounting-multi-currency.md) — `module-accounting-accounting-multi-currency`
+- [Accounting Multi Entity](accounting-multi-entity.md) — `module-accounting-accounting-multi-entity`
+- [Accounting Opening Balances](accounting-opening-balances.md) — `module-accounting-accounting-opening-balances`
+- [Accounting Operational Reports](accounting-operational-reports.md) — `module-accounting-accounting-operational-reports`
+- [Accounting Payment Reconciliation](accounting-payment-reconciliation.md) — `module-accounting-accounting-payment-reconciliation`
+- [Accounting Payroll Integration](accounting-payroll-integration.md) — `module-accounting-accounting-payroll-integration`
+- [Accounting Payroll Journals](accounting-payroll-journals.md) — `module-accounting-accounting-payroll-journals`
+- [Accounting Payroll Liabilities](accounting-payroll-liabilities.md) — `module-accounting-accounting-payroll-liabilities`
+- [Accounting Payroll Payments](accounting-payroll-payments.md) — `module-accounting-accounting-payroll-payments`
+- [Accounting Periods](accounting-periods.md) — `module-accounting-accounting-periods`
+- [Accounting Plaid](accounting-plaid.md) — `module-accounting-accounting-plaid`
+- [Accounting Policies](accounting-policies.md) — `module-accounting-accounting-policies`
+- [Accounting Product And Service Items](accounting-product-and-service-items.md) — `module-accounting-accounting-product-and-service-items`
+- [Accounting Project Billing](accounting-project-billing.md) — `module-accounting-accounting-project-billing`
+- [Accounting Project Costing](accounting-project-costing.md) — `module-accounting-accounting-project-costing`
+- [Accounting Project Profitability](accounting-project-profitability.md) — `module-accounting-accounting-project-profitability`
+- [Accounting Projects And Jobs](accounting-projects-and-jobs.md) — `module-accounting-accounting-projects-and-jobs`
+- [Accounting Purchase Orders](accounting-purchase-orders.md) — `module-accounting-accounting-purchase-orders`
+- [Accounting Purchase Requisitions](accounting-purchase-requisitions.md) — `module-accounting-accounting-purchase-requisitions`
+- [Accounting Quickbooks Online Migration](accounting-quickbooks-online-migration.md) — `module-accounting-accounting-quickbooks-online-migration`
+- [Accounting Receipt Management](accounting-receipt-management.md) — `module-accounting-accounting-receipt-management`
+- [Accounting Recurring Transactions](accounting-recurring-transactions.md) — `module-accounting-accounting-recurring-transactions`
+- [Accounting Regional Packs](accounting-regional-packs.md) — `module-accounting-accounting-regional-packs`
+- [Accounting Reimbursements](accounting-reimbursements.md) — `module-accounting-accounting-reimbursements`
+- [Accounting Revenue Recognition](accounting-revenue-recognition.md) — `module-accounting-accounting-revenue-recognition`
+- [Accounting Review](accounting-review.md) — `module-accounting-accounting-review`
+- [Accounting Revolut](accounting-revolut.md) — `module-accounting-accounting-revolut`
+- [Accounting Sage Accounting Migration](accounting-sage-accounting-migration.md) — `module-accounting-accounting-sage-accounting-migration`
+- [Accounting Sales Invoicing](accounting-sales-invoicing.md) — `module-accounting-accounting-sales-invoicing`
+- [Accounting Sales Orders](accounting-sales-orders.md) — `module-accounting-accounting-sales-orders`
+- [Accounting Sales Tax And Gst](accounting-sales-tax-and-gst.md) — `module-accounting-accounting-sales-tax-and-gst`
+- [Accounting Spreadsheet Migration](accounting-spreadsheet-migration.md) — `module-accounting-accounting-spreadsheet-migration`
+- [Accounting Supplier Bills](accounting-supplier-bills.md) — `module-accounting-accounting-supplier-bills`
+- [Accounting Supplier Portal](accounting-supplier-portal.md) — `module-accounting-accounting-supplier-portal`
+- [Accounting Tax Core](accounting-tax-core.md) — `module-accounting-accounting-tax-core`
+- [Accounting Tax Returns](accounting-tax-returns.md) — `module-accounting-accounting-tax-returns`
+- [Accounting Three Way Matching](accounting-three-way-matching.md) — `module-accounting-accounting-three-way-matching`
+- [Accounting Time Tracking](accounting-time-tracking.md) — `module-accounting-accounting-time-tracking`
+- [Accounting Transfers](accounting-transfers.md) — `module-accounting-accounting-transfers`
+- [Accounting Vat](accounting-vat.md) — `module-accounting-accounting-vat`
+- [Accounting Wise](accounting-wise.md) — `module-accounting-accounting-wise`
+- [Accounting Withholding Tax](accounting-withholding-tax.md) — `module-accounting-accounting-withholding-tax`
+- [Accounting Workforce Costing](accounting-workforce-costing.md) — `module-accounting-accounting-workforce-costing`
+- [Accounting Workpapers](accounting-workpapers.md) — `module-accounting-accounting-workpapers`
+- [Accounting Xero Migration](accounting-xero-migration.md) — `module-accounting-accounting-xero-migration`
+- [Accounting Year End](accounting-year-end.md) — `module-accounting-accounting-year-end`
+- [Activity Comments](activity-comments.md) — `module-accounting-activity-comments`
+- [Analytics Core](analytics-core.md) — `module-accounting-analytics-core`
+- [Analytics Google](analytics-google.md) — `module-accounting-analytics-google`
+- [Analytics Meta](analytics-meta.md) — `module-accounting-analytics-meta`
+- [Api Access](api-access.md) — `module-accounting-api-access`
+- [Application](application.md) — `module-accounting-application`
+- [Audit](audit.md) — `module-accounting-audit`
+- [Currency Context](currency-context.md) — `module-accounting-currency-context`
+- [Developer Experience](developer-experience.md) — `module-accounting-developer-experience`
+- [Feature Flags](feature-flags.md) — `module-accounting-feature-flags`
+- [Files Media](files-media.md) — `module-accounting-files-media`
+- [Identity Core](identity-core.md) — `module-accounting-identity-core`
+- [Identity Socialstream](identity-socialstream.md) — `module-accounting-identity-socialstream`
+- [Import Export](import-export.md) — `module-accounting-import-export`
+- [Integrations](integrations.md) — `module-accounting-integrations`
+- [Jetstream Bridge](jetstream-bridge.md) — `module-accounting-jetstream-bridge`
+- [Liberu Business Workflow Reconciliation](liberu-business-workflow-reconciliation.md) — `module-accounting-liberu-business-workflow-reconciliation`
+- [Liberu Executive Insights](liberu-executive-insights.md) — `module-accounting-liberu-executive-insights`
+- [Liberu Platform Orchestration](liberu-platform-orchestration.md) — `module-accounting-liberu-platform-orchestration`
+- [Localization Core](localization-core.md) — `module-accounting-localization-core`
+- [Localization Mymemory](localization-mymemory.md) — `module-accounting-localization-mymemory`
+- [Module Manager](module-manager.md) — `module-accounting-module-manager`
+- [Notifications](notifications.md) — `module-accounting-notifications`
+- [Observability](observability.md) — `module-accounting-observability`
+- [Organizations Teams](organizations-teams.md) — `module-accounting-organizations-teams`
+- [Profiles](profiles.md) — `module-accounting-profiles`
+- [Roles Permissions](roles-permissions.md) — `module-accounting-roles-permissions`
+- [Scheduler Queues](scheduler-queues.md) — `module-accounting-scheduler-queues`
+- [Search](search.md) — `module-accounting-search`
+- [Sessions Devices](sessions-devices.md) — `module-accounting-sessions-devices`
+- [Settings](settings.md) — `module-accounting-settings`
+- [Theme Support](theme-support.md) — `module-accounting-theme-support`
+- [Two Factor Authentication](two-factor-authentication.md) — `module-accounting-two-factor-authentication`
+- [Webhooks](webhooks.md) — `module-accounting-webhooks`

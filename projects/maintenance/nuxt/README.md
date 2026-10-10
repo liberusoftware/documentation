@@ -1,23 +1,50 @@
-# Maintenance Nuxt 4 Implementations
+# Maintenance Nuxt Implementations
 
-**Source:** [MAINTENANCE.md](../MAINTENANCE.md)
-**Architecture:** [NUXT.md](../MAINTENANCE.md) · [API module index](../api/README.md) · [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md)
+Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-Each file defines the optional `Nuxt 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Maintenance Core Nuxt](maintenance-core.md) — `module-maintenance-core-nuxt`
-- [Customers and Sites Nuxt](customers-and-sites.md) — `module-maintenance-customers-and-sites-nuxt`
-- [Assets Nuxt](assets.md) — `module-maintenance-assets-nuxt`
-- [Work Orders Nuxt](work-orders.md) — `module-maintenance-work-orders-nuxt`
-- [Scheduling Nuxt](scheduling.md) — `module-maintenance-scheduling-nuxt`
-- [Preventative Maintenance Nuxt](preventative-maintenance.md) — `module-maintenance-preventative-maintenance-nuxt`
-- [Inspections Nuxt](inspections.md) — `module-maintenance-inspections-nuxt`
-- [Inventory Nuxt](inventory.md) — `module-maintenance-inventory-nuxt`
-- [Procurement Nuxt](procurement.md) — `module-maintenance-procurement-nuxt`
-- [Labor and Time Nuxt](labor-and-time.md) — `module-maintenance-labor-and-time-nuxt`
-- [Commercial Nuxt](commercial.md) — `module-maintenance-commercial-nuxt`
-- [Compliance Nuxt](compliance.md) — `module-maintenance-compliance-nuxt`
-- [Portals Nuxt](portals.md) — `module-maintenance-portals-nuxt`
-- [Reporting Nuxt](reporting.md) — `module-maintenance-reporting-nuxt`
+- [Activity Comments Nuxt](activity-comments.md) — `module-maintenance-activity-comments-nuxt`
+- [Analytics Core Nuxt](analytics-core.md) — `module-maintenance-analytics-core-nuxt`
+- [Analytics Google Nuxt](analytics-google.md) — `module-maintenance-analytics-google-nuxt`
+- [Analytics Meta Nuxt](analytics-meta.md) — `module-maintenance-analytics-meta-nuxt`
+- [Api Access Nuxt](api-access.md) — `module-maintenance-api-access-nuxt`
+- [Application Nuxt](application.md) — `module-maintenance-application-nuxt`
+- [Audit Nuxt](audit.md) — `module-maintenance-audit-nuxt`
+- [Currency Context Nuxt](currency-context.md) — `module-maintenance-currency-context-nuxt`
+- [Developer Experience Nuxt](developer-experience.md) — `module-maintenance-developer-experience-nuxt`
+- [Feature Flags Nuxt](feature-flags.md) — `module-maintenance-feature-flags-nuxt`
+- [Files Media Nuxt](files-media.md) — `module-maintenance-files-media-nuxt`
+- [Identity Core Nuxt](identity-core.md) — `module-maintenance-identity-core-nuxt`
+- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-maintenance-identity-socialstream-nuxt`
+- [Import Export Nuxt](import-export.md) — `module-maintenance-import-export-nuxt`
+- [Integrations Nuxt](integrations.md) — `module-maintenance-integrations-nuxt`
+- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-nuxt`
+- [Localization Core Nuxt](localization-core.md) — `module-maintenance-localization-core-nuxt`
+- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-maintenance-localization-mymemory-nuxt`
+- [Maintenance Maintenance Core Nuxt](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-nuxt`
+- [Module Maintenance Assets Nuxt](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-nuxt`
+- [Module Maintenance Commercial Nuxt](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-nuxt`
+- [Module Maintenance Compliance Nuxt](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-nuxt`
+- [Module Maintenance Core Nuxt](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-nuxt`
+- [Module Maintenance Customers And Sites Nuxt](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-nuxt`
+- [Module Maintenance Inspections Nuxt](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-nuxt`
+- [Module Maintenance Inventory Nuxt](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-nuxt`
+- [Module Maintenance Labor And Time Nuxt](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-nuxt`
+- [Module Maintenance Portals Nuxt](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-nuxt`
+- [Module Maintenance Preventative Maintenance Nuxt](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-nuxt`
+- [Module Maintenance Procurement Nuxt](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-nuxt`
+- [Module Maintenance Reporting Nuxt](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-nuxt`
+- [Module Maintenance Scheduling Nuxt](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-nuxt`
+- [Module Maintenance Work Orders Nuxt](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-nuxt`
+- [Module Manager Nuxt](module-manager.md) — `module-maintenance-module-manager-nuxt`
+- [Notifications Nuxt](notifications.md) — `module-maintenance-notifications-nuxt`
+- [Observability Nuxt](observability.md) — `module-maintenance-observability-nuxt`
+- [Organizations Teams Nuxt](organizations-teams.md) — `module-maintenance-organizations-teams-nuxt`
+- [Profiles Nuxt](profiles.md) — `module-maintenance-profiles-nuxt`
+- [Roles Permissions Nuxt](roles-permissions.md) — `module-maintenance-roles-permissions-nuxt`
+- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-maintenance-scheduler-queues-nuxt`
+- [Search Nuxt](search.md) — `module-maintenance-search-nuxt`
+- [Sessions Devices Nuxt](sessions-devices.md) — `module-maintenance-sessions-devices-nuxt`
+- [Settings Nuxt](settings.md) — `module-maintenance-settings-nuxt`
+- [Theme Support Nuxt](theme-support.md) — `module-maintenance-theme-support-nuxt`
+- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-nuxt`
+- [Webhooks Nuxt](webhooks.md) — `module-maintenance-webhooks-nuxt`

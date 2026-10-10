@@ -1,20 +1,50 @@
 # Automation Feature Specifications
 
-**Source:** [AUTOMATION.md](../AUTOMATION.md)  
-**Architecture:** [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md) · [DOCUMENTATION.md](../AUTOMATION.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Module plan
-
-- [Automation Core](automation-core.md) — `module-automation-core`
-- [Rules](rules.md) — `module-automation-rules`
-- [Approvals](approvals.md) — `module-automation-approvals`
-- [AI Gateway](ai-gateway.md) — `module-automation-ai-gateway`
-- [Prompt Registry](prompt-registry.md) — `module-automation-prompt-registry`
-- [Data Processing](data-processing.md) — `module-automation-data-processing`
-- [Voice](voice.md) — `module-automation-voice`
-- [Image](image.md) — `module-automation-image`
-- [Video](video.md) — `module-automation-video`
-- [Connectors](connectors.md) — `module-automation-connectors`
-- [Evaluation](evaluation.md) — `module-automation-evaluation`
+- [Activity Comments](activity-comments.md) — `module-automation-activity-comments`
+- [Analytics Core](analytics-core.md) — `module-automation-analytics-core`
+- [Analytics Google](analytics-google.md) — `module-automation-analytics-google`
+- [Analytics Meta](analytics-meta.md) — `module-automation-analytics-meta`
+- [Api Access](api-access.md) — `module-automation-api-access`
+- [Application](application.md) — `module-automation-application`
+- [Audit](audit.md) — `module-automation-audit`
+- [Currency Context](currency-context.md) — `module-automation-currency-context`
+- [Developer Experience](developer-experience.md) — `module-automation-developer-experience`
+- [Feature Flags](feature-flags.md) — `module-automation-feature-flags`
+- [Files Media](files-media.md) — `module-automation-files-media`
+- [Identity Core](identity-core.md) — `module-automation-identity-core`
+- [Identity Socialstream](identity-socialstream.md) — `module-automation-identity-socialstream`
+- [Import Export](import-export.md) — `module-automation-import-export`
+- [Integrations](integrations.md) — `module-automation-integrations`
+- [Jetstream Bridge](jetstream-bridge.md) — `module-automation-jetstream-bridge`
+- [Liberu Business Workflow Reconciliation](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation`
+- [Liberu Executive Insights](liberu-executive-insights.md) — `module-automation-liberu-executive-insights`
+- [Liberu Platform Orchestration](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration`
+- [Liberu Revenue And Care Orchestration](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration`
+- [Localization Core](localization-core.md) — `module-automation-localization-core`
+- [Localization Mymemory](localization-mymemory.md) — `module-automation-localization-mymemory`
+- [Module Automation Ai Gateway](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway`
+- [Module Automation Approvals](module-automation-approvals.md) — `module-automation-module-automation-approvals`
+- [Module Automation Automation Core](module-automation-automation-core.md) — `module-automation-module-automation-automation-core`
+- [Module Automation Connectors](module-automation-connectors.md) — `module-automation-module-automation-connectors`
+- [Module Automation Data Processing](module-automation-data-processing.md) — `module-automation-module-automation-data-processing`
+- [Module Automation Evaluation](module-automation-evaluation.md) — `module-automation-module-automation-evaluation`
+- [Module Automation Image](module-automation-image.md) — `module-automation-module-automation-image`
+- [Module Automation Prompt Registry](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry`
+- [Module Automation Rules](module-automation-rules.md) — `module-automation-module-automation-rules`
+- [Module Automation Video](module-automation-video.md) — `module-automation-module-automation-video`
+- [Module Automation Voice](module-automation-voice.md) — `module-automation-module-automation-voice`
+- [Module Manager](module-manager.md) — `module-automation-module-manager`
+- [Notifications](notifications.md) — `module-automation-notifications`
+- [Observability](observability.md) — `module-automation-observability`
+- [Organizations Teams](organizations-teams.md) — `module-automation-organizations-teams`
+- [Profiles](profiles.md) — `module-automation-profiles`
+- [Roles Permissions](roles-permissions.md) — `module-automation-roles-permissions`
+- [Scheduler Queues](scheduler-queues.md) — `module-automation-scheduler-queues`
+- [Search](search.md) — `module-automation-search`
+- [Sessions Devices](sessions-devices.md) — `module-automation-sessions-devices`
+- [Settings](settings.md) — `module-automation-settings`
+- [Theme Support](theme-support.md) — `module-automation-theme-support`
+- [Two Factor Authentication](two-factor-authentication.md) — `module-automation-two-factor-authentication`
+- [Webhooks](webhooks.md) — `module-automation-webhooks`

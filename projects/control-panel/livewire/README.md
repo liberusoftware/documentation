@@ -1,24 +1,50 @@
-# Control-Panel Livewire 4 Implementations
+# Control Panel Livewire Implementations
 
-**Source:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)  
-**Architecture:** [LIVEWIRE.md](../CONTROL-PANEL.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+Each file defines the optional Livewire 4 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Livewire 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Control Core Livewire](control-core.md) — `module-control-panel-control-core-livewire`
-- [OS Adapters Livewire](os-adapters.md) — `module-control-panel-os-adapters-livewire`
-- [Accounts Livewire](accounts.md) — `module-control-panel-accounts-livewire`
-- [Web Hosting Livewire](web-hosting.md) — `module-control-panel-web-hosting-livewire`
-- [Mail Livewire](mail.md) — `module-control-panel-mail-livewire`
-- [Databases Livewire](databases.md) — `module-control-panel-databases-livewire`
-- [DNS Livewire](dns.md) — `module-control-panel-dns-livewire`
-- [Files Livewire](files.md) — `module-control-panel-files-livewire`
-- [Certificates Livewire](certificates.md) — `module-control-panel-certificates-livewire`
-- [Backups Livewire](backups.md) — `module-control-panel-backups-livewire`
-- [Security Livewire](security.md) — `module-control-panel-security-livewire`
-- [Monitoring Livewire](monitoring.md) — `module-control-panel-monitoring-livewire`
-- [Containers Livewire](containers.md) — `module-control-panel-containers-livewire`
-- [Kubernetes Livewire](kubernetes.md) — `module-control-panel-kubernetes-livewire`
-- [API and Automation Livewire](api-and-automation.md) — `module-control-panel-api-and-automation-livewire`
+- [Activity Comments Livewire](activity-comments.md) — `module-control-panel-activity-comments-livewire`
+- [Analytics Core Livewire](analytics-core.md) — `module-control-panel-analytics-core-livewire`
+- [Analytics Google Livewire](analytics-google.md) — `module-control-panel-analytics-google-livewire`
+- [Analytics Meta Livewire](analytics-meta.md) — `module-control-panel-analytics-meta-livewire`
+- [Api Access Livewire](api-access.md) — `module-control-panel-api-access-livewire`
+- [Application Livewire](application.md) — `module-control-panel-application-livewire`
+- [Audit Livewire](audit.md) — `module-control-panel-audit-livewire`
+- [Control Panel Accounts Livewire](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-livewire`
+- [Control Panel Api And Automation Livewire](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-livewire`
+- [Control Panel Backups Livewire](control-panel-backups.md) — `module-control-panel-control-panel-backups-livewire`
+- [Control Panel Certificates Livewire](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-livewire`
+- [Control Panel Containers Livewire](control-panel-containers.md) — `module-control-panel-control-panel-containers-livewire`
+- [Control Panel Control Core Livewire](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-livewire`
+- [Control Panel Databases Livewire](control-panel-databases.md) — `module-control-panel-control-panel-databases-livewire`
+- [Control Panel Dns Livewire](control-panel-dns.md) — `module-control-panel-control-panel-dns-livewire`
+- [Control Panel Files Livewire](control-panel-files.md) — `module-control-panel-control-panel-files-livewire`
+- [Control Panel Kubernetes Livewire](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-livewire`
+- [Control Panel Mail Livewire](control-panel-mail.md) — `module-control-panel-control-panel-mail-livewire`
+- [Control Panel Monitoring Livewire](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-livewire`
+- [Control Panel Os Adapters Livewire](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-livewire`
+- [Control Panel Security Livewire](control-panel-security.md) — `module-control-panel-control-panel-security-livewire`
+- [Control Panel Web Hosting Livewire](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-livewire`
+- [Currency Context Livewire](currency-context.md) — `module-control-panel-currency-context-livewire`
+- [Developer Experience Livewire](developer-experience.md) — `module-control-panel-developer-experience-livewire`
+- [Feature Flags Livewire](feature-flags.md) — `module-control-panel-feature-flags-livewire`
+- [Files Media Livewire](files-media.md) — `module-control-panel-files-media-livewire`
+- [Identity Core Livewire](identity-core.md) — `module-control-panel-identity-core-livewire`
+- [Identity Socialstream Livewire](identity-socialstream.md) — `module-control-panel-identity-socialstream-livewire`
+- [Import Export Livewire](import-export.md) — `module-control-panel-import-export-livewire`
+- [Integrations Livewire](integrations.md) — `module-control-panel-integrations-livewire`
+- [Jetstream Bridge Livewire](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-livewire`
+- [Localization Core Livewire](localization-core.md) — `module-control-panel-localization-core-livewire`
+- [Localization Mymemory Livewire](localization-mymemory.md) — `module-control-panel-localization-mymemory-livewire`
+- [Module Manager Livewire](module-manager.md) — `module-control-panel-module-manager-livewire`
+- [Notifications Livewire](notifications.md) — `module-control-panel-notifications-livewire`
+- [Observability Livewire](observability.md) — `module-control-panel-observability-livewire`
+- [Organizations Teams Livewire](organizations-teams.md) — `module-control-panel-organizations-teams-livewire`
+- [Profiles Livewire](profiles.md) — `module-control-panel-profiles-livewire`
+- [Roles Permissions Livewire](roles-permissions.md) — `module-control-panel-roles-permissions-livewire`
+- [Scheduler Queues Livewire](scheduler-queues.md) — `module-control-panel-scheduler-queues-livewire`
+- [Search Livewire](search.md) — `module-control-panel-search-livewire`
+- [Sessions Devices Livewire](sessions-devices.md) — `module-control-panel-sessions-devices-livewire`
+- [Settings Livewire](settings.md) — `module-control-panel-settings-livewire`
+- [Theme Support Livewire](theme-support.md) — `module-control-panel-theme-support-livewire`
+- [Two Factor Authentication Livewire](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-livewire`
+- [Webhooks Livewire](webhooks.md) — `module-control-panel-webhooks-livewire`

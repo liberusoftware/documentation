@@ -1,24 +1,50 @@
 # Browser Game Feature Specifications
 
-**Source:** [BROWSER-GAME.md](../BROWSER-GAME.md)  
-**Architecture:** [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md) · [DOCUMENTATION.md](../BROWSER-GAME.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Module plan
-
-- [Game Core](game-core.md) — `module-browser-game-game-core`
-- [Accounts](accounts.md) — `module-browser-game-accounts`
-- [Characters](characters.md) — `module-browser-game-characters`
-- [World](world.md) — `module-browser-game-world`
-- [Combat](combat.md) — `module-browser-game-combat`
-- [Quests](quests.md) — `module-browser-game-quests`
-- [Items](items.md) — `module-browser-game-items`
-- [Crafting](crafting.md) — `module-browser-game-crafting`
-- [Economy](economy.md) — `module-browser-game-economy`
-- [Social](social.md) — `module-browser-game-social`
-- [Competition](competition.md) — `module-browser-game-competition`
-- [Collections](collections.md) — `module-browser-game-collections`
-- [Live Ops](live-ops.md) — `module-browser-game-live-ops`
-- [Commerce](commerce.md) — `module-browser-game-commerce`
-- [Moderation and Analytics](moderation-and-analytics.md) — `module-browser-game-moderation-and-analytics`
+- [Activity Comments](activity-comments.md) — `module-browser-game-activity-comments`
+- [Analytics Core](analytics-core.md) — `module-browser-game-analytics-core`
+- [Analytics Google](analytics-google.md) — `module-browser-game-analytics-google`
+- [Analytics Meta](analytics-meta.md) — `module-browser-game-analytics-meta`
+- [Api Access](api-access.md) — `module-browser-game-api-access`
+- [Application](application.md) — `module-browser-game-application`
+- [Audit](audit.md) — `module-browser-game-audit`
+- [Browser Game Accounts](browser-game-accounts.md) — `module-browser-game-browser-game-accounts`
+- [Browser Game Characters](browser-game-characters.md) — `module-browser-game-browser-game-characters`
+- [Browser Game Collections](browser-game-collections.md) — `module-browser-game-browser-game-collections`
+- [Browser Game Combat](browser-game-combat.md) — `module-browser-game-browser-game-combat`
+- [Browser Game Commerce](browser-game-commerce.md) — `module-browser-game-browser-game-commerce`
+- [Browser Game Competition](browser-game-competition.md) — `module-browser-game-browser-game-competition`
+- [Browser Game Crafting](browser-game-crafting.md) — `module-browser-game-browser-game-crafting`
+- [Browser Game Economy](browser-game-economy.md) — `module-browser-game-browser-game-economy`
+- [Browser Game Game Core](browser-game-game-core.md) — `module-browser-game-browser-game-game-core`
+- [Browser Game Items](browser-game-items.md) — `module-browser-game-browser-game-items`
+- [Browser Game Live Ops](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops`
+- [Browser Game Moderation And Analytics](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics`
+- [Browser Game Quests](browser-game-quests.md) — `module-browser-game-browser-game-quests`
+- [Browser Game Social](browser-game-social.md) — `module-browser-game-browser-game-social`
+- [Browser Game World](browser-game-world.md) — `module-browser-game-browser-game-world`
+- [Currency Context](currency-context.md) — `module-browser-game-currency-context`
+- [Developer Experience](developer-experience.md) — `module-browser-game-developer-experience`
+- [Feature Flags](feature-flags.md) — `module-browser-game-feature-flags`
+- [Files Media](files-media.md) — `module-browser-game-files-media`
+- [Identity Core](identity-core.md) — `module-browser-game-identity-core`
+- [Identity Socialstream](identity-socialstream.md) — `module-browser-game-identity-socialstream`
+- [Import Export](import-export.md) — `module-browser-game-import-export`
+- [Integrations](integrations.md) — `module-browser-game-integrations`
+- [Jetstream Bridge](jetstream-bridge.md) — `module-browser-game-jetstream-bridge`
+- [Localization Core](localization-core.md) — `module-browser-game-localization-core`
+- [Localization Mymemory](localization-mymemory.md) — `module-browser-game-localization-mymemory`
+- [Module Manager](module-manager.md) — `module-browser-game-module-manager`
+- [Notifications](notifications.md) — `module-browser-game-notifications`
+- [Observability](observability.md) — `module-browser-game-observability`
+- [Organizations Teams](organizations-teams.md) — `module-browser-game-organizations-teams`
+- [Profiles](profiles.md) — `module-browser-game-profiles`
+- [Roles Permissions](roles-permissions.md) — `module-browser-game-roles-permissions`
+- [Scheduler Queues](scheduler-queues.md) — `module-browser-game-scheduler-queues`
+- [Search](search.md) — `module-browser-game-search`
+- [Sessions Devices](sessions-devices.md) — `module-browser-game-sessions-devices`
+- [Settings](settings.md) — `module-browser-game-settings`
+- [Theme Support](theme-support.md) — `module-browser-game-theme-support`
+- [Two Factor Authentication](two-factor-authentication.md) — `module-browser-game-two-factor-authentication`
+- [Webhooks](webhooks.md) — `module-browser-game-webhooks`

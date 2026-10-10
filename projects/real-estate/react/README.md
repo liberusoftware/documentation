@@ -1,47 +1,60 @@
-# Real-Estate React 19.2 + Inertia 3 Implementations
+# Real Estate React + Inertia Implementations
 
-**Source:** [REAL-ESTATE.md](../REAL-ESTATE.md)
-**Architecture:** [REACT.md](../REAL-ESTATE.md) · [API module index](../api/README.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Real Estate Core React + Inertia](real-estate-core.md) — `module-real-estate-core-react-inertia`
-- [Parties React + Inertia](parties.md) — `module-real-estate-parties-react-inertia`
-- [Properties React + Inertia](properties.md) — `module-real-estate-properties-react-inertia`
-- [Media and Documents React + Inertia](media-and-documents.md) — `module-real-estate-media-and-documents-react-inertia`
-- [Valuations React + Inertia](valuations.md) — `module-real-estate-valuations-react-inertia`
-- [Instructions React + Inertia](instructions.md) — `module-real-estate-instructions-react-inertia`
-- [Listings React + Inertia](listings.md) — `module-real-estate-listings-react-inertia`
-- [Matching React + Inertia](matching.md) — `module-real-estate-matching-react-inertia`
-- [Viewings React + Inertia](viewings.md) — `module-real-estate-viewings-react-inertia`
-- [Offers React + Inertia](offers.md) — `module-real-estate-offers-react-inertia`
-- [Sales Progression React + Inertia](sales-progression.md) — `module-real-estate-sales-progression-react-inertia`
-- [Lettings React + Inertia](lettings.md) — `module-real-estate-lettings-react-inertia`
-- [Property Management React + Inertia](property-management.md) — `module-real-estate-property-management-react-inertia`
-- [Marketing React + Inertia](marketing.md) — `module-real-estate-marketing-react-inertia`
-- [Portals and Reporting React + Inertia](portals-and-reporting.md) — `module-real-estate-portals-and-reporting-react-inertia`
-
-**Source:** [REAL-ESTATE.md](../REAL-ESTATE.md)
-**Architecture:** [REACT.md](../REAL-ESTATE.md) · [API module index](../api/README.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
-
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Real Estate Core React + Inertia](real-estate-core.md) — `module-real-estate-core-react-inertia`
-- [Parties React + Inertia](parties.md) — `module-real-estate-parties-react-inertia`
-- [Properties React + Inertia](properties.md) — `module-real-estate-properties-react-inertia`
-- [Media and Documents React + Inertia](media-and-documents.md) — `module-real-estate-media-and-documents-react-inertia`
-- [Valuations React + Inertia](valuations.md) — `module-real-estate-valuations-react-inertia`
-- [Instructions React + Inertia](instructions.md) — `module-real-estate-instructions-react-inertia`
-- [Listings React + Inertia](listings.md) — `module-real-estate-listings-react-inertia`
-- [Matching React + Inertia](matching.md) — `module-real-estate-matching-react-inertia`
-- [Viewings React + Inertia](viewings.md) — `module-real-estate-viewings-react-inertia`
-- [Offers React + Inertia](offers.md) — `module-real-estate-offers-react-inertia`
-- [Sales Progression React + Inertia](sales-progression.md) — `module-real-estate-sales-progression-react-inertia`
-- [Lettings React + Inertia](lettings.md) — `module-real-estate-lettings-react-inertia`
-- [Property Management React + Inertia](property-management.md) — `module-real-estate-property-management-react-inertia`
-- [Marketing React + Inertia](marketing.md) — `module-real-estate-marketing-react-inertia`
-- [Portals and Reporting React + Inertia](portals-and-reporting.md) — `module-real-estate-portals-and-reporting-react-inertia`
+- [.graphify React](.graphify.md) — `module-real-estate-.graphify-react-inertia`
+- [Activity Comments React](activity-comments.md) — `module-real-estate-activity-comments-react-inertia`
+- [Analytics Core React](analytics-core.md) — `module-real-estate-analytics-core-react-inertia`
+- [Analytics Google React](analytics-google.md) — `module-real-estate-analytics-google-react-inertia`
+- [Analytics Meta React](analytics-meta.md) — `module-real-estate-analytics-meta-react-inertia`
+- [Api React](api.md) — `module-real-estate-api-react-inertia`
+- [Api Access React](api-access.md) — `module-real-estate-api-access-react-inertia`
+- [Application React](application.md) — `module-real-estate-application-react-inertia`
+- [Audit React](audit.md) — `module-real-estate-audit-react-inertia`
+- [Core React](core.md) — `module-real-estate-core-react-inertia`
+- [Currency Context React](currency-context.md) — `module-real-estate-currency-context-react-inertia`
+- [Developer Experience React](developer-experience.md) — `module-real-estate-developer-experience-react-inertia`
+- [Feature Flags React](feature-flags.md) — `module-real-estate-feature-flags-react-inertia`
+- [Features React](features.md) — `module-real-estate-features-react-inertia`
+- [Filament React](filament.md) — `module-real-estate-filament-react-inertia`
+- [Files Media React](files-media.md) — `module-real-estate-files-media-react-inertia`
+- [Identity Core React](identity-core.md) — `module-real-estate-identity-core-react-inertia`
+- [Identity Socialstream React](identity-socialstream.md) — `module-real-estate-identity-socialstream-react-inertia`
+- [Import Export React](import-export.md) — `module-real-estate-import-export-react-inertia`
+- [Integrations React](integrations.md) — `module-real-estate-integrations-react-inertia`
+- [Jetstream Bridge React](jetstream-bridge.md) — `module-real-estate-jetstream-bridge-react-inertia`
+- [Livewire React](livewire.md) — `module-real-estate-livewire-react-inertia`
+- [Localization Core React](localization-core.md) — `module-real-estate-localization-core-react-inertia`
+- [Localization Mymemory React](localization-mymemory.md) — `module-real-estate-localization-mymemory-react-inertia`
+- [Module Manager React](module-manager.md) — `module-real-estate-module-manager-react-inertia`
+- [Notifications React](notifications.md) — `module-real-estate-notifications-react-inertia`
+- [Observability React](observability.md) — `module-real-estate-observability-react-inertia`
+- [Organizations Teams React](organizations-teams.md) — `module-real-estate-organizations-teams-react-inertia`
+- [Profiles React](profiles.md) — `module-real-estate-profiles-react-inertia`
+- [Real Estate Core React](real-estate-core.md) — `module-real-estate-real-estate-core-react-inertia`
+- [Real Estate Instructions React](real-estate-instructions.md) — `module-real-estate-real-estate-instructions-react-inertia`
+- [Real Estate Lettings React](real-estate-lettings.md) — `module-real-estate-real-estate-lettings-react-inertia`
+- [Real Estate Listings React](real-estate-listings.md) — `module-real-estate-real-estate-listings-react-inertia`
+- [Real Estate Marketing React](real-estate-marketing.md) — `module-real-estate-real-estate-marketing-react-inertia`
+- [Real Estate Matching React](real-estate-matching.md) — `module-real-estate-real-estate-matching-react-inertia`
+- [Real Estate Media And Documents React](real-estate-media-and-documents.md) — `module-real-estate-real-estate-media-and-documents-react-inertia`
+- [Real Estate Offers React](real-estate-offers.md) — `module-real-estate-real-estate-offers-react-inertia`
+- [Real Estate Onthemarket React](real-estate-onthemarket.md) — `module-real-estate-real-estate-onthemarket-react-inertia`
+- [Real Estate Parties React](real-estate-parties.md) — `module-real-estate-real-estate-parties-react-inertia`
+- [Real Estate Portals Reporting React](real-estate-portals-reporting.md) — `module-real-estate-real-estate-portals-reporting-react-inertia`
+- [Real Estate Properties React](real-estate-properties.md) — `module-real-estate-real-estate-properties-react-inertia`
+- [Real Estate Property Management React](real-estate-property-management.md) — `module-real-estate-real-estate-property-management-react-inertia`
+- [Real Estate Rightmove React](real-estate-rightmove.md) — `module-real-estate-real-estate-rightmove-react-inertia`
+- [Real Estate Sales Progression React](real-estate-sales-progression.md) — `module-real-estate-real-estate-sales-progression-react-inertia`
+- [Real Estate Valuations React](real-estate-valuations.md) — `module-real-estate-real-estate-valuations-react-inertia`
+- [Real Estate Viewings React](real-estate-viewings.md) — `module-real-estate-real-estate-viewings-react-inertia`
+- [Real Estate Vr Design React](real-estate-vr-design.md) — `module-real-estate-real-estate-vr-design-react-inertia`
+- [Real Estate Zoopla React](real-estate-zoopla.md) — `module-real-estate-real-estate-zoopla-react-inertia`
+- [Roles Permissions React](roles-permissions.md) — `module-real-estate-roles-permissions-react-inertia`
+- [Scheduler Queues React](scheduler-queues.md) — `module-real-estate-scheduler-queues-react-inertia`
+- [Search React](search.md) — `module-real-estate-search-react-inertia`
+- [Sessions Devices React](sessions-devices.md) — `module-real-estate-sessions-devices-react-inertia`
+- [Settings React](settings.md) — `module-real-estate-settings-react-inertia`
+- [Theme Support React](theme-support.md) — `module-real-estate-theme-support-react-inertia`
+- [Two Factor Authentication React](two-factor-authentication.md) — `module-real-estate-two-factor-authentication-react-inertia`
+- [Webhooks React](webhooks.md) — `module-real-estate-webhooks-react-inertia`

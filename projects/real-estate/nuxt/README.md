@@ -1,24 +1,60 @@
-# Real-Estate Nuxt 4 Implementations
+# Real Estate Nuxt Implementations
 
-**Source:** [REAL-ESTATE.md](../REAL-ESTATE.md)
-**Architecture:** [NUXT.md](../REAL-ESTATE.md) · [API module index](../api/README.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-Each file defines the optional `Nuxt 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Real Estate Core Nuxt](real-estate-core.md) — `module-real-estate-core-nuxt`
-- [Parties Nuxt](parties.md) — `module-real-estate-parties-nuxt`
-- [Properties Nuxt](properties.md) — `module-real-estate-properties-nuxt`
-- [Media and Documents Nuxt](media-and-documents.md) — `module-real-estate-media-and-documents-nuxt`
-- [Valuations Nuxt](valuations.md) — `module-real-estate-valuations-nuxt`
-- [Instructions Nuxt](instructions.md) — `module-real-estate-instructions-nuxt`
-- [Listings Nuxt](listings.md) — `module-real-estate-listings-nuxt`
-- [Matching Nuxt](matching.md) — `module-real-estate-matching-nuxt`
-- [Viewings Nuxt](viewings.md) — `module-real-estate-viewings-nuxt`
-- [Offers Nuxt](offers.md) — `module-real-estate-offers-nuxt`
-- [Sales Progression Nuxt](sales-progression.md) — `module-real-estate-sales-progression-nuxt`
-- [Lettings Nuxt](lettings.md) — `module-real-estate-lettings-nuxt`
-- [Property Management Nuxt](property-management.md) — `module-real-estate-property-management-nuxt`
-- [Marketing Nuxt](marketing.md) — `module-real-estate-marketing-nuxt`
-- [Portals and Reporting Nuxt](portals-and-reporting.md) — `module-real-estate-portals-and-reporting-nuxt`
+- [.graphify Nuxt](.graphify.md) — `module-real-estate-.graphify-nuxt`
+- [Activity Comments Nuxt](activity-comments.md) — `module-real-estate-activity-comments-nuxt`
+- [Analytics Core Nuxt](analytics-core.md) — `module-real-estate-analytics-core-nuxt`
+- [Analytics Google Nuxt](analytics-google.md) — `module-real-estate-analytics-google-nuxt`
+- [Analytics Meta Nuxt](analytics-meta.md) — `module-real-estate-analytics-meta-nuxt`
+- [Api Nuxt](api.md) — `module-real-estate-api-nuxt`
+- [Api Access Nuxt](api-access.md) — `module-real-estate-api-access-nuxt`
+- [Application Nuxt](application.md) — `module-real-estate-application-nuxt`
+- [Audit Nuxt](audit.md) — `module-real-estate-audit-nuxt`
+- [Core Nuxt](core.md) — `module-real-estate-core-nuxt`
+- [Currency Context Nuxt](currency-context.md) — `module-real-estate-currency-context-nuxt`
+- [Developer Experience Nuxt](developer-experience.md) — `module-real-estate-developer-experience-nuxt`
+- [Feature Flags Nuxt](feature-flags.md) — `module-real-estate-feature-flags-nuxt`
+- [Features Nuxt](features.md) — `module-real-estate-features-nuxt`
+- [Filament Nuxt](filament.md) — `module-real-estate-filament-nuxt`
+- [Files Media Nuxt](files-media.md) — `module-real-estate-files-media-nuxt`
+- [Identity Core Nuxt](identity-core.md) — `module-real-estate-identity-core-nuxt`
+- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-real-estate-identity-socialstream-nuxt`
+- [Import Export Nuxt](import-export.md) — `module-real-estate-import-export-nuxt`
+- [Integrations Nuxt](integrations.md) — `module-real-estate-integrations-nuxt`
+- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-real-estate-jetstream-bridge-nuxt`
+- [Livewire Nuxt](livewire.md) — `module-real-estate-livewire-nuxt`
+- [Localization Core Nuxt](localization-core.md) — `module-real-estate-localization-core-nuxt`
+- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-real-estate-localization-mymemory-nuxt`
+- [Module Manager Nuxt](module-manager.md) — `module-real-estate-module-manager-nuxt`
+- [Notifications Nuxt](notifications.md) — `module-real-estate-notifications-nuxt`
+- [Observability Nuxt](observability.md) — `module-real-estate-observability-nuxt`
+- [Organizations Teams Nuxt](organizations-teams.md) — `module-real-estate-organizations-teams-nuxt`
+- [Profiles Nuxt](profiles.md) — `module-real-estate-profiles-nuxt`
+- [Real Estate Core Nuxt](real-estate-core.md) — `module-real-estate-real-estate-core-nuxt`
+- [Real Estate Instructions Nuxt](real-estate-instructions.md) — `module-real-estate-real-estate-instructions-nuxt`
+- [Real Estate Lettings Nuxt](real-estate-lettings.md) — `module-real-estate-real-estate-lettings-nuxt`
+- [Real Estate Listings Nuxt](real-estate-listings.md) — `module-real-estate-real-estate-listings-nuxt`
+- [Real Estate Marketing Nuxt](real-estate-marketing.md) — `module-real-estate-real-estate-marketing-nuxt`
+- [Real Estate Matching Nuxt](real-estate-matching.md) — `module-real-estate-real-estate-matching-nuxt`
+- [Real Estate Media And Documents Nuxt](real-estate-media-and-documents.md) — `module-real-estate-real-estate-media-and-documents-nuxt`
+- [Real Estate Offers Nuxt](real-estate-offers.md) — `module-real-estate-real-estate-offers-nuxt`
+- [Real Estate Onthemarket Nuxt](real-estate-onthemarket.md) — `module-real-estate-real-estate-onthemarket-nuxt`
+- [Real Estate Parties Nuxt](real-estate-parties.md) — `module-real-estate-real-estate-parties-nuxt`
+- [Real Estate Portals Reporting Nuxt](real-estate-portals-reporting.md) — `module-real-estate-real-estate-portals-reporting-nuxt`
+- [Real Estate Properties Nuxt](real-estate-properties.md) — `module-real-estate-real-estate-properties-nuxt`
+- [Real Estate Property Management Nuxt](real-estate-property-management.md) — `module-real-estate-real-estate-property-management-nuxt`
+- [Real Estate Rightmove Nuxt](real-estate-rightmove.md) — `module-real-estate-real-estate-rightmove-nuxt`
+- [Real Estate Sales Progression Nuxt](real-estate-sales-progression.md) — `module-real-estate-real-estate-sales-progression-nuxt`
+- [Real Estate Valuations Nuxt](real-estate-valuations.md) — `module-real-estate-real-estate-valuations-nuxt`
+- [Real Estate Viewings Nuxt](real-estate-viewings.md) — `module-real-estate-real-estate-viewings-nuxt`
+- [Real Estate Vr Design Nuxt](real-estate-vr-design.md) — `module-real-estate-real-estate-vr-design-nuxt`
+- [Real Estate Zoopla Nuxt](real-estate-zoopla.md) — `module-real-estate-real-estate-zoopla-nuxt`
+- [Roles Permissions Nuxt](roles-permissions.md) — `module-real-estate-roles-permissions-nuxt`
+- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-real-estate-scheduler-queues-nuxt`
+- [Search Nuxt](search.md) — `module-real-estate-search-nuxt`
+- [Sessions Devices Nuxt](sessions-devices.md) — `module-real-estate-sessions-devices-nuxt`
+- [Settings Nuxt](settings.md) — `module-real-estate-settings-nuxt`
+- [Theme Support Nuxt](theme-support.md) — `module-real-estate-theme-support-nuxt`
+- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-real-estate-two-factor-authentication-nuxt`
+- [Webhooks Nuxt](webhooks.md) — `module-real-estate-webhooks-nuxt`

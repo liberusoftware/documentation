@@ -1,20 +1,50 @@
-# Automation Filament 5 Implementations
+# Automation Filament Implementations
 
-**Source:** [AUTOMATION.md](../AUTOMATION.md)  
-**Architecture:** [FILAMENT.md](../AUTOMATION.md) · [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md)
+Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Filament 5` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Automation Core Filament](automation-core.md) — `module-automation-core-filament`
-- [Rules Filament](rules.md) — `module-automation-rules-filament`
-- [Approvals Filament](approvals.md) — `module-automation-approvals-filament`
-- [AI Gateway Filament](ai-gateway.md) — `module-automation-ai-gateway-filament`
-- [Prompt Registry Filament](prompt-registry.md) — `module-automation-prompt-registry-filament`
-- [Data Processing Filament](data-processing.md) — `module-automation-data-processing-filament`
-- [Voice Filament](voice.md) — `module-automation-voice-filament`
-- [Image Filament](image.md) — `module-automation-image-filament`
-- [Video Filament](video.md) — `module-automation-video-filament`
-- [Connectors Filament](connectors.md) — `module-automation-connectors-filament`
-- [Evaluation Filament](evaluation.md) — `module-automation-evaluation-filament`
+- [Activity Comments Filament](activity-comments.md) — `module-automation-activity-comments-filament`
+- [Analytics Core Filament](analytics-core.md) — `module-automation-analytics-core-filament`
+- [Analytics Google Filament](analytics-google.md) — `module-automation-analytics-google-filament`
+- [Analytics Meta Filament](analytics-meta.md) — `module-automation-analytics-meta-filament`
+- [Api Access Filament](api-access.md) — `module-automation-api-access-filament`
+- [Application Filament](application.md) — `module-automation-application-filament`
+- [Audit Filament](audit.md) — `module-automation-audit-filament`
+- [Currency Context Filament](currency-context.md) — `module-automation-currency-context-filament`
+- [Developer Experience Filament](developer-experience.md) — `module-automation-developer-experience-filament`
+- [Feature Flags Filament](feature-flags.md) — `module-automation-feature-flags-filament`
+- [Files Media Filament](files-media.md) — `module-automation-files-media-filament`
+- [Identity Core Filament](identity-core.md) — `module-automation-identity-core-filament`
+- [Identity Socialstream Filament](identity-socialstream.md) — `module-automation-identity-socialstream-filament`
+- [Import Export Filament](import-export.md) — `module-automation-import-export-filament`
+- [Integrations Filament](integrations.md) — `module-automation-integrations-filament`
+- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-automation-jetstream-bridge-filament`
+- [Liberu Business Workflow Reconciliation Filament](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-filament`
+- [Liberu Executive Insights Filament](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-filament`
+- [Liberu Platform Orchestration Filament](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-filament`
+- [Liberu Revenue And Care Orchestration Filament](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-filament`
+- [Localization Core Filament](localization-core.md) — `module-automation-localization-core-filament`
+- [Localization Mymemory Filament](localization-mymemory.md) — `module-automation-localization-mymemory-filament`
+- [Module Automation Ai Gateway Filament](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-filament`
+- [Module Automation Approvals Filament](module-automation-approvals.md) — `module-automation-module-automation-approvals-filament`
+- [Module Automation Automation Core Filament](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-filament`
+- [Module Automation Connectors Filament](module-automation-connectors.md) — `module-automation-module-automation-connectors-filament`
+- [Module Automation Data Processing Filament](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-filament`
+- [Module Automation Evaluation Filament](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-filament`
+- [Module Automation Image Filament](module-automation-image.md) — `module-automation-module-automation-image-filament`
+- [Module Automation Prompt Registry Filament](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-filament`
+- [Module Automation Rules Filament](module-automation-rules.md) — `module-automation-module-automation-rules-filament`
+- [Module Automation Video Filament](module-automation-video.md) — `module-automation-module-automation-video-filament`
+- [Module Automation Voice Filament](module-automation-voice.md) — `module-automation-module-automation-voice-filament`
+- [Module Manager Filament](module-manager.md) — `module-automation-module-manager-filament`
+- [Notifications Filament](notifications.md) — `module-automation-notifications-filament`
+- [Observability Filament](observability.md) — `module-automation-observability-filament`
+- [Organizations Teams Filament](organizations-teams.md) — `module-automation-organizations-teams-filament`
+- [Profiles Filament](profiles.md) — `module-automation-profiles-filament`
+- [Roles Permissions Filament](roles-permissions.md) — `module-automation-roles-permissions-filament`
+- [Scheduler Queues Filament](scheduler-queues.md) — `module-automation-scheduler-queues-filament`
+- [Search Filament](search.md) — `module-automation-search-filament`
+- [Sessions Devices Filament](sessions-devices.md) — `module-automation-sessions-devices-filament`
+- [Settings Filament](settings.md) — `module-automation-settings-filament`
+- [Theme Support Filament](theme-support.md) — `module-automation-theme-support-filament`
+- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-automation-two-factor-authentication-filament`
+- [Webhooks Filament](webhooks.md) — `module-automation-webhooks-filament`

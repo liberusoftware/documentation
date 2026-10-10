@@ -1,24 +1,60 @@
-# Real-Estate Livewire 4 Implementations
+# Real Estate Livewire Implementations
 
-**Source:** [REAL-ESTATE.md](../REAL-ESTATE.md)  
-**Architecture:** [LIVEWIRE.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+Each file defines the optional Livewire 4 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Livewire 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Real Estate Core Livewire](real-estate-core.md) — `module-real-estate-core-livewire`
-- [Parties Livewire](parties.md) — `module-real-estate-parties-livewire`
-- [Properties Livewire](properties.md) — `module-real-estate-properties-livewire`
-- [Media and Documents Livewire](media-and-documents.md) — `module-real-estate-media-and-documents-livewire`
-- [Valuations Livewire](valuations.md) — `module-real-estate-valuations-livewire`
-- [Instructions Livewire](instructions.md) — `module-real-estate-instructions-livewire`
-- [Listings Livewire](listings.md) — `module-real-estate-listings-livewire`
-- [Matching Livewire](matching.md) — `module-real-estate-matching-livewire`
-- [Viewings Livewire](viewings.md) — `module-real-estate-viewings-livewire`
-- [Offers Livewire](offers.md) — `module-real-estate-offers-livewire`
-- [Sales Progression Livewire](sales-progression.md) — `module-real-estate-sales-progression-livewire`
-- [Lettings Livewire](lettings.md) — `module-real-estate-lettings-livewire`
-- [Property Management Livewire](property-management.md) — `module-real-estate-property-management-livewire`
-- [Marketing Livewire](marketing.md) — `module-real-estate-marketing-livewire`
-- [Portals and Reporting Livewire](portals-and-reporting.md) — `module-real-estate-portals-and-reporting-livewire`
+- [.graphify Livewire](.graphify.md) — `module-real-estate-.graphify-livewire`
+- [Activity Comments Livewire](activity-comments.md) — `module-real-estate-activity-comments-livewire`
+- [Analytics Core Livewire](analytics-core.md) — `module-real-estate-analytics-core-livewire`
+- [Analytics Google Livewire](analytics-google.md) — `module-real-estate-analytics-google-livewire`
+- [Analytics Meta Livewire](analytics-meta.md) — `module-real-estate-analytics-meta-livewire`
+- [Api Livewire](api.md) — `module-real-estate-api-livewire`
+- [Api Access Livewire](api-access.md) — `module-real-estate-api-access-livewire`
+- [Application Livewire](application.md) — `module-real-estate-application-livewire`
+- [Audit Livewire](audit.md) — `module-real-estate-audit-livewire`
+- [Core Livewire](core.md) — `module-real-estate-core-livewire`
+- [Currency Context Livewire](currency-context.md) — `module-real-estate-currency-context-livewire`
+- [Developer Experience Livewire](developer-experience.md) — `module-real-estate-developer-experience-livewire`
+- [Feature Flags Livewire](feature-flags.md) — `module-real-estate-feature-flags-livewire`
+- [Features Livewire](features.md) — `module-real-estate-features-livewire`
+- [Filament Livewire](filament.md) — `module-real-estate-filament-livewire`
+- [Files Media Livewire](files-media.md) — `module-real-estate-files-media-livewire`
+- [Identity Core Livewire](identity-core.md) — `module-real-estate-identity-core-livewire`
+- [Identity Socialstream Livewire](identity-socialstream.md) — `module-real-estate-identity-socialstream-livewire`
+- [Import Export Livewire](import-export.md) — `module-real-estate-import-export-livewire`
+- [Integrations Livewire](integrations.md) — `module-real-estate-integrations-livewire`
+- [Jetstream Bridge Livewire](jetstream-bridge.md) — `module-real-estate-jetstream-bridge-livewire`
+- [Livewire Livewire](livewire.md) — `module-real-estate-livewire-livewire`
+- [Localization Core Livewire](localization-core.md) — `module-real-estate-localization-core-livewire`
+- [Localization Mymemory Livewire](localization-mymemory.md) — `module-real-estate-localization-mymemory-livewire`
+- [Module Manager Livewire](module-manager.md) — `module-real-estate-module-manager-livewire`
+- [Notifications Livewire](notifications.md) — `module-real-estate-notifications-livewire`
+- [Observability Livewire](observability.md) — `module-real-estate-observability-livewire`
+- [Organizations Teams Livewire](organizations-teams.md) — `module-real-estate-organizations-teams-livewire`
+- [Profiles Livewire](profiles.md) — `module-real-estate-profiles-livewire`
+- [Real Estate Core Livewire](real-estate-core.md) — `module-real-estate-real-estate-core-livewire`
+- [Real Estate Instructions Livewire](real-estate-instructions.md) — `module-real-estate-real-estate-instructions-livewire`
+- [Real Estate Lettings Livewire](real-estate-lettings.md) — `module-real-estate-real-estate-lettings-livewire`
+- [Real Estate Listings Livewire](real-estate-listings.md) — `module-real-estate-real-estate-listings-livewire`
+- [Real Estate Marketing Livewire](real-estate-marketing.md) — `module-real-estate-real-estate-marketing-livewire`
+- [Real Estate Matching Livewire](real-estate-matching.md) — `module-real-estate-real-estate-matching-livewire`
+- [Real Estate Media And Documents Livewire](real-estate-media-and-documents.md) — `module-real-estate-real-estate-media-and-documents-livewire`
+- [Real Estate Offers Livewire](real-estate-offers.md) — `module-real-estate-real-estate-offers-livewire`
+- [Real Estate Onthemarket Livewire](real-estate-onthemarket.md) — `module-real-estate-real-estate-onthemarket-livewire`
+- [Real Estate Parties Livewire](real-estate-parties.md) — `module-real-estate-real-estate-parties-livewire`
+- [Real Estate Portals Reporting Livewire](real-estate-portals-reporting.md) — `module-real-estate-real-estate-portals-reporting-livewire`
+- [Real Estate Properties Livewire](real-estate-properties.md) — `module-real-estate-real-estate-properties-livewire`
+- [Real Estate Property Management Livewire](real-estate-property-management.md) — `module-real-estate-real-estate-property-management-livewire`
+- [Real Estate Rightmove Livewire](real-estate-rightmove.md) — `module-real-estate-real-estate-rightmove-livewire`
+- [Real Estate Sales Progression Livewire](real-estate-sales-progression.md) — `module-real-estate-real-estate-sales-progression-livewire`
+- [Real Estate Valuations Livewire](real-estate-valuations.md) — `module-real-estate-real-estate-valuations-livewire`
+- [Real Estate Viewings Livewire](real-estate-viewings.md) — `module-real-estate-real-estate-viewings-livewire`
+- [Real Estate Vr Design Livewire](real-estate-vr-design.md) — `module-real-estate-real-estate-vr-design-livewire`
+- [Real Estate Zoopla Livewire](real-estate-zoopla.md) — `module-real-estate-real-estate-zoopla-livewire`
+- [Roles Permissions Livewire](roles-permissions.md) — `module-real-estate-roles-permissions-livewire`
+- [Scheduler Queues Livewire](scheduler-queues.md) — `module-real-estate-scheduler-queues-livewire`
+- [Search Livewire](search.md) — `module-real-estate-search-livewire`
+- [Sessions Devices Livewire](sessions-devices.md) — `module-real-estate-sessions-devices-livewire`
+- [Settings Livewire](settings.md) — `module-real-estate-settings-livewire`
+- [Theme Support Livewire](theme-support.md) — `module-real-estate-theme-support-livewire`
+- [Two Factor Authentication Livewire](two-factor-authentication.md) — `module-real-estate-two-factor-authentication-livewire`
+- [Webhooks Livewire](webhooks.md) — `module-real-estate-webhooks-livewire`

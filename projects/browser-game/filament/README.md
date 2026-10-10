@@ -1,24 +1,50 @@
-# Browser-Game Filament 5 Implementations
+# Browser Game Filament Implementations
 
-**Source:** [BROWSER-GAME.md](../BROWSER-GAME.md)  
-**Architecture:** [FILAMENT.md](../BROWSER-GAME.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)
+Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Filament 5` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Game Core Filament](game-core.md) — `module-browser-game-game-core-filament`
-- [Accounts Filament](accounts.md) — `module-browser-game-accounts-filament`
-- [Characters Filament](characters.md) — `module-browser-game-characters-filament`
-- [World Filament](world.md) — `module-browser-game-world-filament`
-- [Combat Filament](combat.md) — `module-browser-game-combat-filament`
-- [Quests Filament](quests.md) — `module-browser-game-quests-filament`
-- [Items Filament](items.md) — `module-browser-game-items-filament`
-- [Crafting Filament](crafting.md) — `module-browser-game-crafting-filament`
-- [Economy Filament](economy.md) — `module-browser-game-economy-filament`
-- [Social Filament](social.md) — `module-browser-game-social-filament`
-- [Competition Filament](competition.md) — `module-browser-game-competition-filament`
-- [Collections Filament](collections.md) — `module-browser-game-collections-filament`
-- [Live Ops Filament](live-ops.md) — `module-browser-game-live-ops-filament`
-- [Commerce Filament](commerce.md) — `module-browser-game-commerce-filament`
-- [Moderation and Analytics Filament](moderation-and-analytics.md) — `module-browser-game-moderation-and-analytics-filament`
+- [Activity Comments Filament](activity-comments.md) — `module-browser-game-activity-comments-filament`
+- [Analytics Core Filament](analytics-core.md) — `module-browser-game-analytics-core-filament`
+- [Analytics Google Filament](analytics-google.md) — `module-browser-game-analytics-google-filament`
+- [Analytics Meta Filament](analytics-meta.md) — `module-browser-game-analytics-meta-filament`
+- [Api Access Filament](api-access.md) — `module-browser-game-api-access-filament`
+- [Application Filament](application.md) — `module-browser-game-application-filament`
+- [Audit Filament](audit.md) — `module-browser-game-audit-filament`
+- [Browser Game Accounts Filament](browser-game-accounts.md) — `module-browser-game-browser-game-accounts-filament`
+- [Browser Game Characters Filament](browser-game-characters.md) — `module-browser-game-browser-game-characters-filament`
+- [Browser Game Collections Filament](browser-game-collections.md) — `module-browser-game-browser-game-collections-filament`
+- [Browser Game Combat Filament](browser-game-combat.md) — `module-browser-game-browser-game-combat-filament`
+- [Browser Game Commerce Filament](browser-game-commerce.md) — `module-browser-game-browser-game-commerce-filament`
+- [Browser Game Competition Filament](browser-game-competition.md) — `module-browser-game-browser-game-competition-filament`
+- [Browser Game Crafting Filament](browser-game-crafting.md) — `module-browser-game-browser-game-crafting-filament`
+- [Browser Game Economy Filament](browser-game-economy.md) — `module-browser-game-browser-game-economy-filament`
+- [Browser Game Game Core Filament](browser-game-game-core.md) — `module-browser-game-browser-game-game-core-filament`
+- [Browser Game Items Filament](browser-game-items.md) — `module-browser-game-browser-game-items-filament`
+- [Browser Game Live Ops Filament](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops-filament`
+- [Browser Game Moderation And Analytics Filament](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics-filament`
+- [Browser Game Quests Filament](browser-game-quests.md) — `module-browser-game-browser-game-quests-filament`
+- [Browser Game Social Filament](browser-game-social.md) — `module-browser-game-browser-game-social-filament`
+- [Browser Game World Filament](browser-game-world.md) — `module-browser-game-browser-game-world-filament`
+- [Currency Context Filament](currency-context.md) — `module-browser-game-currency-context-filament`
+- [Developer Experience Filament](developer-experience.md) — `module-browser-game-developer-experience-filament`
+- [Feature Flags Filament](feature-flags.md) — `module-browser-game-feature-flags-filament`
+- [Files Media Filament](files-media.md) — `module-browser-game-files-media-filament`
+- [Identity Core Filament](identity-core.md) — `module-browser-game-identity-core-filament`
+- [Identity Socialstream Filament](identity-socialstream.md) — `module-browser-game-identity-socialstream-filament`
+- [Import Export Filament](import-export.md) — `module-browser-game-import-export-filament`
+- [Integrations Filament](integrations.md) — `module-browser-game-integrations-filament`
+- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-browser-game-jetstream-bridge-filament`
+- [Localization Core Filament](localization-core.md) — `module-browser-game-localization-core-filament`
+- [Localization Mymemory Filament](localization-mymemory.md) — `module-browser-game-localization-mymemory-filament`
+- [Module Manager Filament](module-manager.md) — `module-browser-game-module-manager-filament`
+- [Notifications Filament](notifications.md) — `module-browser-game-notifications-filament`
+- [Observability Filament](observability.md) — `module-browser-game-observability-filament`
+- [Organizations Teams Filament](organizations-teams.md) — `module-browser-game-organizations-teams-filament`
+- [Profiles Filament](profiles.md) — `module-browser-game-profiles-filament`
+- [Roles Permissions Filament](roles-permissions.md) — `module-browser-game-roles-permissions-filament`
+- [Scheduler Queues Filament](scheduler-queues.md) — `module-browser-game-scheduler-queues-filament`
+- [Search Filament](search.md) — `module-browser-game-search-filament`
+- [Sessions Devices Filament](sessions-devices.md) — `module-browser-game-sessions-devices-filament`
+- [Settings Filament](settings.md) — `module-browser-game-settings-filament`
+- [Theme Support Filament](theme-support.md) — `module-browser-game-theme-support-filament`
+- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-browser-game-two-factor-authentication-filament`
+- [Webhooks Filament](webhooks.md) — `module-browser-game-webhooks-filament`

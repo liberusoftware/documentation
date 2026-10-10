@@ -1,24 +1,50 @@
 # Control Panel Feature Specifications
 
-**Source:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)  
-**Architecture:** [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md) · [DOCUMENTATION.md](../CONTROL-PANEL.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Module plan
-
-- [Control Core](control-core.md) — `module-control-panel-control-core`
-- [OS Adapters](os-adapters.md) — `module-control-panel-os-adapters`
-- [Accounts](accounts.md) — `module-control-panel-accounts`
-- [Web Hosting](web-hosting.md) — `module-control-panel-web-hosting`
-- [Mail](mail.md) — `module-control-panel-mail`
-- [Databases](databases.md) — `module-control-panel-databases`
-- [DNS](dns.md) — `module-control-panel-dns`
-- [Files](files.md) — `module-control-panel-files`
-- [Certificates](certificates.md) — `module-control-panel-certificates`
-- [Backups](backups.md) — `module-control-panel-backups`
-- [Security](security.md) — `module-control-panel-security`
-- [Monitoring](monitoring.md) — `module-control-panel-monitoring`
-- [Containers](containers.md) — `module-control-panel-containers`
-- [Kubernetes](kubernetes.md) — `module-control-panel-kubernetes`
-- [API and Automation](api-and-automation.md) — `module-control-panel-api-and-automation`
+- [Activity Comments](activity-comments.md) — `module-control-panel-activity-comments`
+- [Analytics Core](analytics-core.md) — `module-control-panel-analytics-core`
+- [Analytics Google](analytics-google.md) — `module-control-panel-analytics-google`
+- [Analytics Meta](analytics-meta.md) — `module-control-panel-analytics-meta`
+- [Api Access](api-access.md) — `module-control-panel-api-access`
+- [Application](application.md) — `module-control-panel-application`
+- [Audit](audit.md) — `module-control-panel-audit`
+- [Control Panel Accounts](control-panel-accounts.md) — `module-control-panel-control-panel-accounts`
+- [Control Panel Api And Automation](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation`
+- [Control Panel Backups](control-panel-backups.md) — `module-control-panel-control-panel-backups`
+- [Control Panel Certificates](control-panel-certificates.md) — `module-control-panel-control-panel-certificates`
+- [Control Panel Containers](control-panel-containers.md) — `module-control-panel-control-panel-containers`
+- [Control Panel Control Core](control-panel-control-core.md) — `module-control-panel-control-panel-control-core`
+- [Control Panel Databases](control-panel-databases.md) — `module-control-panel-control-panel-databases`
+- [Control Panel Dns](control-panel-dns.md) — `module-control-panel-control-panel-dns`
+- [Control Panel Files](control-panel-files.md) — `module-control-panel-control-panel-files`
+- [Control Panel Kubernetes](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes`
+- [Control Panel Mail](control-panel-mail.md) — `module-control-panel-control-panel-mail`
+- [Control Panel Monitoring](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring`
+- [Control Panel Os Adapters](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters`
+- [Control Panel Security](control-panel-security.md) — `module-control-panel-control-panel-security`
+- [Control Panel Web Hosting](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting`
+- [Currency Context](currency-context.md) — `module-control-panel-currency-context`
+- [Developer Experience](developer-experience.md) — `module-control-panel-developer-experience`
+- [Feature Flags](feature-flags.md) — `module-control-panel-feature-flags`
+- [Files Media](files-media.md) — `module-control-panel-files-media`
+- [Identity Core](identity-core.md) — `module-control-panel-identity-core`
+- [Identity Socialstream](identity-socialstream.md) — `module-control-panel-identity-socialstream`
+- [Import Export](import-export.md) — `module-control-panel-import-export`
+- [Integrations](integrations.md) — `module-control-panel-integrations`
+- [Jetstream Bridge](jetstream-bridge.md) — `module-control-panel-jetstream-bridge`
+- [Localization Core](localization-core.md) — `module-control-panel-localization-core`
+- [Localization Mymemory](localization-mymemory.md) — `module-control-panel-localization-mymemory`
+- [Module Manager](module-manager.md) — `module-control-panel-module-manager`
+- [Notifications](notifications.md) — `module-control-panel-notifications`
+- [Observability](observability.md) — `module-control-panel-observability`
+- [Organizations Teams](organizations-teams.md) — `module-control-panel-organizations-teams`
+- [Profiles](profiles.md) — `module-control-panel-profiles`
+- [Roles Permissions](roles-permissions.md) — `module-control-panel-roles-permissions`
+- [Scheduler Queues](scheduler-queues.md) — `module-control-panel-scheduler-queues`
+- [Search](search.md) — `module-control-panel-search`
+- [Sessions Devices](sessions-devices.md) — `module-control-panel-sessions-devices`
+- [Settings](settings.md) — `module-control-panel-settings`
+- [Theme Support](theme-support.md) — `module-control-panel-theme-support`
+- [Two Factor Authentication](two-factor-authentication.md) — `module-control-panel-two-factor-authentication`
+- [Webhooks](webhooks.md) — `module-control-panel-webhooks`

@@ -1,23 +1,50 @@
-# Maintenance Filament 5 Implementations
+# Maintenance Filament Implementations
 
-**Source:** [MAINTENANCE.md](../MAINTENANCE.md)  
-**Architecture:** [FILAMENT.md](../MAINTENANCE.md) · [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md)
+Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Filament 5` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Maintenance Core Filament](maintenance-core.md) — `module-maintenance-core-filament`
-- [Customers and Sites Filament](customers-and-sites.md) — `module-maintenance-customers-and-sites-filament`
-- [Assets Filament](assets.md) — `module-maintenance-assets-filament`
-- [Work Orders Filament](work-orders.md) — `module-maintenance-work-orders-filament`
-- [Scheduling Filament](scheduling.md) — `module-maintenance-scheduling-filament`
-- [Preventative Maintenance Filament](preventative-maintenance.md) — `module-maintenance-preventative-maintenance-filament`
-- [Inspections Filament](inspections.md) — `module-maintenance-inspections-filament`
-- [Inventory Filament](inventory.md) — `module-maintenance-inventory-filament`
-- [Procurement Filament](procurement.md) — `module-maintenance-procurement-filament`
-- [Labor and Time Filament](labor-and-time.md) — `module-maintenance-labor-and-time-filament`
-- [Commercial Filament](commercial.md) — `module-maintenance-commercial-filament`
-- [Compliance Filament](compliance.md) — `module-maintenance-compliance-filament`
-- [Portals Filament](portals.md) — `module-maintenance-portals-filament`
-- [Reporting Filament](reporting.md) — `module-maintenance-reporting-filament`
+- [Activity Comments Filament](activity-comments.md) — `module-maintenance-activity-comments-filament`
+- [Analytics Core Filament](analytics-core.md) — `module-maintenance-analytics-core-filament`
+- [Analytics Google Filament](analytics-google.md) — `module-maintenance-analytics-google-filament`
+- [Analytics Meta Filament](analytics-meta.md) — `module-maintenance-analytics-meta-filament`
+- [Api Access Filament](api-access.md) — `module-maintenance-api-access-filament`
+- [Application Filament](application.md) — `module-maintenance-application-filament`
+- [Audit Filament](audit.md) — `module-maintenance-audit-filament`
+- [Currency Context Filament](currency-context.md) — `module-maintenance-currency-context-filament`
+- [Developer Experience Filament](developer-experience.md) — `module-maintenance-developer-experience-filament`
+- [Feature Flags Filament](feature-flags.md) — `module-maintenance-feature-flags-filament`
+- [Files Media Filament](files-media.md) — `module-maintenance-files-media-filament`
+- [Identity Core Filament](identity-core.md) — `module-maintenance-identity-core-filament`
+- [Identity Socialstream Filament](identity-socialstream.md) — `module-maintenance-identity-socialstream-filament`
+- [Import Export Filament](import-export.md) — `module-maintenance-import-export-filament`
+- [Integrations Filament](integrations.md) — `module-maintenance-integrations-filament`
+- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-filament`
+- [Localization Core Filament](localization-core.md) — `module-maintenance-localization-core-filament`
+- [Localization Mymemory Filament](localization-mymemory.md) — `module-maintenance-localization-mymemory-filament`
+- [Maintenance Maintenance Core Filament](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-filament`
+- [Module Maintenance Assets Filament](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-filament`
+- [Module Maintenance Commercial Filament](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-filament`
+- [Module Maintenance Compliance Filament](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-filament`
+- [Module Maintenance Core Filament](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-filament`
+- [Module Maintenance Customers And Sites Filament](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-filament`
+- [Module Maintenance Inspections Filament](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-filament`
+- [Module Maintenance Inventory Filament](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-filament`
+- [Module Maintenance Labor And Time Filament](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-filament`
+- [Module Maintenance Portals Filament](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-filament`
+- [Module Maintenance Preventative Maintenance Filament](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-filament`
+- [Module Maintenance Procurement Filament](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-filament`
+- [Module Maintenance Reporting Filament](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-filament`
+- [Module Maintenance Scheduling Filament](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-filament`
+- [Module Maintenance Work Orders Filament](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-filament`
+- [Module Manager Filament](module-manager.md) — `module-maintenance-module-manager-filament`
+- [Notifications Filament](notifications.md) — `module-maintenance-notifications-filament`
+- [Observability Filament](observability.md) — `module-maintenance-observability-filament`
+- [Organizations Teams Filament](organizations-teams.md) — `module-maintenance-organizations-teams-filament`
+- [Profiles Filament](profiles.md) — `module-maintenance-profiles-filament`
+- [Roles Permissions Filament](roles-permissions.md) — `module-maintenance-roles-permissions-filament`
+- [Scheduler Queues Filament](scheduler-queues.md) — `module-maintenance-scheduler-queues-filament`
+- [Search Filament](search.md) — `module-maintenance-search-filament`
+- [Sessions Devices Filament](sessions-devices.md) — `module-maintenance-sessions-devices-filament`
+- [Settings Filament](settings.md) — `module-maintenance-settings-filament`
+- [Theme Support Filament](theme-support.md) — `module-maintenance-theme-support-filament`
+- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-filament`
+- [Webhooks Filament](webhooks.md) — `module-maintenance-webhooks-filament`

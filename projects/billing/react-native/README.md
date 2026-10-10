@@ -1,47 +1,70 @@
-# Billing React Native + Expo implementations
+# Billing React Native + Expo Implementations
 
-**Scope:** [Billing](../BILLING.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [React Native technology](../../../technologies/REACT-NATIVE.md) · [React Native standard](../../../standards/REACT-NATIVE.md)
+Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-This index defines the optional React Native + Expo adapter boundary for the Billing project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-react-native`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [React Native + Expo module standard](../../../modules/react-native/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 16 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                                | Package                                     | Core                               | API                              |
-| ------------------------------------- | ------------------------------------------- | ---------------------------------- | -------------------------------- |
-| [Billing Core](billing-core.md)       | module-billing-billing-core-react-native    | [Core](../core/billing-core.md)    | [API](../api/billing-core.md)    |
-| [Catalog](catalog.md)                 | module-billing-catalog-react-native         | [Core](../core/catalog.md)         | [API](../api/catalog.md)         |
-| [Collections](collections.md)         | module-billing-collections-react-native     | [Core](../core/collections.md)     | [API](../api/collections.md)     |
-| [Communications](communications.md)   | module-billing-communications-react-native  | [Core](../core/communications.md)  | [API](../api/communications.md)  |
-| [Customer Portal](customer-portal.md) | module-billing-customer-portal-react-native | [Core](../core/customer-portal.md) | [API](../api/customer-portal.md) |
-| [Domains](domains.md)                 | module-billing-domains-react-native         | [Core](../core/domains.md)         | [API](../api/domains.md)         |
-| [Hosting](hosting.md)                 | module-billing-hosting-react-native         | [Core](../core/hosting.md)         | [API](../api/hosting.md)         |
-| [Invoicing](invoicing.md)             | module-billing-invoicing-react-native       | [Core](../core/invoicing.md)       | [API](../api/invoicing.md)       |
-| [Isp](isp.md)                         | module-billing-isp-react-native             | [Core](../core/isp.md)             | [API](../api/isp.md)             |
-| [Orders](orders.md)                   | module-billing-orders-react-native          | [Core](../core/orders.md)          | [API](../api/orders.md)          |
-| [Payments](payments.md)               | module-billing-payments-react-native        | [Core](../core/payments.md)        | [API](../api/payments.md)        |
-| [Pricing](pricing.md)                 | module-billing-pricing-react-native         | [Core](../core/pricing.md)         | [API](../api/pricing.md)         |
-| [Provisioning](provisioning.md)       | module-billing-provisioning-react-native    | [Core](../core/provisioning.md)    | [API](../api/provisioning.md)    |
-| [Reporting](reporting.md)             | module-billing-reporting-react-native       | [Core](../core/reporting.md)       | [API](../api/reporting.md)       |
-| [Subscriptions](subscriptions.md)     | module-billing-subscriptions-react-native   | [Core](../core/subscriptions.md)   | [API](../api/subscriptions.md)   |
-| [Usage](usage.md)                     | module-billing-usage-react-native           | [Core](../core/usage.md)           | [API](../api/usage.md)           |
+- [Activity Comments React Native](activity-comments.md) — `module-billing-activity-comments-react-native`
+- [Analytics Core React Native](analytics-core.md) — `module-billing-analytics-core-react-native`
+- [Analytics Google React Native](analytics-google.md) — `module-billing-analytics-google-react-native`
+- [Analytics Meta React Native](analytics-meta.md) — `module-billing-analytics-meta-react-native`
+- [Api Access React Native](api-access.md) — `module-billing-api-access-react-native`
+- [Application React Native](application.md) — `module-billing-application-react-native`
+- [Audit React Native](audit.md) — `module-billing-audit-react-native`
+- [Billing Core React Native](billing-core.md) — `module-billing-billing-core-react-native`
+- [Currency Context React Native](currency-context.md) — `module-billing-currency-context-react-native`
+- [Developer Experience React Native](developer-experience.md) — `module-billing-developer-experience-react-native`
+- [Feature Flags React Native](feature-flags.md) — `module-billing-feature-flags-react-native`
+- [Files Media React Native](files-media.md) — `module-billing-files-media-react-native`
+- [Identity Core React Native](identity-core.md) — `module-billing-identity-core-react-native`
+- [Identity Socialstream React Native](identity-socialstream.md) — `module-billing-identity-socialstream-react-native`
+- [Import Export React Native](import-export.md) — `module-billing-import-export-react-native`
+- [Integrations React Native](integrations.md) — `module-billing-integrations-react-native`
+- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-billing-jetstream-bridge-react-native`
+- [Liberu Business Workflow Reconciliation React Native](liberu-business-workflow-reconciliation.md) — `module-billing-liberu-business-workflow-reconciliation-react-native`
+- [Liberu Executive Insights React Native](liberu-executive-insights.md) — `module-billing-liberu-executive-insights-react-native`
+- [Liberu Platform Orchestration React Native](liberu-platform-orchestration.md) — `module-billing-liberu-platform-orchestration-react-native`
+- [Liberu Revenue And Care Orchestration React Native](liberu-revenue-and-care-orchestration.md) — `module-billing-liberu-revenue-and-care-orchestration-react-native`
+- [Localization Core React Native](localization-core.md) — `module-billing-localization-core-react-native`
+- [Localization Mymemory React Native](localization-mymemory.md) — `module-billing-localization-mymemory-react-native`
+- [Module Billing Billing Core React Native](module-billing-billing-core.md) — `module-billing-module-billing-billing-core-react-native`
+- [Module Billing Catalog React Native](module-billing-catalog.md) — `module-billing-module-billing-catalog-react-native`
+- [Module Billing Collections React Native](module-billing-collections.md) — `module-billing-module-billing-collections-react-native`
+- [Module Billing Communications React Native](module-billing-communications.md) — `module-billing-module-billing-communications-react-native`
+- [Module Billing Core React Native](module-billing-core.md) — `module-billing-module-billing-core-react-native`
+- [Module Billing Cpanel React Native](module-billing-cpanel.md) — `module-billing-module-billing-cpanel-react-native`
+- [Module Billing Customer Portal React Native](module-billing-customer-portal.md) — `module-billing-module-billing-customer-portal-react-native`
+- [Module Billing Directadmin React Native](module-billing-directadmin.md) — `module-billing-module-billing-directadmin-react-native`
+- [Module Billing Domains React Native](module-billing-domains.md) — `module-billing-module-billing-domains-react-native`
+- [Module Billing Enom React Native](module-billing-enom.md) — `module-billing-module-billing-enom-react-native`
+- [Module Billing Hosting React Native](module-billing-hosting.md) — `module-billing-module-billing-hosting-react-native`
+- [Module Billing Invoicing React Native](module-billing-invoicing.md) — `module-billing-module-billing-invoicing-react-native`
+- [Module Billing Isp React Native](module-billing-isp.md) — `module-billing-module-billing-isp-react-native`
+- [Module Billing Liberu Control Panel React Native](module-billing-liberu-control-panel.md) — `module-billing-module-billing-liberu-control-panel-react-native`
+- [Module Billing Orders React Native](module-billing-orders.md) — `module-billing-module-billing-orders-react-native`
+- [Module Billing Paddle React Native](module-billing-paddle.md) — `module-billing-module-billing-paddle-react-native`
+- [Module Billing Payments React Native](module-billing-payments.md) — `module-billing-module-billing-payments-react-native`
+- [Module Billing Plesk React Native](module-billing-plesk.md) — `module-billing-module-billing-plesk-react-native`
+- [Module Billing Pricing React Native](module-billing-pricing.md) — `module-billing-module-billing-pricing-react-native`
+- [Module Billing Provisioning React Native](module-billing-provisioning.md) — `module-billing-module-billing-provisioning-react-native`
+- [Module Billing Reporting React Native](module-billing-reporting.md) — `module-billing-module-billing-reporting-react-native`
+- [Module Billing Resellerclub React Native](module-billing-resellerclub.md) — `module-billing-module-billing-resellerclub-react-native`
+- [Module Billing Stripe React Native](module-billing-stripe.md) — `module-billing-module-billing-stripe-react-native`
+- [Module Billing Subscriptions React Native](module-billing-subscriptions.md) — `module-billing-module-billing-subscriptions-react-native`
+- [Module Billing Usage React Native](module-billing-usage.md) — `module-billing-module-billing-usage-react-native`
+- [Module Billing Virtualmin React Native](module-billing-virtualmin.md) — `module-billing-module-billing-virtualmin-react-native`
+- [Module Liberu Business Workflow Reconciliation React Native](module-liberu-business-workflow-reconciliation.md) — `module-billing-module-liberu-business-workflow-reconciliation-react-native`
+- [Module Liberu Executive Insights React Native](module-liberu-executive-insights.md) — `module-billing-module-liberu-executive-insights-react-native`
+- [Module Liberu Platform Orchestration React Native](module-liberu-platform-orchestration.md) — `module-billing-module-liberu-platform-orchestration-react-native`
+- [Module Liberu Revenue And Care Orchestration React Native](module-liberu-revenue-and-care-orchestration.md) — `module-billing-module-liberu-revenue-and-care-orchestration-react-native`
+- [Module Manager React Native](module-manager.md) — `module-billing-module-manager-react-native`
+- [Notifications React Native](notifications.md) — `module-billing-notifications-react-native`
+- [Observability React Native](observability.md) — `module-billing-observability-react-native`
+- [Organizations Teams React Native](organizations-teams.md) — `module-billing-organizations-teams-react-native`
+- [Profiles React Native](profiles.md) — `module-billing-profiles-react-native`
+- [Roles Permissions React Native](roles-permissions.md) — `module-billing-roles-permissions-react-native`
+- [Scheduler Queues React Native](scheduler-queues.md) — `module-billing-scheduler-queues-react-native`
+- [Search React Native](search.md) — `module-billing-search-react-native`
+- [Sessions Devices React Native](sessions-devices.md) — `module-billing-sessions-devices-react-native`
+- [Settings React Native](settings.md) — `module-billing-settings-react-native`
+- [Theme Support React Native](theme-support.md) — `module-billing-theme-support-react-native`
+- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-billing-two-factor-authentication-react-native`
+- [Webhooks React Native](webhooks.md) — `module-billing-webhooks-react-native`

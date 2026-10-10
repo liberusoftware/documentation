@@ -1,47 +1,50 @@
-# Browser-Game Vue 3 + Inertia 3 Implementations
+# Browser Game Vue + Inertia Implementations
 
-**Source:** [BROWSER-GAME.md](../BROWSER-GAME.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Game Core Vue + Inertia](game-core.md) — `module-browser-game-game-core-vue-inertia`
-- [Accounts Vue + Inertia](accounts.md) — `module-browser-game-accounts-vue-inertia`
-- [Characters Vue + Inertia](characters.md) — `module-browser-game-characters-vue-inertia`
-- [World Vue + Inertia](world.md) — `module-browser-game-world-vue-inertia`
-- [Combat Vue + Inertia](combat.md) — `module-browser-game-combat-vue-inertia`
-- [Quests Vue + Inertia](quests.md) — `module-browser-game-quests-vue-inertia`
-- [Items Vue + Inertia](items.md) — `module-browser-game-items-vue-inertia`
-- [Crafting Vue + Inertia](crafting.md) — `module-browser-game-crafting-vue-inertia`
-- [Economy Vue + Inertia](economy.md) — `module-browser-game-economy-vue-inertia`
-- [Social Vue + Inertia](social.md) — `module-browser-game-social-vue-inertia`
-- [Competition Vue + Inertia](competition.md) — `module-browser-game-competition-vue-inertia`
-- [Collections Vue + Inertia](collections.md) — `module-browser-game-collections-vue-inertia`
-- [Live Ops Vue + Inertia](live-ops.md) — `module-browser-game-live-ops-vue-inertia`
-- [Commerce Vue + Inertia](commerce.md) — `module-browser-game-commerce-vue-inertia`
-- [Moderation and Analytics Vue + Inertia](moderation-and-analytics.md) — `module-browser-game-moderation-and-analytics-vue-inertia`
-
-**Source:** [BROWSER-GAME.md](../BROWSER-GAME.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
-
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Game Core Vue + Inertia](game-core.md) — `module-browser-game-game-core-vue-inertia`
-- [Accounts Vue + Inertia](accounts.md) — `module-browser-game-accounts-vue-inertia`
-- [Characters Vue + Inertia](characters.md) — `module-browser-game-characters-vue-inertia`
-- [World Vue + Inertia](world.md) — `module-browser-game-world-vue-inertia`
-- [Combat Vue + Inertia](combat.md) — `module-browser-game-combat-vue-inertia`
-- [Quests Vue + Inertia](quests.md) — `module-browser-game-quests-vue-inertia`
-- [Items Vue + Inertia](items.md) — `module-browser-game-items-vue-inertia`
-- [Crafting Vue + Inertia](crafting.md) — `module-browser-game-crafting-vue-inertia`
-- [Economy Vue + Inertia](economy.md) — `module-browser-game-economy-vue-inertia`
-- [Social Vue + Inertia](social.md) — `module-browser-game-social-vue-inertia`
-- [Competition Vue + Inertia](competition.md) — `module-browser-game-competition-vue-inertia`
-- [Collections Vue + Inertia](collections.md) — `module-browser-game-collections-vue-inertia`
-- [Live Ops Vue + Inertia](live-ops.md) — `module-browser-game-live-ops-vue-inertia`
-- [Commerce Vue + Inertia](commerce.md) — `module-browser-game-commerce-vue-inertia`
-- [Moderation and Analytics Vue + Inertia](moderation-and-analytics.md) — `module-browser-game-moderation-and-analytics-vue-inertia`
+- [Activity Comments Vue](activity-comments.md) — `module-browser-game-activity-comments-vue-inertia`
+- [Analytics Core Vue](analytics-core.md) — `module-browser-game-analytics-core-vue-inertia`
+- [Analytics Google Vue](analytics-google.md) — `module-browser-game-analytics-google-vue-inertia`
+- [Analytics Meta Vue](analytics-meta.md) — `module-browser-game-analytics-meta-vue-inertia`
+- [Api Access Vue](api-access.md) — `module-browser-game-api-access-vue-inertia`
+- [Application Vue](application.md) — `module-browser-game-application-vue-inertia`
+- [Audit Vue](audit.md) — `module-browser-game-audit-vue-inertia`
+- [Browser Game Accounts Vue](browser-game-accounts.md) — `module-browser-game-browser-game-accounts-vue-inertia`
+- [Browser Game Characters Vue](browser-game-characters.md) — `module-browser-game-browser-game-characters-vue-inertia`
+- [Browser Game Collections Vue](browser-game-collections.md) — `module-browser-game-browser-game-collections-vue-inertia`
+- [Browser Game Combat Vue](browser-game-combat.md) — `module-browser-game-browser-game-combat-vue-inertia`
+- [Browser Game Commerce Vue](browser-game-commerce.md) — `module-browser-game-browser-game-commerce-vue-inertia`
+- [Browser Game Competition Vue](browser-game-competition.md) — `module-browser-game-browser-game-competition-vue-inertia`
+- [Browser Game Crafting Vue](browser-game-crafting.md) — `module-browser-game-browser-game-crafting-vue-inertia`
+- [Browser Game Economy Vue](browser-game-economy.md) — `module-browser-game-browser-game-economy-vue-inertia`
+- [Browser Game Game Core Vue](browser-game-game-core.md) — `module-browser-game-browser-game-game-core-vue-inertia`
+- [Browser Game Items Vue](browser-game-items.md) — `module-browser-game-browser-game-items-vue-inertia`
+- [Browser Game Live Ops Vue](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops-vue-inertia`
+- [Browser Game Moderation And Analytics Vue](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics-vue-inertia`
+- [Browser Game Quests Vue](browser-game-quests.md) — `module-browser-game-browser-game-quests-vue-inertia`
+- [Browser Game Social Vue](browser-game-social.md) — `module-browser-game-browser-game-social-vue-inertia`
+- [Browser Game World Vue](browser-game-world.md) — `module-browser-game-browser-game-world-vue-inertia`
+- [Currency Context Vue](currency-context.md) — `module-browser-game-currency-context-vue-inertia`
+- [Developer Experience Vue](developer-experience.md) — `module-browser-game-developer-experience-vue-inertia`
+- [Feature Flags Vue](feature-flags.md) — `module-browser-game-feature-flags-vue-inertia`
+- [Files Media Vue](files-media.md) — `module-browser-game-files-media-vue-inertia`
+- [Identity Core Vue](identity-core.md) — `module-browser-game-identity-core-vue-inertia`
+- [Identity Socialstream Vue](identity-socialstream.md) — `module-browser-game-identity-socialstream-vue-inertia`
+- [Import Export Vue](import-export.md) — `module-browser-game-import-export-vue-inertia`
+- [Integrations Vue](integrations.md) — `module-browser-game-integrations-vue-inertia`
+- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-browser-game-jetstream-bridge-vue-inertia`
+- [Localization Core Vue](localization-core.md) — `module-browser-game-localization-core-vue-inertia`
+- [Localization Mymemory Vue](localization-mymemory.md) — `module-browser-game-localization-mymemory-vue-inertia`
+- [Module Manager Vue](module-manager.md) — `module-browser-game-module-manager-vue-inertia`
+- [Notifications Vue](notifications.md) — `module-browser-game-notifications-vue-inertia`
+- [Observability Vue](observability.md) — `module-browser-game-observability-vue-inertia`
+- [Organizations Teams Vue](organizations-teams.md) — `module-browser-game-organizations-teams-vue-inertia`
+- [Profiles Vue](profiles.md) — `module-browser-game-profiles-vue-inertia`
+- [Roles Permissions Vue](roles-permissions.md) — `module-browser-game-roles-permissions-vue-inertia`
+- [Scheduler Queues Vue](scheduler-queues.md) — `module-browser-game-scheduler-queues-vue-inertia`
+- [Search Vue](search.md) — `module-browser-game-search-vue-inertia`
+- [Sessions Devices Vue](sessions-devices.md) — `module-browser-game-sessions-devices-vue-inertia`
+- [Settings Vue](settings.md) — `module-browser-game-settings-vue-inertia`
+- [Theme Support Vue](theme-support.md) — `module-browser-game-theme-support-vue-inertia`
+- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-browser-game-two-factor-authentication-vue-inertia`
+- [Webhooks Vue](webhooks.md) — `module-browser-game-webhooks-vue-inertia`

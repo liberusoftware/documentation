@@ -1,25 +1,70 @@
-# Billing Filament 5 Implementations
+# Billing Filament Implementations
 
-**Source:** [BILLING.md](../BILLING.md)  
-**Architecture:** [FILAMENT.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Filament 5` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Billing Core Filament](billing-core.md) — `module-billing-core-filament`
-- [Catalog Filament](catalog.md) — `module-billing-catalog-filament`
-- [Pricing Filament](pricing.md) — `module-billing-pricing-filament`
-- [Orders Filament](orders.md) — `module-billing-orders-filament`
-- [Subscriptions Filament](subscriptions.md) — `module-billing-subscriptions-filament`
-- [Usage Filament](usage.md) — `module-billing-usage-filament`
-- [Invoicing Filament](invoicing.md) — `module-billing-invoicing-filament`
-- [Payments Filament](payments.md) — `module-billing-payments-filament`
-- [Collections Filament](collections.md) — `module-billing-collections-filament`
-- [Provisioning Filament](provisioning.md) — `module-billing-provisioning-filament`
-- [Hosting Filament](hosting.md) — `module-billing-hosting-filament`
-- [Domains Filament](domains.md) — `module-billing-domains-filament`
-- [ISP Filament](isp.md) — `module-billing-isp-filament`
-- [Communications Filament](communications.md) — `module-billing-communications-filament`
-- [Customer Portal Filament](customer-portal.md) — `module-billing-customer-portal-filament`
-- [Reporting Filament](reporting.md) — `module-billing-reporting-filament`
+- [Activity Comments Filament](activity-comments.md) — `module-billing-activity-comments-filament`
+- [Analytics Core Filament](analytics-core.md) — `module-billing-analytics-core-filament`
+- [Analytics Google Filament](analytics-google.md) — `module-billing-analytics-google-filament`
+- [Analytics Meta Filament](analytics-meta.md) — `module-billing-analytics-meta-filament`
+- [Api Access Filament](api-access.md) — `module-billing-api-access-filament`
+- [Application Filament](application.md) — `module-billing-application-filament`
+- [Audit Filament](audit.md) — `module-billing-audit-filament`
+- [Billing Core Filament](billing-core.md) — `module-billing-billing-core-filament`
+- [Currency Context Filament](currency-context.md) — `module-billing-currency-context-filament`
+- [Developer Experience Filament](developer-experience.md) — `module-billing-developer-experience-filament`
+- [Feature Flags Filament](feature-flags.md) — `module-billing-feature-flags-filament`
+- [Files Media Filament](files-media.md) — `module-billing-files-media-filament`
+- [Identity Core Filament](identity-core.md) — `module-billing-identity-core-filament`
+- [Identity Socialstream Filament](identity-socialstream.md) — `module-billing-identity-socialstream-filament`
+- [Import Export Filament](import-export.md) — `module-billing-import-export-filament`
+- [Integrations Filament](integrations.md) — `module-billing-integrations-filament`
+- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-billing-jetstream-bridge-filament`
+- [Liberu Business Workflow Reconciliation Filament](liberu-business-workflow-reconciliation.md) — `module-billing-liberu-business-workflow-reconciliation-filament`
+- [Liberu Executive Insights Filament](liberu-executive-insights.md) — `module-billing-liberu-executive-insights-filament`
+- [Liberu Platform Orchestration Filament](liberu-platform-orchestration.md) — `module-billing-liberu-platform-orchestration-filament`
+- [Liberu Revenue And Care Orchestration Filament](liberu-revenue-and-care-orchestration.md) — `module-billing-liberu-revenue-and-care-orchestration-filament`
+- [Localization Core Filament](localization-core.md) — `module-billing-localization-core-filament`
+- [Localization Mymemory Filament](localization-mymemory.md) — `module-billing-localization-mymemory-filament`
+- [Module Billing Billing Core Filament](module-billing-billing-core.md) — `module-billing-module-billing-billing-core-filament`
+- [Module Billing Catalog Filament](module-billing-catalog.md) — `module-billing-module-billing-catalog-filament`
+- [Module Billing Collections Filament](module-billing-collections.md) — `module-billing-module-billing-collections-filament`
+- [Module Billing Communications Filament](module-billing-communications.md) — `module-billing-module-billing-communications-filament`
+- [Module Billing Core Filament](module-billing-core.md) — `module-billing-module-billing-core-filament`
+- [Module Billing Cpanel Filament](module-billing-cpanel.md) — `module-billing-module-billing-cpanel-filament`
+- [Module Billing Customer Portal Filament](module-billing-customer-portal.md) — `module-billing-module-billing-customer-portal-filament`
+- [Module Billing Directadmin Filament](module-billing-directadmin.md) — `module-billing-module-billing-directadmin-filament`
+- [Module Billing Domains Filament](module-billing-domains.md) — `module-billing-module-billing-domains-filament`
+- [Module Billing Enom Filament](module-billing-enom.md) — `module-billing-module-billing-enom-filament`
+- [Module Billing Hosting Filament](module-billing-hosting.md) — `module-billing-module-billing-hosting-filament`
+- [Module Billing Invoicing Filament](module-billing-invoicing.md) — `module-billing-module-billing-invoicing-filament`
+- [Module Billing Isp Filament](module-billing-isp.md) — `module-billing-module-billing-isp-filament`
+- [Module Billing Liberu Control Panel Filament](module-billing-liberu-control-panel.md) — `module-billing-module-billing-liberu-control-panel-filament`
+- [Module Billing Orders Filament](module-billing-orders.md) — `module-billing-module-billing-orders-filament`
+- [Module Billing Paddle Filament](module-billing-paddle.md) — `module-billing-module-billing-paddle-filament`
+- [Module Billing Payments Filament](module-billing-payments.md) — `module-billing-module-billing-payments-filament`
+- [Module Billing Plesk Filament](module-billing-plesk.md) — `module-billing-module-billing-plesk-filament`
+- [Module Billing Pricing Filament](module-billing-pricing.md) — `module-billing-module-billing-pricing-filament`
+- [Module Billing Provisioning Filament](module-billing-provisioning.md) — `module-billing-module-billing-provisioning-filament`
+- [Module Billing Reporting Filament](module-billing-reporting.md) — `module-billing-module-billing-reporting-filament`
+- [Module Billing Resellerclub Filament](module-billing-resellerclub.md) — `module-billing-module-billing-resellerclub-filament`
+- [Module Billing Stripe Filament](module-billing-stripe.md) — `module-billing-module-billing-stripe-filament`
+- [Module Billing Subscriptions Filament](module-billing-subscriptions.md) — `module-billing-module-billing-subscriptions-filament`
+- [Module Billing Usage Filament](module-billing-usage.md) — `module-billing-module-billing-usage-filament`
+- [Module Billing Virtualmin Filament](module-billing-virtualmin.md) — `module-billing-module-billing-virtualmin-filament`
+- [Module Liberu Business Workflow Reconciliation Filament](module-liberu-business-workflow-reconciliation.md) — `module-billing-module-liberu-business-workflow-reconciliation-filament`
+- [Module Liberu Executive Insights Filament](module-liberu-executive-insights.md) — `module-billing-module-liberu-executive-insights-filament`
+- [Module Liberu Platform Orchestration Filament](module-liberu-platform-orchestration.md) — `module-billing-module-liberu-platform-orchestration-filament`
+- [Module Liberu Revenue And Care Orchestration Filament](module-liberu-revenue-and-care-orchestration.md) — `module-billing-module-liberu-revenue-and-care-orchestration-filament`
+- [Module Manager Filament](module-manager.md) — `module-billing-module-manager-filament`
+- [Notifications Filament](notifications.md) — `module-billing-notifications-filament`
+- [Observability Filament](observability.md) — `module-billing-observability-filament`
+- [Organizations Teams Filament](organizations-teams.md) — `module-billing-organizations-teams-filament`
+- [Profiles Filament](profiles.md) — `module-billing-profiles-filament`
+- [Roles Permissions Filament](roles-permissions.md) — `module-billing-roles-permissions-filament`
+- [Scheduler Queues Filament](scheduler-queues.md) — `module-billing-scheduler-queues-filament`
+- [Search Filament](search.md) — `module-billing-search-filament`
+- [Sessions Devices Filament](sessions-devices.md) — `module-billing-sessions-devices-filament`
+- [Settings Filament](settings.md) — `module-billing-settings-filament`
+- [Theme Support Filament](theme-support.md) — `module-billing-theme-support-filament`
+- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-billing-two-factor-authentication-filament`
+- [Webhooks Filament](webhooks.md) — `module-billing-webhooks-filament`

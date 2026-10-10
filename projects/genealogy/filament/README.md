@@ -1,23 +1,54 @@
-# Genealogy Filament 5 Implementations
+# Genealogy Filament Implementations
 
-**Source:** [GENEALOGY.md](../GENEALOGY.md)  
-**Architecture:** [FILAMENT.md](../GENEALOGY.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Filament 5` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Genealogy Core Filament](genealogy-core.md) — `module-genealogy-core-filament`
-- [People Filament](people.md) — `module-genealogy-people-filament`
-- [Relationships Filament](relationships.md) — `module-genealogy-relationships-filament`
-- [Evidence Filament](evidence.md) — `module-genealogy-evidence-filament`
-- [Research Filament](research.md) — `module-genealogy-research-filament`
-- [Places Filament](places.md) — `module-genealogy-places-filament`
-- [Timeline Filament](timeline.md) — `module-genealogy-timeline-filament`
-- [Tree Viewer Filament](tree-viewer.md) — `module-genealogy-tree-viewer-filament`
+- [Activity Comments Filament](activity-comments.md) — `module-genealogy-activity-comments-filament`
+- [Analytics Core Filament](analytics-core.md) — `module-genealogy-analytics-core-filament`
+- [Analytics Google Filament](analytics-google.md) — `module-genealogy-analytics-google-filament`
+- [Analytics Meta Filament](analytics-meta.md) — `module-genealogy-analytics-meta-filament`
+- [Api Access Filament](api-access.md) — `module-genealogy-api-access-filament`
+- [Application Filament](application.md) — `module-genealogy-application-filament`
+- [Audit Filament](audit.md) — `module-genealogy-audit-filament`
+- [Currency Context Filament](currency-context.md) — `module-genealogy-currency-context-filament`
+- [Developer Experience Filament](developer-experience.md) — `module-genealogy-developer-experience-filament`
+- [Feature Flags Filament](feature-flags.md) — `module-genealogy-feature-flags-filament`
+- [Files Media Filament](files-media.md) — `module-genealogy-files-media-filament`
+- [Genealogy Collaboration Filament](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-filament`
+- [Genealogy Core Filament](genealogy-core.md) — `module-genealogy-genealogy-core-filament`
+- [Genealogy Discovery Filament](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-filament`
+- [Genealogy Dna Filament](genealogy-dna.md) — `module-genealogy-genealogy-dna-filament`
+- [Genealogy Evidence Filament](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-filament`
+- [Genealogy Gamification Filament](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-filament`
+- [Genealogy Import Export Filament](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-filament`
+- [Genealogy Media Filament](genealogy-media.md) — `module-genealogy-genealogy-media-filament`
+- [Genealogy People Filament](genealogy-people.md) — `module-genealogy-genealogy-people-filament`
+- [Genealogy Places Filament](genealogy-places.md) — `module-genealogy-genealogy-places-filament`
+- [Genealogy Relationships Filament](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-filament`
+- [Genealogy Reports Filament](genealogy-reports.md) — `module-genealogy-genealogy-reports-filament`
+- [Genealogy Research Filament](genealogy-research.md) — `module-genealogy-genealogy-research-filament`
+- [Genealogy Timeline Filament](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-filament`
+- [Genealogy Tree Viewer Filament](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-filament`
+- [Identity Core Filament](identity-core.md) — `module-genealogy-identity-core-filament`
+- [Identity Socialstream Filament](identity-socialstream.md) — `module-genealogy-identity-socialstream-filament`
 - [Import Export Filament](import-export.md) — `module-genealogy-import-export-filament`
-- [DNA Filament](dna.md) — `module-genealogy-dna-filament`
-- [Media Filament](media.md) — `module-genealogy-media-filament`
-- [Collaboration Filament](collaboration.md) — `module-genealogy-collaboration-filament`
-- [Discovery Filament](discovery.md) — `module-genealogy-discovery-filament`
-- [Reports Filament](reports.md) — `module-genealogy-reports-filament`
+- [Integrations Filament](integrations.md) — `module-genealogy-integrations-filament`
+- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-filament`
+- [Liberu Business Workflow Reconciliation Filament](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-filament`
+- [Liberu Executive Insights Filament](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-filament`
+- [Liberu Platform Orchestration Filament](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-filament`
+- [Liberu Revenue And Care Orchestration Filament](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-filament`
+- [Localization Core Filament](localization-core.md) — `module-genealogy-localization-core-filament`
+- [Localization Mymemory Filament](localization-mymemory.md) — `module-genealogy-localization-mymemory-filament`
+- [Module Manager Filament](module-manager.md) — `module-genealogy-module-manager-filament`
+- [Notifications Filament](notifications.md) — `module-genealogy-notifications-filament`
+- [Observability Filament](observability.md) — `module-genealogy-observability-filament`
+- [Organizations Teams Filament](organizations-teams.md) — `module-genealogy-organizations-teams-filament`
+- [Profiles Filament](profiles.md) — `module-genealogy-profiles-filament`
+- [Roles Permissions Filament](roles-permissions.md) — `module-genealogy-roles-permissions-filament`
+- [Scheduler Queues Filament](scheduler-queues.md) — `module-genealogy-scheduler-queues-filament`
+- [Search Filament](search.md) — `module-genealogy-search-filament`
+- [Sessions Devices Filament](sessions-devices.md) — `module-genealogy-sessions-devices-filament`
+- [Settings Filament](settings.md) — `module-genealogy-settings-filament`
+- [Theme Support Filament](theme-support.md) — `module-genealogy-theme-support-filament`
+- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-filament`
+- [Webhooks Filament](webhooks.md) — `module-genealogy-webhooks-filament`

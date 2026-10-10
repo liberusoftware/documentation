@@ -1,49 +1,70 @@
-# Billing Vue 3 + Inertia 3 Implementations
+# Billing Vue + Inertia Implementations
 
-**Source:** [BILLING.md](../BILLING.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Billing Core Vue + Inertia](billing-core.md) — `module-billing-core-vue-inertia`
-- [Catalog Vue + Inertia](catalog.md) — `module-billing-catalog-vue-inertia`
-- [Pricing Vue + Inertia](pricing.md) — `module-billing-pricing-vue-inertia`
-- [Orders Vue + Inertia](orders.md) — `module-billing-orders-vue-inertia`
-- [Subscriptions Vue + Inertia](subscriptions.md) — `module-billing-subscriptions-vue-inertia`
-- [Usage Vue + Inertia](usage.md) — `module-billing-usage-vue-inertia`
-- [Invoicing Vue + Inertia](invoicing.md) — `module-billing-invoicing-vue-inertia`
-- [Payments Vue + Inertia](payments.md) — `module-billing-payments-vue-inertia`
-- [Collections Vue + Inertia](collections.md) — `module-billing-collections-vue-inertia`
-- [Provisioning Vue + Inertia](provisioning.md) — `module-billing-provisioning-vue-inertia`
-- [Hosting Vue + Inertia](hosting.md) — `module-billing-hosting-vue-inertia`
-- [Domains Vue + Inertia](domains.md) — `module-billing-domains-vue-inertia`
-- [ISP Vue + Inertia](isp.md) — `module-billing-isp-vue-inertia`
-- [Communications Vue + Inertia](communications.md) — `module-billing-communications-vue-inertia`
-- [Customer Portal Vue + Inertia](customer-portal.md) — `module-billing-customer-portal-vue-inertia`
-- [Reporting Vue + Inertia](reporting.md) — `module-billing-reporting-vue-inertia`
-
-**Source:** [BILLING.md](../BILLING.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
-
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Billing Core Vue + Inertia](billing-core.md) — `module-billing-core-vue-inertia`
-- [Catalog Vue + Inertia](catalog.md) — `module-billing-catalog-vue-inertia`
-- [Pricing Vue + Inertia](pricing.md) — `module-billing-pricing-vue-inertia`
-- [Orders Vue + Inertia](orders.md) — `module-billing-orders-vue-inertia`
-- [Subscriptions Vue + Inertia](subscriptions.md) — `module-billing-subscriptions-vue-inertia`
-- [Usage Vue + Inertia](usage.md) — `module-billing-usage-vue-inertia`
-- [Invoicing Vue + Inertia](invoicing.md) — `module-billing-invoicing-vue-inertia`
-- [Payments Vue + Inertia](payments.md) — `module-billing-payments-vue-inertia`
-- [Collections Vue + Inertia](collections.md) — `module-billing-collections-vue-inertia`
-- [Provisioning Vue + Inertia](provisioning.md) — `module-billing-provisioning-vue-inertia`
-- [Hosting Vue + Inertia](hosting.md) — `module-billing-hosting-vue-inertia`
-- [Domains Vue + Inertia](domains.md) — `module-billing-domains-vue-inertia`
-- [ISP Vue + Inertia](isp.md) — `module-billing-isp-vue-inertia`
-- [Communications Vue + Inertia](communications.md) — `module-billing-communications-vue-inertia`
-- [Customer Portal Vue + Inertia](customer-portal.md) — `module-billing-customer-portal-vue-inertia`
-- [Reporting Vue + Inertia](reporting.md) — `module-billing-reporting-vue-inertia`
+- [Activity Comments Vue](activity-comments.md) — `module-billing-activity-comments-vue-inertia`
+- [Analytics Core Vue](analytics-core.md) — `module-billing-analytics-core-vue-inertia`
+- [Analytics Google Vue](analytics-google.md) — `module-billing-analytics-google-vue-inertia`
+- [Analytics Meta Vue](analytics-meta.md) — `module-billing-analytics-meta-vue-inertia`
+- [Api Access Vue](api-access.md) — `module-billing-api-access-vue-inertia`
+- [Application Vue](application.md) — `module-billing-application-vue-inertia`
+- [Audit Vue](audit.md) — `module-billing-audit-vue-inertia`
+- [Billing Core Vue](billing-core.md) — `module-billing-billing-core-vue-inertia`
+- [Currency Context Vue](currency-context.md) — `module-billing-currency-context-vue-inertia`
+- [Developer Experience Vue](developer-experience.md) — `module-billing-developer-experience-vue-inertia`
+- [Feature Flags Vue](feature-flags.md) — `module-billing-feature-flags-vue-inertia`
+- [Files Media Vue](files-media.md) — `module-billing-files-media-vue-inertia`
+- [Identity Core Vue](identity-core.md) — `module-billing-identity-core-vue-inertia`
+- [Identity Socialstream Vue](identity-socialstream.md) — `module-billing-identity-socialstream-vue-inertia`
+- [Import Export Vue](import-export.md) — `module-billing-import-export-vue-inertia`
+- [Integrations Vue](integrations.md) — `module-billing-integrations-vue-inertia`
+- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-billing-jetstream-bridge-vue-inertia`
+- [Liberu Business Workflow Reconciliation Vue](liberu-business-workflow-reconciliation.md) — `module-billing-liberu-business-workflow-reconciliation-vue-inertia`
+- [Liberu Executive Insights Vue](liberu-executive-insights.md) — `module-billing-liberu-executive-insights-vue-inertia`
+- [Liberu Platform Orchestration Vue](liberu-platform-orchestration.md) — `module-billing-liberu-platform-orchestration-vue-inertia`
+- [Liberu Revenue And Care Orchestration Vue](liberu-revenue-and-care-orchestration.md) — `module-billing-liberu-revenue-and-care-orchestration-vue-inertia`
+- [Localization Core Vue](localization-core.md) — `module-billing-localization-core-vue-inertia`
+- [Localization Mymemory Vue](localization-mymemory.md) — `module-billing-localization-mymemory-vue-inertia`
+- [Module Billing Billing Core Vue](module-billing-billing-core.md) — `module-billing-module-billing-billing-core-vue-inertia`
+- [Module Billing Catalog Vue](module-billing-catalog.md) — `module-billing-module-billing-catalog-vue-inertia`
+- [Module Billing Collections Vue](module-billing-collections.md) — `module-billing-module-billing-collections-vue-inertia`
+- [Module Billing Communications Vue](module-billing-communications.md) — `module-billing-module-billing-communications-vue-inertia`
+- [Module Billing Core Vue](module-billing-core.md) — `module-billing-module-billing-core-vue-inertia`
+- [Module Billing Cpanel Vue](module-billing-cpanel.md) — `module-billing-module-billing-cpanel-vue-inertia`
+- [Module Billing Customer Portal Vue](module-billing-customer-portal.md) — `module-billing-module-billing-customer-portal-vue-inertia`
+- [Module Billing Directadmin Vue](module-billing-directadmin.md) — `module-billing-module-billing-directadmin-vue-inertia`
+- [Module Billing Domains Vue](module-billing-domains.md) — `module-billing-module-billing-domains-vue-inertia`
+- [Module Billing Enom Vue](module-billing-enom.md) — `module-billing-module-billing-enom-vue-inertia`
+- [Module Billing Hosting Vue](module-billing-hosting.md) — `module-billing-module-billing-hosting-vue-inertia`
+- [Module Billing Invoicing Vue](module-billing-invoicing.md) — `module-billing-module-billing-invoicing-vue-inertia`
+- [Module Billing Isp Vue](module-billing-isp.md) — `module-billing-module-billing-isp-vue-inertia`
+- [Module Billing Liberu Control Panel Vue](module-billing-liberu-control-panel.md) — `module-billing-module-billing-liberu-control-panel-vue-inertia`
+- [Module Billing Orders Vue](module-billing-orders.md) — `module-billing-module-billing-orders-vue-inertia`
+- [Module Billing Paddle Vue](module-billing-paddle.md) — `module-billing-module-billing-paddle-vue-inertia`
+- [Module Billing Payments Vue](module-billing-payments.md) — `module-billing-module-billing-payments-vue-inertia`
+- [Module Billing Plesk Vue](module-billing-plesk.md) — `module-billing-module-billing-plesk-vue-inertia`
+- [Module Billing Pricing Vue](module-billing-pricing.md) — `module-billing-module-billing-pricing-vue-inertia`
+- [Module Billing Provisioning Vue](module-billing-provisioning.md) — `module-billing-module-billing-provisioning-vue-inertia`
+- [Module Billing Reporting Vue](module-billing-reporting.md) — `module-billing-module-billing-reporting-vue-inertia`
+- [Module Billing Resellerclub Vue](module-billing-resellerclub.md) — `module-billing-module-billing-resellerclub-vue-inertia`
+- [Module Billing Stripe Vue](module-billing-stripe.md) — `module-billing-module-billing-stripe-vue-inertia`
+- [Module Billing Subscriptions Vue](module-billing-subscriptions.md) — `module-billing-module-billing-subscriptions-vue-inertia`
+- [Module Billing Usage Vue](module-billing-usage.md) — `module-billing-module-billing-usage-vue-inertia`
+- [Module Billing Virtualmin Vue](module-billing-virtualmin.md) — `module-billing-module-billing-virtualmin-vue-inertia`
+- [Module Liberu Business Workflow Reconciliation Vue](module-liberu-business-workflow-reconciliation.md) — `module-billing-module-liberu-business-workflow-reconciliation-vue-inertia`
+- [Module Liberu Executive Insights Vue](module-liberu-executive-insights.md) — `module-billing-module-liberu-executive-insights-vue-inertia`
+- [Module Liberu Platform Orchestration Vue](module-liberu-platform-orchestration.md) — `module-billing-module-liberu-platform-orchestration-vue-inertia`
+- [Module Liberu Revenue And Care Orchestration Vue](module-liberu-revenue-and-care-orchestration.md) — `module-billing-module-liberu-revenue-and-care-orchestration-vue-inertia`
+- [Module Manager Vue](module-manager.md) — `module-billing-module-manager-vue-inertia`
+- [Notifications Vue](notifications.md) — `module-billing-notifications-vue-inertia`
+- [Observability Vue](observability.md) — `module-billing-observability-vue-inertia`
+- [Organizations Teams Vue](organizations-teams.md) — `module-billing-organizations-teams-vue-inertia`
+- [Profiles Vue](profiles.md) — `module-billing-profiles-vue-inertia`
+- [Roles Permissions Vue](roles-permissions.md) — `module-billing-roles-permissions-vue-inertia`
+- [Scheduler Queues Vue](scheduler-queues.md) — `module-billing-scheduler-queues-vue-inertia`
+- [Search Vue](search.md) — `module-billing-search-vue-inertia`
+- [Sessions Devices Vue](sessions-devices.md) — `module-billing-sessions-devices-vue-inertia`
+- [Settings Vue](settings.md) — `module-billing-settings-vue-inertia`
+- [Theme Support Vue](theme-support.md) — `module-billing-theme-support-vue-inertia`
+- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-billing-two-factor-authentication-vue-inertia`
+- [Webhooks Vue](webhooks.md) — `module-billing-webhooks-vue-inertia`

@@ -1,21 +1,60 @@
-# Liberu Real Estate — module journeys
+# Real Estate — Module User Guides
 
-These pages describe what an end user sees when this module is enabled. They are shared by public web, authenticated portal, staff web, and mobile experiences where applicable.
+End-user guides for each Real Estate module.
 
-| Module | User guide | Developer source |
-| --- | --- | --- |
-| Instructions | [Guide](instructions.md) | [features](../../../../projects/real-estate/features/instructions.md) |
-| Lettings | [Guide](lettings.md) | [features](../../../../projects/real-estate/features/lettings.md) |
-| Listings | [Guide](listings.md) | [features](../../../../projects/real-estate/features/listings.md) |
-| Marketing | [Guide](marketing.md) | [features](../../../../projects/real-estate/features/marketing.md) |
-| Matching | [Guide](matching.md) | [features](../../../../projects/real-estate/features/matching.md) |
-| Media AND Documents | [Guide](media-and-documents.md) | [features](../../../../projects/real-estate/features/media-and-documents.md) |
-| Offers | [Guide](offers.md) | [features](../../../../projects/real-estate/features/offers.md) |
-| Parties | [Guide](parties.md) | [features](../../../../projects/real-estate/features/parties.md) |
-| Portals AND Reporting | [Guide](portals-and-reporting.md) | [features](../../../../projects/real-estate/features/portals-and-reporting.md) |
-| Properties | [Guide](properties.md) | [features](../../../../projects/real-estate/features/properties.md) |
-| Property Management | [Guide](property-management.md) | [features](../../../../projects/real-estate/features/property-management.md) |
-| Real Estate Core | [Guide](real-estate-core.md) | [features](../../../../projects/real-estate/features/real-estate-core.md) |
-| Sales Progression | [Guide](sales-progression.md) | [features](../../../../projects/real-estate/features/sales-progression.md) |
-| Valuations | [Guide](valuations.md) | [features](../../../../projects/real-estate/features/valuations.md) |
-| Viewings | [Guide](viewings.md) | [features](../../../../projects/real-estate/features/viewings.md) |
+- [.graphify](.graphify.md)
+- [Activity Comments](activity-comments.md)
+- [Analytics Core](analytics-core.md)
+- [Analytics Google](analytics-google.md)
+- [Analytics Meta](analytics-meta.md)
+- [Api](api.md)
+- [Api Access](api-access.md)
+- [Application](application.md)
+- [Audit](audit.md)
+- [Core](core.md)
+- [Currency Context](currency-context.md)
+- [Developer Experience](developer-experience.md)
+- [Feature Flags](feature-flags.md)
+- [Features](features.md)
+- [Filament](filament.md)
+- [Files Media](files-media.md)
+- [Identity Core](identity-core.md)
+- [Identity Socialstream](identity-socialstream.md)
+- [Import Export](import-export.md)
+- [Integrations](integrations.md)
+- [Jetstream Bridge](jetstream-bridge.md)
+- [Livewire](livewire.md)
+- [Localization Core](localization-core.md)
+- [Localization Mymemory](localization-mymemory.md)
+- [Module Manager](module-manager.md)
+- [Notifications](notifications.md)
+- [Observability](observability.md)
+- [Organizations Teams](organizations-teams.md)
+- [Profiles](profiles.md)
+- [Real Estate Core](real-estate-core.md)
+- [Real Estate Instructions](real-estate-instructions.md)
+- [Real Estate Lettings](real-estate-lettings.md)
+- [Real Estate Listings](real-estate-listings.md)
+- [Real Estate Marketing](real-estate-marketing.md)
+- [Real Estate Matching](real-estate-matching.md)
+- [Real Estate Media And Documents](real-estate-media-and-documents.md)
+- [Real Estate Offers](real-estate-offers.md)
+- [Real Estate Onthemarket](real-estate-onthemarket.md)
+- [Real Estate Parties](real-estate-parties.md)
+- [Real Estate Portals Reporting](real-estate-portals-reporting.md)
+- [Real Estate Properties](real-estate-properties.md)
+- [Real Estate Property Management](real-estate-property-management.md)
+- [Real Estate Rightmove](real-estate-rightmove.md)
+- [Real Estate Sales Progression](real-estate-sales-progression.md)
+- [Real Estate Valuations](real-estate-valuations.md)
+- [Real Estate Viewings](real-estate-viewings.md)
+- [Real Estate Vr Design](real-estate-vr-design.md)
+- [Real Estate Zoopla](real-estate-zoopla.md)
+- [Roles Permissions](roles-permissions.md)
+- [Scheduler Queues](scheduler-queues.md)
+- [Search](search.md)
+- [Sessions Devices](sessions-devices.md)
+- [Settings](settings.md)
+- [Theme Support](theme-support.md)
+- [Two Factor Authentication](two-factor-authentication.md)
+- [Webhooks](webhooks.md)

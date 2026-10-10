@@ -1,23 +1,54 @@
 # Genealogy Feature Specifications
 
-**Source:** [GENEALOGY.md](../GENEALOGY.md)  
-**Architecture:** [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md) · [DOCUMENTATION.md](../GENEALOGY.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Module plan
-
-- [Genealogy Core](genealogy-core.md) — `module-genealogy-core`
-- [People](people.md) — `module-genealogy-people`
-- [Relationships](relationships.md) — `module-genealogy-relationships`
-- [Evidence](evidence.md) — `module-genealogy-evidence`
-- [Research](research.md) — `module-genealogy-research`
-- [Places](places.md) — `module-genealogy-places`
-- [Timeline](timeline.md) — `module-genealogy-timeline`
-- [Tree Viewer](tree-viewer.md) — `module-genealogy-tree-viewer`
+- [Activity Comments](activity-comments.md) — `module-genealogy-activity-comments`
+- [Analytics Core](analytics-core.md) — `module-genealogy-analytics-core`
+- [Analytics Google](analytics-google.md) — `module-genealogy-analytics-google`
+- [Analytics Meta](analytics-meta.md) — `module-genealogy-analytics-meta`
+- [Api Access](api-access.md) — `module-genealogy-api-access`
+- [Application](application.md) — `module-genealogy-application`
+- [Audit](audit.md) — `module-genealogy-audit`
+- [Currency Context](currency-context.md) — `module-genealogy-currency-context`
+- [Developer Experience](developer-experience.md) — `module-genealogy-developer-experience`
+- [Feature Flags](feature-flags.md) — `module-genealogy-feature-flags`
+- [Files Media](files-media.md) — `module-genealogy-files-media`
+- [Genealogy Collaboration](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration`
+- [Genealogy Core](genealogy-core.md) — `module-genealogy-genealogy-core`
+- [Genealogy Discovery](genealogy-discovery.md) — `module-genealogy-genealogy-discovery`
+- [Genealogy Dna](genealogy-dna.md) — `module-genealogy-genealogy-dna`
+- [Genealogy Evidence](genealogy-evidence.md) — `module-genealogy-genealogy-evidence`
+- [Genealogy Gamification](genealogy-gamification.md) — `module-genealogy-genealogy-gamification`
+- [Genealogy Import Export](genealogy-import-export.md) — `module-genealogy-genealogy-import-export`
+- [Genealogy Media](genealogy-media.md) — `module-genealogy-genealogy-media`
+- [Genealogy People](genealogy-people.md) — `module-genealogy-genealogy-people`
+- [Genealogy Places](genealogy-places.md) — `module-genealogy-genealogy-places`
+- [Genealogy Relationships](genealogy-relationships.md) — `module-genealogy-genealogy-relationships`
+- [Genealogy Reports](genealogy-reports.md) — `module-genealogy-genealogy-reports`
+- [Genealogy Research](genealogy-research.md) — `module-genealogy-genealogy-research`
+- [Genealogy Timeline](genealogy-timeline.md) — `module-genealogy-genealogy-timeline`
+- [Genealogy Tree Viewer](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer`
+- [Identity Core](identity-core.md) — `module-genealogy-identity-core`
+- [Identity Socialstream](identity-socialstream.md) — `module-genealogy-identity-socialstream`
 - [Import Export](import-export.md) — `module-genealogy-import-export`
-- [DNA](dna.md) — `module-genealogy-dna`
-- [Media](media.md) — `module-genealogy-media`
-- [Collaboration](collaboration.md) — `module-genealogy-collaboration`
-- [Discovery](discovery.md) — `module-genealogy-discovery`
-- [Reports](reports.md) — `module-genealogy-reports`
+- [Integrations](integrations.md) — `module-genealogy-integrations`
+- [Jetstream Bridge](jetstream-bridge.md) — `module-genealogy-jetstream-bridge`
+- [Liberu Business Workflow Reconciliation](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation`
+- [Liberu Executive Insights](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights`
+- [Liberu Platform Orchestration](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration`
+- [Liberu Revenue And Care Orchestration](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration`
+- [Localization Core](localization-core.md) — `module-genealogy-localization-core`
+- [Localization Mymemory](localization-mymemory.md) — `module-genealogy-localization-mymemory`
+- [Module Manager](module-manager.md) — `module-genealogy-module-manager`
+- [Notifications](notifications.md) — `module-genealogy-notifications`
+- [Observability](observability.md) — `module-genealogy-observability`
+- [Organizations Teams](organizations-teams.md) — `module-genealogy-organizations-teams`
+- [Profiles](profiles.md) — `module-genealogy-profiles`
+- [Roles Permissions](roles-permissions.md) — `module-genealogy-roles-permissions`
+- [Scheduler Queues](scheduler-queues.md) — `module-genealogy-scheduler-queues`
+- [Search](search.md) — `module-genealogy-search`
+- [Sessions Devices](sessions-devices.md) — `module-genealogy-sessions-devices`
+- [Settings](settings.md) — `module-genealogy-settings`
+- [Theme Support](theme-support.md) — `module-genealogy-theme-support`
+- [Two Factor Authentication](two-factor-authentication.md) — `module-genealogy-two-factor-authentication`
+- [Webhooks](webhooks.md) — `module-genealogy-webhooks`

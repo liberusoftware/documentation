@@ -1,46 +1,50 @@
-# Control Panel React Native + Expo implementations
+# Control Panel React Native + Expo Implementations
 
-**Scope:** [Control Panel](../CONTROL-PANEL.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [React Native technology](../../../technologies/REACT-NATIVE.md) · [React Native standard](../../../standards/REACT-NATIVE.md)
+Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-This index defines the optional React Native + Expo adapter boundary for the Control Panel project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-react-native`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [React Native + Expo module standard](../../../modules/react-native/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 15 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                                      | Package                                              | Core                                  | API                                 |
-| ------------------------------------------- | ---------------------------------------------------- | ------------------------------------- | ----------------------------------- |
-| [Accounts](accounts.md)                     | module-control-panel-accounts-react-native           | [Core](../core/accounts.md)           | [API](../api/accounts.md)           |
-| [Api And Automation](api-and-automation.md) | module-control-panel-api-and-automation-react-native | [Core](../core/api-and-automation.md) | [API](../api/api-and-automation.md) |
-| [Backups](backups.md)                       | module-control-panel-backups-react-native            | [Core](../core/backups.md)            | [API](../api/backups.md)            |
-| [Certificates](certificates.md)             | module-control-panel-certificates-react-native       | [Core](../core/certificates.md)       | [API](../api/certificates.md)       |
-| [Containers](containers.md)                 | module-control-panel-containers-react-native         | [Core](../core/containers.md)         | [API](../api/containers.md)         |
-| [Control Core](control-core.md)             | module-control-panel-control-core-react-native       | [Core](../core/control-core.md)       | [API](../api/control-core.md)       |
-| [Databases](databases.md)                   | module-control-panel-databases-react-native          | [Core](../core/databases.md)          | [API](../api/databases.md)          |
-| [Dns](dns.md)                               | module-control-panel-dns-react-native                | [Core](../core/dns.md)                | [API](../api/dns.md)                |
-| [Files](files.md)                           | module-control-panel-files-react-native              | [Core](../core/files.md)              | [API](../api/files.md)              |
-| [Kubernetes](kubernetes.md)                 | module-control-panel-kubernetes-react-native         | [Core](../core/kubernetes.md)         | [API](../api/kubernetes.md)         |
-| [Mail](mail.md)                             | module-control-panel-mail-react-native               | [Core](../core/mail.md)               | [API](../api/mail.md)               |
-| [Monitoring](monitoring.md)                 | module-control-panel-monitoring-react-native         | [Core](../core/monitoring.md)         | [API](../api/monitoring.md)         |
-| [Os Adapters](os-adapters.md)               | module-control-panel-os-adapters-react-native        | [Core](../core/os-adapters.md)        | [API](../api/os-adapters.md)        |
-| [Security](security.md)                     | module-control-panel-security-react-native           | [Core](../core/security.md)           | [API](../api/security.md)           |
-| [Web Hosting](web-hosting.md)               | module-control-panel-web-hosting-react-native        | [Core](../core/web-hosting.md)        | [API](../api/web-hosting.md)        |
+- [Activity Comments React Native](activity-comments.md) — `module-control-panel-activity-comments-react-native`
+- [Analytics Core React Native](analytics-core.md) — `module-control-panel-analytics-core-react-native`
+- [Analytics Google React Native](analytics-google.md) — `module-control-panel-analytics-google-react-native`
+- [Analytics Meta React Native](analytics-meta.md) — `module-control-panel-analytics-meta-react-native`
+- [Api Access React Native](api-access.md) — `module-control-panel-api-access-react-native`
+- [Application React Native](application.md) — `module-control-panel-application-react-native`
+- [Audit React Native](audit.md) — `module-control-panel-audit-react-native`
+- [Control Panel Accounts React Native](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-react-native`
+- [Control Panel Api And Automation React Native](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-react-native`
+- [Control Panel Backups React Native](control-panel-backups.md) — `module-control-panel-control-panel-backups-react-native`
+- [Control Panel Certificates React Native](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-react-native`
+- [Control Panel Containers React Native](control-panel-containers.md) — `module-control-panel-control-panel-containers-react-native`
+- [Control Panel Control Core React Native](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-react-native`
+- [Control Panel Databases React Native](control-panel-databases.md) — `module-control-panel-control-panel-databases-react-native`
+- [Control Panel Dns React Native](control-panel-dns.md) — `module-control-panel-control-panel-dns-react-native`
+- [Control Panel Files React Native](control-panel-files.md) — `module-control-panel-control-panel-files-react-native`
+- [Control Panel Kubernetes React Native](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-react-native`
+- [Control Panel Mail React Native](control-panel-mail.md) — `module-control-panel-control-panel-mail-react-native`
+- [Control Panel Monitoring React Native](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-react-native`
+- [Control Panel Os Adapters React Native](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-react-native`
+- [Control Panel Security React Native](control-panel-security.md) — `module-control-panel-control-panel-security-react-native`
+- [Control Panel Web Hosting React Native](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-react-native`
+- [Currency Context React Native](currency-context.md) — `module-control-panel-currency-context-react-native`
+- [Developer Experience React Native](developer-experience.md) — `module-control-panel-developer-experience-react-native`
+- [Feature Flags React Native](feature-flags.md) — `module-control-panel-feature-flags-react-native`
+- [Files Media React Native](files-media.md) — `module-control-panel-files-media-react-native`
+- [Identity Core React Native](identity-core.md) — `module-control-panel-identity-core-react-native`
+- [Identity Socialstream React Native](identity-socialstream.md) — `module-control-panel-identity-socialstream-react-native`
+- [Import Export React Native](import-export.md) — `module-control-panel-import-export-react-native`
+- [Integrations React Native](integrations.md) — `module-control-panel-integrations-react-native`
+- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-react-native`
+- [Localization Core React Native](localization-core.md) — `module-control-panel-localization-core-react-native`
+- [Localization Mymemory React Native](localization-mymemory.md) — `module-control-panel-localization-mymemory-react-native`
+- [Module Manager React Native](module-manager.md) — `module-control-panel-module-manager-react-native`
+- [Notifications React Native](notifications.md) — `module-control-panel-notifications-react-native`
+- [Observability React Native](observability.md) — `module-control-panel-observability-react-native`
+- [Organizations Teams React Native](organizations-teams.md) — `module-control-panel-organizations-teams-react-native`
+- [Profiles React Native](profiles.md) — `module-control-panel-profiles-react-native`
+- [Roles Permissions React Native](roles-permissions.md) — `module-control-panel-roles-permissions-react-native`
+- [Scheduler Queues React Native](scheduler-queues.md) — `module-control-panel-scheduler-queues-react-native`
+- [Search React Native](search.md) — `module-control-panel-search-react-native`
+- [Sessions Devices React Native](sessions-devices.md) — `module-control-panel-sessions-devices-react-native`
+- [Settings React Native](settings.md) — `module-control-panel-settings-react-native`
+- [Theme Support React Native](theme-support.md) — `module-control-panel-theme-support-react-native`
+- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-react-native`
+- [Webhooks React Native](webhooks.md) — `module-control-panel-webhooks-react-native`

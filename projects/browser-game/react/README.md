@@ -1,47 +1,50 @@
-# Browser-Game React 19.2 + Inertia 3 Implementations
+# Browser Game React + Inertia Implementations
 
-**Source:** [BROWSER-GAME.md](../BROWSER-GAME.md)
-**Architecture:** [REACT.md](../BROWSER-GAME.md) · [API module index](../api/README.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)
+Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Game Core React + Inertia](game-core.md) — `module-browser-game-game-core-react-inertia`
-- [Accounts React + Inertia](accounts.md) — `module-browser-game-accounts-react-inertia`
-- [Characters React + Inertia](characters.md) — `module-browser-game-characters-react-inertia`
-- [World React + Inertia](world.md) — `module-browser-game-world-react-inertia`
-- [Combat React + Inertia](combat.md) — `module-browser-game-combat-react-inertia`
-- [Quests React + Inertia](quests.md) — `module-browser-game-quests-react-inertia`
-- [Items React + Inertia](items.md) — `module-browser-game-items-react-inertia`
-- [Crafting React + Inertia](crafting.md) — `module-browser-game-crafting-react-inertia`
-- [Economy React + Inertia](economy.md) — `module-browser-game-economy-react-inertia`
-- [Social React + Inertia](social.md) — `module-browser-game-social-react-inertia`
-- [Competition React + Inertia](competition.md) — `module-browser-game-competition-react-inertia`
-- [Collections React + Inertia](collections.md) — `module-browser-game-collections-react-inertia`
-- [Live Ops React + Inertia](live-ops.md) — `module-browser-game-live-ops-react-inertia`
-- [Commerce React + Inertia](commerce.md) — `module-browser-game-commerce-react-inertia`
-- [Moderation and Analytics React + Inertia](moderation-and-analytics.md) — `module-browser-game-moderation-and-analytics-react-inertia`
-
-**Source:** [BROWSER-GAME.md](../BROWSER-GAME.md)
-**Architecture:** [REACT.md](../BROWSER-GAME.md) · [API module index](../api/README.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)
-
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Game Core React + Inertia](game-core.md) — `module-browser-game-game-core-react-inertia`
-- [Accounts React + Inertia](accounts.md) — `module-browser-game-accounts-react-inertia`
-- [Characters React + Inertia](characters.md) — `module-browser-game-characters-react-inertia`
-- [World React + Inertia](world.md) — `module-browser-game-world-react-inertia`
-- [Combat React + Inertia](combat.md) — `module-browser-game-combat-react-inertia`
-- [Quests React + Inertia](quests.md) — `module-browser-game-quests-react-inertia`
-- [Items React + Inertia](items.md) — `module-browser-game-items-react-inertia`
-- [Crafting React + Inertia](crafting.md) — `module-browser-game-crafting-react-inertia`
-- [Economy React + Inertia](economy.md) — `module-browser-game-economy-react-inertia`
-- [Social React + Inertia](social.md) — `module-browser-game-social-react-inertia`
-- [Competition React + Inertia](competition.md) — `module-browser-game-competition-react-inertia`
-- [Collections React + Inertia](collections.md) — `module-browser-game-collections-react-inertia`
-- [Live Ops React + Inertia](live-ops.md) — `module-browser-game-live-ops-react-inertia`
-- [Commerce React + Inertia](commerce.md) — `module-browser-game-commerce-react-inertia`
-- [Moderation and Analytics React + Inertia](moderation-and-analytics.md) — `module-browser-game-moderation-and-analytics-react-inertia`
+- [Activity Comments React](activity-comments.md) — `module-browser-game-activity-comments-react-inertia`
+- [Analytics Core React](analytics-core.md) — `module-browser-game-analytics-core-react-inertia`
+- [Analytics Google React](analytics-google.md) — `module-browser-game-analytics-google-react-inertia`
+- [Analytics Meta React](analytics-meta.md) — `module-browser-game-analytics-meta-react-inertia`
+- [Api Access React](api-access.md) — `module-browser-game-api-access-react-inertia`
+- [Application React](application.md) — `module-browser-game-application-react-inertia`
+- [Audit React](audit.md) — `module-browser-game-audit-react-inertia`
+- [Browser Game Accounts React](browser-game-accounts.md) — `module-browser-game-browser-game-accounts-react-inertia`
+- [Browser Game Characters React](browser-game-characters.md) — `module-browser-game-browser-game-characters-react-inertia`
+- [Browser Game Collections React](browser-game-collections.md) — `module-browser-game-browser-game-collections-react-inertia`
+- [Browser Game Combat React](browser-game-combat.md) — `module-browser-game-browser-game-combat-react-inertia`
+- [Browser Game Commerce React](browser-game-commerce.md) — `module-browser-game-browser-game-commerce-react-inertia`
+- [Browser Game Competition React](browser-game-competition.md) — `module-browser-game-browser-game-competition-react-inertia`
+- [Browser Game Crafting React](browser-game-crafting.md) — `module-browser-game-browser-game-crafting-react-inertia`
+- [Browser Game Economy React](browser-game-economy.md) — `module-browser-game-browser-game-economy-react-inertia`
+- [Browser Game Game Core React](browser-game-game-core.md) — `module-browser-game-browser-game-game-core-react-inertia`
+- [Browser Game Items React](browser-game-items.md) — `module-browser-game-browser-game-items-react-inertia`
+- [Browser Game Live Ops React](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops-react-inertia`
+- [Browser Game Moderation And Analytics React](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics-react-inertia`
+- [Browser Game Quests React](browser-game-quests.md) — `module-browser-game-browser-game-quests-react-inertia`
+- [Browser Game Social React](browser-game-social.md) — `module-browser-game-browser-game-social-react-inertia`
+- [Browser Game World React](browser-game-world.md) — `module-browser-game-browser-game-world-react-inertia`
+- [Currency Context React](currency-context.md) — `module-browser-game-currency-context-react-inertia`
+- [Developer Experience React](developer-experience.md) — `module-browser-game-developer-experience-react-inertia`
+- [Feature Flags React](feature-flags.md) — `module-browser-game-feature-flags-react-inertia`
+- [Files Media React](files-media.md) — `module-browser-game-files-media-react-inertia`
+- [Identity Core React](identity-core.md) — `module-browser-game-identity-core-react-inertia`
+- [Identity Socialstream React](identity-socialstream.md) — `module-browser-game-identity-socialstream-react-inertia`
+- [Import Export React](import-export.md) — `module-browser-game-import-export-react-inertia`
+- [Integrations React](integrations.md) — `module-browser-game-integrations-react-inertia`
+- [Jetstream Bridge React](jetstream-bridge.md) — `module-browser-game-jetstream-bridge-react-inertia`
+- [Localization Core React](localization-core.md) — `module-browser-game-localization-core-react-inertia`
+- [Localization Mymemory React](localization-mymemory.md) — `module-browser-game-localization-mymemory-react-inertia`
+- [Module Manager React](module-manager.md) — `module-browser-game-module-manager-react-inertia`
+- [Notifications React](notifications.md) — `module-browser-game-notifications-react-inertia`
+- [Observability React](observability.md) — `module-browser-game-observability-react-inertia`
+- [Organizations Teams React](organizations-teams.md) — `module-browser-game-organizations-teams-react-inertia`
+- [Profiles React](profiles.md) — `module-browser-game-profiles-react-inertia`
+- [Roles Permissions React](roles-permissions.md) — `module-browser-game-roles-permissions-react-inertia`
+- [Scheduler Queues React](scheduler-queues.md) — `module-browser-game-scheduler-queues-react-inertia`
+- [Search React](search.md) — `module-browser-game-search-react-inertia`
+- [Sessions Devices React](sessions-devices.md) — `module-browser-game-sessions-devices-react-inertia`
+- [Settings React](settings.md) — `module-browser-game-settings-react-inertia`
+- [Theme Support React](theme-support.md) — `module-browser-game-theme-support-react-inertia`
+- [Two Factor Authentication React](two-factor-authentication.md) — `module-browser-game-two-factor-authentication-react-inertia`
+- [Webhooks React](webhooks.md) — `module-browser-game-webhooks-react-inertia`

@@ -1,126 +1,134 @@
-# CRM React Native + Expo implementations
+# CRM React Native + Expo Implementations
 
-**Scope:** [CRM](../CRM.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [React Native technology](../../../technologies/REACT-NATIVE.md) · [React Native standard](../../../standards/REACT-NATIVE.md)
+Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-This index defines the optional React Native + Expo adapter boundary for the CRM project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-react-native`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [React Native + Expo module standard](../../../modules/react-native/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 95 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                                                                | Package                                                 | Core                                               | API                                              |
-| --------------------------------------------------------------------- | ------------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------ |
-| [Account Based Marketing](account-based-marketing.md)                 | module-crm-account-based-marketing-react-native         | [Core](../core/account-based-marketing.md)         | [API](../api/account-based-marketing.md)         |
-| [Account Planning](account-planning.md)                               | module-crm-account-planning-react-native                | [Core](../core/account-planning.md)                | [API](../api/account-planning.md)                |
-| [Activities](activities.md)                                           | module-crm-activities-react-native                      | [Core](../core/activities.md)                      | [API](../api/activities.md)                      |
-| [Advertising](advertising.md)                                         | module-crm-advertising-react-native                     | [Core](../core/advertising.md)                     | [API](../api/advertising.md)                     |
-| [Advocacy](advocacy.md)                                               | module-crm-advocacy-react-native                        | [Core](../core/advocacy.md)                        | [API](../api/advocacy.md)                        |
-| [Affiliate Management](affiliate-management.md)                       | module-crm-affiliate-management-react-native            | [Core](../core/affiliate-management.md)            | [API](../api/affiliate-management.md)            |
-| [Agency Workspace](agency-workspace.md)                               | module-crm-agency-workspace-react-native                | [Core](../core/agency-workspace.md)                | [API](../api/agency-workspace.md)                |
-| [Ai Reception And Conversation](ai-reception-and-conversation.md)     | module-crm-ai-reception-and-conversation-react-native   | [Core](../core/ai-reception-and-conversation.md)   | [API](../api/ai-reception-and-conversation.md)   |
-| [Attribution](attribution.md)                                         | module-crm-attribution-react-native                     | [Core](../core/attribution.md)                     | [API](../api/attribution.md)                     |
-| [Business Process Management](business-process-management.md)         | module-crm-business-process-management-react-native     | [Core](../core/business-process-management.md)     | [API](../api/business-process-management.md)     |
-| [Campaigns](campaigns.md)                                             | module-crm-campaigns-react-native                       | [Core](../core/campaigns.md)                       | [API](../api/campaigns.md)                       |
-| [Case Management](case-management.md)                                 | module-crm-case-management-react-native                 | [Core](../core/case-management.md)                 | [API](../api/case-management.md)                 |
-| [Channel Gateway](channel-gateway.md)                                 | module-crm-channel-gateway-react-native                 | [Core](../core/channel-gateway.md)                 | [API](../api/channel-gateway.md)                 |
-| [Channel Sales](channel-sales.md)                                     | module-crm-channel-sales-react-native                   | [Core](../core/channel-sales.md)                   | [API](../api/channel-sales.md)                   |
-| [Chat And Bots](chat-and-bots.md)                                     | module-crm-chat-and-bots-react-native                   | [Core](../core/chat-and-bots.md)                   | [API](../api/chat-and-bots.md)                   |
-| [Client Onboarding](client-onboarding.md)                             | module-crm-client-onboarding-react-native               | [Core](../core/client-onboarding.md)               | [API](../api/client-onboarding.md)               |
-| [Collaboration](collaboration.md)                                     | module-crm-collaboration-react-native                   | [Core](../core/collaboration.md)                   | [API](../api/collaboration.md)                   |
-| [Communities](communities.md)                                         | module-crm-communities-react-native                     | [Core](../core/communities.md)                     | [API](../api/communities.md)                     |
-| [Consent And Preferences](consent-and-preferences.md)                 | module-crm-consent-and-preferences-react-native         | [Core](../core/consent-and-preferences.md)         | [API](../api/consent-and-preferences.md)         |
-| [Contact Center](contact-center.md)                                   | module-crm-contact-center-react-native                  | [Core](../core/contact-center.md)                  | [API](../api/contact-center.md)                  |
-| [Contracts](contracts.md)                                             | module-crm-contracts-react-native                       | [Core](../core/contracts.md)                       | [API](../api/contracts.md)                       |
-| [Conversation Analytics](conversation-analytics.md)                   | module-crm-conversation-analytics-react-native          | [Core](../core/conversation-analytics.md)          | [API](../api/conversation-analytics.md)          |
-| [Conversation Intelligence](conversation-intelligence.md)             | module-crm-conversation-intelligence-react-native       | [Core](../core/conversation-intelligence.md)       | [API](../api/conversation-intelligence.md)       |
-| [Conversion Optimization](conversion-optimization.md)                 | module-crm-conversion-optimization-react-native         | [Core](../core/conversion-optimization.md)         | [API](../api/conversion-optimization.md)         |
-| [Cpq](cpq.md)                                                         | module-crm-cpq-react-native                             | [Core](../core/cpq.md)                             | [API](../api/cpq.md)                             |
-| [Crm Analytics](crm-analytics.md)                                     | module-crm-crm-analytics-react-native                   | [Core](../core/crm-analytics.md)                   | [API](../api/crm-analytics.md)                   |
-| [Crm Automation Pack](crm-automation-pack.md)                         | module-crm-crm-automation-pack-react-native             | [Core](../core/crm-automation-pack.md)             | [API](../api/crm-automation-pack.md)             |
-| [Crm Copilot](crm-copilot.md)                                         | module-crm-crm-copilot-react-native                     | [Core](../core/crm-copilot.md)                     | [API](../api/crm-copilot.md)                     |
-| [Crm Core](crm-core.md)                                               | module-crm-crm-core-react-native                        | [Core](../core/crm-core.md)                        | [API](../api/crm-core.md)                        |
-| [Crm Documents](crm-documents.md)                                     | module-crm-crm-documents-react-native                   | [Core](../core/crm-documents.md)                   | [API](../api/crm-documents.md)                   |
-| [Crm Product Workspace](crm-product-workspace.md)                     | module-crm-crm-product-workspace-react-native           | [Core](../core/crm-product-workspace.md)           | [API](../api/crm-product-workspace.md)           |
-| [Crm Search](crm-search.md)                                           | module-crm-crm-search-react-native                      | [Core](../core/crm-search.md)                      | [API](../api/crm-search.md)                      |
-| [Customer Data Model](customer-data-model.md)                         | module-crm-customer-data-model-react-native             | [Core](../core/customer-data-model.md)             | [API](../api/customer-data-model.md)             |
-| [Customer Data Platform](customer-data-platform.md)                   | module-crm-customer-data-platform-react-native          | [Core](../core/customer-data-platform.md)          | [API](../api/customer-data-platform.md)          |
-| [Customer Self Service](customer-self-service.md)                     | module-crm-customer-self-service-react-native           | [Core](../core/customer-self-service.md)           | [API](../api/customer-self-service.md)           |
-| [Customer Success](customer-success.md)                               | module-crm-customer-success-react-native                | [Core](../core/customer-success.md)                | [API](../api/customer-success.md)                |
-| [Data Operations](data-operations.md)                                 | module-crm-data-operations-react-native                 | [Core](../core/data-operations.md)                 | [API](../api/data-operations.md)                 |
-| [Deal Registration](deal-registration.md)                             | module-crm-deal-registration-react-native               | [Core](../core/deal-registration.md)               | [API](../api/deal-registration.md)               |
-| [Dialer And Outreach](dialer-and-outreach.md)                         | module-crm-dialer-and-outreach-react-native             | [Core](../core/dialer-and-outreach.md)             | [API](../api/dialer-and-outreach.md)             |
-| [Email Marketing](email-marketing.md)                                 | module-crm-email-marketing-react-native                 | [Core](../core/email-marketing.md)                 | [API](../api/email-marketing.md)                 |
-| [Email Productivity](email-productivity.md)                           | module-crm-email-productivity-react-native              | [Core](../core/email-productivity.md)              | [API](../api/email-productivity.md)              |
-| [Enrichment](enrichment.md)                                           | module-crm-enrichment-react-native                      | [Core](../core/enrichment.md)                      | [API](../api/enrichment.md)                      |
-| [Events And Webinars](events-and-webinars.md)                         | module-crm-events-and-webinars-react-native             | [Core](../core/events-and-webinars.md)             | [API](../api/events-and-webinars.md)             |
-| [Feedback And Voice Of Customer](feedback-and-voice-of-customer.md)   | module-crm-feedback-and-voice-of-customer-react-native  | [Core](../core/feedback-and-voice-of-customer.md)  | [API](../api/feedback-and-voice-of-customer.md)  |
-| [Field Service Coordination](field-service-coordination.md)           | module-crm-field-service-coordination-react-native      | [Core](../core/field-service-coordination.md)      | [API](../api/field-service-coordination.md)      |
-| [Forecasting](forecasting.md)                                         | module-crm-forecasting-react-native                     | [Core](../core/forecasting.md)                     | [API](../api/forecasting.md)                     |
-| [Forms And Surveys](forms-and-surveys.md)                             | module-crm-forms-and-surveys-react-native               | [Core](../core/forms-and-surveys.md)               | [API](../api/forms-and-surveys.md)               |
-| [Goals And Performance](goals-and-performance.md)                     | module-crm-goals-and-performance-react-native           | [Core](../core/goals-and-performance.md)           | [API](../api/goals-and-performance.md)           |
-| [Journey Orchestration](journey-orchestration.md)                     | module-crm-journey-orchestration-react-native           | [Core](../core/journey-orchestration.md)           | [API](../api/journey-orchestration.md)           |
-| [Knowledge](knowledge.md)                                             | module-crm-knowledge-react-native                       | [Core](../core/knowledge.md)                       | [API](../api/knowledge.md)                       |
-| [Landing Pages And Funnels](landing-pages-and-funnels.md)             | module-crm-landing-pages-and-funnels-react-native       | [Core](../core/landing-pages-and-funnels.md)       | [API](../api/landing-pages-and-funnels.md)       |
-| [Lead Capture](lead-capture.md)                                       | module-crm-lead-capture-react-native                    | [Core](../core/lead-capture.md)                    | [API](../api/lead-capture.md)                    |
-| [Lead Qualification](lead-qualification.md)                           | module-crm-lead-qualification-react-native              | [Core](../core/lead-qualification.md)              | [API](../api/lead-qualification.md)              |
-| [Learning And Courses](learning-and-courses.md)                       | module-crm-learning-and-courses-react-native            | [Core](../core/learning-and-courses.md)            | [API](../api/learning-and-courses.md)            |
-| [Loyalty](loyalty.md)                                                 | module-crm-loyalty-react-native                         | [Core](../core/loyalty.md)                         | [API](../api/loyalty.md)                         |
-| [Marketing Agent](marketing-agent.md)                                 | module-crm-marketing-agent-react-native                 | [Core](../core/marketing-agent.md)                 | [API](../api/marketing-agent.md)                 |
-| [Marketing Development Funds](marketing-development-funds.md)         | module-crm-marketing-development-funds-react-native     | [Core](../core/marketing-development-funds.md)     | [API](../api/marketing-development-funds.md)     |
-| [Marketing Resources](marketing-resources.md)                         | module-crm-marketing-resources-react-native             | [Core](../core/marketing-resources.md)             | [API](../api/marketing-resources.md)             |
-| [Memberships](memberships.md)                                         | module-crm-memberships-react-native                     | [Core](../core/memberships.md)                     | [API](../api/memberships.md)                     |
-| [Mobile Messaging](mobile-messaging.md)                               | module-crm-mobile-messaging-react-native                | [Core](../core/mobile-messaging.md)                | [API](../api/mobile-messaging.md)                |
-| [Omnichannel Service](omnichannel-service.md)                         | module-crm-omnichannel-service-react-native             | [Core](../core/omnichannel-service.md)             | [API](../api/omnichannel-service.md)             |
-| [Orders And Payments Workspace](orders-and-payments-workspace.md)     | module-crm-orders-and-payments-workspace-react-native   | [Core](../core/orders-and-payments-workspace.md)   | [API](../api/orders-and-payments-workspace.md)   |
-| [Partner Relationship Management](partner-relationship-management.md) | module-crm-partner-relationship-management-react-native | [Core](../core/partner-relationship-management.md) | [API](../api/partner-relationship-management.md) |
-| [Personalization](personalization.md)                                 | module-crm-personalization-react-native                 | [Core](../core/personalization.md)                 | [API](../api/personalization.md)                 |
-| [Playbooks And Enablement](playbooks-and-enablement.md)               | module-crm-playbooks-and-enablement-react-native        | [Core](../core/playbooks-and-enablement.md)        | [API](../api/playbooks-and-enablement.md)        |
-| [Predictive Models](predictive-models.md)                             | module-crm-predictive-models-react-native               | [Core](../core/predictive-models.md)               | [API](../api/predictive-models.md)               |
-| [Projects](projects.md)                                               | module-crm-projects-react-native                        | [Core](../core/projects.md)                        | [API](../api/projects.md)                        |
-| [Proposals And Quotes](proposals-and-quotes.md)                       | module-crm-proposals-and-quotes-react-native            | [Core](../core/proposals-and-quotes.md)            | [API](../api/proposals-and-quotes.md)            |
-| [Prospecting Agent](prospecting-agent.md)                             | module-crm-prospecting-agent-react-native               | [Core](../core/prospecting-agent.md)               | [API](../api/prospecting-agent.md)               |
-| [Prospecting](prospecting.md)                                         | module-crm-prospecting-react-native                     | [Core](../core/prospecting.md)                     | [API](../api/prospecting.md)                     |
-| [Quotas And Incentives](quotas-and-incentives.md)                     | module-crm-quotas-and-incentives-react-native           | [Core](../core/quotas-and-incentives.md)           | [API](../api/quotas-and-incentives.md)           |
-| [Referrals](referrals.md)                                             | module-crm-referrals-react-native                       | [Core](../core/referrals.md)                       | [API](../api/referrals.md)                       |
-| [Reputation Management](reputation-management.md)                     | module-crm-reputation-management-react-native           | [Core](../core/reputation-management.md)           | [API](../api/reputation-management.md)           |
-| [Resource Planning](resource-planning.md)                             | module-crm-resource-planning-react-native               | [Core](../core/resource-planning.md)               | [API](../api/resource-planning.md)               |
-| [Revenue Intelligence](revenue-intelligence.md)                       | module-crm-revenue-intelligence-react-native            | [Core](../core/revenue-intelligence.md)            | [API](../api/revenue-intelligence.md)            |
-| [Revenue Lifecycle](revenue-lifecycle.md)                             | module-crm-revenue-lifecycle-react-native               | [Core](../core/revenue-lifecycle.md)               | [API](../api/revenue-lifecycle.md)               |
-| [Routing](routing.md)                                                 | module-crm-routing-react-native                         | [Core](../core/routing.md)                         | [API](../api/routing.md)                         |
-| [Saas Packaging](saas-packaging.md)                                   | module-crm-saas-packaging-react-native                  | [Core](../core/saas-packaging.md)                  | [API](../api/saas-packaging.md)                  |
-| [Sales Engagement](sales-engagement.md)                               | module-crm-sales-engagement-react-native                | [Core](../core/sales-engagement.md)                | [API](../api/sales-engagement.md)                |
-| [Sales Pipelines](sales-pipelines.md)                                 | module-crm-sales-pipelines-react-native                 | [Core](../core/sales-pipelines.md)                 | [API](../api/sales-pipelines.md)                 |
-| [Sales Workspace](sales-workspace.md)                                 | module-crm-sales-workspace-react-native                 | [Core](../core/sales-workspace.md)                 | [API](../api/sales-workspace.md)                 |
-| [Sandbox And Release Management](sandbox-and-release-management.md)   | module-crm-sandbox-and-release-management-react-native  | [Core](../core/sandbox-and-release-management.md)  | [API](../api/sandbox-and-release-management.md)  |
-| [Scheduling](scheduling.md)                                           | module-crm-scheduling-react-native                      | [Core](../core/scheduling.md)                      | [API](../api/scheduling.md)                      |
-| [Segmentation](segmentation.md)                                       | module-crm-segmentation-react-native                    | [Core](../core/segmentation.md)                    | [API](../api/segmentation.md)                    |
-| [Service Agent](service-agent.md)                                     | module-crm-service-agent-react-native                   | [Core](../core/service-agent.md)                   | [API](../api/service-agent.md)                   |
-| [Service Analytics](service-analytics.md)                             | module-crm-service-analytics-react-native               | [Core](../core/service-analytics.md)               | [API](../api/service-analytics.md)               |
-| [Sla And Entitlements](sla-and-entitlements.md)                       | module-crm-sla-and-entitlements-react-native            | [Core](../core/sla-and-entitlements.md)            | [API](../api/sla-and-entitlements.md)            |
-| [Telephony](telephony.md)                                             | module-crm-telephony-react-native                       | [Core](../core/telephony.md)                       | [API](../api/telephony.md)                       |
-| [Templates And Snapshots](templates-and-snapshots.md)                 | module-crm-templates-and-snapshots-react-native         | [Core](../core/templates-and-snapshots.md)         | [API](../api/templates-and-snapshots.md)         |
-| [Territories And Ownership](territories-and-ownership.md)             | module-crm-territories-and-ownership-react-native       | [Core](../core/territories-and-ownership.md)       | [API](../api/territories-and-ownership.md)       |
-| [Unified Conversations](unified-conversations.md)                     | module-crm-unified-conversations-react-native           | [Core](../core/unified-conversations.md)           | [API](../api/unified-conversations.md)           |
-| [Usage Wallet And Rebilling](usage-wallet-and-rebilling.md)           | module-crm-usage-wallet-and-rebilling-react-native      | [Core](../core/usage-wallet-and-rebilling.md)      | [API](../api/usage-wallet-and-rebilling.md)      |
-| [Web Intent](web-intent.md)                                           | module-crm-web-intent-react-native                      | [Core](../core/web-intent.md)                      | [API](../api/web-intent.md)                      |
-| [White Label](white-label.md)                                         | module-crm-white-label-react-native                     | [Core](../core/white-label.md)                     | [API](../api/white-label.md)                     |
-| [Work Management](work-management.md)                                 | module-crm-work-management-react-native                 | [Core](../core/work-management.md)                 | [API](../api/work-management.md)                 |
+- [Activity Comments React Native](activity-comments.md) — `module-crm-activity-comments-react-native`
+- [Analytics Contracts React Native](analytics-contracts.md) — `module-crm-analytics-contracts-react-native`
+- [Analytics Core React Native](analytics-core.md) — `module-crm-analytics-core-react-native`
+- [Analytics Google React Native](analytics-google.md) — `module-crm-analytics-google-react-native`
+- [Analytics Meta React Native](analytics-meta.md) — `module-crm-analytics-meta-react-native`
+- [Api Access React Native](api-access.md) — `module-crm-api-access-react-native`
+- [Application React Native](application.md) — `module-crm-application-react-native`
+- [Audit React Native](audit.md) — `module-crm-audit-react-native`
+- [Crm Account Based Marketing React Native](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing-react-native`
+- [Crm Account Planning React Native](crm-account-planning.md) — `module-crm-crm-account-planning-react-native`
+- [Crm Activities React Native](crm-activities.md) — `module-crm-crm-activities-react-native`
+- [Crm Advertising React Native](crm-advertising.md) — `module-crm-crm-advertising-react-native`
+- [Crm Advocacy React Native](crm-advocacy.md) — `module-crm-crm-advocacy-react-native`
+- [Crm Affiliate Management React Native](crm-affiliate-management.md) — `module-crm-crm-affiliate-management-react-native`
+- [Crm Agency Workspace React Native](crm-agency-workspace.md) — `module-crm-crm-agency-workspace-react-native`
+- [Crm Ai Reception And Conversation React Native](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation-react-native`
+- [Crm Analytics React Native](crm-analytics.md) — `module-crm-crm-analytics-react-native`
+- [Crm Attribution React Native](crm-attribution.md) — `module-crm-crm-attribution-react-native`
+- [Crm Automation Pack React Native](crm-automation-pack.md) — `module-crm-crm-automation-pack-react-native`
+- [Crm Business Process Management React Native](crm-business-process-management.md) — `module-crm-crm-business-process-management-react-native`
+- [Crm Campaigns React Native](crm-campaigns.md) — `module-crm-crm-campaigns-react-native`
+- [Crm Case Management React Native](crm-case-management.md) — `module-crm-crm-case-management-react-native`
+- [Crm Channel Gateway React Native](crm-channel-gateway.md) — `module-crm-crm-channel-gateway-react-native`
+- [Crm Channel Sales React Native](crm-channel-sales.md) — `module-crm-crm-channel-sales-react-native`
+- [Crm Chat And Bots React Native](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots-react-native`
+- [Crm Client Onboarding React Native](crm-client-onboarding.md) — `module-crm-crm-client-onboarding-react-native`
+- [Crm Collaboration React Native](crm-collaboration.md) — `module-crm-crm-collaboration-react-native`
+- [Crm Communities React Native](crm-communities.md) — `module-crm-crm-communities-react-native`
+- [Crm Consent And Preferences React Native](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences-react-native`
+- [Crm Contact Center React Native](crm-contact-center.md) — `module-crm-crm-contact-center-react-native`
+- [Crm Contracts React Native](crm-contracts.md) — `module-crm-crm-contracts-react-native`
+- [Crm Conversation Analytics React Native](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics-react-native`
+- [Crm Conversation Intelligence React Native](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence-react-native`
+- [Crm Conversion Optimization React Native](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization-react-native`
+- [Crm Copilot React Native](crm-copilot.md) — `module-crm-crm-copilot-react-native`
+- [Crm Core React Native](crm-core.md) — `module-crm-crm-core-react-native`
+- [Crm Cpq React Native](crm-cpq.md) — `module-crm-crm-cpq-react-native`
+- [Crm Customer Data Model React Native](crm-customer-data-model.md) — `module-crm-crm-customer-data-model-react-native`
+- [Crm Customer Data Platform React Native](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform-react-native`
+- [Crm Customer Self Service React Native](crm-customer-self-service.md) — `module-crm-crm-customer-self-service-react-native`
+- [Crm Customer Success React Native](crm-customer-success.md) — `module-crm-crm-customer-success-react-native`
+- [Crm Data Operations React Native](crm-data-operations.md) — `module-crm-crm-data-operations-react-native`
+- [Crm Deal Registration React Native](crm-deal-registration.md) — `module-crm-crm-deal-registration-react-native`
+- [Crm Dialer And Outreach React Native](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach-react-native`
+- [Crm Documents React Native](crm-documents.md) — `module-crm-crm-documents-react-native`
+- [Crm Email Marketing React Native](crm-email-marketing.md) — `module-crm-crm-email-marketing-react-native`
+- [Crm Email Productivity React Native](crm-email-productivity.md) — `module-crm-crm-email-productivity-react-native`
+- [Crm Enrichment React Native](crm-enrichment.md) — `module-crm-crm-enrichment-react-native`
+- [Crm Events And Webinars React Native](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars-react-native`
+- [Crm Feedback And Voice Of Customer React Native](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer-react-native`
+- [Crm Field Service Coordination React Native](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination-react-native`
+- [Crm Forecasting React Native](crm-forecasting.md) — `module-crm-crm-forecasting-react-native`
+- [Crm Forms And Surveys React Native](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys-react-native`
+- [Crm Goals And Performance React Native](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance-react-native`
+- [Crm Journey Orchestration React Native](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration-react-native`
+- [Crm Knowledge React Native](crm-knowledge.md) — `module-crm-crm-knowledge-react-native`
+- [Crm Landing Pages And Funnels React Native](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels-react-native`
+- [Crm Lead Capture React Native](crm-lead-capture.md) — `module-crm-crm-lead-capture-react-native`
+- [Crm Lead Qualification React Native](crm-lead-qualification.md) — `module-crm-crm-lead-qualification-react-native`
+- [Crm Learning And Courses React Native](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses-react-native`
+- [Crm Loyalty React Native](crm-loyalty.md) — `module-crm-crm-loyalty-react-native`
+- [Crm Marketing Agent React Native](crm-marketing-agent.md) — `module-crm-crm-marketing-agent-react-native`
+- [Crm Marketing Development Funds React Native](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds-react-native`
+- [Crm Marketing Resources React Native](crm-marketing-resources.md) — `module-crm-crm-marketing-resources-react-native`
+- [Crm Memberships React Native](crm-memberships.md) — `module-crm-crm-memberships-react-native`
+- [Crm Mobile Messaging React Native](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging-react-native`
+- [Crm Omnichannel Service React Native](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service-react-native`
+- [Crm Orders And Payments Workspace React Native](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace-react-native`
+- [Crm Partner Relationship Management React Native](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management-react-native`
+- [Crm Personalization React Native](crm-personalization.md) — `module-crm-crm-personalization-react-native`
+- [Crm Playbooks And Enablement React Native](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement-react-native`
+- [Crm Predictive Models React Native](crm-predictive-models.md) — `module-crm-crm-predictive-models-react-native`
+- [Crm Product Workspace React Native](crm-product-workspace.md) — `module-crm-crm-product-workspace-react-native`
+- [Crm Projects React Native](crm-projects.md) — `module-crm-crm-projects-react-native`
+- [Crm Proposals And Quotes React Native](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes-react-native`
+- [Crm Prospecting React Native](crm-prospecting.md) — `module-crm-crm-prospecting-react-native`
+- [Crm Prospecting Agent React Native](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent-react-native`
+- [Crm Quotas And Incentives React Native](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives-react-native`
+- [Crm Referrals React Native](crm-referrals.md) — `module-crm-crm-referrals-react-native`
+- [Crm Reputation Management React Native](crm-reputation-management.md) — `module-crm-crm-reputation-management-react-native`
+- [Crm Resource Planning React Native](crm-resource-planning.md) — `module-crm-crm-resource-planning-react-native`
+- [Crm Revenue Intelligence React Native](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence-react-native`
+- [Crm Revenue Lifecycle React Native](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle-react-native`
+- [Crm Routing React Native](crm-routing.md) — `module-crm-crm-routing-react-native`
+- [Crm Saas Packaging React Native](crm-saas-packaging.md) — `module-crm-crm-saas-packaging-react-native`
+- [Crm Sales Engagement React Native](crm-sales-engagement.md) — `module-crm-crm-sales-engagement-react-native`
+- [Crm Sales Pipelines React Native](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines-react-native`
+- [Crm Sales Workspace React Native](crm-sales-workspace.md) — `module-crm-crm-sales-workspace-react-native`
+- [Crm Sandbox And Release Management React Native](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management-react-native`
+- [Crm Sandbox Release React Native](crm-sandbox-release.md) — `module-crm-crm-sandbox-release-react-native`
+- [Crm Scheduling React Native](crm-scheduling.md) — `module-crm-crm-scheduling-react-native`
+- [Crm Search React Native](crm-search.md) — `module-crm-crm-search-react-native`
+- [Crm Segmentation React Native](crm-segmentation.md) — `module-crm-crm-segmentation-react-native`
+- [Crm Service Agent React Native](crm-service-agent.md) — `module-crm-crm-service-agent-react-native`
+- [Crm Service Analytics React Native](crm-service-analytics.md) — `module-crm-crm-service-analytics-react-native`
+- [Crm Sla And Entitlements React Native](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements-react-native`
+- [Crm Telephony React Native](crm-telephony.md) — `module-crm-crm-telephony-react-native`
+- [Crm Template Snapshots React Native](crm-template-snapshots.md) — `module-crm-crm-template-snapshots-react-native`
+- [Crm Templates And Snapshots React Native](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots-react-native`
+- [Crm Territories And Ownership React Native](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership-react-native`
+- [Crm Unified Conversations React Native](crm-unified-conversations.md) — `module-crm-crm-unified-conversations-react-native`
+- [Crm Usage Wallet And Rebilling React Native](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling-react-native`
+- [Crm Web Intent React Native](crm-web-intent.md) — `module-crm-crm-web-intent-react-native`
+- [Crm White Label React Native](crm-white-label.md) — `module-crm-crm-white-label-react-native`
+- [Crm Work Management React Native](crm-work-management.md) — `module-crm-crm-work-management-react-native`
+- [Currency Context React Native](currency-context.md) — `module-crm-currency-context-react-native`
+- [Developer Experience React Native](developer-experience.md) — `module-crm-developer-experience-react-native`
+- [Feature Flags React Native](feature-flags.md) — `module-crm-feature-flags-react-native`
+- [Files Media React Native](files-media.md) — `module-crm-files-media-react-native`
+- [Identity Core React Native](identity-core.md) — `module-crm-identity-core-react-native`
+- [Identity Socialstream React Native](identity-socialstream.md) — `module-crm-identity-socialstream-react-native`
+- [Import Export React Native](import-export.md) — `module-crm-import-export-react-native`
+- [Integrations React Native](integrations.md) — `module-crm-integrations-react-native`
+- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-crm-jetstream-bridge-react-native`
+- [Localization Contracts React Native](localization-contracts.md) — `module-crm-localization-contracts-react-native`
+- [Localization Core React Native](localization-core.md) — `module-crm-localization-core-react-native`
+- [Localization Mymemory React Native](localization-mymemory.md) — `module-crm-localization-mymemory-react-native`
+- [Module Manager React Native](module-manager.md) — `module-crm-module-manager-react-native`
+- [Notifications React Native](notifications.md) — `module-crm-notifications-react-native`
+- [Observability React Native](observability.md) — `module-crm-observability-react-native`
+- [Organizations Teams React Native](organizations-teams.md) — `module-crm-organizations-teams-react-native`
+- [Profiles React Native](profiles.md) — `module-crm-profiles-react-native`
+- [Roles Permissions React Native](roles-permissions.md) — `module-crm-roles-permissions-react-native`
+- [Scheduler Queues React Native](scheduler-queues.md) — `module-crm-scheduler-queues-react-native`
+- [Search React Native](search.md) — `module-crm-search-react-native`
+- [Sessions Devices React Native](sessions-devices.md) — `module-crm-sessions-devices-react-native`
+- [Settings React Native](settings.md) — `module-crm-settings-react-native`
+- [Theme Support React Native](theme-support.md) — `module-crm-theme-support-react-native`
+- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-crm-two-factor-authentication-react-native`
+- [Webhooks React Native](webhooks.md) — `module-crm-webhooks-react-native`

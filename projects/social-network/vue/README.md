@@ -1,47 +1,50 @@
-# Social-Network Vue 3 + Inertia 3 Implementations
+# Social Network Vue + Inertia Implementations
 
-**Source:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Social Core Vue + Inertia](social-core.md) — `module-social-network-social-core-vue-inertia`
-- [Profiles Vue + Inertia](profiles.md) — `module-social-network-profiles-vue-inertia`
-- [Social Graph Vue + Inertia](social-graph.md) — `module-social-network-social-graph-vue-inertia`
-- [Publishing Vue + Inertia](publishing.md) — `module-social-network-publishing-vue-inertia`
-- [Feed Vue + Inertia](feed.md) — `module-social-network-feed-vue-inertia`
-- [Engagement Vue + Inertia](engagement.md) — `module-social-network-engagement-vue-inertia`
-- [Media Vue + Inertia](media.md) — `module-social-network-media-vue-inertia`
-- [Communities Vue + Inertia](communities.md) — `module-social-network-communities-vue-inertia`
-- [Events Vue + Inertia](events.md) — `module-social-network-events-vue-inertia`
-- [Messaging Vue + Inertia](messaging.md) — `module-social-network-messaging-vue-inertia`
-- [Notifications Vue + Inertia](notifications.md) — `module-social-network-notifications-vue-inertia`
-- [Discovery Vue + Inertia](discovery.md) — `module-social-network-discovery-vue-inertia`
-- [Moderation Vue + Inertia](moderation.md) — `module-social-network-moderation-vue-inertia`
-- [Federation Vue + Inertia](federation.md) — `module-social-network-federation-vue-inertia`
-- [Analytics Vue + Inertia](analytics.md) — `module-social-network-analytics-vue-inertia`
-
-**Source:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
-
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Social Core Vue + Inertia](social-core.md) — `module-social-network-social-core-vue-inertia`
-- [Profiles Vue + Inertia](profiles.md) — `module-social-network-profiles-vue-inertia`
-- [Social Graph Vue + Inertia](social-graph.md) — `module-social-network-social-graph-vue-inertia`
-- [Publishing Vue + Inertia](publishing.md) — `module-social-network-publishing-vue-inertia`
-- [Feed Vue + Inertia](feed.md) — `module-social-network-feed-vue-inertia`
-- [Engagement Vue + Inertia](engagement.md) — `module-social-network-engagement-vue-inertia`
-- [Media Vue + Inertia](media.md) — `module-social-network-media-vue-inertia`
-- [Communities Vue + Inertia](communities.md) — `module-social-network-communities-vue-inertia`
-- [Events Vue + Inertia](events.md) — `module-social-network-events-vue-inertia`
-- [Messaging Vue + Inertia](messaging.md) — `module-social-network-messaging-vue-inertia`
-- [Notifications Vue + Inertia](notifications.md) — `module-social-network-notifications-vue-inertia`
-- [Discovery Vue + Inertia](discovery.md) — `module-social-network-discovery-vue-inertia`
-- [Moderation Vue + Inertia](moderation.md) — `module-social-network-moderation-vue-inertia`
-- [Federation Vue + Inertia](federation.md) — `module-social-network-federation-vue-inertia`
-- [Analytics Vue + Inertia](analytics.md) — `module-social-network-analytics-vue-inertia`
+- [Activity Comments Vue](activity-comments.md) — `module-social-network-activity-comments-vue-inertia`
+- [Analytics Core Vue](analytics-core.md) — `module-social-network-analytics-core-vue-inertia`
+- [Analytics Google Vue](analytics-google.md) — `module-social-network-analytics-google-vue-inertia`
+- [Analytics Meta Vue](analytics-meta.md) — `module-social-network-analytics-meta-vue-inertia`
+- [Api Access Vue](api-access.md) — `module-social-network-api-access-vue-inertia`
+- [Application Vue](application.md) — `module-social-network-application-vue-inertia`
+- [Audit Vue](audit.md) — `module-social-network-audit-vue-inertia`
+- [Currency Context Vue](currency-context.md) — `module-social-network-currency-context-vue-inertia`
+- [Developer Experience Vue](developer-experience.md) — `module-social-network-developer-experience-vue-inertia`
+- [Feature Flags Vue](feature-flags.md) — `module-social-network-feature-flags-vue-inertia`
+- [Files Media Vue](files-media.md) — `module-social-network-files-media-vue-inertia`
+- [Identity Core Vue](identity-core.md) — `module-social-network-identity-core-vue-inertia`
+- [Identity Socialstream Vue](identity-socialstream.md) — `module-social-network-identity-socialstream-vue-inertia`
+- [Import Export Vue](import-export.md) — `module-social-network-import-export-vue-inertia`
+- [Integrations Vue](integrations.md) — `module-social-network-integrations-vue-inertia`
+- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-social-network-jetstream-bridge-vue-inertia`
+- [Localization Core Vue](localization-core.md) — `module-social-network-localization-core-vue-inertia`
+- [Localization Mymemory Vue](localization-mymemory.md) — `module-social-network-localization-mymemory-vue-inertia`
+- [Module Manager Vue](module-manager.md) — `module-social-network-module-manager-vue-inertia`
+- [Notifications Vue](notifications.md) — `module-social-network-notifications-vue-inertia`
+- [Observability Vue](observability.md) — `module-social-network-observability-vue-inertia`
+- [Organizations Teams Vue](organizations-teams.md) — `module-social-network-organizations-teams-vue-inertia`
+- [Profiles Vue](profiles.md) — `module-social-network-profiles-vue-inertia`
+- [Roles Permissions Vue](roles-permissions.md) — `module-social-network-roles-permissions-vue-inertia`
+- [Scheduler Queues Vue](scheduler-queues.md) — `module-social-network-scheduler-queues-vue-inertia`
+- [Search Vue](search.md) — `module-social-network-search-vue-inertia`
+- [Sessions Devices Vue](sessions-devices.md) — `module-social-network-sessions-devices-vue-inertia`
+- [Settings Vue](settings.md) — `module-social-network-settings-vue-inertia`
+- [Social Network Analytics Vue](social-network-analytics.md) — `module-social-network-social-network-analytics-vue-inertia`
+- [Social Network Communities Vue](social-network-communities.md) — `module-social-network-social-network-communities-vue-inertia`
+- [Social Network Discovery Vue](social-network-discovery.md) — `module-social-network-social-network-discovery-vue-inertia`
+- [Social Network Engagement Vue](social-network-engagement.md) — `module-social-network-social-network-engagement-vue-inertia`
+- [Social Network Events Vue](social-network-events.md) — `module-social-network-social-network-events-vue-inertia`
+- [Social Network Federation Vue](social-network-federation.md) — `module-social-network-social-network-federation-vue-inertia`
+- [Social Network Feed Vue](social-network-feed.md) — `module-social-network-social-network-feed-vue-inertia`
+- [Social Network Media Vue](social-network-media.md) — `module-social-network-social-network-media-vue-inertia`
+- [Social Network Messaging Vue](social-network-messaging.md) — `module-social-network-social-network-messaging-vue-inertia`
+- [Social Network Moderation Vue](social-network-moderation.md) — `module-social-network-social-network-moderation-vue-inertia`
+- [Social Network Notifications Vue](social-network-notifications.md) — `module-social-network-social-network-notifications-vue-inertia`
+- [Social Network Profiles Vue](social-network-profiles.md) — `module-social-network-social-network-profiles-vue-inertia`
+- [Social Network Publishing Vue](social-network-publishing.md) — `module-social-network-social-network-publishing-vue-inertia`
+- [Social Network Social Core Vue](social-network-social-core.md) — `module-social-network-social-network-social-core-vue-inertia`
+- [Social Network Social Graph Vue](social-network-social-graph.md) — `module-social-network-social-network-social-graph-vue-inertia`
+- [Theme Support Vue](theme-support.md) — `module-social-network-theme-support-vue-inertia`
+- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-social-network-two-factor-authentication-vue-inertia`
+- [Webhooks Vue](webhooks.md) — `module-social-network-webhooks-vue-inertia`

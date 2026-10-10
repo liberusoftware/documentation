@@ -1,39 +1,50 @@
-# Automation Vue 3 + Inertia 3 Implementations
+# Automation Vue + Inertia Implementations
 
-**Source:** [AUTOMATION.md](../AUTOMATION.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Automation Core Vue + Inertia](automation-core.md) — `module-automation-core-vue-inertia`
-- [Rules Vue + Inertia](rules.md) — `module-automation-rules-vue-inertia`
-- [Approvals Vue + Inertia](approvals.md) — `module-automation-approvals-vue-inertia`
-- [AI Gateway Vue + Inertia](ai-gateway.md) — `module-automation-ai-gateway-vue-inertia`
-- [Prompt Registry Vue + Inertia](prompt-registry.md) — `module-automation-prompt-registry-vue-inertia`
-- [Data Processing Vue + Inertia](data-processing.md) — `module-automation-data-processing-vue-inertia`
-- [Voice Vue + Inertia](voice.md) — `module-automation-voice-vue-inertia`
-- [Image Vue + Inertia](image.md) — `module-automation-image-vue-inertia`
-- [Video Vue + Inertia](video.md) — `module-automation-video-vue-inertia`
-- [Connectors Vue + Inertia](connectors.md) — `module-automation-connectors-vue-inertia`
-- [Evaluation Vue + Inertia](evaluation.md) — `module-automation-evaluation-vue-inertia`
-
-**Source:** [AUTOMATION.md](../AUTOMATION.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
-
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Automation Core Vue + Inertia](automation-core.md) — `module-automation-core-vue-inertia`
-- [Rules Vue + Inertia](rules.md) — `module-automation-rules-vue-inertia`
-- [Approvals Vue + Inertia](approvals.md) — `module-automation-approvals-vue-inertia`
-- [AI Gateway Vue + Inertia](ai-gateway.md) — `module-automation-ai-gateway-vue-inertia`
-- [Prompt Registry Vue + Inertia](prompt-registry.md) — `module-automation-prompt-registry-vue-inertia`
-- [Data Processing Vue + Inertia](data-processing.md) — `module-automation-data-processing-vue-inertia`
-- [Voice Vue + Inertia](voice.md) — `module-automation-voice-vue-inertia`
-- [Image Vue + Inertia](image.md) — `module-automation-image-vue-inertia`
-- [Video Vue + Inertia](video.md) — `module-automation-video-vue-inertia`
-- [Connectors Vue + Inertia](connectors.md) — `module-automation-connectors-vue-inertia`
-- [Evaluation Vue + Inertia](evaluation.md) — `module-automation-evaluation-vue-inertia`
+- [Activity Comments Vue](activity-comments.md) — `module-automation-activity-comments-vue-inertia`
+- [Analytics Core Vue](analytics-core.md) — `module-automation-analytics-core-vue-inertia`
+- [Analytics Google Vue](analytics-google.md) — `module-automation-analytics-google-vue-inertia`
+- [Analytics Meta Vue](analytics-meta.md) — `module-automation-analytics-meta-vue-inertia`
+- [Api Access Vue](api-access.md) — `module-automation-api-access-vue-inertia`
+- [Application Vue](application.md) — `module-automation-application-vue-inertia`
+- [Audit Vue](audit.md) — `module-automation-audit-vue-inertia`
+- [Currency Context Vue](currency-context.md) — `module-automation-currency-context-vue-inertia`
+- [Developer Experience Vue](developer-experience.md) — `module-automation-developer-experience-vue-inertia`
+- [Feature Flags Vue](feature-flags.md) — `module-automation-feature-flags-vue-inertia`
+- [Files Media Vue](files-media.md) — `module-automation-files-media-vue-inertia`
+- [Identity Core Vue](identity-core.md) — `module-automation-identity-core-vue-inertia`
+- [Identity Socialstream Vue](identity-socialstream.md) — `module-automation-identity-socialstream-vue-inertia`
+- [Import Export Vue](import-export.md) — `module-automation-import-export-vue-inertia`
+- [Integrations Vue](integrations.md) — `module-automation-integrations-vue-inertia`
+- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-automation-jetstream-bridge-vue-inertia`
+- [Liberu Business Workflow Reconciliation Vue](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-vue-inertia`
+- [Liberu Executive Insights Vue](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-vue-inertia`
+- [Liberu Platform Orchestration Vue](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-vue-inertia`
+- [Liberu Revenue And Care Orchestration Vue](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-vue-inertia`
+- [Localization Core Vue](localization-core.md) — `module-automation-localization-core-vue-inertia`
+- [Localization Mymemory Vue](localization-mymemory.md) — `module-automation-localization-mymemory-vue-inertia`
+- [Module Automation Ai Gateway Vue](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-vue-inertia`
+- [Module Automation Approvals Vue](module-automation-approvals.md) — `module-automation-module-automation-approvals-vue-inertia`
+- [Module Automation Automation Core Vue](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-vue-inertia`
+- [Module Automation Connectors Vue](module-automation-connectors.md) — `module-automation-module-automation-connectors-vue-inertia`
+- [Module Automation Data Processing Vue](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-vue-inertia`
+- [Module Automation Evaluation Vue](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-vue-inertia`
+- [Module Automation Image Vue](module-automation-image.md) — `module-automation-module-automation-image-vue-inertia`
+- [Module Automation Prompt Registry Vue](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-vue-inertia`
+- [Module Automation Rules Vue](module-automation-rules.md) — `module-automation-module-automation-rules-vue-inertia`
+- [Module Automation Video Vue](module-automation-video.md) — `module-automation-module-automation-video-vue-inertia`
+- [Module Automation Voice Vue](module-automation-voice.md) — `module-automation-module-automation-voice-vue-inertia`
+- [Module Manager Vue](module-manager.md) — `module-automation-module-manager-vue-inertia`
+- [Notifications Vue](notifications.md) — `module-automation-notifications-vue-inertia`
+- [Observability Vue](observability.md) — `module-automation-observability-vue-inertia`
+- [Organizations Teams Vue](organizations-teams.md) — `module-automation-organizations-teams-vue-inertia`
+- [Profiles Vue](profiles.md) — `module-automation-profiles-vue-inertia`
+- [Roles Permissions Vue](roles-permissions.md) — `module-automation-roles-permissions-vue-inertia`
+- [Scheduler Queues Vue](scheduler-queues.md) — `module-automation-scheduler-queues-vue-inertia`
+- [Search Vue](search.md) — `module-automation-search-vue-inertia`
+- [Sessions Devices Vue](sessions-devices.md) — `module-automation-sessions-devices-vue-inertia`
+- [Settings Vue](settings.md) — `module-automation-settings-vue-inertia`
+- [Theme Support Vue](theme-support.md) — `module-automation-theme-support-vue-inertia`
+- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-automation-two-factor-authentication-vue-inertia`
+- [Webhooks Vue](webhooks.md) — `module-automation-webhooks-vue-inertia`

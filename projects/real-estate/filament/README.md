@@ -1,24 +1,60 @@
-# Real-Estate Filament 5 Implementations
+# Real Estate Filament Implementations
 
-**Source:** [REAL-ESTATE.md](../REAL-ESTATE.md)  
-**Architecture:** [FILAMENT.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Filament 5` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Real Estate Core Filament](real-estate-core.md) — `module-real-estate-core-filament`
-- [Parties Filament](parties.md) — `module-real-estate-parties-filament`
-- [Properties Filament](properties.md) — `module-real-estate-properties-filament`
-- [Media and Documents Filament](media-and-documents.md) — `module-real-estate-media-and-documents-filament`
-- [Valuations Filament](valuations.md) — `module-real-estate-valuations-filament`
-- [Instructions Filament](instructions.md) — `module-real-estate-instructions-filament`
-- [Listings Filament](listings.md) — `module-real-estate-listings-filament`
-- [Matching Filament](matching.md) — `module-real-estate-matching-filament`
-- [Viewings Filament](viewings.md) — `module-real-estate-viewings-filament`
-- [Offers Filament](offers.md) — `module-real-estate-offers-filament`
-- [Sales Progression Filament](sales-progression.md) — `module-real-estate-sales-progression-filament`
-- [Lettings Filament](lettings.md) — `module-real-estate-lettings-filament`
-- [Property Management Filament](property-management.md) — `module-real-estate-property-management-filament`
-- [Marketing Filament](marketing.md) — `module-real-estate-marketing-filament`
-- [Portals and Reporting Filament](portals-and-reporting.md) — `module-real-estate-portals-and-reporting-filament`
+- [.graphify Filament](.graphify.md) — `module-real-estate-.graphify-filament`
+- [Activity Comments Filament](activity-comments.md) — `module-real-estate-activity-comments-filament`
+- [Analytics Core Filament](analytics-core.md) — `module-real-estate-analytics-core-filament`
+- [Analytics Google Filament](analytics-google.md) — `module-real-estate-analytics-google-filament`
+- [Analytics Meta Filament](analytics-meta.md) — `module-real-estate-analytics-meta-filament`
+- [Api Filament](api.md) — `module-real-estate-api-filament`
+- [Api Access Filament](api-access.md) — `module-real-estate-api-access-filament`
+- [Application Filament](application.md) — `module-real-estate-application-filament`
+- [Audit Filament](audit.md) — `module-real-estate-audit-filament`
+- [Core Filament](core.md) — `module-real-estate-core-filament`
+- [Currency Context Filament](currency-context.md) — `module-real-estate-currency-context-filament`
+- [Developer Experience Filament](developer-experience.md) — `module-real-estate-developer-experience-filament`
+- [Feature Flags Filament](feature-flags.md) — `module-real-estate-feature-flags-filament`
+- [Features Filament](features.md) — `module-real-estate-features-filament`
+- [Filament Filament](filament.md) — `module-real-estate-filament-filament`
+- [Files Media Filament](files-media.md) — `module-real-estate-files-media-filament`
+- [Identity Core Filament](identity-core.md) — `module-real-estate-identity-core-filament`
+- [Identity Socialstream Filament](identity-socialstream.md) — `module-real-estate-identity-socialstream-filament`
+- [Import Export Filament](import-export.md) — `module-real-estate-import-export-filament`
+- [Integrations Filament](integrations.md) — `module-real-estate-integrations-filament`
+- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-real-estate-jetstream-bridge-filament`
+- [Livewire Filament](livewire.md) — `module-real-estate-livewire-filament`
+- [Localization Core Filament](localization-core.md) — `module-real-estate-localization-core-filament`
+- [Localization Mymemory Filament](localization-mymemory.md) — `module-real-estate-localization-mymemory-filament`
+- [Module Manager Filament](module-manager.md) — `module-real-estate-module-manager-filament`
+- [Notifications Filament](notifications.md) — `module-real-estate-notifications-filament`
+- [Observability Filament](observability.md) — `module-real-estate-observability-filament`
+- [Organizations Teams Filament](organizations-teams.md) — `module-real-estate-organizations-teams-filament`
+- [Profiles Filament](profiles.md) — `module-real-estate-profiles-filament`
+- [Real Estate Core Filament](real-estate-core.md) — `module-real-estate-real-estate-core-filament`
+- [Real Estate Instructions Filament](real-estate-instructions.md) — `module-real-estate-real-estate-instructions-filament`
+- [Real Estate Lettings Filament](real-estate-lettings.md) — `module-real-estate-real-estate-lettings-filament`
+- [Real Estate Listings Filament](real-estate-listings.md) — `module-real-estate-real-estate-listings-filament`
+- [Real Estate Marketing Filament](real-estate-marketing.md) — `module-real-estate-real-estate-marketing-filament`
+- [Real Estate Matching Filament](real-estate-matching.md) — `module-real-estate-real-estate-matching-filament`
+- [Real Estate Media And Documents Filament](real-estate-media-and-documents.md) — `module-real-estate-real-estate-media-and-documents-filament`
+- [Real Estate Offers Filament](real-estate-offers.md) — `module-real-estate-real-estate-offers-filament`
+- [Real Estate Onthemarket Filament](real-estate-onthemarket.md) — `module-real-estate-real-estate-onthemarket-filament`
+- [Real Estate Parties Filament](real-estate-parties.md) — `module-real-estate-real-estate-parties-filament`
+- [Real Estate Portals Reporting Filament](real-estate-portals-reporting.md) — `module-real-estate-real-estate-portals-reporting-filament`
+- [Real Estate Properties Filament](real-estate-properties.md) — `module-real-estate-real-estate-properties-filament`
+- [Real Estate Property Management Filament](real-estate-property-management.md) — `module-real-estate-real-estate-property-management-filament`
+- [Real Estate Rightmove Filament](real-estate-rightmove.md) — `module-real-estate-real-estate-rightmove-filament`
+- [Real Estate Sales Progression Filament](real-estate-sales-progression.md) — `module-real-estate-real-estate-sales-progression-filament`
+- [Real Estate Valuations Filament](real-estate-valuations.md) — `module-real-estate-real-estate-valuations-filament`
+- [Real Estate Viewings Filament](real-estate-viewings.md) — `module-real-estate-real-estate-viewings-filament`
+- [Real Estate Vr Design Filament](real-estate-vr-design.md) — `module-real-estate-real-estate-vr-design-filament`
+- [Real Estate Zoopla Filament](real-estate-zoopla.md) — `module-real-estate-real-estate-zoopla-filament`
+- [Roles Permissions Filament](roles-permissions.md) — `module-real-estate-roles-permissions-filament`
+- [Scheduler Queues Filament](scheduler-queues.md) — `module-real-estate-scheduler-queues-filament`
+- [Search Filament](search.md) — `module-real-estate-search-filament`
+- [Sessions Devices Filament](sessions-devices.md) — `module-real-estate-sessions-devices-filament`
+- [Settings Filament](settings.md) — `module-real-estate-settings-filament`
+- [Theme Support Filament](theme-support.md) — `module-real-estate-theme-support-filament`
+- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-real-estate-two-factor-authentication-filament`
+- [Webhooks Filament](webhooks.md) — `module-real-estate-webhooks-filament`

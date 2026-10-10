@@ -1,134 +1,134 @@
-# Crm Filament 5 Implementations
+# CRM Filament Implementations
 
-**Source:** [CRM.md](../CRM.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Filament 5` presentation package for exactly one matching domain module.
-
-## Customer data and platform modules
-
-- [CRM Core Filament](crm-core.md) — `module-crm-core-filament`
-- [Customer Data Model Filament](customer-data-model.md) — `module-crm-customer-data-model-filament`
-- [Customer Data Platform Filament](customer-data-platform.md) — `module-crm-customer-data-platform-filament`
-- [Data Operations Filament](data-operations.md) — `module-crm-data-operations-filament`
-- [Consent and Preferences Filament](consent-and-preferences.md) — `module-crm-consent-and-preferences-filament`
-- [Territories and Ownership Filament](territories-and-ownership.md) — `module-crm-territories-and-ownership-filament`
-- [CRM Search Filament](crm-search.md) — `module-crm-search-filament`
-- [CRM Documents Filament](crm-documents.md) — `module-crm-documents-filament`
-- [Collaboration Filament](collaboration.md) — `module-crm-collaboration-filament`
-
-## Demand generation and acquisition modules
-
-- [Lead Capture Filament](lead-capture.md) — `module-crm-lead-capture-filament`
-- [Prospecting Filament](prospecting.md) — `module-crm-prospecting-filament`
-- [Enrichment Filament](enrichment.md) — `module-crm-enrichment-filament`
-- [Web Intent Filament](web-intent.md) — `module-crm-web-intent-filament`
-- [Lead Qualification Filament](lead-qualification.md) — `module-crm-lead-qualification-filament`
-- [Routing Filament](routing.md) — `module-crm-routing-filament`
-- [Forms and Surveys Filament](forms-and-surveys.md) — `module-crm-forms-and-surveys-filament`
-- [Chat and Bots Filament](chat-and-bots.md) — `module-crm-chat-and-bots-filament`
-- [Landing Pages and Funnels Filament](landing-pages-and-funnels.md) — `module-crm-landing-pages-and-funnels-filament`
-- [Conversion Optimization Filament](conversion-optimization.md) — `module-crm-conversion-optimization-filament`
-- [Events and Webinars Filament](events-and-webinars.md) — `module-crm-events-and-webinars-filament`
-
-## Sales execution modules
-
-- [Sales Pipelines Filament](sales-pipelines.md) — `module-crm-sales-pipelines-filament`
-- [Sales Workspace Filament](sales-workspace.md) — `module-crm-sales-workspace-filament`
-- [Activities Filament](activities.md) — `module-crm-activities-filament`
-- [Scheduling Filament](scheduling.md) — `module-crm-scheduling-filament`
-- [Sales Engagement Filament](sales-engagement.md) — `module-crm-sales-engagement-filament`
-- [Email Productivity Filament](email-productivity.md) — `module-crm-email-productivity-filament`
-- [Conversation Intelligence Filament](conversation-intelligence.md) — `module-crm-conversation-intelligence-filament`
-- [Playbooks and Enablement Filament](playbooks-and-enablement.md) — `module-crm-playbooks-and-enablement-filament`
-- [Forecasting Filament](forecasting.md) — `module-crm-forecasting-filament`
-- [Revenue Intelligence Filament](revenue-intelligence.md) — `module-crm-revenue-intelligence-filament`
-- [Goals and Performance Filament](goals-and-performance.md) — `module-crm-goals-and-performance-filament`
-- [Quotas and Incentives Filament](quotas-and-incentives.md) — `module-crm-quotas-and-incentives-filament`
-- [Account Planning Filament](account-planning.md) — `module-crm-account-planning-filament`
-
-## Revenue and commercial modules
-
-- [CRM Product Workspace Filament](crm-product-workspace.md) — `module-crm-product-workspace-filament`
-- [CPQ Filament](cpq.md) — `module-crm-cpq-filament`
-- [Proposals and Quotes Filament](proposals-and-quotes.md) — `module-crm-proposals-and-quotes-filament`
-- [Contracts Filament](contracts.md) — `module-crm-contracts-filament`
-- [Orders and Payments Workspace Filament](orders-and-payments-workspace.md) — `module-crm-orders-and-payments-workspace-filament`
-- [Revenue Lifecycle Filament](revenue-lifecycle.md) — `module-crm-revenue-lifecycle-filament`
-
-## Marketing modules
-
-- [Segmentation Filament](segmentation.md) — `module-crm-segmentation-filament`
-- [Campaigns Filament](campaigns.md) — `module-crm-campaigns-filament`
-- [Journey Orchestration Filament](journey-orchestration.md) — `module-crm-journey-orchestration-filament`
-- [Email Marketing Filament](email-marketing.md) — `module-crm-email-marketing-filament`
-- [Mobile Messaging Filament](mobile-messaging.md) — `module-crm-mobile-messaging-filament`
-- [Advertising Filament](advertising.md) — `module-crm-advertising-filament`
-- [Account-Based Marketing Filament](account-based-marketing.md) — `module-crm-account-based-marketing-filament`
-- [Personalization Filament](personalization.md) — `module-crm-personalization-filament`
-- [Marketing Resources Filament](marketing-resources.md) — `module-crm-marketing-resources-filament`
-- [Attribution Filament](attribution.md) — `module-crm-attribution-filament`
-
-## Communications and contact-center modules
-
-- [Unified Conversations Filament](unified-conversations.md) — `module-crm-unified-conversations-filament`
-- [Channel Gateway Filament](channel-gateway.md) — `module-crm-channel-gateway-filament`
-- [Telephony Filament](telephony.md) — `module-crm-telephony-filament`
-- [Dialer and Outreach Filament](dialer-and-outreach.md) — `module-crm-dialer-and-outreach-filament`
-- [Contact Center Filament](contact-center.md) — `module-crm-contact-center-filament`
-- [AI Reception and Conversation Filament](ai-reception-and-conversation.md) — `module-crm-ai-reception-and-conversation-filament`
-
-## Service, success, and experience modules
-
-- [Case Management Filament](case-management.md) — `module-crm-case-management-filament`
-- [Omnichannel Service Filament](omnichannel-service.md) — `module-crm-omnichannel-service-filament`
-- [SLA and Entitlements Filament](sla-and-entitlements.md) — `module-crm-sla-and-entitlements-filament`
-- [Knowledge Filament](knowledge.md) — `module-crm-knowledge-filament`
-- [Customer Self-Service Filament](customer-self-service.md) — `module-crm-customer-self-service-filament`
-- [Customer Success Filament](customer-success.md) — `module-crm-customer-success-filament`
-- [Feedback and Voice of Customer Filament](feedback-and-voice-of-customer.md) — `module-crm-feedback-and-voice-of-customer-filament`
-- [Reputation Management Filament](reputation-management.md) — `module-crm-reputation-management-filament`
-- [Field Service Coordination Filament](field-service-coordination.md) — `module-crm-field-service-coordination-filament`
-- [Service Analytics Filament](service-analytics.md) — `module-crm-service-analytics-filament`
-
-## Community, learning, loyalty, and growth modules
-
-- [Communities Filament](communities.md) — `module-crm-communities-filament`
-- [Learning and Courses Filament](learning-and-courses.md) — `module-crm-learning-and-courses-filament`
-- [Memberships Filament](memberships.md) — `module-crm-memberships-filament`
-- [Loyalty Filament](loyalty.md) — `module-crm-loyalty-filament`
-- [Referrals Filament](referrals.md) — `module-crm-referrals-filament`
-- [Affiliate Management Filament](affiliate-management.md) — `module-crm-affiliate-management-filament`
-- [Advocacy Filament](advocacy.md) — `module-crm-advocacy-filament`
-
-## Partner and agency modules
-
-- [Partner Relationship Management Filament](partner-relationship-management.md) — `module-crm-partner-relationship-management-filament`
-- [Deal Registration Filament](deal-registration.md) — `module-crm-deal-registration-filament`
-- [Channel Sales Filament](channel-sales.md) — `module-crm-channel-sales-filament`
-- [Marketing Development Funds Filament](marketing-development-funds.md) — `module-crm-marketing-development-funds-filament`
-- [Agency Workspace Filament](agency-workspace.md) — `module-crm-agency-workspace-filament`
-- [White Label Filament](white-label.md) — `module-crm-white-label-filament`
-- [SaaS Packaging Filament](saas-packaging.md) — `module-crm-saas-packaging-filament`
-- [Usage Wallet and Rebilling Filament](usage-wallet-and-rebilling.md) — `module-crm-usage-wallet-and-rebilling-filament`
-- [Templates and Snapshots Filament](templates-and-snapshots.md) — `module-crm-templates-and-snapshots-filament`
-- [Client Onboarding Filament](client-onboarding.md) — `module-crm-client-onboarding-filament`
-
-## Delivery, productivity, and operations modules
-
-- [Projects Filament](projects.md) — `module-crm-projects-filament`
-- [Resource Planning Filament](resource-planning.md) — `module-crm-resource-planning-filament`
-- [Work Management Filament](work-management.md) — `module-crm-work-management-filament`
-- [Business Process Management Filament](business-process-management.md) — `module-crm-business-process-management-filament`
-- [CRM Automation Pack Filament](crm-automation-pack.md) — `module-crm-automation-pack-filament`
-- [Sandbox and Release Management Filament](sandbox-and-release-management.md) — `module-crm-sandbox-and-release-management-filament`
-
-## Intelligence and AI modules
-
-- [CRM Analytics Filament](crm-analytics.md) — `module-crm-analytics-filament`
-- [Predictive Models Filament](predictive-models.md) — `module-crm-predictive-models-filament`
-- [CRM Copilot Filament](crm-copilot.md) — `module-crm-copilot-filament`
-- [Prospecting Agent Filament](prospecting-agent.md) — `module-crm-prospecting-agent-filament`
-- [Service Agent Filament](service-agent.md) — `module-crm-service-agent-filament`
-- [Marketing Agent Filament](marketing-agent.md) — `module-crm-marketing-agent-filament`
-- [Conversation Analytics Filament](conversation-analytics.md) — `module-crm-conversation-analytics-filament`
+- [Activity Comments Filament](activity-comments.md) — `module-crm-activity-comments-filament`
+- [Analytics Contracts Filament](analytics-contracts.md) — `module-crm-analytics-contracts-filament`
+- [Analytics Core Filament](analytics-core.md) — `module-crm-analytics-core-filament`
+- [Analytics Google Filament](analytics-google.md) — `module-crm-analytics-google-filament`
+- [Analytics Meta Filament](analytics-meta.md) — `module-crm-analytics-meta-filament`
+- [Api Access Filament](api-access.md) — `module-crm-api-access-filament`
+- [Application Filament](application.md) — `module-crm-application-filament`
+- [Audit Filament](audit.md) — `module-crm-audit-filament`
+- [Crm Account Based Marketing Filament](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing-filament`
+- [Crm Account Planning Filament](crm-account-planning.md) — `module-crm-crm-account-planning-filament`
+- [Crm Activities Filament](crm-activities.md) — `module-crm-crm-activities-filament`
+- [Crm Advertising Filament](crm-advertising.md) — `module-crm-crm-advertising-filament`
+- [Crm Advocacy Filament](crm-advocacy.md) — `module-crm-crm-advocacy-filament`
+- [Crm Affiliate Management Filament](crm-affiliate-management.md) — `module-crm-crm-affiliate-management-filament`
+- [Crm Agency Workspace Filament](crm-agency-workspace.md) — `module-crm-crm-agency-workspace-filament`
+- [Crm Ai Reception And Conversation Filament](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation-filament`
+- [Crm Analytics Filament](crm-analytics.md) — `module-crm-crm-analytics-filament`
+- [Crm Attribution Filament](crm-attribution.md) — `module-crm-crm-attribution-filament`
+- [Crm Automation Pack Filament](crm-automation-pack.md) — `module-crm-crm-automation-pack-filament`
+- [Crm Business Process Management Filament](crm-business-process-management.md) — `module-crm-crm-business-process-management-filament`
+- [Crm Campaigns Filament](crm-campaigns.md) — `module-crm-crm-campaigns-filament`
+- [Crm Case Management Filament](crm-case-management.md) — `module-crm-crm-case-management-filament`
+- [Crm Channel Gateway Filament](crm-channel-gateway.md) — `module-crm-crm-channel-gateway-filament`
+- [Crm Channel Sales Filament](crm-channel-sales.md) — `module-crm-crm-channel-sales-filament`
+- [Crm Chat And Bots Filament](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots-filament`
+- [Crm Client Onboarding Filament](crm-client-onboarding.md) — `module-crm-crm-client-onboarding-filament`
+- [Crm Collaboration Filament](crm-collaboration.md) — `module-crm-crm-collaboration-filament`
+- [Crm Communities Filament](crm-communities.md) — `module-crm-crm-communities-filament`
+- [Crm Consent And Preferences Filament](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences-filament`
+- [Crm Contact Center Filament](crm-contact-center.md) — `module-crm-crm-contact-center-filament`
+- [Crm Contracts Filament](crm-contracts.md) — `module-crm-crm-contracts-filament`
+- [Crm Conversation Analytics Filament](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics-filament`
+- [Crm Conversation Intelligence Filament](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence-filament`
+- [Crm Conversion Optimization Filament](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization-filament`
+- [Crm Copilot Filament](crm-copilot.md) — `module-crm-crm-copilot-filament`
+- [Crm Core Filament](crm-core.md) — `module-crm-crm-core-filament`
+- [Crm Cpq Filament](crm-cpq.md) — `module-crm-crm-cpq-filament`
+- [Crm Customer Data Model Filament](crm-customer-data-model.md) — `module-crm-crm-customer-data-model-filament`
+- [Crm Customer Data Platform Filament](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform-filament`
+- [Crm Customer Self Service Filament](crm-customer-self-service.md) — `module-crm-crm-customer-self-service-filament`
+- [Crm Customer Success Filament](crm-customer-success.md) — `module-crm-crm-customer-success-filament`
+- [Crm Data Operations Filament](crm-data-operations.md) — `module-crm-crm-data-operations-filament`
+- [Crm Deal Registration Filament](crm-deal-registration.md) — `module-crm-crm-deal-registration-filament`
+- [Crm Dialer And Outreach Filament](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach-filament`
+- [Crm Documents Filament](crm-documents.md) — `module-crm-crm-documents-filament`
+- [Crm Email Marketing Filament](crm-email-marketing.md) — `module-crm-crm-email-marketing-filament`
+- [Crm Email Productivity Filament](crm-email-productivity.md) — `module-crm-crm-email-productivity-filament`
+- [Crm Enrichment Filament](crm-enrichment.md) — `module-crm-crm-enrichment-filament`
+- [Crm Events And Webinars Filament](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars-filament`
+- [Crm Feedback And Voice Of Customer Filament](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer-filament`
+- [Crm Field Service Coordination Filament](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination-filament`
+- [Crm Forecasting Filament](crm-forecasting.md) — `module-crm-crm-forecasting-filament`
+- [Crm Forms And Surveys Filament](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys-filament`
+- [Crm Goals And Performance Filament](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance-filament`
+- [Crm Journey Orchestration Filament](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration-filament`
+- [Crm Knowledge Filament](crm-knowledge.md) — `module-crm-crm-knowledge-filament`
+- [Crm Landing Pages And Funnels Filament](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels-filament`
+- [Crm Lead Capture Filament](crm-lead-capture.md) — `module-crm-crm-lead-capture-filament`
+- [Crm Lead Qualification Filament](crm-lead-qualification.md) — `module-crm-crm-lead-qualification-filament`
+- [Crm Learning And Courses Filament](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses-filament`
+- [Crm Loyalty Filament](crm-loyalty.md) — `module-crm-crm-loyalty-filament`
+- [Crm Marketing Agent Filament](crm-marketing-agent.md) — `module-crm-crm-marketing-agent-filament`
+- [Crm Marketing Development Funds Filament](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds-filament`
+- [Crm Marketing Resources Filament](crm-marketing-resources.md) — `module-crm-crm-marketing-resources-filament`
+- [Crm Memberships Filament](crm-memberships.md) — `module-crm-crm-memberships-filament`
+- [Crm Mobile Messaging Filament](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging-filament`
+- [Crm Omnichannel Service Filament](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service-filament`
+- [Crm Orders And Payments Workspace Filament](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace-filament`
+- [Crm Partner Relationship Management Filament](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management-filament`
+- [Crm Personalization Filament](crm-personalization.md) — `module-crm-crm-personalization-filament`
+- [Crm Playbooks And Enablement Filament](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement-filament`
+- [Crm Predictive Models Filament](crm-predictive-models.md) — `module-crm-crm-predictive-models-filament`
+- [Crm Product Workspace Filament](crm-product-workspace.md) — `module-crm-crm-product-workspace-filament`
+- [Crm Projects Filament](crm-projects.md) — `module-crm-crm-projects-filament`
+- [Crm Proposals And Quotes Filament](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes-filament`
+- [Crm Prospecting Filament](crm-prospecting.md) — `module-crm-crm-prospecting-filament`
+- [Crm Prospecting Agent Filament](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent-filament`
+- [Crm Quotas And Incentives Filament](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives-filament`
+- [Crm Referrals Filament](crm-referrals.md) — `module-crm-crm-referrals-filament`
+- [Crm Reputation Management Filament](crm-reputation-management.md) — `module-crm-crm-reputation-management-filament`
+- [Crm Resource Planning Filament](crm-resource-planning.md) — `module-crm-crm-resource-planning-filament`
+- [Crm Revenue Intelligence Filament](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence-filament`
+- [Crm Revenue Lifecycle Filament](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle-filament`
+- [Crm Routing Filament](crm-routing.md) — `module-crm-crm-routing-filament`
+- [Crm Saas Packaging Filament](crm-saas-packaging.md) — `module-crm-crm-saas-packaging-filament`
+- [Crm Sales Engagement Filament](crm-sales-engagement.md) — `module-crm-crm-sales-engagement-filament`
+- [Crm Sales Pipelines Filament](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines-filament`
+- [Crm Sales Workspace Filament](crm-sales-workspace.md) — `module-crm-crm-sales-workspace-filament`
+- [Crm Sandbox And Release Management Filament](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management-filament`
+- [Crm Sandbox Release Filament](crm-sandbox-release.md) — `module-crm-crm-sandbox-release-filament`
+- [Crm Scheduling Filament](crm-scheduling.md) — `module-crm-crm-scheduling-filament`
+- [Crm Search Filament](crm-search.md) — `module-crm-crm-search-filament`
+- [Crm Segmentation Filament](crm-segmentation.md) — `module-crm-crm-segmentation-filament`
+- [Crm Service Agent Filament](crm-service-agent.md) — `module-crm-crm-service-agent-filament`
+- [Crm Service Analytics Filament](crm-service-analytics.md) — `module-crm-crm-service-analytics-filament`
+- [Crm Sla And Entitlements Filament](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements-filament`
+- [Crm Telephony Filament](crm-telephony.md) — `module-crm-crm-telephony-filament`
+- [Crm Template Snapshots Filament](crm-template-snapshots.md) — `module-crm-crm-template-snapshots-filament`
+- [Crm Templates And Snapshots Filament](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots-filament`
+- [Crm Territories And Ownership Filament](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership-filament`
+- [Crm Unified Conversations Filament](crm-unified-conversations.md) — `module-crm-crm-unified-conversations-filament`
+- [Crm Usage Wallet And Rebilling Filament](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling-filament`
+- [Crm Web Intent Filament](crm-web-intent.md) — `module-crm-crm-web-intent-filament`
+- [Crm White Label Filament](crm-white-label.md) — `module-crm-crm-white-label-filament`
+- [Crm Work Management Filament](crm-work-management.md) — `module-crm-crm-work-management-filament`
+- [Currency Context Filament](currency-context.md) — `module-crm-currency-context-filament`
+- [Developer Experience Filament](developer-experience.md) — `module-crm-developer-experience-filament`
+- [Feature Flags Filament](feature-flags.md) — `module-crm-feature-flags-filament`
+- [Files Media Filament](files-media.md) — `module-crm-files-media-filament`
+- [Identity Core Filament](identity-core.md) — `module-crm-identity-core-filament`
+- [Identity Socialstream Filament](identity-socialstream.md) — `module-crm-identity-socialstream-filament`
+- [Import Export Filament](import-export.md) — `module-crm-import-export-filament`
+- [Integrations Filament](integrations.md) — `module-crm-integrations-filament`
+- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-crm-jetstream-bridge-filament`
+- [Localization Contracts Filament](localization-contracts.md) — `module-crm-localization-contracts-filament`
+- [Localization Core Filament](localization-core.md) — `module-crm-localization-core-filament`
+- [Localization Mymemory Filament](localization-mymemory.md) — `module-crm-localization-mymemory-filament`
+- [Module Manager Filament](module-manager.md) — `module-crm-module-manager-filament`
+- [Notifications Filament](notifications.md) — `module-crm-notifications-filament`
+- [Observability Filament](observability.md) — `module-crm-observability-filament`
+- [Organizations Teams Filament](organizations-teams.md) — `module-crm-organizations-teams-filament`
+- [Profiles Filament](profiles.md) — `module-crm-profiles-filament`
+- [Roles Permissions Filament](roles-permissions.md) — `module-crm-roles-permissions-filament`
+- [Scheduler Queues Filament](scheduler-queues.md) — `module-crm-scheduler-queues-filament`
+- [Search Filament](search.md) — `module-crm-search-filament`
+- [Sessions Devices Filament](sessions-devices.md) — `module-crm-sessions-devices-filament`
+- [Settings Filament](settings.md) — `module-crm-settings-filament`
+- [Theme Support Filament](theme-support.md) — `module-crm-theme-support-filament`
+- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-crm-two-factor-authentication-filament`
+- [Webhooks Filament](webhooks.md) — `module-crm-webhooks-filament`

@@ -1,24 +1,60 @@
 # Real Estate Feature Specifications
 
-**Source:** [REAL-ESTATE.md](../REAL-ESTATE.md)  
-**Architecture:** [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md) · [DOCUMENTATION.md](../REAL-ESTATE.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Module plan
-
-- [Real Estate Core](real-estate-core.md) — `module-real-estate-core`
-- [Parties](parties.md) — `module-real-estate-parties`
-- [Properties](properties.md) — `module-real-estate-properties`
-- [Media and Documents](media-and-documents.md) — `module-real-estate-media-and-documents`
-- [Valuations](valuations.md) — `module-real-estate-valuations`
-- [Instructions](instructions.md) — `module-real-estate-instructions`
-- [Listings](listings.md) — `module-real-estate-listings`
-- [Matching](matching.md) — `module-real-estate-matching`
-- [Viewings](viewings.md) — `module-real-estate-viewings`
-- [Offers](offers.md) — `module-real-estate-offers`
-- [Sales Progression](sales-progression.md) — `module-real-estate-sales-progression`
-- [Lettings](lettings.md) — `module-real-estate-lettings`
-- [Property Management](property-management.md) — `module-real-estate-property-management`
-- [Marketing](marketing.md) — `module-real-estate-marketing`
-- [Portals and Reporting](portals-and-reporting.md) — `module-real-estate-portals-and-reporting`
+- [.graphify](.graphify.md) — `module-real-estate-.graphify`
+- [Activity Comments](activity-comments.md) — `module-real-estate-activity-comments`
+- [Analytics Core](analytics-core.md) — `module-real-estate-analytics-core`
+- [Analytics Google](analytics-google.md) — `module-real-estate-analytics-google`
+- [Analytics Meta](analytics-meta.md) — `module-real-estate-analytics-meta`
+- [Api](api.md) — `module-real-estate-api`
+- [Api Access](api-access.md) — `module-real-estate-api-access`
+- [Application](application.md) — `module-real-estate-application`
+- [Audit](audit.md) — `module-real-estate-audit`
+- [Core](core.md) — `module-real-estate-core`
+- [Currency Context](currency-context.md) — `module-real-estate-currency-context`
+- [Developer Experience](developer-experience.md) — `module-real-estate-developer-experience`
+- [Feature Flags](feature-flags.md) — `module-real-estate-feature-flags`
+- [Features](features.md) — `module-real-estate-features`
+- [Filament](filament.md) — `module-real-estate-filament`
+- [Files Media](files-media.md) — `module-real-estate-files-media`
+- [Identity Core](identity-core.md) — `module-real-estate-identity-core`
+- [Identity Socialstream](identity-socialstream.md) — `module-real-estate-identity-socialstream`
+- [Import Export](import-export.md) — `module-real-estate-import-export`
+- [Integrations](integrations.md) — `module-real-estate-integrations`
+- [Jetstream Bridge](jetstream-bridge.md) — `module-real-estate-jetstream-bridge`
+- [Livewire](livewire.md) — `module-real-estate-livewire`
+- [Localization Core](localization-core.md) — `module-real-estate-localization-core`
+- [Localization Mymemory](localization-mymemory.md) — `module-real-estate-localization-mymemory`
+- [Module Manager](module-manager.md) — `module-real-estate-module-manager`
+- [Notifications](notifications.md) — `module-real-estate-notifications`
+- [Observability](observability.md) — `module-real-estate-observability`
+- [Organizations Teams](organizations-teams.md) — `module-real-estate-organizations-teams`
+- [Profiles](profiles.md) — `module-real-estate-profiles`
+- [Real Estate Core](real-estate-core.md) — `module-real-estate-real-estate-core`
+- [Real Estate Instructions](real-estate-instructions.md) — `module-real-estate-real-estate-instructions`
+- [Real Estate Lettings](real-estate-lettings.md) — `module-real-estate-real-estate-lettings`
+- [Real Estate Listings](real-estate-listings.md) — `module-real-estate-real-estate-listings`
+- [Real Estate Marketing](real-estate-marketing.md) — `module-real-estate-real-estate-marketing`
+- [Real Estate Matching](real-estate-matching.md) — `module-real-estate-real-estate-matching`
+- [Real Estate Media And Documents](real-estate-media-and-documents.md) — `module-real-estate-real-estate-media-and-documents`
+- [Real Estate Offers](real-estate-offers.md) — `module-real-estate-real-estate-offers`
+- [Real Estate Onthemarket](real-estate-onthemarket.md) — `module-real-estate-real-estate-onthemarket`
+- [Real Estate Parties](real-estate-parties.md) — `module-real-estate-real-estate-parties`
+- [Real Estate Portals Reporting](real-estate-portals-reporting.md) — `module-real-estate-real-estate-portals-reporting`
+- [Real Estate Properties](real-estate-properties.md) — `module-real-estate-real-estate-properties`
+- [Real Estate Property Management](real-estate-property-management.md) — `module-real-estate-real-estate-property-management`
+- [Real Estate Rightmove](real-estate-rightmove.md) — `module-real-estate-real-estate-rightmove`
+- [Real Estate Sales Progression](real-estate-sales-progression.md) — `module-real-estate-real-estate-sales-progression`
+- [Real Estate Valuations](real-estate-valuations.md) — `module-real-estate-real-estate-valuations`
+- [Real Estate Viewings](real-estate-viewings.md) — `module-real-estate-real-estate-viewings`
+- [Real Estate Vr Design](real-estate-vr-design.md) — `module-real-estate-real-estate-vr-design`
+- [Real Estate Zoopla](real-estate-zoopla.md) — `module-real-estate-real-estate-zoopla`
+- [Roles Permissions](roles-permissions.md) — `module-real-estate-roles-permissions`
+- [Scheduler Queues](scheduler-queues.md) — `module-real-estate-scheduler-queues`
+- [Search](search.md) — `module-real-estate-search`
+- [Sessions Devices](sessions-devices.md) — `module-real-estate-sessions-devices`
+- [Settings](settings.md) — `module-real-estate-settings`
+- [Theme Support](theme-support.md) — `module-real-estate-theme-support`
+- [Two Factor Authentication](two-factor-authentication.md) — `module-real-estate-two-factor-authentication`
+- [Webhooks](webhooks.md) — `module-real-estate-webhooks`

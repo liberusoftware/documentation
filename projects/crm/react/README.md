@@ -1,134 +1,134 @@
-# Crm React 19.2 + Inertia 3 Implementations
+# CRM React + Inertia Implementations
 
-**Source:** [CRM.md](../CRM.md)
-**Architecture:** [REACT.md](../CRM.md) · [API module index](../api/README.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Customer data and platform modules
-
-- [CRM Core React + Inertia](crm-core.md) — `module-crm-core-react-inertia`
-- [Customer Data Model React + Inertia](customer-data-model.md) — `module-crm-customer-data-model-react-inertia`
-- [Customer Data Platform React + Inertia](customer-data-platform.md) — `module-crm-customer-data-platform-react-inertia`
-- [Data Operations React + Inertia](data-operations.md) — `module-crm-data-operations-react-inertia`
-- [Consent and Preferences React + Inertia](consent-and-preferences.md) — `module-crm-consent-and-preferences-react-inertia`
-- [Territories and Ownership React + Inertia](territories-and-ownership.md) — `module-crm-territories-and-ownership-react-inertia`
-- [CRM Search React + Inertia](crm-search.md) — `module-crm-search-react-inertia`
-- [CRM Documents React + Inertia](crm-documents.md) — `module-crm-documents-react-inertia`
-- [Collaboration React + Inertia](collaboration.md) — `module-crm-collaboration-react-inertia`
-
-## Demand generation and acquisition modules
-
-- [Lead Capture React + Inertia](lead-capture.md) — `module-crm-lead-capture-react-inertia`
-- [Prospecting React + Inertia](prospecting.md) — `module-crm-prospecting-react-inertia`
-- [Enrichment React + Inertia](enrichment.md) — `module-crm-enrichment-react-inertia`
-- [Web Intent React + Inertia](web-intent.md) — `module-crm-web-intent-react-inertia`
-- [Lead Qualification React + Inertia](lead-qualification.md) — `module-crm-lead-qualification-react-inertia`
-- [Routing React + Inertia](routing.md) — `module-crm-routing-react-inertia`
-- [Forms and Surveys React + Inertia](forms-and-surveys.md) — `module-crm-forms-and-surveys-react-inertia`
-- [Chat and Bots React + Inertia](chat-and-bots.md) — `module-crm-chat-and-bots-react-inertia`
-- [Landing Pages and Funnels React + Inertia](landing-pages-and-funnels.md) — `module-crm-landing-pages-and-funnels-react-inertia`
-- [Conversion Optimization React + Inertia](conversion-optimization.md) — `module-crm-conversion-optimization-react-inertia`
-- [Events and Webinars React + Inertia](events-and-webinars.md) — `module-crm-events-and-webinars-react-inertia`
-
-## Sales execution modules
-
-- [Sales Pipelines React + Inertia](sales-pipelines.md) — `module-crm-sales-pipelines-react-inertia`
-- [Sales Workspace React + Inertia](sales-workspace.md) — `module-crm-sales-workspace-react-inertia`
-- [Activities React + Inertia](activities.md) — `module-crm-activities-react-inertia`
-- [Scheduling React + Inertia](scheduling.md) — `module-crm-scheduling-react-inertia`
-- [Sales Engagement React + Inertia](sales-engagement.md) — `module-crm-sales-engagement-react-inertia`
-- [Email Productivity React + Inertia](email-productivity.md) — `module-crm-email-productivity-react-inertia`
-- [Conversation Intelligence React + Inertia](conversation-intelligence.md) — `module-crm-conversation-intelligence-react-inertia`
-- [Playbooks and Enablement React + Inertia](playbooks-and-enablement.md) — `module-crm-playbooks-and-enablement-react-inertia`
-- [Forecasting React + Inertia](forecasting.md) — `module-crm-forecasting-react-inertia`
-- [Revenue Intelligence React + Inertia](revenue-intelligence.md) — `module-crm-revenue-intelligence-react-inertia`
-- [Goals and Performance React + Inertia](goals-and-performance.md) — `module-crm-goals-and-performance-react-inertia`
-- [Quotas and Incentives React + Inertia](quotas-and-incentives.md) — `module-crm-quotas-and-incentives-react-inertia`
-- [Account Planning React + Inertia](account-planning.md) — `module-crm-account-planning-react-inertia`
-
-## Revenue and commercial modules
-
-- [CRM Product Workspace React + Inertia](crm-product-workspace.md) — `module-crm-product-workspace-react-inertia`
-- [CPQ React + Inertia](cpq.md) — `module-crm-cpq-react-inertia`
-- [Proposals and Quotes React + Inertia](proposals-and-quotes.md) — `module-crm-proposals-and-quotes-react-inertia`
-- [Contracts React + Inertia](contracts.md) — `module-crm-contracts-react-inertia`
-- [Orders and Payments Workspace React + Inertia](orders-and-payments-workspace.md) — `module-crm-orders-and-payments-workspace-react-inertia`
-- [Revenue Lifecycle React + Inertia](revenue-lifecycle.md) — `module-crm-revenue-lifecycle-react-inertia`
-
-## Marketing modules
-
-- [Segmentation React + Inertia](segmentation.md) — `module-crm-segmentation-react-inertia`
-- [Campaigns React + Inertia](campaigns.md) — `module-crm-campaigns-react-inertia`
-- [Journey Orchestration React + Inertia](journey-orchestration.md) — `module-crm-journey-orchestration-react-inertia`
-- [Email Marketing React + Inertia](email-marketing.md) — `module-crm-email-marketing-react-inertia`
-- [Mobile Messaging React + Inertia](mobile-messaging.md) — `module-crm-mobile-messaging-react-inertia`
-- [Advertising React + Inertia](advertising.md) — `module-crm-advertising-react-inertia`
-- [Account-Based Marketing React + Inertia](account-based-marketing.md) — `module-crm-account-based-marketing-react-inertia`
-- [Personalization React + Inertia](personalization.md) — `module-crm-personalization-react-inertia`
-- [Marketing Resources React + Inertia](marketing-resources.md) — `module-crm-marketing-resources-react-inertia`
-- [Attribution React + Inertia](attribution.md) — `module-crm-attribution-react-inertia`
-
-## Communications and contact-center modules
-
-- [Unified Conversations React + Inertia](unified-conversations.md) — `module-crm-unified-conversations-react-inertia`
-- [Channel Gateway React + Inertia](channel-gateway.md) — `module-crm-channel-gateway-react-inertia`
-- [Telephony React + Inertia](telephony.md) — `module-crm-telephony-react-inertia`
-- [Dialer and Outreach React + Inertia](dialer-and-outreach.md) — `module-crm-dialer-and-outreach-react-inertia`
-- [Contact Center React + Inertia](contact-center.md) — `module-crm-contact-center-react-inertia`
-- [AI Reception and Conversation React + Inertia](ai-reception-and-conversation.md) — `module-crm-ai-reception-and-conversation-react-inertia`
-
-## Service, success, and experience modules
-
-- [Case Management React + Inertia](case-management.md) — `module-crm-case-management-react-inertia`
-- [Omnichannel Service React + Inertia](omnichannel-service.md) — `module-crm-omnichannel-service-react-inertia`
-- [SLA and Entitlements React + Inertia](sla-and-entitlements.md) — `module-crm-sla-and-entitlements-react-inertia`
-- [Knowledge React + Inertia](knowledge.md) — `module-crm-knowledge-react-inertia`
-- [Customer Self-Service React + Inertia](customer-self-service.md) — `module-crm-customer-self-service-react-inertia`
-- [Customer Success React + Inertia](customer-success.md) — `module-crm-customer-success-react-inertia`
-- [Feedback and Voice of Customer React + Inertia](feedback-and-voice-of-customer.md) — `module-crm-feedback-and-voice-of-customer-react-inertia`
-- [Reputation Management React + Inertia](reputation-management.md) — `module-crm-reputation-management-react-inertia`
-- [Field Service Coordination React + Inertia](field-service-coordination.md) — `module-crm-field-service-coordination-react-inertia`
-- [Service Analytics React + Inertia](service-analytics.md) — `module-crm-service-analytics-react-inertia`
-
-## Community, learning, loyalty, and growth modules
-
-- [Communities React + Inertia](communities.md) — `module-crm-communities-react-inertia`
-- [Learning and Courses React + Inertia](learning-and-courses.md) — `module-crm-learning-and-courses-react-inertia`
-- [Memberships React + Inertia](memberships.md) — `module-crm-memberships-react-inertia`
-- [Loyalty React + Inertia](loyalty.md) — `module-crm-loyalty-react-inertia`
-- [Referrals React + Inertia](referrals.md) — `module-crm-referrals-react-inertia`
-- [Affiliate Management React + Inertia](affiliate-management.md) — `module-crm-affiliate-management-react-inertia`
-- [Advocacy React + Inertia](advocacy.md) — `module-crm-advocacy-react-inertia`
-
-## Partner and agency modules
-
-- [Partner Relationship Management React + Inertia](partner-relationship-management.md) — `module-crm-partner-relationship-management-react-inertia`
-- [Deal Registration React + Inertia](deal-registration.md) — `module-crm-deal-registration-react-inertia`
-- [Channel Sales React + Inertia](channel-sales.md) — `module-crm-channel-sales-react-inertia`
-- [Marketing Development Funds React + Inertia](marketing-development-funds.md) — `module-crm-marketing-development-funds-react-inertia`
-- [Agency Workspace React + Inertia](agency-workspace.md) — `module-crm-agency-workspace-react-inertia`
-- [White Label React + Inertia](white-label.md) — `module-crm-white-label-react-inertia`
-- [SaaS Packaging React + Inertia](saas-packaging.md) — `module-crm-saas-packaging-react-inertia`
-- [Usage Wallet and Rebilling React + Inertia](usage-wallet-and-rebilling.md) — `module-crm-usage-wallet-and-rebilling-react-inertia`
-- [Templates and Snapshots React + Inertia](templates-and-snapshots.md) — `module-crm-templates-and-snapshots-react-inertia`
-- [Client Onboarding React + Inertia](client-onboarding.md) — `module-crm-client-onboarding-react-inertia`
-
-## Delivery, productivity, and operations modules
-
-- [Projects React + Inertia](projects.md) — `module-crm-projects-react-inertia`
-- [Resource Planning React + Inertia](resource-planning.md) — `module-crm-resource-planning-react-inertia`
-- [Work Management React + Inertia](work-management.md) — `module-crm-work-management-react-inertia`
-- [Business Process Management React + Inertia](business-process-management.md) — `module-crm-business-process-management-react-inertia`
-- [CRM Automation Pack React + Inertia](crm-automation-pack.md) — `module-crm-automation-pack-react-inertia`
-- [Sandbox and Release Management React + Inertia](sandbox-and-release-management.md) — `module-crm-sandbox-and-release-management-react-inertia`
-
-## Intelligence and AI modules
-
-- [CRM Analytics React + Inertia](crm-analytics.md) — `module-crm-analytics-react-inertia`
-- [Predictive Models React + Inertia](predictive-models.md) — `module-crm-predictive-models-react-inertia`
-- [CRM Copilot React + Inertia](crm-copilot.md) — `module-crm-copilot-react-inertia`
-- [Prospecting Agent React + Inertia](prospecting-agent.md) — `module-crm-prospecting-agent-react-inertia`
-- [Service Agent React + Inertia](service-agent.md) — `module-crm-service-agent-react-inertia`
-- [Marketing Agent React + Inertia](marketing-agent.md) — `module-crm-marketing-agent-react-inertia`
-- [Conversation Analytics React + Inertia](conversation-analytics.md) — `module-crm-conversation-analytics-react-inertia`
+- [Activity Comments React](activity-comments.md) — `module-crm-activity-comments-react-inertia`
+- [Analytics Contracts React](analytics-contracts.md) — `module-crm-analytics-contracts-react-inertia`
+- [Analytics Core React](analytics-core.md) — `module-crm-analytics-core-react-inertia`
+- [Analytics Google React](analytics-google.md) — `module-crm-analytics-google-react-inertia`
+- [Analytics Meta React](analytics-meta.md) — `module-crm-analytics-meta-react-inertia`
+- [Api Access React](api-access.md) — `module-crm-api-access-react-inertia`
+- [Application React](application.md) — `module-crm-application-react-inertia`
+- [Audit React](audit.md) — `module-crm-audit-react-inertia`
+- [Crm Account Based Marketing React](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing-react-inertia`
+- [Crm Account Planning React](crm-account-planning.md) — `module-crm-crm-account-planning-react-inertia`
+- [Crm Activities React](crm-activities.md) — `module-crm-crm-activities-react-inertia`
+- [Crm Advertising React](crm-advertising.md) — `module-crm-crm-advertising-react-inertia`
+- [Crm Advocacy React](crm-advocacy.md) — `module-crm-crm-advocacy-react-inertia`
+- [Crm Affiliate Management React](crm-affiliate-management.md) — `module-crm-crm-affiliate-management-react-inertia`
+- [Crm Agency Workspace React](crm-agency-workspace.md) — `module-crm-crm-agency-workspace-react-inertia`
+- [Crm Ai Reception And Conversation React](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation-react-inertia`
+- [Crm Analytics React](crm-analytics.md) — `module-crm-crm-analytics-react-inertia`
+- [Crm Attribution React](crm-attribution.md) — `module-crm-crm-attribution-react-inertia`
+- [Crm Automation Pack React](crm-automation-pack.md) — `module-crm-crm-automation-pack-react-inertia`
+- [Crm Business Process Management React](crm-business-process-management.md) — `module-crm-crm-business-process-management-react-inertia`
+- [Crm Campaigns React](crm-campaigns.md) — `module-crm-crm-campaigns-react-inertia`
+- [Crm Case Management React](crm-case-management.md) — `module-crm-crm-case-management-react-inertia`
+- [Crm Channel Gateway React](crm-channel-gateway.md) — `module-crm-crm-channel-gateway-react-inertia`
+- [Crm Channel Sales React](crm-channel-sales.md) — `module-crm-crm-channel-sales-react-inertia`
+- [Crm Chat And Bots React](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots-react-inertia`
+- [Crm Client Onboarding React](crm-client-onboarding.md) — `module-crm-crm-client-onboarding-react-inertia`
+- [Crm Collaboration React](crm-collaboration.md) — `module-crm-crm-collaboration-react-inertia`
+- [Crm Communities React](crm-communities.md) — `module-crm-crm-communities-react-inertia`
+- [Crm Consent And Preferences React](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences-react-inertia`
+- [Crm Contact Center React](crm-contact-center.md) — `module-crm-crm-contact-center-react-inertia`
+- [Crm Contracts React](crm-contracts.md) — `module-crm-crm-contracts-react-inertia`
+- [Crm Conversation Analytics React](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics-react-inertia`
+- [Crm Conversation Intelligence React](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence-react-inertia`
+- [Crm Conversion Optimization React](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization-react-inertia`
+- [Crm Copilot React](crm-copilot.md) — `module-crm-crm-copilot-react-inertia`
+- [Crm Core React](crm-core.md) — `module-crm-crm-core-react-inertia`
+- [Crm Cpq React](crm-cpq.md) — `module-crm-crm-cpq-react-inertia`
+- [Crm Customer Data Model React](crm-customer-data-model.md) — `module-crm-crm-customer-data-model-react-inertia`
+- [Crm Customer Data Platform React](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform-react-inertia`
+- [Crm Customer Self Service React](crm-customer-self-service.md) — `module-crm-crm-customer-self-service-react-inertia`
+- [Crm Customer Success React](crm-customer-success.md) — `module-crm-crm-customer-success-react-inertia`
+- [Crm Data Operations React](crm-data-operations.md) — `module-crm-crm-data-operations-react-inertia`
+- [Crm Deal Registration React](crm-deal-registration.md) — `module-crm-crm-deal-registration-react-inertia`
+- [Crm Dialer And Outreach React](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach-react-inertia`
+- [Crm Documents React](crm-documents.md) — `module-crm-crm-documents-react-inertia`
+- [Crm Email Marketing React](crm-email-marketing.md) — `module-crm-crm-email-marketing-react-inertia`
+- [Crm Email Productivity React](crm-email-productivity.md) — `module-crm-crm-email-productivity-react-inertia`
+- [Crm Enrichment React](crm-enrichment.md) — `module-crm-crm-enrichment-react-inertia`
+- [Crm Events And Webinars React](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars-react-inertia`
+- [Crm Feedback And Voice Of Customer React](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer-react-inertia`
+- [Crm Field Service Coordination React](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination-react-inertia`
+- [Crm Forecasting React](crm-forecasting.md) — `module-crm-crm-forecasting-react-inertia`
+- [Crm Forms And Surveys React](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys-react-inertia`
+- [Crm Goals And Performance React](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance-react-inertia`
+- [Crm Journey Orchestration React](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration-react-inertia`
+- [Crm Knowledge React](crm-knowledge.md) — `module-crm-crm-knowledge-react-inertia`
+- [Crm Landing Pages And Funnels React](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels-react-inertia`
+- [Crm Lead Capture React](crm-lead-capture.md) — `module-crm-crm-lead-capture-react-inertia`
+- [Crm Lead Qualification React](crm-lead-qualification.md) — `module-crm-crm-lead-qualification-react-inertia`
+- [Crm Learning And Courses React](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses-react-inertia`
+- [Crm Loyalty React](crm-loyalty.md) — `module-crm-crm-loyalty-react-inertia`
+- [Crm Marketing Agent React](crm-marketing-agent.md) — `module-crm-crm-marketing-agent-react-inertia`
+- [Crm Marketing Development Funds React](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds-react-inertia`
+- [Crm Marketing Resources React](crm-marketing-resources.md) — `module-crm-crm-marketing-resources-react-inertia`
+- [Crm Memberships React](crm-memberships.md) — `module-crm-crm-memberships-react-inertia`
+- [Crm Mobile Messaging React](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging-react-inertia`
+- [Crm Omnichannel Service React](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service-react-inertia`
+- [Crm Orders And Payments Workspace React](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace-react-inertia`
+- [Crm Partner Relationship Management React](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management-react-inertia`
+- [Crm Personalization React](crm-personalization.md) — `module-crm-crm-personalization-react-inertia`
+- [Crm Playbooks And Enablement React](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement-react-inertia`
+- [Crm Predictive Models React](crm-predictive-models.md) — `module-crm-crm-predictive-models-react-inertia`
+- [Crm Product Workspace React](crm-product-workspace.md) — `module-crm-crm-product-workspace-react-inertia`
+- [Crm Projects React](crm-projects.md) — `module-crm-crm-projects-react-inertia`
+- [Crm Proposals And Quotes React](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes-react-inertia`
+- [Crm Prospecting React](crm-prospecting.md) — `module-crm-crm-prospecting-react-inertia`
+- [Crm Prospecting Agent React](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent-react-inertia`
+- [Crm Quotas And Incentives React](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives-react-inertia`
+- [Crm Referrals React](crm-referrals.md) — `module-crm-crm-referrals-react-inertia`
+- [Crm Reputation Management React](crm-reputation-management.md) — `module-crm-crm-reputation-management-react-inertia`
+- [Crm Resource Planning React](crm-resource-planning.md) — `module-crm-crm-resource-planning-react-inertia`
+- [Crm Revenue Intelligence React](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence-react-inertia`
+- [Crm Revenue Lifecycle React](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle-react-inertia`
+- [Crm Routing React](crm-routing.md) — `module-crm-crm-routing-react-inertia`
+- [Crm Saas Packaging React](crm-saas-packaging.md) — `module-crm-crm-saas-packaging-react-inertia`
+- [Crm Sales Engagement React](crm-sales-engagement.md) — `module-crm-crm-sales-engagement-react-inertia`
+- [Crm Sales Pipelines React](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines-react-inertia`
+- [Crm Sales Workspace React](crm-sales-workspace.md) — `module-crm-crm-sales-workspace-react-inertia`
+- [Crm Sandbox And Release Management React](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management-react-inertia`
+- [Crm Sandbox Release React](crm-sandbox-release.md) — `module-crm-crm-sandbox-release-react-inertia`
+- [Crm Scheduling React](crm-scheduling.md) — `module-crm-crm-scheduling-react-inertia`
+- [Crm Search React](crm-search.md) — `module-crm-crm-search-react-inertia`
+- [Crm Segmentation React](crm-segmentation.md) — `module-crm-crm-segmentation-react-inertia`
+- [Crm Service Agent React](crm-service-agent.md) — `module-crm-crm-service-agent-react-inertia`
+- [Crm Service Analytics React](crm-service-analytics.md) — `module-crm-crm-service-analytics-react-inertia`
+- [Crm Sla And Entitlements React](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements-react-inertia`
+- [Crm Telephony React](crm-telephony.md) — `module-crm-crm-telephony-react-inertia`
+- [Crm Template Snapshots React](crm-template-snapshots.md) — `module-crm-crm-template-snapshots-react-inertia`
+- [Crm Templates And Snapshots React](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots-react-inertia`
+- [Crm Territories And Ownership React](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership-react-inertia`
+- [Crm Unified Conversations React](crm-unified-conversations.md) — `module-crm-crm-unified-conversations-react-inertia`
+- [Crm Usage Wallet And Rebilling React](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling-react-inertia`
+- [Crm Web Intent React](crm-web-intent.md) — `module-crm-crm-web-intent-react-inertia`
+- [Crm White Label React](crm-white-label.md) — `module-crm-crm-white-label-react-inertia`
+- [Crm Work Management React](crm-work-management.md) — `module-crm-crm-work-management-react-inertia`
+- [Currency Context React](currency-context.md) — `module-crm-currency-context-react-inertia`
+- [Developer Experience React](developer-experience.md) — `module-crm-developer-experience-react-inertia`
+- [Feature Flags React](feature-flags.md) — `module-crm-feature-flags-react-inertia`
+- [Files Media React](files-media.md) — `module-crm-files-media-react-inertia`
+- [Identity Core React](identity-core.md) — `module-crm-identity-core-react-inertia`
+- [Identity Socialstream React](identity-socialstream.md) — `module-crm-identity-socialstream-react-inertia`
+- [Import Export React](import-export.md) — `module-crm-import-export-react-inertia`
+- [Integrations React](integrations.md) — `module-crm-integrations-react-inertia`
+- [Jetstream Bridge React](jetstream-bridge.md) — `module-crm-jetstream-bridge-react-inertia`
+- [Localization Contracts React](localization-contracts.md) — `module-crm-localization-contracts-react-inertia`
+- [Localization Core React](localization-core.md) — `module-crm-localization-core-react-inertia`
+- [Localization Mymemory React](localization-mymemory.md) — `module-crm-localization-mymemory-react-inertia`
+- [Module Manager React](module-manager.md) — `module-crm-module-manager-react-inertia`
+- [Notifications React](notifications.md) — `module-crm-notifications-react-inertia`
+- [Observability React](observability.md) — `module-crm-observability-react-inertia`
+- [Organizations Teams React](organizations-teams.md) — `module-crm-organizations-teams-react-inertia`
+- [Profiles React](profiles.md) — `module-crm-profiles-react-inertia`
+- [Roles Permissions React](roles-permissions.md) — `module-crm-roles-permissions-react-inertia`
+- [Scheduler Queues React](scheduler-queues.md) — `module-crm-scheduler-queues-react-inertia`
+- [Search React](search.md) — `module-crm-search-react-inertia`
+- [Sessions Devices React](sessions-devices.md) — `module-crm-sessions-devices-react-inertia`
+- [Settings React](settings.md) — `module-crm-settings-react-inertia`
+- [Theme Support React](theme-support.md) — `module-crm-theme-support-react-inertia`
+- [Two Factor Authentication React](two-factor-authentication.md) — `module-crm-two-factor-authentication-react-inertia`
+- [Webhooks React](webhooks.md) — `module-crm-webhooks-react-inertia`

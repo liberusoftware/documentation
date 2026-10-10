@@ -1,23 +1,54 @@
-# Genealogy Nuxt 4 Implementations
+# Genealogy Nuxt Implementations
 
-**Source:** [GENEALOGY.md](../GENEALOGY.md)
-**Architecture:** [NUXT.md](../GENEALOGY.md) · [API module index](../api/README.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-Each file defines the optional `Nuxt 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Genealogy Core Nuxt](genealogy-core.md) — `module-genealogy-core-nuxt`
-- [People Nuxt](people.md) — `module-genealogy-people-nuxt`
-- [Relationships Nuxt](relationships.md) — `module-genealogy-relationships-nuxt`
-- [Evidence Nuxt](evidence.md) — `module-genealogy-evidence-nuxt`
-- [Research Nuxt](research.md) — `module-genealogy-research-nuxt`
-- [Places Nuxt](places.md) — `module-genealogy-places-nuxt`
-- [Timeline Nuxt](timeline.md) — `module-genealogy-timeline-nuxt`
-- [Tree Viewer Nuxt](tree-viewer.md) — `module-genealogy-tree-viewer-nuxt`
+- [Activity Comments Nuxt](activity-comments.md) — `module-genealogy-activity-comments-nuxt`
+- [Analytics Core Nuxt](analytics-core.md) — `module-genealogy-analytics-core-nuxt`
+- [Analytics Google Nuxt](analytics-google.md) — `module-genealogy-analytics-google-nuxt`
+- [Analytics Meta Nuxt](analytics-meta.md) — `module-genealogy-analytics-meta-nuxt`
+- [Api Access Nuxt](api-access.md) — `module-genealogy-api-access-nuxt`
+- [Application Nuxt](application.md) — `module-genealogy-application-nuxt`
+- [Audit Nuxt](audit.md) — `module-genealogy-audit-nuxt`
+- [Currency Context Nuxt](currency-context.md) — `module-genealogy-currency-context-nuxt`
+- [Developer Experience Nuxt](developer-experience.md) — `module-genealogy-developer-experience-nuxt`
+- [Feature Flags Nuxt](feature-flags.md) — `module-genealogy-feature-flags-nuxt`
+- [Files Media Nuxt](files-media.md) — `module-genealogy-files-media-nuxt`
+- [Genealogy Collaboration Nuxt](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-nuxt`
+- [Genealogy Core Nuxt](genealogy-core.md) — `module-genealogy-genealogy-core-nuxt`
+- [Genealogy Discovery Nuxt](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-nuxt`
+- [Genealogy Dna Nuxt](genealogy-dna.md) — `module-genealogy-genealogy-dna-nuxt`
+- [Genealogy Evidence Nuxt](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-nuxt`
+- [Genealogy Gamification Nuxt](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-nuxt`
+- [Genealogy Import Export Nuxt](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-nuxt`
+- [Genealogy Media Nuxt](genealogy-media.md) — `module-genealogy-genealogy-media-nuxt`
+- [Genealogy People Nuxt](genealogy-people.md) — `module-genealogy-genealogy-people-nuxt`
+- [Genealogy Places Nuxt](genealogy-places.md) — `module-genealogy-genealogy-places-nuxt`
+- [Genealogy Relationships Nuxt](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-nuxt`
+- [Genealogy Reports Nuxt](genealogy-reports.md) — `module-genealogy-genealogy-reports-nuxt`
+- [Genealogy Research Nuxt](genealogy-research.md) — `module-genealogy-genealogy-research-nuxt`
+- [Genealogy Timeline Nuxt](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-nuxt`
+- [Genealogy Tree Viewer Nuxt](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-nuxt`
+- [Identity Core Nuxt](identity-core.md) — `module-genealogy-identity-core-nuxt`
+- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-genealogy-identity-socialstream-nuxt`
 - [Import Export Nuxt](import-export.md) — `module-genealogy-import-export-nuxt`
-- [DNA Nuxt](dna.md) — `module-genealogy-dna-nuxt`
-- [Media Nuxt](media.md) — `module-genealogy-media-nuxt`
-- [Collaboration Nuxt](collaboration.md) — `module-genealogy-collaboration-nuxt`
-- [Discovery Nuxt](discovery.md) — `module-genealogy-discovery-nuxt`
-- [Reports Nuxt](reports.md) — `module-genealogy-reports-nuxt`
+- [Integrations Nuxt](integrations.md) — `module-genealogy-integrations-nuxt`
+- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-nuxt`
+- [Liberu Business Workflow Reconciliation Nuxt](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-nuxt`
+- [Liberu Executive Insights Nuxt](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-nuxt`
+- [Liberu Platform Orchestration Nuxt](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-nuxt`
+- [Liberu Revenue And Care Orchestration Nuxt](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-nuxt`
+- [Localization Core Nuxt](localization-core.md) — `module-genealogy-localization-core-nuxt`
+- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-genealogy-localization-mymemory-nuxt`
+- [Module Manager Nuxt](module-manager.md) — `module-genealogy-module-manager-nuxt`
+- [Notifications Nuxt](notifications.md) — `module-genealogy-notifications-nuxt`
+- [Observability Nuxt](observability.md) — `module-genealogy-observability-nuxt`
+- [Organizations Teams Nuxt](organizations-teams.md) — `module-genealogy-organizations-teams-nuxt`
+- [Profiles Nuxt](profiles.md) — `module-genealogy-profiles-nuxt`
+- [Roles Permissions Nuxt](roles-permissions.md) — `module-genealogy-roles-permissions-nuxt`
+- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-genealogy-scheduler-queues-nuxt`
+- [Search Nuxt](search.md) — `module-genealogy-search-nuxt`
+- [Sessions Devices Nuxt](sessions-devices.md) — `module-genealogy-sessions-devices-nuxt`
+- [Settings Nuxt](settings.md) — `module-genealogy-settings-nuxt`
+- [Theme Support Nuxt](theme-support.md) — `module-genealogy-theme-support-nuxt`
+- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-nuxt`
+- [Webhooks Nuxt](webhooks.md) — `module-genealogy-webhooks-nuxt`

@@ -1,46 +1,50 @@
-# Browser Game Flutter + Dart implementations
+# Browser Game Flutter + Dart Implementations
 
-**Scope:** [Browser Game](../BROWSER-GAME.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [Flutter technology](../../../technologies/FLUTTER.md) · [Flutter standard](../../../standards/FLUTTER.md)
+Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-This index defines the optional Flutter + Dart adapter boundary for the Browser Game project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-flutter`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [Flutter + Dart module standard](../../../modules/flutter/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 15 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                                                  | Package                                              | Core                                        | API                                       |
-| ------------------------------------------------------- | ---------------------------------------------------- | ------------------------------------------- | ----------------------------------------- |
-| [Accounts](accounts.md)                                 | module-browser-game-accounts-flutter                 | [Core](../core/accounts.md)                 | [API](../api/accounts.md)                 |
-| [Characters](characters.md)                             | module-browser-game-characters-flutter               | [Core](../core/characters.md)               | [API](../api/characters.md)               |
-| [Collections](collections.md)                           | module-browser-game-collections-flutter              | [Core](../core/collections.md)              | [API](../api/collections.md)              |
-| [Combat](combat.md)                                     | module-browser-game-combat-flutter                   | [Core](../core/combat.md)                   | [API](../api/combat.md)                   |
-| [Commerce](commerce.md)                                 | module-browser-game-commerce-flutter                 | [Core](../core/commerce.md)                 | [API](../api/commerce.md)                 |
-| [Competition](competition.md)                           | module-browser-game-competition-flutter              | [Core](../core/competition.md)              | [API](../api/competition.md)              |
-| [Crafting](crafting.md)                                 | module-browser-game-crafting-flutter                 | [Core](../core/crafting.md)                 | [API](../api/crafting.md)                 |
-| [Economy](economy.md)                                   | module-browser-game-economy-flutter                  | [Core](../core/economy.md)                  | [API](../api/economy.md)                  |
-| [Game Core](game-core.md)                               | module-browser-game-game-core-flutter                | [Core](../core/game-core.md)                | [API](../api/game-core.md)                |
-| [Items](items.md)                                       | module-browser-game-items-flutter                    | [Core](../core/items.md)                    | [API](../api/items.md)                    |
-| [Live Ops](live-ops.md)                                 | module-browser-game-live-ops-flutter                 | [Core](../core/live-ops.md)                 | [API](../api/live-ops.md)                 |
-| [Moderation And Analytics](moderation-and-analytics.md) | module-browser-game-moderation-and-analytics-flutter | [Core](../core/moderation-and-analytics.md) | [API](../api/moderation-and-analytics.md) |
-| [Quests](quests.md)                                     | module-browser-game-quests-flutter                   | [Core](../core/quests.md)                   | [API](../api/quests.md)                   |
-| [Social](social.md)                                     | module-browser-game-social-flutter                   | [Core](../core/social.md)                   | [API](../api/social.md)                   |
-| [World](world.md)                                       | module-browser-game-world-flutter                    | [Core](../core/world.md)                    | [API](../api/world.md)                    |
+- [Activity Comments Flutter](activity-comments.md) — `module-browser-game-activity-comments-flutter`
+- [Analytics Core Flutter](analytics-core.md) — `module-browser-game-analytics-core-flutter`
+- [Analytics Google Flutter](analytics-google.md) — `module-browser-game-analytics-google-flutter`
+- [Analytics Meta Flutter](analytics-meta.md) — `module-browser-game-analytics-meta-flutter`
+- [Api Access Flutter](api-access.md) — `module-browser-game-api-access-flutter`
+- [Application Flutter](application.md) — `module-browser-game-application-flutter`
+- [Audit Flutter](audit.md) — `module-browser-game-audit-flutter`
+- [Browser Game Accounts Flutter](browser-game-accounts.md) — `module-browser-game-browser-game-accounts-flutter`
+- [Browser Game Characters Flutter](browser-game-characters.md) — `module-browser-game-browser-game-characters-flutter`
+- [Browser Game Collections Flutter](browser-game-collections.md) — `module-browser-game-browser-game-collections-flutter`
+- [Browser Game Combat Flutter](browser-game-combat.md) — `module-browser-game-browser-game-combat-flutter`
+- [Browser Game Commerce Flutter](browser-game-commerce.md) — `module-browser-game-browser-game-commerce-flutter`
+- [Browser Game Competition Flutter](browser-game-competition.md) — `module-browser-game-browser-game-competition-flutter`
+- [Browser Game Crafting Flutter](browser-game-crafting.md) — `module-browser-game-browser-game-crafting-flutter`
+- [Browser Game Economy Flutter](browser-game-economy.md) — `module-browser-game-browser-game-economy-flutter`
+- [Browser Game Game Core Flutter](browser-game-game-core.md) — `module-browser-game-browser-game-game-core-flutter`
+- [Browser Game Items Flutter](browser-game-items.md) — `module-browser-game-browser-game-items-flutter`
+- [Browser Game Live Ops Flutter](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops-flutter`
+- [Browser Game Moderation And Analytics Flutter](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics-flutter`
+- [Browser Game Quests Flutter](browser-game-quests.md) — `module-browser-game-browser-game-quests-flutter`
+- [Browser Game Social Flutter](browser-game-social.md) — `module-browser-game-browser-game-social-flutter`
+- [Browser Game World Flutter](browser-game-world.md) — `module-browser-game-browser-game-world-flutter`
+- [Currency Context Flutter](currency-context.md) — `module-browser-game-currency-context-flutter`
+- [Developer Experience Flutter](developer-experience.md) — `module-browser-game-developer-experience-flutter`
+- [Feature Flags Flutter](feature-flags.md) — `module-browser-game-feature-flags-flutter`
+- [Files Media Flutter](files-media.md) — `module-browser-game-files-media-flutter`
+- [Identity Core Flutter](identity-core.md) — `module-browser-game-identity-core-flutter`
+- [Identity Socialstream Flutter](identity-socialstream.md) — `module-browser-game-identity-socialstream-flutter`
+- [Import Export Flutter](import-export.md) — `module-browser-game-import-export-flutter`
+- [Integrations Flutter](integrations.md) — `module-browser-game-integrations-flutter`
+- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-browser-game-jetstream-bridge-flutter`
+- [Localization Core Flutter](localization-core.md) — `module-browser-game-localization-core-flutter`
+- [Localization Mymemory Flutter](localization-mymemory.md) — `module-browser-game-localization-mymemory-flutter`
+- [Module Manager Flutter](module-manager.md) — `module-browser-game-module-manager-flutter`
+- [Notifications Flutter](notifications.md) — `module-browser-game-notifications-flutter`
+- [Observability Flutter](observability.md) — `module-browser-game-observability-flutter`
+- [Organizations Teams Flutter](organizations-teams.md) — `module-browser-game-organizations-teams-flutter`
+- [Profiles Flutter](profiles.md) — `module-browser-game-profiles-flutter`
+- [Roles Permissions Flutter](roles-permissions.md) — `module-browser-game-roles-permissions-flutter`
+- [Scheduler Queues Flutter](scheduler-queues.md) — `module-browser-game-scheduler-queues-flutter`
+- [Search Flutter](search.md) — `module-browser-game-search-flutter`
+- [Sessions Devices Flutter](sessions-devices.md) — `module-browser-game-sessions-devices-flutter`
+- [Settings Flutter](settings.md) — `module-browser-game-settings-flutter`
+- [Theme Support Flutter](theme-support.md) — `module-browser-game-theme-support-flutter`
+- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-browser-game-two-factor-authentication-flutter`
+- [Webhooks Flutter](webhooks.md) — `module-browser-game-webhooks-flutter`

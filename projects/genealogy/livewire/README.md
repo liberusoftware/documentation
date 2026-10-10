@@ -1,23 +1,54 @@
-# Genealogy Livewire 4 Implementations
+# Genealogy Livewire Implementations
 
-**Source:** [GENEALOGY.md](../GENEALOGY.md)  
-**Architecture:** [LIVEWIRE.md](../GENEALOGY.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+Each file defines the optional Livewire 4 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Livewire 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Genealogy Core Livewire](genealogy-core.md) — `module-genealogy-core-livewire`
-- [People Livewire](people.md) — `module-genealogy-people-livewire`
-- [Relationships Livewire](relationships.md) — `module-genealogy-relationships-livewire`
-- [Evidence Livewire](evidence.md) — `module-genealogy-evidence-livewire`
-- [Research Livewire](research.md) — `module-genealogy-research-livewire`
-- [Places Livewire](places.md) — `module-genealogy-places-livewire`
-- [Timeline Livewire](timeline.md) — `module-genealogy-timeline-livewire`
-- [Tree Viewer Livewire](tree-viewer.md) — `module-genealogy-tree-viewer-livewire`
+- [Activity Comments Livewire](activity-comments.md) — `module-genealogy-activity-comments-livewire`
+- [Analytics Core Livewire](analytics-core.md) — `module-genealogy-analytics-core-livewire`
+- [Analytics Google Livewire](analytics-google.md) — `module-genealogy-analytics-google-livewire`
+- [Analytics Meta Livewire](analytics-meta.md) — `module-genealogy-analytics-meta-livewire`
+- [Api Access Livewire](api-access.md) — `module-genealogy-api-access-livewire`
+- [Application Livewire](application.md) — `module-genealogy-application-livewire`
+- [Audit Livewire](audit.md) — `module-genealogy-audit-livewire`
+- [Currency Context Livewire](currency-context.md) — `module-genealogy-currency-context-livewire`
+- [Developer Experience Livewire](developer-experience.md) — `module-genealogy-developer-experience-livewire`
+- [Feature Flags Livewire](feature-flags.md) — `module-genealogy-feature-flags-livewire`
+- [Files Media Livewire](files-media.md) — `module-genealogy-files-media-livewire`
+- [Genealogy Collaboration Livewire](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-livewire`
+- [Genealogy Core Livewire](genealogy-core.md) — `module-genealogy-genealogy-core-livewire`
+- [Genealogy Discovery Livewire](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-livewire`
+- [Genealogy Dna Livewire](genealogy-dna.md) — `module-genealogy-genealogy-dna-livewire`
+- [Genealogy Evidence Livewire](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-livewire`
+- [Genealogy Gamification Livewire](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-livewire`
+- [Genealogy Import Export Livewire](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-livewire`
+- [Genealogy Media Livewire](genealogy-media.md) — `module-genealogy-genealogy-media-livewire`
+- [Genealogy People Livewire](genealogy-people.md) — `module-genealogy-genealogy-people-livewire`
+- [Genealogy Places Livewire](genealogy-places.md) — `module-genealogy-genealogy-places-livewire`
+- [Genealogy Relationships Livewire](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-livewire`
+- [Genealogy Reports Livewire](genealogy-reports.md) — `module-genealogy-genealogy-reports-livewire`
+- [Genealogy Research Livewire](genealogy-research.md) — `module-genealogy-genealogy-research-livewire`
+- [Genealogy Timeline Livewire](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-livewire`
+- [Genealogy Tree Viewer Livewire](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-livewire`
+- [Identity Core Livewire](identity-core.md) — `module-genealogy-identity-core-livewire`
+- [Identity Socialstream Livewire](identity-socialstream.md) — `module-genealogy-identity-socialstream-livewire`
 - [Import Export Livewire](import-export.md) — `module-genealogy-import-export-livewire`
-- [DNA Livewire](dna.md) — `module-genealogy-dna-livewire`
-- [Media Livewire](media.md) — `module-genealogy-media-livewire`
-- [Collaboration Livewire](collaboration.md) — `module-genealogy-collaboration-livewire`
-- [Discovery Livewire](discovery.md) — `module-genealogy-discovery-livewire`
-- [Reports Livewire](reports.md) — `module-genealogy-reports-livewire`
+- [Integrations Livewire](integrations.md) — `module-genealogy-integrations-livewire`
+- [Jetstream Bridge Livewire](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-livewire`
+- [Liberu Business Workflow Reconciliation Livewire](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-livewire`
+- [Liberu Executive Insights Livewire](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-livewire`
+- [Liberu Platform Orchestration Livewire](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-livewire`
+- [Liberu Revenue And Care Orchestration Livewire](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-livewire`
+- [Localization Core Livewire](localization-core.md) — `module-genealogy-localization-core-livewire`
+- [Localization Mymemory Livewire](localization-mymemory.md) — `module-genealogy-localization-mymemory-livewire`
+- [Module Manager Livewire](module-manager.md) — `module-genealogy-module-manager-livewire`
+- [Notifications Livewire](notifications.md) — `module-genealogy-notifications-livewire`
+- [Observability Livewire](observability.md) — `module-genealogy-observability-livewire`
+- [Organizations Teams Livewire](organizations-teams.md) — `module-genealogy-organizations-teams-livewire`
+- [Profiles Livewire](profiles.md) — `module-genealogy-profiles-livewire`
+- [Roles Permissions Livewire](roles-permissions.md) — `module-genealogy-roles-permissions-livewire`
+- [Scheduler Queues Livewire](scheduler-queues.md) — `module-genealogy-scheduler-queues-livewire`
+- [Search Livewire](search.md) — `module-genealogy-search-livewire`
+- [Sessions Devices Livewire](sessions-devices.md) — `module-genealogy-sessions-devices-livewire`
+- [Settings Livewire](settings.md) — `module-genealogy-settings-livewire`
+- [Theme Support Livewire](theme-support.md) — `module-genealogy-theme-support-livewire`
+- [Two Factor Authentication Livewire](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-livewire`
+- [Webhooks Livewire](webhooks.md) — `module-genealogy-webhooks-livewire`

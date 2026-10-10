@@ -1,134 +1,134 @@
-# Crm Vue 3 + Inertia 3 Implementations
+# CRM Vue + Inertia Implementations
 
-**Source:** [CRM.md](../CRM.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Customer data and platform modules
-
-- [CRM Core Vue + Inertia](crm-core.md) — `module-crm-core-vue-inertia`
-- [Customer Data Model Vue + Inertia](customer-data-model.md) — `module-crm-customer-data-model-vue-inertia`
-- [Customer Data Platform Vue + Inertia](customer-data-platform.md) — `module-crm-customer-data-platform-vue-inertia`
-- [Data Operations Vue + Inertia](data-operations.md) — `module-crm-data-operations-vue-inertia`
-- [Consent and Preferences Vue + Inertia](consent-and-preferences.md) — `module-crm-consent-and-preferences-vue-inertia`
-- [Territories and Ownership Vue + Inertia](territories-and-ownership.md) — `module-crm-territories-and-ownership-vue-inertia`
-- [CRM Search Vue + Inertia](crm-search.md) — `module-crm-search-vue-inertia`
-- [CRM Documents Vue + Inertia](crm-documents.md) — `module-crm-documents-vue-inertia`
-- [Collaboration Vue + Inertia](collaboration.md) — `module-crm-collaboration-vue-inertia`
-
-## Demand generation and acquisition modules
-
-- [Lead Capture Vue + Inertia](lead-capture.md) — `module-crm-lead-capture-vue-inertia`
-- [Prospecting Vue + Inertia](prospecting.md) — `module-crm-prospecting-vue-inertia`
-- [Enrichment Vue + Inertia](enrichment.md) — `module-crm-enrichment-vue-inertia`
-- [Web Intent Vue + Inertia](web-intent.md) — `module-crm-web-intent-vue-inertia`
-- [Lead Qualification Vue + Inertia](lead-qualification.md) — `module-crm-lead-qualification-vue-inertia`
-- [Routing Vue + Inertia](routing.md) — `module-crm-routing-vue-inertia`
-- [Forms and Surveys Vue + Inertia](forms-and-surveys.md) — `module-crm-forms-and-surveys-vue-inertia`
-- [Chat and Bots Vue + Inertia](chat-and-bots.md) — `module-crm-chat-and-bots-vue-inertia`
-- [Landing Pages and Funnels Vue + Inertia](landing-pages-and-funnels.md) — `module-crm-landing-pages-and-funnels-vue-inertia`
-- [Conversion Optimization Vue + Inertia](conversion-optimization.md) — `module-crm-conversion-optimization-vue-inertia`
-- [Events and Webinars Vue + Inertia](events-and-webinars.md) — `module-crm-events-and-webinars-vue-inertia`
-
-## Sales execution modules
-
-- [Sales Pipelines Vue + Inertia](sales-pipelines.md) — `module-crm-sales-pipelines-vue-inertia`
-- [Sales Workspace Vue + Inertia](sales-workspace.md) — `module-crm-sales-workspace-vue-inertia`
-- [Activities Vue + Inertia](activities.md) — `module-crm-activities-vue-inertia`
-- [Scheduling Vue + Inertia](scheduling.md) — `module-crm-scheduling-vue-inertia`
-- [Sales Engagement Vue + Inertia](sales-engagement.md) — `module-crm-sales-engagement-vue-inertia`
-- [Email Productivity Vue + Inertia](email-productivity.md) — `module-crm-email-productivity-vue-inertia`
-- [Conversation Intelligence Vue + Inertia](conversation-intelligence.md) — `module-crm-conversation-intelligence-vue-inertia`
-- [Playbooks and Enablement Vue + Inertia](playbooks-and-enablement.md) — `module-crm-playbooks-and-enablement-vue-inertia`
-- [Forecasting Vue + Inertia](forecasting.md) — `module-crm-forecasting-vue-inertia`
-- [Revenue Intelligence Vue + Inertia](revenue-intelligence.md) — `module-crm-revenue-intelligence-vue-inertia`
-- [Goals and Performance Vue + Inertia](goals-and-performance.md) — `module-crm-goals-and-performance-vue-inertia`
-- [Quotas and Incentives Vue + Inertia](quotas-and-incentives.md) — `module-crm-quotas-and-incentives-vue-inertia`
-- [Account Planning Vue + Inertia](account-planning.md) — `module-crm-account-planning-vue-inertia`
-
-## Revenue and commercial modules
-
-- [CRM Product Workspace Vue + Inertia](crm-product-workspace.md) — `module-crm-product-workspace-vue-inertia`
-- [CPQ Vue + Inertia](cpq.md) — `module-crm-cpq-vue-inertia`
-- [Proposals and Quotes Vue + Inertia](proposals-and-quotes.md) — `module-crm-proposals-and-quotes-vue-inertia`
-- [Contracts Vue + Inertia](contracts.md) — `module-crm-contracts-vue-inertia`
-- [Orders and Payments Workspace Vue + Inertia](orders-and-payments-workspace.md) — `module-crm-orders-and-payments-workspace-vue-inertia`
-- [Revenue Lifecycle Vue + Inertia](revenue-lifecycle.md) — `module-crm-revenue-lifecycle-vue-inertia`
-
-## Marketing modules
-
-- [Segmentation Vue + Inertia](segmentation.md) — `module-crm-segmentation-vue-inertia`
-- [Campaigns Vue + Inertia](campaigns.md) — `module-crm-campaigns-vue-inertia`
-- [Journey Orchestration Vue + Inertia](journey-orchestration.md) — `module-crm-journey-orchestration-vue-inertia`
-- [Email Marketing Vue + Inertia](email-marketing.md) — `module-crm-email-marketing-vue-inertia`
-- [Mobile Messaging Vue + Inertia](mobile-messaging.md) — `module-crm-mobile-messaging-vue-inertia`
-- [Advertising Vue + Inertia](advertising.md) — `module-crm-advertising-vue-inertia`
-- [Account-Based Marketing Vue + Inertia](account-based-marketing.md) — `module-crm-account-based-marketing-vue-inertia`
-- [Personalization Vue + Inertia](personalization.md) — `module-crm-personalization-vue-inertia`
-- [Marketing Resources Vue + Inertia](marketing-resources.md) — `module-crm-marketing-resources-vue-inertia`
-- [Attribution Vue + Inertia](attribution.md) — `module-crm-attribution-vue-inertia`
-
-## Communications and contact-center modules
-
-- [Unified Conversations Vue + Inertia](unified-conversations.md) — `module-crm-unified-conversations-vue-inertia`
-- [Channel Gateway Vue + Inertia](channel-gateway.md) — `module-crm-channel-gateway-vue-inertia`
-- [Telephony Vue + Inertia](telephony.md) — `module-crm-telephony-vue-inertia`
-- [Dialer and Outreach Vue + Inertia](dialer-and-outreach.md) — `module-crm-dialer-and-outreach-vue-inertia`
-- [Contact Center Vue + Inertia](contact-center.md) — `module-crm-contact-center-vue-inertia`
-- [AI Reception and Conversation Vue + Inertia](ai-reception-and-conversation.md) — `module-crm-ai-reception-and-conversation-vue-inertia`
-
-## Service, success, and experience modules
-
-- [Case Management Vue + Inertia](case-management.md) — `module-crm-case-management-vue-inertia`
-- [Omnichannel Service Vue + Inertia](omnichannel-service.md) — `module-crm-omnichannel-service-vue-inertia`
-- [SLA and Entitlements Vue + Inertia](sla-and-entitlements.md) — `module-crm-sla-and-entitlements-vue-inertia`
-- [Knowledge Vue + Inertia](knowledge.md) — `module-crm-knowledge-vue-inertia`
-- [Customer Self-Service Vue + Inertia](customer-self-service.md) — `module-crm-customer-self-service-vue-inertia`
-- [Customer Success Vue + Inertia](customer-success.md) — `module-crm-customer-success-vue-inertia`
-- [Feedback and Voice of Customer Vue + Inertia](feedback-and-voice-of-customer.md) — `module-crm-feedback-and-voice-of-customer-vue-inertia`
-- [Reputation Management Vue + Inertia](reputation-management.md) — `module-crm-reputation-management-vue-inertia`
-- [Field Service Coordination Vue + Inertia](field-service-coordination.md) — `module-crm-field-service-coordination-vue-inertia`
-- [Service Analytics Vue + Inertia](service-analytics.md) — `module-crm-service-analytics-vue-inertia`
-
-## Community, learning, loyalty, and growth modules
-
-- [Communities Vue + Inertia](communities.md) — `module-crm-communities-vue-inertia`
-- [Learning and Courses Vue + Inertia](learning-and-courses.md) — `module-crm-learning-and-courses-vue-inertia`
-- [Memberships Vue + Inertia](memberships.md) — `module-crm-memberships-vue-inertia`
-- [Loyalty Vue + Inertia](loyalty.md) — `module-crm-loyalty-vue-inertia`
-- [Referrals Vue + Inertia](referrals.md) — `module-crm-referrals-vue-inertia`
-- [Affiliate Management Vue + Inertia](affiliate-management.md) — `module-crm-affiliate-management-vue-inertia`
-- [Advocacy Vue + Inertia](advocacy.md) — `module-crm-advocacy-vue-inertia`
-
-## Partner and agency modules
-
-- [Partner Relationship Management Vue + Inertia](partner-relationship-management.md) — `module-crm-partner-relationship-management-vue-inertia`
-- [Deal Registration Vue + Inertia](deal-registration.md) — `module-crm-deal-registration-vue-inertia`
-- [Channel Sales Vue + Inertia](channel-sales.md) — `module-crm-channel-sales-vue-inertia`
-- [Marketing Development Funds Vue + Inertia](marketing-development-funds.md) — `module-crm-marketing-development-funds-vue-inertia`
-- [Agency Workspace Vue + Inertia](agency-workspace.md) — `module-crm-agency-workspace-vue-inertia`
-- [White Label Vue + Inertia](white-label.md) — `module-crm-white-label-vue-inertia`
-- [SaaS Packaging Vue + Inertia](saas-packaging.md) — `module-crm-saas-packaging-vue-inertia`
-- [Usage Wallet and Rebilling Vue + Inertia](usage-wallet-and-rebilling.md) — `module-crm-usage-wallet-and-rebilling-vue-inertia`
-- [Templates and Snapshots Vue + Inertia](templates-and-snapshots.md) — `module-crm-templates-and-snapshots-vue-inertia`
-- [Client Onboarding Vue + Inertia](client-onboarding.md) — `module-crm-client-onboarding-vue-inertia`
-
-## Delivery, productivity, and operations modules
-
-- [Projects Vue + Inertia](projects.md) — `module-crm-projects-vue-inertia`
-- [Resource Planning Vue + Inertia](resource-planning.md) — `module-crm-resource-planning-vue-inertia`
-- [Work Management Vue + Inertia](work-management.md) — `module-crm-work-management-vue-inertia`
-- [Business Process Management Vue + Inertia](business-process-management.md) — `module-crm-business-process-management-vue-inertia`
-- [CRM Automation Pack Vue + Inertia](crm-automation-pack.md) — `module-crm-automation-pack-vue-inertia`
-- [Sandbox and Release Management Vue + Inertia](sandbox-and-release-management.md) — `module-crm-sandbox-and-release-management-vue-inertia`
-
-## Intelligence and AI modules
-
-- [CRM Analytics Vue + Inertia](crm-analytics.md) — `module-crm-analytics-vue-inertia`
-- [Predictive Models Vue + Inertia](predictive-models.md) — `module-crm-predictive-models-vue-inertia`
-- [CRM Copilot Vue + Inertia](crm-copilot.md) — `module-crm-copilot-vue-inertia`
-- [Prospecting Agent Vue + Inertia](prospecting-agent.md) — `module-crm-prospecting-agent-vue-inertia`
-- [Service Agent Vue + Inertia](service-agent.md) — `module-crm-service-agent-vue-inertia`
-- [Marketing Agent Vue + Inertia](marketing-agent.md) — `module-crm-marketing-agent-vue-inertia`
-- [Conversation Analytics Vue + Inertia](conversation-analytics.md) — `module-crm-conversation-analytics-vue-inertia`
+- [Activity Comments Vue](activity-comments.md) — `module-crm-activity-comments-vue-inertia`
+- [Analytics Contracts Vue](analytics-contracts.md) — `module-crm-analytics-contracts-vue-inertia`
+- [Analytics Core Vue](analytics-core.md) — `module-crm-analytics-core-vue-inertia`
+- [Analytics Google Vue](analytics-google.md) — `module-crm-analytics-google-vue-inertia`
+- [Analytics Meta Vue](analytics-meta.md) — `module-crm-analytics-meta-vue-inertia`
+- [Api Access Vue](api-access.md) — `module-crm-api-access-vue-inertia`
+- [Application Vue](application.md) — `module-crm-application-vue-inertia`
+- [Audit Vue](audit.md) — `module-crm-audit-vue-inertia`
+- [Crm Account Based Marketing Vue](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing-vue-inertia`
+- [Crm Account Planning Vue](crm-account-planning.md) — `module-crm-crm-account-planning-vue-inertia`
+- [Crm Activities Vue](crm-activities.md) — `module-crm-crm-activities-vue-inertia`
+- [Crm Advertising Vue](crm-advertising.md) — `module-crm-crm-advertising-vue-inertia`
+- [Crm Advocacy Vue](crm-advocacy.md) — `module-crm-crm-advocacy-vue-inertia`
+- [Crm Affiliate Management Vue](crm-affiliate-management.md) — `module-crm-crm-affiliate-management-vue-inertia`
+- [Crm Agency Workspace Vue](crm-agency-workspace.md) — `module-crm-crm-agency-workspace-vue-inertia`
+- [Crm Ai Reception And Conversation Vue](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation-vue-inertia`
+- [Crm Analytics Vue](crm-analytics.md) — `module-crm-crm-analytics-vue-inertia`
+- [Crm Attribution Vue](crm-attribution.md) — `module-crm-crm-attribution-vue-inertia`
+- [Crm Automation Pack Vue](crm-automation-pack.md) — `module-crm-crm-automation-pack-vue-inertia`
+- [Crm Business Process Management Vue](crm-business-process-management.md) — `module-crm-crm-business-process-management-vue-inertia`
+- [Crm Campaigns Vue](crm-campaigns.md) — `module-crm-crm-campaigns-vue-inertia`
+- [Crm Case Management Vue](crm-case-management.md) — `module-crm-crm-case-management-vue-inertia`
+- [Crm Channel Gateway Vue](crm-channel-gateway.md) — `module-crm-crm-channel-gateway-vue-inertia`
+- [Crm Channel Sales Vue](crm-channel-sales.md) — `module-crm-crm-channel-sales-vue-inertia`
+- [Crm Chat And Bots Vue](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots-vue-inertia`
+- [Crm Client Onboarding Vue](crm-client-onboarding.md) — `module-crm-crm-client-onboarding-vue-inertia`
+- [Crm Collaboration Vue](crm-collaboration.md) — `module-crm-crm-collaboration-vue-inertia`
+- [Crm Communities Vue](crm-communities.md) — `module-crm-crm-communities-vue-inertia`
+- [Crm Consent And Preferences Vue](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences-vue-inertia`
+- [Crm Contact Center Vue](crm-contact-center.md) — `module-crm-crm-contact-center-vue-inertia`
+- [Crm Contracts Vue](crm-contracts.md) — `module-crm-crm-contracts-vue-inertia`
+- [Crm Conversation Analytics Vue](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics-vue-inertia`
+- [Crm Conversation Intelligence Vue](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence-vue-inertia`
+- [Crm Conversion Optimization Vue](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization-vue-inertia`
+- [Crm Copilot Vue](crm-copilot.md) — `module-crm-crm-copilot-vue-inertia`
+- [Crm Core Vue](crm-core.md) — `module-crm-crm-core-vue-inertia`
+- [Crm Cpq Vue](crm-cpq.md) — `module-crm-crm-cpq-vue-inertia`
+- [Crm Customer Data Model Vue](crm-customer-data-model.md) — `module-crm-crm-customer-data-model-vue-inertia`
+- [Crm Customer Data Platform Vue](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform-vue-inertia`
+- [Crm Customer Self Service Vue](crm-customer-self-service.md) — `module-crm-crm-customer-self-service-vue-inertia`
+- [Crm Customer Success Vue](crm-customer-success.md) — `module-crm-crm-customer-success-vue-inertia`
+- [Crm Data Operations Vue](crm-data-operations.md) — `module-crm-crm-data-operations-vue-inertia`
+- [Crm Deal Registration Vue](crm-deal-registration.md) — `module-crm-crm-deal-registration-vue-inertia`
+- [Crm Dialer And Outreach Vue](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach-vue-inertia`
+- [Crm Documents Vue](crm-documents.md) — `module-crm-crm-documents-vue-inertia`
+- [Crm Email Marketing Vue](crm-email-marketing.md) — `module-crm-crm-email-marketing-vue-inertia`
+- [Crm Email Productivity Vue](crm-email-productivity.md) — `module-crm-crm-email-productivity-vue-inertia`
+- [Crm Enrichment Vue](crm-enrichment.md) — `module-crm-crm-enrichment-vue-inertia`
+- [Crm Events And Webinars Vue](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars-vue-inertia`
+- [Crm Feedback And Voice Of Customer Vue](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer-vue-inertia`
+- [Crm Field Service Coordination Vue](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination-vue-inertia`
+- [Crm Forecasting Vue](crm-forecasting.md) — `module-crm-crm-forecasting-vue-inertia`
+- [Crm Forms And Surveys Vue](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys-vue-inertia`
+- [Crm Goals And Performance Vue](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance-vue-inertia`
+- [Crm Journey Orchestration Vue](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration-vue-inertia`
+- [Crm Knowledge Vue](crm-knowledge.md) — `module-crm-crm-knowledge-vue-inertia`
+- [Crm Landing Pages And Funnels Vue](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels-vue-inertia`
+- [Crm Lead Capture Vue](crm-lead-capture.md) — `module-crm-crm-lead-capture-vue-inertia`
+- [Crm Lead Qualification Vue](crm-lead-qualification.md) — `module-crm-crm-lead-qualification-vue-inertia`
+- [Crm Learning And Courses Vue](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses-vue-inertia`
+- [Crm Loyalty Vue](crm-loyalty.md) — `module-crm-crm-loyalty-vue-inertia`
+- [Crm Marketing Agent Vue](crm-marketing-agent.md) — `module-crm-crm-marketing-agent-vue-inertia`
+- [Crm Marketing Development Funds Vue](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds-vue-inertia`
+- [Crm Marketing Resources Vue](crm-marketing-resources.md) — `module-crm-crm-marketing-resources-vue-inertia`
+- [Crm Memberships Vue](crm-memberships.md) — `module-crm-crm-memberships-vue-inertia`
+- [Crm Mobile Messaging Vue](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging-vue-inertia`
+- [Crm Omnichannel Service Vue](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service-vue-inertia`
+- [Crm Orders And Payments Workspace Vue](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace-vue-inertia`
+- [Crm Partner Relationship Management Vue](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management-vue-inertia`
+- [Crm Personalization Vue](crm-personalization.md) — `module-crm-crm-personalization-vue-inertia`
+- [Crm Playbooks And Enablement Vue](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement-vue-inertia`
+- [Crm Predictive Models Vue](crm-predictive-models.md) — `module-crm-crm-predictive-models-vue-inertia`
+- [Crm Product Workspace Vue](crm-product-workspace.md) — `module-crm-crm-product-workspace-vue-inertia`
+- [Crm Projects Vue](crm-projects.md) — `module-crm-crm-projects-vue-inertia`
+- [Crm Proposals And Quotes Vue](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes-vue-inertia`
+- [Crm Prospecting Vue](crm-prospecting.md) — `module-crm-crm-prospecting-vue-inertia`
+- [Crm Prospecting Agent Vue](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent-vue-inertia`
+- [Crm Quotas And Incentives Vue](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives-vue-inertia`
+- [Crm Referrals Vue](crm-referrals.md) — `module-crm-crm-referrals-vue-inertia`
+- [Crm Reputation Management Vue](crm-reputation-management.md) — `module-crm-crm-reputation-management-vue-inertia`
+- [Crm Resource Planning Vue](crm-resource-planning.md) — `module-crm-crm-resource-planning-vue-inertia`
+- [Crm Revenue Intelligence Vue](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence-vue-inertia`
+- [Crm Revenue Lifecycle Vue](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle-vue-inertia`
+- [Crm Routing Vue](crm-routing.md) — `module-crm-crm-routing-vue-inertia`
+- [Crm Saas Packaging Vue](crm-saas-packaging.md) — `module-crm-crm-saas-packaging-vue-inertia`
+- [Crm Sales Engagement Vue](crm-sales-engagement.md) — `module-crm-crm-sales-engagement-vue-inertia`
+- [Crm Sales Pipelines Vue](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines-vue-inertia`
+- [Crm Sales Workspace Vue](crm-sales-workspace.md) — `module-crm-crm-sales-workspace-vue-inertia`
+- [Crm Sandbox And Release Management Vue](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management-vue-inertia`
+- [Crm Sandbox Release Vue](crm-sandbox-release.md) — `module-crm-crm-sandbox-release-vue-inertia`
+- [Crm Scheduling Vue](crm-scheduling.md) — `module-crm-crm-scheduling-vue-inertia`
+- [Crm Search Vue](crm-search.md) — `module-crm-crm-search-vue-inertia`
+- [Crm Segmentation Vue](crm-segmentation.md) — `module-crm-crm-segmentation-vue-inertia`
+- [Crm Service Agent Vue](crm-service-agent.md) — `module-crm-crm-service-agent-vue-inertia`
+- [Crm Service Analytics Vue](crm-service-analytics.md) — `module-crm-crm-service-analytics-vue-inertia`
+- [Crm Sla And Entitlements Vue](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements-vue-inertia`
+- [Crm Telephony Vue](crm-telephony.md) — `module-crm-crm-telephony-vue-inertia`
+- [Crm Template Snapshots Vue](crm-template-snapshots.md) — `module-crm-crm-template-snapshots-vue-inertia`
+- [Crm Templates And Snapshots Vue](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots-vue-inertia`
+- [Crm Territories And Ownership Vue](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership-vue-inertia`
+- [Crm Unified Conversations Vue](crm-unified-conversations.md) — `module-crm-crm-unified-conversations-vue-inertia`
+- [Crm Usage Wallet And Rebilling Vue](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling-vue-inertia`
+- [Crm Web Intent Vue](crm-web-intent.md) — `module-crm-crm-web-intent-vue-inertia`
+- [Crm White Label Vue](crm-white-label.md) — `module-crm-crm-white-label-vue-inertia`
+- [Crm Work Management Vue](crm-work-management.md) — `module-crm-crm-work-management-vue-inertia`
+- [Currency Context Vue](currency-context.md) — `module-crm-currency-context-vue-inertia`
+- [Developer Experience Vue](developer-experience.md) — `module-crm-developer-experience-vue-inertia`
+- [Feature Flags Vue](feature-flags.md) — `module-crm-feature-flags-vue-inertia`
+- [Files Media Vue](files-media.md) — `module-crm-files-media-vue-inertia`
+- [Identity Core Vue](identity-core.md) — `module-crm-identity-core-vue-inertia`
+- [Identity Socialstream Vue](identity-socialstream.md) — `module-crm-identity-socialstream-vue-inertia`
+- [Import Export Vue](import-export.md) — `module-crm-import-export-vue-inertia`
+- [Integrations Vue](integrations.md) — `module-crm-integrations-vue-inertia`
+- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-crm-jetstream-bridge-vue-inertia`
+- [Localization Contracts Vue](localization-contracts.md) — `module-crm-localization-contracts-vue-inertia`
+- [Localization Core Vue](localization-core.md) — `module-crm-localization-core-vue-inertia`
+- [Localization Mymemory Vue](localization-mymemory.md) — `module-crm-localization-mymemory-vue-inertia`
+- [Module Manager Vue](module-manager.md) — `module-crm-module-manager-vue-inertia`
+- [Notifications Vue](notifications.md) — `module-crm-notifications-vue-inertia`
+- [Observability Vue](observability.md) — `module-crm-observability-vue-inertia`
+- [Organizations Teams Vue](organizations-teams.md) — `module-crm-organizations-teams-vue-inertia`
+- [Profiles Vue](profiles.md) — `module-crm-profiles-vue-inertia`
+- [Roles Permissions Vue](roles-permissions.md) — `module-crm-roles-permissions-vue-inertia`
+- [Scheduler Queues Vue](scheduler-queues.md) — `module-crm-scheduler-queues-vue-inertia`
+- [Search Vue](search.md) — `module-crm-search-vue-inertia`
+- [Sessions Devices Vue](sessions-devices.md) — `module-crm-sessions-devices-vue-inertia`
+- [Settings Vue](settings.md) — `module-crm-settings-vue-inertia`
+- [Theme Support Vue](theme-support.md) — `module-crm-theme-support-vue-inertia`
+- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-crm-two-factor-authentication-vue-inertia`
+- [Webhooks Vue](webhooks.md) — `module-crm-webhooks-vue-inertia`

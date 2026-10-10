@@ -1,24 +1,50 @@
-# Control-Panel Filament 5 Implementations
+# Control Panel Filament Implementations
 
-**Source:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)  
-**Architecture:** [FILAMENT.md](../CONTROL-PANEL.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Filament 5` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Control Core Filament](control-core.md) — `module-control-panel-control-core-filament`
-- [OS Adapters Filament](os-adapters.md) — `module-control-panel-os-adapters-filament`
-- [Accounts Filament](accounts.md) — `module-control-panel-accounts-filament`
-- [Web Hosting Filament](web-hosting.md) — `module-control-panel-web-hosting-filament`
-- [Mail Filament](mail.md) — `module-control-panel-mail-filament`
-- [Databases Filament](databases.md) — `module-control-panel-databases-filament`
-- [DNS Filament](dns.md) — `module-control-panel-dns-filament`
-- [Files Filament](files.md) — `module-control-panel-files-filament`
-- [Certificates Filament](certificates.md) — `module-control-panel-certificates-filament`
-- [Backups Filament](backups.md) — `module-control-panel-backups-filament`
-- [Security Filament](security.md) — `module-control-panel-security-filament`
-- [Monitoring Filament](monitoring.md) — `module-control-panel-monitoring-filament`
-- [Containers Filament](containers.md) — `module-control-panel-containers-filament`
-- [Kubernetes Filament](kubernetes.md) — `module-control-panel-kubernetes-filament`
-- [API and Automation Filament](api-and-automation.md) — `module-control-panel-api-and-automation-filament`
+- [Activity Comments Filament](activity-comments.md) — `module-control-panel-activity-comments-filament`
+- [Analytics Core Filament](analytics-core.md) — `module-control-panel-analytics-core-filament`
+- [Analytics Google Filament](analytics-google.md) — `module-control-panel-analytics-google-filament`
+- [Analytics Meta Filament](analytics-meta.md) — `module-control-panel-analytics-meta-filament`
+- [Api Access Filament](api-access.md) — `module-control-panel-api-access-filament`
+- [Application Filament](application.md) — `module-control-panel-application-filament`
+- [Audit Filament](audit.md) — `module-control-panel-audit-filament`
+- [Control Panel Accounts Filament](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-filament`
+- [Control Panel Api And Automation Filament](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-filament`
+- [Control Panel Backups Filament](control-panel-backups.md) — `module-control-panel-control-panel-backups-filament`
+- [Control Panel Certificates Filament](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-filament`
+- [Control Panel Containers Filament](control-panel-containers.md) — `module-control-panel-control-panel-containers-filament`
+- [Control Panel Control Core Filament](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-filament`
+- [Control Panel Databases Filament](control-panel-databases.md) — `module-control-panel-control-panel-databases-filament`
+- [Control Panel Dns Filament](control-panel-dns.md) — `module-control-panel-control-panel-dns-filament`
+- [Control Panel Files Filament](control-panel-files.md) — `module-control-panel-control-panel-files-filament`
+- [Control Panel Kubernetes Filament](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-filament`
+- [Control Panel Mail Filament](control-panel-mail.md) — `module-control-panel-control-panel-mail-filament`
+- [Control Panel Monitoring Filament](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-filament`
+- [Control Panel Os Adapters Filament](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-filament`
+- [Control Panel Security Filament](control-panel-security.md) — `module-control-panel-control-panel-security-filament`
+- [Control Panel Web Hosting Filament](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-filament`
+- [Currency Context Filament](currency-context.md) — `module-control-panel-currency-context-filament`
+- [Developer Experience Filament](developer-experience.md) — `module-control-panel-developer-experience-filament`
+- [Feature Flags Filament](feature-flags.md) — `module-control-panel-feature-flags-filament`
+- [Files Media Filament](files-media.md) — `module-control-panel-files-media-filament`
+- [Identity Core Filament](identity-core.md) — `module-control-panel-identity-core-filament`
+- [Identity Socialstream Filament](identity-socialstream.md) — `module-control-panel-identity-socialstream-filament`
+- [Import Export Filament](import-export.md) — `module-control-panel-import-export-filament`
+- [Integrations Filament](integrations.md) — `module-control-panel-integrations-filament`
+- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-filament`
+- [Localization Core Filament](localization-core.md) — `module-control-panel-localization-core-filament`
+- [Localization Mymemory Filament](localization-mymemory.md) — `module-control-panel-localization-mymemory-filament`
+- [Module Manager Filament](module-manager.md) — `module-control-panel-module-manager-filament`
+- [Notifications Filament](notifications.md) — `module-control-panel-notifications-filament`
+- [Observability Filament](observability.md) — `module-control-panel-observability-filament`
+- [Organizations Teams Filament](organizations-teams.md) — `module-control-panel-organizations-teams-filament`
+- [Profiles Filament](profiles.md) — `module-control-panel-profiles-filament`
+- [Roles Permissions Filament](roles-permissions.md) — `module-control-panel-roles-permissions-filament`
+- [Scheduler Queues Filament](scheduler-queues.md) — `module-control-panel-scheduler-queues-filament`
+- [Search Filament](search.md) — `module-control-panel-search-filament`
+- [Sessions Devices Filament](sessions-devices.md) — `module-control-panel-sessions-devices-filament`
+- [Settings Filament](settings.md) — `module-control-panel-settings-filament`
+- [Theme Support Filament](theme-support.md) — `module-control-panel-theme-support-filament`
+- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-filament`
+- [Webhooks Filament](webhooks.md) — `module-control-panel-webhooks-filament`

@@ -1,24 +1,50 @@
-# Social-Network Filament 5 Implementations
+# Social Network Filament Implementations
 
-**Source:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)  
-**Architecture:** [FILAMENT.md](../SOCIAL-NETWORK.md) · [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md)
+Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-Each file defines the optional `Filament 5` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Social Core Filament](social-core.md) — `module-social-network-social-core-filament`
-- [Profiles Filament](profiles.md) — `module-social-network-profiles-filament`
-- [Social Graph Filament](social-graph.md) — `module-social-network-social-graph-filament`
-- [Publishing Filament](publishing.md) — `module-social-network-publishing-filament`
-- [Feed Filament](feed.md) — `module-social-network-feed-filament`
-- [Engagement Filament](engagement.md) — `module-social-network-engagement-filament`
-- [Media Filament](media.md) — `module-social-network-media-filament`
-- [Communities Filament](communities.md) — `module-social-network-communities-filament`
-- [Events Filament](events.md) — `module-social-network-events-filament`
-- [Messaging Filament](messaging.md) — `module-social-network-messaging-filament`
+- [Activity Comments Filament](activity-comments.md) — `module-social-network-activity-comments-filament`
+- [Analytics Core Filament](analytics-core.md) — `module-social-network-analytics-core-filament`
+- [Analytics Google Filament](analytics-google.md) — `module-social-network-analytics-google-filament`
+- [Analytics Meta Filament](analytics-meta.md) — `module-social-network-analytics-meta-filament`
+- [Api Access Filament](api-access.md) — `module-social-network-api-access-filament`
+- [Application Filament](application.md) — `module-social-network-application-filament`
+- [Audit Filament](audit.md) — `module-social-network-audit-filament`
+- [Currency Context Filament](currency-context.md) — `module-social-network-currency-context-filament`
+- [Developer Experience Filament](developer-experience.md) — `module-social-network-developer-experience-filament`
+- [Feature Flags Filament](feature-flags.md) — `module-social-network-feature-flags-filament`
+- [Files Media Filament](files-media.md) — `module-social-network-files-media-filament`
+- [Identity Core Filament](identity-core.md) — `module-social-network-identity-core-filament`
+- [Identity Socialstream Filament](identity-socialstream.md) — `module-social-network-identity-socialstream-filament`
+- [Import Export Filament](import-export.md) — `module-social-network-import-export-filament`
+- [Integrations Filament](integrations.md) — `module-social-network-integrations-filament`
+- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-social-network-jetstream-bridge-filament`
+- [Localization Core Filament](localization-core.md) — `module-social-network-localization-core-filament`
+- [Localization Mymemory Filament](localization-mymemory.md) — `module-social-network-localization-mymemory-filament`
+- [Module Manager Filament](module-manager.md) — `module-social-network-module-manager-filament`
 - [Notifications Filament](notifications.md) — `module-social-network-notifications-filament`
-- [Discovery Filament](discovery.md) — `module-social-network-discovery-filament`
-- [Moderation Filament](moderation.md) — `module-social-network-moderation-filament`
-- [Federation Filament](federation.md) — `module-social-network-federation-filament`
-- [Analytics Filament](analytics.md) — `module-social-network-analytics-filament`
+- [Observability Filament](observability.md) — `module-social-network-observability-filament`
+- [Organizations Teams Filament](organizations-teams.md) — `module-social-network-organizations-teams-filament`
+- [Profiles Filament](profiles.md) — `module-social-network-profiles-filament`
+- [Roles Permissions Filament](roles-permissions.md) — `module-social-network-roles-permissions-filament`
+- [Scheduler Queues Filament](scheduler-queues.md) — `module-social-network-scheduler-queues-filament`
+- [Search Filament](search.md) — `module-social-network-search-filament`
+- [Sessions Devices Filament](sessions-devices.md) — `module-social-network-sessions-devices-filament`
+- [Settings Filament](settings.md) — `module-social-network-settings-filament`
+- [Social Network Analytics Filament](social-network-analytics.md) — `module-social-network-social-network-analytics-filament`
+- [Social Network Communities Filament](social-network-communities.md) — `module-social-network-social-network-communities-filament`
+- [Social Network Discovery Filament](social-network-discovery.md) — `module-social-network-social-network-discovery-filament`
+- [Social Network Engagement Filament](social-network-engagement.md) — `module-social-network-social-network-engagement-filament`
+- [Social Network Events Filament](social-network-events.md) — `module-social-network-social-network-events-filament`
+- [Social Network Federation Filament](social-network-federation.md) — `module-social-network-social-network-federation-filament`
+- [Social Network Feed Filament](social-network-feed.md) — `module-social-network-social-network-feed-filament`
+- [Social Network Media Filament](social-network-media.md) — `module-social-network-social-network-media-filament`
+- [Social Network Messaging Filament](social-network-messaging.md) — `module-social-network-social-network-messaging-filament`
+- [Social Network Moderation Filament](social-network-moderation.md) — `module-social-network-social-network-moderation-filament`
+- [Social Network Notifications Filament](social-network-notifications.md) — `module-social-network-social-network-notifications-filament`
+- [Social Network Profiles Filament](social-network-profiles.md) — `module-social-network-social-network-profiles-filament`
+- [Social Network Publishing Filament](social-network-publishing.md) — `module-social-network-social-network-publishing-filament`
+- [Social Network Social Core Filament](social-network-social-core.md) — `module-social-network-social-network-social-core-filament`
+- [Social Network Social Graph Filament](social-network-social-graph.md) — `module-social-network-social-network-social-graph-filament`
+- [Theme Support Filament](theme-support.md) — `module-social-network-theme-support-filament`
+- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-social-network-two-factor-authentication-filament`
+- [Webhooks Filament](webhooks.md) — `module-social-network-webhooks-filament`

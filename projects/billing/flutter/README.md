@@ -1,47 +1,70 @@
-# Billing Flutter + Dart implementations
+# Billing Flutter + Dart Implementations
 
-**Scope:** [Billing](../BILLING.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [Flutter technology](../../../technologies/FLUTTER.md) · [Flutter standard](../../../standards/FLUTTER.md)
+Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-This index defines the optional Flutter + Dart adapter boundary for the Billing project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-flutter`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [Flutter + Dart module standard](../../../modules/flutter/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 16 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                                | Package                                | Core                               | API                              |
-| ------------------------------------- | -------------------------------------- | ---------------------------------- | -------------------------------- |
-| [Billing Core](billing-core.md)       | module-billing-billing-core-flutter    | [Core](../core/billing-core.md)    | [API](../api/billing-core.md)    |
-| [Catalog](catalog.md)                 | module-billing-catalog-flutter         | [Core](../core/catalog.md)         | [API](../api/catalog.md)         |
-| [Collections](collections.md)         | module-billing-collections-flutter     | [Core](../core/collections.md)     | [API](../api/collections.md)     |
-| [Communications](communications.md)   | module-billing-communications-flutter  | [Core](../core/communications.md)  | [API](../api/communications.md)  |
-| [Customer Portal](customer-portal.md) | module-billing-customer-portal-flutter | [Core](../core/customer-portal.md) | [API](../api/customer-portal.md) |
-| [Domains](domains.md)                 | module-billing-domains-flutter         | [Core](../core/domains.md)         | [API](../api/domains.md)         |
-| [Hosting](hosting.md)                 | module-billing-hosting-flutter         | [Core](../core/hosting.md)         | [API](../api/hosting.md)         |
-| [Invoicing](invoicing.md)             | module-billing-invoicing-flutter       | [Core](../core/invoicing.md)       | [API](../api/invoicing.md)       |
-| [Isp](isp.md)                         | module-billing-isp-flutter             | [Core](../core/isp.md)             | [API](../api/isp.md)             |
-| [Orders](orders.md)                   | module-billing-orders-flutter          | [Core](../core/orders.md)          | [API](../api/orders.md)          |
-| [Payments](payments.md)               | module-billing-payments-flutter        | [Core](../core/payments.md)        | [API](../api/payments.md)        |
-| [Pricing](pricing.md)                 | module-billing-pricing-flutter         | [Core](../core/pricing.md)         | [API](../api/pricing.md)         |
-| [Provisioning](provisioning.md)       | module-billing-provisioning-flutter    | [Core](../core/provisioning.md)    | [API](../api/provisioning.md)    |
-| [Reporting](reporting.md)             | module-billing-reporting-flutter       | [Core](../core/reporting.md)       | [API](../api/reporting.md)       |
-| [Subscriptions](subscriptions.md)     | module-billing-subscriptions-flutter   | [Core](../core/subscriptions.md)   | [API](../api/subscriptions.md)   |
-| [Usage](usage.md)                     | module-billing-usage-flutter           | [Core](../core/usage.md)           | [API](../api/usage.md)           |
+- [Activity Comments Flutter](activity-comments.md) — `module-billing-activity-comments-flutter`
+- [Analytics Core Flutter](analytics-core.md) — `module-billing-analytics-core-flutter`
+- [Analytics Google Flutter](analytics-google.md) — `module-billing-analytics-google-flutter`
+- [Analytics Meta Flutter](analytics-meta.md) — `module-billing-analytics-meta-flutter`
+- [Api Access Flutter](api-access.md) — `module-billing-api-access-flutter`
+- [Application Flutter](application.md) — `module-billing-application-flutter`
+- [Audit Flutter](audit.md) — `module-billing-audit-flutter`
+- [Billing Core Flutter](billing-core.md) — `module-billing-billing-core-flutter`
+- [Currency Context Flutter](currency-context.md) — `module-billing-currency-context-flutter`
+- [Developer Experience Flutter](developer-experience.md) — `module-billing-developer-experience-flutter`
+- [Feature Flags Flutter](feature-flags.md) — `module-billing-feature-flags-flutter`
+- [Files Media Flutter](files-media.md) — `module-billing-files-media-flutter`
+- [Identity Core Flutter](identity-core.md) — `module-billing-identity-core-flutter`
+- [Identity Socialstream Flutter](identity-socialstream.md) — `module-billing-identity-socialstream-flutter`
+- [Import Export Flutter](import-export.md) — `module-billing-import-export-flutter`
+- [Integrations Flutter](integrations.md) — `module-billing-integrations-flutter`
+- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-billing-jetstream-bridge-flutter`
+- [Liberu Business Workflow Reconciliation Flutter](liberu-business-workflow-reconciliation.md) — `module-billing-liberu-business-workflow-reconciliation-flutter`
+- [Liberu Executive Insights Flutter](liberu-executive-insights.md) — `module-billing-liberu-executive-insights-flutter`
+- [Liberu Platform Orchestration Flutter](liberu-platform-orchestration.md) — `module-billing-liberu-platform-orchestration-flutter`
+- [Liberu Revenue And Care Orchestration Flutter](liberu-revenue-and-care-orchestration.md) — `module-billing-liberu-revenue-and-care-orchestration-flutter`
+- [Localization Core Flutter](localization-core.md) — `module-billing-localization-core-flutter`
+- [Localization Mymemory Flutter](localization-mymemory.md) — `module-billing-localization-mymemory-flutter`
+- [Module Billing Billing Core Flutter](module-billing-billing-core.md) — `module-billing-module-billing-billing-core-flutter`
+- [Module Billing Catalog Flutter](module-billing-catalog.md) — `module-billing-module-billing-catalog-flutter`
+- [Module Billing Collections Flutter](module-billing-collections.md) — `module-billing-module-billing-collections-flutter`
+- [Module Billing Communications Flutter](module-billing-communications.md) — `module-billing-module-billing-communications-flutter`
+- [Module Billing Core Flutter](module-billing-core.md) — `module-billing-module-billing-core-flutter`
+- [Module Billing Cpanel Flutter](module-billing-cpanel.md) — `module-billing-module-billing-cpanel-flutter`
+- [Module Billing Customer Portal Flutter](module-billing-customer-portal.md) — `module-billing-module-billing-customer-portal-flutter`
+- [Module Billing Directadmin Flutter](module-billing-directadmin.md) — `module-billing-module-billing-directadmin-flutter`
+- [Module Billing Domains Flutter](module-billing-domains.md) — `module-billing-module-billing-domains-flutter`
+- [Module Billing Enom Flutter](module-billing-enom.md) — `module-billing-module-billing-enom-flutter`
+- [Module Billing Hosting Flutter](module-billing-hosting.md) — `module-billing-module-billing-hosting-flutter`
+- [Module Billing Invoicing Flutter](module-billing-invoicing.md) — `module-billing-module-billing-invoicing-flutter`
+- [Module Billing Isp Flutter](module-billing-isp.md) — `module-billing-module-billing-isp-flutter`
+- [Module Billing Liberu Control Panel Flutter](module-billing-liberu-control-panel.md) — `module-billing-module-billing-liberu-control-panel-flutter`
+- [Module Billing Orders Flutter](module-billing-orders.md) — `module-billing-module-billing-orders-flutter`
+- [Module Billing Paddle Flutter](module-billing-paddle.md) — `module-billing-module-billing-paddle-flutter`
+- [Module Billing Payments Flutter](module-billing-payments.md) — `module-billing-module-billing-payments-flutter`
+- [Module Billing Plesk Flutter](module-billing-plesk.md) — `module-billing-module-billing-plesk-flutter`
+- [Module Billing Pricing Flutter](module-billing-pricing.md) — `module-billing-module-billing-pricing-flutter`
+- [Module Billing Provisioning Flutter](module-billing-provisioning.md) — `module-billing-module-billing-provisioning-flutter`
+- [Module Billing Reporting Flutter](module-billing-reporting.md) — `module-billing-module-billing-reporting-flutter`
+- [Module Billing Resellerclub Flutter](module-billing-resellerclub.md) — `module-billing-module-billing-resellerclub-flutter`
+- [Module Billing Stripe Flutter](module-billing-stripe.md) — `module-billing-module-billing-stripe-flutter`
+- [Module Billing Subscriptions Flutter](module-billing-subscriptions.md) — `module-billing-module-billing-subscriptions-flutter`
+- [Module Billing Usage Flutter](module-billing-usage.md) — `module-billing-module-billing-usage-flutter`
+- [Module Billing Virtualmin Flutter](module-billing-virtualmin.md) — `module-billing-module-billing-virtualmin-flutter`
+- [Module Liberu Business Workflow Reconciliation Flutter](module-liberu-business-workflow-reconciliation.md) — `module-billing-module-liberu-business-workflow-reconciliation-flutter`
+- [Module Liberu Executive Insights Flutter](module-liberu-executive-insights.md) — `module-billing-module-liberu-executive-insights-flutter`
+- [Module Liberu Platform Orchestration Flutter](module-liberu-platform-orchestration.md) — `module-billing-module-liberu-platform-orchestration-flutter`
+- [Module Liberu Revenue And Care Orchestration Flutter](module-liberu-revenue-and-care-orchestration.md) — `module-billing-module-liberu-revenue-and-care-orchestration-flutter`
+- [Module Manager Flutter](module-manager.md) — `module-billing-module-manager-flutter`
+- [Notifications Flutter](notifications.md) — `module-billing-notifications-flutter`
+- [Observability Flutter](observability.md) — `module-billing-observability-flutter`
+- [Organizations Teams Flutter](organizations-teams.md) — `module-billing-organizations-teams-flutter`
+- [Profiles Flutter](profiles.md) — `module-billing-profiles-flutter`
+- [Roles Permissions Flutter](roles-permissions.md) — `module-billing-roles-permissions-flutter`
+- [Scheduler Queues Flutter](scheduler-queues.md) — `module-billing-scheduler-queues-flutter`
+- [Search Flutter](search.md) — `module-billing-search-flutter`
+- [Sessions Devices Flutter](sessions-devices.md) — `module-billing-sessions-devices-flutter`
+- [Settings Flutter](settings.md) — `module-billing-settings-flutter`
+- [Theme Support Flutter](theme-support.md) — `module-billing-theme-support-flutter`
+- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-billing-two-factor-authentication-flutter`
+- [Webhooks Flutter](webhooks.md) — `module-billing-webhooks-flutter`

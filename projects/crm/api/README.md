@@ -1,134 +1,134 @@
 # CRM API Module Specifications
 
-**Source:** [CRM.md](../CRM.md)
-**Architecture:** [API.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
-
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-## Customer data and platform modules
-
-- [CRM Core API](crm-core.md) — `module-crm-core-api`
-- [Customer Data Model API](customer-data-model.md) — `module-crm-customer-data-model-api`
-- [Customer Data Platform API](customer-data-platform.md) — `module-crm-customer-data-platform-api`
-- [Data Operations API](data-operations.md) — `module-crm-data-operations-api`
-- [Consent and Preferences API](consent-and-preferences.md) — `module-crm-consent-and-preferences-api`
-- [Territories and Ownership API](territories-and-ownership.md) — `module-crm-territories-and-ownership-api`
-- [CRM Search API](crm-search.md) — `module-crm-search-api`
-- [CRM Documents API](crm-documents.md) — `module-crm-documents-api`
-- [Collaboration API](collaboration.md) — `module-crm-collaboration-api`
-
-## Demand generation and acquisition modules
-
-- [Lead Capture API](lead-capture.md) — `module-crm-lead-capture-api`
-- [Prospecting API](prospecting.md) — `module-crm-prospecting-api`
-- [Enrichment API](enrichment.md) — `module-crm-enrichment-api`
-- [Web Intent API](web-intent.md) — `module-crm-web-intent-api`
-- [Lead Qualification API](lead-qualification.md) — `module-crm-lead-qualification-api`
-- [Routing API](routing.md) — `module-crm-routing-api`
-- [Forms and Surveys API](forms-and-surveys.md) — `module-crm-forms-and-surveys-api`
-- [Chat and Bots API](chat-and-bots.md) — `module-crm-chat-and-bots-api`
-- [Landing Pages and Funnels API](landing-pages-and-funnels.md) — `module-crm-landing-pages-and-funnels-api`
-- [Conversion Optimization API](conversion-optimization.md) — `module-crm-conversion-optimization-api`
-- [Events and Webinars API](events-and-webinars.md) — `module-crm-events-and-webinars-api`
-
-## Sales execution modules
-
-- [Sales Pipelines API](sales-pipelines.md) — `module-crm-sales-pipelines-api`
-- [Sales Workspace API](sales-workspace.md) — `module-crm-sales-workspace-api`
-- [Activities API](activities.md) — `module-crm-activities-api`
-- [Scheduling API](scheduling.md) — `module-crm-scheduling-api`
-- [Sales Engagement API](sales-engagement.md) — `module-crm-sales-engagement-api`
-- [Email Productivity API](email-productivity.md) — `module-crm-email-productivity-api`
-- [Conversation Intelligence API](conversation-intelligence.md) — `module-crm-conversation-intelligence-api`
-- [Playbooks and Enablement API](playbooks-and-enablement.md) — `module-crm-playbooks-and-enablement-api`
-- [Forecasting API](forecasting.md) — `module-crm-forecasting-api`
-- [Revenue Intelligence API](revenue-intelligence.md) — `module-crm-revenue-intelligence-api`
-- [Goals and Performance API](goals-and-performance.md) — `module-crm-goals-and-performance-api`
-- [Quotas and Incentives API](quotas-and-incentives.md) — `module-crm-quotas-and-incentives-api`
-- [Account Planning API](account-planning.md) — `module-crm-account-planning-api`
-
-## Revenue and commercial modules
-
-- [CRM Product Workspace API](crm-product-workspace.md) — `module-crm-product-workspace-api`
-- [CPQ API](cpq.md) — `module-crm-cpq-api`
-- [Proposals and Quotes API](proposals-and-quotes.md) — `module-crm-proposals-and-quotes-api`
-- [Contracts API](contracts.md) — `module-crm-contracts-api`
-- [Orders and Payments Workspace API](orders-and-payments-workspace.md) — `module-crm-orders-and-payments-workspace-api`
-- [Revenue Lifecycle API](revenue-lifecycle.md) — `module-crm-revenue-lifecycle-api`
-
-## Marketing modules
-
-- [Segmentation API](segmentation.md) — `module-crm-segmentation-api`
-- [Campaigns API](campaigns.md) — `module-crm-campaigns-api`
-- [Journey Orchestration API](journey-orchestration.md) — `module-crm-journey-orchestration-api`
-- [Email Marketing API](email-marketing.md) — `module-crm-email-marketing-api`
-- [Mobile Messaging API](mobile-messaging.md) — `module-crm-mobile-messaging-api`
-- [Advertising API](advertising.md) — `module-crm-advertising-api`
-- [Account-Based Marketing API](account-based-marketing.md) — `module-crm-account-based-marketing-api`
-- [Personalization API](personalization.md) — `module-crm-personalization-api`
-- [Marketing Resources API](marketing-resources.md) — `module-crm-marketing-resources-api`
-- [Attribution API](attribution.md) — `module-crm-attribution-api`
-
-## Communications and contact-center modules
-
-- [Unified Conversations API](unified-conversations.md) — `module-crm-unified-conversations-api`
-- [Channel Gateway API](channel-gateway.md) — `module-crm-channel-gateway-api`
-- [Telephony API](telephony.md) — `module-crm-telephony-api`
-- [Dialer and Outreach API](dialer-and-outreach.md) — `module-crm-dialer-and-outreach-api`
-- [Contact Center API](contact-center.md) — `module-crm-contact-center-api`
-- [AI Reception and Conversation API](ai-reception-and-conversation.md) — `module-crm-ai-reception-and-conversation-api`
-
-## Service, success, and experience modules
-
-- [Case Management API](case-management.md) — `module-crm-case-management-api`
-- [Omnichannel Service API](omnichannel-service.md) — `module-crm-omnichannel-service-api`
-- [SLA and Entitlements API](sla-and-entitlements.md) — `module-crm-sla-and-entitlements-api`
-- [Knowledge API](knowledge.md) — `module-crm-knowledge-api`
-- [Customer Self-Service API](customer-self-service.md) — `module-crm-customer-self-service-api`
-- [Customer Success API](customer-success.md) — `module-crm-customer-success-api`
-- [Feedback and Voice of Customer API](feedback-and-voice-of-customer.md) — `module-crm-feedback-and-voice-of-customer-api`
-- [Reputation Management API](reputation-management.md) — `module-crm-reputation-management-api`
-- [Field Service Coordination API](field-service-coordination.md) — `module-crm-field-service-coordination-api`
-- [Service Analytics API](service-analytics.md) — `module-crm-service-analytics-api`
-
-## Community, learning, loyalty, and growth modules
-
-- [Communities API](communities.md) — `module-crm-communities-api`
-- [Learning and Courses API](learning-and-courses.md) — `module-crm-learning-and-courses-api`
-- [Memberships API](memberships.md) — `module-crm-memberships-api`
-- [Loyalty API](loyalty.md) — `module-crm-loyalty-api`
-- [Referrals API](referrals.md) — `module-crm-referrals-api`
-- [Affiliate Management API](affiliate-management.md) — `module-crm-affiliate-management-api`
-- [Advocacy API](advocacy.md) — `module-crm-advocacy-api`
-
-## Partner and agency modules
-
-- [Partner Relationship Management API](partner-relationship-management.md) — `module-crm-partner-relationship-management-api`
-- [Deal Registration API](deal-registration.md) — `module-crm-deal-registration-api`
-- [Channel Sales API](channel-sales.md) — `module-crm-channel-sales-api`
-- [Marketing Development Funds API](marketing-development-funds.md) — `module-crm-marketing-development-funds-api`
-- [Agency Workspace API](agency-workspace.md) — `module-crm-agency-workspace-api`
-- [White Label API](white-label.md) — `module-crm-white-label-api`
-- [SaaS Packaging API](saas-packaging.md) — `module-crm-saas-packaging-api`
-- [Usage Wallet and Rebilling API](usage-wallet-and-rebilling.md) — `module-crm-usage-wallet-and-rebilling-api`
-- [Templates and Snapshots API](templates-and-snapshots.md) — `module-crm-templates-and-snapshots-api`
-- [Client Onboarding API](client-onboarding.md) — `module-crm-client-onboarding-api`
-
-## Delivery, productivity, and operations modules
-
-- [Projects API](projects.md) — `module-crm-projects-api`
-- [Resource Planning API](resource-planning.md) — `module-crm-resource-planning-api`
-- [Work Management API](work-management.md) — `module-crm-work-management-api`
-- [Business Process Management API](business-process-management.md) — `module-crm-business-process-management-api`
-- [CRM Automation Pack API](crm-automation-pack.md) — `module-crm-automation-pack-api`
-- [Sandbox and Release Management API](sandbox-and-release-management.md) — `module-crm-sandbox-and-release-management-api`
-
-## Intelligence and AI modules
-
-- [CRM Analytics API](crm-analytics.md) — `module-crm-analytics-api`
-- [Predictive Models API](predictive-models.md) — `module-crm-predictive-models-api`
-- [CRM Copilot API](crm-copilot.md) — `module-crm-copilot-api`
-- [Prospecting Agent API](prospecting-agent.md) — `module-crm-prospecting-agent-api`
-- [Service Agent API](service-agent.md) — `module-crm-service-agent-api`
-- [Marketing Agent API](marketing-agent.md) — `module-crm-marketing-agent-api`
-- [Conversation Analytics API](conversation-analytics.md) — `module-crm-conversation-analytics-api`
+- [Activity Comments API](activity-comments.md) — `module-crm-activity-comments-api`
+- [Analytics Contracts API](analytics-contracts.md) — `module-crm-analytics-contracts-api`
+- [Analytics Core API](analytics-core.md) — `module-crm-analytics-core-api`
+- [Analytics Google API](analytics-google.md) — `module-crm-analytics-google-api`
+- [Analytics Meta API](analytics-meta.md) — `module-crm-analytics-meta-api`
+- [Api Access API](api-access.md) — `module-crm-api-access-api`
+- [Application API](application.md) — `module-crm-application-api`
+- [Audit API](audit.md) — `module-crm-audit-api`
+- [Crm Account Based Marketing API](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing-api`
+- [Crm Account Planning API](crm-account-planning.md) — `module-crm-crm-account-planning-api`
+- [Crm Activities API](crm-activities.md) — `module-crm-crm-activities-api`
+- [Crm Advertising API](crm-advertising.md) — `module-crm-crm-advertising-api`
+- [Crm Advocacy API](crm-advocacy.md) — `module-crm-crm-advocacy-api`
+- [Crm Affiliate Management API](crm-affiliate-management.md) — `module-crm-crm-affiliate-management-api`
+- [Crm Agency Workspace API](crm-agency-workspace.md) — `module-crm-crm-agency-workspace-api`
+- [Crm Ai Reception And Conversation API](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation-api`
+- [Crm Analytics API](crm-analytics.md) — `module-crm-crm-analytics-api`
+- [Crm Attribution API](crm-attribution.md) — `module-crm-crm-attribution-api`
+- [Crm Automation Pack API](crm-automation-pack.md) — `module-crm-crm-automation-pack-api`
+- [Crm Business Process Management API](crm-business-process-management.md) — `module-crm-crm-business-process-management-api`
+- [Crm Campaigns API](crm-campaigns.md) — `module-crm-crm-campaigns-api`
+- [Crm Case Management API](crm-case-management.md) — `module-crm-crm-case-management-api`
+- [Crm Channel Gateway API](crm-channel-gateway.md) — `module-crm-crm-channel-gateway-api`
+- [Crm Channel Sales API](crm-channel-sales.md) — `module-crm-crm-channel-sales-api`
+- [Crm Chat And Bots API](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots-api`
+- [Crm Client Onboarding API](crm-client-onboarding.md) — `module-crm-crm-client-onboarding-api`
+- [Crm Collaboration API](crm-collaboration.md) — `module-crm-crm-collaboration-api`
+- [Crm Communities API](crm-communities.md) — `module-crm-crm-communities-api`
+- [Crm Consent And Preferences API](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences-api`
+- [Crm Contact Center API](crm-contact-center.md) — `module-crm-crm-contact-center-api`
+- [Crm Contracts API](crm-contracts.md) — `module-crm-crm-contracts-api`
+- [Crm Conversation Analytics API](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics-api`
+- [Crm Conversation Intelligence API](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence-api`
+- [Crm Conversion Optimization API](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization-api`
+- [Crm Copilot API](crm-copilot.md) — `module-crm-crm-copilot-api`
+- [Crm Core API](crm-core.md) — `module-crm-crm-core-api`
+- [Crm Cpq API](crm-cpq.md) — `module-crm-crm-cpq-api`
+- [Crm Customer Data Model API](crm-customer-data-model.md) — `module-crm-crm-customer-data-model-api`
+- [Crm Customer Data Platform API](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform-api`
+- [Crm Customer Self Service API](crm-customer-self-service.md) — `module-crm-crm-customer-self-service-api`
+- [Crm Customer Success API](crm-customer-success.md) — `module-crm-crm-customer-success-api`
+- [Crm Data Operations API](crm-data-operations.md) — `module-crm-crm-data-operations-api`
+- [Crm Deal Registration API](crm-deal-registration.md) — `module-crm-crm-deal-registration-api`
+- [Crm Dialer And Outreach API](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach-api`
+- [Crm Documents API](crm-documents.md) — `module-crm-crm-documents-api`
+- [Crm Email Marketing API](crm-email-marketing.md) — `module-crm-crm-email-marketing-api`
+- [Crm Email Productivity API](crm-email-productivity.md) — `module-crm-crm-email-productivity-api`
+- [Crm Enrichment API](crm-enrichment.md) — `module-crm-crm-enrichment-api`
+- [Crm Events And Webinars API](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars-api`
+- [Crm Feedback And Voice Of Customer API](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer-api`
+- [Crm Field Service Coordination API](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination-api`
+- [Crm Forecasting API](crm-forecasting.md) — `module-crm-crm-forecasting-api`
+- [Crm Forms And Surveys API](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys-api`
+- [Crm Goals And Performance API](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance-api`
+- [Crm Journey Orchestration API](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration-api`
+- [Crm Knowledge API](crm-knowledge.md) — `module-crm-crm-knowledge-api`
+- [Crm Landing Pages And Funnels API](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels-api`
+- [Crm Lead Capture API](crm-lead-capture.md) — `module-crm-crm-lead-capture-api`
+- [Crm Lead Qualification API](crm-lead-qualification.md) — `module-crm-crm-lead-qualification-api`
+- [Crm Learning And Courses API](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses-api`
+- [Crm Loyalty API](crm-loyalty.md) — `module-crm-crm-loyalty-api`
+- [Crm Marketing Agent API](crm-marketing-agent.md) — `module-crm-crm-marketing-agent-api`
+- [Crm Marketing Development Funds API](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds-api`
+- [Crm Marketing Resources API](crm-marketing-resources.md) — `module-crm-crm-marketing-resources-api`
+- [Crm Memberships API](crm-memberships.md) — `module-crm-crm-memberships-api`
+- [Crm Mobile Messaging API](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging-api`
+- [Crm Omnichannel Service API](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service-api`
+- [Crm Orders And Payments Workspace API](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace-api`
+- [Crm Partner Relationship Management API](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management-api`
+- [Crm Personalization API](crm-personalization.md) — `module-crm-crm-personalization-api`
+- [Crm Playbooks And Enablement API](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement-api`
+- [Crm Predictive Models API](crm-predictive-models.md) — `module-crm-crm-predictive-models-api`
+- [Crm Product Workspace API](crm-product-workspace.md) — `module-crm-crm-product-workspace-api`
+- [Crm Projects API](crm-projects.md) — `module-crm-crm-projects-api`
+- [Crm Proposals And Quotes API](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes-api`
+- [Crm Prospecting API](crm-prospecting.md) — `module-crm-crm-prospecting-api`
+- [Crm Prospecting Agent API](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent-api`
+- [Crm Quotas And Incentives API](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives-api`
+- [Crm Referrals API](crm-referrals.md) — `module-crm-crm-referrals-api`
+- [Crm Reputation Management API](crm-reputation-management.md) — `module-crm-crm-reputation-management-api`
+- [Crm Resource Planning API](crm-resource-planning.md) — `module-crm-crm-resource-planning-api`
+- [Crm Revenue Intelligence API](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence-api`
+- [Crm Revenue Lifecycle API](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle-api`
+- [Crm Routing API](crm-routing.md) — `module-crm-crm-routing-api`
+- [Crm Saas Packaging API](crm-saas-packaging.md) — `module-crm-crm-saas-packaging-api`
+- [Crm Sales Engagement API](crm-sales-engagement.md) — `module-crm-crm-sales-engagement-api`
+- [Crm Sales Pipelines API](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines-api`
+- [Crm Sales Workspace API](crm-sales-workspace.md) — `module-crm-crm-sales-workspace-api`
+- [Crm Sandbox And Release Management API](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management-api`
+- [Crm Sandbox Release API](crm-sandbox-release.md) — `module-crm-crm-sandbox-release-api`
+- [Crm Scheduling API](crm-scheduling.md) — `module-crm-crm-scheduling-api`
+- [Crm Search API](crm-search.md) — `module-crm-crm-search-api`
+- [Crm Segmentation API](crm-segmentation.md) — `module-crm-crm-segmentation-api`
+- [Crm Service Agent API](crm-service-agent.md) — `module-crm-crm-service-agent-api`
+- [Crm Service Analytics API](crm-service-analytics.md) — `module-crm-crm-service-analytics-api`
+- [Crm Sla And Entitlements API](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements-api`
+- [Crm Telephony API](crm-telephony.md) — `module-crm-crm-telephony-api`
+- [Crm Template Snapshots API](crm-template-snapshots.md) — `module-crm-crm-template-snapshots-api`
+- [Crm Templates And Snapshots API](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots-api`
+- [Crm Territories And Ownership API](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership-api`
+- [Crm Unified Conversations API](crm-unified-conversations.md) — `module-crm-crm-unified-conversations-api`
+- [Crm Usage Wallet And Rebilling API](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling-api`
+- [Crm Web Intent API](crm-web-intent.md) — `module-crm-crm-web-intent-api`
+- [Crm White Label API](crm-white-label.md) — `module-crm-crm-white-label-api`
+- [Crm Work Management API](crm-work-management.md) — `module-crm-crm-work-management-api`
+- [Currency Context API](currency-context.md) — `module-crm-currency-context-api`
+- [Developer Experience API](developer-experience.md) — `module-crm-developer-experience-api`
+- [Feature Flags API](feature-flags.md) — `module-crm-feature-flags-api`
+- [Files Media API](files-media.md) — `module-crm-files-media-api`
+- [Identity Core API](identity-core.md) — `module-crm-identity-core-api`
+- [Identity Socialstream API](identity-socialstream.md) — `module-crm-identity-socialstream-api`
+- [Import Export API](import-export.md) — `module-crm-import-export-api`
+- [Integrations API](integrations.md) — `module-crm-integrations-api`
+- [Jetstream Bridge API](jetstream-bridge.md) — `module-crm-jetstream-bridge-api`
+- [Localization Contracts API](localization-contracts.md) — `module-crm-localization-contracts-api`
+- [Localization Core API](localization-core.md) — `module-crm-localization-core-api`
+- [Localization Mymemory API](localization-mymemory.md) — `module-crm-localization-mymemory-api`
+- [Module Manager API](module-manager.md) — `module-crm-module-manager-api`
+- [Notifications API](notifications.md) — `module-crm-notifications-api`
+- [Observability API](observability.md) — `module-crm-observability-api`
+- [Organizations Teams API](organizations-teams.md) — `module-crm-organizations-teams-api`
+- [Profiles API](profiles.md) — `module-crm-profiles-api`
+- [Roles Permissions API](roles-permissions.md) — `module-crm-roles-permissions-api`
+- [Scheduler Queues API](scheduler-queues.md) — `module-crm-scheduler-queues-api`
+- [Search API](search.md) — `module-crm-search-api`
+- [Sessions Devices API](sessions-devices.md) — `module-crm-sessions-devices-api`
+- [Settings API](settings.md) — `module-crm-settings-api`
+- [Theme Support API](theme-support.md) — `module-crm-theme-support-api`
+- [Two Factor Authentication API](two-factor-authentication.md) — `module-crm-two-factor-authentication-api`
+- [Webhooks API](webhooks.md) — `module-crm-webhooks-api`

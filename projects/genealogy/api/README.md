@@ -1,23 +1,54 @@
 # Genealogy API Module Specifications
 
-**Source:** [GENEALOGY.md](../GENEALOGY.md)
-**Architecture:** [API.md](../GENEALOGY.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
-
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-## Module plan
-
-- [Genealogy Core API](genealogy-core.md) — `module-genealogy-core-api`
-- [People API](people.md) — `module-genealogy-people-api`
-- [Relationships API](relationships.md) — `module-genealogy-relationships-api`
-- [Evidence API](evidence.md) — `module-genealogy-evidence-api`
-- [Research API](research.md) — `module-genealogy-research-api`
-- [Places API](places.md) — `module-genealogy-places-api`
-- [Timeline API](timeline.md) — `module-genealogy-timeline-api`
-- [Tree Viewer API](tree-viewer.md) — `module-genealogy-tree-viewer-api`
+- [Activity Comments API](activity-comments.md) — `module-genealogy-activity-comments-api`
+- [Analytics Core API](analytics-core.md) — `module-genealogy-analytics-core-api`
+- [Analytics Google API](analytics-google.md) — `module-genealogy-analytics-google-api`
+- [Analytics Meta API](analytics-meta.md) — `module-genealogy-analytics-meta-api`
+- [Api Access API](api-access.md) — `module-genealogy-api-access-api`
+- [Application API](application.md) — `module-genealogy-application-api`
+- [Audit API](audit.md) — `module-genealogy-audit-api`
+- [Currency Context API](currency-context.md) — `module-genealogy-currency-context-api`
+- [Developer Experience API](developer-experience.md) — `module-genealogy-developer-experience-api`
+- [Feature Flags API](feature-flags.md) — `module-genealogy-feature-flags-api`
+- [Files Media API](files-media.md) — `module-genealogy-files-media-api`
+- [Genealogy Collaboration API](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-api`
+- [Genealogy Core API](genealogy-core.md) — `module-genealogy-genealogy-core-api`
+- [Genealogy Discovery API](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-api`
+- [Genealogy Dna API](genealogy-dna.md) — `module-genealogy-genealogy-dna-api`
+- [Genealogy Evidence API](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-api`
+- [Genealogy Gamification API](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-api`
+- [Genealogy Import Export API](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-api`
+- [Genealogy Media API](genealogy-media.md) — `module-genealogy-genealogy-media-api`
+- [Genealogy People API](genealogy-people.md) — `module-genealogy-genealogy-people-api`
+- [Genealogy Places API](genealogy-places.md) — `module-genealogy-genealogy-places-api`
+- [Genealogy Relationships API](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-api`
+- [Genealogy Reports API](genealogy-reports.md) — `module-genealogy-genealogy-reports-api`
+- [Genealogy Research API](genealogy-research.md) — `module-genealogy-genealogy-research-api`
+- [Genealogy Timeline API](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-api`
+- [Genealogy Tree Viewer API](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-api`
+- [Identity Core API](identity-core.md) — `module-genealogy-identity-core-api`
+- [Identity Socialstream API](identity-socialstream.md) — `module-genealogy-identity-socialstream-api`
 - [Import Export API](import-export.md) — `module-genealogy-import-export-api`
-- [DNA API](dna.md) — `module-genealogy-dna-api`
-- [Media API](media.md) — `module-genealogy-media-api`
-- [Collaboration API](collaboration.md) — `module-genealogy-collaboration-api`
-- [Discovery API](discovery.md) — `module-genealogy-discovery-api`
-- [Reports API](reports.md) — `module-genealogy-reports-api`
+- [Integrations API](integrations.md) — `module-genealogy-integrations-api`
+- [Jetstream Bridge API](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-api`
+- [Liberu Business Workflow Reconciliation API](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-api`
+- [Liberu Executive Insights API](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-api`
+- [Liberu Platform Orchestration API](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-api`
+- [Liberu Revenue And Care Orchestration API](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-api`
+- [Localization Core API](localization-core.md) — `module-genealogy-localization-core-api`
+- [Localization Mymemory API](localization-mymemory.md) — `module-genealogy-localization-mymemory-api`
+- [Module Manager API](module-manager.md) — `module-genealogy-module-manager-api`
+- [Notifications API](notifications.md) — `module-genealogy-notifications-api`
+- [Observability API](observability.md) — `module-genealogy-observability-api`
+- [Organizations Teams API](organizations-teams.md) — `module-genealogy-organizations-teams-api`
+- [Profiles API](profiles.md) — `module-genealogy-profiles-api`
+- [Roles Permissions API](roles-permissions.md) — `module-genealogy-roles-permissions-api`
+- [Scheduler Queues API](scheduler-queues.md) — `module-genealogy-scheduler-queues-api`
+- [Search API](search.md) — `module-genealogy-search-api`
+- [Sessions Devices API](sessions-devices.md) — `module-genealogy-sessions-devices-api`
+- [Settings API](settings.md) — `module-genealogy-settings-api`
+- [Theme Support API](theme-support.md) — `module-genealogy-theme-support-api`
+- [Two Factor Authentication API](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-api`
+- [Webhooks API](webhooks.md) — `module-genealogy-webhooks-api`

@@ -1,25 +1,70 @@
 # Billing API Module Specifications
 
-**Source:** [BILLING.md](../BILLING.md)
-**Architecture:** [API.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
-
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-## Module plan
-
-- [Billing Core API](billing-core.md) — `module-billing-core-api`
-- [Catalog API](catalog.md) — `module-billing-catalog-api`
-- [Pricing API](pricing.md) — `module-billing-pricing-api`
-- [Orders API](orders.md) — `module-billing-orders-api`
-- [Subscriptions API](subscriptions.md) — `module-billing-subscriptions-api`
-- [Usage API](usage.md) — `module-billing-usage-api`
-- [Invoicing API](invoicing.md) — `module-billing-invoicing-api`
-- [Payments API](payments.md) — `module-billing-payments-api`
-- [Collections API](collections.md) — `module-billing-collections-api`
-- [Provisioning API](provisioning.md) — `module-billing-provisioning-api`
-- [Hosting API](hosting.md) — `module-billing-hosting-api`
-- [Domains API](domains.md) — `module-billing-domains-api`
-- [ISP API](isp.md) — `module-billing-isp-api`
-- [Communications API](communications.md) — `module-billing-communications-api`
-- [Customer Portal API](customer-portal.md) — `module-billing-customer-portal-api`
-- [Reporting API](reporting.md) — `module-billing-reporting-api`
+- [Activity Comments API](activity-comments.md) — `module-billing-activity-comments-api`
+- [Analytics Core API](analytics-core.md) — `module-billing-analytics-core-api`
+- [Analytics Google API](analytics-google.md) — `module-billing-analytics-google-api`
+- [Analytics Meta API](analytics-meta.md) — `module-billing-analytics-meta-api`
+- [Api Access API](api-access.md) — `module-billing-api-access-api`
+- [Application API](application.md) — `module-billing-application-api`
+- [Audit API](audit.md) — `module-billing-audit-api`
+- [Billing Core API](billing-core.md) — `module-billing-billing-core-api`
+- [Currency Context API](currency-context.md) — `module-billing-currency-context-api`
+- [Developer Experience API](developer-experience.md) — `module-billing-developer-experience-api`
+- [Feature Flags API](feature-flags.md) — `module-billing-feature-flags-api`
+- [Files Media API](files-media.md) — `module-billing-files-media-api`
+- [Identity Core API](identity-core.md) — `module-billing-identity-core-api`
+- [Identity Socialstream API](identity-socialstream.md) — `module-billing-identity-socialstream-api`
+- [Import Export API](import-export.md) — `module-billing-import-export-api`
+- [Integrations API](integrations.md) — `module-billing-integrations-api`
+- [Jetstream Bridge API](jetstream-bridge.md) — `module-billing-jetstream-bridge-api`
+- [Liberu Business Workflow Reconciliation API](liberu-business-workflow-reconciliation.md) — `module-billing-liberu-business-workflow-reconciliation-api`
+- [Liberu Executive Insights API](liberu-executive-insights.md) — `module-billing-liberu-executive-insights-api`
+- [Liberu Platform Orchestration API](liberu-platform-orchestration.md) — `module-billing-liberu-platform-orchestration-api`
+- [Liberu Revenue And Care Orchestration API](liberu-revenue-and-care-orchestration.md) — `module-billing-liberu-revenue-and-care-orchestration-api`
+- [Localization Core API](localization-core.md) — `module-billing-localization-core-api`
+- [Localization Mymemory API](localization-mymemory.md) — `module-billing-localization-mymemory-api`
+- [Module Billing Billing Core API](module-billing-billing-core.md) — `module-billing-module-billing-billing-core-api`
+- [Module Billing Catalog API](module-billing-catalog.md) — `module-billing-module-billing-catalog-api`
+- [Module Billing Collections API](module-billing-collections.md) — `module-billing-module-billing-collections-api`
+- [Module Billing Communications API](module-billing-communications.md) — `module-billing-module-billing-communications-api`
+- [Module Billing Core API](module-billing-core.md) — `module-billing-module-billing-core-api`
+- [Module Billing Cpanel API](module-billing-cpanel.md) — `module-billing-module-billing-cpanel-api`
+- [Module Billing Customer Portal API](module-billing-customer-portal.md) — `module-billing-module-billing-customer-portal-api`
+- [Module Billing Directadmin API](module-billing-directadmin.md) — `module-billing-module-billing-directadmin-api`
+- [Module Billing Domains API](module-billing-domains.md) — `module-billing-module-billing-domains-api`
+- [Module Billing Enom API](module-billing-enom.md) — `module-billing-module-billing-enom-api`
+- [Module Billing Hosting API](module-billing-hosting.md) — `module-billing-module-billing-hosting-api`
+- [Module Billing Invoicing API](module-billing-invoicing.md) — `module-billing-module-billing-invoicing-api`
+- [Module Billing Isp API](module-billing-isp.md) — `module-billing-module-billing-isp-api`
+- [Module Billing Liberu Control Panel API](module-billing-liberu-control-panel.md) — `module-billing-module-billing-liberu-control-panel-api`
+- [Module Billing Orders API](module-billing-orders.md) — `module-billing-module-billing-orders-api`
+- [Module Billing Paddle API](module-billing-paddle.md) — `module-billing-module-billing-paddle-api`
+- [Module Billing Payments API](module-billing-payments.md) — `module-billing-module-billing-payments-api`
+- [Module Billing Plesk API](module-billing-plesk.md) — `module-billing-module-billing-plesk-api`
+- [Module Billing Pricing API](module-billing-pricing.md) — `module-billing-module-billing-pricing-api`
+- [Module Billing Provisioning API](module-billing-provisioning.md) — `module-billing-module-billing-provisioning-api`
+- [Module Billing Reporting API](module-billing-reporting.md) — `module-billing-module-billing-reporting-api`
+- [Module Billing Resellerclub API](module-billing-resellerclub.md) — `module-billing-module-billing-resellerclub-api`
+- [Module Billing Stripe API](module-billing-stripe.md) — `module-billing-module-billing-stripe-api`
+- [Module Billing Subscriptions API](module-billing-subscriptions.md) — `module-billing-module-billing-subscriptions-api`
+- [Module Billing Usage API](module-billing-usage.md) — `module-billing-module-billing-usage-api`
+- [Module Billing Virtualmin API](module-billing-virtualmin.md) — `module-billing-module-billing-virtualmin-api`
+- [Module Liberu Business Workflow Reconciliation API](module-liberu-business-workflow-reconciliation.md) — `module-billing-module-liberu-business-workflow-reconciliation-api`
+- [Module Liberu Executive Insights API](module-liberu-executive-insights.md) — `module-billing-module-liberu-executive-insights-api`
+- [Module Liberu Platform Orchestration API](module-liberu-platform-orchestration.md) — `module-billing-module-liberu-platform-orchestration-api`
+- [Module Liberu Revenue And Care Orchestration API](module-liberu-revenue-and-care-orchestration.md) — `module-billing-module-liberu-revenue-and-care-orchestration-api`
+- [Module Manager API](module-manager.md) — `module-billing-module-manager-api`
+- [Notifications API](notifications.md) — `module-billing-notifications-api`
+- [Observability API](observability.md) — `module-billing-observability-api`
+- [Organizations Teams API](organizations-teams.md) — `module-billing-organizations-teams-api`
+- [Profiles API](profiles.md) — `module-billing-profiles-api`
+- [Roles Permissions API](roles-permissions.md) — `module-billing-roles-permissions-api`
+- [Scheduler Queues API](scheduler-queues.md) — `module-billing-scheduler-queues-api`
+- [Search API](search.md) — `module-billing-search-api`
+- [Sessions Devices API](sessions-devices.md) — `module-billing-sessions-devices-api`
+- [Settings API](settings.md) — `module-billing-settings-api`
+- [Theme Support API](theme-support.md) — `module-billing-theme-support-api`
+- [Two Factor Authentication API](two-factor-authentication.md) — `module-billing-two-factor-authentication-api`
+- [Webhooks API](webhooks.md) — `module-billing-webhooks-api`

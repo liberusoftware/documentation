@@ -1,45 +1,54 @@
-# Genealogy React Native + Expo implementations
+# Genealogy React Native + Expo Implementations
 
-**Scope:** [Genealogy](../GENEALOGY.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [React Native technology](../../../technologies/REACT-NATIVE.md) · [React Native standard](../../../standards/REACT-NATIVE.md)
+Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-This index defines the optional React Native + Expo adapter boundary for the Genealogy project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-react-native`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [React Native + Expo module standard](../../../modules/react-native/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 14 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                              | Package                                      | Core                              | API                             |
-| ----------------------------------- | -------------------------------------------- | --------------------------------- | ------------------------------- |
-| [Collaboration](collaboration.md)   | module-genealogy-collaboration-react-native  | [Core](../core/collaboration.md)  | [API](../api/collaboration.md)  |
-| [Discovery](discovery.md)           | module-genealogy-discovery-react-native      | [Core](../core/discovery.md)      | [API](../api/discovery.md)      |
-| [Dna](dna.md)                       | module-genealogy-dna-react-native            | [Core](../core/dna.md)            | [API](../api/dna.md)            |
-| [Evidence](evidence.md)             | module-genealogy-evidence-react-native       | [Core](../core/evidence.md)       | [API](../api/evidence.md)       |
-| [Genealogy Core](genealogy-core.md) | module-genealogy-genealogy-core-react-native | [Core](../core/genealogy-core.md) | [API](../api/genealogy-core.md) |
-| [Import Export](import-export.md)   | module-genealogy-import-export-react-native  | [Core](../core/import-export.md)  | [API](../api/import-export.md)  |
-| [Media](media.md)                   | module-genealogy-media-react-native          | [Core](../core/media.md)          | [API](../api/media.md)          |
-| [People](people.md)                 | module-genealogy-people-react-native         | [Core](../core/people.md)         | [API](../api/people.md)         |
-| [Places](places.md)                 | module-genealogy-places-react-native         | [Core](../core/places.md)         | [API](../api/places.md)         |
-| [Relationships](relationships.md)   | module-genealogy-relationships-react-native  | [Core](../core/relationships.md)  | [API](../api/relationships.md)  |
-| [Reports](reports.md)               | module-genealogy-reports-react-native        | [Core](../core/reports.md)        | [API](../api/reports.md)        |
-| [Research](research.md)             | module-genealogy-research-react-native       | [Core](../core/research.md)       | [API](../api/research.md)       |
-| [Timeline](timeline.md)             | module-genealogy-timeline-react-native       | [Core](../core/timeline.md)       | [API](../api/timeline.md)       |
-| [Tree Viewer](tree-viewer.md)       | module-genealogy-tree-viewer-react-native    | [Core](../core/tree-viewer.md)    | [API](../api/tree-viewer.md)    |
+- [Activity Comments React Native](activity-comments.md) — `module-genealogy-activity-comments-react-native`
+- [Analytics Core React Native](analytics-core.md) — `module-genealogy-analytics-core-react-native`
+- [Analytics Google React Native](analytics-google.md) — `module-genealogy-analytics-google-react-native`
+- [Analytics Meta React Native](analytics-meta.md) — `module-genealogy-analytics-meta-react-native`
+- [Api Access React Native](api-access.md) — `module-genealogy-api-access-react-native`
+- [Application React Native](application.md) — `module-genealogy-application-react-native`
+- [Audit React Native](audit.md) — `module-genealogy-audit-react-native`
+- [Currency Context React Native](currency-context.md) — `module-genealogy-currency-context-react-native`
+- [Developer Experience React Native](developer-experience.md) — `module-genealogy-developer-experience-react-native`
+- [Feature Flags React Native](feature-flags.md) — `module-genealogy-feature-flags-react-native`
+- [Files Media React Native](files-media.md) — `module-genealogy-files-media-react-native`
+- [Genealogy Collaboration React Native](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-react-native`
+- [Genealogy Core React Native](genealogy-core.md) — `module-genealogy-genealogy-core-react-native`
+- [Genealogy Discovery React Native](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-react-native`
+- [Genealogy Dna React Native](genealogy-dna.md) — `module-genealogy-genealogy-dna-react-native`
+- [Genealogy Evidence React Native](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-react-native`
+- [Genealogy Gamification React Native](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-react-native`
+- [Genealogy Import Export React Native](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-react-native`
+- [Genealogy Media React Native](genealogy-media.md) — `module-genealogy-genealogy-media-react-native`
+- [Genealogy People React Native](genealogy-people.md) — `module-genealogy-genealogy-people-react-native`
+- [Genealogy Places React Native](genealogy-places.md) — `module-genealogy-genealogy-places-react-native`
+- [Genealogy Relationships React Native](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-react-native`
+- [Genealogy Reports React Native](genealogy-reports.md) — `module-genealogy-genealogy-reports-react-native`
+- [Genealogy Research React Native](genealogy-research.md) — `module-genealogy-genealogy-research-react-native`
+- [Genealogy Timeline React Native](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-react-native`
+- [Genealogy Tree Viewer React Native](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-react-native`
+- [Identity Core React Native](identity-core.md) — `module-genealogy-identity-core-react-native`
+- [Identity Socialstream React Native](identity-socialstream.md) — `module-genealogy-identity-socialstream-react-native`
+- [Import Export React Native](import-export.md) — `module-genealogy-import-export-react-native`
+- [Integrations React Native](integrations.md) — `module-genealogy-integrations-react-native`
+- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-react-native`
+- [Liberu Business Workflow Reconciliation React Native](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-react-native`
+- [Liberu Executive Insights React Native](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-react-native`
+- [Liberu Platform Orchestration React Native](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-react-native`
+- [Liberu Revenue And Care Orchestration React Native](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-react-native`
+- [Localization Core React Native](localization-core.md) — `module-genealogy-localization-core-react-native`
+- [Localization Mymemory React Native](localization-mymemory.md) — `module-genealogy-localization-mymemory-react-native`
+- [Module Manager React Native](module-manager.md) — `module-genealogy-module-manager-react-native`
+- [Notifications React Native](notifications.md) — `module-genealogy-notifications-react-native`
+- [Observability React Native](observability.md) — `module-genealogy-observability-react-native`
+- [Organizations Teams React Native](organizations-teams.md) — `module-genealogy-organizations-teams-react-native`
+- [Profiles React Native](profiles.md) — `module-genealogy-profiles-react-native`
+- [Roles Permissions React Native](roles-permissions.md) — `module-genealogy-roles-permissions-react-native`
+- [Scheduler Queues React Native](scheduler-queues.md) — `module-genealogy-scheduler-queues-react-native`
+- [Search React Native](search.md) — `module-genealogy-search-react-native`
+- [Sessions Devices React Native](sessions-devices.md) — `module-genealogy-sessions-devices-react-native`
+- [Settings React Native](settings.md) — `module-genealogy-settings-react-native`
+- [Theme Support React Native](theme-support.md) — `module-genealogy-theme-support-react-native`
+- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-react-native`
+- [Webhooks React Native](webhooks.md) — `module-genealogy-webhooks-react-native`

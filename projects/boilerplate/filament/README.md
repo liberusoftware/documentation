@@ -1,42 +1,35 @@
-# Boilerplate Filament 5 module implementations
+# Boilerplate Filament Implementations
 
-This index lists the independently installable Filament presentation packages for the shared Liberu foundation. Each entry maps one-to-one to the canonical module catalog in [BOILERPLATE.md](../BOILERPLATE.md).
+Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-These adapters translate the matching core package into Filament 5 conventions. They contain transport or view composition only; authorization and business rules remain in the core package.
-
-| Module                                                    | Composer package                            | Documentation                                       |
-| --------------------------------------------------------- | ------------------------------------------- | --------------------------------------------------- |
-| [Application Core](application-core.md)                   | `module-application-core-filament`          | [Implementation plan](application-core.md)          |
-| [Module Manager](module-manager.md)                       | `module-module-manager-filament`            | [Implementation plan](module-manager.md)            |
-| [Identity](identity.md)                                   | `module-identity-filament`                  | [Implementation plan](identity.md)                  |
-| [Two-Factor Authentication](two-factor-authentication.md) | `module-two-factor-authentication-filament` | [Implementation plan](two-factor-authentication.md) |
-| [Sessions and Devices](sessions-and-devices.md)           | `module-sessions-and-devices-filament`      | [Implementation plan](sessions-and-devices.md)      |
-| [Jetstream Bridge](jetstream-bridge.md)                   | `module-jetstream-bridge-filament`          | [Implementation plan](jetstream-bridge.md)          |
-| [Profiles](profiles.md)                                   | `module-profiles-filament`                  | [Implementation plan](profiles.md)                  |
-| [Organizations and Teams](organizations-and-teams.md)     | `module-organizations-and-teams-filament`   | [Implementation plan](organizations-and-teams.md)   |
-| [Roles and Permissions](roles-and-permissions.md)         | `module-roles-and-permissions-filament`     | [Implementation plan](roles-and-permissions.md)     |
-| [Localization](localization.md)                           | `module-localization-filament`              | [Implementation plan](localization.md)              |
-| [Currency Context](currency-context.md)                   | `module-currency-context-filament`          | [Implementation plan](currency-context.md)          |
-| [Notifications](notifications.md)                         | `module-notifications-filament`             | [Implementation plan](notifications.md)             |
-| [Files and Media](files-and-media.md)                     | `module-files-and-media-filament`           | [Implementation plan](files-and-media.md)           |
-| [Search](search.md)                                       | `module-search-filament`                    | [Implementation plan](search.md)                    |
-| [Audit](audit.md)                                         | `module-audit-filament`                     | [Implementation plan](audit.md)                     |
-| [Feature Flags](feature-flags.md)                         | `module-feature-flags-filament`             | [Implementation plan](feature-flags.md)             |
-| [API Access](api-access.md)                               | `module-api-access-filament`                | [Implementation plan](api-access.md)                |
-| [Webhooks](webhooks.md)                                   | `module-webhooks-filament`                  | [Implementation plan](webhooks.md)                  |
-| [Integrations](integrations.md)                           | `module-integrations-filament`              | [Implementation plan](integrations.md)              |
-| [Analytics Core](analytics-core.md)                       | `module-analytics-core-filament`            | [Implementation plan](analytics-core.md)            |
-| [Google Analytics](google-analytics.md)                   | `module-google-analytics-filament`          | [Implementation plan](google-analytics.md)          |
-| [Meta Server-Side Tracking](meta-server-side-tracking.md) | `module-meta-server-side-tracking-filament` | [Implementation plan](meta-server-side-tracking.md) |
-| [Import and Export](import-and-export.md)                 | `module-import-and-export-filament`         | [Implementation plan](import-and-export.md)         |
-| [Activity and Comments](activity-and-comments.md)         | `module-activity-and-comments-filament`     | [Implementation plan](activity-and-comments.md)     |
-| [Settings](settings.md)                                   | `module-settings-filament`                  | [Implementation plan](settings.md)                  |
-| [Scheduler and Queues](scheduler-and-queues.md)           | `module-scheduler-and-queues-filament`      | [Implementation plan](scheduler-and-queues.md)      |
-| [Observability](observability.md)                         | `module-observability-filament`             | [Implementation plan](observability.md)             |
-| [Developer Experience](developer-experience.md)           | `module-developer-experience-filament`      | [Implementation plan](developer-experience.md)      |
-
-## Shared delivery contract
-
-Every package targets Laravel 13 and PHP 8.5, uses strict types and typed public boundaries, documents configuration and permissions, and ships independent tests, migrations, upgrade notes, and a compatibility matrix.
-
-See [modules/filament](../../../modules/filament/README.md), [API architecture](../../../architecture/API.md), [themes](../../../standards/THEMES.md), and [testing](../../../standards/TESTING.md).
+- [Activity Comments Filament](activity-comments.md) — `module-boilerplate-activity-comments-filament`
+- [Analytics Core Filament](analytics-core.md) — `module-boilerplate-analytics-core-filament`
+- [Analytics Google Filament](analytics-google.md) — `module-boilerplate-analytics-google-filament`
+- [Analytics Meta Filament](analytics-meta.md) — `module-boilerplate-analytics-meta-filament`
+- [Api Access Filament](api-access.md) — `module-boilerplate-api-access-filament`
+- [Application Filament](application.md) — `module-boilerplate-application-filament`
+- [Audit Filament](audit.md) — `module-boilerplate-audit-filament`
+- [Currency Context Filament](currency-context.md) — `module-boilerplate-currency-context-filament`
+- [Developer Experience Filament](developer-experience.md) — `module-boilerplate-developer-experience-filament`
+- [Feature Flags Filament](feature-flags.md) — `module-boilerplate-feature-flags-filament`
+- [Files Media Filament](files-media.md) — `module-boilerplate-files-media-filament`
+- [Identity Core Filament](identity-core.md) — `module-boilerplate-identity-core-filament`
+- [Identity Socialstream Filament](identity-socialstream.md) — `module-boilerplate-identity-socialstream-filament`
+- [Import Export Filament](import-export.md) — `module-boilerplate-import-export-filament`
+- [Integrations Filament](integrations.md) — `module-boilerplate-integrations-filament`
+- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-boilerplate-jetstream-bridge-filament`
+- [Localization Core Filament](localization-core.md) — `module-boilerplate-localization-core-filament`
+- [Localization Mymemory Filament](localization-mymemory.md) — `module-boilerplate-localization-mymemory-filament`
+- [Module Manager Filament](module-manager.md) — `module-boilerplate-module-manager-filament`
+- [Notifications Filament](notifications.md) — `module-boilerplate-notifications-filament`
+- [Observability Filament](observability.md) — `module-boilerplate-observability-filament`
+- [Organizations Teams Filament](organizations-teams.md) — `module-boilerplate-organizations-teams-filament`
+- [Profiles Filament](profiles.md) — `module-boilerplate-profiles-filament`
+- [Roles Permissions Filament](roles-permissions.md) — `module-boilerplate-roles-permissions-filament`
+- [Scheduler Queues Filament](scheduler-queues.md) — `module-boilerplate-scheduler-queues-filament`
+- [Search Filament](search.md) — `module-boilerplate-search-filament`
+- [Sessions Devices Filament](sessions-devices.md) — `module-boilerplate-sessions-devices-filament`
+- [Settings Filament](settings.md) — `module-boilerplate-settings-filament`
+- [Theme Support Filament](theme-support.md) — `module-boilerplate-theme-support-filament`
+- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-boilerplate-two-factor-authentication-filament`
+- [Webhooks Filament](webhooks.md) — `module-boilerplate-webhooks-filament`

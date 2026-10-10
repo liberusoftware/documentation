@@ -1,23 +1,50 @@
 # Maintenance Feature Specifications
 
-**Source:** [MAINTENANCE.md](../MAINTENANCE.md)  
-**Architecture:** [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md) · [DOCUMENTATION.md](../MAINTENANCE.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Module plan
-
-- [Maintenance Core](maintenance-core.md) — `module-maintenance-core`
-- [Customers and Sites](customers-and-sites.md) — `module-maintenance-customers-and-sites`
-- [Assets](assets.md) — `module-maintenance-assets`
-- [Work Orders](work-orders.md) — `module-maintenance-work-orders`
-- [Scheduling](scheduling.md) — `module-maintenance-scheduling`
-- [Preventative Maintenance](preventative-maintenance.md) — `module-maintenance-preventative-maintenance`
-- [Inspections](inspections.md) — `module-maintenance-inspections`
-- [Inventory](inventory.md) — `module-maintenance-inventory`
-- [Procurement](procurement.md) — `module-maintenance-procurement`
-- [Labor and Time](labor-and-time.md) — `module-maintenance-labor-and-time`
-- [Commercial](commercial.md) — `module-maintenance-commercial`
-- [Compliance](compliance.md) — `module-maintenance-compliance`
-- [Portals](portals.md) — `module-maintenance-portals`
-- [Reporting](reporting.md) — `module-maintenance-reporting`
+- [Activity Comments](activity-comments.md) — `module-maintenance-activity-comments`
+- [Analytics Core](analytics-core.md) — `module-maintenance-analytics-core`
+- [Analytics Google](analytics-google.md) — `module-maintenance-analytics-google`
+- [Analytics Meta](analytics-meta.md) — `module-maintenance-analytics-meta`
+- [Api Access](api-access.md) — `module-maintenance-api-access`
+- [Application](application.md) — `module-maintenance-application`
+- [Audit](audit.md) — `module-maintenance-audit`
+- [Currency Context](currency-context.md) — `module-maintenance-currency-context`
+- [Developer Experience](developer-experience.md) — `module-maintenance-developer-experience`
+- [Feature Flags](feature-flags.md) — `module-maintenance-feature-flags`
+- [Files Media](files-media.md) — `module-maintenance-files-media`
+- [Identity Core](identity-core.md) — `module-maintenance-identity-core`
+- [Identity Socialstream](identity-socialstream.md) — `module-maintenance-identity-socialstream`
+- [Import Export](import-export.md) — `module-maintenance-import-export`
+- [Integrations](integrations.md) — `module-maintenance-integrations`
+- [Jetstream Bridge](jetstream-bridge.md) — `module-maintenance-jetstream-bridge`
+- [Localization Core](localization-core.md) — `module-maintenance-localization-core`
+- [Localization Mymemory](localization-mymemory.md) — `module-maintenance-localization-mymemory`
+- [Maintenance Maintenance Core](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core`
+- [Module Maintenance Assets](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets`
+- [Module Maintenance Commercial](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial`
+- [Module Maintenance Compliance](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance`
+- [Module Maintenance Core](module-maintenance-core.md) — `module-maintenance-module-maintenance-core`
+- [Module Maintenance Customers And Sites](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites`
+- [Module Maintenance Inspections](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections`
+- [Module Maintenance Inventory](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory`
+- [Module Maintenance Labor And Time](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time`
+- [Module Maintenance Portals](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals`
+- [Module Maintenance Preventative Maintenance](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance`
+- [Module Maintenance Procurement](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement`
+- [Module Maintenance Reporting](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting`
+- [Module Maintenance Scheduling](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling`
+- [Module Maintenance Work Orders](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders`
+- [Module Manager](module-manager.md) — `module-maintenance-module-manager`
+- [Notifications](notifications.md) — `module-maintenance-notifications`
+- [Observability](observability.md) — `module-maintenance-observability`
+- [Organizations Teams](organizations-teams.md) — `module-maintenance-organizations-teams`
+- [Profiles](profiles.md) — `module-maintenance-profiles`
+- [Roles Permissions](roles-permissions.md) — `module-maintenance-roles-permissions`
+- [Scheduler Queues](scheduler-queues.md) — `module-maintenance-scheduler-queues`
+- [Search](search.md) — `module-maintenance-search`
+- [Sessions Devices](sessions-devices.md) — `module-maintenance-sessions-devices`
+- [Settings](settings.md) — `module-maintenance-settings`
+- [Theme Support](theme-support.md) — `module-maintenance-theme-support`
+- [Two Factor Authentication](two-factor-authentication.md) — `module-maintenance-two-factor-authentication`
+- [Webhooks](webhooks.md) — `module-maintenance-webhooks`

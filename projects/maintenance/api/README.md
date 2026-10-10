@@ -1,23 +1,50 @@
 # Maintenance API Module Specifications
 
-**Source:** [MAINTENANCE.md](../MAINTENANCE.md)
-**Architecture:** [API.md](../MAINTENANCE.md) · [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md)
-
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-## Module plan
-
-- [Maintenance Core API](maintenance-core.md) — `module-maintenance-core-api`
-- [Customers and Sites API](customers-and-sites.md) — `module-maintenance-customers-and-sites-api`
-- [Assets API](assets.md) — `module-maintenance-assets-api`
-- [Work Orders API](work-orders.md) — `module-maintenance-work-orders-api`
-- [Scheduling API](scheduling.md) — `module-maintenance-scheduling-api`
-- [Preventative Maintenance API](preventative-maintenance.md) — `module-maintenance-preventative-maintenance-api`
-- [Inspections API](inspections.md) — `module-maintenance-inspections-api`
-- [Inventory API](inventory.md) — `module-maintenance-inventory-api`
-- [Procurement API](procurement.md) — `module-maintenance-procurement-api`
-- [Labor and Time API](labor-and-time.md) — `module-maintenance-labor-and-time-api`
-- [Commercial API](commercial.md) — `module-maintenance-commercial-api`
-- [Compliance API](compliance.md) — `module-maintenance-compliance-api`
-- [Portals API](portals.md) — `module-maintenance-portals-api`
-- [Reporting API](reporting.md) — `module-maintenance-reporting-api`
+- [Activity Comments API](activity-comments.md) — `module-maintenance-activity-comments-api`
+- [Analytics Core API](analytics-core.md) — `module-maintenance-analytics-core-api`
+- [Analytics Google API](analytics-google.md) — `module-maintenance-analytics-google-api`
+- [Analytics Meta API](analytics-meta.md) — `module-maintenance-analytics-meta-api`
+- [Api Access API](api-access.md) — `module-maintenance-api-access-api`
+- [Application API](application.md) — `module-maintenance-application-api`
+- [Audit API](audit.md) — `module-maintenance-audit-api`
+- [Currency Context API](currency-context.md) — `module-maintenance-currency-context-api`
+- [Developer Experience API](developer-experience.md) — `module-maintenance-developer-experience-api`
+- [Feature Flags API](feature-flags.md) — `module-maintenance-feature-flags-api`
+- [Files Media API](files-media.md) — `module-maintenance-files-media-api`
+- [Identity Core API](identity-core.md) — `module-maintenance-identity-core-api`
+- [Identity Socialstream API](identity-socialstream.md) — `module-maintenance-identity-socialstream-api`
+- [Import Export API](import-export.md) — `module-maintenance-import-export-api`
+- [Integrations API](integrations.md) — `module-maintenance-integrations-api`
+- [Jetstream Bridge API](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-api`
+- [Localization Core API](localization-core.md) — `module-maintenance-localization-core-api`
+- [Localization Mymemory API](localization-mymemory.md) — `module-maintenance-localization-mymemory-api`
+- [Maintenance Maintenance Core API](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-api`
+- [Module Maintenance Assets API](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-api`
+- [Module Maintenance Commercial API](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-api`
+- [Module Maintenance Compliance API](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-api`
+- [Module Maintenance Core API](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-api`
+- [Module Maintenance Customers And Sites API](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-api`
+- [Module Maintenance Inspections API](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-api`
+- [Module Maintenance Inventory API](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-api`
+- [Module Maintenance Labor And Time API](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-api`
+- [Module Maintenance Portals API](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-api`
+- [Module Maintenance Preventative Maintenance API](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-api`
+- [Module Maintenance Procurement API](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-api`
+- [Module Maintenance Reporting API](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-api`
+- [Module Maintenance Scheduling API](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-api`
+- [Module Maintenance Work Orders API](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-api`
+- [Module Manager API](module-manager.md) — `module-maintenance-module-manager-api`
+- [Notifications API](notifications.md) — `module-maintenance-notifications-api`
+- [Observability API](observability.md) — `module-maintenance-observability-api`
+- [Organizations Teams API](organizations-teams.md) — `module-maintenance-organizations-teams-api`
+- [Profiles API](profiles.md) — `module-maintenance-profiles-api`
+- [Roles Permissions API](roles-permissions.md) — `module-maintenance-roles-permissions-api`
+- [Scheduler Queues API](scheduler-queues.md) — `module-maintenance-scheduler-queues-api`
+- [Search API](search.md) — `module-maintenance-search-api`
+- [Sessions Devices API](sessions-devices.md) — `module-maintenance-sessions-devices-api`
+- [Settings API](settings.md) — `module-maintenance-settings-api`
+- [Theme Support API](theme-support.md) — `module-maintenance-theme-support-api`
+- [Two Factor Authentication API](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-api`
+- [Webhooks API](webhooks.md) — `module-maintenance-webhooks-api`

@@ -1,25 +1,70 @@
 # Billing Feature Specifications
 
-**Source:** [BILLING.md](../BILLING.md)  
-**Architecture:** [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md) · [DOCUMENTATION.md](../BILLING.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Module plan
-
-- [Billing Core](billing-core.md) — `module-billing-core`
-- [Catalog](catalog.md) — `module-billing-catalog`
-- [Pricing](pricing.md) — `module-billing-pricing`
-- [Orders](orders.md) — `module-billing-orders`
-- [Subscriptions](subscriptions.md) — `module-billing-subscriptions`
-- [Usage](usage.md) — `module-billing-usage`
-- [Invoicing](invoicing.md) — `module-billing-invoicing`
-- [Payments](payments.md) — `module-billing-payments`
-- [Collections](collections.md) — `module-billing-collections`
-- [Provisioning](provisioning.md) — `module-billing-provisioning`
-- [Hosting](hosting.md) — `module-billing-hosting`
-- [Domains](domains.md) — `module-billing-domains`
-- [ISP](isp.md) — `module-billing-isp`
-- [Communications](communications.md) — `module-billing-communications`
-- [Customer Portal](customer-portal.md) — `module-billing-customer-portal`
-- [Reporting](reporting.md) — `module-billing-reporting`
+- [Activity Comments](activity-comments.md) — `module-billing-activity-comments`
+- [Analytics Core](analytics-core.md) — `module-billing-analytics-core`
+- [Analytics Google](analytics-google.md) — `module-billing-analytics-google`
+- [Analytics Meta](analytics-meta.md) — `module-billing-analytics-meta`
+- [Api Access](api-access.md) — `module-billing-api-access`
+- [Application](application.md) — `module-billing-application`
+- [Audit](audit.md) — `module-billing-audit`
+- [Billing Core](billing-core.md) — `module-billing-billing-core`
+- [Currency Context](currency-context.md) — `module-billing-currency-context`
+- [Developer Experience](developer-experience.md) — `module-billing-developer-experience`
+- [Feature Flags](feature-flags.md) — `module-billing-feature-flags`
+- [Files Media](files-media.md) — `module-billing-files-media`
+- [Identity Core](identity-core.md) — `module-billing-identity-core`
+- [Identity Socialstream](identity-socialstream.md) — `module-billing-identity-socialstream`
+- [Import Export](import-export.md) — `module-billing-import-export`
+- [Integrations](integrations.md) — `module-billing-integrations`
+- [Jetstream Bridge](jetstream-bridge.md) — `module-billing-jetstream-bridge`
+- [Liberu Business Workflow Reconciliation](liberu-business-workflow-reconciliation.md) — `module-billing-liberu-business-workflow-reconciliation`
+- [Liberu Executive Insights](liberu-executive-insights.md) — `module-billing-liberu-executive-insights`
+- [Liberu Platform Orchestration](liberu-platform-orchestration.md) — `module-billing-liberu-platform-orchestration`
+- [Liberu Revenue And Care Orchestration](liberu-revenue-and-care-orchestration.md) — `module-billing-liberu-revenue-and-care-orchestration`
+- [Localization Core](localization-core.md) — `module-billing-localization-core`
+- [Localization Mymemory](localization-mymemory.md) — `module-billing-localization-mymemory`
+- [Module Billing Billing Core](module-billing-billing-core.md) — `module-billing-module-billing-billing-core`
+- [Module Billing Catalog](module-billing-catalog.md) — `module-billing-module-billing-catalog`
+- [Module Billing Collections](module-billing-collections.md) — `module-billing-module-billing-collections`
+- [Module Billing Communications](module-billing-communications.md) — `module-billing-module-billing-communications`
+- [Module Billing Core](module-billing-core.md) — `module-billing-module-billing-core`
+- [Module Billing Cpanel](module-billing-cpanel.md) — `module-billing-module-billing-cpanel`
+- [Module Billing Customer Portal](module-billing-customer-portal.md) — `module-billing-module-billing-customer-portal`
+- [Module Billing Directadmin](module-billing-directadmin.md) — `module-billing-module-billing-directadmin`
+- [Module Billing Domains](module-billing-domains.md) — `module-billing-module-billing-domains`
+- [Module Billing Enom](module-billing-enom.md) — `module-billing-module-billing-enom`
+- [Module Billing Hosting](module-billing-hosting.md) — `module-billing-module-billing-hosting`
+- [Module Billing Invoicing](module-billing-invoicing.md) — `module-billing-module-billing-invoicing`
+- [Module Billing Isp](module-billing-isp.md) — `module-billing-module-billing-isp`
+- [Module Billing Liberu Control Panel](module-billing-liberu-control-panel.md) — `module-billing-module-billing-liberu-control-panel`
+- [Module Billing Orders](module-billing-orders.md) — `module-billing-module-billing-orders`
+- [Module Billing Paddle](module-billing-paddle.md) — `module-billing-module-billing-paddle`
+- [Module Billing Payments](module-billing-payments.md) — `module-billing-module-billing-payments`
+- [Module Billing Plesk](module-billing-plesk.md) — `module-billing-module-billing-plesk`
+- [Module Billing Pricing](module-billing-pricing.md) — `module-billing-module-billing-pricing`
+- [Module Billing Provisioning](module-billing-provisioning.md) — `module-billing-module-billing-provisioning`
+- [Module Billing Reporting](module-billing-reporting.md) — `module-billing-module-billing-reporting`
+- [Module Billing Resellerclub](module-billing-resellerclub.md) — `module-billing-module-billing-resellerclub`
+- [Module Billing Stripe](module-billing-stripe.md) — `module-billing-module-billing-stripe`
+- [Module Billing Subscriptions](module-billing-subscriptions.md) — `module-billing-module-billing-subscriptions`
+- [Module Billing Usage](module-billing-usage.md) — `module-billing-module-billing-usage`
+- [Module Billing Virtualmin](module-billing-virtualmin.md) — `module-billing-module-billing-virtualmin`
+- [Module Liberu Business Workflow Reconciliation](module-liberu-business-workflow-reconciliation.md) — `module-billing-module-liberu-business-workflow-reconciliation`
+- [Module Liberu Executive Insights](module-liberu-executive-insights.md) — `module-billing-module-liberu-executive-insights`
+- [Module Liberu Platform Orchestration](module-liberu-platform-orchestration.md) — `module-billing-module-liberu-platform-orchestration`
+- [Module Liberu Revenue And Care Orchestration](module-liberu-revenue-and-care-orchestration.md) — `module-billing-module-liberu-revenue-and-care-orchestration`
+- [Module Manager](module-manager.md) — `module-billing-module-manager`
+- [Notifications](notifications.md) — `module-billing-notifications`
+- [Observability](observability.md) — `module-billing-observability`
+- [Organizations Teams](organizations-teams.md) — `module-billing-organizations-teams`
+- [Profiles](profiles.md) — `module-billing-profiles`
+- [Roles Permissions](roles-permissions.md) — `module-billing-roles-permissions`
+- [Scheduler Queues](scheduler-queues.md) — `module-billing-scheduler-queues`
+- [Search](search.md) — `module-billing-search`
+- [Sessions Devices](sessions-devices.md) — `module-billing-sessions-devices`
+- [Settings](settings.md) — `module-billing-settings`
+- [Theme Support](theme-support.md) — `module-billing-theme-support`
+- [Two Factor Authentication](two-factor-authentication.md) — `module-billing-two-factor-authentication`
+- [Webhooks](webhooks.md) — `module-billing-webhooks`

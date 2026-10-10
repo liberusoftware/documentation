@@ -1,21 +1,50 @@
-# Liberu Social Network — module journeys
+# Social Network — Module User Guides
 
-These pages describe what an end user sees when this module is enabled. They are shared by public web, authenticated portal, staff web, and mobile experiences where applicable.
+End-user guides for each Social Network module.
 
-| Module | User guide | Developer source |
-| --- | --- | --- |
-| Analytics | [Guide](analytics.md) | [features](../../../../projects/social-network/features/analytics.md) |
-| Communities | [Guide](communities.md) | [features](../../../../projects/social-network/features/communities.md) |
-| Discovery | [Guide](discovery.md) | [features](../../../../projects/social-network/features/discovery.md) |
-| Engagement | [Guide](engagement.md) | [features](../../../../projects/social-network/features/engagement.md) |
-| Events | [Guide](events.md) | [features](../../../../projects/social-network/features/events.md) |
-| Federation | [Guide](federation.md) | [features](../../../../projects/social-network/features/federation.md) |
-| Feed | [Guide](feed.md) | [features](../../../../projects/social-network/features/feed.md) |
-| Media | [Guide](media.md) | [features](../../../../projects/social-network/features/media.md) |
-| Messaging | [Guide](messaging.md) | [features](../../../../projects/social-network/features/messaging.md) |
-| Moderation | [Guide](moderation.md) | [features](../../../../projects/social-network/features/moderation.md) |
-| Notifications | [Guide](notifications.md) | [features](../../../../projects/social-network/features/notifications.md) |
-| Profiles | [Guide](profiles.md) | [features](../../../../projects/social-network/features/profiles.md) |
-| Publishing | [Guide](publishing.md) | [features](../../../../projects/social-network/features/publishing.md) |
-| Social Core | [Guide](social-core.md) | [features](../../../../projects/social-network/features/social-core.md) |
-| Social Graph | [Guide](social-graph.md) | [features](../../../../projects/social-network/features/social-graph.md) |
+- [Activity Comments](activity-comments.md)
+- [Analytics Core](analytics-core.md)
+- [Analytics Google](analytics-google.md)
+- [Analytics Meta](analytics-meta.md)
+- [Api Access](api-access.md)
+- [Application](application.md)
+- [Audit](audit.md)
+- [Currency Context](currency-context.md)
+- [Developer Experience](developer-experience.md)
+- [Feature Flags](feature-flags.md)
+- [Files Media](files-media.md)
+- [Identity Core](identity-core.md)
+- [Identity Socialstream](identity-socialstream.md)
+- [Import Export](import-export.md)
+- [Integrations](integrations.md)
+- [Jetstream Bridge](jetstream-bridge.md)
+- [Localization Core](localization-core.md)
+- [Localization Mymemory](localization-mymemory.md)
+- [Module Manager](module-manager.md)
+- [Notifications](notifications.md)
+- [Observability](observability.md)
+- [Organizations Teams](organizations-teams.md)
+- [Profiles](profiles.md)
+- [Roles Permissions](roles-permissions.md)
+- [Scheduler Queues](scheduler-queues.md)
+- [Search](search.md)
+- [Sessions Devices](sessions-devices.md)
+- [Settings](settings.md)
+- [Social Network Analytics](social-network-analytics.md)
+- [Social Network Communities](social-network-communities.md)
+- [Social Network Discovery](social-network-discovery.md)
+- [Social Network Engagement](social-network-engagement.md)
+- [Social Network Events](social-network-events.md)
+- [Social Network Federation](social-network-federation.md)
+- [Social Network Feed](social-network-feed.md)
+- [Social Network Media](social-network-media.md)
+- [Social Network Messaging](social-network-messaging.md)
+- [Social Network Moderation](social-network-moderation.md)
+- [Social Network Notifications](social-network-notifications.md)
+- [Social Network Profiles](social-network-profiles.md)
+- [Social Network Publishing](social-network-publishing.md)
+- [Social Network Social Core](social-network-social-core.md)
+- [Social Network Social Graph](social-network-social-graph.md)
+- [Theme Support](theme-support.md)
+- [Two Factor Authentication](two-factor-authentication.md)
+- [Webhooks](webhooks.md)

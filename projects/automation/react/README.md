@@ -1,39 +1,50 @@
-# Automation React 19.2 + Inertia 3 Implementations
+# Automation React + Inertia Implementations
 
-**Source:** [AUTOMATION.md](../AUTOMATION.md)
-**Architecture:** [REACT.md](../AUTOMATION.md) · [API module index](../api/README.md) · [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md)
+Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Automation Core React + Inertia](automation-core.md) — `module-automation-core-react-inertia`
-- [Rules React + Inertia](rules.md) — `module-automation-rules-react-inertia`
-- [Approvals React + Inertia](approvals.md) — `module-automation-approvals-react-inertia`
-- [AI Gateway React + Inertia](ai-gateway.md) — `module-automation-ai-gateway-react-inertia`
-- [Prompt Registry React + Inertia](prompt-registry.md) — `module-automation-prompt-registry-react-inertia`
-- [Data Processing React + Inertia](data-processing.md) — `module-automation-data-processing-react-inertia`
-- [Voice React + Inertia](voice.md) — `module-automation-voice-react-inertia`
-- [Image React + Inertia](image.md) — `module-automation-image-react-inertia`
-- [Video React + Inertia](video.md) — `module-automation-video-react-inertia`
-- [Connectors React + Inertia](connectors.md) — `module-automation-connectors-react-inertia`
-- [Evaluation React + Inertia](evaluation.md) — `module-automation-evaluation-react-inertia`
-
-**Source:** [AUTOMATION.md](../AUTOMATION.md)
-**Architecture:** [REACT.md](../AUTOMATION.md) · [API module index](../api/README.md) · [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md)
-
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Automation Core React + Inertia](automation-core.md) — `module-automation-core-react-inertia`
-- [Rules React + Inertia](rules.md) — `module-automation-rules-react-inertia`
-- [Approvals React + Inertia](approvals.md) — `module-automation-approvals-react-inertia`
-- [AI Gateway React + Inertia](ai-gateway.md) — `module-automation-ai-gateway-react-inertia`
-- [Prompt Registry React + Inertia](prompt-registry.md) — `module-automation-prompt-registry-react-inertia`
-- [Data Processing React + Inertia](data-processing.md) — `module-automation-data-processing-react-inertia`
-- [Voice React + Inertia](voice.md) — `module-automation-voice-react-inertia`
-- [Image React + Inertia](image.md) — `module-automation-image-react-inertia`
-- [Video React + Inertia](video.md) — `module-automation-video-react-inertia`
-- [Connectors React + Inertia](connectors.md) — `module-automation-connectors-react-inertia`
-- [Evaluation React + Inertia](evaluation.md) — `module-automation-evaluation-react-inertia`
+- [Activity Comments React](activity-comments.md) — `module-automation-activity-comments-react-inertia`
+- [Analytics Core React](analytics-core.md) — `module-automation-analytics-core-react-inertia`
+- [Analytics Google React](analytics-google.md) — `module-automation-analytics-google-react-inertia`
+- [Analytics Meta React](analytics-meta.md) — `module-automation-analytics-meta-react-inertia`
+- [Api Access React](api-access.md) — `module-automation-api-access-react-inertia`
+- [Application React](application.md) — `module-automation-application-react-inertia`
+- [Audit React](audit.md) — `module-automation-audit-react-inertia`
+- [Currency Context React](currency-context.md) — `module-automation-currency-context-react-inertia`
+- [Developer Experience React](developer-experience.md) — `module-automation-developer-experience-react-inertia`
+- [Feature Flags React](feature-flags.md) — `module-automation-feature-flags-react-inertia`
+- [Files Media React](files-media.md) — `module-automation-files-media-react-inertia`
+- [Identity Core React](identity-core.md) — `module-automation-identity-core-react-inertia`
+- [Identity Socialstream React](identity-socialstream.md) — `module-automation-identity-socialstream-react-inertia`
+- [Import Export React](import-export.md) — `module-automation-import-export-react-inertia`
+- [Integrations React](integrations.md) — `module-automation-integrations-react-inertia`
+- [Jetstream Bridge React](jetstream-bridge.md) — `module-automation-jetstream-bridge-react-inertia`
+- [Liberu Business Workflow Reconciliation React](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-react-inertia`
+- [Liberu Executive Insights React](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-react-inertia`
+- [Liberu Platform Orchestration React](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-react-inertia`
+- [Liberu Revenue And Care Orchestration React](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-react-inertia`
+- [Localization Core React](localization-core.md) — `module-automation-localization-core-react-inertia`
+- [Localization Mymemory React](localization-mymemory.md) — `module-automation-localization-mymemory-react-inertia`
+- [Module Automation Ai Gateway React](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-react-inertia`
+- [Module Automation Approvals React](module-automation-approvals.md) — `module-automation-module-automation-approvals-react-inertia`
+- [Module Automation Automation Core React](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-react-inertia`
+- [Module Automation Connectors React](module-automation-connectors.md) — `module-automation-module-automation-connectors-react-inertia`
+- [Module Automation Data Processing React](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-react-inertia`
+- [Module Automation Evaluation React](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-react-inertia`
+- [Module Automation Image React](module-automation-image.md) — `module-automation-module-automation-image-react-inertia`
+- [Module Automation Prompt Registry React](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-react-inertia`
+- [Module Automation Rules React](module-automation-rules.md) — `module-automation-module-automation-rules-react-inertia`
+- [Module Automation Video React](module-automation-video.md) — `module-automation-module-automation-video-react-inertia`
+- [Module Automation Voice React](module-automation-voice.md) — `module-automation-module-automation-voice-react-inertia`
+- [Module Manager React](module-manager.md) — `module-automation-module-manager-react-inertia`
+- [Notifications React](notifications.md) — `module-automation-notifications-react-inertia`
+- [Observability React](observability.md) — `module-automation-observability-react-inertia`
+- [Organizations Teams React](organizations-teams.md) — `module-automation-organizations-teams-react-inertia`
+- [Profiles React](profiles.md) — `module-automation-profiles-react-inertia`
+- [Roles Permissions React](roles-permissions.md) — `module-automation-roles-permissions-react-inertia`
+- [Scheduler Queues React](scheduler-queues.md) — `module-automation-scheduler-queues-react-inertia`
+- [Search React](search.md) — `module-automation-search-react-inertia`
+- [Sessions Devices React](sessions-devices.md) — `module-automation-sessions-devices-react-inertia`
+- [Settings React](settings.md) — `module-automation-settings-react-inertia`
+- [Theme Support React](theme-support.md) — `module-automation-theme-support-react-inertia`
+- [Two Factor Authentication React](two-factor-authentication.md) — `module-automation-two-factor-authentication-react-inertia`
+- [Webhooks React](webhooks.md) — `module-automation-webhooks-react-inertia`

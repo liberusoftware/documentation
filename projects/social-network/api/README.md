@@ -1,24 +1,50 @@
 # Social Network API Module Specifications
 
-**Source:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)
-**Architecture:** [API.md](../SOCIAL-NETWORK.md) · [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md)
-
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-## Module plan
-
-- [Social Core API](social-core.md) — `module-social-network-social-core-api`
-- [Profiles API](profiles.md) — `module-social-network-profiles-api`
-- [Social Graph API](social-graph.md) — `module-social-network-social-graph-api`
-- [Publishing API](publishing.md) — `module-social-network-publishing-api`
-- [Feed API](feed.md) — `module-social-network-feed-api`
-- [Engagement API](engagement.md) — `module-social-network-engagement-api`
-- [Media API](media.md) — `module-social-network-media-api`
-- [Communities API](communities.md) — `module-social-network-communities-api`
-- [Events API](events.md) — `module-social-network-events-api`
-- [Messaging API](messaging.md) — `module-social-network-messaging-api`
+- [Activity Comments API](activity-comments.md) — `module-social-network-activity-comments-api`
+- [Analytics Core API](analytics-core.md) — `module-social-network-analytics-core-api`
+- [Analytics Google API](analytics-google.md) — `module-social-network-analytics-google-api`
+- [Analytics Meta API](analytics-meta.md) — `module-social-network-analytics-meta-api`
+- [Api Access API](api-access.md) — `module-social-network-api-access-api`
+- [Application API](application.md) — `module-social-network-application-api`
+- [Audit API](audit.md) — `module-social-network-audit-api`
+- [Currency Context API](currency-context.md) — `module-social-network-currency-context-api`
+- [Developer Experience API](developer-experience.md) — `module-social-network-developer-experience-api`
+- [Feature Flags API](feature-flags.md) — `module-social-network-feature-flags-api`
+- [Files Media API](files-media.md) — `module-social-network-files-media-api`
+- [Identity Core API](identity-core.md) — `module-social-network-identity-core-api`
+- [Identity Socialstream API](identity-socialstream.md) — `module-social-network-identity-socialstream-api`
+- [Import Export API](import-export.md) — `module-social-network-import-export-api`
+- [Integrations API](integrations.md) — `module-social-network-integrations-api`
+- [Jetstream Bridge API](jetstream-bridge.md) — `module-social-network-jetstream-bridge-api`
+- [Localization Core API](localization-core.md) — `module-social-network-localization-core-api`
+- [Localization Mymemory API](localization-mymemory.md) — `module-social-network-localization-mymemory-api`
+- [Module Manager API](module-manager.md) — `module-social-network-module-manager-api`
 - [Notifications API](notifications.md) — `module-social-network-notifications-api`
-- [Discovery API](discovery.md) — `module-social-network-discovery-api`
-- [Moderation API](moderation.md) — `module-social-network-moderation-api`
-- [Federation API](federation.md) — `module-social-network-federation-api`
-- [Analytics API](analytics.md) — `module-social-network-analytics-api`
+- [Observability API](observability.md) — `module-social-network-observability-api`
+- [Organizations Teams API](organizations-teams.md) — `module-social-network-organizations-teams-api`
+- [Profiles API](profiles.md) — `module-social-network-profiles-api`
+- [Roles Permissions API](roles-permissions.md) — `module-social-network-roles-permissions-api`
+- [Scheduler Queues API](scheduler-queues.md) — `module-social-network-scheduler-queues-api`
+- [Search API](search.md) — `module-social-network-search-api`
+- [Sessions Devices API](sessions-devices.md) — `module-social-network-sessions-devices-api`
+- [Settings API](settings.md) — `module-social-network-settings-api`
+- [Social Network Analytics API](social-network-analytics.md) — `module-social-network-social-network-analytics-api`
+- [Social Network Communities API](social-network-communities.md) — `module-social-network-social-network-communities-api`
+- [Social Network Discovery API](social-network-discovery.md) — `module-social-network-social-network-discovery-api`
+- [Social Network Engagement API](social-network-engagement.md) — `module-social-network-social-network-engagement-api`
+- [Social Network Events API](social-network-events.md) — `module-social-network-social-network-events-api`
+- [Social Network Federation API](social-network-federation.md) — `module-social-network-social-network-federation-api`
+- [Social Network Feed API](social-network-feed.md) — `module-social-network-social-network-feed-api`
+- [Social Network Media API](social-network-media.md) — `module-social-network-social-network-media-api`
+- [Social Network Messaging API](social-network-messaging.md) — `module-social-network-social-network-messaging-api`
+- [Social Network Moderation API](social-network-moderation.md) — `module-social-network-social-network-moderation-api`
+- [Social Network Notifications API](social-network-notifications.md) — `module-social-network-social-network-notifications-api`
+- [Social Network Profiles API](social-network-profiles.md) — `module-social-network-social-network-profiles-api`
+- [Social Network Publishing API](social-network-publishing.md) — `module-social-network-social-network-publishing-api`
+- [Social Network Social Core API](social-network-social-core.md) — `module-social-network-social-network-social-core-api`
+- [Social Network Social Graph API](social-network-social-graph.md) — `module-social-network-social-network-social-graph-api`
+- [Theme Support API](theme-support.md) — `module-social-network-theme-support-api`
+- [Two Factor Authentication API](two-factor-authentication.md) — `module-social-network-two-factor-authentication-api`
+- [Webhooks API](webhooks.md) — `module-social-network-webhooks-api`

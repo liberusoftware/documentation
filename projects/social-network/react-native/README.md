@@ -1,46 +1,50 @@
-# Social Network React Native + Expo implementations
+# Social Network React Native + Expo Implementations
 
-**Scope:** [Social Network](../SOCIAL-NETWORK.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [React Native technology](../../../technologies/REACT-NATIVE.md) · [React Native standard](../../../standards/REACT-NATIVE.md)
+Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-This index defines the optional React Native + Expo adapter boundary for the Social Network project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-react-native`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [React Native + Expo module standard](../../../modules/react-native/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 15 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                            | Package                                          | Core                             | API                            |
-| --------------------------------- | ------------------------------------------------ | -------------------------------- | ------------------------------ |
-| [Analytics](analytics.md)         | module-social-network-analytics-react-native     | [Core](../core/analytics.md)     | [API](../api/analytics.md)     |
-| [Communities](communities.md)     | module-social-network-communities-react-native   | [Core](../core/communities.md)   | [API](../api/communities.md)   |
-| [Discovery](discovery.md)         | module-social-network-discovery-react-native     | [Core](../core/discovery.md)     | [API](../api/discovery.md)     |
-| [Engagement](engagement.md)       | module-social-network-engagement-react-native    | [Core](../core/engagement.md)    | [API](../api/engagement.md)    |
-| [Events](events.md)               | module-social-network-events-react-native        | [Core](../core/events.md)        | [API](../api/events.md)        |
-| [Federation](federation.md)       | module-social-network-federation-react-native    | [Core](../core/federation.md)    | [API](../api/federation.md)    |
-| [Feed](feed.md)                   | module-social-network-feed-react-native          | [Core](../core/feed.md)          | [API](../api/feed.md)          |
-| [Media](media.md)                 | module-social-network-media-react-native         | [Core](../core/media.md)         | [API](../api/media.md)         |
-| [Messaging](messaging.md)         | module-social-network-messaging-react-native     | [Core](../core/messaging.md)     | [API](../api/messaging.md)     |
-| [Moderation](moderation.md)       | module-social-network-moderation-react-native    | [Core](../core/moderation.md)    | [API](../api/moderation.md)    |
-| [Notifications](notifications.md) | module-social-network-notifications-react-native | [Core](../core/notifications.md) | [API](../api/notifications.md) |
-| [Profiles](profiles.md)           | module-social-network-profiles-react-native      | [Core](../core/profiles.md)      | [API](../api/profiles.md)      |
-| [Publishing](publishing.md)       | module-social-network-publishing-react-native    | [Core](../core/publishing.md)    | [API](../api/publishing.md)    |
-| [Social Core](social-core.md)     | module-social-network-social-core-react-native   | [Core](../core/social-core.md)   | [API](../api/social-core.md)   |
-| [Social Graph](social-graph.md)   | module-social-network-social-graph-react-native  | [Core](../core/social-graph.md)  | [API](../api/social-graph.md)  |
+- [Activity Comments React Native](activity-comments.md) — `module-social-network-activity-comments-react-native`
+- [Analytics Core React Native](analytics-core.md) — `module-social-network-analytics-core-react-native`
+- [Analytics Google React Native](analytics-google.md) — `module-social-network-analytics-google-react-native`
+- [Analytics Meta React Native](analytics-meta.md) — `module-social-network-analytics-meta-react-native`
+- [Api Access React Native](api-access.md) — `module-social-network-api-access-react-native`
+- [Application React Native](application.md) — `module-social-network-application-react-native`
+- [Audit React Native](audit.md) — `module-social-network-audit-react-native`
+- [Currency Context React Native](currency-context.md) — `module-social-network-currency-context-react-native`
+- [Developer Experience React Native](developer-experience.md) — `module-social-network-developer-experience-react-native`
+- [Feature Flags React Native](feature-flags.md) — `module-social-network-feature-flags-react-native`
+- [Files Media React Native](files-media.md) — `module-social-network-files-media-react-native`
+- [Identity Core React Native](identity-core.md) — `module-social-network-identity-core-react-native`
+- [Identity Socialstream React Native](identity-socialstream.md) — `module-social-network-identity-socialstream-react-native`
+- [Import Export React Native](import-export.md) — `module-social-network-import-export-react-native`
+- [Integrations React Native](integrations.md) — `module-social-network-integrations-react-native`
+- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-social-network-jetstream-bridge-react-native`
+- [Localization Core React Native](localization-core.md) — `module-social-network-localization-core-react-native`
+- [Localization Mymemory React Native](localization-mymemory.md) — `module-social-network-localization-mymemory-react-native`
+- [Module Manager React Native](module-manager.md) — `module-social-network-module-manager-react-native`
+- [Notifications React Native](notifications.md) — `module-social-network-notifications-react-native`
+- [Observability React Native](observability.md) — `module-social-network-observability-react-native`
+- [Organizations Teams React Native](organizations-teams.md) — `module-social-network-organizations-teams-react-native`
+- [Profiles React Native](profiles.md) — `module-social-network-profiles-react-native`
+- [Roles Permissions React Native](roles-permissions.md) — `module-social-network-roles-permissions-react-native`
+- [Scheduler Queues React Native](scheduler-queues.md) — `module-social-network-scheduler-queues-react-native`
+- [Search React Native](search.md) — `module-social-network-search-react-native`
+- [Sessions Devices React Native](sessions-devices.md) — `module-social-network-sessions-devices-react-native`
+- [Settings React Native](settings.md) — `module-social-network-settings-react-native`
+- [Social Network Analytics React Native](social-network-analytics.md) — `module-social-network-social-network-analytics-react-native`
+- [Social Network Communities React Native](social-network-communities.md) — `module-social-network-social-network-communities-react-native`
+- [Social Network Discovery React Native](social-network-discovery.md) — `module-social-network-social-network-discovery-react-native`
+- [Social Network Engagement React Native](social-network-engagement.md) — `module-social-network-social-network-engagement-react-native`
+- [Social Network Events React Native](social-network-events.md) — `module-social-network-social-network-events-react-native`
+- [Social Network Federation React Native](social-network-federation.md) — `module-social-network-social-network-federation-react-native`
+- [Social Network Feed React Native](social-network-feed.md) — `module-social-network-social-network-feed-react-native`
+- [Social Network Media React Native](social-network-media.md) — `module-social-network-social-network-media-react-native`
+- [Social Network Messaging React Native](social-network-messaging.md) — `module-social-network-social-network-messaging-react-native`
+- [Social Network Moderation React Native](social-network-moderation.md) — `module-social-network-social-network-moderation-react-native`
+- [Social Network Notifications React Native](social-network-notifications.md) — `module-social-network-social-network-notifications-react-native`
+- [Social Network Profiles React Native](social-network-profiles.md) — `module-social-network-social-network-profiles-react-native`
+- [Social Network Publishing React Native](social-network-publishing.md) — `module-social-network-social-network-publishing-react-native`
+- [Social Network Social Core React Native](social-network-social-core.md) — `module-social-network-social-network-social-core-react-native`
+- [Social Network Social Graph React Native](social-network-social-graph.md) — `module-social-network-social-network-social-graph-react-native`
+- [Theme Support React Native](theme-support.md) — `module-social-network-theme-support-react-native`
+- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-social-network-two-factor-authentication-react-native`
+- [Webhooks React Native](webhooks.md) — `module-social-network-webhooks-react-native`

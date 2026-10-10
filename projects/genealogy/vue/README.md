@@ -1,45 +1,54 @@
-# Genealogy Vue 3 + Inertia 3 Implementations
+# Genealogy Vue + Inertia Implementations
 
-**Source:** [GENEALOGY.md](../GENEALOGY.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Genealogy Core Vue + Inertia](genealogy-core.md) — `module-genealogy-core-vue-inertia`
-- [People Vue + Inertia](people.md) — `module-genealogy-people-vue-inertia`
-- [Relationships Vue + Inertia](relationships.md) — `module-genealogy-relationships-vue-inertia`
-- [Evidence Vue + Inertia](evidence.md) — `module-genealogy-evidence-vue-inertia`
-- [Research Vue + Inertia](research.md) — `module-genealogy-research-vue-inertia`
-- [Places Vue + Inertia](places.md) — `module-genealogy-places-vue-inertia`
-- [Timeline Vue + Inertia](timeline.md) — `module-genealogy-timeline-vue-inertia`
-- [Tree Viewer Vue + Inertia](tree-viewer.md) — `module-genealogy-tree-viewer-vue-inertia`
-- [Import Export Vue + Inertia](import-export.md) — `module-genealogy-import-export-vue-inertia`
-- [DNA Vue + Inertia](dna.md) — `module-genealogy-dna-vue-inertia`
-- [Media Vue + Inertia](media.md) — `module-genealogy-media-vue-inertia`
-- [Collaboration Vue + Inertia](collaboration.md) — `module-genealogy-collaboration-vue-inertia`
-- [Discovery Vue + Inertia](discovery.md) — `module-genealogy-discovery-vue-inertia`
-- [Reports Vue + Inertia](reports.md) — `module-genealogy-reports-vue-inertia`
-
-**Source:** [GENEALOGY.md](../GENEALOGY.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
-
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Genealogy Core Vue + Inertia](genealogy-core.md) — `module-genealogy-core-vue-inertia`
-- [People Vue + Inertia](people.md) — `module-genealogy-people-vue-inertia`
-- [Relationships Vue + Inertia](relationships.md) — `module-genealogy-relationships-vue-inertia`
-- [Evidence Vue + Inertia](evidence.md) — `module-genealogy-evidence-vue-inertia`
-- [Research Vue + Inertia](research.md) — `module-genealogy-research-vue-inertia`
-- [Places Vue + Inertia](places.md) — `module-genealogy-places-vue-inertia`
-- [Timeline Vue + Inertia](timeline.md) — `module-genealogy-timeline-vue-inertia`
-- [Tree Viewer Vue + Inertia](tree-viewer.md) — `module-genealogy-tree-viewer-vue-inertia`
-- [Import Export Vue + Inertia](import-export.md) — `module-genealogy-import-export-vue-inertia`
-- [DNA Vue + Inertia](dna.md) — `module-genealogy-dna-vue-inertia`
-- [Media Vue + Inertia](media.md) — `module-genealogy-media-vue-inertia`
-- [Collaboration Vue + Inertia](collaboration.md) — `module-genealogy-collaboration-vue-inertia`
-- [Discovery Vue + Inertia](discovery.md) — `module-genealogy-discovery-vue-inertia`
-- [Reports Vue + Inertia](reports.md) — `module-genealogy-reports-vue-inertia`
+- [Activity Comments Vue](activity-comments.md) — `module-genealogy-activity-comments-vue-inertia`
+- [Analytics Core Vue](analytics-core.md) — `module-genealogy-analytics-core-vue-inertia`
+- [Analytics Google Vue](analytics-google.md) — `module-genealogy-analytics-google-vue-inertia`
+- [Analytics Meta Vue](analytics-meta.md) — `module-genealogy-analytics-meta-vue-inertia`
+- [Api Access Vue](api-access.md) — `module-genealogy-api-access-vue-inertia`
+- [Application Vue](application.md) — `module-genealogy-application-vue-inertia`
+- [Audit Vue](audit.md) — `module-genealogy-audit-vue-inertia`
+- [Currency Context Vue](currency-context.md) — `module-genealogy-currency-context-vue-inertia`
+- [Developer Experience Vue](developer-experience.md) — `module-genealogy-developer-experience-vue-inertia`
+- [Feature Flags Vue](feature-flags.md) — `module-genealogy-feature-flags-vue-inertia`
+- [Files Media Vue](files-media.md) — `module-genealogy-files-media-vue-inertia`
+- [Genealogy Collaboration Vue](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-vue-inertia`
+- [Genealogy Core Vue](genealogy-core.md) — `module-genealogy-genealogy-core-vue-inertia`
+- [Genealogy Discovery Vue](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-vue-inertia`
+- [Genealogy Dna Vue](genealogy-dna.md) — `module-genealogy-genealogy-dna-vue-inertia`
+- [Genealogy Evidence Vue](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-vue-inertia`
+- [Genealogy Gamification Vue](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-vue-inertia`
+- [Genealogy Import Export Vue](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-vue-inertia`
+- [Genealogy Media Vue](genealogy-media.md) — `module-genealogy-genealogy-media-vue-inertia`
+- [Genealogy People Vue](genealogy-people.md) — `module-genealogy-genealogy-people-vue-inertia`
+- [Genealogy Places Vue](genealogy-places.md) — `module-genealogy-genealogy-places-vue-inertia`
+- [Genealogy Relationships Vue](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-vue-inertia`
+- [Genealogy Reports Vue](genealogy-reports.md) — `module-genealogy-genealogy-reports-vue-inertia`
+- [Genealogy Research Vue](genealogy-research.md) — `module-genealogy-genealogy-research-vue-inertia`
+- [Genealogy Timeline Vue](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-vue-inertia`
+- [Genealogy Tree Viewer Vue](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-vue-inertia`
+- [Identity Core Vue](identity-core.md) — `module-genealogy-identity-core-vue-inertia`
+- [Identity Socialstream Vue](identity-socialstream.md) — `module-genealogy-identity-socialstream-vue-inertia`
+- [Import Export Vue](import-export.md) — `module-genealogy-import-export-vue-inertia`
+- [Integrations Vue](integrations.md) — `module-genealogy-integrations-vue-inertia`
+- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-vue-inertia`
+- [Liberu Business Workflow Reconciliation Vue](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-vue-inertia`
+- [Liberu Executive Insights Vue](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-vue-inertia`
+- [Liberu Platform Orchestration Vue](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-vue-inertia`
+- [Liberu Revenue And Care Orchestration Vue](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-vue-inertia`
+- [Localization Core Vue](localization-core.md) — `module-genealogy-localization-core-vue-inertia`
+- [Localization Mymemory Vue](localization-mymemory.md) — `module-genealogy-localization-mymemory-vue-inertia`
+- [Module Manager Vue](module-manager.md) — `module-genealogy-module-manager-vue-inertia`
+- [Notifications Vue](notifications.md) — `module-genealogy-notifications-vue-inertia`
+- [Observability Vue](observability.md) — `module-genealogy-observability-vue-inertia`
+- [Organizations Teams Vue](organizations-teams.md) — `module-genealogy-organizations-teams-vue-inertia`
+- [Profiles Vue](profiles.md) — `module-genealogy-profiles-vue-inertia`
+- [Roles Permissions Vue](roles-permissions.md) — `module-genealogy-roles-permissions-vue-inertia`
+- [Scheduler Queues Vue](scheduler-queues.md) — `module-genealogy-scheduler-queues-vue-inertia`
+- [Search Vue](search.md) — `module-genealogy-search-vue-inertia`
+- [Sessions Devices Vue](sessions-devices.md) — `module-genealogy-sessions-devices-vue-inertia`
+- [Settings Vue](settings.md) — `module-genealogy-settings-vue-inertia`
+- [Theme Support Vue](theme-support.md) — `module-genealogy-theme-support-vue-inertia`
+- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-vue-inertia`
+- [Webhooks Vue](webhooks.md) — `module-genealogy-webhooks-vue-inertia`

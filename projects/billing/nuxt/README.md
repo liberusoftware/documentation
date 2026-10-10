@@ -1,25 +1,70 @@
-# Billing Nuxt 4 Implementations
+# Billing Nuxt Implementations
 
-**Source:** [BILLING.md](../BILLING.md)
-**Architecture:** [NUXT.md](../BILLING.md) · [API module index](../api/README.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-Each file defines the optional `Nuxt 4` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Billing Core Nuxt](billing-core.md) — `module-billing-core-nuxt`
-- [Catalog Nuxt](catalog.md) — `module-billing-catalog-nuxt`
-- [Pricing Nuxt](pricing.md) — `module-billing-pricing-nuxt`
-- [Orders Nuxt](orders.md) — `module-billing-orders-nuxt`
-- [Subscriptions Nuxt](subscriptions.md) — `module-billing-subscriptions-nuxt`
-- [Usage Nuxt](usage.md) — `module-billing-usage-nuxt`
-- [Invoicing Nuxt](invoicing.md) — `module-billing-invoicing-nuxt`
-- [Payments Nuxt](payments.md) — `module-billing-payments-nuxt`
-- [Collections Nuxt](collections.md) — `module-billing-collections-nuxt`
-- [Provisioning Nuxt](provisioning.md) — `module-billing-provisioning-nuxt`
-- [Hosting Nuxt](hosting.md) — `module-billing-hosting-nuxt`
-- [Domains Nuxt](domains.md) — `module-billing-domains-nuxt`
-- [ISP Nuxt](isp.md) — `module-billing-isp-nuxt`
-- [Communications Nuxt](communications.md) — `module-billing-communications-nuxt`
-- [Customer Portal Nuxt](customer-portal.md) — `module-billing-customer-portal-nuxt`
-- [Reporting Nuxt](reporting.md) — `module-billing-reporting-nuxt`
+- [Activity Comments Nuxt](activity-comments.md) — `module-billing-activity-comments-nuxt`
+- [Analytics Core Nuxt](analytics-core.md) — `module-billing-analytics-core-nuxt`
+- [Analytics Google Nuxt](analytics-google.md) — `module-billing-analytics-google-nuxt`
+- [Analytics Meta Nuxt](analytics-meta.md) — `module-billing-analytics-meta-nuxt`
+- [Api Access Nuxt](api-access.md) — `module-billing-api-access-nuxt`
+- [Application Nuxt](application.md) — `module-billing-application-nuxt`
+- [Audit Nuxt](audit.md) — `module-billing-audit-nuxt`
+- [Billing Core Nuxt](billing-core.md) — `module-billing-billing-core-nuxt`
+- [Currency Context Nuxt](currency-context.md) — `module-billing-currency-context-nuxt`
+- [Developer Experience Nuxt](developer-experience.md) — `module-billing-developer-experience-nuxt`
+- [Feature Flags Nuxt](feature-flags.md) — `module-billing-feature-flags-nuxt`
+- [Files Media Nuxt](files-media.md) — `module-billing-files-media-nuxt`
+- [Identity Core Nuxt](identity-core.md) — `module-billing-identity-core-nuxt`
+- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-billing-identity-socialstream-nuxt`
+- [Import Export Nuxt](import-export.md) — `module-billing-import-export-nuxt`
+- [Integrations Nuxt](integrations.md) — `module-billing-integrations-nuxt`
+- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-billing-jetstream-bridge-nuxt`
+- [Liberu Business Workflow Reconciliation Nuxt](liberu-business-workflow-reconciliation.md) — `module-billing-liberu-business-workflow-reconciliation-nuxt`
+- [Liberu Executive Insights Nuxt](liberu-executive-insights.md) — `module-billing-liberu-executive-insights-nuxt`
+- [Liberu Platform Orchestration Nuxt](liberu-platform-orchestration.md) — `module-billing-liberu-platform-orchestration-nuxt`
+- [Liberu Revenue And Care Orchestration Nuxt](liberu-revenue-and-care-orchestration.md) — `module-billing-liberu-revenue-and-care-orchestration-nuxt`
+- [Localization Core Nuxt](localization-core.md) — `module-billing-localization-core-nuxt`
+- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-billing-localization-mymemory-nuxt`
+- [Module Billing Billing Core Nuxt](module-billing-billing-core.md) — `module-billing-module-billing-billing-core-nuxt`
+- [Module Billing Catalog Nuxt](module-billing-catalog.md) — `module-billing-module-billing-catalog-nuxt`
+- [Module Billing Collections Nuxt](module-billing-collections.md) — `module-billing-module-billing-collections-nuxt`
+- [Module Billing Communications Nuxt](module-billing-communications.md) — `module-billing-module-billing-communications-nuxt`
+- [Module Billing Core Nuxt](module-billing-core.md) — `module-billing-module-billing-core-nuxt`
+- [Module Billing Cpanel Nuxt](module-billing-cpanel.md) — `module-billing-module-billing-cpanel-nuxt`
+- [Module Billing Customer Portal Nuxt](module-billing-customer-portal.md) — `module-billing-module-billing-customer-portal-nuxt`
+- [Module Billing Directadmin Nuxt](module-billing-directadmin.md) — `module-billing-module-billing-directadmin-nuxt`
+- [Module Billing Domains Nuxt](module-billing-domains.md) — `module-billing-module-billing-domains-nuxt`
+- [Module Billing Enom Nuxt](module-billing-enom.md) — `module-billing-module-billing-enom-nuxt`
+- [Module Billing Hosting Nuxt](module-billing-hosting.md) — `module-billing-module-billing-hosting-nuxt`
+- [Module Billing Invoicing Nuxt](module-billing-invoicing.md) — `module-billing-module-billing-invoicing-nuxt`
+- [Module Billing Isp Nuxt](module-billing-isp.md) — `module-billing-module-billing-isp-nuxt`
+- [Module Billing Liberu Control Panel Nuxt](module-billing-liberu-control-panel.md) — `module-billing-module-billing-liberu-control-panel-nuxt`
+- [Module Billing Orders Nuxt](module-billing-orders.md) — `module-billing-module-billing-orders-nuxt`
+- [Module Billing Paddle Nuxt](module-billing-paddle.md) — `module-billing-module-billing-paddle-nuxt`
+- [Module Billing Payments Nuxt](module-billing-payments.md) — `module-billing-module-billing-payments-nuxt`
+- [Module Billing Plesk Nuxt](module-billing-plesk.md) — `module-billing-module-billing-plesk-nuxt`
+- [Module Billing Pricing Nuxt](module-billing-pricing.md) — `module-billing-module-billing-pricing-nuxt`
+- [Module Billing Provisioning Nuxt](module-billing-provisioning.md) — `module-billing-module-billing-provisioning-nuxt`
+- [Module Billing Reporting Nuxt](module-billing-reporting.md) — `module-billing-module-billing-reporting-nuxt`
+- [Module Billing Resellerclub Nuxt](module-billing-resellerclub.md) — `module-billing-module-billing-resellerclub-nuxt`
+- [Module Billing Stripe Nuxt](module-billing-stripe.md) — `module-billing-module-billing-stripe-nuxt`
+- [Module Billing Subscriptions Nuxt](module-billing-subscriptions.md) — `module-billing-module-billing-subscriptions-nuxt`
+- [Module Billing Usage Nuxt](module-billing-usage.md) — `module-billing-module-billing-usage-nuxt`
+- [Module Billing Virtualmin Nuxt](module-billing-virtualmin.md) — `module-billing-module-billing-virtualmin-nuxt`
+- [Module Liberu Business Workflow Reconciliation Nuxt](module-liberu-business-workflow-reconciliation.md) — `module-billing-module-liberu-business-workflow-reconciliation-nuxt`
+- [Module Liberu Executive Insights Nuxt](module-liberu-executive-insights.md) — `module-billing-module-liberu-executive-insights-nuxt`
+- [Module Liberu Platform Orchestration Nuxt](module-liberu-platform-orchestration.md) — `module-billing-module-liberu-platform-orchestration-nuxt`
+- [Module Liberu Revenue And Care Orchestration Nuxt](module-liberu-revenue-and-care-orchestration.md) — `module-billing-module-liberu-revenue-and-care-orchestration-nuxt`
+- [Module Manager Nuxt](module-manager.md) — `module-billing-module-manager-nuxt`
+- [Notifications Nuxt](notifications.md) — `module-billing-notifications-nuxt`
+- [Observability Nuxt](observability.md) — `module-billing-observability-nuxt`
+- [Organizations Teams Nuxt](organizations-teams.md) — `module-billing-organizations-teams-nuxt`
+- [Profiles Nuxt](profiles.md) — `module-billing-profiles-nuxt`
+- [Roles Permissions Nuxt](roles-permissions.md) — `module-billing-roles-permissions-nuxt`
+- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-billing-scheduler-queues-nuxt`
+- [Search Nuxt](search.md) — `module-billing-search-nuxt`
+- [Sessions Devices Nuxt](sessions-devices.md) — `module-billing-sessions-devices-nuxt`
+- [Settings Nuxt](settings.md) — `module-billing-settings-nuxt`
+- [Theme Support Nuxt](theme-support.md) — `module-billing-theme-support-nuxt`
+- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-billing-two-factor-authentication-nuxt`
+- [Webhooks Nuxt](webhooks.md) — `module-billing-webhooks-nuxt`

@@ -1,42 +1,35 @@
-# Boilerplate Livewire 4 module implementations
+# Boilerplate Livewire Implementations
 
-This index lists the independently installable Livewire presentation packages for the shared Liberu foundation. Each entry maps one-to-one to the canonical module catalog in [BOILERPLATE.md](../BOILERPLATE.md).
+Each file defines the optional Livewire 4 presentation package for exactly one matching domain module.
 
-These adapters translate the matching core package into Livewire 4 conventions. They contain transport or view composition only; authorization and business rules remain in the core package.
-
-| Module                                                    | Composer package                            | Documentation                                       |
-| --------------------------------------------------------- | ------------------------------------------- | --------------------------------------------------- |
-| [Application Core](application-core.md)                   | `module-application-core-livewire`          | [Implementation plan](application-core.md)          |
-| [Module Manager](module-manager.md)                       | `module-module-manager-livewire`            | [Implementation plan](module-manager.md)            |
-| [Identity](identity.md)                                   | `module-identity-livewire`                  | [Implementation plan](identity.md)                  |
-| [Two-Factor Authentication](two-factor-authentication.md) | `module-two-factor-authentication-livewire` | [Implementation plan](two-factor-authentication.md) |
-| [Sessions and Devices](sessions-and-devices.md)           | `module-sessions-and-devices-livewire`      | [Implementation plan](sessions-and-devices.md)      |
-| [Jetstream Bridge](jetstream-bridge.md)                   | `module-jetstream-bridge-livewire`          | [Implementation plan](jetstream-bridge.md)          |
-| [Profiles](profiles.md)                                   | `module-profiles-livewire`                  | [Implementation plan](profiles.md)                  |
-| [Organizations and Teams](organizations-and-teams.md)     | `module-organizations-and-teams-livewire`   | [Implementation plan](organizations-and-teams.md)   |
-| [Roles and Permissions](roles-and-permissions.md)         | `module-roles-and-permissions-livewire`     | [Implementation plan](roles-and-permissions.md)     |
-| [Localization](localization.md)                           | `module-localization-livewire`              | [Implementation plan](localization.md)              |
-| [Currency Context](currency-context.md)                   | `module-currency-context-livewire`          | [Implementation plan](currency-context.md)          |
-| [Notifications](notifications.md)                         | `module-notifications-livewire`             | [Implementation plan](notifications.md)             |
-| [Files and Media](files-and-media.md)                     | `module-files-and-media-livewire`           | [Implementation plan](files-and-media.md)           |
-| [Search](search.md)                                       | `module-search-livewire`                    | [Implementation plan](search.md)                    |
-| [Audit](audit.md)                                         | `module-audit-livewire`                     | [Implementation plan](audit.md)                     |
-| [Feature Flags](feature-flags.md)                         | `module-feature-flags-livewire`             | [Implementation plan](feature-flags.md)             |
-| [API Access](api-access.md)                               | `module-api-access-livewire`                | [Implementation plan](api-access.md)                |
-| [Webhooks](webhooks.md)                                   | `module-webhooks-livewire`                  | [Implementation plan](webhooks.md)                  |
-| [Integrations](integrations.md)                           | `module-integrations-livewire`              | [Implementation plan](integrations.md)              |
-| [Analytics Core](analytics-core.md)                       | `module-analytics-core-livewire`            | [Implementation plan](analytics-core.md)            |
-| [Google Analytics](google-analytics.md)                   | `module-google-analytics-livewire`          | [Implementation plan](google-analytics.md)          |
-| [Meta Server-Side Tracking](meta-server-side-tracking.md) | `module-meta-server-side-tracking-livewire` | [Implementation plan](meta-server-side-tracking.md) |
-| [Import and Export](import-and-export.md)                 | `module-import-and-export-livewire`         | [Implementation plan](import-and-export.md)         |
-| [Activity and Comments](activity-and-comments.md)         | `module-activity-and-comments-livewire`     | [Implementation plan](activity-and-comments.md)     |
-| [Settings](settings.md)                                   | `module-settings-livewire`                  | [Implementation plan](settings.md)                  |
-| [Scheduler and Queues](scheduler-and-queues.md)           | `module-scheduler-and-queues-livewire`      | [Implementation plan](scheduler-and-queues.md)      |
-| [Observability](observability.md)                         | `module-observability-livewire`             | [Implementation plan](observability.md)             |
-| [Developer Experience](developer-experience.md)           | `module-developer-experience-livewire`      | [Implementation plan](developer-experience.md)      |
-
-## Shared delivery contract
-
-Every package targets Laravel 13 and PHP 8.5, uses strict types and typed public boundaries, documents configuration and permissions, and ships independent tests, migrations, upgrade notes, and a compatibility matrix.
-
-See [modules/livewire](../../../modules/livewire/README.md), [API architecture](../../../architecture/API.md), [themes](../../../standards/THEMES.md), and [testing](../../../standards/TESTING.md).
+- [Activity Comments Livewire](activity-comments.md) — `module-boilerplate-activity-comments-livewire`
+- [Analytics Core Livewire](analytics-core.md) — `module-boilerplate-analytics-core-livewire`
+- [Analytics Google Livewire](analytics-google.md) — `module-boilerplate-analytics-google-livewire`
+- [Analytics Meta Livewire](analytics-meta.md) — `module-boilerplate-analytics-meta-livewire`
+- [Api Access Livewire](api-access.md) — `module-boilerplate-api-access-livewire`
+- [Application Livewire](application.md) — `module-boilerplate-application-livewire`
+- [Audit Livewire](audit.md) — `module-boilerplate-audit-livewire`
+- [Currency Context Livewire](currency-context.md) — `module-boilerplate-currency-context-livewire`
+- [Developer Experience Livewire](developer-experience.md) — `module-boilerplate-developer-experience-livewire`
+- [Feature Flags Livewire](feature-flags.md) — `module-boilerplate-feature-flags-livewire`
+- [Files Media Livewire](files-media.md) — `module-boilerplate-files-media-livewire`
+- [Identity Core Livewire](identity-core.md) — `module-boilerplate-identity-core-livewire`
+- [Identity Socialstream Livewire](identity-socialstream.md) — `module-boilerplate-identity-socialstream-livewire`
+- [Import Export Livewire](import-export.md) — `module-boilerplate-import-export-livewire`
+- [Integrations Livewire](integrations.md) — `module-boilerplate-integrations-livewire`
+- [Jetstream Bridge Livewire](jetstream-bridge.md) — `module-boilerplate-jetstream-bridge-livewire`
+- [Localization Core Livewire](localization-core.md) — `module-boilerplate-localization-core-livewire`
+- [Localization Mymemory Livewire](localization-mymemory.md) — `module-boilerplate-localization-mymemory-livewire`
+- [Module Manager Livewire](module-manager.md) — `module-boilerplate-module-manager-livewire`
+- [Notifications Livewire](notifications.md) — `module-boilerplate-notifications-livewire`
+- [Observability Livewire](observability.md) — `module-boilerplate-observability-livewire`
+- [Organizations Teams Livewire](organizations-teams.md) — `module-boilerplate-organizations-teams-livewire`
+- [Profiles Livewire](profiles.md) — `module-boilerplate-profiles-livewire`
+- [Roles Permissions Livewire](roles-permissions.md) — `module-boilerplate-roles-permissions-livewire`
+- [Scheduler Queues Livewire](scheduler-queues.md) — `module-boilerplate-scheduler-queues-livewire`
+- [Search Livewire](search.md) — `module-boilerplate-search-livewire`
+- [Sessions Devices Livewire](sessions-devices.md) — `module-boilerplate-sessions-devices-livewire`
+- [Settings Livewire](settings.md) — `module-boilerplate-settings-livewire`
+- [Theme Support Livewire](theme-support.md) — `module-boilerplate-theme-support-livewire`
+- [Two Factor Authentication Livewire](two-factor-authentication.md) — `module-boilerplate-two-factor-authentication-livewire`
+- [Webhooks Livewire](webhooks.md) — `module-boilerplate-webhooks-livewire`

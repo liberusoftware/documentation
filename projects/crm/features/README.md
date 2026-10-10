@@ -1,134 +1,134 @@
 # CRM Feature Specifications
 
-**Source:** [CRM.md](../CRM.md)  
-**Architecture:** [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md) · [DOCUMENTATION.md](../CRM.md)
-
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-## Customer data and platform modules
-
-- [CRM Core](crm-core.md) — `module-crm-core`
-- [Customer Data Model](customer-data-model.md) — `module-crm-customer-data-model`
-- [Customer Data Platform](customer-data-platform.md) — `module-crm-customer-data-platform`
-- [Data Operations](data-operations.md) — `module-crm-data-operations`
-- [Consent and Preferences](consent-and-preferences.md) — `module-crm-consent-and-preferences`
-- [Territories and Ownership](territories-and-ownership.md) — `module-crm-territories-and-ownership`
-- [CRM Search](crm-search.md) — `module-crm-search`
-- [CRM Documents](crm-documents.md) — `module-crm-documents`
-- [Collaboration](collaboration.md) — `module-crm-collaboration`
-
-## Demand generation and acquisition modules
-
-- [Lead Capture](lead-capture.md) — `module-crm-lead-capture`
-- [Prospecting](prospecting.md) — `module-crm-prospecting`
-- [Enrichment](enrichment.md) — `module-crm-enrichment`
-- [Web Intent](web-intent.md) — `module-crm-web-intent`
-- [Lead Qualification](lead-qualification.md) — `module-crm-lead-qualification`
-- [Routing](routing.md) — `module-crm-routing`
-- [Forms and Surveys](forms-and-surveys.md) — `module-crm-forms-and-surveys`
-- [Chat and Bots](chat-and-bots.md) — `module-crm-chat-and-bots`
-- [Landing Pages and Funnels](landing-pages-and-funnels.md) — `module-crm-landing-pages-and-funnels`
-- [Conversion Optimization](conversion-optimization.md) — `module-crm-conversion-optimization`
-- [Events and Webinars](events-and-webinars.md) — `module-crm-events-and-webinars`
-
-## Sales execution modules
-
-- [Sales Pipelines](sales-pipelines.md) — `module-crm-sales-pipelines`
-- [Sales Workspace](sales-workspace.md) — `module-crm-sales-workspace`
-- [Activities](activities.md) — `module-crm-activities`
-- [Scheduling](scheduling.md) — `module-crm-scheduling`
-- [Sales Engagement](sales-engagement.md) — `module-crm-sales-engagement`
-- [Email Productivity](email-productivity.md) — `module-crm-email-productivity`
-- [Conversation Intelligence](conversation-intelligence.md) — `module-crm-conversation-intelligence`
-- [Playbooks and Enablement](playbooks-and-enablement.md) — `module-crm-playbooks-and-enablement`
-- [Forecasting](forecasting.md) — `module-crm-forecasting`
-- [Revenue Intelligence](revenue-intelligence.md) — `module-crm-revenue-intelligence`
-- [Goals and Performance](goals-and-performance.md) — `module-crm-goals-and-performance`
-- [Quotas and Incentives](quotas-and-incentives.md) — `module-crm-quotas-and-incentives`
-- [Account Planning](account-planning.md) — `module-crm-account-planning`
-
-## Revenue and commercial modules
-
-- [CRM Product Workspace](crm-product-workspace.md) — `module-crm-product-workspace`
-- [CPQ](cpq.md) — `module-crm-cpq`
-- [Proposals and Quotes](proposals-and-quotes.md) — `module-crm-proposals-and-quotes`
-- [Contracts](contracts.md) — `module-crm-contracts`
-- [Orders and Payments Workspace](orders-and-payments-workspace.md) — `module-crm-orders-and-payments-workspace`
-- [Revenue Lifecycle](revenue-lifecycle.md) — `module-crm-revenue-lifecycle`
-
-## Marketing modules
-
-- [Segmentation](segmentation.md) — `module-crm-segmentation`
-- [Campaigns](campaigns.md) — `module-crm-campaigns`
-- [Journey Orchestration](journey-orchestration.md) — `module-crm-journey-orchestration`
-- [Email Marketing](email-marketing.md) — `module-crm-email-marketing`
-- [Mobile Messaging](mobile-messaging.md) — `module-crm-mobile-messaging`
-- [Advertising](advertising.md) — `module-crm-advertising`
-- [Account-Based Marketing](account-based-marketing.md) — `module-crm-account-based-marketing`
-- [Personalization](personalization.md) — `module-crm-personalization`
-- [Marketing Resources](marketing-resources.md) — `module-crm-marketing-resources`
-- [Attribution](attribution.md) — `module-crm-attribution`
-
-## Communications and contact-center modules
-
-- [Unified Conversations](unified-conversations.md) — `module-crm-unified-conversations`
-- [Channel Gateway](channel-gateway.md) — `module-crm-channel-gateway`
-- [Telephony](telephony.md) — `module-crm-telephony`
-- [Dialer and Outreach](dialer-and-outreach.md) — `module-crm-dialer-and-outreach`
-- [Contact Center](contact-center.md) — `module-crm-contact-center`
-- [AI Reception and Conversation](ai-reception-and-conversation.md) — `module-crm-ai-reception-and-conversation`
-
-## Service, success, and experience modules
-
-- [Case Management](case-management.md) — `module-crm-case-management`
-- [Omnichannel Service](omnichannel-service.md) — `module-crm-omnichannel-service`
-- [SLA and Entitlements](sla-and-entitlements.md) — `module-crm-sla-and-entitlements`
-- [Knowledge](knowledge.md) — `module-crm-knowledge`
-- [Customer Self-Service](customer-self-service.md) — `module-crm-customer-self-service`
-- [Customer Success](customer-success.md) — `module-crm-customer-success`
-- [Feedback and Voice of Customer](feedback-and-voice-of-customer.md) — `module-crm-feedback-and-voice-of-customer`
-- [Reputation Management](reputation-management.md) — `module-crm-reputation-management`
-- [Field Service Coordination](field-service-coordination.md) — `module-crm-field-service-coordination`
-- [Service Analytics](service-analytics.md) — `module-crm-service-analytics`
-
-## Community, learning, loyalty, and growth modules
-
-- [Communities](communities.md) — `module-crm-communities`
-- [Learning and Courses](learning-and-courses.md) — `module-crm-learning-and-courses`
-- [Memberships](memberships.md) — `module-crm-memberships`
-- [Loyalty](loyalty.md) — `module-crm-loyalty`
-- [Referrals](referrals.md) — `module-crm-referrals`
-- [Affiliate Management](affiliate-management.md) — `module-crm-affiliate-management`
-- [Advocacy](advocacy.md) — `module-crm-advocacy`
-
-## Partner and agency modules
-
-- [Partner Relationship Management](partner-relationship-management.md) — `module-crm-partner-relationship-management`
-- [Deal Registration](deal-registration.md) — `module-crm-deal-registration`
-- [Channel Sales](channel-sales.md) — `module-crm-channel-sales`
-- [Marketing Development Funds](marketing-development-funds.md) — `module-crm-marketing-development-funds`
-- [Agency Workspace](agency-workspace.md) — `module-crm-agency-workspace`
-- [White Label](white-label.md) — `module-crm-white-label`
-- [SaaS Packaging](saas-packaging.md) — `module-crm-saas-packaging`
-- [Usage Wallet and Rebilling](usage-wallet-and-rebilling.md) — `module-crm-usage-wallet-and-rebilling`
-- [Templates and Snapshots](templates-and-snapshots.md) — `module-crm-templates-and-snapshots`
-- [Client Onboarding](client-onboarding.md) — `module-crm-client-onboarding`
-
-## Delivery, productivity, and operations modules
-
-- [Projects](projects.md) — `module-crm-projects`
-- [Resource Planning](resource-planning.md) — `module-crm-resource-planning`
-- [Work Management](work-management.md) — `module-crm-work-management`
-- [Business Process Management](business-process-management.md) — `module-crm-business-process-management`
-- [CRM Automation Pack](crm-automation-pack.md) — `module-crm-automation-pack`
-- [Sandbox and Release Management](sandbox-and-release-management.md) — `module-crm-sandbox-and-release-management`
-
-## Intelligence and AI modules
-
-- [CRM Analytics](crm-analytics.md) — `module-crm-analytics`
-- [Predictive Models](predictive-models.md) — `module-crm-predictive-models`
-- [CRM Copilot](crm-copilot.md) — `module-crm-copilot`
-- [Prospecting Agent](prospecting-agent.md) — `module-crm-prospecting-agent`
-- [Service Agent](service-agent.md) — `module-crm-service-agent`
-- [Marketing Agent](marketing-agent.md) — `module-crm-marketing-agent`
-- [Conversation Analytics](conversation-analytics.md) — `module-crm-conversation-analytics`
+- [Activity Comments](activity-comments.md) — `module-crm-activity-comments`
+- [Analytics Contracts](analytics-contracts.md) — `module-crm-analytics-contracts`
+- [Analytics Core](analytics-core.md) — `module-crm-analytics-core`
+- [Analytics Google](analytics-google.md) — `module-crm-analytics-google`
+- [Analytics Meta](analytics-meta.md) — `module-crm-analytics-meta`
+- [Api Access](api-access.md) — `module-crm-api-access`
+- [Application](application.md) — `module-crm-application`
+- [Audit](audit.md) — `module-crm-audit`
+- [Crm Account Based Marketing](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing`
+- [Crm Account Planning](crm-account-planning.md) — `module-crm-crm-account-planning`
+- [Crm Activities](crm-activities.md) — `module-crm-crm-activities`
+- [Crm Advertising](crm-advertising.md) — `module-crm-crm-advertising`
+- [Crm Advocacy](crm-advocacy.md) — `module-crm-crm-advocacy`
+- [Crm Affiliate Management](crm-affiliate-management.md) — `module-crm-crm-affiliate-management`
+- [Crm Agency Workspace](crm-agency-workspace.md) — `module-crm-crm-agency-workspace`
+- [Crm Ai Reception And Conversation](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation`
+- [Crm Analytics](crm-analytics.md) — `module-crm-crm-analytics`
+- [Crm Attribution](crm-attribution.md) — `module-crm-crm-attribution`
+- [Crm Automation Pack](crm-automation-pack.md) — `module-crm-crm-automation-pack`
+- [Crm Business Process Management](crm-business-process-management.md) — `module-crm-crm-business-process-management`
+- [Crm Campaigns](crm-campaigns.md) — `module-crm-crm-campaigns`
+- [Crm Case Management](crm-case-management.md) — `module-crm-crm-case-management`
+- [Crm Channel Gateway](crm-channel-gateway.md) — `module-crm-crm-channel-gateway`
+- [Crm Channel Sales](crm-channel-sales.md) — `module-crm-crm-channel-sales`
+- [Crm Chat And Bots](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots`
+- [Crm Client Onboarding](crm-client-onboarding.md) — `module-crm-crm-client-onboarding`
+- [Crm Collaboration](crm-collaboration.md) — `module-crm-crm-collaboration`
+- [Crm Communities](crm-communities.md) — `module-crm-crm-communities`
+- [Crm Consent And Preferences](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences`
+- [Crm Contact Center](crm-contact-center.md) — `module-crm-crm-contact-center`
+- [Crm Contracts](crm-contracts.md) — `module-crm-crm-contracts`
+- [Crm Conversation Analytics](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics`
+- [Crm Conversation Intelligence](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence`
+- [Crm Conversion Optimization](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization`
+- [Crm Copilot](crm-copilot.md) — `module-crm-crm-copilot`
+- [Crm Core](crm-core.md) — `module-crm-crm-core`
+- [Crm Cpq](crm-cpq.md) — `module-crm-crm-cpq`
+- [Crm Customer Data Model](crm-customer-data-model.md) — `module-crm-crm-customer-data-model`
+- [Crm Customer Data Platform](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform`
+- [Crm Customer Self Service](crm-customer-self-service.md) — `module-crm-crm-customer-self-service`
+- [Crm Customer Success](crm-customer-success.md) — `module-crm-crm-customer-success`
+- [Crm Data Operations](crm-data-operations.md) — `module-crm-crm-data-operations`
+- [Crm Deal Registration](crm-deal-registration.md) — `module-crm-crm-deal-registration`
+- [Crm Dialer And Outreach](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach`
+- [Crm Documents](crm-documents.md) — `module-crm-crm-documents`
+- [Crm Email Marketing](crm-email-marketing.md) — `module-crm-crm-email-marketing`
+- [Crm Email Productivity](crm-email-productivity.md) — `module-crm-crm-email-productivity`
+- [Crm Enrichment](crm-enrichment.md) — `module-crm-crm-enrichment`
+- [Crm Events And Webinars](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars`
+- [Crm Feedback And Voice Of Customer](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer`
+- [Crm Field Service Coordination](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination`
+- [Crm Forecasting](crm-forecasting.md) — `module-crm-crm-forecasting`
+- [Crm Forms And Surveys](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys`
+- [Crm Goals And Performance](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance`
+- [Crm Journey Orchestration](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration`
+- [Crm Knowledge](crm-knowledge.md) — `module-crm-crm-knowledge`
+- [Crm Landing Pages And Funnels](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels`
+- [Crm Lead Capture](crm-lead-capture.md) — `module-crm-crm-lead-capture`
+- [Crm Lead Qualification](crm-lead-qualification.md) — `module-crm-crm-lead-qualification`
+- [Crm Learning And Courses](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses`
+- [Crm Loyalty](crm-loyalty.md) — `module-crm-crm-loyalty`
+- [Crm Marketing Agent](crm-marketing-agent.md) — `module-crm-crm-marketing-agent`
+- [Crm Marketing Development Funds](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds`
+- [Crm Marketing Resources](crm-marketing-resources.md) — `module-crm-crm-marketing-resources`
+- [Crm Memberships](crm-memberships.md) — `module-crm-crm-memberships`
+- [Crm Mobile Messaging](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging`
+- [Crm Omnichannel Service](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service`
+- [Crm Orders And Payments Workspace](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace`
+- [Crm Partner Relationship Management](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management`
+- [Crm Personalization](crm-personalization.md) — `module-crm-crm-personalization`
+- [Crm Playbooks And Enablement](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement`
+- [Crm Predictive Models](crm-predictive-models.md) — `module-crm-crm-predictive-models`
+- [Crm Product Workspace](crm-product-workspace.md) — `module-crm-crm-product-workspace`
+- [Crm Projects](crm-projects.md) — `module-crm-crm-projects`
+- [Crm Proposals And Quotes](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes`
+- [Crm Prospecting](crm-prospecting.md) — `module-crm-crm-prospecting`
+- [Crm Prospecting Agent](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent`
+- [Crm Quotas And Incentives](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives`
+- [Crm Referrals](crm-referrals.md) — `module-crm-crm-referrals`
+- [Crm Reputation Management](crm-reputation-management.md) — `module-crm-crm-reputation-management`
+- [Crm Resource Planning](crm-resource-planning.md) — `module-crm-crm-resource-planning`
+- [Crm Revenue Intelligence](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence`
+- [Crm Revenue Lifecycle](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle`
+- [Crm Routing](crm-routing.md) — `module-crm-crm-routing`
+- [Crm Saas Packaging](crm-saas-packaging.md) — `module-crm-crm-saas-packaging`
+- [Crm Sales Engagement](crm-sales-engagement.md) — `module-crm-crm-sales-engagement`
+- [Crm Sales Pipelines](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines`
+- [Crm Sales Workspace](crm-sales-workspace.md) — `module-crm-crm-sales-workspace`
+- [Crm Sandbox And Release Management](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management`
+- [Crm Sandbox Release](crm-sandbox-release.md) — `module-crm-crm-sandbox-release`
+- [Crm Scheduling](crm-scheduling.md) — `module-crm-crm-scheduling`
+- [Crm Search](crm-search.md) — `module-crm-crm-search`
+- [Crm Segmentation](crm-segmentation.md) — `module-crm-crm-segmentation`
+- [Crm Service Agent](crm-service-agent.md) — `module-crm-crm-service-agent`
+- [Crm Service Analytics](crm-service-analytics.md) — `module-crm-crm-service-analytics`
+- [Crm Sla And Entitlements](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements`
+- [Crm Telephony](crm-telephony.md) — `module-crm-crm-telephony`
+- [Crm Template Snapshots](crm-template-snapshots.md) — `module-crm-crm-template-snapshots`
+- [Crm Templates And Snapshots](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots`
+- [Crm Territories And Ownership](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership`
+- [Crm Unified Conversations](crm-unified-conversations.md) — `module-crm-crm-unified-conversations`
+- [Crm Usage Wallet And Rebilling](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling`
+- [Crm Web Intent](crm-web-intent.md) — `module-crm-crm-web-intent`
+- [Crm White Label](crm-white-label.md) — `module-crm-crm-white-label`
+- [Crm Work Management](crm-work-management.md) — `module-crm-crm-work-management`
+- [Currency Context](currency-context.md) — `module-crm-currency-context`
+- [Developer Experience](developer-experience.md) — `module-crm-developer-experience`
+- [Feature Flags](feature-flags.md) — `module-crm-feature-flags`
+- [Files Media](files-media.md) — `module-crm-files-media`
+- [Identity Core](identity-core.md) — `module-crm-identity-core`
+- [Identity Socialstream](identity-socialstream.md) — `module-crm-identity-socialstream`
+- [Import Export](import-export.md) — `module-crm-import-export`
+- [Integrations](integrations.md) — `module-crm-integrations`
+- [Jetstream Bridge](jetstream-bridge.md) — `module-crm-jetstream-bridge`
+- [Localization Contracts](localization-contracts.md) — `module-crm-localization-contracts`
+- [Localization Core](localization-core.md) — `module-crm-localization-core`
+- [Localization Mymemory](localization-mymemory.md) — `module-crm-localization-mymemory`
+- [Module Manager](module-manager.md) — `module-crm-module-manager`
+- [Notifications](notifications.md) — `module-crm-notifications`
+- [Observability](observability.md) — `module-crm-observability`
+- [Organizations Teams](organizations-teams.md) — `module-crm-organizations-teams`
+- [Profiles](profiles.md) — `module-crm-profiles`
+- [Roles Permissions](roles-permissions.md) — `module-crm-roles-permissions`
+- [Scheduler Queues](scheduler-queues.md) — `module-crm-scheduler-queues`
+- [Search](search.md) — `module-crm-search`
+- [Sessions Devices](sessions-devices.md) — `module-crm-sessions-devices`
+- [Settings](settings.md) — `module-crm-settings`
+- [Theme Support](theme-support.md) — `module-crm-theme-support`
+- [Two Factor Authentication](two-factor-authentication.md) — `module-crm-two-factor-authentication`
+- [Webhooks](webhooks.md) — `module-crm-webhooks`

@@ -1,126 +1,134 @@
-# CRM Flutter + Dart implementations
+# CRM Flutter + Dart Implementations
 
-**Scope:** [CRM](../CRM.md)
-**Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
-**Technology:** [Flutter technology](../../../technologies/FLUTTER.md) · [Flutter standard](../../../standards/FLUTTER.md)
+Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-This index defines the optional Flutter + Dart adapter boundary for the CRM project. Each future module adapter must map one-to-one to an existing core/API capability, preserve the server contract, and remain independently testable. Product-specific domain behavior stays in the project feature and core documentation.
-
-## Implementation plan
-
-- Consume the matching versioned API contract; do not query private tables or duplicate Laravel authorization, tenant resolution, audit, or business rules.
-- Provide platform-appropriate navigation, screens/widgets, forms, validation feedback, loading/empty/denied/offline/conflict/recovery states, and localization.
-- Document native permissions, secure credential storage, deep links, push notifications, cache classification, offline mutation policy, and supported OS/device matrix.
-- Test API schemas and authorization, state transitions, accessibility, localization, lifecycle interruptions, permission denial, offline recovery, and signed release builds.
-- Keep package naming consistent: `module-{independent-module-name}-flutter`; host applications choose only the adapters they need.
-
-## Related module indexes
-
-- [Core domain modules](../core/README.md)
-- [API modules](../api/README.md)
-- [All mobile project indexes](../../../modules/mobile/README.md)
-- [Flutter + Dart module standard](../../../modules/flutter/README.md)
-
-This project may ship no mobile client, one mobile client, or both. A missing adapter is an explicit product decision and must not be interpreted as permission to move domain behavior into the client.
-
-## Complete module index
-
-The following 95 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
-
-| Module                                                                | Package                                            | Core                                               | API                                              |
-| --------------------------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | ------------------------------------------------ |
-| [Account Based Marketing](account-based-marketing.md)                 | module-crm-account-based-marketing-flutter         | [Core](../core/account-based-marketing.md)         | [API](../api/account-based-marketing.md)         |
-| [Account Planning](account-planning.md)                               | module-crm-account-planning-flutter                | [Core](../core/account-planning.md)                | [API](../api/account-planning.md)                |
-| [Activities](activities.md)                                           | module-crm-activities-flutter                      | [Core](../core/activities.md)                      | [API](../api/activities.md)                      |
-| [Advertising](advertising.md)                                         | module-crm-advertising-flutter                     | [Core](../core/advertising.md)                     | [API](../api/advertising.md)                     |
-| [Advocacy](advocacy.md)                                               | module-crm-advocacy-flutter                        | [Core](../core/advocacy.md)                        | [API](../api/advocacy.md)                        |
-| [Affiliate Management](affiliate-management.md)                       | module-crm-affiliate-management-flutter            | [Core](../core/affiliate-management.md)            | [API](../api/affiliate-management.md)            |
-| [Agency Workspace](agency-workspace.md)                               | module-crm-agency-workspace-flutter                | [Core](../core/agency-workspace.md)                | [API](../api/agency-workspace.md)                |
-| [Ai Reception And Conversation](ai-reception-and-conversation.md)     | module-crm-ai-reception-and-conversation-flutter   | [Core](../core/ai-reception-and-conversation.md)   | [API](../api/ai-reception-and-conversation.md)   |
-| [Attribution](attribution.md)                                         | module-crm-attribution-flutter                     | [Core](../core/attribution.md)                     | [API](../api/attribution.md)                     |
-| [Business Process Management](business-process-management.md)         | module-crm-business-process-management-flutter     | [Core](../core/business-process-management.md)     | [API](../api/business-process-management.md)     |
-| [Campaigns](campaigns.md)                                             | module-crm-campaigns-flutter                       | [Core](../core/campaigns.md)                       | [API](../api/campaigns.md)                       |
-| [Case Management](case-management.md)                                 | module-crm-case-management-flutter                 | [Core](../core/case-management.md)                 | [API](../api/case-management.md)                 |
-| [Channel Gateway](channel-gateway.md)                                 | module-crm-channel-gateway-flutter                 | [Core](../core/channel-gateway.md)                 | [API](../api/channel-gateway.md)                 |
-| [Channel Sales](channel-sales.md)                                     | module-crm-channel-sales-flutter                   | [Core](../core/channel-sales.md)                   | [API](../api/channel-sales.md)                   |
-| [Chat And Bots](chat-and-bots.md)                                     | module-crm-chat-and-bots-flutter                   | [Core](../core/chat-and-bots.md)                   | [API](../api/chat-and-bots.md)                   |
-| [Client Onboarding](client-onboarding.md)                             | module-crm-client-onboarding-flutter               | [Core](../core/client-onboarding.md)               | [API](../api/client-onboarding.md)               |
-| [Collaboration](collaboration.md)                                     | module-crm-collaboration-flutter                   | [Core](../core/collaboration.md)                   | [API](../api/collaboration.md)                   |
-| [Communities](communities.md)                                         | module-crm-communities-flutter                     | [Core](../core/communities.md)                     | [API](../api/communities.md)                     |
-| [Consent And Preferences](consent-and-preferences.md)                 | module-crm-consent-and-preferences-flutter         | [Core](../core/consent-and-preferences.md)         | [API](../api/consent-and-preferences.md)         |
-| [Contact Center](contact-center.md)                                   | module-crm-contact-center-flutter                  | [Core](../core/contact-center.md)                  | [API](../api/contact-center.md)                  |
-| [Contracts](contracts.md)                                             | module-crm-contracts-flutter                       | [Core](../core/contracts.md)                       | [API](../api/contracts.md)                       |
-| [Conversation Analytics](conversation-analytics.md)                   | module-crm-conversation-analytics-flutter          | [Core](../core/conversation-analytics.md)          | [API](../api/conversation-analytics.md)          |
-| [Conversation Intelligence](conversation-intelligence.md)             | module-crm-conversation-intelligence-flutter       | [Core](../core/conversation-intelligence.md)       | [API](../api/conversation-intelligence.md)       |
-| [Conversion Optimization](conversion-optimization.md)                 | module-crm-conversion-optimization-flutter         | [Core](../core/conversion-optimization.md)         | [API](../api/conversion-optimization.md)         |
-| [Cpq](cpq.md)                                                         | module-crm-cpq-flutter                             | [Core](../core/cpq.md)                             | [API](../api/cpq.md)                             |
-| [Crm Analytics](crm-analytics.md)                                     | module-crm-crm-analytics-flutter                   | [Core](../core/crm-analytics.md)                   | [API](../api/crm-analytics.md)                   |
-| [Crm Automation Pack](crm-automation-pack.md)                         | module-crm-crm-automation-pack-flutter             | [Core](../core/crm-automation-pack.md)             | [API](../api/crm-automation-pack.md)             |
-| [Crm Copilot](crm-copilot.md)                                         | module-crm-crm-copilot-flutter                     | [Core](../core/crm-copilot.md)                     | [API](../api/crm-copilot.md)                     |
-| [Crm Core](crm-core.md)                                               | module-crm-crm-core-flutter                        | [Core](../core/crm-core.md)                        | [API](../api/crm-core.md)                        |
-| [Crm Documents](crm-documents.md)                                     | module-crm-crm-documents-flutter                   | [Core](../core/crm-documents.md)                   | [API](../api/crm-documents.md)                   |
-| [Crm Product Workspace](crm-product-workspace.md)                     | module-crm-crm-product-workspace-flutter           | [Core](../core/crm-product-workspace.md)           | [API](../api/crm-product-workspace.md)           |
-| [Crm Search](crm-search.md)                                           | module-crm-crm-search-flutter                      | [Core](../core/crm-search.md)                      | [API](../api/crm-search.md)                      |
-| [Customer Data Model](customer-data-model.md)                         | module-crm-customer-data-model-flutter             | [Core](../core/customer-data-model.md)             | [API](../api/customer-data-model.md)             |
-| [Customer Data Platform](customer-data-platform.md)                   | module-crm-customer-data-platform-flutter          | [Core](../core/customer-data-platform.md)          | [API](../api/customer-data-platform.md)          |
-| [Customer Self Service](customer-self-service.md)                     | module-crm-customer-self-service-flutter           | [Core](../core/customer-self-service.md)           | [API](../api/customer-self-service.md)           |
-| [Customer Success](customer-success.md)                               | module-crm-customer-success-flutter                | [Core](../core/customer-success.md)                | [API](../api/customer-success.md)                |
-| [Data Operations](data-operations.md)                                 | module-crm-data-operations-flutter                 | [Core](../core/data-operations.md)                 | [API](../api/data-operations.md)                 |
-| [Deal Registration](deal-registration.md)                             | module-crm-deal-registration-flutter               | [Core](../core/deal-registration.md)               | [API](../api/deal-registration.md)               |
-| [Dialer And Outreach](dialer-and-outreach.md)                         | module-crm-dialer-and-outreach-flutter             | [Core](../core/dialer-and-outreach.md)             | [API](../api/dialer-and-outreach.md)             |
-| [Email Marketing](email-marketing.md)                                 | module-crm-email-marketing-flutter                 | [Core](../core/email-marketing.md)                 | [API](../api/email-marketing.md)                 |
-| [Email Productivity](email-productivity.md)                           | module-crm-email-productivity-flutter              | [Core](../core/email-productivity.md)              | [API](../api/email-productivity.md)              |
-| [Enrichment](enrichment.md)                                           | module-crm-enrichment-flutter                      | [Core](../core/enrichment.md)                      | [API](../api/enrichment.md)                      |
-| [Events And Webinars](events-and-webinars.md)                         | module-crm-events-and-webinars-flutter             | [Core](../core/events-and-webinars.md)             | [API](../api/events-and-webinars.md)             |
-| [Feedback And Voice Of Customer](feedback-and-voice-of-customer.md)   | module-crm-feedback-and-voice-of-customer-flutter  | [Core](../core/feedback-and-voice-of-customer.md)  | [API](../api/feedback-and-voice-of-customer.md)  |
-| [Field Service Coordination](field-service-coordination.md)           | module-crm-field-service-coordination-flutter      | [Core](../core/field-service-coordination.md)      | [API](../api/field-service-coordination.md)      |
-| [Forecasting](forecasting.md)                                         | module-crm-forecasting-flutter                     | [Core](../core/forecasting.md)                     | [API](../api/forecasting.md)                     |
-| [Forms And Surveys](forms-and-surveys.md)                             | module-crm-forms-and-surveys-flutter               | [Core](../core/forms-and-surveys.md)               | [API](../api/forms-and-surveys.md)               |
-| [Goals And Performance](goals-and-performance.md)                     | module-crm-goals-and-performance-flutter           | [Core](../core/goals-and-performance.md)           | [API](../api/goals-and-performance.md)           |
-| [Journey Orchestration](journey-orchestration.md)                     | module-crm-journey-orchestration-flutter           | [Core](../core/journey-orchestration.md)           | [API](../api/journey-orchestration.md)           |
-| [Knowledge](knowledge.md)                                             | module-crm-knowledge-flutter                       | [Core](../core/knowledge.md)                       | [API](../api/knowledge.md)                       |
-| [Landing Pages And Funnels](landing-pages-and-funnels.md)             | module-crm-landing-pages-and-funnels-flutter       | [Core](../core/landing-pages-and-funnels.md)       | [API](../api/landing-pages-and-funnels.md)       |
-| [Lead Capture](lead-capture.md)                                       | module-crm-lead-capture-flutter                    | [Core](../core/lead-capture.md)                    | [API](../api/lead-capture.md)                    |
-| [Lead Qualification](lead-qualification.md)                           | module-crm-lead-qualification-flutter              | [Core](../core/lead-qualification.md)              | [API](../api/lead-qualification.md)              |
-| [Learning And Courses](learning-and-courses.md)                       | module-crm-learning-and-courses-flutter            | [Core](../core/learning-and-courses.md)            | [API](../api/learning-and-courses.md)            |
-| [Loyalty](loyalty.md)                                                 | module-crm-loyalty-flutter                         | [Core](../core/loyalty.md)                         | [API](../api/loyalty.md)                         |
-| [Marketing Agent](marketing-agent.md)                                 | module-crm-marketing-agent-flutter                 | [Core](../core/marketing-agent.md)                 | [API](../api/marketing-agent.md)                 |
-| [Marketing Development Funds](marketing-development-funds.md)         | module-crm-marketing-development-funds-flutter     | [Core](../core/marketing-development-funds.md)     | [API](../api/marketing-development-funds.md)     |
-| [Marketing Resources](marketing-resources.md)                         | module-crm-marketing-resources-flutter             | [Core](../core/marketing-resources.md)             | [API](../api/marketing-resources.md)             |
-| [Memberships](memberships.md)                                         | module-crm-memberships-flutter                     | [Core](../core/memberships.md)                     | [API](../api/memberships.md)                     |
-| [Mobile Messaging](mobile-messaging.md)                               | module-crm-mobile-messaging-flutter                | [Core](../core/mobile-messaging.md)                | [API](../api/mobile-messaging.md)                |
-| [Omnichannel Service](omnichannel-service.md)                         | module-crm-omnichannel-service-flutter             | [Core](../core/omnichannel-service.md)             | [API](../api/omnichannel-service.md)             |
-| [Orders And Payments Workspace](orders-and-payments-workspace.md)     | module-crm-orders-and-payments-workspace-flutter   | [Core](../core/orders-and-payments-workspace.md)   | [API](../api/orders-and-payments-workspace.md)   |
-| [Partner Relationship Management](partner-relationship-management.md) | module-crm-partner-relationship-management-flutter | [Core](../core/partner-relationship-management.md) | [API](../api/partner-relationship-management.md) |
-| [Personalization](personalization.md)                                 | module-crm-personalization-flutter                 | [Core](../core/personalization.md)                 | [API](../api/personalization.md)                 |
-| [Playbooks And Enablement](playbooks-and-enablement.md)               | module-crm-playbooks-and-enablement-flutter        | [Core](../core/playbooks-and-enablement.md)        | [API](../api/playbooks-and-enablement.md)        |
-| [Predictive Models](predictive-models.md)                             | module-crm-predictive-models-flutter               | [Core](../core/predictive-models.md)               | [API](../api/predictive-models.md)               |
-| [Projects](projects.md)                                               | module-crm-projects-flutter                        | [Core](../core/projects.md)                        | [API](../api/projects.md)                        |
-| [Proposals And Quotes](proposals-and-quotes.md)                       | module-crm-proposals-and-quotes-flutter            | [Core](../core/proposals-and-quotes.md)            | [API](../api/proposals-and-quotes.md)            |
-| [Prospecting Agent](prospecting-agent.md)                             | module-crm-prospecting-agent-flutter               | [Core](../core/prospecting-agent.md)               | [API](../api/prospecting-agent.md)               |
-| [Prospecting](prospecting.md)                                         | module-crm-prospecting-flutter                     | [Core](../core/prospecting.md)                     | [API](../api/prospecting.md)                     |
-| [Quotas And Incentives](quotas-and-incentives.md)                     | module-crm-quotas-and-incentives-flutter           | [Core](../core/quotas-and-incentives.md)           | [API](../api/quotas-and-incentives.md)           |
-| [Referrals](referrals.md)                                             | module-crm-referrals-flutter                       | [Core](../core/referrals.md)                       | [API](../api/referrals.md)                       |
-| [Reputation Management](reputation-management.md)                     | module-crm-reputation-management-flutter           | [Core](../core/reputation-management.md)           | [API](../api/reputation-management.md)           |
-| [Resource Planning](resource-planning.md)                             | module-crm-resource-planning-flutter               | [Core](../core/resource-planning.md)               | [API](../api/resource-planning.md)               |
-| [Revenue Intelligence](revenue-intelligence.md)                       | module-crm-revenue-intelligence-flutter            | [Core](../core/revenue-intelligence.md)            | [API](../api/revenue-intelligence.md)            |
-| [Revenue Lifecycle](revenue-lifecycle.md)                             | module-crm-revenue-lifecycle-flutter               | [Core](../core/revenue-lifecycle.md)               | [API](../api/revenue-lifecycle.md)               |
-| [Routing](routing.md)                                                 | module-crm-routing-flutter                         | [Core](../core/routing.md)                         | [API](../api/routing.md)                         |
-| [Saas Packaging](saas-packaging.md)                                   | module-crm-saas-packaging-flutter                  | [Core](../core/saas-packaging.md)                  | [API](../api/saas-packaging.md)                  |
-| [Sales Engagement](sales-engagement.md)                               | module-crm-sales-engagement-flutter                | [Core](../core/sales-engagement.md)                | [API](../api/sales-engagement.md)                |
-| [Sales Pipelines](sales-pipelines.md)                                 | module-crm-sales-pipelines-flutter                 | [Core](../core/sales-pipelines.md)                 | [API](../api/sales-pipelines.md)                 |
-| [Sales Workspace](sales-workspace.md)                                 | module-crm-sales-workspace-flutter                 | [Core](../core/sales-workspace.md)                 | [API](../api/sales-workspace.md)                 |
-| [Sandbox And Release Management](sandbox-and-release-management.md)   | module-crm-sandbox-and-release-management-flutter  | [Core](../core/sandbox-and-release-management.md)  | [API](../api/sandbox-and-release-management.md)  |
-| [Scheduling](scheduling.md)                                           | module-crm-scheduling-flutter                      | [Core](../core/scheduling.md)                      | [API](../api/scheduling.md)                      |
-| [Segmentation](segmentation.md)                                       | module-crm-segmentation-flutter                    | [Core](../core/segmentation.md)                    | [API](../api/segmentation.md)                    |
-| [Service Agent](service-agent.md)                                     | module-crm-service-agent-flutter                   | [Core](../core/service-agent.md)                   | [API](../api/service-agent.md)                   |
-| [Service Analytics](service-analytics.md)                             | module-crm-service-analytics-flutter               | [Core](../core/service-analytics.md)               | [API](../api/service-analytics.md)               |
-| [Sla And Entitlements](sla-and-entitlements.md)                       | module-crm-sla-and-entitlements-flutter            | [Core](../core/sla-and-entitlements.md)            | [API](../api/sla-and-entitlements.md)            |
-| [Telephony](telephony.md)                                             | module-crm-telephony-flutter                       | [Core](../core/telephony.md)                       | [API](../api/telephony.md)                       |
-| [Templates And Snapshots](templates-and-snapshots.md)                 | module-crm-templates-and-snapshots-flutter         | [Core](../core/templates-and-snapshots.md)         | [API](../api/templates-and-snapshots.md)         |
-| [Territories And Ownership](territories-and-ownership.md)             | module-crm-territories-and-ownership-flutter       | [Core](../core/territories-and-ownership.md)       | [API](../api/territories-and-ownership.md)       |
-| [Unified Conversations](unified-conversations.md)                     | module-crm-unified-conversations-flutter           | [Core](../core/unified-conversations.md)           | [API](../api/unified-conversations.md)           |
-| [Usage Wallet And Rebilling](usage-wallet-and-rebilling.md)           | module-crm-usage-wallet-and-rebilling-flutter      | [Core](../core/usage-wallet-and-rebilling.md)      | [API](../api/usage-wallet-and-rebilling.md)      |
-| [Web Intent](web-intent.md)                                           | module-crm-web-intent-flutter                      | [Core](../core/web-intent.md)                      | [API](../api/web-intent.md)                      |
-| [White Label](white-label.md)                                         | module-crm-white-label-flutter                     | [Core](../core/white-label.md)                     | [API](../api/white-label.md)                     |
-| [Work Management](work-management.md)                                 | module-crm-work-management-flutter                 | [Core](../core/work-management.md)                 | [API](../api/work-management.md)                 |
+- [Activity Comments Flutter](activity-comments.md) — `module-crm-activity-comments-flutter`
+- [Analytics Contracts Flutter](analytics-contracts.md) — `module-crm-analytics-contracts-flutter`
+- [Analytics Core Flutter](analytics-core.md) — `module-crm-analytics-core-flutter`
+- [Analytics Google Flutter](analytics-google.md) — `module-crm-analytics-google-flutter`
+- [Analytics Meta Flutter](analytics-meta.md) — `module-crm-analytics-meta-flutter`
+- [Api Access Flutter](api-access.md) — `module-crm-api-access-flutter`
+- [Application Flutter](application.md) — `module-crm-application-flutter`
+- [Audit Flutter](audit.md) — `module-crm-audit-flutter`
+- [Crm Account Based Marketing Flutter](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing-flutter`
+- [Crm Account Planning Flutter](crm-account-planning.md) — `module-crm-crm-account-planning-flutter`
+- [Crm Activities Flutter](crm-activities.md) — `module-crm-crm-activities-flutter`
+- [Crm Advertising Flutter](crm-advertising.md) — `module-crm-crm-advertising-flutter`
+- [Crm Advocacy Flutter](crm-advocacy.md) — `module-crm-crm-advocacy-flutter`
+- [Crm Affiliate Management Flutter](crm-affiliate-management.md) — `module-crm-crm-affiliate-management-flutter`
+- [Crm Agency Workspace Flutter](crm-agency-workspace.md) — `module-crm-crm-agency-workspace-flutter`
+- [Crm Ai Reception And Conversation Flutter](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation-flutter`
+- [Crm Analytics Flutter](crm-analytics.md) — `module-crm-crm-analytics-flutter`
+- [Crm Attribution Flutter](crm-attribution.md) — `module-crm-crm-attribution-flutter`
+- [Crm Automation Pack Flutter](crm-automation-pack.md) — `module-crm-crm-automation-pack-flutter`
+- [Crm Business Process Management Flutter](crm-business-process-management.md) — `module-crm-crm-business-process-management-flutter`
+- [Crm Campaigns Flutter](crm-campaigns.md) — `module-crm-crm-campaigns-flutter`
+- [Crm Case Management Flutter](crm-case-management.md) — `module-crm-crm-case-management-flutter`
+- [Crm Channel Gateway Flutter](crm-channel-gateway.md) — `module-crm-crm-channel-gateway-flutter`
+- [Crm Channel Sales Flutter](crm-channel-sales.md) — `module-crm-crm-channel-sales-flutter`
+- [Crm Chat And Bots Flutter](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots-flutter`
+- [Crm Client Onboarding Flutter](crm-client-onboarding.md) — `module-crm-crm-client-onboarding-flutter`
+- [Crm Collaboration Flutter](crm-collaboration.md) — `module-crm-crm-collaboration-flutter`
+- [Crm Communities Flutter](crm-communities.md) — `module-crm-crm-communities-flutter`
+- [Crm Consent And Preferences Flutter](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences-flutter`
+- [Crm Contact Center Flutter](crm-contact-center.md) — `module-crm-crm-contact-center-flutter`
+- [Crm Contracts Flutter](crm-contracts.md) — `module-crm-crm-contracts-flutter`
+- [Crm Conversation Analytics Flutter](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics-flutter`
+- [Crm Conversation Intelligence Flutter](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence-flutter`
+- [Crm Conversion Optimization Flutter](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization-flutter`
+- [Crm Copilot Flutter](crm-copilot.md) — `module-crm-crm-copilot-flutter`
+- [Crm Core Flutter](crm-core.md) — `module-crm-crm-core-flutter`
+- [Crm Cpq Flutter](crm-cpq.md) — `module-crm-crm-cpq-flutter`
+- [Crm Customer Data Model Flutter](crm-customer-data-model.md) — `module-crm-crm-customer-data-model-flutter`
+- [Crm Customer Data Platform Flutter](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform-flutter`
+- [Crm Customer Self Service Flutter](crm-customer-self-service.md) — `module-crm-crm-customer-self-service-flutter`
+- [Crm Customer Success Flutter](crm-customer-success.md) — `module-crm-crm-customer-success-flutter`
+- [Crm Data Operations Flutter](crm-data-operations.md) — `module-crm-crm-data-operations-flutter`
+- [Crm Deal Registration Flutter](crm-deal-registration.md) — `module-crm-crm-deal-registration-flutter`
+- [Crm Dialer And Outreach Flutter](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach-flutter`
+- [Crm Documents Flutter](crm-documents.md) — `module-crm-crm-documents-flutter`
+- [Crm Email Marketing Flutter](crm-email-marketing.md) — `module-crm-crm-email-marketing-flutter`
+- [Crm Email Productivity Flutter](crm-email-productivity.md) — `module-crm-crm-email-productivity-flutter`
+- [Crm Enrichment Flutter](crm-enrichment.md) — `module-crm-crm-enrichment-flutter`
+- [Crm Events And Webinars Flutter](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars-flutter`
+- [Crm Feedback And Voice Of Customer Flutter](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer-flutter`
+- [Crm Field Service Coordination Flutter](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination-flutter`
+- [Crm Forecasting Flutter](crm-forecasting.md) — `module-crm-crm-forecasting-flutter`
+- [Crm Forms And Surveys Flutter](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys-flutter`
+- [Crm Goals And Performance Flutter](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance-flutter`
+- [Crm Journey Orchestration Flutter](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration-flutter`
+- [Crm Knowledge Flutter](crm-knowledge.md) — `module-crm-crm-knowledge-flutter`
+- [Crm Landing Pages And Funnels Flutter](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels-flutter`
+- [Crm Lead Capture Flutter](crm-lead-capture.md) — `module-crm-crm-lead-capture-flutter`
+- [Crm Lead Qualification Flutter](crm-lead-qualification.md) — `module-crm-crm-lead-qualification-flutter`
+- [Crm Learning And Courses Flutter](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses-flutter`
+- [Crm Loyalty Flutter](crm-loyalty.md) — `module-crm-crm-loyalty-flutter`
+- [Crm Marketing Agent Flutter](crm-marketing-agent.md) — `module-crm-crm-marketing-agent-flutter`
+- [Crm Marketing Development Funds Flutter](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds-flutter`
+- [Crm Marketing Resources Flutter](crm-marketing-resources.md) — `module-crm-crm-marketing-resources-flutter`
+- [Crm Memberships Flutter](crm-memberships.md) — `module-crm-crm-memberships-flutter`
+- [Crm Mobile Messaging Flutter](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging-flutter`
+- [Crm Omnichannel Service Flutter](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service-flutter`
+- [Crm Orders And Payments Workspace Flutter](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace-flutter`
+- [Crm Partner Relationship Management Flutter](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management-flutter`
+- [Crm Personalization Flutter](crm-personalization.md) — `module-crm-crm-personalization-flutter`
+- [Crm Playbooks And Enablement Flutter](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement-flutter`
+- [Crm Predictive Models Flutter](crm-predictive-models.md) — `module-crm-crm-predictive-models-flutter`
+- [Crm Product Workspace Flutter](crm-product-workspace.md) — `module-crm-crm-product-workspace-flutter`
+- [Crm Projects Flutter](crm-projects.md) — `module-crm-crm-projects-flutter`
+- [Crm Proposals And Quotes Flutter](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes-flutter`
+- [Crm Prospecting Flutter](crm-prospecting.md) — `module-crm-crm-prospecting-flutter`
+- [Crm Prospecting Agent Flutter](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent-flutter`
+- [Crm Quotas And Incentives Flutter](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives-flutter`
+- [Crm Referrals Flutter](crm-referrals.md) — `module-crm-crm-referrals-flutter`
+- [Crm Reputation Management Flutter](crm-reputation-management.md) — `module-crm-crm-reputation-management-flutter`
+- [Crm Resource Planning Flutter](crm-resource-planning.md) — `module-crm-crm-resource-planning-flutter`
+- [Crm Revenue Intelligence Flutter](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence-flutter`
+- [Crm Revenue Lifecycle Flutter](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle-flutter`
+- [Crm Routing Flutter](crm-routing.md) — `module-crm-crm-routing-flutter`
+- [Crm Saas Packaging Flutter](crm-saas-packaging.md) — `module-crm-crm-saas-packaging-flutter`
+- [Crm Sales Engagement Flutter](crm-sales-engagement.md) — `module-crm-crm-sales-engagement-flutter`
+- [Crm Sales Pipelines Flutter](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines-flutter`
+- [Crm Sales Workspace Flutter](crm-sales-workspace.md) — `module-crm-crm-sales-workspace-flutter`
+- [Crm Sandbox And Release Management Flutter](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management-flutter`
+- [Crm Sandbox Release Flutter](crm-sandbox-release.md) — `module-crm-crm-sandbox-release-flutter`
+- [Crm Scheduling Flutter](crm-scheduling.md) — `module-crm-crm-scheduling-flutter`
+- [Crm Search Flutter](crm-search.md) — `module-crm-crm-search-flutter`
+- [Crm Segmentation Flutter](crm-segmentation.md) — `module-crm-crm-segmentation-flutter`
+- [Crm Service Agent Flutter](crm-service-agent.md) — `module-crm-crm-service-agent-flutter`
+- [Crm Service Analytics Flutter](crm-service-analytics.md) — `module-crm-crm-service-analytics-flutter`
+- [Crm Sla And Entitlements Flutter](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements-flutter`
+- [Crm Telephony Flutter](crm-telephony.md) — `module-crm-crm-telephony-flutter`
+- [Crm Template Snapshots Flutter](crm-template-snapshots.md) — `module-crm-crm-template-snapshots-flutter`
+- [Crm Templates And Snapshots Flutter](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots-flutter`
+- [Crm Territories And Ownership Flutter](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership-flutter`
+- [Crm Unified Conversations Flutter](crm-unified-conversations.md) — `module-crm-crm-unified-conversations-flutter`
+- [Crm Usage Wallet And Rebilling Flutter](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling-flutter`
+- [Crm Web Intent Flutter](crm-web-intent.md) — `module-crm-crm-web-intent-flutter`
+- [Crm White Label Flutter](crm-white-label.md) — `module-crm-crm-white-label-flutter`
+- [Crm Work Management Flutter](crm-work-management.md) — `module-crm-crm-work-management-flutter`
+- [Currency Context Flutter](currency-context.md) — `module-crm-currency-context-flutter`
+- [Developer Experience Flutter](developer-experience.md) — `module-crm-developer-experience-flutter`
+- [Feature Flags Flutter](feature-flags.md) — `module-crm-feature-flags-flutter`
+- [Files Media Flutter](files-media.md) — `module-crm-files-media-flutter`
+- [Identity Core Flutter](identity-core.md) — `module-crm-identity-core-flutter`
+- [Identity Socialstream Flutter](identity-socialstream.md) — `module-crm-identity-socialstream-flutter`
+- [Import Export Flutter](import-export.md) — `module-crm-import-export-flutter`
+- [Integrations Flutter](integrations.md) — `module-crm-integrations-flutter`
+- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-crm-jetstream-bridge-flutter`
+- [Localization Contracts Flutter](localization-contracts.md) — `module-crm-localization-contracts-flutter`
+- [Localization Core Flutter](localization-core.md) — `module-crm-localization-core-flutter`
+- [Localization Mymemory Flutter](localization-mymemory.md) — `module-crm-localization-mymemory-flutter`
+- [Module Manager Flutter](module-manager.md) — `module-crm-module-manager-flutter`
+- [Notifications Flutter](notifications.md) — `module-crm-notifications-flutter`
+- [Observability Flutter](observability.md) — `module-crm-observability-flutter`
+- [Organizations Teams Flutter](organizations-teams.md) — `module-crm-organizations-teams-flutter`
+- [Profiles Flutter](profiles.md) — `module-crm-profiles-flutter`
+- [Roles Permissions Flutter](roles-permissions.md) — `module-crm-roles-permissions-flutter`
+- [Scheduler Queues Flutter](scheduler-queues.md) — `module-crm-scheduler-queues-flutter`
+- [Search Flutter](search.md) — `module-crm-search-flutter`
+- [Sessions Devices Flutter](sessions-devices.md) — `module-crm-sessions-devices-flutter`
+- [Settings Flutter](settings.md) — `module-crm-settings-flutter`
+- [Theme Support Flutter](theme-support.md) — `module-crm-theme-support-flutter`
+- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-crm-two-factor-authentication-flutter`
+- [Webhooks Flutter](webhooks.md) — `module-crm-webhooks-flutter`

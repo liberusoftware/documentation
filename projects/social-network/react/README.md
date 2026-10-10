@@ -1,47 +1,50 @@
-# Social-Network React 19.2 + Inertia 3 Implementations
+# Social Network React + Inertia Implementations
 
-**Source:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)
-**Architecture:** [REACT.md](../SOCIAL-NETWORK.md) · [API module index](../api/README.md) · [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md)
+Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Social Core React + Inertia](social-core.md) — `module-social-network-social-core-react-inertia`
-- [Profiles React + Inertia](profiles.md) — `module-social-network-profiles-react-inertia`
-- [Social Graph React + Inertia](social-graph.md) — `module-social-network-social-graph-react-inertia`
-- [Publishing React + Inertia](publishing.md) — `module-social-network-publishing-react-inertia`
-- [Feed React + Inertia](feed.md) — `module-social-network-feed-react-inertia`
-- [Engagement React + Inertia](engagement.md) — `module-social-network-engagement-react-inertia`
-- [Media React + Inertia](media.md) — `module-social-network-media-react-inertia`
-- [Communities React + Inertia](communities.md) — `module-social-network-communities-react-inertia`
-- [Events React + Inertia](events.md) — `module-social-network-events-react-inertia`
-- [Messaging React + Inertia](messaging.md) — `module-social-network-messaging-react-inertia`
-- [Notifications React + Inertia](notifications.md) — `module-social-network-notifications-react-inertia`
-- [Discovery React + Inertia](discovery.md) — `module-social-network-discovery-react-inertia`
-- [Moderation React + Inertia](moderation.md) — `module-social-network-moderation-react-inertia`
-- [Federation React + Inertia](federation.md) — `module-social-network-federation-react-inertia`
-- [Analytics React + Inertia](analytics.md) — `module-social-network-analytics-react-inertia`
-
-**Source:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)
-**Architecture:** [REACT.md](../SOCIAL-NETWORK.md) · [API module index](../api/README.md) · [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md)
-
-Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Social Core React + Inertia](social-core.md) — `module-social-network-social-core-react-inertia`
-- [Profiles React + Inertia](profiles.md) — `module-social-network-profiles-react-inertia`
-- [Social Graph React + Inertia](social-graph.md) — `module-social-network-social-graph-react-inertia`
-- [Publishing React + Inertia](publishing.md) — `module-social-network-publishing-react-inertia`
-- [Feed React + Inertia](feed.md) — `module-social-network-feed-react-inertia`
-- [Engagement React + Inertia](engagement.md) — `module-social-network-engagement-react-inertia`
-- [Media React + Inertia](media.md) — `module-social-network-media-react-inertia`
-- [Communities React + Inertia](communities.md) — `module-social-network-communities-react-inertia`
-- [Events React + Inertia](events.md) — `module-social-network-events-react-inertia`
-- [Messaging React + Inertia](messaging.md) — `module-social-network-messaging-react-inertia`
-- [Notifications React + Inertia](notifications.md) — `module-social-network-notifications-react-inertia`
-- [Discovery React + Inertia](discovery.md) — `module-social-network-discovery-react-inertia`
-- [Moderation React + Inertia](moderation.md) — `module-social-network-moderation-react-inertia`
-- [Federation React + Inertia](federation.md) — `module-social-network-federation-react-inertia`
-- [Analytics React + Inertia](analytics.md) — `module-social-network-analytics-react-inertia`
+- [Activity Comments React](activity-comments.md) — `module-social-network-activity-comments-react-inertia`
+- [Analytics Core React](analytics-core.md) — `module-social-network-analytics-core-react-inertia`
+- [Analytics Google React](analytics-google.md) — `module-social-network-analytics-google-react-inertia`
+- [Analytics Meta React](analytics-meta.md) — `module-social-network-analytics-meta-react-inertia`
+- [Api Access React](api-access.md) — `module-social-network-api-access-react-inertia`
+- [Application React](application.md) — `module-social-network-application-react-inertia`
+- [Audit React](audit.md) — `module-social-network-audit-react-inertia`
+- [Currency Context React](currency-context.md) — `module-social-network-currency-context-react-inertia`
+- [Developer Experience React](developer-experience.md) — `module-social-network-developer-experience-react-inertia`
+- [Feature Flags React](feature-flags.md) — `module-social-network-feature-flags-react-inertia`
+- [Files Media React](files-media.md) — `module-social-network-files-media-react-inertia`
+- [Identity Core React](identity-core.md) — `module-social-network-identity-core-react-inertia`
+- [Identity Socialstream React](identity-socialstream.md) — `module-social-network-identity-socialstream-react-inertia`
+- [Import Export React](import-export.md) — `module-social-network-import-export-react-inertia`
+- [Integrations React](integrations.md) — `module-social-network-integrations-react-inertia`
+- [Jetstream Bridge React](jetstream-bridge.md) — `module-social-network-jetstream-bridge-react-inertia`
+- [Localization Core React](localization-core.md) — `module-social-network-localization-core-react-inertia`
+- [Localization Mymemory React](localization-mymemory.md) — `module-social-network-localization-mymemory-react-inertia`
+- [Module Manager React](module-manager.md) — `module-social-network-module-manager-react-inertia`
+- [Notifications React](notifications.md) — `module-social-network-notifications-react-inertia`
+- [Observability React](observability.md) — `module-social-network-observability-react-inertia`
+- [Organizations Teams React](organizations-teams.md) — `module-social-network-organizations-teams-react-inertia`
+- [Profiles React](profiles.md) — `module-social-network-profiles-react-inertia`
+- [Roles Permissions React](roles-permissions.md) — `module-social-network-roles-permissions-react-inertia`
+- [Scheduler Queues React](scheduler-queues.md) — `module-social-network-scheduler-queues-react-inertia`
+- [Search React](search.md) — `module-social-network-search-react-inertia`
+- [Sessions Devices React](sessions-devices.md) — `module-social-network-sessions-devices-react-inertia`
+- [Settings React](settings.md) — `module-social-network-settings-react-inertia`
+- [Social Network Analytics React](social-network-analytics.md) — `module-social-network-social-network-analytics-react-inertia`
+- [Social Network Communities React](social-network-communities.md) — `module-social-network-social-network-communities-react-inertia`
+- [Social Network Discovery React](social-network-discovery.md) — `module-social-network-social-network-discovery-react-inertia`
+- [Social Network Engagement React](social-network-engagement.md) — `module-social-network-social-network-engagement-react-inertia`
+- [Social Network Events React](social-network-events.md) — `module-social-network-social-network-events-react-inertia`
+- [Social Network Federation React](social-network-federation.md) — `module-social-network-social-network-federation-react-inertia`
+- [Social Network Feed React](social-network-feed.md) — `module-social-network-social-network-feed-react-inertia`
+- [Social Network Media React](social-network-media.md) — `module-social-network-social-network-media-react-inertia`
+- [Social Network Messaging React](social-network-messaging.md) — `module-social-network-social-network-messaging-react-inertia`
+- [Social Network Moderation React](social-network-moderation.md) — `module-social-network-social-network-moderation-react-inertia`
+- [Social Network Notifications React](social-network-notifications.md) — `module-social-network-social-network-notifications-react-inertia`
+- [Social Network Profiles React](social-network-profiles.md) — `module-social-network-social-network-profiles-react-inertia`
+- [Social Network Publishing React](social-network-publishing.md) — `module-social-network-social-network-publishing-react-inertia`
+- [Social Network Social Core React](social-network-social-core.md) — `module-social-network-social-network-social-core-react-inertia`
+- [Social Network Social Graph React](social-network-social-graph.md) — `module-social-network-social-network-social-graph-react-inertia`
+- [Theme Support React](theme-support.md) — `module-social-network-theme-support-react-inertia`
+- [Two Factor Authentication React](two-factor-authentication.md) — `module-social-network-two-factor-authentication-react-inertia`
+- [Webhooks React](webhooks.md) — `module-social-network-webhooks-react-inertia`

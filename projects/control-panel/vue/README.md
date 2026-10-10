@@ -1,47 +1,50 @@
-# Control-Panel Vue 3 + Inertia 3 Implementations
+# Control Panel Vue + Inertia Implementations
 
-**Source:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Control Core Vue + Inertia](control-core.md) — `module-control-panel-control-core-vue-inertia`
-- [OS Adapters Vue + Inertia](os-adapters.md) — `module-control-panel-os-adapters-vue-inertia`
-- [Accounts Vue + Inertia](accounts.md) — `module-control-panel-accounts-vue-inertia`
-- [Web Hosting Vue + Inertia](web-hosting.md) — `module-control-panel-web-hosting-vue-inertia`
-- [Mail Vue + Inertia](mail.md) — `module-control-panel-mail-vue-inertia`
-- [Databases Vue + Inertia](databases.md) — `module-control-panel-databases-vue-inertia`
-- [DNS Vue + Inertia](dns.md) — `module-control-panel-dns-vue-inertia`
-- [Files Vue + Inertia](files.md) — `module-control-panel-files-vue-inertia`
-- [Certificates Vue + Inertia](certificates.md) — `module-control-panel-certificates-vue-inertia`
-- [Backups Vue + Inertia](backups.md) — `module-control-panel-backups-vue-inertia`
-- [Security Vue + Inertia](security.md) — `module-control-panel-security-vue-inertia`
-- [Monitoring Vue + Inertia](monitoring.md) — `module-control-panel-monitoring-vue-inertia`
-- [Containers Vue + Inertia](containers.md) — `module-control-panel-containers-vue-inertia`
-- [Kubernetes Vue + Inertia](kubernetes.md) — `module-control-panel-kubernetes-vue-inertia`
-- [API and Automation Vue + Inertia](api-and-automation.md) — `module-control-panel-api-and-automation-vue-inertia`
-
-**Source:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
-
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Control Core Vue + Inertia](control-core.md) — `module-control-panel-control-core-vue-inertia`
-- [OS Adapters Vue + Inertia](os-adapters.md) — `module-control-panel-os-adapters-vue-inertia`
-- [Accounts Vue + Inertia](accounts.md) — `module-control-panel-accounts-vue-inertia`
-- [Web Hosting Vue + Inertia](web-hosting.md) — `module-control-panel-web-hosting-vue-inertia`
-- [Mail Vue + Inertia](mail.md) — `module-control-panel-mail-vue-inertia`
-- [Databases Vue + Inertia](databases.md) — `module-control-panel-databases-vue-inertia`
-- [DNS Vue + Inertia](dns.md) — `module-control-panel-dns-vue-inertia`
-- [Files Vue + Inertia](files.md) — `module-control-panel-files-vue-inertia`
-- [Certificates Vue + Inertia](certificates.md) — `module-control-panel-certificates-vue-inertia`
-- [Backups Vue + Inertia](backups.md) — `module-control-panel-backups-vue-inertia`
-- [Security Vue + Inertia](security.md) — `module-control-panel-security-vue-inertia`
-- [Monitoring Vue + Inertia](monitoring.md) — `module-control-panel-monitoring-vue-inertia`
-- [Containers Vue + Inertia](containers.md) — `module-control-panel-containers-vue-inertia`
-- [Kubernetes Vue + Inertia](kubernetes.md) — `module-control-panel-kubernetes-vue-inertia`
-- [API and Automation Vue + Inertia](api-and-automation.md) — `module-control-panel-api-and-automation-vue-inertia`
+- [Activity Comments Vue](activity-comments.md) — `module-control-panel-activity-comments-vue-inertia`
+- [Analytics Core Vue](analytics-core.md) — `module-control-panel-analytics-core-vue-inertia`
+- [Analytics Google Vue](analytics-google.md) — `module-control-panel-analytics-google-vue-inertia`
+- [Analytics Meta Vue](analytics-meta.md) — `module-control-panel-analytics-meta-vue-inertia`
+- [Api Access Vue](api-access.md) — `module-control-panel-api-access-vue-inertia`
+- [Application Vue](application.md) — `module-control-panel-application-vue-inertia`
+- [Audit Vue](audit.md) — `module-control-panel-audit-vue-inertia`
+- [Control Panel Accounts Vue](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-vue-inertia`
+- [Control Panel Api And Automation Vue](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-vue-inertia`
+- [Control Panel Backups Vue](control-panel-backups.md) — `module-control-panel-control-panel-backups-vue-inertia`
+- [Control Panel Certificates Vue](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-vue-inertia`
+- [Control Panel Containers Vue](control-panel-containers.md) — `module-control-panel-control-panel-containers-vue-inertia`
+- [Control Panel Control Core Vue](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-vue-inertia`
+- [Control Panel Databases Vue](control-panel-databases.md) — `module-control-panel-control-panel-databases-vue-inertia`
+- [Control Panel Dns Vue](control-panel-dns.md) — `module-control-panel-control-panel-dns-vue-inertia`
+- [Control Panel Files Vue](control-panel-files.md) — `module-control-panel-control-panel-files-vue-inertia`
+- [Control Panel Kubernetes Vue](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-vue-inertia`
+- [Control Panel Mail Vue](control-panel-mail.md) — `module-control-panel-control-panel-mail-vue-inertia`
+- [Control Panel Monitoring Vue](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-vue-inertia`
+- [Control Panel Os Adapters Vue](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-vue-inertia`
+- [Control Panel Security Vue](control-panel-security.md) — `module-control-panel-control-panel-security-vue-inertia`
+- [Control Panel Web Hosting Vue](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-vue-inertia`
+- [Currency Context Vue](currency-context.md) — `module-control-panel-currency-context-vue-inertia`
+- [Developer Experience Vue](developer-experience.md) — `module-control-panel-developer-experience-vue-inertia`
+- [Feature Flags Vue](feature-flags.md) — `module-control-panel-feature-flags-vue-inertia`
+- [Files Media Vue](files-media.md) — `module-control-panel-files-media-vue-inertia`
+- [Identity Core Vue](identity-core.md) — `module-control-panel-identity-core-vue-inertia`
+- [Identity Socialstream Vue](identity-socialstream.md) — `module-control-panel-identity-socialstream-vue-inertia`
+- [Import Export Vue](import-export.md) — `module-control-panel-import-export-vue-inertia`
+- [Integrations Vue](integrations.md) — `module-control-panel-integrations-vue-inertia`
+- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-vue-inertia`
+- [Localization Core Vue](localization-core.md) — `module-control-panel-localization-core-vue-inertia`
+- [Localization Mymemory Vue](localization-mymemory.md) — `module-control-panel-localization-mymemory-vue-inertia`
+- [Module Manager Vue](module-manager.md) — `module-control-panel-module-manager-vue-inertia`
+- [Notifications Vue](notifications.md) — `module-control-panel-notifications-vue-inertia`
+- [Observability Vue](observability.md) — `module-control-panel-observability-vue-inertia`
+- [Organizations Teams Vue](organizations-teams.md) — `module-control-panel-organizations-teams-vue-inertia`
+- [Profiles Vue](profiles.md) — `module-control-panel-profiles-vue-inertia`
+- [Roles Permissions Vue](roles-permissions.md) — `module-control-panel-roles-permissions-vue-inertia`
+- [Scheduler Queues Vue](scheduler-queues.md) — `module-control-panel-scheduler-queues-vue-inertia`
+- [Search Vue](search.md) — `module-control-panel-search-vue-inertia`
+- [Sessions Devices Vue](sessions-devices.md) — `module-control-panel-sessions-devices-vue-inertia`
+- [Settings Vue](settings.md) — `module-control-panel-settings-vue-inertia`
+- [Theme Support Vue](theme-support.md) — `module-control-panel-theme-support-vue-inertia`
+- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-vue-inertia`
+- [Webhooks Vue](webhooks.md) — `module-control-panel-webhooks-vue-inertia`

@@ -1,45 +1,50 @@
-# Maintenance Vue 3 + Inertia 3 Implementations
+# Maintenance Vue + Inertia Implementations
 
-**Source:** [MAINTENANCE.md](../MAINTENANCE.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Maintenance Core Vue + Inertia](maintenance-core.md) — `module-maintenance-core-vue-inertia`
-- [Customers and Sites Vue + Inertia](customers-and-sites.md) — `module-maintenance-customers-and-sites-vue-inertia`
-- [Assets Vue + Inertia](assets.md) — `module-maintenance-assets-vue-inertia`
-- [Work Orders Vue + Inertia](work-orders.md) — `module-maintenance-work-orders-vue-inertia`
-- [Scheduling Vue + Inertia](scheduling.md) — `module-maintenance-scheduling-vue-inertia`
-- [Preventative Maintenance Vue + Inertia](preventative-maintenance.md) — `module-maintenance-preventative-maintenance-vue-inertia`
-- [Inspections Vue + Inertia](inspections.md) — `module-maintenance-inspections-vue-inertia`
-- [Inventory Vue + Inertia](inventory.md) — `module-maintenance-inventory-vue-inertia`
-- [Procurement Vue + Inertia](procurement.md) — `module-maintenance-procurement-vue-inertia`
-- [Labor and Time Vue + Inertia](labor-and-time.md) — `module-maintenance-labor-and-time-vue-inertia`
-- [Commercial Vue + Inertia](commercial.md) — `module-maintenance-commercial-vue-inertia`
-- [Compliance Vue + Inertia](compliance.md) — `module-maintenance-compliance-vue-inertia`
-- [Portals Vue + Inertia](portals.md) — `module-maintenance-portals-vue-inertia`
-- [Reporting Vue + Inertia](reporting.md) — `module-maintenance-reporting-vue-inertia`
-
-**Source:** [MAINTENANCE.md](../MAINTENANCE.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
-
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Maintenance Core Vue + Inertia](maintenance-core.md) — `module-maintenance-core-vue-inertia`
-- [Customers and Sites Vue + Inertia](customers-and-sites.md) — `module-maintenance-customers-and-sites-vue-inertia`
-- [Assets Vue + Inertia](assets.md) — `module-maintenance-assets-vue-inertia`
-- [Work Orders Vue + Inertia](work-orders.md) — `module-maintenance-work-orders-vue-inertia`
-- [Scheduling Vue + Inertia](scheduling.md) — `module-maintenance-scheduling-vue-inertia`
-- [Preventative Maintenance Vue + Inertia](preventative-maintenance.md) — `module-maintenance-preventative-maintenance-vue-inertia`
-- [Inspections Vue + Inertia](inspections.md) — `module-maintenance-inspections-vue-inertia`
-- [Inventory Vue + Inertia](inventory.md) — `module-maintenance-inventory-vue-inertia`
-- [Procurement Vue + Inertia](procurement.md) — `module-maintenance-procurement-vue-inertia`
-- [Labor and Time Vue + Inertia](labor-and-time.md) — `module-maintenance-labor-and-time-vue-inertia`
-- [Commercial Vue + Inertia](commercial.md) — `module-maintenance-commercial-vue-inertia`
-- [Compliance Vue + Inertia](compliance.md) — `module-maintenance-compliance-vue-inertia`
-- [Portals Vue + Inertia](portals.md) — `module-maintenance-portals-vue-inertia`
-- [Reporting Vue + Inertia](reporting.md) — `module-maintenance-reporting-vue-inertia`
+- [Activity Comments Vue](activity-comments.md) — `module-maintenance-activity-comments-vue-inertia`
+- [Analytics Core Vue](analytics-core.md) — `module-maintenance-analytics-core-vue-inertia`
+- [Analytics Google Vue](analytics-google.md) — `module-maintenance-analytics-google-vue-inertia`
+- [Analytics Meta Vue](analytics-meta.md) — `module-maintenance-analytics-meta-vue-inertia`
+- [Api Access Vue](api-access.md) — `module-maintenance-api-access-vue-inertia`
+- [Application Vue](application.md) — `module-maintenance-application-vue-inertia`
+- [Audit Vue](audit.md) — `module-maintenance-audit-vue-inertia`
+- [Currency Context Vue](currency-context.md) — `module-maintenance-currency-context-vue-inertia`
+- [Developer Experience Vue](developer-experience.md) — `module-maintenance-developer-experience-vue-inertia`
+- [Feature Flags Vue](feature-flags.md) — `module-maintenance-feature-flags-vue-inertia`
+- [Files Media Vue](files-media.md) — `module-maintenance-files-media-vue-inertia`
+- [Identity Core Vue](identity-core.md) — `module-maintenance-identity-core-vue-inertia`
+- [Identity Socialstream Vue](identity-socialstream.md) — `module-maintenance-identity-socialstream-vue-inertia`
+- [Import Export Vue](import-export.md) — `module-maintenance-import-export-vue-inertia`
+- [Integrations Vue](integrations.md) — `module-maintenance-integrations-vue-inertia`
+- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-vue-inertia`
+- [Localization Core Vue](localization-core.md) — `module-maintenance-localization-core-vue-inertia`
+- [Localization Mymemory Vue](localization-mymemory.md) — `module-maintenance-localization-mymemory-vue-inertia`
+- [Maintenance Maintenance Core Vue](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-vue-inertia`
+- [Module Maintenance Assets Vue](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-vue-inertia`
+- [Module Maintenance Commercial Vue](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-vue-inertia`
+- [Module Maintenance Compliance Vue](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-vue-inertia`
+- [Module Maintenance Core Vue](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-vue-inertia`
+- [Module Maintenance Customers And Sites Vue](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-vue-inertia`
+- [Module Maintenance Inspections Vue](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-vue-inertia`
+- [Module Maintenance Inventory Vue](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-vue-inertia`
+- [Module Maintenance Labor And Time Vue](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-vue-inertia`
+- [Module Maintenance Portals Vue](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-vue-inertia`
+- [Module Maintenance Preventative Maintenance Vue](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-vue-inertia`
+- [Module Maintenance Procurement Vue](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-vue-inertia`
+- [Module Maintenance Reporting Vue](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-vue-inertia`
+- [Module Maintenance Scheduling Vue](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-vue-inertia`
+- [Module Maintenance Work Orders Vue](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-vue-inertia`
+- [Module Manager Vue](module-manager.md) — `module-maintenance-module-manager-vue-inertia`
+- [Notifications Vue](notifications.md) — `module-maintenance-notifications-vue-inertia`
+- [Observability Vue](observability.md) — `module-maintenance-observability-vue-inertia`
+- [Organizations Teams Vue](organizations-teams.md) — `module-maintenance-organizations-teams-vue-inertia`
+- [Profiles Vue](profiles.md) — `module-maintenance-profiles-vue-inertia`
+- [Roles Permissions Vue](roles-permissions.md) — `module-maintenance-roles-permissions-vue-inertia`
+- [Scheduler Queues Vue](scheduler-queues.md) — `module-maintenance-scheduler-queues-vue-inertia`
+- [Search Vue](search.md) — `module-maintenance-search-vue-inertia`
+- [Sessions Devices Vue](sessions-devices.md) — `module-maintenance-sessions-devices-vue-inertia`
+- [Settings Vue](settings.md) — `module-maintenance-settings-vue-inertia`
+- [Theme Support Vue](theme-support.md) — `module-maintenance-theme-support-vue-inertia`
+- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-vue-inertia`
+- [Webhooks Vue](webhooks.md) — `module-maintenance-webhooks-vue-inertia`

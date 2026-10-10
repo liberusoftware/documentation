@@ -1,20 +1,50 @@
 # Automation API Module Specifications
 
-**Source:** [AUTOMATION.md](../AUTOMATION.md)
-**Architecture:** [API.md](../AUTOMATION.md) · [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md)
-
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-## Module plan
-
-- [Automation Core API](automation-core.md) — `module-automation-core-api`
-- [Rules API](rules.md) — `module-automation-rules-api`
-- [Approvals API](approvals.md) — `module-automation-approvals-api`
-- [AI Gateway API](ai-gateway.md) — `module-automation-ai-gateway-api`
-- [Prompt Registry API](prompt-registry.md) — `module-automation-prompt-registry-api`
-- [Data Processing API](data-processing.md) — `module-automation-data-processing-api`
-- [Voice API](voice.md) — `module-automation-voice-api`
-- [Image API](image.md) — `module-automation-image-api`
-- [Video API](video.md) — `module-automation-video-api`
-- [Connectors API](connectors.md) — `module-automation-connectors-api`
-- [Evaluation API](evaluation.md) — `module-automation-evaluation-api`
+- [Activity Comments API](activity-comments.md) — `module-automation-activity-comments-api`
+- [Analytics Core API](analytics-core.md) — `module-automation-analytics-core-api`
+- [Analytics Google API](analytics-google.md) — `module-automation-analytics-google-api`
+- [Analytics Meta API](analytics-meta.md) — `module-automation-analytics-meta-api`
+- [Api Access API](api-access.md) — `module-automation-api-access-api`
+- [Application API](application.md) — `module-automation-application-api`
+- [Audit API](audit.md) — `module-automation-audit-api`
+- [Currency Context API](currency-context.md) — `module-automation-currency-context-api`
+- [Developer Experience API](developer-experience.md) — `module-automation-developer-experience-api`
+- [Feature Flags API](feature-flags.md) — `module-automation-feature-flags-api`
+- [Files Media API](files-media.md) — `module-automation-files-media-api`
+- [Identity Core API](identity-core.md) — `module-automation-identity-core-api`
+- [Identity Socialstream API](identity-socialstream.md) — `module-automation-identity-socialstream-api`
+- [Import Export API](import-export.md) — `module-automation-import-export-api`
+- [Integrations API](integrations.md) — `module-automation-integrations-api`
+- [Jetstream Bridge API](jetstream-bridge.md) — `module-automation-jetstream-bridge-api`
+- [Liberu Business Workflow Reconciliation API](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-api`
+- [Liberu Executive Insights API](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-api`
+- [Liberu Platform Orchestration API](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-api`
+- [Liberu Revenue And Care Orchestration API](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-api`
+- [Localization Core API](localization-core.md) — `module-automation-localization-core-api`
+- [Localization Mymemory API](localization-mymemory.md) — `module-automation-localization-mymemory-api`
+- [Module Automation Ai Gateway API](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-api`
+- [Module Automation Approvals API](module-automation-approvals.md) — `module-automation-module-automation-approvals-api`
+- [Module Automation Automation Core API](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-api`
+- [Module Automation Connectors API](module-automation-connectors.md) — `module-automation-module-automation-connectors-api`
+- [Module Automation Data Processing API](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-api`
+- [Module Automation Evaluation API](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-api`
+- [Module Automation Image API](module-automation-image.md) — `module-automation-module-automation-image-api`
+- [Module Automation Prompt Registry API](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-api`
+- [Module Automation Rules API](module-automation-rules.md) — `module-automation-module-automation-rules-api`
+- [Module Automation Video API](module-automation-video.md) — `module-automation-module-automation-video-api`
+- [Module Automation Voice API](module-automation-voice.md) — `module-automation-module-automation-voice-api`
+- [Module Manager API](module-manager.md) — `module-automation-module-manager-api`
+- [Notifications API](notifications.md) — `module-automation-notifications-api`
+- [Observability API](observability.md) — `module-automation-observability-api`
+- [Organizations Teams API](organizations-teams.md) — `module-automation-organizations-teams-api`
+- [Profiles API](profiles.md) — `module-automation-profiles-api`
+- [Roles Permissions API](roles-permissions.md) — `module-automation-roles-permissions-api`
+- [Scheduler Queues API](scheduler-queues.md) — `module-automation-scheduler-queues-api`
+- [Search API](search.md) — `module-automation-search-api`
+- [Sessions Devices API](sessions-devices.md) — `module-automation-sessions-devices-api`
+- [Settings API](settings.md) — `module-automation-settings-api`
+- [Theme Support API](theme-support.md) — `module-automation-theme-support-api`
+- [Two Factor Authentication API](two-factor-authentication.md) — `module-automation-two-factor-authentication-api`
+- [Webhooks API](webhooks.md) — `module-automation-webhooks-api`
