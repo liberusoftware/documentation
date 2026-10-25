@@ -1,5 +1,9 @@
 # Liberu Revenue And Care Orchestration React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#liberu-revenue-and-care-orchestration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-genealogy-liberu-revenue-and-care-orchestration-react-native
 **Matching core package:** module-genealogy-liberu-revenue-and-care-orchestration ([implementation](../core/liberu-revenue-and-care-orchestration.md))
 **Matching API package:** module-genealogy-liberu-revenue-and-care-orchestration-api ([contract](../api/liberu-revenue-and-care-orchestration.md))

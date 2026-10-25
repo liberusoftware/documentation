@@ -1,6 +1,10 @@
 # Boilerplate: Feature Flags domain packages
 
-**Composer package:** `module-feature-flags`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#feature-flags). Observed identity: [`liberusoftware/feature-flags`](../../../modules/source/liberusoftware--feature-flags.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-feature-flags`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Typed flags, environment/tenant/user targeting, rollout, telemetry, ownership, and cleanup.
 

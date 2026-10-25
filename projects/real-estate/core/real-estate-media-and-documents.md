@@ -1,8 +1,12 @@
 # Real Estate: Real Estate Media And Documents Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-media-and-documents). Observed identity: [`liberusoftware/real-estate-media-and-documents`](../../../modules/source/liberusoftware--real-estate-media-and-documents.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-real-estate-real-estate-media-and-documents`
+**Design package identifier:** `module-real-estate-real-estate-media-and-documents`
 **Domain specification:** [Real Estate Media And Documents](../features/real-estate-media-and-documents.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,12 +1,16 @@
 # Ecommerce: Multi-Source Inventory Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#multi-source-inventory). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-ecommerce-multi-source-inventory-livewire`  
 **Matching domain module:** `ecommerce-multi-source-inventory`  
 **Application:** Ecommerce  
 **Source feature:** [Multi-Source Inventory](../features/multi-source-inventory.md)  
-**Architecture:** [LIVEWIRE.md](../ECOMMERCE.md) · [MODULES.md](../ECOMMERCE.md) · [TESTING.md](../ECOMMERCE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

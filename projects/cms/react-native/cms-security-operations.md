@@ -1,5 +1,9 @@
 # Cms Security Operations React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-security-operations). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-security-operations-react-native
 **Matching core package:** module-cms-cms-security-operations ([implementation](../core/cms-security-operations.md))
 **Matching API package:** module-cms-cms-security-operations-api ([contract](../api/cms-security-operations.md))

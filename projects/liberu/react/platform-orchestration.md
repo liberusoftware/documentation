@@ -1,5 +1,11 @@
 # Liberu: Platform Orchestration React 19.2 + Inertia 3
 
+**Existing cross-project implementations:** the [platform reuse guide](../REUSE.md) identifies the observed prefixed/unprefixed package families, namespaces, tables and adoption constraints. This scope is their composition/design home; it does not require a third independent implementation.
+
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#platform-orchestration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one presentation implementation
 
 **Package:** `module-liberu-platform-orchestration-react-inertia`
@@ -119,3 +125,13 @@ This optional React 19.2 + Inertia 3 package presents exactly one new Liberu cro
 - Public routes, props, events, resources, components, and extension points are documented and namespaced.
 - CI passes contract, authorization, tenant isolation, accessibility, compatibility, and failure/recovery checks.
 - Release notes, migration guidance, runbook, and uninstall/disable behavior are complete.
+
+<!-- inertia-transport:start -->
+### Inertia transport boundary
+
+Use Laravel-owned Inertia page/command routes for visits and forms. The controller can invoke the module's public application actions in the same host or use a deliberate API adapter, then return an Inertia page/redirect response. A bare REST JSON resource response is not an Inertia page. Keep authoritative domain authorization and validation in the owning boundary for either path.
+
+Independent API consumers and Next.js use their reviewed HTTP/session integration. Share DTOs and framework-independent UI primitives; keep Inertia page props, visits, form errors and redirects in the Inertia wrapper. Do not introduce loopback HTTP solely to reuse a public action inside the same Laravel host.
+
+See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](https://inertiajs.com/docs/v3/core-concepts/how-it-works) and [redirect behavior](https://inertiajs.com/docs/v3/the-basics/redirects).
+<!-- inertia-transport:end -->

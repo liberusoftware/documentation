@@ -1,8 +1,12 @@
 # Cms: Content Intelligence Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#content-intelligence). Observed identity: [`liberusoftware/module-cms-content-intelligence`](../../../modules/source/liberusoftware--module-cms-content-intelligence.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-content-intelligence`
+**Design package identifier:** `module-cms-content-intelligence`
 **Domain specification:** [Content Intelligence](../features/content-intelligence.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

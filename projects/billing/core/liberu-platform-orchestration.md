@@ -1,8 +1,12 @@
 # Billing: Liberu Platform Orchestration Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#liberu-platform-orchestration). Observed identity: [`liberusoftware/module-liberu-platform-orchestration`](../../../modules/source/liberusoftware--module-liberu-platform-orchestration.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-liberu-platform-orchestration`
+**Design package identifier:** `module-billing-liberu-platform-orchestration`
 **Domain specification:** [Liberu Platform Orchestration](../features/liberu-platform-orchestration.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

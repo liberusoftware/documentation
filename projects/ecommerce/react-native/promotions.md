@@ -1,5 +1,9 @@
 # Promotions React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#promotions). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-promotions-react-native
 **Matching core package:** module-ecommerce-promotions ([implementation](../core/promotions.md))
 **Matching API package:** module-ecommerce-promotions-api ([contract](../api/promotions.md))

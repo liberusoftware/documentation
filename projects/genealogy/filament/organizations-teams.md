@@ -1,12 +1,16 @@
 # Genealogy: Organizations Teams Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#organizations-teams). Observed identity: [`liberusoftware/organizations-teams-filament`](../../../modules/source/liberusoftware--organizations-teams-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-genealogy-organizations-teams-filament`  
 **Matching domain module:** `organizations-teams`  
 **Application:** Genealogy  
 **Source feature:** [Organizations Teams](../features/organizations-teams.md)  
-**Architecture:** [FILAMENT.md](../GENEALOGY.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,12 +1,16 @@
 # CRM: Api Access Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#api-access). Observed identity: [`liberusoftware/api-access-filament`](../../../modules/source/liberusoftware--api-access-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-api-access-filament`  
 **Matching domain module:** `api-access`  
 **Application:** CRM  
 **Source feature:** [Api Access](../features/api-access.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,12 +1,16 @@
 # Real Estate: Real Estate Onthemarket Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-onthemarket). Observed identity: [`liberusoftware/real-estate-onthemarket-livewire`](../../../modules/source/liberusoftware--real-estate-onthemarket-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-real-estate-real-estate-onthemarket-livewire`  
 **Matching domain module:** `real-estate-onthemarket`  
 **Application:** Real Estate  
 **Source feature:** [Real Estate Onthemarket](../features/real-estate-onthemarket.md)  
-**Architecture:** [LIVEWIRE.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

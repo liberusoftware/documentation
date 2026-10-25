@@ -1,12 +1,16 @@
 # CRM: Knowledge Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#knowledge). Observed identity: [`liberusoftware/module-crm-knowledge-filament`](../../../modules/source/liberusoftware--module-crm-knowledge-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-knowledge-filament`  
 **Matching domain module:** `crm-knowledge`  
 **Application:** CRM  
 **Source feature:** [Knowledge](../features/knowledge.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,5 +1,9 @@
 # Cms Joomla Migration Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-joomla-migration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-joomla-migration-flutter
 **Matching core package:** module-cms-cms-joomla-migration ([implementation](../core/cms-joomla-migration.md))
 **Matching API package:** module-cms-cms-joomla-migration-api ([contract](../api/cms-joomla-migration.md))

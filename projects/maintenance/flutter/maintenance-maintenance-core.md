@@ -1,5 +1,9 @@
 # Maintenance Maintenance Core Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#maintenance-maintenance-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-maintenance-maintenance-maintenance-core-flutter
 **Matching core package:** module-maintenance-maintenance-maintenance-core ([implementation](../core/maintenance-maintenance-core.md))
 **Matching API package:** module-maintenance-maintenance-maintenance-core-api ([contract](../api/maintenance-maintenance-core.md))

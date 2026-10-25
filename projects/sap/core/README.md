@@ -1,25 +1,29 @@
 # Sap Core Modules
 
+<!-- catalogue-status:start -->
+This index preserves **16 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 This index covers the Laravel 13/PHP 8.5 core Composer packages for the Sap domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
 
-| Module                                                              | Core package                              | Domain specification                                     |
-| ------------------------------------------------------------------- | ----------------------------------------- | -------------------------------------------------------- |
-| [Assets And Facilities](assets-and-facilities.md)                   | module-sap-assets-and-facilities          | [Feature](../features/assets-and-facilities.md)          |
-| [Controlling](controlling.md)                                       | module-sap-controlling                    | [Feature](../features/controlling.md)                    |
-| [Data And Intelligence](data-and-intelligence.md)                   | module-sap-data-and-intelligence          | [Feature](../features/data-and-intelligence.md)          |
-| [Enterprise Foundation](enterprise-foundation.md)                   | module-sap-enterprise-foundation          | [Feature](../features/enterprise-foundation.md)          |
-| [Finance](finance.md)                                               | module-sap-finance                        | [Feature](../features/finance.md)                        |
-| [Governance Risk And Compliance](governance-risk-and-compliance.md) | module-sap-governance-risk-and-compliance | [Feature](../features/governance-risk-and-compliance.md) |
-| [Hosting And Cloud](hosting-and-cloud.md)                           | module-sap-hosting-and-cloud              | [Feature](../features/hosting-and-cloud.md)              |
-| [Inventory And Logistics](inventory-and-logistics.md)               | module-sap-inventory-and-logistics        | [Feature](../features/inventory-and-logistics.md)        |
-| [Partners And Portals](partners-and-portals.md)                     | module-sap-partners-and-portals           | [Feature](../features/partners-and-portals.md)           |
-| [People](people.md)                                                 | module-sap-people                         | [Feature](../features/people.md)                         |
-| [Procurement](procurement.md)                                       | module-sap-procurement                    | [Feature](../features/procurement.md)                    |
-| [Product And Engineering](product-and-engineering.md)               | module-sap-product-and-engineering        | [Feature](../features/product-and-engineering.md)        |
-| [Projects And Services](projects-and-services.md)                   | module-sap-projects-and-services          | [Feature](../features/projects-and-services.md)          |
-| [Revenue Operations](revenue-operations.md)                         | module-sap-revenue-operations             | [Feature](../features/revenue-operations.md)             |
-| [Sales And Crm](sales-and-crm.md)                                   | module-sap-sales-and-crm                  | [Feature](../features/sales-and-crm.md)                  |
-| [Service Management](service-management.md)                         | module-sap-service-management             | [Feature](../features/service-management.md)             |
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [core composition design](assets-and-facilities.md) | [Target/source map](../SOURCE-MAPPING.md#assets-and-facilities) | [api](../api/assets-and-facilities.md) · [nextjs](../nextjs/assets-and-facilities.md) |
+| [core composition design](controlling.md) | [Target/source map](../SOURCE-MAPPING.md#controlling) | [api](../api/controlling.md) · [nextjs](../nextjs/controlling.md) |
+| [core composition design](data-and-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#data-and-intelligence) | [api](../api/data-and-intelligence.md) · [nextjs](../nextjs/data-and-intelligence.md) |
+| [core composition design](enterprise-foundation.md) | [Target/source map](../SOURCE-MAPPING.md#enterprise-foundation) | [api](../api/enterprise-foundation.md) · [nextjs](../nextjs/enterprise-foundation.md) |
+| [core composition design](finance.md) | [Target/source map](../SOURCE-MAPPING.md#finance) | [api](../api/finance.md) · [nextjs](../nextjs/finance.md) |
+| [core composition design](governance-risk-and-compliance.md) | [Target/source map](../SOURCE-MAPPING.md#governance-risk-and-compliance) | [api](../api/governance-risk-and-compliance.md) · [nextjs](../nextjs/governance-risk-and-compliance.md) |
+| [core composition design](hosting-and-cloud.md) | [Target/source map](../SOURCE-MAPPING.md#hosting-and-cloud) | [api](../api/hosting-and-cloud.md) · [nextjs](../nextjs/hosting-and-cloud.md) |
+| [core composition design](inventory-and-logistics.md) | [Target/source map](../SOURCE-MAPPING.md#inventory-and-logistics) | [api](../api/inventory-and-logistics.md) · [nextjs](../nextjs/inventory-and-logistics.md) |
+| [core composition design](partners-and-portals.md) | [Target/source map](../SOURCE-MAPPING.md#partners-and-portals) | [api](../api/partners-and-portals.md) · [nextjs](../nextjs/partners-and-portals.md) |
+| [core composition design](people.md) | [Target/source map](../SOURCE-MAPPING.md#people) | [api](../api/people.md) · [nextjs](../nextjs/people.md) |
+| [core composition design](procurement.md) | [Target/source map](../SOURCE-MAPPING.md#procurement) | [api](../api/procurement.md) · [nextjs](../nextjs/procurement.md) |
+| [core composition design](product-and-engineering.md) | [Target/source map](../SOURCE-MAPPING.md#product-and-engineering) | [api](../api/product-and-engineering.md) · [nextjs](../nextjs/product-and-engineering.md) |
+| [core composition design](projects-and-services.md) | [Target/source map](../SOURCE-MAPPING.md#projects-and-services) | [api](../api/projects-and-services.md) · [nextjs](../nextjs/projects-and-services.md) |
+| [core composition design](revenue-operations.md) | [Target/source map](../SOURCE-MAPPING.md#revenue-operations) | [api](../api/revenue-operations.md) · [nextjs](../nextjs/revenue-operations.md) |
+| [core composition design](sales-and-crm.md) | [Target/source map](../SOURCE-MAPPING.md#sales-and-crm) | [api](../api/sales-and-crm.md) · [nextjs](../nextjs/sales-and-crm.md) |
+| [core composition design](service-management.md) | [Target/source map](../SOURCE-MAPPING.md#service-management) | [api](../api/service-management.md) · [nextjs](../nextjs/service-management.md) |
 
 ## Shared implementation contract
 

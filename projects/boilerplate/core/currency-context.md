@@ -1,6 +1,10 @@
 # Boilerplate: Currency Context domain packages
 
-**Composer package:** `module-currency-context`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#currency-context). Observed identity: [`liberusoftware/currency-context`](../../../modules/source/liberusoftware--currency-context.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-currency-context`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Currency metadata, preferences, precision, formatting, exchange-rate contracts, and context.
 

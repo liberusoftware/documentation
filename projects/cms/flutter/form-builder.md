@@ -1,5 +1,9 @@
 # Form Builder Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#form-builder). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-form-builder-flutter
 **Matching core package:** module-cms-form-builder ([implementation](../core/form-builder.md))
 **Matching API package:** module-cms-form-builder-api ([contract](../api/form-builder.md))

@@ -1,5 +1,9 @@
 # Matching Intelligence Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#matching-intelligence). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-matching-intelligence-flutter
 **Matching core package:** module-accounting-matching-intelligence ([implementation](../core/matching-intelligence.md))
 **Matching API package:** module-accounting-matching-intelligence-api ([contract](../api/matching-intelligence.md))

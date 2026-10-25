@@ -1,193 +1,143 @@
-# SAP: Controlling API
+# Controlling: enterprise API design
 
-## Canonical one-to-one API module specification
+**Status:** proposed composition contract. The [observed SAP source](../SOURCE-APPLICATION.md) establishes a foundation host, not these enterprise business endpoints. The paths, schemas and examples below require implementation/adoption review before any client uses them.
 
-**API package:** `module-sap-controlling-api`
-**Matching domain module:** `sap-controlling`
-**Application:** SAP
-**Source feature:** [Controlling](../features/controlling.md)
-**Architecture:** [API.md](../SAP.md) · [MODULES.md](../SAP.md) · [TESTING.md](../SAP.md)
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#controlling). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
 
 ## 1. Purpose and ownership
 
-This optional API presentation package exposes approved HTTP operations for the Controlling domain module. It presents exactly one independent module, delegates all authoritative behavior to that module's public actions/queries/policies, and contains no other module's API logic.
+Reuse Accounting dimensions, budgets, periods, and posted balances. Enterprise controlling owns documented allocation rules, scenario versions, and cross-unit profitability projections where missing.
 
-The domain capability includes:
+The primary enterprise workflow record is a **allocation run**. A façade can coordinate owning product APIs and an enterprise read model, while the original product retains write authority for its records. `module-sap-controlling-api` is a design identifier; it does not establish a published Composer package or another authoritative business implementation.
 
-- Cost/profit centers
-- internal orders
-- allocation
-- planning
-- variance
-- unit economics
-- profitability
-
-Installation does not expose every capability automatically. The host application selects this package, API version, audiences, route groups, and operations in its API manifest.
+Read the [detailed domain design](../design/controlling.md), [composition guide](../COMPOSITION.md), and [API architecture](../../../architecture/API.md) for the surrounding boundaries.
 
 ## 2. Contract design
 
-- Publish an OpenAPI 3.1 fragment with stable operation IDs, schemas, examples, scopes, errors, pagination, rate limits, idempotency, and deprecation metadata.
-- Use `/api/v1/sap/controlling` as the default module route prefix unless the application owns and documents a compatible façade path.
-- Represent resources through explicit API DTOs/resources rather than automatic Eloquent serialization.
-- Use lowercase kebab-case paths, snake_case JSON fields, opaque identifiers, ISO 8601 timestamps, explicit money objects, and RFC 9457 Problem Details errors.
-- Compatible additions remain within the major version; removals or semantic breaks require a new major version or approved migration path.
+The resource DTO exposes a stable identifier/type, workflow state, record version, authorized source/evidence references and permitted actions. Its domain fields are **`legal_entity_ids`, `period_id`, `rule_version`, `source_balance_snapshot_id`, `driver_snapshot_id`, `scenario_id`, `rounding_policy`**. The [domain field table](../design/controlling.md#records-and-required-context) defines their responsibilities; complete types, limits, sensitivity and required/nullable behavior must be reviewed with the actual owners.
+
+Separate input from output schemas. Resolve actor/service, tenant membership and permitted legal entities from trusted authentication; submitted IDs select records but grant no authority. Resource state, audit fields, source results and permitted actions are server-owned. Paginated reads allowlist filters/sorts/includes and apply field/entity policy before serialization.
+
+The proposed command protocol uses an actor/tenant-scoped `Idempotency-Key` and a documented record-version precondition such as `If-Match`. Scope a stored command result by operation and subject as well as identity; reusing a key with a different request is a conflict. Implement this storage/checking explicitly: passing a header alone does not make a downstream API idempotent.
 
 ## 3. Endpoint examples
 
-**Base path:** `/api/v1/sap/controlling`
+These routes come from the detailed enterprise design. They are not a discovered runtime route list. Record creation/ingestion follows the owning workflow contract; there is no invented generic create/delete operation for an entire business group.
 
-These examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.
+| Method | Proposed path | Responsibility |
+| --- | --- | --- |
+| GET | `/api/v1/enterprise/allocation-runs` | Authorized filtered/paginated workflow records |
+| GET | `/api/v1/enterprise/allocation-runs/{id}` | Workflow detail, source references, state/version and permitted evidence |
+| POST | `/api/v1/enterprise/allocation-runs/{id}/simulate` | Explicit `simulate` command; validate transition, scope and command-specific inputs |
+| POST | `/api/v1/enterprise/allocation-runs/{id}/approve` | Explicit `approve` command; validate transition, scope and command-specific inputs |
+| POST | `/api/v1/enterprise/allocation-runs/{id}/execute` | Explicit `execute` command; validate transition, scope and command-specific inputs |
+| POST | `/api/v1/enterprise/allocation-runs/{id}/reconcile` | Explicit `reconcile` command; validate transition, scope and command-specific inputs |
+| POST | `/api/v1/enterprise/allocation-runs/{id}/cancel` | Explicit `cancel` command; validate transition, scope and command-specific inputs |
 
-| Method   | Endpoint                                                 | Purpose                                       | Possible request data                                                                         |
-| -------- | -------------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `GET`    | `/api/v1/sap/controlling?page[size]=25&sort=-created_at` | List authorized resources                     | Query parameters for pagination, filtering, sorting, field selection, and documented includes |
-| `GET`    | `/api/v1/sap/controlling/{id}`                           | Retrieve one resource                         | Opaque resource `id` in the path; no request body                                             |
-| `POST`   | `/api/v1/sap/controlling`                                | Create a resource                             | JSON body using the module schema and required team/context fields                            |
-| `PATCH`  | `/api/v1/sap/controlling/{id}`                           | Update permitted fields                       | JSON body containing changed fields and `If-Match` when concurrency is supported              |
-| `DELETE` | `/api/v1/sap/controlling/{id}`                           | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted           |
-| `POST`   | `/api/v1/sap/controlling/{id}/<explicit-action>`         | Execute a documented domain action            | Action-specific JSON body and `Idempotency-Key` for retryable writes                          |
+### simulate command
 
-Example create request (illustrative fields only):
+Proposed operation ID: `enterprise.controlling.simulate`. Scenario: `draft` → `simulated` after the business action is confirmed. The example IDs are illustrative; obtain actual identifiers from authorized records.
+
+```http
+POST /api/v1/enterprise/allocation-runs/allocation-example-001/simulate HTTP/1.1
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer YOUR_AUTHORIZED_TOKEN
+If-Match: "record-v12"
+Idempotency-Key: controlling-example-command-001
+```
 
 ```json
 {
-  "cost_profit_centers": "example-value",
-  "internal_orders": "example-value",
-  "allocation": "example-value"
+  "rule_version": "allocation-rule-v3",
+  "source_balance_snapshot_id": "balances-example-001",
+  "driver_snapshot_id": "drivers-example-001",
+  "scenario_id": "scenario-example-001"
 }
 ```
 
-Example request headers:
+Require compatible immutable snapshots and complete allocation drivers. Define zero-driver and rounding-residual behavior; a simulation never posts ledger adjustments.
 
-```http
-Accept: application/json
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Content-Type: application/json
-Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
-X-Request-ID: 01JEXAMPLEREQUESTID
+Publish scenario outputs, residuals and source lineage. Approval and actual posting remain separate actions under the owning policy.
+
+Proposed acceptance response: `202 Accepted`, with `Location: /api/v1/operations/operation-example-001`. Authorization applies when polling the operation and retrieving its result. The returned queue state is not the final business state.
+
+```json
+{
+  "data": {
+    "id": "operation-example-001",
+    "type": "operation",
+    "attributes": {
+      "status": "queued",
+      "operation_id": "enterprise.controlling.simulate",
+      "subject_reference": "allocation-example-001"
+    },
+    "links": {
+      "self": "/api/v1/operations/operation-example-001"
+    }
+  },
+  "meta": {
+    "request_id": "request-example-001"
+  }
+}
 ```
-
-Successful reads and writes return the standard `data` envelope from [API.md](../SAP.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
 
 ## 4. OpenAPI schema
 
-This module owns a versioned OpenAPI 3.1 fragment for `sap-controlling`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/sap-controlling.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.
+The reviewed fragment should define the resource and collection schemas, separate command bodies, operation/result schemas, scopes, version preconditions, idempotency semantics, errors and pagination. Use stable operation IDs for each explicit action and include the owning product/enterprise boundary. Validate/bundle the specification and compare it against supported contracts before generating clients.
 
-### Required schema elements
+This document includes a machine-readable **draft schema for the illustrated `simulate` request only**: [request schema](contracts/controlling.request.schema.json) and [matching example](contracts/controlling.request.example.json). Other command bodies and the complete response/OpenAPI bundle still require their own reviewed schemas. The specimen is not a full implemented service contract.
 
-- Use stable operation IDs such as `sap.controlling.list`, `sap.controlling.get`, `sap.controlling.create`, `sap.controlling.update`, and `sap.controlling.delete`; use an explicit domain action ID when applicable.
-- Define the module's resource schema as `SapControllingResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.
-- Document possible module fields including `cost_profit_centers`, `internal_orders`, `allocation`, `planning`, `variance`, `unit_economics`; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.
-- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.
-- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../SAP.md); do not serialize Eloquent models automatically.
+The specimen makes the illustrated business fields required and rejects unknown properties. Required fields, units, effective-date constraints, value ranges, enum sets and cross-record rules must be confirmed against the selected owner before a release; JSON type validation cannot establish authorization or business validity.
 
-### Minimal fragment example
-
-```yaml
-openapi: 3.1.0
-info:
-  title: sap controlling API
-  version: 1.0.0
-paths:
-  /api/v1/sap/controlling:
-    get:
-      operationId: sap.controlling.list
-      security:
-        - sanctum: []
-      parameters:
-        - $ref: "#/components/parameters/PageSize"
-      responses:
-        "200":
-          $ref: "#/components/responses/ResourceCollection"
-components:
-  parameters:
-    PageSize:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 100
-  securitySchemes:
-    sanctum:
-      type: http
-      scheme: bearer
-      bearerFormat: Sanctum
-  schemas:
-    SapControllingResource:
-      type: object
-      required: [id, type, attributes]
-      properties:
-        id:
-          type: string
-          description: Opaque Liberu resource identifier.
-        type:
-          type: string
-          const: sap-controlling
-        attributes:
-          type: object
-          additionalProperties: true
-    ResourceCollection:
-      type: object
-      required: [data]
-      properties:
-        data:
-          type: array
-          items:
-            $ref: "#/components/schemas/SapControllingResource"
-  responses:
-    ResourceCollection:
-      description: Authorized paginated resources.
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/ResourceCollection"
-```
-
-The example is a contract outline, not a substitute for the complete module schema: replace `additionalProperties` with explicit fields and add create/update/action schemas before release. Validate the fragment, bundle it into the application specification, run breaking-change detection against the supported release, and generate typed clients only from the released specification.
-
-**References:** [OpenAPI 3.1 specification](https://spec.openapis.org/oas/v3.1.0) · [OpenAPI and contract registry](../../../architecture/API.md#8-openapi-and-contract-registry) · [Module API design](../../../architecture/API.md#19-module-api-design) · [Response conventions](../../../architecture/API.md#10-response-conventions)
+Reference: [JSON Schema 2020-12](https://json-schema.org/draft/2020-12) and [OpenAPI 3.1](https://spec.openapis.org/oas/v3.1.0).
 
 ## 5. Audience and operation matrix
 
-| Audience                       | Default exposure                    | Required controls                                                                      |
-| ------------------------------ | ----------------------------------- | -------------------------------------------------------------------------------------- |
-| Public/anonymous               | Disabled unless explicitly required | Enumeration resistance, strict rate limits, field minimization, abuse controls         |
-| Authenticated customer/partner | Explicit allowlist                  | Tenant/resource ownership, purpose-specific scopes, field policy                       |
-| Staff/administrator            | Explicit allowlist                  | Role/permission policy, tenant context, recent authentication for risky actions, audit |
-| Service/integration client     | Explicit allowlist                  | Service identity, least-privilege scopes, expiry/rotation, idempotency, quotas         |
+Analysts simulate; controllers approve rules; posting authority remains with Accounting and the relevant entities.
 
-Every exposed operation must map to one audience, domain query/action, permission/scope, request/response schema, rate limit, idempotency/concurrency policy, audit event, and test set. Unmapped operations fail CI.
+| Audience | Exposure decision |
+| --- | --- |
+| Anonymous/public | Disabled for these workflow commands |
+| Employee or approved external delegate | Only explicitly granted records, fields and actions; enforce source/evidence policy independently |
+| Approver/operator | Domain authority and segregation/delegation policy apply to each action and bulk record |
+| Service integration | Narrow service identity, permitted entities/operations, correlation and durable command identity |
+
+An authenticated role name alone is insufficient where a record, value threshold, legal entity, time window or independent approval constrains the operation. Recheck permissions in jobs and evidence downloads.
 
 ## 6. Implementation strategy
 
-- Keep routes, controllers/handlers, requests, API resources, OpenAPI fragments, and transport tests in this API package.
-- Validate shape at the request boundary and enforce authoritative invariants again in the domain action.
-- Resolve tenant and actor context from trusted authentication/application routing; never grant context from a caller-supplied tenant identifier alone.
-- Authorize field visibility as well as record/action access, and return concealment-safe errors where enumeration is a risk.
-- Use idempotency keys for retryable writes, ETags/`If-Match` for relevant concurrent updates, and asynchronous operation resources for slow/bulk/provider-dependent work.
-- Compose cross-module workflows in the application layer; do not query or mutate another module's private storage from this API package.
+Submit approved actual adjustment requests to Accounting; scenario results remain planning data until explicitly promoted through the posting boundary.
+
+Persist only enterprise-owned workflow/operation state and source references. Use local transactions for its invariants, then durable outbox/inbox or an equivalent owner-supported handoff. Confirm an existing source operation before retrying a timeout; do not repeat a side effect under a fresh identity. Product adapters translate schemas/errors without accessing another owner's private tables.
+
+Presentations use explicit domain commands rather than a generic state patch. Filament/Livewire can invoke the reviewed public application boundary, while React/Inertia, Next.js, Vue/Nuxt and mobile use their appropriate authorized transport. Preserve one domain invariant and recovery contract across all surfaces.
 
 ## 7. Security, resilience, and observability
 
-- Threat-model authentication, authorization, tenant isolation, mass assignment, object references, abusive queries, uploads/downloads, webhooks, and sensitive data.
-- Bound pagination, filters, includes, payloads, batch sizes, timeouts, and retry budgets.
-- Redact credentials and protected data from logs and errors while recording request, correlation, API/module/version, tenant, principal, operation, status, latency, rate-limit, and idempotency outcomes.
-- Define availability, latency, error-rate and queued-operation objectives plus alerts and recovery/reconciliation runbooks.
+Partition runs by durable operation IDs. Resume incomplete partitions without reposting completed ones; route unexplained residuals to reconciliation rather than absorbing them silently.
+
+| Response condition | Proposed handling |
+| --- | --- |
+| 401 / 403 / scoped 404 | Authenticate or deny/conceal consistently; never retry under a broader identity |
+| 409 conflict | Invalid transition, duplicate identity with another payload, or owner uniqueness conflict; expose an actionable current outcome |
+| 412 precondition failed | Reload/review the changed record version; preserve safe draft inputs |
+| 422 validation failed | Return field/domain errors without leaking hidden source records |
+| 429 / 503 | Apply documented retry/backoff and preserve operation identity; reconcile uncertain outcomes before reissuing writes |
+
+Use the shared Problem Details envelope, request/correlation IDs and scoped operator diagnostics. Redact protected data and credentials. Record source acknowledgements, last error, attempt count and recovery owner; an unavailable dependency must not silently advance the final state.
 
 ## 8. Verification strategy
 
-- Lint OpenAPI, validate examples, detect implementation drift and breaking changes, and reject path/schema/operation-ID collisions during application aggregation.
-- Test every operation for allowed, unauthenticated, wrong-tenant, insufficient-scope, insufficient-permission, hidden-field, invalid, missing, duplicate, stale, concurrent, throttled, and failure/recovery paths as applicable.
-- Test pagination, filtering, sorting, includes, dates, money, identifiers, enums, idempotency, ETags, async operations, bulk partial failure, and stable Problem Details.
-- Add one-to-one architecture tests proving this package depends on and presents only `sap-controlling`.
-- Run independent installation, minimum/current compatibility, security, performance, generated-client smoke, and representative host-composition tests.
-- Run Pest 5 with meaningful owned PHP targeting 100% line coverage; coverage complements contract, mutation, security, and failure assertions.
+- Zero or missing drivers produce a defined error; rerunning an execution key does not duplicate allocations; rounded destinations reconcile to the source total.
+- Repeated commands return the documented existing result or a clear conflict; they cannot duplicate a completed external side effect.
+- A tenant/entity switch, permission revocation or expired session cannot reuse another scope's cached record, attachment or exported file.
+- A downstream failure remains observable with a valid owner/recovery path across every enabled presentation.
+
+Also verify the illustrated command body against its draft request schema, allowed/denied/wrong-entity requests, stale versions, changed-payload key reuse, uncertain outcomes, job authorization changes and result/evidence downloads. Test real owner adapters and the selected presentations against the same accepted/rejected transitions. Document which checks ran; the presence of a schema or test file is not a passing-run claim.
 
 ## 9. Definition of done
 
-- The package name, manifest, Composer dependency, namespace, route prefix, and OpenAPI ownership all match `sap-controlling`.
-- The audience/operation matrix is complete, least-privilege, documented, and enforced in CI.
-- Schemas, implementation, examples, errors, SDK/client evidence, and documentation agree.
-- Authorization, tenant/field isolation, idempotency/concurrency, limits, audit, observability, compatibility, and recovery tests pass.
-- The API fragment aggregates without collisions and the independent package can be installed, tested, versioned, upgraded, and removed safely.
+Implementation/adoption is complete only after the selected owner contracts, full request/response/OpenAPI schemas, API/security/version tests, affected data transitions, UI parity and operational recovery are verified. Publish actual identities/compatibility and migration guidance through the owning package process. This document supplies a concrete proposed workflow contract; it does not certify that release gate.

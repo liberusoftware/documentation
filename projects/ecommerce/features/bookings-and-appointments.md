@@ -1,12 +1,16 @@
 # Ecommerce: Bookings and Appointments
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#bookings-and-appointments). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-ecommerce-bookings-and-appointments`
 **Application:** Ecommerce  
 **Capability group:** Recurring, service, and access modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  
-**Architecture:** [MODULES.md](../ECOMMERCE.md) · [TESTING.md](../ECOMMERCE.md) · [API.md](../ECOMMERCE.md) · [FILAMENT.md](../ECOMMERCE.md) · [LIVEWIRE.md](../ECOMMERCE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

@@ -1,5 +1,9 @@
 # Accounting Credit Notes And Adjustments React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-credit-notes-and-adjustments). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-credit-notes-and-adjustments-react-native
 **Matching core package:** module-accounting-accounting-credit-notes-and-adjustments ([implementation](../core/accounting-credit-notes-and-adjustments.md))
 **Matching API package:** module-accounting-accounting-credit-notes-and-adjustments-api ([contract](../api/accounting-credit-notes-and-adjustments.md))

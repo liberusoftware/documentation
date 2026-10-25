@@ -1,8 +1,12 @@
 # Accounting: Roles Permissions Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#roles-permissions). Observed identity: [`liberusoftware/roles-permissions`](../../../modules/source/liberusoftware--roles-permissions.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-roles-permissions`
+**Design package identifier:** `module-accounting-roles-permissions`
 **Domain specification:** [Roles Permissions](../features/roles-permissions.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

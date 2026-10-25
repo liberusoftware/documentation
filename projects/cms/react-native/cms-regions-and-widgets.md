@@ -1,5 +1,9 @@
 # Cms Regions And Widgets React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-regions-and-widgets). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-regions-and-widgets-react-native
 **Matching core package:** module-cms-cms-regions-and-widgets ([implementation](../core/cms-regions-and-widgets.md))
 **Matching API package:** module-cms-cms-regions-and-widgets-api ([contract](../api/cms-regions-and-widgets.md))

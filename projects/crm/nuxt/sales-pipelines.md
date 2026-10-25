@@ -1,12 +1,16 @@
 # CRM: Sales Pipelines Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-pipelines). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-crm-sales-pipelines-nuxt`
 **Matching domain module:** `crm-sales-pipelines`
 **Application:** CRM
 **Source feature:** [Sales Pipelines](../features/sales-pipelines.md)
-**Architecture:** [NUXT.md](../CRM.md) · [API.md](../CRM.md) · [Matching API module](../api/sales-pipelines.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/sales-pipelines.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
@@ -68,3 +72,5 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 - Package identity, public exports, API dependency, and module dependency match `crm-sales-pipelines` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+
+Read the [source-backed sales-pipeline walkthrough](../guides/SALES-PIPELINES.md) for actual actions, routes, permissions, UI behavior and differences from the target design.

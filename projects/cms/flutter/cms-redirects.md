@@ -1,5 +1,9 @@
 # Cms Redirects Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-redirects). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-redirects-flutter
 **Matching core package:** module-cms-cms-redirects ([implementation](../core/cms-redirects.md))
 **Matching API package:** module-cms-cms-redirects-api ([contract](../api/cms-redirects.md))

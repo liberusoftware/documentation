@@ -1,70 +1,91 @@
 # Billing API Module Specifications
 
+<!-- catalogue-status:start -->
+This index preserves **81 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-- [Activity Comments API](activity-comments.md) — `module-billing-activity-comments-api`
-- [Analytics Core API](analytics-core.md) — `module-billing-analytics-core-api`
-- [Analytics Google API](analytics-google.md) — `module-billing-analytics-google-api`
-- [Analytics Meta API](analytics-meta.md) — `module-billing-analytics-meta-api`
-- [Api Access API](api-access.md) — `module-billing-api-access-api`
-- [Application API](application.md) — `module-billing-application-api`
-- [Audit API](audit.md) — `module-billing-audit-api`
-- [Billing Core API](billing-core.md) — `module-billing-billing-core-api`
-- [Currency Context API](currency-context.md) — `module-billing-currency-context-api`
-- [Developer Experience API](developer-experience.md) — `module-billing-developer-experience-api`
-- [Feature Flags API](feature-flags.md) — `module-billing-feature-flags-api`
-- [Files Media API](files-media.md) — `module-billing-files-media-api`
-- [Identity Core API](identity-core.md) — `module-billing-identity-core-api`
-- [Identity Socialstream API](identity-socialstream.md) — `module-billing-identity-socialstream-api`
-- [Import Export API](import-export.md) — `module-billing-import-export-api`
-- [Integrations API](integrations.md) — `module-billing-integrations-api`
-- [Jetstream Bridge API](jetstream-bridge.md) — `module-billing-jetstream-bridge-api`
-- [Liberu Business Workflow Reconciliation API](liberu-business-workflow-reconciliation.md) — `module-billing-liberu-business-workflow-reconciliation-api`
-- [Liberu Executive Insights API](liberu-executive-insights.md) — `module-billing-liberu-executive-insights-api`
-- [Liberu Platform Orchestration API](liberu-platform-orchestration.md) — `module-billing-liberu-platform-orchestration-api`
-- [Liberu Revenue And Care Orchestration API](liberu-revenue-and-care-orchestration.md) — `module-billing-liberu-revenue-and-care-orchestration-api`
-- [Localization Core API](localization-core.md) — `module-billing-localization-core-api`
-- [Localization Mymemory API](localization-mymemory.md) — `module-billing-localization-mymemory-api`
-- [Module Billing Billing Core API](module-billing-billing-core.md) — `module-billing-module-billing-billing-core-api`
-- [Module Billing Catalog API](module-billing-catalog.md) — `module-billing-module-billing-catalog-api`
-- [Module Billing Collections API](module-billing-collections.md) — `module-billing-module-billing-collections-api`
-- [Module Billing Communications API](module-billing-communications.md) — `module-billing-module-billing-communications-api`
-- [Module Billing Core API](module-billing-core.md) — `module-billing-module-billing-core-api`
-- [Module Billing Cpanel API](module-billing-cpanel.md) — `module-billing-module-billing-cpanel-api`
-- [Module Billing Customer Portal API](module-billing-customer-portal.md) — `module-billing-module-billing-customer-portal-api`
-- [Module Billing Directadmin API](module-billing-directadmin.md) — `module-billing-module-billing-directadmin-api`
-- [Module Billing Domains API](module-billing-domains.md) — `module-billing-module-billing-domains-api`
-- [Module Billing Enom API](module-billing-enom.md) — `module-billing-module-billing-enom-api`
-- [Module Billing Hosting API](module-billing-hosting.md) — `module-billing-module-billing-hosting-api`
-- [Module Billing Invoicing API](module-billing-invoicing.md) — `module-billing-module-billing-invoicing-api`
-- [Module Billing Isp API](module-billing-isp.md) — `module-billing-module-billing-isp-api`
-- [Module Billing Liberu Control Panel API](module-billing-liberu-control-panel.md) — `module-billing-module-billing-liberu-control-panel-api`
-- [Module Billing Orders API](module-billing-orders.md) — `module-billing-module-billing-orders-api`
-- [Module Billing Paddle API](module-billing-paddle.md) — `module-billing-module-billing-paddle-api`
-- [Module Billing Payments API](module-billing-payments.md) — `module-billing-module-billing-payments-api`
-- [Module Billing Plesk API](module-billing-plesk.md) — `module-billing-module-billing-plesk-api`
-- [Module Billing Pricing API](module-billing-pricing.md) — `module-billing-module-billing-pricing-api`
-- [Module Billing Provisioning API](module-billing-provisioning.md) — `module-billing-module-billing-provisioning-api`
-- [Module Billing Reporting API](module-billing-reporting.md) — `module-billing-module-billing-reporting-api`
-- [Module Billing Resellerclub API](module-billing-resellerclub.md) — `module-billing-module-billing-resellerclub-api`
-- [Module Billing Stripe API](module-billing-stripe.md) — `module-billing-module-billing-stripe-api`
-- [Module Billing Subscriptions API](module-billing-subscriptions.md) — `module-billing-module-billing-subscriptions-api`
-- [Module Billing Usage API](module-billing-usage.md) — `module-billing-module-billing-usage-api`
-- [Module Billing Virtualmin API](module-billing-virtualmin.md) — `module-billing-module-billing-virtualmin-api`
-- [Module Liberu Business Workflow Reconciliation API](module-liberu-business-workflow-reconciliation.md) — `module-billing-module-liberu-business-workflow-reconciliation-api`
-- [Module Liberu Executive Insights API](module-liberu-executive-insights.md) — `module-billing-module-liberu-executive-insights-api`
-- [Module Liberu Platform Orchestration API](module-liberu-platform-orchestration.md) — `module-billing-module-liberu-platform-orchestration-api`
-- [Module Liberu Revenue And Care Orchestration API](module-liberu-revenue-and-care-orchestration.md) — `module-billing-module-liberu-revenue-and-care-orchestration-api`
-- [Module Manager API](module-manager.md) — `module-billing-module-manager-api`
-- [Notifications API](notifications.md) — `module-billing-notifications-api`
-- [Observability API](observability.md) — `module-billing-observability-api`
-- [Organizations Teams API](organizations-teams.md) — `module-billing-organizations-teams-api`
-- [Profiles API](profiles.md) — `module-billing-profiles-api`
-- [Roles Permissions API](roles-permissions.md) — `module-billing-roles-permissions-api`
-- [Scheduler Queues API](scheduler-queues.md) — `module-billing-scheduler-queues-api`
-- [Search API](search.md) — `module-billing-search-api`
-- [Sessions Devices API](sessions-devices.md) — `module-billing-sessions-devices-api`
-- [Settings API](settings.md) — `module-billing-settings-api`
-- [Theme Support API](theme-support.md) — `module-billing-theme-support-api`
-- [Two Factor Authentication API](two-factor-authentication.md) — `module-billing-two-factor-authentication-api`
-- [Webhooks API](webhooks.md) — `module-billing-webhooks-api`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments API](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core API](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google API](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta API](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access API](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application API](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit API](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Billing Core API](billing-core.md) | [liberusoftware/module-billing-core-api](../../../modules/source/liberusoftware--module-billing-core-api.md) | [core](../core/billing-core.md) · [nextjs](../nextjs/billing-core.md) |
+| [Catalog API](catalog.md) | [liberusoftware/module-billing-catalog-api](../../../modules/source/liberusoftware--module-billing-catalog-api.md) | [core](../core/catalog.md) · [nextjs](../nextjs/catalog.md) |
+| [Collections API](collections.md) | [liberusoftware/module-billing-collections-api](../../../modules/source/liberusoftware--module-billing-collections-api.md) | [core](../core/collections.md) · [nextjs](../nextjs/collections.md) |
+| [Communications API](communications.md) | [liberusoftware/module-billing-communications-api](../../../modules/source/liberusoftware--module-billing-communications-api.md) | [core](../core/communications.md) · [nextjs](../nextjs/communications.md) |
+| [Currency Context API](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customer Portal API](customer-portal.md) | [liberusoftware/module-billing-customer-portal-api](../../../modules/source/liberusoftware--module-billing-customer-portal-api.md) | [core](../core/customer-portal.md) · [nextjs](../nextjs/customer-portal.md) |
+| [Developer Experience API](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Domains API](domains.md) | [liberusoftware/module-billing-domains-api](../../../modules/source/liberusoftware--module-billing-domains-api.md) | [core](../core/domains.md) · [nextjs](../nextjs/domains.md) |
+| [Feature Flags API](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media API](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Hosting API](hosting.md) | [liberusoftware/module-billing-hosting-api](../../../modules/source/liberusoftware--module-billing-hosting-api.md) | [core](../core/hosting.md) · [nextjs](../nextjs/hosting.md) |
+| [Identity Core API](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream API](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export API](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations API](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Invoicing API](invoicing.md) | [liberusoftware/module-billing-invoicing-api](../../../modules/source/liberusoftware--module-billing-invoicing-api.md) | [core](../core/invoicing.md) · [nextjs](../nextjs/invoicing.md) |
+| [ISP API](isp.md) | [liberusoftware/module-billing-isp-api](../../../modules/source/liberusoftware--module-billing-isp-api.md) | [core](../core/isp.md) · [nextjs](../nextjs/isp.md) |
+| [Jetstream Bridge API](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation API](liberu-business-workflow-reconciliation.md) | [liberusoftware/module-liberu-business-workflow-reconciliation-api](../../../modules/source/liberusoftware--module-liberu-business-workflow-reconciliation-api.md) | [core](../core/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights API](liberu-executive-insights.md) | [liberusoftware/module-liberu-executive-insights-api](../../../modules/source/liberusoftware--module-liberu-executive-insights-api.md) | [core](../core/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration API](liberu-platform-orchestration.md) | [liberusoftware/module-liberu-platform-orchestration-api](../../../modules/source/liberusoftware--module-liberu-platform-orchestration-api.md) | [core](../core/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration API](liberu-revenue-and-care-orchestration.md) | [liberusoftware/module-liberu-revenue-and-care-orchestration-api](../../../modules/source/liberusoftware--module-liberu-revenue-and-care-orchestration-api.md) | [core](../core/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core API](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory API](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Module Billing Billing Core API](module-billing-billing-core.md) | [liberusoftware/module-billing-core-api](../../../modules/source/liberusoftware--module-billing-core-api.md) | [core](../core/module-billing-billing-core.md) · [nextjs](../nextjs/module-billing-billing-core.md) |
+| [Module Billing Catalog API](module-billing-catalog.md) | [liberusoftware/module-billing-catalog-api](../../../modules/source/liberusoftware--module-billing-catalog-api.md) | [core](../core/module-billing-catalog.md) · [nextjs](../nextjs/module-billing-catalog.md) |
+| [Module Billing Collections API](module-billing-collections.md) | [liberusoftware/module-billing-collections-api](../../../modules/source/liberusoftware--module-billing-collections-api.md) | [core](../core/module-billing-collections.md) · [nextjs](../nextjs/module-billing-collections.md) |
+| [Module Billing Communications API](module-billing-communications.md) | [liberusoftware/module-billing-communications-api](../../../modules/source/liberusoftware--module-billing-communications-api.md) | [core](../core/module-billing-communications.md) · [nextjs](../nextjs/module-billing-communications.md) |
+| [Module Billing Core API](module-billing-core.md) | [liberusoftware/module-billing-core-api](../../../modules/source/liberusoftware--module-billing-core-api.md) | [core](../core/module-billing-core.md) · [nextjs](../nextjs/module-billing-core.md) |
+| [Module Billing Cpanel API](module-billing-cpanel.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-cpanel) | [core](../core/module-billing-cpanel.md) · [nextjs](../nextjs/module-billing-cpanel.md) |
+| [Module Billing Customer Portal API](module-billing-customer-portal.md) | [liberusoftware/module-billing-customer-portal-api](../../../modules/source/liberusoftware--module-billing-customer-portal-api.md) | [core](../core/module-billing-customer-portal.md) · [nextjs](../nextjs/module-billing-customer-portal.md) |
+| [Module Billing Directadmin API](module-billing-directadmin.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-directadmin) | [core](../core/module-billing-directadmin.md) · [nextjs](../nextjs/module-billing-directadmin.md) |
+| [Module Billing Domains API](module-billing-domains.md) | [liberusoftware/module-billing-domains-api](../../../modules/source/liberusoftware--module-billing-domains-api.md) | [core](../core/module-billing-domains.md) · [nextjs](../nextjs/module-billing-domains.md) |
+| [Module Billing Enom API](module-billing-enom.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-enom) | [core](../core/module-billing-enom.md) · [nextjs](../nextjs/module-billing-enom.md) |
+| [Module Billing Hosting API](module-billing-hosting.md) | [liberusoftware/module-billing-hosting-api](../../../modules/source/liberusoftware--module-billing-hosting-api.md) | [core](../core/module-billing-hosting.md) · [nextjs](../nextjs/module-billing-hosting.md) |
+| [Module Billing Invoicing API](module-billing-invoicing.md) | [liberusoftware/module-billing-invoicing-api](../../../modules/source/liberusoftware--module-billing-invoicing-api.md) | [core](../core/module-billing-invoicing.md) · [nextjs](../nextjs/module-billing-invoicing.md) |
+| [Module Billing Isp API](module-billing-isp.md) | [liberusoftware/module-billing-isp-api](../../../modules/source/liberusoftware--module-billing-isp-api.md) | [core](../core/module-billing-isp.md) · [nextjs](../nextjs/module-billing-isp.md) |
+| [Module Billing Liberu Control Panel API](module-billing-liberu-control-panel.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-liberu-control-panel) | [core](../core/module-billing-liberu-control-panel.md) · [nextjs](../nextjs/module-billing-liberu-control-panel.md) |
+| [Module Billing Orders API](module-billing-orders.md) | [liberusoftware/module-billing-orders-api](../../../modules/source/liberusoftware--module-billing-orders-api.md) | [core](../core/module-billing-orders.md) · [nextjs](../nextjs/module-billing-orders.md) |
+| [Module Billing Paddle API](module-billing-paddle.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-paddle) | [core](../core/module-billing-paddle.md) · [nextjs](../nextjs/module-billing-paddle.md) |
+| [Module Billing Payments API](module-billing-payments.md) | [liberusoftware/module-billing-payments-api](../../../modules/source/liberusoftware--module-billing-payments-api.md) | [core](../core/module-billing-payments.md) · [nextjs](../nextjs/module-billing-payments.md) |
+| [Module Billing Plesk API](module-billing-plesk.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-plesk) | [core](../core/module-billing-plesk.md) · [nextjs](../nextjs/module-billing-plesk.md) |
+| [Module Billing Pricing API](module-billing-pricing.md) | [liberusoftware/module-billing-pricing-api](../../../modules/source/liberusoftware--module-billing-pricing-api.md) | [core](../core/module-billing-pricing.md) · [nextjs](../nextjs/module-billing-pricing.md) |
+| [Module Billing Provisioning API](module-billing-provisioning.md) | [liberusoftware/module-billing-provisioning-api](../../../modules/source/liberusoftware--module-billing-provisioning-api.md) | [core](../core/module-billing-provisioning.md) · [nextjs](../nextjs/module-billing-provisioning.md) |
+| [Module Billing Reporting API](module-billing-reporting.md) | [liberusoftware/module-billing-reporting-api](../../../modules/source/liberusoftware--module-billing-reporting-api.md) | [core](../core/module-billing-reporting.md) · [nextjs](../nextjs/module-billing-reporting.md) |
+| [Module Billing Resellerclub API](module-billing-resellerclub.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-resellerclub) | [core](../core/module-billing-resellerclub.md) · [nextjs](../nextjs/module-billing-resellerclub.md) |
+| [Module Billing Stripe API](module-billing-stripe.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-stripe) | [core](../core/module-billing-stripe.md) · [nextjs](../nextjs/module-billing-stripe.md) |
+| [Module Billing Subscriptions API](module-billing-subscriptions.md) | [liberusoftware/module-billing-subscriptions-api](../../../modules/source/liberusoftware--module-billing-subscriptions-api.md) | [core](../core/module-billing-subscriptions.md) · [nextjs](../nextjs/module-billing-subscriptions.md) |
+| [Module Billing Usage API](module-billing-usage.md) | [liberusoftware/module-billing-usage-api](../../../modules/source/liberusoftware--module-billing-usage-api.md) | [core](../core/module-billing-usage.md) · [nextjs](../nextjs/module-billing-usage.md) |
+| [Module Billing Virtualmin API](module-billing-virtualmin.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-virtualmin) | [core](../core/module-billing-virtualmin.md) · [nextjs](../nextjs/module-billing-virtualmin.md) |
+| [Module Liberu Business Workflow Reconciliation API](module-liberu-business-workflow-reconciliation.md) | [liberusoftware/module-liberu-business-workflow-reconciliation-api](../../../modules/source/liberusoftware--module-liberu-business-workflow-reconciliation-api.md) | [core](../core/module-liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/module-liberu-business-workflow-reconciliation.md) |
+| [Module Liberu Executive Insights API](module-liberu-executive-insights.md) | [liberusoftware/module-liberu-executive-insights-api](../../../modules/source/liberusoftware--module-liberu-executive-insights-api.md) | [core](../core/module-liberu-executive-insights.md) · [nextjs](../nextjs/module-liberu-executive-insights.md) |
+| [Module Liberu Platform Orchestration API](module-liberu-platform-orchestration.md) | [liberusoftware/module-liberu-platform-orchestration-api](../../../modules/source/liberusoftware--module-liberu-platform-orchestration-api.md) | [core](../core/module-liberu-platform-orchestration.md) · [nextjs](../nextjs/module-liberu-platform-orchestration.md) |
+| [Module Liberu Revenue And Care Orchestration API](module-liberu-revenue-and-care-orchestration.md) | [liberusoftware/module-liberu-revenue-and-care-orchestration-api](../../../modules/source/liberusoftware--module-liberu-revenue-and-care-orchestration-api.md) | [core](../core/module-liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/module-liberu-revenue-and-care-orchestration.md) |
+| [Module Manager API](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications API](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability API](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Orders API](orders.md) | [liberusoftware/module-billing-orders-api](../../../modules/source/liberusoftware--module-billing-orders-api.md) | [core](../core/orders.md) · [nextjs](../nextjs/orders.md) |
+| [Organizations Teams API](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Payments API](payments.md) | [liberusoftware/module-billing-payments-api](../../../modules/source/liberusoftware--module-billing-payments-api.md) | [core](../core/payments.md) · [nextjs](../nextjs/payments.md) |
+| [Pricing API](pricing.md) | [liberusoftware/module-billing-pricing-api](../../../modules/source/liberusoftware--module-billing-pricing-api.md) | [core](../core/pricing.md) · [nextjs](../nextjs/pricing.md) |
+| [Profiles API](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Provisioning API](provisioning.md) | [liberusoftware/module-billing-provisioning-api](../../../modules/source/liberusoftware--module-billing-provisioning-api.md) | [core](../core/provisioning.md) · [nextjs](../nextjs/provisioning.md) |
+| [Reporting API](reporting.md) | [liberusoftware/module-billing-reporting-api](../../../modules/source/liberusoftware--module-billing-reporting-api.md) | [core](../core/reporting.md) · [nextjs](../nextjs/reporting.md) |
+| [Roles Permissions API](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues API](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search API](search.md) | [liberusoftware/search-api](../../../modules/source/liberusoftware--search-api.md) | [core](../core/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices API](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings API](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Subscriptions API](subscriptions.md) | [liberusoftware/module-billing-subscriptions-api](../../../modules/source/liberusoftware--module-billing-subscriptions-api.md) | [core](../core/subscriptions.md) · [nextjs](../nextjs/subscriptions.md) |
+| [Theme Support API](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication API](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Usage API](usage.md) | [liberusoftware/module-billing-usage-api](../../../modules/source/liberusoftware--module-billing-usage-api.md) | [core](../core/usage.md) · [nextjs](../nextjs/usage.md) |
+| [Webhooks API](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

@@ -1,5 +1,9 @@
 # Three Way Matching Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#three-way-matching). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-three-way-matching-flutter
 **Matching core package:** module-accounting-three-way-matching ([implementation](../core/three-way-matching.md))
 **Matching API package:** module-accounting-three-way-matching-api ([contract](../api/three-way-matching.md))

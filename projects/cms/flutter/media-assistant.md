@@ -1,5 +1,9 @@
 # Media Assistant Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#media-assistant). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-media-assistant-flutter
 **Matching core package:** module-cms-media-assistant ([implementation](../core/media-assistant.md))
 **Matching API package:** module-cms-media-assistant-api ([contract](../api/media-assistant.md))

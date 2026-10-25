@@ -1,12 +1,16 @@
 # Automation: Module Automation Ai Gateway
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-automation-ai-gateway). Observed identity: [`liberusoftware/automation-ai-gateway`](../../../modules/source/liberusoftware--automation-ai-gateway.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-automation-module-automation-ai-gateway`
 **Application:** Automation  
 **Capability group:** Module Automation Ai Gateway  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  
-**Architecture:** [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md) · [API.md](../AUTOMATION.md) · [FILAMENT.md](../AUTOMATION.md) · [LIVEWIRE.md](../AUTOMATION.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

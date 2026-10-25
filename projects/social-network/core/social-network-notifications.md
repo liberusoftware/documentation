@@ -1,8 +1,12 @@
 # Social Network: Social Network Notifications Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-notifications). Observed identity: [`liberusoftware/module-social-network-notifications`](../../../modules/source/liberusoftware--module-social-network-notifications.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-social-network-social-network-notifications`
+**Design package identifier:** `module-social-network-social-network-notifications`
 **Domain specification:** [Social Network Notifications](../features/social-network-notifications.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

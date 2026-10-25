@@ -1,5 +1,9 @@
 # Recommendations Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#recommendations). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-recommendations-flutter
 **Matching core package:** module-cms-recommendations ([implementation](../core/recommendations.md))
 **Matching API package:** module-cms-recommendations-api ([contract](../api/recommendations.md))

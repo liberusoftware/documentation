@@ -1,5 +1,9 @@
 # Account Based Marketing Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#account-based-marketing). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-account-based-marketing-flutter
 **Matching core package:** module-crm-account-based-marketing ([implementation](../core/account-based-marketing.md))
 **Matching API package:** module-crm-account-based-marketing-api ([contract](../api/account-based-marketing.md))

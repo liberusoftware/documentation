@@ -1,5 +1,9 @@
 # Module Maintenance Customers And Sites React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-customers-and-sites). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-maintenance-module-maintenance-customers-and-sites-react-native
 **Matching core package:** module-maintenance-module-maintenance-customers-and-sites ([implementation](../core/module-maintenance-customers-and-sites.md))
 **Matching API package:** module-maintenance-module-maintenance-customers-and-sites-api ([contract](../api/module-maintenance-customers-and-sites.md))

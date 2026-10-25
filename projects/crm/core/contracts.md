@@ -1,8 +1,12 @@
 # Crm: Contracts Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#contracts). Observed identity: [`liberusoftware/module-crm-contracts`](../../../modules/source/liberusoftware--module-crm-contracts.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-contracts`
+**Design package identifier:** `module-crm-contracts`
 **Domain specification:** [Contracts](../features/contracts.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

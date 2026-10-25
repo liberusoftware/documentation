@@ -1,8 +1,12 @@
 # CRM: Crm Email Marketing Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-email-marketing). Observed identity: [`liberusoftware/module-crm-email-marketing`](../../../modules/source/liberusoftware--module-crm-email-marketing.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-crm-email-marketing`
+**Design package identifier:** `module-crm-crm-email-marketing`
 **Domain specification:** [Crm Email Marketing](../features/crm-email-marketing.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

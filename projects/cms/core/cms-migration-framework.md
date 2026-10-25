@@ -1,8 +1,12 @@
 # CMS: Cms Migration Framework Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-migration-framework). Observed identity: [`liberusoftware/module-cms-migration-framework`](../../../modules/source/liberusoftware--module-cms-migration-framework.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-cms-migration-framework`
+**Design package identifier:** `module-cms-cms-migration-framework`
 **Domain specification:** [Cms Migration Framework](../features/cms-migration-framework.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

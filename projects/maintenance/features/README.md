@@ -1,50 +1,70 @@
 # Maintenance Feature Specifications
 
+<!-- catalogue-status:start -->
+This index preserves **60 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-- [Activity Comments](activity-comments.md) — `module-maintenance-activity-comments`
-- [Analytics Core](analytics-core.md) — `module-maintenance-analytics-core`
-- [Analytics Google](analytics-google.md) — `module-maintenance-analytics-google`
-- [Analytics Meta](analytics-meta.md) — `module-maintenance-analytics-meta`
-- [Api Access](api-access.md) — `module-maintenance-api-access`
-- [Application](application.md) — `module-maintenance-application`
-- [Audit](audit.md) — `module-maintenance-audit`
-- [Currency Context](currency-context.md) — `module-maintenance-currency-context`
-- [Developer Experience](developer-experience.md) — `module-maintenance-developer-experience`
-- [Feature Flags](feature-flags.md) — `module-maintenance-feature-flags`
-- [Files Media](files-media.md) — `module-maintenance-files-media`
-- [Identity Core](identity-core.md) — `module-maintenance-identity-core`
-- [Identity Socialstream](identity-socialstream.md) — `module-maintenance-identity-socialstream`
-- [Import Export](import-export.md) — `module-maintenance-import-export`
-- [Integrations](integrations.md) — `module-maintenance-integrations`
-- [Jetstream Bridge](jetstream-bridge.md) — `module-maintenance-jetstream-bridge`
-- [Localization Core](localization-core.md) — `module-maintenance-localization-core`
-- [Localization Mymemory](localization-mymemory.md) — `module-maintenance-localization-mymemory`
-- [Maintenance Maintenance Core](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core`
-- [Module Maintenance Assets](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets`
-- [Module Maintenance Commercial](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial`
-- [Module Maintenance Compliance](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance`
-- [Module Maintenance Core](module-maintenance-core.md) — `module-maintenance-module-maintenance-core`
-- [Module Maintenance Customers And Sites](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites`
-- [Module Maintenance Inspections](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections`
-- [Module Maintenance Inventory](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory`
-- [Module Maintenance Labor And Time](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time`
-- [Module Maintenance Portals](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals`
-- [Module Maintenance Preventative Maintenance](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance`
-- [Module Maintenance Procurement](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement`
-- [Module Maintenance Reporting](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting`
-- [Module Maintenance Scheduling](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling`
-- [Module Maintenance Work Orders](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders`
-- [Module Manager](module-manager.md) — `module-maintenance-module-manager`
-- [Notifications](notifications.md) — `module-maintenance-notifications`
-- [Observability](observability.md) — `module-maintenance-observability`
-- [Organizations Teams](organizations-teams.md) — `module-maintenance-organizations-teams`
-- [Profiles](profiles.md) — `module-maintenance-profiles`
-- [Roles Permissions](roles-permissions.md) — `module-maintenance-roles-permissions`
-- [Scheduler Queues](scheduler-queues.md) — `module-maintenance-scheduler-queues`
-- [Search](search.md) — `module-maintenance-search`
-- [Sessions Devices](sessions-devices.md) — `module-maintenance-sessions-devices`
-- [Settings](settings.md) — `module-maintenance-settings`
-- [Theme Support](theme-support.md) — `module-maintenance-theme-support`
-- [Two Factor Authentication](two-factor-authentication.md) — `module-maintenance-two-factor-authentication`
-- [Webhooks](webhooks.md) — `module-maintenance-webhooks`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments](activity-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core](analytics-core.md) | [liberusoftware/analytics-core](../../../modules/source/liberusoftware--analytics-core.md) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google](analytics-google.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta](analytics-meta.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access](api-access.md) | [liberusoftware/api-access](../../../modules/source/liberusoftware--api-access.md) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application](application.md) | [liberusoftware/application](../../../modules/source/liberusoftware--application.md) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Assets](assets.md) | [liberusoftware/module-maintenance-assets](../../../modules/source/liberusoftware--module-maintenance-assets.md) | [core](../core/assets.md) · [api](../api/assets.md) · [nextjs](../nextjs/assets.md) |
+| [Audit](audit.md) | [liberusoftware/audit](../../../modules/source/liberusoftware--audit.md) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Commercial](commercial.md) | [liberusoftware/module-maintenance-commercial](../../../modules/source/liberusoftware--module-maintenance-commercial.md) | [core](../core/commercial.md) · [api](../api/commercial.md) · [nextjs](../nextjs/commercial.md) |
+| [Compliance](compliance.md) | [liberusoftware/module-maintenance-compliance](../../../modules/source/liberusoftware--module-maintenance-compliance.md) | [core](../core/compliance.md) · [api](../api/compliance.md) · [nextjs](../nextjs/compliance.md) |
+| [Currency Context](currency-context.md) | [liberusoftware/currency-context](../../../modules/source/liberusoftware--currency-context.md) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customers and Sites](customers-and-sites.md) | [liberusoftware/module-maintenance-customers-and-sites](../../../modules/source/liberusoftware--module-maintenance-customers-and-sites.md) | [core](../core/customers-and-sites.md) · [api](../api/customers-and-sites.md) · [nextjs](../nextjs/customers-and-sites.md) |
+| [Developer Experience](developer-experience.md) | [liberusoftware/developer-experience](../../../modules/source/liberusoftware--developer-experience.md) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags](feature-flags.md) | [liberusoftware/feature-flags](../../../modules/source/liberusoftware--feature-flags.md) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media](files-media.md) | [liberusoftware/files-media](../../../modules/source/liberusoftware--files-media.md) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core](identity-core.md) | [liberusoftware/identity-core](../../../modules/source/liberusoftware--identity-core.md) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream](identity-socialstream.md) | [liberusoftware/identity-socialstream](../../../modules/source/liberusoftware--identity-socialstream.md) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export](import-export.md) | [liberusoftware/import-export](../../../modules/source/liberusoftware--import-export.md) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Inspections](inspections.md) | [liberusoftware/module-maintenance-inspections](../../../modules/source/liberusoftware--module-maintenance-inspections.md) | [core](../core/inspections.md) · [api](../api/inspections.md) · [nextjs](../nextjs/inspections.md) |
+| [Integrations](integrations.md) | [liberusoftware/integrations](../../../modules/source/liberusoftware--integrations.md) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Inventory](inventory.md) | [liberusoftware/module-maintenance-inventory](../../../modules/source/liberusoftware--module-maintenance-inventory.md) | [core](../core/inventory.md) · [api](../api/inventory.md) · [nextjs](../nextjs/inventory.md) |
+| [Jetstream Bridge](jetstream-bridge.md) | [liberusoftware/jetstream-bridge](../../../modules/source/liberusoftware--jetstream-bridge.md) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Labor and Time](labor-and-time.md) | [liberusoftware/module-maintenance-labor-and-time](../../../modules/source/liberusoftware--module-maintenance-labor-and-time.md) | [core](../core/labor-and-time.md) · [api](../api/labor-and-time.md) · [nextjs](../nextjs/labor-and-time.md) |
+| [Localization Core](localization-core.md) | [liberusoftware/localization-core](../../../modules/source/liberusoftware--localization-core.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory](localization-mymemory.md) | [liberusoftware/localization-mymemory](../../../modules/source/liberusoftware--localization-mymemory.md) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Maintenance Core](maintenance-core.md) | [liberusoftware/module-maintenance-maintenance-core](../../../modules/source/liberusoftware--module-maintenance-maintenance-core.md) | [core](../core/maintenance-core.md) · [api](../api/maintenance-core.md) · [nextjs](../nextjs/maintenance-core.md) |
+| [Maintenance Maintenance Core](maintenance-maintenance-core.md) | [liberusoftware/module-maintenance-maintenance-core](../../../modules/source/liberusoftware--module-maintenance-maintenance-core.md) | [core](../core/maintenance-maintenance-core.md) · [api](../api/maintenance-maintenance-core.md) · [nextjs](../nextjs/maintenance-maintenance-core.md) |
+| [Module Maintenance Assets](module-maintenance-assets.md) | [liberusoftware/module-maintenance-assets](../../../modules/source/liberusoftware--module-maintenance-assets.md) | [core](../core/module-maintenance-assets.md) · [api](../api/module-maintenance-assets.md) · [nextjs](../nextjs/module-maintenance-assets.md) |
+| [Module Maintenance Commercial](module-maintenance-commercial.md) | [liberusoftware/module-maintenance-commercial](../../../modules/source/liberusoftware--module-maintenance-commercial.md) | [core](../core/module-maintenance-commercial.md) · [api](../api/module-maintenance-commercial.md) · [nextjs](../nextjs/module-maintenance-commercial.md) |
+| [Module Maintenance Compliance](module-maintenance-compliance.md) | [liberusoftware/module-maintenance-compliance](../../../modules/source/liberusoftware--module-maintenance-compliance.md) | [core](../core/module-maintenance-compliance.md) · [api](../api/module-maintenance-compliance.md) · [nextjs](../nextjs/module-maintenance-compliance.md) |
+| [Module Maintenance Core](module-maintenance-core.md) | [liberusoftware/module-maintenance-maintenance-core](../../../modules/source/liberusoftware--module-maintenance-maintenance-core.md) | [core](../core/module-maintenance-core.md) · [api](../api/module-maintenance-core.md) · [nextjs](../nextjs/module-maintenance-core.md) |
+| [Module Maintenance Customers And Sites](module-maintenance-customers-and-sites.md) | [liberusoftware/module-maintenance-customers-and-sites](../../../modules/source/liberusoftware--module-maintenance-customers-and-sites.md) | [core](../core/module-maintenance-customers-and-sites.md) · [api](../api/module-maintenance-customers-and-sites.md) · [nextjs](../nextjs/module-maintenance-customers-and-sites.md) |
+| [Module Maintenance Inspections](module-maintenance-inspections.md) | [liberusoftware/module-maintenance-inspections](../../../modules/source/liberusoftware--module-maintenance-inspections.md) | [core](../core/module-maintenance-inspections.md) · [api](../api/module-maintenance-inspections.md) · [nextjs](../nextjs/module-maintenance-inspections.md) |
+| [Module Maintenance Inventory](module-maintenance-inventory.md) | [liberusoftware/module-maintenance-inventory](../../../modules/source/liberusoftware--module-maintenance-inventory.md) | [core](../core/module-maintenance-inventory.md) · [api](../api/module-maintenance-inventory.md) · [nextjs](../nextjs/module-maintenance-inventory.md) |
+| [Module Maintenance Labor And Time](module-maintenance-labor-and-time.md) | [liberusoftware/module-maintenance-labor-and-time](../../../modules/source/liberusoftware--module-maintenance-labor-and-time.md) | [core](../core/module-maintenance-labor-and-time.md) · [api](../api/module-maintenance-labor-and-time.md) · [nextjs](../nextjs/module-maintenance-labor-and-time.md) |
+| [Module Maintenance Portals](module-maintenance-portals.md) | [liberusoftware/module-maintenance-portals](../../../modules/source/liberusoftware--module-maintenance-portals.md) | [core](../core/module-maintenance-portals.md) · [api](../api/module-maintenance-portals.md) · [nextjs](../nextjs/module-maintenance-portals.md) |
+| [Module Maintenance Preventative Maintenance](module-maintenance-preventative-maintenance.md) | [liberusoftware/module-maintenance-preventative-maintenance](../../../modules/source/liberusoftware--module-maintenance-preventative-maintenance.md) | [core](../core/module-maintenance-preventative-maintenance.md) · [api](../api/module-maintenance-preventative-maintenance.md) · [nextjs](../nextjs/module-maintenance-preventative-maintenance.md) |
+| [Module Maintenance Procurement](module-maintenance-procurement.md) | [liberusoftware/module-maintenance-procurement](../../../modules/source/liberusoftware--module-maintenance-procurement.md) | [core](../core/module-maintenance-procurement.md) · [api](../api/module-maintenance-procurement.md) · [nextjs](../nextjs/module-maintenance-procurement.md) |
+| [Module Maintenance Reporting](module-maintenance-reporting.md) | [liberusoftware/module-maintenance-reporting](../../../modules/source/liberusoftware--module-maintenance-reporting.md) | [core](../core/module-maintenance-reporting.md) · [api](../api/module-maintenance-reporting.md) · [nextjs](../nextjs/module-maintenance-reporting.md) |
+| [Module Maintenance Scheduling](module-maintenance-scheduling.md) | [liberusoftware/module-maintenance-scheduling](../../../modules/source/liberusoftware--module-maintenance-scheduling.md) | [core](../core/module-maintenance-scheduling.md) · [api](../api/module-maintenance-scheduling.md) · [nextjs](../nextjs/module-maintenance-scheduling.md) |
+| [Module Maintenance Work Orders](module-maintenance-work-orders.md) | [liberusoftware/module-maintenance-work-orders](../../../modules/source/liberusoftware--module-maintenance-work-orders.md) | [core](../core/module-maintenance-work-orders.md) · [api](../api/module-maintenance-work-orders.md) · [nextjs](../nextjs/module-maintenance-work-orders.md) |
+| [Module Manager](module-manager.md) | [liberusoftware/module-manager](../../../modules/source/liberusoftware--module-manager.md) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications](notifications.md) | [liberusoftware/notifications](../../../modules/source/liberusoftware--notifications.md) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability](observability.md) | [liberusoftware/observability](../../../modules/source/liberusoftware--observability.md) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams](organizations-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Portals](portals.md) | [liberusoftware/module-maintenance-portals](../../../modules/source/liberusoftware--module-maintenance-portals.md) | [core](../core/portals.md) · [api](../api/portals.md) · [nextjs](../nextjs/portals.md) |
+| [Preventative Maintenance](preventative-maintenance.md) | [liberusoftware/module-maintenance-preventative-maintenance](../../../modules/source/liberusoftware--module-maintenance-preventative-maintenance.md) | [core](../core/preventative-maintenance.md) · [api](../api/preventative-maintenance.md) · [nextjs](../nextjs/preventative-maintenance.md) |
+| [Procurement](procurement.md) | [liberusoftware/module-maintenance-procurement](../../../modules/source/liberusoftware--module-maintenance-procurement.md) | [core](../core/procurement.md) · [api](../api/procurement.md) · [nextjs](../nextjs/procurement.md) |
+| [Profiles](profiles.md) | [liberusoftware/profiles](../../../modules/source/liberusoftware--profiles.md) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Reporting](reporting.md) | [liberusoftware/module-maintenance-reporting](../../../modules/source/liberusoftware--module-maintenance-reporting.md) | [core](../core/reporting.md) · [api](../api/reporting.md) · [nextjs](../nextjs/reporting.md) |
+| [Roles Permissions](roles-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues](scheduler-queues.md) | [liberusoftware/scheduler-queues](../../../modules/source/liberusoftware--scheduler-queues.md) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Scheduling](scheduling.md) | [liberusoftware/module-maintenance-scheduling](../../../modules/source/liberusoftware--module-maintenance-scheduling.md) | [core](../core/scheduling.md) · [api](../api/scheduling.md) · [nextjs](../nextjs/scheduling.md) |
+| [Search](search.md) | [liberusoftware/search](../../../modules/source/liberusoftware--search.md) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices](sessions-devices.md) | [liberusoftware/sessions-devices](../../../modules/source/liberusoftware--sessions-devices.md) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings](settings.md) | [liberusoftware/settings](../../../modules/source/liberusoftware--settings.md) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support](theme-support.md) | [liberusoftware/theme-support](../../../modules/source/liberusoftware--theme-support.md) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication](two-factor-authentication.md) | [liberusoftware/two-factor-authentication](../../../modules/source/liberusoftware--two-factor-authentication.md) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks](webhooks.md) | [liberusoftware/webhooks](../../../modules/source/liberusoftware--webhooks.md) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [Work Orders](work-orders.md) | [liberusoftware/module-maintenance-work-orders](../../../modules/source/liberusoftware--module-maintenance-work-orders.md) | [core](../core/work-orders.md) · [api](../api/work-orders.md) · [nextjs](../nextjs/work-orders.md) |

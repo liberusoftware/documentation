@@ -1,12 +1,16 @@
 # Social Network: Social Network Discovery Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-discovery). Observed identity: [`liberusoftware/module-social-network-discovery-livewire`](../../../modules/source/liberusoftware--module-social-network-discovery-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-social-network-social-network-discovery-livewire`  
 **Matching domain module:** `social-network-discovery`  
 **Application:** Social Network  
 **Source feature:** [Social Network Discovery](../features/social-network-discovery.md)  
-**Architecture:** [LIVEWIRE.md](../SOCIAL-NETWORK.md) · [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

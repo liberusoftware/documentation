@@ -1,5 +1,9 @@
 # Crm Field Service Coordination React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-field-service-coordination). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-field-service-coordination-react-native
 **Matching core package:** module-crm-crm-field-service-coordination ([implementation](../core/crm-field-service-coordination.md))
 **Matching API package:** module-crm-crm-field-service-coordination-api ([contract](../api/crm-field-service-coordination.md))

@@ -1,12 +1,16 @@
 # CRM: Crm Ai Reception And Conversation Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-ai-reception-and-conversation). Observed identity: [`liberusoftware/module-crm-ai-reception-and-conversation-livewire`](../../../modules/source/liberusoftware--module-crm-ai-reception-and-conversation-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-crm-ai-reception-and-conversation-livewire`  
 **Matching domain module:** `crm-ai-reception-and-conversation`  
 **Application:** CRM  
 **Source feature:** [Crm Ai Reception And Conversation](../features/crm-ai-reception-and-conversation.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

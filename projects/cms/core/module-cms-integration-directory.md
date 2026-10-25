@@ -1,8 +1,12 @@
 # CMS: Module Cms Integration Directory Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-integration-directory). Observed identity: [`liberusoftware/module-cms-integration-directory`](../../../modules/source/liberusoftware--module-cms-integration-directory.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-integration-directory`
+**Design package identifier:** `module-cms-module-cms-integration-directory`
 **Domain specification:** [Module Cms Integration Directory](../features/module-cms-integration-directory.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

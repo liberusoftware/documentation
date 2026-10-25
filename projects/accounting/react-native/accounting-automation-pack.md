@@ -1,5 +1,9 @@
 # Accounting Automation Pack React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-automation-pack). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-automation-pack-react-native
 **Matching core package:** module-accounting-accounting-automation-pack ([implementation](../core/accounting-automation-pack.md))
 **Matching API package:** module-accounting-accounting-automation-pack-api ([contract](../api/accounting-automation-pack.md))

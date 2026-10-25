@@ -1,6 +1,10 @@
 # Boilerplate: Settings Nuxt presentation packages
 
-**Composer package:** `module-settings-nuxt`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#settings). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-settings-nuxt`
 **Matching core package:** [`module-settings`](../core/settings.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Typed application/organization/team/user settings, precedence, validation, secrets, audit, and cache invalidation.

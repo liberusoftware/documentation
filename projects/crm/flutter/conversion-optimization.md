@@ -1,5 +1,9 @@
 # Conversion Optimization Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#conversion-optimization). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-conversion-optimization-flutter
 **Matching core package:** module-crm-conversion-optimization ([implementation](../core/conversion-optimization.md))
 **Matching API package:** module-crm-conversion-optimization-api ([contract](../api/conversion-optimization.md))

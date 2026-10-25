@@ -1,5 +1,9 @@
 # Moderation And Analytics React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#moderation-and-analytics). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-browser-game-moderation-and-analytics-react-native
 **Matching core package:** module-browser-game-moderation-and-analytics ([implementation](../core/moderation-and-analytics.md))
 **Matching API package:** module-browser-game-moderation-and-analytics-api ([contract](../api/moderation-and-analytics.md))

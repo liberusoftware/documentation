@@ -1,8 +1,12 @@
 # Accounting: Purchase Requisitions Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#purchase-requisitions). Observed identity: [`liberusoftware/module-accounting-purchase-requisitions`](../../../modules/source/liberusoftware--module-accounting-purchase-requisitions.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-purchase-requisitions`
+**Design package identifier:** `module-accounting-purchase-requisitions`
 **Domain specification:** [Purchase Requisitions](../features/purchase-requisitions.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

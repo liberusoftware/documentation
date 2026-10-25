@@ -1,12 +1,16 @@
 # Social Network: Events Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#events). Observed identity: [`liberusoftware/module-social-network-events-filament`](../../../modules/source/liberusoftware--module-social-network-events-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-social-network-events-filament`  
 **Matching domain module:** `social-network-events`  
 **Application:** Social Network  
 **Source feature:** [Events](../features/events.md)  
-**Architecture:** [FILAMENT.md](../SOCIAL-NETWORK.md) · [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

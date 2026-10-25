@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:partners-and-portals:revoke:request:v1",
+  "title": "Partners and portals: proposed revoke request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "reason",
+    "revocation_evidence_reference"
+  ],
+  "properties": {
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "revocation_evidence_reference": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

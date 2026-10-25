@@ -1,5 +1,9 @@
 # Order Tracking Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#order-tracking). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-order-tracking-flutter
 **Matching core package:** module-ecommerce-order-tracking ([implementation](../core/order-tracking.md))
 **Matching API package:** module-ecommerce-order-tracking-api ([contract](../api/order-tracking.md))

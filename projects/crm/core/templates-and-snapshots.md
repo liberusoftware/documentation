@@ -1,8 +1,12 @@
 # Crm: Templates And Snapshots Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#templates-and-snapshots). Observed identity: [`liberusoftware/module-crm-templates-and-snapshots`](../../../modules/source/liberusoftware--module-crm-templates-and-snapshots.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-templates-and-snapshots`
+**Design package identifier:** `module-crm-templates-and-snapshots`
 **Domain specification:** [Templates And Snapshots](../features/templates-and-snapshots.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

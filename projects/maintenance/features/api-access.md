@@ -1,12 +1,16 @@
 # Maintenance: Api Access
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#api-access). Observed identity: [`liberusoftware/api-access`](../../../modules/source/liberusoftware--api-access.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-maintenance-api-access`
 **Application:** Maintenance  
 **Capability group:** Api Access  
 **Source scope:** [MAINTENANCE.md](../MAINTENANCE.md)  
-**Architecture:** [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md) · [API.md](../MAINTENANCE.md) · [FILAMENT.md](../MAINTENANCE.md) · [LIVEWIRE.md](../MAINTENANCE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

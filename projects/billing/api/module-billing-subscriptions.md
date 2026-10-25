@@ -1,12 +1,16 @@
 # Billing: Module Billing Subscriptions API
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-subscriptions). Observed identity: [`liberusoftware/module-billing-subscriptions-api`](../../../modules/source/liberusoftware--module-billing-subscriptions-api.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one API module specification
 
-**API package:** `module-billing-module-billing-subscriptions-api`  
+**Proposed API design identifier:** `module-billing-module-billing-subscriptions-api`<br>
 **Matching domain module:** `module-billing-subscriptions`  
 **Application:** Billing  
 **Source feature:** [Module Billing Subscriptions](../features/module-billing-subscriptions.md)  
-**Architecture:** [API.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+**Architecture:** [API.md](../../../architecture/API.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
@@ -22,124 +26,60 @@ Installation does not expose every capability automatically. The host applicatio
 ## 2. Contract design
 
 - Publish an OpenAPI 3.1 fragment with stable operation IDs, schemas, examples, scopes, errors, pagination, rate limits, idempotency, and deprecation metadata.
-- Use `/api/v1/billing/module-billing-subscriptions` as the default module route prefix unless the application owns and documents a compatible façade path.
+- Choose the route namespace through the host's reviewed API contract; observed source prefixes below take precedence over repository/design-name guesses.
 - Represent resources through explicit API DTOs/resources rather than automatic Eloquent serialization.
 - Use lowercase kebab-case paths, snake_case JSON fields, opaque identifiers, ISO 8601 timestamps, explicit money objects, and RFC 9457 Problem Details errors.
 - Compatible additions remain within the major version; removals or semantic breaks require a new major version or approved migration path.
 
 ## 3. Endpoint examples
 
-**Base path:** `/api/v1/billing/module-billing-subscriptions`
+**Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
 
-These examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.
+| Boundary | Observed identity and implementation reference |
+| --- | --- |
+| Source package | [liberusoftware/module-billing-subscriptions-api](../../../modules/source/liberusoftware--module-billing-subscriptions-api.md) |
+| Source package | [liberusoftware/module-billing-subscriptions](../../../modules/source/liberusoftware--module-billing-subscriptions.md) |
 
-| Method   | Endpoint                                              | Purpose                                       | Possible request data                                                                         |
-| -------- | ----------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `GET`    | `/api/v1/billing/module-billing-subscriptions?page[size]=25&sort=-created_at` | List authorized resources                     | Query parameters for pagination, filtering, sorting, field selection, and documented includes |
-| `GET`    | `/api/v1/billing/module-billing-subscriptions/{id}`             | Retrieve one resource                         | Opaque resource `id` in the path; no request body                                             |
-| `POST`   | `/api/v1/billing/module-billing-subscriptions`                    | Create a resource                             | JSON body using the module schema and required team/context fields                            |
-| `PATCH`  | `/api/v1/billing/module-billing-subscriptions/{id}`             | Update permitted fields                       | JSON body containing changed fields and `If-Match` when concurrency is supported              |
-| `DELETE` | `/api/v1/billing/module-billing-subscriptions/{id}`             | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted           |
-| `POST`   | `/api/v1/billing/module-billing-subscriptions/{id}/<explicit-action>` | Execute a documented domain action            | Action-specific JSON body and `Idempotency-Key` for retryable writes                          |
+### Observed route declarations
 
-Example create request (illustrative fields only):
+These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-```json
-{
-  "attributes": "example-value"
-}
+[modules/module-billing-subscriptions-api/routes/api.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-subscriptions-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'throttle:api', 'auth:sanctum', 'ability:billing.subscriptions.read'])
+Route::get('/', [SubscriptionController::class, 'index'])->name('index');
+Route::get('/{subscription}', [SubscriptionController::class, 'show'])->whereNumber('subscription')->name('show');
+Route::middleware(['api', 'throttle:api', 'auth:sanctum', 'ability:billing.subscriptions.write', 'idempotency'])
+Route::post('/', [SubscriptionController::class, 'store'])->name('store');
+Route::post('/{subscription}/renew', [SubscriptionController::class, 'renew'])->name('renew');
+Route::post('/{subscription}/pause', [SubscriptionController::class, 'pause'])->name('pause');
+Route::post('/{subscription}/resume', [SubscriptionController::class, 'resume'])->name('resume');
+Route::post('/{subscription}/cancel', [SubscriptionController::class, 'cancel'])->name('cancel');
+Route::patch('/{subscription}/plan', [SubscriptionController::class, 'changePlan'])->name('plan');
+Route::patch('/{subscription}/entitlements', [SubscriptionController::class, 'entitlements'])->name('entitlements');
+Route::post('/expire', [SubscriptionController::class, 'expire'])->name('expire');
 ```
 
-Example request headers:
+### Observed controller entry points
 
-```http
-Accept: application/json
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Content-Type: application/json
-Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
-X-Request-ID: 01JEXAMPLEREQUESTID
-```
+The signatures identify request handlers to review; their argument names are not complete JSON schemas. Read their request validation, actor/tenant resolution, policy, serialization and error paths before writing a client.
 
-Successful reads and writes return the standard `data` envelope from [API.md](../BILLING.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
+| Controller source | Public handler signatures |
+| --- | --- |
+| [SubscriptionController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-subscriptions-api/src/Http/Controllers/SubscriptionController.php) | `public function index(Request $request, ListSubscriptions $query): JsonResponse`<br>`public function show(Request $request, Subscription $subscription): JsonResponse`<br>`public function store(Request $request, ActivateSubscription $activate): JsonResponse`<br>`public function renew(Request $request, Subscription $subscription, RenewSubscription $renew): JsonResponse`<br>`public function pause(Request $request, Subscription $subscription, PauseSubscription $pause): JsonResponse`<br>`public function cancel(Request $request, Subscription $subscription, CancelSubscription $cancel): JsonResponse`<br>`public function resume(Request $request, Subscription $subscription, ResumeSubscription $resume): JsonResponse`<br>`public function changePlan(Request $request, Subscription $subscription, ChangeSubscriptionPlan $change): JsonResponse`<br>`public function entitlements(Request $request, Subscription $subscription, UpdateEntitlementState $update): JsonResponse`<br>`public function expire(Request $request, ExpireSubscriptions $expire): JsonResponse` |
+
+A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
 ## 4. OpenAPI schema
 
-This module owns a versioned OpenAPI 3.1 fragment for `module-billing-subscriptions`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/module-billing-subscriptions.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.
+The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-### Required schema elements
+- [modules/module-billing-subscriptions-api/openapi/v1/billing-subscriptions.yaml](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-subscriptions-api/openapi/v1/billing-subscriptions.yaml)
 
-- Use stable operation IDs such as `billing.moduleBillingSubscriptions.list`, `billing.moduleBillingSubscriptions.get`, `billing.moduleBillingSubscriptions.create`, `billing.moduleBillingSubscriptions.update`, and `billing.moduleBillingSubscriptions.delete`; use an explicit domain action ID when applicable.
-- Define the module's resource schema as `ModuleBillingSubscriptionsResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.
-- Document possible module fields; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.
-- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.
-- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../BILLING.md); do not serialize Eloquent models automatically.
+For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 
-### Minimal fragment example
-
-```yaml
-openapi: 3.1.0
-info:
-  title: module-billing-subscriptions API
-  version: 1.0.0
-paths:
-  /api/v1/billing/module-billing-subscriptions:
-    get:
-      operationId: billing.moduleBillingSubscriptions.list
-      security:
-        - sanctum: []
-      parameters:
-        - $ref: "#/components/parameters/PageSize"
-      responses:
-        "200":
-          $ref: "#/components/responses/ResourceCollection"
-components:
-  parameters:
-    PageSize:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 100
-  securitySchemes:
-    sanctum:
-      type: http
-      scheme: bearer
-      bearerFormat: Sanctum
-  schemas:
-    ModuleBillingSubscriptionsResource:
-      type: object
-      required: [id, type, attributes]
-      properties:
-        id:
-          type: string
-          description: Opaque Liberu resource identifier.
-        type:
-          type: string
-          const: module-billing-subscriptions
-        attributes:
-          type: object
-          additionalProperties: true
-    ResourceCollection:
-      type: object
-      required: [data]
-      properties:
-        data:
-          type: array
-          items:
-            $ref: "#/components/schemas/ModuleBillingSubscriptionsResource"
-  responses:
-    ResourceCollection:
-      description: Authorized paginated resources.
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/ResourceCollection"
-```
-
-The example is a contract outline, not a substitute for the complete module schema: replace `additionalProperties` with explicit fields and add create/update/action schemas before release. Validate the fragment, bundle it into the application specification, run breaking-change detection against the supported release, and generate typed clients only from the released specification.
-
-**References:** [OpenAPI 3.1 specification](https://spec.openapis.org/oas/v3.1.0) · [OpenAPI and contract registry](../../../architecture/API.md#8-openapi-and-contract-registry) · [Module API design](../../../architecture/API.md#19-module-api-design) · [Response conventions](../../../architecture/API.md#10-response-conventions)
+Validate/bundle the fragment, check supported-version compatibility and generate clients only from the reviewed contract. Retain the source/schema commit or release in client compatibility notes. See the [API architecture](../../../architecture/API.md), [source mapping](../SOURCE-MAPPING.md#module-billing-subscriptions), and [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) guides.
 
 ## 5. Audience and operation matrix
 

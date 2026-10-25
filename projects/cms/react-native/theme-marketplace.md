@@ -1,5 +1,9 @@
 # Theme Marketplace React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#theme-marketplace). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-theme-marketplace-react-native
 **Matching core package:** module-cms-theme-marketplace ([implementation](../core/theme-marketplace.md))
 **Matching API package:** module-cms-theme-marketplace-api ([contract](../api/theme-marketplace.md))

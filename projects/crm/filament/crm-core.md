@@ -1,12 +1,16 @@
 # CRM: CRM Core Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-core). Observed identity: [`liberusoftware/module-crm-core-filament`](../../../modules/source/liberusoftware--module-crm-core-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-core-filament`  
 **Matching domain module:** `crm-core`  
 **Application:** CRM  
 **Source feature:** [CRM Core](../features/crm-core.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

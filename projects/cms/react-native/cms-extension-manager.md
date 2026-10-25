@@ -1,5 +1,9 @@
 # Cms Extension Manager React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-extension-manager). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-extension-manager-react-native
 **Matching core package:** module-cms-cms-extension-manager ([implementation](../core/cms-extension-manager.md))
 **Matching API package:** module-cms-cms-extension-manager-api ([contract](../api/cms-extension-manager.md))

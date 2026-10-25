@@ -1,5 +1,9 @@
 # Listings Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#listings). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-real-estate-listings-flutter
 **Matching core package:** module-real-estate-listings ([implementation](../core/listings.md))
 **Matching API package:** module-real-estate-listings-api ([contract](../api/listings.md))

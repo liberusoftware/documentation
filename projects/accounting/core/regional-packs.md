@@ -1,8 +1,12 @@
 # Accounting: Regional Packs Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#regional-packs). Observed identity: [`liberusoftware/module-accounting-regional-packs`](../../../modules/source/liberusoftware--module-accounting-regional-packs.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-regional-packs`
+**Design package identifier:** `module-accounting-regional-packs`
 **Domain specification:** [Regional Packs](../features/regional-packs.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

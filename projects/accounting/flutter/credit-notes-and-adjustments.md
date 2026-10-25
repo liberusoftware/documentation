@@ -1,5 +1,9 @@
 # Credit Notes And Adjustments Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#credit-notes-and-adjustments). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-credit-notes-and-adjustments-flutter
 **Matching core package:** module-accounting-credit-notes-and-adjustments ([implementation](../core/credit-notes-and-adjustments.md))
 **Matching API package:** module-accounting-credit-notes-and-adjustments-api ([contract](../api/credit-notes-and-adjustments.md))

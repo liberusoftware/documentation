@@ -1,12 +1,16 @@
 # Billing: Module Liberu Business Workflow Reconciliation
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-liberu-business-workflow-reconciliation). Observed identity: [`liberusoftware/module-liberu-business-workflow-reconciliation`](../../../modules/source/liberusoftware--module-liberu-business-workflow-reconciliation.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-billing-module-liberu-business-workflow-reconciliation`
 **Application:** Billing  
 **Capability group:** Module Liberu Business Workflow Reconciliation  
 **Source scope:** [BILLING.md](../BILLING.md)  
-**Architecture:** [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md) · [API.md](../BILLING.md) · [FILAMENT.md](../BILLING.md) · [LIVEWIRE.md](../BILLING.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

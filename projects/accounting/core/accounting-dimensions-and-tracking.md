@@ -1,8 +1,12 @@
 # Accounting: Accounting Dimensions And Tracking Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-dimensions-and-tracking). Observed identity: [`liberusoftware/module-accounting-dimensions-and-tracking`](../../../modules/source/liberusoftware--module-accounting-dimensions-and-tracking.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-dimensions-and-tracking`
+**Design package identifier:** `module-accounting-accounting-dimensions-and-tracking`
 **Domain specification:** [Accounting Dimensions And Tracking](../features/accounting-dimensions-and-tracking.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

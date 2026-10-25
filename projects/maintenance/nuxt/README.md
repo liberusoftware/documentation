@@ -1,50 +1,70 @@
 # Maintenance Nuxt Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **60 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-- [Activity Comments Nuxt](activity-comments.md) — `module-maintenance-activity-comments-nuxt`
-- [Analytics Core Nuxt](analytics-core.md) — `module-maintenance-analytics-core-nuxt`
-- [Analytics Google Nuxt](analytics-google.md) — `module-maintenance-analytics-google-nuxt`
-- [Analytics Meta Nuxt](analytics-meta.md) — `module-maintenance-analytics-meta-nuxt`
-- [Api Access Nuxt](api-access.md) — `module-maintenance-api-access-nuxt`
-- [Application Nuxt](application.md) — `module-maintenance-application-nuxt`
-- [Audit Nuxt](audit.md) — `module-maintenance-audit-nuxt`
-- [Currency Context Nuxt](currency-context.md) — `module-maintenance-currency-context-nuxt`
-- [Developer Experience Nuxt](developer-experience.md) — `module-maintenance-developer-experience-nuxt`
-- [Feature Flags Nuxt](feature-flags.md) — `module-maintenance-feature-flags-nuxt`
-- [Files Media Nuxt](files-media.md) — `module-maintenance-files-media-nuxt`
-- [Identity Core Nuxt](identity-core.md) — `module-maintenance-identity-core-nuxt`
-- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-maintenance-identity-socialstream-nuxt`
-- [Import Export Nuxt](import-export.md) — `module-maintenance-import-export-nuxt`
-- [Integrations Nuxt](integrations.md) — `module-maintenance-integrations-nuxt`
-- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-nuxt`
-- [Localization Core Nuxt](localization-core.md) — `module-maintenance-localization-core-nuxt`
-- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-maintenance-localization-mymemory-nuxt`
-- [Maintenance Maintenance Core Nuxt](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-nuxt`
-- [Module Maintenance Assets Nuxt](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-nuxt`
-- [Module Maintenance Commercial Nuxt](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-nuxt`
-- [Module Maintenance Compliance Nuxt](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-nuxt`
-- [Module Maintenance Core Nuxt](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-nuxt`
-- [Module Maintenance Customers And Sites Nuxt](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-nuxt`
-- [Module Maintenance Inspections Nuxt](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-nuxt`
-- [Module Maintenance Inventory Nuxt](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-nuxt`
-- [Module Maintenance Labor And Time Nuxt](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-nuxt`
-- [Module Maintenance Portals Nuxt](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-nuxt`
-- [Module Maintenance Preventative Maintenance Nuxt](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-nuxt`
-- [Module Maintenance Procurement Nuxt](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-nuxt`
-- [Module Maintenance Reporting Nuxt](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-nuxt`
-- [Module Maintenance Scheduling Nuxt](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-nuxt`
-- [Module Maintenance Work Orders Nuxt](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-nuxt`
-- [Module Manager Nuxt](module-manager.md) — `module-maintenance-module-manager-nuxt`
-- [Notifications Nuxt](notifications.md) — `module-maintenance-notifications-nuxt`
-- [Observability Nuxt](observability.md) — `module-maintenance-observability-nuxt`
-- [Organizations Teams Nuxt](organizations-teams.md) — `module-maintenance-organizations-teams-nuxt`
-- [Profiles Nuxt](profiles.md) — `module-maintenance-profiles-nuxt`
-- [Roles Permissions Nuxt](roles-permissions.md) — `module-maintenance-roles-permissions-nuxt`
-- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-maintenance-scheduler-queues-nuxt`
-- [Search Nuxt](search.md) — `module-maintenance-search-nuxt`
-- [Sessions Devices Nuxt](sessions-devices.md) — `module-maintenance-sessions-devices-nuxt`
-- [Settings Nuxt](settings.md) — `module-maintenance-settings-nuxt`
-- [Theme Support Nuxt](theme-support.md) — `module-maintenance-theme-support-nuxt`
-- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-nuxt`
-- [Webhooks Nuxt](webhooks.md) — `module-maintenance-webhooks-nuxt`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Nuxt](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Nuxt](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Nuxt](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Nuxt](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Nuxt](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Nuxt](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Assets Nuxt](assets.md) | [Target/source map](../SOURCE-MAPPING.md#assets) | [core](../core/assets.md) · [api](../api/assets.md) · [nextjs](../nextjs/assets.md) |
+| [Audit Nuxt](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Commercial Nuxt](commercial.md) | [Target/source map](../SOURCE-MAPPING.md#commercial) | [core](../core/commercial.md) · [api](../api/commercial.md) · [nextjs](../nextjs/commercial.md) |
+| [Compliance Nuxt](compliance.md) | [Target/source map](../SOURCE-MAPPING.md#compliance) | [core](../core/compliance.md) · [api](../api/compliance.md) · [nextjs](../nextjs/compliance.md) |
+| [Currency Context Nuxt](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customers and Sites Nuxt](customers-and-sites.md) | [Target/source map](../SOURCE-MAPPING.md#customers-and-sites) | [core](../core/customers-and-sites.md) · [api](../api/customers-and-sites.md) · [nextjs](../nextjs/customers-and-sites.md) |
+| [Developer Experience Nuxt](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags Nuxt](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Nuxt](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Nuxt](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Nuxt](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Nuxt](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Inspections Nuxt](inspections.md) | [Target/source map](../SOURCE-MAPPING.md#inspections) | [core](../core/inspections.md) · [api](../api/inspections.md) · [nextjs](../nextjs/inspections.md) |
+| [Integrations Nuxt](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Inventory Nuxt](inventory.md) | [Target/source map](../SOURCE-MAPPING.md#inventory) | [core](../core/inventory.md) · [api](../api/inventory.md) · [nextjs](../nextjs/inventory.md) |
+| [Jetstream Bridge Nuxt](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Labor and Time Nuxt](labor-and-time.md) | [Target/source map](../SOURCE-MAPPING.md#labor-and-time) | [core](../core/labor-and-time.md) · [api](../api/labor-and-time.md) · [nextjs](../nextjs/labor-and-time.md) |
+| [Localization Core Nuxt](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Nuxt](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Maintenance Core Nuxt](maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#maintenance-core) | [core](../core/maintenance-core.md) · [api](../api/maintenance-core.md) · [nextjs](../nextjs/maintenance-core.md) |
+| [Maintenance Maintenance Core Nuxt](maintenance-maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#maintenance-maintenance-core) | [core](../core/maintenance-maintenance-core.md) · [api](../api/maintenance-maintenance-core.md) · [nextjs](../nextjs/maintenance-maintenance-core.md) |
+| [Module Maintenance Assets Nuxt](module-maintenance-assets.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-assets) | [core](../core/module-maintenance-assets.md) · [api](../api/module-maintenance-assets.md) · [nextjs](../nextjs/module-maintenance-assets.md) |
+| [Module Maintenance Commercial Nuxt](module-maintenance-commercial.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-commercial) | [core](../core/module-maintenance-commercial.md) · [api](../api/module-maintenance-commercial.md) · [nextjs](../nextjs/module-maintenance-commercial.md) |
+| [Module Maintenance Compliance Nuxt](module-maintenance-compliance.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-compliance) | [core](../core/module-maintenance-compliance.md) · [api](../api/module-maintenance-compliance.md) · [nextjs](../nextjs/module-maintenance-compliance.md) |
+| [Module Maintenance Core Nuxt](module-maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-core) | [core](../core/module-maintenance-core.md) · [api](../api/module-maintenance-core.md) · [nextjs](../nextjs/module-maintenance-core.md) |
+| [Module Maintenance Customers And Sites Nuxt](module-maintenance-customers-and-sites.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-customers-and-sites) | [core](../core/module-maintenance-customers-and-sites.md) · [api](../api/module-maintenance-customers-and-sites.md) · [nextjs](../nextjs/module-maintenance-customers-and-sites.md) |
+| [Module Maintenance Inspections Nuxt](module-maintenance-inspections.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-inspections) | [core](../core/module-maintenance-inspections.md) · [api](../api/module-maintenance-inspections.md) · [nextjs](../nextjs/module-maintenance-inspections.md) |
+| [Module Maintenance Inventory Nuxt](module-maintenance-inventory.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-inventory) | [core](../core/module-maintenance-inventory.md) · [api](../api/module-maintenance-inventory.md) · [nextjs](../nextjs/module-maintenance-inventory.md) |
+| [Module Maintenance Labor And Time Nuxt](module-maintenance-labor-and-time.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-labor-and-time) | [core](../core/module-maintenance-labor-and-time.md) · [api](../api/module-maintenance-labor-and-time.md) · [nextjs](../nextjs/module-maintenance-labor-and-time.md) |
+| [Module Maintenance Portals Nuxt](module-maintenance-portals.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-portals) | [core](../core/module-maintenance-portals.md) · [api](../api/module-maintenance-portals.md) · [nextjs](../nextjs/module-maintenance-portals.md) |
+| [Module Maintenance Preventative Maintenance Nuxt](module-maintenance-preventative-maintenance.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-preventative-maintenance) | [core](../core/module-maintenance-preventative-maintenance.md) · [api](../api/module-maintenance-preventative-maintenance.md) · [nextjs](../nextjs/module-maintenance-preventative-maintenance.md) |
+| [Module Maintenance Procurement Nuxt](module-maintenance-procurement.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-procurement) | [core](../core/module-maintenance-procurement.md) · [api](../api/module-maintenance-procurement.md) · [nextjs](../nextjs/module-maintenance-procurement.md) |
+| [Module Maintenance Reporting Nuxt](module-maintenance-reporting.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-reporting) | [core](../core/module-maintenance-reporting.md) · [api](../api/module-maintenance-reporting.md) · [nextjs](../nextjs/module-maintenance-reporting.md) |
+| [Module Maintenance Scheduling Nuxt](module-maintenance-scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-scheduling) | [core](../core/module-maintenance-scheduling.md) · [api](../api/module-maintenance-scheduling.md) · [nextjs](../nextjs/module-maintenance-scheduling.md) |
+| [Module Maintenance Work Orders Nuxt](module-maintenance-work-orders.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-work-orders) | [core](../core/module-maintenance-work-orders.md) · [api](../api/module-maintenance-work-orders.md) · [nextjs](../nextjs/module-maintenance-work-orders.md) |
+| [Module Manager Nuxt](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Nuxt](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Nuxt](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Nuxt](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Portals Nuxt](portals.md) | [Target/source map](../SOURCE-MAPPING.md#portals) | [core](../core/portals.md) · [api](../api/portals.md) · [nextjs](../nextjs/portals.md) |
+| [Preventative Maintenance Nuxt](preventative-maintenance.md) | [Target/source map](../SOURCE-MAPPING.md#preventative-maintenance) | [core](../core/preventative-maintenance.md) · [api](../api/preventative-maintenance.md) · [nextjs](../nextjs/preventative-maintenance.md) |
+| [Procurement Nuxt](procurement.md) | [Target/source map](../SOURCE-MAPPING.md#procurement) | [core](../core/procurement.md) · [api](../api/procurement.md) · [nextjs](../nextjs/procurement.md) |
+| [Profiles Nuxt](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Reporting Nuxt](reporting.md) | [Target/source map](../SOURCE-MAPPING.md#reporting) | [core](../core/reporting.md) · [api](../api/reporting.md) · [nextjs](../nextjs/reporting.md) |
+| [Roles Permissions Nuxt](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Nuxt](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Scheduling Nuxt](scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#scheduling) | [core](../core/scheduling.md) · [api](../api/scheduling.md) · [nextjs](../nextjs/scheduling.md) |
+| [Search Nuxt](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Nuxt](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Nuxt](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Nuxt](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Nuxt](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Nuxt](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [Work Orders Nuxt](work-orders.md) | [Target/source map](../SOURCE-MAPPING.md#work-orders) | [core](../core/work-orders.md) · [api](../api/work-orders.md) · [nextjs](../nextjs/work-orders.md) |

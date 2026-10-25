@@ -1,50 +1,69 @@
 # Social Network Nuxt Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **59 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-- [Activity Comments Nuxt](activity-comments.md) — `module-social-network-activity-comments-nuxt`
-- [Analytics Core Nuxt](analytics-core.md) — `module-social-network-analytics-core-nuxt`
-- [Analytics Google Nuxt](analytics-google.md) — `module-social-network-analytics-google-nuxt`
-- [Analytics Meta Nuxt](analytics-meta.md) — `module-social-network-analytics-meta-nuxt`
-- [Api Access Nuxt](api-access.md) — `module-social-network-api-access-nuxt`
-- [Application Nuxt](application.md) — `module-social-network-application-nuxt`
-- [Audit Nuxt](audit.md) — `module-social-network-audit-nuxt`
-- [Currency Context Nuxt](currency-context.md) — `module-social-network-currency-context-nuxt`
-- [Developer Experience Nuxt](developer-experience.md) — `module-social-network-developer-experience-nuxt`
-- [Feature Flags Nuxt](feature-flags.md) — `module-social-network-feature-flags-nuxt`
-- [Files Media Nuxt](files-media.md) — `module-social-network-files-media-nuxt`
-- [Identity Core Nuxt](identity-core.md) — `module-social-network-identity-core-nuxt`
-- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-social-network-identity-socialstream-nuxt`
-- [Import Export Nuxt](import-export.md) — `module-social-network-import-export-nuxt`
-- [Integrations Nuxt](integrations.md) — `module-social-network-integrations-nuxt`
-- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-social-network-jetstream-bridge-nuxt`
-- [Localization Core Nuxt](localization-core.md) — `module-social-network-localization-core-nuxt`
-- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-social-network-localization-mymemory-nuxt`
-- [Module Manager Nuxt](module-manager.md) — `module-social-network-module-manager-nuxt`
-- [Notifications Nuxt](notifications.md) — `module-social-network-notifications-nuxt`
-- [Observability Nuxt](observability.md) — `module-social-network-observability-nuxt`
-- [Organizations Teams Nuxt](organizations-teams.md) — `module-social-network-organizations-teams-nuxt`
-- [Profiles Nuxt](profiles.md) — `module-social-network-profiles-nuxt`
-- [Roles Permissions Nuxt](roles-permissions.md) — `module-social-network-roles-permissions-nuxt`
-- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-social-network-scheduler-queues-nuxt`
-- [Search Nuxt](search.md) — `module-social-network-search-nuxt`
-- [Sessions Devices Nuxt](sessions-devices.md) — `module-social-network-sessions-devices-nuxt`
-- [Settings Nuxt](settings.md) — `module-social-network-settings-nuxt`
-- [Social Network Analytics Nuxt](social-network-analytics.md) — `module-social-network-social-network-analytics-nuxt`
-- [Social Network Communities Nuxt](social-network-communities.md) — `module-social-network-social-network-communities-nuxt`
-- [Social Network Discovery Nuxt](social-network-discovery.md) — `module-social-network-social-network-discovery-nuxt`
-- [Social Network Engagement Nuxt](social-network-engagement.md) — `module-social-network-social-network-engagement-nuxt`
-- [Social Network Events Nuxt](social-network-events.md) — `module-social-network-social-network-events-nuxt`
-- [Social Network Federation Nuxt](social-network-federation.md) — `module-social-network-social-network-federation-nuxt`
-- [Social Network Feed Nuxt](social-network-feed.md) — `module-social-network-social-network-feed-nuxt`
-- [Social Network Media Nuxt](social-network-media.md) — `module-social-network-social-network-media-nuxt`
-- [Social Network Messaging Nuxt](social-network-messaging.md) — `module-social-network-social-network-messaging-nuxt`
-- [Social Network Moderation Nuxt](social-network-moderation.md) — `module-social-network-social-network-moderation-nuxt`
-- [Social Network Notifications Nuxt](social-network-notifications.md) — `module-social-network-social-network-notifications-nuxt`
-- [Social Network Profiles Nuxt](social-network-profiles.md) — `module-social-network-social-network-profiles-nuxt`
-- [Social Network Publishing Nuxt](social-network-publishing.md) — `module-social-network-social-network-publishing-nuxt`
-- [Social Network Social Core Nuxt](social-network-social-core.md) — `module-social-network-social-network-social-core-nuxt`
-- [Social Network Social Graph Nuxt](social-network-social-graph.md) — `module-social-network-social-network-social-graph-nuxt`
-- [Theme Support Nuxt](theme-support.md) — `module-social-network-theme-support-nuxt`
-- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-social-network-two-factor-authentication-nuxt`
-- [Webhooks Nuxt](webhooks.md) — `module-social-network-webhooks-nuxt`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Nuxt](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Nuxt](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Nuxt](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Nuxt](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Analytics Nuxt](analytics.md) | [Target/source map](../SOURCE-MAPPING.md#analytics) | [core](../core/analytics.md) · [api](../api/analytics.md) · [nextjs](../nextjs/analytics.md) |
+| [Api Access Nuxt](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Nuxt](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Nuxt](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Communities Nuxt](communities.md) | [Target/source map](../SOURCE-MAPPING.md#communities) | [core](../core/communities.md) · [api](../api/communities.md) · [nextjs](../nextjs/communities.md) |
+| [Currency Context Nuxt](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Nuxt](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Discovery Nuxt](discovery.md) | [Target/source map](../SOURCE-MAPPING.md#discovery) | [core](../core/discovery.md) · [api](../api/discovery.md) · [nextjs](../nextjs/discovery.md) |
+| [Engagement Nuxt](engagement.md) | [Target/source map](../SOURCE-MAPPING.md#engagement) | [core](../core/engagement.md) · [api](../api/engagement.md) · [nextjs](../nextjs/engagement.md) |
+| [Events Nuxt](events.md) | [Target/source map](../SOURCE-MAPPING.md#events) | [core](../core/events.md) · [api](../api/events.md) · [nextjs](../nextjs/events.md) |
+| [Feature Flags Nuxt](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Federation Nuxt](federation.md) | [Target/source map](../SOURCE-MAPPING.md#federation) | [core](../core/federation.md) · [api](../api/federation.md) · [nextjs](../nextjs/federation.md) |
+| [Feed Nuxt](feed.md) | [Target/source map](../SOURCE-MAPPING.md#feed) | [core](../core/feed.md) · [api](../api/feed.md) · [nextjs](../nextjs/feed.md) |
+| [Files Media Nuxt](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Nuxt](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Nuxt](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Nuxt](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Nuxt](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Nuxt](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core Nuxt](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Nuxt](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Media Nuxt](media.md) | [Target/source map](../SOURCE-MAPPING.md#media) | [core](../core/media.md) · [api](../api/media.md) · [nextjs](../nextjs/media.md) |
+| [Messaging Nuxt](messaging.md) | [Target/source map](../SOURCE-MAPPING.md#messaging) | [core](../core/messaging.md) · [api](../api/messaging.md) · [nextjs](../nextjs/messaging.md) |
+| [Moderation Nuxt](moderation.md) | [Target/source map](../SOURCE-MAPPING.md#moderation) | [core](../core/moderation.md) · [api](../api/moderation.md) · [nextjs](../nextjs/moderation.md) |
+| [Module Manager Nuxt](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Nuxt](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Nuxt](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Nuxt](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles Nuxt](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Publishing Nuxt](publishing.md) | [Target/source map](../SOURCE-MAPPING.md#publishing) | [core](../core/publishing.md) · [api](../api/publishing.md) · [nextjs](../nextjs/publishing.md) |
+| [Roles Permissions Nuxt](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Nuxt](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Nuxt](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Nuxt](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Nuxt](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Social Core Nuxt](social-core.md) | [Target/source map](../SOURCE-MAPPING.md#social-core) | [core](../core/social-core.md) · [api](../api/social-core.md) · [nextjs](../nextjs/social-core.md) |
+| [Social Graph Nuxt](social-graph.md) | [Target/source map](../SOURCE-MAPPING.md#social-graph) | [core](../core/social-graph.md) · [api](../api/social-graph.md) · [nextjs](../nextjs/social-graph.md) |
+| [Social Network Analytics Nuxt](social-network-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-analytics) | [core](../core/social-network-analytics.md) · [api](../api/social-network-analytics.md) · [nextjs](../nextjs/social-network-analytics.md) |
+| [Social Network Communities Nuxt](social-network-communities.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-communities) | [core](../core/social-network-communities.md) · [api](../api/social-network-communities.md) · [nextjs](../nextjs/social-network-communities.md) |
+| [Social Network Discovery Nuxt](social-network-discovery.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-discovery) | [core](../core/social-network-discovery.md) · [api](../api/social-network-discovery.md) · [nextjs](../nextjs/social-network-discovery.md) |
+| [Social Network Engagement Nuxt](social-network-engagement.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-engagement) | [core](../core/social-network-engagement.md) · [api](../api/social-network-engagement.md) · [nextjs](../nextjs/social-network-engagement.md) |
+| [Social Network Events Nuxt](social-network-events.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-events) | [core](../core/social-network-events.md) · [api](../api/social-network-events.md) · [nextjs](../nextjs/social-network-events.md) |
+| [Social Network Federation Nuxt](social-network-federation.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-federation) | [core](../core/social-network-federation.md) · [api](../api/social-network-federation.md) · [nextjs](../nextjs/social-network-federation.md) |
+| [Social Network Feed Nuxt](social-network-feed.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-feed) | [core](../core/social-network-feed.md) · [api](../api/social-network-feed.md) · [nextjs](../nextjs/social-network-feed.md) |
+| [Social Network Media Nuxt](social-network-media.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-media) | [core](../core/social-network-media.md) · [api](../api/social-network-media.md) · [nextjs](../nextjs/social-network-media.md) |
+| [Social Network Messaging Nuxt](social-network-messaging.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-messaging) | [core](../core/social-network-messaging.md) · [api](../api/social-network-messaging.md) · [nextjs](../nextjs/social-network-messaging.md) |
+| [Social Network Moderation Nuxt](social-network-moderation.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-moderation) | [core](../core/social-network-moderation.md) · [api](../api/social-network-moderation.md) · [nextjs](../nextjs/social-network-moderation.md) |
+| [Social Network Notifications Nuxt](social-network-notifications.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-notifications) | [core](../core/social-network-notifications.md) · [api](../api/social-network-notifications.md) · [nextjs](../nextjs/social-network-notifications.md) |
+| [Social Network Profiles Nuxt](social-network-profiles.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-profiles) | [core](../core/social-network-profiles.md) · [api](../api/social-network-profiles.md) · [nextjs](../nextjs/social-network-profiles.md) |
+| [Social Network Publishing Nuxt](social-network-publishing.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-publishing) | [core](../core/social-network-publishing.md) · [api](../api/social-network-publishing.md) · [nextjs](../nextjs/social-network-publishing.md) |
+| [Social Network Social Core Nuxt](social-network-social-core.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-social-core) | [core](../core/social-network-social-core.md) · [api](../api/social-network-social-core.md) · [nextjs](../nextjs/social-network-social-core.md) |
+| [Social Network Social Graph Nuxt](social-network-social-graph.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-social-graph) | [core](../core/social-network-social-graph.md) · [api](../api/social-network-social-graph.md) · [nextjs](../nextjs/social-network-social-graph.md) |
+| [Theme Support Nuxt](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Nuxt](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Nuxt](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

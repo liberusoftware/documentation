@@ -22,9 +22,10 @@ Liberu application repositories are published under the [liberusoftware](https:/
 | Genealogy      | [genealogy-laravel](https://github.com/liberusoftware/genealogy-laravel)           | [Scope](projects/genealogy/GENEALOGY.md) · [Features](projects/genealogy/features/README.md) · [API](projects/genealogy/api/README.md)                     |
 | Maintenance    | [maintenance-laravel](https://github.com/liberusoftware/maintenance-laravel)       | [Scope](projects/maintenance/MAINTENANCE.md) · [Features](projects/maintenance/features/README.md) · [API](projects/maintenance/api/README.md)             |
 | Real Estate    | [real-estate-laravel](https://github.com/liberusoftware/real-estate-laravel)       | [Scope](projects/real-estate/REAL-ESTATE.md) · [Features](projects/real-estate/features/README.md) · [API](projects/real-estate/api/README.md)             |
+| Enterprise SAP | [enterprise-sap-laravel](https://github.com/liberusoftware/enterprise-sap-laravel) | [Scope](projects/sap/SAP.md) · [Current foundation](projects/sap/SOURCE-APPLICATION.md) · [Development](projects/sap/DEVELOPMENT.md) |
 | Social Network | [social-network-laravel](https://github.com/liberusoftware/social-network-laravel) | [Scope](projects/social-network/SOCIAL-NETWORK.md) · [Features](projects/social-network/features/README.md) · [API](projects/social-network/api/README.md) |
 
-The organization’s [repositories page](https://github.com/orgs/liberusoftware/repositories) is the current catalogue. SAP-style Enterprise Suite and Liberu cross-product modules are currently documentation/planning scopes without a separately listed application repository.
+The organization’s [repositories page](https://github.com/orgs/liberusoftware/repositories) is the current catalogue. The SAP application is a foundation host; its proposed enterprise business domains are distinct from verified implementation. Liberu cross-product orchestration remains a composition/planning scope. The [complete source inventory](architecture/SOURCE-INVENTORY.md) records the 14 observed application repositories.
 
 For those planning scopes, begin with [Liberu platform](projects/LIBERU.md) or [SAP-style Enterprise Suite](projects/sap/SAP.md), then use their [core](projects/liberu/core/README.md) or [core](projects/sap/core/README.md), [feature](projects/liberu/features/README.md) or [feature](projects/sap/features/README.md), and adapter indexes before selecting a host application.
 
@@ -32,7 +33,7 @@ For those planning scopes, begin with [Liberu platform](projects/LIBERU.md) or [
 
 Start with the framework-neutral feature specification, then add only the matching adapters required by the application.
 
-For each selected feature, install its presentation-neutral core package first, named `module-{independent-module-name}`. Add only the adapters required by the chosen surfaces, such as `module-{independent-module-name}-api`, `-filament`, `-livewire`, `-react-inertia`, `-vue-inertia`, `-nuxt`, `-react-native`, or `-flutter`. Core packages own domain rules, persistence, policies, events, jobs, and contracts; adapters must not duplicate them.
+For each selected feature, identify its actual core package through the project source map and `composer.json`. A `module-{...}` design identifier is not necessarily the Composer identity or a released package. Add only the adapters required by the chosen surfaces, including API, Filament, Livewire, React/Inertia, Vue/Inertia, Next.js, Nuxt or mobile. JavaScript packages need their own verified npm identity; Dart packages follow their own metadata. Core packages own domain rules, persistence, policies, events, jobs, and contracts; adapters must not duplicate them.
 
 | Need                    | Index                                                                                       | Standard                                                      |
 | ----------------------- | ------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -56,7 +57,7 @@ Confirm the selected project README and CI matrix before installing. The current
 - Laravel 13
 - Node.js 22+ and the project’s locked package manager
 - Filament 5 and Livewire 4 where selected
-- React 19.2 + Inertia 3, Vue 3 + Inertia 3, or Nuxt 4 where selected
+- React 19.2 + Inertia 3, Vue 3 + Inertia 3, Nuxt 4, or a compatible Next.js/React application where selected
 - A supported database, cache/queue backend, mail transport, and filesystem
 
 Read [PHP](standards/PHP.md), [Laravel](standards/LARAVEL.md), [Database](standards/DATABASE.md), and [technology references](technologies/README.md) for detail.
@@ -89,7 +90,7 @@ Only run seeders documented by the selected project in a shared or production en
 Build frontend assets when required:
 
 ```bash
-npm install
+npm ci
 npm run build
 ```
 
@@ -99,7 +100,7 @@ Run the project’s verification commands:
 php artisan test
 ```
 
-Follow the project README for workers, Horizon, Reverb, scheduled tasks, storage links, local services, and environment-specific commands.
+Use the selected project’s `DEVELOPMENT.md` for actual root scripts and `SOURCE-MAPPING.md` for package identities and implementation references. A root Composer `test` script is not universal; run the runner declared by that checkout. Follow its README for workers, Horizon, Reverb, scheduled tasks, storage links, local services and environment-specific commands. See the [Composer](guides/COMPOSER.md) and [npm](guides/NPM.md) lifecycle guides for project-clone updates and publishing.
 
 For a personal or first-time installation, complete the smallest path first: install dependencies, configure one supported database, run migrations, create an account, verify one core module workflow, confirm authorization, export or back up the data, and record how to restore it. Do not enable optional integrations until the base workflow is verified.
 
@@ -134,3 +135,7 @@ If installation fails, preserve the error and version information, correct the d
 - [Technology references](technologies/README.md)
 - [Deployment index](deployment/README.md)
 - [Contributing](standards/CONTRIBUTING.md)
+
+## Source-backed presentation selection
+
+Use the [Next.js module plans](modules/nextjs/README.md) and [shared adapter registry](modules/nextjs/OWNERSHIP.md) when selecting API-consuming React presentation. Shared React primitives can serve Inertia and Next.js, while their routing/session/form boundaries remain distinct. Confirm owning API and source-variant compatibility before adopting any planned adapter.

@@ -1,12 +1,16 @@
 # Browser Game: Browser Game Game Core
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#browser-game-game-core). Observed identity: [`liberusoftware/module-browser-game-game-core`](../../../modules/source/liberusoftware--module-browser-game-game-core.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-browser-game-browser-game-game-core`
 **Application:** Browser Game  
 **Capability group:** Browser Game Game Core  
 **Source scope:** [BROWSER-GAME.md](../BROWSER-GAME.md)  
-**Architecture:** [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md) · [API.md](../BROWSER-GAME.md) · [FILAMENT.md](../BROWSER-GAME.md) · [LIVEWIRE.md](../BROWSER-GAME.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

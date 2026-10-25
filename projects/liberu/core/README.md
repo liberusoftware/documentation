@@ -1,13 +1,17 @@
 # Liberu Core Modules
 
+<!-- catalogue-status:start -->
+This index preserves **4 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 This index covers the Laravel 13/PHP 8.5 core Composer packages for the Liberu domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
 
-| Module                                                                  | Core package                                   | Domain specification                                       |
-| ----------------------------------------------------------------------- | ---------------------------------------------- | ---------------------------------------------------------- |
-| [Business Workflow Reconciliation](business-workflow-reconciliation.md) | module-liberu-business-workflow-reconciliation | [Feature](../features/business-workflow-reconciliation.md) |
-| [Executive Insights](executive-insights.md)                             | module-liberu-executive-insights               | [Feature](../features/executive-insights.md)               |
-| [Platform Orchestration](platform-orchestration.md)                     | module-liberu-platform-orchestration           | [Feature](../features/platform-orchestration.md)           |
-| [Revenue and Care Orchestration](revenue-and-care-orchestration.md)     | module-liberu-revenue-and-care-orchestration   | [Feature](../features/revenue-and-care-orchestration.md)   |
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Business Workflow Reconciliation Core Module](business-workflow-reconciliation.md) | [Target/source map](../SOURCE-MAPPING.md#business-workflow-reconciliation) | [api](../api/business-workflow-reconciliation.md) · [nextjs](../nextjs/business-workflow-reconciliation.md) |
+| [Executive Insights Core Module](executive-insights.md) | [Target/source map](../SOURCE-MAPPING.md#executive-insights) | [api](../api/executive-insights.md) · [nextjs](../nextjs/executive-insights.md) |
+| [Platform Orchestration Core Module](platform-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#platform-orchestration) | [api](../api/platform-orchestration.md) · [nextjs](../nextjs/platform-orchestration.md) |
+| [Revenue and Care Orchestration Core](revenue-and-care-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#revenue-and-care-orchestration) | [api](../api/revenue-and-care-orchestration.md) · [nextjs](../nextjs/revenue-and-care-orchestration.md) |
 
 ## Shared implementation contract
 

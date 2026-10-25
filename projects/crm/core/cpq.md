@@ -1,8 +1,12 @@
 # Crm: Cpq Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cpq). Observed identity: [`liberusoftware/module-crm-cpq`](../../../modules/source/liberusoftware--module-crm-cpq.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-cpq`
+**Design package identifier:** `module-crm-cpq`
 **Domain specification:** [Cpq](../features/cpq.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

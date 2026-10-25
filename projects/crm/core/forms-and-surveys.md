@@ -1,8 +1,12 @@
 # Crm: Forms And Surveys Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#forms-and-surveys). Observed identity: [`liberusoftware/module-crm-forms-and-surveys`](../../../modules/source/liberusoftware--module-crm-forms-and-surveys.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-forms-and-surveys`
+**Design package identifier:** `module-crm-forms-and-surveys`
 **Domain specification:** [Forms And Surveys](../features/forms-and-surveys.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

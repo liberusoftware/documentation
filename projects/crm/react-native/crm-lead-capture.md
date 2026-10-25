@@ -1,5 +1,9 @@
 # Crm Lead Capture React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-lead-capture). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-lead-capture-react-native
 **Matching core package:** module-crm-crm-lead-capture ([implementation](../core/crm-lead-capture.md))
 **Matching API package:** module-crm-crm-lead-capture-api ([contract](../api/crm-lead-capture.md))

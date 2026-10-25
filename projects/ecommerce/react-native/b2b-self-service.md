@@ -1,5 +1,9 @@
 # B2b Self Service React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#b2b-self-service). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-b2b-self-service-react-native
 **Matching core package:** module-ecommerce-b2b-self-service ([implementation](../core/b2b-self-service.md))
 **Matching API package:** module-ecommerce-b2b-self-service-api ([contract](../api/b2b-self-service.md))

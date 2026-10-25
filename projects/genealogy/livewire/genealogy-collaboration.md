@@ -1,12 +1,16 @@
 # Genealogy: Genealogy Collaboration Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#genealogy-collaboration). Observed identity: [`liberusoftware/module-genealogy-collaboration-livewire`](../../../modules/source/liberusoftware--module-genealogy-collaboration-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-genealogy-genealogy-collaboration-livewire`  
 **Matching domain module:** `genealogy-collaboration`  
 **Application:** Genealogy  
 **Source feature:** [Genealogy Collaboration](../features/genealogy-collaboration.md)  
-**Architecture:** [LIVEWIRE.md](../GENEALOGY.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

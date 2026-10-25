@@ -1,12 +1,16 @@
 # Genealogy: Genealogy Research
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#genealogy-research). Observed identity: [`liberusoftware/module-genealogy-research`](../../../modules/source/liberusoftware--module-genealogy-research.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-genealogy-genealogy-research`
 **Application:** Genealogy  
 **Capability group:** Genealogy Research  
 **Source scope:** [GENEALOGY.md](../GENEALOGY.md)  
-**Architecture:** [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md) · [API.md](../GENEALOGY.md) · [FILAMENT.md](../GENEALOGY.md) · [LIVEWIRE.md](../GENEALOGY.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

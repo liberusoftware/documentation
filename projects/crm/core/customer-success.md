@@ -1,8 +1,12 @@
 # Crm: Customer Success Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#customer-success). Observed identity: [`liberusoftware/module-crm-customer-success`](../../../modules/source/liberusoftware--module-crm-customer-success.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-customer-success`
+**Design package identifier:** `module-crm-customer-success`
 **Domain specification:** [Customer Success](../features/customer-success.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

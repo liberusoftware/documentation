@@ -1,12 +1,16 @@
 # Automation: Developer Experience
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#developer-experience). Observed identity: [`liberusoftware/developer-experience`](../../../modules/source/liberusoftware--developer-experience.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-automation-developer-experience`
 **Application:** Automation  
 **Capability group:** Developer Experience  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  
-**Architecture:** [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md) · [API.md](../AUTOMATION.md) · [FILAMENT.md](../AUTOMATION.md) · [LIVEWIRE.md](../AUTOMATION.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

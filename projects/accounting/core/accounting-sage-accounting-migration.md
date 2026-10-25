@@ -1,8 +1,12 @@
 # Accounting: Accounting Sage Accounting Migration Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-sage-accounting-migration). Observed identity: [`liberusoftware/module-accounting-sage-accounting-migration`](../../../modules/source/liberusoftware--module-accounting-sage-accounting-migration.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-sage-accounting-migration`
+**Design package identifier:** `module-accounting-accounting-sage-accounting-migration`
 **Domain specification:** [Accounting Sage Accounting Migration](../features/accounting-sage-accounting-migration.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

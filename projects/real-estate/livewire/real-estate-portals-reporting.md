@@ -1,12 +1,16 @@
 # Real Estate: Real Estate Portals Reporting Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-portals-reporting). Observed identity: [`liberusoftware/real-estate-portals-reporting-livewire`](../../../modules/source/liberusoftware--real-estate-portals-reporting-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-real-estate-real-estate-portals-reporting-livewire`  
 **Matching domain module:** `real-estate-portals-reporting`  
 **Application:** Real Estate  
 **Source feature:** [Real Estate Portals Reporting](../features/real-estate-portals-reporting.md)  
-**Architecture:** [LIVEWIRE.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

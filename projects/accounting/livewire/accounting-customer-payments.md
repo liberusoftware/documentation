@@ -1,12 +1,16 @@
 # Accounting: Accounting Customer Payments Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-customer-payments). Observed identity: [`liberusoftware/module-accounting-customer-payments-livewire`](../../../modules/source/liberusoftware--module-accounting-customer-payments-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-accounting-accounting-customer-payments-livewire`  
 **Matching domain module:** `accounting-customer-payments`  
 **Application:** Accounting  
 **Source feature:** [Accounting Customer Payments](../features/accounting-customer-payments.md)  
-**Architecture:** [LIVEWIRE.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

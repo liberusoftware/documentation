@@ -177,3 +177,9 @@ Every phase delivers complete workflows, controls, reconciliations, reports, mig
 ## Definition of done
 
 The ERP is ready when master data has clear ownership; end-to-end workflows reconcile operational, financial, and provider state; entity and role controls hold; reports have lineage; failures recover safely; and each domain/module can be planned as a GitHub epic with measurable acceptance criteria.
+
+## Enterprise implementation design
+
+Read the [composition and delivery design](COMPOSITION.md) for source-backed reuse candidates, record ownership, core/API contracts, presentation responsibilities, rollout gates, and failure recovery.
+
+Read the [16 detailed enterprise domain designs](design/README.md) for records, lifecycle, API operations, permissions, integration recovery, and per-layer delivery requirements.

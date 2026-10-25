@@ -1,5 +1,9 @@
 # Real Estate Portals Reporting Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-portals-reporting). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-real-estate-real-estate-portals-reporting-flutter
 **Matching core package:** module-real-estate-real-estate-portals-reporting ([implementation](../core/real-estate-portals-reporting.md))
 **Matching API package:** module-real-estate-real-estate-portals-reporting-api ([contract](../api/real-estate-portals-reporting.md))

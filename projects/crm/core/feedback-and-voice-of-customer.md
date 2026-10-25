@@ -1,8 +1,12 @@
 # Crm: Feedback And Voice Of Customer Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#feedback-and-voice-of-customer). Observed identity: [`liberusoftware/module-crm-feedback-and-voice-of-customer`](../../../modules/source/liberusoftware--module-crm-feedback-and-voice-of-customer.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-feedback-and-voice-of-customer`
+**Design package identifier:** `module-crm-feedback-and-voice-of-customer`
 **Domain specification:** [Feedback And Voice Of Customer](../features/feedback-and-voice-of-customer.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

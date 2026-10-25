@@ -1,12 +1,16 @@
 # CRM: Crm Journey Orchestration Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-journey-orchestration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-crm-crm-journey-orchestration-nuxt`
 **Matching domain module:** `crm-journey-orchestration`
 **Application:** CRM
 **Source feature:** [Crm Journey Orchestration](../features/crm-journey-orchestration.md)
-**Architecture:** [NUXT.md](../CRM.md) · [API.md](../CRM.md) · [Matching API module](../api/crm-journey-orchestration.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/crm-journey-orchestration.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

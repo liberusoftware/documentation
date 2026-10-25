@@ -1,5 +1,9 @@
 # Accounting Asset Events Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-asset-events). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-asset-events-flutter
 **Matching core package:** module-accounting-accounting-asset-events ([implementation](../core/accounting-asset-events.md))
 **Matching API package:** module-accounting-accounting-asset-events-api ([contract](../api/accounting-asset-events.md))

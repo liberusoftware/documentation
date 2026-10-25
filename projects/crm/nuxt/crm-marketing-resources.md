@@ -1,12 +1,16 @@
 # CRM: Crm Marketing Resources Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-marketing-resources). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-crm-crm-marketing-resources-nuxt`
 **Matching domain module:** `crm-marketing-resources`
 **Application:** CRM
 **Source feature:** [Crm Marketing Resources](../features/crm-marketing-resources.md)
-**Architecture:** [NUXT.md](../CRM.md) · [API.md](../CRM.md) · [Matching API module](../api/crm-marketing-resources.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/crm-marketing-resources.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

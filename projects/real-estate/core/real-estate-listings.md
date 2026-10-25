@@ -1,8 +1,12 @@
 # Real Estate: Real Estate Listings Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-listings). Observed identity: [`liberusoftware/real-estate-listings`](../../../modules/source/liberusoftware--real-estate-listings.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-real-estate-real-estate-listings`
+**Design package identifier:** `module-real-estate-real-estate-listings`
 **Domain specification:** [Real Estate Listings](../features/real-estate-listings.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

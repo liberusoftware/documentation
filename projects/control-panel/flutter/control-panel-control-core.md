@@ -1,5 +1,9 @@
 # Control Panel Control Core Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-control-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-control-panel-control-panel-control-core-flutter
 **Matching core package:** module-control-panel-control-panel-control-core ([implementation](../core/control-panel-control-core.md))
 **Matching API package:** module-control-panel-control-panel-control-core-api ([contract](../api/control-panel-control-core.md))

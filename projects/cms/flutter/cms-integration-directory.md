@@ -1,5 +1,9 @@
 # Cms Integration Directory Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-integration-directory). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-integration-directory-flutter
 **Matching core package:** module-cms-cms-integration-directory ([implementation](../core/cms-integration-directory.md))
 **Matching API package:** module-cms-cms-integration-directory-api ([contract](../api/cms-integration-directory.md))

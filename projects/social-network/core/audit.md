@@ -1,8 +1,12 @@
 # Social Network: Audit Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#audit). Observed identity: [`liberusoftware/audit`](../../../modules/source/liberusoftware--audit.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-social-network-audit`
+**Design package identifier:** `module-social-network-audit`
 **Domain specification:** [Audit](../features/audit.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,8 +1,12 @@
 # Browser Game: Browser Game World Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#browser-game-world). Observed identity: [`liberusoftware/module-browser-game-world`](../../../modules/source/liberusoftware--module-browser-game-world.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-browser-game-browser-game-world`
+**Design package identifier:** `module-browser-game-browser-game-world`
 **Domain specification:** [Browser Game World](../features/browser-game-world.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

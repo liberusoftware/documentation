@@ -1,5 +1,9 @@
 # Control Panel Certificates Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-certificates). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-control-panel-control-panel-certificates-flutter
 **Matching core package:** module-control-panel-control-panel-certificates ([implementation](../core/control-panel-certificates.md))
 **Matching API package:** module-control-panel-control-panel-certificates-api ([contract](../api/control-panel-certificates.md))

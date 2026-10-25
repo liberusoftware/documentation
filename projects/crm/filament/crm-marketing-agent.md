@@ -1,12 +1,16 @@
 # CRM: Crm Marketing Agent Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-marketing-agent). Observed identity: [`liberusoftware/module-crm-marketing-agent-filament`](../../../modules/source/liberusoftware--module-crm-marketing-agent-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-crm-marketing-agent-filament`  
 **Matching domain module:** `crm-marketing-agent`  
 **Application:** CRM  
 **Source feature:** [Crm Marketing Agent](../features/crm-marketing-agent.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,5 +1,9 @@
 # Accounting Time Tracking React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-time-tracking). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-time-tracking-react-native
 **Matching core package:** module-accounting-accounting-time-tracking ([implementation](../core/accounting-time-tracking.md))
 **Matching API package:** module-accounting-accounting-time-tracking-api ([contract](../api/accounting-time-tracking.md))

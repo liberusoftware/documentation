@@ -1,12 +1,16 @@
 # Accounting: Accounting Sales Tax And Gst Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-sales-tax-and-gst). Observed identity: [`liberusoftware/module-accounting-sales-tax-and-gst-livewire`](../../../modules/source/liberusoftware--module-accounting-sales-tax-and-gst-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-accounting-accounting-sales-tax-and-gst-livewire`  
 **Matching domain module:** `accounting-sales-tax-and-gst`  
 **Application:** Accounting  
 **Source feature:** [Accounting Sales Tax And Gst](../features/accounting-sales-tax-and-gst.md)  
-**Architecture:** [LIVEWIRE.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

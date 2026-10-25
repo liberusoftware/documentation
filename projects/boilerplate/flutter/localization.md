@@ -1,5 +1,9 @@
 # Localization domain packages Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#localization). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `localization-core`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-localization-flutter
 **Matching core package:** module-localization ([implementation](../core/localization.md))
 **Matching API package:** module-localization-api ([contract](../api/localization.md))

@@ -1,5 +1,9 @@
 # Media Library React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#media-library). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-media-library-react-native
 **Matching core package:** module-cms-media-library ([implementation](../core/media-library.md))
 **Matching API package:** module-cms-media-library-api ([contract](../api/media-library.md))

@@ -1,5 +1,9 @@
 # Image Processing React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#image-processing). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-image-processing-react-native
 **Matching core package:** module-cms-image-processing ([implementation](../core/image-processing.md))
 **Matching API package:** module-cms-image-processing-api ([contract](../api/image-processing.md))

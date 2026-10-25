@@ -1,8 +1,12 @@
 # Accounting: Accounting Document Capture Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-document-capture). Observed identity: [`liberusoftware/module-accounting-document-capture`](../../../modules/source/liberusoftware--module-accounting-document-capture.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-document-capture`
+**Design package identifier:** `module-accounting-accounting-document-capture`
 **Domain specification:** [Accounting Document Capture](../features/accounting-document-capture.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

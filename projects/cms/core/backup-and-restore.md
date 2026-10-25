@@ -1,8 +1,12 @@
 # Cms: Backup And Restore Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#backup-and-restore). Observed identity: [`liberusoftware/module-cms-backup-and-restore`](../../../modules/source/liberusoftware--module-cms-backup-and-restore.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-backup-and-restore`
+**Design package identifier:** `module-cms-backup-and-restore`
 **Domain specification:** [Backup And Restore](../features/backup-and-restore.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,12 +1,16 @@
 # Billing: Payments Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#payments). Observed identity: [`liberusoftware/module-billing-payments-filament`](../../../modules/source/liberusoftware--module-billing-payments-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-billing-payments-filament`  
 **Matching domain module:** `billing-payments`  
 **Application:** Billing  
 **Source feature:** [Payments](../features/payments.md)  
-**Architecture:** [FILAMENT.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

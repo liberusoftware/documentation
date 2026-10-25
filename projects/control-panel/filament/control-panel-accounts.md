@@ -1,12 +1,16 @@
 # Control Panel: Control Panel Accounts Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-accounts). Observed identity: [`liberusoftware/module-control-panel-accounts-filament`](../../../modules/source/liberusoftware--module-control-panel-accounts-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-control-panel-control-panel-accounts-filament`  
 **Matching domain module:** `control-panel-accounts`  
 **Application:** Control Panel  
 **Source feature:** [Control Panel Accounts](../features/control-panel-accounts.md)  
-**Architecture:** [FILAMENT.md](../CONTROL-PANEL.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

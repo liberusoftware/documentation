@@ -1,5 +1,9 @@
 # Crm Dialer And Outreach Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-dialer-and-outreach). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-dialer-and-outreach-flutter
 **Matching core package:** module-crm-crm-dialer-and-outreach ([implementation](../core/crm-dialer-and-outreach.md))
 **Matching API package:** module-crm-crm-dialer-and-outreach-api ([contract](../api/crm-dialer-and-outreach.md))

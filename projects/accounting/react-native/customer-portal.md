@@ -1,5 +1,9 @@
 # Customer Portal React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#customer-portal). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-customer-portal-react-native
 **Matching core package:** module-accounting-customer-portal ([implementation](../core/customer-portal.md))
 **Matching API package:** module-accounting-customer-portal-api ([contract](../api/customer-portal.md))

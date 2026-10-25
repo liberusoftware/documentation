@@ -1,12 +1,16 @@
 # Maintenance: Module Maintenance Inspections Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-inspections). Observed identity: [`liberusoftware/module-maintenance-inspections-livewire`](../../../modules/source/liberusoftware--module-maintenance-inspections-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-maintenance-module-maintenance-inspections-livewire`  
 **Matching domain module:** `module-maintenance-inspections`  
 **Application:** Maintenance  
 **Source feature:** [Module Maintenance Inspections](../features/module-maintenance-inspections.md)  
-**Architecture:** [LIVEWIRE.md](../MAINTENANCE.md) · [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

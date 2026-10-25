@@ -1,50 +1,71 @@
 # Control Panel Vue + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **61 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments Vue](activity-comments.md) — `module-control-panel-activity-comments-vue-inertia`
-- [Analytics Core Vue](analytics-core.md) — `module-control-panel-analytics-core-vue-inertia`
-- [Analytics Google Vue](analytics-google.md) — `module-control-panel-analytics-google-vue-inertia`
-- [Analytics Meta Vue](analytics-meta.md) — `module-control-panel-analytics-meta-vue-inertia`
-- [Api Access Vue](api-access.md) — `module-control-panel-api-access-vue-inertia`
-- [Application Vue](application.md) — `module-control-panel-application-vue-inertia`
-- [Audit Vue](audit.md) — `module-control-panel-audit-vue-inertia`
-- [Control Panel Accounts Vue](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-vue-inertia`
-- [Control Panel Api And Automation Vue](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-vue-inertia`
-- [Control Panel Backups Vue](control-panel-backups.md) — `module-control-panel-control-panel-backups-vue-inertia`
-- [Control Panel Certificates Vue](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-vue-inertia`
-- [Control Panel Containers Vue](control-panel-containers.md) — `module-control-panel-control-panel-containers-vue-inertia`
-- [Control Panel Control Core Vue](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-vue-inertia`
-- [Control Panel Databases Vue](control-panel-databases.md) — `module-control-panel-control-panel-databases-vue-inertia`
-- [Control Panel Dns Vue](control-panel-dns.md) — `module-control-panel-control-panel-dns-vue-inertia`
-- [Control Panel Files Vue](control-panel-files.md) — `module-control-panel-control-panel-files-vue-inertia`
-- [Control Panel Kubernetes Vue](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-vue-inertia`
-- [Control Panel Mail Vue](control-panel-mail.md) — `module-control-panel-control-panel-mail-vue-inertia`
-- [Control Panel Monitoring Vue](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-vue-inertia`
-- [Control Panel Os Adapters Vue](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-vue-inertia`
-- [Control Panel Security Vue](control-panel-security.md) — `module-control-panel-control-panel-security-vue-inertia`
-- [Control Panel Web Hosting Vue](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-vue-inertia`
-- [Currency Context Vue](currency-context.md) — `module-control-panel-currency-context-vue-inertia`
-- [Developer Experience Vue](developer-experience.md) — `module-control-panel-developer-experience-vue-inertia`
-- [Feature Flags Vue](feature-flags.md) — `module-control-panel-feature-flags-vue-inertia`
-- [Files Media Vue](files-media.md) — `module-control-panel-files-media-vue-inertia`
-- [Identity Core Vue](identity-core.md) — `module-control-panel-identity-core-vue-inertia`
-- [Identity Socialstream Vue](identity-socialstream.md) — `module-control-panel-identity-socialstream-vue-inertia`
-- [Import Export Vue](import-export.md) — `module-control-panel-import-export-vue-inertia`
-- [Integrations Vue](integrations.md) — `module-control-panel-integrations-vue-inertia`
-- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-vue-inertia`
-- [Localization Core Vue](localization-core.md) — `module-control-panel-localization-core-vue-inertia`
-- [Localization Mymemory Vue](localization-mymemory.md) — `module-control-panel-localization-mymemory-vue-inertia`
-- [Module Manager Vue](module-manager.md) — `module-control-panel-module-manager-vue-inertia`
-- [Notifications Vue](notifications.md) — `module-control-panel-notifications-vue-inertia`
-- [Observability Vue](observability.md) — `module-control-panel-observability-vue-inertia`
-- [Organizations Teams Vue](organizations-teams.md) — `module-control-panel-organizations-teams-vue-inertia`
-- [Profiles Vue](profiles.md) — `module-control-panel-profiles-vue-inertia`
-- [Roles Permissions Vue](roles-permissions.md) — `module-control-panel-roles-permissions-vue-inertia`
-- [Scheduler Queues Vue](scheduler-queues.md) — `module-control-panel-scheduler-queues-vue-inertia`
-- [Search Vue](search.md) — `module-control-panel-search-vue-inertia`
-- [Sessions Devices Vue](sessions-devices.md) — `module-control-panel-sessions-devices-vue-inertia`
-- [Settings Vue](settings.md) — `module-control-panel-settings-vue-inertia`
-- [Theme Support Vue](theme-support.md) — `module-control-panel-theme-support-vue-inertia`
-- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-vue-inertia`
-- [Webhooks Vue](webhooks.md) — `module-control-panel-webhooks-vue-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Accounts Vue + Inertia](accounts.md) | [Target/source map](../SOURCE-MAPPING.md#accounts) | [core](../core/accounts.md) · [api](../api/accounts.md) · [nextjs](../nextjs/accounts.md) |
+| [Activity Comments Vue + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Vue + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Vue + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Vue + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Vue + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [API and Automation Vue + Inertia](api-and-automation.md) | [Target/source map](../SOURCE-MAPPING.md#api-and-automation) | [core](../core/api-and-automation.md) · [api](../api/api-and-automation.md) · [nextjs](../nextjs/api-and-automation.md) |
+| [Application Vue + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Vue + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Backups Vue + Inertia](backups.md) | [Target/source map](../SOURCE-MAPPING.md#backups) | [core](../core/backups.md) · [api](../api/backups.md) · [nextjs](../nextjs/backups.md) |
+| [Certificates Vue + Inertia](certificates.md) | [Target/source map](../SOURCE-MAPPING.md#certificates) | [core](../core/certificates.md) · [api](../api/certificates.md) · [nextjs](../nextjs/certificates.md) |
+| [Containers Vue + Inertia](containers.md) | [Target/source map](../SOURCE-MAPPING.md#containers) | [core](../core/containers.md) · [api](../api/containers.md) · [nextjs](../nextjs/containers.md) |
+| [Control Core Vue + Inertia](control-core.md) | [Target/source map](../SOURCE-MAPPING.md#control-core) | [core](../core/control-core.md) · [api](../api/control-core.md) · [nextjs](../nextjs/control-core.md) |
+| [Control Panel Accounts Vue + Inertia](control-panel-accounts.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-accounts) | [core](../core/control-panel-accounts.md) · [api](../api/control-panel-accounts.md) · [nextjs](../nextjs/control-panel-accounts.md) |
+| [Control Panel Api And Automation Vue + Inertia](control-panel-api-and-automation.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-api-and-automation) | [core](../core/control-panel-api-and-automation.md) · [api](../api/control-panel-api-and-automation.md) · [nextjs](../nextjs/control-panel-api-and-automation.md) |
+| [Control Panel Backups Vue + Inertia](control-panel-backups.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-backups) | [core](../core/control-panel-backups.md) · [api](../api/control-panel-backups.md) · [nextjs](../nextjs/control-panel-backups.md) |
+| [Control Panel Certificates Vue + Inertia](control-panel-certificates.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-certificates) | [core](../core/control-panel-certificates.md) · [api](../api/control-panel-certificates.md) · [nextjs](../nextjs/control-panel-certificates.md) |
+| [Control Panel Containers Vue + Inertia](control-panel-containers.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-containers) | [core](../core/control-panel-containers.md) · [api](../api/control-panel-containers.md) · [nextjs](../nextjs/control-panel-containers.md) |
+| [Control Panel Control Core Vue + Inertia](control-panel-control-core.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-control-core) | [core](../core/control-panel-control-core.md) · [api](../api/control-panel-control-core.md) · [nextjs](../nextjs/control-panel-control-core.md) |
+| [Control Panel Databases Vue + Inertia](control-panel-databases.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-databases) | [core](../core/control-panel-databases.md) · [api](../api/control-panel-databases.md) · [nextjs](../nextjs/control-panel-databases.md) |
+| [Control Panel Dns Vue + Inertia](control-panel-dns.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-dns) | [core](../core/control-panel-dns.md) · [api](../api/control-panel-dns.md) · [nextjs](../nextjs/control-panel-dns.md) |
+| [Control Panel Files Vue + Inertia](control-panel-files.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-files) | [core](../core/control-panel-files.md) · [api](../api/control-panel-files.md) · [nextjs](../nextjs/control-panel-files.md) |
+| [Control Panel Kubernetes Vue + Inertia](control-panel-kubernetes.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-kubernetes) | [core](../core/control-panel-kubernetes.md) · [api](../api/control-panel-kubernetes.md) · [nextjs](../nextjs/control-panel-kubernetes.md) |
+| [Control Panel Mail Vue + Inertia](control-panel-mail.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-mail) | [core](../core/control-panel-mail.md) · [api](../api/control-panel-mail.md) · [nextjs](../nextjs/control-panel-mail.md) |
+| [Control Panel Monitoring Vue + Inertia](control-panel-monitoring.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-monitoring) | [core](../core/control-panel-monitoring.md) · [api](../api/control-panel-monitoring.md) · [nextjs](../nextjs/control-panel-monitoring.md) |
+| [Control Panel Os Adapters Vue + Inertia](control-panel-os-adapters.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-os-adapters) | [core](../core/control-panel-os-adapters.md) · [api](../api/control-panel-os-adapters.md) · [nextjs](../nextjs/control-panel-os-adapters.md) |
+| [Control Panel Security Vue + Inertia](control-panel-security.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-security) | [core](../core/control-panel-security.md) · [api](../api/control-panel-security.md) · [nextjs](../nextjs/control-panel-security.md) |
+| [Control Panel Web Hosting Vue + Inertia](control-panel-web-hosting.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-web-hosting) | [core](../core/control-panel-web-hosting.md) · [api](../api/control-panel-web-hosting.md) · [nextjs](../nextjs/control-panel-web-hosting.md) |
+| [Currency Context Vue + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Databases Vue + Inertia](databases.md) | [Target/source map](../SOURCE-MAPPING.md#databases) | [core](../core/databases.md) · [api](../api/databases.md) · [nextjs](../nextjs/databases.md) |
+| [Developer Experience Vue + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [DNS Vue + Inertia](dns.md) | [Target/source map](../SOURCE-MAPPING.md#dns) | [core](../core/dns.md) · [api](../api/dns.md) · [nextjs](../nextjs/dns.md) |
+| [Feature Flags Vue + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Vue + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Files Vue + Inertia](files.md) | [Target/source map](../SOURCE-MAPPING.md#files) | [core](../core/files.md) · [api](../api/files.md) · [nextjs](../nextjs/files.md) |
+| [Identity Core Vue + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Vue + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Vue + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Vue + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Vue + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Kubernetes Vue + Inertia](kubernetes.md) | [Target/source map](../SOURCE-MAPPING.md#kubernetes) | [core](../core/kubernetes.md) · [api](../api/kubernetes.md) · [nextjs](../nextjs/kubernetes.md) |
+| [Localization Core Vue + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Vue + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Mail Vue + Inertia](mail.md) | [Target/source map](../SOURCE-MAPPING.md#mail) | [core](../core/mail.md) · [api](../api/mail.md) · [nextjs](../nextjs/mail.md) |
+| [Module Manager Vue + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Monitoring Vue + Inertia](monitoring.md) | [Target/source map](../SOURCE-MAPPING.md#monitoring) | [core](../core/monitoring.md) · [api](../api/monitoring.md) · [nextjs](../nextjs/monitoring.md) |
+| [Notifications Vue + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Vue + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Vue + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [OS Adapters Vue + Inertia](os-adapters.md) | [Target/source map](../SOURCE-MAPPING.md#os-adapters) | [core](../core/os-adapters.md) · [api](../api/os-adapters.md) · [nextjs](../nextjs/os-adapters.md) |
+| [Profiles Vue + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles Permissions Vue + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Vue + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Vue + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Security Vue + Inertia](security.md) | [Target/source map](../SOURCE-MAPPING.md#security) | [core](../core/security.md) · [api](../api/security.md) · [nextjs](../nextjs/security.md) |
+| [Sessions Devices Vue + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Vue + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Vue + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Vue + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Web Hosting Vue + Inertia](web-hosting.md) | [Target/source map](../SOURCE-MAPPING.md#web-hosting) | [core](../core/web-hosting.md) · [api](../api/web-hosting.md) · [nextjs](../nextjs/web-hosting.md) |
+| [Webhooks Vue + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

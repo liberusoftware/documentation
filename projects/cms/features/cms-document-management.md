@@ -1,12 +1,16 @@
 # CMS: Cms Document Management
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-document-management). Observed identity: [`liberusoftware/module-cms-document-management`](../../../modules/source/liberusoftware--module-cms-document-management.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-cms-cms-document-management`
 **Application:** CMS  
 **Capability group:** Cms Document Management  
 **Source scope:** [CMS.md](../CMS.md)  
-**Architecture:** [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md) · [API.md](../CMS.md) · [FILAMENT.md](../CMS.md) · [LIVEWIRE.md](../CMS.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

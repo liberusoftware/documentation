@@ -1,5 +1,9 @@
 # Debt And Loans Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#debt-and-loans). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-debt-and-loans-flutter
 **Matching core package:** module-accounting-debt-and-loans ([implementation](../core/debt-and-loans.md))
 **Matching API package:** module-accounting-debt-and-loans-api ([contract](../api/debt-and-loans.md))

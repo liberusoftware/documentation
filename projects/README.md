@@ -29,3 +29,6 @@ This is the canonical index of application, foundation, and product scopes docum
 - [Flutter + Dart module implementations](../modules/flutter/README.md)
 - [Technology map](../TECHNOLOGIES.md)
 - [Architecture decisions](../architecture/README.md)
+
+- [Observed source inventories](../architecture/SOURCE-INVENTORY.md)
+- [Next.js presentation plans](../modules/nextjs/README.md)

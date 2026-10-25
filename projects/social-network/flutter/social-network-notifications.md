@@ -1,5 +1,9 @@
 # Social Network Notifications Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-notifications). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-social-network-social-network-notifications-flutter
 **Matching core package:** module-social-network-social-network-notifications ([implementation](../core/social-network-notifications.md))
 **Matching API package:** module-social-network-social-network-notifications-api ([contract](../api/social-network-notifications.md))

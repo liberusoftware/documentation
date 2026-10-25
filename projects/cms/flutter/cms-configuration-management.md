@@ -1,5 +1,9 @@
 # Cms Configuration Management Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-configuration-management). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-configuration-management-flutter
 **Matching core package:** module-cms-cms-configuration-management ([implementation](../core/cms-configuration-management.md))
 **Matching API package:** module-cms-cms-configuration-management-api ([contract](../api/cms-configuration-management.md))

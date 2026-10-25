@@ -1,8 +1,12 @@
 # Real Estate: Portals And Reporting Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#portals-and-reporting). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-real-estate-portals-and-reporting`
+**Design package identifier:** `module-real-estate-portals-and-reporting`
 **Domain specification:** [Portals And Reporting](../features/portals-and-reporting.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

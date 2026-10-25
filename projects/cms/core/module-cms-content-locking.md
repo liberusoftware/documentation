@@ -1,8 +1,12 @@
 # CMS: Module Cms Content Locking Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-content-locking). Observed identity: [`liberusoftware/module-cms-content-locking`](../../../modules/source/liberusoftware--module-cms-content-locking.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-content-locking`
+**Design package identifier:** `module-cms-module-cms-content-locking`
 **Domain specification:** [Module Cms Content Locking](../features/module-cms-content-locking.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,5 +1,9 @@
 # Cms Embeds Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-embeds). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-embeds-flutter
 **Matching core package:** module-cms-cms-embeds ([implementation](../core/cms-embeds.md))
 **Matching API package:** module-cms-cms-embeds-api ([contract](../api/cms-embeds.md))

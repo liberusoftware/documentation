@@ -1,8 +1,12 @@
 # Accounting: Accounting Vat Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-vat). Observed identity: [`liberusoftware/module-accounting-vat`](../../../modules/source/liberusoftware--module-accounting-vat.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-vat`
+**Design package identifier:** `module-accounting-accounting-vat`
 **Domain specification:** [Accounting Vat](../features/accounting-vat.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

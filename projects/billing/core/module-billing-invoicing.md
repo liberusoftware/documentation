@@ -1,8 +1,12 @@
 # Billing: Module Billing Invoicing Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-invoicing). Observed identity: [`liberusoftware/module-billing-invoicing`](../../../modules/source/liberusoftware--module-billing-invoicing.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-module-billing-invoicing`
+**Design package identifier:** `module-billing-module-billing-invoicing`
 **Domain specification:** [Module Billing Invoicing](../features/module-billing-invoicing.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,134 +1,228 @@
 # CRM React + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **218 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments React](activity-comments.md) — `module-crm-activity-comments-react-inertia`
-- [Analytics Contracts React](analytics-contracts.md) — `module-crm-analytics-contracts-react-inertia`
-- [Analytics Core React](analytics-core.md) — `module-crm-analytics-core-react-inertia`
-- [Analytics Google React](analytics-google.md) — `module-crm-analytics-google-react-inertia`
-- [Analytics Meta React](analytics-meta.md) — `module-crm-analytics-meta-react-inertia`
-- [Api Access React](api-access.md) — `module-crm-api-access-react-inertia`
-- [Application React](application.md) — `module-crm-application-react-inertia`
-- [Audit React](audit.md) — `module-crm-audit-react-inertia`
-- [Crm Account Based Marketing React](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing-react-inertia`
-- [Crm Account Planning React](crm-account-planning.md) — `module-crm-crm-account-planning-react-inertia`
-- [Crm Activities React](crm-activities.md) — `module-crm-crm-activities-react-inertia`
-- [Crm Advertising React](crm-advertising.md) — `module-crm-crm-advertising-react-inertia`
-- [Crm Advocacy React](crm-advocacy.md) — `module-crm-crm-advocacy-react-inertia`
-- [Crm Affiliate Management React](crm-affiliate-management.md) — `module-crm-crm-affiliate-management-react-inertia`
-- [Crm Agency Workspace React](crm-agency-workspace.md) — `module-crm-crm-agency-workspace-react-inertia`
-- [Crm Ai Reception And Conversation React](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation-react-inertia`
-- [Crm Analytics React](crm-analytics.md) — `module-crm-crm-analytics-react-inertia`
-- [Crm Attribution React](crm-attribution.md) — `module-crm-crm-attribution-react-inertia`
-- [Crm Automation Pack React](crm-automation-pack.md) — `module-crm-crm-automation-pack-react-inertia`
-- [Crm Business Process Management React](crm-business-process-management.md) — `module-crm-crm-business-process-management-react-inertia`
-- [Crm Campaigns React](crm-campaigns.md) — `module-crm-crm-campaigns-react-inertia`
-- [Crm Case Management React](crm-case-management.md) — `module-crm-crm-case-management-react-inertia`
-- [Crm Channel Gateway React](crm-channel-gateway.md) — `module-crm-crm-channel-gateway-react-inertia`
-- [Crm Channel Sales React](crm-channel-sales.md) — `module-crm-crm-channel-sales-react-inertia`
-- [Crm Chat And Bots React](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots-react-inertia`
-- [Crm Client Onboarding React](crm-client-onboarding.md) — `module-crm-crm-client-onboarding-react-inertia`
-- [Crm Collaboration React](crm-collaboration.md) — `module-crm-crm-collaboration-react-inertia`
-- [Crm Communities React](crm-communities.md) — `module-crm-crm-communities-react-inertia`
-- [Crm Consent And Preferences React](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences-react-inertia`
-- [Crm Contact Center React](crm-contact-center.md) — `module-crm-crm-contact-center-react-inertia`
-- [Crm Contracts React](crm-contracts.md) — `module-crm-crm-contracts-react-inertia`
-- [Crm Conversation Analytics React](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics-react-inertia`
-- [Crm Conversation Intelligence React](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence-react-inertia`
-- [Crm Conversion Optimization React](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization-react-inertia`
-- [Crm Copilot React](crm-copilot.md) — `module-crm-crm-copilot-react-inertia`
-- [Crm Core React](crm-core.md) — `module-crm-crm-core-react-inertia`
-- [Crm Cpq React](crm-cpq.md) — `module-crm-crm-cpq-react-inertia`
-- [Crm Customer Data Model React](crm-customer-data-model.md) — `module-crm-crm-customer-data-model-react-inertia`
-- [Crm Customer Data Platform React](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform-react-inertia`
-- [Crm Customer Self Service React](crm-customer-self-service.md) — `module-crm-crm-customer-self-service-react-inertia`
-- [Crm Customer Success React](crm-customer-success.md) — `module-crm-crm-customer-success-react-inertia`
-- [Crm Data Operations React](crm-data-operations.md) — `module-crm-crm-data-operations-react-inertia`
-- [Crm Deal Registration React](crm-deal-registration.md) — `module-crm-crm-deal-registration-react-inertia`
-- [Crm Dialer And Outreach React](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach-react-inertia`
-- [Crm Documents React](crm-documents.md) — `module-crm-crm-documents-react-inertia`
-- [Crm Email Marketing React](crm-email-marketing.md) — `module-crm-crm-email-marketing-react-inertia`
-- [Crm Email Productivity React](crm-email-productivity.md) — `module-crm-crm-email-productivity-react-inertia`
-- [Crm Enrichment React](crm-enrichment.md) — `module-crm-crm-enrichment-react-inertia`
-- [Crm Events And Webinars React](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars-react-inertia`
-- [Crm Feedback And Voice Of Customer React](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer-react-inertia`
-- [Crm Field Service Coordination React](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination-react-inertia`
-- [Crm Forecasting React](crm-forecasting.md) — `module-crm-crm-forecasting-react-inertia`
-- [Crm Forms And Surveys React](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys-react-inertia`
-- [Crm Goals And Performance React](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance-react-inertia`
-- [Crm Journey Orchestration React](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration-react-inertia`
-- [Crm Knowledge React](crm-knowledge.md) — `module-crm-crm-knowledge-react-inertia`
-- [Crm Landing Pages And Funnels React](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels-react-inertia`
-- [Crm Lead Capture React](crm-lead-capture.md) — `module-crm-crm-lead-capture-react-inertia`
-- [Crm Lead Qualification React](crm-lead-qualification.md) — `module-crm-crm-lead-qualification-react-inertia`
-- [Crm Learning And Courses React](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses-react-inertia`
-- [Crm Loyalty React](crm-loyalty.md) — `module-crm-crm-loyalty-react-inertia`
-- [Crm Marketing Agent React](crm-marketing-agent.md) — `module-crm-crm-marketing-agent-react-inertia`
-- [Crm Marketing Development Funds React](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds-react-inertia`
-- [Crm Marketing Resources React](crm-marketing-resources.md) — `module-crm-crm-marketing-resources-react-inertia`
-- [Crm Memberships React](crm-memberships.md) — `module-crm-crm-memberships-react-inertia`
-- [Crm Mobile Messaging React](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging-react-inertia`
-- [Crm Omnichannel Service React](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service-react-inertia`
-- [Crm Orders And Payments Workspace React](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace-react-inertia`
-- [Crm Partner Relationship Management React](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management-react-inertia`
-- [Crm Personalization React](crm-personalization.md) — `module-crm-crm-personalization-react-inertia`
-- [Crm Playbooks And Enablement React](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement-react-inertia`
-- [Crm Predictive Models React](crm-predictive-models.md) — `module-crm-crm-predictive-models-react-inertia`
-- [Crm Product Workspace React](crm-product-workspace.md) — `module-crm-crm-product-workspace-react-inertia`
-- [Crm Projects React](crm-projects.md) — `module-crm-crm-projects-react-inertia`
-- [Crm Proposals And Quotes React](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes-react-inertia`
-- [Crm Prospecting React](crm-prospecting.md) — `module-crm-crm-prospecting-react-inertia`
-- [Crm Prospecting Agent React](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent-react-inertia`
-- [Crm Quotas And Incentives React](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives-react-inertia`
-- [Crm Referrals React](crm-referrals.md) — `module-crm-crm-referrals-react-inertia`
-- [Crm Reputation Management React](crm-reputation-management.md) — `module-crm-crm-reputation-management-react-inertia`
-- [Crm Resource Planning React](crm-resource-planning.md) — `module-crm-crm-resource-planning-react-inertia`
-- [Crm Revenue Intelligence React](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence-react-inertia`
-- [Crm Revenue Lifecycle React](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle-react-inertia`
-- [Crm Routing React](crm-routing.md) — `module-crm-crm-routing-react-inertia`
-- [Crm Saas Packaging React](crm-saas-packaging.md) — `module-crm-crm-saas-packaging-react-inertia`
-- [Crm Sales Engagement React](crm-sales-engagement.md) — `module-crm-crm-sales-engagement-react-inertia`
-- [Crm Sales Pipelines React](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines-react-inertia`
-- [Crm Sales Workspace React](crm-sales-workspace.md) — `module-crm-crm-sales-workspace-react-inertia`
-- [Crm Sandbox And Release Management React](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management-react-inertia`
-- [Crm Sandbox Release React](crm-sandbox-release.md) — `module-crm-crm-sandbox-release-react-inertia`
-- [Crm Scheduling React](crm-scheduling.md) — `module-crm-crm-scheduling-react-inertia`
-- [Crm Search React](crm-search.md) — `module-crm-crm-search-react-inertia`
-- [Crm Segmentation React](crm-segmentation.md) — `module-crm-crm-segmentation-react-inertia`
-- [Crm Service Agent React](crm-service-agent.md) — `module-crm-crm-service-agent-react-inertia`
-- [Crm Service Analytics React](crm-service-analytics.md) — `module-crm-crm-service-analytics-react-inertia`
-- [Crm Sla And Entitlements React](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements-react-inertia`
-- [Crm Telephony React](crm-telephony.md) — `module-crm-crm-telephony-react-inertia`
-- [Crm Template Snapshots React](crm-template-snapshots.md) — `module-crm-crm-template-snapshots-react-inertia`
-- [Crm Templates And Snapshots React](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots-react-inertia`
-- [Crm Territories And Ownership React](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership-react-inertia`
-- [Crm Unified Conversations React](crm-unified-conversations.md) — `module-crm-crm-unified-conversations-react-inertia`
-- [Crm Usage Wallet And Rebilling React](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling-react-inertia`
-- [Crm Web Intent React](crm-web-intent.md) — `module-crm-crm-web-intent-react-inertia`
-- [Crm White Label React](crm-white-label.md) — `module-crm-crm-white-label-react-inertia`
-- [Crm Work Management React](crm-work-management.md) — `module-crm-crm-work-management-react-inertia`
-- [Currency Context React](currency-context.md) — `module-crm-currency-context-react-inertia`
-- [Developer Experience React](developer-experience.md) — `module-crm-developer-experience-react-inertia`
-- [Feature Flags React](feature-flags.md) — `module-crm-feature-flags-react-inertia`
-- [Files Media React](files-media.md) — `module-crm-files-media-react-inertia`
-- [Identity Core React](identity-core.md) — `module-crm-identity-core-react-inertia`
-- [Identity Socialstream React](identity-socialstream.md) — `module-crm-identity-socialstream-react-inertia`
-- [Import Export React](import-export.md) — `module-crm-import-export-react-inertia`
-- [Integrations React](integrations.md) — `module-crm-integrations-react-inertia`
-- [Jetstream Bridge React](jetstream-bridge.md) — `module-crm-jetstream-bridge-react-inertia`
-- [Localization Contracts React](localization-contracts.md) — `module-crm-localization-contracts-react-inertia`
-- [Localization Core React](localization-core.md) — `module-crm-localization-core-react-inertia`
-- [Localization Mymemory React](localization-mymemory.md) — `module-crm-localization-mymemory-react-inertia`
-- [Module Manager React](module-manager.md) — `module-crm-module-manager-react-inertia`
-- [Notifications React](notifications.md) — `module-crm-notifications-react-inertia`
-- [Observability React](observability.md) — `module-crm-observability-react-inertia`
-- [Organizations Teams React](organizations-teams.md) — `module-crm-organizations-teams-react-inertia`
-- [Profiles React](profiles.md) — `module-crm-profiles-react-inertia`
-- [Roles Permissions React](roles-permissions.md) — `module-crm-roles-permissions-react-inertia`
-- [Scheduler Queues React](scheduler-queues.md) — `module-crm-scheduler-queues-react-inertia`
-- [Search React](search.md) — `module-crm-search-react-inertia`
-- [Sessions Devices React](sessions-devices.md) — `module-crm-sessions-devices-react-inertia`
-- [Settings React](settings.md) — `module-crm-settings-react-inertia`
-- [Theme Support React](theme-support.md) — `module-crm-theme-support-react-inertia`
-- [Two Factor Authentication React](two-factor-authentication.md) — `module-crm-two-factor-authentication-react-inertia`
-- [Webhooks React](webhooks.md) — `module-crm-webhooks-react-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Account-Based Marketing React + Inertia](account-based-marketing.md) | [Target/source map](../SOURCE-MAPPING.md#account-based-marketing) | [core](../core/account-based-marketing.md) · [api](../api/account-based-marketing.md) · [nextjs](../nextjs/account-based-marketing.md) |
+| [Account Planning React + Inertia](account-planning.md) | [Target/source map](../SOURCE-MAPPING.md#account-planning) | [core](../core/account-planning.md) · [api](../api/account-planning.md) · [nextjs](../nextjs/account-planning.md) |
+| [Activities React + Inertia](activities.md) | [Target/source map](../SOURCE-MAPPING.md#activities) | [core](../core/activities.md) · [api](../api/activities.md) · [nextjs](../nextjs/activities.md) |
+| [Activity Comments React + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Advertising React + Inertia](advertising.md) | [Target/source map](../SOURCE-MAPPING.md#advertising) | [core](../core/advertising.md) · [api](../api/advertising.md) · [nextjs](../nextjs/advertising.md) |
+| [Advocacy React + Inertia](advocacy.md) | [Target/source map](../SOURCE-MAPPING.md#advocacy) | [core](../core/advocacy.md) · [api](../api/advocacy.md) · [nextjs](../nextjs/advocacy.md) |
+| [Affiliate Management React + Inertia](affiliate-management.md) | [Target/source map](../SOURCE-MAPPING.md#affiliate-management) | [core](../core/affiliate-management.md) · [api](../api/affiliate-management.md) · [nextjs](../nextjs/affiliate-management.md) |
+| [Agency Workspace React + Inertia](agency-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#agency-workspace) | [core](../core/agency-workspace.md) · [api](../api/agency-workspace.md) · [nextjs](../nextjs/agency-workspace.md) |
+| [AI Reception and Conversation React + Inertia](ai-reception-and-conversation.md) | [Target/source map](../SOURCE-MAPPING.md#ai-reception-and-conversation) | [core](../core/ai-reception-and-conversation.md) · [api](../api/ai-reception-and-conversation.md) · [nextjs](../nextjs/ai-reception-and-conversation.md) |
+| [Analytics Contracts React + Inertia](analytics-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-contracts) | [core](../core/analytics-contracts.md) · [api](../api/analytics-contracts.md) · [nextjs](../nextjs/analytics-contracts.md) |
+| [Analytics Core React + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access React + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application React + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Attribution React + Inertia](attribution.md) | [Target/source map](../SOURCE-MAPPING.md#attribution) | [core](../core/attribution.md) · [api](../api/attribution.md) · [nextjs](../nextjs/attribution.md) |
+| [Audit React + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Business Process Management React + Inertia](business-process-management.md) | [Target/source map](../SOURCE-MAPPING.md#business-process-management) | [core](../core/business-process-management.md) · [api](../api/business-process-management.md) · [nextjs](../nextjs/business-process-management.md) |
+| [Campaigns React + Inertia](campaigns.md) | [Target/source map](../SOURCE-MAPPING.md#campaigns) | [core](../core/campaigns.md) · [api](../api/campaigns.md) · [nextjs](../nextjs/campaigns.md) |
+| [Case Management React + Inertia](case-management.md) | [Target/source map](../SOURCE-MAPPING.md#case-management) | [core](../core/case-management.md) · [api](../api/case-management.md) · [nextjs](../nextjs/case-management.md) |
+| [Channel Gateway React + Inertia](channel-gateway.md) | [Target/source map](../SOURCE-MAPPING.md#channel-gateway) | [core](../core/channel-gateway.md) · [api](../api/channel-gateway.md) · [nextjs](../nextjs/channel-gateway.md) |
+| [Channel Sales React + Inertia](channel-sales.md) | [Target/source map](../SOURCE-MAPPING.md#channel-sales) | [core](../core/channel-sales.md) · [api](../api/channel-sales.md) · [nextjs](../nextjs/channel-sales.md) |
+| [Chat and Bots React + Inertia](chat-and-bots.md) | [Target/source map](../SOURCE-MAPPING.md#chat-and-bots) | [core](../core/chat-and-bots.md) · [api](../api/chat-and-bots.md) · [nextjs](../nextjs/chat-and-bots.md) |
+| [Client Onboarding React + Inertia](client-onboarding.md) | [Target/source map](../SOURCE-MAPPING.md#client-onboarding) | [core](../core/client-onboarding.md) · [api](../api/client-onboarding.md) · [nextjs](../nextjs/client-onboarding.md) |
+| [Collaboration React + Inertia](collaboration.md) | [Target/source map](../SOURCE-MAPPING.md#collaboration) | [core](../core/collaboration.md) · [api](../api/collaboration.md) · [nextjs](../nextjs/collaboration.md) |
+| [Communities React + Inertia](communities.md) | [Target/source map](../SOURCE-MAPPING.md#communities) | [core](../core/communities.md) · [api](../api/communities.md) · [nextjs](../nextjs/communities.md) |
+| [Consent and Preferences React + Inertia](consent-and-preferences.md) | [Target/source map](../SOURCE-MAPPING.md#consent-and-preferences) | [core](../core/consent-and-preferences.md) · [api](../api/consent-and-preferences.md) · [nextjs](../nextjs/consent-and-preferences.md) |
+| [Contact Center React + Inertia](contact-center.md) | [Target/source map](../SOURCE-MAPPING.md#contact-center) | [core](../core/contact-center.md) · [api](../api/contact-center.md) · [nextjs](../nextjs/contact-center.md) |
+| [Contracts React + Inertia](contracts.md) | [Target/source map](../SOURCE-MAPPING.md#contracts) | [core](../core/contracts.md) · [api](../api/contracts.md) · [nextjs](../nextjs/contracts.md) |
+| [Conversation Analytics React + Inertia](conversation-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#conversation-analytics) | [core](../core/conversation-analytics.md) · [api](../api/conversation-analytics.md) · [nextjs](../nextjs/conversation-analytics.md) |
+| [Conversation Intelligence React + Inertia](conversation-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#conversation-intelligence) | [core](../core/conversation-intelligence.md) · [api](../api/conversation-intelligence.md) · [nextjs](../nextjs/conversation-intelligence.md) |
+| [Conversion Optimization React + Inertia](conversion-optimization.md) | [Target/source map](../SOURCE-MAPPING.md#conversion-optimization) | [core](../core/conversion-optimization.md) · [api](../api/conversion-optimization.md) · [nextjs](../nextjs/conversion-optimization.md) |
+| [CPQ React + Inertia](cpq.md) | [Target/source map](../SOURCE-MAPPING.md#cpq) | [core](../core/cpq.md) · [api](../api/cpq.md) · [nextjs](../nextjs/cpq.md) |
+| [Crm Account Based Marketing React + Inertia](crm-account-based-marketing.md) | [Target/source map](../SOURCE-MAPPING.md#crm-account-based-marketing) | [core](../core/crm-account-based-marketing.md) · [api](../api/crm-account-based-marketing.md) · [nextjs](../nextjs/crm-account-based-marketing.md) |
+| [Crm Account Planning React + Inertia](crm-account-planning.md) | [Target/source map](../SOURCE-MAPPING.md#crm-account-planning) | [core](../core/crm-account-planning.md) · [api](../api/crm-account-planning.md) · [nextjs](../nextjs/crm-account-planning.md) |
+| [Crm Activities React + Inertia](crm-activities.md) | [Target/source map](../SOURCE-MAPPING.md#crm-activities) | [core](../core/crm-activities.md) · [api](../api/crm-activities.md) · [nextjs](../nextjs/crm-activities.md) |
+| [Crm Advertising React + Inertia](crm-advertising.md) | [Target/source map](../SOURCE-MAPPING.md#crm-advertising) | [core](../core/crm-advertising.md) · [api](../api/crm-advertising.md) · [nextjs](../nextjs/crm-advertising.md) |
+| [Crm Advocacy React + Inertia](crm-advocacy.md) | [Target/source map](../SOURCE-MAPPING.md#crm-advocacy) | [core](../core/crm-advocacy.md) · [api](../api/crm-advocacy.md) · [nextjs](../nextjs/crm-advocacy.md) |
+| [Crm Affiliate Management React + Inertia](crm-affiliate-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-affiliate-management) | [core](../core/crm-affiliate-management.md) · [api](../api/crm-affiliate-management.md) · [nextjs](../nextjs/crm-affiliate-management.md) |
+| [Crm Agency Workspace React + Inertia](crm-agency-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#crm-agency-workspace) | [core](../core/crm-agency-workspace.md) · [api](../api/crm-agency-workspace.md) · [nextjs](../nextjs/crm-agency-workspace.md) |
+| [Crm Ai Reception And Conversation React + Inertia](crm-ai-reception-and-conversation.md) | [Target/source map](../SOURCE-MAPPING.md#crm-ai-reception-and-conversation) | [core](../core/crm-ai-reception-and-conversation.md) · [api](../api/crm-ai-reception-and-conversation.md) · [nextjs](../nextjs/crm-ai-reception-and-conversation.md) |
+| [CRM Analytics React + Inertia](crm-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#crm-analytics) | [core](../core/crm-analytics.md) · [api](../api/crm-analytics.md) · [nextjs](../nextjs/crm-analytics.md) |
+| [Crm Attribution React + Inertia](crm-attribution.md) | [Target/source map](../SOURCE-MAPPING.md#crm-attribution) | [core](../core/crm-attribution.md) · [api](../api/crm-attribution.md) · [nextjs](../nextjs/crm-attribution.md) |
+| [CRM Automation Pack React + Inertia](crm-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#crm-automation-pack) | [core](../core/crm-automation-pack.md) · [api](../api/crm-automation-pack.md) · [nextjs](../nextjs/crm-automation-pack.md) |
+| [Crm Business Process Management React + Inertia](crm-business-process-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-business-process-management) | [core](../core/crm-business-process-management.md) · [api](../api/crm-business-process-management.md) · [nextjs](../nextjs/crm-business-process-management.md) |
+| [Crm Campaigns React + Inertia](crm-campaigns.md) | [Target/source map](../SOURCE-MAPPING.md#crm-campaigns) | [core](../core/crm-campaigns.md) · [api](../api/crm-campaigns.md) · [nextjs](../nextjs/crm-campaigns.md) |
+| [Crm Case Management React + Inertia](crm-case-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-case-management) | [core](../core/crm-case-management.md) · [api](../api/crm-case-management.md) · [nextjs](../nextjs/crm-case-management.md) |
+| [Crm Channel Gateway React + Inertia](crm-channel-gateway.md) | [Target/source map](../SOURCE-MAPPING.md#crm-channel-gateway) | [core](../core/crm-channel-gateway.md) · [api](../api/crm-channel-gateway.md) · [nextjs](../nextjs/crm-channel-gateway.md) |
+| [Crm Channel Sales React + Inertia](crm-channel-sales.md) | [Target/source map](../SOURCE-MAPPING.md#crm-channel-sales) | [core](../core/crm-channel-sales.md) · [api](../api/crm-channel-sales.md) · [nextjs](../nextjs/crm-channel-sales.md) |
+| [Crm Chat And Bots React + Inertia](crm-chat-and-bots.md) | [Target/source map](../SOURCE-MAPPING.md#crm-chat-and-bots) | [core](../core/crm-chat-and-bots.md) · [api](../api/crm-chat-and-bots.md) · [nextjs](../nextjs/crm-chat-and-bots.md) |
+| [Crm Client Onboarding React + Inertia](crm-client-onboarding.md) | [Target/source map](../SOURCE-MAPPING.md#crm-client-onboarding) | [core](../core/crm-client-onboarding.md) · [api](../api/crm-client-onboarding.md) · [nextjs](../nextjs/crm-client-onboarding.md) |
+| [Crm Collaboration React + Inertia](crm-collaboration.md) | [Target/source map](../SOURCE-MAPPING.md#crm-collaboration) | [core](../core/crm-collaboration.md) · [api](../api/crm-collaboration.md) · [nextjs](../nextjs/crm-collaboration.md) |
+| [Crm Communities React + Inertia](crm-communities.md) | [Target/source map](../SOURCE-MAPPING.md#crm-communities) | [core](../core/crm-communities.md) · [api](../api/crm-communities.md) · [nextjs](../nextjs/crm-communities.md) |
+| [Crm Consent And Preferences React + Inertia](crm-consent-and-preferences.md) | [Target/source map](../SOURCE-MAPPING.md#crm-consent-and-preferences) | [core](../core/crm-consent-and-preferences.md) · [api](../api/crm-consent-and-preferences.md) · [nextjs](../nextjs/crm-consent-and-preferences.md) |
+| [Crm Contact Center React + Inertia](crm-contact-center.md) | [Target/source map](../SOURCE-MAPPING.md#crm-contact-center) | [core](../core/crm-contact-center.md) · [api](../api/crm-contact-center.md) · [nextjs](../nextjs/crm-contact-center.md) |
+| [Crm Contracts React + Inertia](crm-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#crm-contracts) | [core](../core/crm-contracts.md) · [api](../api/crm-contracts.md) · [nextjs](../nextjs/crm-contracts.md) |
+| [Crm Conversation Analytics React + Inertia](crm-conversation-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#crm-conversation-analytics) | [core](../core/crm-conversation-analytics.md) · [api](../api/crm-conversation-analytics.md) · [nextjs](../nextjs/crm-conversation-analytics.md) |
+| [Crm Conversation Intelligence React + Inertia](crm-conversation-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#crm-conversation-intelligence) | [core](../core/crm-conversation-intelligence.md) · [api](../api/crm-conversation-intelligence.md) · [nextjs](../nextjs/crm-conversation-intelligence.md) |
+| [Crm Conversion Optimization React + Inertia](crm-conversion-optimization.md) | [Target/source map](../SOURCE-MAPPING.md#crm-conversion-optimization) | [core](../core/crm-conversion-optimization.md) · [api](../api/crm-conversion-optimization.md) · [nextjs](../nextjs/crm-conversion-optimization.md) |
+| [CRM Copilot React + Inertia](crm-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#crm-copilot) | [core](../core/crm-copilot.md) · [api](../api/crm-copilot.md) · [nextjs](../nextjs/crm-copilot.md) |
+| [CRM Core React + Inertia](crm-core.md) | [Target/source map](../SOURCE-MAPPING.md#crm-core) | [core](../core/crm-core.md) · [api](../api/crm-core.md) · [nextjs](../nextjs/crm-core.md) |
+| [Crm Cpq React + Inertia](crm-cpq.md) | [Target/source map](../SOURCE-MAPPING.md#crm-cpq) | [core](../core/crm-cpq.md) · [api](../api/crm-cpq.md) · [nextjs](../nextjs/crm-cpq.md) |
+| [Crm Customer Data Model React + Inertia](crm-customer-data-model.md) | [Target/source map](../SOURCE-MAPPING.md#crm-customer-data-model) | [core](../core/crm-customer-data-model.md) · [api](../api/crm-customer-data-model.md) · [nextjs](../nextjs/crm-customer-data-model.md) |
+| [Crm Customer Data Platform React + Inertia](crm-customer-data-platform.md) | [Target/source map](../SOURCE-MAPPING.md#crm-customer-data-platform) | [core](../core/crm-customer-data-platform.md) · [api](../api/crm-customer-data-platform.md) · [nextjs](../nextjs/crm-customer-data-platform.md) |
+| [Crm Customer Self Service React + Inertia](crm-customer-self-service.md) | [Target/source map](../SOURCE-MAPPING.md#crm-customer-self-service) | [core](../core/crm-customer-self-service.md) · [api](../api/crm-customer-self-service.md) · [nextjs](../nextjs/crm-customer-self-service.md) |
+| [Crm Customer Success React + Inertia](crm-customer-success.md) | [Target/source map](../SOURCE-MAPPING.md#crm-customer-success) | [core](../core/crm-customer-success.md) · [api](../api/crm-customer-success.md) · [nextjs](../nextjs/crm-customer-success.md) |
+| [Crm Data Operations React + Inertia](crm-data-operations.md) | [Target/source map](../SOURCE-MAPPING.md#crm-data-operations) | [core](../core/crm-data-operations.md) · [api](../api/crm-data-operations.md) · [nextjs](../nextjs/crm-data-operations.md) |
+| [Crm Deal Registration React + Inertia](crm-deal-registration.md) | [Target/source map](../SOURCE-MAPPING.md#crm-deal-registration) | [core](../core/crm-deal-registration.md) · [api](../api/crm-deal-registration.md) · [nextjs](../nextjs/crm-deal-registration.md) |
+| [Crm Dialer And Outreach React + Inertia](crm-dialer-and-outreach.md) | [Target/source map](../SOURCE-MAPPING.md#crm-dialer-and-outreach) | [core](../core/crm-dialer-and-outreach.md) · [api](../api/crm-dialer-and-outreach.md) · [nextjs](../nextjs/crm-dialer-and-outreach.md) |
+| [CRM Documents React + Inertia](crm-documents.md) | [Target/source map](../SOURCE-MAPPING.md#crm-documents) | [core](../core/crm-documents.md) · [api](../api/crm-documents.md) · [nextjs](../nextjs/crm-documents.md) |
+| [Crm Email Marketing React + Inertia](crm-email-marketing.md) | [Target/source map](../SOURCE-MAPPING.md#crm-email-marketing) | [core](../core/crm-email-marketing.md) · [api](../api/crm-email-marketing.md) · [nextjs](../nextjs/crm-email-marketing.md) |
+| [Crm Email Productivity React + Inertia](crm-email-productivity.md) | [Target/source map](../SOURCE-MAPPING.md#crm-email-productivity) | [core](../core/crm-email-productivity.md) · [api](../api/crm-email-productivity.md) · [nextjs](../nextjs/crm-email-productivity.md) |
+| [Crm Enrichment React + Inertia](crm-enrichment.md) | [Target/source map](../SOURCE-MAPPING.md#crm-enrichment) | [core](../core/crm-enrichment.md) · [api](../api/crm-enrichment.md) · [nextjs](../nextjs/crm-enrichment.md) |
+| [Crm Events And Webinars React + Inertia](crm-events-and-webinars.md) | [Target/source map](../SOURCE-MAPPING.md#crm-events-and-webinars) | [core](../core/crm-events-and-webinars.md) · [api](../api/crm-events-and-webinars.md) · [nextjs](../nextjs/crm-events-and-webinars.md) |
+| [Crm Feedback And Voice Of Customer React + Inertia](crm-feedback-and-voice-of-customer.md) | [Target/source map](../SOURCE-MAPPING.md#crm-feedback-and-voice-of-customer) | [core](../core/crm-feedback-and-voice-of-customer.md) · [api](../api/crm-feedback-and-voice-of-customer.md) · [nextjs](../nextjs/crm-feedback-and-voice-of-customer.md) |
+| [Crm Field Service Coordination React + Inertia](crm-field-service-coordination.md) | [Target/source map](../SOURCE-MAPPING.md#crm-field-service-coordination) | [core](../core/crm-field-service-coordination.md) · [api](../api/crm-field-service-coordination.md) · [nextjs](../nextjs/crm-field-service-coordination.md) |
+| [Crm Forecasting React + Inertia](crm-forecasting.md) | [Target/source map](../SOURCE-MAPPING.md#crm-forecasting) | [core](../core/crm-forecasting.md) · [api](../api/crm-forecasting.md) · [nextjs](../nextjs/crm-forecasting.md) |
+| [Crm Forms And Surveys React + Inertia](crm-forms-and-surveys.md) | [Target/source map](../SOURCE-MAPPING.md#crm-forms-and-surveys) | [core](../core/crm-forms-and-surveys.md) · [api](../api/crm-forms-and-surveys.md) · [nextjs](../nextjs/crm-forms-and-surveys.md) |
+| [Crm Goals And Performance React + Inertia](crm-goals-and-performance.md) | [Target/source map](../SOURCE-MAPPING.md#crm-goals-and-performance) | [core](../core/crm-goals-and-performance.md) · [api](../api/crm-goals-and-performance.md) · [nextjs](../nextjs/crm-goals-and-performance.md) |
+| [Crm Journey Orchestration React + Inertia](crm-journey-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#crm-journey-orchestration) | [core](../core/crm-journey-orchestration.md) · [api](../api/crm-journey-orchestration.md) · [nextjs](../nextjs/crm-journey-orchestration.md) |
+| [Crm Knowledge React + Inertia](crm-knowledge.md) | [Target/source map](../SOURCE-MAPPING.md#crm-knowledge) | [core](../core/crm-knowledge.md) · [api](../api/crm-knowledge.md) · [nextjs](../nextjs/crm-knowledge.md) |
+| [Crm Landing Pages And Funnels React + Inertia](crm-landing-pages-and-funnels.md) | [Target/source map](../SOURCE-MAPPING.md#crm-landing-pages-and-funnels) | [core](../core/crm-landing-pages-and-funnels.md) · [api](../api/crm-landing-pages-and-funnels.md) · [nextjs](../nextjs/crm-landing-pages-and-funnels.md) |
+| [Crm Lead Capture React + Inertia](crm-lead-capture.md) | [Target/source map](../SOURCE-MAPPING.md#crm-lead-capture) | [core](../core/crm-lead-capture.md) · [api](../api/crm-lead-capture.md) · [nextjs](../nextjs/crm-lead-capture.md) |
+| [Crm Lead Qualification React + Inertia](crm-lead-qualification.md) | [Target/source map](../SOURCE-MAPPING.md#crm-lead-qualification) | [core](../core/crm-lead-qualification.md) · [api](../api/crm-lead-qualification.md) · [nextjs](../nextjs/crm-lead-qualification.md) |
+| [Crm Learning And Courses React + Inertia](crm-learning-and-courses.md) | [Target/source map](../SOURCE-MAPPING.md#crm-learning-and-courses) | [core](../core/crm-learning-and-courses.md) · [api](../api/crm-learning-and-courses.md) · [nextjs](../nextjs/crm-learning-and-courses.md) |
+| [Crm Loyalty React + Inertia](crm-loyalty.md) | [Target/source map](../SOURCE-MAPPING.md#crm-loyalty) | [core](../core/crm-loyalty.md) · [api](../api/crm-loyalty.md) · [nextjs](../nextjs/crm-loyalty.md) |
+| [Crm Marketing Agent React + Inertia](crm-marketing-agent.md) | [Target/source map](../SOURCE-MAPPING.md#crm-marketing-agent) | [core](../core/crm-marketing-agent.md) · [api](../api/crm-marketing-agent.md) · [nextjs](../nextjs/crm-marketing-agent.md) |
+| [Crm Marketing Development Funds React + Inertia](crm-marketing-development-funds.md) | [Target/source map](../SOURCE-MAPPING.md#crm-marketing-development-funds) | [core](../core/crm-marketing-development-funds.md) · [api](../api/crm-marketing-development-funds.md) · [nextjs](../nextjs/crm-marketing-development-funds.md) |
+| [Crm Marketing Resources React + Inertia](crm-marketing-resources.md) | [Target/source map](../SOURCE-MAPPING.md#crm-marketing-resources) | [core](../core/crm-marketing-resources.md) · [api](../api/crm-marketing-resources.md) · [nextjs](../nextjs/crm-marketing-resources.md) |
+| [Crm Memberships React + Inertia](crm-memberships.md) | [Target/source map](../SOURCE-MAPPING.md#crm-memberships) | [core](../core/crm-memberships.md) · [api](../api/crm-memberships.md) · [nextjs](../nextjs/crm-memberships.md) |
+| [Crm Mobile Messaging React + Inertia](crm-mobile-messaging.md) | [Target/source map](../SOURCE-MAPPING.md#crm-mobile-messaging) | [core](../core/crm-mobile-messaging.md) · [api](../api/crm-mobile-messaging.md) · [nextjs](../nextjs/crm-mobile-messaging.md) |
+| [Crm Omnichannel Service React + Inertia](crm-omnichannel-service.md) | [Target/source map](../SOURCE-MAPPING.md#crm-omnichannel-service) | [core](../core/crm-omnichannel-service.md) · [api](../api/crm-omnichannel-service.md) · [nextjs](../nextjs/crm-omnichannel-service.md) |
+| [Crm Orders And Payments Workspace React + Inertia](crm-orders-and-payments-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#crm-orders-and-payments-workspace) | [core](../core/crm-orders-and-payments-workspace.md) · [api](../api/crm-orders-and-payments-workspace.md) · [nextjs](../nextjs/crm-orders-and-payments-workspace.md) |
+| [Crm Partner Relationship Management React + Inertia](crm-partner-relationship-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-partner-relationship-management) | [core](../core/crm-partner-relationship-management.md) · [api](../api/crm-partner-relationship-management.md) · [nextjs](../nextjs/crm-partner-relationship-management.md) |
+| [Crm Personalization React + Inertia](crm-personalization.md) | [Target/source map](../SOURCE-MAPPING.md#crm-personalization) | [core](../core/crm-personalization.md) · [api](../api/crm-personalization.md) · [nextjs](../nextjs/crm-personalization.md) |
+| [Crm Playbooks And Enablement React + Inertia](crm-playbooks-and-enablement.md) | [Target/source map](../SOURCE-MAPPING.md#crm-playbooks-and-enablement) | [core](../core/crm-playbooks-and-enablement.md) · [api](../api/crm-playbooks-and-enablement.md) · [nextjs](../nextjs/crm-playbooks-and-enablement.md) |
+| [Crm Predictive Models React + Inertia](crm-predictive-models.md) | [Target/source map](../SOURCE-MAPPING.md#crm-predictive-models) | [core](../core/crm-predictive-models.md) · [api](../api/crm-predictive-models.md) · [nextjs](../nextjs/crm-predictive-models.md) |
+| [CRM Product Workspace React + Inertia](crm-product-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#crm-product-workspace) | [core](../core/crm-product-workspace.md) · [api](../api/crm-product-workspace.md) · [nextjs](../nextjs/crm-product-workspace.md) |
+| [Crm Projects React + Inertia](crm-projects.md) | [Target/source map](../SOURCE-MAPPING.md#crm-projects) | [core](../core/crm-projects.md) · [api](../api/crm-projects.md) · [nextjs](../nextjs/crm-projects.md) |
+| [Crm Proposals And Quotes React + Inertia](crm-proposals-and-quotes.md) | [Target/source map](../SOURCE-MAPPING.md#crm-proposals-and-quotes) | [core](../core/crm-proposals-and-quotes.md) · [api](../api/crm-proposals-and-quotes.md) · [nextjs](../nextjs/crm-proposals-and-quotes.md) |
+| [Crm Prospecting Agent React + Inertia](crm-prospecting-agent.md) | [Target/source map](../SOURCE-MAPPING.md#crm-prospecting-agent) | [core](../core/crm-prospecting-agent.md) · [api](../api/crm-prospecting-agent.md) · [nextjs](../nextjs/crm-prospecting-agent.md) |
+| [Crm Prospecting React + Inertia](crm-prospecting.md) | [Target/source map](../SOURCE-MAPPING.md#crm-prospecting) | [core](../core/crm-prospecting.md) · [api](../api/crm-prospecting.md) · [nextjs](../nextjs/crm-prospecting.md) |
+| [Crm Quotas And Incentives React + Inertia](crm-quotas-and-incentives.md) | [Target/source map](../SOURCE-MAPPING.md#crm-quotas-and-incentives) | [core](../core/crm-quotas-and-incentives.md) · [api](../api/crm-quotas-and-incentives.md) · [nextjs](../nextjs/crm-quotas-and-incentives.md) |
+| [Crm Referrals React + Inertia](crm-referrals.md) | [Target/source map](../SOURCE-MAPPING.md#crm-referrals) | [core](../core/crm-referrals.md) · [api](../api/crm-referrals.md) · [nextjs](../nextjs/crm-referrals.md) |
+| [Crm Reputation Management React + Inertia](crm-reputation-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-reputation-management) | [core](../core/crm-reputation-management.md) · [api](../api/crm-reputation-management.md) · [nextjs](../nextjs/crm-reputation-management.md) |
+| [Crm Resource Planning React + Inertia](crm-resource-planning.md) | [Target/source map](../SOURCE-MAPPING.md#crm-resource-planning) | [core](../core/crm-resource-planning.md) · [api](../api/crm-resource-planning.md) · [nextjs](../nextjs/crm-resource-planning.md) |
+| [Crm Revenue Intelligence React + Inertia](crm-revenue-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#crm-revenue-intelligence) | [core](../core/crm-revenue-intelligence.md) · [api](../api/crm-revenue-intelligence.md) · [nextjs](../nextjs/crm-revenue-intelligence.md) |
+| [Crm Revenue Lifecycle React + Inertia](crm-revenue-lifecycle.md) | [Target/source map](../SOURCE-MAPPING.md#crm-revenue-lifecycle) | [core](../core/crm-revenue-lifecycle.md) · [api](../api/crm-revenue-lifecycle.md) · [nextjs](../nextjs/crm-revenue-lifecycle.md) |
+| [Crm Routing React + Inertia](crm-routing.md) | [Target/source map](../SOURCE-MAPPING.md#crm-routing) | [core](../core/crm-routing.md) · [api](../api/crm-routing.md) · [nextjs](../nextjs/crm-routing.md) |
+| [Crm Saas Packaging React + Inertia](crm-saas-packaging.md) | [Target/source map](../SOURCE-MAPPING.md#crm-saas-packaging) | [core](../core/crm-saas-packaging.md) · [api](../api/crm-saas-packaging.md) · [nextjs](../nextjs/crm-saas-packaging.md) |
+| [Crm Sales Engagement React + Inertia](crm-sales-engagement.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sales-engagement) | [core](../core/crm-sales-engagement.md) · [api](../api/crm-sales-engagement.md) · [nextjs](../nextjs/crm-sales-engagement.md) |
+| [Crm Sales Pipelines React + Inertia](crm-sales-pipelines.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sales-pipelines) | [core](../core/crm-sales-pipelines.md) · [api](../api/crm-sales-pipelines.md) · [nextjs](../nextjs/crm-sales-pipelines.md) |
+| [Crm Sales Workspace React + Inertia](crm-sales-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sales-workspace) | [core](../core/crm-sales-workspace.md) · [api](../api/crm-sales-workspace.md) · [nextjs](../nextjs/crm-sales-workspace.md) |
+| [Crm Sandbox And Release Management React + Inertia](crm-sandbox-and-release-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sandbox-and-release-management) | [core](../core/crm-sandbox-and-release-management.md) · [api](../api/crm-sandbox-and-release-management.md) · [nextjs](../nextjs/crm-sandbox-and-release-management.md) |
+| [Crm Sandbox Release React + Inertia](crm-sandbox-release.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sandbox-release) | [core](../core/crm-sandbox-release.md) · [api](../api/crm-sandbox-release.md) · [nextjs](../nextjs/crm-sandbox-release.md) |
+| [Crm Scheduling React + Inertia](crm-scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#crm-scheduling) | [core](../core/crm-scheduling.md) · [api](../api/crm-scheduling.md) · [nextjs](../nextjs/crm-scheduling.md) |
+| [CRM Search React + Inertia](crm-search.md) | [Target/source map](../SOURCE-MAPPING.md#crm-search) | [core](../core/crm-search.md) · [api](../api/crm-search.md) · [nextjs](../nextjs/crm-search.md) |
+| [Crm Segmentation React + Inertia](crm-segmentation.md) | [Target/source map](../SOURCE-MAPPING.md#crm-segmentation) | [core](../core/crm-segmentation.md) · [api](../api/crm-segmentation.md) · [nextjs](../nextjs/crm-segmentation.md) |
+| [Crm Service Agent React + Inertia](crm-service-agent.md) | [Target/source map](../SOURCE-MAPPING.md#crm-service-agent) | [core](../core/crm-service-agent.md) · [api](../api/crm-service-agent.md) · [nextjs](../nextjs/crm-service-agent.md) |
+| [Crm Service Analytics React + Inertia](crm-service-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#crm-service-analytics) | [core](../core/crm-service-analytics.md) · [api](../api/crm-service-analytics.md) · [nextjs](../nextjs/crm-service-analytics.md) |
+| [Crm Sla And Entitlements React + Inertia](crm-sla-and-entitlements.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sla-and-entitlements) | [core](../core/crm-sla-and-entitlements.md) · [api](../api/crm-sla-and-entitlements.md) · [nextjs](../nextjs/crm-sla-and-entitlements.md) |
+| [Crm Telephony React + Inertia](crm-telephony.md) | [Target/source map](../SOURCE-MAPPING.md#crm-telephony) | [core](../core/crm-telephony.md) · [api](../api/crm-telephony.md) · [nextjs](../nextjs/crm-telephony.md) |
+| [Crm Template Snapshots React + Inertia](crm-template-snapshots.md) | [Target/source map](../SOURCE-MAPPING.md#crm-template-snapshots) | [core](../core/crm-template-snapshots.md) · [api](../api/crm-template-snapshots.md) · [nextjs](../nextjs/crm-template-snapshots.md) |
+| [Crm Templates And Snapshots React + Inertia](crm-templates-and-snapshots.md) | [Target/source map](../SOURCE-MAPPING.md#crm-templates-and-snapshots) | [core](../core/crm-templates-and-snapshots.md) · [api](../api/crm-templates-and-snapshots.md) · [nextjs](../nextjs/crm-templates-and-snapshots.md) |
+| [Crm Territories And Ownership React + Inertia](crm-territories-and-ownership.md) | [Target/source map](../SOURCE-MAPPING.md#crm-territories-and-ownership) | [core](../core/crm-territories-and-ownership.md) · [api](../api/crm-territories-and-ownership.md) · [nextjs](../nextjs/crm-territories-and-ownership.md) |
+| [Crm Unified Conversations React + Inertia](crm-unified-conversations.md) | [Target/source map](../SOURCE-MAPPING.md#crm-unified-conversations) | [core](../core/crm-unified-conversations.md) · [api](../api/crm-unified-conversations.md) · [nextjs](../nextjs/crm-unified-conversations.md) |
+| [Crm Usage Wallet And Rebilling React + Inertia](crm-usage-wallet-and-rebilling.md) | [Target/source map](../SOURCE-MAPPING.md#crm-usage-wallet-and-rebilling) | [core](../core/crm-usage-wallet-and-rebilling.md) · [api](../api/crm-usage-wallet-and-rebilling.md) · [nextjs](../nextjs/crm-usage-wallet-and-rebilling.md) |
+| [Crm Web Intent React + Inertia](crm-web-intent.md) | [Target/source map](../SOURCE-MAPPING.md#crm-web-intent) | [core](../core/crm-web-intent.md) · [api](../api/crm-web-intent.md) · [nextjs](../nextjs/crm-web-intent.md) |
+| [Crm White Label React + Inertia](crm-white-label.md) | [Target/source map](../SOURCE-MAPPING.md#crm-white-label) | [core](../core/crm-white-label.md) · [api](../api/crm-white-label.md) · [nextjs](../nextjs/crm-white-label.md) |
+| [Crm Work Management React + Inertia](crm-work-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-work-management) | [core](../core/crm-work-management.md) · [api](../api/crm-work-management.md) · [nextjs](../nextjs/crm-work-management.md) |
+| [Currency Context React + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customer Data Model React + Inertia](customer-data-model.md) | [Target/source map](../SOURCE-MAPPING.md#customer-data-model) | [core](../core/customer-data-model.md) · [api](../api/customer-data-model.md) · [nextjs](../nextjs/customer-data-model.md) |
+| [Customer Data Platform React + Inertia](customer-data-platform.md) | [Target/source map](../SOURCE-MAPPING.md#customer-data-platform) | [core](../core/customer-data-platform.md) · [api](../api/customer-data-platform.md) · [nextjs](../nextjs/customer-data-platform.md) |
+| [Customer Self-Service React + Inertia](customer-self-service.md) | [Target/source map](../SOURCE-MAPPING.md#customer-self-service) | [core](../core/customer-self-service.md) · [api](../api/customer-self-service.md) · [nextjs](../nextjs/customer-self-service.md) |
+| [Customer Success React + Inertia](customer-success.md) | [Target/source map](../SOURCE-MAPPING.md#customer-success) | [core](../core/customer-success.md) · [api](../api/customer-success.md) · [nextjs](../nextjs/customer-success.md) |
+| [Data Operations React + Inertia](data-operations.md) | [Target/source map](../SOURCE-MAPPING.md#data-operations) | [core](../core/data-operations.md) · [api](../api/data-operations.md) · [nextjs](../nextjs/data-operations.md) |
+| [Deal Registration React + Inertia](deal-registration.md) | [Target/source map](../SOURCE-MAPPING.md#deal-registration) | [core](../core/deal-registration.md) · [api](../api/deal-registration.md) · [nextjs](../nextjs/deal-registration.md) |
+| [Developer Experience React + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Dialer and Outreach React + Inertia](dialer-and-outreach.md) | [Target/source map](../SOURCE-MAPPING.md#dialer-and-outreach) | [core](../core/dialer-and-outreach.md) · [api](../api/dialer-and-outreach.md) · [nextjs](../nextjs/dialer-and-outreach.md) |
+| [Email Marketing React + Inertia](email-marketing.md) | [Target/source map](../SOURCE-MAPPING.md#email-marketing) | [core](../core/email-marketing.md) · [api](../api/email-marketing.md) · [nextjs](../nextjs/email-marketing.md) |
+| [Email Productivity React + Inertia](email-productivity.md) | [Target/source map](../SOURCE-MAPPING.md#email-productivity) | [core](../core/email-productivity.md) · [api](../api/email-productivity.md) · [nextjs](../nextjs/email-productivity.md) |
+| [Enrichment React + Inertia](enrichment.md) | [Target/source map](../SOURCE-MAPPING.md#enrichment) | [core](../core/enrichment.md) · [api](../api/enrichment.md) · [nextjs](../nextjs/enrichment.md) |
+| [Events and Webinars React + Inertia](events-and-webinars.md) | [Target/source map](../SOURCE-MAPPING.md#events-and-webinars) | [core](../core/events-and-webinars.md) · [api](../api/events-and-webinars.md) · [nextjs](../nextjs/events-and-webinars.md) |
+| [Feature Flags React + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Feedback and Voice of Customer React + Inertia](feedback-and-voice-of-customer.md) | [Target/source map](../SOURCE-MAPPING.md#feedback-and-voice-of-customer) | [core](../core/feedback-and-voice-of-customer.md) · [api](../api/feedback-and-voice-of-customer.md) · [nextjs](../nextjs/feedback-and-voice-of-customer.md) |
+| [Field Service Coordination React + Inertia](field-service-coordination.md) | [Target/source map](../SOURCE-MAPPING.md#field-service-coordination) | [core](../core/field-service-coordination.md) · [api](../api/field-service-coordination.md) · [nextjs](../nextjs/field-service-coordination.md) |
+| [Files Media React + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Forecasting React + Inertia](forecasting.md) | [Target/source map](../SOURCE-MAPPING.md#forecasting) | [core](../core/forecasting.md) · [api](../api/forecasting.md) · [nextjs](../nextjs/forecasting.md) |
+| [Forms and Surveys React + Inertia](forms-and-surveys.md) | [Target/source map](../SOURCE-MAPPING.md#forms-and-surveys) | [core](../core/forms-and-surveys.md) · [api](../api/forms-and-surveys.md) · [nextjs](../nextjs/forms-and-surveys.md) |
+| [Goals and Performance React + Inertia](goals-and-performance.md) | [Target/source map](../SOURCE-MAPPING.md#goals-and-performance) | [core](../core/goals-and-performance.md) · [api](../api/goals-and-performance.md) · [nextjs](../nextjs/goals-and-performance.md) |
+| [Identity Core React + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export React + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations React + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge React + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Journey Orchestration React + Inertia](journey-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#journey-orchestration) | [core](../core/journey-orchestration.md) · [api](../api/journey-orchestration.md) · [nextjs](../nextjs/journey-orchestration.md) |
+| [Knowledge React + Inertia](knowledge.md) | [Target/source map](../SOURCE-MAPPING.md#knowledge) | [core](../core/knowledge.md) · [api](../api/knowledge.md) · [nextjs](../nextjs/knowledge.md) |
+| [Landing Pages and Funnels React + Inertia](landing-pages-and-funnels.md) | [Target/source map](../SOURCE-MAPPING.md#landing-pages-and-funnels) | [core](../core/landing-pages-and-funnels.md) · [api](../api/landing-pages-and-funnels.md) · [nextjs](../nextjs/landing-pages-and-funnels.md) |
+| [Lead Capture React + Inertia](lead-capture.md) | [Target/source map](../SOURCE-MAPPING.md#lead-capture) | [core](../core/lead-capture.md) · [api](../api/lead-capture.md) · [nextjs](../nextjs/lead-capture.md) |
+| [Lead Qualification React + Inertia](lead-qualification.md) | [Target/source map](../SOURCE-MAPPING.md#lead-qualification) | [core](../core/lead-qualification.md) · [api](../api/lead-qualification.md) · [nextjs](../nextjs/lead-qualification.md) |
+| [Learning and Courses React + Inertia](learning-and-courses.md) | [Target/source map](../SOURCE-MAPPING.md#learning-and-courses) | [core](../core/learning-and-courses.md) · [api](../api/learning-and-courses.md) · [nextjs](../nextjs/learning-and-courses.md) |
+| [Localization Contracts React + Inertia](localization-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#localization-contracts) | [core](../core/localization-contracts.md) · [api](../api/localization-contracts.md) · [nextjs](../nextjs/localization-contracts.md) |
+| [Localization Core React + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Loyalty React + Inertia](loyalty.md) | [Target/source map](../SOURCE-MAPPING.md#loyalty) | [core](../core/loyalty.md) · [api](../api/loyalty.md) · [nextjs](../nextjs/loyalty.md) |
+| [Marketing Agent React + Inertia](marketing-agent.md) | [Target/source map](../SOURCE-MAPPING.md#marketing-agent) | [core](../core/marketing-agent.md) · [api](../api/marketing-agent.md) · [nextjs](../nextjs/marketing-agent.md) |
+| [Marketing Development Funds React + Inertia](marketing-development-funds.md) | [Target/source map](../SOURCE-MAPPING.md#marketing-development-funds) | [core](../core/marketing-development-funds.md) · [api](../api/marketing-development-funds.md) · [nextjs](../nextjs/marketing-development-funds.md) |
+| [Marketing Resources React + Inertia](marketing-resources.md) | [Target/source map](../SOURCE-MAPPING.md#marketing-resources) | [core](../core/marketing-resources.md) · [api](../api/marketing-resources.md) · [nextjs](../nextjs/marketing-resources.md) |
+| [Memberships React + Inertia](memberships.md) | [Target/source map](../SOURCE-MAPPING.md#memberships) | [core](../core/memberships.md) · [api](../api/memberships.md) · [nextjs](../nextjs/memberships.md) |
+| [Mobile Messaging React + Inertia](mobile-messaging.md) | [Target/source map](../SOURCE-MAPPING.md#mobile-messaging) | [core](../core/mobile-messaging.md) · [api](../api/mobile-messaging.md) · [nextjs](../nextjs/mobile-messaging.md) |
+| [Module Manager React + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications React + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability React + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Omnichannel Service React + Inertia](omnichannel-service.md) | [Target/source map](../SOURCE-MAPPING.md#omnichannel-service) | [core](../core/omnichannel-service.md) · [api](../api/omnichannel-service.md) · [nextjs](../nextjs/omnichannel-service.md) |
+| [Orders and Payments Workspace React + Inertia](orders-and-payments-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#orders-and-payments-workspace) | [core](../core/orders-and-payments-workspace.md) · [api](../api/orders-and-payments-workspace.md) · [nextjs](../nextjs/orders-and-payments-workspace.md) |
+| [Organizations Teams React + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Partner Relationship Management React + Inertia](partner-relationship-management.md) | [Target/source map](../SOURCE-MAPPING.md#partner-relationship-management) | [core](../core/partner-relationship-management.md) · [api](../api/partner-relationship-management.md) · [nextjs](../nextjs/partner-relationship-management.md) |
+| [Personalization React + Inertia](personalization.md) | [Target/source map](../SOURCE-MAPPING.md#personalization) | [core](../core/personalization.md) · [api](../api/personalization.md) · [nextjs](../nextjs/personalization.md) |
+| [Playbooks and Enablement React + Inertia](playbooks-and-enablement.md) | [Target/source map](../SOURCE-MAPPING.md#playbooks-and-enablement) | [core](../core/playbooks-and-enablement.md) · [api](../api/playbooks-and-enablement.md) · [nextjs](../nextjs/playbooks-and-enablement.md) |
+| [Predictive Models React + Inertia](predictive-models.md) | [Target/source map](../SOURCE-MAPPING.md#predictive-models) | [core](../core/predictive-models.md) · [api](../api/predictive-models.md) · [nextjs](../nextjs/predictive-models.md) |
+| [Profiles React + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Projects React + Inertia](projects.md) | [Target/source map](../SOURCE-MAPPING.md#projects) | [core](../core/projects.md) · [api](../api/projects.md) · [nextjs](../nextjs/projects.md) |
+| [Proposals and Quotes React + Inertia](proposals-and-quotes.md) | [Target/source map](../SOURCE-MAPPING.md#proposals-and-quotes) | [core](../core/proposals-and-quotes.md) · [api](../api/proposals-and-quotes.md) · [nextjs](../nextjs/proposals-and-quotes.md) |
+| [Prospecting Agent React + Inertia](prospecting-agent.md) | [Target/source map](../SOURCE-MAPPING.md#prospecting-agent) | [core](../core/prospecting-agent.md) · [api](../api/prospecting-agent.md) · [nextjs](../nextjs/prospecting-agent.md) |
+| [Prospecting React + Inertia](prospecting.md) | [Target/source map](../SOURCE-MAPPING.md#prospecting) | [core](../core/prospecting.md) · [api](../api/prospecting.md) · [nextjs](../nextjs/prospecting.md) |
+| [Quotas and Incentives React + Inertia](quotas-and-incentives.md) | [Target/source map](../SOURCE-MAPPING.md#quotas-and-incentives) | [core](../core/quotas-and-incentives.md) · [api](../api/quotas-and-incentives.md) · [nextjs](../nextjs/quotas-and-incentives.md) |
+| [Referrals React + Inertia](referrals.md) | [Target/source map](../SOURCE-MAPPING.md#referrals) | [core](../core/referrals.md) · [api](../api/referrals.md) · [nextjs](../nextjs/referrals.md) |
+| [Reputation Management React + Inertia](reputation-management.md) | [Target/source map](../SOURCE-MAPPING.md#reputation-management) | [core](../core/reputation-management.md) · [api](../api/reputation-management.md) · [nextjs](../nextjs/reputation-management.md) |
+| [Resource Planning React + Inertia](resource-planning.md) | [Target/source map](../SOURCE-MAPPING.md#resource-planning) | [core](../core/resource-planning.md) · [api](../api/resource-planning.md) · [nextjs](../nextjs/resource-planning.md) |
+| [Revenue Intelligence React + Inertia](revenue-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#revenue-intelligence) | [core](../core/revenue-intelligence.md) · [api](../api/revenue-intelligence.md) · [nextjs](../nextjs/revenue-intelligence.md) |
+| [Revenue Lifecycle React + Inertia](revenue-lifecycle.md) | [Target/source map](../SOURCE-MAPPING.md#revenue-lifecycle) | [core](../core/revenue-lifecycle.md) · [api](../api/revenue-lifecycle.md) · [nextjs](../nextjs/revenue-lifecycle.md) |
+| [Roles Permissions React + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Routing React + Inertia](routing.md) | [Target/source map](../SOURCE-MAPPING.md#routing) | [core](../core/routing.md) · [api](../api/routing.md) · [nextjs](../nextjs/routing.md) |
+| [SaaS Packaging React + Inertia](saas-packaging.md) | [Target/source map](../SOURCE-MAPPING.md#saas-packaging) | [core](../core/saas-packaging.md) · [api](../api/saas-packaging.md) · [nextjs](../nextjs/saas-packaging.md) |
+| [Sales Engagement React + Inertia](sales-engagement.md) | [Target/source map](../SOURCE-MAPPING.md#sales-engagement) | [core](../core/sales-engagement.md) · [api](../api/sales-engagement.md) · [nextjs](../nextjs/sales-engagement.md) |
+| [Sales Pipelines React + Inertia](sales-pipelines.md) | [Target/source map](../SOURCE-MAPPING.md#sales-pipelines) | [core](../core/sales-pipelines.md) · [api](../api/sales-pipelines.md) · [nextjs](../nextjs/sales-pipelines.md) |
+| [Sales Workspace React + Inertia](sales-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#sales-workspace) | [core](../core/sales-workspace.md) · [api](../api/sales-workspace.md) · [nextjs](../nextjs/sales-workspace.md) |
+| [Sandbox and Release Management React + Inertia](sandbox-and-release-management.md) | [Target/source map](../SOURCE-MAPPING.md#sandbox-and-release-management) | [core](../core/sandbox-and-release-management.md) · [api](../api/sandbox-and-release-management.md) · [nextjs](../nextjs/sandbox-and-release-management.md) |
+| [Scheduler Queues React + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Scheduling React + Inertia](scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#scheduling) | [core](../core/scheduling.md) · [api](../api/scheduling.md) · [nextjs](../nextjs/scheduling.md) |
+| [Search React + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Segmentation React + Inertia](segmentation.md) | [Target/source map](../SOURCE-MAPPING.md#segmentation) | [core](../core/segmentation.md) · [api](../api/segmentation.md) · [nextjs](../nextjs/segmentation.md) |
+| [Service Agent React + Inertia](service-agent.md) | [Target/source map](../SOURCE-MAPPING.md#service-agent) | [core](../core/service-agent.md) · [api](../api/service-agent.md) · [nextjs](../nextjs/service-agent.md) |
+| [Service Analytics React + Inertia](service-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#service-analytics) | [core](../core/service-analytics.md) · [api](../api/service-analytics.md) · [nextjs](../nextjs/service-analytics.md) |
+| [Sessions Devices React + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings React + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [SLA and Entitlements React + Inertia](sla-and-entitlements.md) | [Target/source map](../SOURCE-MAPPING.md#sla-and-entitlements) | [core](../core/sla-and-entitlements.md) · [api](../api/sla-and-entitlements.md) · [nextjs](../nextjs/sla-and-entitlements.md) |
+| [Telephony React + Inertia](telephony.md) | [Target/source map](../SOURCE-MAPPING.md#telephony) | [core](../core/telephony.md) · [api](../api/telephony.md) · [nextjs](../nextjs/telephony.md) |
+| [Templates and Snapshots React + Inertia](templates-and-snapshots.md) | [Target/source map](../SOURCE-MAPPING.md#templates-and-snapshots) | [core](../core/templates-and-snapshots.md) · [api](../api/templates-and-snapshots.md) · [nextjs](../nextjs/templates-and-snapshots.md) |
+| [Territories and Ownership React + Inertia](territories-and-ownership.md) | [Target/source map](../SOURCE-MAPPING.md#territories-and-ownership) | [core](../core/territories-and-ownership.md) · [api](../api/territories-and-ownership.md) · [nextjs](../nextjs/territories-and-ownership.md) |
+| [Theme Support React + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication React + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Unified Conversations React + Inertia](unified-conversations.md) | [Target/source map](../SOURCE-MAPPING.md#unified-conversations) | [core](../core/unified-conversations.md) · [api](../api/unified-conversations.md) · [nextjs](../nextjs/unified-conversations.md) |
+| [Usage Wallet and Rebilling React + Inertia](usage-wallet-and-rebilling.md) | [Target/source map](../SOURCE-MAPPING.md#usage-wallet-and-rebilling) | [core](../core/usage-wallet-and-rebilling.md) · [api](../api/usage-wallet-and-rebilling.md) · [nextjs](../nextjs/usage-wallet-and-rebilling.md) |
+| [Web Intent React + Inertia](web-intent.md) | [Target/source map](../SOURCE-MAPPING.md#web-intent) | [core](../core/web-intent.md) · [api](../api/web-intent.md) · [nextjs](../nextjs/web-intent.md) |
+| [Webhooks React + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [White Label React + Inertia](white-label.md) | [Target/source map](../SOURCE-MAPPING.md#white-label) | [core](../core/white-label.md) · [api](../api/white-label.md) · [nextjs](../nextjs/white-label.md) |
+| [Work Management React + Inertia](work-management.md) | [Target/source map](../SOURCE-MAPPING.md#work-management) | [core](../core/work-management.md) · [api](../api/work-management.md) · [nextjs](../nextjs/work-management.md) |

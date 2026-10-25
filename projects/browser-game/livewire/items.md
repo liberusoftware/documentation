@@ -1,12 +1,16 @@
 # Browser Game: Items Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#items). Observed identity: [`liberusoftware/module-browser-game-items-livewire`](../../../modules/source/liberusoftware--module-browser-game-items-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-browser-game-items-livewire`  
 **Matching domain module:** `browser-game-items`  
 **Application:** Browser Game  
 **Source feature:** [Items](../features/items.md)  
-**Architecture:** [LIVEWIRE.md](../BROWSER-GAME.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

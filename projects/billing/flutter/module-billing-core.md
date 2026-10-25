@@ -1,5 +1,9 @@
 # Module Billing Core Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-module-billing-core-flutter
 **Matching core package:** module-billing-module-billing-core ([implementation](../core/module-billing-core.md))
 **Matching API package:** module-billing-module-billing-core-api ([contract](../api/module-billing-core.md))

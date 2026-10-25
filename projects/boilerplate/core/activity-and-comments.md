@@ -1,6 +1,10 @@
 # Boilerplate: Activity and Comments domain packages
 
-**Composer package:** `module-activity-and-comments`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#activity-and-comments). Observed identity: [`liberusoftware/activity-comments`](../../../modules/source/liberusoftware--activity-comments.md). This retained spelling maps to `activity-comments`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-activity-and-comments`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Activity timelines, mentions, subscriptions, internal comments, attachments, and visibility.
 

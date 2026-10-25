@@ -1,5 +1,9 @@
 # Observability Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#observability). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-control-panel-observability-flutter
 **Matching core package:** module-control-panel-observability ([implementation](../core/observability.md))
 **Matching API package:** module-control-panel-observability-api ([contract](../api/observability.md))

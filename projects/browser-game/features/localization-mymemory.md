@@ -1,12 +1,16 @@
 # Browser Game: Localization Mymemory
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#localization-mymemory). Observed identity: [`liberusoftware/localization-mymemory`](../../../modules/source/liberusoftware--localization-mymemory.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-browser-game-localization-mymemory`
 **Application:** Browser Game  
 **Capability group:** Localization Mymemory  
 **Source scope:** [BROWSER-GAME.md](../BROWSER-GAME.md)  
-**Architecture:** [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md) · [API.md](../BROWSER-GAME.md) · [FILAMENT.md](../BROWSER-GAME.md) · [LIVEWIRE.md](../BROWSER-GAME.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

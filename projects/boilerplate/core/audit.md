@@ -1,6 +1,10 @@
 # Boilerplate: Audit domain packages
 
-**Composer package:** `module-audit`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#audit). Observed identity: [`liberusoftware/audit`](../../../modules/source/liberusoftware--audit.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-audit`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Actor, tenant, request context, material changes, privileged actions, retention, and tamper evidence.
 

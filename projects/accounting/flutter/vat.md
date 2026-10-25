@@ -1,5 +1,9 @@
 # Vat Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#vat). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-vat-flutter
 **Matching core package:** module-accounting-vat ([implementation](../core/vat.md))
 **Matching API package:** module-accounting-vat-api ([contract](../api/vat.md))

@@ -1,8 +1,12 @@
 # Browser Game: Moderation And Analytics Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#moderation-and-analytics). Observed identity: [`liberusoftware/module-browser-game-moderation-and-analytics`](../../../modules/source/liberusoftware--module-browser-game-moderation-and-analytics.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-browser-game-moderation-and-analytics`
+**Design package identifier:** `module-browser-game-moderation-and-analytics`
 **Domain specification:** [Moderation And Analytics](../features/moderation-and-analytics.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

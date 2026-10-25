@@ -1,5 +1,9 @@
 # Import and Export domain packages React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#import-and-export). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `import-export`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-import-and-export-react-native
 **Matching core package:** module-import-and-export ([implementation](../core/import-and-export.md))
 **Matching API package:** module-import-and-export-api ([contract](../api/import-and-export.md))

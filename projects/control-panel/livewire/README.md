@@ -1,50 +1,71 @@
 # Control Panel Livewire Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **61 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Livewire 4 presentation package for exactly one matching domain module.
 
-- [Activity Comments Livewire](activity-comments.md) — `module-control-panel-activity-comments-livewire`
-- [Analytics Core Livewire](analytics-core.md) — `module-control-panel-analytics-core-livewire`
-- [Analytics Google Livewire](analytics-google.md) — `module-control-panel-analytics-google-livewire`
-- [Analytics Meta Livewire](analytics-meta.md) — `module-control-panel-analytics-meta-livewire`
-- [Api Access Livewire](api-access.md) — `module-control-panel-api-access-livewire`
-- [Application Livewire](application.md) — `module-control-panel-application-livewire`
-- [Audit Livewire](audit.md) — `module-control-panel-audit-livewire`
-- [Control Panel Accounts Livewire](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-livewire`
-- [Control Panel Api And Automation Livewire](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-livewire`
-- [Control Panel Backups Livewire](control-panel-backups.md) — `module-control-panel-control-panel-backups-livewire`
-- [Control Panel Certificates Livewire](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-livewire`
-- [Control Panel Containers Livewire](control-panel-containers.md) — `module-control-panel-control-panel-containers-livewire`
-- [Control Panel Control Core Livewire](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-livewire`
-- [Control Panel Databases Livewire](control-panel-databases.md) — `module-control-panel-control-panel-databases-livewire`
-- [Control Panel Dns Livewire](control-panel-dns.md) — `module-control-panel-control-panel-dns-livewire`
-- [Control Panel Files Livewire](control-panel-files.md) — `module-control-panel-control-panel-files-livewire`
-- [Control Panel Kubernetes Livewire](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-livewire`
-- [Control Panel Mail Livewire](control-panel-mail.md) — `module-control-panel-control-panel-mail-livewire`
-- [Control Panel Monitoring Livewire](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-livewire`
-- [Control Panel Os Adapters Livewire](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-livewire`
-- [Control Panel Security Livewire](control-panel-security.md) — `module-control-panel-control-panel-security-livewire`
-- [Control Panel Web Hosting Livewire](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-livewire`
-- [Currency Context Livewire](currency-context.md) — `module-control-panel-currency-context-livewire`
-- [Developer Experience Livewire](developer-experience.md) — `module-control-panel-developer-experience-livewire`
-- [Feature Flags Livewire](feature-flags.md) — `module-control-panel-feature-flags-livewire`
-- [Files Media Livewire](files-media.md) — `module-control-panel-files-media-livewire`
-- [Identity Core Livewire](identity-core.md) — `module-control-panel-identity-core-livewire`
-- [Identity Socialstream Livewire](identity-socialstream.md) — `module-control-panel-identity-socialstream-livewire`
-- [Import Export Livewire](import-export.md) — `module-control-panel-import-export-livewire`
-- [Integrations Livewire](integrations.md) — `module-control-panel-integrations-livewire`
-- [Jetstream Bridge Livewire](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-livewire`
-- [Localization Core Livewire](localization-core.md) — `module-control-panel-localization-core-livewire`
-- [Localization Mymemory Livewire](localization-mymemory.md) — `module-control-panel-localization-mymemory-livewire`
-- [Module Manager Livewire](module-manager.md) — `module-control-panel-module-manager-livewire`
-- [Notifications Livewire](notifications.md) — `module-control-panel-notifications-livewire`
-- [Observability Livewire](observability.md) — `module-control-panel-observability-livewire`
-- [Organizations Teams Livewire](organizations-teams.md) — `module-control-panel-organizations-teams-livewire`
-- [Profiles Livewire](profiles.md) — `module-control-panel-profiles-livewire`
-- [Roles Permissions Livewire](roles-permissions.md) — `module-control-panel-roles-permissions-livewire`
-- [Scheduler Queues Livewire](scheduler-queues.md) — `module-control-panel-scheduler-queues-livewire`
-- [Search Livewire](search.md) — `module-control-panel-search-livewire`
-- [Sessions Devices Livewire](sessions-devices.md) — `module-control-panel-sessions-devices-livewire`
-- [Settings Livewire](settings.md) — `module-control-panel-settings-livewire`
-- [Theme Support Livewire](theme-support.md) — `module-control-panel-theme-support-livewire`
-- [Two Factor Authentication Livewire](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-livewire`
-- [Webhooks Livewire](webhooks.md) — `module-control-panel-webhooks-livewire`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Accounts Livewire](accounts.md) | [liberusoftware/module-control-panel-accounts-livewire](../../../modules/source/liberusoftware--module-control-panel-accounts-livewire.md) | [core](../core/accounts.md) · [api](../api/accounts.md) · [nextjs](../nextjs/accounts.md) |
+| [Activity Comments Livewire](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Livewire](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Livewire](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Livewire](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Livewire](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [API and Automation Livewire](api-and-automation.md) | [liberusoftware/module-control-panel-api-and-automation-livewire](../../../modules/source/liberusoftware--module-control-panel-api-and-automation-livewire.md) | [core](../core/api-and-automation.md) · [api](../api/api-and-automation.md) · [nextjs](../nextjs/api-and-automation.md) |
+| [Application Livewire](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Livewire](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Backups Livewire](backups.md) | [liberusoftware/module-control-panel-backups-livewire](../../../modules/source/liberusoftware--module-control-panel-backups-livewire.md) | [core](../core/backups.md) · [api](../api/backups.md) · [nextjs](../nextjs/backups.md) |
+| [Certificates Livewire](certificates.md) | [liberusoftware/module-control-panel-certificates-livewire](../../../modules/source/liberusoftware--module-control-panel-certificates-livewire.md) | [core](../core/certificates.md) · [api](../api/certificates.md) · [nextjs](../nextjs/certificates.md) |
+| [Containers Livewire](containers.md) | [liberusoftware/module-control-panel-containers-livewire](../../../modules/source/liberusoftware--module-control-panel-containers-livewire.md) | [core](../core/containers.md) · [api](../api/containers.md) · [nextjs](../nextjs/containers.md) |
+| [Control Core Livewire](control-core.md) | [liberusoftware/module-control-panel-control-core-livewire](../../../modules/source/liberusoftware--module-control-panel-control-core-livewire.md) | [core](../core/control-core.md) · [api](../api/control-core.md) · [nextjs](../nextjs/control-core.md) |
+| [Control Panel Accounts Livewire](control-panel-accounts.md) | [liberusoftware/module-control-panel-accounts-livewire](../../../modules/source/liberusoftware--module-control-panel-accounts-livewire.md) | [core](../core/control-panel-accounts.md) · [api](../api/control-panel-accounts.md) · [nextjs](../nextjs/control-panel-accounts.md) |
+| [Control Panel Api And Automation Livewire](control-panel-api-and-automation.md) | [liberusoftware/module-control-panel-api-and-automation-livewire](../../../modules/source/liberusoftware--module-control-panel-api-and-automation-livewire.md) | [core](../core/control-panel-api-and-automation.md) · [api](../api/control-panel-api-and-automation.md) · [nextjs](../nextjs/control-panel-api-and-automation.md) |
+| [Control Panel Backups Livewire](control-panel-backups.md) | [liberusoftware/module-control-panel-backups-livewire](../../../modules/source/liberusoftware--module-control-panel-backups-livewire.md) | [core](../core/control-panel-backups.md) · [api](../api/control-panel-backups.md) · [nextjs](../nextjs/control-panel-backups.md) |
+| [Control Panel Certificates Livewire](control-panel-certificates.md) | [liberusoftware/module-control-panel-certificates-livewire](../../../modules/source/liberusoftware--module-control-panel-certificates-livewire.md) | [core](../core/control-panel-certificates.md) · [api](../api/control-panel-certificates.md) · [nextjs](../nextjs/control-panel-certificates.md) |
+| [Control Panel Containers Livewire](control-panel-containers.md) | [liberusoftware/module-control-panel-containers-livewire](../../../modules/source/liberusoftware--module-control-panel-containers-livewire.md) | [core](../core/control-panel-containers.md) · [api](../api/control-panel-containers.md) · [nextjs](../nextjs/control-panel-containers.md) |
+| [Control Panel Control Core Livewire](control-panel-control-core.md) | [liberusoftware/module-control-panel-control-core-livewire](../../../modules/source/liberusoftware--module-control-panel-control-core-livewire.md) | [core](../core/control-panel-control-core.md) · [api](../api/control-panel-control-core.md) · [nextjs](../nextjs/control-panel-control-core.md) |
+| [Control Panel Databases Livewire](control-panel-databases.md) | [liberusoftware/module-control-panel-databases-livewire](../../../modules/source/liberusoftware--module-control-panel-databases-livewire.md) | [core](../core/control-panel-databases.md) · [api](../api/control-panel-databases.md) · [nextjs](../nextjs/control-panel-databases.md) |
+| [Control Panel Dns Livewire](control-panel-dns.md) | [liberusoftware/module-control-panel-dns-livewire](../../../modules/source/liberusoftware--module-control-panel-dns-livewire.md) | [core](../core/control-panel-dns.md) · [api](../api/control-panel-dns.md) · [nextjs](../nextjs/control-panel-dns.md) |
+| [Control Panel Files Livewire](control-panel-files.md) | [liberusoftware/module-control-panel-files-livewire](../../../modules/source/liberusoftware--module-control-panel-files-livewire.md) | [core](../core/control-panel-files.md) · [api](../api/control-panel-files.md) · [nextjs](../nextjs/control-panel-files.md) |
+| [Control Panel Kubernetes Livewire](control-panel-kubernetes.md) | [liberusoftware/module-control-panel-kubernetes-livewire](../../../modules/source/liberusoftware--module-control-panel-kubernetes-livewire.md) | [core](../core/control-panel-kubernetes.md) · [api](../api/control-panel-kubernetes.md) · [nextjs](../nextjs/control-panel-kubernetes.md) |
+| [Control Panel Mail Livewire](control-panel-mail.md) | [liberusoftware/module-control-panel-mail-livewire](../../../modules/source/liberusoftware--module-control-panel-mail-livewire.md) | [core](../core/control-panel-mail.md) · [api](../api/control-panel-mail.md) · [nextjs](../nextjs/control-panel-mail.md) |
+| [Control Panel Monitoring Livewire](control-panel-monitoring.md) | [liberusoftware/module-control-panel-monitoring-livewire](../../../modules/source/liberusoftware--module-control-panel-monitoring-livewire.md) | [core](../core/control-panel-monitoring.md) · [api](../api/control-panel-monitoring.md) · [nextjs](../nextjs/control-panel-monitoring.md) |
+| [Control Panel Os Adapters Livewire](control-panel-os-adapters.md) | [liberusoftware/module-control-panel-os-adapters-livewire](../../../modules/source/liberusoftware--module-control-panel-os-adapters-livewire.md) | [core](../core/control-panel-os-adapters.md) · [api](../api/control-panel-os-adapters.md) · [nextjs](../nextjs/control-panel-os-adapters.md) |
+| [Control Panel Security Livewire](control-panel-security.md) | [liberusoftware/module-control-panel-security-livewire](../../../modules/source/liberusoftware--module-control-panel-security-livewire.md) | [core](../core/control-panel-security.md) · [api](../api/control-panel-security.md) · [nextjs](../nextjs/control-panel-security.md) |
+| [Control Panel Web Hosting Livewire](control-panel-web-hosting.md) | [liberusoftware/module-control-panel-web-hosting-livewire](../../../modules/source/liberusoftware--module-control-panel-web-hosting-livewire.md) | [core](../core/control-panel-web-hosting.md) · [api](../api/control-panel-web-hosting.md) · [nextjs](../nextjs/control-panel-web-hosting.md) |
+| [Currency Context Livewire](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Databases Livewire](databases.md) | [liberusoftware/module-control-panel-databases-livewire](../../../modules/source/liberusoftware--module-control-panel-databases-livewire.md) | [core](../core/databases.md) · [api](../api/databases.md) · [nextjs](../nextjs/databases.md) |
+| [Developer Experience Livewire](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [DNS Livewire](dns.md) | [liberusoftware/module-control-panel-dns-livewire](../../../modules/source/liberusoftware--module-control-panel-dns-livewire.md) | [core](../core/dns.md) · [api](../api/dns.md) · [nextjs](../nextjs/dns.md) |
+| [Feature Flags Livewire](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Livewire](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Files Livewire](files.md) | [liberusoftware/module-control-panel-files-livewire](../../../modules/source/liberusoftware--module-control-panel-files-livewire.md) | [core](../core/files.md) · [api](../api/files.md) · [nextjs](../nextjs/files.md) |
+| [Identity Core Livewire](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Livewire](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Livewire](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Livewire](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Livewire](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Kubernetes Livewire](kubernetes.md) | [liberusoftware/module-control-panel-kubernetes-livewire](../../../modules/source/liberusoftware--module-control-panel-kubernetes-livewire.md) | [core](../core/kubernetes.md) · [api](../api/kubernetes.md) · [nextjs](../nextjs/kubernetes.md) |
+| [Localization Core Livewire](localization-core.md) | [liberusoftware/localization-core-livewire](../../../modules/source/liberusoftware--localization-core-livewire.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Livewire](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Mail Livewire](mail.md) | [liberusoftware/module-control-panel-mail-livewire](../../../modules/source/liberusoftware--module-control-panel-mail-livewire.md) | [core](../core/mail.md) · [api](../api/mail.md) · [nextjs](../nextjs/mail.md) |
+| [Module Manager Livewire](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Monitoring Livewire](monitoring.md) | [liberusoftware/module-control-panel-monitoring-livewire](../../../modules/source/liberusoftware--module-control-panel-monitoring-livewire.md) | [core](../core/monitoring.md) · [api](../api/monitoring.md) · [nextjs](../nextjs/monitoring.md) |
+| [Notifications Livewire](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Livewire](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Livewire](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [OS Adapters Livewire](os-adapters.md) | [liberusoftware/module-control-panel-os-adapters-livewire](../../../modules/source/liberusoftware--module-control-panel-os-adapters-livewire.md) | [core](../core/os-adapters.md) · [api](../api/os-adapters.md) · [nextjs](../nextjs/os-adapters.md) |
+| [Profiles Livewire](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles Permissions Livewire](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Livewire](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Livewire](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Security Livewire](security.md) | [liberusoftware/module-control-panel-security-livewire](../../../modules/source/liberusoftware--module-control-panel-security-livewire.md) | [core](../core/security.md) · [api](../api/security.md) · [nextjs](../nextjs/security.md) |
+| [Sessions Devices Livewire](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Livewire](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Livewire](theme-support.md) | [liberusoftware/theme-support-livewire](../../../modules/source/liberusoftware--theme-support-livewire.md) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Livewire](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Web Hosting Livewire](web-hosting.md) | [liberusoftware/module-control-panel-web-hosting-livewire](../../../modules/source/liberusoftware--module-control-panel-web-hosting-livewire.md) | [core](../core/web-hosting.md) · [api](../api/web-hosting.md) · [nextjs](../nextjs/web-hosting.md) |
+| [Webhooks Livewire](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

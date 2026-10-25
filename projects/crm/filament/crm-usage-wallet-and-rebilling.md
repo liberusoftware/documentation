@@ -1,12 +1,16 @@
 # CRM: Crm Usage Wallet And Rebilling Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-usage-wallet-and-rebilling). Observed identity: [`liberusoftware/module-crm-usage-wallet-and-rebilling-filament`](../../../modules/source/liberusoftware--module-crm-usage-wallet-and-rebilling-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-crm-usage-wallet-and-rebilling-filament`  
 **Matching domain module:** `crm-usage-wallet-and-rebilling`  
 **Application:** CRM  
 **Source feature:** [Crm Usage Wallet And Rebilling](../features/crm-usage-wallet-and-rebilling.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

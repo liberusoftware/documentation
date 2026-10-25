@@ -1,5 +1,9 @@
 # Usage Wallet And Rebilling React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#usage-wallet-and-rebilling). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-usage-wallet-and-rebilling-react-native
 **Matching core package:** module-crm-usage-wallet-and-rebilling ([implementation](../core/usage-wallet-and-rebilling.md))
 **Matching API package:** module-crm-usage-wallet-and-rebilling-api ([contract](../api/usage-wallet-and-rebilling.md))

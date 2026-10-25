@@ -1,50 +1,67 @@
 # Automation Filament Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **57 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-- [Activity Comments Filament](activity-comments.md) — `module-automation-activity-comments-filament`
-- [Analytics Core Filament](analytics-core.md) — `module-automation-analytics-core-filament`
-- [Analytics Google Filament](analytics-google.md) — `module-automation-analytics-google-filament`
-- [Analytics Meta Filament](analytics-meta.md) — `module-automation-analytics-meta-filament`
-- [Api Access Filament](api-access.md) — `module-automation-api-access-filament`
-- [Application Filament](application.md) — `module-automation-application-filament`
-- [Audit Filament](audit.md) — `module-automation-audit-filament`
-- [Currency Context Filament](currency-context.md) — `module-automation-currency-context-filament`
-- [Developer Experience Filament](developer-experience.md) — `module-automation-developer-experience-filament`
-- [Feature Flags Filament](feature-flags.md) — `module-automation-feature-flags-filament`
-- [Files Media Filament](files-media.md) — `module-automation-files-media-filament`
-- [Identity Core Filament](identity-core.md) — `module-automation-identity-core-filament`
-- [Identity Socialstream Filament](identity-socialstream.md) — `module-automation-identity-socialstream-filament`
-- [Import Export Filament](import-export.md) — `module-automation-import-export-filament`
-- [Integrations Filament](integrations.md) — `module-automation-integrations-filament`
-- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-automation-jetstream-bridge-filament`
-- [Liberu Business Workflow Reconciliation Filament](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-filament`
-- [Liberu Executive Insights Filament](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-filament`
-- [Liberu Platform Orchestration Filament](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-filament`
-- [Liberu Revenue And Care Orchestration Filament](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-filament`
-- [Localization Core Filament](localization-core.md) — `module-automation-localization-core-filament`
-- [Localization Mymemory Filament](localization-mymemory.md) — `module-automation-localization-mymemory-filament`
-- [Module Automation Ai Gateway Filament](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-filament`
-- [Module Automation Approvals Filament](module-automation-approvals.md) — `module-automation-module-automation-approvals-filament`
-- [Module Automation Automation Core Filament](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-filament`
-- [Module Automation Connectors Filament](module-automation-connectors.md) — `module-automation-module-automation-connectors-filament`
-- [Module Automation Data Processing Filament](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-filament`
-- [Module Automation Evaluation Filament](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-filament`
-- [Module Automation Image Filament](module-automation-image.md) — `module-automation-module-automation-image-filament`
-- [Module Automation Prompt Registry Filament](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-filament`
-- [Module Automation Rules Filament](module-automation-rules.md) — `module-automation-module-automation-rules-filament`
-- [Module Automation Video Filament](module-automation-video.md) — `module-automation-module-automation-video-filament`
-- [Module Automation Voice Filament](module-automation-voice.md) — `module-automation-module-automation-voice-filament`
-- [Module Manager Filament](module-manager.md) — `module-automation-module-manager-filament`
-- [Notifications Filament](notifications.md) — `module-automation-notifications-filament`
-- [Observability Filament](observability.md) — `module-automation-observability-filament`
-- [Organizations Teams Filament](organizations-teams.md) — `module-automation-organizations-teams-filament`
-- [Profiles Filament](profiles.md) — `module-automation-profiles-filament`
-- [Roles Permissions Filament](roles-permissions.md) — `module-automation-roles-permissions-filament`
-- [Scheduler Queues Filament](scheduler-queues.md) — `module-automation-scheduler-queues-filament`
-- [Search Filament](search.md) — `module-automation-search-filament`
-- [Sessions Devices Filament](sessions-devices.md) — `module-automation-sessions-devices-filament`
-- [Settings Filament](settings.md) — `module-automation-settings-filament`
-- [Theme Support Filament](theme-support.md) — `module-automation-theme-support-filament`
-- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-automation-two-factor-authentication-filament`
-- [Webhooks Filament](webhooks.md) — `module-automation-webhooks-filament`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Filament](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [AI Gateway Filament](ai-gateway.md) | [liberusoftware/automation-ai-gateway-filament](../../../modules/source/liberusoftware--automation-ai-gateway-filament.md) | [core](../core/ai-gateway.md) · [api](../api/ai-gateway.md) · [nextjs](../nextjs/ai-gateway.md) |
+| [Analytics Core Filament](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Filament](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Filament](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Filament](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Filament](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Approvals Filament](approvals.md) | [liberusoftware/automation-approvals-filament](../../../modules/source/liberusoftware--automation-approvals-filament.md) | [core](../core/approvals.md) · [api](../api/approvals.md) · [nextjs](../nextjs/approvals.md) |
+| [Audit Filament](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Automation Core Filament](automation-core.md) | [liberusoftware/automation-automation-core-filament](../../../modules/source/liberusoftware--automation-automation-core-filament.md) | [core](../core/automation-core.md) · [api](../api/automation-core.md) · [nextjs](../nextjs/automation-core.md) |
+| [Connectors Filament](connectors.md) | [liberusoftware/automation-connectors-filament](../../../modules/source/liberusoftware--automation-connectors-filament.md) | [core](../core/connectors.md) · [api](../api/connectors.md) · [nextjs](../nextjs/connectors.md) |
+| [Currency Context Filament](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Data Processing Filament](data-processing.md) | [liberusoftware/automation-data-processing-filament](../../../modules/source/liberusoftware--automation-data-processing-filament.md) | [core](../core/data-processing.md) · [api](../api/data-processing.md) · [nextjs](../nextjs/data-processing.md) |
+| [Developer Experience Filament](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Evaluation Filament](evaluation.md) | [liberusoftware/automation-evaluation-filament](../../../modules/source/liberusoftware--automation-evaluation-filament.md) | [core](../core/evaluation.md) · [api](../api/evaluation.md) · [nextjs](../nextjs/evaluation.md) |
+| [Feature Flags Filament](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Filament](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Filament](identity-core.md) | [liberusoftware/identity-core-filament](../../../modules/source/liberusoftware--identity-core-filament.md) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Filament](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Image Filament](image.md) | [liberusoftware/automation-image-filament](../../../modules/source/liberusoftware--automation-image-filament.md) | [core](../core/image.md) · [api](../api/image.md) · [nextjs](../nextjs/image.md) |
+| [Import Export Filament](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Filament](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Filament](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation Filament](liberu-business-workflow-reconciliation.md) | [liberusoftware/liberu-business-workflow-reconciliation-filament](../../../modules/source/liberusoftware--liberu-business-workflow-reconciliation-filament.md) | [core](../core/liberu-business-workflow-reconciliation.md) · [api](../api/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights Filament](liberu-executive-insights.md) | [liberusoftware/liberu-executive-insights-filament](../../../modules/source/liberusoftware--liberu-executive-insights-filament.md) | [core](../core/liberu-executive-insights.md) · [api](../api/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration Filament](liberu-platform-orchestration.md) | [liberusoftware/liberu-platform-orchestration-filament](../../../modules/source/liberusoftware--liberu-platform-orchestration-filament.md) | [core](../core/liberu-platform-orchestration.md) · [api](../api/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration Filament](liberu-revenue-and-care-orchestration.md) | [liberusoftware/liberu-revenue-and-care-orchestration-filament](../../../modules/source/liberusoftware--liberu-revenue-and-care-orchestration-filament.md) | [core](../core/liberu-revenue-and-care-orchestration.md) · [api](../api/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core Filament](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Filament](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Module Automation Ai Gateway Filament](module-automation-ai-gateway.md) | [liberusoftware/automation-ai-gateway-filament](../../../modules/source/liberusoftware--automation-ai-gateway-filament.md) | [core](../core/module-automation-ai-gateway.md) · [api](../api/module-automation-ai-gateway.md) · [nextjs](../nextjs/module-automation-ai-gateway.md) |
+| [Module Automation Approvals Filament](module-automation-approvals.md) | [liberusoftware/automation-approvals-filament](../../../modules/source/liberusoftware--automation-approvals-filament.md) | [core](../core/module-automation-approvals.md) · [api](../api/module-automation-approvals.md) · [nextjs](../nextjs/module-automation-approvals.md) |
+| [Module Automation Automation Core Filament](module-automation-automation-core.md) | [liberusoftware/automation-automation-core-filament](../../../modules/source/liberusoftware--automation-automation-core-filament.md) | [core](../core/module-automation-automation-core.md) · [api](../api/module-automation-automation-core.md) · [nextjs](../nextjs/module-automation-automation-core.md) |
+| [Module Automation Connectors Filament](module-automation-connectors.md) | [liberusoftware/automation-connectors-filament](../../../modules/source/liberusoftware--automation-connectors-filament.md) | [core](../core/module-automation-connectors.md) · [api](../api/module-automation-connectors.md) · [nextjs](../nextjs/module-automation-connectors.md) |
+| [Module Automation Data Processing Filament](module-automation-data-processing.md) | [liberusoftware/automation-data-processing-filament](../../../modules/source/liberusoftware--automation-data-processing-filament.md) | [core](../core/module-automation-data-processing.md) · [api](../api/module-automation-data-processing.md) · [nextjs](../nextjs/module-automation-data-processing.md) |
+| [Module Automation Evaluation Filament](module-automation-evaluation.md) | [liberusoftware/automation-evaluation-filament](../../../modules/source/liberusoftware--automation-evaluation-filament.md) | [core](../core/module-automation-evaluation.md) · [api](../api/module-automation-evaluation.md) · [nextjs](../nextjs/module-automation-evaluation.md) |
+| [Module Automation Image Filament](module-automation-image.md) | [liberusoftware/automation-image-filament](../../../modules/source/liberusoftware--automation-image-filament.md) | [core](../core/module-automation-image.md) · [api](../api/module-automation-image.md) · [nextjs](../nextjs/module-automation-image.md) |
+| [Module Automation Prompt Registry Filament](module-automation-prompt-registry.md) | [liberusoftware/automation-prompt-registry-filament](../../../modules/source/liberusoftware--automation-prompt-registry-filament.md) | [core](../core/module-automation-prompt-registry.md) · [api](../api/module-automation-prompt-registry.md) · [nextjs](../nextjs/module-automation-prompt-registry.md) |
+| [Module Automation Rules Filament](module-automation-rules.md) | [liberusoftware/automation-rules-filament](../../../modules/source/liberusoftware--automation-rules-filament.md) | [core](../core/module-automation-rules.md) · [api](../api/module-automation-rules.md) · [nextjs](../nextjs/module-automation-rules.md) |
+| [Module Automation Video Filament](module-automation-video.md) | [liberusoftware/automation-video-filament](../../../modules/source/liberusoftware--automation-video-filament.md) | [core](../core/module-automation-video.md) · [api](../api/module-automation-video.md) · [nextjs](../nextjs/module-automation-video.md) |
+| [Module Automation Voice Filament](module-automation-voice.md) | [liberusoftware/automation-voice-filament](../../../modules/source/liberusoftware--automation-voice-filament.md) | [core](../core/module-automation-voice.md) · [api](../api/module-automation-voice.md) · [nextjs](../nextjs/module-automation-voice.md) |
+| [Module Manager Filament](module-manager.md) | [liberusoftware/module-manager-filament](../../../modules/source/liberusoftware--module-manager-filament.md) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Filament](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Filament](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Filament](organizations-teams.md) | [liberusoftware/organizations-teams-filament](../../../modules/source/liberusoftware--organizations-teams-filament.md) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles Filament](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Prompt Registry Filament](prompt-registry.md) | [liberusoftware/automation-prompt-registry-filament](../../../modules/source/liberusoftware--automation-prompt-registry-filament.md) | [core](../core/prompt-registry.md) · [api](../api/prompt-registry.md) · [nextjs](../nextjs/prompt-registry.md) |
+| [Roles Permissions Filament](roles-permissions.md) | [liberusoftware/roles-permissions-filament](../../../modules/source/liberusoftware--roles-permissions-filament.md) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Rules Filament](rules.md) | [liberusoftware/automation-rules-filament](../../../modules/source/liberusoftware--automation-rules-filament.md) | [core](../core/rules.md) · [api](../api/rules.md) · [nextjs](../nextjs/rules.md) |
+| [Scheduler Queues Filament](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Filament](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Filament](sessions-devices.md) | [liberusoftware/sessions-devices-filament](../../../modules/source/liberusoftware--sessions-devices-filament.md) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Filament](settings.md) | [liberusoftware/settings-filament](../../../modules/source/liberusoftware--settings-filament.md) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Filament](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Filament](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Video Filament](video.md) | [liberusoftware/automation-video-filament](../../../modules/source/liberusoftware--automation-video-filament.md) | [core](../core/video.md) · [api](../api/video.md) · [nextjs](../nextjs/video.md) |
+| [Voice Filament](voice.md) | [liberusoftware/automation-voice-filament](../../../modules/source/liberusoftware--automation-voice-filament.md) | [core](../core/voice.md) · [api](../api/voice.md) · [nextjs](../nextjs/voice.md) |
+| [Webhooks Filament](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

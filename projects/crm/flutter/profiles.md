@@ -1,5 +1,9 @@
 # Profiles Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#profiles). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-profiles-flutter
 **Matching core package:** module-crm-profiles ([implementation](../core/profiles.md))
 **Matching API package:** module-crm-profiles-api ([contract](../api/profiles.md))

@@ -1,54 +1,72 @@
 # Genealogy Filament Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **62 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-- [Activity Comments Filament](activity-comments.md) — `module-genealogy-activity-comments-filament`
-- [Analytics Core Filament](analytics-core.md) — `module-genealogy-analytics-core-filament`
-- [Analytics Google Filament](analytics-google.md) — `module-genealogy-analytics-google-filament`
-- [Analytics Meta Filament](analytics-meta.md) — `module-genealogy-analytics-meta-filament`
-- [Api Access Filament](api-access.md) — `module-genealogy-api-access-filament`
-- [Application Filament](application.md) — `module-genealogy-application-filament`
-- [Audit Filament](audit.md) — `module-genealogy-audit-filament`
-- [Currency Context Filament](currency-context.md) — `module-genealogy-currency-context-filament`
-- [Developer Experience Filament](developer-experience.md) — `module-genealogy-developer-experience-filament`
-- [Feature Flags Filament](feature-flags.md) — `module-genealogy-feature-flags-filament`
-- [Files Media Filament](files-media.md) — `module-genealogy-files-media-filament`
-- [Genealogy Collaboration Filament](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-filament`
-- [Genealogy Core Filament](genealogy-core.md) — `module-genealogy-genealogy-core-filament`
-- [Genealogy Discovery Filament](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-filament`
-- [Genealogy Dna Filament](genealogy-dna.md) — `module-genealogy-genealogy-dna-filament`
-- [Genealogy Evidence Filament](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-filament`
-- [Genealogy Gamification Filament](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-filament`
-- [Genealogy Import Export Filament](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-filament`
-- [Genealogy Media Filament](genealogy-media.md) — `module-genealogy-genealogy-media-filament`
-- [Genealogy People Filament](genealogy-people.md) — `module-genealogy-genealogy-people-filament`
-- [Genealogy Places Filament](genealogy-places.md) — `module-genealogy-genealogy-places-filament`
-- [Genealogy Relationships Filament](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-filament`
-- [Genealogy Reports Filament](genealogy-reports.md) — `module-genealogy-genealogy-reports-filament`
-- [Genealogy Research Filament](genealogy-research.md) — `module-genealogy-genealogy-research-filament`
-- [Genealogy Timeline Filament](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-filament`
-- [Genealogy Tree Viewer Filament](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-filament`
-- [Identity Core Filament](identity-core.md) — `module-genealogy-identity-core-filament`
-- [Identity Socialstream Filament](identity-socialstream.md) — `module-genealogy-identity-socialstream-filament`
-- [Import Export Filament](import-export.md) — `module-genealogy-import-export-filament`
-- [Integrations Filament](integrations.md) — `module-genealogy-integrations-filament`
-- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-filament`
-- [Liberu Business Workflow Reconciliation Filament](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-filament`
-- [Liberu Executive Insights Filament](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-filament`
-- [Liberu Platform Orchestration Filament](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-filament`
-- [Liberu Revenue And Care Orchestration Filament](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-filament`
-- [Localization Core Filament](localization-core.md) — `module-genealogy-localization-core-filament`
-- [Localization Mymemory Filament](localization-mymemory.md) — `module-genealogy-localization-mymemory-filament`
-- [Module Manager Filament](module-manager.md) — `module-genealogy-module-manager-filament`
-- [Notifications Filament](notifications.md) — `module-genealogy-notifications-filament`
-- [Observability Filament](observability.md) — `module-genealogy-observability-filament`
-- [Organizations Teams Filament](organizations-teams.md) — `module-genealogy-organizations-teams-filament`
-- [Profiles Filament](profiles.md) — `module-genealogy-profiles-filament`
-- [Roles Permissions Filament](roles-permissions.md) — `module-genealogy-roles-permissions-filament`
-- [Scheduler Queues Filament](scheduler-queues.md) — `module-genealogy-scheduler-queues-filament`
-- [Search Filament](search.md) — `module-genealogy-search-filament`
-- [Sessions Devices Filament](sessions-devices.md) — `module-genealogy-sessions-devices-filament`
-- [Settings Filament](settings.md) — `module-genealogy-settings-filament`
-- [Theme Support Filament](theme-support.md) — `module-genealogy-theme-support-filament`
-- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-filament`
-- [Webhooks Filament](webhooks.md) — `module-genealogy-webhooks-filament`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Filament](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Filament](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Filament](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Filament](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Filament](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Filament](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Filament](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Collaboration Filament](collaboration.md) | [liberusoftware/module-genealogy-collaboration-filament](../../../modules/source/liberusoftware--module-genealogy-collaboration-filament.md) | [core](../core/collaboration.md) · [api](../api/collaboration.md) · [nextjs](../nextjs/collaboration.md) |
+| [Currency Context Filament](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Filament](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Discovery Filament](discovery.md) | [liberusoftware/module-genealogy-discovery-filament](../../../modules/source/liberusoftware--module-genealogy-discovery-filament.md) | [core](../core/discovery.md) · [api](../api/discovery.md) · [nextjs](../nextjs/discovery.md) |
+| [DNA Filament](dna.md) | [liberusoftware/module-genealogy-dna-filament](../../../modules/source/liberusoftware--module-genealogy-dna-filament.md) | [core](../core/dna.md) · [api](../api/dna.md) · [nextjs](../nextjs/dna.md) |
+| [Evidence Filament](evidence.md) | [liberusoftware/module-genealogy-evidence-filament](../../../modules/source/liberusoftware--module-genealogy-evidence-filament.md) | [core](../core/evidence.md) · [api](../api/evidence.md) · [nextjs](../nextjs/evidence.md) |
+| [Feature Flags Filament](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Filament](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Genealogy Collaboration Filament](genealogy-collaboration.md) | [liberusoftware/module-genealogy-collaboration-filament](../../../modules/source/liberusoftware--module-genealogy-collaboration-filament.md) | [core](../core/genealogy-collaboration.md) · [api](../api/genealogy-collaboration.md) · [nextjs](../nextjs/genealogy-collaboration.md) |
+| [Genealogy Core Filament](genealogy-core.md) | [liberusoftware/module-genealogy-core-filament](../../../modules/source/liberusoftware--module-genealogy-core-filament.md) | [core](../core/genealogy-core.md) · [api](../api/genealogy-core.md) · [nextjs](../nextjs/genealogy-core.md) |
+| [Genealogy Discovery Filament](genealogy-discovery.md) | [liberusoftware/module-genealogy-discovery-filament](../../../modules/source/liberusoftware--module-genealogy-discovery-filament.md) | [core](../core/genealogy-discovery.md) · [api](../api/genealogy-discovery.md) · [nextjs](../nextjs/genealogy-discovery.md) |
+| [Genealogy Dna Filament](genealogy-dna.md) | [liberusoftware/module-genealogy-dna-filament](../../../modules/source/liberusoftware--module-genealogy-dna-filament.md) | [core](../core/genealogy-dna.md) · [api](../api/genealogy-dna.md) · [nextjs](../nextjs/genealogy-dna.md) |
+| [Genealogy Evidence Filament](genealogy-evidence.md) | [liberusoftware/module-genealogy-evidence-filament](../../../modules/source/liberusoftware--module-genealogy-evidence-filament.md) | [core](../core/genealogy-evidence.md) · [api](../api/genealogy-evidence.md) · [nextjs](../nextjs/genealogy-evidence.md) |
+| [Genealogy Gamification Filament](genealogy-gamification.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-gamification) | [core](../core/genealogy-gamification.md) · [api](../api/genealogy-gamification.md) · [nextjs](../nextjs/genealogy-gamification.md) |
+| [Genealogy Import Export Filament](genealogy-import-export.md) | [liberusoftware/module-genealogy-import-export-filament](../../../modules/source/liberusoftware--module-genealogy-import-export-filament.md) | [core](../core/genealogy-import-export.md) · [api](../api/genealogy-import-export.md) · [nextjs](../nextjs/genealogy-import-export.md) |
+| [Genealogy Media Filament](genealogy-media.md) | [liberusoftware/module-genealogy-media-filament](../../../modules/source/liberusoftware--module-genealogy-media-filament.md) | [core](../core/genealogy-media.md) · [api](../api/genealogy-media.md) · [nextjs](../nextjs/genealogy-media.md) |
+| [Genealogy People Filament](genealogy-people.md) | [liberusoftware/module-genealogy-people-filament](../../../modules/source/liberusoftware--module-genealogy-people-filament.md) | [core](../core/genealogy-people.md) · [api](../api/genealogy-people.md) · [nextjs](../nextjs/genealogy-people.md) |
+| [Genealogy Places Filament](genealogy-places.md) | [liberusoftware/module-genealogy-places-filament](../../../modules/source/liberusoftware--module-genealogy-places-filament.md) | [core](../core/genealogy-places.md) · [api](../api/genealogy-places.md) · [nextjs](../nextjs/genealogy-places.md) |
+| [Genealogy Relationships Filament](genealogy-relationships.md) | [liberusoftware/module-genealogy-relationships-filament](../../../modules/source/liberusoftware--module-genealogy-relationships-filament.md) | [core](../core/genealogy-relationships.md) · [api](../api/genealogy-relationships.md) · [nextjs](../nextjs/genealogy-relationships.md) |
+| [Genealogy Reports Filament](genealogy-reports.md) | [liberusoftware/module-genealogy-reports-filament](../../../modules/source/liberusoftware--module-genealogy-reports-filament.md) | [core](../core/genealogy-reports.md) · [api](../api/genealogy-reports.md) · [nextjs](../nextjs/genealogy-reports.md) |
+| [Genealogy Research Filament](genealogy-research.md) | [liberusoftware/module-genealogy-research-filament](../../../modules/source/liberusoftware--module-genealogy-research-filament.md) | [core](../core/genealogy-research.md) · [api](../api/genealogy-research.md) · [nextjs](../nextjs/genealogy-research.md) |
+| [Genealogy Timeline Filament](genealogy-timeline.md) | [liberusoftware/module-genealogy-timeline-filament](../../../modules/source/liberusoftware--module-genealogy-timeline-filament.md) | [core](../core/genealogy-timeline.md) · [api](../api/genealogy-timeline.md) · [nextjs](../nextjs/genealogy-timeline.md) |
+| [Genealogy Tree Viewer Filament](genealogy-tree-viewer.md) | [liberusoftware/module-genealogy-tree-viewer-filament](../../../modules/source/liberusoftware--module-genealogy-tree-viewer-filament.md) | [core](../core/genealogy-tree-viewer.md) · [api](../api/genealogy-tree-viewer.md) · [nextjs](../nextjs/genealogy-tree-viewer.md) |
+| [Identity Core Filament](identity-core.md) | [liberusoftware/identity-core-filament](../../../modules/source/liberusoftware--identity-core-filament.md) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Filament](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Filament](import-export.md) | [liberusoftware/module-genealogy-import-export-filament](../../../modules/source/liberusoftware--module-genealogy-import-export-filament.md) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Filament](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Filament](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation Filament](liberu-business-workflow-reconciliation.md) | [liberusoftware/module-liberu-business-workflow-reconciliation-filament](../../../modules/source/liberusoftware--module-liberu-business-workflow-reconciliation-filament.md) | [core](../core/liberu-business-workflow-reconciliation.md) · [api](../api/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights Filament](liberu-executive-insights.md) | [liberusoftware/module-liberu-executive-insights-filament](../../../modules/source/liberusoftware--module-liberu-executive-insights-filament.md) | [core](../core/liberu-executive-insights.md) · [api](../api/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration Filament](liberu-platform-orchestration.md) | [liberusoftware/module-liberu-platform-orchestration-filament](../../../modules/source/liberusoftware--module-liberu-platform-orchestration-filament.md) | [core](../core/liberu-platform-orchestration.md) · [api](../api/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration Filament](liberu-revenue-and-care-orchestration.md) | [liberusoftware/module-liberu-revenue-and-care-orchestration-filament](../../../modules/source/liberusoftware--module-liberu-revenue-and-care-orchestration-filament.md) | [core](../core/liberu-revenue-and-care-orchestration.md) · [api](../api/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core Filament](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Filament](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Media Filament](media.md) | [liberusoftware/module-genealogy-media-filament](../../../modules/source/liberusoftware--module-genealogy-media-filament.md) | [core](../core/media.md) · [api](../api/media.md) · [nextjs](../nextjs/media.md) |
+| [Module Manager Filament](module-manager.md) | [liberusoftware/module-manager-filament](../../../modules/source/liberusoftware--module-manager-filament.md) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Filament](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Filament](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Filament](organizations-teams.md) | [liberusoftware/organizations-teams-filament](../../../modules/source/liberusoftware--organizations-teams-filament.md) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [People Filament](people.md) | [liberusoftware/module-genealogy-people-filament](../../../modules/source/liberusoftware--module-genealogy-people-filament.md) | [core](../core/people.md) · [api](../api/people.md) · [nextjs](../nextjs/people.md) |
+| [Places Filament](places.md) | [liberusoftware/module-genealogy-places-filament](../../../modules/source/liberusoftware--module-genealogy-places-filament.md) | [core](../core/places.md) · [api](../api/places.md) · [nextjs](../nextjs/places.md) |
+| [Profiles Filament](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Relationships Filament](relationships.md) | [liberusoftware/module-genealogy-relationships-filament](../../../modules/source/liberusoftware--module-genealogy-relationships-filament.md) | [core](../core/relationships.md) · [api](../api/relationships.md) · [nextjs](../nextjs/relationships.md) |
+| [Reports Filament](reports.md) | [liberusoftware/module-genealogy-reports-filament](../../../modules/source/liberusoftware--module-genealogy-reports-filament.md) | [core](../core/reports.md) · [api](../api/reports.md) · [nextjs](../nextjs/reports.md) |
+| [Research Filament](research.md) | [liberusoftware/module-genealogy-research-filament](../../../modules/source/liberusoftware--module-genealogy-research-filament.md) | [core](../core/research.md) · [api](../api/research.md) · [nextjs](../nextjs/research.md) |
+| [Roles Permissions Filament](roles-permissions.md) | [liberusoftware/roles-permissions-filament](../../../modules/source/liberusoftware--roles-permissions-filament.md) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Filament](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Filament](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Filament](sessions-devices.md) | [liberusoftware/sessions-devices-filament](../../../modules/source/liberusoftware--sessions-devices-filament.md) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Filament](settings.md) | [liberusoftware/settings-filament](../../../modules/source/liberusoftware--settings-filament.md) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Filament](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Timeline Filament](timeline.md) | [liberusoftware/module-genealogy-timeline-filament](../../../modules/source/liberusoftware--module-genealogy-timeline-filament.md) | [core](../core/timeline.md) · [api](../api/timeline.md) · [nextjs](../nextjs/timeline.md) |
+| [Tree Viewer Filament](tree-viewer.md) | [liberusoftware/module-genealogy-tree-viewer-filament](../../../modules/source/liberusoftware--module-genealogy-tree-viewer-filament.md) | [core](../core/tree-viewer.md) · [api](../api/tree-viewer.md) · [nextjs](../nextjs/tree-viewer.md) |
+| [Two Factor Authentication Filament](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Filament](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

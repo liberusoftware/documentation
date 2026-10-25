@@ -1,12 +1,16 @@
 # CMS: Cms Views And Query Builder Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-views-and-query-builder). Observed identity: [`liberusoftware/module-cms-views-and-query-builder-filament`](../../../modules/source/liberusoftware--module-cms-views-and-query-builder-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-cms-cms-views-and-query-builder-filament`  
 **Matching domain module:** `cms-views-and-query-builder`  
 **Application:** CMS  
 **Source feature:** [Cms Views And Query Builder](../features/cms-views-and-query-builder.md)  
-**Architecture:** [FILAMENT.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

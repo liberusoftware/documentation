@@ -1,5 +1,9 @@
 # Sales Pipelines Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-pipelines). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-sales-pipelines-flutter
 **Matching core package:** module-crm-sales-pipelines ([implementation](../core/sales-pipelines.md))
 **Matching API package:** module-crm-sales-pipelines-api ([contract](../api/sales-pipelines.md))
@@ -19,3 +23,5 @@ This adapter presents Sales Pipelines for the Flutter + Dart surface. It owns pl
 Test Sales Pipelines API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
 
 See [Flutter + Dart standard](../../../standards/FLUTTER.md), [mobile architecture](../../../architecture/MOBILE.md), [Flutter + Dart technology](../../../technologies/FLUTTER.md), [core module](../core/sales-pipelines.md), and [API module](../api/sales-pipelines.md).
+
+Read the [source-backed sales-pipeline walkthrough](../guides/SALES-PIPELINES.md) for actual actions, routes, permissions, UI behavior and differences from the target design.

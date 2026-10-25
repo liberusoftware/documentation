@@ -1,5 +1,9 @@
 # Social Network Social Core React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-social-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-social-network-social-network-social-core-react-native
 **Matching core package:** module-social-network-social-network-social-core ([implementation](../core/social-network-social-core.md))
 **Matching API package:** module-social-network-social-network-social-core-api ([contract](../api/social-network-social-core.md))

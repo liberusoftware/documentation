@@ -1,8 +1,12 @@
 # Maintenance: Module Maintenance Assets Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-assets). Observed identity: [`liberusoftware/module-maintenance-assets`](../../../modules/source/liberusoftware--module-maintenance-assets.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-maintenance-module-maintenance-assets`
+**Design package identifier:** `module-maintenance-module-maintenance-assets`
 **Domain specification:** [Module Maintenance Assets](../features/module-maintenance-assets.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

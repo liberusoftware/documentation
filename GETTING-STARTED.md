@@ -218,3 +218,16 @@ The links below include every `README.md` index currently under `projects/`. App
 - For persistence and asynchronous work, read [DATABASE.md](standards/DATABASE.md), [MODELS.md](standards/MODELS.md), [JOBS.md](standards/JOBS.md), and [QUEUES.md](standards/QUEUES.md).
 - For public boundaries, read [CONTRACTS.md](standards/CONTRACTS.md), [CONTROLLERS.md](standards/CONTROLLERS.md), and [API.md](standards/API.md).
 - For a new package or presentation adapter, use the relevant issue mapping in its architecture standard and update documentation in the same change.
+
+- [Observed source inventory](architecture/SOURCE-INVENTORY.md) — distinguish checked-out modules from planned packages.
+- [Composer guide](guides/COMPOSER.md) — PHP installation, local modules, updates, and Packagist releases.
+- [npm guide](guides/NPM.md) — JavaScript workspaces, local packages, updates, and npm releases.
+- [Next.js module plans](modules/nextjs/README.md) — separate React presentation applications consuming Laravel APIs.
+
+## Follow a source-backed module
+
+Open a project’s `DEVELOPMENT.md` for its actual root requirements and commands, then `SOURCE-MAPPING.md` to connect design names with manifest identities. The [implementation reference catalogue](modules/source/README.md) lists dependencies, registration, callable signatures, migrations, routes and test sources. Planned requirements remain separate from observed behavior; use the source-backed walkthroughs where available and verify a clean consumer before adoption.
+
+- [Maintain source-backed documentation](guides/DOCUMENTATION-MAINTENANCE.md) — discovery, regeneration, source review and validation.
+
+- [Presentation selection and reuse](architecture/PRESENTATION.md) — Composer/npm boundaries, Inertia versus API transport, shared React UI and per-layer operation states.

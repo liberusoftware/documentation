@@ -1,6 +1,10 @@
 # Boilerplate: Activity and Comments Filament presentation packages
 
-**Composer package:** `module-activity-and-comments-filament`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#activity-and-comments). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `activity-comments`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-activity-and-comments-filament`
 **Matching core package:** [`module-activity-and-comments`](../core/activity-and-comments.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Activity timelines, mentions, subscriptions, internal comments, attachments, and visibility.

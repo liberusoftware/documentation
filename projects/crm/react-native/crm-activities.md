@@ -1,5 +1,9 @@
 # Crm Activities React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-activities). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-activities-react-native
 **Matching core package:** module-crm-crm-activities ([implementation](../core/crm-activities.md))
 **Matching API package:** module-crm-crm-activities-api ([contract](../api/crm-activities.md))

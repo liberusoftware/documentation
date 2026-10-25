@@ -1,12 +1,16 @@
 # CMS: Module Cms Views And Query Builder Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-views-and-query-builder). Observed identity: [`liberusoftware/module-cms-views-and-query-builder-livewire`](../../../modules/source/liberusoftware--module-cms-views-and-query-builder-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-cms-module-cms-views-and-query-builder-livewire`  
 **Matching domain module:** `module-cms-views-and-query-builder`  
 **Application:** CMS  
 **Source feature:** [Module Cms Views And Query Builder](../features/module-cms-views-and-query-builder.md)  
-**Architecture:** [LIVEWIRE.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

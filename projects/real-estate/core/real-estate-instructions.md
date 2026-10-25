@@ -1,8 +1,12 @@
 # Real Estate: Real Estate Instructions Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-instructions). Observed identity: [`liberusoftware/real-estate-instructions`](../../../modules/source/liberusoftware--real-estate-instructions.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-real-estate-real-estate-instructions`
+**Design package identifier:** `module-real-estate-real-estate-instructions`
 **Domain specification:** [Real Estate Instructions](../features/real-estate-instructions.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

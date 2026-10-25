@@ -1,12 +1,16 @@
 # Ecommerce: Commissions and Settlements Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commissions-and-settlements). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-ecommerce-commissions-and-settlements-nuxt`
 **Matching domain module:** `ecommerce-commissions-and-settlements`
 **Application:** Ecommerce
 **Source feature:** [Commissions and Settlements](../features/commissions-and-settlements.md)
-**Architecture:** [NUXT.md](../ECOMMERCE.md) · [API.md](../ECOMMERCE.md) · [Matching API module](../api/commissions-and-settlements.md) · [MODULES.md](../ECOMMERCE.md) · [TESTING.md](../ECOMMERCE.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/commissions-and-settlements.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

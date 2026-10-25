@@ -1,12 +1,16 @@
 # CMS: Embeds Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#embeds). Observed identity: [`liberusoftware/module-cms-embeds-livewire`](../../../modules/source/liberusoftware--module-cms-embeds-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-cms-embeds-livewire`  
 **Matching domain module:** `cms-embeds`  
 **Application:** CMS  
 **Source feature:** [Embeds](../features/embeds.md)  
-**Architecture:** [LIVEWIRE.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

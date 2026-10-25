@@ -1,6 +1,10 @@
 # Boilerplate: Files and Media Nuxt presentation packages
 
-**Composer package:** `module-files-and-media-nuxt`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#files-and-media). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `files-media`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-files-and-media-nuxt`
 **Matching core package:** [`module-files-and-media`](../core/files-and-media.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Storage contracts, uploads, validation, scanning, metadata, access, transformations, and retention.

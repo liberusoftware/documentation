@@ -1,12 +1,16 @@
 # CRM: Sandbox and Release Management Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sandbox-and-release-management). Observed identity: [`liberusoftware/module-crm-sandbox-and-release-management-livewire`](../../../modules/source/liberusoftware--module-crm-sandbox-and-release-management-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-sandbox-and-release-management-livewire`  
 **Matching domain module:** `crm-sandbox-and-release-management`  
 **Application:** CRM  
 **Source feature:** [Sandbox and Release Management](../features/sandbox-and-release-management.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

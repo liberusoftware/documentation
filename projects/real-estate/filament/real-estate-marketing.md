@@ -1,12 +1,16 @@
 # Real Estate: Real Estate Marketing Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-marketing). Observed identity: [`liberusoftware/real-estate-marketing-filament`](../../../modules/source/liberusoftware--real-estate-marketing-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-real-estate-real-estate-marketing-filament`  
 **Matching domain module:** `real-estate-marketing`  
 **Application:** Real Estate  
 **Source feature:** [Real Estate Marketing](../features/real-estate-marketing.md)  
-**Architecture:** [FILAMENT.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

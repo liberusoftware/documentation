@@ -1,8 +1,12 @@
 # Accounting: Client Collaboration Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#client-collaboration). Observed identity: [`liberusoftware/module-accounting-client-collaboration`](../../../modules/source/liberusoftware--module-accounting-client-collaboration.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-client-collaboration`
+**Design package identifier:** `module-accounting-client-collaboration`
 **Domain specification:** [Client Collaboration](../features/client-collaboration.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

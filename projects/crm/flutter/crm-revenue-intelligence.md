@@ -1,5 +1,9 @@
 # Crm Revenue Intelligence Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-revenue-intelligence). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-revenue-intelligence-flutter
 **Matching core package:** module-crm-crm-revenue-intelligence ([implementation](../core/crm-revenue-intelligence.md))
 **Matching API package:** module-crm-crm-revenue-intelligence-api ([contract](../api/crm-revenue-intelligence.md))

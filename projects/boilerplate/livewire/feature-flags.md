@@ -1,6 +1,10 @@
 # Boilerplate: Feature Flags Livewire presentation packages
 
-**Composer package:** `module-feature-flags-livewire`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#feature-flags). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-feature-flags-livewire`
 **Matching core package:** [`module-feature-flags`](../core/feature-flags.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Typed flags, environment/tenant/user targeting, rollout, telemetry, ownership, and cleanup.

@@ -1,12 +1,16 @@
 # CRM: Omnichannel Service Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#omnichannel-service). Observed identity: [`liberusoftware/module-crm-omnichannel-service-filament`](../../../modules/source/liberusoftware--module-crm-omnichannel-service-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-omnichannel-service-filament`  
 **Matching domain module:** `crm-omnichannel-service`  
 **Application:** CRM  
 **Source feature:** [Omnichannel Service](../features/omnichannel-service.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,8 +1,12 @@
 # CRM: Crm Revenue Intelligence Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-revenue-intelligence). Observed identity: [`liberusoftware/module-crm-revenue-intelligence`](../../../modules/source/liberusoftware--module-crm-revenue-intelligence.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-crm-revenue-intelligence`
+**Design package identifier:** `module-crm-crm-revenue-intelligence`
 **Domain specification:** [Crm Revenue Intelligence](../features/crm-revenue-intelligence.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,66 +1,58 @@
-# SAP: Projects and Services Nuxt
+# Projects and services: Nuxt design
 
-## Canonical one-to-one Nuxt 4 implementation
+**Status:** proposed enterprise implementation. The [current SAP foundation](../SOURCE-APPLICATION.md) does not establish these business workflows or this presentation as implemented. Use the [detailed domain contract](../design/projects-and-services.md) and [API plan](../api/projects-and-services.md) as the review target.
 
-**Nuxt package:** `module-sap-projects-and-services-nuxt`
-**Matching domain module:** `sap-projects-and-services`
-**Application:** SAP
-**Source feature:** [Projects and Services](../features/projects-and-services.md)
-**Architecture:** [NUXT.md](../SAP.md) · [API.md](../SAP.md) · [Matching API module](../api/projects-and-services.md) · [MODULES.md](../SAP.md) · [TESTING.md](../SAP.md)
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#projects-and-services). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
 
-## 1. Purpose and ownership
+## Ownership and delivery scope
 
-This optional Nuxt 4 presentation package presents exactly one matching API module. It contributes reusable pages, layouts, components, composables, typed API clients, and actions to application-owned Nuxt applications while delegating authorization, validation, team context, persistence, and business rules to the `sap-projects-and-services` public API boundary. It must not contain another module's UI or depend on application `App\` classes.
+Reuse CRM project/resource planning, Maintenance labor/time, Billing project charging, and Accounting cost dimensions where contracts fit. Enterprise coordinates accepted delivery and profitability views.
 
-## 2. Module-specific surfaces
+Reuse the [shared enterprise operation design](../design/OPERATIONS.md) for command identities, concurrency, handoffs and recovery. This capability group adds only its own orchestration/projection and genuine missing behavior; it does not create another owner for existing product records.
 
-- **Portfolios:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Projects:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Resources:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Skills:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Time:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Expenses:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Milestones:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Risks:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Delivery:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Profitability:** page/component/composable/API-action behavior for this module's authorized workflow.
+## Workflow and command contract
 
-## 3. Nuxt 4 implementation
+**Workspace surfaces:** delivery board, timesheet/expense approval, milestone evidence, billing readiness, margin drill-down.
 
-- Register a stable `module-sap-projects-and-services-nuxt` Nuxt module or layer and expose only prefixed exports from this package; applications compose it explicitly.
-- Keep pages under `app/pages`, shared UI under `app/components`, data access under `app/composables`, and typed contracts under `shared/`.
-- Use typed API clients, `useFetch`/`useAsyncData`, composables, route metadata, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted API context and fail closed when required context is missing.
+**Business lifecycle:** planned → in_progress → submitted → accepted → billing_requested → billed → reconciled; disputed and rework preserve the submission history.
 
-### Capability mapping
+Freeze the accepted scope and billing basis. Do not bill unapproved time/expenses or claim milestone acceptance without the required customer/delegate evidence. Keep cost attribution separate from access to personal labor details.
 
-- `portfolios`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `projects`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `resources`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `skills`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `time`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `expenses`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `milestones`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `risks`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `delivery`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `profitability`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+The illustrated `request-billing` command takes `contract_version`, `time_expense_snapshot_id`, `billing_rule_version`, `customer_acceptance_id`, with a documented record-version precondition and scoped operation identity. It starts from `accepted` and reaches `billed` only after its defined business outcome. The [API example](../api/projects-and-services.md#3-endpoint-examples) provides the proposed body and [draft request schema](../api/contracts/projects-and-services.request.schema.json).
 
-## 4. API contract and Nuxt consumption
+Require accepted scope, approved time/expenses, valid billing terms and customer/delegate evidence. Preserve the accepted snapshot across retries.
 
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed API client and module-local composables under the package boundary; use `useFetch` or `useAsyncData` for SSR-safe reads and `$fetch` for event-driven mutations.
-- Forward Sanctum cookies or approved authorization headers through a controlled client boundary; never persist long-lived tokens in browser storage or expose secrets in SSR payloads.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+Link the Billing invoice reference and reconcile its basis. A billing request can pass through billing_requested before confirmed invoicing.
 
-## 5. Security and verification
+## Layer implementation
 
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, and minimal-host installation tests.
-- Test observable browser and SSR behavior with Vitest, Vue Test Utils, Playwright, TypeScript, and the supported Nuxt 4/Vue 3 stack; domain behavior remains covered by the owning module.
+The Nuxt application owns its workspace routes, session integration and deployment. The module contributes typed components/composables and an API adapter, with server-only secrets kept out of public runtime configuration and browser payloads.
 
-## 6. Definition of done
+The proposed API family is `/api/v1/enterprise/billable-milestones`. Review actual deployed schemas before generating clients. Server/browser transport validates the authorized DTO and invokes explicit actions such as `request-billing` rather than a generic status update.
 
-- Package identity, public exports, API dependency, and module dependency match `sap-projects-and-services` one-to-one.
-- Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
-- Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+Start protected reads without shared caching until tenant/entity/permission keys and invalidation are reviewed. Resolve authenticated context per request and never keep request-specific scope in shared SSR state. A client-provided target URL or tenant value cannot select a privileged upstream origin or grant access.
+
+The command form preserves `contract_version`, `time_expense_snapshot_id`, `billing_rule_version`, `customer_acceptance_id`, field errors and current record version. On timeout/conflict, query the operation/current subject under the same authorization and show recovery guidance before another write. Separate Vue UI primitives from Nuxt-specific navigation and server transport so they can be reused with Inertia.
+
+## Authorization, recovery and operations
+
+Project staff submit work; project/customer delegates accept deliverables; billing and finance retain their separate authorities.
+
+A rejected milestone returns to rework as a new submission version. If billing times out, reconcile by milestone operation identity before sending again.
+
+Show the selected entity, source/subject reference, current business state and separate operation progress. Preserve safe drafts on validation/conflict. Reauthenticate on expiry and discard protected cached data after scope/permission changes. A network timeout never establishes whether an external write succeeded; use the durable operation/source reference for reconciliation.
+
+## Module-specific acceptance
+
+- Rejected time is excluded from the billable snapshot; duplicate acceptance cannot double-bill; a contract change cannot rewrite an already billed milestone.
+- Repeated commands return the documented existing result or a clear conflict; they cannot duplicate a completed external side effect.
+- A tenant/entity switch, permission revocation or expired session cannot reuse another scope's cached record, attachment or exported file.
+- A downstream failure remains observable with a valid owner/recovery path across every enabled presentation.
+
+- Exercise the `request-billing` example with allowed, denied, invalid, stale, duplicate and uncertain-result paths; confirm `billed` only from its authoritative outcome.
+- Verify the enabled layer uses the same domain/operation contract as other surfaces and cannot bypass it through generic saves, hydrated state, direct JSON fields or offline replay.
+- Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
+
+Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.

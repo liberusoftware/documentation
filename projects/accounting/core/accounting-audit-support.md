@@ -1,8 +1,12 @@
 # Accounting: Accounting Audit Support Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-audit-support). Observed identity: [`liberusoftware/module-accounting-audit-support`](../../../modules/source/liberusoftware--module-accounting-audit-support.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-audit-support`
+**Design package identifier:** `module-accounting-accounting-audit-support`
 **Domain specification:** [Accounting Audit Support](../features/accounting-audit-support.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

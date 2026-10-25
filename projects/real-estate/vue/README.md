@@ -1,60 +1,80 @@
 # Real Estate Vue + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **70 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-- [.graphify Vue](.graphify.md) — `module-real-estate-.graphify-vue-inertia`
-- [Activity Comments Vue](activity-comments.md) — `module-real-estate-activity-comments-vue-inertia`
-- [Analytics Core Vue](analytics-core.md) — `module-real-estate-analytics-core-vue-inertia`
-- [Analytics Google Vue](analytics-google.md) — `module-real-estate-analytics-google-vue-inertia`
-- [Analytics Meta Vue](analytics-meta.md) — `module-real-estate-analytics-meta-vue-inertia`
-- [Api Vue](api.md) — `module-real-estate-api-vue-inertia`
-- [Api Access Vue](api-access.md) — `module-real-estate-api-access-vue-inertia`
-- [Application Vue](application.md) — `module-real-estate-application-vue-inertia`
-- [Audit Vue](audit.md) — `module-real-estate-audit-vue-inertia`
-- [Core Vue](core.md) — `module-real-estate-core-vue-inertia`
-- [Currency Context Vue](currency-context.md) — `module-real-estate-currency-context-vue-inertia`
-- [Developer Experience Vue](developer-experience.md) — `module-real-estate-developer-experience-vue-inertia`
-- [Feature Flags Vue](feature-flags.md) — `module-real-estate-feature-flags-vue-inertia`
-- [Features Vue](features.md) — `module-real-estate-features-vue-inertia`
-- [Filament Vue](filament.md) — `module-real-estate-filament-vue-inertia`
-- [Files Media Vue](files-media.md) — `module-real-estate-files-media-vue-inertia`
-- [Identity Core Vue](identity-core.md) — `module-real-estate-identity-core-vue-inertia`
-- [Identity Socialstream Vue](identity-socialstream.md) — `module-real-estate-identity-socialstream-vue-inertia`
-- [Import Export Vue](import-export.md) — `module-real-estate-import-export-vue-inertia`
-- [Integrations Vue](integrations.md) — `module-real-estate-integrations-vue-inertia`
-- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-real-estate-jetstream-bridge-vue-inertia`
-- [Livewire Vue](livewire.md) — `module-real-estate-livewire-vue-inertia`
-- [Localization Core Vue](localization-core.md) — `module-real-estate-localization-core-vue-inertia`
-- [Localization Mymemory Vue](localization-mymemory.md) — `module-real-estate-localization-mymemory-vue-inertia`
-- [Module Manager Vue](module-manager.md) — `module-real-estate-module-manager-vue-inertia`
-- [Notifications Vue](notifications.md) — `module-real-estate-notifications-vue-inertia`
-- [Observability Vue](observability.md) — `module-real-estate-observability-vue-inertia`
-- [Organizations Teams Vue](organizations-teams.md) — `module-real-estate-organizations-teams-vue-inertia`
-- [Profiles Vue](profiles.md) — `module-real-estate-profiles-vue-inertia`
-- [Real Estate Core Vue](real-estate-core.md) — `module-real-estate-real-estate-core-vue-inertia`
-- [Real Estate Instructions Vue](real-estate-instructions.md) — `module-real-estate-real-estate-instructions-vue-inertia`
-- [Real Estate Lettings Vue](real-estate-lettings.md) — `module-real-estate-real-estate-lettings-vue-inertia`
-- [Real Estate Listings Vue](real-estate-listings.md) — `module-real-estate-real-estate-listings-vue-inertia`
-- [Real Estate Marketing Vue](real-estate-marketing.md) — `module-real-estate-real-estate-marketing-vue-inertia`
-- [Real Estate Matching Vue](real-estate-matching.md) — `module-real-estate-real-estate-matching-vue-inertia`
-- [Real Estate Media And Documents Vue](real-estate-media-and-documents.md) — `module-real-estate-real-estate-media-and-documents-vue-inertia`
-- [Real Estate Offers Vue](real-estate-offers.md) — `module-real-estate-real-estate-offers-vue-inertia`
-- [Real Estate Onthemarket Vue](real-estate-onthemarket.md) — `module-real-estate-real-estate-onthemarket-vue-inertia`
-- [Real Estate Parties Vue](real-estate-parties.md) — `module-real-estate-real-estate-parties-vue-inertia`
-- [Real Estate Portals Reporting Vue](real-estate-portals-reporting.md) — `module-real-estate-real-estate-portals-reporting-vue-inertia`
-- [Real Estate Properties Vue](real-estate-properties.md) — `module-real-estate-real-estate-properties-vue-inertia`
-- [Real Estate Property Management Vue](real-estate-property-management.md) — `module-real-estate-real-estate-property-management-vue-inertia`
-- [Real Estate Rightmove Vue](real-estate-rightmove.md) — `module-real-estate-real-estate-rightmove-vue-inertia`
-- [Real Estate Sales Progression Vue](real-estate-sales-progression.md) — `module-real-estate-real-estate-sales-progression-vue-inertia`
-- [Real Estate Valuations Vue](real-estate-valuations.md) — `module-real-estate-real-estate-valuations-vue-inertia`
-- [Real Estate Viewings Vue](real-estate-viewings.md) — `module-real-estate-real-estate-viewings-vue-inertia`
-- [Real Estate Vr Design Vue](real-estate-vr-design.md) — `module-real-estate-real-estate-vr-design-vue-inertia`
-- [Real Estate Zoopla Vue](real-estate-zoopla.md) — `module-real-estate-real-estate-zoopla-vue-inertia`
-- [Roles Permissions Vue](roles-permissions.md) — `module-real-estate-roles-permissions-vue-inertia`
-- [Scheduler Queues Vue](scheduler-queues.md) — `module-real-estate-scheduler-queues-vue-inertia`
-- [Search Vue](search.md) — `module-real-estate-search-vue-inertia`
-- [Sessions Devices Vue](sessions-devices.md) — `module-real-estate-sessions-devices-vue-inertia`
-- [Settings Vue](settings.md) — `module-real-estate-settings-vue-inertia`
-- [Theme Support Vue](theme-support.md) — `module-real-estate-theme-support-vue-inertia`
-- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-real-estate-two-factor-authentication-vue-inertia`
-- [Webhooks Vue](webhooks.md) — `module-real-estate-webhooks-vue-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [.graphify Vue + Inertia](.graphify.md) | [Target/source map](../SOURCE-MAPPING.md#.graphify) | [core](../core/.graphify.md) · [api](../api/.graphify.md) · [nextjs](../nextjs/.graphify.md) |
+| [Activity Comments Vue + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Vue + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Vue + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Vue + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Vue + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Api Vue + Inertia](api.md) | [Target/source map](../SOURCE-MAPPING.md#api) | [core](../core/api.md) · [api](../api/api.md) · [nextjs](../nextjs/api.md) |
+| [Application Vue + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Vue + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Core Vue + Inertia](core.md) | [Target/source map](../SOURCE-MAPPING.md#core) | [core](../core/core.md) · [api](../api/core.md) · [nextjs](../nextjs/core.md) |
+| [Currency Context Vue + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Vue + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags Vue + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Features Vue + Inertia](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [core](../core/features.md) · [api](../api/features.md) · [nextjs](../nextjs/features.md) |
+| [Filament Vue + Inertia](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [core](../core/filament.md) · [api](../api/filament.md) · [nextjs](../nextjs/filament.md) |
+| [Files Media Vue + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Vue + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Vue + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Vue + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Instructions Vue + Inertia](instructions.md) | [Target/source map](../SOURCE-MAPPING.md#instructions) | [core](../core/instructions.md) · [api](../api/instructions.md) · [nextjs](../nextjs/instructions.md) |
+| [Integrations Vue + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Vue + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Lettings Vue + Inertia](lettings.md) | [Target/source map](../SOURCE-MAPPING.md#lettings) | [core](../core/lettings.md) · [api](../api/lettings.md) · [nextjs](../nextjs/lettings.md) |
+| [Listings Vue + Inertia](listings.md) | [Target/source map](../SOURCE-MAPPING.md#listings) | [core](../core/listings.md) · [api](../api/listings.md) · [nextjs](../nextjs/listings.md) |
+| [Livewire Vue + Inertia](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [core](../core/livewire.md) · [api](../api/livewire.md) · [nextjs](../nextjs/livewire.md) |
+| [Localization Core Vue + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Vue + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Marketing Vue + Inertia](marketing.md) | [Target/source map](../SOURCE-MAPPING.md#marketing) | [core](../core/marketing.md) · [api](../api/marketing.md) · [nextjs](../nextjs/marketing.md) |
+| [Matching Vue + Inertia](matching.md) | [Target/source map](../SOURCE-MAPPING.md#matching) | [core](../core/matching.md) · [api](../api/matching.md) · [nextjs](../nextjs/matching.md) |
+| [Media and Documents Vue + Inertia](media-and-documents.md) | [Target/source map](../SOURCE-MAPPING.md#media-and-documents) | [core](../core/media-and-documents.md) · [api](../api/media-and-documents.md) · [nextjs](../nextjs/media-and-documents.md) |
+| [Module Manager Vue + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Vue + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Vue + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Offers Vue + Inertia](offers.md) | [Target/source map](../SOURCE-MAPPING.md#offers) | [core](../core/offers.md) · [api](../api/offers.md) · [nextjs](../nextjs/offers.md) |
+| [Organizations Teams Vue + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Parties Vue + Inertia](parties.md) | [Target/source map](../SOURCE-MAPPING.md#parties) | [core](../core/parties.md) · [api](../api/parties.md) · [nextjs](../nextjs/parties.md) |
+| [Portals and Reporting Vue + Inertia](portals-and-reporting.md) | [Target/source map](../SOURCE-MAPPING.md#portals-and-reporting) | [core](../core/portals-and-reporting.md) · [api](../api/portals-and-reporting.md) · [nextjs](../nextjs/portals-and-reporting.md) |
+| [Profiles Vue + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Properties Vue + Inertia](properties.md) | [Target/source map](../SOURCE-MAPPING.md#properties) | [core](../core/properties.md) · [api](../api/properties.md) · [nextjs](../nextjs/properties.md) |
+| [Property Management Vue + Inertia](property-management.md) | [Target/source map](../SOURCE-MAPPING.md#property-management) | [core](../core/property-management.md) · [api](../api/property-management.md) · [nextjs](../nextjs/property-management.md) |
+| [Real Estate Core Vue + Inertia](real-estate-core.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-core) | [core](../core/real-estate-core.md) · [api](../api/real-estate-core.md) · [nextjs](../nextjs/real-estate-core.md) |
+| [Real Estate Instructions Vue + Inertia](real-estate-instructions.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-instructions) | [core](../core/real-estate-instructions.md) · [api](../api/real-estate-instructions.md) · [nextjs](../nextjs/real-estate-instructions.md) |
+| [Real Estate Lettings Vue + Inertia](real-estate-lettings.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-lettings) | [core](../core/real-estate-lettings.md) · [api](../api/real-estate-lettings.md) · [nextjs](../nextjs/real-estate-lettings.md) |
+| [Real Estate Listings Vue + Inertia](real-estate-listings.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-listings) | [core](../core/real-estate-listings.md) · [api](../api/real-estate-listings.md) · [nextjs](../nextjs/real-estate-listings.md) |
+| [Real Estate Marketing Vue + Inertia](real-estate-marketing.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-marketing) | [core](../core/real-estate-marketing.md) · [api](../api/real-estate-marketing.md) · [nextjs](../nextjs/real-estate-marketing.md) |
+| [Real Estate Matching Vue + Inertia](real-estate-matching.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-matching) | [core](../core/real-estate-matching.md) · [api](../api/real-estate-matching.md) · [nextjs](../nextjs/real-estate-matching.md) |
+| [Real Estate Media And Documents Vue + Inertia](real-estate-media-and-documents.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-media-and-documents) | [core](../core/real-estate-media-and-documents.md) · [api](../api/real-estate-media-and-documents.md) · [nextjs](../nextjs/real-estate-media-and-documents.md) |
+| [Real Estate Offers Vue + Inertia](real-estate-offers.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-offers) | [core](../core/real-estate-offers.md) · [api](../api/real-estate-offers.md) · [nextjs](../nextjs/real-estate-offers.md) |
+| [Real Estate Onthemarket Vue + Inertia](real-estate-onthemarket.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-onthemarket) | [core](../core/real-estate-onthemarket.md) · [api](../api/real-estate-onthemarket.md) · [nextjs](../nextjs/real-estate-onthemarket.md) |
+| [Real Estate Parties Vue + Inertia](real-estate-parties.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-parties) | [core](../core/real-estate-parties.md) · [api](../api/real-estate-parties.md) · [nextjs](../nextjs/real-estate-parties.md) |
+| [Real Estate Portals Reporting Vue + Inertia](real-estate-portals-reporting.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-portals-reporting) | [core](../core/real-estate-portals-reporting.md) · [api](../api/real-estate-portals-reporting.md) · [nextjs](../nextjs/real-estate-portals-reporting.md) |
+| [Real Estate Properties Vue + Inertia](real-estate-properties.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-properties) | [core](../core/real-estate-properties.md) · [api](../api/real-estate-properties.md) · [nextjs](../nextjs/real-estate-properties.md) |
+| [Real Estate Property Management Vue + Inertia](real-estate-property-management.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-property-management) | [core](../core/real-estate-property-management.md) · [api](../api/real-estate-property-management.md) · [nextjs](../nextjs/real-estate-property-management.md) |
+| [Real Estate Rightmove Vue + Inertia](real-estate-rightmove.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-rightmove) | [core](../core/real-estate-rightmove.md) · [api](../api/real-estate-rightmove.md) · [nextjs](../nextjs/real-estate-rightmove.md) |
+| [Real Estate Sales Progression Vue + Inertia](real-estate-sales-progression.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-sales-progression) | [core](../core/real-estate-sales-progression.md) · [api](../api/real-estate-sales-progression.md) · [nextjs](../nextjs/real-estate-sales-progression.md) |
+| [Real Estate Valuations Vue + Inertia](real-estate-valuations.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-valuations) | [core](../core/real-estate-valuations.md) · [api](../api/real-estate-valuations.md) · [nextjs](../nextjs/real-estate-valuations.md) |
+| [Real Estate Viewings Vue + Inertia](real-estate-viewings.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-viewings) | [core](../core/real-estate-viewings.md) · [api](../api/real-estate-viewings.md) · [nextjs](../nextjs/real-estate-viewings.md) |
+| [Real Estate Vr Design Vue + Inertia](real-estate-vr-design.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-vr-design) | [core](../core/real-estate-vr-design.md) · [api](../api/real-estate-vr-design.md) · [nextjs](../nextjs/real-estate-vr-design.md) |
+| [Real Estate Zoopla Vue + Inertia](real-estate-zoopla.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-zoopla) | [core](../core/real-estate-zoopla.md) · [api](../api/real-estate-zoopla.md) · [nextjs](../nextjs/real-estate-zoopla.md) |
+| [Roles Permissions Vue + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Sales Progression Vue + Inertia](sales-progression.md) | [Target/source map](../SOURCE-MAPPING.md#sales-progression) | [core](../core/sales-progression.md) · [api](../api/sales-progression.md) · [nextjs](../nextjs/sales-progression.md) |
+| [Scheduler Queues Vue + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Vue + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Vue + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Vue + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Vue + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Vue + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Valuations Vue + Inertia](valuations.md) | [Target/source map](../SOURCE-MAPPING.md#valuations) | [core](../core/valuations.md) · [api](../api/valuations.md) · [nextjs](../nextjs/valuations.md) |
+| [Viewings Vue + Inertia](viewings.md) | [Target/source map](../SOURCE-MAPPING.md#viewings) | [core](../core/viewings.md) · [api](../api/viewings.md) · [nextjs](../nextjs/viewings.md) |
+| [Webhooks Vue + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

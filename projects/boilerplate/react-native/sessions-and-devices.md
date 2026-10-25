@@ -1,5 +1,9 @@
 # Sessions and Devices domain packages React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sessions-and-devices). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `sessions-devices`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-sessions-and-devices-react-native
 **Matching core package:** module-sessions-and-devices ([implementation](../core/sessions-and-devices.md))
 **Matching API package:** module-sessions-and-devices-api ([contract](../api/sessions-and-devices.md))

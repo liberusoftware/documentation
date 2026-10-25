@@ -1,12 +1,16 @@
 # CMS: Accessibility Assistant Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accessibility-assistant). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-cms-accessibility-assistant-nuxt`
 **Matching domain module:** `cms-accessibility-assistant`
 **Application:** CMS
 **Source feature:** [Accessibility Assistant](../features/accessibility-assistant.md)
-**Architecture:** [NUXT.md](../CMS.md) · [API.md](../CMS.md) · [Matching API module](../api/accessibility-assistant.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/accessibility-assistant.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

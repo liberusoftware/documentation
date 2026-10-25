@@ -1,5 +1,9 @@
 # Marketing Resources Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#marketing-resources). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-marketing-resources-flutter
 **Matching core package:** module-crm-marketing-resources ([implementation](../core/marketing-resources.md))
 **Matching API package:** module-crm-marketing-resources-api ([contract](../api/marketing-resources.md))

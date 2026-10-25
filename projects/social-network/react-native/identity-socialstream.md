@@ -1,5 +1,9 @@
 # Identity Socialstream React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#identity-socialstream). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-social-network-identity-socialstream-react-native
 **Matching core package:** module-social-network-identity-socialstream ([implementation](../core/identity-socialstream.md))
 **Matching API package:** module-social-network-identity-socialstream-api ([contract](../api/identity-socialstream.md))

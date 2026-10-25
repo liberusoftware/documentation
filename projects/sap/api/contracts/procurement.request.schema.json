@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:procurement:record-receipt:request:v1",
+  "title": "Procurement: proposed record-receipt request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "order_reference",
+    "receipt_reference",
+    "received_at",
+    "lines"
+  ],
+  "properties": {
+    "order_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "receipt_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "received_at": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lines": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "order_line_reference",
+          "received_quantity",
+          "unit",
+          "condition"
+        ],
+        "properties": {
+          "order_line_reference": {
+            "type": "string",
+            "minLength": 1
+          },
+          "received_quantity": {
+            "type": "string",
+            "minLength": 1
+          },
+          "unit": {
+            "type": "string",
+            "minLength": 1
+          },
+          "condition": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    }
+  }
+}

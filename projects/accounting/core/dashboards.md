@@ -1,8 +1,12 @@
 # Accounting: Dashboards Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#dashboards). Observed identity: [`liberusoftware/module-accounting-dashboards`](../../../modules/source/liberusoftware--module-accounting-dashboards.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-dashboards`
+**Design package identifier:** `module-accounting-dashboards`
 **Domain specification:** [Dashboards](../features/dashboards.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

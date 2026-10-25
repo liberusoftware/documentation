@@ -1,8 +1,12 @@
 # Automation: Prompt Registry Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#prompt-registry). Observed identity: [`liberusoftware/automation-prompt-registry`](../../../modules/source/liberusoftware--automation-prompt-registry.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-automation-prompt-registry`
+**Design package identifier:** `module-automation-prompt-registry`
 **Domain specification:** [Prompt Registry](../features/prompt-registry.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

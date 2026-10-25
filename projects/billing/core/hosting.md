@@ -1,8 +1,12 @@
 # Billing: Hosting Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#hosting). Observed identity: [`liberusoftware/module-billing-hosting`](../../../modules/source/liberusoftware--module-billing-hosting.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-hosting`
+**Design package identifier:** `module-billing-hosting`
 **Domain specification:** [Hosting](../features/hosting.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

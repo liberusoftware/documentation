@@ -1,0 +1,74 @@
+# liberusoftware/module-billing-core-filament: observed package reference
+
+**Evidence status:** extracted from tracked source at the commits below. This reference indexes declared metadata, source callables and persistence files. It does not establish a stable public API, implemented acceptance criteria, successful tests, registry availability or runtime safety.
+
+Filament 5 adapter for the Liberu Billing Core module.
+
+## Source locations
+
+| Application | Actual directory | Commit | Reference variant | Test files |
+| --- | --- | --- | --- | ---: |
+| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-billing-core-filament](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 0 |
+
+Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
+
+Use the manifest identity above for resolution. A `module-...` repository or design identifier may differ. See the [Composer lifecycle guide](../../guides/COMPOSER.md), [npm lifecycle guide](../../guides/NPM.md) and [shared ownership guide](../../architecture/SHARED-MODULES.md).
+
+## Variant 1
+
+Representative: billing-laravel, `module-billing-core-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+
+### Manifest and registration
+
+| Property | Observed value |
+| --- | --- |
+| Composer name | `liberusoftware/module-billing-core-filament` |
+| Composer version field | `0.1.3` |
+| Package type | `liberu-module` |
+| Module manifest name | `module-billing-core-filament` |
+| Module version field | `0.1.3` |
+| Category / layers | `"presentation"` |
+| Manifest provider(s) | `"Liberu\\Billing\\Core\\Filament\\BillingCoreFilamentServiceProvider"` |
+| Composer Laravel provider registration | `[]` |
+| default_enabled field | `true` |
+
+The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
+
+Source metadata: [composer.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/composer.json) · [module.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/module.json).
+
+**Declared capabilities:** billing.core.filament
+
+**Declared features:** Billing account resource, Contacts resource, Currencies resource, Currency conversion, Tax profiles resource, Tax exemptions resource, Threshold tax rates, Tax calculation, Sequences resource, Terms resource, Settings resource, Scoped forms, Lifecycle display
+
+### Dependencies and namespace mapping
+
+| Dependency | Constraint |
+| --- | --- |
+| `filament/filament` | `~5.1` |
+| `liberusoftware/module-billing-billing-core` | `^0.1` |
+| `liberusoftware/module-manager` | `^1.0` |
+| `php` | `^8.5` |
+
+PSR-4 mappings: `{"Liberu\\Billing\\Core\\Filament\\": "src/"}`.
+
+Module resolver requirements: `{"laravel": "^13.0", "packages": {"liberusoftware/module-billing-billing-core": "^0.1", "liberusoftware/module-manager": "^1.0"}, "php": "^8.5"}`.
+
+### Source entry points
+
+The following paths identify contracts, actions, queries, policies, services and presentation code for review. Listed public methods are signature excerpts, not API schema or authorization guarantees. Resolve argument types/imports in the linked file and check the provider/call sites before invoking a class.
+
+No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
+
+Other non-legacy PHP sources: [src/BillingCoreFilamentPlugin.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/BillingCoreFilamentPlugin.php) · [src/BillingCoreFilamentServiceProvider.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/BillingCoreFilamentServiceProvider.php) · [src/Resources/BillingAccountResource.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingAccountResource.php) · [src/Resources/BillingAccountResource/Pages/CreateBillingAccount.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingAccountResource/Pages/CreateBillingAccount.php) · [src/Resources/BillingAccountResource/Pages/EditBillingAccount.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingAccountResource/Pages/EditBillingAccount.php) · [src/Resources/BillingAccountResource/Pages/ListBillingAccounts.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingAccountResource/Pages/ListBillingAccounts.php) · [src/Resources/BillingContactResource.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingContactResource.php) · [src/Resources/BillingContactResource/Pages/CreateBillingContact.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingContactResource/Pages/CreateBillingContact.php) · [src/Resources/BillingContactResource/Pages/EditBillingContact.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingContactResource/Pages/EditBillingContact.php) · [src/Resources/BillingContactResource/Pages/ListBillingContacts.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingContactResource/Pages/ListBillingContacts.php) · [src/Resources/BillingCoreResource.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingCoreResource.php) · [src/Resources/BillingCurrencyResource.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingCurrencyResource.php) · [src/Resources/BillingCurrencyResource/Pages/CreateBillingCurrency.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingCurrencyResource/Pages/CreateBillingCurrency.php) · [src/Resources/BillingCurrencyResource/Pages/EditBillingCurrency.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingCurrencyResource/Pages/EditBillingCurrency.php) · [src/Resources/BillingCurrencyResource/Pages/ListBillingCurrencies.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingCurrencyResource/Pages/ListBillingCurrencies.php) · [src/Resources/BillingSequenceResource.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingSequenceResource.php) · [src/Resources/BillingSequenceResource/Pages/CreateBillingSequence.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingSequenceResource/Pages/CreateBillingSequence.php) · [src/Resources/BillingSequenceResource/Pages/EditBillingSequence.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingSequenceResource/Pages/EditBillingSequence.php) · [src/Resources/BillingSequenceResource/Pages/ListBillingSequences.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingSequenceResource/Pages/ListBillingSequences.php) · [src/Resources/BillingSettingResource.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingSettingResource.php) · [src/Resources/BillingSettingResource/Pages/CreateBillingSetting.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingSettingResource/Pages/CreateBillingSetting.php) · [src/Resources/BillingSettingResource/Pages/EditBillingSetting.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingSettingResource/Pages/EditBillingSetting.php) · [src/Resources/BillingSettingResource/Pages/ListBillingSettings.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingSettingResource/Pages/ListBillingSettings.php) · [src/Resources/BillingTaxExemptionResource.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTaxExemptionResource.php) · [src/Resources/BillingTaxExemptionResource/Pages/CreateBillingTaxExemption.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTaxExemptionResource/Pages/CreateBillingTaxExemption.php) · [src/Resources/BillingTaxExemptionResource/Pages/EditBillingTaxExemption.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTaxExemptionResource/Pages/EditBillingTaxExemption.php) · [src/Resources/BillingTaxExemptionResource/Pages/ListBillingTaxExemptions.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTaxExemptionResource/Pages/ListBillingTaxExemptions.php) · [src/Resources/BillingTaxProfileResource.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTaxProfileResource.php) · [src/Resources/BillingTaxProfileResource/Pages/CreateBillingTaxProfile.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTaxProfileResource/Pages/CreateBillingTaxProfile.php) · [src/Resources/BillingTaxProfileResource/Pages/EditBillingTaxProfile.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTaxProfileResource/Pages/EditBillingTaxProfile.php) · [src/Resources/BillingTaxProfileResource/Pages/ListBillingTaxProfiles.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTaxProfileResource/Pages/ListBillingTaxProfiles.php) · [src/Resources/BillingTermResource.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTermResource.php) · [src/Resources/BillingTermResource/Pages/CreateBillingTerm.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTermResource/Pages/CreateBillingTerm.php) · [src/Resources/BillingTermResource/Pages/EditBillingTerm.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTermResource/Pages/EditBillingTerm.php) · [src/Resources/BillingTermResource/Pages/ListBillingTerms.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/BillingTermResource/Pages/ListBillingTerms.php) · [src/Resources/Pages/CreateBillingCoreRecord.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/Pages/CreateBillingCoreRecord.php) · [src/Resources/Pages/EditBillingCoreRecord.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/Pages/EditBillingCoreRecord.php) · [src/Resources/Pages/ListBillingCoreRecords.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-filament/src/Resources/Pages/ListBillingCoreRecords.php).
+
+### Persistence and lifecycle evidence
+
+No migrations/settings files were observed in the indexed roots. Inspect model/provider behavior and upstream dependencies before concluding that the package is stateless.
+
+### Verification and consumer use
+
+Declared Composer scripts: `{}`.
+
+No tracked files under `tests/` were observed in this source location. Do not describe this as a verified independent suite.
+
+Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

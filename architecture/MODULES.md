@@ -274,20 +274,26 @@ Do not create a package for every class or table. Split when responsibility, dep
 
 ## 9. Naming conventions
 
-Composer names communicate domain, capability, and role:
+A repository slug, design identifier, Composer identity, module manifest name and PHP namespace are separate identifiers. Install using `composer.json` `name`, and autoload using its declared PSR-4 mapping. Older design pages often use `module-{...}` without a vendor: that is a design identifier, not a valid complete Composer identity.
 
-| Package role                      | Convention                                             | Example                                  |
-| --------------------------------- | ------------------------------------------------------ | ---------------------------------------- |
-| Product capability                | `liberusoftware/{product}-{capability}`                        | `liberusoftware/cms-publishing`                  |
-| Shared contract                   | `liberusoftware/{capability}-contracts`                        | `liberusoftware/payment-contracts`               |
-| Shared core                       | `liberusoftware/{capability}-core`                             | `liberusoftware/payment-core`                    |
-| Provider adapter                  | `liberusoftware/{capability}-{provider}`                       | `liberusoftware/payment-stripe`                  |
-| Filament presentation adapter     | `liberusoftware/module-{independent-module-name}-filament`     | `liberusoftware/module-cms-content-filament`     |
-| Livewire presentation adapter     | `liberusoftware/module-{product-or-capability}-livewire`       | `liberusoftware/module-cms-livewire`             |
-| API presentation adapter          | `liberusoftware/module-{independent-module-name}-api`          | `liberusoftware/module-cms-content-api`          |
-| React Native presentation adapter | `liberusoftware/module-{independent-module-name}-react-native` | `liberusoftware/module-cms-content-react-native` |
-| Flutter presentation adapter      | `liberusoftware/module-{independent-module-name}-flutter`      | `liberusoftware/module-cms-content-flutter`      |
-| Aggregate distribution            | `liberusoftware/{product}`                                     | `liberusoftware/ecommerce`                       |
+For new packages, use a clear vendor/product/capability/role identity. Existing source packages use both prefixed and unprefixed names; preserve their published identity and compatibility rather than renaming consumers to match a documentation example.
+
+| Package role | New-package naming pattern | Example design identity |
+| --- | --- | --- |
+| Product capability | `liberusoftware/{product}-{capability}` | `liberusoftware/ecommerce-cart` |
+| Shared contract | `liberusoftware/{capability}-contracts` | `liberusoftware/payment-contracts` |
+| Shared core | `liberusoftware/{capability}-core` | `liberusoftware/payment-core` |
+| Provider adapter | `liberusoftware/{capability}-{provider}` | `liberusoftware/payment-stripe` |
+| PHP API adapter | `liberusoftware/{product-or-capability}-api` | `liberusoftware/ecommerce-cart-api` |
+| Filament adapter | `liberusoftware/{product-or-capability}-filament` | `liberusoftware/ecommerce-cart-filament` |
+| Livewire adapter | `liberusoftware/{product-or-capability}-livewire` | `liberusoftware/ecommerce-cart-livewire` |
+| Aggregate distribution | `liberusoftware/{product}` | `liberusoftware/ecommerce` |
+
+The examples above specify naming patterns, not registry availability. The source inventory observes `liberusoftware/activity-comments`, `liberusoftware/module-crm-core`, and `liberusoftware/module-cms-publishing`, among other conventions. Those exact manifest names remain authoritative for their existing consumers. A repository can retain a `module-` prefix while its Composer name omits it. Compatibility symlinks in application trees are directory aliases, not additional packages.
+
+JavaScript adapters need their own `package.json` when independently published to npm. Proposed names such as `@liberusoftware/{capability}-nextjs` require scope ownership and registry checks before publication; PHP package identities and repository slugs do not establish an npm identity. A private application root is not an npm library. Flutter packages follow Dart package metadata and their intended registry/distribution workflow rather than being published to npm by analogy.
+
+Namespaces may contain product, capability and adapter segments where the actual PSR-4 mapping declares them. Never derive an import mechanically from a repository slug when the manifest is available. See the [observed package references](../modules/source/README.md), [design-to-source mapping](source-design-mapping.json), and [Ecommerce naming/source guide](../projects/ecommerce/SOURCE-APPLICATION.md).
 
 Additional conventions:
 
@@ -739,3 +745,8 @@ Create one epic per package boundary—not automatically one epic per repository
 8. Add telemetry, health checks, operational runbook, README, changelog, adoption example, and upgrade guide.
 
 Each issue states user outcome, owning package, category, dependencies, public surfaces, requirements, acceptance criteria, tests, observability, security/data considerations, migration impact, and explicit exclusions.
+
+
+## Source-backed reuse review
+
+Before introducing another implementation, review [shared ownership and consolidation](SHARED-MODULES.md) and the [pinned source comparison](SHARED-MODULE-COMPARISON.md). Existing application module copies may differ even when their Composer identities match. Preserve product capabilities and data while resolving those differences.

@@ -1,8 +1,12 @@
 # Control Panel: Control Panel Security Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-security). Observed identity: [`liberusoftware/module-control-panel-security`](../../../modules/source/liberusoftware--module-control-panel-security.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-control-panel-control-panel-security`
+**Design package identifier:** `module-control-panel-control-panel-security`
 **Domain specification:** [Control Panel Security](../features/control-panel-security.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

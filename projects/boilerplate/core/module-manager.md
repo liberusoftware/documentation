@@ -1,6 +1,10 @@
 # Boilerplate: Module Manager domain packages
 
-**Composer package:** `module-module-manager`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-manager). Observed identity: [`liberusoftware/module-manager`](../../../modules/source/liberusoftware--module-manager.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-module-manager`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Manifest discovery, dependency resolution, enablement, lifecycle, compatibility, registry caching, and diagnostics.
 

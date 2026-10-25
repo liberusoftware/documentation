@@ -1,37 +1,53 @@
 # Boilerplate Core Modules
 
+<!-- catalogue-status:start -->
+This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 This index covers the Laravel 13/PHP 8.5 core Composer packages for the Boilerplate domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
 
-| Module | Core package | Domain specification |
+| Module document | Source/target reference | Related plans |
 | --- | --- | --- |
-| [Activity Comments](activity-comments.md) | module-boilerplate-activity-comments | [Feature](../features/activity-comments.md) |
-| [Analytics Core](analytics-core.md) | module-boilerplate-analytics-core | [Feature](../features/analytics-core.md) |
-| [Analytics Google](analytics-google.md) | module-boilerplate-analytics-google | [Feature](../features/analytics-google.md) |
-| [Analytics Meta](analytics-meta.md) | module-boilerplate-analytics-meta | [Feature](../features/analytics-meta.md) |
-| [Api Access](api-access.md) | module-boilerplate-api-access | [Feature](../features/api-access.md) |
-| [Application](application.md) | module-boilerplate-application | [Feature](../features/application.md) |
-| [Audit](audit.md) | module-boilerplate-audit | [Feature](../features/audit.md) |
-| [Currency Context](currency-context.md) | module-boilerplate-currency-context | [Feature](../features/currency-context.md) |
-| [Developer Experience](developer-experience.md) | module-boilerplate-developer-experience | [Feature](../features/developer-experience.md) |
-| [Feature Flags](feature-flags.md) | module-boilerplate-feature-flags | [Feature](../features/feature-flags.md) |
-| [Files Media](files-media.md) | module-boilerplate-files-media | [Feature](../features/files-media.md) |
-| [Identity Core](identity-core.md) | module-boilerplate-identity-core | [Feature](../features/identity-core.md) |
-| [Identity Socialstream](identity-socialstream.md) | module-boilerplate-identity-socialstream | [Feature](../features/identity-socialstream.md) |
-| [Import Export](import-export.md) | module-boilerplate-import-export | [Feature](../features/import-export.md) |
-| [Integrations](integrations.md) | module-boilerplate-integrations | [Feature](../features/integrations.md) |
-| [Jetstream Bridge](jetstream-bridge.md) | module-boilerplate-jetstream-bridge | [Feature](../features/jetstream-bridge.md) |
-| [Localization Core](localization-core.md) | module-boilerplate-localization-core | [Feature](../features/localization-core.md) |
-| [Localization Mymemory](localization-mymemory.md) | module-boilerplate-localization-mymemory | [Feature](../features/localization-mymemory.md) |
-| [Module Manager](module-manager.md) | module-boilerplate-module-manager | [Feature](../features/module-manager.md) |
-| [Notifications](notifications.md) | module-boilerplate-notifications | [Feature](../features/notifications.md) |
-| [Observability](observability.md) | module-boilerplate-observability | [Feature](../features/observability.md) |
-| [Organizations Teams](organizations-teams.md) | module-boilerplate-organizations-teams | [Feature](../features/organizations-teams.md) |
-| [Profiles](profiles.md) | module-boilerplate-profiles | [Feature](../features/profiles.md) |
-| [Roles Permissions](roles-permissions.md) | module-boilerplate-roles-permissions | [Feature](../features/roles-permissions.md) |
-| [Scheduler Queues](scheduler-queues.md) | module-boilerplate-scheduler-queues | [Feature](../features/scheduler-queues.md) |
-| [Search](search.md) | module-boilerplate-search | [Feature](../features/search.md) |
-| [Sessions Devices](sessions-devices.md) | module-boilerplate-sessions-devices | [Feature](../features/sessions-devices.md) |
-| [Settings](settings.md) | module-boilerplate-settings | [Feature](../features/settings.md) |
-| [Theme Support](theme-support.md) | module-boilerplate-theme-support | [Feature](../features/theme-support.md) |
-| [Two Factor Authentication](two-factor-authentication.md) | module-boilerplate-two-factor-authentication | [Feature](../features/two-factor-authentication.md) |
-| [Webhooks](webhooks.md) | module-boilerplate-webhooks | [Feature](../features/webhooks.md) |
+| [Activity and Comments domain packages](activity-and-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [api](../api/activity-and-comments.md) · [nextjs](../nextjs/activity-and-comments.md) |
+| [Activity Comments Core Module](activity-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core domain packages](analytics-core.md) | [liberusoftware/analytics-core](../../../modules/source/liberusoftware--analytics-core.md) | [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Core Module](analytics-google.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Core Module](analytics-meta.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [API Access domain packages](api-access.md) | [liberusoftware/api-access](../../../modules/source/liberusoftware--api-access.md) | [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Core domain packages](application-core.md) | [liberusoftware/application](../../../modules/source/liberusoftware--application.md) | [api](../api/application-core.md) · [nextjs](../nextjs/application-core.md) |
+| [Application Core Module](application.md) | [liberusoftware/application](../../../modules/source/liberusoftware--application.md) | [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit domain packages](audit.md) | [liberusoftware/audit](../../../modules/source/liberusoftware--audit.md) | [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Currency Context domain packages](currency-context.md) | [liberusoftware/currency-context](../../../modules/source/liberusoftware--currency-context.md) | [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience domain packages](developer-experience.md) | [liberusoftware/developer-experience](../../../modules/source/liberusoftware--developer-experience.md) | [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags domain packages](feature-flags.md) | [liberusoftware/feature-flags](../../../modules/source/liberusoftware--feature-flags.md) | [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files and Media domain packages](files-and-media.md) | [liberusoftware/files-media](../../../modules/source/liberusoftware--files-media.md) | [api](../api/files-and-media.md) · [nextjs](../nextjs/files-and-media.md) |
+| [Files Media Core Module](files-media.md) | [liberusoftware/files-media](../../../modules/source/liberusoftware--files-media.md) | [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Google Analytics domain packages](google-analytics.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [api](../api/google-analytics.md) · [nextjs](../nextjs/google-analytics.md) |
+| [Identity Core Core Module](identity-core.md) | [liberusoftware/identity-core](../../../modules/source/liberusoftware--identity-core.md) | [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Core Module](identity-socialstream.md) | [liberusoftware/identity-socialstream](../../../modules/source/liberusoftware--identity-socialstream.md) | [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Identity domain packages](identity.md) | [liberusoftware/identity-core](../../../modules/source/liberusoftware--identity-core.md) | [api](../api/identity.md) · [nextjs](../nextjs/identity.md) |
+| [Import and Export domain packages](import-and-export.md) | [liberusoftware/import-export](../../../modules/source/liberusoftware--import-export.md) | [api](../api/import-and-export.md) · [nextjs](../nextjs/import-and-export.md) |
+| [Import Export Core Module](import-export.md) | [liberusoftware/import-export](../../../modules/source/liberusoftware--import-export.md) | [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations domain packages](integrations.md) | [liberusoftware/integrations](../../../modules/source/liberusoftware--integrations.md) | [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge domain packages](jetstream-bridge.md) | [liberusoftware/jetstream-bridge](../../../modules/source/liberusoftware--jetstream-bridge.md) | [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core Core Module](localization-core.md) | [liberusoftware/localization-core](../../../modules/source/liberusoftware--localization-core.md) | [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Core Module](localization-mymemory.md) | [liberusoftware/localization-mymemory](../../../modules/source/liberusoftware--localization-mymemory.md) | [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Localization domain packages](localization.md) | [liberusoftware/localization-core](../../../modules/source/liberusoftware--localization-core.md) | [api](../api/localization.md) · [nextjs](../nextjs/localization.md) |
+| [Meta Server-Side Tracking domain packages](meta-server-side-tracking.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [api](../api/meta-server-side-tracking.md) · [nextjs](../nextjs/meta-server-side-tracking.md) |
+| [Module Manager domain packages](module-manager.md) | [liberusoftware/module-manager](../../../modules/source/liberusoftware--module-manager.md) | [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications domain packages](notifications.md) | [liberusoftware/notifications](../../../modules/source/liberusoftware--notifications.md) | [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability domain packages](observability.md) | [liberusoftware/observability](../../../modules/source/liberusoftware--observability.md) | [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations and Teams domain packages](organizations-and-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [api](../api/organizations-and-teams.md) · [nextjs](../nextjs/organizations-and-teams.md) |
+| [Organizations Teams Core Module](organizations-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles domain packages](profiles.md) | [liberusoftware/profiles](../../../modules/source/liberusoftware--profiles.md) | [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles and Permissions domain packages](roles-and-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [api](../api/roles-and-permissions.md) · [nextjs](../nextjs/roles-and-permissions.md) |
+| [Roles Permissions Core Module](roles-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler and Queues domain packages](scheduler-and-queues.md) | [liberusoftware/scheduler-queues](../../../modules/source/liberusoftware--scheduler-queues.md) | [api](../api/scheduler-and-queues.md) · [nextjs](../nextjs/scheduler-and-queues.md) |
+| [Scheduler Queues Core Module](scheduler-queues.md) | [liberusoftware/scheduler-queues](../../../modules/source/liberusoftware--scheduler-queues.md) | [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search domain packages](search.md) | [liberusoftware/search](../../../modules/source/liberusoftware--search.md) | [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions and Devices domain packages](sessions-and-devices.md) | [liberusoftware/sessions-devices](../../../modules/source/liberusoftware--sessions-devices.md) | [api](../api/sessions-and-devices.md) · [nextjs](../nextjs/sessions-and-devices.md) |
+| [Sessions Devices Core Module](sessions-devices.md) | [liberusoftware/sessions-devices](../../../modules/source/liberusoftware--sessions-devices.md) | [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings domain packages](settings.md) | [liberusoftware/settings](../../../modules/source/liberusoftware--settings.md) | [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Core Module](theme-support.md) | [liberusoftware/theme-support](../../../modules/source/liberusoftware--theme-support.md) | [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two-Factor Authentication domain packages](two-factor-authentication.md) | [liberusoftware/two-factor-authentication](../../../modules/source/liberusoftware--two-factor-authentication.md) | [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks domain packages](webhooks.md) | [liberusoftware/webhooks](../../../modules/source/liberusoftware--webhooks.md) | [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

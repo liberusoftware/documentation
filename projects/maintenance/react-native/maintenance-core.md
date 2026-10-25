@@ -1,5 +1,9 @@
 # Maintenance Core React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#maintenance-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-maintenance-maintenance-core-react-native
 **Matching core package:** module-maintenance-maintenance-core ([implementation](../core/maintenance-core.md))
 **Matching API package:** module-maintenance-maintenance-core-api ([contract](../api/maintenance-core.md))

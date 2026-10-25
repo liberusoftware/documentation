@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:revenue-operations:finalize:request:v1",
+  "title": "Revenue operations: proposed finalize request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "usage_window",
+    "source_event_watermark",
+    "pricing_version"
+  ],
+  "properties": {
+    "usage_window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "from",
+        "until"
+      ],
+      "properties": {
+        "from": {
+          "type": "string",
+          "minLength": 1
+        },
+        "until": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "source_event_watermark": {
+      "type": "string",
+      "minLength": 1
+    },
+    "pricing_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

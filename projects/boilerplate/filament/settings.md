@@ -1,6 +1,10 @@
 # Boilerplate: Settings Filament presentation packages
 
-**Composer package:** `module-settings-filament`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#settings). Observed identity: [`liberusoftware/settings-filament`](../../../modules/source/liberusoftware--settings-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-settings-filament`
 **Matching core package:** [`module-settings`](../core/settings.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Typed application/organization/team/user settings, precedence, validation, secrets, audit, and cache invalidation.

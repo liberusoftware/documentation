@@ -1,8 +1,12 @@
 # Crm: Proposals And Quotes Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#proposals-and-quotes). Observed identity: [`liberusoftware/module-crm-proposals-and-quotes`](../../../modules/source/liberusoftware--module-crm-proposals-and-quotes.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-proposals-and-quotes`
+**Design package identifier:** `module-crm-proposals-and-quotes`
 **Domain specification:** [Proposals And Quotes](../features/proposals-and-quotes.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

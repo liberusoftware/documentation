@@ -1,8 +1,12 @@
 # Accounting: Accounting Periods Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-periods). Observed identity: [`liberusoftware/module-accounting-periods`](../../../modules/source/liberusoftware--module-accounting-periods.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-periods`
+**Design package identifier:** `module-accounting-accounting-periods`
 **Domain specification:** [Accounting Periods](../features/accounting-periods.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

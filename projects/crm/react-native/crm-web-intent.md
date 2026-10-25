@@ -1,5 +1,9 @@
 # Crm Web Intent React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-web-intent). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-web-intent-react-native
 **Matching core package:** module-crm-crm-web-intent ([implementation](../core/crm-web-intent.md))
 **Matching API package:** module-crm-crm-web-intent-api ([contract](../api/crm-web-intent.md))

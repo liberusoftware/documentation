@@ -1,8 +1,12 @@
 # Automation: Liberu Business Workflow Reconciliation Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#liberu-business-workflow-reconciliation). Observed identity: [`liberusoftware/liberu-business-workflow-reconciliation`](../../../modules/source/liberusoftware--liberu-business-workflow-reconciliation.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-automation-liberu-business-workflow-reconciliation`
+**Design package identifier:** `module-automation-liberu-business-workflow-reconciliation`
 **Domain specification:** [Liberu Business Workflow Reconciliation](../features/liberu-business-workflow-reconciliation.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

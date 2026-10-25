@@ -1,8 +1,12 @@
 # CRM: Crm Data Operations Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-data-operations). Observed identity: [`liberusoftware/module-crm-data-operations`](../../../modules/source/liberusoftware--module-crm-data-operations.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-crm-data-operations`
+**Design package identifier:** `module-crm-crm-data-operations`
 **Domain specification:** [Crm Data Operations](../features/crm-data-operations.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

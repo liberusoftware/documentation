@@ -1,5 +1,9 @@
 # Module Cms Comments And Discussion React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-comments-and-discussion). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-module-cms-comments-and-discussion-react-native
 **Matching core package:** module-cms-module-cms-comments-and-discussion ([implementation](../core/module-cms-comments-and-discussion.md))
 **Matching API package:** module-cms-module-cms-comments-and-discussion-api ([contract](../api/module-cms-comments-and-discussion.md))

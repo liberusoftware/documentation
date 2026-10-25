@@ -1,5 +1,9 @@
 # Crm Sales Engagement React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-sales-engagement). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-sales-engagement-react-native
 **Matching core package:** module-crm-crm-sales-engagement ([implementation](../core/crm-sales-engagement.md))
 **Matching API package:** module-crm-crm-sales-engagement-api ([contract](../api/crm-sales-engagement.md))

@@ -1,0 +1,113 @@
+# Employee Expenses: Next.js presentation plan
+
+<!-- nextjs-plan:generated -->
+
+**Status:** proposed adapter, not an observed npm release. The source entry points below describe reviewed locations/signatures; screen, route and component decisions are implementation targets until the API and UI contracts are verified.
+
+**Adapter group:** `liberusoftware/module-accounting-employee-expenses`.
+
+**Proposed design identifier:** `module-accounting-employee-expenses-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
+
+## Scope and ownership
+
+The [domain specification](../features/employee-expenses.md) owns the intended capability scope. Laravel and the owning modules remain authoritative for permissions, validation, state changes and persistence. The Next.js application owns public routes, session integration and deployment; the adapter contributes components and transport helpers.
+
+This plan is the shared documentation home for **2 existing design spellings/consumer scopes** that map to the same core identity. They reference one adapter plan rather than create competing implementations. Source variants still need compatibility review before a common release.
+
+| Boundary | Observed package reference |
+| --- | --- |
+| Core | [liberusoftware/module-accounting-employee-expenses](../../../modules/source/liberusoftware--module-accounting-employee-expenses.md) |
+| API | [liberusoftware/module-accounting-employee-expenses-api](../../../modules/source/liberusoftware--module-accounting-employee-expenses-api.md) |
+
+## Module surfaces and component contracts
+
+| Capability in the domain scope | Next.js composition target |
+| --- | --- |
+| Claims | A focused authorized view or workflow section for claims; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Categories | A focused authorized view or workflow section for categories; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Policy checks | A focused authorized view or workflow section for policy checks; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Per diem | A focused authorized view or workflow section for per diem; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Attendees | A focused authorized view or workflow section for attendees; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Projects/dimensions | A focused authorized view or workflow section for projects/dimensions; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Approval | A focused authorized view or workflow section for approval; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Reimbursement | A focused authorized view or workflow section for reimbursement; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Rejection | A focused authorized view or workflow section for rejection; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+| Posting | A focused authorized view or workflow section for posting; define the exact read DTO, permitted command, validation and recovery state from the owning API before implementation. |
+
+Use a list/workspace view only where a domain query exists, a detail/evidence view for an authorized record, and one command form per supported transition. Prefer API-returned permitted actions and explicit field allowlists. Contract/configuration modules can be composed into another workspace instead of receiving artificial resource routes.
+
+## Query and command integration
+
+These are observed PHP query entry points, not assumed HTTP endpoints. Use an owning API adapter to authorize and serialize their results.
+
+| Source query | Signatures |
+| --- | --- |
+| [ExpenseClaimQuery.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Queries/ExpenseClaimQuery.php) | `public function paginate(?int $teamId = null, ?ClaimStatus $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function total(ExpenseClaim $c): float` |
+
+Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
+
+| Source action/service | Signatures |
+| --- | --- |
+| [AddExpenseItem.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Actions/AddExpenseItem.php) | `public function handle(ExpenseClaim $c, array $a): ExpenseItem` |
+| [CreateExpenseClaim.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Actions/CreateExpenseClaim.php) | `public function handle(array $a): ExpenseClaim` |
+| [DecideExpenseClaim.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Actions/DecideExpenseClaim.php) | `public function handle(ExpenseClaim $c, bool $approved, ?string $reason = null, ?string $actor = null): ExpenseClaim` |
+| [PostExpenseClaim.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Actions/PostExpenseClaim.php) | `public function handle(ExpenseClaim $c, ?string $actor = null): ExpenseClaim` |
+| [ReimburseExpenseClaim.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Actions/ReimburseExpenseClaim.php) | `public function handle(ExpenseClaim $c, ?string $actor = null): ExpenseClaim` |
+| [SubmitExpenseClaim.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Actions/SubmitExpenseClaim.php) | `public function handle(ExpenseClaim $c, ?string $actor = null): ExpenseClaim` |
+
+The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
+
+### Record-field review
+
+These are observed storage models and fillable field names, not a browser DTO schema. Review sensitivity, computed values and owner policy; use an explicit API allowlist rather than exposing every model field.
+
+| Source model | Observed fillable fields |
+| --- | --- |
+| [ExpenseCategory.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Models/ExpenseCategory.php) | `team_id`, `category_ref`, `name`, `daily_limit`, `requires_receipt`, `metadata` |
+| [ExpenseClaim.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Models/ExpenseClaim.php) | `team_id`, `employee_ref`, `claim_ref`, `currency`, `status`, `submitted_on`, `approved_on`, `reimbursed_on`, `posted_on`, `rejection_reason`, `project_ref`, `dimension_ref`, `metadata` |
+| [ExpenseHistory.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Models/ExpenseHistory.php) | `claim_id`, `event`, `actor_ref`, `metadata` |
+| [ExpenseItem.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses/src/Models/ExpenseItem.php) | `claim_id`, `category_ref`, `spent_on`, `description`, `amount`, `tax_amount`, `merchant`, `receipt_ref`, `per_diem_days`, `attendees`, `metadata` |
+| [Employee.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses-api/src/Models/Employee.php) | `name`, `email`, `position`, `hire_date`, `tax_id`, `national_insurance_number`, `starter_declaration`, `p45_issue_date`, `has_student_loan`, `student_loan_plan` |
+
+### Route source evidence
+
+The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
+
+[modules/accounting-employee-expenses-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-employee-expenses-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/employee-expenses')->group(function (): void {
+Route::middleware('ability:accounting.employee-expenses.read')->group(function (): void {
+Route::get('/', [ExpenseClaimsController::class, 'index']);
+Route::get('/{c}', [ExpenseClaimsController::class, 'show']);
+Route::middleware('ability:accounting.employee-expenses.write')->group(function (): void {
+Route::post('/', [ExpenseClaimsController::class, 'store']);
+Route::post('/{c}/items', [ExpenseClaimsController::class, 'item']);
+Route::post('/{c}/submit', [ExpenseClaimsController::class, 'submit']);
+Route::post('/{c}/decide', [ExpenseClaimsController::class, 'decide']);
+Route::post('/{c}/reimburse', [ExpenseClaimsController::class, 'reimburse']);
+Route::post('/{c}/post', [ExpenseClaimsController::class, 'post']);
+```
+
+## Server/client and React reuse
+
+Keep API credentials and session forwarding in server-only exports. A Server Component may load authorized serializable data and compose a Client Component for interaction. Put ordinary event callbacks inside the client boundary; server-to-client props must follow the framework serialization/action rules.
+
+Share framework-independent React cards, tables, labels, formatting and field primitives with Inertia. Keep `next/link`, Next.js navigation, server actions and cache invalidation in this adapter, and Inertia visits, page props and redirects in its wrapper. Reuse domain/API DTOs without importing PHP models or another application's private frontend state.
+
+## State, failures and verification
+
+| Situation | User-facing behavior and integration requirement |
+| --- | --- |
+| Loading or empty authorized query | Accessible progress/empty copy; preserve filters and avoid displaying stale records from another scope |
+| Expired session or denied permission | Reauthenticate or show a scoped denial; discard protected cached data and do not retry as a broader service identity |
+| Invalid command input | Preserve safe draft values, announce field errors and use the authoritative API validation outcome |
+| Stale record / concurrent change | Reload/review the current version; do not overwrite silently or invent an ETag contract the API does not support |
+| Timeout after a write | Query the operation/current record when supported before retrying; an idempotency key works only if the owning API actually stores/enforces it |
+| Long-running or partly failed operation | Show a durable operation reference, progress, last error and a permitted retry/recovery action |
+
+Start authenticated reads with explicit no-store behavior until a reviewed tenant/permission-aware caching policy exists. Refresh affected read models after confirmed mutations; pending transport acceptance is not a completed business transition. Recheck access for evidence/export downloads.
+
+Verify the actual supported query/command journeys, invalid and denied paths, tenant switching, stale state, retry recovery, keyboard/focus behavior and secret exclusion from browser bundles. Build/test the packed adapter in a clean consuming Next.js application using its declared versions and API contract. No npm package or application suite was executed by this plan generator.
+
+See the [Next.js standard](../../../standards/NEXTJS.md), [npm lifecycle guide](../../../guides/NPM.md), [API architecture](../../../architecture/API.md), and [shared ownership guide](../../../architecture/SHARED-MODULES.md).

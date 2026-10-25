@@ -1,8 +1,12 @@
 # Maintenance: Module Maintenance Procurement Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-procurement). Observed identity: [`liberusoftware/module-maintenance-procurement`](../../../modules/source/liberusoftware--module-maintenance-procurement.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-maintenance-module-maintenance-procurement`
+**Design package identifier:** `module-maintenance-module-maintenance-procurement`
 **Domain specification:** [Module Maintenance Procurement](../features/module-maintenance-procurement.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

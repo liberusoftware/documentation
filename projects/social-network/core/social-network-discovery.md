@@ -1,8 +1,12 @@
 # Social Network: Social Network Discovery Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-discovery). Observed identity: [`liberusoftware/module-social-network-discovery`](../../../modules/source/liberusoftware--module-social-network-discovery.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-social-network-social-network-discovery`
+**Design package identifier:** `module-social-network-social-network-discovery`
 **Domain specification:** [Social Network Discovery](../features/social-network-discovery.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

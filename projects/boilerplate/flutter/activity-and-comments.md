@@ -1,5 +1,9 @@
 # Activity and Comments domain packages Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#activity-and-comments). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `activity-comments`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-activity-and-comments-flutter
 **Matching core package:** module-activity-and-comments ([implementation](../core/activity-and-comments.md))
 **Matching API package:** module-activity-and-comments-api ([contract](../api/activity-and-comments.md))

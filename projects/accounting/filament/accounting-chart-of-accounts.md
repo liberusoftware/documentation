@@ -1,12 +1,16 @@
 # Accounting: Accounting Chart Of Accounts Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-chart-of-accounts). Observed identity: [`liberusoftware/module-accounting-chart-of-accounts-filament`](../../../modules/source/liberusoftware--module-accounting-chart-of-accounts-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-accounting-accounting-chart-of-accounts-filament`  
 **Matching domain module:** `accounting-chart-of-accounts`  
 **Application:** Accounting  
 **Source feature:** [Accounting Chart Of Accounts](../features/accounting-chart-of-accounts.md)  
-**Architecture:** [FILAMENT.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

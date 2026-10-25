@@ -1,5 +1,9 @@
 # Cms Extension Marketplace Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-extension-marketplace). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-extension-marketplace-flutter
 **Matching core package:** module-cms-cms-extension-marketplace ([implementation](../core/cms-extension-marketplace.md))
 **Matching API package:** module-cms-cms-extension-marketplace-api ([contract](../api/cms-extension-marketplace.md))

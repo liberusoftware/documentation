@@ -1,8 +1,12 @@
 # Accounting: Accounts Receivable Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounts-receivable). Observed identity: [`liberusoftware/module-accounting-accounts-receivable`](../../../modules/source/liberusoftware--module-accounting-accounts-receivable.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounts-receivable`
+**Design package identifier:** `module-accounting-accounts-receivable`
 **Domain specification:** [Accounts Receivable](../features/accounts-receivable.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

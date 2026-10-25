@@ -1,5 +1,9 @@
 # Payment Reconciliation React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#payment-reconciliation). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-payment-reconciliation-react-native
 **Matching core package:** module-accounting-payment-reconciliation ([implementation](../core/payment-reconciliation.md))
 **Matching API package:** module-accounting-payment-reconciliation-api ([contract](../api/payment-reconciliation.md))

@@ -1,5 +1,9 @@
 # Liberu Platform Orchestration Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#liberu-platform-orchestration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-liberu-platform-orchestration-flutter
 **Matching core package:** module-billing-liberu-platform-orchestration ([implementation](../core/liberu-platform-orchestration.md))
 **Matching API package:** module-billing-liberu-platform-orchestration-api ([contract](../api/liberu-platform-orchestration.md))

@@ -1,12 +1,16 @@
 # CMS: Cms Notifications And Subscriptions Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-notifications-and-subscriptions). Observed identity: [`liberusoftware/module-cms-notifications-and-subscriptions-filament`](../../../modules/source/liberusoftware--module-cms-notifications-and-subscriptions-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-cms-cms-notifications-and-subscriptions-filament`  
 **Matching domain module:** `cms-notifications-and-subscriptions`  
 **Application:** CMS  
 **Source feature:** [Cms Notifications And Subscriptions](../features/cms-notifications-and-subscriptions.md)  
-**Architecture:** [FILAMENT.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,8 +1,12 @@
 # CRM: Crm Prospecting Agent Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-prospecting-agent). Observed identity: [`liberusoftware/module-crm-prospecting-agent`](../../../modules/source/liberusoftware--module-crm-prospecting-agent.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-crm-prospecting-agent`
+**Design package identifier:** `module-crm-crm-prospecting-agent`
 **Domain specification:** [Crm Prospecting Agent](../features/crm-prospecting-agent.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

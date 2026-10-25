@@ -1,35 +1,53 @@
 # Boilerplate Flutter + Dart Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-- [Activity Comments Flutter](activity-comments.md) — `module-boilerplate-activity-comments-flutter`
-- [Analytics Core Flutter](analytics-core.md) — `module-boilerplate-analytics-core-flutter`
-- [Analytics Google Flutter](analytics-google.md) — `module-boilerplate-analytics-google-flutter`
-- [Analytics Meta Flutter](analytics-meta.md) — `module-boilerplate-analytics-meta-flutter`
-- [Api Access Flutter](api-access.md) — `module-boilerplate-api-access-flutter`
-- [Application Flutter](application.md) — `module-boilerplate-application-flutter`
-- [Audit Flutter](audit.md) — `module-boilerplate-audit-flutter`
-- [Currency Context Flutter](currency-context.md) — `module-boilerplate-currency-context-flutter`
-- [Developer Experience Flutter](developer-experience.md) — `module-boilerplate-developer-experience-flutter`
-- [Feature Flags Flutter](feature-flags.md) — `module-boilerplate-feature-flags-flutter`
-- [Files Media Flutter](files-media.md) — `module-boilerplate-files-media-flutter`
-- [Identity Core Flutter](identity-core.md) — `module-boilerplate-identity-core-flutter`
-- [Identity Socialstream Flutter](identity-socialstream.md) — `module-boilerplate-identity-socialstream-flutter`
-- [Import Export Flutter](import-export.md) — `module-boilerplate-import-export-flutter`
-- [Integrations Flutter](integrations.md) — `module-boilerplate-integrations-flutter`
-- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-boilerplate-jetstream-bridge-flutter`
-- [Localization Core Flutter](localization-core.md) — `module-boilerplate-localization-core-flutter`
-- [Localization Mymemory Flutter](localization-mymemory.md) — `module-boilerplate-localization-mymemory-flutter`
-- [Module Manager Flutter](module-manager.md) — `module-boilerplate-module-manager-flutter`
-- [Notifications Flutter](notifications.md) — `module-boilerplate-notifications-flutter`
-- [Observability Flutter](observability.md) — `module-boilerplate-observability-flutter`
-- [Organizations Teams Flutter](organizations-teams.md) — `module-boilerplate-organizations-teams-flutter`
-- [Profiles Flutter](profiles.md) — `module-boilerplate-profiles-flutter`
-- [Roles Permissions Flutter](roles-permissions.md) — `module-boilerplate-roles-permissions-flutter`
-- [Scheduler Queues Flutter](scheduler-queues.md) — `module-boilerplate-scheduler-queues-flutter`
-- [Search Flutter](search.md) — `module-boilerplate-search-flutter`
-- [Sessions Devices Flutter](sessions-devices.md) — `module-boilerplate-sessions-devices-flutter`
-- [Settings Flutter](settings.md) — `module-boilerplate-settings-flutter`
-- [Theme Support Flutter](theme-support.md) — `module-boilerplate-theme-support-flutter`
-- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-boilerplate-two-factor-authentication-flutter`
-- [Webhooks Flutter](webhooks.md) — `module-boilerplate-webhooks-flutter`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity and Comments domain packages Flutter + Dart](activity-and-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-and-comments) | [core](../core/activity-and-comments.md) · [api](../api/activity-and-comments.md) · [nextjs](../nextjs/activity-and-comments.md) |
+| [Activity Comments Flutter + Dart](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core domain packages Flutter + Dart](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Flutter + Dart](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Flutter + Dart](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [API Access domain packages Flutter + Dart](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Core domain packages Flutter + Dart](application-core.md) | [Target/source map](../SOURCE-MAPPING.md#application-core) | [core](../core/application-core.md) · [api](../api/application-core.md) · [nextjs](../nextjs/application-core.md) |
+| [Application Flutter + Dart](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit domain packages Flutter + Dart](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Currency Context domain packages Flutter + Dart](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience domain packages Flutter + Dart](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags domain packages Flutter + Dart](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files and Media domain packages Flutter + Dart](files-and-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-and-media) | [core](../core/files-and-media.md) · [api](../api/files-and-media.md) · [nextjs](../nextjs/files-and-media.md) |
+| [Files Media Flutter + Dart](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Google Analytics domain packages Flutter + Dart](google-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#google-analytics) | [core](../core/google-analytics.md) · [api](../api/google-analytics.md) · [nextjs](../nextjs/google-analytics.md) |
+| [Identity Core Flutter + Dart](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Flutter + Dart](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Identity domain packages Flutter + Dart](identity.md) | [Target/source map](../SOURCE-MAPPING.md#identity) | [core](../core/identity.md) · [api](../api/identity.md) · [nextjs](../nextjs/identity.md) |
+| [Import and Export domain packages Flutter + Dart](import-and-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-and-export) | [core](../core/import-and-export.md) · [api](../api/import-and-export.md) · [nextjs](../nextjs/import-and-export.md) |
+| [Import Export Flutter + Dart](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations domain packages Flutter + Dart](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge domain packages Flutter + Dart](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core Flutter + Dart](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Flutter + Dart](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Localization domain packages Flutter + Dart](localization.md) | [Target/source map](../SOURCE-MAPPING.md#localization) | [core](../core/localization.md) · [api](../api/localization.md) · [nextjs](../nextjs/localization.md) |
+| [Meta Server-Side Tracking domain packages Flutter + Dart](meta-server-side-tracking.md) | [Target/source map](../SOURCE-MAPPING.md#meta-server-side-tracking) | [core](../core/meta-server-side-tracking.md) · [api](../api/meta-server-side-tracking.md) · [nextjs](../nextjs/meta-server-side-tracking.md) |
+| [Module Manager domain packages Flutter + Dart](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications domain packages Flutter + Dart](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability domain packages Flutter + Dart](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations and Teams domain packages Flutter + Dart](organizations-and-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-and-teams) | [core](../core/organizations-and-teams.md) · [api](../api/organizations-and-teams.md) · [nextjs](../nextjs/organizations-and-teams.md) |
+| [Organizations Teams Flutter + Dart](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles domain packages Flutter + Dart](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles and Permissions domain packages Flutter + Dart](roles-and-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-and-permissions) | [core](../core/roles-and-permissions.md) · [api](../api/roles-and-permissions.md) · [nextjs](../nextjs/roles-and-permissions.md) |
+| [Roles Permissions Flutter + Dart](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler and Queues domain packages Flutter + Dart](scheduler-and-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-and-queues) | [core](../core/scheduler-and-queues.md) · [api](../api/scheduler-and-queues.md) · [nextjs](../nextjs/scheduler-and-queues.md) |
+| [Scheduler Queues Flutter + Dart](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search domain packages Flutter + Dart](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions and Devices domain packages Flutter + Dart](sessions-and-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-and-devices) | [core](../core/sessions-and-devices.md) · [api](../api/sessions-and-devices.md) · [nextjs](../nextjs/sessions-and-devices.md) |
+| [Sessions Devices Flutter + Dart](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings domain packages Flutter + Dart](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Flutter + Dart](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two-Factor Authentication domain packages Flutter + Dart](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks domain packages Flutter + Dart](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

@@ -1,5 +1,9 @@
 # Draft And Assisted Orders Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#draft-and-assisted-orders). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-draft-and-assisted-orders-flutter
 **Matching core package:** module-ecommerce-draft-and-assisted-orders ([implementation](../core/draft-and-assisted-orders.md))
 **Matching API package:** module-ecommerce-draft-and-assisted-orders-api ([contract](../api/draft-and-assisted-orders.md))

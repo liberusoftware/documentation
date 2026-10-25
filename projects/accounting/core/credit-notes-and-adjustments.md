@@ -1,8 +1,12 @@
 # Accounting: Credit Notes And Adjustments Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#credit-notes-and-adjustments). Observed identity: [`liberusoftware/module-accounting-credit-notes-and-adjustments`](../../../modules/source/liberusoftware--module-accounting-credit-notes-and-adjustments.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-credit-notes-and-adjustments`
+**Design package identifier:** `module-accounting-credit-notes-and-adjustments`
 **Domain specification:** [Credit Notes And Adjustments](../features/credit-notes-and-adjustments.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

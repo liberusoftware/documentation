@@ -1,6 +1,10 @@
 # Boilerplate: Audit Filament presentation packages
 
-**Composer package:** `module-audit-filament`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#audit). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-audit-filament`
 **Matching core package:** [`module-audit`](../core/audit.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Actor, tenant, request context, material changes, privileged actions, retention, and tamper evidence.

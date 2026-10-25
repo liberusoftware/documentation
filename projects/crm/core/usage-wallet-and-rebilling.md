@@ -1,8 +1,12 @@
 # Crm: Usage Wallet And Rebilling Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#usage-wallet-and-rebilling). Observed identity: [`liberusoftware/module-crm-usage-wallet-and-rebilling`](../../../modules/source/liberusoftware--module-crm-usage-wallet-and-rebilling.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-usage-wallet-and-rebilling`
+**Design package identifier:** `module-crm-usage-wallet-and-rebilling`
 **Domain specification:** [Usage Wallet And Rebilling](../features/usage-wallet-and-rebilling.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

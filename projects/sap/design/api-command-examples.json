@@ -1,0 +1,114 @@
+{
+  "enterprise-foundation": {
+    "action": "approve", "status": 200, "record_id": "change-example-001",
+    "before": "submitted", "after": "approved",
+    "body": {"decision_evidence_ids": ["evidence-example-001"], "effective_from": "2026-11-01T00:00:00Z"},
+    "validation": "Require accessible evidence, a valid effective interval and an independent approver when the policy requires separation. Reject an overlapping approved version rather than replacing it.",
+    "outcome": "Record the approved master-data version and decision evidence. Application to consumers is a separately observable handoff, not proof that all consumers have adopted it."
+  },
+  "finance": {
+    "action": "post", "status": 202, "record_id": "batch-example-001",
+    "before": "pending_approval", "after": "posted",
+    "body": {"approval_reference": "approval-example-001", "source_operation_key": "billing:invoice-example-001:v3"},
+    "validation": "Validate the approved source version, entity/ledger/period, balanced totals, dimensions, exchange-rate reference and source operation uniqueness through Accounting.",
+    "outcome": "Complete only after Accounting returns the durable journal reference and reconciled control totals. A queued request cannot be displayed as a posted journal."
+  },
+  "controlling": {
+    "action": "simulate", "status": 202, "record_id": "allocation-example-001",
+    "before": "draft", "after": "simulated",
+    "body": {"rule_version": "allocation-rule-v3", "source_balance_snapshot_id": "balances-example-001", "driver_snapshot_id": "drivers-example-001", "scenario_id": "scenario-example-001"},
+    "validation": "Require compatible immutable snapshots and complete allocation drivers. Define zero-driver and rounding-residual behavior; a simulation never posts ledger adjustments.",
+    "outcome": "Publish scenario outputs, residuals and source lineage. Approval and actual posting remain separate actions under the owning policy."
+  },
+  "sales-and-crm": {
+    "action": "submit", "status": 202, "record_id": "handoff-example-001",
+    "before": "approved", "after": "accepted",
+    "body": {"quote_version": "quote-example-001:v3", "target_order_owner": "billing", "acceptance_evidence_id": "acceptance-example-001"},
+    "validation": "Require a current accepted quote snapshot, authorized seller entity, resolvable customer/product mappings and a reviewed target order owner. Revalidate expired or superseded commercial terms.",
+    "outcome": "Link the accepted downstream order/subscription reference. A timeout remains pending until queried or reconciled using the original handoff identity."
+  },
+  "revenue-operations": {
+    "action": "finalize", "status": 202, "record_id": "settlement-example-001",
+    "before": "approved", "after": "invoiced",
+    "body": {"usage_window": {"from": "2026-09-01T00:00:00Z", "until": "2026-10-01T00:00:00Z"}, "source_event_watermark": "meter-watermark-example-001", "pricing_version": "pricing-v4"},
+    "validation": "Require a closed reviewed usage window, deduplicated source events, explicit units/timezone and the approved rating/pricing snapshot. Late usage follows the correction policy.",
+    "outcome": "Billing owns invoice finalization and returns its reference. Financial revenue recognition remains Accounting-owned and is not implied by invoicing."
+  },
+  "procurement": {
+    "action": "record-receipt", "status": 202, "record_id": "requisition-example-001",
+    "before": "ordered", "after": "partially_received",
+    "body": {"order_reference": "purchase-order-example-001", "receipt_reference": "receipt-example-001", "received_at": "2026-10-25T10:00:00Z", "lines": [{"order_line_reference": "order-line-example-001", "received_quantity": "4.000", "unit": "each", "condition": "accepted"}]},
+    "validation": "Validate the receiving actor/location, order line, units and quantity/tolerance policy. The owning stock/receipt service records physical movements; reject duplicate receipt identities.",
+    "outcome": "Link the receipt and outstanding quantities. A partial receipt does not close the order or release an unmatched supplier invoice for payment."
+  },
+  "inventory-and-logistics": {
+    "action": "receive", "status": 202, "record_id": "transfer-example-001",
+    "before": "dispatched", "after": "partially_received",
+    "body": {"receipt_reference": "transfer-receipt-example-001", "destination_location_id": "warehouse-example-002", "received_at": "2026-10-25T10:30:00Z", "lines": [{"item_reference": "item-example-001", "quantity": "3.000", "unit": "each", "lot_reference": "lot-example-001", "condition": "accepted"}]},
+    "validation": "Require authorized destination custody, correct units and lot/serial policy, and conserved dispatched/received/in-transit quantities. Validate the movement identity at the selected stock owner.",
+    "outcome": "Record received quantities and discrepancies separately. Financial valuation is a linked Accounting event, not a direct write from the receiving UI."
+  },
+  "projects-and-services": {
+    "action": "request-billing", "status": 202, "record_id": "milestone-example-001",
+    "before": "accepted", "after": "billed",
+    "body": {"contract_version": "contract-example-001:v2", "time_expense_snapshot_id": "approved-work-example-001", "billing_rule_version": "milestone-rate-v2", "customer_acceptance_id": "acceptance-example-002"},
+    "validation": "Require accepted scope, approved time/expenses, valid billing terms and customer/delegate evidence. Preserve the accepted snapshot across retries.",
+    "outcome": "Link the Billing invoice reference and reconcile its basis. A billing request can pass through billing_requested before confirmed invoicing."
+  },
+  "service-management": {
+    "action": "resolve", "status": 200, "record_id": "incident-example-001",
+    "before": "investigating", "after": "resolved",
+    "body": {"resolution_code": "service-restored", "resolution_summary": "Approved recovery completed and service checks passed.", "evidence_references": ["service-check-example-001"], "change_reference": "change-example-001"},
+    "validation": "Require resolution authority and evidence for the selected service/entitlement. Keep customer-visible resolution text separate from restricted internal notes; validate any linked change authority.",
+    "outcome": "Record the resolution and SLA outcome. Closure and any later reopening preserve the earlier resolution evidence and are separate lifecycle actions."
+  },
+  "hosting-and-cloud": {
+    "action": "provision", "status": 202, "record_id": "provisioning-example-001",
+    "before": "approved", "after": "active",
+    "body": {"service_template_version": "service-template-v3", "region": "approved-region-example", "capacity_request": {"cpu_units": 2, "memory_mib": 4096}, "approved_change_reference": "change-example-002", "target_platform": "control-panel"},
+    "validation": "Validate entitlement, allowed region, capacity, approved template and change authority. Payloads contain secret references only where required, never provider credentials.",
+    "outcome": "Control Panel returns an observed resource reference and outcome. Partial creation retains created-resource and compensation evidence until reconciled."
+  },
+  "product-and-engineering": {
+    "action": "approve", "status": 200, "record_id": "release-review-example-001",
+    "before": "review_ready", "after": "approved",
+    "body": {"artifact_digest": "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef", "test_evidence_ids": ["test-run-example-001"], "vulnerability_review_id": "security-review-example-001", "rollout_plan_id": "rollout-example-001"},
+    "validation": "Bind approval to the immutable artifact, required test/security evidence and rollout readiness. Changed or expired evidence invalidates the review instead of carrying approval to another artifact.",
+    "outcome": "Record release authorization for this artifact. Actual deployment, rollout results and rollback evidence remain separately reported operations."
+  },
+  "people": {
+    "action": "end", "status": 202, "record_id": "assignment-example-001",
+    "before": "active", "after": "ended",
+    "body": {"effective_until": "2026-11-01T17:00:00Z", "offboarding_case_reference": "offboarding-example-001", "access_recovery_policy_version": "offboarding-policy-v2"},
+    "validation": "Require authorized HR context, consistent assignment dates and the applicable offboarding policy. Restrict employment, compensation and other sensitive fields independently of ordinary team membership.",
+    "outcome": "End the effective assignment and expose outstanding access/equipment recovery obligations. The employment outcome does not claim all downstream access was successfully revoked."
+  },
+  "assets-and-facilities": {
+    "action": "accept", "status": 200, "record_id": "handover-example-001",
+    "before": "in_transit", "after": "accepted",
+    "body": {"to_custodian_reference": "custodian-example-002", "location_reference": "location-example-002", "condition_snapshot_id": "inspection-example-001", "acceptance_evidence_id": "handover-evidence-example-001"},
+    "validation": "Validate the receiving custodian, authorized location, required inspection and current custody version. Conflicting concurrent acceptance must not create two current custodians.",
+    "outcome": "Record the accepted custody transition. Damage/discrepancy and financial capitalization/disposal stay with their respective owner workflows."
+  },
+  "governance-risk-and-compliance": {
+    "action": "record-finding", "status": 200, "record_id": "assessment-example-001",
+    "before": "under_review", "after": "deficient",
+    "body": {"control_reference": "control-example-001", "finding_summary": "Required approval evidence is incomplete for the reviewed sample.", "evidence_references": ["sample-example-001"], "remediation_owner_reference": "owner-example-001", "due_at": "2026-11-15T17:00:00Z"},
+    "validation": "Require independent review authority, accessible immutable evidence and a valid remediation owner. Preserve control/framework version and legal-hold/retention obligations.",
+    "outcome": "Record the finding and linked remediation obligation without changing the original source audit evidence. Remediation acceptance is a distinct reviewed action."
+  },
+  "partners-and-portals": {
+    "action": "revoke", "status": 202, "record_id": "grant-example-001",
+    "before": "active", "after": "revoked",
+    "body": {"reason": "Sponsoring contract ended.", "revocation_evidence_reference": "contract-end-example-001"},
+    "validation": "Require authority over the exact principal/resource scope. A partner relationship alone does not grant revocation or delegation rights across other organizations.",
+    "outcome": "Record revocation and track downstream acknowledgements/session-cache invalidation. Keep delayed revocations visible until protected operations enforce the change."
+  },
+  "data-and-intelligence": {
+    "action": "run", "status": 202, "record_id": "report-run-example-001",
+    "before": "authorized", "after": "ready",
+    "body": {"report_definition_version": "report-example-001:v3", "legal_entity_scope": ["entity-example-001"], "parameter_snapshot": {"period": "2026-09", "currency": "GBP"}, "source_watermarks": {"accounting": "ledger-watermark-example-001"}},
+    "validation": "Authorize every source, row/field and selected entity, then record metric versions and freshness policy. Reject or visibly qualify an incomplete source snapshot according to the report definition.",
+    "outcome": "Produce a permission-scoped report artifact with expiry and lineage. Recheck authorization on download, even if the report was authorized when queued."
+  }
+}

@@ -1,5 +1,9 @@
 # Module Cms Static Publishing Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-static-publishing). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-module-cms-static-publishing-flutter
 **Matching core package:** module-cms-module-cms-static-publishing ([implementation](../core/module-cms-static-publishing.md))
 **Matching API package:** module-cms-module-cms-static-publishing-api ([contract](../api/module-cms-static-publishing.md))

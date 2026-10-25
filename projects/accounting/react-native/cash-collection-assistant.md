@@ -1,5 +1,9 @@
 # Cash Collection Assistant React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cash-collection-assistant). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-cash-collection-assistant-react-native
 **Matching core package:** module-accounting-cash-collection-assistant ([implementation](../core/cash-collection-assistant.md))
 **Matching API package:** module-accounting-cash-collection-assistant-api ([contract](../api/cash-collection-assistant.md))

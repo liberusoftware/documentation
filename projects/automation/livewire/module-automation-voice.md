@@ -1,12 +1,16 @@
 # Automation: Module Automation Voice Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-automation-voice). Observed identity: [`liberusoftware/automation-voice-livewire`](../../../modules/source/liberusoftware--automation-voice-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-automation-module-automation-voice-livewire`  
 **Matching domain module:** `module-automation-voice`  
 **Application:** Automation  
 **Source feature:** [Module Automation Voice](../features/module-automation-voice.md)  
-**Architecture:** [LIVEWIRE.md](../AUTOMATION.md) · [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

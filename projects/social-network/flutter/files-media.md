@@ -1,5 +1,9 @@
 # Files Media Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#files-media). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-social-network-files-media-flutter
 **Matching core package:** module-social-network-files-media ([implementation](../core/files-media.md))
 **Matching API package:** module-social-network-files-media-api ([contract](../api/files-media.md))

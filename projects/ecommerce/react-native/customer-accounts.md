@@ -1,5 +1,9 @@
 # Customer Accounts React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#customer-accounts). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-customer-accounts-react-native
 **Matching core package:** module-ecommerce-customer-accounts ([implementation](../core/customer-accounts.md))
 **Matching API package:** module-ecommerce-customer-accounts-api ([contract](../api/customer-accounts.md))

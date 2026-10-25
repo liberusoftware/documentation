@@ -1,5 +1,9 @@
 # Crm Account Based Marketing React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-account-based-marketing). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-account-based-marketing-react-native
 **Matching core package:** module-crm-crm-account-based-marketing ([implementation](../core/crm-account-based-marketing.md))
 **Matching API package:** module-crm-crm-account-based-marketing-api ([contract](../api/crm-account-based-marketing.md))

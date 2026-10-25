@@ -1,5 +1,9 @@
 # Control Panel Os Adapters React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-os-adapters). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-control-panel-control-panel-os-adapters-react-native
 **Matching core package:** module-control-panel-control-panel-os-adapters ([implementation](../core/control-panel-os-adapters.md))
 **Matching API package:** module-control-panel-control-panel-os-adapters-api ([contract](../api/control-panel-os-adapters.md))

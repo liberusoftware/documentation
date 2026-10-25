@@ -1,5 +1,9 @@
 # Cms Theme Marketplace Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-theme-marketplace). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-theme-marketplace-flutter
 **Matching core package:** module-cms-cms-theme-marketplace ([implementation](../core/cms-theme-marketplace.md))
 **Matching API package:** module-cms-cms-theme-marketplace-api ([contract](../api/cms-theme-marketplace.md))

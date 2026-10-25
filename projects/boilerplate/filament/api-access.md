@@ -1,6 +1,10 @@
 # Boilerplate: API Access Filament presentation packages
 
-**Composer package:** `module-api-access-filament`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#api-access). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-api-access-filament`
 **Matching core package:** [`module-api-access`](../core/api-access.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Tokens, service identities, scopes, rate limits, versioning, idempotency, and revocation.

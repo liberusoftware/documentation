@@ -1,12 +1,16 @@
 # Genealogy: Reports Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#reports). Observed identity: [`liberusoftware/module-genealogy-reports-livewire`](../../../modules/source/liberusoftware--module-genealogy-reports-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-genealogy-reports-livewire`  
 **Matching domain module:** `genealogy-reports`  
 **Application:** Genealogy  
 **Source feature:** [Reports](../features/reports.md)  
-**Architecture:** [LIVEWIRE.md](../GENEALOGY.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

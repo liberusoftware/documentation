@@ -1,12 +1,16 @@
 # Real Estate: Module Manager Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-manager). Observed identity: [`liberusoftware/module-manager-filament`](../../../modules/source/liberusoftware--module-manager-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-real-estate-module-manager-filament`  
 **Matching domain module:** `module-manager`  
 **Application:** Real Estate  
 **Source feature:** [Module Manager](../features/module-manager.md)  
-**Architecture:** [FILAMENT.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

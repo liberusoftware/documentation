@@ -1,5 +1,9 @@
 # Browser Game Accounts Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#browser-game-accounts). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-browser-game-browser-game-accounts-flutter
 **Matching core package:** module-browser-game-browser-game-accounts ([implementation](../core/browser-game-accounts.md))
 **Matching API package:** module-browser-game-browser-game-accounts-api ([contract](../api/browser-game-accounts.md))

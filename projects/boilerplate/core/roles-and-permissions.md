@@ -1,6 +1,10 @@
 # Boilerplate: Roles and Permissions domain packages
 
-**Composer package:** `module-roles-and-permissions`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#roles-and-permissions). Observed identity: [`liberusoftware/roles-permissions`](../../../modules/source/liberusoftware--roles-permissions.md). This retained spelling maps to `roles-permissions`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-roles-and-permissions`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Permission definitions, assignments, contextual scope, policies, caches, safeguards, and audit.
 

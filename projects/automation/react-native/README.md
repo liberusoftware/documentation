@@ -1,50 +1,67 @@
 # Automation React Native + Expo Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **57 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-- [Activity Comments React Native](activity-comments.md) — `module-automation-activity-comments-react-native`
-- [Analytics Core React Native](analytics-core.md) — `module-automation-analytics-core-react-native`
-- [Analytics Google React Native](analytics-google.md) — `module-automation-analytics-google-react-native`
-- [Analytics Meta React Native](analytics-meta.md) — `module-automation-analytics-meta-react-native`
-- [Api Access React Native](api-access.md) — `module-automation-api-access-react-native`
-- [Application React Native](application.md) — `module-automation-application-react-native`
-- [Audit React Native](audit.md) — `module-automation-audit-react-native`
-- [Currency Context React Native](currency-context.md) — `module-automation-currency-context-react-native`
-- [Developer Experience React Native](developer-experience.md) — `module-automation-developer-experience-react-native`
-- [Feature Flags React Native](feature-flags.md) — `module-automation-feature-flags-react-native`
-- [Files Media React Native](files-media.md) — `module-automation-files-media-react-native`
-- [Identity Core React Native](identity-core.md) — `module-automation-identity-core-react-native`
-- [Identity Socialstream React Native](identity-socialstream.md) — `module-automation-identity-socialstream-react-native`
-- [Import Export React Native](import-export.md) — `module-automation-import-export-react-native`
-- [Integrations React Native](integrations.md) — `module-automation-integrations-react-native`
-- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-automation-jetstream-bridge-react-native`
-- [Liberu Business Workflow Reconciliation React Native](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-react-native`
-- [Liberu Executive Insights React Native](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-react-native`
-- [Liberu Platform Orchestration React Native](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-react-native`
-- [Liberu Revenue And Care Orchestration React Native](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-react-native`
-- [Localization Core React Native](localization-core.md) — `module-automation-localization-core-react-native`
-- [Localization Mymemory React Native](localization-mymemory.md) — `module-automation-localization-mymemory-react-native`
-- [Module Automation Ai Gateway React Native](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-react-native`
-- [Module Automation Approvals React Native](module-automation-approvals.md) — `module-automation-module-automation-approvals-react-native`
-- [Module Automation Automation Core React Native](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-react-native`
-- [Module Automation Connectors React Native](module-automation-connectors.md) — `module-automation-module-automation-connectors-react-native`
-- [Module Automation Data Processing React Native](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-react-native`
-- [Module Automation Evaluation React Native](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-react-native`
-- [Module Automation Image React Native](module-automation-image.md) — `module-automation-module-automation-image-react-native`
-- [Module Automation Prompt Registry React Native](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-react-native`
-- [Module Automation Rules React Native](module-automation-rules.md) — `module-automation-module-automation-rules-react-native`
-- [Module Automation Video React Native](module-automation-video.md) — `module-automation-module-automation-video-react-native`
-- [Module Automation Voice React Native](module-automation-voice.md) — `module-automation-module-automation-voice-react-native`
-- [Module Manager React Native](module-manager.md) — `module-automation-module-manager-react-native`
-- [Notifications React Native](notifications.md) — `module-automation-notifications-react-native`
-- [Observability React Native](observability.md) — `module-automation-observability-react-native`
-- [Organizations Teams React Native](organizations-teams.md) — `module-automation-organizations-teams-react-native`
-- [Profiles React Native](profiles.md) — `module-automation-profiles-react-native`
-- [Roles Permissions React Native](roles-permissions.md) — `module-automation-roles-permissions-react-native`
-- [Scheduler Queues React Native](scheduler-queues.md) — `module-automation-scheduler-queues-react-native`
-- [Search React Native](search.md) — `module-automation-search-react-native`
-- [Sessions Devices React Native](sessions-devices.md) — `module-automation-sessions-devices-react-native`
-- [Settings React Native](settings.md) — `module-automation-settings-react-native`
-- [Theme Support React Native](theme-support.md) — `module-automation-theme-support-react-native`
-- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-automation-two-factor-authentication-react-native`
-- [Webhooks React Native](webhooks.md) — `module-automation-webhooks-react-native`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments React Native + Expo](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Ai Gateway React Native + Expo](ai-gateway.md) | [Target/source map](../SOURCE-MAPPING.md#ai-gateway) | [core](../core/ai-gateway.md) · [api](../api/ai-gateway.md) · [nextjs](../nextjs/ai-gateway.md) |
+| [Analytics Core React Native + Expo](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React Native + Expo](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React Native + Expo](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access React Native + Expo](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application React Native + Expo](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Approvals React Native + Expo](approvals.md) | [Target/source map](../SOURCE-MAPPING.md#approvals) | [core](../core/approvals.md) · [api](../api/approvals.md) · [nextjs](../nextjs/approvals.md) |
+| [Audit React Native + Expo](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Automation Core React Native + Expo](automation-core.md) | [Target/source map](../SOURCE-MAPPING.md#automation-core) | [core](../core/automation-core.md) · [api](../api/automation-core.md) · [nextjs](../nextjs/automation-core.md) |
+| [Connectors React Native + Expo](connectors.md) | [Target/source map](../SOURCE-MAPPING.md#connectors) | [core](../core/connectors.md) · [api](../api/connectors.md) · [nextjs](../nextjs/connectors.md) |
+| [Currency Context React Native + Expo](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Data Processing React Native + Expo](data-processing.md) | [Target/source map](../SOURCE-MAPPING.md#data-processing) | [core](../core/data-processing.md) · [api](../api/data-processing.md) · [nextjs](../nextjs/data-processing.md) |
+| [Developer Experience React Native + Expo](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Evaluation React Native + Expo](evaluation.md) | [Target/source map](../SOURCE-MAPPING.md#evaluation) | [core](../core/evaluation.md) · [api](../api/evaluation.md) · [nextjs](../nextjs/evaluation.md) |
+| [Feature Flags React Native + Expo](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media React Native + Expo](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core React Native + Expo](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React Native + Expo](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Image React Native + Expo](image.md) | [Target/source map](../SOURCE-MAPPING.md#image) | [core](../core/image.md) · [api](../api/image.md) · [nextjs](../nextjs/image.md) |
+| [Import Export React Native + Expo](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations React Native + Expo](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge React Native + Expo](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation React Native + Expo](liberu-business-workflow-reconciliation.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-business-workflow-reconciliation) | [core](../core/liberu-business-workflow-reconciliation.md) · [api](../api/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights React Native + Expo](liberu-executive-insights.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-executive-insights) | [core](../core/liberu-executive-insights.md) · [api](../api/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration React Native + Expo](liberu-platform-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-platform-orchestration) | [core](../core/liberu-platform-orchestration.md) · [api](../api/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration React Native + Expo](liberu-revenue-and-care-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-revenue-and-care-orchestration) | [core](../core/liberu-revenue-and-care-orchestration.md) · [api](../api/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core React Native + Expo](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React Native + Expo](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Module Automation Ai Gateway React Native + Expo](module-automation-ai-gateway.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-ai-gateway) | [core](../core/module-automation-ai-gateway.md) · [api](../api/module-automation-ai-gateway.md) · [nextjs](../nextjs/module-automation-ai-gateway.md) |
+| [Module Automation Approvals React Native + Expo](module-automation-approvals.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-approvals) | [core](../core/module-automation-approvals.md) · [api](../api/module-automation-approvals.md) · [nextjs](../nextjs/module-automation-approvals.md) |
+| [Module Automation Automation Core React Native + Expo](module-automation-automation-core.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-automation-core) | [core](../core/module-automation-automation-core.md) · [api](../api/module-automation-automation-core.md) · [nextjs](../nextjs/module-automation-automation-core.md) |
+| [Module Automation Connectors React Native + Expo](module-automation-connectors.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-connectors) | [core](../core/module-automation-connectors.md) · [api](../api/module-automation-connectors.md) · [nextjs](../nextjs/module-automation-connectors.md) |
+| [Module Automation Data Processing React Native + Expo](module-automation-data-processing.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-data-processing) | [core](../core/module-automation-data-processing.md) · [api](../api/module-automation-data-processing.md) · [nextjs](../nextjs/module-automation-data-processing.md) |
+| [Module Automation Evaluation React Native + Expo](module-automation-evaluation.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-evaluation) | [core](../core/module-automation-evaluation.md) · [api](../api/module-automation-evaluation.md) · [nextjs](../nextjs/module-automation-evaluation.md) |
+| [Module Automation Image React Native + Expo](module-automation-image.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-image) | [core](../core/module-automation-image.md) · [api](../api/module-automation-image.md) · [nextjs](../nextjs/module-automation-image.md) |
+| [Module Automation Prompt Registry React Native + Expo](module-automation-prompt-registry.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-prompt-registry) | [core](../core/module-automation-prompt-registry.md) · [api](../api/module-automation-prompt-registry.md) · [nextjs](../nextjs/module-automation-prompt-registry.md) |
+| [Module Automation Rules React Native + Expo](module-automation-rules.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-rules) | [core](../core/module-automation-rules.md) · [api](../api/module-automation-rules.md) · [nextjs](../nextjs/module-automation-rules.md) |
+| [Module Automation Video React Native + Expo](module-automation-video.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-video) | [core](../core/module-automation-video.md) · [api](../api/module-automation-video.md) · [nextjs](../nextjs/module-automation-video.md) |
+| [Module Automation Voice React Native + Expo](module-automation-voice.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-voice) | [core](../core/module-automation-voice.md) · [api](../api/module-automation-voice.md) · [nextjs](../nextjs/module-automation-voice.md) |
+| [Module Manager React Native + Expo](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications React Native + Expo](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability React Native + Expo](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams React Native + Expo](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles React Native + Expo](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Prompt Registry React Native + Expo](prompt-registry.md) | [Target/source map](../SOURCE-MAPPING.md#prompt-registry) | [core](../core/prompt-registry.md) · [api](../api/prompt-registry.md) · [nextjs](../nextjs/prompt-registry.md) |
+| [Roles Permissions React Native + Expo](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Rules React Native + Expo](rules.md) | [Target/source map](../SOURCE-MAPPING.md#rules) | [core](../core/rules.md) · [api](../api/rules.md) · [nextjs](../nextjs/rules.md) |
+| [Scheduler Queues React Native + Expo](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search React Native + Expo](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices React Native + Expo](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings React Native + Expo](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support React Native + Expo](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication React Native + Expo](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Video React Native + Expo](video.md) | [Target/source map](../SOURCE-MAPPING.md#video) | [core](../core/video.md) · [api](../api/video.md) · [nextjs](../nextjs/video.md) |
+| [Voice React Native + Expo](voice.md) | [Target/source map](../SOURCE-MAPPING.md#voice) | [core](../core/voice.md) · [api](../api/voice.md) · [nextjs](../nextjs/voice.md) |
+| [Webhooks React Native + Expo](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

@@ -1,5 +1,9 @@
 # Cms Forms Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-forms). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-forms-flutter
 **Matching core package:** module-cms-cms-forms ([implementation](../core/cms-forms.md))
 **Matching API package:** module-cms-cms-forms-api ([contract](../api/cms-forms.md))

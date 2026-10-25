@@ -1,5 +1,9 @@
 # Accounting Periods React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-periods). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-periods-react-native
 **Matching core package:** module-accounting-accounting-periods ([implementation](../core/accounting-periods.md))
 **Matching API package:** module-accounting-accounting-periods-api ([contract](../api/accounting-periods.md))

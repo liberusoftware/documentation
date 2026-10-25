@@ -1,5 +1,9 @@
 # Genealogy Tree Viewer React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#genealogy-tree-viewer). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-genealogy-genealogy-tree-viewer-react-native
 **Matching core package:** module-genealogy-genealogy-tree-viewer ([implementation](../core/genealogy-tree-viewer.md))
 **Matching API package:** module-genealogy-genealogy-tree-viewer-api ([contract](../api/genealogy-tree-viewer.md))

@@ -1,12 +1,16 @@
 # CMS: Cms Extension Marketplace Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-extension-marketplace). Observed identity: [`liberusoftware/module-cms-extension-marketplace-filament`](../../../modules/source/liberusoftware--module-cms-extension-marketplace-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-cms-cms-extension-marketplace-filament`  
 **Matching domain module:** `cms-extension-marketplace`  
 **Application:** CMS  
 **Source feature:** [Cms Extension Marketplace](../features/cms-extension-marketplace.md)  
-**Architecture:** [FILAMENT.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

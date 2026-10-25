@@ -1,8 +1,12 @@
 # Accounting: Accounting Anomaly Detection Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-anomaly-detection). Observed identity: [`liberusoftware/module-accounting-anomaly-detection`](../../../modules/source/liberusoftware--module-accounting-anomaly-detection.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-anomaly-detection`
+**Design package identifier:** `module-accounting-accounting-anomaly-detection`
 **Domain specification:** [Accounting Anomaly Detection](../features/accounting-anomaly-detection.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

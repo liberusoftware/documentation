@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:finance:post:request:v1",
+  "title": "Finance: proposed post request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "approval_reference",
+    "source_operation_key"
+  ],
+  "properties": {
+    "approval_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_operation_key": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

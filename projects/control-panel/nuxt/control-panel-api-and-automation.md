@@ -1,12 +1,16 @@
 # Control Panel: Control Panel Api And Automation Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-api-and-automation). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-control-panel-control-panel-api-and-automation-nuxt`
 **Matching domain module:** `control-panel-api-and-automation`
 **Application:** Control Panel
 **Source feature:** [Control Panel Api And Automation](../features/control-panel-api-and-automation.md)
-**Architecture:** [NUXT.md](../CONTROL-PANEL.md) · [API.md](../CONTROL-PANEL.md) · [Matching API module](../api/control-panel-api-and-automation.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/control-panel-api-and-automation.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

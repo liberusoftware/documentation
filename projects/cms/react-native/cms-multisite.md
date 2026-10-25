@@ -1,5 +1,9 @@
 # Cms Multisite React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-multisite). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-multisite-react-native
 **Matching core package:** module-cms-cms-multisite ([implementation](../core/cms-multisite.md))
 **Matching API package:** module-cms-cms-multisite-api ([contract](../api/cms-multisite.md))

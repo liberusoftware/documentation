@@ -1,25 +1,31 @@
 # Sap React 19.2 + Inertia 3 Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **16 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 **Source:** [SAP.md](../SAP.md)
-**Architecture:** [REACT.md](../SAP.md) · [API module index](../api/README.md) · [MODULES.md](../SAP.md) · [TESTING.md](../SAP.md)
+**Architecture:** [REACT.md](../../../standards/REACT.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 Each file defines the optional `React 19.2 + Inertia 3` presentation package for exactly one matching domain module.
 
 ## Module plan
 
-- [Enterprise Foundation React + Inertia](enterprise-foundation.md) — `module-sap-enterprise-foundation-react-inertia`
-- [Finance React + Inertia](finance.md) — `module-sap-finance-react-inertia`
-- [Controlling React + Inertia](controlling.md) — `module-sap-controlling-react-inertia`
-- [Sales and CRM React + Inertia](sales-and-crm.md) — `module-sap-sales-and-crm-react-inertia`
-- [Revenue Operations React + Inertia](revenue-operations.md) — `module-sap-revenue-operations-react-inertia`
-- [Procurement React + Inertia](procurement.md) — `module-sap-procurement-react-inertia`
-- [Inventory and Logistics React + Inertia](inventory-and-logistics.md) — `module-sap-inventory-and-logistics-react-inertia`
-- [Projects and Services React + Inertia](projects-and-services.md) — `module-sap-projects-and-services-react-inertia`
-- [Service Management React + Inertia](service-management.md) — `module-sap-service-management-react-inertia`
-- [Hosting and Cloud React + Inertia](hosting-and-cloud.md) — `module-sap-hosting-and-cloud-react-inertia`
-- [Product and Engineering React + Inertia](product-and-engineering.md) — `module-sap-product-and-engineering-react-inertia`
-- [People React + Inertia](people.md) — `module-sap-people-react-inertia`
-- [Assets and Facilities React + Inertia](assets-and-facilities.md) — `module-sap-assets-and-facilities-react-inertia`
-- [Governance, Risk and Compliance React + Inertia](governance-risk-and-compliance.md) — `module-sap-governance-risk-and-compliance-react-inertia`
-- [Partners and Portals React + Inertia](partners-and-portals.md) — `module-sap-partners-and-portals-react-inertia`
-- [Data and Intelligence React + Inertia](data-and-intelligence.md) — `module-sap-data-and-intelligence-react-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [React + Inertia design](assets-and-facilities.md) | [Target/source map](../SOURCE-MAPPING.md#assets-and-facilities) | [core](../core/assets-and-facilities.md) · [api](../api/assets-and-facilities.md) · [nextjs](../nextjs/assets-and-facilities.md) |
+| [React + Inertia design](controlling.md) | [Target/source map](../SOURCE-MAPPING.md#controlling) | [core](../core/controlling.md) · [api](../api/controlling.md) · [nextjs](../nextjs/controlling.md) |
+| [React + Inertia design](data-and-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#data-and-intelligence) | [core](../core/data-and-intelligence.md) · [api](../api/data-and-intelligence.md) · [nextjs](../nextjs/data-and-intelligence.md) |
+| [React + Inertia design](enterprise-foundation.md) | [Target/source map](../SOURCE-MAPPING.md#enterprise-foundation) | [core](../core/enterprise-foundation.md) · [api](../api/enterprise-foundation.md) · [nextjs](../nextjs/enterprise-foundation.md) |
+| [React + Inertia design](finance.md) | [Target/source map](../SOURCE-MAPPING.md#finance) | [core](../core/finance.md) · [api](../api/finance.md) · [nextjs](../nextjs/finance.md) |
+| [React + Inertia design](governance-risk-and-compliance.md) | [Target/source map](../SOURCE-MAPPING.md#governance-risk-and-compliance) | [core](../core/governance-risk-and-compliance.md) · [api](../api/governance-risk-and-compliance.md) · [nextjs](../nextjs/governance-risk-and-compliance.md) |
+| [React + Inertia design](hosting-and-cloud.md) | [Target/source map](../SOURCE-MAPPING.md#hosting-and-cloud) | [core](../core/hosting-and-cloud.md) · [api](../api/hosting-and-cloud.md) · [nextjs](../nextjs/hosting-and-cloud.md) |
+| [React + Inertia design](inventory-and-logistics.md) | [Target/source map](../SOURCE-MAPPING.md#inventory-and-logistics) | [core](../core/inventory-and-logistics.md) · [api](../api/inventory-and-logistics.md) · [nextjs](../nextjs/inventory-and-logistics.md) |
+| [React + Inertia design](partners-and-portals.md) | [Target/source map](../SOURCE-MAPPING.md#partners-and-portals) | [core](../core/partners-and-portals.md) · [api](../api/partners-and-portals.md) · [nextjs](../nextjs/partners-and-portals.md) |
+| [React + Inertia design](people.md) | [Target/source map](../SOURCE-MAPPING.md#people) | [core](../core/people.md) · [api](../api/people.md) · [nextjs](../nextjs/people.md) |
+| [React + Inertia design](procurement.md) | [Target/source map](../SOURCE-MAPPING.md#procurement) | [core](../core/procurement.md) · [api](../api/procurement.md) · [nextjs](../nextjs/procurement.md) |
+| [React + Inertia design](product-and-engineering.md) | [Target/source map](../SOURCE-MAPPING.md#product-and-engineering) | [core](../core/product-and-engineering.md) · [api](../api/product-and-engineering.md) · [nextjs](../nextjs/product-and-engineering.md) |
+| [React + Inertia design](projects-and-services.md) | [Target/source map](../SOURCE-MAPPING.md#projects-and-services) | [core](../core/projects-and-services.md) · [api](../api/projects-and-services.md) · [nextjs](../nextjs/projects-and-services.md) |
+| [React + Inertia design](revenue-operations.md) | [Target/source map](../SOURCE-MAPPING.md#revenue-operations) | [core](../core/revenue-operations.md) · [api](../api/revenue-operations.md) · [nextjs](../nextjs/revenue-operations.md) |
+| [React + Inertia design](sales-and-crm.md) | [Target/source map](../SOURCE-MAPPING.md#sales-and-crm) | [core](../core/sales-and-crm.md) · [api](../api/sales-and-crm.md) · [nextjs](../nextjs/sales-and-crm.md) |
+| [React + Inertia design](service-management.md) | [Target/source map](../SOURCE-MAPPING.md#service-management) | [core](../core/service-management.md) · [api](../api/service-management.md) · [nextjs](../nextjs/service-management.md) |

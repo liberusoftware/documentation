@@ -1,5 +1,9 @@
 # Client Onboarding Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#client-onboarding). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-client-onboarding-flutter
 **Matching core package:** module-crm-client-onboarding ([implementation](../core/client-onboarding.md))
 **Matching API package:** module-crm-client-onboarding-api ([contract](../api/client-onboarding.md))

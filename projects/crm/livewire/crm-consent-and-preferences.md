@@ -1,12 +1,16 @@
 # CRM: Crm Consent And Preferences Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-consent-and-preferences). Observed identity: [`liberusoftware/module-crm-consent-and-preferences-livewire`](../../../modules/source/liberusoftware--module-crm-consent-and-preferences-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-crm-consent-and-preferences-livewire`  
 **Matching domain module:** `crm-consent-and-preferences`  
 **Application:** CRM  
 **Source feature:** [Crm Consent And Preferences](../features/crm-consent-and-preferences.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

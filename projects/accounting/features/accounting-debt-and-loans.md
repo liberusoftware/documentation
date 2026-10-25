@@ -1,12 +1,16 @@
 # Accounting: Accounting Debt And Loans
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-debt-and-loans). Observed identity: [`liberusoftware/module-accounting-debt-and-loans`](../../../modules/source/liberusoftware--module-accounting-debt-and-loans.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-accounting-accounting-debt-and-loans`
 **Application:** Accounting  
 **Capability group:** Accounting Debt And Loans  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  
-**Architecture:** [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md) · [API.md](../ACCOUNTING.md) · [FILAMENT.md](../ACCOUNTING.md) · [LIVEWIRE.md](../ACCOUNTING.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

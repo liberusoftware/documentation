@@ -1,5 +1,9 @@
 # Multi Tender Payments React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#multi-tender-payments). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-multi-tender-payments-react-native
 **Matching core package:** module-ecommerce-multi-tender-payments ([implementation](../core/multi-tender-payments.md))
 **Matching API package:** module-ecommerce-multi-tender-payments-api ([contract](../api/multi-tender-payments.md))

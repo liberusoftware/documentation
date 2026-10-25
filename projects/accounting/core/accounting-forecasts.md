@@ -1,8 +1,12 @@
 # Accounting: Accounting Forecasts Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-forecasts). Observed identity: [`liberusoftware/module-accounting-forecasts`](../../../modules/source/liberusoftware--module-accounting-forecasts.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-forecasts`
+**Design package identifier:** `module-accounting-accounting-forecasts`
 **Domain specification:** [Accounting Forecasts](../features/accounting-forecasts.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

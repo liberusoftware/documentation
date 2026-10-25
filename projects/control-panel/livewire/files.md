@@ -1,12 +1,16 @@
 # Control Panel: Files Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#files). Observed identity: [`liberusoftware/module-control-panel-files-livewire`](../../../modules/source/liberusoftware--module-control-panel-files-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-control-panel-files-livewire`  
 **Matching domain module:** `control-panel-files`  
 **Application:** Control Panel  
 **Source feature:** [Files](../features/files.md)  
-**Architecture:** [LIVEWIRE.md](../CONTROL-PANEL.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

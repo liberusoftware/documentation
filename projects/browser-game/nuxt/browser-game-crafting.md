@@ -1,12 +1,16 @@
 # Browser Game: Browser Game Crafting Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#browser-game-crafting). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-browser-game-browser-game-crafting-nuxt`
 **Matching domain module:** `browser-game-crafting`
 **Application:** Browser Game
 **Source feature:** [Browser Game Crafting](../features/browser-game-crafting.md)
-**Architecture:** [NUXT.md](../BROWSER-GAME.md) · [API.md](../BROWSER-GAME.md) · [Matching API module](../api/browser-game-crafting.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/browser-game-crafting.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,6 +1,10 @@
 # Boilerplate: Identity domain packages
 
-**Composer package:** `module-identity`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#identity). Observed identity: [`liberusoftware/identity-core`](../../../modules/source/liberusoftware--identity-core.md). This retained spelling maps to `identity-core`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-identity`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Registration, authentication, logout, password recovery, verification, identity linking, and security events.
 

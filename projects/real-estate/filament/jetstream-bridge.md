@@ -1,12 +1,16 @@
 # Real Estate: Jetstream Bridge Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#jetstream-bridge). Observed identity: [`liberusoftware/jetstream-bridge-filament`](../../../modules/source/liberusoftware--jetstream-bridge-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-real-estate-jetstream-bridge-filament`  
 **Matching domain module:** `jetstream-bridge`  
 **Application:** Real Estate  
 **Source feature:** [Jetstream Bridge](../features/jetstream-bridge.md)  
-**Architecture:** [FILAMENT.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

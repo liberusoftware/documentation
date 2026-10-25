@@ -1,0 +1,86 @@
+[
+  {
+    "name": "accounting-erp-laravel",
+    "clone_url": "https://github.com/liberusoftware/accounting-erp-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "automation-laravel",
+    "clone_url": "https://github.com/liberusoftware/automation-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "billing-laravel",
+    "clone_url": "https://github.com/liberusoftware/billing-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "boilerplate-laravel",
+    "clone_url": "https://github.com/liberusoftware/boilerplate-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "browser-game-laravel",
+    "clone_url": "https://github.com/liberusoftware/browser-game-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "cms-laravel",
+    "clone_url": "https://github.com/liberusoftware/cms-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "control-panel-laravel",
+    "clone_url": "https://github.com/liberusoftware/control-panel-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "crm-laravel",
+    "clone_url": "https://github.com/liberusoftware/crm-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "ecommerce-laravel",
+    "clone_url": "https://github.com/liberusoftware/ecommerce-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "enterprise-sap-laravel",
+    "clone_url": "https://github.com/liberusoftware/enterprise-sap-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "genealogy-laravel",
+    "clone_url": "https://github.com/liberusoftware/genealogy-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "maintenance-laravel",
+    "clone_url": "https://github.com/liberusoftware/maintenance-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "real-estate-laravel",
+    "clone_url": "https://github.com/liberusoftware/real-estate-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  },
+  {
+    "name": "social-network-laravel",
+    "clone_url": "https://github.com/liberusoftware/social-network-laravel.git",
+    "default_branch": "main",
+    "archived": false
+  }
+]

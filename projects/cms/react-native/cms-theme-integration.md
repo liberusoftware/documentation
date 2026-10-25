@@ -1,5 +1,9 @@
 # Cms Theme Integration React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-theme-integration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-theme-integration-react-native
 **Matching core package:** module-cms-cms-theme-integration ([implementation](../core/cms-theme-integration.md))
 **Matching API package:** module-cms-cms-theme-integration-api ([contract](../api/cms-theme-integration.md))

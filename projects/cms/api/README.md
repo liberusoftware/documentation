@@ -1,177 +1,262 @@
 # CMS API Module Specifications
 
+<!-- catalogue-status:start -->
+This index preserves **252 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-- [Api API](api.md) — `module-cms-api-api`
-- [Cms API](cms.md) — `module-cms-cms-api`
-- [Cms Accessibility Assistant API](cms-accessibility-assistant.md) — `module-cms-cms-accessibility-assistant-api`
-- [Cms Admin API](cms-admin.md) — `module-cms-cms-admin-api`
-- [Cms Analytics Integration API](cms-analytics-integration.md) — `module-cms-cms-analytics-integration-api`
-- [Cms Audit API](cms-audit.md) — `module-cms-cms-audit-api`
-- [Cms Backup And Restore API](cms-backup-and-restore.md) — `module-cms-cms-backup-and-restore-api`
-- [Cms Block Editor API](cms-block-editor.md) — `module-cms-cms-block-editor-api`
-- [Cms Blocks API](cms-blocks.md) — `module-cms-cms-blocks-api`
-- [Cms Cache And Performance API](cms-cache-and-performance.md) — `module-cms-cms-cache-and-performance-api`
-- [Cms Collections API](cms-collections.md) — `module-cms-cms-collections-api`
-- [Cms Comments And Discussion API](cms-comments-and-discussion.md) — `module-cms-cms-comments-and-discussion-api`
-- [Cms Configuration Management API](cms-configuration-management.md) — `module-cms-cms-configuration-management-api`
-- [Cms Contact Directory API](cms-contact-directory.md) — `module-cms-cms-contact-directory-api`
-- [Cms Content API](cms-content.md) — `module-cms-cms-content-api`
-- [Cms Content Access API](cms-content-access.md) — `module-cms-cms-content-access-api`
-- [Cms Content Calendar API](cms-content-calendar.md) — `module-cms-cms-content-calendar-api`
-- [Cms Content Federation API](cms-content-federation.md) — `module-cms-cms-content-federation-api`
-- [Cms Content Governance API](cms-content-governance.md) — `module-cms-cms-content-governance-api`
-- [Cms Content Integrity API](cms-content-integrity.md) — `module-cms-cms-content-integrity-api`
-- [Cms Content Intelligence API](cms-content-intelligence.md) — `module-cms-cms-content-intelligence-api`
-- [Cms Content Locking API](cms-content-locking.md) — `module-cms-cms-content-locking-api`
-- [Cms Content Templates API](cms-content-templates.md) — `module-cms-cms-content-templates-api`
-- [Cms Content Types API](cms-content-types.md) — `module-cms-cms-content-types-api`
-- [Cms Contracts API](cms-contracts.md) — `module-cms-cms-contracts-api`
-- [Cms Copilot API](cms-copilot.md) — `module-cms-cms-copilot-api`
-- [Cms Core API](cms-core.md) — `module-cms-cms-core-api`
-- [Cms Digital Asset Management API](cms-digital-asset-management.md) — `module-cms-cms-digital-asset-management-api`
-- [Cms Display Modes API](cms-display-modes.md) — `module-cms-cms-display-modes-api`
-- [Cms Document Management API](cms-document-management.md) — `module-cms-cms-document-management-api`
-- [Cms Drupal Migration API](cms-drupal-migration.md) — `module-cms-cms-drupal-migration-api`
-- [Cms Embeds API](cms-embeds.md) — `module-cms-cms-embeds-api`
-- [Cms Events Content API](cms-events-content.md) — `module-cms-cms-events-content-api`
-- [Cms Experimentation API](cms-experimentation.md) — `module-cms-cms-experimentation-api`
-- [Cms Extension Manager API](cms-extension-manager.md) — `module-cms-cms-extension-manager-api`
-- [Cms Extension Marketplace API](cms-extension-marketplace.md) — `module-cms-cms-extension-marketplace-api`
-- [Cms Field System API](cms-field-system.md) — `module-cms-cms-field-system-api`
-- [Cms Forms API](cms-forms.md) — `module-cms-cms-forms-api`
-- [Cms Hello API](cms-hello.md) — `module-cms-cms-hello-api`
-- [Cms Integration Directory API](cms-integration-directory.md) — `module-cms-cms-integration-directory-api`
-- [Cms Joomla Migration API](cms-joomla-migration.md) — `module-cms-cms-joomla-migration-api`
-- [Cms Layout Builder API](cms-layout-builder.md) — `module-cms-cms-layout-builder-api`
-- [Cms Media API](cms-media.md) — `module-cms-cms-media-api`
-- [Cms Menus API](cms-menus.md) — `module-cms-cms-menus-api`
-- [Cms Metadata API](cms-metadata.md) — `module-cms-cms-metadata-api`
-- [Cms Migration Framework API](cms-migration-framework.md) — `module-cms-cms-migration-framework-api`
-- [Cms Multisite API](cms-multisite.md) — `module-cms-cms-multisite-api`
-- [Cms Notifications API](cms-notifications.md) — `module-cms-cms-notifications-api`
-- [Cms Notifications And Subscriptions API](cms-notifications-and-subscriptions.md) — `module-cms-cms-notifications-and-subscriptions-api`
-- [Cms Observability API](cms-observability.md) — `module-cms-cms-observability-api`
-- [Cms Offline And Pwa API](cms-offline-and-pwa.md) — `module-cms-cms-offline-and-pwa-api`
-- [Cms Pages API](cms-pages.md) — `module-cms-cms-pages-api`
-- [Cms Personalization API](cms-personalization.md) — `module-cms-cms-personalization-api`
-- [Cms Polls And Surveys API](cms-polls-and-surveys.md) — `module-cms-cms-polls-and-surveys-api`
-- [Cms Posts API](cms-posts.md) — `module-cms-cms-posts-api`
-- [Cms Publishing API](cms-publishing.md) — `module-cms-cms-publishing-api`
-- [Cms Recommendations API](cms-recommendations.md) — `module-cms-cms-recommendations-api`
-- [Cms Redirects API](cms-redirects.md) — `module-cms-cms-redirects-api`
-- [Cms Regions And Widgets API](cms-regions-and-widgets.md) — `module-cms-cms-regions-and-widgets-api`
-- [Cms Related Content API](cms-related-content.md) — `module-cms-cms-related-content-api`
-- [Cms Revisions API](cms-revisions.md) — `module-cms-cms-revisions-api`
-- [Cms Rich Text Editor API](cms-rich-text-editor.md) — `module-cms-cms-rich-text-editor-api`
-- [Cms Search API](cms-search.md) — `module-cms-cms-search-api`
-- [Cms Security Operations API](cms-security-operations.md) — `module-cms-cms-security-operations-api`
-- [Cms Seo API](cms-seo.md) — `module-cms-cms-seo-api`
-- [Cms Site Factory API](cms-site-factory.md) — `module-cms-cms-site-factory-api`
-- [Cms Site Recipes API](cms-site-recipes.md) — `module-cms-cms-site-recipes-api`
-- [Cms Sitemaps API](cms-sitemaps.md) — `module-cms-cms-sitemaps-api`
-- [Cms Static Publishing API](cms-static-publishing.md) — `module-cms-cms-static-publishing-api`
-- [Cms Structured Collections API](cms-structured-collections.md) — `module-cms-cms-structured-collections-api`
-- [Cms Syndication And Feeds API](cms-syndication-and-feeds.md) — `module-cms-cms-syndication-and-feeds-api`
-- [Cms Taxonomy API](cms-taxonomy.md) — `module-cms-cms-taxonomy-api`
-- [Cms Theme Integration API](cms-theme-integration.md) — `module-cms-cms-theme-integration-api`
-- [Cms Theme Marketplace API](cms-theme-marketplace.md) — `module-cms-cms-theme-marketplace-api`
-- [Cms Themes API](cms-themes.md) — `module-cms-cms-themes-api`
-- [Cms Translation Assistant API](cms-translation-assistant.md) — `module-cms-cms-translation-assistant-api`
-- [Cms Translation Management API](cms-translation-management.md) — `module-cms-cms-translation-management-api`
-- [Cms Users API](cms-users.md) — `module-cms-cms-users-api`
-- [Cms Video And Audio API](cms-video-and-audio.md) — `module-cms-cms-video-and-audio-api`
-- [Cms Views And Query Builder API](cms-views-and-query-builder.md) — `module-cms-cms-views-and-query-builder-api`
-- [Cms Web Delivery API](cms-web-delivery.md) — `module-cms-cms-web-delivery-api`
-- [Cms Widgets API](cms-widgets.md) — `module-cms-cms-widgets-api`
-- [Cms Wordpress Migration API](cms-wordpress-migration.md) — `module-cms-cms-wordpress-migration-api`
-- [Core API](core.md) — `module-cms-core-api`
-- [Features API](features.md) — `module-cms-features-api`
-- [Filament API](filament.md) — `module-cms-filament-api`
-- [Livewire API](livewire.md) — `module-cms-livewire-api`
-- [Module Cms API](module-cms.md) — `module-cms-module-cms-api`
-- [Module Cms Accessibility Assistant API](module-cms-accessibility-assistant.md) — `module-cms-module-cms-accessibility-assistant-api`
-- [Module Cms Admin API](module-cms-admin.md) — `module-cms-module-cms-admin-api`
-- [Module Cms Analytics Integration API](module-cms-analytics-integration.md) — `module-cms-module-cms-analytics-integration-api`
-- [Module Cms Audit API](module-cms-audit.md) — `module-cms-module-cms-audit-api`
-- [Module Cms Backup And Restore API](module-cms-backup-and-restore.md) — `module-cms-module-cms-backup-and-restore-api`
-- [Module Cms Block Editor API](module-cms-block-editor.md) — `module-cms-module-cms-block-editor-api`
-- [Module Cms Blocks API](module-cms-blocks.md) — `module-cms-module-cms-blocks-api`
-- [Module Cms Cache And Performance API](module-cms-cache-and-performance.md) — `module-cms-module-cms-cache-and-performance-api`
-- [Module Cms Cms Copilot API](module-cms-cms-copilot.md) — `module-cms-module-cms-cms-copilot-api`
-- [Module Cms Collections API](module-cms-collections.md) — `module-cms-module-cms-collections-api`
-- [Module Cms Comments And Discussion API](module-cms-comments-and-discussion.md) — `module-cms-module-cms-comments-and-discussion-api`
-- [Module Cms Configuration Management API](module-cms-configuration-management.md) — `module-cms-module-cms-configuration-management-api`
-- [Module Cms Contact Directory API](module-cms-contact-directory.md) — `module-cms-module-cms-contact-directory-api`
-- [Module Cms Content API](module-cms-content.md) — `module-cms-module-cms-content-api`
-- [Module Cms Content Access API](module-cms-content-access.md) — `module-cms-module-cms-content-access-api`
-- [Module Cms Content Calendar API](module-cms-content-calendar.md) — `module-cms-module-cms-content-calendar-api`
-- [Module Cms Content Entities API](module-cms-content-entities.md) — `module-cms-module-cms-content-entities-api`
-- [Module Cms Content Federation API](module-cms-content-federation.md) — `module-cms-module-cms-content-federation-api`
-- [Module Cms Content Governance API](module-cms-content-governance.md) — `module-cms-module-cms-content-governance-api`
-- [Module Cms Content Integrity API](module-cms-content-integrity.md) — `module-cms-module-cms-content-integrity-api`
-- [Module Cms Content Intelligence API](module-cms-content-intelligence.md) — `module-cms-module-cms-content-intelligence-api`
-- [Module Cms Content Locking API](module-cms-content-locking.md) — `module-cms-module-cms-content-locking-api`
-- [Module Cms Content Search API](module-cms-content-search.md) — `module-cms-module-cms-content-search-api`
-- [Module Cms Content Templates API](module-cms-content-templates.md) — `module-cms-module-cms-content-templates-api`
-- [Module Cms Content Types API](module-cms-content-types.md) — `module-cms-module-cms-content-types-api`
-- [Module Cms Contracts API](module-cms-contracts.md) — `module-cms-module-cms-contracts-api`
-- [Module Cms Copilot API](module-cms-copilot.md) — `module-cms-module-cms-copilot-api`
-- [Module Cms Core API](module-cms-core.md) — `module-cms-module-cms-core-api`
-- [Module Cms Digital Asset Management API](module-cms-digital-asset-management.md) — `module-cms-module-cms-digital-asset-management-api`
-- [Module Cms Display Modes API](module-cms-display-modes.md) — `module-cms-module-cms-display-modes-api`
-- [Module Cms Document Management API](module-cms-document-management.md) — `module-cms-module-cms-document-management-api`
-- [Module Cms Drupal Migration API](module-cms-drupal-migration.md) — `module-cms-module-cms-drupal-migration-api`
-- [Module Cms Embeds API](module-cms-embeds.md) — `module-cms-module-cms-embeds-api`
-- [Module Cms Events Content API](module-cms-events-content.md) — `module-cms-module-cms-events-content-api`
-- [Module Cms Experimentation API](module-cms-experimentation.md) — `module-cms-module-cms-experimentation-api`
-- [Module Cms Extension Manager API](module-cms-extension-manager.md) — `module-cms-module-cms-extension-manager-api`
-- [Module Cms Extension Marketplace API](module-cms-extension-marketplace.md) — `module-cms-module-cms-extension-marketplace-api`
-- [Module Cms Field System API](module-cms-field-system.md) — `module-cms-module-cms-field-system-api`
-- [Module Cms Forms API](module-cms-forms.md) — `module-cms-module-cms-forms-api`
-- [Module Cms Hello API](module-cms-hello.md) — `module-cms-module-cms-hello-api`
-- [Module Cms Integration Directory API](module-cms-integration-directory.md) — `module-cms-module-cms-integration-directory-api`
-- [Module Cms Joomla Migration API](module-cms-joomla-migration.md) — `module-cms-module-cms-joomla-migration-api`
-- [Module Cms Layout Builder API](module-cms-layout-builder.md) — `module-cms-module-cms-layout-builder-api`
-- [Module Cms Media API](module-cms-media.md) — `module-cms-module-cms-media-api`
-- [Module Cms Menus API](module-cms-menus.md) — `module-cms-module-cms-menus-api`
-- [Module Cms Metadata API](module-cms-metadata.md) — `module-cms-module-cms-metadata-api`
-- [Module Cms Migration Framework API](module-cms-migration-framework.md) — `module-cms-module-cms-migration-framework-api`
-- [Module Cms Multisite API](module-cms-multisite.md) — `module-cms-module-cms-multisite-api`
-- [Module Cms Navigation API](module-cms-navigation.md) — `module-cms-module-cms-navigation-api`
-- [Module Cms Notifications API](module-cms-notifications.md) — `module-cms-module-cms-notifications-api`
-- [Module Cms Notifications And Subscriptions API](module-cms-notifications-and-subscriptions.md) — `module-cms-module-cms-notifications-and-subscriptions-api`
-- [Module Cms Observability API](module-cms-observability.md) — `module-cms-module-cms-observability-api`
-- [Module Cms Offline And Pwa API](module-cms-offline-and-pwa.md) — `module-cms-module-cms-offline-and-pwa-api`
-- [Module Cms Pages API](module-cms-pages.md) — `module-cms-module-cms-pages-api`
-- [Module Cms Personalization API](module-cms-personalization.md) — `module-cms-module-cms-personalization-api`
-- [Module Cms Polls And Surveys API](module-cms-polls-and-surveys.md) — `module-cms-module-cms-polls-and-surveys-api`
-- [Module Cms Posts API](module-cms-posts.md) — `module-cms-module-cms-posts-api`
-- [Module Cms Publishing API](module-cms-publishing.md) — `module-cms-module-cms-publishing-api`
-- [Module Cms Recommendations API](module-cms-recommendations.md) — `module-cms-module-cms-recommendations-api`
-- [Module Cms Redirects API](module-cms-redirects.md) — `module-cms-module-cms-redirects-api`
-- [Module Cms Regions And Widgets API](module-cms-regions-and-widgets.md) — `module-cms-module-cms-regions-and-widgets-api`
-- [Module Cms Related Content API](module-cms-related-content.md) — `module-cms-module-cms-related-content-api`
-- [Module Cms Revisions API](module-cms-revisions.md) — `module-cms-module-cms-revisions-api`
-- [Module Cms Rich Text Editor API](module-cms-rich-text-editor.md) — `module-cms-module-cms-rich-text-editor-api`
-- [Module Cms Search API](module-cms-search.md) — `module-cms-module-cms-search-api`
-- [Module Cms Security Operations API](module-cms-security-operations.md) — `module-cms-module-cms-security-operations-api`
-- [Module Cms Seo API](module-cms-seo.md) — `module-cms-module-cms-seo-api`
-- [Module Cms Site Factory API](module-cms-site-factory.md) — `module-cms-module-cms-site-factory-api`
-- [Module Cms Site Recipes API](module-cms-site-recipes.md) — `module-cms-module-cms-site-recipes-api`
-- [Module Cms Sitemaps API](module-cms-sitemaps.md) — `module-cms-module-cms-sitemaps-api`
-- [Module Cms Static Publishing API](module-cms-static-publishing.md) — `module-cms-module-cms-static-publishing-api`
-- [Module Cms Structured Collections API](module-cms-structured-collections.md) — `module-cms-module-cms-structured-collections-api`
-- [Module Cms Syndication And Feeds API](module-cms-syndication-and-feeds.md) — `module-cms-module-cms-syndication-and-feeds-api`
-- [Module Cms Taxonomy API](module-cms-taxonomy.md) — `module-cms-module-cms-taxonomy-api`
-- [Module Cms Theme Integration API](module-cms-theme-integration.md) — `module-cms-module-cms-theme-integration-api`
-- [Module Cms Theme Marketplace API](module-cms-theme-marketplace.md) — `module-cms-module-cms-theme-marketplace-api`
-- [Module Cms Themes API](module-cms-themes.md) — `module-cms-module-cms-themes-api`
-- [Module Cms Translation Assistant API](module-cms-translation-assistant.md) — `module-cms-module-cms-translation-assistant-api`
-- [Module Cms Translation Management API](module-cms-translation-management.md) — `module-cms-module-cms-translation-management-api`
-- [Module Cms Users API](module-cms-users.md) — `module-cms-module-cms-users-api`
-- [Module Cms Video And Audio API](module-cms-video-and-audio.md) — `module-cms-module-cms-video-and-audio-api`
-- [Module Cms Views And Query Builder API](module-cms-views-and-query-builder.md) — `module-cms-module-cms-views-and-query-builder-api`
-- [Module Cms Web Delivery API](module-cms-web-delivery.md) — `module-cms-module-cms-web-delivery-api`
-- [Module Cms Widgets API](module-cms-widgets.md) — `module-cms-module-cms-widgets-api`
-- [Module Cms Wordpress Migration API](module-cms-wordpress-migration.md) — `module-cms-module-cms-wordpress-migration-api`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Accessibility Assistant API](accessibility-assistant.md) | [liberusoftware/module-cms-accessibility-assistant-api](../../../modules/source/liberusoftware--module-cms-accessibility-assistant-api.md) | [core](../core/accessibility-assistant.md) · [nextjs](../nextjs/accessibility-assistant.md) |
+| [Analytics Integration API](analytics-integration.md) | [liberusoftware/module-cms-analytics-integration-api](../../../modules/source/liberusoftware--module-cms-analytics-integration-api.md) | [core](../core/analytics-integration.md) · [nextjs](../nextjs/analytics-integration.md) |
+| [Api API](api.md) | [Target/source map](../SOURCE-MAPPING.md#api) | [core](../core/api.md) · [nextjs](../nextjs/api.md) |
+| [Audit and History API](audit-and-history.md) | [Target/source map](../SOURCE-MAPPING.md#audit-and-history) | [core](../core/audit-and-history.md) · [nextjs](../nextjs/audit-and-history.md) |
+| [Backup and Restore API](backup-and-restore.md) | [liberusoftware/module-cms-backup-and-restore-api](../../../modules/source/liberusoftware--module-cms-backup-and-restore-api.md) | [core](../core/backup-and-restore.md) · [nextjs](../nextjs/backup-and-restore.md) |
+| [Block Editor API](block-editor.md) | [liberusoftware/module-cms-block-editor-api](../../../modules/source/liberusoftware--module-cms-block-editor-api.md) | [core](../core/block-editor.md) · [nextjs](../nextjs/block-editor.md) |
+| [Cache and Performance API](cache-and-performance.md) | [liberusoftware/module-cms-cache-and-performance-api](../../../modules/source/liberusoftware--module-cms-cache-and-performance-api.md) | [core](../core/cache-and-performance.md) · [nextjs](../nextjs/cache-and-performance.md) |
+| [Cms Accessibility Assistant API](cms-accessibility-assistant.md) | [liberusoftware/module-cms-accessibility-assistant-api](../../../modules/source/liberusoftware--module-cms-accessibility-assistant-api.md) | [core](../core/cms-accessibility-assistant.md) · [nextjs](../nextjs/cms-accessibility-assistant.md) |
+| [Cms Admin API](cms-admin.md) | [Target/source map](../SOURCE-MAPPING.md#cms-admin) | [core](../core/cms-admin.md) · [nextjs](../nextjs/cms-admin.md) |
+| [Cms Analytics Integration API](cms-analytics-integration.md) | [liberusoftware/module-cms-analytics-integration-api](../../../modules/source/liberusoftware--module-cms-analytics-integration-api.md) | [core](../core/cms-analytics-integration.md) · [nextjs](../nextjs/cms-analytics-integration.md) |
+| [Cms Audit API](cms-audit.md) | [Target/source map](../SOURCE-MAPPING.md#cms-audit) | [core](../core/cms-audit.md) · [nextjs](../nextjs/cms-audit.md) |
+| [Cms Backup And Restore API](cms-backup-and-restore.md) | [liberusoftware/module-cms-backup-and-restore-api](../../../modules/source/liberusoftware--module-cms-backup-and-restore-api.md) | [core](../core/cms-backup-and-restore.md) · [nextjs](../nextjs/cms-backup-and-restore.md) |
+| [Cms Block Editor API](cms-block-editor.md) | [liberusoftware/module-cms-block-editor-api](../../../modules/source/liberusoftware--module-cms-block-editor-api.md) | [core](../core/cms-block-editor.md) · [nextjs](../nextjs/cms-block-editor.md) |
+| [Cms Blocks API](cms-blocks.md) | [Target/source map](../SOURCE-MAPPING.md#cms-blocks) | [core](../core/cms-blocks.md) · [nextjs](../nextjs/cms-blocks.md) |
+| [Cms Cache And Performance API](cms-cache-and-performance.md) | [liberusoftware/module-cms-cache-and-performance-api](../../../modules/source/liberusoftware--module-cms-cache-and-performance-api.md) | [core](../core/cms-cache-and-performance.md) · [nextjs](../nextjs/cms-cache-and-performance.md) |
+| [Cms Collections API](cms-collections.md) | [Target/source map](../SOURCE-MAPPING.md#cms-collections) | [core](../core/cms-collections.md) · [nextjs](../nextjs/cms-collections.md) |
+| [Cms Comments And Discussion API](cms-comments-and-discussion.md) | [liberusoftware/module-cms-comments-and-discussion-api](../../../modules/source/liberusoftware--module-cms-comments-and-discussion-api.md) | [core](../core/cms-comments-and-discussion.md) · [nextjs](../nextjs/cms-comments-and-discussion.md) |
+| [Cms Configuration Management API](cms-configuration-management.md) | [liberusoftware/module-cms-configuration-management-api](../../../modules/source/liberusoftware--module-cms-configuration-management-api.md) | [core](../core/cms-configuration-management.md) · [nextjs](../nextjs/cms-configuration-management.md) |
+| [Cms Contact Directory API](cms-contact-directory.md) | [liberusoftware/module-cms-contact-directory-api](../../../modules/source/liberusoftware--module-cms-contact-directory-api.md) | [core](../core/cms-contact-directory.md) · [nextjs](../nextjs/cms-contact-directory.md) |
+| [Cms Content Access API](cms-content-access.md) | [liberusoftware/module-cms-content-access-api](../../../modules/source/liberusoftware--module-cms-content-access-api.md) | [core](../core/cms-content-access.md) · [nextjs](../nextjs/cms-content-access.md) |
+| [Cms Content Calendar API](cms-content-calendar.md) | [liberusoftware/module-cms-content-calendar-api](../../../modules/source/liberusoftware--module-cms-content-calendar-api.md) | [core](../core/cms-content-calendar.md) · [nextjs](../nextjs/cms-content-calendar.md) |
+| [Cms Content Federation API](cms-content-federation.md) | [liberusoftware/module-cms-content-federation-api](../../../modules/source/liberusoftware--module-cms-content-federation-api.md) | [core](../core/cms-content-federation.md) · [nextjs](../nextjs/cms-content-federation.md) |
+| [Cms Content Governance API](cms-content-governance.md) | [liberusoftware/module-cms-content-governance-api](../../../modules/source/liberusoftware--module-cms-content-governance-api.md) | [core](../core/cms-content-governance.md) · [nextjs](../nextjs/cms-content-governance.md) |
+| [Cms Content Integrity API](cms-content-integrity.md) | [liberusoftware/module-cms-content-integrity-api](../../../modules/source/liberusoftware--module-cms-content-integrity-api.md) | [core](../core/cms-content-integrity.md) · [nextjs](../nextjs/cms-content-integrity.md) |
+| [Cms Content Intelligence API](cms-content-intelligence.md) | [liberusoftware/module-cms-content-intelligence-api](../../../modules/source/liberusoftware--module-cms-content-intelligence-api.md) | [core](../core/cms-content-intelligence.md) · [nextjs](../nextjs/cms-content-intelligence.md) |
+| [Cms Content Locking API](cms-content-locking.md) | [liberusoftware/module-cms-content-locking-api](../../../modules/source/liberusoftware--module-cms-content-locking-api.md) | [core](../core/cms-content-locking.md) · [nextjs](../nextjs/cms-content-locking.md) |
+| [Cms Content Templates API](cms-content-templates.md) | [liberusoftware/module-cms-content-templates-api](../../../modules/source/liberusoftware--module-cms-content-templates-api.md) | [core](../core/cms-content-templates.md) · [nextjs](../nextjs/cms-content-templates.md) |
+| [Cms Content Types API](cms-content-types.md) | [Target/source map](../SOURCE-MAPPING.md#cms-content-types) | [core](../core/cms-content-types.md) · [nextjs](../nextjs/cms-content-types.md) |
+| [Cms Content API](cms-content.md) | [Target/source map](../SOURCE-MAPPING.md#cms-content) | [core](../core/cms-content.md) · [nextjs](../nextjs/cms-content.md) |
+| [Cms Contracts API](cms-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#cms-contracts) | [core](../core/cms-contracts.md) · [nextjs](../nextjs/cms-contracts.md) |
+| [CMS Copilot API](cms-copilot.md) | [liberusoftware/module-cms-copilot-api](../../../modules/source/liberusoftware--module-cms-copilot-api.md) | [core](../core/cms-copilot.md) · [nextjs](../nextjs/cms-copilot.md) |
+| [CMS Core API](cms-core.md) | [liberusoftware/module-cms-core-api](../../../modules/source/liberusoftware--module-cms-core-api.md) | [core](../core/cms-core.md) · [nextjs](../nextjs/cms-core.md) |
+| [Cms Digital Asset Management API](cms-digital-asset-management.md) | [liberusoftware/module-cms-digital-asset-management-api](../../../modules/source/liberusoftware--module-cms-digital-asset-management-api.md) | [core](../core/cms-digital-asset-management.md) · [nextjs](../nextjs/cms-digital-asset-management.md) |
+| [Cms Display Modes API](cms-display-modes.md) | [liberusoftware/module-cms-display-modes-api](../../../modules/source/liberusoftware--module-cms-display-modes-api.md) | [core](../core/cms-display-modes.md) · [nextjs](../nextjs/cms-display-modes.md) |
+| [Cms Document Management API](cms-document-management.md) | [liberusoftware/module-cms-document-management-api](../../../modules/source/liberusoftware--module-cms-document-management-api.md) | [core](../core/cms-document-management.md) · [nextjs](../nextjs/cms-document-management.md) |
+| [Cms Drupal Migration API](cms-drupal-migration.md) | [liberusoftware/module-cms-drupal-migration-api](../../../modules/source/liberusoftware--module-cms-drupal-migration-api.md) | [core](../core/cms-drupal-migration.md) · [nextjs](../nextjs/cms-drupal-migration.md) |
+| [Cms Embeds API](cms-embeds.md) | [liberusoftware/module-cms-embeds-api](../../../modules/source/liberusoftware--module-cms-embeds-api.md) | [core](../core/cms-embeds.md) · [nextjs](../nextjs/cms-embeds.md) |
+| [Cms Events Content API](cms-events-content.md) | [liberusoftware/module-cms-events-content-api](../../../modules/source/liberusoftware--module-cms-events-content-api.md) | [core](../core/cms-events-content.md) · [nextjs](../nextjs/cms-events-content.md) |
+| [Cms Experimentation API](cms-experimentation.md) | [liberusoftware/module-cms-experimentation-api](../../../modules/source/liberusoftware--module-cms-experimentation-api.md) | [core](../core/cms-experimentation.md) · [nextjs](../nextjs/cms-experimentation.md) |
+| [Cms Extension Manager API](cms-extension-manager.md) | [liberusoftware/module-cms-extension-manager-api](../../../modules/source/liberusoftware--module-cms-extension-manager-api.md) | [core](../core/cms-extension-manager.md) · [nextjs](../nextjs/cms-extension-manager.md) |
+| [Cms Extension Marketplace API](cms-extension-marketplace.md) | [liberusoftware/module-cms-extension-marketplace-api](../../../modules/source/liberusoftware--module-cms-extension-marketplace-api.md) | [core](../core/cms-extension-marketplace.md) · [nextjs](../nextjs/cms-extension-marketplace.md) |
+| [Cms Field System API](cms-field-system.md) | [liberusoftware/module-cms-field-system-api](../../../modules/source/liberusoftware--module-cms-field-system-api.md) | [core](../core/cms-field-system.md) · [nextjs](../nextjs/cms-field-system.md) |
+| [Cms Forms API](cms-forms.md) | [Target/source map](../SOURCE-MAPPING.md#cms-forms) | [core](../core/cms-forms.md) · [nextjs](../nextjs/cms-forms.md) |
+| [Cms Hello API](cms-hello.md) | [Target/source map](../SOURCE-MAPPING.md#cms-hello) | [core](../core/cms-hello.md) · [nextjs](../nextjs/cms-hello.md) |
+| [Cms Integration Directory API](cms-integration-directory.md) | [liberusoftware/module-cms-integration-directory-api](../../../modules/source/liberusoftware--module-cms-integration-directory-api.md) | [core](../core/cms-integration-directory.md) · [nextjs](../nextjs/cms-integration-directory.md) |
+| [Cms Joomla Migration API](cms-joomla-migration.md) | [liberusoftware/module-cms-joomla-migration-api](../../../modules/source/liberusoftware--module-cms-joomla-migration-api.md) | [core](../core/cms-joomla-migration.md) · [nextjs](../nextjs/cms-joomla-migration.md) |
+| [Cms Layout Builder API](cms-layout-builder.md) | [liberusoftware/module-cms-layout-builder-api](../../../modules/source/liberusoftware--module-cms-layout-builder-api.md) | [core](../core/cms-layout-builder.md) · [nextjs](../nextjs/cms-layout-builder.md) |
+| [Cms Media API](cms-media.md) | [Target/source map](../SOURCE-MAPPING.md#cms-media) | [core](../core/cms-media.md) · [nextjs](../nextjs/cms-media.md) |
+| [Cms Menus API](cms-menus.md) | [Target/source map](../SOURCE-MAPPING.md#cms-menus) | [core](../core/cms-menus.md) · [nextjs](../nextjs/cms-menus.md) |
+| [Cms Metadata API](cms-metadata.md) | [liberusoftware/module-cms-metadata-api](../../../modules/source/liberusoftware--module-cms-metadata-api.md) | [core](../core/cms-metadata.md) · [nextjs](../nextjs/cms-metadata.md) |
+| [Cms Migration Framework API](cms-migration-framework.md) | [liberusoftware/module-cms-migration-framework-api](../../../modules/source/liberusoftware--module-cms-migration-framework-api.md) | [core](../core/cms-migration-framework.md) · [nextjs](../nextjs/cms-migration-framework.md) |
+| [Cms Multisite API](cms-multisite.md) | [liberusoftware/module-cms-multisite-api](../../../modules/source/liberusoftware--module-cms-multisite-api.md) | [core](../core/cms-multisite.md) · [nextjs](../nextjs/cms-multisite.md) |
+| [Cms Notifications And Subscriptions API](cms-notifications-and-subscriptions.md) | [liberusoftware/module-cms-notifications-and-subscriptions-api](../../../modules/source/liberusoftware--module-cms-notifications-and-subscriptions-api.md) | [core](../core/cms-notifications-and-subscriptions.md) · [nextjs](../nextjs/cms-notifications-and-subscriptions.md) |
+| [Cms Notifications API](cms-notifications.md) | [Target/source map](../SOURCE-MAPPING.md#cms-notifications) | [core](../core/cms-notifications.md) · [nextjs](../nextjs/cms-notifications.md) |
+| [Cms Observability API](cms-observability.md) | [Target/source map](../SOURCE-MAPPING.md#cms-observability) | [core](../core/cms-observability.md) · [nextjs](../nextjs/cms-observability.md) |
+| [Cms Offline And Pwa API](cms-offline-and-pwa.md) | [liberusoftware/module-cms-offline-and-pwa-api](../../../modules/source/liberusoftware--module-cms-offline-and-pwa-api.md) | [core](../core/cms-offline-and-pwa.md) · [nextjs](../nextjs/cms-offline-and-pwa.md) |
+| [Cms Pages API](cms-pages.md) | [liberusoftware/module-cms-pages-api](../../../modules/source/liberusoftware--module-cms-pages-api.md) | [core](../core/cms-pages.md) · [nextjs](../nextjs/cms-pages.md) |
+| [Cms Personalization API](cms-personalization.md) | [liberusoftware/module-cms-personalization-api](../../../modules/source/liberusoftware--module-cms-personalization-api.md) | [core](../core/cms-personalization.md) · [nextjs](../nextjs/cms-personalization.md) |
+| [Cms Polls And Surveys API](cms-polls-and-surveys.md) | [liberusoftware/module-cms-polls-and-surveys-api](../../../modules/source/liberusoftware--module-cms-polls-and-surveys-api.md) | [core](../core/cms-polls-and-surveys.md) · [nextjs](../nextjs/cms-polls-and-surveys.md) |
+| [Cms Posts API](cms-posts.md) | [Target/source map](../SOURCE-MAPPING.md#cms-posts) | [core](../core/cms-posts.md) · [nextjs](../nextjs/cms-posts.md) |
+| [Cms Publishing API](cms-publishing.md) | [liberusoftware/module-cms-publishing-api](../../../modules/source/liberusoftware--module-cms-publishing-api.md) | [core](../core/cms-publishing.md) · [nextjs](../nextjs/cms-publishing.md) |
+| [Cms Recommendations API](cms-recommendations.md) | [liberusoftware/module-cms-recommendations-api](../../../modules/source/liberusoftware--module-cms-recommendations-api.md) | [core](../core/cms-recommendations.md) · [nextjs](../nextjs/cms-recommendations.md) |
+| [Cms Redirects API](cms-redirects.md) | [liberusoftware/module-cms-redirects-api](../../../modules/source/liberusoftware--module-cms-redirects-api.md) | [core](../core/cms-redirects.md) · [nextjs](../nextjs/cms-redirects.md) |
+| [Cms Regions And Widgets API](cms-regions-and-widgets.md) | [liberusoftware/module-cms-regions-and-widgets-api](../../../modules/source/liberusoftware--module-cms-regions-and-widgets-api.md) | [core](../core/cms-regions-and-widgets.md) · [nextjs](../nextjs/cms-regions-and-widgets.md) |
+| [Cms Related Content API](cms-related-content.md) | [liberusoftware/module-cms-related-content-api](../../../modules/source/liberusoftware--module-cms-related-content-api.md) | [core](../core/cms-related-content.md) · [nextjs](../nextjs/cms-related-content.md) |
+| [Cms Revisions API](cms-revisions.md) | [liberusoftware/module-cms-revisions-api](../../../modules/source/liberusoftware--module-cms-revisions-api.md) | [core](../core/cms-revisions.md) · [nextjs](../nextjs/cms-revisions.md) |
+| [Cms Rich Text Editor API](cms-rich-text-editor.md) | [liberusoftware/module-cms-rich-text-editor-api](../../../modules/source/liberusoftware--module-cms-rich-text-editor-api.md) | [core](../core/cms-rich-text-editor.md) · [nextjs](../nextjs/cms-rich-text-editor.md) |
+| [Cms Search API](cms-search.md) | [Target/source map](../SOURCE-MAPPING.md#cms-search) | [core](../core/cms-search.md) · [nextjs](../nextjs/cms-search.md) |
+| [Cms Security Operations API](cms-security-operations.md) | [liberusoftware/module-cms-security-operations-api](../../../modules/source/liberusoftware--module-cms-security-operations-api.md) | [core](../core/cms-security-operations.md) · [nextjs](../nextjs/cms-security-operations.md) |
+| [Cms Seo API](cms-seo.md) | [liberusoftware/module-cms-seo-api](../../../modules/source/liberusoftware--module-cms-seo-api.md) | [core](../core/cms-seo.md) · [nextjs](../nextjs/cms-seo.md) |
+| [Cms Site Factory API](cms-site-factory.md) | [liberusoftware/module-cms-site-factory-api](../../../modules/source/liberusoftware--module-cms-site-factory-api.md) | [core](../core/cms-site-factory.md) · [nextjs](../nextjs/cms-site-factory.md) |
+| [Cms Site Recipes API](cms-site-recipes.md) | [liberusoftware/module-cms-site-recipes-api](../../../modules/source/liberusoftware--module-cms-site-recipes-api.md) | [core](../core/cms-site-recipes.md) · [nextjs](../nextjs/cms-site-recipes.md) |
+| [Cms Sitemaps API](cms-sitemaps.md) | [liberusoftware/module-cms-sitemaps-api](../../../modules/source/liberusoftware--module-cms-sitemaps-api.md) | [core](../core/cms-sitemaps.md) · [nextjs](../nextjs/cms-sitemaps.md) |
+| [Cms Static Publishing API](cms-static-publishing.md) | [liberusoftware/module-cms-static-publishing-api](../../../modules/source/liberusoftware--module-cms-static-publishing-api.md) | [core](../core/cms-static-publishing.md) · [nextjs](../nextjs/cms-static-publishing.md) |
+| [Cms Structured Collections API](cms-structured-collections.md) | [liberusoftware/module-cms-structured-collections-api](../../../modules/source/liberusoftware--module-cms-structured-collections-api.md) | [core](../core/cms-structured-collections.md) · [nextjs](../nextjs/cms-structured-collections.md) |
+| [Cms Syndication And Feeds API](cms-syndication-and-feeds.md) | [liberusoftware/module-cms-syndication-and-feeds-api](../../../modules/source/liberusoftware--module-cms-syndication-and-feeds-api.md) | [core](../core/cms-syndication-and-feeds.md) · [nextjs](../nextjs/cms-syndication-and-feeds.md) |
+| [Cms Taxonomy API](cms-taxonomy.md) | [liberusoftware/module-cms-taxonomy-api](../../../modules/source/liberusoftware--module-cms-taxonomy-api.md) | [core](../core/cms-taxonomy.md) · [nextjs](../nextjs/cms-taxonomy.md) |
+| [Cms Theme Integration API](cms-theme-integration.md) | [liberusoftware/module-cms-theme-integration-api](../../../modules/source/liberusoftware--module-cms-theme-integration-api.md) | [core](../core/cms-theme-integration.md) · [nextjs](../nextjs/cms-theme-integration.md) |
+| [Cms Theme Marketplace API](cms-theme-marketplace.md) | [liberusoftware/module-cms-theme-marketplace-api](../../../modules/source/liberusoftware--module-cms-theme-marketplace-api.md) | [core](../core/cms-theme-marketplace.md) · [nextjs](../nextjs/cms-theme-marketplace.md) |
+| [Cms Themes API](cms-themes.md) | [Target/source map](../SOURCE-MAPPING.md#cms-themes) | [core](../core/cms-themes.md) · [nextjs](../nextjs/cms-themes.md) |
+| [Cms Translation Assistant API](cms-translation-assistant.md) | [liberusoftware/module-cms-translation-assistant-api](../../../modules/source/liberusoftware--module-cms-translation-assistant-api.md) | [core](../core/cms-translation-assistant.md) · [nextjs](../nextjs/cms-translation-assistant.md) |
+| [Cms Translation Management API](cms-translation-management.md) | [liberusoftware/module-cms-translation-management-api](../../../modules/source/liberusoftware--module-cms-translation-management-api.md) | [core](../core/cms-translation-management.md) · [nextjs](../nextjs/cms-translation-management.md) |
+| [Cms Users API](cms-users.md) | [Target/source map](../SOURCE-MAPPING.md#cms-users) | [core](../core/cms-users.md) · [nextjs](../nextjs/cms-users.md) |
+| [Cms Video And Audio API](cms-video-and-audio.md) | [liberusoftware/module-cms-video-and-audio-api](../../../modules/source/liberusoftware--module-cms-video-and-audio-api.md) | [core](../core/cms-video-and-audio.md) · [nextjs](../nextjs/cms-video-and-audio.md) |
+| [Cms Views And Query Builder API](cms-views-and-query-builder.md) | [liberusoftware/module-cms-views-and-query-builder-api](../../../modules/source/liberusoftware--module-cms-views-and-query-builder-api.md) | [core](../core/cms-views-and-query-builder.md) · [nextjs](../nextjs/cms-views-and-query-builder.md) |
+| [Cms Web Delivery API](cms-web-delivery.md) | [liberusoftware/module-cms-web-delivery-api](../../../modules/source/liberusoftware--module-cms-web-delivery-api.md) | [core](../core/cms-web-delivery.md) · [nextjs](../nextjs/cms-web-delivery.md) |
+| [Cms Widgets API](cms-widgets.md) | [Target/source map](../SOURCE-MAPPING.md#cms-widgets) | [core](../core/cms-widgets.md) · [nextjs](../nextjs/cms-widgets.md) |
+| [Cms Wordpress Migration API](cms-wordpress-migration.md) | [liberusoftware/module-cms-wordpress-migration-api](../../../modules/source/liberusoftware--module-cms-wordpress-migration-api.md) | [core](../core/cms-wordpress-migration.md) · [nextjs](../nextjs/cms-wordpress-migration.md) |
+| [Cms API](cms.md) | [liberusoftware/module-cms-api](../../../modules/source/liberusoftware--module-cms-api.md) | [core](../core/cms.md) · [nextjs](../nextjs/cms.md) |
+| [Comments and Discussion API](comments-and-discussion.md) | [liberusoftware/module-cms-comments-and-discussion-api](../../../modules/source/liberusoftware--module-cms-comments-and-discussion-api.md) | [core](../core/comments-and-discussion.md) · [nextjs](../nextjs/comments-and-discussion.md) |
+| [Configuration Management API](configuration-management.md) | [liberusoftware/module-cms-configuration-management-api](../../../modules/source/liberusoftware--module-cms-configuration-management-api.md) | [core](../core/configuration-management.md) · [nextjs](../nextjs/configuration-management.md) |
+| [Contact Directory API](contact-directory.md) | [liberusoftware/module-cms-contact-directory-api](../../../modules/source/liberusoftware--module-cms-contact-directory-api.md) | [core](../core/contact-directory.md) · [nextjs](../nextjs/contact-directory.md) |
+| [Content Access API](content-access.md) | [liberusoftware/module-cms-content-access-api](../../../modules/source/liberusoftware--module-cms-content-access-api.md) | [core](../core/content-access.md) · [nextjs](../nextjs/content-access.md) |
+| [Content Calendar API](content-calendar.md) | [liberusoftware/module-cms-content-calendar-api](../../../modules/source/liberusoftware--module-cms-content-calendar-api.md) | [core](../core/content-calendar.md) · [nextjs](../nextjs/content-calendar.md) |
+| [Content Entities API](content-entities.md) | [liberusoftware/module-cms-content-entities-api](../../../modules/source/liberusoftware--module-cms-content-entities-api.md) | [core](../core/content-entities.md) · [nextjs](../nextjs/content-entities.md) |
+| [Content Federation API](content-federation.md) | [liberusoftware/module-cms-content-federation-api](../../../modules/source/liberusoftware--module-cms-content-federation-api.md) | [core](../core/content-federation.md) · [nextjs](../nextjs/content-federation.md) |
+| [Content Governance API](content-governance.md) | [liberusoftware/module-cms-content-governance-api](../../../modules/source/liberusoftware--module-cms-content-governance-api.md) | [core](../core/content-governance.md) · [nextjs](../nextjs/content-governance.md) |
+| [Content Integrity API](content-integrity.md) | [liberusoftware/module-cms-content-integrity-api](../../../modules/source/liberusoftware--module-cms-content-integrity-api.md) | [core](../core/content-integrity.md) · [nextjs](../nextjs/content-integrity.md) |
+| [Content Intelligence API](content-intelligence.md) | [liberusoftware/module-cms-content-intelligence-api](../../../modules/source/liberusoftware--module-cms-content-intelligence-api.md) | [core](../core/content-intelligence.md) · [nextjs](../nextjs/content-intelligence.md) |
+| [Content Locking API](content-locking.md) | [liberusoftware/module-cms-content-locking-api](../../../modules/source/liberusoftware--module-cms-content-locking-api.md) | [core](../core/content-locking.md) · [nextjs](../nextjs/content-locking.md) |
+| [Content Search API](content-search.md) | [liberusoftware/module-cms-content-search-api](../../../modules/source/liberusoftware--module-cms-content-search-api.md) | [core](../core/content-search.md) · [nextjs](../nextjs/content-search.md) |
+| [Content Templates API](content-templates.md) | [liberusoftware/module-cms-content-templates-api](../../../modules/source/liberusoftware--module-cms-content-templates-api.md) | [core](../core/content-templates.md) · [nextjs](../nextjs/content-templates.md) |
+| [Core API](core.md) | [liberusoftware/module-cms-core-api](../../../modules/source/liberusoftware--module-cms-core-api.md) | [core](../core/core.md) · [nextjs](../nextjs/core.md) |
+| [Digital Asset Management API](digital-asset-management.md) | [liberusoftware/module-cms-digital-asset-management-api](../../../modules/source/liberusoftware--module-cms-digital-asset-management-api.md) | [core](../core/digital-asset-management.md) · [nextjs](../nextjs/digital-asset-management.md) |
+| [Display Modes API](display-modes.md) | [liberusoftware/module-cms-display-modes-api](../../../modules/source/liberusoftware--module-cms-display-modes-api.md) | [core](../core/display-modes.md) · [nextjs](../nextjs/display-modes.md) |
+| [Document Management API](document-management.md) | [liberusoftware/module-cms-document-management-api](../../../modules/source/liberusoftware--module-cms-document-management-api.md) | [core](../core/document-management.md) · [nextjs](../nextjs/document-management.md) |
+| [Drupal Migration API](drupal-migration.md) | [liberusoftware/module-cms-drupal-migration-api](../../../modules/source/liberusoftware--module-cms-drupal-migration-api.md) | [core](../core/drupal-migration.md) · [nextjs](../nextjs/drupal-migration.md) |
+| [Editorial Content API](editorial-content.md) | [Target/source map](../SOURCE-MAPPING.md#editorial-content) | [core](../core/editorial-content.md) · [nextjs](../nextjs/editorial-content.md) |
+| [Editorial Workflow API](editorial-workflow.md) | [Target/source map](../SOURCE-MAPPING.md#editorial-workflow) | [core](../core/editorial-workflow.md) · [nextjs](../nextjs/editorial-workflow.md) |
+| [Embeds API](embeds.md) | [liberusoftware/module-cms-embeds-api](../../../modules/source/liberusoftware--module-cms-embeds-api.md) | [core](../core/embeds.md) · [nextjs](../nextjs/embeds.md) |
+| [Events Content API](events-content.md) | [liberusoftware/module-cms-events-content-api](../../../modules/source/liberusoftware--module-cms-events-content-api.md) | [core](../core/events-content.md) · [nextjs](../nextjs/events-content.md) |
+| [Experience Assistant API](experience-assistant.md) | [Target/source map](../SOURCE-MAPPING.md#experience-assistant) | [core](../core/experience-assistant.md) · [nextjs](../nextjs/experience-assistant.md) |
+| [Experimentation API](experimentation.md) | [liberusoftware/module-cms-experimentation-api](../../../modules/source/liberusoftware--module-cms-experimentation-api.md) | [core](../core/experimentation.md) · [nextjs](../nextjs/experimentation.md) |
+| [Extension Manager API](extension-manager.md) | [liberusoftware/module-cms-extension-manager-api](../../../modules/source/liberusoftware--module-cms-extension-manager-api.md) | [core](../core/extension-manager.md) · [nextjs](../nextjs/extension-manager.md) |
+| [Extension Marketplace API](extension-marketplace.md) | [liberusoftware/module-cms-extension-marketplace-api](../../../modules/source/liberusoftware--module-cms-extension-marketplace-api.md) | [core](../core/extension-marketplace.md) · [nextjs](../nextjs/extension-marketplace.md) |
+| [Features API](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [core](../core/features.md) · [nextjs](../nextjs/features.md) |
+| [Field System API](field-system.md) | [liberusoftware/module-cms-field-system-api](../../../modules/source/liberusoftware--module-cms-field-system-api.md) | [core](../core/field-system.md) · [nextjs](../nextjs/field-system.md) |
+| [Filament API](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [core](../core/filament.md) · [nextjs](../nextjs/filament.md) |
+| [Form Builder API](form-builder.md) | [Target/source map](../SOURCE-MAPPING.md#form-builder) | [core](../core/form-builder.md) · [nextjs](../nextjs/form-builder.md) |
+| [Form Operations API](form-operations.md) | [Target/source map](../SOURCE-MAPPING.md#form-operations) | [core](../core/form-operations.md) · [nextjs](../nextjs/form-operations.md) |
+| [Forums Integration API](forums-integration.md) | [Target/source map](../SOURCE-MAPPING.md#forums-integration) | [core](../core/forums-integration.md) · [nextjs](../nextjs/forums-integration.md) |
+| [Headless API API](headless-api.md) | [Target/source map](../SOURCE-MAPPING.md#headless-api) | [core](../core/headless-api.md) · [nextjs](../nextjs/headless-api.md) |
+| [Hook and Event SDK API](hook-and-event-sdk.md) | [Target/source map](../SOURCE-MAPPING.md#hook-and-event-sdk) | [core](../core/hook-and-event-sdk.md) · [nextjs](../nextjs/hook-and-event-sdk.md) |
+| [Image Processing API](image-processing.md) | [Target/source map](../SOURCE-MAPPING.md#image-processing) | [core](../core/image-processing.md) · [nextjs](../nextjs/image-processing.md) |
+| [Integration Directory API](integration-directory.md) | [liberusoftware/module-cms-integration-directory-api](../../../modules/source/liberusoftware--module-cms-integration-directory-api.md) | [core](../core/integration-directory.md) · [nextjs](../nextjs/integration-directory.md) |
+| [Joomla Migration API](joomla-migration.md) | [liberusoftware/module-cms-joomla-migration-api](../../../modules/source/liberusoftware--module-cms-joomla-migration-api.md) | [core](../core/joomla-migration.md) · [nextjs](../nextjs/joomla-migration.md) |
+| [Knowledge Base API](knowledge-base.md) | [Target/source map](../SOURCE-MAPPING.md#knowledge-base) | [core](../core/knowledge-base.md) · [nextjs](../nextjs/knowledge-base.md) |
+| [Layout Builder API](layout-builder.md) | [liberusoftware/module-cms-layout-builder-api](../../../modules/source/liberusoftware--module-cms-layout-builder-api.md) | [core](../core/layout-builder.md) · [nextjs](../nextjs/layout-builder.md) |
+| [Livewire API](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [core](../core/livewire.md) · [nextjs](../nextjs/livewire.md) |
+| [Localization API](localization.md) | [Target/source map](../SOURCE-MAPPING.md#localization) | [core](../core/localization.md) · [nextjs](../nextjs/localization.md) |
+| [Media Assistant API](media-assistant.md) | [Target/source map](../SOURCE-MAPPING.md#media-assistant) | [core](../core/media-assistant.md) · [nextjs](../nextjs/media-assistant.md) |
+| [Media Library API](media-library.md) | [Target/source map](../SOURCE-MAPPING.md#media-library) | [core](../core/media-library.md) · [nextjs](../nextjs/media-library.md) |
+| [Membership Content API](membership-content.md) | [Target/source map](../SOURCE-MAPPING.md#membership-content) | [core](../core/membership-content.md) · [nextjs](../nextjs/membership-content.md) |
+| [Metadata API](metadata.md) | [liberusoftware/module-cms-metadata-api](../../../modules/source/liberusoftware--module-cms-metadata-api.md) | [core](../core/metadata.md) · [nextjs](../nextjs/metadata.md) |
+| [Migration Framework API](migration-framework.md) | [liberusoftware/module-cms-migration-framework-api](../../../modules/source/liberusoftware--module-cms-migration-framework-api.md) | [core](../core/migration-framework.md) · [nextjs](../nextjs/migration-framework.md) |
+| [Module Cms Accessibility Assistant API](module-cms-accessibility-assistant.md) | [liberusoftware/module-cms-accessibility-assistant-api](../../../modules/source/liberusoftware--module-cms-accessibility-assistant-api.md) | [core](../core/module-cms-accessibility-assistant.md) · [nextjs](../nextjs/module-cms-accessibility-assistant.md) |
+| [Module Cms Admin API](module-cms-admin.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-admin) | [core](../core/module-cms-admin.md) · [nextjs](../nextjs/module-cms-admin.md) |
+| [Module Cms Analytics Integration API](module-cms-analytics-integration.md) | [liberusoftware/module-cms-analytics-integration-api](../../../modules/source/liberusoftware--module-cms-analytics-integration-api.md) | [core](../core/module-cms-analytics-integration.md) · [nextjs](../nextjs/module-cms-analytics-integration.md) |
+| [Module Cms Audit API](module-cms-audit.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-audit) | [core](../core/module-cms-audit.md) · [nextjs](../nextjs/module-cms-audit.md) |
+| [Module Cms Backup And Restore API](module-cms-backup-and-restore.md) | [liberusoftware/module-cms-backup-and-restore-api](../../../modules/source/liberusoftware--module-cms-backup-and-restore-api.md) | [core](../core/module-cms-backup-and-restore.md) · [nextjs](../nextjs/module-cms-backup-and-restore.md) |
+| [Module Cms Block Editor API](module-cms-block-editor.md) | [liberusoftware/module-cms-block-editor-api](../../../modules/source/liberusoftware--module-cms-block-editor-api.md) | [core](../core/module-cms-block-editor.md) · [nextjs](../nextjs/module-cms-block-editor.md) |
+| [Module Cms Blocks API](module-cms-blocks.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-blocks) | [core](../core/module-cms-blocks.md) · [nextjs](../nextjs/module-cms-blocks.md) |
+| [Module Cms Cache And Performance API](module-cms-cache-and-performance.md) | [liberusoftware/module-cms-cache-and-performance-api](../../../modules/source/liberusoftware--module-cms-cache-and-performance-api.md) | [core](../core/module-cms-cache-and-performance.md) · [nextjs](../nextjs/module-cms-cache-and-performance.md) |
+| [Module Cms Cms Copilot API](module-cms-cms-copilot.md) | [liberusoftware/module-cms-copilot-api](../../../modules/source/liberusoftware--module-cms-copilot-api.md) | [core](../core/module-cms-cms-copilot.md) · [nextjs](../nextjs/module-cms-cms-copilot.md) |
+| [Module Cms Collections API](module-cms-collections.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-collections) | [core](../core/module-cms-collections.md) · [nextjs](../nextjs/module-cms-collections.md) |
+| [Module Cms Comments And Discussion API](module-cms-comments-and-discussion.md) | [liberusoftware/module-cms-comments-and-discussion-api](../../../modules/source/liberusoftware--module-cms-comments-and-discussion-api.md) | [core](../core/module-cms-comments-and-discussion.md) · [nextjs](../nextjs/module-cms-comments-and-discussion.md) |
+| [Module Cms Configuration Management API](module-cms-configuration-management.md) | [liberusoftware/module-cms-configuration-management-api](../../../modules/source/liberusoftware--module-cms-configuration-management-api.md) | [core](../core/module-cms-configuration-management.md) · [nextjs](../nextjs/module-cms-configuration-management.md) |
+| [Module Cms Contact Directory API](module-cms-contact-directory.md) | [liberusoftware/module-cms-contact-directory-api](../../../modules/source/liberusoftware--module-cms-contact-directory-api.md) | [core](../core/module-cms-contact-directory.md) · [nextjs](../nextjs/module-cms-contact-directory.md) |
+| [Module Cms Content Access API](module-cms-content-access.md) | [liberusoftware/module-cms-content-access-api](../../../modules/source/liberusoftware--module-cms-content-access-api.md) | [core](../core/module-cms-content-access.md) · [nextjs](../nextjs/module-cms-content-access.md) |
+| [Module Cms Content Calendar API](module-cms-content-calendar.md) | [liberusoftware/module-cms-content-calendar-api](../../../modules/source/liberusoftware--module-cms-content-calendar-api.md) | [core](../core/module-cms-content-calendar.md) · [nextjs](../nextjs/module-cms-content-calendar.md) |
+| [Module Cms Content Entities API](module-cms-content-entities.md) | [liberusoftware/module-cms-content-entities-api](../../../modules/source/liberusoftware--module-cms-content-entities-api.md) | [core](../core/module-cms-content-entities.md) · [nextjs](../nextjs/module-cms-content-entities.md) |
+| [Module Cms Content Federation API](module-cms-content-federation.md) | [liberusoftware/module-cms-content-federation-api](../../../modules/source/liberusoftware--module-cms-content-federation-api.md) | [core](../core/module-cms-content-federation.md) · [nextjs](../nextjs/module-cms-content-federation.md) |
+| [Module Cms Content Governance API](module-cms-content-governance.md) | [liberusoftware/module-cms-content-governance-api](../../../modules/source/liberusoftware--module-cms-content-governance-api.md) | [core](../core/module-cms-content-governance.md) · [nextjs](../nextjs/module-cms-content-governance.md) |
+| [Module Cms Content Integrity API](module-cms-content-integrity.md) | [liberusoftware/module-cms-content-integrity-api](../../../modules/source/liberusoftware--module-cms-content-integrity-api.md) | [core](../core/module-cms-content-integrity.md) · [nextjs](../nextjs/module-cms-content-integrity.md) |
+| [Module Cms Content Intelligence API](module-cms-content-intelligence.md) | [liberusoftware/module-cms-content-intelligence-api](../../../modules/source/liberusoftware--module-cms-content-intelligence-api.md) | [core](../core/module-cms-content-intelligence.md) · [nextjs](../nextjs/module-cms-content-intelligence.md) |
+| [Module Cms Content Locking API](module-cms-content-locking.md) | [liberusoftware/module-cms-content-locking-api](../../../modules/source/liberusoftware--module-cms-content-locking-api.md) | [core](../core/module-cms-content-locking.md) · [nextjs](../nextjs/module-cms-content-locking.md) |
+| [Module Cms Content Search API](module-cms-content-search.md) | [liberusoftware/module-cms-content-search-api](../../../modules/source/liberusoftware--module-cms-content-search-api.md) | [core](../core/module-cms-content-search.md) · [nextjs](../nextjs/module-cms-content-search.md) |
+| [Module Cms Content Templates API](module-cms-content-templates.md) | [liberusoftware/module-cms-content-templates-api](../../../modules/source/liberusoftware--module-cms-content-templates-api.md) | [core](../core/module-cms-content-templates.md) · [nextjs](../nextjs/module-cms-content-templates.md) |
+| [Module Cms Content Types API](module-cms-content-types.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-content-types) | [core](../core/module-cms-content-types.md) · [nextjs](../nextjs/module-cms-content-types.md) |
+| [Module Cms Content API](module-cms-content.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-content) | [core](../core/module-cms-content.md) · [nextjs](../nextjs/module-cms-content.md) |
+| [Module Cms Contracts API](module-cms-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-contracts) | [core](../core/module-cms-contracts.md) · [nextjs](../nextjs/module-cms-contracts.md) |
+| [Module Cms Copilot API](module-cms-copilot.md) | [liberusoftware/module-cms-copilot-api](../../../modules/source/liberusoftware--module-cms-copilot-api.md) | [core](../core/module-cms-copilot.md) · [nextjs](../nextjs/module-cms-copilot.md) |
+| [Module Cms Core API](module-cms-core.md) | [liberusoftware/module-cms-core-api](../../../modules/source/liberusoftware--module-cms-core-api.md) | [core](../core/module-cms-core.md) · [nextjs](../nextjs/module-cms-core.md) |
+| [Module Cms Digital Asset Management API](module-cms-digital-asset-management.md) | [liberusoftware/module-cms-digital-asset-management-api](../../../modules/source/liberusoftware--module-cms-digital-asset-management-api.md) | [core](../core/module-cms-digital-asset-management.md) · [nextjs](../nextjs/module-cms-digital-asset-management.md) |
+| [Module Cms Display Modes API](module-cms-display-modes.md) | [liberusoftware/module-cms-display-modes-api](../../../modules/source/liberusoftware--module-cms-display-modes-api.md) | [core](../core/module-cms-display-modes.md) · [nextjs](../nextjs/module-cms-display-modes.md) |
+| [Module Cms Document Management API](module-cms-document-management.md) | [liberusoftware/module-cms-document-management-api](../../../modules/source/liberusoftware--module-cms-document-management-api.md) | [core](../core/module-cms-document-management.md) · [nextjs](../nextjs/module-cms-document-management.md) |
+| [Module Cms Drupal Migration API](module-cms-drupal-migration.md) | [liberusoftware/module-cms-drupal-migration-api](../../../modules/source/liberusoftware--module-cms-drupal-migration-api.md) | [core](../core/module-cms-drupal-migration.md) · [nextjs](../nextjs/module-cms-drupal-migration.md) |
+| [Module Cms Embeds API](module-cms-embeds.md) | [liberusoftware/module-cms-embeds-api](../../../modules/source/liberusoftware--module-cms-embeds-api.md) | [core](../core/module-cms-embeds.md) · [nextjs](../nextjs/module-cms-embeds.md) |
+| [Module Cms Events Content API](module-cms-events-content.md) | [liberusoftware/module-cms-events-content-api](../../../modules/source/liberusoftware--module-cms-events-content-api.md) | [core](../core/module-cms-events-content.md) · [nextjs](../nextjs/module-cms-events-content.md) |
+| [Module Cms Experimentation API](module-cms-experimentation.md) | [liberusoftware/module-cms-experimentation-api](../../../modules/source/liberusoftware--module-cms-experimentation-api.md) | [core](../core/module-cms-experimentation.md) · [nextjs](../nextjs/module-cms-experimentation.md) |
+| [Module Cms Extension Manager API](module-cms-extension-manager.md) | [liberusoftware/module-cms-extension-manager-api](../../../modules/source/liberusoftware--module-cms-extension-manager-api.md) | [core](../core/module-cms-extension-manager.md) · [nextjs](../nextjs/module-cms-extension-manager.md) |
+| [Module Cms Extension Marketplace API](module-cms-extension-marketplace.md) | [liberusoftware/module-cms-extension-marketplace-api](../../../modules/source/liberusoftware--module-cms-extension-marketplace-api.md) | [core](../core/module-cms-extension-marketplace.md) · [nextjs](../nextjs/module-cms-extension-marketplace.md) |
+| [Module Cms Field System API](module-cms-field-system.md) | [liberusoftware/module-cms-field-system-api](../../../modules/source/liberusoftware--module-cms-field-system-api.md) | [core](../core/module-cms-field-system.md) · [nextjs](../nextjs/module-cms-field-system.md) |
+| [Module Cms Forms API](module-cms-forms.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-forms) | [core](../core/module-cms-forms.md) · [nextjs](../nextjs/module-cms-forms.md) |
+| [Module Cms Hello API](module-cms-hello.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-hello) | [core](../core/module-cms-hello.md) · [nextjs](../nextjs/module-cms-hello.md) |
+| [Module Cms Integration Directory API](module-cms-integration-directory.md) | [liberusoftware/module-cms-integration-directory-api](../../../modules/source/liberusoftware--module-cms-integration-directory-api.md) | [core](../core/module-cms-integration-directory.md) · [nextjs](../nextjs/module-cms-integration-directory.md) |
+| [Module Cms Joomla Migration API](module-cms-joomla-migration.md) | [liberusoftware/module-cms-joomla-migration-api](../../../modules/source/liberusoftware--module-cms-joomla-migration-api.md) | [core](../core/module-cms-joomla-migration.md) · [nextjs](../nextjs/module-cms-joomla-migration.md) |
+| [Module Cms Layout Builder API](module-cms-layout-builder.md) | [liberusoftware/module-cms-layout-builder-api](../../../modules/source/liberusoftware--module-cms-layout-builder-api.md) | [core](../core/module-cms-layout-builder.md) · [nextjs](../nextjs/module-cms-layout-builder.md) |
+| [Module Cms Media API](module-cms-media.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-media) | [core](../core/module-cms-media.md) · [nextjs](../nextjs/module-cms-media.md) |
+| [Module Cms Menus API](module-cms-menus.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-menus) | [core](../core/module-cms-menus.md) · [nextjs](../nextjs/module-cms-menus.md) |
+| [Module Cms Metadata API](module-cms-metadata.md) | [liberusoftware/module-cms-metadata-api](../../../modules/source/liberusoftware--module-cms-metadata-api.md) | [core](../core/module-cms-metadata.md) · [nextjs](../nextjs/module-cms-metadata.md) |
+| [Module Cms Migration Framework API](module-cms-migration-framework.md) | [liberusoftware/module-cms-migration-framework-api](../../../modules/source/liberusoftware--module-cms-migration-framework-api.md) | [core](../core/module-cms-migration-framework.md) · [nextjs](../nextjs/module-cms-migration-framework.md) |
+| [Module Cms Multisite API](module-cms-multisite.md) | [liberusoftware/module-cms-multisite-api](../../../modules/source/liberusoftware--module-cms-multisite-api.md) | [core](../core/module-cms-multisite.md) · [nextjs](../nextjs/module-cms-multisite.md) |
+| [Module Cms Navigation API](module-cms-navigation.md) | [liberusoftware/module-cms-navigation-api](../../../modules/source/liberusoftware--module-cms-navigation-api.md) | [core](../core/module-cms-navigation.md) · [nextjs](../nextjs/module-cms-navigation.md) |
+| [Module Cms Notifications And Subscriptions API](module-cms-notifications-and-subscriptions.md) | [liberusoftware/module-cms-notifications-and-subscriptions-api](../../../modules/source/liberusoftware--module-cms-notifications-and-subscriptions-api.md) | [core](../core/module-cms-notifications-and-subscriptions.md) · [nextjs](../nextjs/module-cms-notifications-and-subscriptions.md) |
+| [Module Cms Notifications API](module-cms-notifications.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-notifications) | [core](../core/module-cms-notifications.md) · [nextjs](../nextjs/module-cms-notifications.md) |
+| [Module Cms Observability API](module-cms-observability.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-observability) | [core](../core/module-cms-observability.md) · [nextjs](../nextjs/module-cms-observability.md) |
+| [Module Cms Offline And Pwa API](module-cms-offline-and-pwa.md) | [liberusoftware/module-cms-offline-and-pwa-api](../../../modules/source/liberusoftware--module-cms-offline-and-pwa-api.md) | [core](../core/module-cms-offline-and-pwa.md) · [nextjs](../nextjs/module-cms-offline-and-pwa.md) |
+| [Module Cms Pages API](module-cms-pages.md) | [liberusoftware/module-cms-pages-api](../../../modules/source/liberusoftware--module-cms-pages-api.md) | [core](../core/module-cms-pages.md) · [nextjs](../nextjs/module-cms-pages.md) |
+| [Module Cms Personalization API](module-cms-personalization.md) | [liberusoftware/module-cms-personalization-api](../../../modules/source/liberusoftware--module-cms-personalization-api.md) | [core](../core/module-cms-personalization.md) · [nextjs](../nextjs/module-cms-personalization.md) |
+| [Module Cms Polls And Surveys API](module-cms-polls-and-surveys.md) | [liberusoftware/module-cms-polls-and-surveys-api](../../../modules/source/liberusoftware--module-cms-polls-and-surveys-api.md) | [core](../core/module-cms-polls-and-surveys.md) · [nextjs](../nextjs/module-cms-polls-and-surveys.md) |
+| [Module Cms Posts API](module-cms-posts.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-posts) | [core](../core/module-cms-posts.md) · [nextjs](../nextjs/module-cms-posts.md) |
+| [Module Cms Publishing API](module-cms-publishing.md) | [liberusoftware/module-cms-publishing-api](../../../modules/source/liberusoftware--module-cms-publishing-api.md) | [core](../core/module-cms-publishing.md) · [nextjs](../nextjs/module-cms-publishing.md) |
+| [Module Cms Recommendations API](module-cms-recommendations.md) | [liberusoftware/module-cms-recommendations-api](../../../modules/source/liberusoftware--module-cms-recommendations-api.md) | [core](../core/module-cms-recommendations.md) · [nextjs](../nextjs/module-cms-recommendations.md) |
+| [Module Cms Redirects API](module-cms-redirects.md) | [liberusoftware/module-cms-redirects-api](../../../modules/source/liberusoftware--module-cms-redirects-api.md) | [core](../core/module-cms-redirects.md) · [nextjs](../nextjs/module-cms-redirects.md) |
+| [Module Cms Regions And Widgets API](module-cms-regions-and-widgets.md) | [liberusoftware/module-cms-regions-and-widgets-api](../../../modules/source/liberusoftware--module-cms-regions-and-widgets-api.md) | [core](../core/module-cms-regions-and-widgets.md) · [nextjs](../nextjs/module-cms-regions-and-widgets.md) |
+| [Module Cms Related Content API](module-cms-related-content.md) | [liberusoftware/module-cms-related-content-api](../../../modules/source/liberusoftware--module-cms-related-content-api.md) | [core](../core/module-cms-related-content.md) · [nextjs](../nextjs/module-cms-related-content.md) |
+| [Module Cms Revisions API](module-cms-revisions.md) | [liberusoftware/module-cms-revisions-api](../../../modules/source/liberusoftware--module-cms-revisions-api.md) | [core](../core/module-cms-revisions.md) · [nextjs](../nextjs/module-cms-revisions.md) |
+| [Module Cms Rich Text Editor API](module-cms-rich-text-editor.md) | [liberusoftware/module-cms-rich-text-editor-api](../../../modules/source/liberusoftware--module-cms-rich-text-editor-api.md) | [core](../core/module-cms-rich-text-editor.md) · [nextjs](../nextjs/module-cms-rich-text-editor.md) |
+| [Module Cms Search API](module-cms-search.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-search) | [core](../core/module-cms-search.md) · [nextjs](../nextjs/module-cms-search.md) |
+| [Module Cms Security Operations API](module-cms-security-operations.md) | [liberusoftware/module-cms-security-operations-api](../../../modules/source/liberusoftware--module-cms-security-operations-api.md) | [core](../core/module-cms-security-operations.md) · [nextjs](../nextjs/module-cms-security-operations.md) |
+| [Module Cms Seo API](module-cms-seo.md) | [liberusoftware/module-cms-seo-api](../../../modules/source/liberusoftware--module-cms-seo-api.md) | [core](../core/module-cms-seo.md) · [nextjs](../nextjs/module-cms-seo.md) |
+| [Module Cms Site Factory API](module-cms-site-factory.md) | [liberusoftware/module-cms-site-factory-api](../../../modules/source/liberusoftware--module-cms-site-factory-api.md) | [core](../core/module-cms-site-factory.md) · [nextjs](../nextjs/module-cms-site-factory.md) |
+| [Module Cms Site Recipes API](module-cms-site-recipes.md) | [liberusoftware/module-cms-site-recipes-api](../../../modules/source/liberusoftware--module-cms-site-recipes-api.md) | [core](../core/module-cms-site-recipes.md) · [nextjs](../nextjs/module-cms-site-recipes.md) |
+| [Module Cms Sitemaps API](module-cms-sitemaps.md) | [liberusoftware/module-cms-sitemaps-api](../../../modules/source/liberusoftware--module-cms-sitemaps-api.md) | [core](../core/module-cms-sitemaps.md) · [nextjs](../nextjs/module-cms-sitemaps.md) |
+| [Module Cms Static Publishing API](module-cms-static-publishing.md) | [liberusoftware/module-cms-static-publishing-api](../../../modules/source/liberusoftware--module-cms-static-publishing-api.md) | [core](../core/module-cms-static-publishing.md) · [nextjs](../nextjs/module-cms-static-publishing.md) |
+| [Module Cms Structured Collections API](module-cms-structured-collections.md) | [liberusoftware/module-cms-structured-collections-api](../../../modules/source/liberusoftware--module-cms-structured-collections-api.md) | [core](../core/module-cms-structured-collections.md) · [nextjs](../nextjs/module-cms-structured-collections.md) |
+| [Module Cms Syndication And Feeds API](module-cms-syndication-and-feeds.md) | [liberusoftware/module-cms-syndication-and-feeds-api](../../../modules/source/liberusoftware--module-cms-syndication-and-feeds-api.md) | [core](../core/module-cms-syndication-and-feeds.md) · [nextjs](../nextjs/module-cms-syndication-and-feeds.md) |
+| [Module Cms Taxonomy API](module-cms-taxonomy.md) | [liberusoftware/module-cms-taxonomy-api](../../../modules/source/liberusoftware--module-cms-taxonomy-api.md) | [core](../core/module-cms-taxonomy.md) · [nextjs](../nextjs/module-cms-taxonomy.md) |
+| [Module Cms Theme Integration API](module-cms-theme-integration.md) | [liberusoftware/module-cms-theme-integration-api](../../../modules/source/liberusoftware--module-cms-theme-integration-api.md) | [core](../core/module-cms-theme-integration.md) · [nextjs](../nextjs/module-cms-theme-integration.md) |
+| [Module Cms Theme Marketplace API](module-cms-theme-marketplace.md) | [liberusoftware/module-cms-theme-marketplace-api](../../../modules/source/liberusoftware--module-cms-theme-marketplace-api.md) | [core](../core/module-cms-theme-marketplace.md) · [nextjs](../nextjs/module-cms-theme-marketplace.md) |
+| [Module Cms Themes API](module-cms-themes.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-themes) | [core](../core/module-cms-themes.md) · [nextjs](../nextjs/module-cms-themes.md) |
+| [Module Cms Translation Assistant API](module-cms-translation-assistant.md) | [liberusoftware/module-cms-translation-assistant-api](../../../modules/source/liberusoftware--module-cms-translation-assistant-api.md) | [core](../core/module-cms-translation-assistant.md) · [nextjs](../nextjs/module-cms-translation-assistant.md) |
+| [Module Cms Translation Management API](module-cms-translation-management.md) | [liberusoftware/module-cms-translation-management-api](../../../modules/source/liberusoftware--module-cms-translation-management-api.md) | [core](../core/module-cms-translation-management.md) · [nextjs](../nextjs/module-cms-translation-management.md) |
+| [Module Cms Users API](module-cms-users.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-users) | [core](../core/module-cms-users.md) · [nextjs](../nextjs/module-cms-users.md) |
+| [Module Cms Video And Audio API](module-cms-video-and-audio.md) | [liberusoftware/module-cms-video-and-audio-api](../../../modules/source/liberusoftware--module-cms-video-and-audio-api.md) | [core](../core/module-cms-video-and-audio.md) · [nextjs](../nextjs/module-cms-video-and-audio.md) |
+| [Module Cms Views And Query Builder API](module-cms-views-and-query-builder.md) | [liberusoftware/module-cms-views-and-query-builder-api](../../../modules/source/liberusoftware--module-cms-views-and-query-builder-api.md) | [core](../core/module-cms-views-and-query-builder.md) · [nextjs](../nextjs/module-cms-views-and-query-builder.md) |
+| [Module Cms Web Delivery API](module-cms-web-delivery.md) | [liberusoftware/module-cms-web-delivery-api](../../../modules/source/liberusoftware--module-cms-web-delivery-api.md) | [core](../core/module-cms-web-delivery.md) · [nextjs](../nextjs/module-cms-web-delivery.md) |
+| [Module Cms Widgets API](module-cms-widgets.md) | [Target/source map](../SOURCE-MAPPING.md#module-cms-widgets) | [core](../core/module-cms-widgets.md) · [nextjs](../nextjs/module-cms-widgets.md) |
+| [Module Cms Wordpress Migration API](module-cms-wordpress-migration.md) | [liberusoftware/module-cms-wordpress-migration-api](../../../modules/source/liberusoftware--module-cms-wordpress-migration-api.md) | [core](../core/module-cms-wordpress-migration.md) · [nextjs](../nextjs/module-cms-wordpress-migration.md) |
+| [Module Cms API](module-cms.md) | [liberusoftware/module-cms-api](../../../modules/source/liberusoftware--module-cms-api.md) | [core](../core/module-cms.md) · [nextjs](../nextjs/module-cms.md) |
+| [Multisite API](multisite.md) | [liberusoftware/module-cms-multisite-api](../../../modules/source/liberusoftware--module-cms-multisite-api.md) | [core](../core/multisite.md) · [nextjs](../nextjs/multisite.md) |
+| [Navigation API](navigation.md) | [liberusoftware/module-cms-navigation-api](../../../modules/source/liberusoftware--module-cms-navigation-api.md) | [core](../core/navigation.md) · [nextjs](../nextjs/navigation.md) |
+| [Notifications and Subscriptions API](notifications-and-subscriptions.md) | [liberusoftware/module-cms-notifications-and-subscriptions-api](../../../modules/source/liberusoftware--module-cms-notifications-and-subscriptions-api.md) | [core](../core/notifications-and-subscriptions.md) · [nextjs](../nextjs/notifications-and-subscriptions.md) |
+| [Offline and PWA API](offline-and-pwa.md) | [liberusoftware/module-cms-offline-and-pwa-api](../../../modules/source/liberusoftware--module-cms-offline-and-pwa-api.md) | [core](../core/offline-and-pwa.md) · [nextjs](../nextjs/offline-and-pwa.md) |
+| [Pages API](pages.md) | [liberusoftware/module-cms-pages-api](../../../modules/source/liberusoftware--module-cms-pages-api.md) | [core](../core/pages.md) · [nextjs](../nextjs/pages.md) |
+| [Personalization API](personalization.md) | [liberusoftware/module-cms-personalization-api](../../../modules/source/liberusoftware--module-cms-personalization-api.md) | [core](../core/personalization.md) · [nextjs](../nextjs/personalization.md) |
+| [Polls and Surveys API](polls-and-surveys.md) | [liberusoftware/module-cms-polls-and-surveys-api](../../../modules/source/liberusoftware--module-cms-polls-and-surveys-api.md) | [core](../core/polls-and-surveys.md) · [nextjs](../nextjs/polls-and-surveys.md) |
+| [Publishing API](publishing.md) | [liberusoftware/module-cms-publishing-api](../../../modules/source/liberusoftware--module-cms-publishing-api.md) | [core](../core/publishing.md) · [nextjs](../nextjs/publishing.md) |
+| [Recommendations API](recommendations.md) | [liberusoftware/module-cms-recommendations-api](../../../modules/source/liberusoftware--module-cms-recommendations-api.md) | [core](../core/recommendations.md) · [nextjs](../nextjs/recommendations.md) |
+| [Redirects API](redirects.md) | [liberusoftware/module-cms-redirects-api](../../../modules/source/liberusoftware--module-cms-redirects-api.md) | [core](../core/redirects.md) · [nextjs](../nextjs/redirects.md) |
+| [Regions and Widgets API](regions-and-widgets.md) | [liberusoftware/module-cms-regions-and-widgets-api](../../../modules/source/liberusoftware--module-cms-regions-and-widgets-api.md) | [core](../core/regions-and-widgets.md) · [nextjs](../nextjs/regions-and-widgets.md) |
+| [Related Content API](related-content.md) | [liberusoftware/module-cms-related-content-api](../../../modules/source/liberusoftware--module-cms-related-content-api.md) | [core](../core/related-content.md) · [nextjs](../nextjs/related-content.md) |
+| [Revisions API](revisions.md) | [liberusoftware/module-cms-revisions-api](../../../modules/source/liberusoftware--module-cms-revisions-api.md) | [core](../core/revisions.md) · [nextjs](../nextjs/revisions.md) |
+| [Rich Text Editor API](rich-text-editor.md) | [liberusoftware/module-cms-rich-text-editor-api](../../../modules/source/liberusoftware--module-cms-rich-text-editor-api.md) | [core](../core/rich-text-editor.md) · [nextjs](../nextjs/rich-text-editor.md) |
+| [Security Operations API](security-operations.md) | [liberusoftware/module-cms-security-operations-api](../../../modules/source/liberusoftware--module-cms-security-operations-api.md) | [core](../core/security-operations.md) · [nextjs](../nextjs/security-operations.md) |
+| [SEO API](seo.md) | [liberusoftware/module-cms-seo-api](../../../modules/source/liberusoftware--module-cms-seo-api.md) | [core](../core/seo.md) · [nextjs](../nextjs/seo.md) |
+| [Site Factory API](site-factory.md) | [liberusoftware/module-cms-site-factory-api](../../../modules/source/liberusoftware--module-cms-site-factory-api.md) | [core](../core/site-factory.md) · [nextjs](../nextjs/site-factory.md) |
+| [Site Recipes API](site-recipes.md) | [liberusoftware/module-cms-site-recipes-api](../../../modules/source/liberusoftware--module-cms-site-recipes-api.md) | [core](../core/site-recipes.md) · [nextjs](../nextjs/site-recipes.md) |
+| [Sitemaps API](sitemaps.md) | [liberusoftware/module-cms-sitemaps-api](../../../modules/source/liberusoftware--module-cms-sitemaps-api.md) | [core](../core/sitemaps.md) · [nextjs](../nextjs/sitemaps.md) |
+| [Static Publishing API](static-publishing.md) | [liberusoftware/module-cms-static-publishing-api](../../../modules/source/liberusoftware--module-cms-static-publishing-api.md) | [core](../core/static-publishing.md) · [nextjs](../nextjs/static-publishing.md) |
+| [Structured Collections API](structured-collections.md) | [liberusoftware/module-cms-structured-collections-api](../../../modules/source/liberusoftware--module-cms-structured-collections-api.md) | [core](../core/structured-collections.md) · [nextjs](../nextjs/structured-collections.md) |
+| [Syndication and Feeds API](syndication-and-feeds.md) | [liberusoftware/module-cms-syndication-and-feeds-api](../../../modules/source/liberusoftware--module-cms-syndication-and-feeds-api.md) | [core](../core/syndication-and-feeds.md) · [nextjs](../nextjs/syndication-and-feeds.md) |
+| [Taxonomy API](taxonomy.md) | [liberusoftware/module-cms-taxonomy-api](../../../modules/source/liberusoftware--module-cms-taxonomy-api.md) | [core](../core/taxonomy.md) · [nextjs](../nextjs/taxonomy.md) |
+| [Theme Integration API](theme-integration.md) | [liberusoftware/module-cms-theme-integration-api](../../../modules/source/liberusoftware--module-cms-theme-integration-api.md) | [core](../core/theme-integration.md) · [nextjs](../nextjs/theme-integration.md) |
+| [Theme Marketplace API](theme-marketplace.md) | [liberusoftware/module-cms-theme-marketplace-api](../../../modules/source/liberusoftware--module-cms-theme-marketplace-api.md) | [core](../core/theme-marketplace.md) · [nextjs](../nextjs/theme-marketplace.md) |
+| [Translation Assistant API](translation-assistant.md) | [liberusoftware/module-cms-translation-assistant-api](../../../modules/source/liberusoftware--module-cms-translation-assistant-api.md) | [core](../core/translation-assistant.md) · [nextjs](../nextjs/translation-assistant.md) |
+| [Translation Management API](translation-management.md) | [liberusoftware/module-cms-translation-management-api](../../../modules/source/liberusoftware--module-cms-translation-management-api.md) | [core](../core/translation-management.md) · [nextjs](../nextjs/translation-management.md) |
+| [Video and Audio API](video-and-audio.md) | [liberusoftware/module-cms-video-and-audio-api](../../../modules/source/liberusoftware--module-cms-video-and-audio-api.md) | [core](../core/video-and-audio.md) · [nextjs](../nextjs/video-and-audio.md) |
+| [Views and Query Builder API](views-and-query-builder.md) | [liberusoftware/module-cms-views-and-query-builder-api](../../../modules/source/liberusoftware--module-cms-views-and-query-builder-api.md) | [core](../core/views-and-query-builder.md) · [nextjs](../nextjs/views-and-query-builder.md) |
+| [Web Delivery API](web-delivery.md) | [liberusoftware/module-cms-web-delivery-api](../../../modules/source/liberusoftware--module-cms-web-delivery-api.md) | [core](../core/web-delivery.md) · [nextjs](../nextjs/web-delivery.md) |
+| [WordPress Migration API](wordpress-migration.md) | [liberusoftware/module-cms-wordpress-migration-api](../../../modules/source/liberusoftware--module-cms-wordpress-migration-api.md) | [core](../core/wordpress-migration.md) · [nextjs](../nextjs/wordpress-migration.md) |

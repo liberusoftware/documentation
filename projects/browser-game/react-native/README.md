@@ -1,50 +1,71 @@
 # Browser Game React Native + Expo Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **61 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-- [Activity Comments React Native](activity-comments.md) — `module-browser-game-activity-comments-react-native`
-- [Analytics Core React Native](analytics-core.md) — `module-browser-game-analytics-core-react-native`
-- [Analytics Google React Native](analytics-google.md) — `module-browser-game-analytics-google-react-native`
-- [Analytics Meta React Native](analytics-meta.md) — `module-browser-game-analytics-meta-react-native`
-- [Api Access React Native](api-access.md) — `module-browser-game-api-access-react-native`
-- [Application React Native](application.md) — `module-browser-game-application-react-native`
-- [Audit React Native](audit.md) — `module-browser-game-audit-react-native`
-- [Browser Game Accounts React Native](browser-game-accounts.md) — `module-browser-game-browser-game-accounts-react-native`
-- [Browser Game Characters React Native](browser-game-characters.md) — `module-browser-game-browser-game-characters-react-native`
-- [Browser Game Collections React Native](browser-game-collections.md) — `module-browser-game-browser-game-collections-react-native`
-- [Browser Game Combat React Native](browser-game-combat.md) — `module-browser-game-browser-game-combat-react-native`
-- [Browser Game Commerce React Native](browser-game-commerce.md) — `module-browser-game-browser-game-commerce-react-native`
-- [Browser Game Competition React Native](browser-game-competition.md) — `module-browser-game-browser-game-competition-react-native`
-- [Browser Game Crafting React Native](browser-game-crafting.md) — `module-browser-game-browser-game-crafting-react-native`
-- [Browser Game Economy React Native](browser-game-economy.md) — `module-browser-game-browser-game-economy-react-native`
-- [Browser Game Game Core React Native](browser-game-game-core.md) — `module-browser-game-browser-game-game-core-react-native`
-- [Browser Game Items React Native](browser-game-items.md) — `module-browser-game-browser-game-items-react-native`
-- [Browser Game Live Ops React Native](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops-react-native`
-- [Browser Game Moderation And Analytics React Native](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics-react-native`
-- [Browser Game Quests React Native](browser-game-quests.md) — `module-browser-game-browser-game-quests-react-native`
-- [Browser Game Social React Native](browser-game-social.md) — `module-browser-game-browser-game-social-react-native`
-- [Browser Game World React Native](browser-game-world.md) — `module-browser-game-browser-game-world-react-native`
-- [Currency Context React Native](currency-context.md) — `module-browser-game-currency-context-react-native`
-- [Developer Experience React Native](developer-experience.md) — `module-browser-game-developer-experience-react-native`
-- [Feature Flags React Native](feature-flags.md) — `module-browser-game-feature-flags-react-native`
-- [Files Media React Native](files-media.md) — `module-browser-game-files-media-react-native`
-- [Identity Core React Native](identity-core.md) — `module-browser-game-identity-core-react-native`
-- [Identity Socialstream React Native](identity-socialstream.md) — `module-browser-game-identity-socialstream-react-native`
-- [Import Export React Native](import-export.md) — `module-browser-game-import-export-react-native`
-- [Integrations React Native](integrations.md) — `module-browser-game-integrations-react-native`
-- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-browser-game-jetstream-bridge-react-native`
-- [Localization Core React Native](localization-core.md) — `module-browser-game-localization-core-react-native`
-- [Localization Mymemory React Native](localization-mymemory.md) — `module-browser-game-localization-mymemory-react-native`
-- [Module Manager React Native](module-manager.md) — `module-browser-game-module-manager-react-native`
-- [Notifications React Native](notifications.md) — `module-browser-game-notifications-react-native`
-- [Observability React Native](observability.md) — `module-browser-game-observability-react-native`
-- [Organizations Teams React Native](organizations-teams.md) — `module-browser-game-organizations-teams-react-native`
-- [Profiles React Native](profiles.md) — `module-browser-game-profiles-react-native`
-- [Roles Permissions React Native](roles-permissions.md) — `module-browser-game-roles-permissions-react-native`
-- [Scheduler Queues React Native](scheduler-queues.md) — `module-browser-game-scheduler-queues-react-native`
-- [Search React Native](search.md) — `module-browser-game-search-react-native`
-- [Sessions Devices React Native](sessions-devices.md) — `module-browser-game-sessions-devices-react-native`
-- [Settings React Native](settings.md) — `module-browser-game-settings-react-native`
-- [Theme Support React Native](theme-support.md) — `module-browser-game-theme-support-react-native`
-- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-browser-game-two-factor-authentication-react-native`
-- [Webhooks React Native](webhooks.md) — `module-browser-game-webhooks-react-native`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Accounts React Native + Expo](accounts.md) | [Target/source map](../SOURCE-MAPPING.md#accounts) | [core](../core/accounts.md) · [api](../api/accounts.md) · [nextjs](../nextjs/accounts.md) |
+| [Activity Comments React Native + Expo](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core React Native + Expo](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React Native + Expo](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React Native + Expo](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access React Native + Expo](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application React Native + Expo](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit React Native + Expo](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Browser Game Accounts React Native + Expo](browser-game-accounts.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-accounts) | [core](../core/browser-game-accounts.md) · [api](../api/browser-game-accounts.md) · [nextjs](../nextjs/browser-game-accounts.md) |
+| [Browser Game Characters React Native + Expo](browser-game-characters.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-characters) | [core](../core/browser-game-characters.md) · [api](../api/browser-game-characters.md) · [nextjs](../nextjs/browser-game-characters.md) |
+| [Browser Game Collections React Native + Expo](browser-game-collections.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-collections) | [core](../core/browser-game-collections.md) · [api](../api/browser-game-collections.md) · [nextjs](../nextjs/browser-game-collections.md) |
+| [Browser Game Combat React Native + Expo](browser-game-combat.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-combat) | [core](../core/browser-game-combat.md) · [api](../api/browser-game-combat.md) · [nextjs](../nextjs/browser-game-combat.md) |
+| [Browser Game Commerce React Native + Expo](browser-game-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-commerce) | [core](../core/browser-game-commerce.md) · [api](../api/browser-game-commerce.md) · [nextjs](../nextjs/browser-game-commerce.md) |
+| [Browser Game Competition React Native + Expo](browser-game-competition.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-competition) | [core](../core/browser-game-competition.md) · [api](../api/browser-game-competition.md) · [nextjs](../nextjs/browser-game-competition.md) |
+| [Browser Game Crafting React Native + Expo](browser-game-crafting.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-crafting) | [core](../core/browser-game-crafting.md) · [api](../api/browser-game-crafting.md) · [nextjs](../nextjs/browser-game-crafting.md) |
+| [Browser Game Economy React Native + Expo](browser-game-economy.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-economy) | [core](../core/browser-game-economy.md) · [api](../api/browser-game-economy.md) · [nextjs](../nextjs/browser-game-economy.md) |
+| [Browser Game Game Core React Native + Expo](browser-game-game-core.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-game-core) | [core](../core/browser-game-game-core.md) · [api](../api/browser-game-game-core.md) · [nextjs](../nextjs/browser-game-game-core.md) |
+| [Browser Game Items React Native + Expo](browser-game-items.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-items) | [core](../core/browser-game-items.md) · [api](../api/browser-game-items.md) · [nextjs](../nextjs/browser-game-items.md) |
+| [Browser Game Live Ops React Native + Expo](browser-game-live-ops.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-live-ops) | [core](../core/browser-game-live-ops.md) · [api](../api/browser-game-live-ops.md) · [nextjs](../nextjs/browser-game-live-ops.md) |
+| [Browser Game Moderation And Analytics React Native + Expo](browser-game-moderation-and-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-moderation-and-analytics) | [core](../core/browser-game-moderation-and-analytics.md) · [api](../api/browser-game-moderation-and-analytics.md) · [nextjs](../nextjs/browser-game-moderation-and-analytics.md) |
+| [Browser Game Quests React Native + Expo](browser-game-quests.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-quests) | [core](../core/browser-game-quests.md) · [api](../api/browser-game-quests.md) · [nextjs](../nextjs/browser-game-quests.md) |
+| [Browser Game Social React Native + Expo](browser-game-social.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-social) | [core](../core/browser-game-social.md) · [api](../api/browser-game-social.md) · [nextjs](../nextjs/browser-game-social.md) |
+| [Browser Game World React Native + Expo](browser-game-world.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-world) | [core](../core/browser-game-world.md) · [api](../api/browser-game-world.md) · [nextjs](../nextjs/browser-game-world.md) |
+| [Characters React Native + Expo](characters.md) | [Target/source map](../SOURCE-MAPPING.md#characters) | [core](../core/characters.md) · [api](../api/characters.md) · [nextjs](../nextjs/characters.md) |
+| [Collections React Native + Expo](collections.md) | [Target/source map](../SOURCE-MAPPING.md#collections) | [core](../core/collections.md) · [api](../api/collections.md) · [nextjs](../nextjs/collections.md) |
+| [Combat React Native + Expo](combat.md) | [Target/source map](../SOURCE-MAPPING.md#combat) | [core](../core/combat.md) · [api](../api/combat.md) · [nextjs](../nextjs/combat.md) |
+| [Commerce React Native + Expo](commerce.md) | [Target/source map](../SOURCE-MAPPING.md#commerce) | [core](../core/commerce.md) · [api](../api/commerce.md) · [nextjs](../nextjs/commerce.md) |
+| [Competition React Native + Expo](competition.md) | [Target/source map](../SOURCE-MAPPING.md#competition) | [core](../core/competition.md) · [api](../api/competition.md) · [nextjs](../nextjs/competition.md) |
+| [Crafting React Native + Expo](crafting.md) | [Target/source map](../SOURCE-MAPPING.md#crafting) | [core](../core/crafting.md) · [api](../api/crafting.md) · [nextjs](../nextjs/crafting.md) |
+| [Currency Context React Native + Expo](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience React Native + Expo](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Economy React Native + Expo](economy.md) | [Target/source map](../SOURCE-MAPPING.md#economy) | [core](../core/economy.md) · [api](../api/economy.md) · [nextjs](../nextjs/economy.md) |
+| [Feature Flags React Native + Expo](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media React Native + Expo](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Game Core React Native + Expo](game-core.md) | [Target/source map](../SOURCE-MAPPING.md#game-core) | [core](../core/game-core.md) · [api](../api/game-core.md) · [nextjs](../nextjs/game-core.md) |
+| [Identity Core React Native + Expo](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React Native + Expo](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export React Native + Expo](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations React Native + Expo](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Items React Native + Expo](items.md) | [Target/source map](../SOURCE-MAPPING.md#items) | [core](../core/items.md) · [api](../api/items.md) · [nextjs](../nextjs/items.md) |
+| [Jetstream Bridge React Native + Expo](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Live Ops React Native + Expo](live-ops.md) | [Target/source map](../SOURCE-MAPPING.md#live-ops) | [core](../core/live-ops.md) · [api](../api/live-ops.md) · [nextjs](../nextjs/live-ops.md) |
+| [Localization Core React Native + Expo](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React Native + Expo](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Moderation And Analytics React Native + Expo](moderation-and-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#moderation-and-analytics) | [core](../core/moderation-and-analytics.md) · [api](../api/moderation-and-analytics.md) · [nextjs](../nextjs/moderation-and-analytics.md) |
+| [Module Manager React Native + Expo](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications React Native + Expo](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability React Native + Expo](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams React Native + Expo](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles React Native + Expo](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Quests React Native + Expo](quests.md) | [Target/source map](../SOURCE-MAPPING.md#quests) | [core](../core/quests.md) · [api](../api/quests.md) · [nextjs](../nextjs/quests.md) |
+| [Roles Permissions React Native + Expo](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues React Native + Expo](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search React Native + Expo](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices React Native + Expo](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings React Native + Expo](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Social React Native + Expo](social.md) | [Target/source map](../SOURCE-MAPPING.md#social) | [core](../core/social.md) · [api](../api/social.md) · [nextjs](../nextjs/social.md) |
+| [Theme Support React Native + Expo](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication React Native + Expo](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks React Native + Expo](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [World React Native + Expo](world.md) | [Target/source map](../SOURCE-MAPPING.md#world) | [core](../core/world.md) · [api](../api/world.md) · [nextjs](../nextjs/world.md) |

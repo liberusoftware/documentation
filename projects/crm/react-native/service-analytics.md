@@ -1,5 +1,9 @@
 # Service Analytics React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#service-analytics). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-service-analytics-react-native
 **Matching core package:** module-crm-service-analytics ([implementation](../core/service-analytics.md))
 **Matching API package:** module-crm-service-analytics-api ([contract](../api/service-analytics.md))

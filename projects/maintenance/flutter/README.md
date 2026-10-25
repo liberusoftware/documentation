@@ -1,50 +1,70 @@
 # Maintenance Flutter + Dart Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **60 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-- [Activity Comments Flutter](activity-comments.md) — `module-maintenance-activity-comments-flutter`
-- [Analytics Core Flutter](analytics-core.md) — `module-maintenance-analytics-core-flutter`
-- [Analytics Google Flutter](analytics-google.md) — `module-maintenance-analytics-google-flutter`
-- [Analytics Meta Flutter](analytics-meta.md) — `module-maintenance-analytics-meta-flutter`
-- [Api Access Flutter](api-access.md) — `module-maintenance-api-access-flutter`
-- [Application Flutter](application.md) — `module-maintenance-application-flutter`
-- [Audit Flutter](audit.md) — `module-maintenance-audit-flutter`
-- [Currency Context Flutter](currency-context.md) — `module-maintenance-currency-context-flutter`
-- [Developer Experience Flutter](developer-experience.md) — `module-maintenance-developer-experience-flutter`
-- [Feature Flags Flutter](feature-flags.md) — `module-maintenance-feature-flags-flutter`
-- [Files Media Flutter](files-media.md) — `module-maintenance-files-media-flutter`
-- [Identity Core Flutter](identity-core.md) — `module-maintenance-identity-core-flutter`
-- [Identity Socialstream Flutter](identity-socialstream.md) — `module-maintenance-identity-socialstream-flutter`
-- [Import Export Flutter](import-export.md) — `module-maintenance-import-export-flutter`
-- [Integrations Flutter](integrations.md) — `module-maintenance-integrations-flutter`
-- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-flutter`
-- [Localization Core Flutter](localization-core.md) — `module-maintenance-localization-core-flutter`
-- [Localization Mymemory Flutter](localization-mymemory.md) — `module-maintenance-localization-mymemory-flutter`
-- [Maintenance Maintenance Core Flutter](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-flutter`
-- [Module Maintenance Assets Flutter](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-flutter`
-- [Module Maintenance Commercial Flutter](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-flutter`
-- [Module Maintenance Compliance Flutter](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-flutter`
-- [Module Maintenance Core Flutter](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-flutter`
-- [Module Maintenance Customers And Sites Flutter](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-flutter`
-- [Module Maintenance Inspections Flutter](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-flutter`
-- [Module Maintenance Inventory Flutter](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-flutter`
-- [Module Maintenance Labor And Time Flutter](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-flutter`
-- [Module Maintenance Portals Flutter](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-flutter`
-- [Module Maintenance Preventative Maintenance Flutter](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-flutter`
-- [Module Maintenance Procurement Flutter](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-flutter`
-- [Module Maintenance Reporting Flutter](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-flutter`
-- [Module Maintenance Scheduling Flutter](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-flutter`
-- [Module Maintenance Work Orders Flutter](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-flutter`
-- [Module Manager Flutter](module-manager.md) — `module-maintenance-module-manager-flutter`
-- [Notifications Flutter](notifications.md) — `module-maintenance-notifications-flutter`
-- [Observability Flutter](observability.md) — `module-maintenance-observability-flutter`
-- [Organizations Teams Flutter](organizations-teams.md) — `module-maintenance-organizations-teams-flutter`
-- [Profiles Flutter](profiles.md) — `module-maintenance-profiles-flutter`
-- [Roles Permissions Flutter](roles-permissions.md) — `module-maintenance-roles-permissions-flutter`
-- [Scheduler Queues Flutter](scheduler-queues.md) — `module-maintenance-scheduler-queues-flutter`
-- [Search Flutter](search.md) — `module-maintenance-search-flutter`
-- [Sessions Devices Flutter](sessions-devices.md) — `module-maintenance-sessions-devices-flutter`
-- [Settings Flutter](settings.md) — `module-maintenance-settings-flutter`
-- [Theme Support Flutter](theme-support.md) — `module-maintenance-theme-support-flutter`
-- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-flutter`
-- [Webhooks Flutter](webhooks.md) — `module-maintenance-webhooks-flutter`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Flutter + Dart](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Flutter + Dart](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Flutter + Dart](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Flutter + Dart](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Flutter + Dart](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Flutter + Dart](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Assets Flutter + Dart](assets.md) | [Target/source map](../SOURCE-MAPPING.md#assets) | [core](../core/assets.md) · [api](../api/assets.md) · [nextjs](../nextjs/assets.md) |
+| [Audit Flutter + Dart](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Commercial Flutter + Dart](commercial.md) | [Target/source map](../SOURCE-MAPPING.md#commercial) | [core](../core/commercial.md) · [api](../api/commercial.md) · [nextjs](../nextjs/commercial.md) |
+| [Compliance Flutter + Dart](compliance.md) | [Target/source map](../SOURCE-MAPPING.md#compliance) | [core](../core/compliance.md) · [api](../api/compliance.md) · [nextjs](../nextjs/compliance.md) |
+| [Currency Context Flutter + Dart](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customers And Sites Flutter + Dart](customers-and-sites.md) | [Target/source map](../SOURCE-MAPPING.md#customers-and-sites) | [core](../core/customers-and-sites.md) · [api](../api/customers-and-sites.md) · [nextjs](../nextjs/customers-and-sites.md) |
+| [Developer Experience Flutter + Dart](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags Flutter + Dart](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Flutter + Dart](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Flutter + Dart](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Flutter + Dart](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Flutter + Dart](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Inspections Flutter + Dart](inspections.md) | [Target/source map](../SOURCE-MAPPING.md#inspections) | [core](../core/inspections.md) · [api](../api/inspections.md) · [nextjs](../nextjs/inspections.md) |
+| [Integrations Flutter + Dart](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Inventory Flutter + Dart](inventory.md) | [Target/source map](../SOURCE-MAPPING.md#inventory) | [core](../core/inventory.md) · [api](../api/inventory.md) · [nextjs](../nextjs/inventory.md) |
+| [Jetstream Bridge Flutter + Dart](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Labor And Time Flutter + Dart](labor-and-time.md) | [Target/source map](../SOURCE-MAPPING.md#labor-and-time) | [core](../core/labor-and-time.md) · [api](../api/labor-and-time.md) · [nextjs](../nextjs/labor-and-time.md) |
+| [Localization Core Flutter + Dart](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Flutter + Dart](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Maintenance Core Flutter + Dart](maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#maintenance-core) | [core](../core/maintenance-core.md) · [api](../api/maintenance-core.md) · [nextjs](../nextjs/maintenance-core.md) |
+| [Maintenance Maintenance Core Flutter + Dart](maintenance-maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#maintenance-maintenance-core) | [core](../core/maintenance-maintenance-core.md) · [api](../api/maintenance-maintenance-core.md) · [nextjs](../nextjs/maintenance-maintenance-core.md) |
+| [Module Maintenance Assets Flutter + Dart](module-maintenance-assets.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-assets) | [core](../core/module-maintenance-assets.md) · [api](../api/module-maintenance-assets.md) · [nextjs](../nextjs/module-maintenance-assets.md) |
+| [Module Maintenance Commercial Flutter + Dart](module-maintenance-commercial.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-commercial) | [core](../core/module-maintenance-commercial.md) · [api](../api/module-maintenance-commercial.md) · [nextjs](../nextjs/module-maintenance-commercial.md) |
+| [Module Maintenance Compliance Flutter + Dart](module-maintenance-compliance.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-compliance) | [core](../core/module-maintenance-compliance.md) · [api](../api/module-maintenance-compliance.md) · [nextjs](../nextjs/module-maintenance-compliance.md) |
+| [Module Maintenance Core Flutter + Dart](module-maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-core) | [core](../core/module-maintenance-core.md) · [api](../api/module-maintenance-core.md) · [nextjs](../nextjs/module-maintenance-core.md) |
+| [Module Maintenance Customers And Sites Flutter + Dart](module-maintenance-customers-and-sites.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-customers-and-sites) | [core](../core/module-maintenance-customers-and-sites.md) · [api](../api/module-maintenance-customers-and-sites.md) · [nextjs](../nextjs/module-maintenance-customers-and-sites.md) |
+| [Module Maintenance Inspections Flutter + Dart](module-maintenance-inspections.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-inspections) | [core](../core/module-maintenance-inspections.md) · [api](../api/module-maintenance-inspections.md) · [nextjs](../nextjs/module-maintenance-inspections.md) |
+| [Module Maintenance Inventory Flutter + Dart](module-maintenance-inventory.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-inventory) | [core](../core/module-maintenance-inventory.md) · [api](../api/module-maintenance-inventory.md) · [nextjs](../nextjs/module-maintenance-inventory.md) |
+| [Module Maintenance Labor And Time Flutter + Dart](module-maintenance-labor-and-time.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-labor-and-time) | [core](../core/module-maintenance-labor-and-time.md) · [api](../api/module-maintenance-labor-and-time.md) · [nextjs](../nextjs/module-maintenance-labor-and-time.md) |
+| [Module Maintenance Portals Flutter + Dart](module-maintenance-portals.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-portals) | [core](../core/module-maintenance-portals.md) · [api](../api/module-maintenance-portals.md) · [nextjs](../nextjs/module-maintenance-portals.md) |
+| [Module Maintenance Preventative Maintenance Flutter + Dart](module-maintenance-preventative-maintenance.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-preventative-maintenance) | [core](../core/module-maintenance-preventative-maintenance.md) · [api](../api/module-maintenance-preventative-maintenance.md) · [nextjs](../nextjs/module-maintenance-preventative-maintenance.md) |
+| [Module Maintenance Procurement Flutter + Dart](module-maintenance-procurement.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-procurement) | [core](../core/module-maintenance-procurement.md) · [api](../api/module-maintenance-procurement.md) · [nextjs](../nextjs/module-maintenance-procurement.md) |
+| [Module Maintenance Reporting Flutter + Dart](module-maintenance-reporting.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-reporting) | [core](../core/module-maintenance-reporting.md) · [api](../api/module-maintenance-reporting.md) · [nextjs](../nextjs/module-maintenance-reporting.md) |
+| [Module Maintenance Scheduling Flutter + Dart](module-maintenance-scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-scheduling) | [core](../core/module-maintenance-scheduling.md) · [api](../api/module-maintenance-scheduling.md) · [nextjs](../nextjs/module-maintenance-scheduling.md) |
+| [Module Maintenance Work Orders Flutter + Dart](module-maintenance-work-orders.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-work-orders) | [core](../core/module-maintenance-work-orders.md) · [api](../api/module-maintenance-work-orders.md) · [nextjs](../nextjs/module-maintenance-work-orders.md) |
+| [Module Manager Flutter + Dart](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Flutter + Dart](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Flutter + Dart](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Flutter + Dart](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Portals Flutter + Dart](portals.md) | [Target/source map](../SOURCE-MAPPING.md#portals) | [core](../core/portals.md) · [api](../api/portals.md) · [nextjs](../nextjs/portals.md) |
+| [Preventative Maintenance Flutter + Dart](preventative-maintenance.md) | [Target/source map](../SOURCE-MAPPING.md#preventative-maintenance) | [core](../core/preventative-maintenance.md) · [api](../api/preventative-maintenance.md) · [nextjs](../nextjs/preventative-maintenance.md) |
+| [Procurement Flutter + Dart](procurement.md) | [Target/source map](../SOURCE-MAPPING.md#procurement) | [core](../core/procurement.md) · [api](../api/procurement.md) · [nextjs](../nextjs/procurement.md) |
+| [Profiles Flutter + Dart](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Reporting Flutter + Dart](reporting.md) | [Target/source map](../SOURCE-MAPPING.md#reporting) | [core](../core/reporting.md) · [api](../api/reporting.md) · [nextjs](../nextjs/reporting.md) |
+| [Roles Permissions Flutter + Dart](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Flutter + Dart](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Scheduling Flutter + Dart](scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#scheduling) | [core](../core/scheduling.md) · [api](../api/scheduling.md) · [nextjs](../nextjs/scheduling.md) |
+| [Search Flutter + Dart](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Flutter + Dart](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Flutter + Dart](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Flutter + Dart](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Flutter + Dart](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Flutter + Dart](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [Work Orders Flutter + Dart](work-orders.md) | [Target/source map](../SOURCE-MAPPING.md#work-orders) | [core](../core/work-orders.md) · [api](../api/work-orders.md) · [nextjs](../nextjs/work-orders.md) |

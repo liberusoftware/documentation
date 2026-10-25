@@ -1,12 +1,16 @@
 # Maintenance: Reporting Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#reporting). Observed identity: [`liberusoftware/module-maintenance-reporting-filament`](../../../modules/source/liberusoftware--module-maintenance-reporting-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-maintenance-reporting-filament`  
 **Matching domain module:** `maintenance-reporting`  
 **Application:** Maintenance  
 **Source feature:** [Reporting](../features/reporting.md)  
-**Architecture:** [FILAMENT.md](../MAINTENANCE.md) · [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

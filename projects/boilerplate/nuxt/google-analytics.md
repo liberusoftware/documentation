@@ -1,6 +1,10 @@
 # Boilerplate: Google Analytics Nuxt presentation packages
 
-**Composer package:** `module-google-analytics-nuxt`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#google-analytics). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `analytics-google`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-google-analytics-nuxt`
 **Matching core package:** [`module-google-analytics`](../core/google-analytics.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Google Analytics event mapping, property/stream configuration, consent-aware delivery, and diagnostics.

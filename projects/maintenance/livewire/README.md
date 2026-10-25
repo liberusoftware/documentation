@@ -1,50 +1,70 @@
 # Maintenance Livewire Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **60 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Livewire 4 presentation package for exactly one matching domain module.
 
-- [Activity Comments Livewire](activity-comments.md) — `module-maintenance-activity-comments-livewire`
-- [Analytics Core Livewire](analytics-core.md) — `module-maintenance-analytics-core-livewire`
-- [Analytics Google Livewire](analytics-google.md) — `module-maintenance-analytics-google-livewire`
-- [Analytics Meta Livewire](analytics-meta.md) — `module-maintenance-analytics-meta-livewire`
-- [Api Access Livewire](api-access.md) — `module-maintenance-api-access-livewire`
-- [Application Livewire](application.md) — `module-maintenance-application-livewire`
-- [Audit Livewire](audit.md) — `module-maintenance-audit-livewire`
-- [Currency Context Livewire](currency-context.md) — `module-maintenance-currency-context-livewire`
-- [Developer Experience Livewire](developer-experience.md) — `module-maintenance-developer-experience-livewire`
-- [Feature Flags Livewire](feature-flags.md) — `module-maintenance-feature-flags-livewire`
-- [Files Media Livewire](files-media.md) — `module-maintenance-files-media-livewire`
-- [Identity Core Livewire](identity-core.md) — `module-maintenance-identity-core-livewire`
-- [Identity Socialstream Livewire](identity-socialstream.md) — `module-maintenance-identity-socialstream-livewire`
-- [Import Export Livewire](import-export.md) — `module-maintenance-import-export-livewire`
-- [Integrations Livewire](integrations.md) — `module-maintenance-integrations-livewire`
-- [Jetstream Bridge Livewire](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-livewire`
-- [Localization Core Livewire](localization-core.md) — `module-maintenance-localization-core-livewire`
-- [Localization Mymemory Livewire](localization-mymemory.md) — `module-maintenance-localization-mymemory-livewire`
-- [Maintenance Maintenance Core Livewire](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-livewire`
-- [Module Maintenance Assets Livewire](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-livewire`
-- [Module Maintenance Commercial Livewire](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-livewire`
-- [Module Maintenance Compliance Livewire](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-livewire`
-- [Module Maintenance Core Livewire](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-livewire`
-- [Module Maintenance Customers And Sites Livewire](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-livewire`
-- [Module Maintenance Inspections Livewire](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-livewire`
-- [Module Maintenance Inventory Livewire](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-livewire`
-- [Module Maintenance Labor And Time Livewire](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-livewire`
-- [Module Maintenance Portals Livewire](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-livewire`
-- [Module Maintenance Preventative Maintenance Livewire](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-livewire`
-- [Module Maintenance Procurement Livewire](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-livewire`
-- [Module Maintenance Reporting Livewire](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-livewire`
-- [Module Maintenance Scheduling Livewire](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-livewire`
-- [Module Maintenance Work Orders Livewire](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-livewire`
-- [Module Manager Livewire](module-manager.md) — `module-maintenance-module-manager-livewire`
-- [Notifications Livewire](notifications.md) — `module-maintenance-notifications-livewire`
-- [Observability Livewire](observability.md) — `module-maintenance-observability-livewire`
-- [Organizations Teams Livewire](organizations-teams.md) — `module-maintenance-organizations-teams-livewire`
-- [Profiles Livewire](profiles.md) — `module-maintenance-profiles-livewire`
-- [Roles Permissions Livewire](roles-permissions.md) — `module-maintenance-roles-permissions-livewire`
-- [Scheduler Queues Livewire](scheduler-queues.md) — `module-maintenance-scheduler-queues-livewire`
-- [Search Livewire](search.md) — `module-maintenance-search-livewire`
-- [Sessions Devices Livewire](sessions-devices.md) — `module-maintenance-sessions-devices-livewire`
-- [Settings Livewire](settings.md) — `module-maintenance-settings-livewire`
-- [Theme Support Livewire](theme-support.md) — `module-maintenance-theme-support-livewire`
-- [Two Factor Authentication Livewire](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-livewire`
-- [Webhooks Livewire](webhooks.md) — `module-maintenance-webhooks-livewire`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Livewire](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Livewire](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Livewire](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Livewire](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Livewire](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Livewire](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Assets Livewire](assets.md) | [liberusoftware/module-maintenance-assets-livewire](../../../modules/source/liberusoftware--module-maintenance-assets-livewire.md) | [core](../core/assets.md) · [api](../api/assets.md) · [nextjs](../nextjs/assets.md) |
+| [Audit Livewire](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Commercial Livewire](commercial.md) | [liberusoftware/module-maintenance-commercial-livewire](../../../modules/source/liberusoftware--module-maintenance-commercial-livewire.md) | [core](../core/commercial.md) · [api](../api/commercial.md) · [nextjs](../nextjs/commercial.md) |
+| [Compliance Livewire](compliance.md) | [liberusoftware/module-maintenance-compliance-livewire](../../../modules/source/liberusoftware--module-maintenance-compliance-livewire.md) | [core](../core/compliance.md) · [api](../api/compliance.md) · [nextjs](../nextjs/compliance.md) |
+| [Currency Context Livewire](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customers and Sites Livewire](customers-and-sites.md) | [liberusoftware/module-maintenance-customers-and-sites-livewire](../../../modules/source/liberusoftware--module-maintenance-customers-and-sites-livewire.md) | [core](../core/customers-and-sites.md) · [api](../api/customers-and-sites.md) · [nextjs](../nextjs/customers-and-sites.md) |
+| [Developer Experience Livewire](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags Livewire](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Livewire](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Livewire](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Livewire](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Livewire](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Inspections Livewire](inspections.md) | [liberusoftware/module-maintenance-inspections-livewire](../../../modules/source/liberusoftware--module-maintenance-inspections-livewire.md) | [core](../core/inspections.md) · [api](../api/inspections.md) · [nextjs](../nextjs/inspections.md) |
+| [Integrations Livewire](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Inventory Livewire](inventory.md) | [liberusoftware/module-maintenance-inventory-livewire](../../../modules/source/liberusoftware--module-maintenance-inventory-livewire.md) | [core](../core/inventory.md) · [api](../api/inventory.md) · [nextjs](../nextjs/inventory.md) |
+| [Jetstream Bridge Livewire](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Labor and Time Livewire](labor-and-time.md) | [liberusoftware/module-maintenance-labor-and-time-livewire](../../../modules/source/liberusoftware--module-maintenance-labor-and-time-livewire.md) | [core](../core/labor-and-time.md) · [api](../api/labor-and-time.md) · [nextjs](../nextjs/labor-and-time.md) |
+| [Localization Core Livewire](localization-core.md) | [liberusoftware/localization-core-livewire](../../../modules/source/liberusoftware--localization-core-livewire.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Livewire](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Maintenance Core Livewire](maintenance-core.md) | [liberusoftware/module-maintenance-core-livewire](../../../modules/source/liberusoftware--module-maintenance-core-livewire.md) | [core](../core/maintenance-core.md) · [api](../api/maintenance-core.md) · [nextjs](../nextjs/maintenance-core.md) |
+| [Maintenance Maintenance Core Livewire](maintenance-maintenance-core.md) | [liberusoftware/module-maintenance-core-livewire](../../../modules/source/liberusoftware--module-maintenance-core-livewire.md) | [core](../core/maintenance-maintenance-core.md) · [api](../api/maintenance-maintenance-core.md) · [nextjs](../nextjs/maintenance-maintenance-core.md) |
+| [Module Maintenance Assets Livewire](module-maintenance-assets.md) | [liberusoftware/module-maintenance-assets-livewire](../../../modules/source/liberusoftware--module-maintenance-assets-livewire.md) | [core](../core/module-maintenance-assets.md) · [api](../api/module-maintenance-assets.md) · [nextjs](../nextjs/module-maintenance-assets.md) |
+| [Module Maintenance Commercial Livewire](module-maintenance-commercial.md) | [liberusoftware/module-maintenance-commercial-livewire](../../../modules/source/liberusoftware--module-maintenance-commercial-livewire.md) | [core](../core/module-maintenance-commercial.md) · [api](../api/module-maintenance-commercial.md) · [nextjs](../nextjs/module-maintenance-commercial.md) |
+| [Module Maintenance Compliance Livewire](module-maintenance-compliance.md) | [liberusoftware/module-maintenance-compliance-livewire](../../../modules/source/liberusoftware--module-maintenance-compliance-livewire.md) | [core](../core/module-maintenance-compliance.md) · [api](../api/module-maintenance-compliance.md) · [nextjs](../nextjs/module-maintenance-compliance.md) |
+| [Module Maintenance Core Livewire](module-maintenance-core.md) | [liberusoftware/module-maintenance-core-livewire](../../../modules/source/liberusoftware--module-maintenance-core-livewire.md) | [core](../core/module-maintenance-core.md) · [api](../api/module-maintenance-core.md) · [nextjs](../nextjs/module-maintenance-core.md) |
+| [Module Maintenance Customers And Sites Livewire](module-maintenance-customers-and-sites.md) | [liberusoftware/module-maintenance-customers-and-sites-livewire](../../../modules/source/liberusoftware--module-maintenance-customers-and-sites-livewire.md) | [core](../core/module-maintenance-customers-and-sites.md) · [api](../api/module-maintenance-customers-and-sites.md) · [nextjs](../nextjs/module-maintenance-customers-and-sites.md) |
+| [Module Maintenance Inspections Livewire](module-maintenance-inspections.md) | [liberusoftware/module-maintenance-inspections-livewire](../../../modules/source/liberusoftware--module-maintenance-inspections-livewire.md) | [core](../core/module-maintenance-inspections.md) · [api](../api/module-maintenance-inspections.md) · [nextjs](../nextjs/module-maintenance-inspections.md) |
+| [Module Maintenance Inventory Livewire](module-maintenance-inventory.md) | [liberusoftware/module-maintenance-inventory-livewire](../../../modules/source/liberusoftware--module-maintenance-inventory-livewire.md) | [core](../core/module-maintenance-inventory.md) · [api](../api/module-maintenance-inventory.md) · [nextjs](../nextjs/module-maintenance-inventory.md) |
+| [Module Maintenance Labor And Time Livewire](module-maintenance-labor-and-time.md) | [liberusoftware/module-maintenance-labor-and-time-livewire](../../../modules/source/liberusoftware--module-maintenance-labor-and-time-livewire.md) | [core](../core/module-maintenance-labor-and-time.md) · [api](../api/module-maintenance-labor-and-time.md) · [nextjs](../nextjs/module-maintenance-labor-and-time.md) |
+| [Module Maintenance Portals Livewire](module-maintenance-portals.md) | [liberusoftware/module-maintenance-portals-livewire](../../../modules/source/liberusoftware--module-maintenance-portals-livewire.md) | [core](../core/module-maintenance-portals.md) · [api](../api/module-maintenance-portals.md) · [nextjs](../nextjs/module-maintenance-portals.md) |
+| [Module Maintenance Preventative Maintenance Livewire](module-maintenance-preventative-maintenance.md) | [liberusoftware/module-maintenance-preventative-maintenance-livewire](../../../modules/source/liberusoftware--module-maintenance-preventative-maintenance-livewire.md) | [core](../core/module-maintenance-preventative-maintenance.md) · [api](../api/module-maintenance-preventative-maintenance.md) · [nextjs](../nextjs/module-maintenance-preventative-maintenance.md) |
+| [Module Maintenance Procurement Livewire](module-maintenance-procurement.md) | [liberusoftware/module-maintenance-procurement-livewire](../../../modules/source/liberusoftware--module-maintenance-procurement-livewire.md) | [core](../core/module-maintenance-procurement.md) · [api](../api/module-maintenance-procurement.md) · [nextjs](../nextjs/module-maintenance-procurement.md) |
+| [Module Maintenance Reporting Livewire](module-maintenance-reporting.md) | [liberusoftware/module-maintenance-reporting-livewire](../../../modules/source/liberusoftware--module-maintenance-reporting-livewire.md) | [core](../core/module-maintenance-reporting.md) · [api](../api/module-maintenance-reporting.md) · [nextjs](../nextjs/module-maintenance-reporting.md) |
+| [Module Maintenance Scheduling Livewire](module-maintenance-scheduling.md) | [liberusoftware/module-maintenance-scheduling-livewire](../../../modules/source/liberusoftware--module-maintenance-scheduling-livewire.md) | [core](../core/module-maintenance-scheduling.md) · [api](../api/module-maintenance-scheduling.md) · [nextjs](../nextjs/module-maintenance-scheduling.md) |
+| [Module Maintenance Work Orders Livewire](module-maintenance-work-orders.md) | [liberusoftware/module-maintenance-work-orders-livewire](../../../modules/source/liberusoftware--module-maintenance-work-orders-livewire.md) | [core](../core/module-maintenance-work-orders.md) · [api](../api/module-maintenance-work-orders.md) · [nextjs](../nextjs/module-maintenance-work-orders.md) |
+| [Module Manager Livewire](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Livewire](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Livewire](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Livewire](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Portals Livewire](portals.md) | [liberusoftware/module-maintenance-portals-livewire](../../../modules/source/liberusoftware--module-maintenance-portals-livewire.md) | [core](../core/portals.md) · [api](../api/portals.md) · [nextjs](../nextjs/portals.md) |
+| [Preventative Maintenance Livewire](preventative-maintenance.md) | [liberusoftware/module-maintenance-preventative-maintenance-livewire](../../../modules/source/liberusoftware--module-maintenance-preventative-maintenance-livewire.md) | [core](../core/preventative-maintenance.md) · [api](../api/preventative-maintenance.md) · [nextjs](../nextjs/preventative-maintenance.md) |
+| [Procurement Livewire](procurement.md) | [liberusoftware/module-maintenance-procurement-livewire](../../../modules/source/liberusoftware--module-maintenance-procurement-livewire.md) | [core](../core/procurement.md) · [api](../api/procurement.md) · [nextjs](../nextjs/procurement.md) |
+| [Profiles Livewire](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Reporting Livewire](reporting.md) | [liberusoftware/module-maintenance-reporting-livewire](../../../modules/source/liberusoftware--module-maintenance-reporting-livewire.md) | [core](../core/reporting.md) · [api](../api/reporting.md) · [nextjs](../nextjs/reporting.md) |
+| [Roles Permissions Livewire](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Livewire](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Scheduling Livewire](scheduling.md) | [liberusoftware/module-maintenance-scheduling-livewire](../../../modules/source/liberusoftware--module-maintenance-scheduling-livewire.md) | [core](../core/scheduling.md) · [api](../api/scheduling.md) · [nextjs](../nextjs/scheduling.md) |
+| [Search Livewire](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Livewire](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Livewire](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Livewire](theme-support.md) | [liberusoftware/theme-support-livewire](../../../modules/source/liberusoftware--theme-support-livewire.md) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Livewire](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Livewire](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [Work Orders Livewire](work-orders.md) | [liberusoftware/module-maintenance-work-orders-livewire](../../../modules/source/liberusoftware--module-maintenance-work-orders-livewire.md) | [core](../core/work-orders.md) · [api](../api/work-orders.md) · [nextjs](../nextjs/work-orders.md) |

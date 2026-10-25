@@ -1,0 +1,9 @@
+{
+  "control_reference": "control-example-001",
+  "finding_summary": "Required approval evidence is incomplete for the reviewed sample.",
+  "evidence_references": [
+    "sample-example-001"
+  ],
+  "remediation_owner_reference": "owner-example-001",
+  "due_at": "2026-11-15T17:00:00Z"
+}

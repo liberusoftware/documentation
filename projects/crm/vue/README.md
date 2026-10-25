@@ -1,134 +1,228 @@
 # CRM Vue + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **218 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments Vue](activity-comments.md) — `module-crm-activity-comments-vue-inertia`
-- [Analytics Contracts Vue](analytics-contracts.md) — `module-crm-analytics-contracts-vue-inertia`
-- [Analytics Core Vue](analytics-core.md) — `module-crm-analytics-core-vue-inertia`
-- [Analytics Google Vue](analytics-google.md) — `module-crm-analytics-google-vue-inertia`
-- [Analytics Meta Vue](analytics-meta.md) — `module-crm-analytics-meta-vue-inertia`
-- [Api Access Vue](api-access.md) — `module-crm-api-access-vue-inertia`
-- [Application Vue](application.md) — `module-crm-application-vue-inertia`
-- [Audit Vue](audit.md) — `module-crm-audit-vue-inertia`
-- [Crm Account Based Marketing Vue](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing-vue-inertia`
-- [Crm Account Planning Vue](crm-account-planning.md) — `module-crm-crm-account-planning-vue-inertia`
-- [Crm Activities Vue](crm-activities.md) — `module-crm-crm-activities-vue-inertia`
-- [Crm Advertising Vue](crm-advertising.md) — `module-crm-crm-advertising-vue-inertia`
-- [Crm Advocacy Vue](crm-advocacy.md) — `module-crm-crm-advocacy-vue-inertia`
-- [Crm Affiliate Management Vue](crm-affiliate-management.md) — `module-crm-crm-affiliate-management-vue-inertia`
-- [Crm Agency Workspace Vue](crm-agency-workspace.md) — `module-crm-crm-agency-workspace-vue-inertia`
-- [Crm Ai Reception And Conversation Vue](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation-vue-inertia`
-- [Crm Analytics Vue](crm-analytics.md) — `module-crm-crm-analytics-vue-inertia`
-- [Crm Attribution Vue](crm-attribution.md) — `module-crm-crm-attribution-vue-inertia`
-- [Crm Automation Pack Vue](crm-automation-pack.md) — `module-crm-crm-automation-pack-vue-inertia`
-- [Crm Business Process Management Vue](crm-business-process-management.md) — `module-crm-crm-business-process-management-vue-inertia`
-- [Crm Campaigns Vue](crm-campaigns.md) — `module-crm-crm-campaigns-vue-inertia`
-- [Crm Case Management Vue](crm-case-management.md) — `module-crm-crm-case-management-vue-inertia`
-- [Crm Channel Gateway Vue](crm-channel-gateway.md) — `module-crm-crm-channel-gateway-vue-inertia`
-- [Crm Channel Sales Vue](crm-channel-sales.md) — `module-crm-crm-channel-sales-vue-inertia`
-- [Crm Chat And Bots Vue](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots-vue-inertia`
-- [Crm Client Onboarding Vue](crm-client-onboarding.md) — `module-crm-crm-client-onboarding-vue-inertia`
-- [Crm Collaboration Vue](crm-collaboration.md) — `module-crm-crm-collaboration-vue-inertia`
-- [Crm Communities Vue](crm-communities.md) — `module-crm-crm-communities-vue-inertia`
-- [Crm Consent And Preferences Vue](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences-vue-inertia`
-- [Crm Contact Center Vue](crm-contact-center.md) — `module-crm-crm-contact-center-vue-inertia`
-- [Crm Contracts Vue](crm-contracts.md) — `module-crm-crm-contracts-vue-inertia`
-- [Crm Conversation Analytics Vue](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics-vue-inertia`
-- [Crm Conversation Intelligence Vue](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence-vue-inertia`
-- [Crm Conversion Optimization Vue](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization-vue-inertia`
-- [Crm Copilot Vue](crm-copilot.md) — `module-crm-crm-copilot-vue-inertia`
-- [Crm Core Vue](crm-core.md) — `module-crm-crm-core-vue-inertia`
-- [Crm Cpq Vue](crm-cpq.md) — `module-crm-crm-cpq-vue-inertia`
-- [Crm Customer Data Model Vue](crm-customer-data-model.md) — `module-crm-crm-customer-data-model-vue-inertia`
-- [Crm Customer Data Platform Vue](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform-vue-inertia`
-- [Crm Customer Self Service Vue](crm-customer-self-service.md) — `module-crm-crm-customer-self-service-vue-inertia`
-- [Crm Customer Success Vue](crm-customer-success.md) — `module-crm-crm-customer-success-vue-inertia`
-- [Crm Data Operations Vue](crm-data-operations.md) — `module-crm-crm-data-operations-vue-inertia`
-- [Crm Deal Registration Vue](crm-deal-registration.md) — `module-crm-crm-deal-registration-vue-inertia`
-- [Crm Dialer And Outreach Vue](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach-vue-inertia`
-- [Crm Documents Vue](crm-documents.md) — `module-crm-crm-documents-vue-inertia`
-- [Crm Email Marketing Vue](crm-email-marketing.md) — `module-crm-crm-email-marketing-vue-inertia`
-- [Crm Email Productivity Vue](crm-email-productivity.md) — `module-crm-crm-email-productivity-vue-inertia`
-- [Crm Enrichment Vue](crm-enrichment.md) — `module-crm-crm-enrichment-vue-inertia`
-- [Crm Events And Webinars Vue](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars-vue-inertia`
-- [Crm Feedback And Voice Of Customer Vue](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer-vue-inertia`
-- [Crm Field Service Coordination Vue](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination-vue-inertia`
-- [Crm Forecasting Vue](crm-forecasting.md) — `module-crm-crm-forecasting-vue-inertia`
-- [Crm Forms And Surveys Vue](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys-vue-inertia`
-- [Crm Goals And Performance Vue](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance-vue-inertia`
-- [Crm Journey Orchestration Vue](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration-vue-inertia`
-- [Crm Knowledge Vue](crm-knowledge.md) — `module-crm-crm-knowledge-vue-inertia`
-- [Crm Landing Pages And Funnels Vue](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels-vue-inertia`
-- [Crm Lead Capture Vue](crm-lead-capture.md) — `module-crm-crm-lead-capture-vue-inertia`
-- [Crm Lead Qualification Vue](crm-lead-qualification.md) — `module-crm-crm-lead-qualification-vue-inertia`
-- [Crm Learning And Courses Vue](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses-vue-inertia`
-- [Crm Loyalty Vue](crm-loyalty.md) — `module-crm-crm-loyalty-vue-inertia`
-- [Crm Marketing Agent Vue](crm-marketing-agent.md) — `module-crm-crm-marketing-agent-vue-inertia`
-- [Crm Marketing Development Funds Vue](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds-vue-inertia`
-- [Crm Marketing Resources Vue](crm-marketing-resources.md) — `module-crm-crm-marketing-resources-vue-inertia`
-- [Crm Memberships Vue](crm-memberships.md) — `module-crm-crm-memberships-vue-inertia`
-- [Crm Mobile Messaging Vue](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging-vue-inertia`
-- [Crm Omnichannel Service Vue](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service-vue-inertia`
-- [Crm Orders And Payments Workspace Vue](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace-vue-inertia`
-- [Crm Partner Relationship Management Vue](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management-vue-inertia`
-- [Crm Personalization Vue](crm-personalization.md) — `module-crm-crm-personalization-vue-inertia`
-- [Crm Playbooks And Enablement Vue](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement-vue-inertia`
-- [Crm Predictive Models Vue](crm-predictive-models.md) — `module-crm-crm-predictive-models-vue-inertia`
-- [Crm Product Workspace Vue](crm-product-workspace.md) — `module-crm-crm-product-workspace-vue-inertia`
-- [Crm Projects Vue](crm-projects.md) — `module-crm-crm-projects-vue-inertia`
-- [Crm Proposals And Quotes Vue](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes-vue-inertia`
-- [Crm Prospecting Vue](crm-prospecting.md) — `module-crm-crm-prospecting-vue-inertia`
-- [Crm Prospecting Agent Vue](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent-vue-inertia`
-- [Crm Quotas And Incentives Vue](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives-vue-inertia`
-- [Crm Referrals Vue](crm-referrals.md) — `module-crm-crm-referrals-vue-inertia`
-- [Crm Reputation Management Vue](crm-reputation-management.md) — `module-crm-crm-reputation-management-vue-inertia`
-- [Crm Resource Planning Vue](crm-resource-planning.md) — `module-crm-crm-resource-planning-vue-inertia`
-- [Crm Revenue Intelligence Vue](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence-vue-inertia`
-- [Crm Revenue Lifecycle Vue](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle-vue-inertia`
-- [Crm Routing Vue](crm-routing.md) — `module-crm-crm-routing-vue-inertia`
-- [Crm Saas Packaging Vue](crm-saas-packaging.md) — `module-crm-crm-saas-packaging-vue-inertia`
-- [Crm Sales Engagement Vue](crm-sales-engagement.md) — `module-crm-crm-sales-engagement-vue-inertia`
-- [Crm Sales Pipelines Vue](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines-vue-inertia`
-- [Crm Sales Workspace Vue](crm-sales-workspace.md) — `module-crm-crm-sales-workspace-vue-inertia`
-- [Crm Sandbox And Release Management Vue](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management-vue-inertia`
-- [Crm Sandbox Release Vue](crm-sandbox-release.md) — `module-crm-crm-sandbox-release-vue-inertia`
-- [Crm Scheduling Vue](crm-scheduling.md) — `module-crm-crm-scheduling-vue-inertia`
-- [Crm Search Vue](crm-search.md) — `module-crm-crm-search-vue-inertia`
-- [Crm Segmentation Vue](crm-segmentation.md) — `module-crm-crm-segmentation-vue-inertia`
-- [Crm Service Agent Vue](crm-service-agent.md) — `module-crm-crm-service-agent-vue-inertia`
-- [Crm Service Analytics Vue](crm-service-analytics.md) — `module-crm-crm-service-analytics-vue-inertia`
-- [Crm Sla And Entitlements Vue](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements-vue-inertia`
-- [Crm Telephony Vue](crm-telephony.md) — `module-crm-crm-telephony-vue-inertia`
-- [Crm Template Snapshots Vue](crm-template-snapshots.md) — `module-crm-crm-template-snapshots-vue-inertia`
-- [Crm Templates And Snapshots Vue](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots-vue-inertia`
-- [Crm Territories And Ownership Vue](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership-vue-inertia`
-- [Crm Unified Conversations Vue](crm-unified-conversations.md) — `module-crm-crm-unified-conversations-vue-inertia`
-- [Crm Usage Wallet And Rebilling Vue](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling-vue-inertia`
-- [Crm Web Intent Vue](crm-web-intent.md) — `module-crm-crm-web-intent-vue-inertia`
-- [Crm White Label Vue](crm-white-label.md) — `module-crm-crm-white-label-vue-inertia`
-- [Crm Work Management Vue](crm-work-management.md) — `module-crm-crm-work-management-vue-inertia`
-- [Currency Context Vue](currency-context.md) — `module-crm-currency-context-vue-inertia`
-- [Developer Experience Vue](developer-experience.md) — `module-crm-developer-experience-vue-inertia`
-- [Feature Flags Vue](feature-flags.md) — `module-crm-feature-flags-vue-inertia`
-- [Files Media Vue](files-media.md) — `module-crm-files-media-vue-inertia`
-- [Identity Core Vue](identity-core.md) — `module-crm-identity-core-vue-inertia`
-- [Identity Socialstream Vue](identity-socialstream.md) — `module-crm-identity-socialstream-vue-inertia`
-- [Import Export Vue](import-export.md) — `module-crm-import-export-vue-inertia`
-- [Integrations Vue](integrations.md) — `module-crm-integrations-vue-inertia`
-- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-crm-jetstream-bridge-vue-inertia`
-- [Localization Contracts Vue](localization-contracts.md) — `module-crm-localization-contracts-vue-inertia`
-- [Localization Core Vue](localization-core.md) — `module-crm-localization-core-vue-inertia`
-- [Localization Mymemory Vue](localization-mymemory.md) — `module-crm-localization-mymemory-vue-inertia`
-- [Module Manager Vue](module-manager.md) — `module-crm-module-manager-vue-inertia`
-- [Notifications Vue](notifications.md) — `module-crm-notifications-vue-inertia`
-- [Observability Vue](observability.md) — `module-crm-observability-vue-inertia`
-- [Organizations Teams Vue](organizations-teams.md) — `module-crm-organizations-teams-vue-inertia`
-- [Profiles Vue](profiles.md) — `module-crm-profiles-vue-inertia`
-- [Roles Permissions Vue](roles-permissions.md) — `module-crm-roles-permissions-vue-inertia`
-- [Scheduler Queues Vue](scheduler-queues.md) — `module-crm-scheduler-queues-vue-inertia`
-- [Search Vue](search.md) — `module-crm-search-vue-inertia`
-- [Sessions Devices Vue](sessions-devices.md) — `module-crm-sessions-devices-vue-inertia`
-- [Settings Vue](settings.md) — `module-crm-settings-vue-inertia`
-- [Theme Support Vue](theme-support.md) — `module-crm-theme-support-vue-inertia`
-- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-crm-two-factor-authentication-vue-inertia`
-- [Webhooks Vue](webhooks.md) — `module-crm-webhooks-vue-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Account-Based Marketing Vue + Inertia](account-based-marketing.md) | [Target/source map](../SOURCE-MAPPING.md#account-based-marketing) | [core](../core/account-based-marketing.md) · [api](../api/account-based-marketing.md) · [nextjs](../nextjs/account-based-marketing.md) |
+| [Account Planning Vue + Inertia](account-planning.md) | [Target/source map](../SOURCE-MAPPING.md#account-planning) | [core](../core/account-planning.md) · [api](../api/account-planning.md) · [nextjs](../nextjs/account-planning.md) |
+| [Activities Vue + Inertia](activities.md) | [Target/source map](../SOURCE-MAPPING.md#activities) | [core](../core/activities.md) · [api](../api/activities.md) · [nextjs](../nextjs/activities.md) |
+| [Activity Comments Vue + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Advertising Vue + Inertia](advertising.md) | [Target/source map](../SOURCE-MAPPING.md#advertising) | [core](../core/advertising.md) · [api](../api/advertising.md) · [nextjs](../nextjs/advertising.md) |
+| [Advocacy Vue + Inertia](advocacy.md) | [Target/source map](../SOURCE-MAPPING.md#advocacy) | [core](../core/advocacy.md) · [api](../api/advocacy.md) · [nextjs](../nextjs/advocacy.md) |
+| [Affiliate Management Vue + Inertia](affiliate-management.md) | [Target/source map](../SOURCE-MAPPING.md#affiliate-management) | [core](../core/affiliate-management.md) · [api](../api/affiliate-management.md) · [nextjs](../nextjs/affiliate-management.md) |
+| [Agency Workspace Vue + Inertia](agency-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#agency-workspace) | [core](../core/agency-workspace.md) · [api](../api/agency-workspace.md) · [nextjs](../nextjs/agency-workspace.md) |
+| [AI Reception and Conversation Vue + Inertia](ai-reception-and-conversation.md) | [Target/source map](../SOURCE-MAPPING.md#ai-reception-and-conversation) | [core](../core/ai-reception-and-conversation.md) · [api](../api/ai-reception-and-conversation.md) · [nextjs](../nextjs/ai-reception-and-conversation.md) |
+| [Analytics Contracts Vue + Inertia](analytics-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-contracts) | [core](../core/analytics-contracts.md) · [api](../api/analytics-contracts.md) · [nextjs](../nextjs/analytics-contracts.md) |
+| [Analytics Core Vue + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Vue + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Vue + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Vue + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Vue + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Attribution Vue + Inertia](attribution.md) | [Target/source map](../SOURCE-MAPPING.md#attribution) | [core](../core/attribution.md) · [api](../api/attribution.md) · [nextjs](../nextjs/attribution.md) |
+| [Audit Vue + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Business Process Management Vue + Inertia](business-process-management.md) | [Target/source map](../SOURCE-MAPPING.md#business-process-management) | [core](../core/business-process-management.md) · [api](../api/business-process-management.md) · [nextjs](../nextjs/business-process-management.md) |
+| [Campaigns Vue + Inertia](campaigns.md) | [Target/source map](../SOURCE-MAPPING.md#campaigns) | [core](../core/campaigns.md) · [api](../api/campaigns.md) · [nextjs](../nextjs/campaigns.md) |
+| [Case Management Vue + Inertia](case-management.md) | [Target/source map](../SOURCE-MAPPING.md#case-management) | [core](../core/case-management.md) · [api](../api/case-management.md) · [nextjs](../nextjs/case-management.md) |
+| [Channel Gateway Vue + Inertia](channel-gateway.md) | [Target/source map](../SOURCE-MAPPING.md#channel-gateway) | [core](../core/channel-gateway.md) · [api](../api/channel-gateway.md) · [nextjs](../nextjs/channel-gateway.md) |
+| [Channel Sales Vue + Inertia](channel-sales.md) | [Target/source map](../SOURCE-MAPPING.md#channel-sales) | [core](../core/channel-sales.md) · [api](../api/channel-sales.md) · [nextjs](../nextjs/channel-sales.md) |
+| [Chat and Bots Vue + Inertia](chat-and-bots.md) | [Target/source map](../SOURCE-MAPPING.md#chat-and-bots) | [core](../core/chat-and-bots.md) · [api](../api/chat-and-bots.md) · [nextjs](../nextjs/chat-and-bots.md) |
+| [Client Onboarding Vue + Inertia](client-onboarding.md) | [Target/source map](../SOURCE-MAPPING.md#client-onboarding) | [core](../core/client-onboarding.md) · [api](../api/client-onboarding.md) · [nextjs](../nextjs/client-onboarding.md) |
+| [Collaboration Vue + Inertia](collaboration.md) | [Target/source map](../SOURCE-MAPPING.md#collaboration) | [core](../core/collaboration.md) · [api](../api/collaboration.md) · [nextjs](../nextjs/collaboration.md) |
+| [Communities Vue + Inertia](communities.md) | [Target/source map](../SOURCE-MAPPING.md#communities) | [core](../core/communities.md) · [api](../api/communities.md) · [nextjs](../nextjs/communities.md) |
+| [Consent and Preferences Vue + Inertia](consent-and-preferences.md) | [Target/source map](../SOURCE-MAPPING.md#consent-and-preferences) | [core](../core/consent-and-preferences.md) · [api](../api/consent-and-preferences.md) · [nextjs](../nextjs/consent-and-preferences.md) |
+| [Contact Center Vue + Inertia](contact-center.md) | [Target/source map](../SOURCE-MAPPING.md#contact-center) | [core](../core/contact-center.md) · [api](../api/contact-center.md) · [nextjs](../nextjs/contact-center.md) |
+| [Contracts Vue + Inertia](contracts.md) | [Target/source map](../SOURCE-MAPPING.md#contracts) | [core](../core/contracts.md) · [api](../api/contracts.md) · [nextjs](../nextjs/contracts.md) |
+| [Conversation Analytics Vue + Inertia](conversation-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#conversation-analytics) | [core](../core/conversation-analytics.md) · [api](../api/conversation-analytics.md) · [nextjs](../nextjs/conversation-analytics.md) |
+| [Conversation Intelligence Vue + Inertia](conversation-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#conversation-intelligence) | [core](../core/conversation-intelligence.md) · [api](../api/conversation-intelligence.md) · [nextjs](../nextjs/conversation-intelligence.md) |
+| [Conversion Optimization Vue + Inertia](conversion-optimization.md) | [Target/source map](../SOURCE-MAPPING.md#conversion-optimization) | [core](../core/conversion-optimization.md) · [api](../api/conversion-optimization.md) · [nextjs](../nextjs/conversion-optimization.md) |
+| [CPQ Vue + Inertia](cpq.md) | [Target/source map](../SOURCE-MAPPING.md#cpq) | [core](../core/cpq.md) · [api](../api/cpq.md) · [nextjs](../nextjs/cpq.md) |
+| [Crm Account Based Marketing Vue + Inertia](crm-account-based-marketing.md) | [Target/source map](../SOURCE-MAPPING.md#crm-account-based-marketing) | [core](../core/crm-account-based-marketing.md) · [api](../api/crm-account-based-marketing.md) · [nextjs](../nextjs/crm-account-based-marketing.md) |
+| [Crm Account Planning Vue + Inertia](crm-account-planning.md) | [Target/source map](../SOURCE-MAPPING.md#crm-account-planning) | [core](../core/crm-account-planning.md) · [api](../api/crm-account-planning.md) · [nextjs](../nextjs/crm-account-planning.md) |
+| [Crm Activities Vue + Inertia](crm-activities.md) | [Target/source map](../SOURCE-MAPPING.md#crm-activities) | [core](../core/crm-activities.md) · [api](../api/crm-activities.md) · [nextjs](../nextjs/crm-activities.md) |
+| [Crm Advertising Vue + Inertia](crm-advertising.md) | [Target/source map](../SOURCE-MAPPING.md#crm-advertising) | [core](../core/crm-advertising.md) · [api](../api/crm-advertising.md) · [nextjs](../nextjs/crm-advertising.md) |
+| [Crm Advocacy Vue + Inertia](crm-advocacy.md) | [Target/source map](../SOURCE-MAPPING.md#crm-advocacy) | [core](../core/crm-advocacy.md) · [api](../api/crm-advocacy.md) · [nextjs](../nextjs/crm-advocacy.md) |
+| [Crm Affiliate Management Vue + Inertia](crm-affiliate-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-affiliate-management) | [core](../core/crm-affiliate-management.md) · [api](../api/crm-affiliate-management.md) · [nextjs](../nextjs/crm-affiliate-management.md) |
+| [Crm Agency Workspace Vue + Inertia](crm-agency-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#crm-agency-workspace) | [core](../core/crm-agency-workspace.md) · [api](../api/crm-agency-workspace.md) · [nextjs](../nextjs/crm-agency-workspace.md) |
+| [Crm Ai Reception And Conversation Vue + Inertia](crm-ai-reception-and-conversation.md) | [Target/source map](../SOURCE-MAPPING.md#crm-ai-reception-and-conversation) | [core](../core/crm-ai-reception-and-conversation.md) · [api](../api/crm-ai-reception-and-conversation.md) · [nextjs](../nextjs/crm-ai-reception-and-conversation.md) |
+| [CRM Analytics Vue + Inertia](crm-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#crm-analytics) | [core](../core/crm-analytics.md) · [api](../api/crm-analytics.md) · [nextjs](../nextjs/crm-analytics.md) |
+| [Crm Attribution Vue + Inertia](crm-attribution.md) | [Target/source map](../SOURCE-MAPPING.md#crm-attribution) | [core](../core/crm-attribution.md) · [api](../api/crm-attribution.md) · [nextjs](../nextjs/crm-attribution.md) |
+| [CRM Automation Pack Vue + Inertia](crm-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#crm-automation-pack) | [core](../core/crm-automation-pack.md) · [api](../api/crm-automation-pack.md) · [nextjs](../nextjs/crm-automation-pack.md) |
+| [Crm Business Process Management Vue + Inertia](crm-business-process-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-business-process-management) | [core](../core/crm-business-process-management.md) · [api](../api/crm-business-process-management.md) · [nextjs](../nextjs/crm-business-process-management.md) |
+| [Crm Campaigns Vue + Inertia](crm-campaigns.md) | [Target/source map](../SOURCE-MAPPING.md#crm-campaigns) | [core](../core/crm-campaigns.md) · [api](../api/crm-campaigns.md) · [nextjs](../nextjs/crm-campaigns.md) |
+| [Crm Case Management Vue + Inertia](crm-case-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-case-management) | [core](../core/crm-case-management.md) · [api](../api/crm-case-management.md) · [nextjs](../nextjs/crm-case-management.md) |
+| [Crm Channel Gateway Vue + Inertia](crm-channel-gateway.md) | [Target/source map](../SOURCE-MAPPING.md#crm-channel-gateway) | [core](../core/crm-channel-gateway.md) · [api](../api/crm-channel-gateway.md) · [nextjs](../nextjs/crm-channel-gateway.md) |
+| [Crm Channel Sales Vue + Inertia](crm-channel-sales.md) | [Target/source map](../SOURCE-MAPPING.md#crm-channel-sales) | [core](../core/crm-channel-sales.md) · [api](../api/crm-channel-sales.md) · [nextjs](../nextjs/crm-channel-sales.md) |
+| [Crm Chat And Bots Vue + Inertia](crm-chat-and-bots.md) | [Target/source map](../SOURCE-MAPPING.md#crm-chat-and-bots) | [core](../core/crm-chat-and-bots.md) · [api](../api/crm-chat-and-bots.md) · [nextjs](../nextjs/crm-chat-and-bots.md) |
+| [Crm Client Onboarding Vue + Inertia](crm-client-onboarding.md) | [Target/source map](../SOURCE-MAPPING.md#crm-client-onboarding) | [core](../core/crm-client-onboarding.md) · [api](../api/crm-client-onboarding.md) · [nextjs](../nextjs/crm-client-onboarding.md) |
+| [Crm Collaboration Vue + Inertia](crm-collaboration.md) | [Target/source map](../SOURCE-MAPPING.md#crm-collaboration) | [core](../core/crm-collaboration.md) · [api](../api/crm-collaboration.md) · [nextjs](../nextjs/crm-collaboration.md) |
+| [Crm Communities Vue + Inertia](crm-communities.md) | [Target/source map](../SOURCE-MAPPING.md#crm-communities) | [core](../core/crm-communities.md) · [api](../api/crm-communities.md) · [nextjs](../nextjs/crm-communities.md) |
+| [Crm Consent And Preferences Vue + Inertia](crm-consent-and-preferences.md) | [Target/source map](../SOURCE-MAPPING.md#crm-consent-and-preferences) | [core](../core/crm-consent-and-preferences.md) · [api](../api/crm-consent-and-preferences.md) · [nextjs](../nextjs/crm-consent-and-preferences.md) |
+| [Crm Contact Center Vue + Inertia](crm-contact-center.md) | [Target/source map](../SOURCE-MAPPING.md#crm-contact-center) | [core](../core/crm-contact-center.md) · [api](../api/crm-contact-center.md) · [nextjs](../nextjs/crm-contact-center.md) |
+| [Crm Contracts Vue + Inertia](crm-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#crm-contracts) | [core](../core/crm-contracts.md) · [api](../api/crm-contracts.md) · [nextjs](../nextjs/crm-contracts.md) |
+| [Crm Conversation Analytics Vue + Inertia](crm-conversation-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#crm-conversation-analytics) | [core](../core/crm-conversation-analytics.md) · [api](../api/crm-conversation-analytics.md) · [nextjs](../nextjs/crm-conversation-analytics.md) |
+| [Crm Conversation Intelligence Vue + Inertia](crm-conversation-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#crm-conversation-intelligence) | [core](../core/crm-conversation-intelligence.md) · [api](../api/crm-conversation-intelligence.md) · [nextjs](../nextjs/crm-conversation-intelligence.md) |
+| [Crm Conversion Optimization Vue + Inertia](crm-conversion-optimization.md) | [Target/source map](../SOURCE-MAPPING.md#crm-conversion-optimization) | [core](../core/crm-conversion-optimization.md) · [api](../api/crm-conversion-optimization.md) · [nextjs](../nextjs/crm-conversion-optimization.md) |
+| [CRM Copilot Vue + Inertia](crm-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#crm-copilot) | [core](../core/crm-copilot.md) · [api](../api/crm-copilot.md) · [nextjs](../nextjs/crm-copilot.md) |
+| [CRM Core Vue + Inertia](crm-core.md) | [Target/source map](../SOURCE-MAPPING.md#crm-core) | [core](../core/crm-core.md) · [api](../api/crm-core.md) · [nextjs](../nextjs/crm-core.md) |
+| [Crm Cpq Vue + Inertia](crm-cpq.md) | [Target/source map](../SOURCE-MAPPING.md#crm-cpq) | [core](../core/crm-cpq.md) · [api](../api/crm-cpq.md) · [nextjs](../nextjs/crm-cpq.md) |
+| [Crm Customer Data Model Vue + Inertia](crm-customer-data-model.md) | [Target/source map](../SOURCE-MAPPING.md#crm-customer-data-model) | [core](../core/crm-customer-data-model.md) · [api](../api/crm-customer-data-model.md) · [nextjs](../nextjs/crm-customer-data-model.md) |
+| [Crm Customer Data Platform Vue + Inertia](crm-customer-data-platform.md) | [Target/source map](../SOURCE-MAPPING.md#crm-customer-data-platform) | [core](../core/crm-customer-data-platform.md) · [api](../api/crm-customer-data-platform.md) · [nextjs](../nextjs/crm-customer-data-platform.md) |
+| [Crm Customer Self Service Vue + Inertia](crm-customer-self-service.md) | [Target/source map](../SOURCE-MAPPING.md#crm-customer-self-service) | [core](../core/crm-customer-self-service.md) · [api](../api/crm-customer-self-service.md) · [nextjs](../nextjs/crm-customer-self-service.md) |
+| [Crm Customer Success Vue + Inertia](crm-customer-success.md) | [Target/source map](../SOURCE-MAPPING.md#crm-customer-success) | [core](../core/crm-customer-success.md) · [api](../api/crm-customer-success.md) · [nextjs](../nextjs/crm-customer-success.md) |
+| [Crm Data Operations Vue + Inertia](crm-data-operations.md) | [Target/source map](../SOURCE-MAPPING.md#crm-data-operations) | [core](../core/crm-data-operations.md) · [api](../api/crm-data-operations.md) · [nextjs](../nextjs/crm-data-operations.md) |
+| [Crm Deal Registration Vue + Inertia](crm-deal-registration.md) | [Target/source map](../SOURCE-MAPPING.md#crm-deal-registration) | [core](../core/crm-deal-registration.md) · [api](../api/crm-deal-registration.md) · [nextjs](../nextjs/crm-deal-registration.md) |
+| [Crm Dialer And Outreach Vue + Inertia](crm-dialer-and-outreach.md) | [Target/source map](../SOURCE-MAPPING.md#crm-dialer-and-outreach) | [core](../core/crm-dialer-and-outreach.md) · [api](../api/crm-dialer-and-outreach.md) · [nextjs](../nextjs/crm-dialer-and-outreach.md) |
+| [CRM Documents Vue + Inertia](crm-documents.md) | [Target/source map](../SOURCE-MAPPING.md#crm-documents) | [core](../core/crm-documents.md) · [api](../api/crm-documents.md) · [nextjs](../nextjs/crm-documents.md) |
+| [Crm Email Marketing Vue + Inertia](crm-email-marketing.md) | [Target/source map](../SOURCE-MAPPING.md#crm-email-marketing) | [core](../core/crm-email-marketing.md) · [api](../api/crm-email-marketing.md) · [nextjs](../nextjs/crm-email-marketing.md) |
+| [Crm Email Productivity Vue + Inertia](crm-email-productivity.md) | [Target/source map](../SOURCE-MAPPING.md#crm-email-productivity) | [core](../core/crm-email-productivity.md) · [api](../api/crm-email-productivity.md) · [nextjs](../nextjs/crm-email-productivity.md) |
+| [Crm Enrichment Vue + Inertia](crm-enrichment.md) | [Target/source map](../SOURCE-MAPPING.md#crm-enrichment) | [core](../core/crm-enrichment.md) · [api](../api/crm-enrichment.md) · [nextjs](../nextjs/crm-enrichment.md) |
+| [Crm Events And Webinars Vue + Inertia](crm-events-and-webinars.md) | [Target/source map](../SOURCE-MAPPING.md#crm-events-and-webinars) | [core](../core/crm-events-and-webinars.md) · [api](../api/crm-events-and-webinars.md) · [nextjs](../nextjs/crm-events-and-webinars.md) |
+| [Crm Feedback And Voice Of Customer Vue + Inertia](crm-feedback-and-voice-of-customer.md) | [Target/source map](../SOURCE-MAPPING.md#crm-feedback-and-voice-of-customer) | [core](../core/crm-feedback-and-voice-of-customer.md) · [api](../api/crm-feedback-and-voice-of-customer.md) · [nextjs](../nextjs/crm-feedback-and-voice-of-customer.md) |
+| [Crm Field Service Coordination Vue + Inertia](crm-field-service-coordination.md) | [Target/source map](../SOURCE-MAPPING.md#crm-field-service-coordination) | [core](../core/crm-field-service-coordination.md) · [api](../api/crm-field-service-coordination.md) · [nextjs](../nextjs/crm-field-service-coordination.md) |
+| [Crm Forecasting Vue + Inertia](crm-forecasting.md) | [Target/source map](../SOURCE-MAPPING.md#crm-forecasting) | [core](../core/crm-forecasting.md) · [api](../api/crm-forecasting.md) · [nextjs](../nextjs/crm-forecasting.md) |
+| [Crm Forms And Surveys Vue + Inertia](crm-forms-and-surveys.md) | [Target/source map](../SOURCE-MAPPING.md#crm-forms-and-surveys) | [core](../core/crm-forms-and-surveys.md) · [api](../api/crm-forms-and-surveys.md) · [nextjs](../nextjs/crm-forms-and-surveys.md) |
+| [Crm Goals And Performance Vue + Inertia](crm-goals-and-performance.md) | [Target/source map](../SOURCE-MAPPING.md#crm-goals-and-performance) | [core](../core/crm-goals-and-performance.md) · [api](../api/crm-goals-and-performance.md) · [nextjs](../nextjs/crm-goals-and-performance.md) |
+| [Crm Journey Orchestration Vue + Inertia](crm-journey-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#crm-journey-orchestration) | [core](../core/crm-journey-orchestration.md) · [api](../api/crm-journey-orchestration.md) · [nextjs](../nextjs/crm-journey-orchestration.md) |
+| [Crm Knowledge Vue + Inertia](crm-knowledge.md) | [Target/source map](../SOURCE-MAPPING.md#crm-knowledge) | [core](../core/crm-knowledge.md) · [api](../api/crm-knowledge.md) · [nextjs](../nextjs/crm-knowledge.md) |
+| [Crm Landing Pages And Funnels Vue + Inertia](crm-landing-pages-and-funnels.md) | [Target/source map](../SOURCE-MAPPING.md#crm-landing-pages-and-funnels) | [core](../core/crm-landing-pages-and-funnels.md) · [api](../api/crm-landing-pages-and-funnels.md) · [nextjs](../nextjs/crm-landing-pages-and-funnels.md) |
+| [Crm Lead Capture Vue + Inertia](crm-lead-capture.md) | [Target/source map](../SOURCE-MAPPING.md#crm-lead-capture) | [core](../core/crm-lead-capture.md) · [api](../api/crm-lead-capture.md) · [nextjs](../nextjs/crm-lead-capture.md) |
+| [Crm Lead Qualification Vue + Inertia](crm-lead-qualification.md) | [Target/source map](../SOURCE-MAPPING.md#crm-lead-qualification) | [core](../core/crm-lead-qualification.md) · [api](../api/crm-lead-qualification.md) · [nextjs](../nextjs/crm-lead-qualification.md) |
+| [Crm Learning And Courses Vue + Inertia](crm-learning-and-courses.md) | [Target/source map](../SOURCE-MAPPING.md#crm-learning-and-courses) | [core](../core/crm-learning-and-courses.md) · [api](../api/crm-learning-and-courses.md) · [nextjs](../nextjs/crm-learning-and-courses.md) |
+| [Crm Loyalty Vue + Inertia](crm-loyalty.md) | [Target/source map](../SOURCE-MAPPING.md#crm-loyalty) | [core](../core/crm-loyalty.md) · [api](../api/crm-loyalty.md) · [nextjs](../nextjs/crm-loyalty.md) |
+| [Crm Marketing Agent Vue + Inertia](crm-marketing-agent.md) | [Target/source map](../SOURCE-MAPPING.md#crm-marketing-agent) | [core](../core/crm-marketing-agent.md) · [api](../api/crm-marketing-agent.md) · [nextjs](../nextjs/crm-marketing-agent.md) |
+| [Crm Marketing Development Funds Vue + Inertia](crm-marketing-development-funds.md) | [Target/source map](../SOURCE-MAPPING.md#crm-marketing-development-funds) | [core](../core/crm-marketing-development-funds.md) · [api](../api/crm-marketing-development-funds.md) · [nextjs](../nextjs/crm-marketing-development-funds.md) |
+| [Crm Marketing Resources Vue + Inertia](crm-marketing-resources.md) | [Target/source map](../SOURCE-MAPPING.md#crm-marketing-resources) | [core](../core/crm-marketing-resources.md) · [api](../api/crm-marketing-resources.md) · [nextjs](../nextjs/crm-marketing-resources.md) |
+| [Crm Memberships Vue + Inertia](crm-memberships.md) | [Target/source map](../SOURCE-MAPPING.md#crm-memberships) | [core](../core/crm-memberships.md) · [api](../api/crm-memberships.md) · [nextjs](../nextjs/crm-memberships.md) |
+| [Crm Mobile Messaging Vue + Inertia](crm-mobile-messaging.md) | [Target/source map](../SOURCE-MAPPING.md#crm-mobile-messaging) | [core](../core/crm-mobile-messaging.md) · [api](../api/crm-mobile-messaging.md) · [nextjs](../nextjs/crm-mobile-messaging.md) |
+| [Crm Omnichannel Service Vue + Inertia](crm-omnichannel-service.md) | [Target/source map](../SOURCE-MAPPING.md#crm-omnichannel-service) | [core](../core/crm-omnichannel-service.md) · [api](../api/crm-omnichannel-service.md) · [nextjs](../nextjs/crm-omnichannel-service.md) |
+| [Crm Orders And Payments Workspace Vue + Inertia](crm-orders-and-payments-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#crm-orders-and-payments-workspace) | [core](../core/crm-orders-and-payments-workspace.md) · [api](../api/crm-orders-and-payments-workspace.md) · [nextjs](../nextjs/crm-orders-and-payments-workspace.md) |
+| [Crm Partner Relationship Management Vue + Inertia](crm-partner-relationship-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-partner-relationship-management) | [core](../core/crm-partner-relationship-management.md) · [api](../api/crm-partner-relationship-management.md) · [nextjs](../nextjs/crm-partner-relationship-management.md) |
+| [Crm Personalization Vue + Inertia](crm-personalization.md) | [Target/source map](../SOURCE-MAPPING.md#crm-personalization) | [core](../core/crm-personalization.md) · [api](../api/crm-personalization.md) · [nextjs](../nextjs/crm-personalization.md) |
+| [Crm Playbooks And Enablement Vue + Inertia](crm-playbooks-and-enablement.md) | [Target/source map](../SOURCE-MAPPING.md#crm-playbooks-and-enablement) | [core](../core/crm-playbooks-and-enablement.md) · [api](../api/crm-playbooks-and-enablement.md) · [nextjs](../nextjs/crm-playbooks-and-enablement.md) |
+| [Crm Predictive Models Vue + Inertia](crm-predictive-models.md) | [Target/source map](../SOURCE-MAPPING.md#crm-predictive-models) | [core](../core/crm-predictive-models.md) · [api](../api/crm-predictive-models.md) · [nextjs](../nextjs/crm-predictive-models.md) |
+| [CRM Product Workspace Vue + Inertia](crm-product-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#crm-product-workspace) | [core](../core/crm-product-workspace.md) · [api](../api/crm-product-workspace.md) · [nextjs](../nextjs/crm-product-workspace.md) |
+| [Crm Projects Vue + Inertia](crm-projects.md) | [Target/source map](../SOURCE-MAPPING.md#crm-projects) | [core](../core/crm-projects.md) · [api](../api/crm-projects.md) · [nextjs](../nextjs/crm-projects.md) |
+| [Crm Proposals And Quotes Vue + Inertia](crm-proposals-and-quotes.md) | [Target/source map](../SOURCE-MAPPING.md#crm-proposals-and-quotes) | [core](../core/crm-proposals-and-quotes.md) · [api](../api/crm-proposals-and-quotes.md) · [nextjs](../nextjs/crm-proposals-and-quotes.md) |
+| [Crm Prospecting Agent Vue + Inertia](crm-prospecting-agent.md) | [Target/source map](../SOURCE-MAPPING.md#crm-prospecting-agent) | [core](../core/crm-prospecting-agent.md) · [api](../api/crm-prospecting-agent.md) · [nextjs](../nextjs/crm-prospecting-agent.md) |
+| [Crm Prospecting Vue + Inertia](crm-prospecting.md) | [Target/source map](../SOURCE-MAPPING.md#crm-prospecting) | [core](../core/crm-prospecting.md) · [api](../api/crm-prospecting.md) · [nextjs](../nextjs/crm-prospecting.md) |
+| [Crm Quotas And Incentives Vue + Inertia](crm-quotas-and-incentives.md) | [Target/source map](../SOURCE-MAPPING.md#crm-quotas-and-incentives) | [core](../core/crm-quotas-and-incentives.md) · [api](../api/crm-quotas-and-incentives.md) · [nextjs](../nextjs/crm-quotas-and-incentives.md) |
+| [Crm Referrals Vue + Inertia](crm-referrals.md) | [Target/source map](../SOURCE-MAPPING.md#crm-referrals) | [core](../core/crm-referrals.md) · [api](../api/crm-referrals.md) · [nextjs](../nextjs/crm-referrals.md) |
+| [Crm Reputation Management Vue + Inertia](crm-reputation-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-reputation-management) | [core](../core/crm-reputation-management.md) · [api](../api/crm-reputation-management.md) · [nextjs](../nextjs/crm-reputation-management.md) |
+| [Crm Resource Planning Vue + Inertia](crm-resource-planning.md) | [Target/source map](../SOURCE-MAPPING.md#crm-resource-planning) | [core](../core/crm-resource-planning.md) · [api](../api/crm-resource-planning.md) · [nextjs](../nextjs/crm-resource-planning.md) |
+| [Crm Revenue Intelligence Vue + Inertia](crm-revenue-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#crm-revenue-intelligence) | [core](../core/crm-revenue-intelligence.md) · [api](../api/crm-revenue-intelligence.md) · [nextjs](../nextjs/crm-revenue-intelligence.md) |
+| [Crm Revenue Lifecycle Vue + Inertia](crm-revenue-lifecycle.md) | [Target/source map](../SOURCE-MAPPING.md#crm-revenue-lifecycle) | [core](../core/crm-revenue-lifecycle.md) · [api](../api/crm-revenue-lifecycle.md) · [nextjs](../nextjs/crm-revenue-lifecycle.md) |
+| [Crm Routing Vue + Inertia](crm-routing.md) | [Target/source map](../SOURCE-MAPPING.md#crm-routing) | [core](../core/crm-routing.md) · [api](../api/crm-routing.md) · [nextjs](../nextjs/crm-routing.md) |
+| [Crm Saas Packaging Vue + Inertia](crm-saas-packaging.md) | [Target/source map](../SOURCE-MAPPING.md#crm-saas-packaging) | [core](../core/crm-saas-packaging.md) · [api](../api/crm-saas-packaging.md) · [nextjs](../nextjs/crm-saas-packaging.md) |
+| [Crm Sales Engagement Vue + Inertia](crm-sales-engagement.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sales-engagement) | [core](../core/crm-sales-engagement.md) · [api](../api/crm-sales-engagement.md) · [nextjs](../nextjs/crm-sales-engagement.md) |
+| [Crm Sales Pipelines Vue + Inertia](crm-sales-pipelines.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sales-pipelines) | [core](../core/crm-sales-pipelines.md) · [api](../api/crm-sales-pipelines.md) · [nextjs](../nextjs/crm-sales-pipelines.md) |
+| [Crm Sales Workspace Vue + Inertia](crm-sales-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sales-workspace) | [core](../core/crm-sales-workspace.md) · [api](../api/crm-sales-workspace.md) · [nextjs](../nextjs/crm-sales-workspace.md) |
+| [Crm Sandbox And Release Management Vue + Inertia](crm-sandbox-and-release-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sandbox-and-release-management) | [core](../core/crm-sandbox-and-release-management.md) · [api](../api/crm-sandbox-and-release-management.md) · [nextjs](../nextjs/crm-sandbox-and-release-management.md) |
+| [Crm Sandbox Release Vue + Inertia](crm-sandbox-release.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sandbox-release) | [core](../core/crm-sandbox-release.md) · [api](../api/crm-sandbox-release.md) · [nextjs](../nextjs/crm-sandbox-release.md) |
+| [Crm Scheduling Vue + Inertia](crm-scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#crm-scheduling) | [core](../core/crm-scheduling.md) · [api](../api/crm-scheduling.md) · [nextjs](../nextjs/crm-scheduling.md) |
+| [CRM Search Vue + Inertia](crm-search.md) | [Target/source map](../SOURCE-MAPPING.md#crm-search) | [core](../core/crm-search.md) · [api](../api/crm-search.md) · [nextjs](../nextjs/crm-search.md) |
+| [Crm Segmentation Vue + Inertia](crm-segmentation.md) | [Target/source map](../SOURCE-MAPPING.md#crm-segmentation) | [core](../core/crm-segmentation.md) · [api](../api/crm-segmentation.md) · [nextjs](../nextjs/crm-segmentation.md) |
+| [Crm Service Agent Vue + Inertia](crm-service-agent.md) | [Target/source map](../SOURCE-MAPPING.md#crm-service-agent) | [core](../core/crm-service-agent.md) · [api](../api/crm-service-agent.md) · [nextjs](../nextjs/crm-service-agent.md) |
+| [Crm Service Analytics Vue + Inertia](crm-service-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#crm-service-analytics) | [core](../core/crm-service-analytics.md) · [api](../api/crm-service-analytics.md) · [nextjs](../nextjs/crm-service-analytics.md) |
+| [Crm Sla And Entitlements Vue + Inertia](crm-sla-and-entitlements.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sla-and-entitlements) | [core](../core/crm-sla-and-entitlements.md) · [api](../api/crm-sla-and-entitlements.md) · [nextjs](../nextjs/crm-sla-and-entitlements.md) |
+| [Crm Telephony Vue + Inertia](crm-telephony.md) | [Target/source map](../SOURCE-MAPPING.md#crm-telephony) | [core](../core/crm-telephony.md) · [api](../api/crm-telephony.md) · [nextjs](../nextjs/crm-telephony.md) |
+| [Crm Template Snapshots Vue + Inertia](crm-template-snapshots.md) | [Target/source map](../SOURCE-MAPPING.md#crm-template-snapshots) | [core](../core/crm-template-snapshots.md) · [api](../api/crm-template-snapshots.md) · [nextjs](../nextjs/crm-template-snapshots.md) |
+| [Crm Templates And Snapshots Vue + Inertia](crm-templates-and-snapshots.md) | [Target/source map](../SOURCE-MAPPING.md#crm-templates-and-snapshots) | [core](../core/crm-templates-and-snapshots.md) · [api](../api/crm-templates-and-snapshots.md) · [nextjs](../nextjs/crm-templates-and-snapshots.md) |
+| [Crm Territories And Ownership Vue + Inertia](crm-territories-and-ownership.md) | [Target/source map](../SOURCE-MAPPING.md#crm-territories-and-ownership) | [core](../core/crm-territories-and-ownership.md) · [api](../api/crm-territories-and-ownership.md) · [nextjs](../nextjs/crm-territories-and-ownership.md) |
+| [Crm Unified Conversations Vue + Inertia](crm-unified-conversations.md) | [Target/source map](../SOURCE-MAPPING.md#crm-unified-conversations) | [core](../core/crm-unified-conversations.md) · [api](../api/crm-unified-conversations.md) · [nextjs](../nextjs/crm-unified-conversations.md) |
+| [Crm Usage Wallet And Rebilling Vue + Inertia](crm-usage-wallet-and-rebilling.md) | [Target/source map](../SOURCE-MAPPING.md#crm-usage-wallet-and-rebilling) | [core](../core/crm-usage-wallet-and-rebilling.md) · [api](../api/crm-usage-wallet-and-rebilling.md) · [nextjs](../nextjs/crm-usage-wallet-and-rebilling.md) |
+| [Crm Web Intent Vue + Inertia](crm-web-intent.md) | [Target/source map](../SOURCE-MAPPING.md#crm-web-intent) | [core](../core/crm-web-intent.md) · [api](../api/crm-web-intent.md) · [nextjs](../nextjs/crm-web-intent.md) |
+| [Crm White Label Vue + Inertia](crm-white-label.md) | [Target/source map](../SOURCE-MAPPING.md#crm-white-label) | [core](../core/crm-white-label.md) · [api](../api/crm-white-label.md) · [nextjs](../nextjs/crm-white-label.md) |
+| [Crm Work Management Vue + Inertia](crm-work-management.md) | [Target/source map](../SOURCE-MAPPING.md#crm-work-management) | [core](../core/crm-work-management.md) · [api](../api/crm-work-management.md) · [nextjs](../nextjs/crm-work-management.md) |
+| [Currency Context Vue + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customer Data Model Vue + Inertia](customer-data-model.md) | [Target/source map](../SOURCE-MAPPING.md#customer-data-model) | [core](../core/customer-data-model.md) · [api](../api/customer-data-model.md) · [nextjs](../nextjs/customer-data-model.md) |
+| [Customer Data Platform Vue + Inertia](customer-data-platform.md) | [Target/source map](../SOURCE-MAPPING.md#customer-data-platform) | [core](../core/customer-data-platform.md) · [api](../api/customer-data-platform.md) · [nextjs](../nextjs/customer-data-platform.md) |
+| [Customer Self-Service Vue + Inertia](customer-self-service.md) | [Target/source map](../SOURCE-MAPPING.md#customer-self-service) | [core](../core/customer-self-service.md) · [api](../api/customer-self-service.md) · [nextjs](../nextjs/customer-self-service.md) |
+| [Customer Success Vue + Inertia](customer-success.md) | [Target/source map](../SOURCE-MAPPING.md#customer-success) | [core](../core/customer-success.md) · [api](../api/customer-success.md) · [nextjs](../nextjs/customer-success.md) |
+| [Data Operations Vue + Inertia](data-operations.md) | [Target/source map](../SOURCE-MAPPING.md#data-operations) | [core](../core/data-operations.md) · [api](../api/data-operations.md) · [nextjs](../nextjs/data-operations.md) |
+| [Deal Registration Vue + Inertia](deal-registration.md) | [Target/source map](../SOURCE-MAPPING.md#deal-registration) | [core](../core/deal-registration.md) · [api](../api/deal-registration.md) · [nextjs](../nextjs/deal-registration.md) |
+| [Developer Experience Vue + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Dialer and Outreach Vue + Inertia](dialer-and-outreach.md) | [Target/source map](../SOURCE-MAPPING.md#dialer-and-outreach) | [core](../core/dialer-and-outreach.md) · [api](../api/dialer-and-outreach.md) · [nextjs](../nextjs/dialer-and-outreach.md) |
+| [Email Marketing Vue + Inertia](email-marketing.md) | [Target/source map](../SOURCE-MAPPING.md#email-marketing) | [core](../core/email-marketing.md) · [api](../api/email-marketing.md) · [nextjs](../nextjs/email-marketing.md) |
+| [Email Productivity Vue + Inertia](email-productivity.md) | [Target/source map](../SOURCE-MAPPING.md#email-productivity) | [core](../core/email-productivity.md) · [api](../api/email-productivity.md) · [nextjs](../nextjs/email-productivity.md) |
+| [Enrichment Vue + Inertia](enrichment.md) | [Target/source map](../SOURCE-MAPPING.md#enrichment) | [core](../core/enrichment.md) · [api](../api/enrichment.md) · [nextjs](../nextjs/enrichment.md) |
+| [Events and Webinars Vue + Inertia](events-and-webinars.md) | [Target/source map](../SOURCE-MAPPING.md#events-and-webinars) | [core](../core/events-and-webinars.md) · [api](../api/events-and-webinars.md) · [nextjs](../nextjs/events-and-webinars.md) |
+| [Feature Flags Vue + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Feedback and Voice of Customer Vue + Inertia](feedback-and-voice-of-customer.md) | [Target/source map](../SOURCE-MAPPING.md#feedback-and-voice-of-customer) | [core](../core/feedback-and-voice-of-customer.md) · [api](../api/feedback-and-voice-of-customer.md) · [nextjs](../nextjs/feedback-and-voice-of-customer.md) |
+| [Field Service Coordination Vue + Inertia](field-service-coordination.md) | [Target/source map](../SOURCE-MAPPING.md#field-service-coordination) | [core](../core/field-service-coordination.md) · [api](../api/field-service-coordination.md) · [nextjs](../nextjs/field-service-coordination.md) |
+| [Files Media Vue + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Forecasting Vue + Inertia](forecasting.md) | [Target/source map](../SOURCE-MAPPING.md#forecasting) | [core](../core/forecasting.md) · [api](../api/forecasting.md) · [nextjs](../nextjs/forecasting.md) |
+| [Forms and Surveys Vue + Inertia](forms-and-surveys.md) | [Target/source map](../SOURCE-MAPPING.md#forms-and-surveys) | [core](../core/forms-and-surveys.md) · [api](../api/forms-and-surveys.md) · [nextjs](../nextjs/forms-and-surveys.md) |
+| [Goals and Performance Vue + Inertia](goals-and-performance.md) | [Target/source map](../SOURCE-MAPPING.md#goals-and-performance) | [core](../core/goals-and-performance.md) · [api](../api/goals-and-performance.md) · [nextjs](../nextjs/goals-and-performance.md) |
+| [Identity Core Vue + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Vue + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Vue + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Vue + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Vue + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Journey Orchestration Vue + Inertia](journey-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#journey-orchestration) | [core](../core/journey-orchestration.md) · [api](../api/journey-orchestration.md) · [nextjs](../nextjs/journey-orchestration.md) |
+| [Knowledge Vue + Inertia](knowledge.md) | [Target/source map](../SOURCE-MAPPING.md#knowledge) | [core](../core/knowledge.md) · [api](../api/knowledge.md) · [nextjs](../nextjs/knowledge.md) |
+| [Landing Pages and Funnels Vue + Inertia](landing-pages-and-funnels.md) | [Target/source map](../SOURCE-MAPPING.md#landing-pages-and-funnels) | [core](../core/landing-pages-and-funnels.md) · [api](../api/landing-pages-and-funnels.md) · [nextjs](../nextjs/landing-pages-and-funnels.md) |
+| [Lead Capture Vue + Inertia](lead-capture.md) | [Target/source map](../SOURCE-MAPPING.md#lead-capture) | [core](../core/lead-capture.md) · [api](../api/lead-capture.md) · [nextjs](../nextjs/lead-capture.md) |
+| [Lead Qualification Vue + Inertia](lead-qualification.md) | [Target/source map](../SOURCE-MAPPING.md#lead-qualification) | [core](../core/lead-qualification.md) · [api](../api/lead-qualification.md) · [nextjs](../nextjs/lead-qualification.md) |
+| [Learning and Courses Vue + Inertia](learning-and-courses.md) | [Target/source map](../SOURCE-MAPPING.md#learning-and-courses) | [core](../core/learning-and-courses.md) · [api](../api/learning-and-courses.md) · [nextjs](../nextjs/learning-and-courses.md) |
+| [Localization Contracts Vue + Inertia](localization-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#localization-contracts) | [core](../core/localization-contracts.md) · [api](../api/localization-contracts.md) · [nextjs](../nextjs/localization-contracts.md) |
+| [Localization Core Vue + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Vue + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Loyalty Vue + Inertia](loyalty.md) | [Target/source map](../SOURCE-MAPPING.md#loyalty) | [core](../core/loyalty.md) · [api](../api/loyalty.md) · [nextjs](../nextjs/loyalty.md) |
+| [Marketing Agent Vue + Inertia](marketing-agent.md) | [Target/source map](../SOURCE-MAPPING.md#marketing-agent) | [core](../core/marketing-agent.md) · [api](../api/marketing-agent.md) · [nextjs](../nextjs/marketing-agent.md) |
+| [Marketing Development Funds Vue + Inertia](marketing-development-funds.md) | [Target/source map](../SOURCE-MAPPING.md#marketing-development-funds) | [core](../core/marketing-development-funds.md) · [api](../api/marketing-development-funds.md) · [nextjs](../nextjs/marketing-development-funds.md) |
+| [Marketing Resources Vue + Inertia](marketing-resources.md) | [Target/source map](../SOURCE-MAPPING.md#marketing-resources) | [core](../core/marketing-resources.md) · [api](../api/marketing-resources.md) · [nextjs](../nextjs/marketing-resources.md) |
+| [Memberships Vue + Inertia](memberships.md) | [Target/source map](../SOURCE-MAPPING.md#memberships) | [core](../core/memberships.md) · [api](../api/memberships.md) · [nextjs](../nextjs/memberships.md) |
+| [Mobile Messaging Vue + Inertia](mobile-messaging.md) | [Target/source map](../SOURCE-MAPPING.md#mobile-messaging) | [core](../core/mobile-messaging.md) · [api](../api/mobile-messaging.md) · [nextjs](../nextjs/mobile-messaging.md) |
+| [Module Manager Vue + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Vue + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Vue + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Omnichannel Service Vue + Inertia](omnichannel-service.md) | [Target/source map](../SOURCE-MAPPING.md#omnichannel-service) | [core](../core/omnichannel-service.md) · [api](../api/omnichannel-service.md) · [nextjs](../nextjs/omnichannel-service.md) |
+| [Orders and Payments Workspace Vue + Inertia](orders-and-payments-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#orders-and-payments-workspace) | [core](../core/orders-and-payments-workspace.md) · [api](../api/orders-and-payments-workspace.md) · [nextjs](../nextjs/orders-and-payments-workspace.md) |
+| [Organizations Teams Vue + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Partner Relationship Management Vue + Inertia](partner-relationship-management.md) | [Target/source map](../SOURCE-MAPPING.md#partner-relationship-management) | [core](../core/partner-relationship-management.md) · [api](../api/partner-relationship-management.md) · [nextjs](../nextjs/partner-relationship-management.md) |
+| [Personalization Vue + Inertia](personalization.md) | [Target/source map](../SOURCE-MAPPING.md#personalization) | [core](../core/personalization.md) · [api](../api/personalization.md) · [nextjs](../nextjs/personalization.md) |
+| [Playbooks and Enablement Vue + Inertia](playbooks-and-enablement.md) | [Target/source map](../SOURCE-MAPPING.md#playbooks-and-enablement) | [core](../core/playbooks-and-enablement.md) · [api](../api/playbooks-and-enablement.md) · [nextjs](../nextjs/playbooks-and-enablement.md) |
+| [Predictive Models Vue + Inertia](predictive-models.md) | [Target/source map](../SOURCE-MAPPING.md#predictive-models) | [core](../core/predictive-models.md) · [api](../api/predictive-models.md) · [nextjs](../nextjs/predictive-models.md) |
+| [Profiles Vue + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Projects Vue + Inertia](projects.md) | [Target/source map](../SOURCE-MAPPING.md#projects) | [core](../core/projects.md) · [api](../api/projects.md) · [nextjs](../nextjs/projects.md) |
+| [Proposals and Quotes Vue + Inertia](proposals-and-quotes.md) | [Target/source map](../SOURCE-MAPPING.md#proposals-and-quotes) | [core](../core/proposals-and-quotes.md) · [api](../api/proposals-and-quotes.md) · [nextjs](../nextjs/proposals-and-quotes.md) |
+| [Prospecting Agent Vue + Inertia](prospecting-agent.md) | [Target/source map](../SOURCE-MAPPING.md#prospecting-agent) | [core](../core/prospecting-agent.md) · [api](../api/prospecting-agent.md) · [nextjs](../nextjs/prospecting-agent.md) |
+| [Prospecting Vue + Inertia](prospecting.md) | [Target/source map](../SOURCE-MAPPING.md#prospecting) | [core](../core/prospecting.md) · [api](../api/prospecting.md) · [nextjs](../nextjs/prospecting.md) |
+| [Quotas and Incentives Vue + Inertia](quotas-and-incentives.md) | [Target/source map](../SOURCE-MAPPING.md#quotas-and-incentives) | [core](../core/quotas-and-incentives.md) · [api](../api/quotas-and-incentives.md) · [nextjs](../nextjs/quotas-and-incentives.md) |
+| [Referrals Vue + Inertia](referrals.md) | [Target/source map](../SOURCE-MAPPING.md#referrals) | [core](../core/referrals.md) · [api](../api/referrals.md) · [nextjs](../nextjs/referrals.md) |
+| [Reputation Management Vue + Inertia](reputation-management.md) | [Target/source map](../SOURCE-MAPPING.md#reputation-management) | [core](../core/reputation-management.md) · [api](../api/reputation-management.md) · [nextjs](../nextjs/reputation-management.md) |
+| [Resource Planning Vue + Inertia](resource-planning.md) | [Target/source map](../SOURCE-MAPPING.md#resource-planning) | [core](../core/resource-planning.md) · [api](../api/resource-planning.md) · [nextjs](../nextjs/resource-planning.md) |
+| [Revenue Intelligence Vue + Inertia](revenue-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#revenue-intelligence) | [core](../core/revenue-intelligence.md) · [api](../api/revenue-intelligence.md) · [nextjs](../nextjs/revenue-intelligence.md) |
+| [Revenue Lifecycle Vue + Inertia](revenue-lifecycle.md) | [Target/source map](../SOURCE-MAPPING.md#revenue-lifecycle) | [core](../core/revenue-lifecycle.md) · [api](../api/revenue-lifecycle.md) · [nextjs](../nextjs/revenue-lifecycle.md) |
+| [Roles Permissions Vue + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Routing Vue + Inertia](routing.md) | [Target/source map](../SOURCE-MAPPING.md#routing) | [core](../core/routing.md) · [api](../api/routing.md) · [nextjs](../nextjs/routing.md) |
+| [SaaS Packaging Vue + Inertia](saas-packaging.md) | [Target/source map](../SOURCE-MAPPING.md#saas-packaging) | [core](../core/saas-packaging.md) · [api](../api/saas-packaging.md) · [nextjs](../nextjs/saas-packaging.md) |
+| [Sales Engagement Vue + Inertia](sales-engagement.md) | [Target/source map](../SOURCE-MAPPING.md#sales-engagement) | [core](../core/sales-engagement.md) · [api](../api/sales-engagement.md) · [nextjs](../nextjs/sales-engagement.md) |
+| [Sales Pipelines Vue + Inertia](sales-pipelines.md) | [Target/source map](../SOURCE-MAPPING.md#sales-pipelines) | [core](../core/sales-pipelines.md) · [api](../api/sales-pipelines.md) · [nextjs](../nextjs/sales-pipelines.md) |
+| [Sales Workspace Vue + Inertia](sales-workspace.md) | [Target/source map](../SOURCE-MAPPING.md#sales-workspace) | [core](../core/sales-workspace.md) · [api](../api/sales-workspace.md) · [nextjs](../nextjs/sales-workspace.md) |
+| [Sandbox and Release Management Vue + Inertia](sandbox-and-release-management.md) | [Target/source map](../SOURCE-MAPPING.md#sandbox-and-release-management) | [core](../core/sandbox-and-release-management.md) · [api](../api/sandbox-and-release-management.md) · [nextjs](../nextjs/sandbox-and-release-management.md) |
+| [Scheduler Queues Vue + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Scheduling Vue + Inertia](scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#scheduling) | [core](../core/scheduling.md) · [api](../api/scheduling.md) · [nextjs](../nextjs/scheduling.md) |
+| [Search Vue + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Segmentation Vue + Inertia](segmentation.md) | [Target/source map](../SOURCE-MAPPING.md#segmentation) | [core](../core/segmentation.md) · [api](../api/segmentation.md) · [nextjs](../nextjs/segmentation.md) |
+| [Service Agent Vue + Inertia](service-agent.md) | [Target/source map](../SOURCE-MAPPING.md#service-agent) | [core](../core/service-agent.md) · [api](../api/service-agent.md) · [nextjs](../nextjs/service-agent.md) |
+| [Service Analytics Vue + Inertia](service-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#service-analytics) | [core](../core/service-analytics.md) · [api](../api/service-analytics.md) · [nextjs](../nextjs/service-analytics.md) |
+| [Sessions Devices Vue + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Vue + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [SLA and Entitlements Vue + Inertia](sla-and-entitlements.md) | [Target/source map](../SOURCE-MAPPING.md#sla-and-entitlements) | [core](../core/sla-and-entitlements.md) · [api](../api/sla-and-entitlements.md) · [nextjs](../nextjs/sla-and-entitlements.md) |
+| [Telephony Vue + Inertia](telephony.md) | [Target/source map](../SOURCE-MAPPING.md#telephony) | [core](../core/telephony.md) · [api](../api/telephony.md) · [nextjs](../nextjs/telephony.md) |
+| [Templates and Snapshots Vue + Inertia](templates-and-snapshots.md) | [Target/source map](../SOURCE-MAPPING.md#templates-and-snapshots) | [core](../core/templates-and-snapshots.md) · [api](../api/templates-and-snapshots.md) · [nextjs](../nextjs/templates-and-snapshots.md) |
+| [Territories and Ownership Vue + Inertia](territories-and-ownership.md) | [Target/source map](../SOURCE-MAPPING.md#territories-and-ownership) | [core](../core/territories-and-ownership.md) · [api](../api/territories-and-ownership.md) · [nextjs](../nextjs/territories-and-ownership.md) |
+| [Theme Support Vue + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Vue + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Unified Conversations Vue + Inertia](unified-conversations.md) | [Target/source map](../SOURCE-MAPPING.md#unified-conversations) | [core](../core/unified-conversations.md) · [api](../api/unified-conversations.md) · [nextjs](../nextjs/unified-conversations.md) |
+| [Usage Wallet and Rebilling Vue + Inertia](usage-wallet-and-rebilling.md) | [Target/source map](../SOURCE-MAPPING.md#usage-wallet-and-rebilling) | [core](../core/usage-wallet-and-rebilling.md) · [api](../api/usage-wallet-and-rebilling.md) · [nextjs](../nextjs/usage-wallet-and-rebilling.md) |
+| [Web Intent Vue + Inertia](web-intent.md) | [Target/source map](../SOURCE-MAPPING.md#web-intent) | [core](../core/web-intent.md) · [api](../api/web-intent.md) · [nextjs](../nextjs/web-intent.md) |
+| [Webhooks Vue + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [White Label Vue + Inertia](white-label.md) | [Target/source map](../SOURCE-MAPPING.md#white-label) | [core](../core/white-label.md) · [api](../api/white-label.md) · [nextjs](../nextjs/white-label.md) |
+| [Work Management Vue + Inertia](work-management.md) | [Target/source map](../SOURCE-MAPPING.md#work-management) | [core](../core/work-management.md) · [api](../api/work-management.md) · [nextjs](../nextjs/work-management.md) |

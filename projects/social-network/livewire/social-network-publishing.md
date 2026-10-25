@@ -1,12 +1,16 @@
 # Social Network: Social Network Publishing Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-publishing). Observed identity: [`liberusoftware/module-social-network-publishing-livewire`](../../../modules/source/liberusoftware--module-social-network-publishing-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-social-network-social-network-publishing-livewire`  
 **Matching domain module:** `social-network-publishing`  
 **Application:** Social Network  
 **Source feature:** [Social Network Publishing](../features/social-network-publishing.md)  
-**Architecture:** [LIVEWIRE.md](../SOCIAL-NETWORK.md) · [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

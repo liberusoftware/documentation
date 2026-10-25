@@ -1,8 +1,12 @@
 # Accounting: Accounting Product And Service Items Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-product-and-service-items). Observed identity: [`liberusoftware/module-accounting-product-and-service-items`](../../../modules/source/liberusoftware--module-accounting-product-and-service-items.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-product-and-service-items`
+**Design package identifier:** `module-accounting-accounting-product-and-service-items`
 **Domain specification:** [Accounting Product And Service Items](../features/accounting-product-and-service-items.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

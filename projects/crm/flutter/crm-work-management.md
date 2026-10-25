@@ -1,5 +1,9 @@
 # Crm Work Management Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-work-management). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-work-management-flutter
 **Matching core package:** module-crm-crm-work-management ([implementation](../core/crm-work-management.md))
 **Matching API package:** module-crm-crm-work-management-api ([contract](../api/crm-work-management.md))

@@ -1,8 +1,12 @@
 # CMS: Module Cms Content Search Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-content-search). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-content-search`
+**Design package identifier:** `module-cms-module-cms-content-search`
 **Domain specification:** [Module Cms Content Search](../features/module-cms-content-search.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

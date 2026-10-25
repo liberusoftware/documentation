@@ -1,8 +1,12 @@
 # Control Panel: Files Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#files). Observed identity: [`liberusoftware/module-control-panel-files`](../../../modules/source/liberusoftware--module-control-panel-files.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-control-panel-files`
+**Design package identifier:** `module-control-panel-files`
 **Domain specification:** [Files](../features/files.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

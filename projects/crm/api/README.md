@@ -1,134 +1,228 @@
 # CRM API Module Specifications
 
+<!-- catalogue-status:start -->
+This index preserves **218 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional API presentation package for exactly one matching domain module.
 
-- [Activity Comments API](activity-comments.md) — `module-crm-activity-comments-api`
-- [Analytics Contracts API](analytics-contracts.md) — `module-crm-analytics-contracts-api`
-- [Analytics Core API](analytics-core.md) — `module-crm-analytics-core-api`
-- [Analytics Google API](analytics-google.md) — `module-crm-analytics-google-api`
-- [Analytics Meta API](analytics-meta.md) — `module-crm-analytics-meta-api`
-- [Api Access API](api-access.md) — `module-crm-api-access-api`
-- [Application API](application.md) — `module-crm-application-api`
-- [Audit API](audit.md) — `module-crm-audit-api`
-- [Crm Account Based Marketing API](crm-account-based-marketing.md) — `module-crm-crm-account-based-marketing-api`
-- [Crm Account Planning API](crm-account-planning.md) — `module-crm-crm-account-planning-api`
-- [Crm Activities API](crm-activities.md) — `module-crm-crm-activities-api`
-- [Crm Advertising API](crm-advertising.md) — `module-crm-crm-advertising-api`
-- [Crm Advocacy API](crm-advocacy.md) — `module-crm-crm-advocacy-api`
-- [Crm Affiliate Management API](crm-affiliate-management.md) — `module-crm-crm-affiliate-management-api`
-- [Crm Agency Workspace API](crm-agency-workspace.md) — `module-crm-crm-agency-workspace-api`
-- [Crm Ai Reception And Conversation API](crm-ai-reception-and-conversation.md) — `module-crm-crm-ai-reception-and-conversation-api`
-- [Crm Analytics API](crm-analytics.md) — `module-crm-crm-analytics-api`
-- [Crm Attribution API](crm-attribution.md) — `module-crm-crm-attribution-api`
-- [Crm Automation Pack API](crm-automation-pack.md) — `module-crm-crm-automation-pack-api`
-- [Crm Business Process Management API](crm-business-process-management.md) — `module-crm-crm-business-process-management-api`
-- [Crm Campaigns API](crm-campaigns.md) — `module-crm-crm-campaigns-api`
-- [Crm Case Management API](crm-case-management.md) — `module-crm-crm-case-management-api`
-- [Crm Channel Gateway API](crm-channel-gateway.md) — `module-crm-crm-channel-gateway-api`
-- [Crm Channel Sales API](crm-channel-sales.md) — `module-crm-crm-channel-sales-api`
-- [Crm Chat And Bots API](crm-chat-and-bots.md) — `module-crm-crm-chat-and-bots-api`
-- [Crm Client Onboarding API](crm-client-onboarding.md) — `module-crm-crm-client-onboarding-api`
-- [Crm Collaboration API](crm-collaboration.md) — `module-crm-crm-collaboration-api`
-- [Crm Communities API](crm-communities.md) — `module-crm-crm-communities-api`
-- [Crm Consent And Preferences API](crm-consent-and-preferences.md) — `module-crm-crm-consent-and-preferences-api`
-- [Crm Contact Center API](crm-contact-center.md) — `module-crm-crm-contact-center-api`
-- [Crm Contracts API](crm-contracts.md) — `module-crm-crm-contracts-api`
-- [Crm Conversation Analytics API](crm-conversation-analytics.md) — `module-crm-crm-conversation-analytics-api`
-- [Crm Conversation Intelligence API](crm-conversation-intelligence.md) — `module-crm-crm-conversation-intelligence-api`
-- [Crm Conversion Optimization API](crm-conversion-optimization.md) — `module-crm-crm-conversion-optimization-api`
-- [Crm Copilot API](crm-copilot.md) — `module-crm-crm-copilot-api`
-- [Crm Core API](crm-core.md) — `module-crm-crm-core-api`
-- [Crm Cpq API](crm-cpq.md) — `module-crm-crm-cpq-api`
-- [Crm Customer Data Model API](crm-customer-data-model.md) — `module-crm-crm-customer-data-model-api`
-- [Crm Customer Data Platform API](crm-customer-data-platform.md) — `module-crm-crm-customer-data-platform-api`
-- [Crm Customer Self Service API](crm-customer-self-service.md) — `module-crm-crm-customer-self-service-api`
-- [Crm Customer Success API](crm-customer-success.md) — `module-crm-crm-customer-success-api`
-- [Crm Data Operations API](crm-data-operations.md) — `module-crm-crm-data-operations-api`
-- [Crm Deal Registration API](crm-deal-registration.md) — `module-crm-crm-deal-registration-api`
-- [Crm Dialer And Outreach API](crm-dialer-and-outreach.md) — `module-crm-crm-dialer-and-outreach-api`
-- [Crm Documents API](crm-documents.md) — `module-crm-crm-documents-api`
-- [Crm Email Marketing API](crm-email-marketing.md) — `module-crm-crm-email-marketing-api`
-- [Crm Email Productivity API](crm-email-productivity.md) — `module-crm-crm-email-productivity-api`
-- [Crm Enrichment API](crm-enrichment.md) — `module-crm-crm-enrichment-api`
-- [Crm Events And Webinars API](crm-events-and-webinars.md) — `module-crm-crm-events-and-webinars-api`
-- [Crm Feedback And Voice Of Customer API](crm-feedback-and-voice-of-customer.md) — `module-crm-crm-feedback-and-voice-of-customer-api`
-- [Crm Field Service Coordination API](crm-field-service-coordination.md) — `module-crm-crm-field-service-coordination-api`
-- [Crm Forecasting API](crm-forecasting.md) — `module-crm-crm-forecasting-api`
-- [Crm Forms And Surveys API](crm-forms-and-surveys.md) — `module-crm-crm-forms-and-surveys-api`
-- [Crm Goals And Performance API](crm-goals-and-performance.md) — `module-crm-crm-goals-and-performance-api`
-- [Crm Journey Orchestration API](crm-journey-orchestration.md) — `module-crm-crm-journey-orchestration-api`
-- [Crm Knowledge API](crm-knowledge.md) — `module-crm-crm-knowledge-api`
-- [Crm Landing Pages And Funnels API](crm-landing-pages-and-funnels.md) — `module-crm-crm-landing-pages-and-funnels-api`
-- [Crm Lead Capture API](crm-lead-capture.md) — `module-crm-crm-lead-capture-api`
-- [Crm Lead Qualification API](crm-lead-qualification.md) — `module-crm-crm-lead-qualification-api`
-- [Crm Learning And Courses API](crm-learning-and-courses.md) — `module-crm-crm-learning-and-courses-api`
-- [Crm Loyalty API](crm-loyalty.md) — `module-crm-crm-loyalty-api`
-- [Crm Marketing Agent API](crm-marketing-agent.md) — `module-crm-crm-marketing-agent-api`
-- [Crm Marketing Development Funds API](crm-marketing-development-funds.md) — `module-crm-crm-marketing-development-funds-api`
-- [Crm Marketing Resources API](crm-marketing-resources.md) — `module-crm-crm-marketing-resources-api`
-- [Crm Memberships API](crm-memberships.md) — `module-crm-crm-memberships-api`
-- [Crm Mobile Messaging API](crm-mobile-messaging.md) — `module-crm-crm-mobile-messaging-api`
-- [Crm Omnichannel Service API](crm-omnichannel-service.md) — `module-crm-crm-omnichannel-service-api`
-- [Crm Orders And Payments Workspace API](crm-orders-and-payments-workspace.md) — `module-crm-crm-orders-and-payments-workspace-api`
-- [Crm Partner Relationship Management API](crm-partner-relationship-management.md) — `module-crm-crm-partner-relationship-management-api`
-- [Crm Personalization API](crm-personalization.md) — `module-crm-crm-personalization-api`
-- [Crm Playbooks And Enablement API](crm-playbooks-and-enablement.md) — `module-crm-crm-playbooks-and-enablement-api`
-- [Crm Predictive Models API](crm-predictive-models.md) — `module-crm-crm-predictive-models-api`
-- [Crm Product Workspace API](crm-product-workspace.md) — `module-crm-crm-product-workspace-api`
-- [Crm Projects API](crm-projects.md) — `module-crm-crm-projects-api`
-- [Crm Proposals And Quotes API](crm-proposals-and-quotes.md) — `module-crm-crm-proposals-and-quotes-api`
-- [Crm Prospecting API](crm-prospecting.md) — `module-crm-crm-prospecting-api`
-- [Crm Prospecting Agent API](crm-prospecting-agent.md) — `module-crm-crm-prospecting-agent-api`
-- [Crm Quotas And Incentives API](crm-quotas-and-incentives.md) — `module-crm-crm-quotas-and-incentives-api`
-- [Crm Referrals API](crm-referrals.md) — `module-crm-crm-referrals-api`
-- [Crm Reputation Management API](crm-reputation-management.md) — `module-crm-crm-reputation-management-api`
-- [Crm Resource Planning API](crm-resource-planning.md) — `module-crm-crm-resource-planning-api`
-- [Crm Revenue Intelligence API](crm-revenue-intelligence.md) — `module-crm-crm-revenue-intelligence-api`
-- [Crm Revenue Lifecycle API](crm-revenue-lifecycle.md) — `module-crm-crm-revenue-lifecycle-api`
-- [Crm Routing API](crm-routing.md) — `module-crm-crm-routing-api`
-- [Crm Saas Packaging API](crm-saas-packaging.md) — `module-crm-crm-saas-packaging-api`
-- [Crm Sales Engagement API](crm-sales-engagement.md) — `module-crm-crm-sales-engagement-api`
-- [Crm Sales Pipelines API](crm-sales-pipelines.md) — `module-crm-crm-sales-pipelines-api`
-- [Crm Sales Workspace API](crm-sales-workspace.md) — `module-crm-crm-sales-workspace-api`
-- [Crm Sandbox And Release Management API](crm-sandbox-and-release-management.md) — `module-crm-crm-sandbox-and-release-management-api`
-- [Crm Sandbox Release API](crm-sandbox-release.md) — `module-crm-crm-sandbox-release-api`
-- [Crm Scheduling API](crm-scheduling.md) — `module-crm-crm-scheduling-api`
-- [Crm Search API](crm-search.md) — `module-crm-crm-search-api`
-- [Crm Segmentation API](crm-segmentation.md) — `module-crm-crm-segmentation-api`
-- [Crm Service Agent API](crm-service-agent.md) — `module-crm-crm-service-agent-api`
-- [Crm Service Analytics API](crm-service-analytics.md) — `module-crm-crm-service-analytics-api`
-- [Crm Sla And Entitlements API](crm-sla-and-entitlements.md) — `module-crm-crm-sla-and-entitlements-api`
-- [Crm Telephony API](crm-telephony.md) — `module-crm-crm-telephony-api`
-- [Crm Template Snapshots API](crm-template-snapshots.md) — `module-crm-crm-template-snapshots-api`
-- [Crm Templates And Snapshots API](crm-templates-and-snapshots.md) — `module-crm-crm-templates-and-snapshots-api`
-- [Crm Territories And Ownership API](crm-territories-and-ownership.md) — `module-crm-crm-territories-and-ownership-api`
-- [Crm Unified Conversations API](crm-unified-conversations.md) — `module-crm-crm-unified-conversations-api`
-- [Crm Usage Wallet And Rebilling API](crm-usage-wallet-and-rebilling.md) — `module-crm-crm-usage-wallet-and-rebilling-api`
-- [Crm Web Intent API](crm-web-intent.md) — `module-crm-crm-web-intent-api`
-- [Crm White Label API](crm-white-label.md) — `module-crm-crm-white-label-api`
-- [Crm Work Management API](crm-work-management.md) — `module-crm-crm-work-management-api`
-- [Currency Context API](currency-context.md) — `module-crm-currency-context-api`
-- [Developer Experience API](developer-experience.md) — `module-crm-developer-experience-api`
-- [Feature Flags API](feature-flags.md) — `module-crm-feature-flags-api`
-- [Files Media API](files-media.md) — `module-crm-files-media-api`
-- [Identity Core API](identity-core.md) — `module-crm-identity-core-api`
-- [Identity Socialstream API](identity-socialstream.md) — `module-crm-identity-socialstream-api`
-- [Import Export API](import-export.md) — `module-crm-import-export-api`
-- [Integrations API](integrations.md) — `module-crm-integrations-api`
-- [Jetstream Bridge API](jetstream-bridge.md) — `module-crm-jetstream-bridge-api`
-- [Localization Contracts API](localization-contracts.md) — `module-crm-localization-contracts-api`
-- [Localization Core API](localization-core.md) — `module-crm-localization-core-api`
-- [Localization Mymemory API](localization-mymemory.md) — `module-crm-localization-mymemory-api`
-- [Module Manager API](module-manager.md) — `module-crm-module-manager-api`
-- [Notifications API](notifications.md) — `module-crm-notifications-api`
-- [Observability API](observability.md) — `module-crm-observability-api`
-- [Organizations Teams API](organizations-teams.md) — `module-crm-organizations-teams-api`
-- [Profiles API](profiles.md) — `module-crm-profiles-api`
-- [Roles Permissions API](roles-permissions.md) — `module-crm-roles-permissions-api`
-- [Scheduler Queues API](scheduler-queues.md) — `module-crm-scheduler-queues-api`
-- [Search API](search.md) — `module-crm-search-api`
-- [Sessions Devices API](sessions-devices.md) — `module-crm-sessions-devices-api`
-- [Settings API](settings.md) — `module-crm-settings-api`
-- [Theme Support API](theme-support.md) — `module-crm-theme-support-api`
-- [Two Factor Authentication API](two-factor-authentication.md) — `module-crm-two-factor-authentication-api`
-- [Webhooks API](webhooks.md) — `module-crm-webhooks-api`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Account-Based Marketing API](account-based-marketing.md) | [liberusoftware/module-crm-account-based-marketing-api](../../../modules/source/liberusoftware--module-crm-account-based-marketing-api.md) | [core](../core/account-based-marketing.md) · [nextjs](../nextjs/account-based-marketing.md) |
+| [Account Planning API](account-planning.md) | [liberusoftware/module-crm-account-planning-api](../../../modules/source/liberusoftware--module-crm-account-planning-api.md) | [core](../core/account-planning.md) · [nextjs](../nextjs/account-planning.md) |
+| [Activities API](activities.md) | [liberusoftware/module-crm-activities-api](../../../modules/source/liberusoftware--module-crm-activities-api.md) | [core](../core/activities.md) · [nextjs](../nextjs/activities.md) |
+| [Activity Comments API](activity-comments.md) | [liberusoftware/activity-comments-api](../../../modules/source/liberusoftware--activity-comments-api.md) | [core](../core/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Advertising API](advertising.md) | [liberusoftware/module-crm-advertising-api](../../../modules/source/liberusoftware--module-crm-advertising-api.md) | [core](../core/advertising.md) · [nextjs](../nextjs/advertising.md) |
+| [Advocacy API](advocacy.md) | [liberusoftware/module-crm-advocacy-api](../../../modules/source/liberusoftware--module-crm-advocacy-api.md) | [core](../core/advocacy.md) · [nextjs](../nextjs/advocacy.md) |
+| [Affiliate Management API](affiliate-management.md) | [liberusoftware/module-crm-affiliate-management-api](../../../modules/source/liberusoftware--module-crm-affiliate-management-api.md) | [core](../core/affiliate-management.md) · [nextjs](../nextjs/affiliate-management.md) |
+| [Agency Workspace API](agency-workspace.md) | [liberusoftware/module-crm-agency-workspace-api](../../../modules/source/liberusoftware--module-crm-agency-workspace-api.md) | [core](../core/agency-workspace.md) · [nextjs](../nextjs/agency-workspace.md) |
+| [AI Reception and Conversation API](ai-reception-and-conversation.md) | [liberusoftware/module-crm-ai-reception-and-conversation-api](../../../modules/source/liberusoftware--module-crm-ai-reception-and-conversation-api.md) | [core](../core/ai-reception-and-conversation.md) · [nextjs](../nextjs/ai-reception-and-conversation.md) |
+| [Analytics Contracts API](analytics-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-contracts) | [core](../core/analytics-contracts.md) · [nextjs](../nextjs/analytics-contracts.md) |
+| [Analytics Core API](analytics-core.md) | [liberusoftware/analytics-core-api](../../../modules/source/liberusoftware--analytics-core-api.md) | [core](../core/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google API](analytics-google.md) | [liberusoftware/analytics-google-api](../../../modules/source/liberusoftware--analytics-google-api.md) | [core](../core/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta API](analytics-meta.md) | [liberusoftware/analytics-meta-api](../../../modules/source/liberusoftware--analytics-meta-api.md) | [core](../core/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access API](api-access.md) | [liberusoftware/api-access-api](../../../modules/source/liberusoftware--api-access-api.md) | [core](../core/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application API](application.md) | [liberusoftware/application-api](../../../modules/source/liberusoftware--application-api.md) | [core](../core/application.md) · [nextjs](../nextjs/application.md) |
+| [Attribution API](attribution.md) | [liberusoftware/module-crm-attribution-api](../../../modules/source/liberusoftware--module-crm-attribution-api.md) | [core](../core/attribution.md) · [nextjs](../nextjs/attribution.md) |
+| [Audit API](audit.md) | [liberusoftware/audit-api](../../../modules/source/liberusoftware--audit-api.md) | [core](../core/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Business Process Management API](business-process-management.md) | [liberusoftware/module-crm-business-process-management-api](../../../modules/source/liberusoftware--module-crm-business-process-management-api.md) | [core](../core/business-process-management.md) · [nextjs](../nextjs/business-process-management.md) |
+| [Campaigns API](campaigns.md) | [liberusoftware/module-crm-campaigns-api](../../../modules/source/liberusoftware--module-crm-campaigns-api.md) | [core](../core/campaigns.md) · [nextjs](../nextjs/campaigns.md) |
+| [Case Management API](case-management.md) | [liberusoftware/module-crm-case-management-api](../../../modules/source/liberusoftware--module-crm-case-management-api.md) | [core](../core/case-management.md) · [nextjs](../nextjs/case-management.md) |
+| [Channel Gateway API](channel-gateway.md) | [liberusoftware/module-crm-channel-gateway-api](../../../modules/source/liberusoftware--module-crm-channel-gateway-api.md) | [core](../core/channel-gateway.md) · [nextjs](../nextjs/channel-gateway.md) |
+| [Channel Sales API](channel-sales.md) | [liberusoftware/module-crm-channel-sales-api](../../../modules/source/liberusoftware--module-crm-channel-sales-api.md) | [core](../core/channel-sales.md) · [nextjs](../nextjs/channel-sales.md) |
+| [Chat and Bots API](chat-and-bots.md) | [liberusoftware/module-crm-chat-and-bots-api](../../../modules/source/liberusoftware--module-crm-chat-and-bots-api.md) | [core](../core/chat-and-bots.md) · [nextjs](../nextjs/chat-and-bots.md) |
+| [Client Onboarding API](client-onboarding.md) | [liberusoftware/module-crm-client-onboarding-api](../../../modules/source/liberusoftware--module-crm-client-onboarding-api.md) | [core](../core/client-onboarding.md) · [nextjs](../nextjs/client-onboarding.md) |
+| [Collaboration API](collaboration.md) | [liberusoftware/module-crm-collaboration-api](../../../modules/source/liberusoftware--module-crm-collaboration-api.md) | [core](../core/collaboration.md) · [nextjs](../nextjs/collaboration.md) |
+| [Communities API](communities.md) | [liberusoftware/module-crm-communities-api](../../../modules/source/liberusoftware--module-crm-communities-api.md) | [core](../core/communities.md) · [nextjs](../nextjs/communities.md) |
+| [Consent and Preferences API](consent-and-preferences.md) | [liberusoftware/module-crm-consent-and-preferences-api](../../../modules/source/liberusoftware--module-crm-consent-and-preferences-api.md) | [core](../core/consent-and-preferences.md) · [nextjs](../nextjs/consent-and-preferences.md) |
+| [Contact Center API](contact-center.md) | [liberusoftware/module-crm-contact-center-api](../../../modules/source/liberusoftware--module-crm-contact-center-api.md) | [core](../core/contact-center.md) · [nextjs](../nextjs/contact-center.md) |
+| [Contracts API](contracts.md) | [liberusoftware/module-crm-contracts-api](../../../modules/source/liberusoftware--module-crm-contracts-api.md) | [core](../core/contracts.md) · [nextjs](../nextjs/contracts.md) |
+| [Conversation Analytics API](conversation-analytics.md) | [liberusoftware/module-crm-conversation-analytics-api](../../../modules/source/liberusoftware--module-crm-conversation-analytics-api.md) | [core](../core/conversation-analytics.md) · [nextjs](../nextjs/conversation-analytics.md) |
+| [Conversation Intelligence API](conversation-intelligence.md) | [liberusoftware/module-crm-conversation-intelligence-api](../../../modules/source/liberusoftware--module-crm-conversation-intelligence-api.md) | [core](../core/conversation-intelligence.md) · [nextjs](../nextjs/conversation-intelligence.md) |
+| [Conversion Optimization API](conversion-optimization.md) | [liberusoftware/module-crm-conversion-optimization-api](../../../modules/source/liberusoftware--module-crm-conversion-optimization-api.md) | [core](../core/conversion-optimization.md) · [nextjs](../nextjs/conversion-optimization.md) |
+| [CPQ API](cpq.md) | [liberusoftware/module-crm-cpq-api](../../../modules/source/liberusoftware--module-crm-cpq-api.md) | [core](../core/cpq.md) · [nextjs](../nextjs/cpq.md) |
+| [Crm Account Based Marketing API](crm-account-based-marketing.md) | [liberusoftware/module-crm-account-based-marketing-api](../../../modules/source/liberusoftware--module-crm-account-based-marketing-api.md) | [core](../core/crm-account-based-marketing.md) · [nextjs](../nextjs/crm-account-based-marketing.md) |
+| [Crm Account Planning API](crm-account-planning.md) | [liberusoftware/module-crm-account-planning-api](../../../modules/source/liberusoftware--module-crm-account-planning-api.md) | [core](../core/crm-account-planning.md) · [nextjs](../nextjs/crm-account-planning.md) |
+| [Crm Activities API](crm-activities.md) | [liberusoftware/module-crm-activities-api](../../../modules/source/liberusoftware--module-crm-activities-api.md) | [core](../core/crm-activities.md) · [nextjs](../nextjs/crm-activities.md) |
+| [Crm Advertising API](crm-advertising.md) | [liberusoftware/module-crm-advertising-api](../../../modules/source/liberusoftware--module-crm-advertising-api.md) | [core](../core/crm-advertising.md) · [nextjs](../nextjs/crm-advertising.md) |
+| [Crm Advocacy API](crm-advocacy.md) | [liberusoftware/module-crm-advocacy-api](../../../modules/source/liberusoftware--module-crm-advocacy-api.md) | [core](../core/crm-advocacy.md) · [nextjs](../nextjs/crm-advocacy.md) |
+| [Crm Affiliate Management API](crm-affiliate-management.md) | [liberusoftware/module-crm-affiliate-management-api](../../../modules/source/liberusoftware--module-crm-affiliate-management-api.md) | [core](../core/crm-affiliate-management.md) · [nextjs](../nextjs/crm-affiliate-management.md) |
+| [Crm Agency Workspace API](crm-agency-workspace.md) | [liberusoftware/module-crm-agency-workspace-api](../../../modules/source/liberusoftware--module-crm-agency-workspace-api.md) | [core](../core/crm-agency-workspace.md) · [nextjs](../nextjs/crm-agency-workspace.md) |
+| [Crm Ai Reception And Conversation API](crm-ai-reception-and-conversation.md) | [liberusoftware/module-crm-ai-reception-and-conversation-api](../../../modules/source/liberusoftware--module-crm-ai-reception-and-conversation-api.md) | [core](../core/crm-ai-reception-and-conversation.md) · [nextjs](../nextjs/crm-ai-reception-and-conversation.md) |
+| [CRM Analytics API](crm-analytics.md) | [liberusoftware/module-crm-analytics-api](../../../modules/source/liberusoftware--module-crm-analytics-api.md) | [core](../core/crm-analytics.md) · [nextjs](../nextjs/crm-analytics.md) |
+| [Crm Attribution API](crm-attribution.md) | [liberusoftware/module-crm-attribution-api](../../../modules/source/liberusoftware--module-crm-attribution-api.md) | [core](../core/crm-attribution.md) · [nextjs](../nextjs/crm-attribution.md) |
+| [CRM Automation Pack API](crm-automation-pack.md) | [liberusoftware/module-crm-automation-pack-api](../../../modules/source/liberusoftware--module-crm-automation-pack-api.md) | [core](../core/crm-automation-pack.md) · [nextjs](../nextjs/crm-automation-pack.md) |
+| [Crm Business Process Management API](crm-business-process-management.md) | [liberusoftware/module-crm-business-process-management-api](../../../modules/source/liberusoftware--module-crm-business-process-management-api.md) | [core](../core/crm-business-process-management.md) · [nextjs](../nextjs/crm-business-process-management.md) |
+| [Crm Campaigns API](crm-campaigns.md) | [liberusoftware/module-crm-campaigns-api](../../../modules/source/liberusoftware--module-crm-campaigns-api.md) | [core](../core/crm-campaigns.md) · [nextjs](../nextjs/crm-campaigns.md) |
+| [Crm Case Management API](crm-case-management.md) | [liberusoftware/module-crm-case-management-api](../../../modules/source/liberusoftware--module-crm-case-management-api.md) | [core](../core/crm-case-management.md) · [nextjs](../nextjs/crm-case-management.md) |
+| [Crm Channel Gateway API](crm-channel-gateway.md) | [liberusoftware/module-crm-channel-gateway-api](../../../modules/source/liberusoftware--module-crm-channel-gateway-api.md) | [core](../core/crm-channel-gateway.md) · [nextjs](../nextjs/crm-channel-gateway.md) |
+| [Crm Channel Sales API](crm-channel-sales.md) | [liberusoftware/module-crm-channel-sales-api](../../../modules/source/liberusoftware--module-crm-channel-sales-api.md) | [core](../core/crm-channel-sales.md) · [nextjs](../nextjs/crm-channel-sales.md) |
+| [Crm Chat And Bots API](crm-chat-and-bots.md) | [liberusoftware/module-crm-chat-and-bots-api](../../../modules/source/liberusoftware--module-crm-chat-and-bots-api.md) | [core](../core/crm-chat-and-bots.md) · [nextjs](../nextjs/crm-chat-and-bots.md) |
+| [Crm Client Onboarding API](crm-client-onboarding.md) | [liberusoftware/module-crm-client-onboarding-api](../../../modules/source/liberusoftware--module-crm-client-onboarding-api.md) | [core](../core/crm-client-onboarding.md) · [nextjs](../nextjs/crm-client-onboarding.md) |
+| [Crm Collaboration API](crm-collaboration.md) | [liberusoftware/module-crm-collaboration-api](../../../modules/source/liberusoftware--module-crm-collaboration-api.md) | [core](../core/crm-collaboration.md) · [nextjs](../nextjs/crm-collaboration.md) |
+| [Crm Communities API](crm-communities.md) | [liberusoftware/module-crm-communities-api](../../../modules/source/liberusoftware--module-crm-communities-api.md) | [core](../core/crm-communities.md) · [nextjs](../nextjs/crm-communities.md) |
+| [Crm Consent And Preferences API](crm-consent-and-preferences.md) | [liberusoftware/module-crm-consent-and-preferences-api](../../../modules/source/liberusoftware--module-crm-consent-and-preferences-api.md) | [core](../core/crm-consent-and-preferences.md) · [nextjs](../nextjs/crm-consent-and-preferences.md) |
+| [Crm Contact Center API](crm-contact-center.md) | [liberusoftware/module-crm-contact-center-api](../../../modules/source/liberusoftware--module-crm-contact-center-api.md) | [core](../core/crm-contact-center.md) · [nextjs](../nextjs/crm-contact-center.md) |
+| [Crm Contracts API](crm-contracts.md) | [liberusoftware/module-crm-contracts-api](../../../modules/source/liberusoftware--module-crm-contracts-api.md) | [core](../core/crm-contracts.md) · [nextjs](../nextjs/crm-contracts.md) |
+| [Crm Conversation Analytics API](crm-conversation-analytics.md) | [liberusoftware/module-crm-conversation-analytics-api](../../../modules/source/liberusoftware--module-crm-conversation-analytics-api.md) | [core](../core/crm-conversation-analytics.md) · [nextjs](../nextjs/crm-conversation-analytics.md) |
+| [Crm Conversation Intelligence API](crm-conversation-intelligence.md) | [liberusoftware/module-crm-conversation-intelligence-api](../../../modules/source/liberusoftware--module-crm-conversation-intelligence-api.md) | [core](../core/crm-conversation-intelligence.md) · [nextjs](../nextjs/crm-conversation-intelligence.md) |
+| [Crm Conversion Optimization API](crm-conversion-optimization.md) | [liberusoftware/module-crm-conversion-optimization-api](../../../modules/source/liberusoftware--module-crm-conversion-optimization-api.md) | [core](../core/crm-conversion-optimization.md) · [nextjs](../nextjs/crm-conversion-optimization.md) |
+| [CRM Copilot API](crm-copilot.md) | [liberusoftware/module-crm-copilot-api](../../../modules/source/liberusoftware--module-crm-copilot-api.md) | [core](../core/crm-copilot.md) · [nextjs](../nextjs/crm-copilot.md) |
+| [CRM Core API](crm-core.md) | [liberusoftware/module-crm-core-api](../../../modules/source/liberusoftware--module-crm-core-api.md) | [core](../core/crm-core.md) · [nextjs](../nextjs/crm-core.md) |
+| [Crm Cpq API](crm-cpq.md) | [liberusoftware/module-crm-cpq-api](../../../modules/source/liberusoftware--module-crm-cpq-api.md) | [core](../core/crm-cpq.md) · [nextjs](../nextjs/crm-cpq.md) |
+| [Crm Customer Data Model API](crm-customer-data-model.md) | [liberusoftware/module-crm-customer-data-model-api](../../../modules/source/liberusoftware--module-crm-customer-data-model-api.md) | [core](../core/crm-customer-data-model.md) · [nextjs](../nextjs/crm-customer-data-model.md) |
+| [Crm Customer Data Platform API](crm-customer-data-platform.md) | [liberusoftware/module-crm-customer-data-platform-api](../../../modules/source/liberusoftware--module-crm-customer-data-platform-api.md) | [core](../core/crm-customer-data-platform.md) · [nextjs](../nextjs/crm-customer-data-platform.md) |
+| [Crm Customer Self Service API](crm-customer-self-service.md) | [liberusoftware/module-crm-customer-self-service-api](../../../modules/source/liberusoftware--module-crm-customer-self-service-api.md) | [core](../core/crm-customer-self-service.md) · [nextjs](../nextjs/crm-customer-self-service.md) |
+| [Crm Customer Success API](crm-customer-success.md) | [liberusoftware/module-crm-customer-success-api](../../../modules/source/liberusoftware--module-crm-customer-success-api.md) | [core](../core/crm-customer-success.md) · [nextjs](../nextjs/crm-customer-success.md) |
+| [Crm Data Operations API](crm-data-operations.md) | [liberusoftware/module-crm-data-operations-api](../../../modules/source/liberusoftware--module-crm-data-operations-api.md) | [core](../core/crm-data-operations.md) · [nextjs](../nextjs/crm-data-operations.md) |
+| [Crm Deal Registration API](crm-deal-registration.md) | [liberusoftware/module-crm-deal-registration-api](../../../modules/source/liberusoftware--module-crm-deal-registration-api.md) | [core](../core/crm-deal-registration.md) · [nextjs](../nextjs/crm-deal-registration.md) |
+| [Crm Dialer And Outreach API](crm-dialer-and-outreach.md) | [liberusoftware/module-crm-dialer-and-outreach-api](../../../modules/source/liberusoftware--module-crm-dialer-and-outreach-api.md) | [core](../core/crm-dialer-and-outreach.md) · [nextjs](../nextjs/crm-dialer-and-outreach.md) |
+| [CRM Documents API](crm-documents.md) | [liberusoftware/module-crm-documents-api](../../../modules/source/liberusoftware--module-crm-documents-api.md) | [core](../core/crm-documents.md) · [nextjs](../nextjs/crm-documents.md) |
+| [Crm Email Marketing API](crm-email-marketing.md) | [liberusoftware/module-crm-email-marketing-api](../../../modules/source/liberusoftware--module-crm-email-marketing-api.md) | [core](../core/crm-email-marketing.md) · [nextjs](../nextjs/crm-email-marketing.md) |
+| [Crm Email Productivity API](crm-email-productivity.md) | [liberusoftware/module-crm-email-productivity-api](../../../modules/source/liberusoftware--module-crm-email-productivity-api.md) | [core](../core/crm-email-productivity.md) · [nextjs](../nextjs/crm-email-productivity.md) |
+| [Crm Enrichment API](crm-enrichment.md) | [liberusoftware/module-crm-enrichment-api](../../../modules/source/liberusoftware--module-crm-enrichment-api.md) | [core](../core/crm-enrichment.md) · [nextjs](../nextjs/crm-enrichment.md) |
+| [Crm Events And Webinars API](crm-events-and-webinars.md) | [liberusoftware/module-crm-events-and-webinars-api](../../../modules/source/liberusoftware--module-crm-events-and-webinars-api.md) | [core](../core/crm-events-and-webinars.md) · [nextjs](../nextjs/crm-events-and-webinars.md) |
+| [Crm Feedback And Voice Of Customer API](crm-feedback-and-voice-of-customer.md) | [liberusoftware/module-crm-feedback-and-voice-of-customer-api](../../../modules/source/liberusoftware--module-crm-feedback-and-voice-of-customer-api.md) | [core](../core/crm-feedback-and-voice-of-customer.md) · [nextjs](../nextjs/crm-feedback-and-voice-of-customer.md) |
+| [Crm Field Service Coordination API](crm-field-service-coordination.md) | [liberusoftware/module-crm-field-service-coordination-api](../../../modules/source/liberusoftware--module-crm-field-service-coordination-api.md) | [core](../core/crm-field-service-coordination.md) · [nextjs](../nextjs/crm-field-service-coordination.md) |
+| [Crm Forecasting API](crm-forecasting.md) | [liberusoftware/module-crm-forecasting-api](../../../modules/source/liberusoftware--module-crm-forecasting-api.md) | [core](../core/crm-forecasting.md) · [nextjs](../nextjs/crm-forecasting.md) |
+| [Crm Forms And Surveys API](crm-forms-and-surveys.md) | [liberusoftware/module-crm-forms-and-surveys-api](../../../modules/source/liberusoftware--module-crm-forms-and-surveys-api.md) | [core](../core/crm-forms-and-surveys.md) · [nextjs](../nextjs/crm-forms-and-surveys.md) |
+| [Crm Goals And Performance API](crm-goals-and-performance.md) | [liberusoftware/module-crm-goals-and-performance-api](../../../modules/source/liberusoftware--module-crm-goals-and-performance-api.md) | [core](../core/crm-goals-and-performance.md) · [nextjs](../nextjs/crm-goals-and-performance.md) |
+| [Crm Journey Orchestration API](crm-journey-orchestration.md) | [liberusoftware/module-crm-journey-orchestration-api](../../../modules/source/liberusoftware--module-crm-journey-orchestration-api.md) | [core](../core/crm-journey-orchestration.md) · [nextjs](../nextjs/crm-journey-orchestration.md) |
+| [Crm Knowledge API](crm-knowledge.md) | [liberusoftware/module-crm-knowledge-api](../../../modules/source/liberusoftware--module-crm-knowledge-api.md) | [core](../core/crm-knowledge.md) · [nextjs](../nextjs/crm-knowledge.md) |
+| [Crm Landing Pages And Funnels API](crm-landing-pages-and-funnels.md) | [liberusoftware/module-crm-landing-pages-and-funnels-api](../../../modules/source/liberusoftware--module-crm-landing-pages-and-funnels-api.md) | [core](../core/crm-landing-pages-and-funnels.md) · [nextjs](../nextjs/crm-landing-pages-and-funnels.md) |
+| [Crm Lead Capture API](crm-lead-capture.md) | [liberusoftware/module-crm-lead-capture-api](../../../modules/source/liberusoftware--module-crm-lead-capture-api.md) | [core](../core/crm-lead-capture.md) · [nextjs](../nextjs/crm-lead-capture.md) |
+| [Crm Lead Qualification API](crm-lead-qualification.md) | [liberusoftware/module-crm-lead-qualification-api](../../../modules/source/liberusoftware--module-crm-lead-qualification-api.md) | [core](../core/crm-lead-qualification.md) · [nextjs](../nextjs/crm-lead-qualification.md) |
+| [Crm Learning And Courses API](crm-learning-and-courses.md) | [liberusoftware/module-crm-learning-and-courses-api](../../../modules/source/liberusoftware--module-crm-learning-and-courses-api.md) | [core](../core/crm-learning-and-courses.md) · [nextjs](../nextjs/crm-learning-and-courses.md) |
+| [Crm Loyalty API](crm-loyalty.md) | [liberusoftware/module-crm-loyalty-api](../../../modules/source/liberusoftware--module-crm-loyalty-api.md) | [core](../core/crm-loyalty.md) · [nextjs](../nextjs/crm-loyalty.md) |
+| [Crm Marketing Agent API](crm-marketing-agent.md) | [liberusoftware/module-crm-marketing-agent-api](../../../modules/source/liberusoftware--module-crm-marketing-agent-api.md) | [core](../core/crm-marketing-agent.md) · [nextjs](../nextjs/crm-marketing-agent.md) |
+| [Crm Marketing Development Funds API](crm-marketing-development-funds.md) | [liberusoftware/module-crm-marketing-development-funds-api](../../../modules/source/liberusoftware--module-crm-marketing-development-funds-api.md) | [core](../core/crm-marketing-development-funds.md) · [nextjs](../nextjs/crm-marketing-development-funds.md) |
+| [Crm Marketing Resources API](crm-marketing-resources.md) | [liberusoftware/module-crm-marketing-resources-api](../../../modules/source/liberusoftware--module-crm-marketing-resources-api.md) | [core](../core/crm-marketing-resources.md) · [nextjs](../nextjs/crm-marketing-resources.md) |
+| [Crm Memberships API](crm-memberships.md) | [liberusoftware/module-crm-memberships-api](../../../modules/source/liberusoftware--module-crm-memberships-api.md) | [core](../core/crm-memberships.md) · [nextjs](../nextjs/crm-memberships.md) |
+| [Crm Mobile Messaging API](crm-mobile-messaging.md) | [liberusoftware/module-crm-mobile-messaging-api](../../../modules/source/liberusoftware--module-crm-mobile-messaging-api.md) | [core](../core/crm-mobile-messaging.md) · [nextjs](../nextjs/crm-mobile-messaging.md) |
+| [Crm Omnichannel Service API](crm-omnichannel-service.md) | [liberusoftware/module-crm-omnichannel-service-api](../../../modules/source/liberusoftware--module-crm-omnichannel-service-api.md) | [core](../core/crm-omnichannel-service.md) · [nextjs](../nextjs/crm-omnichannel-service.md) |
+| [Crm Orders And Payments Workspace API](crm-orders-and-payments-workspace.md) | [liberusoftware/module-crm-orders-and-payments-workspace-api](../../../modules/source/liberusoftware--module-crm-orders-and-payments-workspace-api.md) | [core](../core/crm-orders-and-payments-workspace.md) · [nextjs](../nextjs/crm-orders-and-payments-workspace.md) |
+| [Crm Partner Relationship Management API](crm-partner-relationship-management.md) | [liberusoftware/module-crm-partner-relationship-management-api](../../../modules/source/liberusoftware--module-crm-partner-relationship-management-api.md) | [core](../core/crm-partner-relationship-management.md) · [nextjs](../nextjs/crm-partner-relationship-management.md) |
+| [Crm Personalization API](crm-personalization.md) | [liberusoftware/module-crm-personalization-api](../../../modules/source/liberusoftware--module-crm-personalization-api.md) | [core](../core/crm-personalization.md) · [nextjs](../nextjs/crm-personalization.md) |
+| [Crm Playbooks And Enablement API](crm-playbooks-and-enablement.md) | [liberusoftware/module-crm-playbooks-and-enablement-api](../../../modules/source/liberusoftware--module-crm-playbooks-and-enablement-api.md) | [core](../core/crm-playbooks-and-enablement.md) · [nextjs](../nextjs/crm-playbooks-and-enablement.md) |
+| [Crm Predictive Models API](crm-predictive-models.md) | [liberusoftware/module-crm-predictive-models-api](../../../modules/source/liberusoftware--module-crm-predictive-models-api.md) | [core](../core/crm-predictive-models.md) · [nextjs](../nextjs/crm-predictive-models.md) |
+| [CRM Product Workspace API](crm-product-workspace.md) | [liberusoftware/module-crm-product-workspace-api](../../../modules/source/liberusoftware--module-crm-product-workspace-api.md) | [core](../core/crm-product-workspace.md) · [nextjs](../nextjs/crm-product-workspace.md) |
+| [Crm Projects API](crm-projects.md) | [liberusoftware/module-crm-projects-api](../../../modules/source/liberusoftware--module-crm-projects-api.md) | [core](../core/crm-projects.md) · [nextjs](../nextjs/crm-projects.md) |
+| [Crm Proposals And Quotes API](crm-proposals-and-quotes.md) | [liberusoftware/module-crm-proposals-and-quotes-api](../../../modules/source/liberusoftware--module-crm-proposals-and-quotes-api.md) | [core](../core/crm-proposals-and-quotes.md) · [nextjs](../nextjs/crm-proposals-and-quotes.md) |
+| [Crm Prospecting Agent API](crm-prospecting-agent.md) | [liberusoftware/module-crm-prospecting-agent-api](../../../modules/source/liberusoftware--module-crm-prospecting-agent-api.md) | [core](../core/crm-prospecting-agent.md) · [nextjs](../nextjs/crm-prospecting-agent.md) |
+| [Crm Prospecting API](crm-prospecting.md) | [liberusoftware/module-crm-prospecting-api](../../../modules/source/liberusoftware--module-crm-prospecting-api.md) | [core](../core/crm-prospecting.md) · [nextjs](../nextjs/crm-prospecting.md) |
+| [Crm Quotas And Incentives API](crm-quotas-and-incentives.md) | [liberusoftware/module-crm-quotas-and-incentives-api](../../../modules/source/liberusoftware--module-crm-quotas-and-incentives-api.md) | [core](../core/crm-quotas-and-incentives.md) · [nextjs](../nextjs/crm-quotas-and-incentives.md) |
+| [Crm Referrals API](crm-referrals.md) | [liberusoftware/module-crm-referrals-api](../../../modules/source/liberusoftware--module-crm-referrals-api.md) | [core](../core/crm-referrals.md) · [nextjs](../nextjs/crm-referrals.md) |
+| [Crm Reputation Management API](crm-reputation-management.md) | [liberusoftware/module-crm-reputation-management-api](../../../modules/source/liberusoftware--module-crm-reputation-management-api.md) | [core](../core/crm-reputation-management.md) · [nextjs](../nextjs/crm-reputation-management.md) |
+| [Crm Resource Planning API](crm-resource-planning.md) | [liberusoftware/module-crm-resource-planning-api](../../../modules/source/liberusoftware--module-crm-resource-planning-api.md) | [core](../core/crm-resource-planning.md) · [nextjs](../nextjs/crm-resource-planning.md) |
+| [Crm Revenue Intelligence API](crm-revenue-intelligence.md) | [liberusoftware/module-crm-revenue-intelligence-api](../../../modules/source/liberusoftware--module-crm-revenue-intelligence-api.md) | [core](../core/crm-revenue-intelligence.md) · [nextjs](../nextjs/crm-revenue-intelligence.md) |
+| [Crm Revenue Lifecycle API](crm-revenue-lifecycle.md) | [liberusoftware/module-crm-revenue-lifecycle-api](../../../modules/source/liberusoftware--module-crm-revenue-lifecycle-api.md) | [core](../core/crm-revenue-lifecycle.md) · [nextjs](../nextjs/crm-revenue-lifecycle.md) |
+| [Crm Routing API](crm-routing.md) | [liberusoftware/module-crm-routing-api](../../../modules/source/liberusoftware--module-crm-routing-api.md) | [core](../core/crm-routing.md) · [nextjs](../nextjs/crm-routing.md) |
+| [Crm Saas Packaging API](crm-saas-packaging.md) | [liberusoftware/module-crm-saas-packaging-api](../../../modules/source/liberusoftware--module-crm-saas-packaging-api.md) | [core](../core/crm-saas-packaging.md) · [nextjs](../nextjs/crm-saas-packaging.md) |
+| [Crm Sales Engagement API](crm-sales-engagement.md) | [liberusoftware/module-crm-sales-engagement-api](../../../modules/source/liberusoftware--module-crm-sales-engagement-api.md) | [core](../core/crm-sales-engagement.md) · [nextjs](../nextjs/crm-sales-engagement.md) |
+| [Crm Sales Pipelines API](crm-sales-pipelines.md) | [liberusoftware/module-crm-sales-pipelines-api](../../../modules/source/liberusoftware--module-crm-sales-pipelines-api.md) | [core](../core/crm-sales-pipelines.md) · [nextjs](../nextjs/crm-sales-pipelines.md) |
+| [Crm Sales Workspace API](crm-sales-workspace.md) | [liberusoftware/module-crm-sales-workspace-api](../../../modules/source/liberusoftware--module-crm-sales-workspace-api.md) | [core](../core/crm-sales-workspace.md) · [nextjs](../nextjs/crm-sales-workspace.md) |
+| [Crm Sandbox And Release Management API](crm-sandbox-and-release-management.md) | [liberusoftware/module-crm-sandbox-and-release-management-api](../../../modules/source/liberusoftware--module-crm-sandbox-and-release-management-api.md) | [core](../core/crm-sandbox-and-release-management.md) · [nextjs](../nextjs/crm-sandbox-and-release-management.md) |
+| [Crm Sandbox Release API](crm-sandbox-release.md) | [Target/source map](../SOURCE-MAPPING.md#crm-sandbox-release) | [core](../core/crm-sandbox-release.md) · [nextjs](../nextjs/crm-sandbox-release.md) |
+| [Crm Scheduling API](crm-scheduling.md) | [liberusoftware/module-crm-scheduling-api](../../../modules/source/liberusoftware--module-crm-scheduling-api.md) | [core](../core/crm-scheduling.md) · [nextjs](../nextjs/crm-scheduling.md) |
+| [CRM Search API](crm-search.md) | [liberusoftware/module-crm-search-api](../../../modules/source/liberusoftware--module-crm-search-api.md) | [core](../core/crm-search.md) · [nextjs](../nextjs/crm-search.md) |
+| [Crm Segmentation API](crm-segmentation.md) | [liberusoftware/module-crm-segmentation-api](../../../modules/source/liberusoftware--module-crm-segmentation-api.md) | [core](../core/crm-segmentation.md) · [nextjs](../nextjs/crm-segmentation.md) |
+| [Crm Service Agent API](crm-service-agent.md) | [liberusoftware/module-crm-service-agent-api](../../../modules/source/liberusoftware--module-crm-service-agent-api.md) | [core](../core/crm-service-agent.md) · [nextjs](../nextjs/crm-service-agent.md) |
+| [Crm Service Analytics API](crm-service-analytics.md) | [liberusoftware/module-crm-service-analytics-api](../../../modules/source/liberusoftware--module-crm-service-analytics-api.md) | [core](../core/crm-service-analytics.md) · [nextjs](../nextjs/crm-service-analytics.md) |
+| [Crm Sla And Entitlements API](crm-sla-and-entitlements.md) | [liberusoftware/module-crm-sla-and-entitlements-api](../../../modules/source/liberusoftware--module-crm-sla-and-entitlements-api.md) | [core](../core/crm-sla-and-entitlements.md) · [nextjs](../nextjs/crm-sla-and-entitlements.md) |
+| [Crm Telephony API](crm-telephony.md) | [liberusoftware/module-crm-telephony-api](../../../modules/source/liberusoftware--module-crm-telephony-api.md) | [core](../core/crm-telephony.md) · [nextjs](../nextjs/crm-telephony.md) |
+| [Crm Template Snapshots API](crm-template-snapshots.md) | [Target/source map](../SOURCE-MAPPING.md#crm-template-snapshots) | [core](../core/crm-template-snapshots.md) · [nextjs](../nextjs/crm-template-snapshots.md) |
+| [Crm Templates And Snapshots API](crm-templates-and-snapshots.md) | [liberusoftware/module-crm-templates-and-snapshots-api](../../../modules/source/liberusoftware--module-crm-templates-and-snapshots-api.md) | [core](../core/crm-templates-and-snapshots.md) · [nextjs](../nextjs/crm-templates-and-snapshots.md) |
+| [Crm Territories And Ownership API](crm-territories-and-ownership.md) | [liberusoftware/module-crm-territories-and-ownership-api](../../../modules/source/liberusoftware--module-crm-territories-and-ownership-api.md) | [core](../core/crm-territories-and-ownership.md) · [nextjs](../nextjs/crm-territories-and-ownership.md) |
+| [Crm Unified Conversations API](crm-unified-conversations.md) | [liberusoftware/module-crm-unified-conversations-api](../../../modules/source/liberusoftware--module-crm-unified-conversations-api.md) | [core](../core/crm-unified-conversations.md) · [nextjs](../nextjs/crm-unified-conversations.md) |
+| [Crm Usage Wallet And Rebilling API](crm-usage-wallet-and-rebilling.md) | [liberusoftware/module-crm-usage-wallet-and-rebilling-api](../../../modules/source/liberusoftware--module-crm-usage-wallet-and-rebilling-api.md) | [core](../core/crm-usage-wallet-and-rebilling.md) · [nextjs](../nextjs/crm-usage-wallet-and-rebilling.md) |
+| [Crm Web Intent API](crm-web-intent.md) | [liberusoftware/module-crm-web-intent-api](../../../modules/source/liberusoftware--module-crm-web-intent-api.md) | [core](../core/crm-web-intent.md) · [nextjs](../nextjs/crm-web-intent.md) |
+| [Crm White Label API](crm-white-label.md) | [liberusoftware/module-crm-white-label-api](../../../modules/source/liberusoftware--module-crm-white-label-api.md) | [core](../core/crm-white-label.md) · [nextjs](../nextjs/crm-white-label.md) |
+| [Crm Work Management API](crm-work-management.md) | [liberusoftware/module-crm-work-management-api](../../../modules/source/liberusoftware--module-crm-work-management-api.md) | [core](../core/crm-work-management.md) · [nextjs](../nextjs/crm-work-management.md) |
+| [Currency Context API](currency-context.md) | [liberusoftware/currency-context-api](../../../modules/source/liberusoftware--currency-context-api.md) | [core](../core/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customer Data Model API](customer-data-model.md) | [liberusoftware/module-crm-customer-data-model-api](../../../modules/source/liberusoftware--module-crm-customer-data-model-api.md) | [core](../core/customer-data-model.md) · [nextjs](../nextjs/customer-data-model.md) |
+| [Customer Data Platform API](customer-data-platform.md) | [liberusoftware/module-crm-customer-data-platform-api](../../../modules/source/liberusoftware--module-crm-customer-data-platform-api.md) | [core](../core/customer-data-platform.md) · [nextjs](../nextjs/customer-data-platform.md) |
+| [Customer Self-Service API](customer-self-service.md) | [liberusoftware/module-crm-customer-self-service-api](../../../modules/source/liberusoftware--module-crm-customer-self-service-api.md) | [core](../core/customer-self-service.md) · [nextjs](../nextjs/customer-self-service.md) |
+| [Customer Success API](customer-success.md) | [liberusoftware/module-crm-customer-success-api](../../../modules/source/liberusoftware--module-crm-customer-success-api.md) | [core](../core/customer-success.md) · [nextjs](../nextjs/customer-success.md) |
+| [Data Operations API](data-operations.md) | [liberusoftware/module-crm-data-operations-api](../../../modules/source/liberusoftware--module-crm-data-operations-api.md) | [core](../core/data-operations.md) · [nextjs](../nextjs/data-operations.md) |
+| [Deal Registration API](deal-registration.md) | [liberusoftware/module-crm-deal-registration-api](../../../modules/source/liberusoftware--module-crm-deal-registration-api.md) | [core](../core/deal-registration.md) · [nextjs](../nextjs/deal-registration.md) |
+| [Developer Experience API](developer-experience.md) | [liberusoftware/developer-experience-api](../../../modules/source/liberusoftware--developer-experience-api.md) | [core](../core/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Dialer and Outreach API](dialer-and-outreach.md) | [liberusoftware/module-crm-dialer-and-outreach-api](../../../modules/source/liberusoftware--module-crm-dialer-and-outreach-api.md) | [core](../core/dialer-and-outreach.md) · [nextjs](../nextjs/dialer-and-outreach.md) |
+| [Email Marketing API](email-marketing.md) | [liberusoftware/module-crm-email-marketing-api](../../../modules/source/liberusoftware--module-crm-email-marketing-api.md) | [core](../core/email-marketing.md) · [nextjs](../nextjs/email-marketing.md) |
+| [Email Productivity API](email-productivity.md) | [liberusoftware/module-crm-email-productivity-api](../../../modules/source/liberusoftware--module-crm-email-productivity-api.md) | [core](../core/email-productivity.md) · [nextjs](../nextjs/email-productivity.md) |
+| [Enrichment API](enrichment.md) | [liberusoftware/module-crm-enrichment-api](../../../modules/source/liberusoftware--module-crm-enrichment-api.md) | [core](../core/enrichment.md) · [nextjs](../nextjs/enrichment.md) |
+| [Events and Webinars API](events-and-webinars.md) | [liberusoftware/module-crm-events-and-webinars-api](../../../modules/source/liberusoftware--module-crm-events-and-webinars-api.md) | [core](../core/events-and-webinars.md) · [nextjs](../nextjs/events-and-webinars.md) |
+| [Feature Flags API](feature-flags.md) | [liberusoftware/feature-flags-api](../../../modules/source/liberusoftware--feature-flags-api.md) | [core](../core/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Feedback and Voice of Customer API](feedback-and-voice-of-customer.md) | [liberusoftware/module-crm-feedback-and-voice-of-customer-api](../../../modules/source/liberusoftware--module-crm-feedback-and-voice-of-customer-api.md) | [core](../core/feedback-and-voice-of-customer.md) · [nextjs](../nextjs/feedback-and-voice-of-customer.md) |
+| [Field Service Coordination API](field-service-coordination.md) | [liberusoftware/module-crm-field-service-coordination-api](../../../modules/source/liberusoftware--module-crm-field-service-coordination-api.md) | [core](../core/field-service-coordination.md) · [nextjs](../nextjs/field-service-coordination.md) |
+| [Files Media API](files-media.md) | [liberusoftware/files-media-api](../../../modules/source/liberusoftware--files-media-api.md) | [core](../core/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Forecasting API](forecasting.md) | [liberusoftware/module-crm-forecasting-api](../../../modules/source/liberusoftware--module-crm-forecasting-api.md) | [core](../core/forecasting.md) · [nextjs](../nextjs/forecasting.md) |
+| [Forms and Surveys API](forms-and-surveys.md) | [liberusoftware/module-crm-forms-and-surveys-api](../../../modules/source/liberusoftware--module-crm-forms-and-surveys-api.md) | [core](../core/forms-and-surveys.md) · [nextjs](../nextjs/forms-and-surveys.md) |
+| [Goals and Performance API](goals-and-performance.md) | [liberusoftware/module-crm-goals-and-performance-api](../../../modules/source/liberusoftware--module-crm-goals-and-performance-api.md) | [core](../core/goals-and-performance.md) · [nextjs](../nextjs/goals-and-performance.md) |
+| [Identity Core API](identity-core.md) | [liberusoftware/identity-core-api](../../../modules/source/liberusoftware--identity-core-api.md) | [core](../core/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream API](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export API](import-export.md) | [liberusoftware/import-export-api](../../../modules/source/liberusoftware--import-export-api.md) | [core](../core/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations API](integrations.md) | [liberusoftware/integrations-api](../../../modules/source/liberusoftware--integrations-api.md) | [core](../core/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge API](jetstream-bridge.md) | [liberusoftware/jetstream-bridge-api](../../../modules/source/liberusoftware--jetstream-bridge-api.md) | [core](../core/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Journey Orchestration API](journey-orchestration.md) | [liberusoftware/module-crm-journey-orchestration-api](../../../modules/source/liberusoftware--module-crm-journey-orchestration-api.md) | [core](../core/journey-orchestration.md) · [nextjs](../nextjs/journey-orchestration.md) |
+| [Knowledge API](knowledge.md) | [liberusoftware/module-crm-knowledge-api](../../../modules/source/liberusoftware--module-crm-knowledge-api.md) | [core](../core/knowledge.md) · [nextjs](../nextjs/knowledge.md) |
+| [Landing Pages and Funnels API](landing-pages-and-funnels.md) | [liberusoftware/module-crm-landing-pages-and-funnels-api](../../../modules/source/liberusoftware--module-crm-landing-pages-and-funnels-api.md) | [core](../core/landing-pages-and-funnels.md) · [nextjs](../nextjs/landing-pages-and-funnels.md) |
+| [Lead Capture API](lead-capture.md) | [liberusoftware/module-crm-lead-capture-api](../../../modules/source/liberusoftware--module-crm-lead-capture-api.md) | [core](../core/lead-capture.md) · [nextjs](../nextjs/lead-capture.md) |
+| [Lead Qualification API](lead-qualification.md) | [liberusoftware/module-crm-lead-qualification-api](../../../modules/source/liberusoftware--module-crm-lead-qualification-api.md) | [core](../core/lead-qualification.md) · [nextjs](../nextjs/lead-qualification.md) |
+| [Learning and Courses API](learning-and-courses.md) | [liberusoftware/module-crm-learning-and-courses-api](../../../modules/source/liberusoftware--module-crm-learning-and-courses-api.md) | [core](../core/learning-and-courses.md) · [nextjs](../nextjs/learning-and-courses.md) |
+| [Localization Contracts API](localization-contracts.md) | [Target/source map](../SOURCE-MAPPING.md#localization-contracts) | [core](../core/localization-contracts.md) · [nextjs](../nextjs/localization-contracts.md) |
+| [Localization Core API](localization-core.md) | [liberusoftware/localization-core-api](../../../modules/source/liberusoftware--localization-core-api.md) | [core](../core/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory API](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Loyalty API](loyalty.md) | [liberusoftware/module-crm-loyalty-api](../../../modules/source/liberusoftware--module-crm-loyalty-api.md) | [core](../core/loyalty.md) · [nextjs](../nextjs/loyalty.md) |
+| [Marketing Agent API](marketing-agent.md) | [liberusoftware/module-crm-marketing-agent-api](../../../modules/source/liberusoftware--module-crm-marketing-agent-api.md) | [core](../core/marketing-agent.md) · [nextjs](../nextjs/marketing-agent.md) |
+| [Marketing Development Funds API](marketing-development-funds.md) | [liberusoftware/module-crm-marketing-development-funds-api](../../../modules/source/liberusoftware--module-crm-marketing-development-funds-api.md) | [core](../core/marketing-development-funds.md) · [nextjs](../nextjs/marketing-development-funds.md) |
+| [Marketing Resources API](marketing-resources.md) | [liberusoftware/module-crm-marketing-resources-api](../../../modules/source/liberusoftware--module-crm-marketing-resources-api.md) | [core](../core/marketing-resources.md) · [nextjs](../nextjs/marketing-resources.md) |
+| [Memberships API](memberships.md) | [liberusoftware/module-crm-memberships-api](../../../modules/source/liberusoftware--module-crm-memberships-api.md) | [core](../core/memberships.md) · [nextjs](../nextjs/memberships.md) |
+| [Mobile Messaging API](mobile-messaging.md) | [liberusoftware/module-crm-mobile-messaging-api](../../../modules/source/liberusoftware--module-crm-mobile-messaging-api.md) | [core](../core/mobile-messaging.md) · [nextjs](../nextjs/mobile-messaging.md) |
+| [Module Manager API](module-manager.md) | [liberusoftware/module-manager-api](../../../modules/source/liberusoftware--module-manager-api.md) | [core](../core/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications API](notifications.md) | [liberusoftware/notifications-api](../../../modules/source/liberusoftware--notifications-api.md) | [core](../core/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability API](observability.md) | [liberusoftware/observability-api](../../../modules/source/liberusoftware--observability-api.md) | [core](../core/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Omnichannel Service API](omnichannel-service.md) | [liberusoftware/module-crm-omnichannel-service-api](../../../modules/source/liberusoftware--module-crm-omnichannel-service-api.md) | [core](../core/omnichannel-service.md) · [nextjs](../nextjs/omnichannel-service.md) |
+| [Orders and Payments Workspace API](orders-and-payments-workspace.md) | [liberusoftware/module-crm-orders-and-payments-workspace-api](../../../modules/source/liberusoftware--module-crm-orders-and-payments-workspace-api.md) | [core](../core/orders-and-payments-workspace.md) · [nextjs](../nextjs/orders-and-payments-workspace.md) |
+| [Organizations Teams API](organizations-teams.md) | [liberusoftware/organizations-teams-api](../../../modules/source/liberusoftware--organizations-teams-api.md) | [core](../core/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Partner Relationship Management API](partner-relationship-management.md) | [liberusoftware/module-crm-partner-relationship-management-api](../../../modules/source/liberusoftware--module-crm-partner-relationship-management-api.md) | [core](../core/partner-relationship-management.md) · [nextjs](../nextjs/partner-relationship-management.md) |
+| [Personalization API](personalization.md) | [liberusoftware/module-crm-personalization-api](../../../modules/source/liberusoftware--module-crm-personalization-api.md) | [core](../core/personalization.md) · [nextjs](../nextjs/personalization.md) |
+| [Playbooks and Enablement API](playbooks-and-enablement.md) | [liberusoftware/module-crm-playbooks-and-enablement-api](../../../modules/source/liberusoftware--module-crm-playbooks-and-enablement-api.md) | [core](../core/playbooks-and-enablement.md) · [nextjs](../nextjs/playbooks-and-enablement.md) |
+| [Predictive Models API](predictive-models.md) | [liberusoftware/module-crm-predictive-models-api](../../../modules/source/liberusoftware--module-crm-predictive-models-api.md) | [core](../core/predictive-models.md) · [nextjs](../nextjs/predictive-models.md) |
+| [Profiles API](profiles.md) | [liberusoftware/profiles-api](../../../modules/source/liberusoftware--profiles-api.md) | [core](../core/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Projects API](projects.md) | [liberusoftware/module-crm-projects-api](../../../modules/source/liberusoftware--module-crm-projects-api.md) | [core](../core/projects.md) · [nextjs](../nextjs/projects.md) |
+| [Proposals and Quotes API](proposals-and-quotes.md) | [liberusoftware/module-crm-proposals-and-quotes-api](../../../modules/source/liberusoftware--module-crm-proposals-and-quotes-api.md) | [core](../core/proposals-and-quotes.md) · [nextjs](../nextjs/proposals-and-quotes.md) |
+| [Prospecting Agent API](prospecting-agent.md) | [liberusoftware/module-crm-prospecting-agent-api](../../../modules/source/liberusoftware--module-crm-prospecting-agent-api.md) | [core](../core/prospecting-agent.md) · [nextjs](../nextjs/prospecting-agent.md) |
+| [Prospecting API](prospecting.md) | [liberusoftware/module-crm-prospecting-api](../../../modules/source/liberusoftware--module-crm-prospecting-api.md) | [core](../core/prospecting.md) · [nextjs](../nextjs/prospecting.md) |
+| [Quotas and Incentives API](quotas-and-incentives.md) | [liberusoftware/module-crm-quotas-and-incentives-api](../../../modules/source/liberusoftware--module-crm-quotas-and-incentives-api.md) | [core](../core/quotas-and-incentives.md) · [nextjs](../nextjs/quotas-and-incentives.md) |
+| [Referrals API](referrals.md) | [liberusoftware/module-crm-referrals-api](../../../modules/source/liberusoftware--module-crm-referrals-api.md) | [core](../core/referrals.md) · [nextjs](../nextjs/referrals.md) |
+| [Reputation Management API](reputation-management.md) | [liberusoftware/module-crm-reputation-management-api](../../../modules/source/liberusoftware--module-crm-reputation-management-api.md) | [core](../core/reputation-management.md) · [nextjs](../nextjs/reputation-management.md) |
+| [Resource Planning API](resource-planning.md) | [liberusoftware/module-crm-resource-planning-api](../../../modules/source/liberusoftware--module-crm-resource-planning-api.md) | [core](../core/resource-planning.md) · [nextjs](../nextjs/resource-planning.md) |
+| [Revenue Intelligence API](revenue-intelligence.md) | [liberusoftware/module-crm-revenue-intelligence-api](../../../modules/source/liberusoftware--module-crm-revenue-intelligence-api.md) | [core](../core/revenue-intelligence.md) · [nextjs](../nextjs/revenue-intelligence.md) |
+| [Revenue Lifecycle API](revenue-lifecycle.md) | [liberusoftware/module-crm-revenue-lifecycle-api](../../../modules/source/liberusoftware--module-crm-revenue-lifecycle-api.md) | [core](../core/revenue-lifecycle.md) · [nextjs](../nextjs/revenue-lifecycle.md) |
+| [Roles Permissions API](roles-permissions.md) | [liberusoftware/roles-permissions-api](../../../modules/source/liberusoftware--roles-permissions-api.md) | [core](../core/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Routing API](routing.md) | [liberusoftware/module-crm-routing-api](../../../modules/source/liberusoftware--module-crm-routing-api.md) | [core](../core/routing.md) · [nextjs](../nextjs/routing.md) |
+| [SaaS Packaging API](saas-packaging.md) | [liberusoftware/module-crm-saas-packaging-api](../../../modules/source/liberusoftware--module-crm-saas-packaging-api.md) | [core](../core/saas-packaging.md) · [nextjs](../nextjs/saas-packaging.md) |
+| [Sales Engagement API](sales-engagement.md) | [liberusoftware/module-crm-sales-engagement-api](../../../modules/source/liberusoftware--module-crm-sales-engagement-api.md) | [core](../core/sales-engagement.md) · [nextjs](../nextjs/sales-engagement.md) |
+| [Sales Pipelines API](sales-pipelines.md) | [liberusoftware/module-crm-sales-pipelines-api](../../../modules/source/liberusoftware--module-crm-sales-pipelines-api.md) | [core](../core/sales-pipelines.md) · [nextjs](../nextjs/sales-pipelines.md) |
+| [Sales Workspace API](sales-workspace.md) | [liberusoftware/module-crm-sales-workspace-api](../../../modules/source/liberusoftware--module-crm-sales-workspace-api.md) | [core](../core/sales-workspace.md) · [nextjs](../nextjs/sales-workspace.md) |
+| [Sandbox and Release Management API](sandbox-and-release-management.md) | [liberusoftware/module-crm-sandbox-and-release-management-api](../../../modules/source/liberusoftware--module-crm-sandbox-and-release-management-api.md) | [core](../core/sandbox-and-release-management.md) · [nextjs](../nextjs/sandbox-and-release-management.md) |
+| [Scheduler Queues API](scheduler-queues.md) | [liberusoftware/scheduler-queues-api](../../../modules/source/liberusoftware--scheduler-queues-api.md) | [core](../core/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Scheduling API](scheduling.md) | [liberusoftware/module-crm-scheduling-api](../../../modules/source/liberusoftware--module-crm-scheduling-api.md) | [core](../core/scheduling.md) · [nextjs](../nextjs/scheduling.md) |
+| [Search API](search.md) | [liberusoftware/search-api](../../../modules/source/liberusoftware--search-api.md) | [core](../core/search.md) · [nextjs](../nextjs/search.md) |
+| [Segmentation API](segmentation.md) | [liberusoftware/module-crm-segmentation-api](../../../modules/source/liberusoftware--module-crm-segmentation-api.md) | [core](../core/segmentation.md) · [nextjs](../nextjs/segmentation.md) |
+| [Service Agent API](service-agent.md) | [liberusoftware/module-crm-service-agent-api](../../../modules/source/liberusoftware--module-crm-service-agent-api.md) | [core](../core/service-agent.md) · [nextjs](../nextjs/service-agent.md) |
+| [Service Analytics API](service-analytics.md) | [liberusoftware/module-crm-service-analytics-api](../../../modules/source/liberusoftware--module-crm-service-analytics-api.md) | [core](../core/service-analytics.md) · [nextjs](../nextjs/service-analytics.md) |
+| [Sessions Devices API](sessions-devices.md) | [liberusoftware/sessions-devices-api](../../../modules/source/liberusoftware--sessions-devices-api.md) | [core](../core/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings API](settings.md) | [liberusoftware/settings-api](../../../modules/source/liberusoftware--settings-api.md) | [core](../core/settings.md) · [nextjs](../nextjs/settings.md) |
+| [SLA and Entitlements API](sla-and-entitlements.md) | [liberusoftware/module-crm-sla-and-entitlements-api](../../../modules/source/liberusoftware--module-crm-sla-and-entitlements-api.md) | [core](../core/sla-and-entitlements.md) · [nextjs](../nextjs/sla-and-entitlements.md) |
+| [Telephony API](telephony.md) | [liberusoftware/module-crm-telephony-api](../../../modules/source/liberusoftware--module-crm-telephony-api.md) | [core](../core/telephony.md) · [nextjs](../nextjs/telephony.md) |
+| [Templates and Snapshots API](templates-and-snapshots.md) | [liberusoftware/module-crm-templates-and-snapshots-api](../../../modules/source/liberusoftware--module-crm-templates-and-snapshots-api.md) | [core](../core/templates-and-snapshots.md) · [nextjs](../nextjs/templates-and-snapshots.md) |
+| [Territories and Ownership API](territories-and-ownership.md) | [liberusoftware/module-crm-territories-and-ownership-api](../../../modules/source/liberusoftware--module-crm-territories-and-ownership-api.md) | [core](../core/territories-and-ownership.md) · [nextjs](../nextjs/territories-and-ownership.md) |
+| [Theme Support API](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication API](two-factor-authentication.md) | [liberusoftware/two-factor-authentication-api](../../../modules/source/liberusoftware--two-factor-authentication-api.md) | [core](../core/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Unified Conversations API](unified-conversations.md) | [liberusoftware/module-crm-unified-conversations-api](../../../modules/source/liberusoftware--module-crm-unified-conversations-api.md) | [core](../core/unified-conversations.md) · [nextjs](../nextjs/unified-conversations.md) |
+| [Usage Wallet and Rebilling API](usage-wallet-and-rebilling.md) | [liberusoftware/module-crm-usage-wallet-and-rebilling-api](../../../modules/source/liberusoftware--module-crm-usage-wallet-and-rebilling-api.md) | [core](../core/usage-wallet-and-rebilling.md) · [nextjs](../nextjs/usage-wallet-and-rebilling.md) |
+| [Web Intent API](web-intent.md) | [liberusoftware/module-crm-web-intent-api](../../../modules/source/liberusoftware--module-crm-web-intent-api.md) | [core](../core/web-intent.md) · [nextjs](../nextjs/web-intent.md) |
+| [Webhooks API](webhooks.md) | [liberusoftware/webhooks-api](../../../modules/source/liberusoftware--webhooks-api.md) | [core](../core/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [White Label API](white-label.md) | [liberusoftware/module-crm-white-label-api](../../../modules/source/liberusoftware--module-crm-white-label-api.md) | [core](../core/white-label.md) · [nextjs](../nextjs/white-label.md) |
+| [Work Management API](work-management.md) | [liberusoftware/module-crm-work-management-api](../../../modules/source/liberusoftware--module-crm-work-management-api.md) | [core](../core/work-management.md) · [nextjs](../nextjs/work-management.md) |

@@ -1,5 +1,9 @@
 # Roles and Permissions domain packages Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#roles-and-permissions). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `roles-permissions`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-roles-and-permissions-flutter
 **Matching core package:** module-roles-and-permissions ([implementation](../core/roles-and-permissions.md))
 **Matching API package:** module-roles-and-permissions-api ([contract](../api/roles-and-permissions.md))

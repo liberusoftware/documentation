@@ -1,12 +1,16 @@
 # Ecommerce: Module Ecommerce Warehouse Operations Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-ecommerce-warehouse-operations). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-ecommerce-module-ecommerce-warehouse-operations-filament`  
 **Matching domain module:** `module-ecommerce-warehouse-operations`  
 **Application:** Ecommerce  
 **Source feature:** [Module Ecommerce Warehouse Operations](../features/module-ecommerce-warehouse-operations.md)  
-**Architecture:** [FILAMENT.md](../ECOMMERCE.md) · [MODULES.md](../ECOMMERCE.md) · [TESTING.md](../ECOMMERCE.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

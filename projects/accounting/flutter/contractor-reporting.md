@@ -1,5 +1,9 @@
 # Contractor Reporting Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#contractor-reporting). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-contractor-reporting-flutter
 **Matching core package:** module-accounting-contractor-reporting ([implementation](../core/contractor-reporting.md))
 **Matching API package:** module-accounting-contractor-reporting-api ([contract](../api/contractor-reporting.md))

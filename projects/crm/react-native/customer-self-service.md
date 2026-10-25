@@ -1,5 +1,9 @@
 # Customer Self Service React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#customer-self-service). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-customer-self-service-react-native
 **Matching core package:** module-crm-customer-self-service ([implementation](../core/customer-self-service.md))
 **Matching API package:** module-crm-customer-self-service-api ([contract](../api/customer-self-service.md))

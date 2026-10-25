@@ -1,5 +1,9 @@
 # Real Estate Sales Progression React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-sales-progression). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-real-estate-real-estate-sales-progression-react-native
 **Matching core package:** module-real-estate-real-estate-sales-progression ([implementation](../core/real-estate-sales-progression.md))
 **Matching API package:** module-real-estate-real-estate-sales-progression-api ([contract](../api/real-estate-sales-progression.md))

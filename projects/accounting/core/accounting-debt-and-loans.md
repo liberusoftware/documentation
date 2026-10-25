@@ -1,8 +1,12 @@
 # Accounting: Accounting Debt And Loans Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-debt-and-loans). Observed identity: [`liberusoftware/module-accounting-debt-and-loans`](../../../modules/source/liberusoftware--module-accounting-debt-and-loans.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-debt-and-loans`
+**Design package identifier:** `module-accounting-accounting-debt-and-loans`
 **Domain specification:** [Accounting Debt And Loans](../features/accounting-debt-and-loans.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

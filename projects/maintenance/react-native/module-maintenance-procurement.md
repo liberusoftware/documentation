@@ -1,5 +1,9 @@
 # Module Maintenance Procurement React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-procurement). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-maintenance-module-maintenance-procurement-react-native
 **Matching core package:** module-maintenance-module-maintenance-procurement ([implementation](../core/module-maintenance-procurement.md))
 **Matching API package:** module-maintenance-module-maintenance-procurement-api ([contract](../api/module-maintenance-procurement.md))

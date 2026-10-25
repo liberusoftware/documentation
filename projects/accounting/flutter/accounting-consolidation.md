@@ -1,5 +1,9 @@
 # Accounting Consolidation Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-consolidation). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-consolidation-flutter
 **Matching core package:** module-accounting-accounting-consolidation ([implementation](../core/accounting-consolidation.md))
 **Matching API package:** module-accounting-accounting-consolidation-api ([contract](../api/accounting-consolidation.md))

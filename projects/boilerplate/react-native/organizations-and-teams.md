@@ -1,5 +1,9 @@
 # Organizations and Teams domain packages React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#organizations-and-teams). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `organizations-teams`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-organizations-and-teams-react-native
 **Matching core package:** module-organizations-and-teams ([implementation](../core/organizations-and-teams.md))
 **Matching API package:** module-organizations-and-teams-api ([contract](../api/organizations-and-teams.md))

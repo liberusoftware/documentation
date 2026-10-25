@@ -1,50 +1,69 @@
 # Social Network Feature Specifications
 
+<!-- catalogue-status:start -->
+This index preserves **59 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-- [Activity Comments](activity-comments.md) — `module-social-network-activity-comments`
-- [Analytics Core](analytics-core.md) — `module-social-network-analytics-core`
-- [Analytics Google](analytics-google.md) — `module-social-network-analytics-google`
-- [Analytics Meta](analytics-meta.md) — `module-social-network-analytics-meta`
-- [Api Access](api-access.md) — `module-social-network-api-access`
-- [Application](application.md) — `module-social-network-application`
-- [Audit](audit.md) — `module-social-network-audit`
-- [Currency Context](currency-context.md) — `module-social-network-currency-context`
-- [Developer Experience](developer-experience.md) — `module-social-network-developer-experience`
-- [Feature Flags](feature-flags.md) — `module-social-network-feature-flags`
-- [Files Media](files-media.md) — `module-social-network-files-media`
-- [Identity Core](identity-core.md) — `module-social-network-identity-core`
-- [Identity Socialstream](identity-socialstream.md) — `module-social-network-identity-socialstream`
-- [Import Export](import-export.md) — `module-social-network-import-export`
-- [Integrations](integrations.md) — `module-social-network-integrations`
-- [Jetstream Bridge](jetstream-bridge.md) — `module-social-network-jetstream-bridge`
-- [Localization Core](localization-core.md) — `module-social-network-localization-core`
-- [Localization Mymemory](localization-mymemory.md) — `module-social-network-localization-mymemory`
-- [Module Manager](module-manager.md) — `module-social-network-module-manager`
-- [Notifications](notifications.md) — `module-social-network-notifications`
-- [Observability](observability.md) — `module-social-network-observability`
-- [Organizations Teams](organizations-teams.md) — `module-social-network-organizations-teams`
-- [Profiles](profiles.md) — `module-social-network-profiles`
-- [Roles Permissions](roles-permissions.md) — `module-social-network-roles-permissions`
-- [Scheduler Queues](scheduler-queues.md) — `module-social-network-scheduler-queues`
-- [Search](search.md) — `module-social-network-search`
-- [Sessions Devices](sessions-devices.md) — `module-social-network-sessions-devices`
-- [Settings](settings.md) — `module-social-network-settings`
-- [Social Network Analytics](social-network-analytics.md) — `module-social-network-social-network-analytics`
-- [Social Network Communities](social-network-communities.md) — `module-social-network-social-network-communities`
-- [Social Network Discovery](social-network-discovery.md) — `module-social-network-social-network-discovery`
-- [Social Network Engagement](social-network-engagement.md) — `module-social-network-social-network-engagement`
-- [Social Network Events](social-network-events.md) — `module-social-network-social-network-events`
-- [Social Network Federation](social-network-federation.md) — `module-social-network-social-network-federation`
-- [Social Network Feed](social-network-feed.md) — `module-social-network-social-network-feed`
-- [Social Network Media](social-network-media.md) — `module-social-network-social-network-media`
-- [Social Network Messaging](social-network-messaging.md) — `module-social-network-social-network-messaging`
-- [Social Network Moderation](social-network-moderation.md) — `module-social-network-social-network-moderation`
-- [Social Network Notifications](social-network-notifications.md) — `module-social-network-social-network-notifications`
-- [Social Network Profiles](social-network-profiles.md) — `module-social-network-social-network-profiles`
-- [Social Network Publishing](social-network-publishing.md) — `module-social-network-social-network-publishing`
-- [Social Network Social Core](social-network-social-core.md) — `module-social-network-social-network-social-core`
-- [Social Network Social Graph](social-network-social-graph.md) — `module-social-network-social-network-social-graph`
-- [Theme Support](theme-support.md) — `module-social-network-theme-support`
-- [Two Factor Authentication](two-factor-authentication.md) — `module-social-network-two-factor-authentication`
-- [Webhooks](webhooks.md) — `module-social-network-webhooks`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments](activity-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core](analytics-core.md) | [liberusoftware/analytics-core](../../../modules/source/liberusoftware--analytics-core.md) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google](analytics-google.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta](analytics-meta.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Analytics](analytics.md) | [liberusoftware/module-social-network-analytics](../../../modules/source/liberusoftware--module-social-network-analytics.md) | [core](../core/analytics.md) · [api](../api/analytics.md) · [nextjs](../nextjs/analytics.md) |
+| [Api Access](api-access.md) | [liberusoftware/api-access](../../../modules/source/liberusoftware--api-access.md) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application](application.md) | [liberusoftware/application](../../../modules/source/liberusoftware--application.md) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit](audit.md) | [liberusoftware/audit](../../../modules/source/liberusoftware--audit.md) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Communities](communities.md) | [liberusoftware/module-social-network-communities](../../../modules/source/liberusoftware--module-social-network-communities.md) | [core](../core/communities.md) · [api](../api/communities.md) · [nextjs](../nextjs/communities.md) |
+| [Currency Context](currency-context.md) | [liberusoftware/currency-context](../../../modules/source/liberusoftware--currency-context.md) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience](developer-experience.md) | [liberusoftware/developer-experience](../../../modules/source/liberusoftware--developer-experience.md) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Discovery](discovery.md) | [liberusoftware/module-social-network-discovery](../../../modules/source/liberusoftware--module-social-network-discovery.md) | [core](../core/discovery.md) · [api](../api/discovery.md) · [nextjs](../nextjs/discovery.md) |
+| [Engagement](engagement.md) | [liberusoftware/module-social-network-engagement](../../../modules/source/liberusoftware--module-social-network-engagement.md) | [core](../core/engagement.md) · [api](../api/engagement.md) · [nextjs](../nextjs/engagement.md) |
+| [Events](events.md) | [liberusoftware/module-social-network-events](../../../modules/source/liberusoftware--module-social-network-events.md) | [core](../core/events.md) · [api](../api/events.md) · [nextjs](../nextjs/events.md) |
+| [Feature Flags](feature-flags.md) | [liberusoftware/feature-flags](../../../modules/source/liberusoftware--feature-flags.md) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Federation](federation.md) | [liberusoftware/module-social-network-federation](../../../modules/source/liberusoftware--module-social-network-federation.md) | [core](../core/federation.md) · [api](../api/federation.md) · [nextjs](../nextjs/federation.md) |
+| [Feed](feed.md) | [liberusoftware/module-social-network-feed](../../../modules/source/liberusoftware--module-social-network-feed.md) | [core](../core/feed.md) · [api](../api/feed.md) · [nextjs](../nextjs/feed.md) |
+| [Files Media](files-media.md) | [liberusoftware/files-media](../../../modules/source/liberusoftware--files-media.md) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core](identity-core.md) | [liberusoftware/identity-core](../../../modules/source/liberusoftware--identity-core.md) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream](identity-socialstream.md) | [liberusoftware/identity-socialstream](../../../modules/source/liberusoftware--identity-socialstream.md) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export](import-export.md) | [liberusoftware/import-export](../../../modules/source/liberusoftware--import-export.md) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations](integrations.md) | [liberusoftware/integrations](../../../modules/source/liberusoftware--integrations.md) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge](jetstream-bridge.md) | [liberusoftware/jetstream-bridge](../../../modules/source/liberusoftware--jetstream-bridge.md) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core](localization-core.md) | [liberusoftware/localization-core](../../../modules/source/liberusoftware--localization-core.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory](localization-mymemory.md) | [liberusoftware/localization-mymemory](../../../modules/source/liberusoftware--localization-mymemory.md) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Media](media.md) | [liberusoftware/module-social-network-media](../../../modules/source/liberusoftware--module-social-network-media.md) | [core](../core/media.md) · [api](../api/media.md) · [nextjs](../nextjs/media.md) |
+| [Messaging](messaging.md) | [liberusoftware/module-social-network-messaging](../../../modules/source/liberusoftware--module-social-network-messaging.md) | [core](../core/messaging.md) · [api](../api/messaging.md) · [nextjs](../nextjs/messaging.md) |
+| [Moderation](moderation.md) | [liberusoftware/module-social-network-moderation](../../../modules/source/liberusoftware--module-social-network-moderation.md) | [core](../core/moderation.md) · [api](../api/moderation.md) · [nextjs](../nextjs/moderation.md) |
+| [Module Manager](module-manager.md) | [liberusoftware/module-manager](../../../modules/source/liberusoftware--module-manager.md) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications](notifications.md) | [liberusoftware/notifications](../../../modules/source/liberusoftware--notifications.md) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability](observability.md) | [liberusoftware/observability](../../../modules/source/liberusoftware--observability.md) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams](organizations-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles](profiles.md) | [liberusoftware/profiles](../../../modules/source/liberusoftware--profiles.md) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Publishing](publishing.md) | [liberusoftware/module-social-network-publishing](../../../modules/source/liberusoftware--module-social-network-publishing.md) | [core](../core/publishing.md) · [api](../api/publishing.md) · [nextjs](../nextjs/publishing.md) |
+| [Roles Permissions](roles-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues](scheduler-queues.md) | [liberusoftware/scheduler-queues](../../../modules/source/liberusoftware--scheduler-queues.md) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search](search.md) | [liberusoftware/search](../../../modules/source/liberusoftware--search.md) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices](sessions-devices.md) | [liberusoftware/sessions-devices](../../../modules/source/liberusoftware--sessions-devices.md) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings](settings.md) | [liberusoftware/settings](../../../modules/source/liberusoftware--settings.md) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Social Core](social-core.md) | [liberusoftware/module-social-network-social-core](../../../modules/source/liberusoftware--module-social-network-social-core.md) | [core](../core/social-core.md) · [api](../api/social-core.md) · [nextjs](../nextjs/social-core.md) |
+| [Social Graph](social-graph.md) | [liberusoftware/module-social-network-social-graph](../../../modules/source/liberusoftware--module-social-network-social-graph.md) | [core](../core/social-graph.md) · [api](../api/social-graph.md) · [nextjs](../nextjs/social-graph.md) |
+| [Social Network Analytics](social-network-analytics.md) | [liberusoftware/module-social-network-analytics](../../../modules/source/liberusoftware--module-social-network-analytics.md) | [core](../core/social-network-analytics.md) · [api](../api/social-network-analytics.md) · [nextjs](../nextjs/social-network-analytics.md) |
+| [Social Network Communities](social-network-communities.md) | [liberusoftware/module-social-network-communities](../../../modules/source/liberusoftware--module-social-network-communities.md) | [core](../core/social-network-communities.md) · [api](../api/social-network-communities.md) · [nextjs](../nextjs/social-network-communities.md) |
+| [Social Network Discovery](social-network-discovery.md) | [liberusoftware/module-social-network-discovery](../../../modules/source/liberusoftware--module-social-network-discovery.md) | [core](../core/social-network-discovery.md) · [api](../api/social-network-discovery.md) · [nextjs](../nextjs/social-network-discovery.md) |
+| [Social Network Engagement](social-network-engagement.md) | [liberusoftware/module-social-network-engagement](../../../modules/source/liberusoftware--module-social-network-engagement.md) | [core](../core/social-network-engagement.md) · [api](../api/social-network-engagement.md) · [nextjs](../nextjs/social-network-engagement.md) |
+| [Social Network Events](social-network-events.md) | [liberusoftware/module-social-network-events](../../../modules/source/liberusoftware--module-social-network-events.md) | [core](../core/social-network-events.md) · [api](../api/social-network-events.md) · [nextjs](../nextjs/social-network-events.md) |
+| [Social Network Federation](social-network-federation.md) | [liberusoftware/module-social-network-federation](../../../modules/source/liberusoftware--module-social-network-federation.md) | [core](../core/social-network-federation.md) · [api](../api/social-network-federation.md) · [nextjs](../nextjs/social-network-federation.md) |
+| [Social Network Feed](social-network-feed.md) | [liberusoftware/module-social-network-feed](../../../modules/source/liberusoftware--module-social-network-feed.md) | [core](../core/social-network-feed.md) · [api](../api/social-network-feed.md) · [nextjs](../nextjs/social-network-feed.md) |
+| [Social Network Media](social-network-media.md) | [liberusoftware/module-social-network-media](../../../modules/source/liberusoftware--module-social-network-media.md) | [core](../core/social-network-media.md) · [api](../api/social-network-media.md) · [nextjs](../nextjs/social-network-media.md) |
+| [Social Network Messaging](social-network-messaging.md) | [liberusoftware/module-social-network-messaging](../../../modules/source/liberusoftware--module-social-network-messaging.md) | [core](../core/social-network-messaging.md) · [api](../api/social-network-messaging.md) · [nextjs](../nextjs/social-network-messaging.md) |
+| [Social Network Moderation](social-network-moderation.md) | [liberusoftware/module-social-network-moderation](../../../modules/source/liberusoftware--module-social-network-moderation.md) | [core](../core/social-network-moderation.md) · [api](../api/social-network-moderation.md) · [nextjs](../nextjs/social-network-moderation.md) |
+| [Social Network Notifications](social-network-notifications.md) | [liberusoftware/module-social-network-notifications](../../../modules/source/liberusoftware--module-social-network-notifications.md) | [core](../core/social-network-notifications.md) · [api](../api/social-network-notifications.md) · [nextjs](../nextjs/social-network-notifications.md) |
+| [Social Network Profiles](social-network-profiles.md) | [liberusoftware/module-social-network-profiles](../../../modules/source/liberusoftware--module-social-network-profiles.md) | [core](../core/social-network-profiles.md) · [api](../api/social-network-profiles.md) · [nextjs](../nextjs/social-network-profiles.md) |
+| [Social Network Publishing](social-network-publishing.md) | [liberusoftware/module-social-network-publishing](../../../modules/source/liberusoftware--module-social-network-publishing.md) | [core](../core/social-network-publishing.md) · [api](../api/social-network-publishing.md) · [nextjs](../nextjs/social-network-publishing.md) |
+| [Social Network Social Core](social-network-social-core.md) | [liberusoftware/module-social-network-social-core](../../../modules/source/liberusoftware--module-social-network-social-core.md) | [core](../core/social-network-social-core.md) · [api](../api/social-network-social-core.md) · [nextjs](../nextjs/social-network-social-core.md) |
+| [Social Network Social Graph](social-network-social-graph.md) | [liberusoftware/module-social-network-social-graph](../../../modules/source/liberusoftware--module-social-network-social-graph.md) | [core](../core/social-network-social-graph.md) · [api](../api/social-network-social-graph.md) · [nextjs](../nextjs/social-network-social-graph.md) |
+| [Theme Support](theme-support.md) | [liberusoftware/theme-support](../../../modules/source/liberusoftware--theme-support.md) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication](two-factor-authentication.md) | [liberusoftware/two-factor-authentication](../../../modules/source/liberusoftware--two-factor-authentication.md) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks](webhooks.md) | [liberusoftware/webhooks](../../../modules/source/liberusoftware--webhooks.md) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

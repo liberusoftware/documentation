@@ -1,8 +1,12 @@
 # Crm: Memberships Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#memberships). Observed identity: [`liberusoftware/module-crm-memberships`](../../../modules/source/liberusoftware--module-crm-memberships.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-memberships`
+**Design package identifier:** `module-crm-memberships`
 **Domain specification:** [Memberships](../features/memberships.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

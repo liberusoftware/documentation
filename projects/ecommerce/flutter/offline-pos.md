@@ -1,5 +1,9 @@
 # Offline Pos Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#offline-pos). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-offline-pos-flutter
 **Matching core package:** module-ecommerce-offline-pos ([implementation](../core/offline-pos.md))
 **Matching API package:** module-ecommerce-offline-pos-api ([contract](../api/offline-pos.md))

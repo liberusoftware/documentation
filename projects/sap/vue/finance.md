@@ -1,135 +1,60 @@
-# SAP: Finance Vue + Inertia
+# Finance: Vue + Inertia design
 
-## Canonical one-to-one Vue/Inertia implementation
+**Status:** proposed enterprise implementation. The [current SAP foundation](../SOURCE-APPLICATION.md) does not establish these business workflows or this presentation as implemented. Use the [detailed domain contract](../design/finance.md) and [API plan](../api/finance.md) as the review target.
 
-**Package:** `module-sap-finance-vue-inertia`
-**Matching domain module:** `sap-finance`
-**Application:** SAP
-**Source feature:** [Finance](../features/finance.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/finance.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#finance). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
 
-## 1. Purpose and ownership
+## Ownership and delivery scope
 
-This optional Vue 3 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, Vue components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+Accounting owns ledger accounts, journal posting, periods, reconciliation, close, and consolidation. The enterprise workspace coordinates source operations and unresolved handoffs.
 
-## 2. Module-specific surfaces
+Reuse the [shared enterprise operation design](../design/OPERATIONS.md) for command identities, concurrency, handoffs and recovery. This capability group adds only its own orchestration/projection and genuine missing behavior; it does not create another owner for existing product records.
 
-- **General ledger:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Receivables:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Payables:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Banking:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Tax:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Assets:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Budgets:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Treasury:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Consolidation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Close:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Statements:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+## Workflow and command contract
 
-## 3. Vue 3 + Inertia 3 implementation
+**Workspace surfaces:** posting exception inbox, journal evidence, source-to-ledger reconciliation, close checklist, consolidation status.
 
-- Register a stable `module-sap-finance-vue-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
-- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, composables under `resources/js/composables`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
-- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+**Business lifecycle:** received → validated → pending_approval → posted; validation_failed and rejected preserve the source reference; posted corrections use a linked reversal.
 
-### Capability mapping
+Require balanced debit/credit totals in the posting representation, valid dimensions, open periods, approved source versions, and unique source operation identities. Preserve transaction/base-currency amounts and the selected exchange-rate reference.
 
-- `general-ledger`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `receivables`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `payables`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `banking`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `tax`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `assets`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `budgets`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `treasury`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `consolidation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `close`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `statements`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+The illustrated `post` command takes `approval_reference`, `source_operation_key`, with a documented record-version precondition and scoped operation identity. It starts from `pending_approval` and reaches `posted` only after its defined business outcome. The [API example](../api/finance.md#3-endpoint-examples) provides the proposed body and [draft request schema](../api/contracts/finance.request.schema.json).
 
-## 4. API contract and Inertia consumption
+Validate the approved source version, entity/ledger/period, balanced totals, dimensions, exchange-rate reference and source operation uniqueness through Accounting.
 
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
-- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+Complete only after Accounting returns the durable journal reference and reconciled control totals. A queued request cannot be displayed as a posted journal.
 
-## 5. Security and verification
+## Layer implementation
 
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
-- Test observable behavior with TypeScript, ESLint, Vitest, Vue Test Utils, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
+The Laravel host owns Inertia routes/controllers and passes authorized serializable page props to typed Vue components/composables. Compose a queue, subject/evidence detail and `post` form for the domain workspace. Props include the record/version, permitted actions, safe draft defaults and operation reference, not an unrestricted model snapshot.
 
-## 6. Definition of done
+An Inertia visit expects an Inertia page/redirect lifecycle. Use the Laravel controller's reviewed public application boundary or a deliberate API adapter and then return the appropriate Inertia response. Do not point an Inertia page visit at a bare REST JSON endpoint and assume it is an Inertia page.
 
-- Package identity, public exports, API dependency, and module dependency match `sap-finance` one-to-one.
-- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
-- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+Keep `approval_reference`, `source_operation_key` in a typed command draft and map actual server field errors to the form. Preserve navigation/filter state where safe, focus the actionable error summary, and reload/review a stale record before resubmission. Laravel reauthorizes every command independently of client visibility.
 
-## Canonical one-to-one Vue/Inertia implementation
+Share framework-independent Vue primitives with Nuxt where the contracts fit. Keep Inertia navigation/forms/page props in its wrapper and Nuxt server/browser transport, routing and runtime configuration in its adapter.
 
-**Package:** `module-sap-finance-vue-inertia`
-**Matching domain module:** `sap-finance`
-**Application:** SAP
-**Source feature:** [Finance](../features/finance.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/finance.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+The Vue UI displays business and operation states separately. A queued response preserves a pending status and authorized progress link; it does not manufacture the eventual domain outcome in local state.
 
-## 1. Purpose and ownership
+## Authorization, recovery and operations
 
-This optional Vue 3 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, Vue components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+Preparers submit; independent approvers authorize journals and reopening; read access is scoped by ledger and legal entity.
 
-## 2. Module-specific surfaces
+For a timeout after posting, query by source operation identity before retrying. Reconcile the returned journal and control totals; a posted journal is never silently edited or deleted.
 
-- **General ledger:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Receivables:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Payables:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Banking:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Tax:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Assets:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Budgets:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Treasury:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Consolidation:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Close:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Statements:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+Show the selected entity, source/subject reference, current business state and separate operation progress. Preserve safe drafts on validation/conflict. Reauthenticate on expiry and discard protected cached data after scope/permission changes. A network timeout never establishes whether an external write succeeded; use the durable operation/source reference for reconciliation.
 
-## 3. Vue 3 + Inertia 3 implementation
+## Module-specific acceptance
 
-- Register a stable `module-sap-finance-vue-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
-- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, composables under `resources/js/composables`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
-- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+- A duplicate invoice event creates one posting; a closed-period command is rejected; reversal preserves the original journal and audit chain.
+- Repeated commands return the documented existing result or a clear conflict; they cannot duplicate a completed external side effect.
+- A tenant/entity switch, permission revocation or expired session cannot reuse another scope's cached record, attachment or exported file.
+- A downstream failure remains observable with a valid owner/recovery path across every enabled presentation.
 
-### Capability mapping
+- Exercise the `post` example with allowed, denied, invalid, stale, duplicate and uncertain-result paths; confirm `posted` only from its authoritative outcome.
+- Verify the enabled layer uses the same domain/operation contract as other surfaces and cannot bypass it through generic saves, hydrated state, direct JSON fields or offline replay.
+- Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
 
-- `general-ledger`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `receivables`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `payables`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `banking`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `tax`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `assets`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `budgets`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `treasury`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `consolidation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `close`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `statements`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-
-## 4. API contract and Inertia consumption
-
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
-- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
-
-## 5. Security and verification
-
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
-- Test observable behavior with TypeScript, ESLint, Vitest, Vue Test Utils, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
-
-## 6. Definition of done
-
-- Package identity, public exports, API dependency, and module dependency match `sap-finance` one-to-one.
-- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
-- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.

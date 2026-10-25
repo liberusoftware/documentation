@@ -1,5 +1,9 @@
 # Developer Experience domain packages React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#developer-experience). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-developer-experience-react-native
 **Matching core package:** module-developer-experience ([implementation](../core/developer-experience.md))
 **Matching API package:** module-developer-experience-api ([contract](../api/developer-experience.md))

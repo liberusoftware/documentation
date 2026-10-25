@@ -1,12 +1,16 @@
 # Billing: Communications Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#communications). Observed identity: [`liberusoftware/module-billing-communications-livewire`](../../../modules/source/liberusoftware--module-billing-communications-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-billing-communications-livewire`  
 **Matching domain module:** `billing-communications`  
 **Application:** Billing  
 **Source feature:** [Communications](../features/communications.md)  
-**Architecture:** [LIVEWIRE.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

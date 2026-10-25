@@ -1,0 +1,6 @@
+{
+  "rule_version": "allocation-rule-v3",
+  "source_balance_snapshot_id": "balances-example-001",
+  "driver_snapshot_id": "drivers-example-001",
+  "scenario_id": "scenario-example-001"
+}

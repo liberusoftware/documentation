@@ -1,5 +1,9 @@
 # Attribution And Analytics Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#attribution-and-analytics). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-attribution-and-analytics-flutter
 **Matching core package:** module-ecommerce-attribution-and-analytics ([implementation](../core/attribution-and-analytics.md))
 **Matching API package:** module-ecommerce-attribution-and-analytics-api ([contract](../api/attribution-and-analytics.md))

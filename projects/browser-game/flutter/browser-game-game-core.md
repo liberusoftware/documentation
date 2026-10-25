@@ -1,5 +1,9 @@
 # Browser Game Game Core Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#browser-game-game-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-browser-game-browser-game-game-core-flutter
 **Matching core package:** module-browser-game-browser-game-game-core ([implementation](../core/browser-game-game-core.md))
 **Matching API package:** module-browser-game-browser-game-game-core-api ([contract](../api/browser-game-game-core.md))

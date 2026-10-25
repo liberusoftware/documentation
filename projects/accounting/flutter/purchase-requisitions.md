@@ -1,5 +1,9 @@
 # Purchase Requisitions Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#purchase-requisitions). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-purchase-requisitions-flutter
 **Matching core package:** module-accounting-purchase-requisitions ([implementation](../core/purchase-requisitions.md))
 **Matching API package:** module-accounting-purchase-requisitions-api ([contract](../api/purchase-requisitions.md))

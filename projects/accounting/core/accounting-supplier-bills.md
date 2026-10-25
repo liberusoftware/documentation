@@ -1,8 +1,12 @@
 # Accounting: Accounting Supplier Bills Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-supplier-bills). Observed identity: [`liberusoftware/module-accounting-supplier-bills`](../../../modules/source/liberusoftware--module-accounting-supplier-bills.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-supplier-bills`
+**Design package identifier:** `module-accounting-accounting-supplier-bills`
 **Domain specification:** [Accounting Supplier Bills](../features/accounting-supplier-bills.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

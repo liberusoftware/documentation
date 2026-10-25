@@ -32,3 +32,7 @@ This guide is derived from bringing 44 packages and 4 themes onto these conventi
 ## A known inconsistency
 
 The Composer vendor is **`liberusoftware/`** throughout. MODULES.md and four sibling standards once wrote `liberu/*`, which does not resolve — `PROMPT.md` had always said `liberusoftware/`, so the specification disagreed with itself. Corrected in [#16](https://github.com/liberusoftware/documentation/pull/16). If you meet a `liberu/*` name anywhere, it is stale: copy the name from an existing package's `composer.json` rather than from prose.
+
+## Working with existing project clones
+
+Read the [Composer lifecycle guide](../../guides/COMPOSER.md) for installed tracked modules, path overrides, module enablement and consumer updates. Use the [npm lifecycle guide](../../guides/NPM.md) for JavaScript packages and [shared ownership guide](../../architecture/SHARED-MODULES.md) before creating another implementation.

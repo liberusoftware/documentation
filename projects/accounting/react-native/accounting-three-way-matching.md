@@ -1,5 +1,9 @@
 # Accounting Three Way Matching React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-three-way-matching). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-three-way-matching-react-native
 **Matching core package:** module-accounting-accounting-three-way-matching ([implementation](../core/accounting-three-way-matching.md))
 **Matching API package:** module-accounting-accounting-three-way-matching-api ([contract](../api/accounting-three-way-matching.md))

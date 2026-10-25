@@ -1,5 +1,9 @@
 # Accounting Accounts Receivable Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-accounts-receivable). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-accounts-receivable-flutter
 **Matching core package:** module-accounting-accounting-accounts-receivable ([implementation](../core/accounting-accounts-receivable.md))
 **Matching API package:** module-accounting-accounting-accounts-receivable-api ([contract](../api/accounting-accounts-receivable.md))

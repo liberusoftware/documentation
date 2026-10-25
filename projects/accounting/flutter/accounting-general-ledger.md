@@ -1,5 +1,9 @@
 # Accounting General Ledger Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-general-ledger). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-general-ledger-flutter
 **Matching core package:** module-accounting-accounting-general-ledger ([implementation](../core/accounting-general-ledger.md))
 **Matching API package:** module-accounting-accounting-general-ledger-api ([contract](../api/accounting-general-ledger.md))

@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:product-and-engineering:approve:request:v1",
+  "title": "Product and engineering: proposed approve request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact_digest",
+    "test_evidence_ids",
+    "vulnerability_review_id",
+    "rollout_plan_id"
+  ],
+  "properties": {
+    "artifact_digest": {
+      "type": "string",
+      "minLength": 1
+    },
+    "test_evidence_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "vulnerability_review_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "rollout_plan_id": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

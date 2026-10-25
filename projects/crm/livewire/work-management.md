@@ -1,12 +1,16 @@
 # CRM: Work Management Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#work-management). Observed identity: [`liberusoftware/module-crm-work-management-livewire`](../../../modules/source/liberusoftware--module-crm-work-management-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-work-management-livewire`  
 **Matching domain module:** `crm-work-management`  
 **Application:** CRM  
 **Source feature:** [Work Management](../features/work-management.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

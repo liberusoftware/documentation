@@ -1,5 +1,9 @@
 # Cms Digital Asset Management React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-digital-asset-management). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-digital-asset-management-react-native
 **Matching core package:** module-cms-cms-digital-asset-management ([implementation](../core/cms-digital-asset-management.md))
 **Matching API package:** module-cms-cms-digital-asset-management-api ([contract](../api/cms-digital-asset-management.md))

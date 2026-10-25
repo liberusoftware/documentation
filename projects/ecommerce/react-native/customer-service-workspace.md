@@ -1,5 +1,9 @@
 # Customer Service Workspace React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#customer-service-workspace). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-customer-service-workspace-react-native
 **Matching core package:** module-ecommerce-customer-service-workspace ([implementation](../core/customer-service-workspace.md))
 **Matching API package:** module-ecommerce-customer-service-workspace-api ([contract](../api/customer-service-workspace.md))

@@ -1,50 +1,69 @@
 # Social Network Livewire Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **59 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Livewire 4 presentation package for exactly one matching domain module.
 
-- [Activity Comments Livewire](activity-comments.md) — `module-social-network-activity-comments-livewire`
-- [Analytics Core Livewire](analytics-core.md) — `module-social-network-analytics-core-livewire`
-- [Analytics Google Livewire](analytics-google.md) — `module-social-network-analytics-google-livewire`
-- [Analytics Meta Livewire](analytics-meta.md) — `module-social-network-analytics-meta-livewire`
-- [Api Access Livewire](api-access.md) — `module-social-network-api-access-livewire`
-- [Application Livewire](application.md) — `module-social-network-application-livewire`
-- [Audit Livewire](audit.md) — `module-social-network-audit-livewire`
-- [Currency Context Livewire](currency-context.md) — `module-social-network-currency-context-livewire`
-- [Developer Experience Livewire](developer-experience.md) — `module-social-network-developer-experience-livewire`
-- [Feature Flags Livewire](feature-flags.md) — `module-social-network-feature-flags-livewire`
-- [Files Media Livewire](files-media.md) — `module-social-network-files-media-livewire`
-- [Identity Core Livewire](identity-core.md) — `module-social-network-identity-core-livewire`
-- [Identity Socialstream Livewire](identity-socialstream.md) — `module-social-network-identity-socialstream-livewire`
-- [Import Export Livewire](import-export.md) — `module-social-network-import-export-livewire`
-- [Integrations Livewire](integrations.md) — `module-social-network-integrations-livewire`
-- [Jetstream Bridge Livewire](jetstream-bridge.md) — `module-social-network-jetstream-bridge-livewire`
-- [Localization Core Livewire](localization-core.md) — `module-social-network-localization-core-livewire`
-- [Localization Mymemory Livewire](localization-mymemory.md) — `module-social-network-localization-mymemory-livewire`
-- [Module Manager Livewire](module-manager.md) — `module-social-network-module-manager-livewire`
-- [Notifications Livewire](notifications.md) — `module-social-network-notifications-livewire`
-- [Observability Livewire](observability.md) — `module-social-network-observability-livewire`
-- [Organizations Teams Livewire](organizations-teams.md) — `module-social-network-organizations-teams-livewire`
-- [Profiles Livewire](profiles.md) — `module-social-network-profiles-livewire`
-- [Roles Permissions Livewire](roles-permissions.md) — `module-social-network-roles-permissions-livewire`
-- [Scheduler Queues Livewire](scheduler-queues.md) — `module-social-network-scheduler-queues-livewire`
-- [Search Livewire](search.md) — `module-social-network-search-livewire`
-- [Sessions Devices Livewire](sessions-devices.md) — `module-social-network-sessions-devices-livewire`
-- [Settings Livewire](settings.md) — `module-social-network-settings-livewire`
-- [Social Network Analytics Livewire](social-network-analytics.md) — `module-social-network-social-network-analytics-livewire`
-- [Social Network Communities Livewire](social-network-communities.md) — `module-social-network-social-network-communities-livewire`
-- [Social Network Discovery Livewire](social-network-discovery.md) — `module-social-network-social-network-discovery-livewire`
-- [Social Network Engagement Livewire](social-network-engagement.md) — `module-social-network-social-network-engagement-livewire`
-- [Social Network Events Livewire](social-network-events.md) — `module-social-network-social-network-events-livewire`
-- [Social Network Federation Livewire](social-network-federation.md) — `module-social-network-social-network-federation-livewire`
-- [Social Network Feed Livewire](social-network-feed.md) — `module-social-network-social-network-feed-livewire`
-- [Social Network Media Livewire](social-network-media.md) — `module-social-network-social-network-media-livewire`
-- [Social Network Messaging Livewire](social-network-messaging.md) — `module-social-network-social-network-messaging-livewire`
-- [Social Network Moderation Livewire](social-network-moderation.md) — `module-social-network-social-network-moderation-livewire`
-- [Social Network Notifications Livewire](social-network-notifications.md) — `module-social-network-social-network-notifications-livewire`
-- [Social Network Profiles Livewire](social-network-profiles.md) — `module-social-network-social-network-profiles-livewire`
-- [Social Network Publishing Livewire](social-network-publishing.md) — `module-social-network-social-network-publishing-livewire`
-- [Social Network Social Core Livewire](social-network-social-core.md) — `module-social-network-social-network-social-core-livewire`
-- [Social Network Social Graph Livewire](social-network-social-graph.md) — `module-social-network-social-network-social-graph-livewire`
-- [Theme Support Livewire](theme-support.md) — `module-social-network-theme-support-livewire`
-- [Two Factor Authentication Livewire](two-factor-authentication.md) — `module-social-network-two-factor-authentication-livewire`
-- [Webhooks Livewire](webhooks.md) — `module-social-network-webhooks-livewire`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Livewire](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Livewire](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Livewire](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Livewire](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Analytics Livewire](analytics.md) | [liberusoftware/module-social-network-analytics-livewire](../../../modules/source/liberusoftware--module-social-network-analytics-livewire.md) | [core](../core/analytics.md) · [api](../api/analytics.md) · [nextjs](../nextjs/analytics.md) |
+| [Api Access Livewire](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Livewire](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Livewire](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Communities Livewire](communities.md) | [liberusoftware/module-social-network-communities-livewire](../../../modules/source/liberusoftware--module-social-network-communities-livewire.md) | [core](../core/communities.md) · [api](../api/communities.md) · [nextjs](../nextjs/communities.md) |
+| [Currency Context Livewire](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Livewire](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Discovery Livewire](discovery.md) | [liberusoftware/module-social-network-discovery-livewire](../../../modules/source/liberusoftware--module-social-network-discovery-livewire.md) | [core](../core/discovery.md) · [api](../api/discovery.md) · [nextjs](../nextjs/discovery.md) |
+| [Engagement Livewire](engagement.md) | [liberusoftware/module-social-network-engagement-livewire](../../../modules/source/liberusoftware--module-social-network-engagement-livewire.md) | [core](../core/engagement.md) · [api](../api/engagement.md) · [nextjs](../nextjs/engagement.md) |
+| [Events Livewire](events.md) | [liberusoftware/module-social-network-events-livewire](../../../modules/source/liberusoftware--module-social-network-events-livewire.md) | [core](../core/events.md) · [api](../api/events.md) · [nextjs](../nextjs/events.md) |
+| [Feature Flags Livewire](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Federation Livewire](federation.md) | [liberusoftware/module-social-network-federation-livewire](../../../modules/source/liberusoftware--module-social-network-federation-livewire.md) | [core](../core/federation.md) · [api](../api/federation.md) · [nextjs](../nextjs/federation.md) |
+| [Feed Livewire](feed.md) | [liberusoftware/module-social-network-feed-livewire](../../../modules/source/liberusoftware--module-social-network-feed-livewire.md) | [core](../core/feed.md) · [api](../api/feed.md) · [nextjs](../nextjs/feed.md) |
+| [Files Media Livewire](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Livewire](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Livewire](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Livewire](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Livewire](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Livewire](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core Livewire](localization-core.md) | [liberusoftware/localization-core-livewire](../../../modules/source/liberusoftware--localization-core-livewire.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Livewire](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Media Livewire](media.md) | [liberusoftware/module-social-network-media-livewire](../../../modules/source/liberusoftware--module-social-network-media-livewire.md) | [core](../core/media.md) · [api](../api/media.md) · [nextjs](../nextjs/media.md) |
+| [Messaging Livewire](messaging.md) | [liberusoftware/module-social-network-messaging-livewire](../../../modules/source/liberusoftware--module-social-network-messaging-livewire.md) | [core](../core/messaging.md) · [api](../api/messaging.md) · [nextjs](../nextjs/messaging.md) |
+| [Moderation Livewire](moderation.md) | [liberusoftware/module-social-network-moderation-livewire](../../../modules/source/liberusoftware--module-social-network-moderation-livewire.md) | [core](../core/moderation.md) · [api](../api/moderation.md) · [nextjs](../nextjs/moderation.md) |
+| [Module Manager Livewire](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Livewire](notifications.md) | [liberusoftware/module-social-network-notifications-livewire](../../../modules/source/liberusoftware--module-social-network-notifications-livewire.md) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Livewire](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Livewire](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles Livewire](profiles.md) | [liberusoftware/module-social-network-profiles-livewire](../../../modules/source/liberusoftware--module-social-network-profiles-livewire.md) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Publishing Livewire](publishing.md) | [liberusoftware/module-social-network-publishing-livewire](../../../modules/source/liberusoftware--module-social-network-publishing-livewire.md) | [core](../core/publishing.md) · [api](../api/publishing.md) · [nextjs](../nextjs/publishing.md) |
+| [Roles Permissions Livewire](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Livewire](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Livewire](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Livewire](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Livewire](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Social Core Livewire](social-core.md) | [liberusoftware/module-social-network-social-core-livewire](../../../modules/source/liberusoftware--module-social-network-social-core-livewire.md) | [core](../core/social-core.md) · [api](../api/social-core.md) · [nextjs](../nextjs/social-core.md) |
+| [Social Graph Livewire](social-graph.md) | [liberusoftware/module-social-network-social-graph-livewire](../../../modules/source/liberusoftware--module-social-network-social-graph-livewire.md) | [core](../core/social-graph.md) · [api](../api/social-graph.md) · [nextjs](../nextjs/social-graph.md) |
+| [Social Network Analytics Livewire](social-network-analytics.md) | [liberusoftware/module-social-network-analytics-livewire](../../../modules/source/liberusoftware--module-social-network-analytics-livewire.md) | [core](../core/social-network-analytics.md) · [api](../api/social-network-analytics.md) · [nextjs](../nextjs/social-network-analytics.md) |
+| [Social Network Communities Livewire](social-network-communities.md) | [liberusoftware/module-social-network-communities-livewire](../../../modules/source/liberusoftware--module-social-network-communities-livewire.md) | [core](../core/social-network-communities.md) · [api](../api/social-network-communities.md) · [nextjs](../nextjs/social-network-communities.md) |
+| [Social Network Discovery Livewire](social-network-discovery.md) | [liberusoftware/module-social-network-discovery-livewire](../../../modules/source/liberusoftware--module-social-network-discovery-livewire.md) | [core](../core/social-network-discovery.md) · [api](../api/social-network-discovery.md) · [nextjs](../nextjs/social-network-discovery.md) |
+| [Social Network Engagement Livewire](social-network-engagement.md) | [liberusoftware/module-social-network-engagement-livewire](../../../modules/source/liberusoftware--module-social-network-engagement-livewire.md) | [core](../core/social-network-engagement.md) · [api](../api/social-network-engagement.md) · [nextjs](../nextjs/social-network-engagement.md) |
+| [Social Network Events Livewire](social-network-events.md) | [liberusoftware/module-social-network-events-livewire](../../../modules/source/liberusoftware--module-social-network-events-livewire.md) | [core](../core/social-network-events.md) · [api](../api/social-network-events.md) · [nextjs](../nextjs/social-network-events.md) |
+| [Social Network Federation Livewire](social-network-federation.md) | [liberusoftware/module-social-network-federation-livewire](../../../modules/source/liberusoftware--module-social-network-federation-livewire.md) | [core](../core/social-network-federation.md) · [api](../api/social-network-federation.md) · [nextjs](../nextjs/social-network-federation.md) |
+| [Social Network Feed Livewire](social-network-feed.md) | [liberusoftware/module-social-network-feed-livewire](../../../modules/source/liberusoftware--module-social-network-feed-livewire.md) | [core](../core/social-network-feed.md) · [api](../api/social-network-feed.md) · [nextjs](../nextjs/social-network-feed.md) |
+| [Social Network Media Livewire](social-network-media.md) | [liberusoftware/module-social-network-media-livewire](../../../modules/source/liberusoftware--module-social-network-media-livewire.md) | [core](../core/social-network-media.md) · [api](../api/social-network-media.md) · [nextjs](../nextjs/social-network-media.md) |
+| [Social Network Messaging Livewire](social-network-messaging.md) | [liberusoftware/module-social-network-messaging-livewire](../../../modules/source/liberusoftware--module-social-network-messaging-livewire.md) | [core](../core/social-network-messaging.md) · [api](../api/social-network-messaging.md) · [nextjs](../nextjs/social-network-messaging.md) |
+| [Social Network Moderation Livewire](social-network-moderation.md) | [liberusoftware/module-social-network-moderation-livewire](../../../modules/source/liberusoftware--module-social-network-moderation-livewire.md) | [core](../core/social-network-moderation.md) · [api](../api/social-network-moderation.md) · [nextjs](../nextjs/social-network-moderation.md) |
+| [Social Network Notifications Livewire](social-network-notifications.md) | [liberusoftware/module-social-network-notifications-livewire](../../../modules/source/liberusoftware--module-social-network-notifications-livewire.md) | [core](../core/social-network-notifications.md) · [api](../api/social-network-notifications.md) · [nextjs](../nextjs/social-network-notifications.md) |
+| [Social Network Profiles Livewire](social-network-profiles.md) | [liberusoftware/module-social-network-profiles-livewire](../../../modules/source/liberusoftware--module-social-network-profiles-livewire.md) | [core](../core/social-network-profiles.md) · [api](../api/social-network-profiles.md) · [nextjs](../nextjs/social-network-profiles.md) |
+| [Social Network Publishing Livewire](social-network-publishing.md) | [liberusoftware/module-social-network-publishing-livewire](../../../modules/source/liberusoftware--module-social-network-publishing-livewire.md) | [core](../core/social-network-publishing.md) · [api](../api/social-network-publishing.md) · [nextjs](../nextjs/social-network-publishing.md) |
+| [Social Network Social Core Livewire](social-network-social-core.md) | [liberusoftware/module-social-network-social-core-livewire](../../../modules/source/liberusoftware--module-social-network-social-core-livewire.md) | [core](../core/social-network-social-core.md) · [api](../api/social-network-social-core.md) · [nextjs](../nextjs/social-network-social-core.md) |
+| [Social Network Social Graph Livewire](social-network-social-graph.md) | [liberusoftware/module-social-network-social-graph-livewire](../../../modules/source/liberusoftware--module-social-network-social-graph-livewire.md) | [core](../core/social-network-social-graph.md) · [api](../api/social-network-social-graph.md) · [nextjs](../nextjs/social-network-social-graph.md) |
+| [Theme Support Livewire](theme-support.md) | [liberusoftware/theme-support-livewire](../../../modules/source/liberusoftware--theme-support-livewire.md) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Livewire](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Livewire](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

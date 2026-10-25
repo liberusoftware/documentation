@@ -1,5 +1,9 @@
 # Crm Unified Conversations React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-unified-conversations). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-unified-conversations-react-native
 **Matching core package:** module-crm-crm-unified-conversations ([implementation](../core/crm-unified-conversations.md))
 **Matching API package:** module-crm-crm-unified-conversations-api ([contract](../api/crm-unified-conversations.md))

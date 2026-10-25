@@ -1,12 +1,16 @@
 # Real Estate: Jetstream Bridge Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#jetstream-bridge). Observed identity: [`liberusoftware/jetstream-bridge-livewire`](../../../modules/source/liberusoftware--jetstream-bridge-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-real-estate-jetstream-bridge-livewire`  
 **Matching domain module:** `jetstream-bridge`  
 **Application:** Real Estate  
 **Source feature:** [Jetstream Bridge](../features/jetstream-bridge.md)  
-**Architecture:** [LIVEWIRE.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

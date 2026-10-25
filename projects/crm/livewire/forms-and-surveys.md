@@ -1,12 +1,16 @@
 # CRM: Forms and Surveys Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#forms-and-surveys). Observed identity: [`liberusoftware/module-crm-forms-and-surveys-livewire`](../../../modules/source/liberusoftware--module-crm-forms-and-surveys-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-forms-and-surveys-livewire`  
 **Matching domain module:** `crm-forms-and-surveys`  
 **Application:** CRM  
 **Source feature:** [Forms and Surveys](../features/forms-and-surveys.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

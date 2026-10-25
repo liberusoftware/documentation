@@ -1,8 +1,12 @@
 # Crm: Deal Registration Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#deal-registration). Observed identity: [`liberusoftware/module-crm-deal-registration`](../../../modules/source/liberusoftware--module-crm-deal-registration.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-deal-registration`
+**Design package identifier:** `module-crm-deal-registration`
 **Domain specification:** [Deal Registration](../features/deal-registration.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

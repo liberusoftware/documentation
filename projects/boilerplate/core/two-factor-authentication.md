@@ -1,6 +1,10 @@
 # Boilerplate: Two-Factor Authentication domain packages
 
-**Composer package:** `module-two-factor-authentication`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#two-factor-authentication). Observed identity: [`liberusoftware/two-factor-authentication`](../../../modules/source/liberusoftware--two-factor-authentication.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-two-factor-authentication`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** TOTP enrollment, recovery codes, enforcement, trusted devices, recovery, and audit.
 

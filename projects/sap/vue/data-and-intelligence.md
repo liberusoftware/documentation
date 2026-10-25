@@ -1,127 +1,60 @@
-# SAP: Data and Intelligence Vue + Inertia
+# Data and intelligence: Vue + Inertia design
 
-## Canonical one-to-one Vue/Inertia implementation
+**Status:** proposed enterprise implementation. The [current SAP foundation](../SOURCE-APPLICATION.md) does not establish these business workflows or this presentation as implemented. Use the [detailed domain contract](../design/data-and-intelligence.md) and [API plan](../api/data-and-intelligence.md) as the review target.
 
-**Package:** `module-sap-data-and-intelligence-vue-inertia`
-**Matching domain module:** `sap-data-and-intelligence`
-**Application:** SAP
-**Source feature:** [Data and Intelligence](../features/data-and-intelligence.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/data-and-intelligence.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#data-and-intelligence). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
 
-## 1. Purpose and ownership
+## Ownership and delivery scope
 
-This optional Vue 3 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, Vue components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+Operational products own transactional records and domain metrics. Enterprise owns governed semantic definitions, cross-product projections, lineage and report delivery where needed.
 
-## 2. Module-specific surfaces
+Reuse the [shared enterprise operation design](../design/OPERATIONS.md) for command identities, concurrency, handoffs and recovery. This capability group adds only its own orchestration/projection and genuine missing behavior; it does not create another owner for existing product records.
 
-- **Governed metrics:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Semantic models:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Reports:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Planning:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Forecasts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Data quality:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Lineage:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Exports:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **AI assistance:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+## Workflow and command contract
 
-## 3. Vue 3 + Inertia 3 implementation
+**Workspace surfaces:** report catalogue, filter/freshness preview, run progress, lineage drill-down, governed metric explanations.
 
-- Register a stable `module-sap-data-and-intelligence-vue-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
-- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, composables under `resources/js/composables`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
-- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+**Business lifecycle:** requested → authorized → queued → running → ready → expired; failed and cancelled preserve execution evidence.
 
-### Capability mapping
+Apply row/field policy to every source and output; record freshness and lineage. Define currency/timezone and period semantics. Published metrics need an accountable definition owner; AI suggestions do not become authoritative transactions.
 
-- `governed-metrics`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `semantic-models`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `reports`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `planning`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `forecasts`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `data-quality`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `lineage`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `exports`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `ai-assistance`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+The illustrated `run` command takes `report_definition_version`, `legal_entity_scope`, `parameter_snapshot`, `source_watermarks`, with a documented record-version precondition and scoped operation identity. It starts from `authorized` and reaches `ready` only after its defined business outcome. The [API example](../api/data-and-intelligence.md#3-endpoint-examples) provides the proposed body and [draft request schema](../api/contracts/data-and-intelligence.request.schema.json).
 
-## 4. API contract and Inertia consumption
+Authorize every source, row/field and selected entity, then record metric versions and freshness policy. Reject or visibly qualify an incomplete source snapshot according to the report definition.
 
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
-- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+Produce a permission-scoped report artifact with expiry and lineage. Recheck authorization on download, even if the report was authorized when queued.
 
-## 5. Security and verification
+## Layer implementation
 
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
-- Test observable behavior with TypeScript, ESLint, Vitest, Vue Test Utils, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
+The Laravel host owns Inertia routes/controllers and passes authorized serializable page props to typed Vue components/composables. Compose a queue, subject/evidence detail and `run` form for the domain workspace. Props include the record/version, permitted actions, safe draft defaults and operation reference, not an unrestricted model snapshot.
 
-## 6. Definition of done
+An Inertia visit expects an Inertia page/redirect lifecycle. Use the Laravel controller's reviewed public application boundary or a deliberate API adapter and then return the appropriate Inertia response. Do not point an Inertia page visit at a bare REST JSON endpoint and assume it is an Inertia page.
 
-- Package identity, public exports, API dependency, and module dependency match `sap-data-and-intelligence` one-to-one.
-- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
-- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+Keep `report_definition_version`, `legal_entity_scope`, `parameter_snapshot`, `source_watermarks` in a typed command draft and map actual server field errors to the form. Preserve navigation/filter state where safe, focus the actionable error summary, and reload/review a stale record before resubmission. Laravel reauthorizes every command independently of client visibility.
 
-## Canonical one-to-one Vue/Inertia implementation
+Share framework-independent Vue primitives with Nuxt where the contracts fit. Keep Inertia navigation/forms/page props in its wrapper and Nuxt server/browser transport, routing and runtime configuration in its adapter.
 
-**Package:** `module-sap-data-and-intelligence-vue-inertia`
-**Matching domain module:** `sap-data-and-intelligence`
-**Application:** SAP
-**Source feature:** [Data and Intelligence](../features/data-and-intelligence.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/data-and-intelligence.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+The Vue UI displays business and operation states separately. A queued response preserves a pending status and authorized progress link; it does not manufacture the eventual domain outcome in local state.
 
-## 1. Purpose and ownership
+## Authorization, recovery and operations
 
-This optional Vue 3 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, Vue components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+Authors define reports within approved sources; data owners approve sensitive fields; viewers can run/export only their permitted entity and purpose scope.
 
-## 2. Module-specific surfaces
+A stale or incomplete feed must be visible in output metadata and may block governed reports. Retry failed partitions with the same run identity; recheck authorization at download time.
 
-- **Governed metrics:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Semantic models:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Reports:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Planning:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Forecasts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Data quality:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Lineage:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Exports:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **AI assistance:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+Show the selected entity, source/subject reference, current business state and separate operation progress. Preserve safe drafts on validation/conflict. Reauthenticate on expiry and discard protected cached data after scope/permission changes. A network timeout never establishes whether an external write succeeded; use the durable operation/source reference for reconciliation.
 
-## 3. Vue 3 + Inertia 3 implementation
+## Module-specific acceptance
 
-- Register a stable `module-sap-data-and-intelligence-vue-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
-- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, composables under `resources/js/composables`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
-- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+- A report cannot leak a hidden entity through totals or cache reuse; revoked access blocks download; source totals and declared watermark reconciliation agree.
+- Repeated commands return the documented existing result or a clear conflict; they cannot duplicate a completed external side effect.
+- A tenant/entity switch, permission revocation or expired session cannot reuse another scope's cached record, attachment or exported file.
+- A downstream failure remains observable with a valid owner/recovery path across every enabled presentation.
 
-### Capability mapping
+- Exercise the `run` example with allowed, denied, invalid, stale, duplicate and uncertain-result paths; confirm `ready` only from its authoritative outcome.
+- Verify the enabled layer uses the same domain/operation contract as other surfaces and cannot bypass it through generic saves, hydrated state, direct JSON fields or offline replay.
+- Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
 
-- `governed-metrics`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `semantic-models`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `reports`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `planning`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `forecasts`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `data-quality`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `lineage`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `exports`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `ai-assistance`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-
-## 4. API contract and Inertia consumption
-
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
-- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
-
-## 5. Security and verification
-
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
-- Test observable behavior with TypeScript, ESLint, Vitest, Vue Test Utils, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
-
-## 6. Definition of done
-
-- Package identity, public exports, API dependency, and module dependency match `sap-data-and-intelligence` one-to-one.
-- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
-- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.

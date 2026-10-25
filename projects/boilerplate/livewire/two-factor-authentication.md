@@ -1,6 +1,10 @@
 # Boilerplate: Two-Factor Authentication Livewire presentation packages
 
-**Composer package:** `module-two-factor-authentication-livewire`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#two-factor-authentication). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-two-factor-authentication-livewire`
 **Matching core package:** [`module-two-factor-authentication`](../core/two-factor-authentication.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** TOTP enrollment, recovery codes, enforcement, trusted devices, recovery, and audit.

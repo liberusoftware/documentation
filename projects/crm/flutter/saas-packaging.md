@@ -1,5 +1,9 @@
 # Saas Packaging Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#saas-packaging). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-saas-packaging-flutter
 **Matching core package:** module-crm-saas-packaging ([implementation](../core/saas-packaging.md))
 **Matching API package:** module-crm-saas-packaging-api ([contract](../api/saas-packaging.md))

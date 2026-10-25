@@ -1,12 +1,16 @@
 # CMS: Module Cms Migration Framework Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-migration-framework). Observed identity: [`liberusoftware/module-cms-migration-framework-filament`](../../../modules/source/liberusoftware--module-cms-migration-framework-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-cms-module-cms-migration-framework-filament`  
 **Matching domain module:** `module-cms-migration-framework`  
 **Application:** CMS  
 **Source feature:** [Module Cms Migration Framework](../features/module-cms-migration-framework.md)  
-**Architecture:** [FILAMENT.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

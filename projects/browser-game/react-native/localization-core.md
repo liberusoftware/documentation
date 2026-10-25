@@ -1,5 +1,9 @@
 # Localization Core React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#localization-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-browser-game-localization-core-react-native
 **Matching core package:** module-browser-game-localization-core ([implementation](../core/localization-core.md))
 **Matching API package:** module-browser-game-localization-core-api ([contract](../api/localization-core.md))

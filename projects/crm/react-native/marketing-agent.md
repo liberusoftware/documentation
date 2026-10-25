@@ -1,5 +1,9 @@
 # Marketing Agent React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#marketing-agent). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-marketing-agent-react-native
 **Matching core package:** module-crm-marketing-agent ([implementation](../core/marketing-agent.md))
 **Matching API package:** module-crm-marketing-agent-api ([contract](../api/marketing-agent.md))

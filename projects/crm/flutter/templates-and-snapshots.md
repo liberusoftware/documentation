@@ -1,5 +1,9 @@
 # Templates And Snapshots Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#templates-and-snapshots). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-templates-and-snapshots-flutter
 **Matching core package:** module-crm-templates-and-snapshots ([implementation](../core/templates-and-snapshots.md))
 **Matching API package:** module-crm-templates-and-snapshots-api ([contract](../api/templates-and-snapshots.md))

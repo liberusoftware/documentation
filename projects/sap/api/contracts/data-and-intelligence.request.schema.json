@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:data-and-intelligence:run:request:v1",
+  "title": "Data and intelligence: proposed run request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "report_definition_version",
+    "legal_entity_scope",
+    "parameter_snapshot",
+    "source_watermarks"
+  ],
+  "properties": {
+    "report_definition_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "legal_entity_scope": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "parameter_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "period",
+        "currency"
+      ],
+      "properties": {
+        "period": {
+          "type": "string",
+          "minLength": 1
+        },
+        "currency": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "source_watermarks": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "accounting"
+      ],
+      "properties": {
+        "accounting": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  }
+}

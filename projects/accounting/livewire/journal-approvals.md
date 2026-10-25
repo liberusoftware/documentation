@@ -1,12 +1,16 @@
 # Accounting: Journal Approvals Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#journal-approvals). Observed identity: [`liberusoftware/module-accounting-journal-approvals-livewire`](../../../modules/source/liberusoftware--module-accounting-journal-approvals-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-accounting-journal-approvals-livewire`  
 **Matching domain module:** `accounting-journal-approvals`  
 **Application:** Accounting  
 **Source feature:** [Journal Approvals](../features/journal-approvals.md)  
-**Architecture:** [LIVEWIRE.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,5 +1,9 @@
 # Currency Context Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#currency-context). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-currency-context-flutter
 **Matching core package:** module-billing-currency-context ([implementation](../core/currency-context.md))
 **Matching API package:** module-billing-currency-context-api ([contract](../api/currency-context.md))

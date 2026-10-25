@@ -1,12 +1,16 @@
 # Accounting: Accounting Inventory Accounting Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-inventory-accounting). Observed identity: [`liberusoftware/module-accounting-inventory-accounting-filament`](../../../modules/source/liberusoftware--module-accounting-inventory-accounting-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-accounting-accounting-inventory-accounting-filament`  
 **Matching domain module:** `accounting-inventory-accounting`  
 **Application:** Accounting  
 **Source feature:** [Accounting Inventory Accounting](../features/accounting-inventory-accounting.md)  
-**Architecture:** [FILAMENT.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

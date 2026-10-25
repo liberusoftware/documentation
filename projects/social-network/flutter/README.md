@@ -1,50 +1,69 @@
 # Social Network Flutter + Dart Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **59 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-- [Activity Comments Flutter](activity-comments.md) — `module-social-network-activity-comments-flutter`
-- [Analytics Core Flutter](analytics-core.md) — `module-social-network-analytics-core-flutter`
-- [Analytics Google Flutter](analytics-google.md) — `module-social-network-analytics-google-flutter`
-- [Analytics Meta Flutter](analytics-meta.md) — `module-social-network-analytics-meta-flutter`
-- [Api Access Flutter](api-access.md) — `module-social-network-api-access-flutter`
-- [Application Flutter](application.md) — `module-social-network-application-flutter`
-- [Audit Flutter](audit.md) — `module-social-network-audit-flutter`
-- [Currency Context Flutter](currency-context.md) — `module-social-network-currency-context-flutter`
-- [Developer Experience Flutter](developer-experience.md) — `module-social-network-developer-experience-flutter`
-- [Feature Flags Flutter](feature-flags.md) — `module-social-network-feature-flags-flutter`
-- [Files Media Flutter](files-media.md) — `module-social-network-files-media-flutter`
-- [Identity Core Flutter](identity-core.md) — `module-social-network-identity-core-flutter`
-- [Identity Socialstream Flutter](identity-socialstream.md) — `module-social-network-identity-socialstream-flutter`
-- [Import Export Flutter](import-export.md) — `module-social-network-import-export-flutter`
-- [Integrations Flutter](integrations.md) — `module-social-network-integrations-flutter`
-- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-social-network-jetstream-bridge-flutter`
-- [Localization Core Flutter](localization-core.md) — `module-social-network-localization-core-flutter`
-- [Localization Mymemory Flutter](localization-mymemory.md) — `module-social-network-localization-mymemory-flutter`
-- [Module Manager Flutter](module-manager.md) — `module-social-network-module-manager-flutter`
-- [Notifications Flutter](notifications.md) — `module-social-network-notifications-flutter`
-- [Observability Flutter](observability.md) — `module-social-network-observability-flutter`
-- [Organizations Teams Flutter](organizations-teams.md) — `module-social-network-organizations-teams-flutter`
-- [Profiles Flutter](profiles.md) — `module-social-network-profiles-flutter`
-- [Roles Permissions Flutter](roles-permissions.md) — `module-social-network-roles-permissions-flutter`
-- [Scheduler Queues Flutter](scheduler-queues.md) — `module-social-network-scheduler-queues-flutter`
-- [Search Flutter](search.md) — `module-social-network-search-flutter`
-- [Sessions Devices Flutter](sessions-devices.md) — `module-social-network-sessions-devices-flutter`
-- [Settings Flutter](settings.md) — `module-social-network-settings-flutter`
-- [Social Network Analytics Flutter](social-network-analytics.md) — `module-social-network-social-network-analytics-flutter`
-- [Social Network Communities Flutter](social-network-communities.md) — `module-social-network-social-network-communities-flutter`
-- [Social Network Discovery Flutter](social-network-discovery.md) — `module-social-network-social-network-discovery-flutter`
-- [Social Network Engagement Flutter](social-network-engagement.md) — `module-social-network-social-network-engagement-flutter`
-- [Social Network Events Flutter](social-network-events.md) — `module-social-network-social-network-events-flutter`
-- [Social Network Federation Flutter](social-network-federation.md) — `module-social-network-social-network-federation-flutter`
-- [Social Network Feed Flutter](social-network-feed.md) — `module-social-network-social-network-feed-flutter`
-- [Social Network Media Flutter](social-network-media.md) — `module-social-network-social-network-media-flutter`
-- [Social Network Messaging Flutter](social-network-messaging.md) — `module-social-network-social-network-messaging-flutter`
-- [Social Network Moderation Flutter](social-network-moderation.md) — `module-social-network-social-network-moderation-flutter`
-- [Social Network Notifications Flutter](social-network-notifications.md) — `module-social-network-social-network-notifications-flutter`
-- [Social Network Profiles Flutter](social-network-profiles.md) — `module-social-network-social-network-profiles-flutter`
-- [Social Network Publishing Flutter](social-network-publishing.md) — `module-social-network-social-network-publishing-flutter`
-- [Social Network Social Core Flutter](social-network-social-core.md) — `module-social-network-social-network-social-core-flutter`
-- [Social Network Social Graph Flutter](social-network-social-graph.md) — `module-social-network-social-network-social-graph-flutter`
-- [Theme Support Flutter](theme-support.md) — `module-social-network-theme-support-flutter`
-- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-social-network-two-factor-authentication-flutter`
-- [Webhooks Flutter](webhooks.md) — `module-social-network-webhooks-flutter`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Flutter + Dart](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Flutter + Dart](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Flutter + Dart](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Flutter + Dart](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Analytics Flutter + Dart](analytics.md) | [Target/source map](../SOURCE-MAPPING.md#analytics) | [core](../core/analytics.md) · [api](../api/analytics.md) · [nextjs](../nextjs/analytics.md) |
+| [Api Access Flutter + Dart](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Flutter + Dart](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Flutter + Dart](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Communities Flutter + Dart](communities.md) | [Target/source map](../SOURCE-MAPPING.md#communities) | [core](../core/communities.md) · [api](../api/communities.md) · [nextjs](../nextjs/communities.md) |
+| [Currency Context Flutter + Dart](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Flutter + Dart](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Discovery Flutter + Dart](discovery.md) | [Target/source map](../SOURCE-MAPPING.md#discovery) | [core](../core/discovery.md) · [api](../api/discovery.md) · [nextjs](../nextjs/discovery.md) |
+| [Engagement Flutter + Dart](engagement.md) | [Target/source map](../SOURCE-MAPPING.md#engagement) | [core](../core/engagement.md) · [api](../api/engagement.md) · [nextjs](../nextjs/engagement.md) |
+| [Events Flutter + Dart](events.md) | [Target/source map](../SOURCE-MAPPING.md#events) | [core](../core/events.md) · [api](../api/events.md) · [nextjs](../nextjs/events.md) |
+| [Feature Flags Flutter + Dart](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Federation Flutter + Dart](federation.md) | [Target/source map](../SOURCE-MAPPING.md#federation) | [core](../core/federation.md) · [api](../api/federation.md) · [nextjs](../nextjs/federation.md) |
+| [Feed Flutter + Dart](feed.md) | [Target/source map](../SOURCE-MAPPING.md#feed) | [core](../core/feed.md) · [api](../api/feed.md) · [nextjs](../nextjs/feed.md) |
+| [Files Media Flutter + Dart](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Flutter + Dart](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Flutter + Dart](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Flutter + Dart](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Flutter + Dart](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Flutter + Dart](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core Flutter + Dart](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Flutter + Dart](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Media Flutter + Dart](media.md) | [Target/source map](../SOURCE-MAPPING.md#media) | [core](../core/media.md) · [api](../api/media.md) · [nextjs](../nextjs/media.md) |
+| [Messaging Flutter + Dart](messaging.md) | [Target/source map](../SOURCE-MAPPING.md#messaging) | [core](../core/messaging.md) · [api](../api/messaging.md) · [nextjs](../nextjs/messaging.md) |
+| [Moderation Flutter + Dart](moderation.md) | [Target/source map](../SOURCE-MAPPING.md#moderation) | [core](../core/moderation.md) · [api](../api/moderation.md) · [nextjs](../nextjs/moderation.md) |
+| [Module Manager Flutter + Dart](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Flutter + Dart](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Flutter + Dart](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Flutter + Dart](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles Flutter + Dart](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Publishing Flutter + Dart](publishing.md) | [Target/source map](../SOURCE-MAPPING.md#publishing) | [core](../core/publishing.md) · [api](../api/publishing.md) · [nextjs](../nextjs/publishing.md) |
+| [Roles Permissions Flutter + Dart](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Flutter + Dart](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Flutter + Dart](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Flutter + Dart](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Flutter + Dart](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Social Core Flutter + Dart](social-core.md) | [Target/source map](../SOURCE-MAPPING.md#social-core) | [core](../core/social-core.md) · [api](../api/social-core.md) · [nextjs](../nextjs/social-core.md) |
+| [Social Graph Flutter + Dart](social-graph.md) | [Target/source map](../SOURCE-MAPPING.md#social-graph) | [core](../core/social-graph.md) · [api](../api/social-graph.md) · [nextjs](../nextjs/social-graph.md) |
+| [Social Network Analytics Flutter + Dart](social-network-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-analytics) | [core](../core/social-network-analytics.md) · [api](../api/social-network-analytics.md) · [nextjs](../nextjs/social-network-analytics.md) |
+| [Social Network Communities Flutter + Dart](social-network-communities.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-communities) | [core](../core/social-network-communities.md) · [api](../api/social-network-communities.md) · [nextjs](../nextjs/social-network-communities.md) |
+| [Social Network Discovery Flutter + Dart](social-network-discovery.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-discovery) | [core](../core/social-network-discovery.md) · [api](../api/social-network-discovery.md) · [nextjs](../nextjs/social-network-discovery.md) |
+| [Social Network Engagement Flutter + Dart](social-network-engagement.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-engagement) | [core](../core/social-network-engagement.md) · [api](../api/social-network-engagement.md) · [nextjs](../nextjs/social-network-engagement.md) |
+| [Social Network Events Flutter + Dart](social-network-events.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-events) | [core](../core/social-network-events.md) · [api](../api/social-network-events.md) · [nextjs](../nextjs/social-network-events.md) |
+| [Social Network Federation Flutter + Dart](social-network-federation.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-federation) | [core](../core/social-network-federation.md) · [api](../api/social-network-federation.md) · [nextjs](../nextjs/social-network-federation.md) |
+| [Social Network Feed Flutter + Dart](social-network-feed.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-feed) | [core](../core/social-network-feed.md) · [api](../api/social-network-feed.md) · [nextjs](../nextjs/social-network-feed.md) |
+| [Social Network Media Flutter + Dart](social-network-media.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-media) | [core](../core/social-network-media.md) · [api](../api/social-network-media.md) · [nextjs](../nextjs/social-network-media.md) |
+| [Social Network Messaging Flutter + Dart](social-network-messaging.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-messaging) | [core](../core/social-network-messaging.md) · [api](../api/social-network-messaging.md) · [nextjs](../nextjs/social-network-messaging.md) |
+| [Social Network Moderation Flutter + Dart](social-network-moderation.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-moderation) | [core](../core/social-network-moderation.md) · [api](../api/social-network-moderation.md) · [nextjs](../nextjs/social-network-moderation.md) |
+| [Social Network Notifications Flutter + Dart](social-network-notifications.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-notifications) | [core](../core/social-network-notifications.md) · [api](../api/social-network-notifications.md) · [nextjs](../nextjs/social-network-notifications.md) |
+| [Social Network Profiles Flutter + Dart](social-network-profiles.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-profiles) | [core](../core/social-network-profiles.md) · [api](../api/social-network-profiles.md) · [nextjs](../nextjs/social-network-profiles.md) |
+| [Social Network Publishing Flutter + Dart](social-network-publishing.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-publishing) | [core](../core/social-network-publishing.md) · [api](../api/social-network-publishing.md) · [nextjs](../nextjs/social-network-publishing.md) |
+| [Social Network Social Core Flutter + Dart](social-network-social-core.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-social-core) | [core](../core/social-network-social-core.md) · [api](../api/social-network-social-core.md) · [nextjs](../nextjs/social-network-social-core.md) |
+| [Social Network Social Graph Flutter + Dart](social-network-social-graph.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-social-graph) | [core](../core/social-network-social-graph.md) · [api](../api/social-network-social-graph.md) · [nextjs](../nextjs/social-network-social-graph.md) |
+| [Theme Support Flutter + Dart](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Flutter + Dart](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Flutter + Dart](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

@@ -2,9 +2,9 @@
 
 These pages describe what an end user sees when this module is enabled. They are shared by public web, authenticated portal, staff web, and mobile experiences where applicable.
 
-| Module | User guide | Developer source |
-| --- | --- | --- |
-| Business Workflow Reconciliation | [Guide](business-workflow-reconciliation.md) | [features](../../../../projects/liberu/features/business-workflow-reconciliation.md) |
-| Executive Insights | [Guide](executive-insights.md) | [features](../../../../projects/liberu/features/executive-insights.md) |
-| Platform Orchestration | [Guide](platform-orchestration.md) | [features](../../../../projects/liberu/features/platform-orchestration.md) |
-| Revenue AND Care Orchestration | [Guide](revenue-and-care-orchestration.md) | [features](../../../../projects/liberu/features/revenue-and-care-orchestration.md) |
+| Module/task guide | Design/source context |
+| --- | --- |
+| [Business Workflow Reconciliation](business-workflow-reconciliation.md) | [Context](../../../../projects/liberu/SOURCE-MAPPING.md#business-workflow-reconciliation) |
+| [Executive Insights](executive-insights.md) | [Context](../../../../projects/liberu/SOURCE-MAPPING.md#executive-insights) |
+| [Platform Orchestration](platform-orchestration.md) | [Context](../../../../projects/liberu/SOURCE-MAPPING.md#platform-orchestration) |
+| [Revenue AND Care Orchestration](revenue-and-care-orchestration.md) | [Context](../../../../projects/liberu/SOURCE-MAPPING.md#revenue-and-care-orchestration) |

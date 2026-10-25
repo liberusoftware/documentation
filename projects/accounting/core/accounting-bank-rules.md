@@ -1,8 +1,12 @@
 # Accounting: Accounting Bank Rules Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-bank-rules). Observed identity: [`liberusoftware/module-accounting-bank-rules`](../../../modules/source/liberusoftware--module-accounting-bank-rules.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-bank-rules`
+**Design package identifier:** `module-accounting-accounting-bank-rules`
 **Domain specification:** [Accounting Bank Rules](../features/accounting-bank-rules.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

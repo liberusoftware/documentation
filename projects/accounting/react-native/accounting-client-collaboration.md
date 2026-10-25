@@ -1,5 +1,9 @@
 # Accounting Client Collaboration React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-client-collaboration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-client-collaboration-react-native
 **Matching core package:** module-accounting-accounting-client-collaboration ([implementation](../core/accounting-client-collaboration.md))
 **Matching API package:** module-accounting-accounting-client-collaboration-api ([contract](../api/accounting-client-collaboration.md))

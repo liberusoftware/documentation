@@ -1,8 +1,12 @@
 # Maintenance: Jetstream Bridge Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#jetstream-bridge). Observed identity: [`liberusoftware/jetstream-bridge`](../../../modules/source/liberusoftware--jetstream-bridge.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-maintenance-jetstream-bridge`
+**Design package identifier:** `module-maintenance-jetstream-bridge`
 **Domain specification:** [Jetstream Bridge](../features/jetstream-bridge.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

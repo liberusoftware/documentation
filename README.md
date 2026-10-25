@@ -106,3 +106,7 @@ These root indexes cover the complete existing module matrix. Select only the ad
 - [Contributing](standards/CONTRIBUTING.md)
 - [Security policy](architecture/SECURITY.md)
 - [Documentation standard](standards/DOCUMENTATION.md)
+
+## Source-backed development references
+
+Use the [observed implementation catalogue](modules/source/README.md) for exact package identities, dependencies, callables, persistence and route sources. Each cloned project now has `DEVELOPMENT.md` and `SOURCE-MAPPING.md` linked from its project README. The [Composer](guides/COMPOSER.md) and [npm](guides/NPM.md) guides cover local updates and publishing; the [Next.js plans](modules/nextjs/README.md) explain the additional React presentation option.

@@ -1,5 +1,9 @@
 # Audit And History React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#audit-and-history). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-audit-and-history-react-native
 **Matching core package:** module-cms-audit-and-history ([implementation](../core/audit-and-history.md))
 **Matching API package:** module-cms-audit-and-history-api ([contract](../api/audit-and-history.md))

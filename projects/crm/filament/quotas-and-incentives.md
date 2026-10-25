@@ -1,12 +1,16 @@
 # CRM: Quotas and Incentives Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#quotas-and-incentives). Observed identity: [`liberusoftware/module-crm-quotas-and-incentives-filament`](../../../modules/source/liberusoftware--module-crm-quotas-and-incentives-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-quotas-and-incentives-filament`  
 **Matching domain module:** `crm-quotas-and-incentives`  
 **Application:** CRM  
 **Source feature:** [Quotas and Incentives](../features/quotas-and-incentives.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

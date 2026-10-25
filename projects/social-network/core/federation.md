@@ -1,8 +1,12 @@
 # Social Network: Federation Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#federation). Observed identity: [`liberusoftware/module-social-network-federation`](../../../modules/source/liberusoftware--module-social-network-federation.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-social-network-federation`
+**Design package identifier:** `module-social-network-federation`
 **Domain specification:** [Federation](../features/federation.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

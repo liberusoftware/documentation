@@ -1,35 +1,53 @@
 # Boilerplate React + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments React](activity-comments.md) — `module-boilerplate-activity-comments-react-inertia`
-- [Analytics Core React](analytics-core.md) — `module-boilerplate-analytics-core-react-inertia`
-- [Analytics Google React](analytics-google.md) — `module-boilerplate-analytics-google-react-inertia`
-- [Analytics Meta React](analytics-meta.md) — `module-boilerplate-analytics-meta-react-inertia`
-- [Api Access React](api-access.md) — `module-boilerplate-api-access-react-inertia`
-- [Application React](application.md) — `module-boilerplate-application-react-inertia`
-- [Audit React](audit.md) — `module-boilerplate-audit-react-inertia`
-- [Currency Context React](currency-context.md) — `module-boilerplate-currency-context-react-inertia`
-- [Developer Experience React](developer-experience.md) — `module-boilerplate-developer-experience-react-inertia`
-- [Feature Flags React](feature-flags.md) — `module-boilerplate-feature-flags-react-inertia`
-- [Files Media React](files-media.md) — `module-boilerplate-files-media-react-inertia`
-- [Identity Core React](identity-core.md) — `module-boilerplate-identity-core-react-inertia`
-- [Identity Socialstream React](identity-socialstream.md) — `module-boilerplate-identity-socialstream-react-inertia`
-- [Import Export React](import-export.md) — `module-boilerplate-import-export-react-inertia`
-- [Integrations React](integrations.md) — `module-boilerplate-integrations-react-inertia`
-- [Jetstream Bridge React](jetstream-bridge.md) — `module-boilerplate-jetstream-bridge-react-inertia`
-- [Localization Core React](localization-core.md) — `module-boilerplate-localization-core-react-inertia`
-- [Localization Mymemory React](localization-mymemory.md) — `module-boilerplate-localization-mymemory-react-inertia`
-- [Module Manager React](module-manager.md) — `module-boilerplate-module-manager-react-inertia`
-- [Notifications React](notifications.md) — `module-boilerplate-notifications-react-inertia`
-- [Observability React](observability.md) — `module-boilerplate-observability-react-inertia`
-- [Organizations Teams React](organizations-teams.md) — `module-boilerplate-organizations-teams-react-inertia`
-- [Profiles React](profiles.md) — `module-boilerplate-profiles-react-inertia`
-- [Roles Permissions React](roles-permissions.md) — `module-boilerplate-roles-permissions-react-inertia`
-- [Scheduler Queues React](scheduler-queues.md) — `module-boilerplate-scheduler-queues-react-inertia`
-- [Search React](search.md) — `module-boilerplate-search-react-inertia`
-- [Sessions Devices React](sessions-devices.md) — `module-boilerplate-sessions-devices-react-inertia`
-- [Settings React](settings.md) — `module-boilerplate-settings-react-inertia`
-- [Theme Support React](theme-support.md) — `module-boilerplate-theme-support-react-inertia`
-- [Two Factor Authentication React](two-factor-authentication.md) — `module-boilerplate-two-factor-authentication-react-inertia`
-- [Webhooks React](webhooks.md) — `module-boilerplate-webhooks-react-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity and Comments React presentation packages](activity-and-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-and-comments) | [core](../core/activity-and-comments.md) · [api](../api/activity-and-comments.md) · [nextjs](../nextjs/activity-and-comments.md) |
+| [Activity Comments React + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core React presentation packages](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [API Access React presentation packages](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Core React presentation packages](application-core.md) | [Target/source map](../SOURCE-MAPPING.md#application-core) | [core](../core/application-core.md) · [api](../api/application-core.md) · [nextjs](../nextjs/application-core.md) |
+| [Application React + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit React presentation packages](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Currency Context React presentation packages](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience React presentation packages](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags React presentation packages](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files and Media React presentation packages](files-and-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-and-media) | [core](../core/files-and-media.md) · [api](../api/files-and-media.md) · [nextjs](../nextjs/files-and-media.md) |
+| [Files Media React + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Google Analytics React presentation packages](google-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#google-analytics) | [core](../core/google-analytics.md) · [api](../api/google-analytics.md) · [nextjs](../nextjs/google-analytics.md) |
+| [Identity Core React + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Identity React presentation packages](identity.md) | [Target/source map](../SOURCE-MAPPING.md#identity) | [core](../core/identity.md) · [api](../api/identity.md) · [nextjs](../nextjs/identity.md) |
+| [Import and Export React presentation packages](import-and-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-and-export) | [core](../core/import-and-export.md) · [api](../api/import-and-export.md) · [nextjs](../nextjs/import-and-export.md) |
+| [Import Export React + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations React presentation packages](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge React presentation packages](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core React + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Localization React presentation packages](localization.md) | [Target/source map](../SOURCE-MAPPING.md#localization) | [core](../core/localization.md) · [api](../api/localization.md) · [nextjs](../nextjs/localization.md) |
+| [Meta Server-Side Tracking React presentation packages](meta-server-side-tracking.md) | [Target/source map](../SOURCE-MAPPING.md#meta-server-side-tracking) | [core](../core/meta-server-side-tracking.md) · [api](../api/meta-server-side-tracking.md) · [nextjs](../nextjs/meta-server-side-tracking.md) |
+| [Module Manager React presentation packages](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications React presentation packages](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability React presentation packages](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations and Teams React presentation packages](organizations-and-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-and-teams) | [core](../core/organizations-and-teams.md) · [api](../api/organizations-and-teams.md) · [nextjs](../nextjs/organizations-and-teams.md) |
+| [Organizations Teams React + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles React presentation packages](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles and Permissions React presentation packages](roles-and-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-and-permissions) | [core](../core/roles-and-permissions.md) · [api](../api/roles-and-permissions.md) · [nextjs](../nextjs/roles-and-permissions.md) |
+| [Roles Permissions React + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler and Queues React presentation packages](scheduler-and-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-and-queues) | [core](../core/scheduler-and-queues.md) · [api](../api/scheduler-and-queues.md) · [nextjs](../nextjs/scheduler-and-queues.md) |
+| [Scheduler Queues React + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search React presentation packages](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions and Devices React presentation packages](sessions-and-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-and-devices) | [core](../core/sessions-and-devices.md) · [api](../api/sessions-and-devices.md) · [nextjs](../nextjs/sessions-and-devices.md) |
+| [Sessions Devices React + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings React presentation packages](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support React + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two-Factor Authentication React presentation packages](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks React presentation packages](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

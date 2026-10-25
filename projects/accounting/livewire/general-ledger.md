@@ -1,12 +1,16 @@
 # Accounting: General Ledger Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#general-ledger). Observed identity: [`liberusoftware/module-accounting-general-ledger-livewire`](../../../modules/source/liberusoftware--module-accounting-general-ledger-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-accounting-general-ledger-livewire`  
 **Matching domain module:** `accounting-general-ledger`  
 **Application:** Accounting  
 **Source feature:** [General Ledger](../features/general-ledger.md)  
-**Architecture:** [LIVEWIRE.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

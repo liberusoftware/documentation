@@ -1,19 +1,23 @@
 # End-user module guides
 
-This index covers the user-visible module behavior for every documented project. Start with a [project guide](../projects/README.md), then choose its module map. These pages describe observable product behavior across web and mobile; the matching feature/core document remains the implementation source of truth.
+Choose a project, then the module/task guide. The catalogue preserves all documented spellings, including compatibility aliases; counts are documents, not deployed features or separate independent packages. Source maps and module-specific references distinguish current code from target behavior.
 
-- [Liberu Accounting](../projects/accounting/modules/README.md) — 105 module journeys
-- [Liberu Automation](../projects/automation/modules/README.md) — 11 module journeys
-- [Liberu Billing](../projects/billing/modules/README.md) — 16 module journeys
-- [Liberu Laravel Boilerplate](../projects/boilerplate/modules/README.md) — 28 module journeys
-- [Liberu Browser Game](../projects/browser-game/modules/README.md) — 15 module journeys
-- [Liberu CMS](../projects/cms/modules/README.md) — 81 module journeys
-- [Liberu Control Panel](../projects/control-panel/modules/README.md) — 15 module journeys
-- [Liberu CRM](../projects/crm/modules/README.md) — 95 module journeys
-- [Liberu Ecommerce](../projects/ecommerce/modules/README.md) — 105 module journeys
-- [Liberu Genealogy](../projects/genealogy/modules/README.md) — 14 module journeys
-- [Liberu Business Platform](../projects/liberu/modules/README.md) — 4 module journeys
-- [Liberu Maintenance](../projects/maintenance/modules/README.md) — 14 module journeys
-- [Liberu Real Estate](../projects/real-estate/modules/README.md) — 15 module journeys
-- [Liberu Enterprise Resource Planning](../projects/sap/modules/README.md) — 16 module journeys
-- [Liberu Social Network](../projects/social-network/modules/README.md) — 15 module journeys
+| Project | Module/task documents |
+| --- | ---: |
+| [accounting](../projects/accounting/modules/README.md) | 241 |
+| [automation](../projects/automation/modules/README.md) | 57 |
+| [billing](../projects/billing/modules/README.md) | 81 |
+| [boilerplate](../projects/boilerplate/modules/README.md) | 43 |
+| [browser-game](../projects/browser-game/modules/README.md) | 61 |
+| [cms](../projects/cms/modules/README.md) | 252 |
+| [control-panel](../projects/control-panel/modules/README.md) | 61 |
+| [crm](../projects/crm/modules/README.md) | 218 |
+| [ecommerce](../projects/ecommerce/modules/README.md) | 107 |
+| [genealogy](../projects/genealogy/modules/README.md) | 62 |
+| [liberu](../projects/liberu/modules/README.md) | 4 |
+| [maintenance](../projects/maintenance/modules/README.md) | 60 |
+| [real-estate](../projects/real-estate/modules/README.md) | 70 |
+| [sap](../projects/sap/modules/README.md) | 16 |
+| [social-network](../projects/social-network/modules/README.md) | 59 |
+
+The [shared experience standard](../WEB-AND-MOBILE.md) covers accessible web/mobile states. Administrators can use the [presentation guide](../../architecture/PRESENTATION.md) and [implementation references](../../modules/source/README.md) for transport, source and package details.

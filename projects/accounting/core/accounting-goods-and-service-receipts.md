@@ -1,8 +1,12 @@
 # Accounting: Accounting Goods And Service Receipts Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-goods-and-service-receipts). Observed identity: [`liberusoftware/module-accounting-goods-and-service-receipts`](../../../modules/source/liberusoftware--module-accounting-goods-and-service-receipts.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-goods-and-service-receipts`
+**Design package identifier:** `module-accounting-accounting-goods-and-service-receipts`
 **Domain specification:** [Accounting Goods And Service Receipts](../features/accounting-goods-and-service-receipts.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

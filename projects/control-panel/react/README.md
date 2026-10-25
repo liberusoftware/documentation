@@ -1,50 +1,71 @@
 # Control Panel React + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **61 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments React](activity-comments.md) — `module-control-panel-activity-comments-react-inertia`
-- [Analytics Core React](analytics-core.md) — `module-control-panel-analytics-core-react-inertia`
-- [Analytics Google React](analytics-google.md) — `module-control-panel-analytics-google-react-inertia`
-- [Analytics Meta React](analytics-meta.md) — `module-control-panel-analytics-meta-react-inertia`
-- [Api Access React](api-access.md) — `module-control-panel-api-access-react-inertia`
-- [Application React](application.md) — `module-control-panel-application-react-inertia`
-- [Audit React](audit.md) — `module-control-panel-audit-react-inertia`
-- [Control Panel Accounts React](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-react-inertia`
-- [Control Panel Api And Automation React](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-react-inertia`
-- [Control Panel Backups React](control-panel-backups.md) — `module-control-panel-control-panel-backups-react-inertia`
-- [Control Panel Certificates React](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-react-inertia`
-- [Control Panel Containers React](control-panel-containers.md) — `module-control-panel-control-panel-containers-react-inertia`
-- [Control Panel Control Core React](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-react-inertia`
-- [Control Panel Databases React](control-panel-databases.md) — `module-control-panel-control-panel-databases-react-inertia`
-- [Control Panel Dns React](control-panel-dns.md) — `module-control-panel-control-panel-dns-react-inertia`
-- [Control Panel Files React](control-panel-files.md) — `module-control-panel-control-panel-files-react-inertia`
-- [Control Panel Kubernetes React](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-react-inertia`
-- [Control Panel Mail React](control-panel-mail.md) — `module-control-panel-control-panel-mail-react-inertia`
-- [Control Panel Monitoring React](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-react-inertia`
-- [Control Panel Os Adapters React](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-react-inertia`
-- [Control Panel Security React](control-panel-security.md) — `module-control-panel-control-panel-security-react-inertia`
-- [Control Panel Web Hosting React](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-react-inertia`
-- [Currency Context React](currency-context.md) — `module-control-panel-currency-context-react-inertia`
-- [Developer Experience React](developer-experience.md) — `module-control-panel-developer-experience-react-inertia`
-- [Feature Flags React](feature-flags.md) — `module-control-panel-feature-flags-react-inertia`
-- [Files Media React](files-media.md) — `module-control-panel-files-media-react-inertia`
-- [Identity Core React](identity-core.md) — `module-control-panel-identity-core-react-inertia`
-- [Identity Socialstream React](identity-socialstream.md) — `module-control-panel-identity-socialstream-react-inertia`
-- [Import Export React](import-export.md) — `module-control-panel-import-export-react-inertia`
-- [Integrations React](integrations.md) — `module-control-panel-integrations-react-inertia`
-- [Jetstream Bridge React](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-react-inertia`
-- [Localization Core React](localization-core.md) — `module-control-panel-localization-core-react-inertia`
-- [Localization Mymemory React](localization-mymemory.md) — `module-control-panel-localization-mymemory-react-inertia`
-- [Module Manager React](module-manager.md) — `module-control-panel-module-manager-react-inertia`
-- [Notifications React](notifications.md) — `module-control-panel-notifications-react-inertia`
-- [Observability React](observability.md) — `module-control-panel-observability-react-inertia`
-- [Organizations Teams React](organizations-teams.md) — `module-control-panel-organizations-teams-react-inertia`
-- [Profiles React](profiles.md) — `module-control-panel-profiles-react-inertia`
-- [Roles Permissions React](roles-permissions.md) — `module-control-panel-roles-permissions-react-inertia`
-- [Scheduler Queues React](scheduler-queues.md) — `module-control-panel-scheduler-queues-react-inertia`
-- [Search React](search.md) — `module-control-panel-search-react-inertia`
-- [Sessions Devices React](sessions-devices.md) — `module-control-panel-sessions-devices-react-inertia`
-- [Settings React](settings.md) — `module-control-panel-settings-react-inertia`
-- [Theme Support React](theme-support.md) — `module-control-panel-theme-support-react-inertia`
-- [Two Factor Authentication React](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-react-inertia`
-- [Webhooks React](webhooks.md) — `module-control-panel-webhooks-react-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Accounts React + Inertia](accounts.md) | [Target/source map](../SOURCE-MAPPING.md#accounts) | [core](../core/accounts.md) · [api](../api/accounts.md) · [nextjs](../nextjs/accounts.md) |
+| [Activity Comments React + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core React + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access React + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [API and Automation React + Inertia](api-and-automation.md) | [Target/source map](../SOURCE-MAPPING.md#api-and-automation) | [core](../core/api-and-automation.md) · [api](../api/api-and-automation.md) · [nextjs](../nextjs/api-and-automation.md) |
+| [Application React + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit React + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Backups React + Inertia](backups.md) | [Target/source map](../SOURCE-MAPPING.md#backups) | [core](../core/backups.md) · [api](../api/backups.md) · [nextjs](../nextjs/backups.md) |
+| [Certificates React + Inertia](certificates.md) | [Target/source map](../SOURCE-MAPPING.md#certificates) | [core](../core/certificates.md) · [api](../api/certificates.md) · [nextjs](../nextjs/certificates.md) |
+| [Containers React + Inertia](containers.md) | [Target/source map](../SOURCE-MAPPING.md#containers) | [core](../core/containers.md) · [api](../api/containers.md) · [nextjs](../nextjs/containers.md) |
+| [Control Core React + Inertia](control-core.md) | [Target/source map](../SOURCE-MAPPING.md#control-core) | [core](../core/control-core.md) · [api](../api/control-core.md) · [nextjs](../nextjs/control-core.md) |
+| [Control Panel Accounts React + Inertia](control-panel-accounts.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-accounts) | [core](../core/control-panel-accounts.md) · [api](../api/control-panel-accounts.md) · [nextjs](../nextjs/control-panel-accounts.md) |
+| [Control Panel Api And Automation React + Inertia](control-panel-api-and-automation.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-api-and-automation) | [core](../core/control-panel-api-and-automation.md) · [api](../api/control-panel-api-and-automation.md) · [nextjs](../nextjs/control-panel-api-and-automation.md) |
+| [Control Panel Backups React + Inertia](control-panel-backups.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-backups) | [core](../core/control-panel-backups.md) · [api](../api/control-panel-backups.md) · [nextjs](../nextjs/control-panel-backups.md) |
+| [Control Panel Certificates React + Inertia](control-panel-certificates.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-certificates) | [core](../core/control-panel-certificates.md) · [api](../api/control-panel-certificates.md) · [nextjs](../nextjs/control-panel-certificates.md) |
+| [Control Panel Containers React + Inertia](control-panel-containers.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-containers) | [core](../core/control-panel-containers.md) · [api](../api/control-panel-containers.md) · [nextjs](../nextjs/control-panel-containers.md) |
+| [Control Panel Control Core React + Inertia](control-panel-control-core.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-control-core) | [core](../core/control-panel-control-core.md) · [api](../api/control-panel-control-core.md) · [nextjs](../nextjs/control-panel-control-core.md) |
+| [Control Panel Databases React + Inertia](control-panel-databases.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-databases) | [core](../core/control-panel-databases.md) · [api](../api/control-panel-databases.md) · [nextjs](../nextjs/control-panel-databases.md) |
+| [Control Panel Dns React + Inertia](control-panel-dns.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-dns) | [core](../core/control-panel-dns.md) · [api](../api/control-panel-dns.md) · [nextjs](../nextjs/control-panel-dns.md) |
+| [Control Panel Files React + Inertia](control-panel-files.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-files) | [core](../core/control-panel-files.md) · [api](../api/control-panel-files.md) · [nextjs](../nextjs/control-panel-files.md) |
+| [Control Panel Kubernetes React + Inertia](control-panel-kubernetes.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-kubernetes) | [core](../core/control-panel-kubernetes.md) · [api](../api/control-panel-kubernetes.md) · [nextjs](../nextjs/control-panel-kubernetes.md) |
+| [Control Panel Mail React + Inertia](control-panel-mail.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-mail) | [core](../core/control-panel-mail.md) · [api](../api/control-panel-mail.md) · [nextjs](../nextjs/control-panel-mail.md) |
+| [Control Panel Monitoring React + Inertia](control-panel-monitoring.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-monitoring) | [core](../core/control-panel-monitoring.md) · [api](../api/control-panel-monitoring.md) · [nextjs](../nextjs/control-panel-monitoring.md) |
+| [Control Panel Os Adapters React + Inertia](control-panel-os-adapters.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-os-adapters) | [core](../core/control-panel-os-adapters.md) · [api](../api/control-panel-os-adapters.md) · [nextjs](../nextjs/control-panel-os-adapters.md) |
+| [Control Panel Security React + Inertia](control-panel-security.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-security) | [core](../core/control-panel-security.md) · [api](../api/control-panel-security.md) · [nextjs](../nextjs/control-panel-security.md) |
+| [Control Panel Web Hosting React + Inertia](control-panel-web-hosting.md) | [Target/source map](../SOURCE-MAPPING.md#control-panel-web-hosting) | [core](../core/control-panel-web-hosting.md) · [api](../api/control-panel-web-hosting.md) · [nextjs](../nextjs/control-panel-web-hosting.md) |
+| [Currency Context React + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Databases React + Inertia](databases.md) | [Target/source map](../SOURCE-MAPPING.md#databases) | [core](../core/databases.md) · [api](../api/databases.md) · [nextjs](../nextjs/databases.md) |
+| [Developer Experience React + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [DNS React + Inertia](dns.md) | [Target/source map](../SOURCE-MAPPING.md#dns) | [core](../core/dns.md) · [api](../api/dns.md) · [nextjs](../nextjs/dns.md) |
+| [Feature Flags React + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media React + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Files React + Inertia](files.md) | [Target/source map](../SOURCE-MAPPING.md#files) | [core](../core/files.md) · [api](../api/files.md) · [nextjs](../nextjs/files.md) |
+| [Identity Core React + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export React + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations React + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge React + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Kubernetes React + Inertia](kubernetes.md) | [Target/source map](../SOURCE-MAPPING.md#kubernetes) | [core](../core/kubernetes.md) · [api](../api/kubernetes.md) · [nextjs](../nextjs/kubernetes.md) |
+| [Localization Core React + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Mail React + Inertia](mail.md) | [Target/source map](../SOURCE-MAPPING.md#mail) | [core](../core/mail.md) · [api](../api/mail.md) · [nextjs](../nextjs/mail.md) |
+| [Module Manager React + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Monitoring React + Inertia](monitoring.md) | [Target/source map](../SOURCE-MAPPING.md#monitoring) | [core](../core/monitoring.md) · [api](../api/monitoring.md) · [nextjs](../nextjs/monitoring.md) |
+| [Notifications React + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability React + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams React + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [OS Adapters React + Inertia](os-adapters.md) | [Target/source map](../SOURCE-MAPPING.md#os-adapters) | [core](../core/os-adapters.md) · [api](../api/os-adapters.md) · [nextjs](../nextjs/os-adapters.md) |
+| [Profiles React + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles Permissions React + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues React + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search React + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Security React + Inertia](security.md) | [Target/source map](../SOURCE-MAPPING.md#security) | [core](../core/security.md) · [api](../api/security.md) · [nextjs](../nextjs/security.md) |
+| [Sessions Devices React + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings React + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support React + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication React + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Web Hosting React + Inertia](web-hosting.md) | [Target/source map](../SOURCE-MAPPING.md#web-hosting) | [core](../core/web-hosting.md) · [api](../api/web-hosting.md) · [nextjs](../nextjs/web-hosting.md) |
+| [Webhooks React + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

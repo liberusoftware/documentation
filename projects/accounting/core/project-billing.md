@@ -1,8 +1,12 @@
 # Accounting: Project Billing Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#project-billing). Observed identity: [`liberusoftware/module-accounting-project-billing`](../../../modules/source/liberusoftware--module-accounting-project-billing.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-project-billing`
+**Design package identifier:** `module-accounting-project-billing`
 **Domain specification:** [Project Billing](../features/project-billing.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

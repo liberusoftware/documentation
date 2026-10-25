@@ -1,8 +1,12 @@
 # Social Network: Social Network Moderation Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-moderation). Observed identity: [`liberusoftware/module-social-network-moderation`](../../../modules/source/liberusoftware--module-social-network-moderation.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-social-network-social-network-moderation`
+**Design package identifier:** `module-social-network-social-network-moderation`
 **Domain specification:** [Social Network Moderation](../features/social-network-moderation.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

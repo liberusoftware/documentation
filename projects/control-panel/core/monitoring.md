@@ -1,8 +1,12 @@
 # Control Panel: Monitoring Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#monitoring). Observed identity: [`liberusoftware/module-control-panel-monitoring`](../../../modules/source/liberusoftware--module-control-panel-monitoring.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-control-panel-monitoring`
+**Design package identifier:** `module-control-panel-monitoring`
 **Domain specification:** [Monitoring](../features/monitoring.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

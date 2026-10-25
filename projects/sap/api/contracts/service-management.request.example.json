@@ -1,0 +1,8 @@
+{
+  "resolution_code": "service-restored",
+  "resolution_summary": "Approved recovery completed and service checks passed.",
+  "evidence_references": [
+    "service-check-example-001"
+  ],
+  "change_reference": "change-example-001"
+}

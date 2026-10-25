@@ -1,5 +1,9 @@
 # Cash Position React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cash-position). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-cash-position-react-native
 **Matching core package:** module-accounting-cash-position ([implementation](../core/cash-position.md))
 **Matching API package:** module-accounting-cash-position-api ([contract](../api/cash-position.md))

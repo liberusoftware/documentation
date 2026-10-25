@@ -1,12 +1,16 @@
 # Maintenance: Module Maintenance Core
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-core). Observed identity: [`liberusoftware/module-maintenance-maintenance-core`](../../../modules/source/liberusoftware--module-maintenance-maintenance-core.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-maintenance-module-maintenance-core`
 **Application:** Maintenance  
 **Capability group:** Module Maintenance Core  
 **Source scope:** [MAINTENANCE.md](../MAINTENANCE.md)  
-**Architecture:** [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md) · [API.md](../MAINTENANCE.md) · [FILAMENT.md](../MAINTENANCE.md) · [LIVEWIRE.md](../MAINTENANCE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

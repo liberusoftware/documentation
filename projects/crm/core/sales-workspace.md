@@ -1,8 +1,12 @@
 # Crm: Sales Workspace Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-workspace). Observed identity: [`liberusoftware/module-crm-sales-workspace`](../../../modules/source/liberusoftware--module-crm-sales-workspace.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-sales-workspace`
+**Design package identifier:** `module-crm-sales-workspace`
 **Domain specification:** [Sales Workspace](../features/sales-workspace.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

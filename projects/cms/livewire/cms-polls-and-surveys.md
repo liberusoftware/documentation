@@ -1,12 +1,16 @@
 # CMS: Cms Polls And Surveys Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-polls-and-surveys). Observed identity: [`liberusoftware/module-cms-polls-and-surveys-livewire`](../../../modules/source/liberusoftware--module-cms-polls-and-surveys-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-cms-cms-polls-and-surveys-livewire`  
 **Matching domain module:** `cms-polls-and-surveys`  
 **Application:** CMS  
 **Source feature:** [Cms Polls And Surveys](../features/cms-polls-and-surveys.md)  
-**Architecture:** [LIVEWIRE.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,8 +1,12 @@
 # Accounting: Financial Master Data Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#financial-master-data). Observed identity: [`liberusoftware/module-accounting-financial-master-data`](../../../modules/source/liberusoftware--module-accounting-financial-master-data.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-financial-master-data`
+**Design package identifier:** `module-accounting-financial-master-data`
 **Domain specification:** [Financial Master Data](../features/financial-master-data.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

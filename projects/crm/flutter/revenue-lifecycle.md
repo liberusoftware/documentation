@@ -1,5 +1,9 @@
 # Revenue Lifecycle Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#revenue-lifecycle). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-revenue-lifecycle-flutter
 **Matching core package:** module-crm-revenue-lifecycle ([implementation](../core/revenue-lifecycle.md))
 **Matching API package:** module-crm-revenue-lifecycle-api ([contract](../api/revenue-lifecycle.md))

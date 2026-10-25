@@ -1,5 +1,9 @@
 # Social Graph React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-graph). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-social-network-social-graph-react-native
 **Matching core package:** module-social-network-social-graph ([implementation](../core/social-graph.md))
 **Matching API package:** module-social-network-social-graph-api ([contract](../api/social-graph.md))

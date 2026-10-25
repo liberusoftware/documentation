@@ -1,12 +1,16 @@
 # Automation: Organizations Teams
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#organizations-teams). Observed identity: [`liberusoftware/organizations-teams`](../../../modules/source/liberusoftware--organizations-teams.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-automation-organizations-teams`
 **Application:** Automation  
 **Capability group:** Organizations Teams  
 **Source scope:** [AUTOMATION.md](../AUTOMATION.md)  
-**Architecture:** [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md) · [API.md](../AUTOMATION.md) · [FILAMENT.md](../AUTOMATION.md) · [LIVEWIRE.md](../AUTOMATION.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

@@ -1,8 +1,12 @@
 # Accounting: Accounting Cash Collection Assistant Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-cash-collection-assistant). Observed identity: [`liberusoftware/module-accounting-cash-collection-assistant`](../../../modules/source/liberusoftware--module-accounting-cash-collection-assistant.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-cash-collection-assistant`
+**Design package identifier:** `module-accounting-accounting-cash-collection-assistant`
 **Domain specification:** [Accounting Cash Collection Assistant](../features/accounting-cash-collection-assistant.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

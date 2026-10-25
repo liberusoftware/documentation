@@ -1,5 +1,9 @@
 # Transfers And Replenishment Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#transfers-and-replenishment). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-transfers-and-replenishment-flutter
 **Matching core package:** module-ecommerce-transfers-and-replenishment ([implementation](../core/transfers-and-replenishment.md))
 **Matching API package:** module-ecommerce-transfers-and-replenishment-api ([contract](../api/transfers-and-replenishment.md))

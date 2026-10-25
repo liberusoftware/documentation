@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:assets-and-facilities:accept:request:v1",
+  "title": "Assets and facilities: proposed accept request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "to_custodian_reference",
+    "location_reference",
+    "condition_snapshot_id",
+    "acceptance_evidence_id"
+  ],
+  "properties": {
+    "to_custodian_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "location_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "condition_snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptance_evidence_id": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

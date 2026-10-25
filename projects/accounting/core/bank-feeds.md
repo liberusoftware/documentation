@@ -1,8 +1,12 @@
 # Accounting: Bank Feeds Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#bank-feeds). Observed identity: [`liberusoftware/module-accounting-bank-feeds`](../../../modules/source/liberusoftware--module-accounting-bank-feeds.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-bank-feeds`
+**Design package identifier:** `module-accounting-bank-feeds`
 **Domain specification:** [Bank Feeds](../features/bank-feeds.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

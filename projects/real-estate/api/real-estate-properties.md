@@ -1,12 +1,16 @@
 # Real Estate: Real Estate Properties API
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-properties). Observed identity: [`liberusoftware/real-estate-properties-api`](../../../modules/source/liberusoftware--real-estate-properties-api.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one API module specification
 
-**API package:** `module-real-estate-real-estate-properties-api`  
+**Proposed API design identifier:** `module-real-estate-real-estate-properties-api`<br>
 **Matching domain module:** `real-estate-properties`  
 **Application:** Real Estate  
 **Source feature:** [Real Estate Properties](../features/real-estate-properties.md)  
-**Architecture:** [API.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [API.md](../../../architecture/API.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
@@ -22,124 +26,102 @@ Installation does not expose every capability automatically. The host applicatio
 ## 2. Contract design
 
 - Publish an OpenAPI 3.1 fragment with stable operation IDs, schemas, examples, scopes, errors, pagination, rate limits, idempotency, and deprecation metadata.
-- Use `/api/v1/real-estate/real-estate-properties` as the default module route prefix unless the application owns and documents a compatible façade path.
+- Choose the route namespace through the host's reviewed API contract; observed source prefixes below take precedence over repository/design-name guesses.
 - Represent resources through explicit API DTOs/resources rather than automatic Eloquent serialization.
 - Use lowercase kebab-case paths, snake_case JSON fields, opaque identifiers, ISO 8601 timestamps, explicit money objects, and RFC 9457 Problem Details errors.
 - Compatible additions remain within the major version; removals or semantic breaks require a new major version or approved migration path.
 
 ## 3. Endpoint examples
 
-**Base path:** `/api/v1/real-estate/real-estate-properties`
+**Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
 
-These examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.
+| Boundary | Observed identity and implementation reference |
+| --- | --- |
+| Source package | [liberusoftware/real-estate-properties-api](../../../modules/source/liberusoftware--real-estate-properties-api.md) |
+| Source package | [liberusoftware/real-estate-properties](../../../modules/source/liberusoftware--real-estate-properties.md) |
 
-| Method   | Endpoint                                              | Purpose                                       | Possible request data                                                                         |
-| -------- | ----------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `GET`    | `/api/v1/real-estate/real-estate-properties?page[size]=25&sort=-created_at` | List authorized resources                     | Query parameters for pagination, filtering, sorting, field selection, and documented includes |
-| `GET`    | `/api/v1/real-estate/real-estate-properties/{id}`             | Retrieve one resource                         | Opaque resource `id` in the path; no request body                                             |
-| `POST`   | `/api/v1/real-estate/real-estate-properties`                    | Create a resource                             | JSON body using the module schema and required team/context fields                            |
-| `PATCH`  | `/api/v1/real-estate/real-estate-properties/{id}`             | Update permitted fields                       | JSON body containing changed fields and `If-Match` when concurrency is supported              |
-| `DELETE` | `/api/v1/real-estate/real-estate-properties/{id}`             | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted           |
-| `POST`   | `/api/v1/real-estate/real-estate-properties/{id}/<explicit-action>` | Execute a documented domain action            | Action-specific JSON body and `Idempotency-Key` for retryable writes                          |
+### Observed route declarations
 
-Example create request (illustrative fields only):
+These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-```json
-{
-  "attributes": "example-value"
-}
+[modules/real-estate-properties-api/routes/api.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-properties-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/public/properties')->middleware(['api', 'throttle:api'])->group(function (): void {
+Route::get('/', [PublicPropertyController::class, 'index'])->name('public.properties.index');
+Route::get('/{property}', [PublicPropertyController::class, 'show'])->name('public.properties.show');
+Route::prefix('api/v1/real-estate/properties/{property}/ar-tour')->middleware(['api', 'throttle:api'])->group(function (): void {
+Route::get('/config', [PropertyArTourController::class, 'config'])->name('real-estate.properties.ar-tour.config');
+Route::get('/availability', [PropertyArTourController::class, 'availability'])->name('real-estate.properties.ar-tour.availability');
+Route::prefix('api/v1/real-estate/properties/{property}/ar-tour')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
+Route::post('/enable', [PropertyArTourController::class, 'enable'])->name('real-estate.properties.ar-tour.enable');
+Route::post('/disable', [PropertyArTourController::class, 'disable'])->name('real-estate.properties.ar-tour.disable');
+Route::prefix('api/v1/real-estate/property-saved-searches')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
+Route::get('/', [PropertySavedSearchController::class, 'index'])->name('real-estate.property-saved-searches.index');
+Route::post('/', [PropertySavedSearchController::class, 'store'])->name('real-estate.property-saved-searches.store');
+Route::delete('/{savedSearch}', [PropertySavedSearchController::class, 'destroy'])->name('real-estate.property-saved-searches.destroy');
+Route::prefix('api/v1/real-estate/community-events')->middleware(['api', 'auth:sanctum', 'throttle:api'])->group(function (): void {
+Route::get('/', [CommunityEventController::class, 'index'])->name('real-estate.community-events.index');
+Route::get('/{event}', [CommunityEventController::class, 'show'])->name('real-estate.community-events.show');
+Route::prefix('api/v1/real-estate/properties')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
+Route::get('/', [PropertyController::class, 'index'])->name('real-estate.properties.index');
+Route::post('/', [PropertyController::class, 'store'])->name('real-estate.properties.store');
+Route::get('/compare', [PropertyController::class, 'compare'])->name('real-estate.properties.compare');
+Route::post('/tax-estimate', [PropertyController::class, 'taxEstimate'])->name('real-estate.properties.tax-estimate');
+Route::get('/favorites', [PropertyController::class, 'favorites'])->name('real-estate.properties.favorites');
+Route::post('/{property}/transition/{status}', [PropertyController::class, 'transition'])->name('real-estate.properties.transition');
+Route::post('/{property}/favorite', [PropertyController::class, 'favorite'])->name('real-estate.properties.favorite');
+Route::delete('/favorites/{property}', [PropertyController::class, 'removeFavorite'])->name('real-estate.properties.favorite-remove');
+Route::get('/{property}/similar', [PropertyController::class, 'similar'])->name('real-estate.properties.similar');
+Route::post('/{property}/walkability', [PropertyController::class, 'walkability'])->name('real-estate.properties.walkability');
+Route::get('/{property}/qr-code', [PropertyController::class, 'qrCode'])->name('real-estate.properties.qr-code');
+Route::post('/{property}/share', [PropertyController::class, 'share'])->name('real-estate.properties.share');
+Route::get('/{property}/history', [PropertyController::class, 'history'])->name('real-estate.properties.history');
+Route::put('/{property}/units', [PropertyController::class, 'unit'])->name('real-estate.properties.units');
+Route::post('/{property}/keys', [PropertyController::class, 'key'])->name('real-estate.properties.keys');
+Route::get('/{property}', [PropertyController::class, 'show'])->name('real-estate.properties.show');
+Route::delete('/{property}', [PropertyController::class, 'destroy'])->name('real-estate.properties.destroy');
+Route::prefix('api/v1/real-estate/properties/{property}/price-alerts')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
+Route::get('/', [PropertyPriceAlertController::class, 'index'])->name('real-estate.properties.price-alerts.index');
+Route::post('/', [PropertyPriceAlertController::class, 'store'])->name('real-estate.properties.price-alerts.store');
+Route::prefix('api/v1/real-estate/price-alerts')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
+Route::delete('/{alert}', [PropertyPriceAlertController::class, 'destroy'])->name('real-estate.price-alerts.destroy');
+Route::prefix('api/v1/real-estate/property-categories')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
+Route::get('/', [PropertyCategoryController::class, 'index'])->name('real-estate.property-categories.index');
+Route::post('/', [PropertyCategoryController::class, 'store'])->name('real-estate.property-categories.store');
+Route::delete('/{category}', [PropertyCategoryController::class, 'destroy'])->name('real-estate.property-categories.destroy');
+Route::prefix('api/v1/real-estate/property-templates')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
+Route::get('/', [PropertyTemplateController::class, 'index'])->name('real-estate.property-templates.index');
+Route::post('/', [PropertyTemplateController::class, 'store'])->name('real-estate.property-templates.store');
+Route::delete('/{template}', [PropertyTemplateController::class, 'destroy'])->name('real-estate.property-templates.destroy');
 ```
 
-Example request headers:
+### Observed controller entry points
 
-```http
-Accept: application/json
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Content-Type: application/json
-Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
-X-Request-ID: 01JEXAMPLEREQUESTID
-```
+The signatures identify request handlers to review; their argument names are not complete JSON schemas. Read their request validation, actor/tenant resolution, policy, serialization and error paths before writing a client.
 
-Successful reads and writes return the standard `data` envelope from [API.md](../REAL-ESTATE.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
+| Controller source | Public handler signatures |
+| --- | --- |
+| [CommunityEventController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-properties-api/src/Http/Controllers/CommunityEventController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(Request $request, CommunityEvent $event): JsonResponse` |
+| [PropertyArTourController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-properties-api/src/Http/Controllers/PropertyArTourController.php) | `public function config(Property $property, ConfigurePropertyArTour $arTour): JsonResponse`<br>`public function availability(Property $property, ConfigurePropertyArTour $arTour): JsonResponse`<br>`public function enable(Request $request, Property $property, ConfigurePropertyArTour $arTour): JsonResponse`<br>`public function disable(Request $request, Property $property, ConfigurePropertyArTour $arTour): JsonResponse`<br>`public function updateSettings(Request $request, Property $property, ConfigurePropertyArTour $arTour): JsonResponse` |
+| [PropertyCategoryController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-properties-api/src/Http/Controllers/PropertyCategoryController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request): JsonResponse`<br>`public function update(Request $request, PropertyCategory $category): JsonResponse`<br>`public function destroy(Request $request, PropertyCategory $category): Response` |
+| [PropertyController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-properties-api/src/Http/Controllers/PropertyController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateProperty $create): JsonResponse`<br>`public function favorite(Request $request, Property $property, TogglePropertyFavorite $toggle): JsonResponse`<br>`public function favorites(Request $request): JsonResponse`<br>`public function removeFavorite(Request $request, Property $property, RemovePropertyFavorite $remove): JsonResponse`<br>`public function similar(Request $request, Property $property): JsonResponse`<br>`public function walkability(Request $request, Property $property, FetchWalkabilityScores $fetch, UpdateProperty $update): JsonResponse`<br>`public function qrCode(Request $request, Property $property, GeneratePropertyQrCode $generate): JsonResponse`<br>`public function share(Request $request, Property $property, SendPropertyToFriend $send): JsonResponse`<br>`public function compare(Request $request): JsonResponse`<br>`public function taxEstimate(Request $request, EstimatePropertyTax $estimate): JsonResponse`<br>`public function show(Request $request, Property $property): JsonResponse`<br>`public function history(Request $request, Property $property): JsonResponse`<br>`public function update(Request $request, Property $property, UpdateProperty $update): JsonResponse`<br>`public function transition(Request $request, Property $property, string $status, TransitionProperty $transition): JsonResponse`<br>`public function unit(Request $request, Property $property, UpsertPropertyUnit $upsert): JsonResponse`<br>`public function key(Request $request, Property $property, RecordPropertyKey $record): JsonResponse`<br>`public function destroy(Request $request, Property $property, DeleteProperty $delete): Response` |
+| [PropertyPriceAlertController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-properties-api/src/Http/Controllers/PropertyPriceAlertController.php) | `public function index(Request $request, int\|string $property): JsonResponse`<br>`public function store(Request $request, int\|string $property, CreatePriceAlert $create): JsonResponse`<br>`public function update(Request $request, int\|string $alert, UpdatePriceAlert $update): JsonResponse`<br>`public function destroy(Request $request, int\|string $alert, DeletePriceAlert $delete): JsonResponse` |
+| [PropertySavedSearchController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-properties-api/src/Http/Controllers/PropertySavedSearchController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, SavePropertySearch $save): JsonResponse`<br>`public function destroy(Request $request, int $savedSearch, DeletePropertySearch $delete): JsonResponse` |
+| [PropertyTemplateController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-properties-api/src/Http/Controllers/PropertyTemplateController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request): JsonResponse`<br>`public function update(Request $request, PropertyTemplate $template): JsonResponse`<br>`public function destroy(Request $request, PropertyTemplate $template): Response` |
+| [PublicPropertyController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-properties-api/src/Http/Controllers/PublicPropertyController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(Request $request, Property $property): JsonResponse` |
+
+A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
 ## 4. OpenAPI schema
 
-This module owns a versioned OpenAPI 3.1 fragment for `real-estate-properties`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/real-estate-properties.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.
+The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-### Required schema elements
+- [modules/real-estate-properties-api/openapi/v1/real-estate-properties.yaml](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-properties-api/openapi/v1/real-estate-properties.yaml)
 
-- Use stable operation IDs such as `real-estate.realEstateProperties.list`, `real-estate.realEstateProperties.get`, `real-estate.realEstateProperties.create`, `real-estate.realEstateProperties.update`, and `real-estate.realEstateProperties.delete`; use an explicit domain action ID when applicable.
-- Define the module's resource schema as `RealEstatePropertiesResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.
-- Document possible module fields; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.
-- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.
-- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../REAL-ESTATE.md); do not serialize Eloquent models automatically.
+For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 
-### Minimal fragment example
-
-```yaml
-openapi: 3.1.0
-info:
-  title: real-estate-properties API
-  version: 1.0.0
-paths:
-  /api/v1/real-estate/real-estate-properties:
-    get:
-      operationId: real-estate.realEstateProperties.list
-      security:
-        - sanctum: []
-      parameters:
-        - $ref: "#/components/parameters/PageSize"
-      responses:
-        "200":
-          $ref: "#/components/responses/ResourceCollection"
-components:
-  parameters:
-    PageSize:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 100
-  securitySchemes:
-    sanctum:
-      type: http
-      scheme: bearer
-      bearerFormat: Sanctum
-  schemas:
-    RealEstatePropertiesResource:
-      type: object
-      required: [id, type, attributes]
-      properties:
-        id:
-          type: string
-          description: Opaque Liberu resource identifier.
-        type:
-          type: string
-          const: real-estate-properties
-        attributes:
-          type: object
-          additionalProperties: true
-    ResourceCollection:
-      type: object
-      required: [data]
-      properties:
-        data:
-          type: array
-          items:
-            $ref: "#/components/schemas/RealEstatePropertiesResource"
-  responses:
-    ResourceCollection:
-      description: Authorized paginated resources.
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/ResourceCollection"
-```
-
-The example is a contract outline, not a substitute for the complete module schema: replace `additionalProperties` with explicit fields and add create/update/action schemas before release. Validate the fragment, bundle it into the application specification, run breaking-change detection against the supported release, and generate typed clients only from the released specification.
-
-**References:** [OpenAPI 3.1 specification](https://spec.openapis.org/oas/v3.1.0) · [OpenAPI and contract registry](../../../architecture/API.md#8-openapi-and-contract-registry) · [Module API design](../../../architecture/API.md#19-module-api-design) · [Response conventions](../../../architecture/API.md#10-response-conventions)
+Validate/bundle the fragment, check supported-version compatibility and generate clients only from the reviewed contract. Retain the source/schema commit or release in client compatibility notes. See the [API architecture](../../../architecture/API.md), [source mapping](../SOURCE-MAPPING.md#real-estate-properties), and [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) guides.
 
 ## 5. Audience and operation matrix
 

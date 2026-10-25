@@ -1,5 +1,9 @@
 # Content Locking Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#content-locking). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-content-locking-flutter
 **Matching core package:** module-cms-content-locking ([implementation](../core/content-locking.md))
 **Matching API package:** module-cms-content-locking-api ([contract](../api/content-locking.md))

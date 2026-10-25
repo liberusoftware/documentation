@@ -1,8 +1,12 @@
 # Real Estate: Real Estate Property Management Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-property-management). Observed identity: [`liberusoftware/real-estate-property-management`](../../../modules/source/liberusoftware--real-estate-property-management.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-real-estate-real-estate-property-management`
+**Design package identifier:** `module-real-estate-real-estate-property-management`
 **Domain specification:** [Real Estate Property Management](../features/real-estate-property-management.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

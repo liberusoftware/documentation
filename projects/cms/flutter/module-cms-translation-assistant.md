@@ -1,5 +1,9 @@
 # Module Cms Translation Assistant Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-translation-assistant). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-module-cms-translation-assistant-flutter
 **Matching core package:** module-cms-module-cms-translation-assistant ([implementation](../core/module-cms-translation-assistant.md))
 **Matching API package:** module-cms-module-cms-translation-assistant-api ([contract](../api/module-cms-translation-assistant.md))

@@ -1,5 +1,9 @@
 # Customer Data Model React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#customer-data-model). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-customer-data-model-react-native
 **Matching core package:** module-crm-customer-data-model ([implementation](../core/customer-data-model.md))
 **Matching API package:** module-crm-customer-data-model-api ([contract](../api/customer-data-model.md))

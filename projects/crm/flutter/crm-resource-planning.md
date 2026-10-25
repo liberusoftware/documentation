@@ -1,5 +1,9 @@
 # Crm Resource Planning Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-resource-planning). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-resource-planning-flutter
 **Matching core package:** module-crm-crm-resource-planning ([implementation](../core/crm-resource-planning.md))
 **Matching API package:** module-crm-crm-resource-planning-api ([contract](../api/crm-resource-planning.md))

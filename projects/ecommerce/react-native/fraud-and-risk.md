@@ -1,5 +1,9 @@
 # Fraud And Risk React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#fraud-and-risk). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-fraud-and-risk-react-native
 **Matching core package:** module-ecommerce-fraud-and-risk ([implementation](../core/fraud-and-risk.md))
 **Matching API package:** module-ecommerce-fraud-and-risk-api ([contract](../api/fraud-and-risk.md))

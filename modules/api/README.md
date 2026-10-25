@@ -66,18 +66,24 @@ Provide an authenticated token-management action to revoke the current token or 
 
 For a first-party SPA, use `/sanctum/csrf-cookie`, session login, and `auth:sanctum`; do not issue long-lived personal access tokens to browser JavaScript.
 
-| Application                                                   | API modules | Source                                                               |
-| ------------------------------------------------------------- | ----------: | -------------------------------------------------------------------- |
-| [Accounting](../../projects/accounting/api/README.md)         |         105 | [ACCOUNTING.md](../../projects/accounting/ACCOUNTING.md)             |
-| [Automation](../../projects/automation/api/README.md)         |          11 | [AUTOMATION.md](../../projects/automation/AUTOMATION.md)             |
-| [Billing](../../projects/billing/api/README.md)               |          16 | [BILLING.md](../../projects/billing/BILLING.md)                      |
-| [Browser Game](../../projects/browser-game/api/README.md)     |          15 | [BROWSER-GAME.md](../../projects/browser-game/BROWSER-GAME.md)       |
-| [CMS](../../projects/cms/api/README.md)                       |          81 | [CMS.md](../../projects/cms/CMS.md)                                  |
-| [Control Panel](../../projects/control-panel/api/README.md)   |          15 | [CONTROL-PANEL.md](../../projects/control-panel/CONTROL-PANEL.md)    |
-| [CRM](../../projects/crm/api/README.md)                       |          95 | [CRM.md](../../projects/crm/CRM.md)                                  |
-| [Ecommerce](../../projects/ecommerce/api/README.md)           |         105 | [ECOMMERCE.md](../../projects/ecommerce/ECOMMERCE.md)                |
-| [Genealogy](../../projects/genealogy/api/README.md)           |          14 | [GENEALOGY.md](../../projects/genealogy/GENEALOGY.md)                |
-| [Maintenance](../../projects/maintenance/api/README.md)       |          14 | [MAINTENANCE.md](../../projects/maintenance/MAINTENANCE.md)          |
-| [Real Estate](../../projects/real-estate/api/README.md)       |          15 | [REAL-ESTATE.md](../../projects/real-estate/REAL-ESTATE.md)          |
-| [SAP](../../projects/sap/api/README.md)                       |          16 | [SAP.md](../../projects/sap/SAP.md)                                  |
-| [Social Network](../../projects/social-network/api/README.md) |          15 | [SOCIAL-NETWORK.md](../../projects/social-network/SOCIAL-NETWORK.md) |
+| Project | Specification documents | Standard |
+| --- | ---: | --- |
+| [Accounting](../../projects/accounting/api/README.md) | 241 | [API](../../architecture/API.md) |
+| [Automation](../../projects/automation/api/README.md) | 57 | [API](../../architecture/API.md) |
+| [Billing](../../projects/billing/api/README.md) | 81 | [API](../../architecture/API.md) |
+| [Boilerplate](../../projects/boilerplate/api/README.md) | 43 | [API](../../architecture/API.md) |
+| [Browser Game](../../projects/browser-game/api/README.md) | 61 | [API](../../architecture/API.md) |
+| [CMS](../../projects/cms/api/README.md) | 252 | [API](../../architecture/API.md) |
+| [Control Panel](../../projects/control-panel/api/README.md) | 61 | [API](../../architecture/API.md) |
+| [CRM](../../projects/crm/api/README.md) | 218 | [API](../../architecture/API.md) |
+| [Ecommerce](../../projects/ecommerce/api/README.md) | 107 | [API](../../architecture/API.md) |
+| [Genealogy](../../projects/genealogy/api/README.md) | 62 | [API](../../architecture/API.md) |
+| [Liberu platform](../../projects/liberu/api/README.md) | 4 | [API](../../architecture/API.md) |
+| [Maintenance](../../projects/maintenance/api/README.md) | 60 | [API](../../architecture/API.md) |
+| [Real Estate](../../projects/real-estate/api/README.md) | 70 | [API](../../architecture/API.md) |
+| [SAP enterprise suite](../../projects/sap/api/README.md) | 16 | [API](../../architecture/API.md) |
+| [Social Network](../../projects/social-network/api/README.md) | 59 | [API](../../architecture/API.md) |
+
+## Availability and package identities
+
+Counts above describe Markdown specifications, not released packages or implemented features. The [source inventory](../../architecture/SOURCE-INVENTORY.md) records observed manifests and source locations. Repository slugs, design identifiers, and Composer/npm package identities can differ; install using the actual manifest name. Shared capabilities use the [canonical owner](../../architecture/SHARED-MODULES.md) rather than a separate implementation in each project.

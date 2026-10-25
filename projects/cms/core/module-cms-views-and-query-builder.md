@@ -1,8 +1,12 @@
 # CMS: Module Cms Views And Query Builder Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-views-and-query-builder). Observed identity: [`liberusoftware/module-cms-views-and-query-builder`](../../../modules/source/liberusoftware--module-cms-views-and-query-builder.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-views-and-query-builder`
+**Design package identifier:** `module-cms-module-cms-views-and-query-builder`
 **Domain specification:** [Module Cms Views And Query Builder](../features/module-cms-views-and-query-builder.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

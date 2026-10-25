@@ -1,6 +1,10 @@
 # Boilerplate: Google Analytics domain packages
 
-**Composer package:** `module-google-analytics`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#google-analytics). Observed identity: [`liberusoftware/analytics-google`](../../../modules/source/liberusoftware--analytics-google.md). This retained spelling maps to `analytics-google`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-google-analytics`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Google Analytics event mapping, property/stream configuration, consent-aware delivery, and diagnostics.
 

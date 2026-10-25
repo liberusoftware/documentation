@@ -1,12 +1,16 @@
 # Accounting: Depreciation
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#depreciation). Observed identity: [`liberusoftware/module-accounting-depreciation`](../../../modules/source/liberusoftware--module-accounting-depreciation.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-accounting-depreciation`
 **Application:** Accounting  
 **Capability group:** Inventory, assets, and specialized accounting modules  
 **Source scope:** [ACCOUNTING.md](../ACCOUNTING.md)  
-**Architecture:** [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md) · [API.md](../ACCOUNTING.md) · [FILAMENT.md](../ACCOUNTING.md) · [LIVEWIRE.md](../ACCOUNTING.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

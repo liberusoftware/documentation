@@ -1,12 +1,16 @@
 # Boilerplate: Scheduler Queues Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#scheduler-queues). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-boilerplate-scheduler-queues-filament`  
 **Matching domain module:** `scheduler-queues`  
 **Application:** Boilerplate  
 **Source feature:** [Scheduler Queues](../features/scheduler-queues.md)  
-**Architecture:** [FILAMENT.md](../BOILERPLATE.md) · [MODULES.md](../BOILERPLATE.md) · [TESTING.md](../BOILERPLATE.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

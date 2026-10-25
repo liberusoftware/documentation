@@ -1,8 +1,12 @@
 # Automation: Identity Core Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#identity-core). Observed identity: [`liberusoftware/identity-core`](../../../modules/source/liberusoftware--identity-core.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-automation-identity-core`
+**Design package identifier:** `module-automation-identity-core`
 **Domain specification:** [Identity Core](../features/identity-core.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

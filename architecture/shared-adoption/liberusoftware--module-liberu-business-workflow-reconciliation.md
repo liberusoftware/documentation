@@ -1,0 +1,72 @@
+# liberusoftware/module-liberu-business-workflow-reconciliation: shared adoption review
+
+**Status:** source-backed consolidation design, not a completed migration or stability certification. This profile records differences at the pinned commits and a data-preserving adoption path. Active source projects are unchanged by this documentation review.
+
+## Ownership and decision
+
+The documentation owner is the [liberu capability scope](../../projects/liberu/README.md). Keep one authoritative capability/release boundary and product-specific behavior behind reviewed extensions. This is a documentation ownership decision; select the actual package maintainer/canonical release repository from verified package governance before changing consumers.
+
+Runtime variants: **3**; selected metadata variants: **3** under this exact manifest identity. Equal names/constraints do not make different schemas or providers interchangeable. Keep the installed identity and its data until a compatible release or explicit migration is reviewed.
+
+See the [implementation reference](../../modules/source/liberusoftware--module-liberu-business-workflow-reconciliation.md), [source comparison](../SHARED-MODULE-COMPARISON.md) and [consolidation procedure](../SHARED-MODULES.md).
+
+## Consumer variants
+
+| Consumer | Pinned module metadata | Variant | Test files |
+| --- | --- | ---: | ---: |
+| accounting | [liberu-business-workflow-reconciliation](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-business-workflow-reconciliation/composer.json) | 2 | 0 |
+| billing | [liberu-business-workflow-reconciliation](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-business-workflow-reconciliation/composer.json) | 3 | 2 |
+| billing | [module-liberu-business-workflow-reconciliation](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-liberu-business-workflow-reconciliation/composer.json) | 3 | 2 |
+| genealogy | [liberu-business-workflow-reconciliation](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation/composer.json) | 1 | 2 |
+
+## Manifest and dependency differences
+
+Each row below is one representative per runtime/metadata combination. Module defaults and providers are declarations, not proof of deployment enablement. Read the actual host resolver and registration path; changing defaults can change the selected graph without changing the application manifest.
+
+| Variant | Module name / version | Default | Provider(s) | Composer runtime requirements |
+| --- | --- | --- | --- | --- |
+| 1 | `liberu-business-workflow-reconciliation` / `1.1.1` | `True` | `"Liberu\\Platform\\BusinessWorkflowReconciliation\\BusinessWorkflowReconciliationServiceProvider"` | `{"illuminate/database": "^13.0", "illuminate/events": "^13.0", "illuminate/support": "^13.0", "php": "^8.5"}` |
+| 2 | `liberu-business-workflow-reconciliation` / `1.0.0` | `True` | `"Liberu\\BusinessWorkflowReconciliation\\BusinessWorkflowReconciliationServiceProvider"` | `{"illuminate/database": "^13.0", "illuminate/support": "^13.0", "liberusoftware/module-manager": "^1.0", "php": "^8.5"}` |
+| 3 | `liberu-business-workflow-reconciliation` / `1.0.0` | `True` | `"Liberu\\Platform\\BusinessWorkflowReconciliation\\BusinessWorkflowReconciliationServiceProvider"` | `{"illuminate/database": "^13.0", "illuminate/support": "^13.0", "php": "^8.5"}` |
+
+## Persistence and data transition
+
+The following database paths differ or are missing in at least one consumer. A missing file does not prove its table/data never existed, and a matching filename does not prove matching contents. Inspect migration history and the deployed database before adoption.
+
+| Differing database path | Variant source and declared table operation |
+| --- | --- |
+| `database/migrations/2026_08_24_000000_create_liberu_workflow_runs_table.php` | V1: absent<br>V2: [8586d72bad](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-business-workflow-reconciliation/database/migrations/2026_08_24_000000_create_liberu_workflow_runs_table.php); create liberu_workflow_runs, dropIfExists liberu_workflow_runs<br>V3: absent |
+| `database/migrations/2026_08_24_010000_create_liberu_reconciliation_cases_table.php` | V1: [d09c73a96e](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation/database/migrations/2026_08_24_010000_create_liberu_reconciliation_cases_table.php); create liberu_reconciliation_cases, dropIfExists liberu_reconciliation_cases<br>V2: absent<br>V3: [d16c97b04c](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-business-workflow-reconciliation/database/migrations/2026_08_24_010000_create_liberu_reconciliation_cases_table.php); create liberu_reconciliation_cases, dropIfExists liberu_reconciliation_cases |
+
+Before a shared release, inventory affected tables/columns and tenant/source identifiers in every consumer, then map legacy/current record identities and callers. Use additive backfills or a separate migration with reconciliation and recovery; do not drop a historical table because the chosen package tree lacks its old migration. Reconcile counts, ownership and required evidence before moving callers or removing obsolete implementations.
+
+## Public contract and extension review
+
+Changed action/query/contract/service/context paths are indexed below. Signature differences identify compatibility work; equal signatures alone do not prove matching authorization, validation, side effects or event timing.
+
+| Path | Variant entry points |
+| --- | --- |
+| `src/Actions/CreateReconciliationCase.php` | V1: [CreateReconciliationCase.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation/src/Actions/CreateReconciliationCase.php) — `public function execute(array $attributes): ReconciliationCase`<br>V2: absent<br>V3: [CreateReconciliationCase.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-business-workflow-reconciliation/src/Actions/CreateReconciliationCase.php) — `public function execute(array $attributes): ReconciliationCase` |
+| `src/Actions/StartWorkflowRun.php` | V1: absent<br>V2: [StartWorkflowRun.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-business-workflow-reconciliation/src/Actions/StartWorkflowRun.php) — `public function __construct(private readonly Dispatcher $events)` ; `public function handle(array $attributes): WorkflowRun`<br>V3: absent |
+| `src/Actions/TransitionReconciliationCase.php` | V1: [TransitionReconciliationCase.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation/src/Actions/TransitionReconciliationCase.php) — `public function execute(ReconciliationCase $record, LifecycleStatus $to): ReconciliationCase`<br>V2: absent<br>V3: absent |
+
+Resolve host-model lookups, actor/tenant policy, source-record references and provider dependencies through explicit public contracts/configuration. Keep product policy and presentation composition outside shared core. Consumer tests must cover the real call paths, including jobs/exports and private-data visibility; do not widen a contract solely to accommodate one host's internal model.
+
+## Registration, route and presentation review
+
+- `module.json`: V1 [source](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation/module.json), V2 [source](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-business-workflow-reconciliation/module.json), V3 [source](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-business-workflow-reconciliation/module.json)
+- `src/BusinessWorkflowReconciliationServiceProvider.php`: V1 [source](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-business-workflow-reconciliation/src/BusinessWorkflowReconciliationServiceProvider.php), V2 [source](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-business-workflow-reconciliation/src/BusinessWorkflowReconciliationServiceProvider.php), V3 [source](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-business-workflow-reconciliation/src/BusinessWorkflowReconciliationServiceProvider.php)
+
+Validate discovery, manifest schema/version handling, dependency selection, provider boot order and route/plugin identifiers against the consuming host. For UI/API adapters, retain the authorized DTO and domain action semantics rather than exposing private models or bypassing transitions through generic record saves.
+
+React/Inertia and Next.js can share framework-independent components, not page/session/redirect lifecycles. If a shared adapter is proposed, review all relevant variants and declared peers/exports first; a shared documentation home is not a completed code migration.
+
+## Adoption sequence and acceptance
+
+1. Confirm the canonical maintainer/release source and supported versions, then compare every source variant above with its actual host callers and schema. Keep the existing installed identities until that decision is reviewed.
+2. Separate genuine shared behavior from product-specific legacy/adapters. Define the required extension points and map source-record IDs/data before removing or redirecting a caller.
+3. Release compatible changes or an explicitly versioned migration. Test a clean consumer and upgrade/recovery path without local dependency overrides; package version strings and source tests are not release evidence.
+4. Adopt one consumer through a targeted dependency/lockfile update, verify data reconciliation and meaningful permitted/denied/tenant/retry journeys, then expand to other consumers.
+5. Record package/source versions, schema/data transition, retained extensions, checks run, remaining limitations and operational recovery. Preserve tracked installed trees and all documented product capabilities until callers/data have moved.
+
+The current documentation supplies source comparisons and a consolidation design. Application refactoring, migration execution, package publication and certification of a stable common release remain separate owning-project work.

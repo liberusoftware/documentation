@@ -1,6 +1,10 @@
 # Boilerplate: Analytics Core domain packages
 
-**Composer package:** `module-analytics-core`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#analytics-core). Observed identity: [`liberusoftware/analytics-core`](../../../modules/source/liberusoftware--analytics-core.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-analytics-core`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Provider-neutral events, identity/consent context, destinations, routing, deduplication, and delivery audit.
 

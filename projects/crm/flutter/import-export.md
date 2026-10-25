@@ -1,5 +1,9 @@
 # Import Export Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#import-export). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-import-export-flutter
 **Matching core package:** module-crm-import-export ([implementation](../core/import-export.md))
 **Matching API package:** module-crm-import-export-api ([contract](../api/import-export.md))

@@ -1,50 +1,70 @@
 # Maintenance React + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **60 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments React](activity-comments.md) — `module-maintenance-activity-comments-react-inertia`
-- [Analytics Core React](analytics-core.md) — `module-maintenance-analytics-core-react-inertia`
-- [Analytics Google React](analytics-google.md) — `module-maintenance-analytics-google-react-inertia`
-- [Analytics Meta React](analytics-meta.md) — `module-maintenance-analytics-meta-react-inertia`
-- [Api Access React](api-access.md) — `module-maintenance-api-access-react-inertia`
-- [Application React](application.md) — `module-maintenance-application-react-inertia`
-- [Audit React](audit.md) — `module-maintenance-audit-react-inertia`
-- [Currency Context React](currency-context.md) — `module-maintenance-currency-context-react-inertia`
-- [Developer Experience React](developer-experience.md) — `module-maintenance-developer-experience-react-inertia`
-- [Feature Flags React](feature-flags.md) — `module-maintenance-feature-flags-react-inertia`
-- [Files Media React](files-media.md) — `module-maintenance-files-media-react-inertia`
-- [Identity Core React](identity-core.md) — `module-maintenance-identity-core-react-inertia`
-- [Identity Socialstream React](identity-socialstream.md) — `module-maintenance-identity-socialstream-react-inertia`
-- [Import Export React](import-export.md) — `module-maintenance-import-export-react-inertia`
-- [Integrations React](integrations.md) — `module-maintenance-integrations-react-inertia`
-- [Jetstream Bridge React](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-react-inertia`
-- [Localization Core React](localization-core.md) — `module-maintenance-localization-core-react-inertia`
-- [Localization Mymemory React](localization-mymemory.md) — `module-maintenance-localization-mymemory-react-inertia`
-- [Maintenance Maintenance Core React](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-react-inertia`
-- [Module Maintenance Assets React](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-react-inertia`
-- [Module Maintenance Commercial React](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-react-inertia`
-- [Module Maintenance Compliance React](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-react-inertia`
-- [Module Maintenance Core React](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-react-inertia`
-- [Module Maintenance Customers And Sites React](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-react-inertia`
-- [Module Maintenance Inspections React](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-react-inertia`
-- [Module Maintenance Inventory React](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-react-inertia`
-- [Module Maintenance Labor And Time React](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-react-inertia`
-- [Module Maintenance Portals React](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-react-inertia`
-- [Module Maintenance Preventative Maintenance React](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-react-inertia`
-- [Module Maintenance Procurement React](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-react-inertia`
-- [Module Maintenance Reporting React](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-react-inertia`
-- [Module Maintenance Scheduling React](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-react-inertia`
-- [Module Maintenance Work Orders React](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-react-inertia`
-- [Module Manager React](module-manager.md) — `module-maintenance-module-manager-react-inertia`
-- [Notifications React](notifications.md) — `module-maintenance-notifications-react-inertia`
-- [Observability React](observability.md) — `module-maintenance-observability-react-inertia`
-- [Organizations Teams React](organizations-teams.md) — `module-maintenance-organizations-teams-react-inertia`
-- [Profiles React](profiles.md) — `module-maintenance-profiles-react-inertia`
-- [Roles Permissions React](roles-permissions.md) — `module-maintenance-roles-permissions-react-inertia`
-- [Scheduler Queues React](scheduler-queues.md) — `module-maintenance-scheduler-queues-react-inertia`
-- [Search React](search.md) — `module-maintenance-search-react-inertia`
-- [Sessions Devices React](sessions-devices.md) — `module-maintenance-sessions-devices-react-inertia`
-- [Settings React](settings.md) — `module-maintenance-settings-react-inertia`
-- [Theme Support React](theme-support.md) — `module-maintenance-theme-support-react-inertia`
-- [Two Factor Authentication React](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-react-inertia`
-- [Webhooks React](webhooks.md) — `module-maintenance-webhooks-react-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments React + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core React + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access React + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application React + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Assets React + Inertia](assets.md) | [Target/source map](../SOURCE-MAPPING.md#assets) | [core](../core/assets.md) · [api](../api/assets.md) · [nextjs](../nextjs/assets.md) |
+| [Audit React + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Commercial React + Inertia](commercial.md) | [Target/source map](../SOURCE-MAPPING.md#commercial) | [core](../core/commercial.md) · [api](../api/commercial.md) · [nextjs](../nextjs/commercial.md) |
+| [Compliance React + Inertia](compliance.md) | [Target/source map](../SOURCE-MAPPING.md#compliance) | [core](../core/compliance.md) · [api](../api/compliance.md) · [nextjs](../nextjs/compliance.md) |
+| [Currency Context React + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customers and Sites React + Inertia](customers-and-sites.md) | [Target/source map](../SOURCE-MAPPING.md#customers-and-sites) | [core](../core/customers-and-sites.md) · [api](../api/customers-and-sites.md) · [nextjs](../nextjs/customers-and-sites.md) |
+| [Developer Experience React + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags React + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media React + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core React + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export React + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Inspections React + Inertia](inspections.md) | [Target/source map](../SOURCE-MAPPING.md#inspections) | [core](../core/inspections.md) · [api](../api/inspections.md) · [nextjs](../nextjs/inspections.md) |
+| [Integrations React + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Inventory React + Inertia](inventory.md) | [Target/source map](../SOURCE-MAPPING.md#inventory) | [core](../core/inventory.md) · [api](../api/inventory.md) · [nextjs](../nextjs/inventory.md) |
+| [Jetstream Bridge React + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Labor and Time React + Inertia](labor-and-time.md) | [Target/source map](../SOURCE-MAPPING.md#labor-and-time) | [core](../core/labor-and-time.md) · [api](../api/labor-and-time.md) · [nextjs](../nextjs/labor-and-time.md) |
+| [Localization Core React + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Maintenance Core React + Inertia](maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#maintenance-core) | [core](../core/maintenance-core.md) · [api](../api/maintenance-core.md) · [nextjs](../nextjs/maintenance-core.md) |
+| [Maintenance Maintenance Core React + Inertia](maintenance-maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#maintenance-maintenance-core) | [core](../core/maintenance-maintenance-core.md) · [api](../api/maintenance-maintenance-core.md) · [nextjs](../nextjs/maintenance-maintenance-core.md) |
+| [Module Maintenance Assets React + Inertia](module-maintenance-assets.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-assets) | [core](../core/module-maintenance-assets.md) · [api](../api/module-maintenance-assets.md) · [nextjs](../nextjs/module-maintenance-assets.md) |
+| [Module Maintenance Commercial React + Inertia](module-maintenance-commercial.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-commercial) | [core](../core/module-maintenance-commercial.md) · [api](../api/module-maintenance-commercial.md) · [nextjs](../nextjs/module-maintenance-commercial.md) |
+| [Module Maintenance Compliance React + Inertia](module-maintenance-compliance.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-compliance) | [core](../core/module-maintenance-compliance.md) · [api](../api/module-maintenance-compliance.md) · [nextjs](../nextjs/module-maintenance-compliance.md) |
+| [Module Maintenance Core React + Inertia](module-maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-core) | [core](../core/module-maintenance-core.md) · [api](../api/module-maintenance-core.md) · [nextjs](../nextjs/module-maintenance-core.md) |
+| [Module Maintenance Customers And Sites React + Inertia](module-maintenance-customers-and-sites.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-customers-and-sites) | [core](../core/module-maintenance-customers-and-sites.md) · [api](../api/module-maintenance-customers-and-sites.md) · [nextjs](../nextjs/module-maintenance-customers-and-sites.md) |
+| [Module Maintenance Inspections React + Inertia](module-maintenance-inspections.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-inspections) | [core](../core/module-maintenance-inspections.md) · [api](../api/module-maintenance-inspections.md) · [nextjs](../nextjs/module-maintenance-inspections.md) |
+| [Module Maintenance Inventory React + Inertia](module-maintenance-inventory.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-inventory) | [core](../core/module-maintenance-inventory.md) · [api](../api/module-maintenance-inventory.md) · [nextjs](../nextjs/module-maintenance-inventory.md) |
+| [Module Maintenance Labor And Time React + Inertia](module-maintenance-labor-and-time.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-labor-and-time) | [core](../core/module-maintenance-labor-and-time.md) · [api](../api/module-maintenance-labor-and-time.md) · [nextjs](../nextjs/module-maintenance-labor-and-time.md) |
+| [Module Maintenance Portals React + Inertia](module-maintenance-portals.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-portals) | [core](../core/module-maintenance-portals.md) · [api](../api/module-maintenance-portals.md) · [nextjs](../nextjs/module-maintenance-portals.md) |
+| [Module Maintenance Preventative Maintenance React + Inertia](module-maintenance-preventative-maintenance.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-preventative-maintenance) | [core](../core/module-maintenance-preventative-maintenance.md) · [api](../api/module-maintenance-preventative-maintenance.md) · [nextjs](../nextjs/module-maintenance-preventative-maintenance.md) |
+| [Module Maintenance Procurement React + Inertia](module-maintenance-procurement.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-procurement) | [core](../core/module-maintenance-procurement.md) · [api](../api/module-maintenance-procurement.md) · [nextjs](../nextjs/module-maintenance-procurement.md) |
+| [Module Maintenance Reporting React + Inertia](module-maintenance-reporting.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-reporting) | [core](../core/module-maintenance-reporting.md) · [api](../api/module-maintenance-reporting.md) · [nextjs](../nextjs/module-maintenance-reporting.md) |
+| [Module Maintenance Scheduling React + Inertia](module-maintenance-scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-scheduling) | [core](../core/module-maintenance-scheduling.md) · [api](../api/module-maintenance-scheduling.md) · [nextjs](../nextjs/module-maintenance-scheduling.md) |
+| [Module Maintenance Work Orders React + Inertia](module-maintenance-work-orders.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-work-orders) | [core](../core/module-maintenance-work-orders.md) · [api](../api/module-maintenance-work-orders.md) · [nextjs](../nextjs/module-maintenance-work-orders.md) |
+| [Module Manager React + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications React + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability React + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams React + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Portals React + Inertia](portals.md) | [Target/source map](../SOURCE-MAPPING.md#portals) | [core](../core/portals.md) · [api](../api/portals.md) · [nextjs](../nextjs/portals.md) |
+| [Preventative Maintenance React + Inertia](preventative-maintenance.md) | [Target/source map](../SOURCE-MAPPING.md#preventative-maintenance) | [core](../core/preventative-maintenance.md) · [api](../api/preventative-maintenance.md) · [nextjs](../nextjs/preventative-maintenance.md) |
+| [Procurement React + Inertia](procurement.md) | [Target/source map](../SOURCE-MAPPING.md#procurement) | [core](../core/procurement.md) · [api](../api/procurement.md) · [nextjs](../nextjs/procurement.md) |
+| [Profiles React + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Reporting React + Inertia](reporting.md) | [Target/source map](../SOURCE-MAPPING.md#reporting) | [core](../core/reporting.md) · [api](../api/reporting.md) · [nextjs](../nextjs/reporting.md) |
+| [Roles Permissions React + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues React + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Scheduling React + Inertia](scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#scheduling) | [core](../core/scheduling.md) · [api](../api/scheduling.md) · [nextjs](../nextjs/scheduling.md) |
+| [Search React + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices React + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings React + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support React + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication React + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks React + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [Work Orders React + Inertia](work-orders.md) | [Target/source map](../SOURCE-MAPPING.md#work-orders) | [core](../core/work-orders.md) · [api](../api/work-orders.md) · [nextjs](../nextjs/work-orders.md) |

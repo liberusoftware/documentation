@@ -1,8 +1,12 @@
 # Genealogy: Genealogy Import Export Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#genealogy-import-export). Observed identity: [`liberusoftware/module-genealogy-import-export`](../../../modules/source/liberusoftware--module-genealogy-import-export.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-genealogy-genealogy-import-export`
+**Design package identifier:** `module-genealogy-genealogy-import-export`
 **Domain specification:** [Genealogy Import Export](../features/genealogy-import-export.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

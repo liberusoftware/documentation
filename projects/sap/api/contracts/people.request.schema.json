@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:people:end:request:v1",
+  "title": "People: proposed end request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "effective_until",
+    "offboarding_case_reference",
+    "access_recovery_policy_version"
+  ],
+  "properties": {
+    "effective_until": {
+      "type": "string",
+      "minLength": 1
+    },
+    "offboarding_case_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "access_recovery_policy_version": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

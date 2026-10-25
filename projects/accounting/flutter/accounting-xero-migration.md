@@ -1,5 +1,9 @@
 # Accounting Xero Migration Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-xero-migration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-xero-migration-flutter
 **Matching core package:** module-accounting-accounting-xero-migration ([implementation](../core/accounting-xero-migration.md))
 **Matching API package:** module-accounting-accounting-xero-migration-api ([contract](../api/accounting-xero-migration.md))

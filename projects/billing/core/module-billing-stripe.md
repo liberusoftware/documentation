@@ -1,8 +1,12 @@
 # Billing: Module Billing Stripe Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-stripe). Observed identity: [`liberusoftware/billing-stripe`](../../../modules/source/liberusoftware--billing-stripe.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-module-billing-stripe`
+**Design package identifier:** `module-billing-module-billing-stripe`
 **Domain specification:** [Module Billing Stripe](../features/module-billing-stripe.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

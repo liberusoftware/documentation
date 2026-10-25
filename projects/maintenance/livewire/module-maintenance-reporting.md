@@ -1,12 +1,16 @@
 # Maintenance: Module Maintenance Reporting Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-reporting). Observed identity: [`liberusoftware/module-maintenance-reporting-livewire`](../../../modules/source/liberusoftware--module-maintenance-reporting-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-maintenance-module-maintenance-reporting-livewire`  
 **Matching domain module:** `module-maintenance-reporting`  
 **Application:** Maintenance  
 **Source feature:** [Module Maintenance Reporting](../features/module-maintenance-reporting.md)  
-**Architecture:** [LIVEWIRE.md](../MAINTENANCE.md) · [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

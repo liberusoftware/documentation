@@ -1,8 +1,12 @@
 # Genealogy: Dna Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#dna). Observed identity: [`liberusoftware/module-genealogy-dna`](../../../modules/source/liberusoftware--module-genealogy-dna.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-genealogy-dna`
+**Design package identifier:** `module-genealogy-dna`
 **Domain specification:** [Dna](../features/dna.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

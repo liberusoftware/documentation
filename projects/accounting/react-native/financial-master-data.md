@@ -1,5 +1,9 @@
 # Financial Master Data React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#financial-master-data). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-financial-master-data-react-native
 **Matching core package:** module-accounting-financial-master-data ([implementation](../core/financial-master-data.md))
 **Matching API package:** module-accounting-financial-master-data-api ([contract](../api/financial-master-data.md))

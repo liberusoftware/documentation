@@ -1,5 +1,9 @@
 # Module Manager React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-manager). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-module-manager-react-native
 **Matching core package:** module-accounting-module-manager ([implementation](../core/module-manager.md))
 **Matching API package:** module-accounting-module-manager-api ([contract](../api/module-manager.md))

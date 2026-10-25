@@ -1,5 +1,9 @@
 # Valuations Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#valuations). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-real-estate-valuations-flutter
 **Matching core package:** module-real-estate-valuations ([implementation](../core/valuations.md))
 **Matching API package:** module-real-estate-valuations-api ([contract](../api/valuations.md))

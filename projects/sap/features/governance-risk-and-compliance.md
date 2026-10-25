@@ -1,16 +1,22 @@
 # SAP: Governance, Risk and Compliance
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#governance-risk-and-compliance). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design status and ownership:** this is an enterprise capability group. Read the [detailed governance, risk and compliance design](../design/governance-risk-and-compliance.md) for concrete records, transitions, permissions, proposed operations and recovery. Compose existing product owners under the [enterprise composition design](../COMPOSITION.md); package identifiers and endpoint examples here are proposals, not verified releases.
+
 ## Canonical independent module specification
 
 **Domain module:** `module-sap-governance-risk-and-compliance`
 **Application:** SAP  
 **Capability group:** Module plan  
 **Source scope:** [SAP.md](../SAP.md)  
-**Architecture:** [MODULES.md](../SAP.md) · [TESTING.md](../SAP.md) · [API.md](../SAP.md) · [FILAMENT.md](../SAP.md) · [LIVEWIRE.md](../SAP.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 
-The Governance, Risk and Compliance module owns Policies, controls, risks, audits, evidence, incidents, privacy, security, continuity, and regulatory obligations. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
+The Governance, Risk and Compliance module owns Policies, controls, risks, audits, evidence, incidents, privacy, security, continuity, and regulatory obligations. This enterprise scope composes the canonical product owners; only its own orchestration and genuine capability gaps require new independently versioned modules.
 
 ## 2. Full feature scope
 

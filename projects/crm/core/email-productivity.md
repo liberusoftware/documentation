@@ -1,8 +1,12 @@
 # Crm: Email Productivity Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#email-productivity). Observed identity: [`liberusoftware/module-crm-email-productivity`](../../../modules/source/liberusoftware--module-crm-email-productivity.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-email-productivity`
+**Design package identifier:** `module-crm-email-productivity`
 **Domain specification:** [Email Productivity](../features/email-productivity.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

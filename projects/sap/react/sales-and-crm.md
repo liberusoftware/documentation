@@ -1,127 +1,60 @@
-# SAP: Sales and CRM React + Inertia
+# Sales and CRM: React + Inertia design
 
-## Canonical one-to-one React/Inertia implementation
+**Status:** proposed enterprise implementation. The [current SAP foundation](../SOURCE-APPLICATION.md) does not establish these business workflows or this presentation as implemented. Use the [detailed domain contract](../design/sales-and-crm.md) and [API plan](../api/sales-and-crm.md) as the review target.
 
-**Package:** `module-sap-sales-and-crm-react-inertia`
-**Matching domain module:** `sap-sales-and-crm`
-**Application:** SAP
-**Source feature:** [Sales and CRM](../features/sales-and-crm.md)
-**Architecture:** [REACT.md](../SAP.md) · [API.md](../SAP.md) · [Matching API module](../api/sales-and-crm.md) · [MODULES.md](../SAP.md) · [TESTING.md](../SAP.md)
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-and-crm). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
 
-## 1. Purpose and ownership
+## Ownership and delivery scope
 
-This optional React 19.2 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, React components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+CRM owns customer relationships, opportunities, quotes, and contracts. Billing or Ecommerce owns the accepted commercial order according to the deployment; enterprise owns the governed handoff.
 
-## 2. Module-specific surfaces
+Reuse the [shared enterprise operation design](../design/OPERATIONS.md) for command identities, concurrency, handoffs and recovery. This capability group adds only its own orchestration/projection and genuine missing behavior; it does not create another owner for existing product records.
 
-- **Accounts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Leads:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Opportunities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Quotes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Contracts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Orders:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Customer success:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Communications:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Forecasts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+## Workflow and command contract
 
-## 3. React 19.2 + Inertia 3 implementation
+**Workspace surfaces:** opportunity-to-order workspace, accepted quote comparison, approval evidence, handoff exception queue.
 
-- Register a stable `module-sap-sales-and-crm-react-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
-- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, hooks under `resources/js/hooks`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
-- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+**Business lifecycle:** prepared → approved → submitted → accepted; rejected and needs_review retain downstream reasons.
 
-### Capability mapping
+An accepted quote snapshot cannot be silently changed during handoff. Resolve the authoritative customer and order owner, approved pricing/tax treatment, and seller entity before submission.
 
-- `accounts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `leads`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `opportunities`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `quotes`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `contracts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `orders`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `customer-success`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `communications`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `forecasts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
+The illustrated `submit` command takes `quote_version`, `target_order_owner`, `acceptance_evidence_id`, with a documented record-version precondition and scoped operation identity. It starts from `approved` and reaches `accepted` only after its defined business outcome. The [API example](../api/sales-and-crm.md#3-endpoint-examples) provides the proposed body and [draft request schema](../api/contracts/sales-and-crm.request.schema.json).
 
-## 4. API contract and Inertia consumption
+Require a current accepted quote snapshot, authorized seller entity, resolvable customer/product mappings and a reviewed target order owner. Revalidate expired or superseded commercial terms.
 
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
-- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+Link the accepted downstream order/subscription reference. A timeout remains pending until queried or reconciled using the original handoff identity.
 
-## 5. Security and verification
+## Layer implementation
 
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
-- Test observable behavior with TypeScript, ESLint, Vitest, React Testing Library, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
+The Laravel host owns Inertia routes/controllers and passes authorized serializable page props to typed React components/hooks. Compose a queue, subject/evidence detail and `submit` form for the domain workspace. Props include the record/version, permitted actions, safe draft defaults and operation reference, not an unrestricted model snapshot.
 
-## 6. Definition of done
+An Inertia visit expects an Inertia page/redirect lifecycle. Use the Laravel controller's reviewed public application boundary or a deliberate API adapter and then return the appropriate Inertia response. Do not point an Inertia page visit at a bare REST JSON endpoint and assume it is an Inertia page.
 
-- Package identity, public exports, API dependency, and module dependency match `sap-sales-and-crm` one-to-one.
-- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
-- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+Keep `quote_version`, `target_order_owner`, `acceptance_evidence_id` in a typed command draft and map actual server field errors to the form. Preserve navigation/filter state where safe, focus the actionable error summary, and reload/review a stale record before resubmission. Laravel reauthorizes every command independently of client visibility.
 
-## Canonical one-to-one React/Inertia implementation
+Share framework-independent cards, tables, labels, formatting and field primitives with the [Next.js adapter](../nextjs/sales-and-crm.md). Keep Inertia `Link`, visits, page props, form transport and redirects in its wrapper; Next.js retains its own routing, server/client and cache boundaries.
 
-**Package:** `module-sap-sales-and-crm-react-inertia`
-**Matching domain module:** `sap-sales-and-crm`
-**Application:** SAP
-**Source feature:** [Sales and CRM](../features/sales-and-crm.md)
-**Architecture:** [REACT.md](../SAP.md) · [API.md](../SAP.md) · [Matching API module](../api/sales-and-crm.md) · [MODULES.md](../SAP.md) · [TESTING.md](../SAP.md)
+The React UI displays business and operation states separately. A queued response preserves a pending status and authorized progress link; it does not manufacture the eventual domain outcome in local state.
 
-## 1. Purpose and ownership
+## Authorization, recovery and operations
 
-This optional React 19.2 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, React components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+Account teams propose; commercial approvers authorize within value/entity limits; destination services independently authorize acceptance.
 
-## 2. Module-specific surfaces
+If quote validity expires or the destination rejects a product mapping, request review and prepare a new version. Retry a network failure under the original handoff identity.
 
-- **Accounts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Leads:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Opportunities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Quotes:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Contracts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Orders:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Customer success:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Communications:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Forecasts:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+Show the selected entity, source/subject reference, current business state and separate operation progress. Preserve safe drafts on validation/conflict. Reauthenticate on expiry and discard protected cached data after scope/permission changes. A network timeout never establishes whether an external write succeeded; use the durable operation/source reference for reconciliation.
 
-## 3. React 19.2 + Inertia 3 implementation
+## Module-specific acceptance
 
-- Register a stable `module-sap-sales-and-crm-react-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
-- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, hooks under `resources/js/hooks`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
-- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+- An expired or superseded quote cannot be accepted; a retry returns the same downstream order; unauthorized customer details are absent from projections.
+- Repeated commands return the documented existing result or a clear conflict; they cannot duplicate a completed external side effect.
+- A tenant/entity switch, permission revocation or expired session cannot reuse another scope's cached record, attachment or exported file.
+- A downstream failure remains observable with a valid owner/recovery path across every enabled presentation.
 
-### Capability mapping
+- Exercise the `submit` example with allowed, denied, invalid, stale, duplicate and uncertain-result paths; confirm `accepted` only from its authoritative outcome.
+- Verify the enabled layer uses the same domain/operation contract as other surfaces and cannot bypass it through generic saves, hydrated state, direct JSON fields or offline replay.
+- Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
 
-- `accounts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `leads`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `opportunities`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `quotes`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `contracts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `orders`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `customer-success`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `communications`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-- `forecasts`: map the matching API query/action to a focused React page, component, hook, or Inertia form.
-
-## 4. API contract and Inertia consumption
-
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
-- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
-
-## 5. Security and verification
-
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
-- Test observable behavior with TypeScript, ESLint, Vitest, React Testing Library, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
-
-## 6. Definition of done
-
-- Package identity, public exports, API dependency, and module dependency match `sap-sales-and-crm` one-to-one.
-- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
-- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.

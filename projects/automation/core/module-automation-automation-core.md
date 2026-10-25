@@ -1,8 +1,12 @@
 # Automation: Module Automation Automation Core Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-automation-automation-core). Observed identity: [`liberusoftware/automation-automation-core`](../../../modules/source/liberusoftware--automation-automation-core.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-automation-module-automation-automation-core`
+**Design package identifier:** `module-automation-module-automation-automation-core`
 **Domain specification:** [Module Automation Automation Core](../features/module-automation-automation-core.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

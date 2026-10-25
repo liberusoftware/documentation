@@ -1,8 +1,12 @@
 # Crm: Collaboration Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#collaboration). Observed identity: [`liberusoftware/module-crm-collaboration`](../../../modules/source/liberusoftware--module-crm-collaboration.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-collaboration`
+**Design package identifier:** `module-crm-collaboration`
 **Domain specification:** [Collaboration](../features/collaboration.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

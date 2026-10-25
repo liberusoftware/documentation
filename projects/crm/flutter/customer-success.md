@@ -1,5 +1,9 @@
 # Customer Success Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#customer-success). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-customer-success-flutter
 **Matching core package:** module-crm-customer-success ([implementation](../core/customer-success.md))
 **Matching API package:** module-crm-customer-success-api ([contract](../api/customer-success.md))

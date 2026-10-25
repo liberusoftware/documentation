@@ -1,8 +1,12 @@
 # Browser Game: Browser Game Collections Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#browser-game-collections). Observed identity: [`liberusoftware/module-browser-game-collections`](../../../modules/source/liberusoftware--module-browser-game-collections.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-browser-game-browser-game-collections`
+**Design package identifier:** `module-browser-game-browser-game-collections`
 **Domain specification:** [Browser Game Collections](../features/browser-game-collections.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

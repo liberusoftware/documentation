@@ -1,8 +1,12 @@
 # Crm: Crm Search Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-search). Observed identity: [`liberusoftware/module-crm-search`](../../../modules/source/liberusoftware--module-crm-search.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-crm-search`
+**Design package identifier:** `module-crm-crm-search`
 **Domain specification:** [Crm Search](../features/crm-search.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

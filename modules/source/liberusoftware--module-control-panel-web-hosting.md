@@ -1,0 +1,131 @@
+# liberusoftware/module-control-panel-web-hosting: observed package reference
+
+**Evidence status:** extracted from tracked source at the commits below. This reference indexes declared metadata, source callables and persistence files. It does not establish a stable public API, implemented acceptance criteria, successful tests, registry availability or runtime safety.
+
+Control Panel domains, virtual hosts, runtimes, redirects, SSL, logs, and applications.
+
+## Source locations
+
+| Application | Actual directory | Commit | Reference variant | Test files |
+| --- | --- | --- | --- | ---: |
+| [control-panel](../../projects/control-panel/SOURCE-MODULES.md) | [control-panel-web-hosting](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/composer.json) | `1797f25d705f` | [Variant 1](#variant-1) | 0 |
+
+Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
+
+Use the manifest identity above for resolution. A `module-...` repository or design identifier may differ. See the [Composer lifecycle guide](../../guides/COMPOSER.md), [npm lifecycle guide](../../guides/NPM.md) and [shared ownership guide](../../architecture/SHARED-MODULES.md).
+
+## Variant 1
+
+Representative: control-panel-laravel, `control-panel-web-hosting`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+
+### Manifest and registration
+
+| Property | Observed value |
+| --- | --- |
+| Composer name | `liberusoftware/module-control-panel-web-hosting` |
+| Composer version field | `1.0.0` |
+| Package type | `liberu-module` |
+| Module manifest name | `control-panel-web-hosting` |
+| Module version field | `1.0.0` |
+| Category / layers | `"capability"` |
+| Manifest provider(s) | `"Liberu\\ControlPanel\\WebHosting\\WebHostingServiceProvider"` |
+| Composer Laravel provider registration | `[]` |
+| default_enabled field | `false` |
+
+The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
+
+Source metadata: [composer.json](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/composer.json) · [module.json](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/module.json).
+
+**Declared capabilities:** control-panel.web-hosting
+
+**Declared features:** Domain lifecycle and validation, Virtual host desired state, Runtime, redirect, and MIME metadata, Monthly disk and bandwidth usage records, Certificate and application references, Git repository deployment configuration and webhook security, Hotlink protection, Directory protection, Custom error pages, Domain cron jobs and execution history, Subdomain lifecycle and redirects
+
+### Dependencies and namespace mapping
+
+| Dependency | Constraint |
+| --- | --- |
+| `illuminate/database` | `^13.0` |
+| `illuminate/support` | `^13.0` |
+| `liberusoftware/module-manager` | `^1.0` |
+| `php` | `^8.5` |
+
+PSR-4 mappings: `{"Liberu\\ControlPanel\\WebHosting\\": "src/"}`.
+
+Module resolver requirements: `{"laravel": "^13.0", "packages": {"liberusoftware/module-manager": "^1.0"}, "php": "^8.5"}`.
+
+### Source entry points
+
+The following paths identify contracts, actions, queries, policies, services and presentation code for review. Listed public methods are signature excerpts, not API schema or authorization guarantees. Resolve argument types/imports in the linked file and check the provider/call sites before invoking a class.
+
+| Source file | Public method signatures observed |
+| --- | --- |
+| [src/Actions/ActivateDomain.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/ActivateDomain.php) | `public function execute(Domain $domain): Domain` |
+| [src/Actions/AddDirectoryProtectionUser.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/AddDirectoryProtectionUser.php) | `public function execute(DirectoryProtection $protection, string $username, string $password): DirectoryProtectionUser` |
+| [src/Actions/ArchiveDomain.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/ArchiveDomain.php) | `public function execute(Domain $domain): Domain` |
+| [src/Actions/CheckApplicationHealth.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/CheckApplicationHealth.php) | `public function __construct(private readonly RecordApplicationMetric $record)`<br>`public function execute(HostedApplication $application): array` |
+| [src/Actions/CheckWordPressUpdates.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/CheckWordPressUpdates.php) | `public function execute(HostedApplication $application): array` |
+| [src/Actions/ConfigureHotlinkProtection.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/ConfigureHotlinkProtection.php) | `public function execute(Domain $domain, array $attributes): HotlinkProtection` |
+| [src/Actions/CreateCronJob.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/CreateCronJob.php) | `public function execute(Domain $domain, array $attributes): CronJob`<br>`public function assertSchedule(string $schedule): void` |
+| [src/Actions/CreateDirectoryProtection.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/CreateDirectoryProtection.php) | `public function execute(Domain $domain, array $attributes): DirectoryProtection` |
+| [src/Actions/CreateDomain.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/CreateDomain.php) | `public function __construct(private Dispatcher $events)`<br>`public function execute(array $attributes): Domain` |
+| [src/Actions/CreateMimeType.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/CreateMimeType.php) | `public function execute(Domain $domain, array $attributes): MimeType` |
+| [src/Actions/CreateRedirect.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/CreateRedirect.php) | `public function execute(Domain $domain, array $attributes): Redirect` |
+| [src/Actions/CreateSubdomain.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/CreateSubdomain.php) | `public function execute(Domain $domain, array $attributes): Subdomain` |
+| [src/Actions/CreateVirtualHost.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/CreateVirtualHost.php) | `public function execute(Domain $domain, array $attributes): VirtualHost` |
+| [src/Actions/DeleteCronJob.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/DeleteCronJob.php) | `public function execute(CronJob $job): void` |
+| [src/Actions/DeleteCustomErrorPage.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/DeleteCustomErrorPage.php) | `public function execute(CustomErrorPage $page): void` |
+| [src/Actions/DeleteDirectoryProtection.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/DeleteDirectoryProtection.php) | `public function execute(DirectoryProtection $protection): void` |
+| [src/Actions/DeleteHostedApplication.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/DeleteHostedApplication.php) | `public function execute(HostedApplication $application): void` |
+| [src/Actions/DeleteRedirect.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/DeleteRedirect.php) | `public function execute(Redirect $redirect): void` |
+| [src/Actions/DeleteSubdomain.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/DeleteSubdomain.php) | `public function execute(Subdomain $subdomain): void` |
+| [src/Actions/DeleteVirtualHost.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/DeleteVirtualHost.php) | `public function execute(VirtualHost $virtualHost): void` |
+| [src/Actions/RecordApplicationMetric.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/RecordApplicationMetric.php) | `public function execute(HostedApplication $application, array $attributes): ApplicationMetric` |
+| [src/Actions/RecordCronExecution.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/RecordCronExecution.php) | `public function execute(CronJob $job, array $attributes): CronExecution` |
+| [src/Actions/RecordResourceUsage.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/RecordResourceUsage.php) | `public function execute(Domain $domain, array $attributes): ResourceUsage` |
+| [src/Actions/RegisterGitDeployment.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/RegisterGitDeployment.php) | `public function execute(Domain $domain, array $attributes): GitDeployment` |
+| [src/Actions/RegisterHostingResource.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/RegisterHostingResource.php) | `public function execute(array $attributes): Model` |
+| [src/Actions/RemoveDirectoryProtectionUser.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/RemoveDirectoryProtectionUser.php) | `public function execute(DirectoryProtectionUser $user): void` |
+| [src/Actions/RequestCertificate.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/RequestCertificate.php) | `public function execute(Domain $domain, array $attributes = []): SslCertificate` |
+| [src/Actions/RequestGitDeployment.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/RequestGitDeployment.php) | `public function execute(GitDeployment $deployment): GitDeployment` |
+| [src/Actions/SaveCustomErrorPage.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/SaveCustomErrorPage.php) | `public function execute(Domain $domain, array $attributes): CustomErrorPage` |
+| [src/Actions/SavePhpConfiguration.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/SavePhpConfiguration.php) | `public function execute(Domain $domain, array $attributes): PhpConfiguration` |
+| [src/Actions/SuspendDomain.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/SuspendDomain.php) | `public function execute(Domain $domain, string $reason): Domain` |
+| [src/Actions/UpdateCronJob.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/UpdateCronJob.php) | `public function execute(CronJob $job, array $attributes): CronJob` |
+| [src/Actions/UpdateDomain.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/UpdateDomain.php) | `public function execute(Domain $domain, array $attributes): Domain` |
+| [src/Actions/UpdateHostedApplication.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/UpdateHostedApplication.php) | `public function execute(HostedApplication $application, array $attributes): HostedApplication` |
+| [src/Actions/UpdateRedirect.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/UpdateRedirect.php) | `public function execute(Redirect $redirect, array $attributes): Redirect` |
+| [src/Actions/UpdateSubdomain.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/UpdateSubdomain.php) | `public function execute(Subdomain $subdomain, array $attributes): Subdomain` |
+| [src/Actions/UpdateVirtualHost.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Actions/UpdateVirtualHost.php) | `public function execute(VirtualHost $virtualHost, array $attributes): VirtualHost` |
+| [src/Queries/ApplicationStatistics.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Queries/ApplicationStatistics.php) | `public function execute(string\|int $teamId, int $days = 30): array` |
+| [src/Queries/ListDomains.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Queries/ListDomains.php) | `public function execute(?string $teamId = null, int $perPage = 25): LengthAwarePaginator` |
+| [src/Queries/ListGitDeployments.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Queries/ListGitDeployments.php) | `public function execute(string\|int $teamId, int $perPage = 25, string $search = ''): LengthAwarePaginator` |
+| [src/Queries/ListResourceUsage.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Queries/ListResourceUsage.php) | `public function execute(string\|int $teamId, ?string $domainId = null, int $months = 12): Collection` |
+
+Other non-legacy PHP sources: [src/Enums/CertificateStatus.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Enums/CertificateStatus.php) · [src/Enums/DomainStatus.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Enums/DomainStatus.php) · [src/Events/DomainCreated.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Events/DomainCreated.php) · [src/Models/ApplicationMetric.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/ApplicationMetric.php) · [src/Models/CronExecution.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/CronExecution.php) · [src/Models/CronJob.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/CronJob.php) · [src/Models/CustomErrorPage.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/CustomErrorPage.php) · [src/Models/DirectoryProtection.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/DirectoryProtection.php) · [src/Models/DirectoryProtectionUser.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/DirectoryProtectionUser.php) · [src/Models/Domain.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/Domain.php) · [src/Models/GitDeployment.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/GitDeployment.php) · [src/Models/HostedApplication.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/HostedApplication.php) · [src/Models/HostingLog.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/HostingLog.php) · [src/Models/HotlinkProtection.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/HotlinkProtection.php) · [src/Models/MimeType.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/MimeType.php) · [src/Models/PhpConfiguration.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/PhpConfiguration.php) · [src/Models/Redirect.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/Redirect.php) · [src/Models/ResourceUsage.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/ResourceUsage.php) · [src/Models/RuntimeVersion.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/RuntimeVersion.php) · [src/Models/SslCertificate.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/SslCertificate.php) · [src/Models/Subdomain.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/Subdomain.php) · [src/Models/VirtualHost.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/VirtualHost.php) · [src/Models/WebServer.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Models/WebServer.php) · [src/WebHostingServiceProvider.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/WebHostingServiceProvider.php).
+
+### Persistence and lifecycle evidence
+
+Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
+
+- [database/migrations/2026_08_23_020000_create_control_panel_web_hosting_tables.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/database/migrations/2026_08_23_020000_create_control_panel_web_hosting_tables.php)
+- [database/migrations/2026_08_24_000001_create_control_panel_web_hosting_operations.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/database/migrations/2026_08_24_000001_create_control_panel_web_hosting_operations.php)
+- [database/migrations/2026_08_24_160000_create_control_panel_git_deployments.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/database/migrations/2026_08_24_160000_create_control_panel_git_deployments.php)
+- [database/migrations/2026_08_24_170000_create_control_panel_php_configurations.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/database/migrations/2026_08_24_170000_create_control_panel_php_configurations.php)
+- [database/migrations/2026_08_25_000001_create_control_panel_application_metrics.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/database/migrations/2026_08_25_000001_create_control_panel_application_metrics.php)
+- [database/migrations/2026_08_30_000001_create_control_panel_resource_usage.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/database/migrations/2026_08_30_000001_create_control_panel_resource_usage.php)
+- [database/migrations/2026_08_30_000003_create_control_panel_web_protection.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/database/migrations/2026_08_30_000003_create_control_panel_web_protection.php)
+- [database/migrations/2026_08_30_000004_add_redirect_policies_and_mime_types.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/database/migrations/2026_08_30_000004_add_redirect_policies_and_mime_types.php)
+- [database/migrations/2026_08_30_000006_create_control_panel_cron_tables.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/database/migrations/2026_08_30_000006_create_control_panel_cron_tables.php)
+- [database/migrations/2026_08_30_000007_create_control_panel_subdomains.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/database/migrations/2026_08_30_000007_create_control_panel_subdomains.php)
+
+[src/Enums/CertificateStatus.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Enums/CertificateStatus.php): `Pending = 'pending'`, `Issued = 'issued'`, `Expired = 'expired'`, `Revoked = 'revoked'`.
+
+[src/Enums/DomainStatus.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-web-hosting/src/Enums/DomainStatus.php): `Pending = 'pending'`, `Active = 'active'`, `Suspended = 'suspended'`, `Archived = 'archived'`.
+
+### Verification and consumer use
+
+Declared Composer scripts: `{}`.
+
+No tracked files under `tests/` were observed in this source location. Do not describe this as a verified independent suite.
+
+Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

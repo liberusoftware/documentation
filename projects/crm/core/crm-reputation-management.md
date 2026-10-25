@@ -1,8 +1,12 @@
 # CRM: Crm Reputation Management Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-reputation-management). Observed identity: [`liberusoftware/module-crm-reputation-management`](../../../modules/source/liberusoftware--module-crm-reputation-management.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-crm-reputation-management`
+**Design package identifier:** `module-crm-crm-reputation-management`
 **Domain specification:** [Crm Reputation Management](../features/crm-reputation-management.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

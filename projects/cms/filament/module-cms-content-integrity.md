@@ -1,12 +1,16 @@
 # CMS: Module Cms Content Integrity Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-content-integrity). Observed identity: [`liberusoftware/module-cms-content-integrity-filament`](../../../modules/source/liberusoftware--module-cms-content-integrity-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-cms-module-cms-content-integrity-filament`  
 **Matching domain module:** `module-cms-content-integrity`  
 **Application:** CMS  
 **Source feature:** [Module Cms Content Integrity](../features/module-cms-content-integrity.md)  
-**Architecture:** [FILAMENT.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

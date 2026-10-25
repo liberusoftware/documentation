@@ -1,12 +1,16 @@
 # CRM: Case Management API
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#case-management). Observed identity: [`liberusoftware/module-crm-case-management-api`](../../../modules/source/liberusoftware--module-crm-case-management-api.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one API module specification
 
-**API package:** `module-crm-case-management-api`
+**Proposed API design identifier:** `module-crm-case-management-api`
 **Matching domain module:** `crm-case-management`
 **Application:** CRM
 **Source feature:** [Case Management](../features/case-management.md)
-**Architecture:** [API.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [API.md](../../../architecture/API.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
@@ -31,105 +35,68 @@ Installation does not expose every capability automatically. The host applicatio
 ## 2. Contract design
 
 - Publish an OpenAPI 3.1 fragment with stable operation IDs, schemas, examples, scopes, errors, pagination, rate limits, idempotency, and deprecation metadata.
-- Use `/api/v1/crm/case-management` as the default module route prefix unless the application owns and documents a compatible façade path.
+- Choose the route namespace through the host's reviewed API contract; observed source prefixes below take precedence over repository/design-name guesses.
 - Represent resources through explicit API DTOs/resources rather than automatic Eloquent serialization.
 - Use lowercase kebab-case paths, snake_case JSON fields, opaque identifiers, ISO 8601 timestamps, explicit money objects, and RFC 9457 Problem Details errors.
 - Compatible additions remain within the major version; removals or semantic breaks require a new major version or approved migration path.
 
 ## 3. Endpoint examples
 
-**Base path:** `/api/v1/crm/case-management`
+**Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
 
-These examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.
+| Boundary | Observed identity and implementation reference |
+| --- | --- |
+| Source package | [liberusoftware/module-crm-case-management-api](../../../modules/source/liberusoftware--module-crm-case-management-api.md) |
+| Source package | [liberusoftware/module-crm-case-management](../../../modules/source/liberusoftware--module-crm-case-management.md) |
 
-| Method   | Endpoint                                                     | Purpose                                       | Possible request data                                                                         |
-| -------- | ------------------------------------------------------------ | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `GET`    | `/api/v1/crm/case-management?page[size]=25&sort=-created_at` | List authorized resources                     | Query parameters for pagination, filtering, sorting, field selection, and documented includes |
-| `GET`    | `/api/v1/crm/case-management/{id}`                           | Retrieve one resource                         | Opaque resource `id` in the path; no request body                                             |
-| `POST`   | `/api/v1/crm/case-management`                                | Create a resource                             | JSON body using the module schema and required team/context fields                            |
-| `PATCH`  | `/api/v1/crm/case-management/{id}`                           | Update permitted fields                       | JSON body containing changed fields and `If-Match` when concurrency is supported              |
-| `DELETE` | `/api/v1/crm/case-management/{id}`                           | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted           |
-| `POST`   | `/api/v1/crm/case-management/{id}/<explicit-action>`         | Execute a documented domain action            | Action-specific JSON body and `Idempotency-Key` for retryable writes                          |
+### Observed route declarations
 
-Example create request (illustrative fields only):
+These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-```json
-{
-  "tickets_cases": "example-value",
-  "types": "example-value",
-  "pipelines": "example-value"
-}
+[modules/crm-case-management-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-case-management-api/routes/api.php)
+
+```php
+Route::middleware('auth:sanctum')->prefix('api/v1/crm/case-management')->group(function (): void {
+Route::get('cases', [CaseManagementController::class, 'index']);
+Route::post('cases', [CaseManagementController::class, 'store']);
+Route::post('cases/{case}/transition', [CaseManagementController::class, 'transition']);
+Route::get('queue', [CaseManagementController::class, 'queue']);
 ```
 
-Example request headers:
+### Observed controller entry points
 
-```http
-Accept: application/json
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Content-Type: application/json
-Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
-X-Request-ID: 01JEXAMPLEREQUESTID
-```
+The signatures identify request handlers to review; their argument names are not complete JSON schemas. Read their request validation, actor/tenant resolution, policy, serialization and error paths before writing a client.
 
-Successful reads and writes return the standard `data` envelope from [API.md](../CRM.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
+| Controller source | Public handler signatures |
+| --- | --- |
+| [CaseManagementController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-case-management-api/src/Http/Controllers/CaseManagementController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, OpenCase $a): JsonResponse`<br>`public function transition(Request $request, CaseRecord $case, TransitionCase $a): JsonResponse`<br>`public function queue(Request $request): JsonResponse` |
+
+A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
 ## 4. OpenAPI schema
 
-This module owns a versioned OpenAPI 3.1 fragment for `crm-case-management`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/crm-case-management.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.
+No machine-readable schema file was found in the indexed `openapi/` or `schemas/` roots of the matched packages. Define a reviewed fragment from the actual public operations; a capability list or unrestricted `attributes` object is not a complete request contract. Application-owned or differently located contracts may need separate mapping.
 
-### Required schema elements
+For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 
-- Use stable operation IDs such as `crm.case.management.list`, `crm.case.management.get`, `crm.case.management.create`, `crm.case.management.update`, and `crm.case.management.delete`; use an explicit domain action ID when applicable.
-- Define the module's resource schema as `CrmCaseManagementResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.
-- Document possible module fields including `tickets_cases`, `types`, `pipelines`, `statuses`, `priorities`, `ownership`; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.
-- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.
-- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../CRM.md); do not serialize Eloquent models automatically.
+Validate/bundle the fragment, check supported-version compatibility and generate clients only from the reviewed contract. Retain the source/schema commit or release in client compatibility notes. See the [API architecture](../../../architecture/API.md), [source mapping](../SOURCE-MAPPING.md#case-management), and [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) guides.
 
-### Minimal fragment example
+## 5. Audience and operation matrix
 
-```yaml
-openapi: 3.1.0
-info:
-  title: crm case management API
-  version: 1.0.0
-paths:
-  /api/v1/crm/case-management:
-    get:
-      operationId: crm.case.management.…172152 tokens truncated…cations compose it explicitly.
-- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, composables under `resources/js/composables`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
-- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+Expose only explicitly selected operations. Anonymous access is disabled unless the owning capability requires it; customer/partner reads and commands use record/tenant scope, staff actions use the relevant policy, and integrations use a narrow service identity. UI visibility and authentication alone do not establish authorization.
 
-### Capability mapping
+## 6. Implementation strategy
 
-- `lead-opportunity-scoring`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `churn-renewal-risk`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `next-action-product`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `forecast`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `routing`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `model-registry`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `evaluation`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `drift`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `explanations`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+Resolve trusted actor/tenant context, validate the reviewed request and delegate to the public owning action/query. Serialize explicit authorized DTOs; preserve documented operation identity, concurrency and error semantics. Reuse existing owner APIs instead of copying their records or private model access.
 
-## 4. API contract and Inertia consumption
+## 7. Security, resilience, and observability
 
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router`for mutations, preserving server validation and redirect semantics.
-- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+Apply record/field policy to lists, relationships, commands, bulk work, jobs and downloads. Use bounded retries/timeouts, durable operation/source references and explicit partial-failure recovery. Redact credentials/protected data while retaining safe request/correlation diagnostics.
 
-## 5. Security and verification
+## 8. Verification strategy
 
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
-- Test observable behavior with TypeScript, ESLint, Vitest, Vue Test Utils, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
+Verify actual route/schema parity, required input, allowed/denied/wrong-tenant requests, stale/duplicate commands, uncertain outcomes, pagination/field policy and affected owner integrations. Check the declared package/host scripts and supported versions; source/test presence is not a passing-run claim.
 
-## 6. Definition of done
+## 9. Definition of done
 
-- Package identity, public exports, API dependency, and module dependency match`crm-predictive-models` one-to-one.
-- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
-- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
-
-```
+Release only after the complete reviewed request/response/error contract, version compatibility, security and owner invariants, consumer integration, migrations where owned, and operational recovery are verified. Document the actual package identity and source/release evidence in its README and changelog.

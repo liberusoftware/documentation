@@ -1,8 +1,12 @@
 # Maintenance: Module Maintenance Work Orders Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-work-orders). Observed identity: [`liberusoftware/module-maintenance-work-orders`](../../../modules/source/liberusoftware--module-maintenance-work-orders.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-maintenance-module-maintenance-work-orders`
+**Design package identifier:** `module-maintenance-module-maintenance-work-orders`
 **Domain specification:** [Module Maintenance Work Orders](../features/module-maintenance-work-orders.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

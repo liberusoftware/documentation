@@ -1,5 +1,9 @@
 # Commerce Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-browser-game-commerce-flutter
 **Matching core package:** module-browser-game-commerce ([implementation](../core/commerce.md))
 **Matching API package:** module-browser-game-commerce-api ([contract](../api/commerce.md))

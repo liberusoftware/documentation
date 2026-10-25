@@ -1,12 +1,16 @@
 # Real Estate: Features
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#features). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-real-estate-features`
 **Application:** Real Estate  
 **Capability group:** Features  
 **Source scope:** [REAL-ESTATE.md](../REAL-ESTATE.md)  
-**Architecture:** [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md) · [API.md](../REAL-ESTATE.md) · [FILAMENT.md](../REAL-ESTATE.md) · [LIVEWIRE.md](../REAL-ESTATE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

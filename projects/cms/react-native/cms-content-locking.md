@@ -1,5 +1,9 @@
 # Cms Content Locking React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-content-locking). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-content-locking-react-native
 **Matching core package:** module-cms-cms-content-locking ([implementation](../core/cms-content-locking.md))
 **Matching API package:** module-cms-cms-content-locking-api ([contract](../api/cms-content-locking.md))

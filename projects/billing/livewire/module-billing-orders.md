@@ -1,12 +1,16 @@
 # Billing: Module Billing Orders Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-orders). Observed identity: [`liberusoftware/module-billing-orders-livewire`](../../../modules/source/liberusoftware--module-billing-orders-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-billing-module-billing-orders-livewire`  
 **Matching domain module:** `module-billing-orders`  
 **Application:** Billing  
 **Source feature:** [Module Billing Orders](../features/module-billing-orders.md)  
-**Architecture:** [LIVEWIRE.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

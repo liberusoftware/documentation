@@ -1,8 +1,12 @@
 # Cms: Form Operations Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#form-operations). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-form-operations`
+**Design package identifier:** `module-cms-form-operations`
 **Domain specification:** [Form Operations](../features/form-operations.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

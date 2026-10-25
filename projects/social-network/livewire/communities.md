@@ -1,12 +1,16 @@
 # Social Network: Communities Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#communities). Observed identity: [`liberusoftware/module-social-network-communities-livewire`](../../../modules/source/liberusoftware--module-social-network-communities-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-social-network-communities-livewire`  
 **Matching domain module:** `social-network-communities`  
 **Application:** Social Network  
 **Source feature:** [Communities](../features/communities.md)  
-**Architecture:** [LIVEWIRE.md](../SOCIAL-NETWORK.md) · [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

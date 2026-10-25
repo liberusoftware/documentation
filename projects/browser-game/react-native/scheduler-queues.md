@@ -1,5 +1,9 @@
 # Scheduler Queues React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#scheduler-queues). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-browser-game-scheduler-queues-react-native
 **Matching core package:** module-browser-game-scheduler-queues ([implementation](../core/scheduler-queues.md))
 **Matching API package:** module-browser-game-scheduler-queues-api ([contract](../api/scheduler-queues.md))

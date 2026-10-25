@@ -1,12 +1,16 @@
 # CRM: Crm White Label Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-white-label). Observed identity: [`liberusoftware/module-crm-white-label-filament`](../../../modules/source/liberusoftware--module-crm-white-label-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-crm-white-label-filament`  
 **Matching domain module:** `crm-white-label`  
 **Application:** CRM  
 **Source feature:** [Crm White Label](../features/crm-white-label.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

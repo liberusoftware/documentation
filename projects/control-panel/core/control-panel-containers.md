@@ -1,8 +1,12 @@
 # Control Panel: Control Panel Containers Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-containers). Observed identity: [`liberusoftware/module-control-panel-containers`](../../../modules/source/liberusoftware--module-control-panel-containers.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-control-panel-control-panel-containers`
+**Design package identifier:** `module-control-panel-control-panel-containers`
 **Domain specification:** [Control Panel Containers](../features/control-panel-containers.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

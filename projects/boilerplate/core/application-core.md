@@ -1,6 +1,10 @@
 # Boilerplate: Application Core domain packages
 
-**Composer package:** `module-application-core`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#application-core). Observed identity: [`liberusoftware/application`](../../../modules/source/liberusoftware--application.md). This retained spelling maps to `application`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-application-core`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Environment validation, application metadata, health/readiness, maintenance mode, identifiers, clocks, and shared service contracts.
 

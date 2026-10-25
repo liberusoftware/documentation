@@ -2,7 +2,7 @@
 
 ## Canonical domain package boundary
 
-Core modules are the reusable, presentation-neutral Composer packages in the Liberu architecture. Each package is named `module-{independent-module-name}` and owns one cohesive domain capability: its domain model, application use cases, policies, persistence, events, jobs, contracts, lifecycle, recovery, and tests.
+Core modules are the reusable, presentation-neutral Composer packages in the Liberu architecture. Each design uses an identifier such as `module-{independent-module-name}`; installable Composer identities come from the [actual package manifests](../source/README.md). Each core package owns one cohesive domain capability: its domain model, application use cases, policies, persistence, events, jobs, contracts, lifecycle, recovery, and tests.
 
 The target is Laravel 13, PHP 8.5, Composer 2, and Pest 5. Core packages are suitable for enterprise deployments and for SMEs or personal users because the same boundary supports strong authorization, auditability, migration safety, clear workflows, low operational overhead, localization, accessibility in adapters, and safe data export.
 
@@ -40,21 +40,26 @@ Testing covers pure domain rules, actions, policies, validation, persistence, te
 
 ## Project indexes
 
-| Project         | Core module index                                            |
-| --------------- | ------------------------------------------------------------ |
-| Accounting      | [Core modules](../../projects/accounting/core/README.md)     |
-| Automation      | [Core modules](../../projects/automation/core/README.md)     |
-| Billing         | [Core modules](../../projects/billing/core/README.md)        |
-| Browser Game    | [Core modules](../../projects/browser-game/core/README.md)   |
-| CMS             | [Core modules](../../projects/cms/core/README.md)            |
-| Control Panel   | [Core modules](../../projects/control-panel/core/README.md)  |
-| CRM             | [Core modules](../../projects/crm/core/README.md)            |
-| Ecommerce       | [Core modules](../../projects/ecommerce/core/README.md)      |
-| Genealogy       | [Core modules](../../projects/genealogy/core/README.md)      |
-| Liberu platform | [Core modules](../../projects/liberu/core/README.md)         |
-| Maintenance     | [Core modules](../../projects/maintenance/core/README.md)    |
-| Real Estate     | [Core modules](../../projects/real-estate/core/README.md)    |
-| SAP             | [Core modules](../../projects/sap/core/README.md)            |
-| Social Network  | [Core modules](../../projects/social-network/core/README.md) |
+| Project | Specification documents | Standard |
+| --- | ---: | --- |
+| [Accounting](../../projects/accounting/core/README.md) | 241 | [MODULES](../../architecture/MODULES.md) |
+| [Automation](../../projects/automation/core/README.md) | 57 | [MODULES](../../architecture/MODULES.md) |
+| [Billing](../../projects/billing/core/README.md) | 81 | [MODULES](../../architecture/MODULES.md) |
+| [Boilerplate](../../projects/boilerplate/core/README.md) | 43 | [MODULES](../../architecture/MODULES.md) |
+| [Browser Game](../../projects/browser-game/core/README.md) | 61 | [MODULES](../../architecture/MODULES.md) |
+| [CMS](../../projects/cms/core/README.md) | 252 | [MODULES](../../architecture/MODULES.md) |
+| [Control Panel](../../projects/control-panel/core/README.md) | 61 | [MODULES](../../architecture/MODULES.md) |
+| [CRM](../../projects/crm/core/README.md) | 218 | [MODULES](../../architecture/MODULES.md) |
+| [Ecommerce](../../projects/ecommerce/core/README.md) | 107 | [MODULES](../../architecture/MODULES.md) |
+| [Genealogy](../../projects/genealogy/core/README.md) | 62 | [MODULES](../../architecture/MODULES.md) |
+| [Liberu platform](../../projects/liberu/core/README.md) | 4 | [MODULES](../../architecture/MODULES.md) |
+| [Maintenance](../../projects/maintenance/core/README.md) | 60 | [MODULES](../../architecture/MODULES.md) |
+| [Real Estate](../../projects/real-estate/core/README.md) | 70 | [MODULES](../../architecture/MODULES.md) |
+| [SAP enterprise suite](../../projects/sap/core/README.md) | 16 | [MODULES](../../architecture/MODULES.md) |
+| [Social Network](../../projects/social-network/core/README.md) | 59 | [MODULES](../../architecture/MODULES.md) |
 
 See [MODULES.md](../../architecture/MODULES.md), [Laravel 13](../../standards/LARAVEL.md), [PHP 8.5](../../standards/PHP.md), [DDD patterns](../../standards/DOMAIN-DRIVEN-DESIGN-PATTERNS.md), [database](../../standards/DATABASE.md), [security](../../architecture/SECURITY.md), and [testing](../../standards/TESTING.md) for the governing details.
+
+## Availability and package identities
+
+Counts above describe Markdown specifications, not released packages or implemented features. The [source inventory](../../architecture/SOURCE-INVENTORY.md) records observed manifests and source locations. Repository slugs, design identifiers, and Composer/npm package identities can differ; install using the actual manifest name. Shared capabilities use the [canonical owner](../../architecture/SHARED-MODULES.md) rather than a separate implementation in each project.

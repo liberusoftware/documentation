@@ -1,5 +1,9 @@
 # Bookings And Appointments React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#bookings-and-appointments). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-bookings-and-appointments-react-native
 **Matching core package:** module-ecommerce-bookings-and-appointments ([implementation](../core/bookings-and-appointments.md))
 **Matching API package:** module-ecommerce-bookings-and-appointments-api ([contract](../api/bookings-and-appointments.md))

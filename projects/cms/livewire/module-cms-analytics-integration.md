@@ -1,12 +1,16 @@
 # CMS: Module Cms Analytics Integration Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-analytics-integration). Observed identity: [`liberusoftware/module-cms-analytics-integration-livewire`](../../../modules/source/liberusoftware--module-cms-analytics-integration-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-cms-module-cms-analytics-integration-livewire`  
 **Matching domain module:** `module-cms-analytics-integration`  
 **Application:** CMS  
 **Source feature:** [Module Cms Analytics Integration](../features/module-cms-analytics-integration.md)  
-**Architecture:** [LIVEWIRE.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

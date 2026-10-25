@@ -1,8 +1,12 @@
 # Automation: Module Automation Voice Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-automation-voice). Observed identity: [`liberusoftware/automation-voice`](../../../modules/source/liberusoftware--automation-voice.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-automation-module-automation-voice`
+**Design package identifier:** `module-automation-module-automation-voice`
 **Domain specification:** [Module Automation Voice](../features/module-automation-voice.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

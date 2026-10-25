@@ -1,12 +1,16 @@
 # Accounting: Accounting Accounts Receivable Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-accounts-receivable). Observed identity: [`liberusoftware/module-accounting-accounts-receivable-filament`](../../../modules/source/liberusoftware--module-accounting-accounts-receivable-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-accounting-accounting-accounts-receivable-filament`  
 **Matching domain module:** `accounting-accounts-receivable`  
 **Application:** Accounting  
 **Source feature:** [Accounting Accounts Receivable](../features/accounting-accounts-receivable.md)  
-**Architecture:** [FILAMENT.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,8 +1,12 @@
 # Billing: Domains Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#domains). Observed identity: [`liberusoftware/module-billing-domains`](../../../modules/source/liberusoftware--module-billing-domains.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-domains`
+**Design package identifier:** `module-billing-domains`
 **Domain specification:** [Domains](../features/domains.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

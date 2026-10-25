@@ -1,70 +1,91 @@
 # Billing Flutter + Dart Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **81 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-- [Activity Comments Flutter](activity-comments.md) — `module-billing-activity-comments-flutter`
-- [Analytics Core Flutter](analytics-core.md) — `module-billing-analytics-core-flutter`
-- [Analytics Google Flutter](analytics-google.md) — `module-billing-analytics-google-flutter`
-- [Analytics Meta Flutter](analytics-meta.md) — `module-billing-analytics-meta-flutter`
-- [Api Access Flutter](api-access.md) — `module-billing-api-access-flutter`
-- [Application Flutter](application.md) — `module-billing-application-flutter`
-- [Audit Flutter](audit.md) — `module-billing-audit-flutter`
-- [Billing Core Flutter](billing-core.md) — `module-billing-billing-core-flutter`
-- [Currency Context Flutter](currency-context.md) — `module-billing-currency-context-flutter`
-- [Developer Experience Flutter](developer-experience.md) — `module-billing-developer-experience-flutter`
-- [Feature Flags Flutter](feature-flags.md) — `module-billing-feature-flags-flutter`
-- [Files Media Flutter](files-media.md) — `module-billing-files-media-flutter`
-- [Identity Core Flutter](identity-core.md) — `module-billing-identity-core-flutter`
-- [Identity Socialstream Flutter](identity-socialstream.md) — `module-billing-identity-socialstream-flutter`
-- [Import Export Flutter](import-export.md) — `module-billing-import-export-flutter`
-- [Integrations Flutter](integrations.md) — `module-billing-integrations-flutter`
-- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-billing-jetstream-bridge-flutter`
-- [Liberu Business Workflow Reconciliation Flutter](liberu-business-workflow-reconciliation.md) — `module-billing-liberu-business-workflow-reconciliation-flutter`
-- [Liberu Executive Insights Flutter](liberu-executive-insights.md) — `module-billing-liberu-executive-insights-flutter`
-- [Liberu Platform Orchestration Flutter](liberu-platform-orchestration.md) — `module-billing-liberu-platform-orchestration-flutter`
-- [Liberu Revenue And Care Orchestration Flutter](liberu-revenue-and-care-orchestration.md) — `module-billing-liberu-revenue-and-care-orchestration-flutter`
-- [Localization Core Flutter](localization-core.md) — `module-billing-localization-core-flutter`
-- [Localization Mymemory Flutter](localization-mymemory.md) — `module-billing-localization-mymemory-flutter`
-- [Module Billing Billing Core Flutter](module-billing-billing-core.md) — `module-billing-module-billing-billing-core-flutter`
-- [Module Billing Catalog Flutter](module-billing-catalog.md) — `module-billing-module-billing-catalog-flutter`
-- [Module Billing Collections Flutter](module-billing-collections.md) — `module-billing-module-billing-collections-flutter`
-- [Module Billing Communications Flutter](module-billing-communications.md) — `module-billing-module-billing-communications-flutter`
-- [Module Billing Core Flutter](module-billing-core.md) — `module-billing-module-billing-core-flutter`
-- [Module Billing Cpanel Flutter](module-billing-cpanel.md) — `module-billing-module-billing-cpanel-flutter`
-- [Module Billing Customer Portal Flutter](module-billing-customer-portal.md) — `module-billing-module-billing-customer-portal-flutter`
-- [Module Billing Directadmin Flutter](module-billing-directadmin.md) — `module-billing-module-billing-directadmin-flutter`
-- [Module Billing Domains Flutter](module-billing-domains.md) — `module-billing-module-billing-domains-flutter`
-- [Module Billing Enom Flutter](module-billing-enom.md) — `module-billing-module-billing-enom-flutter`
-- [Module Billing Hosting Flutter](module-billing-hosting.md) — `module-billing-module-billing-hosting-flutter`
-- [Module Billing Invoicing Flutter](module-billing-invoicing.md) — `module-billing-module-billing-invoicing-flutter`
-- [Module Billing Isp Flutter](module-billing-isp.md) — `module-billing-module-billing-isp-flutter`
-- [Module Billing Liberu Control Panel Flutter](module-billing-liberu-control-panel.md) — `module-billing-module-billing-liberu-control-panel-flutter`
-- [Module Billing Orders Flutter](module-billing-orders.md) — `module-billing-module-billing-orders-flutter`
-- [Module Billing Paddle Flutter](module-billing-paddle.md) — `module-billing-module-billing-paddle-flutter`
-- [Module Billing Payments Flutter](module-billing-payments.md) — `module-billing-module-billing-payments-flutter`
-- [Module Billing Plesk Flutter](module-billing-plesk.md) — `module-billing-module-billing-plesk-flutter`
-- [Module Billing Pricing Flutter](module-billing-pricing.md) — `module-billing-module-billing-pricing-flutter`
-- [Module Billing Provisioning Flutter](module-billing-provisioning.md) — `module-billing-module-billing-provisioning-flutter`
-- [Module Billing Reporting Flutter](module-billing-reporting.md) — `module-billing-module-billing-reporting-flutter`
-- [Module Billing Resellerclub Flutter](module-billing-resellerclub.md) — `module-billing-module-billing-resellerclub-flutter`
-- [Module Billing Stripe Flutter](module-billing-stripe.md) — `module-billing-module-billing-stripe-flutter`
-- [Module Billing Subscriptions Flutter](module-billing-subscriptions.md) — `module-billing-module-billing-subscriptions-flutter`
-- [Module Billing Usage Flutter](module-billing-usage.md) — `module-billing-module-billing-usage-flutter`
-- [Module Billing Virtualmin Flutter](module-billing-virtualmin.md) — `module-billing-module-billing-virtualmin-flutter`
-- [Module Liberu Business Workflow Reconciliation Flutter](module-liberu-business-workflow-reconciliation.md) — `module-billing-module-liberu-business-workflow-reconciliation-flutter`
-- [Module Liberu Executive Insights Flutter](module-liberu-executive-insights.md) — `module-billing-module-liberu-executive-insights-flutter`
-- [Module Liberu Platform Orchestration Flutter](module-liberu-platform-orchestration.md) — `module-billing-module-liberu-platform-orchestration-flutter`
-- [Module Liberu Revenue And Care Orchestration Flutter](module-liberu-revenue-and-care-orchestration.md) — `module-billing-module-liberu-revenue-and-care-orchestration-flutter`
-- [Module Manager Flutter](module-manager.md) — `module-billing-module-manager-flutter`
-- [Notifications Flutter](notifications.md) — `module-billing-notifications-flutter`
-- [Observability Flutter](observability.md) — `module-billing-observability-flutter`
-- [Organizations Teams Flutter](organizations-teams.md) — `module-billing-organizations-teams-flutter`
-- [Profiles Flutter](profiles.md) — `module-billing-profiles-flutter`
-- [Roles Permissions Flutter](roles-permissions.md) — `module-billing-roles-permissions-flutter`
-- [Scheduler Queues Flutter](scheduler-queues.md) — `module-billing-scheduler-queues-flutter`
-- [Search Flutter](search.md) — `module-billing-search-flutter`
-- [Sessions Devices Flutter](sessions-devices.md) — `module-billing-sessions-devices-flutter`
-- [Settings Flutter](settings.md) — `module-billing-settings-flutter`
-- [Theme Support Flutter](theme-support.md) — `module-billing-theme-support-flutter`
-- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-billing-two-factor-authentication-flutter`
-- [Webhooks Flutter](webhooks.md) — `module-billing-webhooks-flutter`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Flutter + Dart](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Flutter + Dart](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Flutter + Dart](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Flutter + Dart](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Flutter + Dart](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Flutter + Dart](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Flutter + Dart](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Billing Core Flutter + Dart](billing-core.md) | [Target/source map](../SOURCE-MAPPING.md#billing-core) | [core](../core/billing-core.md) · [api](../api/billing-core.md) · [nextjs](../nextjs/billing-core.md) |
+| [Catalog Flutter + Dart](catalog.md) | [Target/source map](../SOURCE-MAPPING.md#catalog) | [core](../core/catalog.md) · [api](../api/catalog.md) · [nextjs](../nextjs/catalog.md) |
+| [Collections Flutter + Dart](collections.md) | [Target/source map](../SOURCE-MAPPING.md#collections) | [core](../core/collections.md) · [api](../api/collections.md) · [nextjs](../nextjs/collections.md) |
+| [Communications Flutter + Dart](communications.md) | [Target/source map](../SOURCE-MAPPING.md#communications) | [core](../core/communications.md) · [api](../api/communications.md) · [nextjs](../nextjs/communications.md) |
+| [Currency Context Flutter + Dart](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customer Portal Flutter + Dart](customer-portal.md) | [Target/source map](../SOURCE-MAPPING.md#customer-portal) | [core](../core/customer-portal.md) · [api](../api/customer-portal.md) · [nextjs](../nextjs/customer-portal.md) |
+| [Developer Experience Flutter + Dart](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Domains Flutter + Dart](domains.md) | [Target/source map](../SOURCE-MAPPING.md#domains) | [core](../core/domains.md) · [api](../api/domains.md) · [nextjs](../nextjs/domains.md) |
+| [Feature Flags Flutter + Dart](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Flutter + Dart](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Hosting Flutter + Dart](hosting.md) | [Target/source map](../SOURCE-MAPPING.md#hosting) | [core](../core/hosting.md) · [api](../api/hosting.md) · [nextjs](../nextjs/hosting.md) |
+| [Identity Core Flutter + Dart](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Flutter + Dart](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Flutter + Dart](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Flutter + Dart](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Invoicing Flutter + Dart](invoicing.md) | [Target/source map](../SOURCE-MAPPING.md#invoicing) | [core](../core/invoicing.md) · [api](../api/invoicing.md) · [nextjs](../nextjs/invoicing.md) |
+| [Isp Flutter + Dart](isp.md) | [Target/source map](../SOURCE-MAPPING.md#isp) | [core](../core/isp.md) · [api](../api/isp.md) · [nextjs](../nextjs/isp.md) |
+| [Jetstream Bridge Flutter + Dart](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation Flutter + Dart](liberu-business-workflow-reconciliation.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-business-workflow-reconciliation) | [core](../core/liberu-business-workflow-reconciliation.md) · [api](../api/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights Flutter + Dart](liberu-executive-insights.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-executive-insights) | [core](../core/liberu-executive-insights.md) · [api](../api/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration Flutter + Dart](liberu-platform-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-platform-orchestration) | [core](../core/liberu-platform-orchestration.md) · [api](../api/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration Flutter + Dart](liberu-revenue-and-care-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-revenue-and-care-orchestration) | [core](../core/liberu-revenue-and-care-orchestration.md) · [api](../api/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core Flutter + Dart](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Flutter + Dart](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Module Billing Billing Core Flutter + Dart](module-billing-billing-core.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-billing-core) | [core](../core/module-billing-billing-core.md) · [api](../api/module-billing-billing-core.md) · [nextjs](../nextjs/module-billing-billing-core.md) |
+| [Module Billing Catalog Flutter + Dart](module-billing-catalog.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-catalog) | [core](../core/module-billing-catalog.md) · [api](../api/module-billing-catalog.md) · [nextjs](../nextjs/module-billing-catalog.md) |
+| [Module Billing Collections Flutter + Dart](module-billing-collections.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-collections) | [core](../core/module-billing-collections.md) · [api](../api/module-billing-collections.md) · [nextjs](../nextjs/module-billing-collections.md) |
+| [Module Billing Communications Flutter + Dart](module-billing-communications.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-communications) | [core](../core/module-billing-communications.md) · [api](../api/module-billing-communications.md) · [nextjs](../nextjs/module-billing-communications.md) |
+| [Module Billing Core Flutter + Dart](module-billing-core.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-core) | [core](../core/module-billing-core.md) · [api](../api/module-billing-core.md) · [nextjs](../nextjs/module-billing-core.md) |
+| [Module Billing Cpanel Flutter + Dart](module-billing-cpanel.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-cpanel) | [core](../core/module-billing-cpanel.md) · [api](../api/module-billing-cpanel.md) · [nextjs](../nextjs/module-billing-cpanel.md) |
+| [Module Billing Customer Portal Flutter + Dart](module-billing-customer-portal.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-customer-portal) | [core](../core/module-billing-customer-portal.md) · [api](../api/module-billing-customer-portal.md) · [nextjs](../nextjs/module-billing-customer-portal.md) |
+| [Module Billing Directadmin Flutter + Dart](module-billing-directadmin.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-directadmin) | [core](../core/module-billing-directadmin.md) · [api](../api/module-billing-directadmin.md) · [nextjs](../nextjs/module-billing-directadmin.md) |
+| [Module Billing Domains Flutter + Dart](module-billing-domains.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-domains) | [core](../core/module-billing-domains.md) · [api](../api/module-billing-domains.md) · [nextjs](../nextjs/module-billing-domains.md) |
+| [Module Billing Enom Flutter + Dart](module-billing-enom.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-enom) | [core](../core/module-billing-enom.md) · [api](../api/module-billing-enom.md) · [nextjs](../nextjs/module-billing-enom.md) |
+| [Module Billing Hosting Flutter + Dart](module-billing-hosting.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-hosting) | [core](../core/module-billing-hosting.md) · [api](../api/module-billing-hosting.md) · [nextjs](../nextjs/module-billing-hosting.md) |
+| [Module Billing Invoicing Flutter + Dart](module-billing-invoicing.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-invoicing) | [core](../core/module-billing-invoicing.md) · [api](../api/module-billing-invoicing.md) · [nextjs](../nextjs/module-billing-invoicing.md) |
+| [Module Billing Isp Flutter + Dart](module-billing-isp.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-isp) | [core](../core/module-billing-isp.md) · [api](../api/module-billing-isp.md) · [nextjs](../nextjs/module-billing-isp.md) |
+| [Module Billing Liberu Control Panel Flutter + Dart](module-billing-liberu-control-panel.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-liberu-control-panel) | [core](../core/module-billing-liberu-control-panel.md) · [api](../api/module-billing-liberu-control-panel.md) · [nextjs](../nextjs/module-billing-liberu-control-panel.md) |
+| [Module Billing Orders Flutter + Dart](module-billing-orders.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-orders) | [core](../core/module-billing-orders.md) · [api](../api/module-billing-orders.md) · [nextjs](../nextjs/module-billing-orders.md) |
+| [Module Billing Paddle Flutter + Dart](module-billing-paddle.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-paddle) | [core](../core/module-billing-paddle.md) · [api](../api/module-billing-paddle.md) · [nextjs](../nextjs/module-billing-paddle.md) |
+| [Module Billing Payments Flutter + Dart](module-billing-payments.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-payments) | [core](../core/module-billing-payments.md) · [api](../api/module-billing-payments.md) · [nextjs](../nextjs/module-billing-payments.md) |
+| [Module Billing Plesk Flutter + Dart](module-billing-plesk.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-plesk) | [core](../core/module-billing-plesk.md) · [api](../api/module-billing-plesk.md) · [nextjs](../nextjs/module-billing-plesk.md) |
+| [Module Billing Pricing Flutter + Dart](module-billing-pricing.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-pricing) | [core](../core/module-billing-pricing.md) · [api](../api/module-billing-pricing.md) · [nextjs](../nextjs/module-billing-pricing.md) |
+| [Module Billing Provisioning Flutter + Dart](module-billing-provisioning.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-provisioning) | [core](../core/module-billing-provisioning.md) · [api](../api/module-billing-provisioning.md) · [nextjs](../nextjs/module-billing-provisioning.md) |
+| [Module Billing Reporting Flutter + Dart](module-billing-reporting.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-reporting) | [core](../core/module-billing-reporting.md) · [api](../api/module-billing-reporting.md) · [nextjs](../nextjs/module-billing-reporting.md) |
+| [Module Billing Resellerclub Flutter + Dart](module-billing-resellerclub.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-resellerclub) | [core](../core/module-billing-resellerclub.md) · [api](../api/module-billing-resellerclub.md) · [nextjs](../nextjs/module-billing-resellerclub.md) |
+| [Module Billing Stripe Flutter + Dart](module-billing-stripe.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-stripe) | [core](../core/module-billing-stripe.md) · [api](../api/module-billing-stripe.md) · [nextjs](../nextjs/module-billing-stripe.md) |
+| [Module Billing Subscriptions Flutter + Dart](module-billing-subscriptions.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-subscriptions) | [core](../core/module-billing-subscriptions.md) · [api](../api/module-billing-subscriptions.md) · [nextjs](../nextjs/module-billing-subscriptions.md) |
+| [Module Billing Usage Flutter + Dart](module-billing-usage.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-usage) | [core](../core/module-billing-usage.md) · [api](../api/module-billing-usage.md) · [nextjs](../nextjs/module-billing-usage.md) |
+| [Module Billing Virtualmin Flutter + Dart](module-billing-virtualmin.md) | [Target/source map](../SOURCE-MAPPING.md#module-billing-virtualmin) | [core](../core/module-billing-virtualmin.md) · [api](../api/module-billing-virtualmin.md) · [nextjs](../nextjs/module-billing-virtualmin.md) |
+| [Module Liberu Business Workflow Reconciliation Flutter + Dart](module-liberu-business-workflow-reconciliation.md) | [Target/source map](../SOURCE-MAPPING.md#module-liberu-business-workflow-reconciliation) | [core](../core/module-liberu-business-workflow-reconciliation.md) · [api](../api/module-liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/module-liberu-business-workflow-reconciliation.md) |
+| [Module Liberu Executive Insights Flutter + Dart](module-liberu-executive-insights.md) | [Target/source map](../SOURCE-MAPPING.md#module-liberu-executive-insights) | [core](../core/module-liberu-executive-insights.md) · [api](../api/module-liberu-executive-insights.md) · [nextjs](../nextjs/module-liberu-executive-insights.md) |
+| [Module Liberu Platform Orchestration Flutter + Dart](module-liberu-platform-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#module-liberu-platform-orchestration) | [core](../core/module-liberu-platform-orchestration.md) · [api](../api/module-liberu-platform-orchestration.md) · [nextjs](../nextjs/module-liberu-platform-orchestration.md) |
+| [Module Liberu Revenue And Care Orchestration Flutter + Dart](module-liberu-revenue-and-care-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#module-liberu-revenue-and-care-orchestration) | [core](../core/module-liberu-revenue-and-care-orchestration.md) · [api](../api/module-liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/module-liberu-revenue-and-care-orchestration.md) |
+| [Module Manager Flutter + Dart](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Flutter + Dart](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Flutter + Dart](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Orders Flutter + Dart](orders.md) | [Target/source map](../SOURCE-MAPPING.md#orders) | [core](../core/orders.md) · [api](../api/orders.md) · [nextjs](../nextjs/orders.md) |
+| [Organizations Teams Flutter + Dart](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Payments Flutter + Dart](payments.md) | [Target/source map](../SOURCE-MAPPING.md#payments) | [core](../core/payments.md) · [api](../api/payments.md) · [nextjs](../nextjs/payments.md) |
+| [Pricing Flutter + Dart](pricing.md) | [Target/source map](../SOURCE-MAPPING.md#pricing) | [core](../core/pricing.md) · [api](../api/pricing.md) · [nextjs](../nextjs/pricing.md) |
+| [Profiles Flutter + Dart](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Provisioning Flutter + Dart](provisioning.md) | [Target/source map](../SOURCE-MAPPING.md#provisioning) | [core](../core/provisioning.md) · [api](../api/provisioning.md) · [nextjs](../nextjs/provisioning.md) |
+| [Reporting Flutter + Dart](reporting.md) | [Target/source map](../SOURCE-MAPPING.md#reporting) | [core](../core/reporting.md) · [api](../api/reporting.md) · [nextjs](../nextjs/reporting.md) |
+| [Roles Permissions Flutter + Dart](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Flutter + Dart](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Flutter + Dart](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Flutter + Dart](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Flutter + Dart](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Subscriptions Flutter + Dart](subscriptions.md) | [Target/source map](../SOURCE-MAPPING.md#subscriptions) | [core](../core/subscriptions.md) · [api](../api/subscriptions.md) · [nextjs](../nextjs/subscriptions.md) |
+| [Theme Support Flutter + Dart](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Flutter + Dart](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Usage Flutter + Dart](usage.md) | [Target/source map](../SOURCE-MAPPING.md#usage) | [core](../core/usage.md) · [api](../api/usage.md) · [nextjs](../nextjs/usage.md) |
+| [Webhooks Flutter + Dart](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

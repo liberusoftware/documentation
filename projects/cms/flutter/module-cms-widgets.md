@@ -1,5 +1,9 @@
 # Module Cms Widgets Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-widgets). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-module-cms-widgets-flutter
 **Matching core package:** module-cms-module-cms-widgets ([implementation](../core/module-cms-widgets.md))
 **Matching API package:** module-cms-module-cms-widgets-api ([contract](../api/module-cms-widgets.md))

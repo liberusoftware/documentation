@@ -1,12 +1,16 @@
 # Genealogy: Reports Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#reports). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-genealogy-reports-nuxt`
 **Matching domain module:** `genealogy-reports`
 **Application:** Genealogy
 **Source feature:** [Reports](../features/reports.md)
-**Architecture:** [NUXT.md](../GENEALOGY.md) · [API.md](../GENEALOGY.md) · [Matching API module](../api/reports.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/reports.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
@@ -65,7 +69,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 **Matching domain module:** `genealogy-reports`
 **Application:** Genealogy
 **Source feature:** [Reports](../features/reports.md)
-**Architecture:** [NUXT.md](../GENEALOGY.md) · [API.md](../GENEALOGY.md) · [Matching API module](../api/reports.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/reports.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

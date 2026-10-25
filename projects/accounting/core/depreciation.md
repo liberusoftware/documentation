@@ -1,8 +1,12 @@
 # Accounting: Depreciation Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#depreciation). Observed identity: [`liberusoftware/module-accounting-depreciation`](../../../modules/source/liberusoftware--module-accounting-depreciation.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-depreciation`
+**Design package identifier:** `module-accounting-depreciation`
 **Domain specification:** [Depreciation](../features/depreciation.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

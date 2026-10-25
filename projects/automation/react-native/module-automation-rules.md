@@ -1,5 +1,9 @@
 # Module Automation Rules React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-automation-rules). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-automation-module-automation-rules-react-native
 **Matching core package:** module-automation-module-automation-rules ([implementation](../core/module-automation-rules.md))
 **Matching API package:** module-automation-module-automation-rules-api ([contract](../api/module-automation-rules.md))

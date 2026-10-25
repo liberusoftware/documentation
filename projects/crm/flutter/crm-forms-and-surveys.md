@@ -1,5 +1,9 @@
 # Crm Forms And Surveys Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-forms-and-surveys). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-forms-and-surveys-flutter
 **Matching core package:** module-crm-crm-forms-and-surveys ([implementation](../core/crm-forms-and-surveys.md))
 **Matching API package:** module-crm-crm-forms-and-surveys-api ([contract](../api/crm-forms-and-surveys.md))

@@ -1,12 +1,16 @@
 # CRM: Scheduler Queues Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#scheduler-queues). Observed identity: [`liberusoftware/scheduler-queues-filament`](../../../modules/source/liberusoftware--scheduler-queues-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-scheduler-queues-filament`  
 **Matching domain module:** `scheduler-queues`  
 **Application:** CRM  
 **Source feature:** [Scheduler Queues](../features/scheduler-queues.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

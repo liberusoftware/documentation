@@ -1,12 +1,16 @@
 # CMS: Module Cms Sitemaps Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-sitemaps). Observed identity: [`liberusoftware/module-cms-sitemaps-filament`](../../../modules/source/liberusoftware--module-cms-sitemaps-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-cms-module-cms-sitemaps-filament`  
 **Matching domain module:** `module-cms-sitemaps`  
 **Application:** CMS  
 **Source feature:** [Module Cms Sitemaps](../features/module-cms-sitemaps.md)  
-**Architecture:** [FILAMENT.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

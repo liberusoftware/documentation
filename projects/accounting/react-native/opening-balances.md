@@ -1,5 +1,9 @@
 # Opening Balances React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#opening-balances). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-opening-balances-react-native
 **Matching core package:** module-accounting-opening-balances ([implementation](../core/opening-balances.md))
 **Matching API package:** module-accounting-opening-balances-api ([contract](../api/opening-balances.md))

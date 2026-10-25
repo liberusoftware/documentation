@@ -1,12 +1,16 @@
 # Control Panel: Certificates
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#certificates). Observed identity: [`liberusoftware/module-control-panel-certificates`](../../../modules/source/liberusoftware--module-control-panel-certificates.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-control-panel-certificates`
 **Application:** Control Panel  
 **Capability group:** Module plan  
 **Source scope:** [CONTROL-PANEL.md](../CONTROL-PANEL.md)  
-**Architecture:** [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md) · [API.md](../CONTROL-PANEL.md) · [FILAMENT.md](../CONTROL-PANEL.md) · [LIVEWIRE.md](../CONTROL-PANEL.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

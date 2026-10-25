@@ -1,8 +1,12 @@
 # CRM: Crm Events And Webinars Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-events-and-webinars). Observed identity: [`liberusoftware/module-crm-events-and-webinars`](../../../modules/source/liberusoftware--module-crm-events-and-webinars.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-crm-events-and-webinars`
+**Design package identifier:** `module-crm-crm-events-and-webinars`
 **Domain specification:** [Crm Events And Webinars](../features/crm-events-and-webinars.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

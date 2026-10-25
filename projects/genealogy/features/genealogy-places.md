@@ -1,12 +1,16 @@
 # Genealogy: Genealogy Places
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#genealogy-places). Observed identity: [`liberusoftware/module-genealogy-places`](../../../modules/source/liberusoftware--module-genealogy-places.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-genealogy-genealogy-places`
 **Application:** Genealogy  
 **Capability group:** Genealogy Places  
 **Source scope:** [GENEALOGY.md](../GENEALOGY.md)  
-**Architecture:** [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md) · [API.md](../GENEALOGY.md) · [FILAMENT.md](../GENEALOGY.md) · [LIVEWIRE.md](../GENEALOGY.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

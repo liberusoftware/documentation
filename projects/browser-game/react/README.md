@@ -1,50 +1,71 @@
 # Browser Game React + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **61 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments React](activity-comments.md) — `module-browser-game-activity-comments-react-inertia`
-- [Analytics Core React](analytics-core.md) — `module-browser-game-analytics-core-react-inertia`
-- [Analytics Google React](analytics-google.md) — `module-browser-game-analytics-google-react-inertia`
-- [Analytics Meta React](analytics-meta.md) — `module-browser-game-analytics-meta-react-inertia`
-- [Api Access React](api-access.md) — `module-browser-game-api-access-react-inertia`
-- [Application React](application.md) — `module-browser-game-application-react-inertia`
-- [Audit React](audit.md) — `module-browser-game-audit-react-inertia`
-- [Browser Game Accounts React](browser-game-accounts.md) — `module-browser-game-browser-game-accounts-react-inertia`
-- [Browser Game Characters React](browser-game-characters.md) — `module-browser-game-browser-game-characters-react-inertia`
-- [Browser Game Collections React](browser-game-collections.md) — `module-browser-game-browser-game-collections-react-inertia`
-- [Browser Game Combat React](browser-game-combat.md) — `module-browser-game-browser-game-combat-react-inertia`
-- [Browser Game Commerce React](browser-game-commerce.md) — `module-browser-game-browser-game-commerce-react-inertia`
-- [Browser Game Competition React](browser-game-competition.md) — `module-browser-game-browser-game-competition-react-inertia`
-- [Browser Game Crafting React](browser-game-crafting.md) — `module-browser-game-browser-game-crafting-react-inertia`
-- [Browser Game Economy React](browser-game-economy.md) — `module-browser-game-browser-game-economy-react-inertia`
-- [Browser Game Game Core React](browser-game-game-core.md) — `module-browser-game-browser-game-game-core-react-inertia`
-- [Browser Game Items React](browser-game-items.md) — `module-browser-game-browser-game-items-react-inertia`
-- [Browser Game Live Ops React](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops-react-inertia`
-- [Browser Game Moderation And Analytics React](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics-react-inertia`
-- [Browser Game Quests React](browser-game-quests.md) — `module-browser-game-browser-game-quests-react-inertia`
-- [Browser Game Social React](browser-game-social.md) — `module-browser-game-browser-game-social-react-inertia`
-- [Browser Game World React](browser-game-world.md) — `module-browser-game-browser-game-world-react-inertia`
-- [Currency Context React](currency-context.md) — `module-browser-game-currency-context-react-inertia`
-- [Developer Experience React](developer-experience.md) — `module-browser-game-developer-experience-react-inertia`
-- [Feature Flags React](feature-flags.md) — `module-browser-game-feature-flags-react-inertia`
-- [Files Media React](files-media.md) — `module-browser-game-files-media-react-inertia`
-- [Identity Core React](identity-core.md) — `module-browser-game-identity-core-react-inertia`
-- [Identity Socialstream React](identity-socialstream.md) — `module-browser-game-identity-socialstream-react-inertia`
-- [Import Export React](import-export.md) — `module-browser-game-import-export-react-inertia`
-- [Integrations React](integrations.md) — `module-browser-game-integrations-react-inertia`
-- [Jetstream Bridge React](jetstream-bridge.md) — `module-browser-game-jetstream-bridge-react-inertia`
-- [Localization Core React](localization-core.md) — `module-browser-game-localization-core-react-inertia`
-- [Localization Mymemory React](localization-mymemory.md) — `module-browser-game-localization-mymemory-react-inertia`
-- [Module Manager React](module-manager.md) — `module-browser-game-module-manager-react-inertia`
-- [Notifications React](notifications.md) — `module-browser-game-notifications-react-inertia`
-- [Observability React](observability.md) — `module-browser-game-observability-react-inertia`
-- [Organizations Teams React](organizations-teams.md) — `module-browser-game-organizations-teams-react-inertia`
-- [Profiles React](profiles.md) — `module-browser-game-profiles-react-inertia`
-- [Roles Permissions React](roles-permissions.md) — `module-browser-game-roles-permissions-react-inertia`
-- [Scheduler Queues React](scheduler-queues.md) — `module-browser-game-scheduler-queues-react-inertia`
-- [Search React](search.md) — `module-browser-game-search-react-inertia`
-- [Sessions Devices React](sessions-devices.md) — `module-browser-game-sessions-devices-react-inertia`
-- [Settings React](settings.md) — `module-browser-game-settings-react-inertia`
-- [Theme Support React](theme-support.md) — `module-browser-game-theme-support-react-inertia`
-- [Two Factor Authentication React](two-factor-authentication.md) — `module-browser-game-two-factor-authentication-react-inertia`
-- [Webhooks React](webhooks.md) — `module-browser-game-webhooks-react-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Accounts React + Inertia](accounts.md) | [Target/source map](../SOURCE-MAPPING.md#accounts) | [core](../core/accounts.md) · [api](../api/accounts.md) · [nextjs](../nextjs/accounts.md) |
+| [Activity Comments React + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core React + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access React + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application React + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit React + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Browser Game Accounts React + Inertia](browser-game-accounts.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-accounts) | [core](../core/browser-game-accounts.md) · [api](../api/browser-game-accounts.md) · [nextjs](../nextjs/browser-game-accounts.md) |
+| [Browser Game Characters React + Inertia](browser-game-characters.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-characters) | [core](../core/browser-game-characters.md) · [api](../api/browser-game-characters.md) · [nextjs](../nextjs/browser-game-characters.md) |
+| [Browser Game Collections React + Inertia](browser-game-collections.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-collections) | [core](../core/browser-game-collections.md) · [api](../api/browser-game-collections.md) · [nextjs](../nextjs/browser-game-collections.md) |
+| [Browser Game Combat React + Inertia](browser-game-combat.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-combat) | [core](../core/browser-game-combat.md) · [api](../api/browser-game-combat.md) · [nextjs](../nextjs/browser-game-combat.md) |
+| [Browser Game Commerce React + Inertia](browser-game-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-commerce) | [core](../core/browser-game-commerce.md) · [api](../api/browser-game-commerce.md) · [nextjs](../nextjs/browser-game-commerce.md) |
+| [Browser Game Competition React + Inertia](browser-game-competition.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-competition) | [core](../core/browser-game-competition.md) · [api](../api/browser-game-competition.md) · [nextjs](../nextjs/browser-game-competition.md) |
+| [Browser Game Crafting React + Inertia](browser-game-crafting.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-crafting) | [core](../core/browser-game-crafting.md) · [api](../api/browser-game-crafting.md) · [nextjs](../nextjs/browser-game-crafting.md) |
+| [Browser Game Economy React + Inertia](browser-game-economy.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-economy) | [core](../core/browser-game-economy.md) · [api](../api/browser-game-economy.md) · [nextjs](../nextjs/browser-game-economy.md) |
+| [Browser Game Game Core React + Inertia](browser-game-game-core.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-game-core) | [core](../core/browser-game-game-core.md) · [api](../api/browser-game-game-core.md) · [nextjs](../nextjs/browser-game-game-core.md) |
+| [Browser Game Items React + Inertia](browser-game-items.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-items) | [core](../core/browser-game-items.md) · [api](../api/browser-game-items.md) · [nextjs](../nextjs/browser-game-items.md) |
+| [Browser Game Live Ops React + Inertia](browser-game-live-ops.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-live-ops) | [core](../core/browser-game-live-ops.md) · [api](../api/browser-game-live-ops.md) · [nextjs](../nextjs/browser-game-live-ops.md) |
+| [Browser Game Moderation And Analytics React + Inertia](browser-game-moderation-and-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-moderation-and-analytics) | [core](../core/browser-game-moderation-and-analytics.md) · [api](../api/browser-game-moderation-and-analytics.md) · [nextjs](../nextjs/browser-game-moderation-and-analytics.md) |
+| [Browser Game Quests React + Inertia](browser-game-quests.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-quests) | [core](../core/browser-game-quests.md) · [api](../api/browser-game-quests.md) · [nextjs](../nextjs/browser-game-quests.md) |
+| [Browser Game Social React + Inertia](browser-game-social.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-social) | [core](../core/browser-game-social.md) · [api](../api/browser-game-social.md) · [nextjs](../nextjs/browser-game-social.md) |
+| [Browser Game World React + Inertia](browser-game-world.md) | [Target/source map](../SOURCE-MAPPING.md#browser-game-world) | [core](../core/browser-game-world.md) · [api](../api/browser-game-world.md) · [nextjs](../nextjs/browser-game-world.md) |
+| [Characters React + Inertia](characters.md) | [Target/source map](../SOURCE-MAPPING.md#characters) | [core](../core/characters.md) · [api](../api/characters.md) · [nextjs](../nextjs/characters.md) |
+| [Collections React + Inertia](collections.md) | [Target/source map](../SOURCE-MAPPING.md#collections) | [core](../core/collections.md) · [api](../api/collections.md) · [nextjs](../nextjs/collections.md) |
+| [Combat React + Inertia](combat.md) | [Target/source map](../SOURCE-MAPPING.md#combat) | [core](../core/combat.md) · [api](../api/combat.md) · [nextjs](../nextjs/combat.md) |
+| [Commerce React + Inertia](commerce.md) | [Target/source map](../SOURCE-MAPPING.md#commerce) | [core](../core/commerce.md) · [api](../api/commerce.md) · [nextjs](../nextjs/commerce.md) |
+| [Competition React + Inertia](competition.md) | [Target/source map](../SOURCE-MAPPING.md#competition) | [core](../core/competition.md) · [api](../api/competition.md) · [nextjs](../nextjs/competition.md) |
+| [Crafting React + Inertia](crafting.md) | [Target/source map](../SOURCE-MAPPING.md#crafting) | [core](../core/crafting.md) · [api](../api/crafting.md) · [nextjs](../nextjs/crafting.md) |
+| [Currency Context React + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience React + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Economy React + Inertia](economy.md) | [Target/source map](../SOURCE-MAPPING.md#economy) | [core](../core/economy.md) · [api](../api/economy.md) · [nextjs](../nextjs/economy.md) |
+| [Feature Flags React + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media React + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Game Core React + Inertia](game-core.md) | [Target/source map](../SOURCE-MAPPING.md#game-core) | [core](../core/game-core.md) · [api](../api/game-core.md) · [nextjs](../nextjs/game-core.md) |
+| [Identity Core React + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export React + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations React + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Items React + Inertia](items.md) | [Target/source map](../SOURCE-MAPPING.md#items) | [core](../core/items.md) · [api](../api/items.md) · [nextjs](../nextjs/items.md) |
+| [Jetstream Bridge React + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Live Ops React + Inertia](live-ops.md) | [Target/source map](../SOURCE-MAPPING.md#live-ops) | [core](../core/live-ops.md) · [api](../api/live-ops.md) · [nextjs](../nextjs/live-ops.md) |
+| [Localization Core React + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Moderation and Analytics React + Inertia](moderation-and-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#moderation-and-analytics) | [core](../core/moderation-and-analytics.md) · [api](../api/moderation-and-analytics.md) · [nextjs](../nextjs/moderation-and-analytics.md) |
+| [Module Manager React + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications React + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability React + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams React + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles React + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Quests React + Inertia](quests.md) | [Target/source map](../SOURCE-MAPPING.md#quests) | [core](../core/quests.md) · [api](../api/quests.md) · [nextjs](../nextjs/quests.md) |
+| [Roles Permissions React + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues React + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search React + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices React + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings React + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Social React + Inertia](social.md) | [Target/source map](../SOURCE-MAPPING.md#social) | [core](../core/social.md) · [api](../api/social.md) · [nextjs](../nextjs/social.md) |
+| [Theme Support React + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication React + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks React + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [World React + Inertia](world.md) | [Target/source map](../SOURCE-MAPPING.md#world) | [core](../core/world.md) · [api](../api/world.md) · [nextjs](../nextjs/world.md) |

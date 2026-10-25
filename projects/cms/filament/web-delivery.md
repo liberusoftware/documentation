@@ -1,12 +1,16 @@
 # CMS: Web Delivery Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#web-delivery). Observed identity: [`liberusoftware/module-cms-web-delivery-filament`](../../../modules/source/liberusoftware--module-cms-web-delivery-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-cms-web-delivery-filament`  
 **Matching domain module:** `cms-web-delivery`  
 **Application:** CMS  
 **Source feature:** [Web Delivery](../features/web-delivery.md)  
-**Architecture:** [FILAMENT.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

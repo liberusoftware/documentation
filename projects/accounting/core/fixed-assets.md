@@ -1,8 +1,12 @@
 # Accounting: Fixed Assets Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#fixed-assets). Observed identity: [`liberusoftware/module-accounting-fixed-assets`](../../../modules/source/liberusoftware--module-accounting-fixed-assets.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-fixed-assets`
+**Design package identifier:** `module-accounting-fixed-assets`
 **Domain specification:** [Fixed Assets](../features/fixed-assets.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

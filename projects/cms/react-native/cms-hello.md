@@ -1,5 +1,9 @@
 # Cms Hello React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-hello). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-hello-react-native
 **Matching core package:** module-cms-cms-hello ([implementation](../core/cms-hello.md))
 **Matching API package:** module-cms-cms-hello-api ([contract](../api/cms-hello.md))

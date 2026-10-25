@@ -1,8 +1,12 @@
 # Accounting: Accounting Business Insights Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-business-insights). Observed identity: [`liberusoftware/module-accounting-business-insights`](../../../modules/source/liberusoftware--module-accounting-business-insights.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-business-insights`
+**Design package identifier:** `module-accounting-accounting-business-insights`
 **Domain specification:** [Accounting Business Insights](../features/accounting-business-insights.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

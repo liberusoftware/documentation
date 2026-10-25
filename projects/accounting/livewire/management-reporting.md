@@ -1,12 +1,16 @@
 # Accounting: Management Reporting Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#management-reporting). Observed identity: [`liberusoftware/module-accounting-management-reporting-livewire`](../../../modules/source/liberusoftware--module-accounting-management-reporting-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-accounting-management-reporting-livewire`  
 **Matching domain module:** `accounting-management-reporting`  
 **Application:** Accounting  
 **Source feature:** [Management Reporting](../features/management-reporting.md)  
-**Architecture:** [LIVEWIRE.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

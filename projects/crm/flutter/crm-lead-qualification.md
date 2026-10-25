@@ -1,5 +1,9 @@
 # Crm Lead Qualification Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-lead-qualification). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-lead-qualification-flutter
 **Matching core package:** module-crm-crm-lead-qualification ([implementation](../core/crm-lead-qualification.md))
 **Matching API package:** module-crm-crm-lead-qualification-api ([contract](../api/crm-lead-qualification.md))

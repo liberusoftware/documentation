@@ -1,12 +1,16 @@
 # Maintenance: Module Maintenance Customers And Sites Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-customers-and-sites). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-maintenance-module-maintenance-customers-and-sites-nuxt`
 **Matching domain module:** `module-maintenance-customers-and-sites`
 **Application:** Maintenance
 **Source feature:** [Module Maintenance Customers And Sites](../features/module-maintenance-customers-and-sites.md)
-**Architecture:** [NUXT.md](../MAINTENANCE.md) · [API.md](../MAINTENANCE.md) · [Matching API module](../api/module-maintenance-customers-and-sites.md) · [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/module-maintenance-customers-and-sites.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

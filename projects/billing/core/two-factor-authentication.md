@@ -1,8 +1,12 @@
 # Billing: Two Factor Authentication Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#two-factor-authentication). Observed identity: [`liberusoftware/two-factor-authentication`](../../../modules/source/liberusoftware--two-factor-authentication.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-two-factor-authentication`
+**Design package identifier:** `module-billing-two-factor-authentication`
 **Domain specification:** [Two Factor Authentication](../features/two-factor-authentication.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

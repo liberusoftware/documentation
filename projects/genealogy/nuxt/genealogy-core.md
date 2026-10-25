@@ -1,12 +1,16 @@
 # Genealogy: Genealogy Core Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#genealogy-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-genealogy-core-nuxt`
 **Matching domain module:** `genealogy-core`
 **Application:** Genealogy
 **Source feature:** [Genealogy Core](../features/genealogy-core.md)
-**Architecture:** [NUXT.md](../GENEALOGY.md) · [API.md](../GENEALOGY.md) · [Matching API module](../api/genealogy-core.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/genealogy-core.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

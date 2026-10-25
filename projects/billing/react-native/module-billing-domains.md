@@ -1,5 +1,9 @@
 # Module Billing Domains React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-domains). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-module-billing-domains-react-native
 **Matching core package:** module-billing-module-billing-domains ([implementation](../core/module-billing-domains.md))
 **Matching API package:** module-billing-module-billing-domains-api ([contract](../api/module-billing-domains.md))

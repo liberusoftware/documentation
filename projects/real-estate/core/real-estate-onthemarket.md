@@ -1,8 +1,12 @@
 # Real Estate: Real Estate Onthemarket Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-onthemarket). Observed identity: [`liberusoftware/real-estate-onthemarket`](../../../modules/source/liberusoftware--real-estate-onthemarket.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-real-estate-real-estate-onthemarket`
+**Design package identifier:** `module-real-estate-real-estate-onthemarket`
 **Domain specification:** [Real Estate Onthemarket](../features/real-estate-onthemarket.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

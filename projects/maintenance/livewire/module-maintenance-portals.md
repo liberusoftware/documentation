@@ -1,12 +1,16 @@
 # Maintenance: Module Maintenance Portals Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-portals). Observed identity: [`liberusoftware/module-maintenance-portals-livewire`](../../../modules/source/liberusoftware--module-maintenance-portals-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-maintenance-module-maintenance-portals-livewire`  
 **Matching domain module:** `module-maintenance-portals`  
 **Application:** Maintenance  
 **Source feature:** [Module Maintenance Portals](../features/module-maintenance-portals.md)  
-**Architecture:** [LIVEWIRE.md](../MAINTENANCE.md) · [MODULES.md](../MAINTENANCE.md) · [TESTING.md](../MAINTENANCE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

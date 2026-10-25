@@ -1,8 +1,12 @@
 # Accounting: Accounting Revenue Recognition Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-revenue-recognition). Observed identity: [`liberusoftware/module-accounting-revenue-recognition`](../../../modules/source/liberusoftware--module-accounting-revenue-recognition.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-revenue-recognition`
+**Design package identifier:** `module-accounting-accounting-revenue-recognition`
 **Domain specification:** [Accounting Revenue Recognition](../features/accounting-revenue-recognition.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

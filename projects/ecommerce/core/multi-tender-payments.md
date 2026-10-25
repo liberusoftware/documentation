@@ -1,8 +1,12 @@
 # Ecommerce: Multi Tender Payments Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#multi-tender-payments). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-ecommerce-multi-tender-payments`
+**Design package identifier:** `module-ecommerce-multi-tender-payments`
 **Domain specification:** [Multi Tender Payments](../features/multi-tender-payments.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

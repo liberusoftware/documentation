@@ -1,12 +1,16 @@
 # Accounting: Accounting Inventory Accounting API
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-inventory-accounting). Observed identity: [`liberusoftware/module-accounting-inventory-accounting-api`](../../../modules/source/liberusoftware--module-accounting-inventory-accounting-api.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one API module specification
 
-**API package:** `module-accounting-accounting-inventory-accounting-api`  
+**Proposed API design identifier:** `module-accounting-accounting-inventory-accounting-api`<br>
 **Matching domain module:** `accounting-inventory-accounting`  
 **Application:** Accounting  
 **Source feature:** [Accounting Inventory Accounting](../features/accounting-inventory-accounting.md)  
-**Architecture:** [API.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [API.md](../../../architecture/API.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
@@ -22,124 +26,59 @@ Installation does not expose every capability automatically. The host applicatio
 ## 2. Contract design
 
 - Publish an OpenAPI 3.1 fragment with stable operation IDs, schemas, examples, scopes, errors, pagination, rate limits, idempotency, and deprecation metadata.
-- Use `/api/v1/accounting/accounting-inventory-accounting` as the default module route prefix unless the application owns and documents a compatible façade path.
+- Choose the route namespace through the host's reviewed API contract; observed source prefixes below take precedence over repository/design-name guesses.
 - Represent resources through explicit API DTOs/resources rather than automatic Eloquent serialization.
 - Use lowercase kebab-case paths, snake_case JSON fields, opaque identifiers, ISO 8601 timestamps, explicit money objects, and RFC 9457 Problem Details errors.
 - Compatible additions remain within the major version; removals or semantic breaks require a new major version or approved migration path.
 
 ## 3. Endpoint examples
 
-**Base path:** `/api/v1/accounting/accounting-inventory-accounting`
+**Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
 
-These examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.
+| Boundary | Observed identity and implementation reference |
+| --- | --- |
+| Source package | [liberusoftware/module-accounting-inventory-accounting-api](../../../modules/source/liberusoftware--module-accounting-inventory-accounting-api.md) |
+| Source package | [liberusoftware/module-accounting-inventory-accounting](../../../modules/source/liberusoftware--module-accounting-inventory-accounting.md) |
 
-| Method   | Endpoint                                              | Purpose                                       | Possible request data                                                                         |
-| -------- | ----------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `GET`    | `/api/v1/accounting/accounting-inventory-accounting?page[size]=25&sort=-created_at` | List authorized resources                     | Query parameters for pagination, filtering, sorting, field selection, and documented includes |
-| `GET`    | `/api/v1/accounting/accounting-inventory-accounting/{id}`             | Retrieve one resource                         | Opaque resource `id` in the path; no request body                                             |
-| `POST`   | `/api/v1/accounting/accounting-inventory-accounting`                    | Create a resource                             | JSON body using the module schema and required team/context fields                            |
-| `PATCH`  | `/api/v1/accounting/accounting-inventory-accounting/{id}`             | Update permitted fields                       | JSON body containing changed fields and `If-Match` when concurrency is supported              |
-| `DELETE` | `/api/v1/accounting/accounting-inventory-accounting/{id}`             | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted           |
-| `POST`   | `/api/v1/accounting/accounting-inventory-accounting/{id}/<explicit-action>` | Execute a documented domain action            | Action-specific JSON body and `Idempotency-Key` for retryable writes                          |
+### Observed route declarations
 
-Example create request (illustrative fields only):
+These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-```json
-{
-  "attributes": "example-value"
-}
+[modules/accounting-inventory-accounting-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-inventory-accounting-api/routes/api.php)
+
+```php
+Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/inventory-accounting')->group(function (): void {
+Route::get('/', [InventoryAccountingController::class, 'index'])->name('accounting.inventory-accounting.list');
+Route::post('/', [InventoryAccountingController::class, 'store'])->name('accounting.inventory-accounting.create');
+Route::get('/{item}', [InventoryAccountingController::class, 'show'])->name('accounting.inventory-accounting.show');
+Route::post('/{item}/receipts', [InventoryAccountingController::class, 'receive'])->name('accounting.inventory-accounting.receive');
+Route::post('/{item}/issues', [InventoryAccountingController::class, 'issue'])->name('accounting.inventory-accounting.issue');
+Route::post('/{item}/adjustments', [InventoryAccountingController::class, 'adjust'])->name('accounting.inventory-accounting.adjust');
+Route::post('/{item}/landed-costs', [InventoryAccountingController::class, 'landed'])->name('accounting.inventory-accounting.landed');
+Route::post('/{item}/write-downs', [InventoryAccountingController::class, 'writeDown'])->name('accounting.inventory-accounting.write-down');
+Route::get('/{item}/valuation', [InventoryAccountingController::class, 'valuation'])->name('accounting.inventory-accounting.valuation');
+Route::post('/reconciliations', [InventoryAccountingController::class, 'reconcile'])->name('accounting.inventory-accounting.reconcile');
 ```
 
-Example request headers:
+### Observed controller entry points
 
-```http
-Accept: application/json
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Content-Type: application/json
-Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
-X-Request-ID: 01JEXAMPLEREQUESTID
-```
+The signatures identify request handlers to review; their argument names are not complete JSON schemas. Read their request validation, actor/tenant resolution, policy, serialization and error paths before writing a client.
 
-Successful reads and writes return the standard `data` envelope from [API.md](../ACCOUNTING.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
+| Controller source | Public handler signatures |
+| --- | --- |
+| [InventoryAccountingController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-inventory-accounting-api/src/Http/Controllers/InventoryAccountingController.php) | `public function index(Request $request): InventoryItemResource`<br>`public function store(Request $request, CreateInventoryItem $action): InventoryItemResource`<br>`public function show(InventoryItem $item): InventoryItemResource`<br>`public function receive(Request $request, InventoryItem $item, ReceiveInventory $action): InventoryItemResource`<br>`public function issue(Request $request, InventoryItem $item, IssueInventory $action): JsonResponse`<br>`public function adjust(Request $request, InventoryItem $item, AdjustInventory $action): InventoryItemResource`<br>`public function landed(Request $request, InventoryItem $item, ApplyLandedCost $action): InventoryItemResource`<br>`public function writeDown(Request $request, InventoryItem $item, WriteDownInventory $action): InventoryItemResource`<br>`public function valuation(InventoryItem $item, InventoryQuery $query): JsonResponse`<br>`public function reconcile(Request $request, ReconcileInventory $action): JsonResponse` |
+
+A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
 ## 4. OpenAPI schema
 
-This module owns a versioned OpenAPI 3.1 fragment for `accounting-inventory-accounting`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/accounting-inventory-accounting.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.
+The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-### Required schema elements
+- [modules/accounting-inventory-accounting-api/openapi/v1/accounting-inventory-accounting.yaml](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-inventory-accounting-api/openapi/v1/accounting-inventory-accounting.yaml)
 
-- Use stable operation IDs such as `accounting.accountingInventoryAccounting.list`, `accounting.accountingInventoryAccounting.get`, `accounting.accountingInventoryAccounting.create`, `accounting.accountingInventoryAccounting.update`, and `accounting.accountingInventoryAccounting.delete`; use an explicit domain action ID when applicable.
-- Define the module's resource schema as `AccountingInventoryAccountingResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.
-- Document possible module fields; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.
-- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.
-- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../ACCOUNTING.md); do not serialize Eloquent models automatically.
+For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 
-### Minimal fragment example
-
-```yaml
-openapi: 3.1.0
-info:
-  title: accounting-inventory-accounting API
-  version: 1.0.0
-paths:
-  /api/v1/accounting/accounting-inventory-accounting:
-    get:
-      operationId: accounting.accountingInventoryAccounting.list
-      security:
-        - sanctum: []
-      parameters:
-        - $ref: "#/components/parameters/PageSize"
-      responses:
-        "200":
-          $ref: "#/components/responses/ResourceCollection"
-components:
-  parameters:
-    PageSize:
-      name: page[size]
-      in: query
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 100
-  securitySchemes:
-    sanctum:
-      type: http
-      scheme: bearer
-      bearerFormat: Sanctum
-  schemas:
-    AccountingInventoryAccountingResource:
-      type: object
-      required: [id, type, attributes]
-      properties:
-        id:
-          type: string
-          description: Opaque Liberu resource identifier.
-        type:
-          type: string
-          const: accounting-inventory-accounting
-        attributes:
-          type: object
-          additionalProperties: true
-    ResourceCollection:
-      type: object
-      required: [data]
-      properties:
-        data:
-          type: array
-          items:
-            $ref: "#/components/schemas/AccountingInventoryAccountingResource"
-  responses:
-    ResourceCollection:
-      description: Authorized paginated resources.
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/ResourceCollection"
-```
-
-The example is a contract outline, not a substitute for the complete module schema: replace `additionalProperties` with explicit fields and add create/update/action schemas before release. Validate the fragment, bundle it into the application specification, run breaking-change detection against the supported release, and generate typed clients only from the released specification.
-
-**References:** [OpenAPI 3.1 specification](https://spec.openapis.org/oas/v3.1.0) · [OpenAPI and contract registry](../../../architecture/API.md#8-openapi-and-contract-registry) · [Module API design](../../../architecture/API.md#19-module-api-design) · [Response conventions](../../../architecture/API.md#10-response-conventions)
+Validate/bundle the fragment, check supported-version compatibility and generate clients only from the reviewed contract. Retain the source/schema commit or release in client compatibility notes. See the [API architecture](../../../architecture/API.md), [source mapping](../SOURCE-MAPPING.md#accounting-inventory-accounting), and [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) guides.
 
 ## 5. Audience and operation matrix
 

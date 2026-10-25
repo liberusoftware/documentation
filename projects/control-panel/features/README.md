@@ -1,50 +1,71 @@
 # Control Panel Feature Specifications
 
+<!-- catalogue-status:start -->
+This index preserves **61 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-- [Activity Comments](activity-comments.md) — `module-control-panel-activity-comments`
-- [Analytics Core](analytics-core.md) — `module-control-panel-analytics-core`
-- [Analytics Google](analytics-google.md) — `module-control-panel-analytics-google`
-- [Analytics Meta](analytics-meta.md) — `module-control-panel-analytics-meta`
-- [Api Access](api-access.md) — `module-control-panel-api-access`
-- [Application](application.md) — `module-control-panel-application`
-- [Audit](audit.md) — `module-control-panel-audit`
-- [Control Panel Accounts](control-panel-accounts.md) — `module-control-panel-control-panel-accounts`
-- [Control Panel Api And Automation](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation`
-- [Control Panel Backups](control-panel-backups.md) — `module-control-panel-control-panel-backups`
-- [Control Panel Certificates](control-panel-certificates.md) — `module-control-panel-control-panel-certificates`
-- [Control Panel Containers](control-panel-containers.md) — `module-control-panel-control-panel-containers`
-- [Control Panel Control Core](control-panel-control-core.md) — `module-control-panel-control-panel-control-core`
-- [Control Panel Databases](control-panel-databases.md) — `module-control-panel-control-panel-databases`
-- [Control Panel Dns](control-panel-dns.md) — `module-control-panel-control-panel-dns`
-- [Control Panel Files](control-panel-files.md) — `module-control-panel-control-panel-files`
-- [Control Panel Kubernetes](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes`
-- [Control Panel Mail](control-panel-mail.md) — `module-control-panel-control-panel-mail`
-- [Control Panel Monitoring](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring`
-- [Control Panel Os Adapters](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters`
-- [Control Panel Security](control-panel-security.md) — `module-control-panel-control-panel-security`
-- [Control Panel Web Hosting](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting`
-- [Currency Context](currency-context.md) — `module-control-panel-currency-context`
-- [Developer Experience](developer-experience.md) — `module-control-panel-developer-experience`
-- [Feature Flags](feature-flags.md) — `module-control-panel-feature-flags`
-- [Files Media](files-media.md) — `module-control-panel-files-media`
-- [Identity Core](identity-core.md) — `module-control-panel-identity-core`
-- [Identity Socialstream](identity-socialstream.md) — `module-control-panel-identity-socialstream`
-- [Import Export](import-export.md) — `module-control-panel-import-export`
-- [Integrations](integrations.md) — `module-control-panel-integrations`
-- [Jetstream Bridge](jetstream-bridge.md) — `module-control-panel-jetstream-bridge`
-- [Localization Core](localization-core.md) — `module-control-panel-localization-core`
-- [Localization Mymemory](localization-mymemory.md) — `module-control-panel-localization-mymemory`
-- [Module Manager](module-manager.md) — `module-control-panel-module-manager`
-- [Notifications](notifications.md) — `module-control-panel-notifications`
-- [Observability](observability.md) — `module-control-panel-observability`
-- [Organizations Teams](organizations-teams.md) — `module-control-panel-organizations-teams`
-- [Profiles](profiles.md) — `module-control-panel-profiles`
-- [Roles Permissions](roles-permissions.md) — `module-control-panel-roles-permissions`
-- [Scheduler Queues](scheduler-queues.md) — `module-control-panel-scheduler-queues`
-- [Search](search.md) — `module-control-panel-search`
-- [Sessions Devices](sessions-devices.md) — `module-control-panel-sessions-devices`
-- [Settings](settings.md) — `module-control-panel-settings`
-- [Theme Support](theme-support.md) — `module-control-panel-theme-support`
-- [Two Factor Authentication](two-factor-authentication.md) — `module-control-panel-two-factor-authentication`
-- [Webhooks](webhooks.md) — `module-control-panel-webhooks`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Accounts](accounts.md) | [liberusoftware/module-control-panel-accounts](../../../modules/source/liberusoftware--module-control-panel-accounts.md) | [core](../core/accounts.md) · [api](../api/accounts.md) · [nextjs](../nextjs/accounts.md) |
+| [Activity Comments](activity-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core](analytics-core.md) | [liberusoftware/analytics-core](../../../modules/source/liberusoftware--analytics-core.md) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google](analytics-google.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta](analytics-meta.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access](api-access.md) | [liberusoftware/api-access](../../../modules/source/liberusoftware--api-access.md) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [API and Automation](api-and-automation.md) | [liberusoftware/module-control-panel-api-and-automation](../../../modules/source/liberusoftware--module-control-panel-api-and-automation.md) | [core](../core/api-and-automation.md) · [api](../api/api-and-automation.md) · [nextjs](../nextjs/api-and-automation.md) |
+| [Application](application.md) | [liberusoftware/application](../../../modules/source/liberusoftware--application.md) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit](audit.md) | [liberusoftware/audit](../../../modules/source/liberusoftware--audit.md) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Backups](backups.md) | [liberusoftware/module-control-panel-backups](../../../modules/source/liberusoftware--module-control-panel-backups.md) | [core](../core/backups.md) · [api](../api/backups.md) · [nextjs](../nextjs/backups.md) |
+| [Certificates](certificates.md) | [liberusoftware/module-control-panel-certificates](../../../modules/source/liberusoftware--module-control-panel-certificates.md) | [core](../core/certificates.md) · [api](../api/certificates.md) · [nextjs](../nextjs/certificates.md) |
+| [Containers](containers.md) | [liberusoftware/module-control-panel-containers](../../../modules/source/liberusoftware--module-control-panel-containers.md) | [core](../core/containers.md) · [api](../api/containers.md) · [nextjs](../nextjs/containers.md) |
+| [Control Core](control-core.md) | [liberusoftware/module-control-panel-control-core](../../../modules/source/liberusoftware--module-control-panel-control-core.md) | [core](../core/control-core.md) · [api](../api/control-core.md) · [nextjs](../nextjs/control-core.md) |
+| [Control Panel Accounts](control-panel-accounts.md) | [liberusoftware/module-control-panel-accounts](../../../modules/source/liberusoftware--module-control-panel-accounts.md) | [core](../core/control-panel-accounts.md) · [api](../api/control-panel-accounts.md) · [nextjs](../nextjs/control-panel-accounts.md) |
+| [Control Panel Api And Automation](control-panel-api-and-automation.md) | [liberusoftware/module-control-panel-api-and-automation](../../../modules/source/liberusoftware--module-control-panel-api-and-automation.md) | [core](../core/control-panel-api-and-automation.md) · [api](../api/control-panel-api-and-automation.md) · [nextjs](../nextjs/control-panel-api-and-automation.md) |
+| [Control Panel Backups](control-panel-backups.md) | [liberusoftware/module-control-panel-backups](../../../modules/source/liberusoftware--module-control-panel-backups.md) | [core](../core/control-panel-backups.md) · [api](../api/control-panel-backups.md) · [nextjs](../nextjs/control-panel-backups.md) |
+| [Control Panel Certificates](control-panel-certificates.md) | [liberusoftware/module-control-panel-certificates](../../../modules/source/liberusoftware--module-control-panel-certificates.md) | [core](../core/control-panel-certificates.md) · [api](../api/control-panel-certificates.md) · [nextjs](../nextjs/control-panel-certificates.md) |
+| [Control Panel Containers](control-panel-containers.md) | [liberusoftware/module-control-panel-containers](../../../modules/source/liberusoftware--module-control-panel-containers.md) | [core](../core/control-panel-containers.md) · [api](../api/control-panel-containers.md) · [nextjs](../nextjs/control-panel-containers.md) |
+| [Control Panel Control Core](control-panel-control-core.md) | [liberusoftware/module-control-panel-control-core](../../../modules/source/liberusoftware--module-control-panel-control-core.md) | [core](../core/control-panel-control-core.md) · [api](../api/control-panel-control-core.md) · [nextjs](../nextjs/control-panel-control-core.md) |
+| [Control Panel Databases](control-panel-databases.md) | [liberusoftware/module-control-panel-databases](../../../modules/source/liberusoftware--module-control-panel-databases.md) | [core](../core/control-panel-databases.md) · [api](../api/control-panel-databases.md) · [nextjs](../nextjs/control-panel-databases.md) |
+| [Control Panel Dns](control-panel-dns.md) | [liberusoftware/module-control-panel-dns](../../../modules/source/liberusoftware--module-control-panel-dns.md) | [core](../core/control-panel-dns.md) · [api](../api/control-panel-dns.md) · [nextjs](../nextjs/control-panel-dns.md) |
+| [Control Panel Files](control-panel-files.md) | [liberusoftware/module-control-panel-files](../../../modules/source/liberusoftware--module-control-panel-files.md) | [core](../core/control-panel-files.md) · [api](../api/control-panel-files.md) · [nextjs](../nextjs/control-panel-files.md) |
+| [Control Panel Kubernetes](control-panel-kubernetes.md) | [liberusoftware/module-control-panel-kubernetes](../../../modules/source/liberusoftware--module-control-panel-kubernetes.md) | [core](../core/control-panel-kubernetes.md) · [api](../api/control-panel-kubernetes.md) · [nextjs](../nextjs/control-panel-kubernetes.md) |
+| [Control Panel Mail](control-panel-mail.md) | [liberusoftware/module-control-panel-mail](../../../modules/source/liberusoftware--module-control-panel-mail.md) | [core](../core/control-panel-mail.md) · [api](../api/control-panel-mail.md) · [nextjs](../nextjs/control-panel-mail.md) |
+| [Control Panel Monitoring](control-panel-monitoring.md) | [liberusoftware/module-control-panel-monitoring](../../../modules/source/liberusoftware--module-control-panel-monitoring.md) | [core](../core/control-panel-monitoring.md) · [api](../api/control-panel-monitoring.md) · [nextjs](../nextjs/control-panel-monitoring.md) |
+| [Control Panel Os Adapters](control-panel-os-adapters.md) | [liberusoftware/module-control-panel-os-adapters](../../../modules/source/liberusoftware--module-control-panel-os-adapters.md) | [core](../core/control-panel-os-adapters.md) · [api](../api/control-panel-os-adapters.md) · [nextjs](../nextjs/control-panel-os-adapters.md) |
+| [Control Panel Security](control-panel-security.md) | [liberusoftware/module-control-panel-security](../../../modules/source/liberusoftware--module-control-panel-security.md) | [core](../core/control-panel-security.md) · [api](../api/control-panel-security.md) · [nextjs](../nextjs/control-panel-security.md) |
+| [Control Panel Web Hosting](control-panel-web-hosting.md) | [liberusoftware/module-control-panel-web-hosting](../../../modules/source/liberusoftware--module-control-panel-web-hosting.md) | [core](../core/control-panel-web-hosting.md) · [api](../api/control-panel-web-hosting.md) · [nextjs](../nextjs/control-panel-web-hosting.md) |
+| [Currency Context](currency-context.md) | [liberusoftware/currency-context](../../../modules/source/liberusoftware--currency-context.md) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Databases](databases.md) | [liberusoftware/module-control-panel-databases](../../../modules/source/liberusoftware--module-control-panel-databases.md) | [core](../core/databases.md) · [api](../api/databases.md) · [nextjs](../nextjs/databases.md) |
+| [Developer Experience](developer-experience.md) | [liberusoftware/developer-experience](../../../modules/source/liberusoftware--developer-experience.md) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [DNS](dns.md) | [liberusoftware/module-control-panel-dns](../../../modules/source/liberusoftware--module-control-panel-dns.md) | [core](../core/dns.md) · [api](../api/dns.md) · [nextjs](../nextjs/dns.md) |
+| [Feature Flags](feature-flags.md) | [liberusoftware/feature-flags](../../../modules/source/liberusoftware--feature-flags.md) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media](files-media.md) | [liberusoftware/files-media](../../../modules/source/liberusoftware--files-media.md) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Files](files.md) | [liberusoftware/module-control-panel-files](../../../modules/source/liberusoftware--module-control-panel-files.md) | [core](../core/files.md) · [api](../api/files.md) · [nextjs](../nextjs/files.md) |
+| [Identity Core](identity-core.md) | [liberusoftware/identity-core](../../../modules/source/liberusoftware--identity-core.md) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream](identity-socialstream.md) | [liberusoftware/identity-socialstream](../../../modules/source/liberusoftware--identity-socialstream.md) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export](import-export.md) | [liberusoftware/import-export](../../../modules/source/liberusoftware--import-export.md) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations](integrations.md) | [liberusoftware/integrations](../../../modules/source/liberusoftware--integrations.md) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge](jetstream-bridge.md) | [liberusoftware/jetstream-bridge](../../../modules/source/liberusoftware--jetstream-bridge.md) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Kubernetes](kubernetes.md) | [liberusoftware/module-control-panel-kubernetes](../../../modules/source/liberusoftware--module-control-panel-kubernetes.md) | [core](../core/kubernetes.md) · [api](../api/kubernetes.md) · [nextjs](../nextjs/kubernetes.md) |
+| [Localization Core](localization-core.md) | [liberusoftware/localization-core](../../../modules/source/liberusoftware--localization-core.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory](localization-mymemory.md) | [liberusoftware/localization-mymemory](../../../modules/source/liberusoftware--localization-mymemory.md) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Mail](mail.md) | [liberusoftware/module-control-panel-mail](../../../modules/source/liberusoftware--module-control-panel-mail.md) | [core](../core/mail.md) · [api](../api/mail.md) · [nextjs](../nextjs/mail.md) |
+| [Module Manager](module-manager.md) | [liberusoftware/module-manager](../../../modules/source/liberusoftware--module-manager.md) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Monitoring](monitoring.md) | [liberusoftware/module-control-panel-monitoring](../../../modules/source/liberusoftware--module-control-panel-monitoring.md) | [core](../core/monitoring.md) · [api](../api/monitoring.md) · [nextjs](../nextjs/monitoring.md) |
+| [Notifications](notifications.md) | [liberusoftware/notifications](../../../modules/source/liberusoftware--notifications.md) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability](observability.md) | [liberusoftware/observability](../../../modules/source/liberusoftware--observability.md) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams](organizations-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [OS Adapters](os-adapters.md) | [liberusoftware/module-control-panel-os-adapters](../../../modules/source/liberusoftware--module-control-panel-os-adapters.md) | [core](../core/os-adapters.md) · [api](../api/os-adapters.md) · [nextjs](../nextjs/os-adapters.md) |
+| [Profiles](profiles.md) | [liberusoftware/profiles](../../../modules/source/liberusoftware--profiles.md) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles Permissions](roles-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues](scheduler-queues.md) | [liberusoftware/scheduler-queues](../../../modules/source/liberusoftware--scheduler-queues.md) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search](search.md) | [liberusoftware/search](../../../modules/source/liberusoftware--search.md) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Security](security.md) | [liberusoftware/module-control-panel-security](../../../modules/source/liberusoftware--module-control-panel-security.md) | [core](../core/security.md) · [api](../api/security.md) · [nextjs](../nextjs/security.md) |
+| [Sessions Devices](sessions-devices.md) | [liberusoftware/sessions-devices](../../../modules/source/liberusoftware--sessions-devices.md) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings](settings.md) | [liberusoftware/settings](../../../modules/source/liberusoftware--settings.md) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support](theme-support.md) | [liberusoftware/theme-support](../../../modules/source/liberusoftware--theme-support.md) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication](two-factor-authentication.md) | [liberusoftware/two-factor-authentication](../../../modules/source/liberusoftware--two-factor-authentication.md) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Web Hosting](web-hosting.md) | [liberusoftware/module-control-panel-web-hosting](../../../modules/source/liberusoftware--module-control-panel-web-hosting.md) | [core](../core/web-hosting.md) · [api](../api/web-hosting.md) · [nextjs](../nextjs/web-hosting.md) |
+| [Webhooks](webhooks.md) | [liberusoftware/webhooks](../../../modules/source/liberusoftware--webhooks.md) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

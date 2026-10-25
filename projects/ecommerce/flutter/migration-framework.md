@@ -1,5 +1,9 @@
 # Migration Framework Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#migration-framework). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-migration-framework-flutter
 **Matching core package:** module-ecommerce-migration-framework ([implementation](../core/migration-framework.md))
 **Matching API package:** module-ecommerce-migration-framework-api ([contract](../api/migration-framework.md))

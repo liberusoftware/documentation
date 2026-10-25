@@ -1,8 +1,12 @@
 # Billing: Liberu Executive Insights Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#liberu-executive-insights). Observed identity: [`liberusoftware/module-liberu-executive-insights`](../../../modules/source/liberusoftware--module-liberu-executive-insights.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-liberu-executive-insights`
+**Design package identifier:** `module-billing-liberu-executive-insights`
 **Domain specification:** [Liberu Executive Insights](../features/liberu-executive-insights.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

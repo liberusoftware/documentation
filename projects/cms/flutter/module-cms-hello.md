@@ -1,5 +1,9 @@
 # Module Cms Hello Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-hello). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-module-cms-hello-flutter
 **Matching core package:** module-cms-module-cms-hello ([implementation](../core/module-cms-hello.md))
 **Matching API package:** module-cms-module-cms-hello-api ([contract](../api/module-cms-hello.md))

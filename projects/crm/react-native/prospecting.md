@@ -1,5 +1,9 @@
 # Prospecting React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#prospecting). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-prospecting-react-native
 **Matching core package:** module-crm-prospecting ([implementation](../core/prospecting.md))
 **Matching API package:** module-crm-prospecting-api ([contract](../api/prospecting.md))

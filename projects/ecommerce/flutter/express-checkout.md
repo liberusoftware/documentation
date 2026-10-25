@@ -1,5 +1,9 @@
 # Express Checkout Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#express-checkout). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-express-checkout-flutter
 **Matching core package:** module-ecommerce-express-checkout ([implementation](../core/express-checkout.md))
 **Matching API package:** module-ecommerce-express-checkout-api ([contract](../api/express-checkout.md))

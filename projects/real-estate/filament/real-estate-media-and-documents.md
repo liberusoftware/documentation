@@ -1,12 +1,16 @@
 # Real Estate: Real Estate Media And Documents Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-media-and-documents). Observed identity: [`liberusoftware/real-estate-media-and-documents-filament`](../../../modules/source/liberusoftware--real-estate-media-and-documents-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-real-estate-real-estate-media-and-documents-filament`  
 **Matching domain module:** `real-estate-media-and-documents`  
 **Application:** Real Estate  
 **Source feature:** [Real Estate Media And Documents](../features/real-estate-media-and-documents.md)  
-**Architecture:** [FILAMENT.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

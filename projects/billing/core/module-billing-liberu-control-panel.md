@@ -1,8 +1,12 @@
 # Billing: Module Billing Liberu Control Panel Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-liberu-control-panel). Observed identity: [`liberusoftware/billing-liberu-control-panel`](../../../modules/source/liberusoftware--billing-liberu-control-panel.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-module-billing-liberu-control-panel`
+**Design package identifier:** `module-billing-module-billing-liberu-control-panel`
 **Domain specification:** [Module Billing Liberu Control Panel](../features/module-billing-liberu-control-panel.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

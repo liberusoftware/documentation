@@ -1,5 +1,9 @@
 # Module Cms Navigation React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-navigation). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-module-cms-navigation-react-native
 **Matching core package:** module-cms-module-cms-navigation ([implementation](../core/module-cms-navigation.md))
 **Matching API package:** module-cms-module-cms-navigation-api ([contract](../api/module-cms-navigation.md))

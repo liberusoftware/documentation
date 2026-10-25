@@ -1,5 +1,9 @@
 # Application Core domain packages Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#application-core). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `application`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-application-core-flutter
 **Matching core package:** module-application-core ([implementation](../core/application-core.md))
 **Matching API package:** module-application-core-api ([contract](../api/application-core.md))

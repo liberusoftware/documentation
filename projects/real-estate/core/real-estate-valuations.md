@@ -1,8 +1,12 @@
 # Real Estate: Real Estate Valuations Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-valuations). Observed identity: [`liberusoftware/real-estate-valuations`](../../../modules/source/liberusoftware--real-estate-valuations.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-real-estate-real-estate-valuations`
+**Design package identifier:** `module-real-estate-real-estate-valuations`
 **Domain specification:** [Real Estate Valuations](../features/real-estate-valuations.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

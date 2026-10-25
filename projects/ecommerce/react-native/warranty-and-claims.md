@@ -1,5 +1,9 @@
 # Warranty And Claims React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#warranty-and-claims). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-warranty-and-claims-react-native
 **Matching core package:** module-ecommerce-warranty-and-claims ([implementation](../core/warranty-and-claims.md))
 **Matching API package:** module-ecommerce-warranty-and-claims-api ([contract](../api/warranty-and-claims.md))

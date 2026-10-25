@@ -1,5 +1,9 @@
 # Accounting Reimbursements React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-reimbursements). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-reimbursements-react-native
 **Matching core package:** module-accounting-accounting-reimbursements ([implementation](../core/accounting-reimbursements.md))
 **Matching API package:** module-accounting-accounting-reimbursements-api ([contract](../api/accounting-reimbursements.md))

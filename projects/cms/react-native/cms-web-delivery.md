@@ -1,5 +1,9 @@
 # Cms Web Delivery React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-web-delivery). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-web-delivery-react-native
 **Matching core package:** module-cms-cms-web-delivery ([implementation](../core/cms-web-delivery.md))
 **Matching API package:** module-cms-cms-web-delivery-api ([contract](../api/cms-web-delivery.md))

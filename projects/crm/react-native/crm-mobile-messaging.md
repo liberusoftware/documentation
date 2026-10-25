@@ -1,5 +1,9 @@
 # Crm Mobile Messaging React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-mobile-messaging). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-mobile-messaging-react-native
 **Matching core package:** module-crm-crm-mobile-messaging ([implementation](../core/crm-mobile-messaging.md))
 **Matching API package:** module-crm-crm-mobile-messaging-api ([contract](../api/crm-mobile-messaging.md))

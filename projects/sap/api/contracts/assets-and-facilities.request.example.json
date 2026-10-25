@@ -1,0 +1,6 @@
+{
+  "to_custodian_reference": "custodian-example-002",
+  "location_reference": "location-example-002",
+  "condition_snapshot_id": "inspection-example-001",
+  "acceptance_evidence_id": "handover-evidence-example-001"
+}

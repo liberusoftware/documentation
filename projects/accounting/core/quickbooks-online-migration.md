@@ -1,8 +1,12 @@
 # Accounting: Quickbooks Online Migration Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#quickbooks-online-migration). Observed identity: [`liberusoftware/module-accounting-quickbooks-online-migration`](../../../modules/source/liberusoftware--module-accounting-quickbooks-online-migration.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-quickbooks-online-migration`
+**Design package identifier:** `module-accounting-quickbooks-online-migration`
 **Domain specification:** [Quickbooks Online Migration](../features/quickbooks-online-migration.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

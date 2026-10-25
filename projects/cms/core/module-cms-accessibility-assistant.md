@@ -1,8 +1,12 @@
 # CMS: Module Cms Accessibility Assistant Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-accessibility-assistant). Observed identity: [`liberusoftware/module-cms-accessibility-assistant`](../../../modules/source/liberusoftware--module-cms-accessibility-assistant.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-accessibility-assistant`
+**Design package identifier:** `module-cms-module-cms-accessibility-assistant`
 **Domain specification:** [Module Cms Accessibility Assistant](../features/module-cms-accessibility-assistant.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

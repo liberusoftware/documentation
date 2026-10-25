@@ -1,8 +1,12 @@
 # Accounting: Api Access Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#api-access). Observed identity: [`liberusoftware/api-access`](../../../modules/source/liberusoftware--api-access.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-api-access`
+**Design package identifier:** `module-accounting-api-access`
 **Domain specification:** [Api Access](../features/api-access.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,5 +1,9 @@
 # Product And Service Items React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#product-and-service-items). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-product-and-service-items-react-native
 **Matching core package:** module-accounting-product-and-service-items ([implementation](../core/product-and-service-items.md))
 **Matching API package:** module-accounting-product-and-service-items-api ([contract](../api/product-and-service-items.md))

@@ -1,5 +1,9 @@
 # Crm Contracts Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-contracts). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-contracts-flutter
 **Matching core package:** module-crm-crm-contracts ([implementation](../core/crm-contracts.md))
 **Matching API package:** module-crm-crm-contracts-api ([contract](../api/crm-contracts.md))

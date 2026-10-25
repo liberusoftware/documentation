@@ -1,8 +1,12 @@
 # Ecommerce: Pickup And Local Delivery Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#pickup-and-local-delivery). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-ecommerce-pickup-and-local-delivery`
+**Design package identifier:** `module-ecommerce-pickup-and-local-delivery`
 **Domain specification:** [Pickup And Local Delivery](../features/pickup-and-local-delivery.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,5 +1,9 @@
 # Theme Integration Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#theme-integration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-theme-integration-flutter
 **Matching core package:** module-cms-theme-integration ([implementation](../core/theme-integration.md))
 **Matching API package:** module-cms-theme-integration-api ([contract](../api/theme-integration.md))

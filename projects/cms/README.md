@@ -4,13 +4,22 @@
 
 ## Module indexes
 
-- [Core domain modules](core/README.md) — 173 modules
-- [API modules](api/README.md) — 173 modules
-- [Feature specifications](features/README.md) — 173 modules
-- [Filament modules](filament/README.md) — 173 modules
-- [Livewire modules](livewire/README.md) — 173 modules
-- [React modules](react/README.md) — 173 modules
-- [Vue modules](vue/README.md) — 173 modules
-- [Nuxt modules](nuxt/README.md) — 173 modules
-- [Flutter modules](flutter/README.md) — 173 modules
-- [React Native modules](react-native/README.md) — 173 modules
+- [Core domain modules](core/README.md) — 252 specification documents
+- [API modules](api/README.md) — 252 specification documents
+- [Feature specifications](features/README.md) — 252 specification documents
+- [Filament modules](filament/README.md) — 252 specification documents
+- [Livewire modules](livewire/README.md) — 252 specification documents
+- [React modules](react/README.md) — 252 specification documents
+- [Vue modules](vue/README.md) — 252 specification documents
+- [Nuxt modules](nuxt/README.md) — 252 specification documents
+- [Flutter modules](flutter/README.md) — 252 specification documents
+- [React Native modules](react-native/README.md) — 252 specification documents
+
+## Source and additional presentation options
+
+- [Observed source modules](SOURCE-MODULES.md) — exact manifest identities and commit-pinned source links.
+- [Next.js module plan](nextjs/README.md) — API-consuming React adapters and shared component boundaries.
+
+- [Design-to-source reconciliation](SOURCE-MAPPING.md) — exact package identities, retained aliases, unmatched observed modules, and source implementation references.
+
+- [Project clone development guide](DEVELOPMENT.md) — requirements, actual scripts, setup, module selection, verification and updates.

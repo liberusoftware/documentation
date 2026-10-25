@@ -1,5 +1,9 @@
 # Crm Sales Pipelines React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-sales-pipelines). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-sales-pipelines-react-native
 **Matching core package:** module-crm-crm-sales-pipelines ([implementation](../core/crm-sales-pipelines.md))
 **Matching API package:** module-crm-crm-sales-pipelines-api ([contract](../api/crm-sales-pipelines.md))
@@ -19,3 +23,5 @@ This adapter presents Crm Sales Pipelines for the React Native + Expo surface. I
 Test Crm Sales Pipelines API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
 
 See [React Native + Expo standard](../../../standards/REACT-NATIVE.md), [mobile architecture](../../../architecture/MOBILE.md), [React Native + Expo technology](../../../technologies/REACT-NATIVE.md), [core module](../core/crm-sales-pipelines.md), and [API module](../api/crm-sales-pipelines.md).
+
+Read the [source-backed sales-pipeline walkthrough](../guides/SALES-PIPELINES.md) for actual actions, routes, permissions, UI behavior and differences from the target design.

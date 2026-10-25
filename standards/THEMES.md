@@ -3,7 +3,7 @@
 ## Canonical Implementation Specification
 
 **Status:** Source of truth
-**Applies to:** Public sites, customer portals, application shells, Filament panels, Livewire, React/Inertia, Vue/Inertia, and Nuxt surfaces
+**Applies to:** Public sites, customer portals, application shells, Filament panels, Livewire, React/Inertia, Vue/Inertia, Next.js, and Nuxt surfaces
 **Related architecture:** [MODULES.md](../architecture/MODULES.md) · [API.md](../architecture/API.md) · [DOCUMENTATION.md](DOCUMENTATION.md) · [TESTING.md](TESTING.md) · [TECHNOLOGIES.md](../TECHNOLOGIES.md)
 
 ## 1. Purpose
@@ -16,7 +16,7 @@ Themes consume APIs only through documented application or module contracts gove
 
 Themes use a unified design, manifest, installation, inheritance, testing, and documentation approach. They may be mixed into different repository-based projects as needed. A theme may be designed and optimized for a specific Liberu repository to produce the best result, but it should remain installable and reasonably compatible with other Liberu repositories or compatible Laravel projects. Outside its optimized hosts, some views or integrations may be unavailable or imperfect; those limitations must be declared and must fail or fall back safely.
 
-Each theme is developed and released from an independent GitHub repository under the [`liberusoftware`](https://github.com/liberusoftware) organization. Composer resolves Laravel/theme packages, while the custom Liberu Composer installer places them in `/themes`; Node-based adapters use the same identity and manifest through the consuming Vite/Nuxt build.
+Each theme is developed and released from an independent GitHub repository under the [`liberusoftware`](https://github.com/liberusoftware) organization. Composer resolves Laravel/theme packages, while the custom Liberu Composer installer places them in `/themes`; Node-based adapters use the same identity and manifest through the consuming Vite, Next.js, or Nuxt build.
 
 ## 2. Theme types
 
@@ -229,6 +229,12 @@ The theme identity, semantic token names, component states, content regions, ass
 
 Adapters must not change token meaning, responsive states, focus behavior, copy, permission semantics, or required loading/error/empty states. If a framework cannot support a capability, the manifest declares the limitation and uses the documented fallback.
 
+### Next.js theme integration
+
+Next.js adapters consume the same semantic tokens, asset roles, accessible component states, and documented module slots. Share framework-independent React primitives with Inertia where they have no routing or session imports. The Next.js application owns layouts, metadata, navigation wrappers, and its server/client boundaries; the theme must not register business routes or gain access to service credentials.
+
+Keep server-only loaders separate from client exports. Pass only authorized serializable view data across the boundary, load public assets through the application build, and keep authenticated API responses out of public/static theme caches. Test the same light/dark, keyboard/focus, error, loading, responsive, and localization behavior as the other adapters. See the [Next.js standard](NEXTJS.md).
+
 ### 6.2 Theme adapter packages
 
 Use one technology adapter package per supported framework when framework code is non-trivial:
@@ -238,6 +244,7 @@ theme-{name}                         # shared identity, tokens, assets, Blade de
 theme-{name}-livewire                # optional Livewire presentation adapter
 theme-{name}-react-inertia            # optional React/Inertia adapter
 theme-{name}-vue-inertia              # optional Vue/Inertia adapter
+theme-{name}-nextjs                   # optional Next.js adapter
 theme-{name}-nuxt                     # optional Nuxt adapter
 ```
 

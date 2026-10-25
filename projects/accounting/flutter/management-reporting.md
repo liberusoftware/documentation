@@ -1,5 +1,9 @@
 # Management Reporting Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#management-reporting). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-management-reporting-flutter
 **Matching core package:** module-accounting-management-reporting ([implementation](../core/management-reporting.md))
 **Matching API package:** module-accounting-management-reporting-api ([contract](../api/management-reporting.md))

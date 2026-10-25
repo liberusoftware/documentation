@@ -1,56 +1,58 @@
-# SAP: Data and Intelligence Filament
+# Data and intelligence: Filament design
 
-## Canonical one-to-one Filament 5 implementation
+**Status:** proposed enterprise implementation. The [current SAP foundation](../SOURCE-APPLICATION.md) does not establish these business workflows or this presentation as implemented. Use the [detailed domain contract](../design/data-and-intelligence.md) and [API plan](../api/data-and-intelligence.md) as the review target.
 
-**Filament package:** `module-sap-data-and-intelligence-filament`  
-**Matching domain module:** `sap-data-and-intelligence`  
-**Application:** SAP  
-**Source feature:** [Data and Intelligence](../features/data-and-intelligence.md)  
-**Architecture:** [FILAMENT.md](../SAP.md) · [MODULES.md](../SAP.md) · [TESTING.md](../SAP.md)
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#data-and-intelligence). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
 
-## 1. Purpose and ownership
+## Ownership and delivery scope
 
-This optional Filament 5 presentation package presents exactly one independent domain module. It contributes reusable resources, pages, widgets, schemas, tables, infolists, and actions to application-owned panels while delegating authorization, validation, tenancy, persistence, and business rules to the `sap-data-and-intelligence` public boundary. It must not contain another module's UI or depend on application `App\` classes.
+Operational products own transactional records and domain metrics. Enterprise owns governed semantic definitions, cross-product projections, lineage and report delivery where needed.
 
-## 2. Module-specific surfaces
+Reuse the [shared enterprise operation design](../design/OPERATIONS.md) for command identities, concurrency, handoffs and recovery. This capability group adds only its own orchestration/projection and genuine missing behavior; it does not create another owner for existing product records.
 
-- **Governed metrics:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Semantic models:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Reports:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Planning:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Forecasts:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Data quality:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Lineage:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Exports:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **AI assistance:** resource/table/form/action or page behavior for this module's authorized workflow.
+## Workflow and command contract
 
-## 3. Filament 5 implementation
+**Workspace surfaces:** report catalogue, filter/freshness preview, run progress, lineage drill-down, governed metric explanations.
 
-- Register a stable `module-sap-data-and-intelligence-filament` plugin and discover only classes in this package's namespace; applications attach it explicitly to each eligible panel.
-- Keep resources under `src/Resources`, resource pages and relation managers beneath their resource, and shared module-local widgets/pages under `src/Widgets` and `src/Pages`.
-- Use Filament 5 schemas, tables, infolists, actions, notifications, authorization hooks, and panel configuration as adapters over domain queries/actions; never duplicate domain invariants in form validation.
-- Resolve actor, tenant, locale, and sensitive-field visibility through trusted application context and fail closed when required context is missing.
+**Business lifecycle:** requested → authorized → queued → running → ready → expired; failed and cancelled preserve execution evidence.
 
-### Capability mapping
+Apply row/field policy to every source and output; record freshness and lineage. Define currency/timezone and period semantics. Published metrics need an accountable definition owner; AI suggestions do not become authoritative transactions.
 
-- `governed-metrics`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `semantic-models`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `reports`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `planning`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `forecasts`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `data-quality`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `lineage`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `exports`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `ai-assistance`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+The illustrated `run` command takes `report_definition_version`, `legal_entity_scope`, `parameter_snapshot`, `source_watermarks`, with a documented record-version precondition and scoped operation identity. It starts from `authorized` and reaches `ready` only after its defined business outcome. The [API example](../api/data-and-intelligence.md#3-endpoint-examples) provides the proposed body and [draft request schema](../api/contracts/data-and-intelligence.request.schema.json).
 
-## 4. Security and verification
+Authorize every source, row/field and selected entity, then record metric versions and freshness policy. Reject or visibly qualify an incomplete source snapshot according to the report definition.
 
-- Prove allowed, denied, wrong-tenant, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add plugin discovery/collision, architecture-boundary, authorization, tenancy, accessibility, localization, and minimal-host installation tests.
-- Test observable Filament behavior with Pest 5 and the supported Filament 5/Livewire 4 stack; domain behavior remains covered by the owning module.
+Produce a permission-scoped report artifact with expiry and lineage. Recheck authorization on download, even if the report was authorized when queued.
 
-## 5. Definition of done
+## Layer implementation
 
-- Package identity, namespace, plugin ID, and dependency match `sap-data-and-intelligence` one-to-one.
-- Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
-- Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+Compose a scoped work queue and detail/evidence page for the workspace above. Recommended queue columns are subject/source reference, active legal entity, business state, operation state, responsible owner and last transition/attempt time. Filter authorized records before counts, search, exports and relationships.
+
+Implement `run` as an explicit authorized action/form using `report_definition_version`, `legal_entity_scope`, `parameter_snapshot`, `source_watermarks`. Load permitted options from owning queries; keep protected IDs and final state fields outside editable form state. Validate at the form boundary for feedback and again in the public core/API command.
+
+A generic resource save or a status dropdown must not bypass the transition use case. Resolve the current record/version and policy again when handling the action. Display a review summary/evidence when the domain approval policy requires it; do not infer approval from a hidden button or navigation permission.
+
+Bulk operations preview eligible/skipped rows and retain each record's version and command identity. Show per-record completion/conflict/failure rather than a blanket success toast. Queue large exports/actions and preserve authorized result/evidence links.
+
+## Authorization, recovery and operations
+
+Authors define reports within approved sources; data owners approve sensitive fields; viewers can run/export only their permitted entity and purpose scope.
+
+A stale or incomplete feed must be visible in output metadata and may block governed reports. Retry failed partitions with the same run identity; recheck authorization at download time.
+
+Show the selected entity, source/subject reference, current business state and separate operation progress. Preserve safe drafts on validation/conflict. Reauthenticate on expiry and discard protected cached data after scope/permission changes. A network timeout never establishes whether an external write succeeded; use the durable operation/source reference for reconciliation.
+
+## Module-specific acceptance
+
+- A report cannot leak a hidden entity through totals or cache reuse; revoked access blocks download; source totals and declared watermark reconciliation agree.
+- Repeated commands return the documented existing result or a clear conflict; they cannot duplicate a completed external side effect.
+- A tenant/entity switch, permission revocation or expired session cannot reuse another scope's cached record, attachment or exported file.
+- A downstream failure remains observable with a valid owner/recovery path across every enabled presentation.
+
+- Exercise the `run` example with allowed, denied, invalid, stale, duplicate and uncertain-result paths; confirm `ready` only from its authoritative outcome.
+- Verify the enabled layer uses the same domain/operation contract as other surfaces and cannot bypass it through generic saves, hydrated state, direct JSON fields or offline replay.
+- Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
+
+Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.

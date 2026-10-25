@@ -1,12 +1,16 @@
 # Billing: Customer Portal Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#customer-portal). Observed identity: [`liberusoftware/module-billing-customer-portal-filament`](../../../modules/source/liberusoftware--module-billing-customer-portal-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-billing-customer-portal-filament`  
 **Matching domain module:** `billing-customer-portal`  
 **Application:** Billing  
 **Source feature:** [Customer Portal](../features/customer-portal.md)  
-**Architecture:** [FILAMENT.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

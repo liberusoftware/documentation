@@ -1,5 +1,9 @@
 # Module Liberu Revenue And Care Orchestration Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-liberu-revenue-and-care-orchestration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-module-liberu-revenue-and-care-orchestration-flutter
 **Matching core package:** module-billing-module-liberu-revenue-and-care-orchestration ([implementation](../core/module-liberu-revenue-and-care-orchestration.md))
 **Matching API package:** module-billing-module-liberu-revenue-and-care-orchestration-api ([contract](../api/module-liberu-revenue-and-care-orchestration.md))

@@ -1,5 +1,9 @@
 # Carbon Accounting React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#carbon-accounting). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-carbon-accounting-react-native
 **Matching core package:** module-accounting-carbon-accounting ([implementation](../core/carbon-accounting.md))
 **Matching API package:** module-accounting-carbon-accounting-api ([contract](../api/carbon-accounting.md))

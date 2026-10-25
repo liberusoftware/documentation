@@ -1,5 +1,9 @@
 # Accounts Receivable React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounts-receivable). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounts-receivable-react-native
 **Matching core package:** module-accounting-accounts-receivable ([implementation](../core/accounts-receivable.md))
 **Matching API package:** module-accounting-accounts-receivable-api ([contract](../api/accounts-receivable.md))

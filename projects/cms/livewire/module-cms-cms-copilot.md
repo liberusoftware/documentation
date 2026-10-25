@@ -1,12 +1,16 @@
 # CMS: Module Cms Cms Copilot Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-cms-copilot). Observed identity: [`liberusoftware/module-cms-copilot-livewire`](../../../modules/source/liberusoftware--module-cms-copilot-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-cms-module-cms-cms-copilot-livewire`  
 **Matching domain module:** `module-cms-cms-copilot`  
 **Application:** CMS  
 **Source feature:** [Module Cms Cms Copilot](../features/module-cms-cms-copilot.md)  
-**Architecture:** [LIVEWIRE.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

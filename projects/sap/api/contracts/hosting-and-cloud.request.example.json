@@ -1,0 +1,10 @@
+{
+  "service_template_version": "service-template-v3",
+  "region": "approved-region-example",
+  "capacity_request": {
+    "cpu_units": 2,
+    "memory_mib": 4096
+  },
+  "approved_change_reference": "change-example-002",
+  "target_platform": "control-panel"
+}

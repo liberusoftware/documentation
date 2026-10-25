@@ -1,5 +1,9 @@
 # Control Panel Web Hosting React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-web-hosting). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-control-panel-control-panel-web-hosting-react-native
 **Matching core package:** module-control-panel-control-panel-web-hosting ([implementation](../core/control-panel-web-hosting.md))
 **Matching API package:** module-control-panel-control-panel-web-hosting-api ([contract](../api/control-panel-web-hosting.md))

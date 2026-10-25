@@ -1,5 +1,9 @@
 # Categories And Navigation Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#categories-and-navigation). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-categories-and-navigation-flutter
 **Matching core package:** module-ecommerce-categories-and-navigation ([implementation](../core/categories-and-navigation.md))
 **Matching API package:** module-ecommerce-categories-and-navigation-api ([contract](../api/categories-and-navigation.md))

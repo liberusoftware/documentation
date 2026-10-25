@@ -1,58 +1,58 @@
-# SAP: Projects and Services Filament
+# Projects and services: Filament design
 
-## Canonical one-to-one Filament 5 implementation
+**Status:** proposed enterprise implementation. The [current SAP foundation](../SOURCE-APPLICATION.md) does not establish these business workflows or this presentation as implemented. Use the [detailed domain contract](../design/projects-and-services.md) and [API plan](../api/projects-and-services.md) as the review target.
 
-**Filament package:** `module-sap-projects-and-services-filament`  
-**Matching domain module:** `sap-projects-and-services`  
-**Application:** SAP  
-**Source feature:** [Projects and Services](../features/projects-and-services.md)  
-**Architecture:** [FILAMENT.md](../SAP.md) · [MODULES.md](../SAP.md) · [TESTING.md](../SAP.md)
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#projects-and-services). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
 
-## 1. Purpose and ownership
+## Ownership and delivery scope
 
-This optional Filament 5 presentation package presents exactly one independent domain module. It contributes reusable resources, pages, widgets, schemas, tables, infolists, and actions to application-owned panels while delegating authorization, validation, tenancy, persistence, and business rules to the `sap-projects-and-services` public boundary. It must not contain another module's UI or depend on application `App\` classes.
+Reuse CRM project/resource planning, Maintenance labor/time, Billing project charging, and Accounting cost dimensions where contracts fit. Enterprise coordinates accepted delivery and profitability views.
 
-## 2. Module-specific surfaces
+Reuse the [shared enterprise operation design](../design/OPERATIONS.md) for command identities, concurrency, handoffs and recovery. This capability group adds only its own orchestration/projection and genuine missing behavior; it does not create another owner for existing product records.
 
-- **Portfolios:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Projects:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Resources:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Skills:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Time:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Expenses:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Milestones:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Risks:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Delivery:** resource/table/form/action or page behavior for this module's authorized workflow.
-- **Profitability:** resource/table/form/action or page behavior for this module's authorized workflow.
+## Workflow and command contract
 
-## 3. Filament 5 implementation
+**Workspace surfaces:** delivery board, timesheet/expense approval, milestone evidence, billing readiness, margin drill-down.
 
-- Register a stable `module-sap-projects-and-services-filament` plugin and discover only classes in this package's namespace; applications attach it explicitly to each eligible panel.
-- Keep resources under `src/Resources`, resource pages and relation managers beneath their resource, and shared module-local widgets/pages under `src/Widgets` and `src/Pages`.
-- Use Filament 5 schemas, tables, infolists, actions, notifications, authorization hooks, and panel configuration as adapters over domain queries/actions; never duplicate domain invariants in form validation.
-- Resolve actor, tenant, locale, and sensitive-field visibility through trusted application context and fail closed when required context is missing.
+**Business lifecycle:** planned → in_progress → submitted → accepted → billing_requested → billed → reconciled; disputed and rework preserve the submission history.
 
-### Capability mapping
+Freeze the accepted scope and billing basis. Do not bill unapproved time/expenses or claim milestone acceptance without the required customer/delegate evidence. Keep cost attribution separate from access to personal labor details.
 
-- `portfolios`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `projects`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `resources`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `skills`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `time`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `expenses`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `milestones`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `risks`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `delivery`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
-- `profitability`: map the domain query/action to the appropriate Filament 5 resource, page, widget, or action.
+The illustrated `request-billing` command takes `contract_version`, `time_expense_snapshot_id`, `billing_rule_version`, `customer_acceptance_id`, with a documented record-version precondition and scoped operation identity. It starts from `accepted` and reaches `billed` only after its defined business outcome. The [API example](../api/projects-and-services.md#3-endpoint-examples) provides the proposed body and [draft request schema](../api/contracts/projects-and-services.request.schema.json).
 
-## 4. Security and verification
+Require accepted scope, approved time/expenses, valid billing terms and customer/delegate evidence. Preserve the accepted snapshot across retries.
 
-- Prove allowed, denied, wrong-tenant, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add plugin discovery/collision, architecture-boundary, authorization, tenancy, accessibility, localization, and minimal-host installation tests.
-- Test observable Filament behavior with Pest 5 and the supported Filament 5/Livewire 4 stack; domain behavior remains covered by the owning module.
+Link the Billing invoice reference and reconcile its basis. A billing request can pass through billing_requested before confirmed invoicing.
 
-## 5. Definition of done
+## Layer implementation
 
-- Package identity, namespace, plugin ID, and dependency match `sap-projects-and-services` one-to-one.
-- Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
-- Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+Compose a scoped work queue and detail/evidence page for the workspace above. Recommended queue columns are subject/source reference, active legal entity, business state, operation state, responsible owner and last transition/attempt time. Filter authorized records before counts, search, exports and relationships.
+
+Implement `request-billing` as an explicit authorized action/form using `contract_version`, `time_expense_snapshot_id`, `billing_rule_version`, `customer_acceptance_id`. Load permitted options from owning queries; keep protected IDs and final state fields outside editable form state. Validate at the form boundary for feedback and again in the public core/API command.
+
+A generic resource save or a status dropdown must not bypass the transition use case. Resolve the current record/version and policy again when handling the action. Display a review summary/evidence when the domain approval policy requires it; do not infer approval from a hidden button or navigation permission.
+
+Bulk operations preview eligible/skipped rows and retain each record's version and command identity. Show per-record completion/conflict/failure rather than a blanket success toast. Queue large exports/actions and preserve authorized result/evidence links.
+
+## Authorization, recovery and operations
+
+Project staff submit work; project/customer delegates accept deliverables; billing and finance retain their separate authorities.
+
+A rejected milestone returns to rework as a new submission version. If billing times out, reconcile by milestone operation identity before sending again.
+
+Show the selected entity, source/subject reference, current business state and separate operation progress. Preserve safe drafts on validation/conflict. Reauthenticate on expiry and discard protected cached data after scope/permission changes. A network timeout never establishes whether an external write succeeded; use the durable operation/source reference for reconciliation.
+
+## Module-specific acceptance
+
+- Rejected time is excluded from the billable snapshot; duplicate acceptance cannot double-bill; a contract change cannot rewrite an already billed milestone.
+- Repeated commands return the documented existing result or a clear conflict; they cannot duplicate a completed external side effect.
+- A tenant/entity switch, permission revocation or expired session cannot reuse another scope's cached record, attachment or exported file.
+- A downstream failure remains observable with a valid owner/recovery path across every enabled presentation.
+
+- Exercise the `request-billing` example with allowed, denied, invalid, stale, duplicate and uncertain-result paths; confirm `billed` only from its authoritative outcome.
+- Verify the enabled layer uses the same domain/operation contract as other surfaces and cannot bypass it through generic saves, hydrated state, direct JSON fields or offline replay.
+- Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
+
+Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.

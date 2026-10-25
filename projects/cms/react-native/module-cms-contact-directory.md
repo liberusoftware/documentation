@@ -1,5 +1,9 @@
 # Module Cms Contact Directory React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-contact-directory). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-module-cms-contact-directory-react-native
 **Matching core package:** module-cms-module-cms-contact-directory ([implementation](../core/module-cms-contact-directory.md))
 **Matching API package:** module-cms-module-cms-contact-directory-api ([contract](../api/module-cms-contact-directory.md))

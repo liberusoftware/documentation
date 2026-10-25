@@ -1,8 +1,12 @@
 # Accounting: Module Manager Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-manager). Observed identity: [`liberusoftware/module-manager`](../../../modules/source/liberusoftware--module-manager.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-module-manager`
+**Design package identifier:** `module-accounting-module-manager`
 **Domain specification:** [Module Manager](../features/module-manager.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

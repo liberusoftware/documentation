@@ -1,12 +1,16 @@
 # Billing: Module Billing Resellerclub
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-resellerclub). Observed identity: [`liberusoftware/billing-resellerclub`](../../../modules/source/liberusoftware--billing-resellerclub.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-billing-module-billing-resellerclub`
 **Application:** Billing  
 **Capability group:** Module Billing Resellerclub  
 **Source scope:** [BILLING.md](../BILLING.md)  
-**Architecture:** [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md) · [API.md](../BILLING.md) · [FILAMENT.md](../BILLING.md) · [LIVEWIRE.md](../BILLING.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

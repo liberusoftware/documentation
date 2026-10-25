@@ -1,5 +1,9 @@
 # Localization Contracts Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#localization-contracts). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-localization-contracts-flutter
 **Matching core package:** module-crm-localization-contracts ([implementation](../core/localization-contracts.md))
 **Matching API package:** module-crm-localization-contracts-api ([contract](../api/localization-contracts.md))

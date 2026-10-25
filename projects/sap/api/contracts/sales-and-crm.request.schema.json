@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:sales-and-crm:submit:request:v1",
+  "title": "Sales and CRM: proposed submit request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "quote_version",
+    "target_order_owner",
+    "acceptance_evidence_id"
+  ],
+  "properties": {
+    "quote_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_order_owner": {
+      "type": "string",
+      "minLength": 1
+    },
+    "acceptance_evidence_id": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

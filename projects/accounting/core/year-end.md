@@ -1,8 +1,12 @@
 # Accounting: Year End Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#year-end). Observed identity: [`liberusoftware/module-accounting-year-end`](../../../modules/source/liberusoftware--module-accounting-year-end.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-year-end`
+**Design package identifier:** `module-accounting-year-end`
 **Domain specification:** [Year End](../features/year-end.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

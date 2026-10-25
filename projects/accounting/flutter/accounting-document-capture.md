@@ -1,5 +1,9 @@
 # Accounting Document Capture Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-document-capture). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-document-capture-flutter
 **Matching core package:** module-accounting-accounting-document-capture ([implementation](../core/accounting-document-capture.md))
 **Matching API package:** module-accounting-accounting-document-capture-api ([contract](../api/accounting-document-capture.md))

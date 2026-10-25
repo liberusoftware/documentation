@@ -1,5 +1,9 @@
 # Content Federation Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#content-federation). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-content-federation-flutter
 **Matching core package:** module-cms-content-federation ([implementation](../core/content-federation.md))
 **Matching API package:** module-cms-content-federation-api ([contract](../api/content-federation.md))

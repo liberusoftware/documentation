@@ -1,0 +1,14 @@
+{
+  "receipt_reference": "transfer-receipt-example-001",
+  "destination_location_id": "warehouse-example-002",
+  "received_at": "2026-10-25T10:30:00Z",
+  "lines": [
+    {
+      "item_reference": "item-example-001",
+      "quantity": "3.000",
+      "unit": "each",
+      "lot_reference": "lot-example-001",
+      "condition": "accepted"
+    }
+  ]
+}

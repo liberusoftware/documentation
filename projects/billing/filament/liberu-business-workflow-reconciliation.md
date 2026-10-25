@@ -1,12 +1,16 @@
 # Billing: Liberu Business Workflow Reconciliation Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#liberu-business-workflow-reconciliation). Observed identity: [`liberusoftware/module-liberu-business-workflow-reconciliation-filament`](../../../modules/source/liberusoftware--module-liberu-business-workflow-reconciliation-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-billing-liberu-business-workflow-reconciliation-filament`  
 **Matching domain module:** `liberu-business-workflow-reconciliation`  
 **Application:** Billing  
 **Source feature:** [Liberu Business Workflow Reconciliation](../features/liberu-business-workflow-reconciliation.md)  
-**Architecture:** [FILAMENT.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

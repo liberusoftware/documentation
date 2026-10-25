@@ -1,8 +1,12 @@
 # CMS: Module Cms Offline And Pwa Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-offline-and-pwa). Observed identity: [`liberusoftware/module-cms-offline-and-pwa`](../../../modules/source/liberusoftware--module-cms-offline-and-pwa.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-offline-and-pwa`
+**Design package identifier:** `module-cms-module-cms-offline-and-pwa`
 **Domain specification:** [Module Cms Offline And Pwa](../features/module-cms-offline-and-pwa.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

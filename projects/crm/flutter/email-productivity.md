@@ -1,5 +1,9 @@
 # Email Productivity Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#email-productivity). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-email-productivity-flutter
 **Matching core package:** module-crm-email-productivity ([implementation](../core/email-productivity.md))
 **Matching API package:** module-crm-email-productivity-api ([contract](../api/email-productivity.md))

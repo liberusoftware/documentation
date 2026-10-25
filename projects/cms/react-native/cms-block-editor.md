@@ -1,5 +1,9 @@
 # Cms Block Editor React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-block-editor). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-block-editor-react-native
 **Matching core package:** module-cms-cms-block-editor ([implementation](../core/cms-block-editor.md))
 **Matching API package:** module-cms-cms-block-editor-api ([contract](../api/cms-block-editor.md))

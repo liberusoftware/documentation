@@ -1,0 +1,13 @@
+{
+  "order_reference": "purchase-order-example-001",
+  "receipt_reference": "receipt-example-001",
+  "received_at": "2026-10-25T10:00:00Z",
+  "lines": [
+    {
+      "order_line_reference": "order-line-example-001",
+      "received_quantity": "4.000",
+      "unit": "each",
+      "condition": "accepted"
+    }
+  ]
+}

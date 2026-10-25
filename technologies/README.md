@@ -36,6 +36,7 @@ This directory is the practical technology map for Liberu. It explains the langu
 | Inertia 3           | [Inertia](INERTIA.md)                                                  | [Inertia standard](../standards/INERTIA.md)            |
 | Vue 3               | [Vue](VUE.md)                                                          | [Vue standard](../standards/VUE.md)                    |
 | Nuxt 4              | [Nuxt](NUXT.md)                                                        | [Nuxt standard](../standards/NUXT.md)                  |
+| Next.js | [Next.js framework guide](NEXTJS.md) | [Next.js standard](../standards/NEXTJS.md) |
 | Vite                | [Vite](VITE.md)                                                        | [Theme and asset architecture](../standards/THEMES.md) |
 | React Native + Expo | [React Native](REACT-NATIVE.md) · [Expo build and publishing](EXPO.md) | [React Native standard](../standards/REACT-NATIVE.md)  |
 | Flutter + Dart      | [Flutter](FLUTTER.md)                                                  | [Flutter standard](../standards/FLUTTER.md)            |

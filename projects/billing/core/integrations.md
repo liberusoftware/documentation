@@ -1,8 +1,12 @@
 # Billing: Integrations Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#integrations). Observed identity: [`liberusoftware/integrations`](../../../modules/source/liberusoftware--integrations.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-integrations`
+**Design package identifier:** `module-billing-integrations`
 **Domain specification:** [Integrations](../features/integrations.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

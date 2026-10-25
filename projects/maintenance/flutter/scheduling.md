@@ -1,5 +1,9 @@
 # Scheduling Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#scheduling). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-maintenance-scheduling-flutter
 **Matching core package:** module-maintenance-scheduling ([implementation](../core/scheduling.md))
 **Matching API package:** module-maintenance-scheduling-api ([contract](../api/scheduling.md))

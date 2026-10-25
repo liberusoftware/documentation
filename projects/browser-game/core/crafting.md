@@ -1,8 +1,12 @@
 # Browser Game: Crafting Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crafting). Observed identity: [`liberusoftware/module-browser-game-crafting`](../../../modules/source/liberusoftware--module-browser-game-crafting.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-browser-game-crafting`
+**Design package identifier:** `module-browser-game-crafting`
 **Domain specification:** [Crafting](../features/crafting.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

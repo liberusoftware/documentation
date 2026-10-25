@@ -57,3 +57,5 @@ Use the latest stable releases supported by the ecosystem and the application lo
 - [React](https://react.dev/) · [Vue](https://vuejs.org/) · [Nuxt](https://nuxt.com/docs/4.x)
 - [React Native](https://reactnative.dev/docs/getting-started) · [Expo](https://docs.expo.dev/) · [Flutter](https://docs.flutter.dev/)
 - [PHP-FIG](https://www.php-fig.org/psr/) · [TypeScript](https://www.typescriptlang.org/docs/) · [MDN JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+- [Next.js](NEXTJS.md) — API-consuming React applications and shared UI boundaries.

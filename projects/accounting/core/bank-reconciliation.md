@@ -1,8 +1,12 @@
 # Accounting: Bank Reconciliation Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#bank-reconciliation). Observed identity: [`liberusoftware/module-accounting-bank-reconciliation`](../../../modules/source/liberusoftware--module-accounting-bank-reconciliation.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-bank-reconciliation`
+**Design package identifier:** `module-accounting-bank-reconciliation`
 **Domain specification:** [Bank Reconciliation](../features/bank-reconciliation.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

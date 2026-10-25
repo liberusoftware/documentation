@@ -1,8 +1,12 @@
 # Ecommerce: Warranty And Claims Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#warranty-and-claims). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-ecommerce-warranty-and-claims`
+**Design package identifier:** `module-ecommerce-warranty-and-claims`
 **Domain specification:** [Warranty And Claims](../features/warranty-and-claims.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

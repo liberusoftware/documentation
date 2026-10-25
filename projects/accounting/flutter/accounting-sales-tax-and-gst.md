@@ -1,5 +1,9 @@
 # Accounting Sales Tax And Gst Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-sales-tax-and-gst). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-sales-tax-and-gst-flutter
 **Matching core package:** module-accounting-accounting-sales-tax-and-gst ([implementation](../core/accounting-sales-tax-and-gst.md))
 **Matching API package:** module-accounting-accounting-sales-tax-and-gst-api ([contract](../api/accounting-sales-tax-and-gst.md))

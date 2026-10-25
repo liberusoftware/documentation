@@ -1,50 +1,67 @@
 # Automation Feature Specifications
 
+<!-- catalogue-status:start -->
+This index preserves **57 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-- [Activity Comments](activity-comments.md) — `module-automation-activity-comments`
-- [Analytics Core](analytics-core.md) — `module-automation-analytics-core`
-- [Analytics Google](analytics-google.md) — `module-automation-analytics-google`
-- [Analytics Meta](analytics-meta.md) — `module-automation-analytics-meta`
-- [Api Access](api-access.md) — `module-automation-api-access`
-- [Application](application.md) — `module-automation-application`
-- [Audit](audit.md) — `module-automation-audit`
-- [Currency Context](currency-context.md) — `module-automation-currency-context`
-- [Developer Experience](developer-experience.md) — `module-automation-developer-experience`
-- [Feature Flags](feature-flags.md) — `module-automation-feature-flags`
-- [Files Media](files-media.md) — `module-automation-files-media`
-- [Identity Core](identity-core.md) — `module-automation-identity-core`
-- [Identity Socialstream](identity-socialstream.md) — `module-automation-identity-socialstream`
-- [Import Export](import-export.md) — `module-automation-import-export`
-- [Integrations](integrations.md) — `module-automation-integrations`
-- [Jetstream Bridge](jetstream-bridge.md) — `module-automation-jetstream-bridge`
-- [Liberu Business Workflow Reconciliation](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation`
-- [Liberu Executive Insights](liberu-executive-insights.md) — `module-automation-liberu-executive-insights`
-- [Liberu Platform Orchestration](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration`
-- [Liberu Revenue And Care Orchestration](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration`
-- [Localization Core](localization-core.md) — `module-automation-localization-core`
-- [Localization Mymemory](localization-mymemory.md) — `module-automation-localization-mymemory`
-- [Module Automation Ai Gateway](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway`
-- [Module Automation Approvals](module-automation-approvals.md) — `module-automation-module-automation-approvals`
-- [Module Automation Automation Core](module-automation-automation-core.md) — `module-automation-module-automation-automation-core`
-- [Module Automation Connectors](module-automation-connectors.md) — `module-automation-module-automation-connectors`
-- [Module Automation Data Processing](module-automation-data-processing.md) — `module-automation-module-automation-data-processing`
-- [Module Automation Evaluation](module-automation-evaluation.md) — `module-automation-module-automation-evaluation`
-- [Module Automation Image](module-automation-image.md) — `module-automation-module-automation-image`
-- [Module Automation Prompt Registry](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry`
-- [Module Automation Rules](module-automation-rules.md) — `module-automation-module-automation-rules`
-- [Module Automation Video](module-automation-video.md) — `module-automation-module-automation-video`
-- [Module Automation Voice](module-automation-voice.md) — `module-automation-module-automation-voice`
-- [Module Manager](module-manager.md) — `module-automation-module-manager`
-- [Notifications](notifications.md) — `module-automation-notifications`
-- [Observability](observability.md) — `module-automation-observability`
-- [Organizations Teams](organizations-teams.md) — `module-automation-organizations-teams`
-- [Profiles](profiles.md) — `module-automation-profiles`
-- [Roles Permissions](roles-permissions.md) — `module-automation-roles-permissions`
-- [Scheduler Queues](scheduler-queues.md) — `module-automation-scheduler-queues`
-- [Search](search.md) — `module-automation-search`
-- [Sessions Devices](sessions-devices.md) — `module-automation-sessions-devices`
-- [Settings](settings.md) — `module-automation-settings`
-- [Theme Support](theme-support.md) — `module-automation-theme-support`
-- [Two Factor Authentication](two-factor-authentication.md) — `module-automation-two-factor-authentication`
-- [Webhooks](webhooks.md) — `module-automation-webhooks`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments](activity-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [AI Gateway](ai-gateway.md) | [liberusoftware/automation-ai-gateway](../../../modules/source/liberusoftware--automation-ai-gateway.md) | [core](../core/ai-gateway.md) · [api](../api/ai-gateway.md) · [nextjs](../nextjs/ai-gateway.md) |
+| [Analytics Core](analytics-core.md) | [liberusoftware/analytics-core](../../../modules/source/liberusoftware--analytics-core.md) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google](analytics-google.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta](analytics-meta.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access](api-access.md) | [liberusoftware/api-access](../../../modules/source/liberusoftware--api-access.md) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application](application.md) | [liberusoftware/application](../../../modules/source/liberusoftware--application.md) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Approvals](approvals.md) | [liberusoftware/automation-approvals](../../../modules/source/liberusoftware--automation-approvals.md) | [core](../core/approvals.md) · [api](../api/approvals.md) · [nextjs](../nextjs/approvals.md) |
+| [Audit](audit.md) | [liberusoftware/audit](../../../modules/source/liberusoftware--audit.md) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Automation Core](automation-core.md) | [liberusoftware/automation-automation-core](../../../modules/source/liberusoftware--automation-automation-core.md) | [core](../core/automation-core.md) · [api](../api/automation-core.md) · [nextjs](../nextjs/automation-core.md) |
+| [Connectors](connectors.md) | [liberusoftware/automation-connectors](../../../modules/source/liberusoftware--automation-connectors.md) | [core](../core/connectors.md) · [api](../api/connectors.md) · [nextjs](../nextjs/connectors.md) |
+| [Currency Context](currency-context.md) | [liberusoftware/currency-context](../../../modules/source/liberusoftware--currency-context.md) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Data Processing](data-processing.md) | [liberusoftware/automation-data-processing](../../../modules/source/liberusoftware--automation-data-processing.md) | [core](../core/data-processing.md) · [api](../api/data-processing.md) · [nextjs](../nextjs/data-processing.md) |
+| [Developer Experience](developer-experience.md) | [liberusoftware/developer-experience](../../../modules/source/liberusoftware--developer-experience.md) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Evaluation](evaluation.md) | [liberusoftware/automation-evaluation](../../../modules/source/liberusoftware--automation-evaluation.md) | [core](../core/evaluation.md) · [api](../api/evaluation.md) · [nextjs](../nextjs/evaluation.md) |
+| [Feature Flags](feature-flags.md) | [liberusoftware/feature-flags](../../../modules/source/liberusoftware--feature-flags.md) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media](files-media.md) | [liberusoftware/files-media](../../../modules/source/liberusoftware--files-media.md) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core](identity-core.md) | [liberusoftware/identity-core](../../../modules/source/liberusoftware--identity-core.md) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream](identity-socialstream.md) | [liberusoftware/identity-socialstream](../../../modules/source/liberusoftware--identity-socialstream.md) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Image](image.md) | [liberusoftware/automation-image](../../../modules/source/liberusoftware--automation-image.md) | [core](../core/image.md) · [api](../api/image.md) · [nextjs](../nextjs/image.md) |
+| [Import Export](import-export.md) | [liberusoftware/import-export](../../../modules/source/liberusoftware--import-export.md) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations](integrations.md) | [liberusoftware/integrations](../../../modules/source/liberusoftware--integrations.md) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge](jetstream-bridge.md) | [liberusoftware/jetstream-bridge](../../../modules/source/liberusoftware--jetstream-bridge.md) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation](liberu-business-workflow-reconciliation.md) | [liberusoftware/liberu-business-workflow-reconciliation](../../../modules/source/liberusoftware--liberu-business-workflow-reconciliation.md) | [core](../core/liberu-business-workflow-reconciliation.md) · [api](../api/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights](liberu-executive-insights.md) | [liberusoftware/liberu-executive-insights](../../../modules/source/liberusoftware--liberu-executive-insights.md) | [core](../core/liberu-executive-insights.md) · [api](../api/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration](liberu-platform-orchestration.md) | [liberusoftware/liberu-platform-orchestration](../../../modules/source/liberusoftware--liberu-platform-orchestration.md) | [core](../core/liberu-platform-orchestration.md) · [api](../api/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration](liberu-revenue-and-care-orchestration.md) | [liberusoftware/liberu-revenue-and-care-orchestration](../../../modules/source/liberusoftware--liberu-revenue-and-care-orchestration.md) | [core](../core/liberu-revenue-and-care-orchestration.md) · [api](../api/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core](localization-core.md) | [liberusoftware/localization-core](../../../modules/source/liberusoftware--localization-core.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory](localization-mymemory.md) | [liberusoftware/localization-mymemory](../../../modules/source/liberusoftware--localization-mymemory.md) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Module Automation Ai Gateway](module-automation-ai-gateway.md) | [liberusoftware/automation-ai-gateway](../../../modules/source/liberusoftware--automation-ai-gateway.md) | [core](../core/module-automation-ai-gateway.md) · [api](../api/module-automation-ai-gateway.md) · [nextjs](../nextjs/module-automation-ai-gateway.md) |
+| [Module Automation Approvals](module-automation-approvals.md) | [liberusoftware/automation-approvals](../../../modules/source/liberusoftware--automation-approvals.md) | [core](../core/module-automation-approvals.md) · [api](../api/module-automation-approvals.md) · [nextjs](../nextjs/module-automation-approvals.md) |
+| [Module Automation Automation Core](module-automation-automation-core.md) | [liberusoftware/automation-automation-core](../../../modules/source/liberusoftware--automation-automation-core.md) | [core](../core/module-automation-automation-core.md) · [api](../api/module-automation-automation-core.md) · [nextjs](../nextjs/module-automation-automation-core.md) |
+| [Module Automation Connectors](module-automation-connectors.md) | [liberusoftware/automation-connectors](../../../modules/source/liberusoftware--automation-connectors.md) | [core](../core/module-automation-connectors.md) · [api](../api/module-automation-connectors.md) · [nextjs](../nextjs/module-automation-connectors.md) |
+| [Module Automation Data Processing](module-automation-data-processing.md) | [liberusoftware/automation-data-processing](../../../modules/source/liberusoftware--automation-data-processing.md) | [core](../core/module-automation-data-processing.md) · [api](../api/module-automation-data-processing.md) · [nextjs](../nextjs/module-automation-data-processing.md) |
+| [Module Automation Evaluation](module-automation-evaluation.md) | [liberusoftware/automation-evaluation](../../../modules/source/liberusoftware--automation-evaluation.md) | [core](../core/module-automation-evaluation.md) · [api](../api/module-automation-evaluation.md) · [nextjs](../nextjs/module-automation-evaluation.md) |
+| [Module Automation Image](module-automation-image.md) | [liberusoftware/automation-image](../../../modules/source/liberusoftware--automation-image.md) | [core](../core/module-automation-image.md) · [api](../api/module-automation-image.md) · [nextjs](../nextjs/module-automation-image.md) |
+| [Module Automation Prompt Registry](module-automation-prompt-registry.md) | [liberusoftware/automation-prompt-registry](../../../modules/source/liberusoftware--automation-prompt-registry.md) | [core](../core/module-automation-prompt-registry.md) · [api](../api/module-automation-prompt-registry.md) · [nextjs](../nextjs/module-automation-prompt-registry.md) |
+| [Module Automation Rules](module-automation-rules.md) | [liberusoftware/automation-rules](../../../modules/source/liberusoftware--automation-rules.md) | [core](../core/module-automation-rules.md) · [api](../api/module-automation-rules.md) · [nextjs](../nextjs/module-automation-rules.md) |
+| [Module Automation Video](module-automation-video.md) | [liberusoftware/automation-video](../../../modules/source/liberusoftware--automation-video.md) | [core](../core/module-automation-video.md) · [api](../api/module-automation-video.md) · [nextjs](../nextjs/module-automation-video.md) |
+| [Module Automation Voice](module-automation-voice.md) | [liberusoftware/automation-voice](../../../modules/source/liberusoftware--automation-voice.md) | [core](../core/module-automation-voice.md) · [api](../api/module-automation-voice.md) · [nextjs](../nextjs/module-automation-voice.md) |
+| [Module Manager](module-manager.md) | [liberusoftware/module-manager](../../../modules/source/liberusoftware--module-manager.md) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications](notifications.md) | [liberusoftware/notifications](../../../modules/source/liberusoftware--notifications.md) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability](observability.md) | [liberusoftware/observability](../../../modules/source/liberusoftware--observability.md) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams](organizations-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles](profiles.md) | [liberusoftware/profiles](../../../modules/source/liberusoftware--profiles.md) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Prompt Registry](prompt-registry.md) | [liberusoftware/automation-prompt-registry](../../../modules/source/liberusoftware--automation-prompt-registry.md) | [core](../core/prompt-registry.md) · [api](../api/prompt-registry.md) · [nextjs](../nextjs/prompt-registry.md) |
+| [Roles Permissions](roles-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Rules](rules.md) | [liberusoftware/automation-rules](../../../modules/source/liberusoftware--automation-rules.md) | [core](../core/rules.md) · [api](../api/rules.md) · [nextjs](../nextjs/rules.md) |
+| [Scheduler Queues](scheduler-queues.md) | [liberusoftware/scheduler-queues](../../../modules/source/liberusoftware--scheduler-queues.md) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search](search.md) | [liberusoftware/search](../../../modules/source/liberusoftware--search.md) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices](sessions-devices.md) | [liberusoftware/sessions-devices](../../../modules/source/liberusoftware--sessions-devices.md) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings](settings.md) | [liberusoftware/settings](../../../modules/source/liberusoftware--settings.md) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support](theme-support.md) | [liberusoftware/theme-support](../../../modules/source/liberusoftware--theme-support.md) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication](two-factor-authentication.md) | [liberusoftware/two-factor-authentication](../../../modules/source/liberusoftware--two-factor-authentication.md) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Video](video.md) | [liberusoftware/automation-video](../../../modules/source/liberusoftware--automation-video.md) | [core](../core/video.md) · [api](../api/video.md) · [nextjs](../nextjs/video.md) |
+| [Voice](voice.md) | [liberusoftware/automation-voice](../../../modules/source/liberusoftware--automation-voice.md) | [core](../core/voice.md) · [api](../api/voice.md) · [nextjs](../nextjs/voice.md) |
+| [Webhooks](webhooks.md) | [liberusoftware/webhooks](../../../modules/source/liberusoftware--webhooks.md) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

@@ -1,6 +1,10 @@
 # Boilerplate: Files and Media Vue presentation packages
 
-**Composer package:** `module-files-and-media-vue`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#files-and-media). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `files-media`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-files-and-media-vue`
 **Matching core package:** [`module-files-and-media`](../core/files-and-media.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Storage contracts, uploads, validation, scanning, metadata, access, transformations, and retention.
@@ -17,3 +21,13 @@ This package presents the Files and Media core capability through Vue. It owns r
 ## Scope
 
 The package is optional and installable independently. Applications may omit it, replace it with another presentation adapter, or compose it with a custom theme while retaining the same Files and Media core boundary.
+
+<!-- inertia-transport:start -->
+### Inertia transport boundary
+
+Use Laravel-owned Inertia page/command routes for visits and forms. The controller can invoke the module's public application actions in the same host or use a deliberate API adapter, then return an Inertia page/redirect response. A bare REST JSON resource response is not an Inertia page. Keep authoritative domain authorization and validation in the owning boundary for either path.
+
+Independent API consumers and Next.js use their reviewed HTTP/session integration. Share DTOs and framework-independent UI primitives; keep Inertia page props, visits, form errors and redirects in the Inertia wrapper. Do not introduce loopback HTTP solely to reuse a public action inside the same Laravel host.
+
+See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](https://inertiajs.com/docs/v3/core-concepts/how-it-works) and [redirect behavior](https://inertiajs.com/docs/v3/the-basics/redirects).
+<!-- inertia-transport:end -->

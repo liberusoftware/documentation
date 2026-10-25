@@ -1,8 +1,12 @@
 # CMS: Module Cms Theme Marketplace Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-theme-marketplace). Observed identity: [`liberusoftware/module-cms-theme-marketplace`](../../../modules/source/liberusoftware--module-cms-theme-marketplace.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-theme-marketplace`
+**Design package identifier:** `module-cms-module-cms-theme-marketplace`
 **Domain specification:** [Module Cms Theme Marketplace](../features/module-cms-theme-marketplace.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

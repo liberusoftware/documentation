@@ -1,12 +1,16 @@
 # Accounting: Accounting Branch And Location Accounting Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-branch-and-location-accounting). Observed identity: [`liberusoftware/module-accounting-branch-and-location-accounting-filament`](../../../modules/source/liberusoftware--module-accounting-branch-and-location-accounting-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-accounting-accounting-branch-and-location-accounting-filament`  
 **Matching domain module:** `accounting-branch-and-location-accounting`  
 **Application:** Accounting  
 **Source feature:** [Accounting Branch And Location Accounting](../features/accounting-branch-and-location-accounting.md)  
-**Architecture:** [FILAMENT.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

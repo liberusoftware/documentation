@@ -18,3 +18,5 @@ composer show --direct
 ```
 
 A minimal core package declaration is documented in the [module implementation guide](../modules/features/IMPLEMENTATION.md). See the official [Composer documentation](https://getcomposer.org/doc/), [basic usage](https://getcomposer.org/doc/01-basic-usage.md), [schema](https://getcomposer.org/doc/04-schema.md), and [Composer GitHub repository](https://github.com/composer/composer). Related local rules: [PHP](PHP.md), [PHP standard](../standards/PHP.md), and [repository architecture](../architecture/REPOSITORIES.md).
+
+For the full project-clone, local-development, update, installer, enablement, and publishing workflow, read the [Composer module lifecycle guide](../guides/COMPOSER.md).

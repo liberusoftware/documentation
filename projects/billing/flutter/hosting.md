@@ -1,5 +1,9 @@
 # Hosting Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#hosting). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-hosting-flutter
 **Matching core package:** module-billing-hosting ([implementation](../core/hosting.md))
 **Matching API package:** module-billing-hosting-api ([contract](../api/hosting.md))

@@ -1,35 +1,53 @@
 # Boilerplate Vue + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments Vue](activity-comments.md) — `module-boilerplate-activity-comments-vue-inertia`
-- [Analytics Core Vue](analytics-core.md) — `module-boilerplate-analytics-core-vue-inertia`
-- [Analytics Google Vue](analytics-google.md) — `module-boilerplate-analytics-google-vue-inertia`
-- [Analytics Meta Vue](analytics-meta.md) — `module-boilerplate-analytics-meta-vue-inertia`
-- [Api Access Vue](api-access.md) — `module-boilerplate-api-access-vue-inertia`
-- [Application Vue](application.md) — `module-boilerplate-application-vue-inertia`
-- [Audit Vue](audit.md) — `module-boilerplate-audit-vue-inertia`
-- [Currency Context Vue](currency-context.md) — `module-boilerplate-currency-context-vue-inertia`
-- [Developer Experience Vue](developer-experience.md) — `module-boilerplate-developer-experience-vue-inertia`
-- [Feature Flags Vue](feature-flags.md) — `module-boilerplate-feature-flags-vue-inertia`
-- [Files Media Vue](files-media.md) — `module-boilerplate-files-media-vue-inertia`
-- [Identity Core Vue](identity-core.md) — `module-boilerplate-identity-core-vue-inertia`
-- [Identity Socialstream Vue](identity-socialstream.md) — `module-boilerplate-identity-socialstream-vue-inertia`
-- [Import Export Vue](import-export.md) — `module-boilerplate-import-export-vue-inertia`
-- [Integrations Vue](integrations.md) — `module-boilerplate-integrations-vue-inertia`
-- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-boilerplate-jetstream-bridge-vue-inertia`
-- [Localization Core Vue](localization-core.md) — `module-boilerplate-localization-core-vue-inertia`
-- [Localization Mymemory Vue](localization-mymemory.md) — `module-boilerplate-localization-mymemory-vue-inertia`
-- [Module Manager Vue](module-manager.md) — `module-boilerplate-module-manager-vue-inertia`
-- [Notifications Vue](notifications.md) — `module-boilerplate-notifications-vue-inertia`
-- [Observability Vue](observability.md) — `module-boilerplate-observability-vue-inertia`
-- [Organizations Teams Vue](organizations-teams.md) — `module-boilerplate-organizations-teams-vue-inertia`
-- [Profiles Vue](profiles.md) — `module-boilerplate-profiles-vue-inertia`
-- [Roles Permissions Vue](roles-permissions.md) — `module-boilerplate-roles-permissions-vue-inertia`
-- [Scheduler Queues Vue](scheduler-queues.md) — `module-boilerplate-scheduler-queues-vue-inertia`
-- [Search Vue](search.md) — `module-boilerplate-search-vue-inertia`
-- [Sessions Devices Vue](sessions-devices.md) — `module-boilerplate-sessions-devices-vue-inertia`
-- [Settings Vue](settings.md) — `module-boilerplate-settings-vue-inertia`
-- [Theme Support Vue](theme-support.md) — `module-boilerplate-theme-support-vue-inertia`
-- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-boilerplate-two-factor-authentication-vue-inertia`
-- [Webhooks Vue](webhooks.md) — `module-boilerplate-webhooks-vue-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity and Comments Vue presentation packages](activity-and-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-and-comments) | [core](../core/activity-and-comments.md) · [api](../api/activity-and-comments.md) · [nextjs](../nextjs/activity-and-comments.md) |
+| [Activity Comments Vue + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Vue presentation packages](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Vue + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Vue + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [API Access Vue presentation packages](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Core Vue presentation packages](application-core.md) | [Target/source map](../SOURCE-MAPPING.md#application-core) | [core](../core/application-core.md) · [api](../api/application-core.md) · [nextjs](../nextjs/application-core.md) |
+| [Application Vue + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Vue presentation packages](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Currency Context Vue presentation packages](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Vue presentation packages](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags Vue presentation packages](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files and Media Vue presentation packages](files-and-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-and-media) | [core](../core/files-and-media.md) · [api](../api/files-and-media.md) · [nextjs](../nextjs/files-and-media.md) |
+| [Files Media Vue + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Google Analytics Vue presentation packages](google-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#google-analytics) | [core](../core/google-analytics.md) · [api](../api/google-analytics.md) · [nextjs](../nextjs/google-analytics.md) |
+| [Identity Core Vue + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Vue + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Identity Vue presentation packages](identity.md) | [Target/source map](../SOURCE-MAPPING.md#identity) | [core](../core/identity.md) · [api](../api/identity.md) · [nextjs](../nextjs/identity.md) |
+| [Import and Export Vue presentation packages](import-and-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-and-export) | [core](../core/import-and-export.md) · [api](../api/import-and-export.md) · [nextjs](../nextjs/import-and-export.md) |
+| [Import Export Vue + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Vue presentation packages](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Vue presentation packages](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core Vue + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Vue + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Localization Vue presentation packages](localization.md) | [Target/source map](../SOURCE-MAPPING.md#localization) | [core](../core/localization.md) · [api](../api/localization.md) · [nextjs](../nextjs/localization.md) |
+| [Meta Server-Side Tracking Vue presentation packages](meta-server-side-tracking.md) | [Target/source map](../SOURCE-MAPPING.md#meta-server-side-tracking) | [core](../core/meta-server-side-tracking.md) · [api](../api/meta-server-side-tracking.md) · [nextjs](../nextjs/meta-server-side-tracking.md) |
+| [Module Manager Vue presentation packages](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Vue presentation packages](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Vue presentation packages](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations and Teams Vue presentation packages](organizations-and-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-and-teams) | [core](../core/organizations-and-teams.md) · [api](../api/organizations-and-teams.md) · [nextjs](../nextjs/organizations-and-teams.md) |
+| [Organizations Teams Vue + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles Vue presentation packages](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles and Permissions Vue presentation packages](roles-and-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-and-permissions) | [core](../core/roles-and-permissions.md) · [api](../api/roles-and-permissions.md) · [nextjs](../nextjs/roles-and-permissions.md) |
+| [Roles Permissions Vue + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler and Queues Vue presentation packages](scheduler-and-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-and-queues) | [core](../core/scheduler-and-queues.md) · [api](../api/scheduler-and-queues.md) · [nextjs](../nextjs/scheduler-and-queues.md) |
+| [Scheduler Queues Vue + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Vue presentation packages](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions and Devices Vue presentation packages](sessions-and-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-and-devices) | [core](../core/sessions-and-devices.md) · [api](../api/sessions-and-devices.md) · [nextjs](../nextjs/sessions-and-devices.md) |
+| [Sessions Devices Vue + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Vue presentation packages](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Vue + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two-Factor Authentication Vue presentation packages](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Vue presentation packages](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

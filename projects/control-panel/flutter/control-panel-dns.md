@@ -1,5 +1,9 @@
 # Control Panel Dns Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-dns). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-control-panel-control-panel-dns-flutter
 **Matching core package:** module-control-panel-control-panel-dns ([implementation](../core/control-panel-dns.md))
 **Matching API package:** module-control-panel-control-panel-dns-api ([contract](../api/control-panel-dns.md))

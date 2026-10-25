@@ -1,5 +1,11 @@
 # Platform Orchestration Flutter + Dart
 
+**Existing cross-project implementations:** the [platform reuse guide](../REUSE.md) identifies the observed prefixed/unprefixed package families, namespaces, tables and adoption constraints. This scope is their composition/design home; it does not require a third independent implementation.
+
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#platform-orchestration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-liberu-platform-orchestration-flutter
 **Matching core package:** module-liberu-platform-orchestration ([implementation](../core/platform-orchestration.md))
 **Matching API package:** module-liberu-platform-orchestration-api ([contract](../api/platform-orchestration.md))

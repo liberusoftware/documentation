@@ -1,12 +1,16 @@
 # CRM: Orders and Payments Workspace Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#orders-and-payments-workspace). Observed identity: [`liberusoftware/module-crm-orders-and-payments-workspace-livewire`](../../../modules/source/liberusoftware--module-crm-orders-and-payments-workspace-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-orders-and-payments-workspace-livewire`  
 **Matching domain module:** `crm-orders-and-payments-workspace`  
 **Application:** CRM  
 **Source feature:** [Orders and Payments Workspace](../features/orders-and-payments-workspace.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

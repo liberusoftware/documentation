@@ -1,8 +1,12 @@
 # CMS: Cms Structured Collections Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-structured-collections). Observed identity: [`liberusoftware/module-cms-structured-collections`](../../../modules/source/liberusoftware--module-cms-structured-collections.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-cms-structured-collections`
+**Design package identifier:** `module-cms-cms-structured-collections`
 **Domain specification:** [Cms Structured Collections](../features/cms-structured-collections.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

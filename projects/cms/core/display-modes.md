@@ -1,8 +1,12 @@
 # Cms: Display Modes Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#display-modes). Observed identity: [`liberusoftware/module-cms-display-modes`](../../../modules/source/liberusoftware--module-cms-display-modes.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-display-modes`
+**Design package identifier:** `module-cms-display-modes`
 **Domain specification:** [Display Modes](../features/display-modes.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

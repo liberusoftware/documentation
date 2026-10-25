@@ -1,12 +1,16 @@
 # CRM: Feedback and Voice of Customer Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#feedback-and-voice-of-customer). Observed identity: [`liberusoftware/module-crm-feedback-and-voice-of-customer-livewire`](../../../modules/source/liberusoftware--module-crm-feedback-and-voice-of-customer-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-feedback-and-voice-of-customer-livewire`  
 **Matching domain module:** `crm-feedback-and-voice-of-customer`  
 **Application:** CRM  
 **Source feature:** [Feedback and Voice of Customer](../features/feedback-and-voice-of-customer.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

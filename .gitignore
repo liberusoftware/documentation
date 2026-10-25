@@ -28,3 +28,7 @@ Homestead.json
 .env.production
 .phpactor.json
 auth.json
+
+# Documentation tooling caches
+__pycache__/
+*.py[cod]

@@ -1,8 +1,12 @@
 # Real Estate: Viewings Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#viewings). Observed identity: [`liberusoftware/real-estate-viewings`](../../../modules/source/liberusoftware--real-estate-viewings.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-real-estate-viewings`
+**Design package identifier:** `module-real-estate-viewings`
 **Domain specification:** [Viewings](../features/viewings.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

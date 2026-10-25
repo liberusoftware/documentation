@@ -1,12 +1,16 @@
 # Real Estate: Sales Progression Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-progression). Observed identity: [`liberusoftware/real-estate-sales-progression-filament`](../../../modules/source/liberusoftware--real-estate-sales-progression-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-real-estate-sales-progression-filament`  
 **Matching domain module:** `real-estate-sales-progression`  
 **Application:** Real Estate  
 **Source feature:** [Sales Progression](../features/sales-progression.md)  
-**Architecture:** [FILAMENT.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

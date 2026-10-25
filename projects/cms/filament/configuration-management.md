@@ -1,12 +1,16 @@
 # CMS: Configuration Management Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#configuration-management). Observed identity: [`liberusoftware/module-cms-configuration-management-filament`](../../../modules/source/liberusoftware--module-cms-configuration-management-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-cms-configuration-management-filament`  
 **Matching domain module:** `cms-configuration-management`  
 **Application:** CMS  
 **Source feature:** [Configuration Management](../features/configuration-management.md)  
-**Architecture:** [FILAMENT.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

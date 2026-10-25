@@ -1,5 +1,9 @@
 # Crm Goals And Performance Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-goals-and-performance). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-goals-and-performance-flutter
 **Matching core package:** module-crm-crm-goals-and-performance ([implementation](../core/crm-goals-and-performance.md))
 **Matching API package:** module-crm-crm-goals-and-performance-api ([contract](../api/crm-goals-and-performance.md))

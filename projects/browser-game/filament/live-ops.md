@@ -1,12 +1,16 @@
 # Browser Game: Live Ops Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#live-ops). Observed identity: [`liberusoftware/module-browser-game-live-ops-filament`](../../../modules/source/liberusoftware--module-browser-game-live-ops-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-browser-game-live-ops-filament`  
 **Matching domain module:** `browser-game-live-ops`  
 **Application:** Browser Game  
 **Source feature:** [Live Ops](../features/live-ops.md)  
-**Architecture:** [FILAMENT.md](../BROWSER-GAME.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

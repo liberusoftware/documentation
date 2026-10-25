@@ -1,8 +1,12 @@
 # Billing: Module Billing Enom Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-enom). Observed identity: [`liberusoftware/billing-enom`](../../../modules/source/liberusoftware--billing-enom.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-module-billing-enom`
+**Design package identifier:** `module-billing-module-billing-enom`
 **Domain specification:** [Module Billing Enom](../features/module-billing-enom.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

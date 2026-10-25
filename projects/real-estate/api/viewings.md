@@ -1,12 +1,16 @@
 # Real Estate: Viewings API
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#viewings). Observed identity: [`liberusoftware/real-estate-viewings-api`](../../../modules/source/liberusoftware--real-estate-viewings-api.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one API module specification
 
-**API package:** `module-real-estate-viewings-api`
+**Proposed API design identifier:** `module-real-estate-viewings-api`
 **Matching domain module:** `real-estate-viewings`
 **Application:** Real Estate
 **Source feature:** [Viewings](../features/viewings.md)
-**Architecture:** [API.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [API.md](../../../architecture/API.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
@@ -28,88 +32,75 @@ Installation does not expose every capability automatically. The host applicatio
 ## 2. Contract design
 
 - Publish an OpenAPI 3.1 fragment with stable operation IDs, schemas, examples, scopes, errors, pagination, rate limits, idempotency, and deprecation metadata.
-- Use `/api/v1/real-estate/viewings` as the default module route prefix unless the application owns and documents a compatible façade path.
+- Choose the route namespace through the host's reviewed API contract; observed source prefixes below take precedence over repository/design-name guesses.
 - Represent resources through explicit API DTOs/resources rather than automatic Eloquent serialization.
 - Use lowercase kebab-case paths, snake_case JSON fields, opaque identifiers, ISO 8601 timestamps, explicit money objects, and RFC 9457 Problem Details errors.
 - Compatible additions remain within the major version; removals or semantic breaks require a new major version or approved migration path.
 
 ## 3. Endpoint examples
 
-**Base path:** `/api/v1/real-estate/viewings`
+**Contract status:** use the observed source below for current route/handler/schema evidence. The surrounding module scope is a target design; its feature labels are not request field names. Do not generate a create/update/delete payload or final URL by mechanically copying the design identifier.
 
-These examples show the normal REST shape. The matching OpenAPI fragment remains authoritative for exact fields, required data, permissions, response schemas, and whether an operation is exposed.
+| Boundary | Observed identity and implementation reference |
+| --- | --- |
+| Source package | [liberusoftware/real-estate-viewings-api](../../../modules/source/liberusoftware--real-estate-viewings-api.md) |
+| Source package | [liberusoftware/real-estate-viewings](../../../modules/source/liberusoftware--real-estate-viewings.md) |
 
-| Method   | Endpoint                                                      | Purpose                                       | Possible request data                                                                         |
-| -------- | ------------------------------------------------------------- | --------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| `GET`    | `/api/v1/real-estate/viewings?page[size]=25&sort=-created_at` | List authorized resources                     | Query parameters for pagination, filtering, sorting, field selection, and documented includes |
-| `GET`    | `/api/v1/real-estate/viewings/{id}`                           | Retrieve one resource                         | Opaque resource `id` in the path; no request body                                             |
-| `POST`   | `/api/v1/real-estate/viewings`                                | Create a resource                             | JSON body using the module schema and required team/context fields                            |
-| `PATCH`  | `/api/v1/real-estate/viewings/{id}`                           | Update permitted fields                       | JSON body containing changed fields and `If-Match` when concurrency is supported              |
-| `DELETE` | `/api/v1/real-estate/viewings/{id}`                           | Delete, archive, or deactivate when supported | Usually no body; use the documented lifecycle action when deletion is not permitted           |
-| `POST`   | `/api/v1/real-estate/viewings/{id}/<explicit-action>`         | Execute a documented domain action            | Action-specific JSON body and `Idempotency-Key` for retryable writes                          |
+### Observed route declarations
 
-Example create request (illustrative fields only):
+These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-```json
-{
-  "availability": "example-value",
-  "booking": "example-value",
-  "confirmation": "example-value"
-}
+[modules/real-estate-viewings-api/routes/api.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-viewings-api/routes/api.php)
+
+```php
+Route::prefix('api/v1/real-estate/viewings')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
+Route::get('/', [ViewingController::class, 'index'])->name('real-estate.viewings.index');
+Route::post('/', [ViewingController::class, 'store'])->name('real-estate.viewings.store');
+Route::get('/availability', [ViewingController::class, 'availability'])->name('real-estate.viewings.availability');
+Route::get('/{viewing}', [ViewingController::class, 'show'])->name('real-estate.viewings.show');
+Route::delete('/{viewing}', [ViewingController::class, 'destroy'])->name('real-estate.viewings.destroy');
+Route::post('/{viewing}/confirm', [ViewingController::class, 'confirm'])->name('real-estate.viewings.confirm');
+Route::post('/{viewing}/complete', [ViewingController::class, 'complete'])->name('real-estate.viewings.complete');
+Route::post('/{viewing}/cancel', [ViewingController::class, 'cancel'])->name('real-estate.viewings.cancel');
+Route::post('/{viewing}/no-show', [ViewingController::class, 'noShow'])->name('real-estate.viewings.no-show');
 ```
 
-Example request headers:
+### Observed controller entry points
 
-```http
-Accept: application/json
-Authorization: Bearer YOUR_SANCTUM_TOKEN
-Content-Type: application/json
-Idempotency-Key: 01JEXAMPLEIDEMPOTENCYKEY
-X-Request-ID: 01JEXAMPLEREQUESTID
-```
+The signatures identify request handlers to review; their argument names are not complete JSON schemas. Read their request validation, actor/tenant resolution, policy, serialization and error paths before writing a client.
 
-Successful reads and writes return the standard `data` envelope from [API.md](../REAL-ESTATE.md). A create normally returns `201`, an update or query `200`, a successful delete `204`, and a queued or provider-dependent action `202` with an operation resource. Invalid, unauthorized, forbidden, conflicting, throttled, or unavailable requests use the documented HTTP status and RFC 9457 Problem Details shape.
+| Controller source | Public handler signatures |
+| --- | --- |
+| [ViewingController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-viewings-api/src/Http/Controllers/ViewingController.php) | `public function index(Request $request): JsonResponse`<br>`public function availability(Request $request, AvailableViewingSlots $slots): JsonResponse`<br>`public function store(Request $request, CreateViewing $create): JsonResponse`<br>`public function show(Request $request, Viewing $viewing): JsonResponse`<br>`public function update(Request $request, Viewing $viewing, UpdateViewing $update): JsonResponse`<br>`public function destroy(Request $request, Viewing $viewing, DeleteViewing $delete): Response`<br>`public function confirm(Request $request, Viewing $viewing, ConfirmViewing $confirm): JsonResponse`<br>`public function complete(Request $request, Viewing $viewing, CompleteViewing $complete): JsonResponse`<br>`public function cancel(Request $request, Viewing $viewing, CancelViewing $cancel): JsonResponse`<br>`public function noShow(Request $request, Viewing $viewing, MarkViewingNoShow $noShow): JsonResponse` |
+
+A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
 ## 4. OpenAPI schema
 
-This module owns a versioned OpenAPI 3.1 fragment for `real-estate-viewings`. Keep the fragment at the repository's declared OpenAPI path, normally `openapi/v1/real-estate-viewings.yaml`, and aggregate it only through the host application's API manifest. The fragment must document the base path, operation IDs, security requirements, parameters, request bodies, response envelopes, reusable schemas, errors, pagination, idempotency, concurrency, and deprecation metadata.
+The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-### Required schema elements
+- [modules/real-estate-viewings-api/openapi/v1/real-estate-viewings.yaml](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-viewings-api/openapi/v1/real-estate-viewings.yaml)
 
-- Use stable operation IDs such as `real.estate.viewings.list`, `real.estate.viewings.get`, `real.estate.viewings.create`, `real.estate.viewings.update`, and `real.estate.viewings.delete`; use an explicit domain action ID when applicable.
-- Define the module's resource schema as `RealEstateViewingsResource` with opaque `id`, stable `type`, field classification, relationships, state, timestamps, and only authorized attributes.
-- Document possible module fields including `availability`, `booking`, `confirmation`, `access`, `accompaniment`, `reminders`; each field must state its type, required/nullable behavior, validation, example, sensitivity, and read/write authorization.
-- Define request schemas separately from response schemas, use `snake_case`, and document team/context, pagination, filter, sort, include, `If-Match`, and `Idempotency-Key` behavior.
-- Reuse the standard `data`, `links`, `meta`, and RFC 9457 Problem Details shapes from [API.md](../REAL-ESTATE.md); do not serialize Eloquent models automatically.
+For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 
-### Minimal fragment example
+Validate/bundle the fragment, check supported-version compatibility and generate clients only from the reviewed contract. Retain the source/schema commit or release in client compatibility notes. See the [API architecture](../../../architecture/API.md), [source mapping](../SOURCE-MAPPING.md#viewings), and [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) guides.
 
-```yaml
-openapi: 3.1.0
-info:
-  title: real estate viewings API
-  version: 1.0.0
-paths:
-  /api/v1/real-estate/viewings:
-    get:
-      operationId: real.estate.viewings.list
-      security:
-        - sanctu…84605 tokens truncated…m context, pagination, errors, and operation semantics.
-- Keep a typed API client and module-local composables under the package boundary; use `useFetch`or`useAsyncData`for SSR-safe reads and`$fetch`for event-driven mutations.
-- Forward Sanctum cookies or approved authorization headers through a controlled client boundary; never persist long-lived tokens in browser storage or expose secrets in SSR payloads.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+## 5. Audience and operation matrix
 
-## 5. Security and verification
+Expose only explicitly selected operations. Anonymous access is disabled unless the owning capability requires it; customer/partner reads and commands use record/tenant scope, staff actions use the relevant policy, and integrations use a narrow service identity. UI visibility and authentication alone do not establish authorization.
 
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, and minimal-host installation tests.
-- Test observable browser and SSR behavior with Vitest, Vue Test Utils, Playwright, TypeScript, and the supported Nuxt 4/Vue 3 stack; domain behavior remains covered by the owning module.
+## 6. Implementation strategy
 
-## 6. Definition of done
+Resolve trusted actor/tenant context, validate the reviewed request and delegate to the public owning action/query. Serialize explicit authorized DTOs; preserve documented operation identity, concurrency and error semantics. Reuse existing owner APIs instead of copying their records or private model access.
 
-- Package identity, public exports, API dependency, and module dependency match`real-estate-valuations` one-to-one.
-- Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
-- Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+## 7. Security, resilience, and observability
 
-```
+Apply record/field policy to lists, relationships, commands, bulk work, jobs and downloads. Use bounded retries/timeouts, durable operation/source references and explicit partial-failure recovery. Redact credentials/protected data while retaining safe request/correlation diagnostics.
+
+## 8. Verification strategy
+
+Verify actual route/schema parity, required input, allowed/denied/wrong-tenant requests, stale/duplicate commands, uncertain outcomes, pagination/field policy and affected owner integrations. Check the declared package/host scripts and supported versions; source/test presence is not a passing-run claim.
+
+## 9. Definition of done
+
+Release only after the complete reviewed request/response/error contract, version compatibility, security and owner invariants, consumer integration, migrations where owned, and operational recovery are verified. Document the actual package identity and source/release evidence in its README and changelog.

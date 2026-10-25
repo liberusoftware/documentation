@@ -1,50 +1,69 @@
 # Social Network React Native + Expo Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **59 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-- [Activity Comments React Native](activity-comments.md) — `module-social-network-activity-comments-react-native`
-- [Analytics Core React Native](analytics-core.md) — `module-social-network-analytics-core-react-native`
-- [Analytics Google React Native](analytics-google.md) — `module-social-network-analytics-google-react-native`
-- [Analytics Meta React Native](analytics-meta.md) — `module-social-network-analytics-meta-react-native`
-- [Api Access React Native](api-access.md) — `module-social-network-api-access-react-native`
-- [Application React Native](application.md) — `module-social-network-application-react-native`
-- [Audit React Native](audit.md) — `module-social-network-audit-react-native`
-- [Currency Context React Native](currency-context.md) — `module-social-network-currency-context-react-native`
-- [Developer Experience React Native](developer-experience.md) — `module-social-network-developer-experience-react-native`
-- [Feature Flags React Native](feature-flags.md) — `module-social-network-feature-flags-react-native`
-- [Files Media React Native](files-media.md) — `module-social-network-files-media-react-native`
-- [Identity Core React Native](identity-core.md) — `module-social-network-identity-core-react-native`
-- [Identity Socialstream React Native](identity-socialstream.md) — `module-social-network-identity-socialstream-react-native`
-- [Import Export React Native](import-export.md) — `module-social-network-import-export-react-native`
-- [Integrations React Native](integrations.md) — `module-social-network-integrations-react-native`
-- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-social-network-jetstream-bridge-react-native`
-- [Localization Core React Native](localization-core.md) — `module-social-network-localization-core-react-native`
-- [Localization Mymemory React Native](localization-mymemory.md) — `module-social-network-localization-mymemory-react-native`
-- [Module Manager React Native](module-manager.md) — `module-social-network-module-manager-react-native`
-- [Notifications React Native](notifications.md) — `module-social-network-notifications-react-native`
-- [Observability React Native](observability.md) — `module-social-network-observability-react-native`
-- [Organizations Teams React Native](organizations-teams.md) — `module-social-network-organizations-teams-react-native`
-- [Profiles React Native](profiles.md) — `module-social-network-profiles-react-native`
-- [Roles Permissions React Native](roles-permissions.md) — `module-social-network-roles-permissions-react-native`
-- [Scheduler Queues React Native](scheduler-queues.md) — `module-social-network-scheduler-queues-react-native`
-- [Search React Native](search.md) — `module-social-network-search-react-native`
-- [Sessions Devices React Native](sessions-devices.md) — `module-social-network-sessions-devices-react-native`
-- [Settings React Native](settings.md) — `module-social-network-settings-react-native`
-- [Social Network Analytics React Native](social-network-analytics.md) — `module-social-network-social-network-analytics-react-native`
-- [Social Network Communities React Native](social-network-communities.md) — `module-social-network-social-network-communities-react-native`
-- [Social Network Discovery React Native](social-network-discovery.md) — `module-social-network-social-network-discovery-react-native`
-- [Social Network Engagement React Native](social-network-engagement.md) — `module-social-network-social-network-engagement-react-native`
-- [Social Network Events React Native](social-network-events.md) — `module-social-network-social-network-events-react-native`
-- [Social Network Federation React Native](social-network-federation.md) — `module-social-network-social-network-federation-react-native`
-- [Social Network Feed React Native](social-network-feed.md) — `module-social-network-social-network-feed-react-native`
-- [Social Network Media React Native](social-network-media.md) — `module-social-network-social-network-media-react-native`
-- [Social Network Messaging React Native](social-network-messaging.md) — `module-social-network-social-network-messaging-react-native`
-- [Social Network Moderation React Native](social-network-moderation.md) — `module-social-network-social-network-moderation-react-native`
-- [Social Network Notifications React Native](social-network-notifications.md) — `module-social-network-social-network-notifications-react-native`
-- [Social Network Profiles React Native](social-network-profiles.md) — `module-social-network-social-network-profiles-react-native`
-- [Social Network Publishing React Native](social-network-publishing.md) — `module-social-network-social-network-publishing-react-native`
-- [Social Network Social Core React Native](social-network-social-core.md) — `module-social-network-social-network-social-core-react-native`
-- [Social Network Social Graph React Native](social-network-social-graph.md) — `module-social-network-social-network-social-graph-react-native`
-- [Theme Support React Native](theme-support.md) — `module-social-network-theme-support-react-native`
-- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-social-network-two-factor-authentication-react-native`
-- [Webhooks React Native](webhooks.md) — `module-social-network-webhooks-react-native`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments React Native + Expo](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core React Native + Expo](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React Native + Expo](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React Native + Expo](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Analytics React Native + Expo](analytics.md) | [Target/source map](../SOURCE-MAPPING.md#analytics) | [core](../core/analytics.md) · [api](../api/analytics.md) · [nextjs](../nextjs/analytics.md) |
+| [Api Access React Native + Expo](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application React Native + Expo](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit React Native + Expo](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Communities React Native + Expo](communities.md) | [Target/source map](../SOURCE-MAPPING.md#communities) | [core](../core/communities.md) · [api](../api/communities.md) · [nextjs](../nextjs/communities.md) |
+| [Currency Context React Native + Expo](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience React Native + Expo](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Discovery React Native + Expo](discovery.md) | [Target/source map](../SOURCE-MAPPING.md#discovery) | [core](../core/discovery.md) · [api](../api/discovery.md) · [nextjs](../nextjs/discovery.md) |
+| [Engagement React Native + Expo](engagement.md) | [Target/source map](../SOURCE-MAPPING.md#engagement) | [core](../core/engagement.md) · [api](../api/engagement.md) · [nextjs](../nextjs/engagement.md) |
+| [Events React Native + Expo](events.md) | [Target/source map](../SOURCE-MAPPING.md#events) | [core](../core/events.md) · [api](../api/events.md) · [nextjs](../nextjs/events.md) |
+| [Feature Flags React Native + Expo](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Federation React Native + Expo](federation.md) | [Target/source map](../SOURCE-MAPPING.md#federation) | [core](../core/federation.md) · [api](../api/federation.md) · [nextjs](../nextjs/federation.md) |
+| [Feed React Native + Expo](feed.md) | [Target/source map](../SOURCE-MAPPING.md#feed) | [core](../core/feed.md) · [api](../api/feed.md) · [nextjs](../nextjs/feed.md) |
+| [Files Media React Native + Expo](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core React Native + Expo](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React Native + Expo](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export React Native + Expo](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations React Native + Expo](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge React Native + Expo](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core React Native + Expo](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React Native + Expo](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Media React Native + Expo](media.md) | [Target/source map](../SOURCE-MAPPING.md#media) | [core](../core/media.md) · [api](../api/media.md) · [nextjs](../nextjs/media.md) |
+| [Messaging React Native + Expo](messaging.md) | [Target/source map](../SOURCE-MAPPING.md#messaging) | [core](../core/messaging.md) · [api](../api/messaging.md) · [nextjs](../nextjs/messaging.md) |
+| [Moderation React Native + Expo](moderation.md) | [Target/source map](../SOURCE-MAPPING.md#moderation) | [core](../core/moderation.md) · [api](../api/moderation.md) · [nextjs](../nextjs/moderation.md) |
+| [Module Manager React Native + Expo](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications React Native + Expo](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability React Native + Expo](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams React Native + Expo](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles React Native + Expo](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Publishing React Native + Expo](publishing.md) | [Target/source map](../SOURCE-MAPPING.md#publishing) | [core](../core/publishing.md) · [api](../api/publishing.md) · [nextjs](../nextjs/publishing.md) |
+| [Roles Permissions React Native + Expo](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues React Native + Expo](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search React Native + Expo](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices React Native + Expo](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings React Native + Expo](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Social Core React Native + Expo](social-core.md) | [Target/source map](../SOURCE-MAPPING.md#social-core) | [core](../core/social-core.md) · [api](../api/social-core.md) · [nextjs](../nextjs/social-core.md) |
+| [Social Graph React Native + Expo](social-graph.md) | [Target/source map](../SOURCE-MAPPING.md#social-graph) | [core](../core/social-graph.md) · [api](../api/social-graph.md) · [nextjs](../nextjs/social-graph.md) |
+| [Social Network Analytics React Native + Expo](social-network-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-analytics) | [core](../core/social-network-analytics.md) · [api](../api/social-network-analytics.md) · [nextjs](../nextjs/social-network-analytics.md) |
+| [Social Network Communities React Native + Expo](social-network-communities.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-communities) | [core](../core/social-network-communities.md) · [api](../api/social-network-communities.md) · [nextjs](../nextjs/social-network-communities.md) |
+| [Social Network Discovery React Native + Expo](social-network-discovery.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-discovery) | [core](../core/social-network-discovery.md) · [api](../api/social-network-discovery.md) · [nextjs](../nextjs/social-network-discovery.md) |
+| [Social Network Engagement React Native + Expo](social-network-engagement.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-engagement) | [core](../core/social-network-engagement.md) · [api](../api/social-network-engagement.md) · [nextjs](../nextjs/social-network-engagement.md) |
+| [Social Network Events React Native + Expo](social-network-events.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-events) | [core](../core/social-network-events.md) · [api](../api/social-network-events.md) · [nextjs](../nextjs/social-network-events.md) |
+| [Social Network Federation React Native + Expo](social-network-federation.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-federation) | [core](../core/social-network-federation.md) · [api](../api/social-network-federation.md) · [nextjs](../nextjs/social-network-federation.md) |
+| [Social Network Feed React Native + Expo](social-network-feed.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-feed) | [core](../core/social-network-feed.md) · [api](../api/social-network-feed.md) · [nextjs](../nextjs/social-network-feed.md) |
+| [Social Network Media React Native + Expo](social-network-media.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-media) | [core](../core/social-network-media.md) · [api](../api/social-network-media.md) · [nextjs](../nextjs/social-network-media.md) |
+| [Social Network Messaging React Native + Expo](social-network-messaging.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-messaging) | [core](../core/social-network-messaging.md) · [api](../api/social-network-messaging.md) · [nextjs](../nextjs/social-network-messaging.md) |
+| [Social Network Moderation React Native + Expo](social-network-moderation.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-moderation) | [core](../core/social-network-moderation.md) · [api](../api/social-network-moderation.md) · [nextjs](../nextjs/social-network-moderation.md) |
+| [Social Network Notifications React Native + Expo](social-network-notifications.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-notifications) | [core](../core/social-network-notifications.md) · [api](../api/social-network-notifications.md) · [nextjs](../nextjs/social-network-notifications.md) |
+| [Social Network Profiles React Native + Expo](social-network-profiles.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-profiles) | [core](../core/social-network-profiles.md) · [api](../api/social-network-profiles.md) · [nextjs](../nextjs/social-network-profiles.md) |
+| [Social Network Publishing React Native + Expo](social-network-publishing.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-publishing) | [core](../core/social-network-publishing.md) · [api](../api/social-network-publishing.md) · [nextjs](../nextjs/social-network-publishing.md) |
+| [Social Network Social Core React Native + Expo](social-network-social-core.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-social-core) | [core](../core/social-network-social-core.md) · [api](../api/social-network-social-core.md) · [nextjs](../nextjs/social-network-social-core.md) |
+| [Social Network Social Graph React Native + Expo](social-network-social-graph.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-social-graph) | [core](../core/social-network-social-graph.md) · [api](../api/social-network-social-graph.md) · [nextjs](../nextjs/social-network-social-graph.md) |
+| [Theme Support React Native + Expo](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication React Native + Expo](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks React Native + Expo](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

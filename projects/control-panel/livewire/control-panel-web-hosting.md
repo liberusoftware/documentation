@@ -1,12 +1,16 @@
 # Control Panel: Control Panel Web Hosting Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-web-hosting). Observed identity: [`liberusoftware/module-control-panel-web-hosting-livewire`](../../../modules/source/liberusoftware--module-control-panel-web-hosting-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-control-panel-control-panel-web-hosting-livewire`  
 **Matching domain module:** `control-panel-web-hosting`  
 **Application:** Control Panel  
 **Source feature:** [Control Panel Web Hosting](../features/control-panel-web-hosting.md)  
-**Architecture:** [LIVEWIRE.md](../CONTROL-PANEL.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,5 +1,9 @@
 # Module Billing Cpanel Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-cpanel). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-module-billing-cpanel-flutter
 **Matching core package:** module-billing-module-billing-cpanel ([implementation](../core/module-billing-cpanel.md))
 **Matching API package:** module-billing-module-billing-cpanel-api ([contract](../api/module-billing-cpanel.md))

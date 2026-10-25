@@ -1,6 +1,10 @@
 # Boilerplate: Webhooks Livewire presentation packages
 
-**Composer package:** `module-webhooks-livewire`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#webhooks). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-webhooks-livewire`
 **Matching core package:** [`module-webhooks`](../core/webhooks.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Endpoint registration, signing, delivery attempts, retries, replay, event filtering, and logs.

@@ -1,5 +1,9 @@
 # Time Tracking Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#time-tracking). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-time-tracking-flutter
 **Matching core package:** module-accounting-time-tracking ([implementation](../core/time-tracking.md))
 **Matching API package:** module-accounting-time-tracking-api ([contract](../api/time-tracking.md))

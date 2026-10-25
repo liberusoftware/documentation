@@ -1,5 +1,9 @@
 # Cms Drupal Migration React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-drupal-migration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-drupal-migration-react-native
 **Matching core package:** module-cms-cms-drupal-migration ([implementation](../core/cms-drupal-migration.md))
 **Matching API package:** module-cms-cms-drupal-migration-api ([contract](../api/cms-drupal-migration.md))

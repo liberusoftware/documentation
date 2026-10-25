@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:hosting-and-cloud:provision:request:v1",
+  "title": "Hosting and cloud: proposed provision request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "service_template_version",
+    "region",
+    "capacity_request",
+    "approved_change_reference",
+    "target_platform"
+  ],
+  "properties": {
+    "service_template_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "region": {
+      "type": "string",
+      "minLength": 1
+    },
+    "capacity_request": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cpu_units",
+        "memory_mib"
+      ],
+      "properties": {
+        "cpu_units": {
+          "type": "integer"
+        },
+        "memory_mib": {
+          "type": "integer"
+        }
+      }
+    },
+    "approved_change_reference": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_platform": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

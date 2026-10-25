@@ -1,12 +1,16 @@
 # Real Estate: Organizations Teams Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#organizations-teams). Observed identity: [`liberusoftware/organizations-teams-livewire`](../../../modules/source/liberusoftware--organizations-teams-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-real-estate-organizations-teams-livewire`  
 **Matching domain module:** `organizations-teams`  
 **Application:** Real Estate  
 **Source feature:** [Organizations Teams](../features/organizations-teams.md)  
-**Architecture:** [LIVEWIRE.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,5 +1,9 @@
 # Module Billing Billing Core React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-billing-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-module-billing-billing-core-react-native
 **Matching core package:** module-billing-module-billing-billing-core ([implementation](../core/module-billing-billing-core.md))
 **Matching API package:** module-billing-module-billing-billing-core-api ([contract](../api/module-billing-billing-core.md))

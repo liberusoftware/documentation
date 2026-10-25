@@ -1,8 +1,12 @@
 # Control Panel: Control Panel Api And Automation Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-api-and-automation). Observed identity: [`liberusoftware/module-control-panel-api-and-automation`](../../../modules/source/liberusoftware--module-control-panel-api-and-automation.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-control-panel-control-panel-api-and-automation`
+**Design package identifier:** `module-control-panel-control-panel-api-and-automation`
 **Domain specification:** [Control Panel Api And Automation](../features/control-panel-api-and-automation.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

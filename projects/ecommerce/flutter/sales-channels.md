@@ -1,5 +1,9 @@
 # Sales Channels Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-channels). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-sales-channels-flutter
 **Matching core package:** module-ecommerce-sales-channels ([implementation](../core/sales-channels.md))
 **Matching API package:** module-ecommerce-sales-channels-api ([contract](../api/sales-channels.md))

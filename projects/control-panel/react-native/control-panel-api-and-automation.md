@@ -1,5 +1,9 @@
 # Control Panel Api And Automation React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-api-and-automation). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-control-panel-control-panel-api-and-automation-react-native
 **Matching core package:** module-control-panel-control-panel-api-and-automation ([implementation](../core/control-panel-api-and-automation.md))
 **Matching API package:** module-control-panel-control-panel-api-and-automation-api ([contract](../api/control-panel-api-and-automation.md))

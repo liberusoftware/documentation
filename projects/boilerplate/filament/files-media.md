@@ -1,12 +1,16 @@
 # Boilerplate: Files Media Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#files-media). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-boilerplate-files-media-filament`  
 **Matching domain module:** `files-media`  
 **Application:** Boilerplate  
 **Source feature:** [Files Media](../features/files-media.md)  
-**Architecture:** [FILAMENT.md](../BOILERPLATE.md) · [MODULES.md](../BOILERPLATE.md) · [TESTING.md](../BOILERPLATE.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

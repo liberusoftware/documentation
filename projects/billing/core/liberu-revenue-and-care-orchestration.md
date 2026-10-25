@@ -1,8 +1,12 @@
 # Billing: Liberu Revenue And Care Orchestration Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#liberu-revenue-and-care-orchestration). Observed identity: [`liberusoftware/module-liberu-revenue-and-care-orchestration`](../../../modules/source/liberusoftware--module-liberu-revenue-and-care-orchestration.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-liberu-revenue-and-care-orchestration`
+**Design package identifier:** `module-billing-liberu-revenue-and-care-orchestration`
 **Domain specification:** [Liberu Revenue And Care Orchestration](../features/liberu-revenue-and-care-orchestration.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

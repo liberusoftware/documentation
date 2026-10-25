@@ -1,5 +1,9 @@
 # Browser Game Social Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#browser-game-social). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-browser-game-browser-game-social-flutter
 **Matching core package:** module-browser-game-browser-game-social ([implementation](../core/browser-game-social.md))
 **Matching API package:** module-browser-game-browser-game-social-api ([contract](../api/browser-game-social.md))

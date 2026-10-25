@@ -1,6 +1,10 @@
 # Boilerplate: Observability domain packages
 
-**Composer package:** `module-observability`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#observability). Observed identity: [`liberusoftware/observability`](../../../modules/source/liberusoftware--observability.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-observability`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Structured logs, correlation, metrics, traces, exception reporting, health checks, redaction, and SLO hooks.
 

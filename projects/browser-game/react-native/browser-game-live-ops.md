@@ -1,5 +1,9 @@
 # Browser Game Live Ops React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#browser-game-live-ops). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-browser-game-browser-game-live-ops-react-native
 **Matching core package:** module-browser-game-browser-game-live-ops ([implementation](../core/browser-game-live-ops.md))
 **Matching API package:** module-browser-game-browser-game-live-ops-api ([contract](../api/browser-game-live-ops.md))

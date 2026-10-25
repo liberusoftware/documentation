@@ -1,8 +1,12 @@
 # CRM: Crm Forecasting Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-forecasting). Observed identity: [`liberusoftware/module-crm-forecasting`](../../../modules/source/liberusoftware--module-crm-forecasting.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-crm-forecasting`
+**Design package identifier:** `module-crm-crm-forecasting`
 **Domain specification:** [Crm Forecasting](../features/crm-forecasting.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

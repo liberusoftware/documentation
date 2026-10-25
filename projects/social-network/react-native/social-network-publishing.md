@@ -1,5 +1,9 @@
 # Social Network Publishing React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-publishing). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-social-network-social-network-publishing-react-native
 **Matching core package:** module-social-network-social-network-publishing ([implementation](../core/social-network-publishing.md))
 **Matching API package:** module-social-network-social-network-publishing-api ([contract](../api/social-network-publishing.md))

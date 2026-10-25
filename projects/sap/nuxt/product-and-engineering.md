@@ -1,64 +1,58 @@
-# SAP: Product and Engineering Nuxt
+# Product and engineering: Nuxt design
 
-## Canonical one-to-one Nuxt 4 implementation
+**Status:** proposed enterprise implementation. The [current SAP foundation](../SOURCE-APPLICATION.md) does not establish these business workflows or this presentation as implemented. Use the [detailed domain contract](../design/product-and-engineering.md) and [API plan](../api/product-and-engineering.md) as the review target.
 
-**Nuxt package:** `module-sap-product-and-engineering-nuxt`
-**Matching domain module:** `sap-product-and-engineering`
-**Application:** SAP
-**Source feature:** [Product and Engineering](../features/product-and-engineering.md)
-**Architecture:** [NUXT.md](../SAP.md) · [API.md](../SAP.md) · [Matching API module](../api/product-and-engineering.md) · [MODULES.md](../SAP.md) · [TESTING.md](../SAP.md)
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#product-and-engineering). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
 
-## 1. Purpose and ownership
+## Ownership and delivery scope
 
-This optional Nuxt 4 presentation package presents exactly one matching API module. It contributes reusable pages, layouts, components, composables, typed API clients, and actions to application-owned Nuxt applications while delegating authorization, validation, team context, persistence, and business rules to the `sap-product-and-engineering` public API boundary. It must not contain another module's UI or depend on application `App\` classes.
+Keep repositories, CI execution, and issue records in their owning engineering systems. Reuse CRM product/support context and licensing/billing contracts; enterprise owns governed release evidence and product outcome links.
 
-## 2. Module-specific surfaces
+Reuse the [shared enterprise operation design](../design/OPERATIONS.md) for command identities, concurrency, handoffs and recovery. This capability group adds only its own orchestration/projection and genuine missing behavior; it does not create another owner for existing product records.
 
-- **Products:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Roadmaps:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Requirements:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Releases:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Licenses:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Repositories:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Issues:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **CI/CD links:** page/component/composable/API-action behavior for this module's authorized workflow.
-- **Support feedback:** page/component/composable/API-action behavior for this module's authorized workflow.
+## Workflow and command contract
 
-## 3. Nuxt 4 implementation
+**Workspace surfaces:** release checklist, requirement/test traceability, artifact comparison, rollout timeline, support readiness.
 
-- Register a stable `module-sap-product-and-engineering-nuxt` Nuxt module or layer and expose only prefixed exports from this package; applications compose it explicitly.
-- Keep pages under `app/pages`, shared UI under `app/components`, data access under `app/composables`, and typed contracts under `shared/`.
-- Use typed API clients, `useFetch`/`useAsyncData`, composables, route metadata, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted API context and fail closed when required context is missing.
+**Business lifecycle:** draft → evidence_pending → review_ready → approved → rolling_out → released; rejected and rolled_back retain artifact references.
 
-### Capability mapping
+Bind approval to immutable artifact and evidence versions. Invalidate readiness when the artifact changes. Do not infer deployment success from a green build or modify source repositories through a reporting projection.
 
-- `products`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `roadmaps`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `requirements`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `releases`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `licenses`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `repositories`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `issues`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `ci/cd-links`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
-- `support-feedback`: map the API query/action to the appropriate Nuxt page, component, composable, or typed API action.
+The illustrated `approve` command takes `artifact_digest`, `test_evidence_ids`, `vulnerability_review_id`, `rollout_plan_id`, with a documented record-version precondition and scoped operation identity. It starts from `review_ready` and reaches `approved` only after its defined business outcome. The [API example](../api/product-and-engineering.md#3-endpoint-examples) provides the proposed body and [draft request schema](../api/contracts/product-and-engineering.request.schema.json).
 
-## 4. API contract and Nuxt consumption
+Bind approval to the immutable artifact, required test/security evidence and rollout readiness. Changed or expired evidence invalidates the review instead of carrying approval to another artifact.
 
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed API client and module-local composables under the package boundary; use `useFetch` or `useAsyncData` for SSR-safe reads and `$fetch` for event-driven mutations.
-- Forward Sanctum cookies or approved authorization headers through a controlled client boundary; never persist long-lived tokens in browser storage or expose secrets in SSR payloads.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+Record release authorization for this artifact. Actual deployment, rollout results and rollback evidence remain separately reported operations.
 
-## 5. Security and verification
+## Layer implementation
 
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, and minimal-host installation tests.
-- Test observable browser and SSR behavior with Vitest, Vue Test Utils, Playwright, TypeScript, and the supported Nuxt 4/Vue 3 stack; domain behavior remains covered by the owning module.
+The Nuxt application owns its workspace routes, session integration and deployment. The module contributes typed components/composables and an API adapter, with server-only secrets kept out of public runtime configuration and browser payloads.
 
-## 6. Definition of done
+The proposed API family is `/api/v1/enterprise/release-reviews`. Review actual deployed schemas before generating clients. Server/browser transport validates the authorized DTO and invokes explicit actions such as `approve` rather than a generic status update.
 
-- Package identity, public exports, API dependency, and module dependency match `sap-product-and-engineering` one-to-one.
-- Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
-- Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+Start protected reads without shared caching until tenant/entity/permission keys and invalidation are reviewed. Resolve authenticated context per request and never keep request-specific scope in shared SSR state. A client-provided target URL or tenant value cannot select a privileged upstream origin or grant access.
+
+The command form preserves `artifact_digest`, `test_evidence_ids`, `vulnerability_review_id`, `rollout_plan_id`, field errors and current record version. On timeout/conflict, query the operation/current subject under the same authorization and show recovery guidance before another write. Separate Vue UI primitives from Nuxt-specific navigation and server transport so they can be reused with Inertia.
+
+## Authorization, recovery and operations
+
+Engineers submit evidence; product/security owners approve their controls; release managers authorize deployment under policy.
+
+Missing, expired, or mismatched evidence blocks approval. Preserve rollout failures and rollback outcomes against the original release digest for support and audit.
+
+Show the selected entity, source/subject reference, current business state and separate operation progress. Preserve safe drafts on validation/conflict. Reauthenticate on expiry and discard protected cached data after scope/permission changes. A network timeout never establishes whether an external write succeeded; use the durable operation/source reference for reconciliation.
+
+## Module-specific acceptance
+
+- An artifact digest change invalidates approval; duplicate CI notifications do not create duplicate releases; rollback preserves the original release record.
+- Repeated commands return the documented existing result or a clear conflict; they cannot duplicate a completed external side effect.
+- A tenant/entity switch, permission revocation or expired session cannot reuse another scope's cached record, attachment or exported file.
+- A downstream failure remains observable with a valid owner/recovery path across every enabled presentation.
+
+- Exercise the `approve` example with allowed, denied, invalid, stale, duplicate and uncertain-result paths; confirm `approved` only from its authoritative outcome.
+- Verify the enabled layer uses the same domain/operation contract as other surfaces and cannot bypass it through generic saves, hydrated state, direct JSON fields or offline replay.
+- Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
+
+Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.

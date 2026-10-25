@@ -1,8 +1,12 @@
 # CMS: Cms Digital Asset Management Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-digital-asset-management). Observed identity: [`liberusoftware/module-cms-digital-asset-management`](../../../modules/source/liberusoftware--module-cms-digital-asset-management.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-cms-digital-asset-management`
+**Design package identifier:** `module-cms-cms-digital-asset-management`
 **Domain specification:** [Cms Digital Asset Management](../features/cms-digital-asset-management.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

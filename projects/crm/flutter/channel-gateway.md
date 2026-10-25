@@ -1,5 +1,9 @@
 # Channel Gateway Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#channel-gateway). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-channel-gateway-flutter
 **Matching core package:** module-crm-channel-gateway ([implementation](../core/channel-gateway.md))
 **Matching API package:** module-crm-channel-gateway-api ([contract](../api/channel-gateway.md))

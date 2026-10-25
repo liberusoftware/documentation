@@ -1,5 +1,9 @@
 # Pricing Rules React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#pricing-rules). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-pricing-rules-react-native
 **Matching core package:** module-ecommerce-pricing-rules ([implementation](../core/pricing-rules.md))
 **Matching API package:** module-ecommerce-pricing-rules-api ([contract](../api/pricing-rules.md))

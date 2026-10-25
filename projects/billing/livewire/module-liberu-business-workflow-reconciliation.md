@@ -1,12 +1,16 @@
 # Billing: Module Liberu Business Workflow Reconciliation Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-liberu-business-workflow-reconciliation). Observed identity: [`liberusoftware/module-liberu-business-workflow-reconciliation-livewire`](../../../modules/source/liberusoftware--module-liberu-business-workflow-reconciliation-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-billing-module-liberu-business-workflow-reconciliation-livewire`  
 **Matching domain module:** `module-liberu-business-workflow-reconciliation`  
 **Application:** Billing  
 **Source feature:** [Module Liberu Business Workflow Reconciliation](../features/module-liberu-business-workflow-reconciliation.md)  
-**Architecture:** [LIVEWIRE.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

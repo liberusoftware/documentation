@@ -1,5 +1,9 @@
 # Sales Engagement Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-engagement). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-sales-engagement-flutter
 **Matching core package:** module-crm-sales-engagement ([implementation](../core/sales-engagement.md))
 **Matching API package:** module-crm-sales-engagement-api ([contract](../api/sales-engagement.md))

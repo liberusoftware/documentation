@@ -1,50 +1,67 @@
 # Automation Flutter + Dart Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **57 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
 
-- [Activity Comments Flutter](activity-comments.md) — `module-automation-activity-comments-flutter`
-- [Analytics Core Flutter](analytics-core.md) — `module-automation-analytics-core-flutter`
-- [Analytics Google Flutter](analytics-google.md) — `module-automation-analytics-google-flutter`
-- [Analytics Meta Flutter](analytics-meta.md) — `module-automation-analytics-meta-flutter`
-- [Api Access Flutter](api-access.md) — `module-automation-api-access-flutter`
-- [Application Flutter](application.md) — `module-automation-application-flutter`
-- [Audit Flutter](audit.md) — `module-automation-audit-flutter`
-- [Currency Context Flutter](currency-context.md) — `module-automation-currency-context-flutter`
-- [Developer Experience Flutter](developer-experience.md) — `module-automation-developer-experience-flutter`
-- [Feature Flags Flutter](feature-flags.md) — `module-automation-feature-flags-flutter`
-- [Files Media Flutter](files-media.md) — `module-automation-files-media-flutter`
-- [Identity Core Flutter](identity-core.md) — `module-automation-identity-core-flutter`
-- [Identity Socialstream Flutter](identity-socialstream.md) — `module-automation-identity-socialstream-flutter`
-- [Import Export Flutter](import-export.md) — `module-automation-import-export-flutter`
-- [Integrations Flutter](integrations.md) — `module-automation-integrations-flutter`
-- [Jetstream Bridge Flutter](jetstream-bridge.md) — `module-automation-jetstream-bridge-flutter`
-- [Liberu Business Workflow Reconciliation Flutter](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-flutter`
-- [Liberu Executive Insights Flutter](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-flutter`
-- [Liberu Platform Orchestration Flutter](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-flutter`
-- [Liberu Revenue And Care Orchestration Flutter](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-flutter`
-- [Localization Core Flutter](localization-core.md) — `module-automation-localization-core-flutter`
-- [Localization Mymemory Flutter](localization-mymemory.md) — `module-automation-localization-mymemory-flutter`
-- [Module Automation Ai Gateway Flutter](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-flutter`
-- [Module Automation Approvals Flutter](module-automation-approvals.md) — `module-automation-module-automation-approvals-flutter`
-- [Module Automation Automation Core Flutter](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-flutter`
-- [Module Automation Connectors Flutter](module-automation-connectors.md) — `module-automation-module-automation-connectors-flutter`
-- [Module Automation Data Processing Flutter](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-flutter`
-- [Module Automation Evaluation Flutter](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-flutter`
-- [Module Automation Image Flutter](module-automation-image.md) — `module-automation-module-automation-image-flutter`
-- [Module Automation Prompt Registry Flutter](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-flutter`
-- [Module Automation Rules Flutter](module-automation-rules.md) — `module-automation-module-automation-rules-flutter`
-- [Module Automation Video Flutter](module-automation-video.md) — `module-automation-module-automation-video-flutter`
-- [Module Automation Voice Flutter](module-automation-voice.md) — `module-automation-module-automation-voice-flutter`
-- [Module Manager Flutter](module-manager.md) — `module-automation-module-manager-flutter`
-- [Notifications Flutter](notifications.md) — `module-automation-notifications-flutter`
-- [Observability Flutter](observability.md) — `module-automation-observability-flutter`
-- [Organizations Teams Flutter](organizations-teams.md) — `module-automation-organizations-teams-flutter`
-- [Profiles Flutter](profiles.md) — `module-automation-profiles-flutter`
-- [Roles Permissions Flutter](roles-permissions.md) — `module-automation-roles-permissions-flutter`
-- [Scheduler Queues Flutter](scheduler-queues.md) — `module-automation-scheduler-queues-flutter`
-- [Search Flutter](search.md) — `module-automation-search-flutter`
-- [Sessions Devices Flutter](sessions-devices.md) — `module-automation-sessions-devices-flutter`
-- [Settings Flutter](settings.md) — `module-automation-settings-flutter`
-- [Theme Support Flutter](theme-support.md) — `module-automation-theme-support-flutter`
-- [Two Factor Authentication Flutter](two-factor-authentication.md) — `module-automation-two-factor-authentication-flutter`
-- [Webhooks Flutter](webhooks.md) — `module-automation-webhooks-flutter`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Flutter + Dart](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Ai Gateway Flutter + Dart](ai-gateway.md) | [Target/source map](../SOURCE-MAPPING.md#ai-gateway) | [core](../core/ai-gateway.md) · [api](../api/ai-gateway.md) · [nextjs](../nextjs/ai-gateway.md) |
+| [Analytics Core Flutter + Dart](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Flutter + Dart](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Flutter + Dart](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Flutter + Dart](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Flutter + Dart](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Approvals Flutter + Dart](approvals.md) | [Target/source map](../SOURCE-MAPPING.md#approvals) | [core](../core/approvals.md) · [api](../api/approvals.md) · [nextjs](../nextjs/approvals.md) |
+| [Audit Flutter + Dart](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Automation Core Flutter + Dart](automation-core.md) | [Target/source map](../SOURCE-MAPPING.md#automation-core) | [core](../core/automation-core.md) · [api](../api/automation-core.md) · [nextjs](../nextjs/automation-core.md) |
+| [Connectors Flutter + Dart](connectors.md) | [Target/source map](../SOURCE-MAPPING.md#connectors) | [core](../core/connectors.md) · [api](../api/connectors.md) · [nextjs](../nextjs/connectors.md) |
+| [Currency Context Flutter + Dart](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Data Processing Flutter + Dart](data-processing.md) | [Target/source map](../SOURCE-MAPPING.md#data-processing) | [core](../core/data-processing.md) · [api](../api/data-processing.md) · [nextjs](../nextjs/data-processing.md) |
+| [Developer Experience Flutter + Dart](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Evaluation Flutter + Dart](evaluation.md) | [Target/source map](../SOURCE-MAPPING.md#evaluation) | [core](../core/evaluation.md) · [api](../api/evaluation.md) · [nextjs](../nextjs/evaluation.md) |
+| [Feature Flags Flutter + Dart](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Flutter + Dart](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Flutter + Dart](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Flutter + Dart](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Image Flutter + Dart](image.md) | [Target/source map](../SOURCE-MAPPING.md#image) | [core](../core/image.md) · [api](../api/image.md) · [nextjs](../nextjs/image.md) |
+| [Import Export Flutter + Dart](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Flutter + Dart](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Flutter + Dart](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation Flutter + Dart](liberu-business-workflow-reconciliation.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-business-workflow-reconciliation) | [core](../core/liberu-business-workflow-reconciliation.md) · [api](../api/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights Flutter + Dart](liberu-executive-insights.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-executive-insights) | [core](../core/liberu-executive-insights.md) · [api](../api/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration Flutter + Dart](liberu-platform-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-platform-orchestration) | [core](../core/liberu-platform-orchestration.md) · [api](../api/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration Flutter + Dart](liberu-revenue-and-care-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-revenue-and-care-orchestration) | [core](../core/liberu-revenue-and-care-orchestration.md) · [api](../api/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core Flutter + Dart](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Flutter + Dart](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Module Automation Ai Gateway Flutter + Dart](module-automation-ai-gateway.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-ai-gateway) | [core](../core/module-automation-ai-gateway.md) · [api](../api/module-automation-ai-gateway.md) · [nextjs](../nextjs/module-automation-ai-gateway.md) |
+| [Module Automation Approvals Flutter + Dart](module-automation-approvals.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-approvals) | [core](../core/module-automation-approvals.md) · [api](../api/module-automation-approvals.md) · [nextjs](../nextjs/module-automation-approvals.md) |
+| [Module Automation Automation Core Flutter + Dart](module-automation-automation-core.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-automation-core) | [core](../core/module-automation-automation-core.md) · [api](../api/module-automation-automation-core.md) · [nextjs](../nextjs/module-automation-automation-core.md) |
+| [Module Automation Connectors Flutter + Dart](module-automation-connectors.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-connectors) | [core](../core/module-automation-connectors.md) · [api](../api/module-automation-connectors.md) · [nextjs](../nextjs/module-automation-connectors.md) |
+| [Module Automation Data Processing Flutter + Dart](module-automation-data-processing.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-data-processing) | [core](../core/module-automation-data-processing.md) · [api](../api/module-automation-data-processing.md) · [nextjs](../nextjs/module-automation-data-processing.md) |
+| [Module Automation Evaluation Flutter + Dart](module-automation-evaluation.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-evaluation) | [core](../core/module-automation-evaluation.md) · [api](../api/module-automation-evaluation.md) · [nextjs](../nextjs/module-automation-evaluation.md) |
+| [Module Automation Image Flutter + Dart](module-automation-image.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-image) | [core](../core/module-automation-image.md) · [api](../api/module-automation-image.md) · [nextjs](../nextjs/module-automation-image.md) |
+| [Module Automation Prompt Registry Flutter + Dart](module-automation-prompt-registry.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-prompt-registry) | [core](../core/module-automation-prompt-registry.md) · [api](../api/module-automation-prompt-registry.md) · [nextjs](../nextjs/module-automation-prompt-registry.md) |
+| [Module Automation Rules Flutter + Dart](module-automation-rules.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-rules) | [core](../core/module-automation-rules.md) · [api](../api/module-automation-rules.md) · [nextjs](../nextjs/module-automation-rules.md) |
+| [Module Automation Video Flutter + Dart](module-automation-video.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-video) | [core](../core/module-automation-video.md) · [api](../api/module-automation-video.md) · [nextjs](../nextjs/module-automation-video.md) |
+| [Module Automation Voice Flutter + Dart](module-automation-voice.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-voice) | [core](../core/module-automation-voice.md) · [api](../api/module-automation-voice.md) · [nextjs](../nextjs/module-automation-voice.md) |
+| [Module Manager Flutter + Dart](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Flutter + Dart](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Flutter + Dart](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Flutter + Dart](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles Flutter + Dart](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Prompt Registry Flutter + Dart](prompt-registry.md) | [Target/source map](../SOURCE-MAPPING.md#prompt-registry) | [core](../core/prompt-registry.md) · [api](../api/prompt-registry.md) · [nextjs](../nextjs/prompt-registry.md) |
+| [Roles Permissions Flutter + Dart](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Rules Flutter + Dart](rules.md) | [Target/source map](../SOURCE-MAPPING.md#rules) | [core](../core/rules.md) · [api](../api/rules.md) · [nextjs](../nextjs/rules.md) |
+| [Scheduler Queues Flutter + Dart](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Flutter + Dart](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Flutter + Dart](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Flutter + Dart](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Flutter + Dart](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Flutter + Dart](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Video Flutter + Dart](video.md) | [Target/source map](../SOURCE-MAPPING.md#video) | [core](../core/video.md) · [api](../api/video.md) · [nextjs](../nextjs/video.md) |
+| [Voice Flutter + Dart](voice.md) | [Target/source map](../SOURCE-MAPPING.md#voice) | [core](../core/voice.md) · [api](../api/voice.md) · [nextjs](../nextjs/voice.md) |
+| [Webhooks Flutter + Dart](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

@@ -1,8 +1,12 @@
 # Accounting: Accounts Payable Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounts-payable). Observed identity: [`liberusoftware/module-accounting-accounts-payable`](../../../modules/source/liberusoftware--module-accounting-accounts-payable.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounts-payable`
+**Design package identifier:** `module-accounting-accounts-payable`
 **Domain specification:** [Accounts Payable](../features/accounts-payable.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

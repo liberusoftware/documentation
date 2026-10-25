@@ -1,5 +1,9 @@
 # Crm Client Onboarding React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-client-onboarding). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-client-onboarding-react-native
 **Matching core package:** module-crm-crm-client-onboarding ([implementation](../core/crm-client-onboarding.md))
 **Matching API package:** module-crm-crm-client-onboarding-api ([contract](../api/crm-client-onboarding.md))

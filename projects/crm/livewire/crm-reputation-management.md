@@ -1,12 +1,16 @@
 # CRM: Crm Reputation Management Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-reputation-management). Observed identity: [`liberusoftware/module-crm-reputation-management-livewire`](../../../modules/source/liberusoftware--module-crm-reputation-management-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-crm-reputation-management-livewire`  
 **Matching domain module:** `crm-reputation-management`  
 **Application:** CRM  
 **Source feature:** [Crm Reputation Management](../features/crm-reputation-management.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

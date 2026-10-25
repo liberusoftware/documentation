@@ -1,8 +1,12 @@
 # Accounting: Accounting Cash Position Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-cash-position). Observed identity: [`liberusoftware/module-accounting-cash-position`](../../../modules/source/liberusoftware--module-accounting-cash-position.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-cash-position`
+**Design package identifier:** `module-accounting-accounting-cash-position`
 **Domain specification:** [Accounting Cash Position](../features/accounting-cash-position.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

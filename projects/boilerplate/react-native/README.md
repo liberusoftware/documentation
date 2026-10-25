@@ -1,35 +1,53 @@
 # Boilerplate React Native + Expo Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-- [Activity Comments React Native](activity-comments.md) — `module-boilerplate-activity-comments-react-native`
-- [Analytics Core React Native](analytics-core.md) — `module-boilerplate-analytics-core-react-native`
-- [Analytics Google React Native](analytics-google.md) — `module-boilerplate-analytics-google-react-native`
-- [Analytics Meta React Native](analytics-meta.md) — `module-boilerplate-analytics-meta-react-native`
-- [Api Access React Native](api-access.md) — `module-boilerplate-api-access-react-native`
-- [Application React Native](application.md) — `module-boilerplate-application-react-native`
-- [Audit React Native](audit.md) — `module-boilerplate-audit-react-native`
-- [Currency Context React Native](currency-context.md) — `module-boilerplate-currency-context-react-native`
-- [Developer Experience React Native](developer-experience.md) — `module-boilerplate-developer-experience-react-native`
-- [Feature Flags React Native](feature-flags.md) — `module-boilerplate-feature-flags-react-native`
-- [Files Media React Native](files-media.md) — `module-boilerplate-files-media-react-native`
-- [Identity Core React Native](identity-core.md) — `module-boilerplate-identity-core-react-native`
-- [Identity Socialstream React Native](identity-socialstream.md) — `module-boilerplate-identity-socialstream-react-native`
-- [Import Export React Native](import-export.md) — `module-boilerplate-import-export-react-native`
-- [Integrations React Native](integrations.md) — `module-boilerplate-integrations-react-native`
-- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-boilerplate-jetstream-bridge-react-native`
-- [Localization Core React Native](localization-core.md) — `module-boilerplate-localization-core-react-native`
-- [Localization Mymemory React Native](localization-mymemory.md) — `module-boilerplate-localization-mymemory-react-native`
-- [Module Manager React Native](module-manager.md) — `module-boilerplate-module-manager-react-native`
-- [Notifications React Native](notifications.md) — `module-boilerplate-notifications-react-native`
-- [Observability React Native](observability.md) — `module-boilerplate-observability-react-native`
-- [Organizations Teams React Native](organizations-teams.md) — `module-boilerplate-organizations-teams-react-native`
-- [Profiles React Native](profiles.md) — `module-boilerplate-profiles-react-native`
-- [Roles Permissions React Native](roles-permissions.md) — `module-boilerplate-roles-permissions-react-native`
-- [Scheduler Queues React Native](scheduler-queues.md) — `module-boilerplate-scheduler-queues-react-native`
-- [Search React Native](search.md) — `module-boilerplate-search-react-native`
-- [Sessions Devices React Native](sessions-devices.md) — `module-boilerplate-sessions-devices-react-native`
-- [Settings React Native](settings.md) — `module-boilerplate-settings-react-native`
-- [Theme Support React Native](theme-support.md) — `module-boilerplate-theme-support-react-native`
-- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-boilerplate-two-factor-authentication-react-native`
-- [Webhooks React Native](webhooks.md) — `module-boilerplate-webhooks-react-native`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity and Comments domain packages React Native + Expo](activity-and-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-and-comments) | [core](../core/activity-and-comments.md) · [api](../api/activity-and-comments.md) · [nextjs](../nextjs/activity-and-comments.md) |
+| [Activity Comments React Native + Expo](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core domain packages React Native + Expo](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React Native + Expo](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React Native + Expo](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [API Access domain packages React Native + Expo](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Core domain packages React Native + Expo](application-core.md) | [Target/source map](../SOURCE-MAPPING.md#application-core) | [core](../core/application-core.md) · [api](../api/application-core.md) · [nextjs](../nextjs/application-core.md) |
+| [Application React Native + Expo](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit domain packages React Native + Expo](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Currency Context domain packages React Native + Expo](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience domain packages React Native + Expo](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags domain packages React Native + Expo](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files and Media domain packages React Native + Expo](files-and-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-and-media) | [core](../core/files-and-media.md) · [api](../api/files-and-media.md) · [nextjs](../nextjs/files-and-media.md) |
+| [Files Media React Native + Expo](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Google Analytics domain packages React Native + Expo](google-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#google-analytics) | [core](../core/google-analytics.md) · [api](../api/google-analytics.md) · [nextjs](../nextjs/google-analytics.md) |
+| [Identity Core React Native + Expo](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React Native + Expo](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Identity domain packages React Native + Expo](identity.md) | [Target/source map](../SOURCE-MAPPING.md#identity) | [core](../core/identity.md) · [api](../api/identity.md) · [nextjs](../nextjs/identity.md) |
+| [Import and Export domain packages React Native + Expo](import-and-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-and-export) | [core](../core/import-and-export.md) · [api](../api/import-and-export.md) · [nextjs](../nextjs/import-and-export.md) |
+| [Import Export React Native + Expo](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations domain packages React Native + Expo](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge domain packages React Native + Expo](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core React Native + Expo](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React Native + Expo](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Localization domain packages React Native + Expo](localization.md) | [Target/source map](../SOURCE-MAPPING.md#localization) | [core](../core/localization.md) · [api](../api/localization.md) · [nextjs](../nextjs/localization.md) |
+| [Meta Server-Side Tracking domain packages React Native + Expo](meta-server-side-tracking.md) | [Target/source map](../SOURCE-MAPPING.md#meta-server-side-tracking) | [core](../core/meta-server-side-tracking.md) · [api](../api/meta-server-side-tracking.md) · [nextjs](../nextjs/meta-server-side-tracking.md) |
+| [Module Manager domain packages React Native + Expo](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications domain packages React Native + Expo](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability domain packages React Native + Expo](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations and Teams domain packages React Native + Expo](organizations-and-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-and-teams) | [core](../core/organizations-and-teams.md) · [api](../api/organizations-and-teams.md) · [nextjs](../nextjs/organizations-and-teams.md) |
+| [Organizations Teams React Native + Expo](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles domain packages React Native + Expo](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles and Permissions domain packages React Native + Expo](roles-and-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-and-permissions) | [core](../core/roles-and-permissions.md) · [api](../api/roles-and-permissions.md) · [nextjs](../nextjs/roles-and-permissions.md) |
+| [Roles Permissions React Native + Expo](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler and Queues domain packages React Native + Expo](scheduler-and-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-and-queues) | [core](../core/scheduler-and-queues.md) · [api](../api/scheduler-and-queues.md) · [nextjs](../nextjs/scheduler-and-queues.md) |
+| [Scheduler Queues React Native + Expo](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search domain packages React Native + Expo](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions and Devices domain packages React Native + Expo](sessions-and-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-and-devices) | [core](../core/sessions-and-devices.md) · [api](../api/sessions-and-devices.md) · [nextjs](../nextjs/sessions-and-devices.md) |
+| [Sessions Devices React Native + Expo](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings domain packages React Native + Expo](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support React Native + Expo](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two-Factor Authentication domain packages React Native + Expo](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks domain packages React Native + Expo](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

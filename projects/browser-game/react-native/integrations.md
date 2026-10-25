@@ -1,5 +1,9 @@
 # Integrations React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#integrations). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-browser-game-integrations-react-native
 **Matching core package:** module-browser-game-integrations ([implementation](../core/integrations.md))
 **Matching API package:** module-browser-game-integrations-api ([contract](../api/integrations.md))

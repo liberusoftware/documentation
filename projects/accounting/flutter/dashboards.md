@@ -1,5 +1,9 @@
 # Dashboards Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#dashboards). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-dashboards-flutter
 **Matching core package:** module-accounting-dashboards ([implementation](../core/dashboards.md))
 **Matching API package:** module-accounting-dashboards-api ([contract](../api/dashboards.md))

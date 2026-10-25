@@ -1,5 +1,9 @@
 # Sandbox And Release Management Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sandbox-and-release-management). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-sandbox-and-release-management-flutter
 **Matching core package:** module-crm-sandbox-and-release-management ([implementation](../core/sandbox-and-release-management.md))
 **Matching API package:** module-crm-sandbox-and-release-management-api ([contract](../api/sandbox-and-release-management.md))

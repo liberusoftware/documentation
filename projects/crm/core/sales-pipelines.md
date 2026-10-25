@@ -1,8 +1,12 @@
 # Crm: Sales Pipelines Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-pipelines). Observed identity: [`liberusoftware/module-crm-sales-pipelines`](../../../modules/source/liberusoftware--module-crm-sales-pipelines.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-sales-pipelines`
+**Design package identifier:** `module-crm-sales-pipelines`
 **Domain specification:** [Sales Pipelines](../features/sales-pipelines.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 
@@ -36,3 +40,5 @@ Expose only stable contracts, actions, queries, events, resource data, and capab
 - Add architecture tests for forbidden App classes, private cross-module access, provider leakage, presentation dependencies, and dependency cycles. Test empty installs, supported upgrades, rollback policy, representative host composition, and compatibility across the declared Laravel/PHP/database matrix.
 - Run the independent repository's Pest 5 suite through Composer scripts and the shared package testbench. Generate meaningful coverage, static-analysis, security, documentation/link, and performance evidence; coverage complements risk-based assertions and never replaces them.
 - Release with Composer metadata, module manifest, service provider, changelog, migration notes, README, compatibility matrix, runbook, and safe install/enable/disable/upgrade/uninstall behavior. Disabling or removal never silently deletes user data.
+
+Read the [source-backed sales-pipeline walkthrough](../guides/SALES-PIPELINES.md) for actual actions, routes, permissions, UI behavior and differences from the target design.

@@ -1,5 +1,9 @@
 # Close Management React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#close-management). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-close-management-react-native
 **Matching core package:** module-accounting-close-management ([implementation](../core/close-management.md))
 **Matching API package:** module-accounting-close-management-api ([contract](../api/close-management.md))

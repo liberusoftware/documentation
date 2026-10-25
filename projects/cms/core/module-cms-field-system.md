@@ -1,8 +1,12 @@
 # CMS: Module Cms Field System Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-field-system). Observed identity: [`liberusoftware/module-cms-field-system`](../../../modules/source/liberusoftware--module-cms-field-system.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-field-system`
+**Design package identifier:** `module-cms-module-cms-field-system`
 **Domain specification:** [Module Cms Field System](../features/module-cms-field-system.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

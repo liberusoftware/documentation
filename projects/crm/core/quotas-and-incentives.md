@@ -1,8 +1,12 @@
 # Crm: Quotas And Incentives Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#quotas-and-incentives). Observed identity: [`liberusoftware/module-crm-quotas-and-incentives`](../../../modules/source/liberusoftware--module-crm-quotas-and-incentives.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-quotas-and-incentives`
+**Design package identifier:** `module-crm-quotas-and-incentives`
 **Domain specification:** [Quotas And Incentives](../features/quotas-and-incentives.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

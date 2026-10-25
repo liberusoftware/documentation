@@ -1,8 +1,12 @@
 # Accounting: Project Profitability Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#project-profitability). Observed identity: [`liberusoftware/module-accounting-project-profitability`](../../../modules/source/liberusoftware--module-accounting-project-profitability.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-project-profitability`
+**Design package identifier:** `module-accounting-project-profitability`
 **Domain specification:** [Project Profitability](../features/project-profitability.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

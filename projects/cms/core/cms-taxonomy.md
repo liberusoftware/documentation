@@ -1,8 +1,12 @@
 # CMS: Cms Taxonomy Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-taxonomy). Observed identity: [`liberusoftware/module-cms-taxonomy`](../../../modules/source/liberusoftware--module-cms-taxonomy.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-cms-taxonomy`
+**Design package identifier:** `module-cms-cms-taxonomy`
 **Domain specification:** [Cms Taxonomy](../features/cms-taxonomy.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,5 +1,9 @@
 # Module Cms Extension Manager Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-extension-manager). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-module-cms-extension-manager-flutter
 **Matching core package:** module-cms-module-cms-extension-manager ([implementation](../core/module-cms-extension-manager.md))
 **Matching API package:** module-cms-module-cms-extension-manager-api ([contract](../api/module-cms-extension-manager.md))

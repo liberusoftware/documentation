@@ -1,12 +1,16 @@
 # Billing: Module Billing Catalog Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-catalog). Observed identity: [`liberusoftware/module-billing-catalog-livewire`](../../../modules/source/liberusoftware--module-billing-catalog-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-billing-module-billing-catalog-livewire`  
 **Matching domain module:** `module-billing-catalog`  
 **Application:** Billing  
 **Source feature:** [Module Billing Catalog](../features/module-billing-catalog.md)  
-**Architecture:** [LIVEWIRE.md](../BILLING.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

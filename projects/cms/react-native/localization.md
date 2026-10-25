@@ -1,5 +1,9 @@
 # Localization React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#localization). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-localization-react-native
 **Matching core package:** module-cms-localization ([implementation](../core/localization.md))
 **Matching API package:** module-cms-localization-api ([contract](../api/localization.md))

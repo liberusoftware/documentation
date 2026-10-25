@@ -1,8 +1,12 @@
 # CMS: Module Cms Search Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-search). Observed identity: [`liberusoftware/module-cms-search`](../../../modules/source/liberusoftware--module-cms-search.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-search`
+**Design package identifier:** `module-cms-module-cms-search`
 **Domain specification:** [Module Cms Search](../features/module-cms-search.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

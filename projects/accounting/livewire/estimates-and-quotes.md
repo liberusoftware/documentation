@@ -1,12 +1,16 @@
 # Accounting: Estimates and Quotes Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#estimates-and-quotes). Observed identity: [`liberusoftware/module-accounting-estimates-and-quotes-livewire`](../../../modules/source/liberusoftware--module-accounting-estimates-and-quotes-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-accounting-estimates-and-quotes-livewire`  
 **Matching domain module:** `accounting-estimates-and-quotes`  
 **Application:** Accounting  
 **Source feature:** [Estimates and Quotes](../features/estimates-and-quotes.md)  
-**Architecture:** [LIVEWIRE.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

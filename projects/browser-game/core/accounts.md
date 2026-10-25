@@ -1,8 +1,12 @@
 # Browser Game: Accounts Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounts). Observed identity: [`liberusoftware/module-browser-game-accounts`](../../../modules/source/liberusoftware--module-browser-game-accounts.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-browser-game-accounts`
+**Design package identifier:** `module-browser-game-accounts`
 **Domain specification:** [Accounts](../features/accounts.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

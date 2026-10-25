@@ -1,12 +1,16 @@
 # CRM: Crm Account Based Marketing Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-account-based-marketing). Observed identity: [`liberusoftware/module-crm-account-based-marketing-filament`](../../../modules/source/liberusoftware--module-crm-account-based-marketing-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-crm-account-based-marketing-filament`  
 **Matching domain module:** `crm-account-based-marketing`  
 **Application:** CRM  
 **Source feature:** [Crm Account Based Marketing](../features/crm-account-based-marketing.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,8 +1,12 @@
 # Accounting: Branch And Location Accounting Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#branch-and-location-accounting). Observed identity: [`liberusoftware/module-accounting-branch-and-location-accounting`](../../../modules/source/liberusoftware--module-accounting-branch-and-location-accounting.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-branch-and-location-accounting`
+**Design package identifier:** `module-accounting-branch-and-location-accounting`
 **Domain specification:** [Branch And Location Accounting](../features/branch-and-location-accounting.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

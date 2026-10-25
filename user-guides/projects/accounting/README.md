@@ -33,3 +33,7 @@ Use the shared [responsive shell and state contract](../../WEB-AND-MOBILE.md). A
 ## Module map
 
 See [all finance module experiences](modules/README.md).
+
+## Availability and implementation
+
+These are target experience/task guides. Use the [current source map](../../../projects/accounting/SOURCE-MAPPING.md) to identify observed packages and source locations; confirm enabled UI and permissions in the installed application. Business state and operation progress remain separate across every presentation.

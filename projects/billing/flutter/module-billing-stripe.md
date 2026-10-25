@@ -1,5 +1,9 @@
 # Module Billing Stripe Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-stripe). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-module-billing-stripe-flutter
 **Matching core package:** module-billing-module-billing-stripe ([implementation](../core/module-billing-stripe.md))
 **Matching API package:** module-billing-module-billing-stripe-api ([contract](../api/module-billing-stripe.md))

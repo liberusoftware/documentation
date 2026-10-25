@@ -1,5 +1,9 @@
 # Localization Core Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#localization-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-social-network-localization-core-flutter
 **Matching core package:** module-social-network-localization-core ([implementation](../core/localization-core.md))
 **Matching API package:** module-social-network-localization-core-api ([contract](../api/localization-core.md))

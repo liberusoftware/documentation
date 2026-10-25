@@ -1,5 +1,9 @@
 # Approvals Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#approvals). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-automation-approvals-flutter
 **Matching core package:** module-automation-approvals ([implementation](../core/approvals.md))
 **Matching API package:** module-automation-approvals-api ([contract](../api/approvals.md))

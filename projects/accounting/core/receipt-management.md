@@ -1,8 +1,12 @@
 # Accounting: Receipt Management Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#receipt-management). Observed identity: [`liberusoftware/module-accounting-receipt-management`](../../../modules/source/liberusoftware--module-accounting-receipt-management.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-receipt-management`
+**Design package identifier:** `module-accounting-receipt-management`
 **Domain specification:** [Receipt Management](../features/receipt-management.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

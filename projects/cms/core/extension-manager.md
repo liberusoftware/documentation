@@ -1,8 +1,12 @@
 # Cms: Extension Manager Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#extension-manager). Observed identity: [`liberusoftware/module-cms-extension-manager`](../../../modules/source/liberusoftware--module-cms-extension-manager.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-extension-manager`
+**Design package identifier:** `module-cms-extension-manager`
 **Domain specification:** [Extension Manager](../features/extension-manager.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

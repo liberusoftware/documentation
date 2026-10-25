@@ -1,12 +1,16 @@
 # CMS: Module Cms Embeds Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-embeds). Observed identity: [`liberusoftware/module-cms-embeds-filament`](../../../modules/source/liberusoftware--module-cms-embeds-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-cms-module-cms-embeds-filament`  
 **Matching domain module:** `module-cms-embeds`  
 **Application:** CMS  
 **Source feature:** [Module Cms Embeds](../features/module-cms-embeds.md)  
-**Architecture:** [FILAMENT.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

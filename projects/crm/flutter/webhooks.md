@@ -1,5 +1,9 @@
 # Webhooks Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#webhooks). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-webhooks-flutter
 **Matching core package:** module-crm-webhooks ([implementation](../core/webhooks.md))
 **Matching API package:** module-crm-webhooks-api ([contract](../api/webhooks.md))

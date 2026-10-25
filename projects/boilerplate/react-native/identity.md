@@ -1,5 +1,9 @@
 # Identity domain packages React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#identity). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `identity-core`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-identity-react-native
 **Matching core package:** module-identity ([implementation](../core/identity.md))
 **Matching API package:** module-identity-api ([contract](../api/identity.md))

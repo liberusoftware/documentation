@@ -1,5 +1,9 @@
 # Display Modes Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#display-modes). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-display-modes-flutter
 **Matching core package:** module-cms-display-modes ([implementation](../core/display-modes.md))
 **Matching API package:** module-cms-display-modes-api ([contract](../api/display-modes.md))

@@ -1,12 +1,16 @@
 # Control Panel: Control Panel Os Adapters Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-os-adapters). Observed identity: [`liberusoftware/module-control-panel-os-adapters-filament`](../../../modules/source/liberusoftware--module-control-panel-os-adapters-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-control-panel-control-panel-os-adapters-filament`  
 **Matching domain module:** `control-panel-os-adapters`  
 **Application:** Control Panel  
 **Source feature:** [Control Panel Os Adapters](../features/control-panel-os-adapters.md)  
-**Architecture:** [FILAMENT.md](../CONTROL-PANEL.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

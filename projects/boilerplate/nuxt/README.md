@@ -1,35 +1,53 @@
 # Boilerplate Nuxt Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **43 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
 
-- [Activity Comments Nuxt](activity-comments.md) — `module-boilerplate-activity-comments-nuxt`
-- [Analytics Core Nuxt](analytics-core.md) — `module-boilerplate-analytics-core-nuxt`
-- [Analytics Google Nuxt](analytics-google.md) — `module-boilerplate-analytics-google-nuxt`
-- [Analytics Meta Nuxt](analytics-meta.md) — `module-boilerplate-analytics-meta-nuxt`
-- [Api Access Nuxt](api-access.md) — `module-boilerplate-api-access-nuxt`
-- [Application Nuxt](application.md) — `module-boilerplate-application-nuxt`
-- [Audit Nuxt](audit.md) — `module-boilerplate-audit-nuxt`
-- [Currency Context Nuxt](currency-context.md) — `module-boilerplate-currency-context-nuxt`
-- [Developer Experience Nuxt](developer-experience.md) — `module-boilerplate-developer-experience-nuxt`
-- [Feature Flags Nuxt](feature-flags.md) — `module-boilerplate-feature-flags-nuxt`
-- [Files Media Nuxt](files-media.md) — `module-boilerplate-files-media-nuxt`
-- [Identity Core Nuxt](identity-core.md) — `module-boilerplate-identity-core-nuxt`
-- [Identity Socialstream Nuxt](identity-socialstream.md) — `module-boilerplate-identity-socialstream-nuxt`
-- [Import Export Nuxt](import-export.md) — `module-boilerplate-import-export-nuxt`
-- [Integrations Nuxt](integrations.md) — `module-boilerplate-integrations-nuxt`
-- [Jetstream Bridge Nuxt](jetstream-bridge.md) — `module-boilerplate-jetstream-bridge-nuxt`
-- [Localization Core Nuxt](localization-core.md) — `module-boilerplate-localization-core-nuxt`
-- [Localization Mymemory Nuxt](localization-mymemory.md) — `module-boilerplate-localization-mymemory-nuxt`
-- [Module Manager Nuxt](module-manager.md) — `module-boilerplate-module-manager-nuxt`
-- [Notifications Nuxt](notifications.md) — `module-boilerplate-notifications-nuxt`
-- [Observability Nuxt](observability.md) — `module-boilerplate-observability-nuxt`
-- [Organizations Teams Nuxt](organizations-teams.md) — `module-boilerplate-organizations-teams-nuxt`
-- [Profiles Nuxt](profiles.md) — `module-boilerplate-profiles-nuxt`
-- [Roles Permissions Nuxt](roles-permissions.md) — `module-boilerplate-roles-permissions-nuxt`
-- [Scheduler Queues Nuxt](scheduler-queues.md) — `module-boilerplate-scheduler-queues-nuxt`
-- [Search Nuxt](search.md) — `module-boilerplate-search-nuxt`
-- [Sessions Devices Nuxt](sessions-devices.md) — `module-boilerplate-sessions-devices-nuxt`
-- [Settings Nuxt](settings.md) — `module-boilerplate-settings-nuxt`
-- [Theme Support Nuxt](theme-support.md) — `module-boilerplate-theme-support-nuxt`
-- [Two Factor Authentication Nuxt](two-factor-authentication.md) — `module-boilerplate-two-factor-authentication-nuxt`
-- [Webhooks Nuxt](webhooks.md) — `module-boilerplate-webhooks-nuxt`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity and Comments Nuxt presentation packages](activity-and-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-and-comments) | [core](../core/activity-and-comments.md) · [api](../api/activity-and-comments.md) · [nextjs](../nextjs/activity-and-comments.md) |
+| [Activity Comments Nuxt](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Nuxt presentation packages](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Nuxt](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Nuxt](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [API Access Nuxt presentation packages](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Core Nuxt presentation packages](application-core.md) | [Target/source map](../SOURCE-MAPPING.md#application-core) | [core](../core/application-core.md) · [api](../api/application-core.md) · [nextjs](../nextjs/application-core.md) |
+| [Application Nuxt](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Nuxt presentation packages](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Currency Context Nuxt presentation packages](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Nuxt presentation packages](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags Nuxt presentation packages](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files and Media Nuxt presentation packages](files-and-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-and-media) | [core](../core/files-and-media.md) · [api](../api/files-and-media.md) · [nextjs](../nextjs/files-and-media.md) |
+| [Files Media Nuxt](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Google Analytics Nuxt presentation packages](google-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#google-analytics) | [core](../core/google-analytics.md) · [api](../api/google-analytics.md) · [nextjs](../nextjs/google-analytics.md) |
+| [Identity Core Nuxt](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Nuxt](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Identity Nuxt presentation packages](identity.md) | [Target/source map](../SOURCE-MAPPING.md#identity) | [core](../core/identity.md) · [api](../api/identity.md) · [nextjs](../nextjs/identity.md) |
+| [Import and Export Nuxt presentation packages](import-and-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-and-export) | [core](../core/import-and-export.md) · [api](../api/import-and-export.md) · [nextjs](../nextjs/import-and-export.md) |
+| [Import Export Nuxt](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Nuxt presentation packages](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Nuxt presentation packages](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core Nuxt](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Nuxt](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Localization Nuxt presentation packages](localization.md) | [Target/source map](../SOURCE-MAPPING.md#localization) | [core](../core/localization.md) · [api](../api/localization.md) · [nextjs](../nextjs/localization.md) |
+| [Meta Server-Side Tracking Nuxt presentation packages](meta-server-side-tracking.md) | [Target/source map](../SOURCE-MAPPING.md#meta-server-side-tracking) | [core](../core/meta-server-side-tracking.md) · [api](../api/meta-server-side-tracking.md) · [nextjs](../nextjs/meta-server-side-tracking.md) |
+| [Module Manager Nuxt presentation packages](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Nuxt presentation packages](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Nuxt presentation packages](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations and Teams Nuxt presentation packages](organizations-and-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-and-teams) | [core](../core/organizations-and-teams.md) · [api](../api/organizations-and-teams.md) · [nextjs](../nextjs/organizations-and-teams.md) |
+| [Organizations Teams Nuxt](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles Nuxt presentation packages](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles and Permissions Nuxt presentation packages](roles-and-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-and-permissions) | [core](../core/roles-and-permissions.md) · [api](../api/roles-and-permissions.md) · [nextjs](../nextjs/roles-and-permissions.md) |
+| [Roles Permissions Nuxt](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler and Queues Nuxt presentation packages](scheduler-and-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-and-queues) | [core](../core/scheduler-and-queues.md) · [api](../api/scheduler-and-queues.md) · [nextjs](../nextjs/scheduler-and-queues.md) |
+| [Scheduler Queues Nuxt](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Nuxt presentation packages](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions and Devices Nuxt presentation packages](sessions-and-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-and-devices) | [core](../core/sessions-and-devices.md) · [api](../api/sessions-and-devices.md) · [nextjs](../nextjs/sessions-and-devices.md) |
+| [Sessions Devices Nuxt](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Nuxt presentation packages](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Nuxt](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two-Factor Authentication Nuxt presentation packages](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Nuxt presentation packages](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

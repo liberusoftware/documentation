@@ -1,6 +1,10 @@
 # Boilerplate: Meta Server-Side Tracking domain packages
 
-**Composer package:** `module-meta-server-side-tracking`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#meta-server-side-tracking). Observed identity: [`liberusoftware/analytics-meta`](../../../modules/source/liberusoftware--analytics-meta.md). This retained spelling maps to `analytics-meta`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-meta-server-side-tracking`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Meta server-side event mapping, deduplication, consent, hashing, delivery, and diagnostics.
 

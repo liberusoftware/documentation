@@ -1,8 +1,12 @@
 # Browser Game: Browser Game Quests Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#browser-game-quests). Observed identity: [`liberusoftware/module-browser-game-quests`](../../../modules/source/liberusoftware--module-browser-game-quests.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-browser-game-browser-game-quests`
+**Design package identifier:** `module-browser-game-browser-game-quests`
 **Domain specification:** [Browser Game Quests](../features/browser-game-quests.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

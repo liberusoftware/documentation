@@ -1,8 +1,12 @@
 # Boilerplate: Activity Comments Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#activity-comments). Observed identity: [`liberusoftware/activity-comments`](../../../modules/source/liberusoftware--activity-comments.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-boilerplate-activity-comments`
+**Design package identifier:** `module-boilerplate-activity-comments`
 **Domain specification:** [Activity Comments](../features/activity-comments.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,8 +1,12 @@
 # Accounting: Custom Report Builder Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#custom-report-builder). Observed identity: [`liberusoftware/module-accounting-custom-report-builder`](../../../modules/source/liberusoftware--module-accounting-custom-report-builder.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-custom-report-builder`
+**Design package identifier:** `module-accounting-custom-report-builder`
 **Domain specification:** [Custom Report Builder](../features/custom-report-builder.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

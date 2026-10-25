@@ -1,12 +1,16 @@
 # Boilerplate: Module Manager
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-manager). Observed identity: [`liberusoftware/module-manager`](../../../modules/source/liberusoftware--module-manager.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-boilerplate-module-manager`
 **Application:** Boilerplate  
 **Capability group:** Module Manager  
 **Source scope:** [BOILERPLATE.md](../BOILERPLATE.md)  
-**Architecture:** [MODULES.md](../BOILERPLATE.md) · [TESTING.md](../BOILERPLATE.md) · [API.md](../BOILERPLATE.md) · [FILAMENT.md](../BOILERPLATE.md) · [LIVEWIRE.md](../BOILERPLATE.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

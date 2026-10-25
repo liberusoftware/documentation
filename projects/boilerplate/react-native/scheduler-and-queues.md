@@ -1,5 +1,9 @@
 # Scheduler and Queues domain packages React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#scheduler-and-queues). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `scheduler-queues`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-scheduler-and-queues-react-native
 **Matching core package:** module-scheduler-and-queues ([implementation](../core/scheduler-and-queues.md))
 **Matching API package:** module-scheduler-and-queues-api ([contract](../api/scheduler-and-queues.md))

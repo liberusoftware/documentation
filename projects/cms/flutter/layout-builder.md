@@ -1,5 +1,9 @@
 # Layout Builder Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#layout-builder). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-layout-builder-flutter
 **Matching core package:** module-cms-layout-builder ([implementation](../core/layout-builder.md))
 **Matching API package:** module-cms-layout-builder-api ([contract](../api/layout-builder.md))

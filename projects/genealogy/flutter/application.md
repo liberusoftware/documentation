@@ -1,5 +1,9 @@
 # Application Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#application). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-genealogy-application-flutter
 **Matching core package:** module-genealogy-application ([implementation](../core/application.md))
 **Matching API package:** module-genealogy-application-api ([contract](../api/application.md))

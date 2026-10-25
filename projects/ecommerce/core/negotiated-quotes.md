@@ -1,8 +1,12 @@
 # Ecommerce: Negotiated Quotes Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#negotiated-quotes). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-ecommerce-negotiated-quotes`
+**Design package identifier:** `module-ecommerce-negotiated-quotes`
 **Domain specification:** [Negotiated Quotes](../features/negotiated-quotes.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

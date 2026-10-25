@@ -1,6 +1,10 @@
 # Boilerplate: Module Manager Nuxt presentation packages
 
-**Composer package:** `module-module-manager-nuxt`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-manager). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-module-manager-nuxt`
 **Matching core package:** [`module-module-manager`](../core/module-manager.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Manifest discovery, dependency resolution, enablement, lifecycle, compatibility, registry caching, and diagnostics.

@@ -1,5 +1,9 @@
 # Forecasts Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#forecasts). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-forecasts-flutter
 **Matching core package:** module-accounting-forecasts ([implementation](../core/forecasts.md))
 **Matching API package:** module-accounting-forecasts-api ([contract](../api/forecasts.md))

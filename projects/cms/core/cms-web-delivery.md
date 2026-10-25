@@ -1,8 +1,12 @@
 # CMS: Cms Web Delivery Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-web-delivery). Observed identity: [`liberusoftware/module-cms-web-delivery`](../../../modules/source/liberusoftware--module-cms-web-delivery.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-cms-web-delivery`
+**Design package identifier:** `module-cms-cms-web-delivery`
 **Domain specification:** [Cms Web Delivery](../features/cms-web-delivery.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,8 +1,12 @@
 # Accounting: Corporate Cards Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#corporate-cards). Observed identity: [`liberusoftware/module-accounting-corporate-cards`](../../../modules/source/liberusoftware--module-accounting-corporate-cards.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-corporate-cards`
+**Design package identifier:** `module-accounting-corporate-cards`
 **Domain specification:** [Corporate Cards](../features/corporate-cards.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

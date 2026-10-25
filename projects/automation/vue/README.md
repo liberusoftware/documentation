@@ -1,50 +1,67 @@
 # Automation Vue + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **57 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments Vue](activity-comments.md) — `module-automation-activity-comments-vue-inertia`
-- [Analytics Core Vue](analytics-core.md) — `module-automation-analytics-core-vue-inertia`
-- [Analytics Google Vue](analytics-google.md) — `module-automation-analytics-google-vue-inertia`
-- [Analytics Meta Vue](analytics-meta.md) — `module-automation-analytics-meta-vue-inertia`
-- [Api Access Vue](api-access.md) — `module-automation-api-access-vue-inertia`
-- [Application Vue](application.md) — `module-automation-application-vue-inertia`
-- [Audit Vue](audit.md) — `module-automation-audit-vue-inertia`
-- [Currency Context Vue](currency-context.md) — `module-automation-currency-context-vue-inertia`
-- [Developer Experience Vue](developer-experience.md) — `module-automation-developer-experience-vue-inertia`
-- [Feature Flags Vue](feature-flags.md) — `module-automation-feature-flags-vue-inertia`
-- [Files Media Vue](files-media.md) — `module-automation-files-media-vue-inertia`
-- [Identity Core Vue](identity-core.md) — `module-automation-identity-core-vue-inertia`
-- [Identity Socialstream Vue](identity-socialstream.md) — `module-automation-identity-socialstream-vue-inertia`
-- [Import Export Vue](import-export.md) — `module-automation-import-export-vue-inertia`
-- [Integrations Vue](integrations.md) — `module-automation-integrations-vue-inertia`
-- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-automation-jetstream-bridge-vue-inertia`
-- [Liberu Business Workflow Reconciliation Vue](liberu-business-workflow-reconciliation.md) — `module-automation-liberu-business-workflow-reconciliation-vue-inertia`
-- [Liberu Executive Insights Vue](liberu-executive-insights.md) — `module-automation-liberu-executive-insights-vue-inertia`
-- [Liberu Platform Orchestration Vue](liberu-platform-orchestration.md) — `module-automation-liberu-platform-orchestration-vue-inertia`
-- [Liberu Revenue And Care Orchestration Vue](liberu-revenue-and-care-orchestration.md) — `module-automation-liberu-revenue-and-care-orchestration-vue-inertia`
-- [Localization Core Vue](localization-core.md) — `module-automation-localization-core-vue-inertia`
-- [Localization Mymemory Vue](localization-mymemory.md) — `module-automation-localization-mymemory-vue-inertia`
-- [Module Automation Ai Gateway Vue](module-automation-ai-gateway.md) — `module-automation-module-automation-ai-gateway-vue-inertia`
-- [Module Automation Approvals Vue](module-automation-approvals.md) — `module-automation-module-automation-approvals-vue-inertia`
-- [Module Automation Automation Core Vue](module-automation-automation-core.md) — `module-automation-module-automation-automation-core-vue-inertia`
-- [Module Automation Connectors Vue](module-automation-connectors.md) — `module-automation-module-automation-connectors-vue-inertia`
-- [Module Automation Data Processing Vue](module-automation-data-processing.md) — `module-automation-module-automation-data-processing-vue-inertia`
-- [Module Automation Evaluation Vue](module-automation-evaluation.md) — `module-automation-module-automation-evaluation-vue-inertia`
-- [Module Automation Image Vue](module-automation-image.md) — `module-automation-module-automation-image-vue-inertia`
-- [Module Automation Prompt Registry Vue](module-automation-prompt-registry.md) — `module-automation-module-automation-prompt-registry-vue-inertia`
-- [Module Automation Rules Vue](module-automation-rules.md) — `module-automation-module-automation-rules-vue-inertia`
-- [Module Automation Video Vue](module-automation-video.md) — `module-automation-module-automation-video-vue-inertia`
-- [Module Automation Voice Vue](module-automation-voice.md) — `module-automation-module-automation-voice-vue-inertia`
-- [Module Manager Vue](module-manager.md) — `module-automation-module-manager-vue-inertia`
-- [Notifications Vue](notifications.md) — `module-automation-notifications-vue-inertia`
-- [Observability Vue](observability.md) — `module-automation-observability-vue-inertia`
-- [Organizations Teams Vue](organizations-teams.md) — `module-automation-organizations-teams-vue-inertia`
-- [Profiles Vue](profiles.md) — `module-automation-profiles-vue-inertia`
-- [Roles Permissions Vue](roles-permissions.md) — `module-automation-roles-permissions-vue-inertia`
-- [Scheduler Queues Vue](scheduler-queues.md) — `module-automation-scheduler-queues-vue-inertia`
-- [Search Vue](search.md) — `module-automation-search-vue-inertia`
-- [Sessions Devices Vue](sessions-devices.md) — `module-automation-sessions-devices-vue-inertia`
-- [Settings Vue](settings.md) — `module-automation-settings-vue-inertia`
-- [Theme Support Vue](theme-support.md) — `module-automation-theme-support-vue-inertia`
-- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-automation-two-factor-authentication-vue-inertia`
-- [Webhooks Vue](webhooks.md) — `module-automation-webhooks-vue-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Vue + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [AI Gateway Vue + Inertia](ai-gateway.md) | [Target/source map](../SOURCE-MAPPING.md#ai-gateway) | [core](../core/ai-gateway.md) · [api](../api/ai-gateway.md) · [nextjs](../nextjs/ai-gateway.md) |
+| [Analytics Core Vue + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Vue + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Vue + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Vue + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Vue + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Approvals Vue + Inertia](approvals.md) | [Target/source map](../SOURCE-MAPPING.md#approvals) | [core](../core/approvals.md) · [api](../api/approvals.md) · [nextjs](../nextjs/approvals.md) |
+| [Audit Vue + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Automation Core Vue + Inertia](automation-core.md) | [Target/source map](../SOURCE-MAPPING.md#automation-core) | [core](../core/automation-core.md) · [api](../api/automation-core.md) · [nextjs](../nextjs/automation-core.md) |
+| [Connectors Vue + Inertia](connectors.md) | [Target/source map](../SOURCE-MAPPING.md#connectors) | [core](../core/connectors.md) · [api](../api/connectors.md) · [nextjs](../nextjs/connectors.md) |
+| [Currency Context Vue + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Data Processing Vue + Inertia](data-processing.md) | [Target/source map](../SOURCE-MAPPING.md#data-processing) | [core](../core/data-processing.md) · [api](../api/data-processing.md) · [nextjs](../nextjs/data-processing.md) |
+| [Developer Experience Vue + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Evaluation Vue + Inertia](evaluation.md) | [Target/source map](../SOURCE-MAPPING.md#evaluation) | [core](../core/evaluation.md) · [api](../api/evaluation.md) · [nextjs](../nextjs/evaluation.md) |
+| [Feature Flags Vue + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Vue + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Vue + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Vue + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Image Vue + Inertia](image.md) | [Target/source map](../SOURCE-MAPPING.md#image) | [core](../core/image.md) · [api](../api/image.md) · [nextjs](../nextjs/image.md) |
+| [Import Export Vue + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Vue + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Vue + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation Vue + Inertia](liberu-business-workflow-reconciliation.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-business-workflow-reconciliation) | [core](../core/liberu-business-workflow-reconciliation.md) · [api](../api/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights Vue + Inertia](liberu-executive-insights.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-executive-insights) | [core](../core/liberu-executive-insights.md) · [api](../api/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration Vue + Inertia](liberu-platform-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-platform-orchestration) | [core](../core/liberu-platform-orchestration.md) · [api](../api/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration Vue + Inertia](liberu-revenue-and-care-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-revenue-and-care-orchestration) | [core](../core/liberu-revenue-and-care-orchestration.md) · [api](../api/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core Vue + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Vue + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Module Automation Ai Gateway Vue + Inertia](module-automation-ai-gateway.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-ai-gateway) | [core](../core/module-automation-ai-gateway.md) · [api](../api/module-automation-ai-gateway.md) · [nextjs](../nextjs/module-automation-ai-gateway.md) |
+| [Module Automation Approvals Vue + Inertia](module-automation-approvals.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-approvals) | [core](../core/module-automation-approvals.md) · [api](../api/module-automation-approvals.md) · [nextjs](../nextjs/module-automation-approvals.md) |
+| [Module Automation Automation Core Vue + Inertia](module-automation-automation-core.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-automation-core) | [core](../core/module-automation-automation-core.md) · [api](../api/module-automation-automation-core.md) · [nextjs](../nextjs/module-automation-automation-core.md) |
+| [Module Automation Connectors Vue + Inertia](module-automation-connectors.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-connectors) | [core](../core/module-automation-connectors.md) · [api](../api/module-automation-connectors.md) · [nextjs](../nextjs/module-automation-connectors.md) |
+| [Module Automation Data Processing Vue + Inertia](module-automation-data-processing.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-data-processing) | [core](../core/module-automation-data-processing.md) · [api](../api/module-automation-data-processing.md) · [nextjs](../nextjs/module-automation-data-processing.md) |
+| [Module Automation Evaluation Vue + Inertia](module-automation-evaluation.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-evaluation) | [core](../core/module-automation-evaluation.md) · [api](../api/module-automation-evaluation.md) · [nextjs](../nextjs/module-automation-evaluation.md) |
+| [Module Automation Image Vue + Inertia](module-automation-image.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-image) | [core](../core/module-automation-image.md) · [api](../api/module-automation-image.md) · [nextjs](../nextjs/module-automation-image.md) |
+| [Module Automation Prompt Registry Vue + Inertia](module-automation-prompt-registry.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-prompt-registry) | [core](../core/module-automation-prompt-registry.md) · [api](../api/module-automation-prompt-registry.md) · [nextjs](../nextjs/module-automation-prompt-registry.md) |
+| [Module Automation Rules Vue + Inertia](module-automation-rules.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-rules) | [core](../core/module-automation-rules.md) · [api](../api/module-automation-rules.md) · [nextjs](../nextjs/module-automation-rules.md) |
+| [Module Automation Video Vue + Inertia](module-automation-video.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-video) | [core](../core/module-automation-video.md) · [api](../api/module-automation-video.md) · [nextjs](../nextjs/module-automation-video.md) |
+| [Module Automation Voice Vue + Inertia](module-automation-voice.md) | [Target/source map](../SOURCE-MAPPING.md#module-automation-voice) | [core](../core/module-automation-voice.md) · [api](../api/module-automation-voice.md) · [nextjs](../nextjs/module-automation-voice.md) |
+| [Module Manager Vue + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Vue + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Vue + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Vue + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles Vue + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Prompt Registry Vue + Inertia](prompt-registry.md) | [Target/source map](../SOURCE-MAPPING.md#prompt-registry) | [core](../core/prompt-registry.md) · [api](../api/prompt-registry.md) · [nextjs](../nextjs/prompt-registry.md) |
+| [Roles Permissions Vue + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Rules Vue + Inertia](rules.md) | [Target/source map](../SOURCE-MAPPING.md#rules) | [core](../core/rules.md) · [api](../api/rules.md) · [nextjs](../nextjs/rules.md) |
+| [Scheduler Queues Vue + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Vue + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Vue + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Vue + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Vue + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Vue + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Video Vue + Inertia](video.md) | [Target/source map](../SOURCE-MAPPING.md#video) | [core](../core/video.md) · [api](../api/video.md) · [nextjs](../nextjs/video.md) |
+| [Voice Vue + Inertia](voice.md) | [Target/source map](../SOURCE-MAPPING.md#voice) | [core](../core/voice.md) · [api](../api/voice.md) · [nextjs](../nextjs/voice.md) |
+| [Webhooks Vue + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

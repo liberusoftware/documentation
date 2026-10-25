@@ -1,6 +1,10 @@
 # Boilerplate: Observability Filament presentation packages
 
-**Composer package:** `module-observability-filament`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#observability). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-observability-filament`
 **Matching core package:** [`module-observability`](../core/observability.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Structured logs, correlation, metrics, traces, exception reporting, health checks, redaction, and SLO hooks.

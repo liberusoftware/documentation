@@ -1,5 +1,9 @@
 # Cms Polls And Surveys Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-polls-and-surveys). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-polls-and-surveys-flutter
 **Matching core package:** module-cms-cms-polls-and-surveys ([implementation](../core/cms-polls-and-surveys.md))
 **Matching API package:** module-cms-cms-polls-and-surveys-api ([contract](../api/cms-polls-and-surveys.md))

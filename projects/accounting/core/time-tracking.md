@@ -1,8 +1,12 @@
 # Accounting: Time Tracking Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#time-tracking). Observed identity: [`liberusoftware/module-accounting-time-tracking`](../../../modules/source/liberusoftware--module-accounting-time-tracking.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-time-tracking`
+**Design package identifier:** `module-accounting-time-tracking`
 **Domain specification:** [Time Tracking](../features/time-tracking.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

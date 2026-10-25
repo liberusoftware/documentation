@@ -1,8 +1,12 @@
 # Crm: Resource Planning Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#resource-planning). Observed identity: [`liberusoftware/module-crm-resource-planning`](../../../modules/source/liberusoftware--module-crm-resource-planning.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-resource-planning`
+**Design package identifier:** `module-crm-resource-planning`
 **Domain specification:** [Resource Planning](../features/resource-planning.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

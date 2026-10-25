@@ -1,5 +1,9 @@
 # Developer Experience Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#developer-experience). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-browser-game-developer-experience-flutter
 **Matching core package:** module-browser-game-developer-experience ([implementation](../core/developer-experience.md))
 **Matching API package:** module-browser-game-developer-experience-api ([contract](../api/developer-experience.md))

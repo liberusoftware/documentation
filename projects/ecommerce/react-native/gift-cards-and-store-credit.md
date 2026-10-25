@@ -1,5 +1,9 @@
 # Gift Cards And Store Credit React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#gift-cards-and-store-credit). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-gift-cards-and-store-credit-react-native
 **Matching core package:** module-ecommerce-gift-cards-and-store-credit ([implementation](../core/gift-cards-and-store-credit.md))
 **Matching API package:** module-ecommerce-gift-cards-and-store-credit-api ([contract](../api/gift-cards-and-store-credit.md))

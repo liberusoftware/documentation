@@ -1,0 +1,13 @@
+{
+  "report_definition_version": "report-example-001:v3",
+  "legal_entity_scope": [
+    "entity-example-001"
+  ],
+  "parameter_snapshot": {
+    "period": "2026-09",
+    "currency": "GBP"
+  },
+  "source_watermarks": {
+    "accounting": "ledger-watermark-example-001"
+  }
+}

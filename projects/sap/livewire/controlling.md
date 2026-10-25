@@ -1,52 +1,58 @@
-# SAP: Controlling Livewire
+# Controlling: Livewire design
 
-## Canonical one-to-one Livewire 4 implementation
+**Status:** proposed enterprise implementation. The [current SAP foundation](../SOURCE-APPLICATION.md) does not establish these business workflows or this presentation as implemented. Use the [detailed domain contract](../design/controlling.md) and [API plan](../api/controlling.md) as the review target.
 
-**Livewire package:** `module-sap-controlling-livewire`  
-**Matching domain module:** `sap-controlling`  
-**Application:** SAP  
-**Source feature:** [Controlling](../features/controlling.md)  
-**Architecture:** [LIVEWIRE.md](../SAP.md) · [MODULES.md](../SAP.md) · [TESTING.md](../SAP.md)
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#controlling). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
 
-## 1. Purpose and ownership
+## Ownership and delivery scope
 
-This optional Livewire 4 presentation package provides interactive server-driven components for exactly one independent domain module. Components coordinate public queries/actions and presentation state; they do not own persistence, authorization decisions, tenancy, business rules, or theme identity. The package has no dependency on application `App\` classes or another module's internals.
+Reuse Accounting dimensions, budgets, periods, and posted balances. Enterprise controlling owns documented allocation rules, scenario versions, and cross-unit profitability projections where missing.
 
-## 2. Module-specific interactions
+Reuse the [shared enterprise operation design](../design/OPERATIONS.md) for command identities, concurrency, handoffs and recovery. This capability group adds only its own orchestration/projection and genuine missing behavior; it does not create another owner for existing product records.
 
-- **Cost/profit centers:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Internal orders:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Allocation:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Planning:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Variance:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Unit economics:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
-- **Profitability:** interactive component state, validation feedback, loading, and failure recovery for this domain capability.
+## Workflow and command contract
 
-## 3. Livewire 4 implementation
+**Workspace surfaces:** rule editor, driver completeness report, allocation preview, variance drill-down, run reconciliation.
 
-- Register a stable `module-sap-controlling-livewire` component namespace and service provider; use explicit aliases such as `<livewire:module-sap-controlling::component-name />` according to LIVEWIRE.md.
-- Keep reusable components under `src/Components`, full-page components under `src/Pages`, and package views under `resources/views`.
-- Treat public properties, URL state, events, uploads, and action parameters as untrusted input; validate and authorize at the Livewire boundary, then invoke the authoritative domain action/query.
-- Keep public state minimal and non-sensitive, use locked/typed state where supported, and provide loading, validation, authorization, empty, and failure states.
+**Business lifecycle:** draft → simulated → approved → executing → reconciled; failed and cancelled runs retain their input snapshots.
 
-### Capability mapping
+Freeze source balances and drivers for a run. Require complete allocation weights, defined zero-driver behavior, conserved totals after rounding, and a clear distinction between simulations and posted adjustments.
 
-- `cost/profit-centers`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `internal-orders`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `allocation`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `planning`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `variance`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `unit-economics`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
-- `profitability`: expose a focused Livewire 4 component or full-page component backed by the corresponding domain query/action.
+The illustrated `simulate` command takes `rule_version`, `source_balance_snapshot_id`, `driver_snapshot_id`, `scenario_id`, with a documented record-version precondition and scoped operation identity. It starts from `draft` and reaches `simulated` only after its defined business outcome. The [API example](../api/controlling.md#3-endpoint-examples) provides the proposed body and [draft request schema](../api/contracts/controlling.request.schema.json).
 
-## 4. Security and verification
+Require compatible immutable snapshots and complete allocation drivers. Define zero-driver and rounding-residual behavior; a simulation never posts ledger adjustments.
 
-- Prove allowed, denied, wrong-tenant, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every component.
-- Test hydration/dehydration, authorization, validation, events, loading, pagination/filter state, accessibility, and component alias collisions.
-- Run Pest 5 Livewire tests against the supported Livewire 4/Laravel stack; domain behavior remains covered by the owning module.
+Publish scenario outputs, residuals and source lineage. Approval and actual posting remain separate actions under the owning policy.
 
-## 5. Definition of done
+## Layer implementation
 
-- Package identity, namespace, aliases, and dependency match `sap-controlling` one-to-one.
-- Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
-- Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+Compose a workspace list, selected-subject detail, command form and operation-status component. Public component state contains only authorized filter values, opaque selection/version, safe command draft and operation reference; hydrated IDs are untrusted input.
+
+The `simulate` handler resolves the authenticated actor and current scope afresh, loads the authorized subject, validates `rule_version`, `source_balance_snapshot_id`, `driver_snapshot_id`, `scenario_id`, and calls the public application/API command. Protected lifecycle/audit/owner-result fields are not mass-assigned from component state.
+
+Keep field validation messages with the draft and announce them accessibly. Disable repeat interaction while a request is pending for usability, while relying on server command identity/concurrency rules for correctness. After a confirmed write, reload authorized state rather than applying an assumed client-side final state.
+
+Poll only an authorized operation reference at a bounded interval; stop/recover cleanly after expiry, revocation or navigation. Avoid persisting request-specific tenant/actor data in long-lived singleton/static state. File uploads need size/type checks and authorized evidence registration before use.
+
+## Authorization, recovery and operations
+
+Analysts simulate; controllers approve rules; posting authority remains with Accounting and the relevant entities.
+
+Partition runs by durable operation IDs. Resume incomplete partitions without reposting completed ones; route unexplained residuals to reconciliation rather than absorbing them silently.
+
+Show the selected entity, source/subject reference, current business state and separate operation progress. Preserve safe drafts on validation/conflict. Reauthenticate on expiry and discard protected cached data after scope/permission changes. A network timeout never establishes whether an external write succeeded; use the durable operation/source reference for reconciliation.
+
+## Module-specific acceptance
+
+- Zero or missing drivers produce a defined error; rerunning an execution key does not duplicate allocations; rounded destinations reconcile to the source total.
+- Repeated commands return the documented existing result or a clear conflict; they cannot duplicate a completed external side effect.
+- A tenant/entity switch, permission revocation or expired session cannot reuse another scope's cached record, attachment or exported file.
+- A downstream failure remains observable with a valid owner/recovery path across every enabled presentation.
+
+- Exercise the `simulate` example with allowed, denied, invalid, stale, duplicate and uncertain-result paths; confirm `simulated` only from its authoritative outcome.
+- Verify the enabled layer uses the same domain/operation contract as other surfaces and cannot bypass it through generic saves, hydrated state, direct JSON fields or offline replay.
+- Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
+
+Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.

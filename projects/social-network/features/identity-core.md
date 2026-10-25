@@ -1,12 +1,16 @@
 # Social Network: Identity Core
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#identity-core). Observed identity: [`liberusoftware/identity-core`](../../../modules/source/liberusoftware--identity-core.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-social-network-identity-core`
 **Application:** Social Network  
 **Capability group:** Identity Core  
 **Source scope:** [SOCIAL-NETWORK.md](../SOCIAL-NETWORK.md)  
-**Architecture:** [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md) · [API.md](../SOCIAL-NETWORK.md) · [FILAMENT.md](../SOCIAL-NETWORK.md) · [LIVEWIRE.md](../SOCIAL-NETWORK.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

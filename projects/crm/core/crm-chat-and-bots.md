@@ -1,8 +1,12 @@
 # CRM: Crm Chat And Bots Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-chat-and-bots). Observed identity: [`liberusoftware/module-crm-chat-and-bots`](../../../modules/source/liberusoftware--module-crm-chat-and-bots.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-crm-chat-and-bots`
+**Design package identifier:** `module-crm-crm-chat-and-bots`
 **Domain specification:** [Crm Chat And Bots](../features/crm-chat-and-bots.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

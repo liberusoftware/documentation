@@ -1,5 +1,9 @@
 # Attribution Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#attribution). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-attribution-flutter
 **Matching core package:** module-crm-attribution ([implementation](../core/attribution.md))
 **Matching API package:** module-crm-attribution-api ([contract](../api/attribution.md))

@@ -1,8 +1,12 @@
 # Automation: Module Automation Data Processing Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-automation-data-processing). Observed identity: [`liberusoftware/automation-data-processing`](../../../modules/source/liberusoftware--automation-data-processing.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-automation-module-automation-data-processing`
+**Design package identifier:** `module-automation-module-automation-data-processing`
 **Domain specification:** [Module Automation Data Processing](../features/module-automation-data-processing.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,12 +1,16 @@
 # Social Network: Social Network Feed Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-feed). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-social-network-social-network-feed-nuxt`
 **Matching domain module:** `social-network-feed`
 **Application:** Social Network
 **Source feature:** [Social Network Feed](../features/social-network-feed.md)
-**Architecture:** [NUXT.md](../SOCIAL-NETWORK.md) · [API.md](../SOCIAL-NETWORK.md) · [Matching API module](../api/social-network-feed.md) · [MODULES.md](../SOCIAL-NETWORK.md) · [TESTING.md](../SOCIAL-NETWORK.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/social-network-feed.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

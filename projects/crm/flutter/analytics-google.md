@@ -1,5 +1,9 @@
 # Analytics Google Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#analytics-google). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-analytics-google-flutter
 **Matching core package:** module-crm-analytics-google ([implementation](../core/analytics-google.md))
 **Matching API package:** module-crm-analytics-google-api ([contract](../api/analytics-google.md))

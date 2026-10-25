@@ -1,8 +1,12 @@
 # Accounting: Accounting Chart Of Accounts Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-chart-of-accounts). Observed identity: [`liberusoftware/module-accounting-chart-of-accounts`](../../../modules/source/liberusoftware--module-accounting-chart-of-accounts.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-chart-of-accounts`
+**Design package identifier:** `module-accounting-accounting-chart-of-accounts`
 **Domain specification:** [Accounting Chart Of Accounts](../features/accounting-chart-of-accounts.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

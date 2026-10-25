@@ -1,5 +1,9 @@
 # Views And Query Builder React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#views-and-query-builder). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-views-and-query-builder-react-native
 **Matching core package:** module-cms-views-and-query-builder ([implementation](../core/views-and-query-builder.md))
 **Matching API package:** module-cms-views-and-query-builder-api ([contract](../api/views-and-query-builder.md))

@@ -1,12 +1,16 @@
 # CRM: Crm Ai Reception And Conversation
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-ai-reception-and-conversation). Observed identity: [`liberusoftware/module-crm-ai-reception-and-conversation`](../../../modules/source/liberusoftware--module-crm-ai-reception-and-conversation.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-crm-crm-ai-reception-and-conversation`
 **Application:** CRM  
 **Capability group:** Crm Ai Reception And Conversation  
 **Source scope:** [CRM.md](../CRM.md)  
-**Architecture:** [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md) · [API.md](../CRM.md) · [FILAMENT.md](../CRM.md) · [LIVEWIRE.md](../CRM.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 

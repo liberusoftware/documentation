@@ -1,5 +1,9 @@
 # Crm Agency Workspace Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-agency-workspace). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-agency-workspace-flutter
 **Matching core package:** module-crm-crm-agency-workspace ([implementation](../core/crm-agency-workspace.md))
 **Matching API package:** module-crm-crm-agency-workspace-api ([contract](../api/crm-agency-workspace.md))

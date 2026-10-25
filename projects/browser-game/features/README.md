@@ -1,50 +1,71 @@
 # Browser Game Feature Specifications
 
+<!-- catalogue-status:start -->
+This index preserves **61 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
-- [Activity Comments](activity-comments.md) — `module-browser-game-activity-comments`
-- [Analytics Core](analytics-core.md) — `module-browser-game-analytics-core`
-- [Analytics Google](analytics-google.md) — `module-browser-game-analytics-google`
-- [Analytics Meta](analytics-meta.md) — `module-browser-game-analytics-meta`
-- [Api Access](api-access.md) — `module-browser-game-api-access`
-- [Application](application.md) — `module-browser-game-application`
-- [Audit](audit.md) — `module-browser-game-audit`
-- [Browser Game Accounts](browser-game-accounts.md) — `module-browser-game-browser-game-accounts`
-- [Browser Game Characters](browser-game-characters.md) — `module-browser-game-browser-game-characters`
-- [Browser Game Collections](browser-game-collections.md) — `module-browser-game-browser-game-collections`
-- [Browser Game Combat](browser-game-combat.md) — `module-browser-game-browser-game-combat`
-- [Browser Game Commerce](browser-game-commerce.md) — `module-browser-game-browser-game-commerce`
-- [Browser Game Competition](browser-game-competition.md) — `module-browser-game-browser-game-competition`
-- [Browser Game Crafting](browser-game-crafting.md) — `module-browser-game-browser-game-crafting`
-- [Browser Game Economy](browser-game-economy.md) — `module-browser-game-browser-game-economy`
-- [Browser Game Game Core](browser-game-game-core.md) — `module-browser-game-browser-game-game-core`
-- [Browser Game Items](browser-game-items.md) — `module-browser-game-browser-game-items`
-- [Browser Game Live Ops](browser-game-live-ops.md) — `module-browser-game-browser-game-live-ops`
-- [Browser Game Moderation And Analytics](browser-game-moderation-and-analytics.md) — `module-browser-game-browser-game-moderation-and-analytics`
-- [Browser Game Quests](browser-game-quests.md) — `module-browser-game-browser-game-quests`
-- [Browser Game Social](browser-game-social.md) — `module-browser-game-browser-game-social`
-- [Browser Game World](browser-game-world.md) — `module-browser-game-browser-game-world`
-- [Currency Context](currency-context.md) — `module-browser-game-currency-context`
-- [Developer Experience](developer-experience.md) — `module-browser-game-developer-experience`
-- [Feature Flags](feature-flags.md) — `module-browser-game-feature-flags`
-- [Files Media](files-media.md) — `module-browser-game-files-media`
-- [Identity Core](identity-core.md) — `module-browser-game-identity-core`
-- [Identity Socialstream](identity-socialstream.md) — `module-browser-game-identity-socialstream`
-- [Import Export](import-export.md) — `module-browser-game-import-export`
-- [Integrations](integrations.md) — `module-browser-game-integrations`
-- [Jetstream Bridge](jetstream-bridge.md) — `module-browser-game-jetstream-bridge`
-- [Localization Core](localization-core.md) — `module-browser-game-localization-core`
-- [Localization Mymemory](localization-mymemory.md) — `module-browser-game-localization-mymemory`
-- [Module Manager](module-manager.md) — `module-browser-game-module-manager`
-- [Notifications](notifications.md) — `module-browser-game-notifications`
-- [Observability](observability.md) — `module-browser-game-observability`
-- [Organizations Teams](organizations-teams.md) — `module-browser-game-organizations-teams`
-- [Profiles](profiles.md) — `module-browser-game-profiles`
-- [Roles Permissions](roles-permissions.md) — `module-browser-game-roles-permissions`
-- [Scheduler Queues](scheduler-queues.md) — `module-browser-game-scheduler-queues`
-- [Search](search.md) — `module-browser-game-search`
-- [Sessions Devices](sessions-devices.md) — `module-browser-game-sessions-devices`
-- [Settings](settings.md) — `module-browser-game-settings`
-- [Theme Support](theme-support.md) — `module-browser-game-theme-support`
-- [Two Factor Authentication](two-factor-authentication.md) — `module-browser-game-two-factor-authentication`
-- [Webhooks](webhooks.md) — `module-browser-game-webhooks`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Accounts](accounts.md) | [liberusoftware/module-browser-game-accounts](../../../modules/source/liberusoftware--module-browser-game-accounts.md) | [core](../core/accounts.md) · [api](../api/accounts.md) · [nextjs](../nextjs/accounts.md) |
+| [Activity Comments](activity-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core](analytics-core.md) | [liberusoftware/analytics-core](../../../modules/source/liberusoftware--analytics-core.md) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google](analytics-google.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta](analytics-meta.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access](api-access.md) | [liberusoftware/api-access](../../../modules/source/liberusoftware--api-access.md) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application](application.md) | [liberusoftware/application](../../../modules/source/liberusoftware--application.md) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit](audit.md) | [liberusoftware/audit](../../../modules/source/liberusoftware--audit.md) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Browser Game Accounts](browser-game-accounts.md) | [liberusoftware/module-browser-game-accounts](../../../modules/source/liberusoftware--module-browser-game-accounts.md) | [core](../core/browser-game-accounts.md) · [api](../api/browser-game-accounts.md) · [nextjs](../nextjs/browser-game-accounts.md) |
+| [Browser Game Characters](browser-game-characters.md) | [liberusoftware/module-browser-game-characters](../../../modules/source/liberusoftware--module-browser-game-characters.md) | [core](../core/browser-game-characters.md) · [api](../api/browser-game-characters.md) · [nextjs](../nextjs/browser-game-characters.md) |
+| [Browser Game Collections](browser-game-collections.md) | [liberusoftware/module-browser-game-collections](../../../modules/source/liberusoftware--module-browser-game-collections.md) | [core](../core/browser-game-collections.md) · [api](../api/browser-game-collections.md) · [nextjs](../nextjs/browser-game-collections.md) |
+| [Browser Game Combat](browser-game-combat.md) | [liberusoftware/module-browser-game-combat](../../../modules/source/liberusoftware--module-browser-game-combat.md) | [core](../core/browser-game-combat.md) · [api](../api/browser-game-combat.md) · [nextjs](../nextjs/browser-game-combat.md) |
+| [Browser Game Commerce](browser-game-commerce.md) | [liberusoftware/module-browser-game-commerce](../../../modules/source/liberusoftware--module-browser-game-commerce.md) | [core](../core/browser-game-commerce.md) · [api](../api/browser-game-commerce.md) · [nextjs](../nextjs/browser-game-commerce.md) |
+| [Browser Game Competition](browser-game-competition.md) | [liberusoftware/module-browser-game-competition](../../../modules/source/liberusoftware--module-browser-game-competition.md) | [core](../core/browser-game-competition.md) · [api](../api/browser-game-competition.md) · [nextjs](../nextjs/browser-game-competition.md) |
+| [Browser Game Crafting](browser-game-crafting.md) | [liberusoftware/module-browser-game-crafting](../../../modules/source/liberusoftware--module-browser-game-crafting.md) | [core](../core/browser-game-crafting.md) · [api](../api/browser-game-crafting.md) · [nextjs](../nextjs/browser-game-crafting.md) |
+| [Browser Game Economy](browser-game-economy.md) | [liberusoftware/module-browser-game-economy](../../../modules/source/liberusoftware--module-browser-game-economy.md) | [core](../core/browser-game-economy.md) · [api](../api/browser-game-economy.md) · [nextjs](../nextjs/browser-game-economy.md) |
+| [Browser Game Game Core](browser-game-game-core.md) | [liberusoftware/module-browser-game-game-core](../../../modules/source/liberusoftware--module-browser-game-game-core.md) | [core](../core/browser-game-game-core.md) · [api](../api/browser-game-game-core.md) · [nextjs](../nextjs/browser-game-game-core.md) |
+| [Browser Game Items](browser-game-items.md) | [liberusoftware/module-browser-game-items](../../../modules/source/liberusoftware--module-browser-game-items.md) | [core](../core/browser-game-items.md) · [api](../api/browser-game-items.md) · [nextjs](../nextjs/browser-game-items.md) |
+| [Browser Game Live Ops](browser-game-live-ops.md) | [liberusoftware/module-browser-game-live-ops](../../../modules/source/liberusoftware--module-browser-game-live-ops.md) | [core](../core/browser-game-live-ops.md) · [api](../api/browser-game-live-ops.md) · [nextjs](../nextjs/browser-game-live-ops.md) |
+| [Browser Game Moderation And Analytics](browser-game-moderation-and-analytics.md) | [liberusoftware/module-browser-game-moderation-and-analytics](../../../modules/source/liberusoftware--module-browser-game-moderation-and-analytics.md) | [core](../core/browser-game-moderation-and-analytics.md) · [api](../api/browser-game-moderation-and-analytics.md) · [nextjs](../nextjs/browser-game-moderation-and-analytics.md) |
+| [Browser Game Quests](browser-game-quests.md) | [liberusoftware/module-browser-game-quests](../../../modules/source/liberusoftware--module-browser-game-quests.md) | [core](../core/browser-game-quests.md) · [api](../api/browser-game-quests.md) · [nextjs](../nextjs/browser-game-quests.md) |
+| [Browser Game Social](browser-game-social.md) | [liberusoftware/module-browser-game-social](../../../modules/source/liberusoftware--module-browser-game-social.md) | [core](../core/browser-game-social.md) · [api](../api/browser-game-social.md) · [nextjs](../nextjs/browser-game-social.md) |
+| [Browser Game World](browser-game-world.md) | [liberusoftware/module-browser-game-world](../../../modules/source/liberusoftware--module-browser-game-world.md) | [core](../core/browser-game-world.md) · [api](../api/browser-game-world.md) · [nextjs](../nextjs/browser-game-world.md) |
+| [Characters](characters.md) | [liberusoftware/module-browser-game-characters](../../../modules/source/liberusoftware--module-browser-game-characters.md) | [core](../core/characters.md) · [api](../api/characters.md) · [nextjs](../nextjs/characters.md) |
+| [Collections](collections.md) | [liberusoftware/module-browser-game-collections](../../../modules/source/liberusoftware--module-browser-game-collections.md) | [core](../core/collections.md) · [api](../api/collections.md) · [nextjs](../nextjs/collections.md) |
+| [Combat](combat.md) | [liberusoftware/module-browser-game-combat](../../../modules/source/liberusoftware--module-browser-game-combat.md) | [core](../core/combat.md) · [api](../api/combat.md) · [nextjs](../nextjs/combat.md) |
+| [Commerce](commerce.md) | [liberusoftware/module-browser-game-commerce](../../../modules/source/liberusoftware--module-browser-game-commerce.md) | [core](../core/commerce.md) · [api](../api/commerce.md) · [nextjs](../nextjs/commerce.md) |
+| [Competition](competition.md) | [liberusoftware/module-browser-game-competition](../../../modules/source/liberusoftware--module-browser-game-competition.md) | [core](../core/competition.md) · [api](../api/competition.md) · [nextjs](../nextjs/competition.md) |
+| [Crafting](crafting.md) | [liberusoftware/module-browser-game-crafting](../../../modules/source/liberusoftware--module-browser-game-crafting.md) | [core](../core/crafting.md) · [api](../api/crafting.md) · [nextjs](../nextjs/crafting.md) |
+| [Currency Context](currency-context.md) | [liberusoftware/currency-context](../../../modules/source/liberusoftware--currency-context.md) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience](developer-experience.md) | [liberusoftware/developer-experience](../../../modules/source/liberusoftware--developer-experience.md) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Economy](economy.md) | [liberusoftware/module-browser-game-economy](../../../modules/source/liberusoftware--module-browser-game-economy.md) | [core](../core/economy.md) · [api](../api/economy.md) · [nextjs](../nextjs/economy.md) |
+| [Feature Flags](feature-flags.md) | [liberusoftware/feature-flags](../../../modules/source/liberusoftware--feature-flags.md) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media](files-media.md) | [liberusoftware/files-media](../../../modules/source/liberusoftware--files-media.md) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Game Core](game-core.md) | [liberusoftware/module-browser-game-game-core](../../../modules/source/liberusoftware--module-browser-game-game-core.md) | [core](../core/game-core.md) · [api](../api/game-core.md) · [nextjs](../nextjs/game-core.md) |
+| [Identity Core](identity-core.md) | [liberusoftware/identity-core](../../../modules/source/liberusoftware--identity-core.md) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream](identity-socialstream.md) | [liberusoftware/identity-socialstream](../../../modules/source/liberusoftware--identity-socialstream.md) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export](import-export.md) | [liberusoftware/import-export](../../../modules/source/liberusoftware--import-export.md) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations](integrations.md) | [liberusoftware/integrations](../../../modules/source/liberusoftware--integrations.md) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Items](items.md) | [liberusoftware/module-browser-game-items](../../../modules/source/liberusoftware--module-browser-game-items.md) | [core](../core/items.md) · [api](../api/items.md) · [nextjs](../nextjs/items.md) |
+| [Jetstream Bridge](jetstream-bridge.md) | [liberusoftware/jetstream-bridge](../../../modules/source/liberusoftware--jetstream-bridge.md) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Live Ops](live-ops.md) | [liberusoftware/module-browser-game-live-ops](../../../modules/source/liberusoftware--module-browser-game-live-ops.md) | [core](../core/live-ops.md) · [api](../api/live-ops.md) · [nextjs](../nextjs/live-ops.md) |
+| [Localization Core](localization-core.md) | [liberusoftware/localization-core](../../../modules/source/liberusoftware--localization-core.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory](localization-mymemory.md) | [liberusoftware/localization-mymemory](../../../modules/source/liberusoftware--localization-mymemory.md) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Moderation and Analytics](moderation-and-analytics.md) | [liberusoftware/module-browser-game-moderation-and-analytics](../../../modules/source/liberusoftware--module-browser-game-moderation-and-analytics.md) | [core](../core/moderation-and-analytics.md) · [api](../api/moderation-and-analytics.md) · [nextjs](../nextjs/moderation-and-analytics.md) |
+| [Module Manager](module-manager.md) | [liberusoftware/module-manager](../../../modules/source/liberusoftware--module-manager.md) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications](notifications.md) | [liberusoftware/notifications](../../../modules/source/liberusoftware--notifications.md) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability](observability.md) | [liberusoftware/observability](../../../modules/source/liberusoftware--observability.md) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams](organizations-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles](profiles.md) | [liberusoftware/profiles](../../../modules/source/liberusoftware--profiles.md) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Quests](quests.md) | [liberusoftware/module-browser-game-quests](../../../modules/source/liberusoftware--module-browser-game-quests.md) | [core](../core/quests.md) · [api](../api/quests.md) · [nextjs](../nextjs/quests.md) |
+| [Roles Permissions](roles-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues](scheduler-queues.md) | [liberusoftware/scheduler-queues](../../../modules/source/liberusoftware--scheduler-queues.md) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search](search.md) | [liberusoftware/search](../../../modules/source/liberusoftware--search.md) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices](sessions-devices.md) | [liberusoftware/sessions-devices](../../../modules/source/liberusoftware--sessions-devices.md) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings](settings.md) | [liberusoftware/settings](../../../modules/source/liberusoftware--settings.md) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Social](social.md) | [liberusoftware/module-browser-game-social](../../../modules/source/liberusoftware--module-browser-game-social.md) | [core](../core/social.md) · [api](../api/social.md) · [nextjs](../nextjs/social.md) |
+| [Theme Support](theme-support.md) | [liberusoftware/theme-support](../../../modules/source/liberusoftware--theme-support.md) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication](two-factor-authentication.md) | [liberusoftware/two-factor-authentication](../../../modules/source/liberusoftware--two-factor-authentication.md) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks](webhooks.md) | [liberusoftware/webhooks](../../../modules/source/liberusoftware--webhooks.md) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [World](world.md) | [liberusoftware/module-browser-game-world](../../../modules/source/liberusoftware--module-browser-game-world.md) | [core](../core/world.md) · [api](../api/world.md) · [nextjs](../nextjs/world.md) |

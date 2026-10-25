@@ -1,50 +1,69 @@
 # Social Network Vue + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **59 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments Vue](activity-comments.md) — `module-social-network-activity-comments-vue-inertia`
-- [Analytics Core Vue](analytics-core.md) — `module-social-network-analytics-core-vue-inertia`
-- [Analytics Google Vue](analytics-google.md) — `module-social-network-analytics-google-vue-inertia`
-- [Analytics Meta Vue](analytics-meta.md) — `module-social-network-analytics-meta-vue-inertia`
-- [Api Access Vue](api-access.md) — `module-social-network-api-access-vue-inertia`
-- [Application Vue](application.md) — `module-social-network-application-vue-inertia`
-- [Audit Vue](audit.md) — `module-social-network-audit-vue-inertia`
-- [Currency Context Vue](currency-context.md) — `module-social-network-currency-context-vue-inertia`
-- [Developer Experience Vue](developer-experience.md) — `module-social-network-developer-experience-vue-inertia`
-- [Feature Flags Vue](feature-flags.md) — `module-social-network-feature-flags-vue-inertia`
-- [Files Media Vue](files-media.md) — `module-social-network-files-media-vue-inertia`
-- [Identity Core Vue](identity-core.md) — `module-social-network-identity-core-vue-inertia`
-- [Identity Socialstream Vue](identity-socialstream.md) — `module-social-network-identity-socialstream-vue-inertia`
-- [Import Export Vue](import-export.md) — `module-social-network-import-export-vue-inertia`
-- [Integrations Vue](integrations.md) — `module-social-network-integrations-vue-inertia`
-- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-social-network-jetstream-bridge-vue-inertia`
-- [Localization Core Vue](localization-core.md) — `module-social-network-localization-core-vue-inertia`
-- [Localization Mymemory Vue](localization-mymemory.md) — `module-social-network-localization-mymemory-vue-inertia`
-- [Module Manager Vue](module-manager.md) — `module-social-network-module-manager-vue-inertia`
-- [Notifications Vue](notifications.md) — `module-social-network-notifications-vue-inertia`
-- [Observability Vue](observability.md) — `module-social-network-observability-vue-inertia`
-- [Organizations Teams Vue](organizations-teams.md) — `module-social-network-organizations-teams-vue-inertia`
-- [Profiles Vue](profiles.md) — `module-social-network-profiles-vue-inertia`
-- [Roles Permissions Vue](roles-permissions.md) — `module-social-network-roles-permissions-vue-inertia`
-- [Scheduler Queues Vue](scheduler-queues.md) — `module-social-network-scheduler-queues-vue-inertia`
-- [Search Vue](search.md) — `module-social-network-search-vue-inertia`
-- [Sessions Devices Vue](sessions-devices.md) — `module-social-network-sessions-devices-vue-inertia`
-- [Settings Vue](settings.md) — `module-social-network-settings-vue-inertia`
-- [Social Network Analytics Vue](social-network-analytics.md) — `module-social-network-social-network-analytics-vue-inertia`
-- [Social Network Communities Vue](social-network-communities.md) — `module-social-network-social-network-communities-vue-inertia`
-- [Social Network Discovery Vue](social-network-discovery.md) — `module-social-network-social-network-discovery-vue-inertia`
-- [Social Network Engagement Vue](social-network-engagement.md) — `module-social-network-social-network-engagement-vue-inertia`
-- [Social Network Events Vue](social-network-events.md) — `module-social-network-social-network-events-vue-inertia`
-- [Social Network Federation Vue](social-network-federation.md) — `module-social-network-social-network-federation-vue-inertia`
-- [Social Network Feed Vue](social-network-feed.md) — `module-social-network-social-network-feed-vue-inertia`
-- [Social Network Media Vue](social-network-media.md) — `module-social-network-social-network-media-vue-inertia`
-- [Social Network Messaging Vue](social-network-messaging.md) — `module-social-network-social-network-messaging-vue-inertia`
-- [Social Network Moderation Vue](social-network-moderation.md) — `module-social-network-social-network-moderation-vue-inertia`
-- [Social Network Notifications Vue](social-network-notifications.md) — `module-social-network-social-network-notifications-vue-inertia`
-- [Social Network Profiles Vue](social-network-profiles.md) — `module-social-network-social-network-profiles-vue-inertia`
-- [Social Network Publishing Vue](social-network-publishing.md) — `module-social-network-social-network-publishing-vue-inertia`
-- [Social Network Social Core Vue](social-network-social-core.md) — `module-social-network-social-network-social-core-vue-inertia`
-- [Social Network Social Graph Vue](social-network-social-graph.md) — `module-social-network-social-network-social-graph-vue-inertia`
-- [Theme Support Vue](theme-support.md) — `module-social-network-theme-support-vue-inertia`
-- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-social-network-two-factor-authentication-vue-inertia`
-- [Webhooks Vue](webhooks.md) — `module-social-network-webhooks-vue-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Vue + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Vue + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Vue + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Vue + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Analytics Vue + Inertia](analytics.md) | [Target/source map](../SOURCE-MAPPING.md#analytics) | [core](../core/analytics.md) · [api](../api/analytics.md) · [nextjs](../nextjs/analytics.md) |
+| [Api Access Vue + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Vue + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Vue + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Communities Vue + Inertia](communities.md) | [Target/source map](../SOURCE-MAPPING.md#communities) | [core](../core/communities.md) · [api](../api/communities.md) · [nextjs](../nextjs/communities.md) |
+| [Currency Context Vue + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Vue + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Discovery Vue + Inertia](discovery.md) | [Target/source map](../SOURCE-MAPPING.md#discovery) | [core](../core/discovery.md) · [api](../api/discovery.md) · [nextjs](../nextjs/discovery.md) |
+| [Engagement Vue + Inertia](engagement.md) | [Target/source map](../SOURCE-MAPPING.md#engagement) | [core](../core/engagement.md) · [api](../api/engagement.md) · [nextjs](../nextjs/engagement.md) |
+| [Events Vue + Inertia](events.md) | [Target/source map](../SOURCE-MAPPING.md#events) | [core](../core/events.md) · [api](../api/events.md) · [nextjs](../nextjs/events.md) |
+| [Feature Flags Vue + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Federation Vue + Inertia](federation.md) | [Target/source map](../SOURCE-MAPPING.md#federation) | [core](../core/federation.md) · [api](../api/federation.md) · [nextjs](../nextjs/federation.md) |
+| [Feed Vue + Inertia](feed.md) | [Target/source map](../SOURCE-MAPPING.md#feed) | [core](../core/feed.md) · [api](../api/feed.md) · [nextjs](../nextjs/feed.md) |
+| [Files Media Vue + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Vue + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Vue + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Vue + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Vue + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Vue + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Localization Core Vue + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Vue + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Media Vue + Inertia](media.md) | [Target/source map](../SOURCE-MAPPING.md#media) | [core](../core/media.md) · [api](../api/media.md) · [nextjs](../nextjs/media.md) |
+| [Messaging Vue + Inertia](messaging.md) | [Target/source map](../SOURCE-MAPPING.md#messaging) | [core](../core/messaging.md) · [api](../api/messaging.md) · [nextjs](../nextjs/messaging.md) |
+| [Moderation Vue + Inertia](moderation.md) | [Target/source map](../SOURCE-MAPPING.md#moderation) | [core](../core/moderation.md) · [api](../api/moderation.md) · [nextjs](../nextjs/moderation.md) |
+| [Module Manager Vue + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Vue + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Vue + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Vue + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Profiles Vue + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Publishing Vue + Inertia](publishing.md) | [Target/source map](../SOURCE-MAPPING.md#publishing) | [core](../core/publishing.md) · [api](../api/publishing.md) · [nextjs](../nextjs/publishing.md) |
+| [Roles Permissions Vue + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Vue + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Vue + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Vue + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Vue + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Social Core Vue + Inertia](social-core.md) | [Target/source map](../SOURCE-MAPPING.md#social-core) | [core](../core/social-core.md) · [api](../api/social-core.md) · [nextjs](../nextjs/social-core.md) |
+| [Social Graph Vue + Inertia](social-graph.md) | [Target/source map](../SOURCE-MAPPING.md#social-graph) | [core](../core/social-graph.md) · [api](../api/social-graph.md) · [nextjs](../nextjs/social-graph.md) |
+| [Social Network Analytics Vue + Inertia](social-network-analytics.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-analytics) | [core](../core/social-network-analytics.md) · [api](../api/social-network-analytics.md) · [nextjs](../nextjs/social-network-analytics.md) |
+| [Social Network Communities Vue + Inertia](social-network-communities.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-communities) | [core](../core/social-network-communities.md) · [api](../api/social-network-communities.md) · [nextjs](../nextjs/social-network-communities.md) |
+| [Social Network Discovery Vue + Inertia](social-network-discovery.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-discovery) | [core](../core/social-network-discovery.md) · [api](../api/social-network-discovery.md) · [nextjs](../nextjs/social-network-discovery.md) |
+| [Social Network Engagement Vue + Inertia](social-network-engagement.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-engagement) | [core](../core/social-network-engagement.md) · [api](../api/social-network-engagement.md) · [nextjs](../nextjs/social-network-engagement.md) |
+| [Social Network Events Vue + Inertia](social-network-events.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-events) | [core](../core/social-network-events.md) · [api](../api/social-network-events.md) · [nextjs](../nextjs/social-network-events.md) |
+| [Social Network Federation Vue + Inertia](social-network-federation.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-federation) | [core](../core/social-network-federation.md) · [api](../api/social-network-federation.md) · [nextjs](../nextjs/social-network-federation.md) |
+| [Social Network Feed Vue + Inertia](social-network-feed.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-feed) | [core](../core/social-network-feed.md) · [api](../api/social-network-feed.md) · [nextjs](../nextjs/social-network-feed.md) |
+| [Social Network Media Vue + Inertia](social-network-media.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-media) | [core](../core/social-network-media.md) · [api](../api/social-network-media.md) · [nextjs](../nextjs/social-network-media.md) |
+| [Social Network Messaging Vue + Inertia](social-network-messaging.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-messaging) | [core](../core/social-network-messaging.md) · [api](../api/social-network-messaging.md) · [nextjs](../nextjs/social-network-messaging.md) |
+| [Social Network Moderation Vue + Inertia](social-network-moderation.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-moderation) | [core](../core/social-network-moderation.md) · [api](../api/social-network-moderation.md) · [nextjs](../nextjs/social-network-moderation.md) |
+| [Social Network Notifications Vue + Inertia](social-network-notifications.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-notifications) | [core](../core/social-network-notifications.md) · [api](../api/social-network-notifications.md) · [nextjs](../nextjs/social-network-notifications.md) |
+| [Social Network Profiles Vue + Inertia](social-network-profiles.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-profiles) | [core](../core/social-network-profiles.md) · [api](../api/social-network-profiles.md) · [nextjs](../nextjs/social-network-profiles.md) |
+| [Social Network Publishing Vue + Inertia](social-network-publishing.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-publishing) | [core](../core/social-network-publishing.md) · [api](../api/social-network-publishing.md) · [nextjs](../nextjs/social-network-publishing.md) |
+| [Social Network Social Core Vue + Inertia](social-network-social-core.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-social-core) | [core](../core/social-network-social-core.md) · [api](../api/social-network-social-core.md) · [nextjs](../nextjs/social-network-social-core.md) |
+| [Social Network Social Graph Vue + Inertia](social-network-social-graph.md) | [Target/source map](../SOURCE-MAPPING.md#social-network-social-graph) | [core](../core/social-network-social-graph.md) · [api](../api/social-network-social-graph.md) · [nextjs](../nextjs/social-network-social-graph.md) |
+| [Theme Support Vue + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Vue + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Vue + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

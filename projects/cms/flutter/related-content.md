@@ -1,5 +1,9 @@
 # Related Content Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#related-content). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-related-content-flutter
 **Matching core package:** module-cms-related-content ([implementation](../core/related-content.md))
 **Matching API package:** module-cms-related-content-api ([contract](../api/related-content.md))

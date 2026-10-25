@@ -1,5 +1,9 @@
 # Projects And Jobs React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#projects-and-jobs). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-projects-and-jobs-react-native
 **Matching core package:** module-accounting-projects-and-jobs ([implementation](../core/projects-and-jobs.md))
 **Matching API package:** module-accounting-projects-and-jobs-api ([contract](../api/projects-and-jobs.md))

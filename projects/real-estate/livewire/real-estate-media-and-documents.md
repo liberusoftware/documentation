@@ -1,12 +1,16 @@
 # Real Estate: Real Estate Media And Documents Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-media-and-documents). Observed identity: [`liberusoftware/real-estate-media-and-documents-livewire`](../../../modules/source/liberusoftware--real-estate-media-and-documents-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-real-estate-real-estate-media-and-documents-livewire`  
 **Matching domain module:** `real-estate-media-and-documents`  
 **Application:** Real Estate  
 **Source feature:** [Real Estate Media And Documents](../features/real-estate-media-and-documents.md)  
-**Architecture:** [LIVEWIRE.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

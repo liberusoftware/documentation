@@ -1,6 +1,10 @@
 # Boilerplate: Notifications domain packages
 
-**Composer package:** `module-notifications`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#notifications). Observed identity: [`liberusoftware/notifications`](../../../modules/source/liberusoftware--notifications.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-notifications`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Templates, channels, preferences, inbox, delivery status, retries, quiet hours, and localization.
 

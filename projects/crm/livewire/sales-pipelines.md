@@ -1,12 +1,16 @@
 # CRM: Sales Pipelines Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-pipelines). Observed identity: [`liberusoftware/module-crm-sales-pipelines-livewire`](../../../modules/source/liberusoftware--module-crm-sales-pipelines-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-sales-pipelines-livewire`  
 **Matching domain module:** `crm-sales-pipelines`  
 **Application:** CRM  
 **Source feature:** [Sales Pipelines](../features/sales-pipelines.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
@@ -60,3 +64,5 @@ This optional Livewire 4 presentation package provides interactive server-driven
 - Package identity, namespace, aliases, and dependency match `crm-sales-pipelines` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.
+
+Read the [source-backed sales-pipeline walkthrough](../guides/SALES-PIPELINES.md) for actual actions, routes, permissions, UI behavior and differences from the target design.

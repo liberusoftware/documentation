@@ -1,5 +1,9 @@
 # Inventory Counting Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#inventory-counting). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-inventory-counting-flutter
 **Matching core package:** module-ecommerce-inventory-counting ([implementation](../core/inventory-counting.md))
 **Matching API package:** module-ecommerce-inventory-counting-api ([contract](../api/inventory-counting.md))

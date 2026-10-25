@@ -1,5 +1,9 @@
 # Crm Marketing Development Funds React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-marketing-development-funds). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-marketing-development-funds-react-native
 **Matching core package:** module-crm-crm-marketing-development-funds ([implementation](../core/crm-marketing-development-funds.md))
 **Matching API package:** module-crm-crm-marketing-development-funds-api ([contract](../api/crm-marketing-development-funds.md))

@@ -1,8 +1,12 @@
 # Accounting: Accounting Payroll Journals Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-payroll-journals). Observed identity: [`liberusoftware/module-accounting-payroll-journals`](../../../modules/source/liberusoftware--module-accounting-payroll-journals.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-payroll-journals`
+**Design package identifier:** `module-accounting-accounting-payroll-journals`
 **Domain specification:** [Accounting Payroll Journals](../features/accounting-payroll-journals.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

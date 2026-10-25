@@ -1,5 +1,9 @@
 # Crm Playbooks And Enablement Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-playbooks-and-enablement). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-playbooks-and-enablement-flutter
 **Matching core package:** module-crm-crm-playbooks-and-enablement ([implementation](../core/crm-playbooks-and-enablement.md))
 **Matching API package:** module-crm-crm-playbooks-and-enablement-api ([contract](../api/crm-playbooks-and-enablement.md))

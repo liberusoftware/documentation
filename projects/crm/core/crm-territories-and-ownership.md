@@ -1,8 +1,12 @@
 # CRM: Crm Territories And Ownership Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-territories-and-ownership). Observed identity: [`liberusoftware/module-crm-territories-and-ownership`](../../../modules/source/liberusoftware--module-crm-territories-and-ownership.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-crm-territories-and-ownership`
+**Design package identifier:** `module-crm-crm-territories-and-ownership`
 **Domain specification:** [Crm Territories And Ownership](../features/crm-territories-and-ownership.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

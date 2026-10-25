@@ -1,5 +1,9 @@
 # Control Panel Monitoring React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#control-panel-monitoring). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-control-panel-control-panel-monitoring-react-native
 **Matching core package:** module-control-panel-control-panel-monitoring ([implementation](../core/control-panel-monitoring.md))
 **Matching API package:** module-control-panel-control-panel-monitoring-api ([contract](../api/control-panel-monitoring.md))

@@ -1,50 +1,70 @@
 # Maintenance Vue + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **60 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments Vue](activity-comments.md) — `module-maintenance-activity-comments-vue-inertia`
-- [Analytics Core Vue](analytics-core.md) — `module-maintenance-analytics-core-vue-inertia`
-- [Analytics Google Vue](analytics-google.md) — `module-maintenance-analytics-google-vue-inertia`
-- [Analytics Meta Vue](analytics-meta.md) — `module-maintenance-analytics-meta-vue-inertia`
-- [Api Access Vue](api-access.md) — `module-maintenance-api-access-vue-inertia`
-- [Application Vue](application.md) — `module-maintenance-application-vue-inertia`
-- [Audit Vue](audit.md) — `module-maintenance-audit-vue-inertia`
-- [Currency Context Vue](currency-context.md) — `module-maintenance-currency-context-vue-inertia`
-- [Developer Experience Vue](developer-experience.md) — `module-maintenance-developer-experience-vue-inertia`
-- [Feature Flags Vue](feature-flags.md) — `module-maintenance-feature-flags-vue-inertia`
-- [Files Media Vue](files-media.md) — `module-maintenance-files-media-vue-inertia`
-- [Identity Core Vue](identity-core.md) — `module-maintenance-identity-core-vue-inertia`
-- [Identity Socialstream Vue](identity-socialstream.md) — `module-maintenance-identity-socialstream-vue-inertia`
-- [Import Export Vue](import-export.md) — `module-maintenance-import-export-vue-inertia`
-- [Integrations Vue](integrations.md) — `module-maintenance-integrations-vue-inertia`
-- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-maintenance-jetstream-bridge-vue-inertia`
-- [Localization Core Vue](localization-core.md) — `module-maintenance-localization-core-vue-inertia`
-- [Localization Mymemory Vue](localization-mymemory.md) — `module-maintenance-localization-mymemory-vue-inertia`
-- [Maintenance Maintenance Core Vue](maintenance-maintenance-core.md) — `module-maintenance-maintenance-maintenance-core-vue-inertia`
-- [Module Maintenance Assets Vue](module-maintenance-assets.md) — `module-maintenance-module-maintenance-assets-vue-inertia`
-- [Module Maintenance Commercial Vue](module-maintenance-commercial.md) — `module-maintenance-module-maintenance-commercial-vue-inertia`
-- [Module Maintenance Compliance Vue](module-maintenance-compliance.md) — `module-maintenance-module-maintenance-compliance-vue-inertia`
-- [Module Maintenance Core Vue](module-maintenance-core.md) — `module-maintenance-module-maintenance-core-vue-inertia`
-- [Module Maintenance Customers And Sites Vue](module-maintenance-customers-and-sites.md) — `module-maintenance-module-maintenance-customers-and-sites-vue-inertia`
-- [Module Maintenance Inspections Vue](module-maintenance-inspections.md) — `module-maintenance-module-maintenance-inspections-vue-inertia`
-- [Module Maintenance Inventory Vue](module-maintenance-inventory.md) — `module-maintenance-module-maintenance-inventory-vue-inertia`
-- [Module Maintenance Labor And Time Vue](module-maintenance-labor-and-time.md) — `module-maintenance-module-maintenance-labor-and-time-vue-inertia`
-- [Module Maintenance Portals Vue](module-maintenance-portals.md) — `module-maintenance-module-maintenance-portals-vue-inertia`
-- [Module Maintenance Preventative Maintenance Vue](module-maintenance-preventative-maintenance.md) — `module-maintenance-module-maintenance-preventative-maintenance-vue-inertia`
-- [Module Maintenance Procurement Vue](module-maintenance-procurement.md) — `module-maintenance-module-maintenance-procurement-vue-inertia`
-- [Module Maintenance Reporting Vue](module-maintenance-reporting.md) — `module-maintenance-module-maintenance-reporting-vue-inertia`
-- [Module Maintenance Scheduling Vue](module-maintenance-scheduling.md) — `module-maintenance-module-maintenance-scheduling-vue-inertia`
-- [Module Maintenance Work Orders Vue](module-maintenance-work-orders.md) — `module-maintenance-module-maintenance-work-orders-vue-inertia`
-- [Module Manager Vue](module-manager.md) — `module-maintenance-module-manager-vue-inertia`
-- [Notifications Vue](notifications.md) — `module-maintenance-notifications-vue-inertia`
-- [Observability Vue](observability.md) — `module-maintenance-observability-vue-inertia`
-- [Organizations Teams Vue](organizations-teams.md) — `module-maintenance-organizations-teams-vue-inertia`
-- [Profiles Vue](profiles.md) — `module-maintenance-profiles-vue-inertia`
-- [Roles Permissions Vue](roles-permissions.md) — `module-maintenance-roles-permissions-vue-inertia`
-- [Scheduler Queues Vue](scheduler-queues.md) — `module-maintenance-scheduler-queues-vue-inertia`
-- [Search Vue](search.md) — `module-maintenance-search-vue-inertia`
-- [Sessions Devices Vue](sessions-devices.md) — `module-maintenance-sessions-devices-vue-inertia`
-- [Settings Vue](settings.md) — `module-maintenance-settings-vue-inertia`
-- [Theme Support Vue](theme-support.md) — `module-maintenance-theme-support-vue-inertia`
-- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-maintenance-two-factor-authentication-vue-inertia`
-- [Webhooks Vue](webhooks.md) — `module-maintenance-webhooks-vue-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Vue + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Vue + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Vue + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Vue + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Vue + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Vue + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Assets Vue + Inertia](assets.md) | [Target/source map](../SOURCE-MAPPING.md#assets) | [core](../core/assets.md) · [api](../api/assets.md) · [nextjs](../nextjs/assets.md) |
+| [Audit Vue + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Commercial Vue + Inertia](commercial.md) | [Target/source map](../SOURCE-MAPPING.md#commercial) | [core](../core/commercial.md) · [api](../api/commercial.md) · [nextjs](../nextjs/commercial.md) |
+| [Compliance Vue + Inertia](compliance.md) | [Target/source map](../SOURCE-MAPPING.md#compliance) | [core](../core/compliance.md) · [api](../api/compliance.md) · [nextjs](../nextjs/compliance.md) |
+| [Currency Context Vue + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Customers and Sites Vue + Inertia](customers-and-sites.md) | [Target/source map](../SOURCE-MAPPING.md#customers-and-sites) | [core](../core/customers-and-sites.md) · [api](../api/customers-and-sites.md) · [nextjs](../nextjs/customers-and-sites.md) |
+| [Developer Experience Vue + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags Vue + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Vue + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Vue + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Vue + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Vue + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Inspections Vue + Inertia](inspections.md) | [Target/source map](../SOURCE-MAPPING.md#inspections) | [core](../core/inspections.md) · [api](../api/inspections.md) · [nextjs](../nextjs/inspections.md) |
+| [Integrations Vue + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Inventory Vue + Inertia](inventory.md) | [Target/source map](../SOURCE-MAPPING.md#inventory) | [core](../core/inventory.md) · [api](../api/inventory.md) · [nextjs](../nextjs/inventory.md) |
+| [Jetstream Bridge Vue + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Labor and Time Vue + Inertia](labor-and-time.md) | [Target/source map](../SOURCE-MAPPING.md#labor-and-time) | [core](../core/labor-and-time.md) · [api](../api/labor-and-time.md) · [nextjs](../nextjs/labor-and-time.md) |
+| [Localization Core Vue + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Vue + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Maintenance Core Vue + Inertia](maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#maintenance-core) | [core](../core/maintenance-core.md) · [api](../api/maintenance-core.md) · [nextjs](../nextjs/maintenance-core.md) |
+| [Maintenance Maintenance Core Vue + Inertia](maintenance-maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#maintenance-maintenance-core) | [core](../core/maintenance-maintenance-core.md) · [api](../api/maintenance-maintenance-core.md) · [nextjs](../nextjs/maintenance-maintenance-core.md) |
+| [Module Maintenance Assets Vue + Inertia](module-maintenance-assets.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-assets) | [core](../core/module-maintenance-assets.md) · [api](../api/module-maintenance-assets.md) · [nextjs](../nextjs/module-maintenance-assets.md) |
+| [Module Maintenance Commercial Vue + Inertia](module-maintenance-commercial.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-commercial) | [core](../core/module-maintenance-commercial.md) · [api](../api/module-maintenance-commercial.md) · [nextjs](../nextjs/module-maintenance-commercial.md) |
+| [Module Maintenance Compliance Vue + Inertia](module-maintenance-compliance.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-compliance) | [core](../core/module-maintenance-compliance.md) · [api](../api/module-maintenance-compliance.md) · [nextjs](../nextjs/module-maintenance-compliance.md) |
+| [Module Maintenance Core Vue + Inertia](module-maintenance-core.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-core) | [core](../core/module-maintenance-core.md) · [api](../api/module-maintenance-core.md) · [nextjs](../nextjs/module-maintenance-core.md) |
+| [Module Maintenance Customers And Sites Vue + Inertia](module-maintenance-customers-and-sites.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-customers-and-sites) | [core](../core/module-maintenance-customers-and-sites.md) · [api](../api/module-maintenance-customers-and-sites.md) · [nextjs](../nextjs/module-maintenance-customers-and-sites.md) |
+| [Module Maintenance Inspections Vue + Inertia](module-maintenance-inspections.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-inspections) | [core](../core/module-maintenance-inspections.md) · [api](../api/module-maintenance-inspections.md) · [nextjs](../nextjs/module-maintenance-inspections.md) |
+| [Module Maintenance Inventory Vue + Inertia](module-maintenance-inventory.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-inventory) | [core](../core/module-maintenance-inventory.md) · [api](../api/module-maintenance-inventory.md) · [nextjs](../nextjs/module-maintenance-inventory.md) |
+| [Module Maintenance Labor And Time Vue + Inertia](module-maintenance-labor-and-time.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-labor-and-time) | [core](../core/module-maintenance-labor-and-time.md) · [api](../api/module-maintenance-labor-and-time.md) · [nextjs](../nextjs/module-maintenance-labor-and-time.md) |
+| [Module Maintenance Portals Vue + Inertia](module-maintenance-portals.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-portals) | [core](../core/module-maintenance-portals.md) · [api](../api/module-maintenance-portals.md) · [nextjs](../nextjs/module-maintenance-portals.md) |
+| [Module Maintenance Preventative Maintenance Vue + Inertia](module-maintenance-preventative-maintenance.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-preventative-maintenance) | [core](../core/module-maintenance-preventative-maintenance.md) · [api](../api/module-maintenance-preventative-maintenance.md) · [nextjs](../nextjs/module-maintenance-preventative-maintenance.md) |
+| [Module Maintenance Procurement Vue + Inertia](module-maintenance-procurement.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-procurement) | [core](../core/module-maintenance-procurement.md) · [api](../api/module-maintenance-procurement.md) · [nextjs](../nextjs/module-maintenance-procurement.md) |
+| [Module Maintenance Reporting Vue + Inertia](module-maintenance-reporting.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-reporting) | [core](../core/module-maintenance-reporting.md) · [api](../api/module-maintenance-reporting.md) · [nextjs](../nextjs/module-maintenance-reporting.md) |
+| [Module Maintenance Scheduling Vue + Inertia](module-maintenance-scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-scheduling) | [core](../core/module-maintenance-scheduling.md) · [api](../api/module-maintenance-scheduling.md) · [nextjs](../nextjs/module-maintenance-scheduling.md) |
+| [Module Maintenance Work Orders Vue + Inertia](module-maintenance-work-orders.md) | [Target/source map](../SOURCE-MAPPING.md#module-maintenance-work-orders) | [core](../core/module-maintenance-work-orders.md) · [api](../api/module-maintenance-work-orders.md) · [nextjs](../nextjs/module-maintenance-work-orders.md) |
+| [Module Manager Vue + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Vue + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Vue + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Vue + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Portals Vue + Inertia](portals.md) | [Target/source map](../SOURCE-MAPPING.md#portals) | [core](../core/portals.md) · [api](../api/portals.md) · [nextjs](../nextjs/portals.md) |
+| [Preventative Maintenance Vue + Inertia](preventative-maintenance.md) | [Target/source map](../SOURCE-MAPPING.md#preventative-maintenance) | [core](../core/preventative-maintenance.md) · [api](../api/preventative-maintenance.md) · [nextjs](../nextjs/preventative-maintenance.md) |
+| [Procurement Vue + Inertia](procurement.md) | [Target/source map](../SOURCE-MAPPING.md#procurement) | [core](../core/procurement.md) · [api](../api/procurement.md) · [nextjs](../nextjs/procurement.md) |
+| [Profiles Vue + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Reporting Vue + Inertia](reporting.md) | [Target/source map](../SOURCE-MAPPING.md#reporting) | [core](../core/reporting.md) · [api](../api/reporting.md) · [nextjs](../nextjs/reporting.md) |
+| [Roles Permissions Vue + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Vue + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Scheduling Vue + Inertia](scheduling.md) | [Target/source map](../SOURCE-MAPPING.md#scheduling) | [core](../core/scheduling.md) · [api](../api/scheduling.md) · [nextjs](../nextjs/scheduling.md) |
+| [Search Vue + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Vue + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Vue + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Vue + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Vue + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Vue + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |
+| [Work Orders Vue + Inertia](work-orders.md) | [Target/source map](../SOURCE-MAPPING.md#work-orders) | [core](../core/work-orders.md) · [api](../api/work-orders.md) · [nextjs](../nextjs/work-orders.md) |

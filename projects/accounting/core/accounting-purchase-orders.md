@@ -1,8 +1,12 @@
 # Accounting: Accounting Purchase Orders Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-purchase-orders). Observed identity: [`liberusoftware/module-accounting-purchase-orders`](../../../modules/source/liberusoftware--module-accounting-purchase-orders.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-purchase-orders`
+**Design package identifier:** `module-accounting-accounting-purchase-orders`
 **Domain specification:** [Accounting Purchase Orders](../features/accounting-purchase-orders.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,5 +1,9 @@
 # Intercompany Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#intercompany). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-intercompany-flutter
 **Matching core package:** module-accounting-intercompany ([implementation](../core/intercompany.md))
 **Matching API package:** module-accounting-intercompany-api ([contract](../api/intercompany.md))

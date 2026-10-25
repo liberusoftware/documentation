@@ -1,5 +1,9 @@
 # Cms Publishing React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-publishing). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-publishing-react-native
 **Matching core package:** module-cms-cms-publishing ([implementation](../core/cms-publishing.md))
 **Matching API package:** module-cms-cms-publishing-api ([contract](../api/cms-publishing.md))

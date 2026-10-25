@@ -1,6 +1,10 @@
 # Boilerplate: Scheduler and Queues domain packages
 
-**Composer package:** `module-scheduler-and-queues`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#scheduler-and-queues). Observed identity: [`liberusoftware/scheduler-queues`](../../../modules/source/liberusoftware--scheduler-queues.md). This retained spelling maps to `scheduler-queues`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-scheduler-and-queues`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Queue conventions, unique/idempotent jobs, schedules, locks, retries, failures, and graceful deployment.
 

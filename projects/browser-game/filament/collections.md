@@ -1,12 +1,16 @@
 # Browser Game: Collections Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#collections). Observed identity: [`liberusoftware/module-browser-game-collections-filament`](../../../modules/source/liberusoftware--module-browser-game-collections-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-browser-game-collections-filament`  
 **Matching domain module:** `browser-game-collections`  
 **Application:** Browser Game  
 **Source feature:** [Collections](../features/collections.md)  
-**Architecture:** [FILAMENT.md](../BROWSER-GAME.md) · [MODULES.md](../BROWSER-GAME.md) · [TESTING.md](../BROWSER-GAME.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

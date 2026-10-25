@@ -1,5 +1,9 @@
 # Feedback And Voice Of Customer React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#feedback-and-voice-of-customer). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-feedback-and-voice-of-customer-react-native
 **Matching core package:** module-crm-feedback-and-voice-of-customer ([implementation](../core/feedback-and-voice-of-customer.md))
 **Matching API package:** module-crm-feedback-and-voice-of-customer-api ([contract](../api/feedback-and-voice-of-customer.md))

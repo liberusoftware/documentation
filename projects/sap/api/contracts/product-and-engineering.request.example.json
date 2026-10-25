@@ -1,0 +1,8 @@
+{
+  "artifact_digest": "sha256:0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  "test_evidence_ids": [
+    "test-run-example-001"
+  ],
+  "vulnerability_review_id": "security-review-example-001",
+  "rollout_plan_id": "rollout-example-001"
+}

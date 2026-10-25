@@ -1,5 +1,9 @@
 # Two Factor Authentication Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#two-factor-authentication). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-automation-two-factor-authentication-flutter
 **Matching core package:** module-automation-two-factor-authentication ([implementation](../core/two-factor-authentication.md))
 **Matching API package:** module-automation-two-factor-authentication-api ([contract](../api/two-factor-authentication.md))

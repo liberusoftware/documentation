@@ -1,12 +1,16 @@
 # CMS: Module Cms Wordpress Migration Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-wordpress-migration). Observed identity: [`liberusoftware/module-cms-wordpress-migration-filament`](../../../modules/source/liberusoftware--module-cms-wordpress-migration-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-cms-module-cms-wordpress-migration-filament`  
 **Matching domain module:** `module-cms-wordpress-migration`  
 **Application:** CMS  
 **Source feature:** [Module Cms Wordpress Migration](../features/module-cms-wordpress-migration.md)  
-**Architecture:** [FILAMENT.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,5 +1,9 @@
 # Job Estimates React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#job-estimates). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-job-estimates-react-native
 **Matching core package:** module-accounting-job-estimates ([implementation](../core/job-estimates.md))
 **Matching API package:** module-accounting-job-estimates-api ([contract](../api/job-estimates.md))

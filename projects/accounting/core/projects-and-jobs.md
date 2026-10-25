@@ -1,8 +1,12 @@
 # Accounting: Projects And Jobs Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#projects-and-jobs). Observed identity: [`liberusoftware/module-accounting-projects-and-jobs`](../../../modules/source/liberusoftware--module-accounting-projects-and-jobs.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-projects-and-jobs`
+**Design package identifier:** `module-accounting-projects-and-jobs`
 **Domain specification:** [Projects And Jobs](../features/projects-and-jobs.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

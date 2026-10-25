@@ -1,6 +1,10 @@
 # Boilerplate: Sessions and Devices Filament presentation packages
 
-**Composer package:** `module-sessions-and-devices-filament`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sessions-and-devices). Observed identity: [`liberusoftware/sessions-devices-filament`](../../../modules/source/liberusoftware--sessions-devices-filament.md). This retained spelling maps to `sessions-devices`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-sessions-and-devices-filament`
 **Matching core package:** [`module-sessions-and-devices`](../core/sessions-and-devices.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Active sessions, device metadata, revocation, timeout policy, suspicious access, and retention.

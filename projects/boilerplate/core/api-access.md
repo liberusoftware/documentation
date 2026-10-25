@@ -1,6 +1,10 @@
 # Boilerplate: API Access domain packages
 
-**Composer package:** `module-api-access`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#api-access). Observed identity: [`liberusoftware/api-access`](../../../modules/source/liberusoftware--api-access.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-api-access`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Tokens, service identities, scopes, rate limits, versioning, idempotency, and revocation.
 

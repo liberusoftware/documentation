@@ -1,8 +1,12 @@
 # Accounting: Accounting Mileage Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-mileage). Observed identity: [`liberusoftware/module-accounting-mileage`](../../../modules/source/liberusoftware--module-accounting-mileage.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-mileage`
+**Design package identifier:** `module-accounting-accounting-mileage`
 **Domain specification:** [Accounting Mileage](../features/accounting-mileage.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

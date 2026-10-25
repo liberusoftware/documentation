@@ -1,8 +1,12 @@
 # Browser Game: Browser Game Live Ops Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#browser-game-live-ops). Observed identity: [`liberusoftware/module-browser-game-live-ops`](../../../modules/source/liberusoftware--module-browser-game-live-ops.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-browser-game-browser-game-live-ops`
+**Design package identifier:** `module-browser-game-browser-game-live-ops`
 **Domain specification:** [Browser Game Live Ops](../features/browser-game-live-ops.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

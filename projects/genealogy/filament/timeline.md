@@ -1,12 +1,16 @@
 # Genealogy: Timeline Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#timeline). Observed identity: [`liberusoftware/module-genealogy-timeline-filament`](../../../modules/source/liberusoftware--module-genealogy-timeline-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-genealogy-timeline-filament`  
 **Matching domain module:** `genealogy-timeline`  
 **Application:** Genealogy  
 **Source feature:** [Timeline](../features/timeline.md)  
-**Architecture:** [FILAMENT.md](../GENEALOGY.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

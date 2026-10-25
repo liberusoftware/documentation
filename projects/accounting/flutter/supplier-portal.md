@@ -1,5 +1,9 @@
 # Supplier Portal Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#supplier-portal). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-supplier-portal-flutter
 **Matching core package:** module-accounting-supplier-portal ([implementation](../core/supplier-portal.md))
 **Matching API package:** module-accounting-supplier-portal-api ([contract](../api/supplier-portal.md))

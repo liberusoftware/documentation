@@ -1,5 +1,9 @@
 # Unified Conversations Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#unified-conversations). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-unified-conversations-flutter
 **Matching core package:** module-crm-unified-conversations ([implementation](../core/unified-conversations.md))
 **Matching API package:** module-crm-unified-conversations-api ([contract](../api/unified-conversations.md))

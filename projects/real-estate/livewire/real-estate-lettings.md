@@ -1,12 +1,16 @@
 # Real Estate: Real Estate Lettings Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-lettings). Observed identity: [`liberusoftware/real-estate-lettings-livewire`](../../../modules/source/liberusoftware--real-estate-lettings-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-real-estate-real-estate-lettings-livewire`  
 **Matching domain module:** `real-estate-lettings`  
 **Application:** Real Estate  
 **Source feature:** [Real Estate Lettings](../features/real-estate-lettings.md)  
-**Architecture:** [LIVEWIRE.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

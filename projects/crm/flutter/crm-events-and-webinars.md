@@ -1,5 +1,9 @@
 # Crm Events And Webinars Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-events-and-webinars). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-crm-events-and-webinars-flutter
 **Matching core package:** module-crm-crm-events-and-webinars ([implementation](../core/crm-events-and-webinars.md))
 **Matching API package:** module-crm-crm-events-and-webinars-api ([contract](../api/crm-events-and-webinars.md))

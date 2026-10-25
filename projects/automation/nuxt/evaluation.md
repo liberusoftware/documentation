@@ -1,12 +1,16 @@
 # Automation: Evaluation Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#evaluation). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-automation-evaluation-nuxt`
 **Matching domain module:** `automation-evaluation`
 **Application:** Automation
 **Source feature:** [Evaluation](../features/evaluation.md)
-**Architecture:** [NUXT.md](../AUTOMATION.md) · [API.md](../AUTOMATION.md) · [Matching API module](../api/evaluation.md) · [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/evaluation.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
@@ -61,7 +65,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 **Matching domain module:** `automation-evaluation`
 **Application:** Automation
 **Source feature:** [Evaluation](../features/evaluation.md)
-**Architecture:** [NUXT.md](../AUTOMATION.md) · [API.md](../AUTOMATION.md) · [Matching API module](../api/evaluation.md) · [MODULES.md](../AUTOMATION.md) · [TESTING.md](../AUTOMATION.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/evaluation.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

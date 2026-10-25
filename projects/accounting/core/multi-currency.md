@@ -1,8 +1,12 @@
 # Accounting: Multi Currency Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#multi-currency). Observed identity: [`liberusoftware/module-accounting-multi-currency`](../../../modules/source/liberusoftware--module-accounting-multi-currency.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-multi-currency`
+**Design package identifier:** `module-accounting-multi-currency`
 **Domain specification:** [Multi Currency](../features/multi-currency.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

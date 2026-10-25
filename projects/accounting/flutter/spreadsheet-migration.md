@@ -1,5 +1,9 @@
 # Spreadsheet Migration Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#spreadsheet-migration). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-spreadsheet-migration-flutter
 **Matching core package:** module-accounting-spreadsheet-migration ([implementation](../core/spreadsheet-migration.md))
 **Matching API package:** module-accounting-spreadsheet-migration-api ([contract](../api/spreadsheet-migration.md))

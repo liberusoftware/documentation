@@ -1,54 +1,72 @@
 # Genealogy Livewire Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **62 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Livewire 4 presentation package for exactly one matching domain module.
 
-- [Activity Comments Livewire](activity-comments.md) — `module-genealogy-activity-comments-livewire`
-- [Analytics Core Livewire](analytics-core.md) — `module-genealogy-analytics-core-livewire`
-- [Analytics Google Livewire](analytics-google.md) — `module-genealogy-analytics-google-livewire`
-- [Analytics Meta Livewire](analytics-meta.md) — `module-genealogy-analytics-meta-livewire`
-- [Api Access Livewire](api-access.md) — `module-genealogy-api-access-livewire`
-- [Application Livewire](application.md) — `module-genealogy-application-livewire`
-- [Audit Livewire](audit.md) — `module-genealogy-audit-livewire`
-- [Currency Context Livewire](currency-context.md) — `module-genealogy-currency-context-livewire`
-- [Developer Experience Livewire](developer-experience.md) — `module-genealogy-developer-experience-livewire`
-- [Feature Flags Livewire](feature-flags.md) — `module-genealogy-feature-flags-livewire`
-- [Files Media Livewire](files-media.md) — `module-genealogy-files-media-livewire`
-- [Genealogy Collaboration Livewire](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-livewire`
-- [Genealogy Core Livewire](genealogy-core.md) — `module-genealogy-genealogy-core-livewire`
-- [Genealogy Discovery Livewire](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-livewire`
-- [Genealogy Dna Livewire](genealogy-dna.md) — `module-genealogy-genealogy-dna-livewire`
-- [Genealogy Evidence Livewire](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-livewire`
-- [Genealogy Gamification Livewire](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-livewire`
-- [Genealogy Import Export Livewire](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-livewire`
-- [Genealogy Media Livewire](genealogy-media.md) — `module-genealogy-genealogy-media-livewire`
-- [Genealogy People Livewire](genealogy-people.md) — `module-genealogy-genealogy-people-livewire`
-- [Genealogy Places Livewire](genealogy-places.md) — `module-genealogy-genealogy-places-livewire`
-- [Genealogy Relationships Livewire](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-livewire`
-- [Genealogy Reports Livewire](genealogy-reports.md) — `module-genealogy-genealogy-reports-livewire`
-- [Genealogy Research Livewire](genealogy-research.md) — `module-genealogy-genealogy-research-livewire`
-- [Genealogy Timeline Livewire](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-livewire`
-- [Genealogy Tree Viewer Livewire](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-livewire`
-- [Identity Core Livewire](identity-core.md) — `module-genealogy-identity-core-livewire`
-- [Identity Socialstream Livewire](identity-socialstream.md) — `module-genealogy-identity-socialstream-livewire`
-- [Import Export Livewire](import-export.md) — `module-genealogy-import-export-livewire`
-- [Integrations Livewire](integrations.md) — `module-genealogy-integrations-livewire`
-- [Jetstream Bridge Livewire](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-livewire`
-- [Liberu Business Workflow Reconciliation Livewire](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-livewire`
-- [Liberu Executive Insights Livewire](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-livewire`
-- [Liberu Platform Orchestration Livewire](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-livewire`
-- [Liberu Revenue And Care Orchestration Livewire](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-livewire`
-- [Localization Core Livewire](localization-core.md) — `module-genealogy-localization-core-livewire`
-- [Localization Mymemory Livewire](localization-mymemory.md) — `module-genealogy-localization-mymemory-livewire`
-- [Module Manager Livewire](module-manager.md) — `module-genealogy-module-manager-livewire`
-- [Notifications Livewire](notifications.md) — `module-genealogy-notifications-livewire`
-- [Observability Livewire](observability.md) — `module-genealogy-observability-livewire`
-- [Organizations Teams Livewire](organizations-teams.md) — `module-genealogy-organizations-teams-livewire`
-- [Profiles Livewire](profiles.md) — `module-genealogy-profiles-livewire`
-- [Roles Permissions Livewire](roles-permissions.md) — `module-genealogy-roles-permissions-livewire`
-- [Scheduler Queues Livewire](scheduler-queues.md) — `module-genealogy-scheduler-queues-livewire`
-- [Search Livewire](search.md) — `module-genealogy-search-livewire`
-- [Sessions Devices Livewire](sessions-devices.md) — `module-genealogy-sessions-devices-livewire`
-- [Settings Livewire](settings.md) — `module-genealogy-settings-livewire`
-- [Theme Support Livewire](theme-support.md) — `module-genealogy-theme-support-livewire`
-- [Two Factor Authentication Livewire](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-livewire`
-- [Webhooks Livewire](webhooks.md) — `module-genealogy-webhooks-livewire`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Livewire](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Livewire](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Livewire](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Livewire](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Livewire](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Livewire](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Livewire](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Collaboration Livewire](collaboration.md) | [liberusoftware/module-genealogy-collaboration-livewire](../../../modules/source/liberusoftware--module-genealogy-collaboration-livewire.md) | [core](../core/collaboration.md) · [api](../api/collaboration.md) · [nextjs](../nextjs/collaboration.md) |
+| [Currency Context Livewire](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Livewire](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Discovery Livewire](discovery.md) | [liberusoftware/module-genealogy-discovery-livewire](../../../modules/source/liberusoftware--module-genealogy-discovery-livewire.md) | [core](../core/discovery.md) · [api](../api/discovery.md) · [nextjs](../nextjs/discovery.md) |
+| [DNA Livewire](dna.md) | [liberusoftware/module-genealogy-dna-livewire](../../../modules/source/liberusoftware--module-genealogy-dna-livewire.md) | [core](../core/dna.md) · [api](../api/dna.md) · [nextjs](../nextjs/dna.md) |
+| [Evidence Livewire](evidence.md) | [liberusoftware/module-genealogy-evidence-livewire](../../../modules/source/liberusoftware--module-genealogy-evidence-livewire.md) | [core](../core/evidence.md) · [api](../api/evidence.md) · [nextjs](../nextjs/evidence.md) |
+| [Feature Flags Livewire](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Livewire](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Genealogy Collaboration Livewire](genealogy-collaboration.md) | [liberusoftware/module-genealogy-collaboration-livewire](../../../modules/source/liberusoftware--module-genealogy-collaboration-livewire.md) | [core](../core/genealogy-collaboration.md) · [api](../api/genealogy-collaboration.md) · [nextjs](../nextjs/genealogy-collaboration.md) |
+| [Genealogy Core Livewire](genealogy-core.md) | [liberusoftware/module-genealogy-core-livewire](../../../modules/source/liberusoftware--module-genealogy-core-livewire.md) | [core](../core/genealogy-core.md) · [api](../api/genealogy-core.md) · [nextjs](../nextjs/genealogy-core.md) |
+| [Genealogy Discovery Livewire](genealogy-discovery.md) | [liberusoftware/module-genealogy-discovery-livewire](../../../modules/source/liberusoftware--module-genealogy-discovery-livewire.md) | [core](../core/genealogy-discovery.md) · [api](../api/genealogy-discovery.md) · [nextjs](../nextjs/genealogy-discovery.md) |
+| [Genealogy Dna Livewire](genealogy-dna.md) | [liberusoftware/module-genealogy-dna-livewire](../../../modules/source/liberusoftware--module-genealogy-dna-livewire.md) | [core](../core/genealogy-dna.md) · [api](../api/genealogy-dna.md) · [nextjs](../nextjs/genealogy-dna.md) |
+| [Genealogy Evidence Livewire](genealogy-evidence.md) | [liberusoftware/module-genealogy-evidence-livewire](../../../modules/source/liberusoftware--module-genealogy-evidence-livewire.md) | [core](../core/genealogy-evidence.md) · [api](../api/genealogy-evidence.md) · [nextjs](../nextjs/genealogy-evidence.md) |
+| [Genealogy Gamification Livewire](genealogy-gamification.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-gamification) | [core](../core/genealogy-gamification.md) · [api](../api/genealogy-gamification.md) · [nextjs](../nextjs/genealogy-gamification.md) |
+| [Genealogy Import Export Livewire](genealogy-import-export.md) | [liberusoftware/module-genealogy-import-export-livewire](../../../modules/source/liberusoftware--module-genealogy-import-export-livewire.md) | [core](../core/genealogy-import-export.md) · [api](../api/genealogy-import-export.md) · [nextjs](../nextjs/genealogy-import-export.md) |
+| [Genealogy Media Livewire](genealogy-media.md) | [liberusoftware/module-genealogy-media-livewire](../../../modules/source/liberusoftware--module-genealogy-media-livewire.md) | [core](../core/genealogy-media.md) · [api](../api/genealogy-media.md) · [nextjs](../nextjs/genealogy-media.md) |
+| [Genealogy People Livewire](genealogy-people.md) | [liberusoftware/module-genealogy-people-livewire](../../../modules/source/liberusoftware--module-genealogy-people-livewire.md) | [core](../core/genealogy-people.md) · [api](../api/genealogy-people.md) · [nextjs](../nextjs/genealogy-people.md) |
+| [Genealogy Places Livewire](genealogy-places.md) | [liberusoftware/module-genealogy-places-livewire](../../../modules/source/liberusoftware--module-genealogy-places-livewire.md) | [core](../core/genealogy-places.md) · [api](../api/genealogy-places.md) · [nextjs](../nextjs/genealogy-places.md) |
+| [Genealogy Relationships Livewire](genealogy-relationships.md) | [liberusoftware/module-genealogy-relationships-livewire](../../../modules/source/liberusoftware--module-genealogy-relationships-livewire.md) | [core](../core/genealogy-relationships.md) · [api](../api/genealogy-relationships.md) · [nextjs](../nextjs/genealogy-relationships.md) |
+| [Genealogy Reports Livewire](genealogy-reports.md) | [liberusoftware/module-genealogy-reports-livewire](../../../modules/source/liberusoftware--module-genealogy-reports-livewire.md) | [core](../core/genealogy-reports.md) · [api](../api/genealogy-reports.md) · [nextjs](../nextjs/genealogy-reports.md) |
+| [Genealogy Research Livewire](genealogy-research.md) | [liberusoftware/module-genealogy-research-livewire](../../../modules/source/liberusoftware--module-genealogy-research-livewire.md) | [core](../core/genealogy-research.md) · [api](../api/genealogy-research.md) · [nextjs](../nextjs/genealogy-research.md) |
+| [Genealogy Timeline Livewire](genealogy-timeline.md) | [liberusoftware/module-genealogy-timeline-livewire](../../../modules/source/liberusoftware--module-genealogy-timeline-livewire.md) | [core](../core/genealogy-timeline.md) · [api](../api/genealogy-timeline.md) · [nextjs](../nextjs/genealogy-timeline.md) |
+| [Genealogy Tree Viewer Livewire](genealogy-tree-viewer.md) | [liberusoftware/module-genealogy-tree-viewer-livewire](../../../modules/source/liberusoftware--module-genealogy-tree-viewer-livewire.md) | [core](../core/genealogy-tree-viewer.md) · [api](../api/genealogy-tree-viewer.md) · [nextjs](../nextjs/genealogy-tree-viewer.md) |
+| [Identity Core Livewire](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Livewire](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Livewire](import-export.md) | [liberusoftware/module-genealogy-import-export-livewire](../../../modules/source/liberusoftware--module-genealogy-import-export-livewire.md) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Livewire](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Livewire](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation Livewire](liberu-business-workflow-reconciliation.md) | [liberusoftware/module-liberu-business-workflow-reconciliation-livewire](../../../modules/source/liberusoftware--module-liberu-business-workflow-reconciliation-livewire.md) | [core](../core/liberu-business-workflow-reconciliation.md) · [api](../api/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights Livewire](liberu-executive-insights.md) | [liberusoftware/module-liberu-executive-insights-livewire](../../../modules/source/liberusoftware--module-liberu-executive-insights-livewire.md) | [core](../core/liberu-executive-insights.md) · [api](../api/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration Livewire](liberu-platform-orchestration.md) | [liberusoftware/module-liberu-platform-orchestration-livewire](../../../modules/source/liberusoftware--module-liberu-platform-orchestration-livewire.md) | [core](../core/liberu-platform-orchestration.md) · [api](../api/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration Livewire](liberu-revenue-and-care-orchestration.md) | [liberusoftware/module-liberu-revenue-and-care-orchestration-livewire](../../../modules/source/liberusoftware--module-liberu-revenue-and-care-orchestration-livewire.md) | [core](../core/liberu-revenue-and-care-orchestration.md) · [api](../api/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core Livewire](localization-core.md) | [liberusoftware/localization-core-livewire](../../../modules/source/liberusoftware--localization-core-livewire.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Livewire](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Media Livewire](media.md) | [liberusoftware/module-genealogy-media-livewire](../../../modules/source/liberusoftware--module-genealogy-media-livewire.md) | [core](../core/media.md) · [api](../api/media.md) · [nextjs](../nextjs/media.md) |
+| [Module Manager Livewire](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Livewire](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Livewire](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Livewire](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [People Livewire](people.md) | [liberusoftware/module-genealogy-people-livewire](../../../modules/source/liberusoftware--module-genealogy-people-livewire.md) | [core](../core/people.md) · [api](../api/people.md) · [nextjs](../nextjs/people.md) |
+| [Places Livewire](places.md) | [liberusoftware/module-genealogy-places-livewire](../../../modules/source/liberusoftware--module-genealogy-places-livewire.md) | [core](../core/places.md) · [api](../api/places.md) · [nextjs](../nextjs/places.md) |
+| [Profiles Livewire](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Relationships Livewire](relationships.md) | [liberusoftware/module-genealogy-relationships-livewire](../../../modules/source/liberusoftware--module-genealogy-relationships-livewire.md) | [core](../core/relationships.md) · [api](../api/relationships.md) · [nextjs](../nextjs/relationships.md) |
+| [Reports Livewire](reports.md) | [liberusoftware/module-genealogy-reports-livewire](../../../modules/source/liberusoftware--module-genealogy-reports-livewire.md) | [core](../core/reports.md) · [api](../api/reports.md) · [nextjs](../nextjs/reports.md) |
+| [Research Livewire](research.md) | [liberusoftware/module-genealogy-research-livewire](../../../modules/source/liberusoftware--module-genealogy-research-livewire.md) | [core](../core/research.md) · [api](../api/research.md) · [nextjs](../nextjs/research.md) |
+| [Roles Permissions Livewire](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Livewire](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Livewire](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Livewire](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Livewire](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Livewire](theme-support.md) | [liberusoftware/theme-support-livewire](../../../modules/source/liberusoftware--theme-support-livewire.md) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Timeline Livewire](timeline.md) | [liberusoftware/module-genealogy-timeline-livewire](../../../modules/source/liberusoftware--module-genealogy-timeline-livewire.md) | [core](../core/timeline.md) · [api](../api/timeline.md) · [nextjs](../nextjs/timeline.md) |
+| [Tree Viewer Livewire](tree-viewer.md) | [liberusoftware/module-genealogy-tree-viewer-livewire](../../../modules/source/liberusoftware--module-genealogy-tree-viewer-livewire.md) | [core](../core/tree-viewer.md) · [api](../api/tree-viewer.md) · [nextjs](../nextjs/tree-viewer.md) |
+| [Two Factor Authentication Livewire](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Livewire](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

@@ -1,12 +1,16 @@
 # Control Panel: Mail Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#mail). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-control-panel-mail-nuxt`
 **Matching domain module:** `control-panel-mail`
 **Application:** Control Panel
 **Source feature:** [Mail](../features/mail.md)
-**Architecture:** [NUXT.md](../CONTROL-PANEL.md) · [API.md](../CONTROL-PANEL.md) · [Matching API module](../api/mail.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/mail.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

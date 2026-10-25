@@ -1,0 +1,6 @@
+{
+  "contract_version": "contract-example-001:v2",
+  "time_expense_snapshot_id": "approved-work-example-001",
+  "billing_rule_version": "milestone-rate-v2",
+  "customer_acceptance_id": "acceptance-example-002"
+}

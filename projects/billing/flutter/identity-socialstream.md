@@ -1,5 +1,9 @@
 # Identity Socialstream Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#identity-socialstream). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-identity-socialstream-flutter
 **Matching core package:** module-billing-identity-socialstream ([implementation](../core/identity-socialstream.md))
 **Matching API package:** module-billing-identity-socialstream-api ([contract](../api/identity-socialstream.md))

@@ -1,12 +1,16 @@
 # Genealogy: Liberu Revenue And Care Orchestration Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#liberu-revenue-and-care-orchestration). Observed identity: [`liberusoftware/module-liberu-revenue-and-care-orchestration-livewire`](../../../modules/source/liberusoftware--module-liberu-revenue-and-care-orchestration-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-genealogy-liberu-revenue-and-care-orchestration-livewire`  
 **Matching domain module:** `liberu-revenue-and-care-orchestration`  
 **Application:** Genealogy  
 **Source feature:** [Liberu Revenue And Care Orchestration](../features/liberu-revenue-and-care-orchestration.md)  
-**Architecture:** [LIVEWIRE.md](../GENEALOGY.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

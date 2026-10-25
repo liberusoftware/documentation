@@ -1,8 +1,12 @@
 # Accounting: Accounting Sales Orders Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-sales-orders). Observed identity: [`liberusoftware/module-accounting-sales-orders`](../../../modules/source/liberusoftware--module-accounting-sales-orders.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-accounting-sales-orders`
+**Design package identifier:** `module-accounting-accounting-sales-orders`
 **Domain specification:** [Accounting Sales Orders](../features/accounting-sales-orders.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

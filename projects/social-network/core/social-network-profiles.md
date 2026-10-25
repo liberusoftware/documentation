@@ -1,8 +1,12 @@
 # Social Network: Social Network Profiles Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-profiles). Observed identity: [`liberusoftware/module-social-network-profiles`](../../../modules/source/liberusoftware--module-social-network-profiles.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-social-network-social-network-profiles`
+**Design package identifier:** `module-social-network-social-network-profiles`
 **Domain specification:** [Social Network Profiles](../features/social-network-profiles.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

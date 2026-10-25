@@ -1,5 +1,9 @@
 # Real Estate Valuations React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-valuations). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-real-estate-real-estate-valuations-react-native
 **Matching core package:** module-real-estate-real-estate-valuations ([implementation](../core/real-estate-valuations.md))
 **Matching API package:** module-real-estate-real-estate-valuations-api ([contract](../api/real-estate-valuations.md))

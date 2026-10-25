@@ -1,12 +1,16 @@
 # CRM: Attribution Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#attribution). Observed identity: [`liberusoftware/module-crm-attribution-filament`](../../../modules/source/liberusoftware--module-crm-attribution-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-crm-attribution-filament`  
 **Matching domain module:** `crm-attribution`  
 **Application:** CRM  
 **Source feature:** [Attribution](../features/attribution.md)  
-**Architecture:** [FILAMENT.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

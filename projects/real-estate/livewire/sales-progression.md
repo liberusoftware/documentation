@@ -1,12 +1,16 @@
 # Real Estate: Sales Progression Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-progression). Observed identity: [`liberusoftware/real-estate-sales-progression-livewire`](../../../modules/source/liberusoftware--real-estate-sales-progression-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-real-estate-sales-progression-livewire`  
 **Matching domain module:** `real-estate-sales-progression`  
 **Application:** Real Estate  
 **Source feature:** [Sales Progression](../features/sales-progression.md)  
-**Architecture:** [LIVEWIRE.md](../REAL-ESTATE.md) · [MODULES.md](../REAL-ESTATE.md) · [TESTING.md](../REAL-ESTATE.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

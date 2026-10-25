@@ -1,5 +1,9 @@
 # Construction Tax React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#construction-tax). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-construction-tax-react-native
 **Matching core package:** module-accounting-construction-tax ([implementation](../core/construction-tax.md))
 **Matching API package:** module-accounting-construction-tax-api ([contract](../api/construction-tax.md))

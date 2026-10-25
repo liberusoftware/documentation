@@ -1,5 +1,9 @@
 # Content Search React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#content-search). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-content-search-react-native
 **Matching core package:** module-cms-content-search ([implementation](../core/content-search.md))
 **Matching API package:** module-cms-content-search-api ([contract](../api/content-search.md))

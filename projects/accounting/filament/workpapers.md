@@ -1,12 +1,16 @@
 # Accounting: Workpapers Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#workpapers). Observed identity: [`liberusoftware/module-accounting-workpapers-filament`](../../../modules/source/liberusoftware--module-accounting-workpapers-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-accounting-workpapers-filament`  
 **Matching domain module:** `accounting-workpapers`  
 **Application:** Accounting  
 **Source feature:** [Workpapers](../features/workpapers.md)  
-**Architecture:** [FILAMENT.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

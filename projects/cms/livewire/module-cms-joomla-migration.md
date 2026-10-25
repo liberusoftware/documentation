@@ -1,12 +1,16 @@
 # CMS: Module Cms Joomla Migration Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-joomla-migration). Observed identity: [`liberusoftware/module-cms-joomla-migration-livewire`](../../../modules/source/liberusoftware--module-cms-joomla-migration-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-cms-module-cms-joomla-migration-livewire`  
 **Matching domain module:** `module-cms-joomla-migration`  
 **Application:** CMS  
 **Source feature:** [Module Cms Joomla Migration](../features/module-cms-joomla-migration.md)  
-**Architecture:** [LIVEWIRE.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

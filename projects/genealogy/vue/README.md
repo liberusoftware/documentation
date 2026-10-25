@@ -1,54 +1,72 @@
 # Genealogy Vue + Inertia Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **62 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Vue 3 + Inertia 3 presentation package for exactly one matching API module.
 
-- [Activity Comments Vue](activity-comments.md) — `module-genealogy-activity-comments-vue-inertia`
-- [Analytics Core Vue](analytics-core.md) — `module-genealogy-analytics-core-vue-inertia`
-- [Analytics Google Vue](analytics-google.md) — `module-genealogy-analytics-google-vue-inertia`
-- [Analytics Meta Vue](analytics-meta.md) — `module-genealogy-analytics-meta-vue-inertia`
-- [Api Access Vue](api-access.md) — `module-genealogy-api-access-vue-inertia`
-- [Application Vue](application.md) — `module-genealogy-application-vue-inertia`
-- [Audit Vue](audit.md) — `module-genealogy-audit-vue-inertia`
-- [Currency Context Vue](currency-context.md) — `module-genealogy-currency-context-vue-inertia`
-- [Developer Experience Vue](developer-experience.md) — `module-genealogy-developer-experience-vue-inertia`
-- [Feature Flags Vue](feature-flags.md) — `module-genealogy-feature-flags-vue-inertia`
-- [Files Media Vue](files-media.md) — `module-genealogy-files-media-vue-inertia`
-- [Genealogy Collaboration Vue](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-vue-inertia`
-- [Genealogy Core Vue](genealogy-core.md) — `module-genealogy-genealogy-core-vue-inertia`
-- [Genealogy Discovery Vue](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-vue-inertia`
-- [Genealogy Dna Vue](genealogy-dna.md) — `module-genealogy-genealogy-dna-vue-inertia`
-- [Genealogy Evidence Vue](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-vue-inertia`
-- [Genealogy Gamification Vue](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-vue-inertia`
-- [Genealogy Import Export Vue](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-vue-inertia`
-- [Genealogy Media Vue](genealogy-media.md) — `module-genealogy-genealogy-media-vue-inertia`
-- [Genealogy People Vue](genealogy-people.md) — `module-genealogy-genealogy-people-vue-inertia`
-- [Genealogy Places Vue](genealogy-places.md) — `module-genealogy-genealogy-places-vue-inertia`
-- [Genealogy Relationships Vue](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-vue-inertia`
-- [Genealogy Reports Vue](genealogy-reports.md) — `module-genealogy-genealogy-reports-vue-inertia`
-- [Genealogy Research Vue](genealogy-research.md) — `module-genealogy-genealogy-research-vue-inertia`
-- [Genealogy Timeline Vue](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-vue-inertia`
-- [Genealogy Tree Viewer Vue](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-vue-inertia`
-- [Identity Core Vue](identity-core.md) — `module-genealogy-identity-core-vue-inertia`
-- [Identity Socialstream Vue](identity-socialstream.md) — `module-genealogy-identity-socialstream-vue-inertia`
-- [Import Export Vue](import-export.md) — `module-genealogy-import-export-vue-inertia`
-- [Integrations Vue](integrations.md) — `module-genealogy-integrations-vue-inertia`
-- [Jetstream Bridge Vue](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-vue-inertia`
-- [Liberu Business Workflow Reconciliation Vue](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-vue-inertia`
-- [Liberu Executive Insights Vue](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-vue-inertia`
-- [Liberu Platform Orchestration Vue](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-vue-inertia`
-- [Liberu Revenue And Care Orchestration Vue](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-vue-inertia`
-- [Localization Core Vue](localization-core.md) — `module-genealogy-localization-core-vue-inertia`
-- [Localization Mymemory Vue](localization-mymemory.md) — `module-genealogy-localization-mymemory-vue-inertia`
-- [Module Manager Vue](module-manager.md) — `module-genealogy-module-manager-vue-inertia`
-- [Notifications Vue](notifications.md) — `module-genealogy-notifications-vue-inertia`
-- [Observability Vue](observability.md) — `module-genealogy-observability-vue-inertia`
-- [Organizations Teams Vue](organizations-teams.md) — `module-genealogy-organizations-teams-vue-inertia`
-- [Profiles Vue](profiles.md) — `module-genealogy-profiles-vue-inertia`
-- [Roles Permissions Vue](roles-permissions.md) — `module-genealogy-roles-permissions-vue-inertia`
-- [Scheduler Queues Vue](scheduler-queues.md) — `module-genealogy-scheduler-queues-vue-inertia`
-- [Search Vue](search.md) — `module-genealogy-search-vue-inertia`
-- [Sessions Devices Vue](sessions-devices.md) — `module-genealogy-sessions-devices-vue-inertia`
-- [Settings Vue](settings.md) — `module-genealogy-settings-vue-inertia`
-- [Theme Support Vue](theme-support.md) — `module-genealogy-theme-support-vue-inertia`
-- [Two Factor Authentication Vue](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-vue-inertia`
-- [Webhooks Vue](webhooks.md) — `module-genealogy-webhooks-vue-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments Vue + Inertia](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Vue + Inertia](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Vue + Inertia](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Vue + Inertia](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Vue + Inertia](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application Vue + Inertia](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Vue + Inertia](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Collaboration Vue + Inertia](collaboration.md) | [Target/source map](../SOURCE-MAPPING.md#collaboration) | [core](../core/collaboration.md) · [api](../api/collaboration.md) · [nextjs](../nextjs/collaboration.md) |
+| [Currency Context Vue + Inertia](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Vue + Inertia](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Discovery Vue + Inertia](discovery.md) | [Target/source map](../SOURCE-MAPPING.md#discovery) | [core](../core/discovery.md) · [api](../api/discovery.md) · [nextjs](../nextjs/discovery.md) |
+| [DNA Vue + Inertia](dna.md) | [Target/source map](../SOURCE-MAPPING.md#dna) | [core](../core/dna.md) · [api](../api/dna.md) · [nextjs](../nextjs/dna.md) |
+| [Evidence Vue + Inertia](evidence.md) | [Target/source map](../SOURCE-MAPPING.md#evidence) | [core](../core/evidence.md) · [api](../api/evidence.md) · [nextjs](../nextjs/evidence.md) |
+| [Feature Flags Vue + Inertia](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Vue + Inertia](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Genealogy Collaboration Vue + Inertia](genealogy-collaboration.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-collaboration) | [core](../core/genealogy-collaboration.md) · [api](../api/genealogy-collaboration.md) · [nextjs](../nextjs/genealogy-collaboration.md) |
+| [Genealogy Core Vue + Inertia](genealogy-core.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-core) | [core](../core/genealogy-core.md) · [api](../api/genealogy-core.md) · [nextjs](../nextjs/genealogy-core.md) |
+| [Genealogy Discovery Vue + Inertia](genealogy-discovery.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-discovery) | [core](../core/genealogy-discovery.md) · [api](../api/genealogy-discovery.md) · [nextjs](../nextjs/genealogy-discovery.md) |
+| [Genealogy Dna Vue + Inertia](genealogy-dna.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-dna) | [core](../core/genealogy-dna.md) · [api](../api/genealogy-dna.md) · [nextjs](../nextjs/genealogy-dna.md) |
+| [Genealogy Evidence Vue + Inertia](genealogy-evidence.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-evidence) | [core](../core/genealogy-evidence.md) · [api](../api/genealogy-evidence.md) · [nextjs](../nextjs/genealogy-evidence.md) |
+| [Genealogy Gamification Vue + Inertia](genealogy-gamification.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-gamification) | [core](../core/genealogy-gamification.md) · [api](../api/genealogy-gamification.md) · [nextjs](../nextjs/genealogy-gamification.md) |
+| [Genealogy Import Export Vue + Inertia](genealogy-import-export.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-import-export) | [core](../core/genealogy-import-export.md) · [api](../api/genealogy-import-export.md) · [nextjs](../nextjs/genealogy-import-export.md) |
+| [Genealogy Media Vue + Inertia](genealogy-media.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-media) | [core](../core/genealogy-media.md) · [api](../api/genealogy-media.md) · [nextjs](../nextjs/genealogy-media.md) |
+| [Genealogy People Vue + Inertia](genealogy-people.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-people) | [core](../core/genealogy-people.md) · [api](../api/genealogy-people.md) · [nextjs](../nextjs/genealogy-people.md) |
+| [Genealogy Places Vue + Inertia](genealogy-places.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-places) | [core](../core/genealogy-places.md) · [api](../api/genealogy-places.md) · [nextjs](../nextjs/genealogy-places.md) |
+| [Genealogy Relationships Vue + Inertia](genealogy-relationships.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-relationships) | [core](../core/genealogy-relationships.md) · [api](../api/genealogy-relationships.md) · [nextjs](../nextjs/genealogy-relationships.md) |
+| [Genealogy Reports Vue + Inertia](genealogy-reports.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-reports) | [core](../core/genealogy-reports.md) · [api](../api/genealogy-reports.md) · [nextjs](../nextjs/genealogy-reports.md) |
+| [Genealogy Research Vue + Inertia](genealogy-research.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-research) | [core](../core/genealogy-research.md) · [api](../api/genealogy-research.md) · [nextjs](../nextjs/genealogy-research.md) |
+| [Genealogy Timeline Vue + Inertia](genealogy-timeline.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-timeline) | [core](../core/genealogy-timeline.md) · [api](../api/genealogy-timeline.md) · [nextjs](../nextjs/genealogy-timeline.md) |
+| [Genealogy Tree Viewer Vue + Inertia](genealogy-tree-viewer.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-tree-viewer) | [core](../core/genealogy-tree-viewer.md) · [api](../api/genealogy-tree-viewer.md) · [nextjs](../nextjs/genealogy-tree-viewer.md) |
+| [Identity Core Vue + Inertia](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Vue + Inertia](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Vue + Inertia](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Vue + Inertia](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Vue + Inertia](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation Vue + Inertia](liberu-business-workflow-reconciliation.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-business-workflow-reconciliation) | [core](../core/liberu-business-workflow-reconciliation.md) · [api](../api/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights Vue + Inertia](liberu-executive-insights.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-executive-insights) | [core](../core/liberu-executive-insights.md) · [api](../api/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration Vue + Inertia](liberu-platform-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-platform-orchestration) | [core](../core/liberu-platform-orchestration.md) · [api](../api/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration Vue + Inertia](liberu-revenue-and-care-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-revenue-and-care-orchestration) | [core](../core/liberu-revenue-and-care-orchestration.md) · [api](../api/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core Vue + Inertia](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Vue + Inertia](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Media Vue + Inertia](media.md) | [Target/source map](../SOURCE-MAPPING.md#media) | [core](../core/media.md) · [api](../api/media.md) · [nextjs](../nextjs/media.md) |
+| [Module Manager Vue + Inertia](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Vue + Inertia](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Vue + Inertia](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Vue + Inertia](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [People Vue + Inertia](people.md) | [Target/source map](../SOURCE-MAPPING.md#people) | [core](../core/people.md) · [api](../api/people.md) · [nextjs](../nextjs/people.md) |
+| [Places Vue + Inertia](places.md) | [Target/source map](../SOURCE-MAPPING.md#places) | [core](../core/places.md) · [api](../api/places.md) · [nextjs](../nextjs/places.md) |
+| [Profiles Vue + Inertia](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Relationships Vue + Inertia](relationships.md) | [Target/source map](../SOURCE-MAPPING.md#relationships) | [core](../core/relationships.md) · [api](../api/relationships.md) · [nextjs](../nextjs/relationships.md) |
+| [Reports Vue + Inertia](reports.md) | [Target/source map](../SOURCE-MAPPING.md#reports) | [core](../core/reports.md) · [api](../api/reports.md) · [nextjs](../nextjs/reports.md) |
+| [Research Vue + Inertia](research.md) | [Target/source map](../SOURCE-MAPPING.md#research) | [core](../core/research.md) · [api](../api/research.md) · [nextjs](../nextjs/research.md) |
+| [Roles Permissions Vue + Inertia](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Vue + Inertia](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Vue + Inertia](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Vue + Inertia](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Vue + Inertia](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Vue + Inertia](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Timeline Vue + Inertia](timeline.md) | [Target/source map](../SOURCE-MAPPING.md#timeline) | [core](../core/timeline.md) · [api](../api/timeline.md) · [nextjs](../nextjs/timeline.md) |
+| [Tree Viewer Vue + Inertia](tree-viewer.md) | [Target/source map](../SOURCE-MAPPING.md#tree-viewer) | [core](../core/tree-viewer.md) · [api](../api/tree-viewer.md) · [nextjs](../nextjs/tree-viewer.md) |
+| [Two Factor Authentication Vue + Inertia](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks Vue + Inertia](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

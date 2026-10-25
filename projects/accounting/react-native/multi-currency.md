@@ -1,5 +1,9 @@
 # Multi Currency React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#multi-currency). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-multi-currency-react-native
 **Matching core package:** module-accounting-multi-currency ([implementation](../core/multi-currency.md))
 **Matching API package:** module-accounting-multi-currency-api ([contract](../api/multi-currency.md))

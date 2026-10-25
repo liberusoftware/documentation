@@ -1,12 +1,16 @@
 # Control Panel: Sessions Devices Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sessions-devices). Observed identity: [`liberusoftware/sessions-devices-filament`](../../../modules/source/liberusoftware--sessions-devices-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-control-panel-sessions-devices-filament`  
 **Matching domain module:** `sessions-devices`  
 **Application:** Control Panel  
 **Source feature:** [Sessions Devices](../features/sessions-devices.md)  
-**Architecture:** [FILAMENT.md](../CONTROL-PANEL.md) · [MODULES.md](../CONTROL-PANEL.md) · [TESTING.md](../CONTROL-PANEL.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,5 +1,9 @@
 # Accounting Receipt Management Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-receipt-management). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-receipt-management-flutter
 **Matching core package:** module-accounting-accounting-receipt-management ([implementation](../core/accounting-receipt-management.md))
 **Matching API package:** module-accounting-accounting-receipt-management-api ([contract](../api/accounting-receipt-management.md))

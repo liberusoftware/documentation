@@ -1,8 +1,12 @@
 # Genealogy: Sessions Devices Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sessions-devices). Observed identity: [`liberusoftware/sessions-devices`](../../../modules/source/liberusoftware--sessions-devices.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-genealogy-sessions-devices`
+**Design package identifier:** `module-genealogy-sessions-devices`
 **Domain specification:** [Sessions Devices](../features/sessions-devices.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

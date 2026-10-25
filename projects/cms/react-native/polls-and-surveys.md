@@ -1,5 +1,9 @@
 # Polls And Surveys React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#polls-and-surveys). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-polls-and-surveys-react-native
 **Matching core package:** module-cms-polls-and-surveys ([implementation](../core/polls-and-surveys.md))
 **Matching API package:** module-cms-polls-and-surveys-api ([contract](../api/polls-and-surveys.md))

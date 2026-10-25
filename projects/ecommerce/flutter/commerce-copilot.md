@@ -1,5 +1,9 @@
 # Commerce Copilot Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-copilot). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-commerce-copilot-flutter
 **Matching core package:** module-ecommerce-commerce-copilot ([implementation](../core/commerce-copilot.md))
 **Matching API package:** module-ecommerce-commerce-copilot-api ([contract](../api/commerce-copilot.md))

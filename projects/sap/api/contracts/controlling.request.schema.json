@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:liberu:proposed:enterprise:controlling:simulate:request:v1",
+  "title": "Controlling: proposed simulate request",
+  "description": "Draft enterprise request contract, not an implemented or released API guarantee.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "rule_version",
+    "source_balance_snapshot_id",
+    "driver_snapshot_id",
+    "scenario_id"
+  ],
+  "properties": {
+    "rule_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_balance_snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "driver_snapshot_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "scenario_id": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

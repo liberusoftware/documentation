@@ -1,8 +1,12 @@
 # Crm: Marketing Resources Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#marketing-resources). Observed identity: [`liberusoftware/module-crm-marketing-resources`](../../../modules/source/liberusoftware--module-crm-marketing-resources.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-marketing-resources`
+**Design package identifier:** `module-crm-marketing-resources`
 **Domain specification:** [Marketing Resources](../features/marketing-resources.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

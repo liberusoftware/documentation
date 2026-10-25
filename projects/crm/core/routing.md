@@ -1,8 +1,12 @@
 # Crm: Routing Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#routing). Observed identity: [`liberusoftware/module-crm-routing`](../../../modules/source/liberusoftware--module-crm-routing.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-routing`
+**Design package identifier:** `module-crm-routing`
 **Domain specification:** [Routing](../features/routing.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

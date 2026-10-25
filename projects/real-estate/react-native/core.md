@@ -1,5 +1,9 @@
 # Core React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-real-estate-core-react-native
 **Matching core package:** module-real-estate-core ([implementation](../core/core.md))
 **Matching API package:** module-real-estate-core-api ([contract](../api/core.md))

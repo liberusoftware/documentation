@@ -1,5 +1,9 @@
 # Hook And Event Sdk React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#hook-and-event-sdk). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-hook-and-event-sdk-react-native
 **Matching core package:** module-cms-hook-and-event-sdk ([implementation](../core/hook-and-event-sdk.md))
 **Matching API package:** module-cms-hook-and-event-sdk-api ([contract](../api/hook-and-event-sdk.md))

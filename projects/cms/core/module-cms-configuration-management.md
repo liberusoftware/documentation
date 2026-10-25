@@ -1,8 +1,12 @@
 # CMS: Module Cms Configuration Management Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-configuration-management). Observed identity: [`liberusoftware/module-cms-configuration-management`](../../../modules/source/liberusoftware--module-cms-configuration-management.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-configuration-management`
+**Design package identifier:** `module-cms-module-cms-configuration-management`
 **Domain specification:** [Module Cms Configuration Management](../features/module-cms-configuration-management.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

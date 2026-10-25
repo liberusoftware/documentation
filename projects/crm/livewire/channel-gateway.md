@@ -1,12 +1,16 @@
 # CRM: Channel Gateway Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#channel-gateway). Observed identity: [`liberusoftware/module-crm-channel-gateway-livewire`](../../../modules/source/liberusoftware--module-crm-channel-gateway-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-channel-gateway-livewire`  
 **Matching domain module:** `crm-channel-gateway`  
 **Application:** CRM  
 **Source feature:** [Channel Gateway](../features/channel-gateway.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

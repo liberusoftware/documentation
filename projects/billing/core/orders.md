@@ -1,8 +1,12 @@
 # Billing: Orders Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#orders). Observed identity: [`liberusoftware/module-billing-orders`](../../../modules/source/liberusoftware--module-billing-orders.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-orders`
+**Design package identifier:** `module-billing-orders`
 **Domain specification:** [Orders](../features/orders.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

@@ -1,8 +1,12 @@
 # CMS: Module Cms Audit Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-audit). Observed identity: [`liberusoftware/module-cms-audit`](../../../modules/source/liberusoftware--module-cms-audit.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-cms-module-cms-audit`
+**Design package identifier:** `module-cms-module-cms-audit`
 **Domain specification:** [Module Cms Audit](../features/module-cms-audit.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

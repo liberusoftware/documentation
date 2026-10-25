@@ -1,5 +1,9 @@
 # Accounting Multi Entity Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-multi-entity). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-multi-entity-flutter
 **Matching core package:** module-accounting-accounting-multi-entity ([implementation](../core/accounting-multi-entity.md))
 **Matching API package:** module-accounting-accounting-multi-entity-api ([contract](../api/accounting-multi-entity.md))

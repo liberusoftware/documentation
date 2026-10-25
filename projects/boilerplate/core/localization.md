@@ -1,6 +1,10 @@
 # Boilerplate: Localization domain packages
 
-**Composer package:** `module-localization`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#localization). Observed identity: [`liberusoftware/localization-core`](../../../modules/source/liberusoftware--localization-core.md). This retained spelling maps to `localization-core`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-localization`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Locale negotiation, translations, pluralization, RTL direction, timezone, and localized formatting.
 

@@ -1,5 +1,9 @@
 # Cms Posts Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-posts). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-posts-flutter
 **Matching core package:** module-cms-cms-posts ([implementation](../core/cms-posts.md))
 **Matching API package:** module-cms-cms-posts-api ([contract](../api/cms-posts.md))

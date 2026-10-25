@@ -1,5 +1,9 @@
 # Back In Stock And Price Alerts React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#back-in-stock-and-price-alerts). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-back-in-stock-and-price-alerts-react-native
 **Matching core package:** module-ecommerce-back-in-stock-and-price-alerts ([implementation](../core/back-in-stock-and-price-alerts.md))
 **Matching API package:** module-ecommerce-back-in-stock-and-price-alerts-api ([contract](../api/back-in-stock-and-price-alerts.md))

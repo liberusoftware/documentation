@@ -1,12 +1,16 @@
 # Billing: Module Billing Virtualmin Nuxt
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-virtualmin). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Nuxt 4 implementation
 
 **Nuxt package:** `module-billing-module-billing-virtualmin-nuxt`
 **Matching domain module:** `module-billing-virtualmin`
 **Application:** Billing
 **Source feature:** [Module Billing Virtualmin](../features/module-billing-virtualmin.md)
-**Architecture:** [NUXT.md](../BILLING.md) · [API.md](../BILLING.md) · [Matching API module](../api/module-billing-virtualmin.md) · [MODULES.md](../BILLING.md) · [TESTING.md](../BILLING.md)
+**Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/module-billing-virtualmin.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

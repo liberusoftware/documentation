@@ -1,5 +1,9 @@
 # Regional Packs Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#regional-packs). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-regional-packs-flutter
 **Matching core package:** module-accounting-regional-packs ([implementation](../core/regional-packs.md))
 **Matching API package:** module-accounting-regional-packs-api ([contract](../api/regional-packs.md))

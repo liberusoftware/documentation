@@ -1,5 +1,9 @@
 # Territories And Ownership React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#territories-and-ownership). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-territories-and-ownership-react-native
 **Matching core package:** module-crm-territories-and-ownership ([implementation](../core/territories-and-ownership.md))
 **Matching API package:** module-crm-territories-and-ownership-api ([contract](../api/territories-and-ownership.md))

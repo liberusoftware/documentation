@@ -1,6 +1,10 @@
 # Boilerplate: Profiles Filament presentation packages
 
-**Composer package:** `module-profiles-filament`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#profiles). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-profiles-filament`
 **Matching core package:** [`module-profiles`](../core/profiles.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Names, avatars, contact preferences, locale/timezone, completion, and controlled profile updates.

@@ -1,62 +1,80 @@
 # Real Estate Core Modules
 
+<!-- catalogue-status:start -->
+This index preserves **70 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 This index covers the Laravel 13/PHP 8.5 core Composer packages for the Real Estate domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
 
-| Module | Core package | Domain specification |
+| Module document | Source/target reference | Related plans |
 | --- | --- | --- |
-| [.graphify](.graphify.md) | module-real-estate-.graphify | [Feature](../features/.graphify.md) |
-| [Activity Comments](activity-comments.md) | module-real-estate-activity-comments | [Feature](../features/activity-comments.md) |
-| [Analytics Core](analytics-core.md) | module-real-estate-analytics-core | [Feature](../features/analytics-core.md) |
-| [Analytics Google](analytics-google.md) | module-real-estate-analytics-google | [Feature](../features/analytics-google.md) |
-| [Analytics Meta](analytics-meta.md) | module-real-estate-analytics-meta | [Feature](../features/analytics-meta.md) |
-| [Api](api.md) | module-real-estate-api | [Feature](../features/api.md) |
-| [Api Access](api-access.md) | module-real-estate-api-access | [Feature](../features/api-access.md) |
-| [Application](application.md) | module-real-estate-application | [Feature](../features/application.md) |
-| [Audit](audit.md) | module-real-estate-audit | [Feature](../features/audit.md) |
-| [Core](core.md) | module-real-estate-core | [Feature](../features/core.md) |
-| [Currency Context](currency-context.md) | module-real-estate-currency-context | [Feature](../features/currency-context.md) |
-| [Developer Experience](developer-experience.md) | module-real-estate-developer-experience | [Feature](../features/developer-experience.md) |
-| [Feature Flags](feature-flags.md) | module-real-estate-feature-flags | [Feature](../features/feature-flags.md) |
-| [Features](features.md) | module-real-estate-features | [Feature](../features/features.md) |
-| [Filament](filament.md) | module-real-estate-filament | [Feature](../features/filament.md) |
-| [Files Media](files-media.md) | module-real-estate-files-media | [Feature](../features/files-media.md) |
-| [Identity Core](identity-core.md) | module-real-estate-identity-core | [Feature](../features/identity-core.md) |
-| [Identity Socialstream](identity-socialstream.md) | module-real-estate-identity-socialstream | [Feature](../features/identity-socialstream.md) |
-| [Import Export](import-export.md) | module-real-estate-import-export | [Feature](../features/import-export.md) |
-| [Integrations](integrations.md) | module-real-estate-integrations | [Feature](../features/integrations.md) |
-| [Jetstream Bridge](jetstream-bridge.md) | module-real-estate-jetstream-bridge | [Feature](../features/jetstream-bridge.md) |
-| [Livewire](livewire.md) | module-real-estate-livewire | [Feature](../features/livewire.md) |
-| [Localization Core](localization-core.md) | module-real-estate-localization-core | [Feature](../features/localization-core.md) |
-| [Localization Mymemory](localization-mymemory.md) | module-real-estate-localization-mymemory | [Feature](../features/localization-mymemory.md) |
-| [Module Manager](module-manager.md) | module-real-estate-module-manager | [Feature](../features/module-manager.md) |
-| [Notifications](notifications.md) | module-real-estate-notifications | [Feature](../features/notifications.md) |
-| [Observability](observability.md) | module-real-estate-observability | [Feature](../features/observability.md) |
-| [Organizations Teams](organizations-teams.md) | module-real-estate-organizations-teams | [Feature](../features/organizations-teams.md) |
-| [Profiles](profiles.md) | module-real-estate-profiles | [Feature](../features/profiles.md) |
-| [Real Estate Core](real-estate-core.md) | module-real-estate-real-estate-core | [Feature](../features/real-estate-core.md) |
-| [Real Estate Instructions](real-estate-instructions.md) | module-real-estate-real-estate-instructions | [Feature](../features/real-estate-instructions.md) |
-| [Real Estate Lettings](real-estate-lettings.md) | module-real-estate-real-estate-lettings | [Feature](../features/real-estate-lettings.md) |
-| [Real Estate Listings](real-estate-listings.md) | module-real-estate-real-estate-listings | [Feature](../features/real-estate-listings.md) |
-| [Real Estate Marketing](real-estate-marketing.md) | module-real-estate-real-estate-marketing | [Feature](../features/real-estate-marketing.md) |
-| [Real Estate Matching](real-estate-matching.md) | module-real-estate-real-estate-matching | [Feature](../features/real-estate-matching.md) |
-| [Real Estate Media And Documents](real-estate-media-and-documents.md) | module-real-estate-real-estate-media-and-documents | [Feature](../features/real-estate-media-and-documents.md) |
-| [Real Estate Offers](real-estate-offers.md) | module-real-estate-real-estate-offers | [Feature](../features/real-estate-offers.md) |
-| [Real Estate Onthemarket](real-estate-onthemarket.md) | module-real-estate-real-estate-onthemarket | [Feature](../features/real-estate-onthemarket.md) |
-| [Real Estate Parties](real-estate-parties.md) | module-real-estate-real-estate-parties | [Feature](../features/real-estate-parties.md) |
-| [Real Estate Portals Reporting](real-estate-portals-reporting.md) | module-real-estate-real-estate-portals-reporting | [Feature](../features/real-estate-portals-reporting.md) |
-| [Real Estate Properties](real-estate-properties.md) | module-real-estate-real-estate-properties | [Feature](../features/real-estate-properties.md) |
-| [Real Estate Property Management](real-estate-property-management.md) | module-real-estate-real-estate-property-management | [Feature](../features/real-estate-property-management.md) |
-| [Real Estate Rightmove](real-estate-rightmove.md) | module-real-estate-real-estate-rightmove | [Feature](../features/real-estate-rightmove.md) |
-| [Real Estate Sales Progression](real-estate-sales-progression.md) | module-real-estate-real-estate-sales-progression | [Feature](../features/real-estate-sales-progression.md) |
-| [Real Estate Valuations](real-estate-valuations.md) | module-real-estate-real-estate-valuations | [Feature](../features/real-estate-valuations.md) |
-| [Real Estate Viewings](real-estate-viewings.md) | module-real-estate-real-estate-viewings | [Feature](../features/real-estate-viewings.md) |
-| [Real Estate Vr Design](real-estate-vr-design.md) | module-real-estate-real-estate-vr-design | [Feature](../features/real-estate-vr-design.md) |
-| [Real Estate Zoopla](real-estate-zoopla.md) | module-real-estate-real-estate-zoopla | [Feature](../features/real-estate-zoopla.md) |
-| [Roles Permissions](roles-permissions.md) | module-real-estate-roles-permissions | [Feature](../features/roles-permissions.md) |
-| [Scheduler Queues](scheduler-queues.md) | module-real-estate-scheduler-queues | [Feature](../features/scheduler-queues.md) |
-| [Search](search.md) | module-real-estate-search | [Feature](../features/search.md) |
-| [Sessions Devices](sessions-devices.md) | module-real-estate-sessions-devices | [Feature](../features/sessions-devices.md) |
-| [Settings](settings.md) | module-real-estate-settings | [Feature](../features/settings.md) |
-| [Theme Support](theme-support.md) | module-real-estate-theme-support | [Feature](../features/theme-support.md) |
-| [Two Factor Authentication](two-factor-authentication.md) | module-real-estate-two-factor-authentication | [Feature](../features/two-factor-authentication.md) |
-| [Webhooks](webhooks.md) | module-real-estate-webhooks | [Feature](../features/webhooks.md) |
+| [.graphify Core Module](.graphify.md) | [Target/source map](../SOURCE-MAPPING.md#.graphify) | [api](../api/.graphify.md) · [nextjs](../nextjs/.graphify.md) |
+| [Activity Comments Core Module](activity-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Core Module](analytics-core.md) | [liberusoftware/analytics-core](../../../modules/source/liberusoftware--analytics-core.md) | [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Core Module](analytics-google.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Core Module](analytics-meta.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Core Module](api-access.md) | [liberusoftware/api-access](../../../modules/source/liberusoftware--api-access.md) | [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Api Core Module](api.md) | [Target/source map](../SOURCE-MAPPING.md#api) | [api](../api/api.md) · [nextjs](../nextjs/api.md) |
+| [Application Core Module](application.md) | [liberusoftware/application](../../../modules/source/liberusoftware--application.md) | [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Core Module](audit.md) | [liberusoftware/audit](../../../modules/source/liberusoftware--audit.md) | [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Core Core Module](core.md) | [liberusoftware/real-estate-core](../../../modules/source/liberusoftware--real-estate-core.md) | [api](../api/core.md) · [nextjs](../nextjs/core.md) |
+| [Currency Context Core Module](currency-context.md) | [liberusoftware/currency-context](../../../modules/source/liberusoftware--currency-context.md) | [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience Core Module](developer-experience.md) | [liberusoftware/developer-experience](../../../modules/source/liberusoftware--developer-experience.md) | [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags Core Module](feature-flags.md) | [liberusoftware/feature-flags](../../../modules/source/liberusoftware--feature-flags.md) | [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Features Core Module](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [api](../api/features.md) · [nextjs](../nextjs/features.md) |
+| [Filament Core Module](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [api](../api/filament.md) · [nextjs](../nextjs/filament.md) |
+| [Files Media Core Module](files-media.md) | [liberusoftware/files-media](../../../modules/source/liberusoftware--files-media.md) | [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core Core Module](identity-core.md) | [liberusoftware/identity-core](../../../modules/source/liberusoftware--identity-core.md) | [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Core Module](identity-socialstream.md) | [liberusoftware/identity-socialstream](../../../modules/source/liberusoftware--identity-socialstream.md) | [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Core Module](import-export.md) | [liberusoftware/import-export](../../../modules/source/liberusoftware--import-export.md) | [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Instructions Core Module](instructions.md) | [liberusoftware/real-estate-instructions](../../../modules/source/liberusoftware--real-estate-instructions.md) | [api](../api/instructions.md) · [nextjs](../nextjs/instructions.md) |
+| [Integrations Core Module](integrations.md) | [liberusoftware/integrations](../../../modules/source/liberusoftware--integrations.md) | [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Core Module](jetstream-bridge.md) | [liberusoftware/jetstream-bridge](../../../modules/source/liberusoftware--jetstream-bridge.md) | [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Lettings Core Module](lettings.md) | [liberusoftware/real-estate-lettings](../../../modules/source/liberusoftware--real-estate-lettings.md) | [api](../api/lettings.md) · [nextjs](../nextjs/lettings.md) |
+| [Listings Core Module](listings.md) | [liberusoftware/real-estate-listings](../../../modules/source/liberusoftware--real-estate-listings.md) | [api](../api/listings.md) · [nextjs](../nextjs/listings.md) |
+| [Livewire Core Module](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [api](../api/livewire.md) · [nextjs](../nextjs/livewire.md) |
+| [Localization Core Core Module](localization-core.md) | [liberusoftware/localization-core](../../../modules/source/liberusoftware--localization-core.md) | [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Core Module](localization-mymemory.md) | [liberusoftware/localization-mymemory](../../../modules/source/liberusoftware--localization-mymemory.md) | [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Marketing Core Module](marketing.md) | [liberusoftware/real-estate-marketing](../../../modules/source/liberusoftware--real-estate-marketing.md) | [api](../api/marketing.md) · [nextjs](../nextjs/marketing.md) |
+| [Matching Core Module](matching.md) | [liberusoftware/real-estate-matching](../../../modules/source/liberusoftware--real-estate-matching.md) | [api](../api/matching.md) · [nextjs](../nextjs/matching.md) |
+| [Media And Documents Core Module](media-and-documents.md) | [liberusoftware/real-estate-media-and-documents](../../../modules/source/liberusoftware--real-estate-media-and-documents.md) | [api](../api/media-and-documents.md) · [nextjs](../nextjs/media-and-documents.md) |
+| [Module Manager Core Module](module-manager.md) | [liberusoftware/module-manager](../../../modules/source/liberusoftware--module-manager.md) | [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications Core Module](notifications.md) | [liberusoftware/notifications](../../../modules/source/liberusoftware--notifications.md) | [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Core Module](observability.md) | [liberusoftware/observability](../../../modules/source/liberusoftware--observability.md) | [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Offers Core Module](offers.md) | [liberusoftware/real-estate-offers](../../../modules/source/liberusoftware--real-estate-offers.md) | [api](../api/offers.md) · [nextjs](../nextjs/offers.md) |
+| [Organizations Teams Core Module](organizations-teams.md) | [liberusoftware/organizations-teams](../../../modules/source/liberusoftware--organizations-teams.md) | [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Parties Core Module](parties.md) | [liberusoftware/real-estate-parties](../../../modules/source/liberusoftware--real-estate-parties.md) | [api](../api/parties.md) · [nextjs](../nextjs/parties.md) |
+| [Portals And Reporting Core Module](portals-and-reporting.md) | [Target/source map](../SOURCE-MAPPING.md#portals-and-reporting) | [api](../api/portals-and-reporting.md) · [nextjs](../nextjs/portals-and-reporting.md) |
+| [Profiles Core Module](profiles.md) | [liberusoftware/profiles](../../../modules/source/liberusoftware--profiles.md) | [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Properties Core Module](properties.md) | [liberusoftware/real-estate-properties](../../../modules/source/liberusoftware--real-estate-properties.md) | [api](../api/properties.md) · [nextjs](../nextjs/properties.md) |
+| [Property Management Core Module](property-management.md) | [liberusoftware/real-estate-property-management](../../../modules/source/liberusoftware--real-estate-property-management.md) | [api](../api/property-management.md) · [nextjs](../nextjs/property-management.md) |
+| [Real Estate Core Core Module](real-estate-core.md) | [liberusoftware/real-estate-core](../../../modules/source/liberusoftware--real-estate-core.md) | [api](../api/real-estate-core.md) · [nextjs](../nextjs/real-estate-core.md) |
+| [Real Estate Instructions Core Module](real-estate-instructions.md) | [liberusoftware/real-estate-instructions](../../../modules/source/liberusoftware--real-estate-instructions.md) | [api](../api/real-estate-instructions.md) · [nextjs](../nextjs/real-estate-instructions.md) |
+| [Real Estate Lettings Core Module](real-estate-lettings.md) | [liberusoftware/real-estate-lettings](../../../modules/source/liberusoftware--real-estate-lettings.md) | [api](../api/real-estate-lettings.md) · [nextjs](../nextjs/real-estate-lettings.md) |
+| [Real Estate Listings Core Module](real-estate-listings.md) | [liberusoftware/real-estate-listings](../../../modules/source/liberusoftware--real-estate-listings.md) | [api](../api/real-estate-listings.md) · [nextjs](../nextjs/real-estate-listings.md) |
+| [Real Estate Marketing Core Module](real-estate-marketing.md) | [liberusoftware/real-estate-marketing](../../../modules/source/liberusoftware--real-estate-marketing.md) | [api](../api/real-estate-marketing.md) · [nextjs](../nextjs/real-estate-marketing.md) |
+| [Real Estate Matching Core Module](real-estate-matching.md) | [liberusoftware/real-estate-matching](../../../modules/source/liberusoftware--real-estate-matching.md) | [api](../api/real-estate-matching.md) · [nextjs](../nextjs/real-estate-matching.md) |
+| [Real Estate Media And Documents Core Module](real-estate-media-and-documents.md) | [liberusoftware/real-estate-media-and-documents](../../../modules/source/liberusoftware--real-estate-media-and-documents.md) | [api](../api/real-estate-media-and-documents.md) · [nextjs](../nextjs/real-estate-media-and-documents.md) |
+| [Real Estate Offers Core Module](real-estate-offers.md) | [liberusoftware/real-estate-offers](../../../modules/source/liberusoftware--real-estate-offers.md) | [api](../api/real-estate-offers.md) · [nextjs](../nextjs/real-estate-offers.md) |
+| [Real Estate Onthemarket Core Module](real-estate-onthemarket.md) | [liberusoftware/real-estate-onthemarket](../../../modules/source/liberusoftware--real-estate-onthemarket.md) | [api](../api/real-estate-onthemarket.md) · [nextjs](../nextjs/real-estate-onthemarket.md) |
+| [Real Estate Parties Core Module](real-estate-parties.md) | [liberusoftware/real-estate-parties](../../../modules/source/liberusoftware--real-estate-parties.md) | [api](../api/real-estate-parties.md) · [nextjs](../nextjs/real-estate-parties.md) |
+| [Real Estate Portals Reporting Core Module](real-estate-portals-reporting.md) | [liberusoftware/real-estate-portals-reporting](../../../modules/source/liberusoftware--real-estate-portals-reporting.md) | [api](../api/real-estate-portals-reporting.md) · [nextjs](../nextjs/real-estate-portals-reporting.md) |
+| [Real Estate Properties Core Module](real-estate-properties.md) | [liberusoftware/real-estate-properties](../../../modules/source/liberusoftware--real-estate-properties.md) | [api](../api/real-estate-properties.md) · [nextjs](../nextjs/real-estate-properties.md) |
+| [Real Estate Property Management Core Module](real-estate-property-management.md) | [liberusoftware/real-estate-property-management](../../../modules/source/liberusoftware--real-estate-property-management.md) | [api](../api/real-estate-property-management.md) · [nextjs](../nextjs/real-estate-property-management.md) |
+| [Real Estate Rightmove Core Module](real-estate-rightmove.md) | [liberusoftware/real-estate-rightmove](../../../modules/source/liberusoftware--real-estate-rightmove.md) | [api](../api/real-estate-rightmove.md) · [nextjs](../nextjs/real-estate-rightmove.md) |
+| [Real Estate Sales Progression Core Module](real-estate-sales-progression.md) | [liberusoftware/real-estate-sales-progression](../../../modules/source/liberusoftware--real-estate-sales-progression.md) | [api](../api/real-estate-sales-progression.md) · [nextjs](../nextjs/real-estate-sales-progression.md) |
+| [Real Estate Valuations Core Module](real-estate-valuations.md) | [liberusoftware/real-estate-valuations](../../../modules/source/liberusoftware--real-estate-valuations.md) | [api](../api/real-estate-valuations.md) · [nextjs](../nextjs/real-estate-valuations.md) |
+| [Real Estate Viewings Core Module](real-estate-viewings.md) | [liberusoftware/real-estate-viewings](../../../modules/source/liberusoftware--real-estate-viewings.md) | [api](../api/real-estate-viewings.md) · [nextjs](../nextjs/real-estate-viewings.md) |
+| [Real Estate Vr Design Core Module](real-estate-vr-design.md) | [liberusoftware/real-estate-vr-design](../../../modules/source/liberusoftware--real-estate-vr-design.md) | [api](../api/real-estate-vr-design.md) · [nextjs](../nextjs/real-estate-vr-design.md) |
+| [Real Estate Zoopla Core Module](real-estate-zoopla.md) | [liberusoftware/real-estate-zoopla](../../../modules/source/liberusoftware--real-estate-zoopla.md) | [api](../api/real-estate-zoopla.md) · [nextjs](../nextjs/real-estate-zoopla.md) |
+| [Roles Permissions Core Module](roles-permissions.md) | [liberusoftware/roles-permissions](../../../modules/source/liberusoftware--roles-permissions.md) | [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Sales Progression Core Module](sales-progression.md) | [liberusoftware/real-estate-sales-progression](../../../modules/source/liberusoftware--real-estate-sales-progression.md) | [api](../api/sales-progression.md) · [nextjs](../nextjs/sales-progression.md) |
+| [Scheduler Queues Core Module](scheduler-queues.md) | [liberusoftware/scheduler-queues](../../../modules/source/liberusoftware--scheduler-queues.md) | [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Core Module](search.md) | [liberusoftware/search](../../../modules/source/liberusoftware--search.md) | [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices Core Module](sessions-devices.md) | [liberusoftware/sessions-devices](../../../modules/source/liberusoftware--sessions-devices.md) | [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Core Module](settings.md) | [liberusoftware/settings](../../../modules/source/liberusoftware--settings.md) | [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Core Module](theme-support.md) | [liberusoftware/theme-support](../../../modules/source/liberusoftware--theme-support.md) | [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Core Module](two-factor-authentication.md) | [liberusoftware/two-factor-authentication](../../../modules/source/liberusoftware--two-factor-authentication.md) | [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Valuations Core Module](valuations.md) | [liberusoftware/real-estate-valuations](../../../modules/source/liberusoftware--real-estate-valuations.md) | [api](../api/valuations.md) · [nextjs](../nextjs/valuations.md) |
+| [Viewings Core Module](viewings.md) | [liberusoftware/real-estate-viewings](../../../modules/source/liberusoftware--real-estate-viewings.md) | [api](../api/viewings.md) · [nextjs](../nextjs/viewings.md) |
+| [Webhooks Core Module](webhooks.md) | [liberusoftware/webhooks](../../../modules/source/liberusoftware--webhooks.md) | [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

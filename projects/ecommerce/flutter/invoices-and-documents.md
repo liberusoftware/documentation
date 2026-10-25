@@ -1,5 +1,9 @@
 # Invoices And Documents Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#invoices-and-documents). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-invoices-and-documents-flutter
 **Matching core package:** module-ecommerce-invoices-and-documents ([implementation](../core/invoices-and-documents.md))
 **Matching API package:** module-ecommerce-invoices-and-documents-api ([contract](../api/invoices-and-documents.md))

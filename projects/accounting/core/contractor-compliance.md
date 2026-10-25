@@ -1,8 +1,12 @@
 # Accounting: Contractor Compliance Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#contractor-compliance). Observed identity: [`liberusoftware/module-accounting-contractor-compliance`](../../../modules/source/liberusoftware--module-accounting-contractor-compliance.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-contractor-compliance`
+**Design package identifier:** `module-accounting-contractor-compliance`
 **Domain specification:** [Contractor Compliance](../features/contractor-compliance.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

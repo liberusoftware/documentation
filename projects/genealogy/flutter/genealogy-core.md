@@ -1,5 +1,9 @@
 # Genealogy Core Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#genealogy-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-genealogy-genealogy-core-flutter
 **Matching core package:** module-genealogy-genealogy-core ([implementation](../core/genealogy-core.md))
 **Matching API package:** module-genealogy-genealogy-core-api ([contract](../api/genealogy-core.md))

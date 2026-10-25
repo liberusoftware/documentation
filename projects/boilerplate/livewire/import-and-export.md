@@ -1,6 +1,10 @@
 # Boilerplate: Import and Export Livewire presentation packages
 
-**Composer package:** `module-import-and-export-livewire`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#import-and-export). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `import-export`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-import-and-export-livewire`
 **Matching core package:** [`module-import-and-export`](../core/import-and-export.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Schemas, mapping, dry runs, validation, queued execution, progress, errors, authorization, and retention.

@@ -1,12 +1,16 @@
 # CRM: Crm Territories And Ownership Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-territories-and-ownership). Observed identity: [`liberusoftware/module-crm-territories-and-ownership-livewire`](../../../modules/source/liberusoftware--module-crm-territories-and-ownership-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-crm-crm-territories-and-ownership-livewire`  
 **Matching domain module:** `crm-territories-and-ownership`  
 **Application:** CRM  
 **Source feature:** [Crm Territories And Ownership](../features/crm-territories-and-ownership.md)  
-**Architecture:** [LIVEWIRE.md](../CRM.md) · [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

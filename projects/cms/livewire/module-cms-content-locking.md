@@ -1,12 +1,16 @@
 # CMS: Module Cms Content Locking Livewire
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-content-locking). Observed identity: [`liberusoftware/module-cms-content-locking-livewire`](../../../modules/source/liberusoftware--module-cms-content-locking-livewire.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Livewire 4 implementation
 
 **Livewire package:** `module-cms-module-cms-content-locking-livewire`  
 **Matching domain module:** `module-cms-content-locking`  
 **Application:** CMS  
 **Source feature:** [Module Cms Content Locking](../features/module-cms-content-locking.md)  
-**Architecture:** [LIVEWIRE.md](../CMS.md) · [MODULES.md](../CMS.md) · [TESTING.md](../CMS.md)
+**Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

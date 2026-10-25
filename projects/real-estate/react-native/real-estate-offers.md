@@ -1,5 +1,9 @@
 # Real Estate Offers React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#real-estate-offers). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-real-estate-real-estate-offers-react-native
 **Matching core package:** module-real-estate-real-estate-offers ([implementation](../core/real-estate-offers.md))
 **Matching API package:** module-real-estate-real-estate-offers-api ([contract](../api/real-estate-offers.md))

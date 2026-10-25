@@ -1,5 +1,9 @@
 # Content Calendar Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#content-calendar). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-content-calendar-flutter
 **Matching core package:** module-cms-content-calendar ([implementation](../core/content-calendar.md))
 **Matching API package:** module-cms-content-calendar-api ([contract](../api/content-calendar.md))

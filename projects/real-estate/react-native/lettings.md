@@ -1,5 +1,9 @@
 # Lettings React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#lettings). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-real-estate-lettings-react-native
 **Matching core package:** module-real-estate-lettings ([implementation](../core/lettings.md))
 **Matching API package:** module-real-estate-lettings-api ([contract](../api/lettings.md))

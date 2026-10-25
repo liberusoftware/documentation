@@ -1,5 +1,9 @@
 # Customers And Sites Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#customers-and-sites). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-maintenance-customers-and-sites-flutter
 **Matching core package:** module-maintenance-customers-and-sites ([implementation](../core/customers-and-sites.md))
 **Matching API package:** module-maintenance-customers-and-sites-api ([contract](../api/customers-and-sites.md))

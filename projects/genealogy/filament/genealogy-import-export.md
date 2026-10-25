@@ -1,12 +1,16 @@
 # Genealogy: Genealogy Import Export Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#genealogy-import-export). Observed identity: [`liberusoftware/module-genealogy-import-export-filament`](../../../modules/source/liberusoftware--module-genealogy-import-export-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-genealogy-genealogy-import-export-filament`  
 **Matching domain module:** `genealogy-import-export`  
 **Application:** Genealogy  
 **Source feature:** [Genealogy Import Export](../features/genealogy-import-export.md)  
-**Architecture:** [FILAMENT.md](../GENEALOGY.md) · [MODULES.md](../GENEALOGY.md) · [TESTING.md](../GENEALOGY.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

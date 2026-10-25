@@ -1,5 +1,9 @@
 # Automation Core React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#automation-core). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-automation-automation-core-react-native
 **Matching core package:** module-automation-automation-core ([implementation](../core/automation-core.md))
 **Matching API package:** module-automation-automation-core-api ([contract](../api/automation-core.md))

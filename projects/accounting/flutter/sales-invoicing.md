@@ -1,5 +1,9 @@
 # Sales Invoicing Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#sales-invoicing). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-sales-invoicing-flutter
 **Matching core package:** module-accounting-sales-invoicing ([implementation](../core/sales-invoicing.md))
 **Matching API package:** module-accounting-sales-invoicing-api ([contract](../api/sales-invoicing.md))

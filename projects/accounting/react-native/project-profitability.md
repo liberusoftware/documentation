@@ -1,5 +1,9 @@
 # Project Profitability React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#project-profitability). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-project-profitability-react-native
 **Matching core package:** module-accounting-project-profitability ([implementation](../core/project-profitability.md))
 **Matching API package:** module-accounting-project-profitability-api ([contract](../api/project-profitability.md))

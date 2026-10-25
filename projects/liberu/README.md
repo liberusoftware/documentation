@@ -39,3 +39,11 @@ This is the navigation index for the Liberu platform project. Start with the [Li
 5. Use [DELIVERY-CHECKLIST.md](implementation/DELIVERY-CHECKLIST.md) for tests, runbooks, documentation, and release evidence.
 
 Every directory in this project has its own README index. Module files are linked from the matching index and must not be discovered by convention alone.
+
+## Source and additional presentation options
+
+- [Next.js module plan](nextjs/README.md) — API-consuming React adapters and shared component boundaries.
+
+- [Design-to-source reconciliation](SOURCE-MAPPING.md) — exact package identities, retained aliases, unmatched observed modules, and source implementation references.
+
+- [Cross-project platform reuse](REUSE.md) — observed source families, namespace/table differences and data-preserving adoption.

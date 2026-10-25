@@ -1,5 +1,9 @@
 # Consent And Preferences React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#consent-and-preferences). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-crm-consent-and-preferences-react-native
 **Matching core package:** module-crm-consent-and-preferences ([implementation](../core/consent-and-preferences.md))
 **Matching API package:** module-crm-consent-and-preferences-api ([contract](../api/consent-and-preferences.md))

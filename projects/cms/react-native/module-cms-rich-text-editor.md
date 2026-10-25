@@ -1,5 +1,9 @@
 # Module Cms Rich Text Editor React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-cms-rich-text-editor). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-module-cms-rich-text-editor-react-native
 **Matching core package:** module-cms-module-cms-rich-text-editor ([implementation](../core/module-cms-rich-text-editor.md))
 **Matching API package:** module-cms-module-cms-rich-text-editor-api ([contract](../api/module-cms-rich-text-editor.md))

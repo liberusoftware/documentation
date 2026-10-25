@@ -1,6 +1,10 @@
 # Boilerplate: Developer Experience domain packages
 
-**Composer package:** `module-developer-experience`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#developer-experience). Observed identity: [`liberusoftware/developer-experience`](../../../modules/source/liberusoftware--developer-experience.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-developer-experience`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Local setup, fixtures, factories, quality scripts, CI, architecture tests, docs, and upgrade automation.
 

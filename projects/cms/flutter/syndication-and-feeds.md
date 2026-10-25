@@ -1,5 +1,9 @@
 # Syndication And Feeds Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#syndication-and-feeds). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-syndication-and-feeds-flutter
 **Matching core package:** module-cms-syndication-and-feeds ([implementation](../core/syndication-and-feeds.md))
 **Matching API package:** module-cms-syndication-and-feeds-api ([contract](../api/syndication-and-feeds.md))

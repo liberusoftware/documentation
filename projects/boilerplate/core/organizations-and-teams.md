@@ -1,6 +1,10 @@
 # Boilerplate: Organizations and Teams domain packages
 
-**Composer package:** `module-organizations-and-teams`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#organizations-and-teams). Observed identity: [`liberusoftware/organizations-teams`](../../../modules/source/liberusoftware--organizations-teams.md). This retained spelling maps to `organizations-teams`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-organizations-and-teams`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Organizations, teams, memberships, invitations, ownership, switching, transfer, and lifecycle.
 

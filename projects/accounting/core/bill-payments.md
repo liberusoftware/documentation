@@ -1,8 +1,12 @@
 # Accounting: Bill Payments Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#bill-payments). Observed identity: [`liberusoftware/module-accounting-bill-payments`](../../../modules/source/liberusoftware--module-accounting-bill-payments.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-bill-payments`
+**Design package identifier:** `module-accounting-bill-payments`
 **Domain specification:** [Bill Payments](../features/bill-payments.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

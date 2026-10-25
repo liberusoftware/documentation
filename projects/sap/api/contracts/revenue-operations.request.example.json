@@ -1,0 +1,8 @@
+{
+  "usage_window": {
+    "from": "2026-09-01T00:00:00Z",
+    "until": "2026-10-01T00:00:00Z"
+  },
+  "source_event_watermark": "meter-watermark-example-001",
+  "pricing_version": "pricing-v4"
+}

@@ -1,123 +1,60 @@
-# SAP: Assets and Facilities Vue + Inertia
+# Assets and facilities: Vue + Inertia design
 
-## Canonical one-to-one Vue/Inertia implementation
+**Status:** proposed enterprise implementation. The [current SAP foundation](../SOURCE-APPLICATION.md) does not establish these business workflows or this presentation as implemented. Use the [detailed domain contract](../design/assets-and-facilities.md) and [API plan](../api/assets-and-facilities.md) as the review target.
 
-**Package:** `module-sap-assets-and-facilities-vue-inertia`
-**Matching domain module:** `sap-assets-and-facilities`
-**Application:** SAP
-**Source feature:** [Assets and Facilities](../features/assets-and-facilities.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/assets-and-facilities.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#assets-and-facilities). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
 
-## 1. Purpose and ownership
+## Ownership and delivery scope
 
-This optional Vue 3 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, Vue components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+Maintenance owns operational assets, inspections and work orders; Accounting owns capitalization, depreciation and disposal postings. Enterprise coordinates custody, locations, facilities and cross-domain evidence.
 
-## 2. Module-specific surfaces
+Reuse the [shared enterprise operation design](../design/OPERATIONS.md) for command identities, concurrency, handoffs and recovery. This capability group adds only its own orchestration/projection and genuine missing behavior; it does not create another owner for existing product records.
 
-- **Asset lifecycle:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Maintenance:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Leases:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Locations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Facilities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Energy:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Safety:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Disposal:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+## Workflow and command contract
 
-## 3. Vue 3 + Inertia 3 implementation
+**Workspace surfaces:** asset/custody search, handover checklist, inspection evidence, discrepancy queue, operational-to-financial reconciliation.
 
-- Register a stable `module-sap-assets-and-facilities-vue-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
-- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, composables under `resources/js/composables`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
-- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+**Business lifecycle:** draft → approved → in_transit → accepted → reconciled; rejected and lost_or_damaged preserve custody evidence.
 
-### Capability mapping
+Keep physical asset identity distinct from its financial record. Require explicit custody acceptance, valid location/entity mappings, inspection evidence where needed, and a separate disposal authorization.
 
-- `asset-lifecycle`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `maintenance`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `leases`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `locations`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `facilities`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `energy`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `safety`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `disposal`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
+The illustrated `accept` command takes `to_custodian_reference`, `location_reference`, `condition_snapshot_id`, `acceptance_evidence_id`, with a documented record-version precondition and scoped operation identity. It starts from `in_transit` and reaches `accepted` only after its defined business outcome. The [API example](../api/assets-and-facilities.md#3-endpoint-examples) provides the proposed body and [draft request schema](../api/contracts/assets-and-facilities.request.schema.json).
 
-## 4. API contract and Inertia consumption
+Validate the receiving custodian, authorized location, required inspection and current custody version. Conflicting concurrent acceptance must not create two current custodians.
 
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
-- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
+Record the accepted custody transition. Damage/discrepancy and financial capitalization/disposal stay with their respective owner workflows.
 
-## 5. Security and verification
+## Layer implementation
 
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
-- Test observable behavior with TypeScript, ESLint, Vitest, Vue Test Utils, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
+The Laravel host owns Inertia routes/controllers and passes authorized serializable page props to typed Vue components/composables. Compose a queue, subject/evidence detail and `accept` form for the domain workspace. Props include the record/version, permitted actions, safe draft defaults and operation reference, not an unrestricted model snapshot.
 
-## 6. Definition of done
+An Inertia visit expects an Inertia page/redirect lifecycle. Use the Laravel controller's reviewed public application boundary or a deliberate API adapter and then return the appropriate Inertia response. Do not point an Inertia page visit at a bare REST JSON endpoint and assume it is an Inertia page.
 
-- Package identity, public exports, API dependency, and module dependency match `sap-assets-and-facilities` one-to-one.
-- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
-- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+Keep `to_custodian_reference`, `location_reference`, `condition_snapshot_id`, `acceptance_evidence_id` in a typed command draft and map actual server field errors to the form. Preserve navigation/filter state where safe, focus the actionable error summary, and reload/review a stale record before resubmission. Laravel reauthorizes every command independently of client visibility.
 
-## Canonical one-to-one Vue/Inertia implementation
+Share framework-independent Vue primitives with Nuxt where the contracts fit. Keep Inertia navigation/forms/page props in its wrapper and Nuxt server/browser transport, routing and runtime configuration in its adapter.
 
-**Package:** `module-sap-assets-and-facilities-vue-inertia`
-**Matching domain module:** `sap-assets-and-facilities`
-**Application:** SAP
-**Source feature:** [Assets and Facilities](../features/assets-and-facilities.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/assets-and-facilities.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+The Vue UI displays business and operation states separately. A queued response preserves a pending status and authorized progress link; it does not manufacture the eventual domain outcome in local state.
 
-## 1. Purpose and ownership
+## Authorization, recovery and operations
 
-This optional Vue 3 + Inertia 3 presentation package presents exactly one matching API module. It contributes reusable Inertia pages, Vue components, hooks, typed API adapters, forms, and actions to application-owned Laravel applications while delegating authentication, authorization, validation, team context, persistence, and business rules to the matching public API boundary. It must not contain another module's UI, private Laravel model access, or application-specific `App\` coupling.
+Custodians acknowledge receipt; asset managers approve changes; finance authorizes capitalization/disposal financial effects.
 
-## 2. Module-specific surfaces
+Unaccepted or damaged handovers stay in a discrepancy queue. Never complete offboarding by deleting an assigned asset or clearing its custody history.
 
-- **Asset lifecycle:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Maintenance:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Leases:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Locations:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Facilities:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Energy:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Safety:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
-- **Disposal:** page, component, hook, form, and failure-state behavior for this module's authorized workflow.
+Show the selected entity, source/subject reference, current business state and separate operation progress. Preserve safe drafts on validation/conflict. Reauthenticate on expiry and discard protected cached data after scope/permission changes. A network timeout never establishes whether an external write succeeded; use the durable operation/source reference for reconciliation.
 
-## 3. Vue 3 + Inertia 3 implementation
+## Module-specific acceptance
 
-- Register a stable `module-sap-assets-and-facilities-vue-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
-- Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, composables under `resources/js/composables`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
-- Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
-- Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
+- The same asset cannot be concurrently accepted by two custodians; damaged receipts remain unresolved; disposal retains financial and custody references.
+- Repeated commands return the documented existing result or a clear conflict; they cannot duplicate a completed external side effect.
+- A tenant/entity switch, permission revocation or expired session cannot reuse another scope's cached record, attachment or exported file.
+- A downstream failure remains observable with a valid owner/recovery path across every enabled presentation.
 
-### Capability mapping
+- Exercise the `accept` example with allowed, denied, invalid, stale, duplicate and uncertain-result paths; confirm `accepted` only from its authoritative outcome.
+- Verify the enabled layer uses the same domain/operation contract as other surfaces and cannot bypass it through generic saves, hydrated state, direct JSON fields or offline replay.
+- Check scope changes, revoked permissions, evidence/result access, accessible errors and recovery in a representative consuming host. Record actual commands/results before describing the implementation as verified.
 
-- `asset-lifecycle`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `maintenance`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `leases`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `locations`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `facilities`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `energy`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `safety`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-- `disposal`: map the matching API query/action to a focused Vue page, component, hook, or Inertia form.
-
-## 4. API contract and Inertia consumption
-
-- Consume only the matching API module linked above; use its documented OpenAPI schemas, routes, authentication, permissions, team context, pagination, errors, and operation semantics.
-- Keep a typed module-local API client and hooks boundary; use Inertia visits for page transitions and `useForm`/`router` for mutations, preserving server validation and redirect semantics.
-- Forward Sanctum cookies or approved authorization headers through a controlled first-party boundary; never persist long-lived tokens in browser storage or expose secrets in page props.
-- Validate client input for user experience, but rely on the API for authoritative authorization, validation, concurrency, idempotency, and business invariants.
-- Map loading, empty, stale, unauthorized, forbidden, validation, rate-limit, and server-error responses to accessible UI states.
-
-## 5. Security and verification
-
-- Prove allowed, denied, wrong-team, invalid, stale/concurrent, duplicate, partial-failure, and recovery paths for every exposed surface.
-- Add package discovery/collision, architecture-boundary, authorization, team-context, accessibility, localization, SSR hydration where enabled, and minimal-host installation tests.
-- Test observable behavior with TypeScript, ESLint, Vitest, Vue Test Utils, Playwright, and the supported Laravel/Inertia stack; domain behavior remains covered by the owning module.
-
-## 6. Definition of done
-
-- Package identity, public exports, API dependency, and module dependency match `sap-assets-and-facilities` one-to-one.
-- Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
-- Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.
+Use [testing](../../../standards/TESTING.md), [API architecture](../../../architecture/API.md), [shared operations](../design/OPERATIONS.md), and the [Composer](../../../guides/COMPOSER.md)/[npm](../../../guides/NPM.md) lifecycle guides for the remaining delivery requirements.

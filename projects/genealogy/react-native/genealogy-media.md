@@ -1,5 +1,9 @@
 # Genealogy Media React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#genealogy-media). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-genealogy-genealogy-media-react-native
 **Matching core package:** module-genealogy-genealogy-media ([implementation](../core/genealogy-media.md))
 **Matching API package:** module-genealogy-genealogy-media-api ([contract](../api/genealogy-media.md))

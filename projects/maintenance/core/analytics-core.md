@@ -1,8 +1,12 @@
 # Maintenance: Analytics Core Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#analytics-core). Observed identity: [`liberusoftware/analytics-core`](../../../modules/source/liberusoftware--analytics-core.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-maintenance-analytics-core`
+**Design package identifier:** `module-maintenance-analytics-core`
 **Domain specification:** [Analytics Core](../features/analytics-core.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

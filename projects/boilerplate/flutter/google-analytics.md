@@ -1,5 +1,9 @@
 # Google Analytics domain packages Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#google-analytics). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `analytics-google`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-google-analytics-flutter
 **Matching core package:** module-google-analytics ([implementation](../core/google-analytics.md))
 **Matching API package:** module-google-analytics-api ([contract](../api/google-analytics.md))

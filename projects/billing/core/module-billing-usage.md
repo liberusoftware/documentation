@@ -1,8 +1,12 @@
 # Billing: Module Billing Usage Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-usage). Observed identity: [`liberusoftware/module-billing-usage`](../../../modules/source/liberusoftware--module-billing-usage.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-module-billing-usage`
+**Design package identifier:** `module-billing-module-billing-usage`
 **Domain specification:** [Module Billing Usage](../features/module-billing-usage.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

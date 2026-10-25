@@ -1,8 +1,12 @@
 # Accounting: Reimbursements Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#reimbursements). Observed identity: [`liberusoftware/module-accounting-reimbursements`](../../../modules/source/liberusoftware--module-accounting-reimbursements.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-accounting-reimbursements`
+**Design package identifier:** `module-accounting-reimbursements`
 **Domain specification:** [Reimbursements](../features/reimbursements.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

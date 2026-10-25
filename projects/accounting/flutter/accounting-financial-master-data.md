@@ -1,5 +1,9 @@
 # Accounting Financial Master Data Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-financial-master-data). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-accounting-financial-master-data-flutter
 **Matching core package:** module-accounting-accounting-financial-master-data ([implementation](../core/accounting-financial-master-data.md))
 **Matching API package:** module-accounting-accounting-financial-master-data-api ([contract](../api/accounting-financial-master-data.md))

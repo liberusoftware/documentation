@@ -1,54 +1,72 @@
 # Genealogy React Native + Expo Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **62 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-- [Activity Comments React Native](activity-comments.md) — `module-genealogy-activity-comments-react-native`
-- [Analytics Core React Native](analytics-core.md) — `module-genealogy-analytics-core-react-native`
-- [Analytics Google React Native](analytics-google.md) — `module-genealogy-analytics-google-react-native`
-- [Analytics Meta React Native](analytics-meta.md) — `module-genealogy-analytics-meta-react-native`
-- [Api Access React Native](api-access.md) — `module-genealogy-api-access-react-native`
-- [Application React Native](application.md) — `module-genealogy-application-react-native`
-- [Audit React Native](audit.md) — `module-genealogy-audit-react-native`
-- [Currency Context React Native](currency-context.md) — `module-genealogy-currency-context-react-native`
-- [Developer Experience React Native](developer-experience.md) — `module-genealogy-developer-experience-react-native`
-- [Feature Flags React Native](feature-flags.md) — `module-genealogy-feature-flags-react-native`
-- [Files Media React Native](files-media.md) — `module-genealogy-files-media-react-native`
-- [Genealogy Collaboration React Native](genealogy-collaboration.md) — `module-genealogy-genealogy-collaboration-react-native`
-- [Genealogy Core React Native](genealogy-core.md) — `module-genealogy-genealogy-core-react-native`
-- [Genealogy Discovery React Native](genealogy-discovery.md) — `module-genealogy-genealogy-discovery-react-native`
-- [Genealogy Dna React Native](genealogy-dna.md) — `module-genealogy-genealogy-dna-react-native`
-- [Genealogy Evidence React Native](genealogy-evidence.md) — `module-genealogy-genealogy-evidence-react-native`
-- [Genealogy Gamification React Native](genealogy-gamification.md) — `module-genealogy-genealogy-gamification-react-native`
-- [Genealogy Import Export React Native](genealogy-import-export.md) — `module-genealogy-genealogy-import-export-react-native`
-- [Genealogy Media React Native](genealogy-media.md) — `module-genealogy-genealogy-media-react-native`
-- [Genealogy People React Native](genealogy-people.md) — `module-genealogy-genealogy-people-react-native`
-- [Genealogy Places React Native](genealogy-places.md) — `module-genealogy-genealogy-places-react-native`
-- [Genealogy Relationships React Native](genealogy-relationships.md) — `module-genealogy-genealogy-relationships-react-native`
-- [Genealogy Reports React Native](genealogy-reports.md) — `module-genealogy-genealogy-reports-react-native`
-- [Genealogy Research React Native](genealogy-research.md) — `module-genealogy-genealogy-research-react-native`
-- [Genealogy Timeline React Native](genealogy-timeline.md) — `module-genealogy-genealogy-timeline-react-native`
-- [Genealogy Tree Viewer React Native](genealogy-tree-viewer.md) — `module-genealogy-genealogy-tree-viewer-react-native`
-- [Identity Core React Native](identity-core.md) — `module-genealogy-identity-core-react-native`
-- [Identity Socialstream React Native](identity-socialstream.md) — `module-genealogy-identity-socialstream-react-native`
-- [Import Export React Native](import-export.md) — `module-genealogy-import-export-react-native`
-- [Integrations React Native](integrations.md) — `module-genealogy-integrations-react-native`
-- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-genealogy-jetstream-bridge-react-native`
-- [Liberu Business Workflow Reconciliation React Native](liberu-business-workflow-reconciliation.md) — `module-genealogy-liberu-business-workflow-reconciliation-react-native`
-- [Liberu Executive Insights React Native](liberu-executive-insights.md) — `module-genealogy-liberu-executive-insights-react-native`
-- [Liberu Platform Orchestration React Native](liberu-platform-orchestration.md) — `module-genealogy-liberu-platform-orchestration-react-native`
-- [Liberu Revenue And Care Orchestration React Native](liberu-revenue-and-care-orchestration.md) — `module-genealogy-liberu-revenue-and-care-orchestration-react-native`
-- [Localization Core React Native](localization-core.md) — `module-genealogy-localization-core-react-native`
-- [Localization Mymemory React Native](localization-mymemory.md) — `module-genealogy-localization-mymemory-react-native`
-- [Module Manager React Native](module-manager.md) — `module-genealogy-module-manager-react-native`
-- [Notifications React Native](notifications.md) — `module-genealogy-notifications-react-native`
-- [Observability React Native](observability.md) — `module-genealogy-observability-react-native`
-- [Organizations Teams React Native](organizations-teams.md) — `module-genealogy-organizations-teams-react-native`
-- [Profiles React Native](profiles.md) — `module-genealogy-profiles-react-native`
-- [Roles Permissions React Native](roles-permissions.md) — `module-genealogy-roles-permissions-react-native`
-- [Scheduler Queues React Native](scheduler-queues.md) — `module-genealogy-scheduler-queues-react-native`
-- [Search React Native](search.md) — `module-genealogy-search-react-native`
-- [Sessions Devices React Native](sessions-devices.md) — `module-genealogy-sessions-devices-react-native`
-- [Settings React Native](settings.md) — `module-genealogy-settings-react-native`
-- [Theme Support React Native](theme-support.md) — `module-genealogy-theme-support-react-native`
-- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-genealogy-two-factor-authentication-react-native`
-- [Webhooks React Native](webhooks.md) — `module-genealogy-webhooks-react-native`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Activity Comments React Native + Expo](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core React Native + Expo](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React Native + Expo](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React Native + Expo](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access React Native + Expo](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Application React Native + Expo](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit React Native + Expo](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Collaboration React Native + Expo](collaboration.md) | [Target/source map](../SOURCE-MAPPING.md#collaboration) | [core](../core/collaboration.md) · [api](../api/collaboration.md) · [nextjs](../nextjs/collaboration.md) |
+| [Currency Context React Native + Expo](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience React Native + Expo](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Discovery React Native + Expo](discovery.md) | [Target/source map](../SOURCE-MAPPING.md#discovery) | [core](../core/discovery.md) · [api](../api/discovery.md) · [nextjs](../nextjs/discovery.md) |
+| [Dna React Native + Expo](dna.md) | [Target/source map](../SOURCE-MAPPING.md#dna) | [core](../core/dna.md) · [api](../api/dna.md) · [nextjs](../nextjs/dna.md) |
+| [Evidence React Native + Expo](evidence.md) | [Target/source map](../SOURCE-MAPPING.md#evidence) | [core](../core/evidence.md) · [api](../api/evidence.md) · [nextjs](../nextjs/evidence.md) |
+| [Feature Flags React Native + Expo](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media React Native + Expo](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Genealogy Collaboration React Native + Expo](genealogy-collaboration.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-collaboration) | [core](../core/genealogy-collaboration.md) · [api](../api/genealogy-collaboration.md) · [nextjs](../nextjs/genealogy-collaboration.md) |
+| [Genealogy Core React Native + Expo](genealogy-core.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-core) | [core](../core/genealogy-core.md) · [api](../api/genealogy-core.md) · [nextjs](../nextjs/genealogy-core.md) |
+| [Genealogy Discovery React Native + Expo](genealogy-discovery.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-discovery) | [core](../core/genealogy-discovery.md) · [api](../api/genealogy-discovery.md) · [nextjs](../nextjs/genealogy-discovery.md) |
+| [Genealogy Dna React Native + Expo](genealogy-dna.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-dna) | [core](../core/genealogy-dna.md) · [api](../api/genealogy-dna.md) · [nextjs](../nextjs/genealogy-dna.md) |
+| [Genealogy Evidence React Native + Expo](genealogy-evidence.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-evidence) | [core](../core/genealogy-evidence.md) · [api](../api/genealogy-evidence.md) · [nextjs](../nextjs/genealogy-evidence.md) |
+| [Genealogy Gamification React Native + Expo](genealogy-gamification.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-gamification) | [core](../core/genealogy-gamification.md) · [api](../api/genealogy-gamification.md) · [nextjs](../nextjs/genealogy-gamification.md) |
+| [Genealogy Import Export React Native + Expo](genealogy-import-export.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-import-export) | [core](../core/genealogy-import-export.md) · [api](../api/genealogy-import-export.md) · [nextjs](../nextjs/genealogy-import-export.md) |
+| [Genealogy Media React Native + Expo](genealogy-media.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-media) | [core](../core/genealogy-media.md) · [api](../api/genealogy-media.md) · [nextjs](../nextjs/genealogy-media.md) |
+| [Genealogy People React Native + Expo](genealogy-people.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-people) | [core](../core/genealogy-people.md) · [api](../api/genealogy-people.md) · [nextjs](../nextjs/genealogy-people.md) |
+| [Genealogy Places React Native + Expo](genealogy-places.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-places) | [core](../core/genealogy-places.md) · [api](../api/genealogy-places.md) · [nextjs](../nextjs/genealogy-places.md) |
+| [Genealogy Relationships React Native + Expo](genealogy-relationships.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-relationships) | [core](../core/genealogy-relationships.md) · [api](../api/genealogy-relationships.md) · [nextjs](../nextjs/genealogy-relationships.md) |
+| [Genealogy Reports React Native + Expo](genealogy-reports.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-reports) | [core](../core/genealogy-reports.md) · [api](../api/genealogy-reports.md) · [nextjs](../nextjs/genealogy-reports.md) |
+| [Genealogy Research React Native + Expo](genealogy-research.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-research) | [core](../core/genealogy-research.md) · [api](../api/genealogy-research.md) · [nextjs](../nextjs/genealogy-research.md) |
+| [Genealogy Timeline React Native + Expo](genealogy-timeline.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-timeline) | [core](../core/genealogy-timeline.md) · [api](../api/genealogy-timeline.md) · [nextjs](../nextjs/genealogy-timeline.md) |
+| [Genealogy Tree Viewer React Native + Expo](genealogy-tree-viewer.md) | [Target/source map](../SOURCE-MAPPING.md#genealogy-tree-viewer) | [core](../core/genealogy-tree-viewer.md) · [api](../api/genealogy-tree-viewer.md) · [nextjs](../nextjs/genealogy-tree-viewer.md) |
+| [Identity Core React Native + Expo](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React Native + Expo](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export React Native + Expo](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations React Native + Expo](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge React Native + Expo](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Liberu Business Workflow Reconciliation React Native + Expo](liberu-business-workflow-reconciliation.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-business-workflow-reconciliation) | [core](../core/liberu-business-workflow-reconciliation.md) · [api](../api/liberu-business-workflow-reconciliation.md) · [nextjs](../nextjs/liberu-business-workflow-reconciliation.md) |
+| [Liberu Executive Insights React Native + Expo](liberu-executive-insights.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-executive-insights) | [core](../core/liberu-executive-insights.md) · [api](../api/liberu-executive-insights.md) · [nextjs](../nextjs/liberu-executive-insights.md) |
+| [Liberu Platform Orchestration React Native + Expo](liberu-platform-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-platform-orchestration) | [core](../core/liberu-platform-orchestration.md) · [api](../api/liberu-platform-orchestration.md) · [nextjs](../nextjs/liberu-platform-orchestration.md) |
+| [Liberu Revenue And Care Orchestration React Native + Expo](liberu-revenue-and-care-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#liberu-revenue-and-care-orchestration) | [core](../core/liberu-revenue-and-care-orchestration.md) · [api](../api/liberu-revenue-and-care-orchestration.md) · [nextjs](../nextjs/liberu-revenue-and-care-orchestration.md) |
+| [Localization Core React Native + Expo](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React Native + Expo](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Media React Native + Expo](media.md) | [Target/source map](../SOURCE-MAPPING.md#media) | [core](../core/media.md) · [api](../api/media.md) · [nextjs](../nextjs/media.md) |
+| [Module Manager React Native + Expo](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications React Native + Expo](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability React Native + Expo](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams React Native + Expo](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [People React Native + Expo](people.md) | [Target/source map](../SOURCE-MAPPING.md#people) | [core](../core/people.md) · [api](../api/people.md) · [nextjs](../nextjs/people.md) |
+| [Places React Native + Expo](places.md) | [Target/source map](../SOURCE-MAPPING.md#places) | [core](../core/places.md) · [api](../api/places.md) · [nextjs](../nextjs/places.md) |
+| [Profiles React Native + Expo](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Relationships React Native + Expo](relationships.md) | [Target/source map](../SOURCE-MAPPING.md#relationships) | [core](../core/relationships.md) · [api](../api/relationships.md) · [nextjs](../nextjs/relationships.md) |
+| [Reports React Native + Expo](reports.md) | [Target/source map](../SOURCE-MAPPING.md#reports) | [core](../core/reports.md) · [api](../api/reports.md) · [nextjs](../nextjs/reports.md) |
+| [Research React Native + Expo](research.md) | [Target/source map](../SOURCE-MAPPING.md#research) | [core](../core/research.md) · [api](../api/research.md) · [nextjs](../nextjs/research.md) |
+| [Roles Permissions React Native + Expo](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues React Native + Expo](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search React Native + Expo](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices React Native + Expo](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings React Native + Expo](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support React Native + Expo](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Timeline React Native + Expo](timeline.md) | [Target/source map](../SOURCE-MAPPING.md#timeline) | [core](../core/timeline.md) · [api](../api/timeline.md) · [nextjs](../nextjs/timeline.md) |
+| [Tree Viewer React Native + Expo](tree-viewer.md) | [Target/source map](../SOURCE-MAPPING.md#tree-viewer) | [core](../core/tree-viewer.md) · [api](../api/tree-viewer.md) · [nextjs](../nextjs/tree-viewer.md) |
+| [Two Factor Authentication React Native + Expo](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Webhooks React Native + Expo](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

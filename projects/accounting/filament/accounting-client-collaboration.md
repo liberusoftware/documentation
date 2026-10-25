@@ -1,12 +1,16 @@
 # Accounting: Accounting Client Collaboration Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-client-collaboration). Observed identity: [`liberusoftware/module-accounting-client-collaboration-filament`](../../../modules/source/liberusoftware--module-accounting-client-collaboration-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-accounting-accounting-client-collaboration-filament`  
 **Matching domain module:** `accounting-client-collaboration`  
 **Application:** Accounting  
 **Source feature:** [Accounting Client Collaboration](../features/accounting-client-collaboration.md)  
-**Architecture:** [FILAMENT.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,6 +1,10 @@
 # Boilerplate: Developer Experience Livewire presentation packages
 
-**Composer package:** `module-developer-experience-livewire`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#developer-experience). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-developer-experience-livewire`
 **Matching core package:** [`module-developer-experience`](../core/developer-experience.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Local setup, fixtures, factories, quality scripts, CI, architecture tests, docs, and upgrade automation.

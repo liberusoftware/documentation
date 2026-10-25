@@ -1,12 +1,16 @@
 # Accounting: Accounts Payable Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounts-payable). Observed identity: [`liberusoftware/module-accounting-accounts-payable-filament`](../../../modules/source/liberusoftware--module-accounting-accounts-payable-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-accounting-accounts-payable-filament`  
 **Matching domain module:** `accounting-accounts-payable`  
 **Application:** Accounting  
 **Source feature:** [Accounts Payable](../features/accounts-payable.md)  
-**Architecture:** [FILAMENT.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

@@ -1,5 +1,9 @@
 # Editorial Workflow Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#editorial-workflow). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-editorial-workflow-flutter
 **Matching core package:** module-cms-editorial-workflow ([implementation](../core/editorial-workflow.md))
 **Matching API package:** module-cms-editorial-workflow-api ([contract](../api/editorial-workflow.md))

@@ -1,28 +1,8 @@
 # Sap Vue 3 + Inertia 3 Implementations
 
-**Source:** [SAP.md](../SAP.md)
-**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
-
-Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
-
-## Module plan
-
-- [Enterprise Foundation Vue + Inertia](enterprise-foundation.md) — `module-sap-enterprise-foundation-vue-inertia`
-- [Finance Vue + Inertia](finance.md) — `module-sap-finance-vue-inertia`
-- [Controlling Vue + Inertia](controlling.md) — `module-sap-controlling-vue-inertia`
-- [Sales and CRM Vue + Inertia](sales-and-crm.md) — `module-sap-sales-and-crm-vue-inertia`
-- [Revenue Operations Vue + Inertia](revenue-operations.md) — `module-sap-revenue-operations-vue-inertia`
-- [Procurement Vue + Inertia](procurement.md) — `module-sap-procurement-vue-inertia`
-- [Inventory and Logistics Vue + Inertia](inventory-and-logistics.md) — `module-sap-inventory-and-logistics-vue-inertia`
-- [Projects and Services Vue + Inertia](projects-and-services.md) — `module-sap-projects-and-services-vue-inertia`
-- [Service Management Vue + Inertia](service-management.md) — `module-sap-service-management-vue-inertia`
-- [Hosting and Cloud Vue + Inertia](hosting-and-cloud.md) — `module-sap-hosting-and-cloud-vue-inertia`
-- [Product and Engineering Vue + Inertia](product-and-engineering.md) — `module-sap-product-and-engineering-vue-inertia`
-- [People Vue + Inertia](people.md) — `module-sap-people-vue-inertia`
-- [Assets and Facilities Vue + Inertia](assets-and-facilities.md) — `module-sap-assets-and-facilities-vue-inertia`
-- [Governance, Risk and Compliance Vue + Inertia](governance-risk-and-compliance.md) — `module-sap-governance-risk-and-compliance-vue-inertia`
-- [Partners and Portals Vue + Inertia](partners-and-portals.md) — `module-sap-partners-and-portals-vue-inertia`
-- [Data and Intelligence Vue + Inertia](data-and-intelligence.md) — `module-sap-data-and-intelligence-vue-inertia`
+<!-- catalogue-status:start -->
+This index preserves **16 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
 
 **Source:** [SAP.md](../SAP.md)
 **Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
@@ -31,19 +11,28 @@ Each file defines the optional `Vue 3 + Inertia 3` presentation package for exac
 
 ## Module plan
 
-- [Enterprise Foundation Vue + Inertia](enterprise-foundation.md) — `module-sap-enterprise-foundation-vue-inertia`
-- [Finance Vue + Inertia](finance.md) — `module-sap-finance-vue-inertia`
-- [Controlling Vue + Inertia](controlling.md) — `module-sap-controlling-vue-inertia`
-- [Sales and CRM Vue + Inertia](sales-and-crm.md) — `module-sap-sales-and-crm-vue-inertia`
-- [Revenue Operations Vue + Inertia](revenue-operations.md) — `module-sap-revenue-operations-vue-inertia`
-- [Procurement Vue + Inertia](procurement.md) — `module-sap-procurement-vue-inertia`
-- [Inventory and Logistics Vue + Inertia](inventory-and-logistics.md) — `module-sap-inventory-and-logistics-vue-inertia`
-- [Projects and Services Vue + Inertia](projects-and-services.md) — `module-sap-projects-and-services-vue-inertia`
-- [Service Management Vue + Inertia](service-management.md) — `module-sap-service-management-vue-inertia`
-- [Hosting and Cloud Vue + Inertia](hosting-and-cloud.md) — `module-sap-hosting-and-cloud-vue-inertia`
-- [Product and Engineering Vue + Inertia](product-and-engineering.md) — `module-sap-product-and-engineering-vue-inertia`
-- [People Vue + Inertia](people.md) — `module-sap-people-vue-inertia`
-- [Assets and Facilities Vue + Inertia](assets-and-facilities.md) — `module-sap-assets-and-facilities-vue-inertia`
-- [Governance, Risk and Compliance Vue + Inertia](governance-risk-and-compliance.md) — `module-sap-governance-risk-and-compliance-vue-inertia`
-- [Partners and Portals Vue + Inertia](partners-and-portals.md) — `module-sap-partners-and-portals-vue-inertia`
-- [Data and Intelligence Vue + Inertia](data-and-intelligence.md) — `module-sap-data-and-intelligence-vue-inertia`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Vue + Inertia design](assets-and-facilities.md) | [Target/source map](../SOURCE-MAPPING.md#assets-and-facilities) | [core](../core/assets-and-facilities.md) · [api](../api/assets-and-facilities.md) · [nextjs](../nextjs/assets-and-facilities.md) |
+| [Vue + Inertia design](controlling.md) | [Target/source map](../SOURCE-MAPPING.md#controlling) | [core](../core/controlling.md) · [api](../api/controlling.md) · [nextjs](../nextjs/controlling.md) |
+| [Vue + Inertia design](data-and-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#data-and-intelligence) | [core](../core/data-and-intelligence.md) · [api](../api/data-and-intelligence.md) · [nextjs](../nextjs/data-and-intelligence.md) |
+| [Vue + Inertia design](enterprise-foundation.md) | [Target/source map](../SOURCE-MAPPING.md#enterprise-foundation) | [core](../core/enterprise-foundation.md) · [api](../api/enterprise-foundation.md) · [nextjs](../nextjs/enterprise-foundation.md) |
+| [Vue + Inertia design](finance.md) | [Target/source map](../SOURCE-MAPPING.md#finance) | [core](../core/finance.md) · [api](../api/finance.md) · [nextjs](../nextjs/finance.md) |
+| [Vue + Inertia design](governance-risk-and-compliance.md) | [Target/source map](../SOURCE-MAPPING.md#governance-risk-and-compliance) | [core](../core/governance-risk-and-compliance.md) · [api](../api/governance-risk-and-compliance.md) · [nextjs](../nextjs/governance-risk-and-compliance.md) |
+| [Vue + Inertia design](hosting-and-cloud.md) | [Target/source map](../SOURCE-MAPPING.md#hosting-and-cloud) | [core](../core/hosting-and-cloud.md) · [api](../api/hosting-and-cloud.md) · [nextjs](../nextjs/hosting-and-cloud.md) |
+| [Vue + Inertia design](inventory-and-logistics.md) | [Target/source map](../SOURCE-MAPPING.md#inventory-and-logistics) | [core](../core/inventory-and-logistics.md) · [api](../api/inventory-and-logistics.md) · [nextjs](../nextjs/inventory-and-logistics.md) |
+| [Vue + Inertia design](partners-and-portals.md) | [Target/source map](../SOURCE-MAPPING.md#partners-and-portals) | [core](../core/partners-and-portals.md) · [api](../api/partners-and-portals.md) · [nextjs](../nextjs/partners-and-portals.md) |
+| [Vue + Inertia design](people.md) | [Target/source map](../SOURCE-MAPPING.md#people) | [core](../core/people.md) · [api](../api/people.md) · [nextjs](../nextjs/people.md) |
+| [Vue + Inertia design](procurement.md) | [Target/source map](../SOURCE-MAPPING.md#procurement) | [core](../core/procurement.md) · [api](../api/procurement.md) · [nextjs](../nextjs/procurement.md) |
+| [Vue + Inertia design](product-and-engineering.md) | [Target/source map](../SOURCE-MAPPING.md#product-and-engineering) | [core](../core/product-and-engineering.md) · [api](../api/product-and-engineering.md) · [nextjs](../nextjs/product-and-engineering.md) |
+| [Vue + Inertia design](projects-and-services.md) | [Target/source map](../SOURCE-MAPPING.md#projects-and-services) | [core](../core/projects-and-services.md) · [api](../api/projects-and-services.md) · [nextjs](../nextjs/projects-and-services.md) |
+| [Vue + Inertia design](revenue-operations.md) | [Target/source map](../SOURCE-MAPPING.md#revenue-operations) | [core](../core/revenue-operations.md) · [api](../api/revenue-operations.md) · [nextjs](../nextjs/revenue-operations.md) |
+| [Vue + Inertia design](sales-and-crm.md) | [Target/source map](../SOURCE-MAPPING.md#sales-and-crm) | [core](../core/sales-and-crm.md) · [api](../api/sales-and-crm.md) · [nextjs](../nextjs/sales-and-crm.md) |
+| [Vue + Inertia design](service-management.md) | [Target/source map](../SOURCE-MAPPING.md#service-management) | [core](../core/service-management.md) · [api](../api/service-management.md) · [nextjs](../nextjs/service-management.md) |
+
+**Source:** [SAP.md](../SAP.md)
+**Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API module index](../api/README.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
+
+Each file defines the optional `Vue 3 + Inertia 3` presentation package for exactly one matching domain module.
+
+## Module plan

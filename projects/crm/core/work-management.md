@@ -1,8 +1,12 @@
 # Crm: Work Management Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#work-management). Observed identity: [`liberusoftware/module-crm-work-management`](../../../modules/source/liberusoftware--module-crm-work-management.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-crm-work-management`
+**Design package identifier:** `module-crm-work-management`
 **Domain specification:** [Work Management](../features/work-management.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

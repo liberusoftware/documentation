@@ -1,5 +1,9 @@
 # Cms Rich Text Editor Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-rich-text-editor). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-rich-text-editor-flutter
 **Matching core package:** module-cms-cms-rich-text-editor ([implementation](../core/cms-rich-text-editor.md))
 **Matching API package:** module-cms-cms-rich-text-editor-api ([contract](../api/cms-rich-text-editor.md))

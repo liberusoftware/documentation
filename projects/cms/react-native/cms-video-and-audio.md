@@ -1,5 +1,9 @@
 # Cms Video And Audio React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#cms-video-and-audio). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-cms-cms-video-and-audio-react-native
 **Matching core package:** module-cms-cms-video-and-audio ([implementation](../core/cms-video-and-audio.md))
 **Matching API package:** module-cms-cms-video-and-audio-api ([contract](../api/cms-video-and-audio.md))

@@ -1,60 +1,80 @@
 # Real Estate React Native + Expo Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **70 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional React Native + Expo adapter for exactly one matching core/API module.
 
-- [.graphify React Native](.graphify.md) — `module-real-estate-.graphify-react-native`
-- [Activity Comments React Native](activity-comments.md) — `module-real-estate-activity-comments-react-native`
-- [Analytics Core React Native](analytics-core.md) — `module-real-estate-analytics-core-react-native`
-- [Analytics Google React Native](analytics-google.md) — `module-real-estate-analytics-google-react-native`
-- [Analytics Meta React Native](analytics-meta.md) — `module-real-estate-analytics-meta-react-native`
-- [Api React Native](api.md) — `module-real-estate-api-react-native`
-- [Api Access React Native](api-access.md) — `module-real-estate-api-access-react-native`
-- [Application React Native](application.md) — `module-real-estate-application-react-native`
-- [Audit React Native](audit.md) — `module-real-estate-audit-react-native`
-- [Core React Native](core.md) — `module-real-estate-core-react-native`
-- [Currency Context React Native](currency-context.md) — `module-real-estate-currency-context-react-native`
-- [Developer Experience React Native](developer-experience.md) — `module-real-estate-developer-experience-react-native`
-- [Feature Flags React Native](feature-flags.md) — `module-real-estate-feature-flags-react-native`
-- [Features React Native](features.md) — `module-real-estate-features-react-native`
-- [Filament React Native](filament.md) — `module-real-estate-filament-react-native`
-- [Files Media React Native](files-media.md) — `module-real-estate-files-media-react-native`
-- [Identity Core React Native](identity-core.md) — `module-real-estate-identity-core-react-native`
-- [Identity Socialstream React Native](identity-socialstream.md) — `module-real-estate-identity-socialstream-react-native`
-- [Import Export React Native](import-export.md) — `module-real-estate-import-export-react-native`
-- [Integrations React Native](integrations.md) — `module-real-estate-integrations-react-native`
-- [Jetstream Bridge React Native](jetstream-bridge.md) — `module-real-estate-jetstream-bridge-react-native`
-- [Livewire React Native](livewire.md) — `module-real-estate-livewire-react-native`
-- [Localization Core React Native](localization-core.md) — `module-real-estate-localization-core-react-native`
-- [Localization Mymemory React Native](localization-mymemory.md) — `module-real-estate-localization-mymemory-react-native`
-- [Module Manager React Native](module-manager.md) — `module-real-estate-module-manager-react-native`
-- [Notifications React Native](notifications.md) — `module-real-estate-notifications-react-native`
-- [Observability React Native](observability.md) — `module-real-estate-observability-react-native`
-- [Organizations Teams React Native](organizations-teams.md) — `module-real-estate-organizations-teams-react-native`
-- [Profiles React Native](profiles.md) — `module-real-estate-profiles-react-native`
-- [Real Estate Core React Native](real-estate-core.md) — `module-real-estate-real-estate-core-react-native`
-- [Real Estate Instructions React Native](real-estate-instructions.md) — `module-real-estate-real-estate-instructions-react-native`
-- [Real Estate Lettings React Native](real-estate-lettings.md) — `module-real-estate-real-estate-lettings-react-native`
-- [Real Estate Listings React Native](real-estate-listings.md) — `module-real-estate-real-estate-listings-react-native`
-- [Real Estate Marketing React Native](real-estate-marketing.md) — `module-real-estate-real-estate-marketing-react-native`
-- [Real Estate Matching React Native](real-estate-matching.md) — `module-real-estate-real-estate-matching-react-native`
-- [Real Estate Media And Documents React Native](real-estate-media-and-documents.md) — `module-real-estate-real-estate-media-and-documents-react-native`
-- [Real Estate Offers React Native](real-estate-offers.md) — `module-real-estate-real-estate-offers-react-native`
-- [Real Estate Onthemarket React Native](real-estate-onthemarket.md) — `module-real-estate-real-estate-onthemarket-react-native`
-- [Real Estate Parties React Native](real-estate-parties.md) — `module-real-estate-real-estate-parties-react-native`
-- [Real Estate Portals Reporting React Native](real-estate-portals-reporting.md) — `module-real-estate-real-estate-portals-reporting-react-native`
-- [Real Estate Properties React Native](real-estate-properties.md) — `module-real-estate-real-estate-properties-react-native`
-- [Real Estate Property Management React Native](real-estate-property-management.md) — `module-real-estate-real-estate-property-management-react-native`
-- [Real Estate Rightmove React Native](real-estate-rightmove.md) — `module-real-estate-real-estate-rightmove-react-native`
-- [Real Estate Sales Progression React Native](real-estate-sales-progression.md) — `module-real-estate-real-estate-sales-progression-react-native`
-- [Real Estate Valuations React Native](real-estate-valuations.md) — `module-real-estate-real-estate-valuations-react-native`
-- [Real Estate Viewings React Native](real-estate-viewings.md) — `module-real-estate-real-estate-viewings-react-native`
-- [Real Estate Vr Design React Native](real-estate-vr-design.md) — `module-real-estate-real-estate-vr-design-react-native`
-- [Real Estate Zoopla React Native](real-estate-zoopla.md) — `module-real-estate-real-estate-zoopla-react-native`
-- [Roles Permissions React Native](roles-permissions.md) — `module-real-estate-roles-permissions-react-native`
-- [Scheduler Queues React Native](scheduler-queues.md) — `module-real-estate-scheduler-queues-react-native`
-- [Search React Native](search.md) — `module-real-estate-search-react-native`
-- [Sessions Devices React Native](sessions-devices.md) — `module-real-estate-sessions-devices-react-native`
-- [Settings React Native](settings.md) — `module-real-estate-settings-react-native`
-- [Theme Support React Native](theme-support.md) — `module-real-estate-theme-support-react-native`
-- [Two Factor Authentication React Native](two-factor-authentication.md) — `module-real-estate-two-factor-authentication-react-native`
-- [Webhooks React Native](webhooks.md) — `module-real-estate-webhooks-react-native`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [.graphify React Native + Expo](.graphify.md) | [Target/source map](../SOURCE-MAPPING.md#.graphify) | [core](../core/.graphify.md) · [api](../api/.graphify.md) · [nextjs](../nextjs/.graphify.md) |
+| [Activity Comments React Native + Expo](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core React Native + Expo](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google React Native + Expo](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta React Native + Expo](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access React Native + Expo](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [Api React Native + Expo](api.md) | [Target/source map](../SOURCE-MAPPING.md#api) | [core](../core/api.md) · [api](../api/api.md) · [nextjs](../nextjs/api.md) |
+| [Application React Native + Expo](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit React Native + Expo](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Core React Native + Expo](core.md) | [Target/source map](../SOURCE-MAPPING.md#core) | [core](../core/core.md) · [api](../api/core.md) · [nextjs](../nextjs/core.md) |
+| [Currency Context React Native + Expo](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Developer Experience React Native + Expo](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [Feature Flags React Native + Expo](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Features React Native + Expo](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [core](../core/features.md) · [api](../api/features.md) · [nextjs](../nextjs/features.md) |
+| [Filament React Native + Expo](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [core](../core/filament.md) · [api](../api/filament.md) · [nextjs](../nextjs/filament.md) |
+| [Files Media React Native + Expo](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Identity Core React Native + Expo](identity-core.md) | [Target/source map](../SOURCE-MAPPING.md#identity-core) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream React Native + Expo](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export React Native + Expo](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Instructions React Native + Expo](instructions.md) | [Target/source map](../SOURCE-MAPPING.md#instructions) | [core](../core/instructions.md) · [api](../api/instructions.md) · [nextjs](../nextjs/instructions.md) |
+| [Integrations React Native + Expo](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge React Native + Expo](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Lettings React Native + Expo](lettings.md) | [Target/source map](../SOURCE-MAPPING.md#lettings) | [core](../core/lettings.md) · [api](../api/lettings.md) · [nextjs](../nextjs/lettings.md) |
+| [Listings React Native + Expo](listings.md) | [Target/source map](../SOURCE-MAPPING.md#listings) | [core](../core/listings.md) · [api](../api/listings.md) · [nextjs](../nextjs/listings.md) |
+| [Livewire React Native + Expo](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [core](../core/livewire.md) · [api](../api/livewire.md) · [nextjs](../nextjs/livewire.md) |
+| [Localization Core React Native + Expo](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory React Native + Expo](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Marketing React Native + Expo](marketing.md) | [Target/source map](../SOURCE-MAPPING.md#marketing) | [core](../core/marketing.md) · [api](../api/marketing.md) · [nextjs](../nextjs/marketing.md) |
+| [Matching React Native + Expo](matching.md) | [Target/source map](../SOURCE-MAPPING.md#matching) | [core](../core/matching.md) · [api](../api/matching.md) · [nextjs](../nextjs/matching.md) |
+| [Media And Documents React Native + Expo](media-and-documents.md) | [Target/source map](../SOURCE-MAPPING.md#media-and-documents) | [core](../core/media-and-documents.md) · [api](../api/media-and-documents.md) · [nextjs](../nextjs/media-and-documents.md) |
+| [Module Manager React Native + Expo](module-manager.md) | [Target/source map](../SOURCE-MAPPING.md#module-manager) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Notifications React Native + Expo](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability React Native + Expo](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Offers React Native + Expo](offers.md) | [Target/source map](../SOURCE-MAPPING.md#offers) | [core](../core/offers.md) · [api](../api/offers.md) · [nextjs](../nextjs/offers.md) |
+| [Organizations Teams React Native + Expo](organizations-teams.md) | [Target/source map](../SOURCE-MAPPING.md#organizations-teams) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [Parties React Native + Expo](parties.md) | [Target/source map](../SOURCE-MAPPING.md#parties) | [core](../core/parties.md) · [api](../api/parties.md) · [nextjs](../nextjs/parties.md) |
+| [Portals And Reporting React Native + Expo](portals-and-reporting.md) | [Target/source map](../SOURCE-MAPPING.md#portals-and-reporting) | [core](../core/portals-and-reporting.md) · [api](../api/portals-and-reporting.md) · [nextjs](../nextjs/portals-and-reporting.md) |
+| [Profiles React Native + Expo](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Properties React Native + Expo](properties.md) | [Target/source map](../SOURCE-MAPPING.md#properties) | [core](../core/properties.md) · [api](../api/properties.md) · [nextjs](../nextjs/properties.md) |
+| [Property Management React Native + Expo](property-management.md) | [Target/source map](../SOURCE-MAPPING.md#property-management) | [core](../core/property-management.md) · [api](../api/property-management.md) · [nextjs](../nextjs/property-management.md) |
+| [Real Estate Core React Native + Expo](real-estate-core.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-core) | [core](../core/real-estate-core.md) · [api](../api/real-estate-core.md) · [nextjs](../nextjs/real-estate-core.md) |
+| [Real Estate Instructions React Native + Expo](real-estate-instructions.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-instructions) | [core](../core/real-estate-instructions.md) · [api](../api/real-estate-instructions.md) · [nextjs](../nextjs/real-estate-instructions.md) |
+| [Real Estate Lettings React Native + Expo](real-estate-lettings.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-lettings) | [core](../core/real-estate-lettings.md) · [api](../api/real-estate-lettings.md) · [nextjs](../nextjs/real-estate-lettings.md) |
+| [Real Estate Listings React Native + Expo](real-estate-listings.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-listings) | [core](../core/real-estate-listings.md) · [api](../api/real-estate-listings.md) · [nextjs](../nextjs/real-estate-listings.md) |
+| [Real Estate Marketing React Native + Expo](real-estate-marketing.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-marketing) | [core](../core/real-estate-marketing.md) · [api](../api/real-estate-marketing.md) · [nextjs](../nextjs/real-estate-marketing.md) |
+| [Real Estate Matching React Native + Expo](real-estate-matching.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-matching) | [core](../core/real-estate-matching.md) · [api](../api/real-estate-matching.md) · [nextjs](../nextjs/real-estate-matching.md) |
+| [Real Estate Media And Documents React Native + Expo](real-estate-media-and-documents.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-media-and-documents) | [core](../core/real-estate-media-and-documents.md) · [api](../api/real-estate-media-and-documents.md) · [nextjs](../nextjs/real-estate-media-and-documents.md) |
+| [Real Estate Offers React Native + Expo](real-estate-offers.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-offers) | [core](../core/real-estate-offers.md) · [api](../api/real-estate-offers.md) · [nextjs](../nextjs/real-estate-offers.md) |
+| [Real Estate Onthemarket React Native + Expo](real-estate-onthemarket.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-onthemarket) | [core](../core/real-estate-onthemarket.md) · [api](../api/real-estate-onthemarket.md) · [nextjs](../nextjs/real-estate-onthemarket.md) |
+| [Real Estate Parties React Native + Expo](real-estate-parties.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-parties) | [core](../core/real-estate-parties.md) · [api](../api/real-estate-parties.md) · [nextjs](../nextjs/real-estate-parties.md) |
+| [Real Estate Portals Reporting React Native + Expo](real-estate-portals-reporting.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-portals-reporting) | [core](../core/real-estate-portals-reporting.md) · [api](../api/real-estate-portals-reporting.md) · [nextjs](../nextjs/real-estate-portals-reporting.md) |
+| [Real Estate Properties React Native + Expo](real-estate-properties.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-properties) | [core](../core/real-estate-properties.md) · [api](../api/real-estate-properties.md) · [nextjs](../nextjs/real-estate-properties.md) |
+| [Real Estate Property Management React Native + Expo](real-estate-property-management.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-property-management) | [core](../core/real-estate-property-management.md) · [api](../api/real-estate-property-management.md) · [nextjs](../nextjs/real-estate-property-management.md) |
+| [Real Estate Rightmove React Native + Expo](real-estate-rightmove.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-rightmove) | [core](../core/real-estate-rightmove.md) · [api](../api/real-estate-rightmove.md) · [nextjs](../nextjs/real-estate-rightmove.md) |
+| [Real Estate Sales Progression React Native + Expo](real-estate-sales-progression.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-sales-progression) | [core](../core/real-estate-sales-progression.md) · [api](../api/real-estate-sales-progression.md) · [nextjs](../nextjs/real-estate-sales-progression.md) |
+| [Real Estate Valuations React Native + Expo](real-estate-valuations.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-valuations) | [core](../core/real-estate-valuations.md) · [api](../api/real-estate-valuations.md) · [nextjs](../nextjs/real-estate-valuations.md) |
+| [Real Estate Viewings React Native + Expo](real-estate-viewings.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-viewings) | [core](../core/real-estate-viewings.md) · [api](../api/real-estate-viewings.md) · [nextjs](../nextjs/real-estate-viewings.md) |
+| [Real Estate Vr Design React Native + Expo](real-estate-vr-design.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-vr-design) | [core](../core/real-estate-vr-design.md) · [api](../api/real-estate-vr-design.md) · [nextjs](../nextjs/real-estate-vr-design.md) |
+| [Real Estate Zoopla React Native + Expo](real-estate-zoopla.md) | [Target/source map](../SOURCE-MAPPING.md#real-estate-zoopla) | [core](../core/real-estate-zoopla.md) · [api](../api/real-estate-zoopla.md) · [nextjs](../nextjs/real-estate-zoopla.md) |
+| [Roles Permissions React Native + Expo](roles-permissions.md) | [Target/source map](../SOURCE-MAPPING.md#roles-permissions) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Sales Progression React Native + Expo](sales-progression.md) | [Target/source map](../SOURCE-MAPPING.md#sales-progression) | [core](../core/sales-progression.md) · [api](../api/sales-progression.md) · [nextjs](../nextjs/sales-progression.md) |
+| [Scheduler Queues React Native + Expo](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search React Native + Expo](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Sessions Devices React Native + Expo](sessions-devices.md) | [Target/source map](../SOURCE-MAPPING.md#sessions-devices) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings React Native + Expo](settings.md) | [Target/source map](../SOURCE-MAPPING.md#settings) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support React Native + Expo](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication React Native + Expo](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Valuations React Native + Expo](valuations.md) | [Target/source map](../SOURCE-MAPPING.md#valuations) | [core](../core/valuations.md) · [api](../api/valuations.md) · [nextjs](../nextjs/valuations.md) |
+| [Viewings React Native + Expo](viewings.md) | [Target/source map](../SOURCE-MAPPING.md#viewings) | [core](../core/viewings.md) · [api](../api/viewings.md) · [nextjs](../nextjs/viewings.md) |
+| [Webhooks React Native + Expo](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

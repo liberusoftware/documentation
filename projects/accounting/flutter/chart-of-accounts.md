@@ -1,5 +1,9 @@
 # Chart Of Accounts Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#chart-of-accounts). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-chart-of-accounts-flutter
 **Matching core package:** module-accounting-chart-of-accounts ([implementation](../core/chart-of-accounts.md))
 **Matching API package:** module-accounting-chart-of-accounts-api ([contract](../api/chart-of-accounts.md))

@@ -1,12 +1,16 @@
 # CRM: Crm Sales Pipelines
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#crm-sales-pipelines). Observed identity: [`liberusoftware/module-crm-sales-pipelines`](../../../modules/source/liberusoftware--module-crm-sales-pipelines.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical independent module specification
 
 **Domain module:** `module-crm-crm-sales-pipelines`
 **Application:** CRM  
 **Capability group:** Crm Sales Pipelines  
 **Source scope:** [CRM.md](../CRM.md)  
-**Architecture:** [MODULES.md](../CRM.md) · [TESTING.md](../CRM.md) · [API.md](../CRM.md) · [FILAMENT.md](../CRM.md) · [LIVEWIRE.md](../CRM.md)
+**Architecture:** [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md) · [API.md](../../../architecture/API.md) · [FILAMENT.md](../../../standards/FILAMENT.md) · [LIVEWIRE.md](../../../standards/LIVEWIRE.md)
 
 ## 1. Purpose
 
@@ -74,3 +78,5 @@ The Crm Sales Pipelines module owns crm sales pipelines domain behavior. It is t
 - Install, enable, disable, upgrade, retry/recovery, and uninstall/retention behavior is verified.
 - Security, accessibility where presented, compatibility, architecture, and 100% meaningful-PHP coverage gates pass.
 - README, changelog, migration guidance, runbook, CI evidence, and tagged release are available from the independent repository.
+
+Read the [source-backed sales-pipeline walkthrough](../guides/SALES-PIPELINES.md) for actual actions, routes, permissions, UI behavior and differences from the target design.

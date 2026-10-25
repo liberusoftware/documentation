@@ -1,5 +1,9 @@
 # Seller Marketplace Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#seller-marketplace). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-ecommerce-seller-marketplace-flutter
 **Matching core package:** module-ecommerce-seller-marketplace ([implementation](../core/seller-marketplace.md))
 **Matching API package:** module-ecommerce-seller-marketplace-api ([contract](../api/seller-marketplace.md))

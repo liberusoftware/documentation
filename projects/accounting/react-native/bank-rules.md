@@ -1,5 +1,9 @@
 # Bank Rules React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#bank-rules). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-accounting-bank-rules-react-native
 **Matching core package:** module-accounting-bank-rules ([implementation](../core/bank-rules.md))
 **Matching API package:** module-accounting-bank-rules-api ([contract](../api/bank-rules.md))

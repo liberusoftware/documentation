@@ -1,5 +1,9 @@
 # Liberu Executive Insights Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#liberu-executive-insights). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-billing-liberu-executive-insights-flutter
 **Matching core package:** module-billing-liberu-executive-insights ([implementation](../core/liberu-executive-insights.md))
 **Matching API package:** module-billing-liberu-executive-insights-api ([contract](../api/liberu-executive-insights.md))

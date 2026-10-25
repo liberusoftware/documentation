@@ -1,50 +1,71 @@
 # Control Panel Filament Implementations
 
+<!-- catalogue-status:start -->
+This index preserves **61 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
-- [Activity Comments Filament](activity-comments.md) — `module-control-panel-activity-comments-filament`
-- [Analytics Core Filament](analytics-core.md) — `module-control-panel-analytics-core-filament`
-- [Analytics Google Filament](analytics-google.md) — `module-control-panel-analytics-google-filament`
-- [Analytics Meta Filament](analytics-meta.md) — `module-control-panel-analytics-meta-filament`
-- [Api Access Filament](api-access.md) — `module-control-panel-api-access-filament`
-- [Application Filament](application.md) — `module-control-panel-application-filament`
-- [Audit Filament](audit.md) — `module-control-panel-audit-filament`
-- [Control Panel Accounts Filament](control-panel-accounts.md) — `module-control-panel-control-panel-accounts-filament`
-- [Control Panel Api And Automation Filament](control-panel-api-and-automation.md) — `module-control-panel-control-panel-api-and-automation-filament`
-- [Control Panel Backups Filament](control-panel-backups.md) — `module-control-panel-control-panel-backups-filament`
-- [Control Panel Certificates Filament](control-panel-certificates.md) — `module-control-panel-control-panel-certificates-filament`
-- [Control Panel Containers Filament](control-panel-containers.md) — `module-control-panel-control-panel-containers-filament`
-- [Control Panel Control Core Filament](control-panel-control-core.md) — `module-control-panel-control-panel-control-core-filament`
-- [Control Panel Databases Filament](control-panel-databases.md) — `module-control-panel-control-panel-databases-filament`
-- [Control Panel Dns Filament](control-panel-dns.md) — `module-control-panel-control-panel-dns-filament`
-- [Control Panel Files Filament](control-panel-files.md) — `module-control-panel-control-panel-files-filament`
-- [Control Panel Kubernetes Filament](control-panel-kubernetes.md) — `module-control-panel-control-panel-kubernetes-filament`
-- [Control Panel Mail Filament](control-panel-mail.md) — `module-control-panel-control-panel-mail-filament`
-- [Control Panel Monitoring Filament](control-panel-monitoring.md) — `module-control-panel-control-panel-monitoring-filament`
-- [Control Panel Os Adapters Filament](control-panel-os-adapters.md) — `module-control-panel-control-panel-os-adapters-filament`
-- [Control Panel Security Filament](control-panel-security.md) — `module-control-panel-control-panel-security-filament`
-- [Control Panel Web Hosting Filament](control-panel-web-hosting.md) — `module-control-panel-control-panel-web-hosting-filament`
-- [Currency Context Filament](currency-context.md) — `module-control-panel-currency-context-filament`
-- [Developer Experience Filament](developer-experience.md) — `module-control-panel-developer-experience-filament`
-- [Feature Flags Filament](feature-flags.md) — `module-control-panel-feature-flags-filament`
-- [Files Media Filament](files-media.md) — `module-control-panel-files-media-filament`
-- [Identity Core Filament](identity-core.md) — `module-control-panel-identity-core-filament`
-- [Identity Socialstream Filament](identity-socialstream.md) — `module-control-panel-identity-socialstream-filament`
-- [Import Export Filament](import-export.md) — `module-control-panel-import-export-filament`
-- [Integrations Filament](integrations.md) — `module-control-panel-integrations-filament`
-- [Jetstream Bridge Filament](jetstream-bridge.md) — `module-control-panel-jetstream-bridge-filament`
-- [Localization Core Filament](localization-core.md) — `module-control-panel-localization-core-filament`
-- [Localization Mymemory Filament](localization-mymemory.md) — `module-control-panel-localization-mymemory-filament`
-- [Module Manager Filament](module-manager.md) — `module-control-panel-module-manager-filament`
-- [Notifications Filament](notifications.md) — `module-control-panel-notifications-filament`
-- [Observability Filament](observability.md) — `module-control-panel-observability-filament`
-- [Organizations Teams Filament](organizations-teams.md) — `module-control-panel-organizations-teams-filament`
-- [Profiles Filament](profiles.md) — `module-control-panel-profiles-filament`
-- [Roles Permissions Filament](roles-permissions.md) — `module-control-panel-roles-permissions-filament`
-- [Scheduler Queues Filament](scheduler-queues.md) — `module-control-panel-scheduler-queues-filament`
-- [Search Filament](search.md) — `module-control-panel-search-filament`
-- [Sessions Devices Filament](sessions-devices.md) — `module-control-panel-sessions-devices-filament`
-- [Settings Filament](settings.md) — `module-control-panel-settings-filament`
-- [Theme Support Filament](theme-support.md) — `module-control-panel-theme-support-filament`
-- [Two Factor Authentication Filament](two-factor-authentication.md) — `module-control-panel-two-factor-authentication-filament`
-- [Webhooks Filament](webhooks.md) — `module-control-panel-webhooks-filament`
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Accounts Filament](accounts.md) | [liberusoftware/module-control-panel-accounts-filament](../../../modules/source/liberusoftware--module-control-panel-accounts-filament.md) | [core](../core/accounts.md) · [api](../api/accounts.md) · [nextjs](../nextjs/accounts.md) |
+| [Activity Comments Filament](activity-comments.md) | [Target/source map](../SOURCE-MAPPING.md#activity-comments) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
+| [Analytics Core Filament](analytics-core.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-core) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
+| [Analytics Google Filament](analytics-google.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-google) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
+| [Analytics Meta Filament](analytics-meta.md) | [Target/source map](../SOURCE-MAPPING.md#analytics-meta) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
+| [Api Access Filament](api-access.md) | [Target/source map](../SOURCE-MAPPING.md#api-access) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
+| [API and Automation Filament](api-and-automation.md) | [liberusoftware/module-control-panel-api-and-automation-filament](../../../modules/source/liberusoftware--module-control-panel-api-and-automation-filament.md) | [core](../core/api-and-automation.md) · [api](../api/api-and-automation.md) · [nextjs](../nextjs/api-and-automation.md) |
+| [Application Filament](application.md) | [Target/source map](../SOURCE-MAPPING.md#application) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
+| [Audit Filament](audit.md) | [Target/source map](../SOURCE-MAPPING.md#audit) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
+| [Backups Filament](backups.md) | [liberusoftware/module-control-panel-backups-filament](../../../modules/source/liberusoftware--module-control-panel-backups-filament.md) | [core](../core/backups.md) · [api](../api/backups.md) · [nextjs](../nextjs/backups.md) |
+| [Certificates Filament](certificates.md) | [liberusoftware/module-control-panel-certificates-filament](../../../modules/source/liberusoftware--module-control-panel-certificates-filament.md) | [core](../core/certificates.md) · [api](../api/certificates.md) · [nextjs](../nextjs/certificates.md) |
+| [Containers Filament](containers.md) | [liberusoftware/module-control-panel-containers-filament](../../../modules/source/liberusoftware--module-control-panel-containers-filament.md) | [core](../core/containers.md) · [api](../api/containers.md) · [nextjs](../nextjs/containers.md) |
+| [Control Core Filament](control-core.md) | [liberusoftware/module-control-panel-control-core-filament](../../../modules/source/liberusoftware--module-control-panel-control-core-filament.md) | [core](../core/control-core.md) · [api](../api/control-core.md) · [nextjs](../nextjs/control-core.md) |
+| [Control Panel Accounts Filament](control-panel-accounts.md) | [liberusoftware/module-control-panel-accounts-filament](../../../modules/source/liberusoftware--module-control-panel-accounts-filament.md) | [core](../core/control-panel-accounts.md) · [api](../api/control-panel-accounts.md) · [nextjs](../nextjs/control-panel-accounts.md) |
+| [Control Panel Api And Automation Filament](control-panel-api-and-automation.md) | [liberusoftware/module-control-panel-api-and-automation-filament](../../../modules/source/liberusoftware--module-control-panel-api-and-automation-filament.md) | [core](../core/control-panel-api-and-automation.md) · [api](../api/control-panel-api-and-automation.md) · [nextjs](../nextjs/control-panel-api-and-automation.md) |
+| [Control Panel Backups Filament](control-panel-backups.md) | [liberusoftware/module-control-panel-backups-filament](../../../modules/source/liberusoftware--module-control-panel-backups-filament.md) | [core](../core/control-panel-backups.md) · [api](../api/control-panel-backups.md) · [nextjs](../nextjs/control-panel-backups.md) |
+| [Control Panel Certificates Filament](control-panel-certificates.md) | [liberusoftware/module-control-panel-certificates-filament](../../../modules/source/liberusoftware--module-control-panel-certificates-filament.md) | [core](../core/control-panel-certificates.md) · [api](../api/control-panel-certificates.md) · [nextjs](../nextjs/control-panel-certificates.md) |
+| [Control Panel Containers Filament](control-panel-containers.md) | [liberusoftware/module-control-panel-containers-filament](../../../modules/source/liberusoftware--module-control-panel-containers-filament.md) | [core](../core/control-panel-containers.md) · [api](../api/control-panel-containers.md) · [nextjs](../nextjs/control-panel-containers.md) |
+| [Control Panel Control Core Filament](control-panel-control-core.md) | [liberusoftware/module-control-panel-control-core-filament](../../../modules/source/liberusoftware--module-control-panel-control-core-filament.md) | [core](../core/control-panel-control-core.md) · [api](../api/control-panel-control-core.md) · [nextjs](../nextjs/control-panel-control-core.md) |
+| [Control Panel Databases Filament](control-panel-databases.md) | [liberusoftware/module-control-panel-databases-filament](../../../modules/source/liberusoftware--module-control-panel-databases-filament.md) | [core](../core/control-panel-databases.md) · [api](../api/control-panel-databases.md) · [nextjs](../nextjs/control-panel-databases.md) |
+| [Control Panel Dns Filament](control-panel-dns.md) | [liberusoftware/module-control-panel-dns-filament](../../../modules/source/liberusoftware--module-control-panel-dns-filament.md) | [core](../core/control-panel-dns.md) · [api](../api/control-panel-dns.md) · [nextjs](../nextjs/control-panel-dns.md) |
+| [Control Panel Files Filament](control-panel-files.md) | [liberusoftware/module-control-panel-files-filament](../../../modules/source/liberusoftware--module-control-panel-files-filament.md) | [core](../core/control-panel-files.md) · [api](../api/control-panel-files.md) · [nextjs](../nextjs/control-panel-files.md) |
+| [Control Panel Kubernetes Filament](control-panel-kubernetes.md) | [liberusoftware/module-control-panel-kubernetes-filament](../../../modules/source/liberusoftware--module-control-panel-kubernetes-filament.md) | [core](../core/control-panel-kubernetes.md) · [api](../api/control-panel-kubernetes.md) · [nextjs](../nextjs/control-panel-kubernetes.md) |
+| [Control Panel Mail Filament](control-panel-mail.md) | [liberusoftware/module-control-panel-mail-filament](../../../modules/source/liberusoftware--module-control-panel-mail-filament.md) | [core](../core/control-panel-mail.md) · [api](../api/control-panel-mail.md) · [nextjs](../nextjs/control-panel-mail.md) |
+| [Control Panel Monitoring Filament](control-panel-monitoring.md) | [liberusoftware/module-control-panel-monitoring-filament](../../../modules/source/liberusoftware--module-control-panel-monitoring-filament.md) | [core](../core/control-panel-monitoring.md) · [api](../api/control-panel-monitoring.md) · [nextjs](../nextjs/control-panel-monitoring.md) |
+| [Control Panel Os Adapters Filament](control-panel-os-adapters.md) | [liberusoftware/module-control-panel-os-adapters-filament](../../../modules/source/liberusoftware--module-control-panel-os-adapters-filament.md) | [core](../core/control-panel-os-adapters.md) · [api](../api/control-panel-os-adapters.md) · [nextjs](../nextjs/control-panel-os-adapters.md) |
+| [Control Panel Security Filament](control-panel-security.md) | [liberusoftware/module-control-panel-security-filament](../../../modules/source/liberusoftware--module-control-panel-security-filament.md) | [core](../core/control-panel-security.md) · [api](../api/control-panel-security.md) · [nextjs](../nextjs/control-panel-security.md) |
+| [Control Panel Web Hosting Filament](control-panel-web-hosting.md) | [liberusoftware/module-control-panel-web-hosting-filament](../../../modules/source/liberusoftware--module-control-panel-web-hosting-filament.md) | [core](../core/control-panel-web-hosting.md) · [api](../api/control-panel-web-hosting.md) · [nextjs](../nextjs/control-panel-web-hosting.md) |
+| [Currency Context Filament](currency-context.md) | [Target/source map](../SOURCE-MAPPING.md#currency-context) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
+| [Databases Filament](databases.md) | [liberusoftware/module-control-panel-databases-filament](../../../modules/source/liberusoftware--module-control-panel-databases-filament.md) | [core](../core/databases.md) · [api](../api/databases.md) · [nextjs](../nextjs/databases.md) |
+| [Developer Experience Filament](developer-experience.md) | [Target/source map](../SOURCE-MAPPING.md#developer-experience) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
+| [DNS Filament](dns.md) | [liberusoftware/module-control-panel-dns-filament](../../../modules/source/liberusoftware--module-control-panel-dns-filament.md) | [core](../core/dns.md) · [api](../api/dns.md) · [nextjs](../nextjs/dns.md) |
+| [Feature Flags Filament](feature-flags.md) | [Target/source map](../SOURCE-MAPPING.md#feature-flags) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
+| [Files Media Filament](files-media.md) | [Target/source map](../SOURCE-MAPPING.md#files-media) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
+| [Files Filament](files.md) | [liberusoftware/module-control-panel-files-filament](../../../modules/source/liberusoftware--module-control-panel-files-filament.md) | [core](../core/files.md) · [api](../api/files.md) · [nextjs](../nextjs/files.md) |
+| [Identity Core Filament](identity-core.md) | [liberusoftware/identity-core-filament](../../../modules/source/liberusoftware--identity-core-filament.md) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
+| [Identity Socialstream Filament](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
+| [Import Export Filament](import-export.md) | [Target/source map](../SOURCE-MAPPING.md#import-export) | [core](../core/import-export.md) · [api](../api/import-export.md) · [nextjs](../nextjs/import-export.md) |
+| [Integrations Filament](integrations.md) | [Target/source map](../SOURCE-MAPPING.md#integrations) | [core](../core/integrations.md) · [api](../api/integrations.md) · [nextjs](../nextjs/integrations.md) |
+| [Jetstream Bridge Filament](jetstream-bridge.md) | [Target/source map](../SOURCE-MAPPING.md#jetstream-bridge) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
+| [Kubernetes Filament](kubernetes.md) | [liberusoftware/module-control-panel-kubernetes-filament](../../../modules/source/liberusoftware--module-control-panel-kubernetes-filament.md) | [core](../core/kubernetes.md) · [api](../api/kubernetes.md) · [nextjs](../nextjs/kubernetes.md) |
+| [Localization Core Filament](localization-core.md) | [Target/source map](../SOURCE-MAPPING.md#localization-core) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
+| [Localization Mymemory Filament](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
+| [Mail Filament](mail.md) | [liberusoftware/module-control-panel-mail-filament](../../../modules/source/liberusoftware--module-control-panel-mail-filament.md) | [core](../core/mail.md) · [api](../api/mail.md) · [nextjs](../nextjs/mail.md) |
+| [Module Manager Filament](module-manager.md) | [liberusoftware/module-manager-filament](../../../modules/source/liberusoftware--module-manager-filament.md) | [core](../core/module-manager.md) · [api](../api/module-manager.md) · [nextjs](../nextjs/module-manager.md) |
+| [Monitoring Filament](monitoring.md) | [liberusoftware/module-control-panel-monitoring-filament](../../../modules/source/liberusoftware--module-control-panel-monitoring-filament.md) | [core](../core/monitoring.md) · [api](../api/monitoring.md) · [nextjs](../nextjs/monitoring.md) |
+| [Notifications Filament](notifications.md) | [Target/source map](../SOURCE-MAPPING.md#notifications) | [core](../core/notifications.md) · [api](../api/notifications.md) · [nextjs](../nextjs/notifications.md) |
+| [Observability Filament](observability.md) | [Target/source map](../SOURCE-MAPPING.md#observability) | [core](../core/observability.md) · [api](../api/observability.md) · [nextjs](../nextjs/observability.md) |
+| [Organizations Teams Filament](organizations-teams.md) | [liberusoftware/organizations-teams-filament](../../../modules/source/liberusoftware--organizations-teams-filament.md) | [core](../core/organizations-teams.md) · [api](../api/organizations-teams.md) · [nextjs](../nextjs/organizations-teams.md) |
+| [OS Adapters Filament](os-adapters.md) | [liberusoftware/module-control-panel-os-adapters-filament](../../../modules/source/liberusoftware--module-control-panel-os-adapters-filament.md) | [core](../core/os-adapters.md) · [api](../api/os-adapters.md) · [nextjs](../nextjs/os-adapters.md) |
+| [Profiles Filament](profiles.md) | [Target/source map](../SOURCE-MAPPING.md#profiles) | [core](../core/profiles.md) · [api](../api/profiles.md) · [nextjs](../nextjs/profiles.md) |
+| [Roles Permissions Filament](roles-permissions.md) | [liberusoftware/roles-permissions-filament](../../../modules/source/liberusoftware--roles-permissions-filament.md) | [core](../core/roles-permissions.md) · [api](../api/roles-permissions.md) · [nextjs](../nextjs/roles-permissions.md) |
+| [Scheduler Queues Filament](scheduler-queues.md) | [Target/source map](../SOURCE-MAPPING.md#scheduler-queues) | [core](../core/scheduler-queues.md) · [api](../api/scheduler-queues.md) · [nextjs](../nextjs/scheduler-queues.md) |
+| [Search Filament](search.md) | [Target/source map](../SOURCE-MAPPING.md#search) | [core](../core/search.md) · [api](../api/search.md) · [nextjs](../nextjs/search.md) |
+| [Security Filament](security.md) | [liberusoftware/module-control-panel-security-filament](../../../modules/source/liberusoftware--module-control-panel-security-filament.md) | [core](../core/security.md) · [api](../api/security.md) · [nextjs](../nextjs/security.md) |
+| [Sessions Devices Filament](sessions-devices.md) | [liberusoftware/sessions-devices-filament](../../../modules/source/liberusoftware--sessions-devices-filament.md) | [core](../core/sessions-devices.md) · [api](../api/sessions-devices.md) · [nextjs](../nextjs/sessions-devices.md) |
+| [Settings Filament](settings.md) | [liberusoftware/settings-filament](../../../modules/source/liberusoftware--settings-filament.md) | [core](../core/settings.md) · [api](../api/settings.md) · [nextjs](../nextjs/settings.md) |
+| [Theme Support Filament](theme-support.md) | [Target/source map](../SOURCE-MAPPING.md#theme-support) | [core](../core/theme-support.md) · [api](../api/theme-support.md) · [nextjs](../nextjs/theme-support.md) |
+| [Two Factor Authentication Filament](two-factor-authentication.md) | [Target/source map](../SOURCE-MAPPING.md#two-factor-authentication) | [core](../core/two-factor-authentication.md) · [api](../api/two-factor-authentication.md) · [nextjs](../nextjs/two-factor-authentication.md) |
+| [Web Hosting Filament](web-hosting.md) | [liberusoftware/module-control-panel-web-hosting-filament](../../../modules/source/liberusoftware--module-control-panel-web-hosting-filament.md) | [core](../core/web-hosting.md) · [api](../api/web-hosting.md) · [nextjs](../nextjs/web-hosting.md) |
+| [Webhooks Filament](webhooks.md) | [Target/source map](../SOURCE-MAPPING.md#webhooks) | [core](../core/webhooks.md) · [api](../api/webhooks.md) · [nextjs](../nextjs/webhooks.md) |

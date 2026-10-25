@@ -1,6 +1,10 @@
 # Boilerplate: Meta Server-Side Tracking React presentation packages
 
-**Composer package:** `module-meta-server-side-tracking-react`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#meta-server-side-tracking). No dedicated package name match was found for this layer in the scanned module manifests. This retained spelling maps to `analytics-meta`; it is not another independent module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-meta-server-side-tracking-react`
 **Matching core package:** [`module-meta-server-side-tracking`](../core/meta-server-side-tracking.md)
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Meta server-side event mapping, deduplication, consent, hashing, delivery, and diagnostics.
@@ -17,3 +21,13 @@ This package presents the Meta Server-Side Tracking core capability through Reac
 ## Scope
 
 The package is optional and installable independently. Applications may omit it, replace it with another presentation adapter, or compose it with a custom theme while retaining the same Meta Server-Side Tracking core boundary.
+
+<!-- inertia-transport:start -->
+### Inertia transport boundary
+
+Use Laravel-owned Inertia page/command routes for visits and forms. The controller can invoke the module's public application actions in the same host or use a deliberate API adapter, then return an Inertia page/redirect response. A bare REST JSON resource response is not an Inertia page. Keep authoritative domain authorization and validation in the owning boundary for either path.
+
+Independent API consumers and Next.js use their reviewed HTTP/session integration. Share DTOs and framework-independent UI primitives; keep Inertia page props, visits, form errors and redirects in the Inertia wrapper. Do not introduce loopback HTTP solely to reuse a public action inside the same Laravel host.
+
+See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](https://inertiajs.com/docs/v3/core-concepts/how-it-works) and [redirect behavior](https://inertiajs.com/docs/v3/the-basics/redirects).
+<!-- inertia-transport:end -->

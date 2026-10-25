@@ -1,6 +1,10 @@
 # Boilerplate: Settings domain packages
 
-**Composer package:** `module-settings`
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#settings). Observed identity: [`liberusoftware/settings`](../../../modules/source/liberusoftware--settings.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
+**Design package identifier:** `module-settings`
 **Foundation specification:** [BOILERPLATE.md](../BOILERPLATE.md)
 **Capability:** Typed application/organization/team/user settings, precedence, validation, secrets, audit, and cache invalidation.
 

@@ -1,12 +1,16 @@
 # Accounting: Accounting Journal Approvals Filament
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#accounting-journal-approvals). Observed identity: [`liberusoftware/module-accounting-journal-approvals-filament`](../../../modules/source/liberusoftware--module-accounting-journal-approvals-filament.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Canonical one-to-one Filament 5 implementation
 
 **Filament package:** `module-accounting-accounting-journal-approvals-filament`  
 **Matching domain module:** `accounting-journal-approvals`  
 **Application:** Accounting  
 **Source feature:** [Accounting Journal Approvals](../features/accounting-journal-approvals.md)  
-**Architecture:** [FILAMENT.md](../ACCOUNTING.md) · [MODULES.md](../ACCOUNTING.md) · [TESTING.md](../ACCOUNTING.md)
+**Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 

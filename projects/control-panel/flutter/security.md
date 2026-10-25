@@ -1,5 +1,9 @@
 # Security Flutter + Dart
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#security). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-control-panel-security-flutter
 **Matching core package:** module-control-panel-security ([implementation](../core/security.md))
 **Matching API package:** module-control-panel-security-api ([contract](../api/security.md))

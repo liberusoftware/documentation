@@ -1,8 +1,12 @@
 # Ecommerce: Fraud And Risk Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#fraud-and-risk). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-ecommerce-fraud-and-risk`
+**Design package identifier:** `module-ecommerce-fraud-and-risk`
 **Domain specification:** [Fraud And Risk](../features/fraud-and-risk.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

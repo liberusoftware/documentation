@@ -1,8 +1,12 @@
 # Social Network: Social Network Messaging Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#social-network-messaging). Observed identity: [`liberusoftware/module-social-network-messaging`](../../../modules/source/liberusoftware--module-social-network-messaging.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-social-network-social-network-messaging`
+**Design package identifier:** `module-social-network-social-network-messaging`
 **Domain specification:** [Social Network Messaging](../features/social-network-messaging.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 

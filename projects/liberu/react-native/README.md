@@ -1,5 +1,9 @@
 # Liberu platform React Native + Expo implementations
 
+<!-- catalogue-status:start -->
+This index preserves **4 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+<!-- catalogue-status:end -->
+
 **Scope:** [Liberu platform](../../LIBERU.md)
 **Architecture:** [Mobile](../../../architecture/MOBILE.md) · [API](../api/README.md) · [Core](../core/README.md)
 **Technology:** [React Native technology](../../../technologies/REACT-NATIVE.md) · [React Native standard](../../../standards/REACT-NATIVE.md)
@@ -27,9 +31,9 @@ This project may ship no mobile client, one mobile client, or both. A missing ad
 
 The following 4 adapters map one-to-one to the project core and API indexes. Each module document is the implementation plan for this surface.
 
-| Module                                                                  | Package                                                     | Core                                                | API                                               |
-| ----------------------------------------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------- |
-| [Business Workflow Reconciliation](business-workflow-reconciliation.md) | module-liberu-business-workflow-reconciliation-react-native | [Core](../core/business-workflow-reconciliation.md) | [API](../api/business-workflow-reconciliation.md) |
-| [Executive Insights](executive-insights.md)                             | module-liberu-executive-insights-react-native               | [Core](../core/executive-insights.md)               | [API](../api/executive-insights.md)               |
-| [Platform Orchestration](platform-orchestration.md)                     | module-liberu-platform-orchestration-react-native           | [Core](../core/platform-orchestration.md)           | [API](../api/platform-orchestration.md)           |
-| [Revenue and Care Orchestration](revenue-and-care-orchestration.md)     | module-liberu-revenue-and-care-orchestration-react-native   | [Core](../core/revenue-and-care-orchestration.md)   | [API](../api/revenue-and-care-orchestration.md)   |
+| Module document | Source/target reference | Related plans |
+| --- | --- | --- |
+| [Business Workflow Reconciliation React Native + Expo](business-workflow-reconciliation.md) | [Target/source map](../SOURCE-MAPPING.md#business-workflow-reconciliation) | [core](../core/business-workflow-reconciliation.md) · [api](../api/business-workflow-reconciliation.md) · [nextjs](../nextjs/business-workflow-reconciliation.md) |
+| [Executive Insights React Native + Expo](executive-insights.md) | [Target/source map](../SOURCE-MAPPING.md#executive-insights) | [core](../core/executive-insights.md) · [api](../api/executive-insights.md) · [nextjs](../nextjs/executive-insights.md) |
+| [Platform Orchestration React Native + Expo](platform-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#platform-orchestration) | [core](../core/platform-orchestration.md) · [api](../api/platform-orchestration.md) · [nextjs](../nextjs/platform-orchestration.md) |
+| [Revenue and Care Orchestration React Native + Expo](revenue-and-care-orchestration.md) | [Target/source map](../SOURCE-MAPPING.md#revenue-and-care-orchestration) | [core](../core/revenue-and-care-orchestration.md) · [api](../api/revenue-and-care-orchestration.md) · [nextjs](../nextjs/revenue-and-care-orchestration.md) |

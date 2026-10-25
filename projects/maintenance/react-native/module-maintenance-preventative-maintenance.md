@@ -1,5 +1,9 @@
 # Module Maintenance Preventative Maintenance React Native + Expo
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-maintenance-preventative-maintenance). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 **Package:** module-maintenance-module-maintenance-preventative-maintenance-react-native
 **Matching core package:** module-maintenance-module-maintenance-preventative-maintenance ([implementation](../core/module-maintenance-preventative-maintenance.md))
 **Matching API package:** module-maintenance-module-maintenance-preventative-maintenance-api ([contract](../api/module-maintenance-preventative-maintenance.md))

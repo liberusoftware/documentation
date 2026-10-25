@@ -1,8 +1,12 @@
 # Billing: Module Billing Resellerclub Core Module
 
+<!-- source-reconciliation:start -->
+**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#module-billing-resellerclub). Observed identity: [`liberusoftware/billing-resellerclub`](../../../modules/source/liberusoftware--billing-resellerclub.md). Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
+<!-- source-reconciliation:end -->
+
 ## Package contract
 
-**Composer package:** `module-billing-module-billing-resellerclub`
+**Design package identifier:** `module-billing-module-billing-resellerclub`
 **Domain specification:** [Module Billing Resellerclub](../features/module-billing-resellerclub.md)
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 
