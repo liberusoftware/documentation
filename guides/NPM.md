@@ -60,3 +60,10 @@ Publication is a maintainer action, separate from documenting or testing a packa
 Published name/version pairs cannot simply be overwritten. Correct release defects with a new version and communicate compatibility or security impact. Restore consumers to a known working version when necessary; review registry deprecation and unpublish rules before taking registry actions. Never commit registry tokens in `.npmrc`; provide credentials using the supported local or CI secret mechanism.
 
 When a presentation package changes, follow the [documentation synchronization guide](DOCUMENTATION-MAINTENANCE.md) and update its consumer/version/route integration notes with the release.
+
+## Related module lifecycle guides
+
+- [Repository ownership and project-local copies](MODULE-REPOSITORIES.md) — canonical sources, local integration, tracked copies and drift recovery.
+- [Package publishing runbook](PACKAGE-PUBLISHING.md) — registry registration, release artifacts and consumer upgrades.
+- [Security issue handling](SECURITY-ISSUES.md) — private reports, affected copies, fixes and disclosure.
+- [Security audits](SECURITY-AUDITS.md) — dependency/source checks, CI gates and evidence.

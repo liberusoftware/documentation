@@ -93,3 +93,10 @@ Composer is the dependency client; Packagist indexes package repositories. Publi
 Keep registry credentials outside Git. Private packages need a private registry or authenticated VCS configuration available to developers and CI. A release failure should stop promotion; fix and issue a new version rather than moving a tag already consumed by applications.
 
 When a module changes, also follow the [documentation synchronization guide](DOCUMENTATION-MAINTENANCE.md) so consumers can find its current source identity, behavior and migration requirements.
+
+## Related module lifecycle guides
+
+- [Repository ownership and project-local copies](MODULE-REPOSITORIES.md) — canonical sources, local integration, tracked copies and drift recovery.
+- [Package publishing runbook](PACKAGE-PUBLISHING.md) — registry registration, release artifacts and consumer upgrades.
+- [Security issue handling](SECURITY-ISSUES.md) — private reports, affected copies, fixes and disclosure.
+- [Security audits](SECURITY-AUDITS.md) — dependency/source checks, CI gates and evidence.

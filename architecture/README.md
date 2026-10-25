@@ -28,3 +28,6 @@ For language/framework/design standards, start with [standards/README.md](../sta
 - [Shared-package adoption profiles](shared-adoption/README.md) — 44 package-specific schema, contract and consumer transition reviews.
 
 - [Documentation objective audit](DOCUMENTATION-AUDIT.md) — requirement coverage, semantic/source review and reproducible validation.
+
+- [Module repository maintenance](../guides/MODULE-REPOSITORIES.md) and [publishing](../guides/PACKAGE-PUBLISHING.md) — canonical packages, project copies and registry releases.
+- [Security issue handling](../guides/SECURITY-ISSUES.md) and [audit procedures](../guides/SECURITY-AUDITS.md) — response, dependency/source checks and evidence.

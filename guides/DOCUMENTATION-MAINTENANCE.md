@@ -112,3 +112,10 @@ Review the remaining concerns separately. Render representative long tables, pac
 Review the diff for source correctness, retained capabilities, generated/reference consistency and actionable user guidance. Run the checks appropriate to the changed content, record remaining limitations and follow the repository's Git/review workflow. Documentation updates do not themselves publish Composer/npm packages or establish their stability. Package publishing follows the [Composer](COMPOSER.md) or [npm](NPM.md) lifecycle guide in the owning package repository.
 
 The [objective audit](../architecture/DOCUMENTATION-AUDIT.md) records requirement-by-requirement evidence and the limits of automated checks.
+
+## Related module lifecycle guides
+
+- [Repository ownership and project-local copies](MODULE-REPOSITORIES.md) — canonical sources, local integration, tracked copies and drift recovery.
+- [Package publishing runbook](PACKAGE-PUBLISHING.md) — registry registration, release artifacts and consumer upgrades.
+- [Security issue handling](SECURITY-ISSUES.md) — private reports, affected copies, fixes and disclosure.
+- [Security audits](SECURITY-AUDITS.md) — dependency/source checks, CI gates and evidence.

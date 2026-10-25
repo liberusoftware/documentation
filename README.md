@@ -18,6 +18,10 @@ If you are new, start with [GETTING-STARTED.md](GETTING-STARTED.md). If you alre
 | Run tests, CI, or a release                                           | [Testing](standards/TESTING.md) · [CI](standards/CI.md) · [Deployment](deployment/README.md)                                 |
 | Contribute or report a vulnerability                                  | [Contributing](standards/CONTRIBUTING.md) · [Security](architecture/SECURITY.md)                                             |
 
+## Maintain and release reusable modules
+
+Follow the [repository and local-copy guide](guides/MODULE-REPOSITORIES.md) to keep independent module repositories synchronized with application copies. Use the [publishing runbook](guides/PACKAGE-PUBLISHING.md) for Packagist registration, Composer releases, npm publication and verified consumer upgrades. The [security issue guide](guides/SECURITY-ISSUES.md) covers reporting and response; the [audit guide](guides/SECURITY-AUDITS.md) covers dependency scans, source review, evidence and release decisions.
+
 ## How the documentation fits together
 
 Liberu separates concerns so the same domain capability can be used by multiple applications and interfaces:

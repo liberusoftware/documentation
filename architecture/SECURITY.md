@@ -35,3 +35,9 @@ Never commit credentials, tokens, private keys, personal data, unredacted OAuth 
 - [Policies and permissions](POLICY.md)
 - [Deployment](../deployment/README.md)
 - [Contributing](../standards/CONTRIBUTING.md)
+
+## Module security operations
+
+Use [security issue handling](../guides/SECURITY-ISSUES.md) for intake, triage, containment, canonical fixes, affected application copies and coordinated disclosure. Use [security audits](../guides/SECURITY-AUDITS.md) for Composer/npm checks, source and artifact review, evidence, time-limited exceptions and retesting. These procedures do not claim that every documented module has been audited.
+
+Each owning code repository should maintain a root `SECURITY.md` with its supported versions and verified private contact. For a vulnerability in an application/package, use that repository's security channel; this documentation repository's form is for its own scope.
