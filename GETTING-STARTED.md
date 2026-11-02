@@ -48,6 +48,7 @@ This guide gives you the shortest safe path through the Liberu documentation rep
 | React application UI over Laravel routes              | [React + Inertia](standards/REACT.md) · [React indexes](modules/react/README.md)                   |
 | Vue application UI over Laravel routes                | [Vue + Inertia](standards/VUE.md) · [Vue indexes](modules/vue/README.md)                           |
 | Vue SSR/API-consuming application                     | [Nuxt](standards/NUXT.md) · [Nuxt indexes](modules/nuxt/README.md)                                 |
+| React SSR/API-consuming application                   | [Next.js](standards/NEXTJS.md) · [Next.js indexes](modules/nextjs/README.md)                         |
 | iOS/Android client with React skills                  | [React Native](standards/REACT-NATIVE.md) · [React Native indexes](modules/react-native/README.md) |
 | iOS/Android client with Dart/Flutter skills           | [Flutter](standards/FLUTTER.md) · [Flutter indexes](modules/flutter/README.md)                     |
 
@@ -231,3 +232,7 @@ Open a project’s `DEVELOPMENT.md` for its actual root requirements and command
 - [Maintain source-backed documentation](guides/DOCUMENTATION-MAINTENANCE.md) — discovery, regeneration, source review and validation.
 
 - [Presentation selection and reuse](architecture/PRESENTATION.md) — Composer/npm boundaries, Inertia versus API transport, shared React UI and per-layer operation states.
+
+## Implement a presentation from a skeleton
+
+Start with the [presentation implementation runbooks](guides/presentation/README.md) for Vue/React with Inertia, Nuxt with Vue, Next.js with React, and native React Native/Expo or Flutter applications. They include foundation composition, working page/screen patterns, library builds, npm/pub publishing and application deployment or mobile store release.

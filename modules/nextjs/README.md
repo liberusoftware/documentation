@@ -21,3 +21,7 @@ Use the [Next.js standard](../../standards/NEXTJS.md) for server/client boundari
 | [real-estate](../../projects/real-estate/nextjs/README.md) | 70 |
 | [sap](../../projects/sap/nextjs/README.md) | 16 |
 | [social-network](../../projects/social-network/nextjs/README.md) | 59 |
+
+## Build the application and adapter
+
+Follow the [implementation runbook](../../guides/presentation/NEXTJS.md) for a skeleton, concrete integration steps, package builds and releases. Begin with the [shared architecture/foundation setup](../../guides/presentation/README.md); the module plans above do not imply registry availability.

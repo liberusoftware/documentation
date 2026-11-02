@@ -33,3 +33,7 @@ The package naming rule is `module-{independent-module-name}-nuxt`. Applications
 ## Availability and package identities
 
 Counts above describe Markdown specifications, not released packages or implemented features. The [source inventory](../../architecture/SOURCE-INVENTORY.md) records observed manifests and source locations. Repository slugs, design identifiers, and Composer/npm package identities can differ; install using the actual manifest name. Shared capabilities use the [canonical owner](../../architecture/SHARED-MODULES.md) rather than a separate implementation in each project.
+
+## Build the application and adapter
+
+Follow the [implementation runbook](../../guides/presentation/NUXT.md) for a skeleton, concrete integration steps, package builds and releases. Begin with the [shared architecture/foundation setup](../../guides/presentation/README.md); the module plans above do not imply registry availability.

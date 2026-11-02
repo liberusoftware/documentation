@@ -18,3 +18,7 @@ Inertia is the bridge between Laravel server-side routing/controllers and React,
 ## Public domain boundary and API transport
 
 Laravel-hosted Inertia controllers can invoke public application actions or a deliberate API adapter and then return an Inertia page/redirect. A bare REST JSON response is a separate transport contract. Share domain behavior and framework-independent UI while preserving Inertia form/visit semantics and Next.js routing/session/server-client boundaries. See the [presentation guide](../architecture/PRESENTATION.md).
+
+## Step-by-step implementation
+
+Use the [skeleton, implementation and release guide](../guides/presentation/INERTIA.md) with the [shared foundation steps](../guides/presentation/README.md).

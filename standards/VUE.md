@@ -15,3 +15,7 @@ See [INERTIA.md](INERTIA.md), [NUXT.md](NUXT.md), [TypeScript](../technologies/T
 ## Delivery checklist
 
 For each page or component, document its core action/query contract, typed props and emits, loading/error/empty states, authorization source, and accessibility behavior. Keep business invariants server-side, avoid duplicated validation, test SSR/hydration where applicable, and keep build, browser, and dependency requirements explicit for personal, SME, and enterprise deployments.
+
+## Step-by-step implementation
+
+Use the [skeleton, implementation and release guide](../guides/presentation/INERTIA.md) with the [shared foundation steps](../guides/presentation/README.md).

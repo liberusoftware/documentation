@@ -22,3 +22,7 @@ if (!response.ok) throw new Error("Unable to load records");
 ```
 
 Review [MOBILE.md](MOBILE.md), [frontend testing](FRONTEND-TESTING.md), [security architecture](../architecture/SECURITY.md), [API architecture](../architecture/API.md), [React Native technology reference](../technologies/REACT-NATIVE.md), [Expo build and publishing guide](../technologies/EXPO.md), and [Expo documentation](https://docs.expo.dev/).
+
+## Step-by-step implementation
+
+Use the [skeleton, implementation and release guide](../guides/presentation/REACT-NATIVE.md) with the [shared foundation steps](../guides/presentation/README.md).

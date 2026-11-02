@@ -41,3 +41,7 @@ Maintain a support matrix for iOS, Android, device classes, OS versions, API ver
 Test core contracts independently, then test API authorization and schemas, client state transitions, navigation/deep links, permission denial, offline/retry/conflict behavior, accessibility, localization, app lifecycle, upgrade/migration, and release artifacts on supported platforms.
 
 Related documents: [API architecture](API.md), [security](SECURITY.md), [tenancy](TENANCY.md), [modules](MODULES.md), [mobile standard](../standards/MOBILE.md), [React Native standard](../standards/REACT-NATIVE.md), [Flutter standard](../standards/FLUTTER.md), and [mobile module index](../modules/mobile/README.md).
+
+## Implementation runbooks
+
+Build the device shells with the [React Native/Expo guide](../guides/presentation/REACT-NATIVE.md) or [Flutter guide](../guides/presentation/FLUTTER.md). Both cover API/session integration, native screen composition, offline recovery, reusable package publication and signed iOS/Android delivery. Start with the [shared foundation steps](../guides/presentation/README.md).

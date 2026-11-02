@@ -19,3 +19,7 @@ Cache only classified data with an owner, expiry, invalidation rule, and deletio
 Maintain a device/OS compatibility matrix, signed reproducible builds, environment-specific configuration, crash/error telemetry with consent and redaction, staged rollout, rollback/kill-switch procedures, and store compliance evidence. Keep personal/SME profiles operationally simple while allowing enterprise profiles to add SSO, MDM, stronger policy, and audit requirements.
 
 See [mobile architecture](../architecture/MOBILE.md), [accessibility](../technologies/ACCESSIBILITY.md), [testing](../technologies/TESTING.md), [React Native](REACT-NATIVE.md), and [Flutter](FLUTTER.md).
+
+## Step-by-step implementation
+
+Follow the [React Native/Expo runbook](../guides/presentation/REACT-NATIVE.md) or [Flutter runbook](../guides/presentation/FLUTTER.md) for skeletons, API/session integration, mobile UI, offline recovery, package publication and signed platform releases. Start with the [shared foundation setup](../guides/presentation/README.md).

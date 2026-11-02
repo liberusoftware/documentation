@@ -57,3 +57,7 @@ Verify cross-tenant denial at the API and rendered page boundaries, cache isolat
 Build with committed lockfiles and validate required environment variables. Configure the trusted API origin separately for preview and production; use isolated test tenants in previews. Deploy compatible API changes before dependent clients, retain old contracts during the rollout, and monitor authentication failures, latency, command errors, and cache behavior. Roll back the frontend artifact without reversing database migrations automatically.
 
 Consult the [Next.js upgrade guide](https://nextjs.org/docs/app/guides/upgrading) for the installed major version. Upgrade React and Next.js as a compatible set, review server/client boundaries and caching changes, rebuild, and test authentication and tenant isolation before promotion.
+
+## Step-by-step implementation
+
+Use the [skeleton, implementation and release guide](../guides/presentation/NEXTJS.md) with the [shared foundation steps](../guides/presentation/README.md).

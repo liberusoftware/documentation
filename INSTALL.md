@@ -139,3 +139,7 @@ If installation fails, preserve the error and version information, correct the d
 ## Source-backed presentation selection
 
 Use the [Next.js module plans](modules/nextjs/README.md) and [shared adapter registry](modules/nextjs/OWNERSHIP.md) when selecting API-consuming React presentation. Shared React primitives can serve Inertia and Next.js, while their routing/session/form boundaries remain distinct. Confirm owning API and source-variant compatibility before adopting any planned adapter.
+
+## Build the selected presentation
+
+After the Laravel foundation works, follow the [presentation implementation runbooks](guides/presentation/README.md) for application skeletons, Vue/React with Inertia, Nuxt, Next.js, React Native/Expo and Flutter. Use the [package build and npm publication guide](guides/presentation/PACKAGES.md) for reusable JavaScript libraries; the mobile guides cover Dart/pub and signed device releases.

@@ -99,3 +99,7 @@ Deploy the compiled Vite assets with the Laravel application and serve them thro
 - [Inertia Laravel adapter](https://inertiajs.com/docs/v3/installation/server-side)
 - [Vite](https://vite.dev/guide/)
 - [Liberu API architecture](../architecture/API.md)
+
+## Step-by-step implementation
+
+Use the [skeleton, implementation and release guide](../guides/presentation/INERTIA.md) with the [shared foundation steps](../guides/presentation/README.md).

@@ -24,3 +24,7 @@ Future<Record> loadRecord(String id) async {
 ```
 
 Review [MOBILE.md](MOBILE.md), [security architecture](../architecture/SECURITY.md), [API architecture](../architecture/API.md), [Flutter technology reference](../technologies/FLUTTER.md), and [Flutter documentation](https://docs.flutter.dev/).
+
+## Step-by-step implementation
+
+Use the [skeleton, implementation and release guide](../guides/presentation/FLUTTER.md) with the [shared foundation steps](../guides/presentation/README.md).

@@ -90,3 +90,7 @@ Deploy the generated Nuxt server as an immutable Node artifact behind TLS and a 
 - [Nuxt 4 server routes](https://nuxt.com/docs/4.x/directory-structure/server)
 - [Nuxt 4 deployment](https://nuxt.com/docs/4.x/getting-started/deployment)
 - [Liberu API architecture](../architecture/API.md)
+
+## Step-by-step implementation
+
+Use the [skeleton, implementation and release guide](../guides/presentation/NUXT.md) with the [shared foundation steps](../guides/presentation/README.md).

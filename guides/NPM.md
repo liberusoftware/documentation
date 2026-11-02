@@ -67,3 +67,7 @@ When a presentation package changes, follow the [documentation synchronization g
 - [Package publishing runbook](PACKAGE-PUBLISHING.md) — registry registration, release artifacts and consumer upgrades.
 - [Security issue handling](SECURITY-ISSUES.md) — private reports, affected copies, fixes and disclosure.
 - [Security audits](SECURITY-AUDITS.md) — dependency/source checks, CI gates and evidence.
+
+## Complete library build and release recipes
+
+Use [presentation package building and npm publishing](presentation/PACKAGES.md) for manifests, React/Vue compilation, declaration output, framework boundaries, tarball consumers, versioning, maintainer releases and CI publishing. [React Native packaging](presentation/REACT-NATIVE.md#7-build-a-reusable-mobile-package) adds Metro/native requirements; [Flutter](presentation/FLUTTER.md) uses Dart/pub instead.

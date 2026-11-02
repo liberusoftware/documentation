@@ -85,3 +85,7 @@ Mobile offline capture needs an explicit data and conflict policy. A local draft
 Install an existing clone from its selected lockfiles. A deliberately changed library needs a package build and a packed/clean-consumer check, not only a workspace link. Review React/framework peer versions, exported server/client boundaries, styles/assets and supported API contracts before publishing. Use the [Composer lifecycle](../guides/COMPOSER.md), [npm lifecycle](../guides/NPM.md), and each project's `DEVELOPMENT.md`.
 
 Deploy compatible owner/API changes before dependent clients, retain the documented compatibility window and follow the host migration/worker/cache procedure. Test meaningful journeys in every enabled layer: allowed/denied/wrong-tenant operations, field errors, concurrency/retries, session expiry, cache isolation, asynchronous outcomes, downloads and accessible interaction. Record actual results and limitations rather than deriving parity from package names or copied templates.
+
+## Implementation runbooks
+
+Follow the [presentation implementation guides](../guides/presentation/README.md) for skeleton creation, Vue/React with Inertia, Nuxt with Vue, Next.js with React, React Native/Expo and Flutter. The guides include package builds, clean-consumer verification, npm/pub publication and platform-specific application delivery.

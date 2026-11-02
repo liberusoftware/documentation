@@ -113,3 +113,7 @@ A published name/version cannot be overwritten. Correct defects with a new versi
 Maintain a consumer record with package version, source commit, application upgrade PR, deployed environment/version, migration status, audit result and owner. A package release is not proof all applications adopted it. Track pending upgrades and unsupported consumers explicitly.
 
 For a security fix, coordinate the [private response process](SECURITY-ISSUES.md), publish accurate affected/fixed ranges, and test the actual package artifact. Retest affected consumers and remove temporary local patches after adopting the fixed release. Update [source and documentation references](DOCUMENTATION-MAINTENANCE.md) without removing product capabilities that live outside package folders.
+
+## Presentation-specific implementation and release
+
+The [presentation runbooks](presentation/README.md) connect new application skeletons to adapter implementation. Use [JavaScript build and npm release recipes](presentation/PACKAGES.md), [React Native native/package delivery](presentation/REACT-NATIVE.md), or [Flutter/pub and store delivery](presentation/FLUTTER.md) for each artifact type.

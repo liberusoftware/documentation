@@ -238,6 +238,8 @@ def main():
            'Use the [Next.js standard](../../standards/NEXTJS.md) for server/client boundaries, sessions, authorization, caching and deployment, and the [npm lifecycle guide](../../guides/NPM.md) for development and release. Framework-independent React UI can be shared with Inertia; routing, forms and transport require distinct adapters.','',
            '| Project | Documented module spellings |','| --- | ---: |']
     for project,count in sorted(project_counts.items()):lines.append(f'| [{project}](../../projects/{project}/nextjs/README.md) | {count} |')
+    lines += ['', '## Build the application and adapter', '',
+              'Follow the [implementation runbook](../../guides/presentation/NEXTJS.md) for a skeleton, concrete integration steps, package builds and releases. Begin with the [shared architecture/foundation setup](../../guides/presentation/README.md); the module plans above do not imply registry availability.']
     index.write_text('\n'.join(lines)+'\n')
     print(f'Next.js: {len(output)} canonical groups, {canonical_written} generated plans, {preserved} authored plans retained, {aliases_written} consumer/alias references; {sum(project_counts.values())} documents.')
 

@@ -114,3 +114,7 @@ These root indexes cover the complete existing module matrix. Select only the ad
 ## Source-backed development references
 
 Use the [observed implementation catalogue](modules/source/README.md) for exact package identities, dependencies, callables, persistence and route sources. Each cloned project now has `DEVELOPMENT.md` and `SOURCE-MAPPING.md` linked from its project README. The [Composer](guides/COMPOSER.md) and [npm](guides/NPM.md) guides cover local updates and publishing; the [Next.js plans](modules/nextjs/README.md) explain the additional React presentation option.
+
+## Presentation implementation guides
+
+[Build a presentation skeleton](guides/presentation/README.md), then follow [Vue/React with Inertia](guides/presentation/INERTIA.md), [Nuxt with Vue](guides/presentation/NUXT.md), [Next.js with React](guides/presentation/NEXTJS.md), [React Native/Expo](guides/presentation/REACT-NATIVE.md), or [Flutter](guides/presentation/FLUTTER.md). [Package build and npm publishing](guides/presentation/PACKAGES.md) covers reusable JavaScript releases; the mobile guides add native packaging and signed store delivery.

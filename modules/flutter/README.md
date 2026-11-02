@@ -36,3 +36,7 @@ These counts describe documents, not released packages. Consult the [source inve
 | [real-estate](../../projects/real-estate/flutter/README.md) | 70 |
 | [sap](../../projects/sap/flutter/README.md) | 16 |
 | [social-network](../../projects/social-network/flutter/README.md) | 59 |
+
+## Build the application and adapter
+
+Follow the [implementation runbook](../../guides/presentation/FLUTTER.md) for a skeleton, concrete integration steps, package builds and releases. Begin with the [shared architecture/foundation setup](../../guides/presentation/README.md); the module plans above do not imply registry availability.
