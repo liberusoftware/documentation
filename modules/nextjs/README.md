@@ -25,3 +25,7 @@ Use the [Next.js standard](../../standards/NEXTJS.md) for server/client boundari
 ## Build the application and adapter
 
 Follow the [implementation runbook](../../guides/presentation/NEXTJS.md) for a skeleton, concrete integration steps, package builds and releases. Begin with the [shared architecture/foundation setup](../../guides/presentation/README.md); the module plans above do not imply registry availability.
+
+## Liberu Music planned modules
+
+See the [22 Music Next.js plans](../../projects/music/nextjs/README.md) and [DAW scope](../../projects/music/MUSIC.md). These are proposed adapters and domain boundaries, not verified package releases.

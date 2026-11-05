@@ -37,3 +37,7 @@ Counts above describe Markdown specifications, not released packages or implemen
 ## Build the application and adapter
 
 Follow the [implementation runbook](../../guides/presentation/NUXT.md) for a skeleton, concrete integration steps, package builds and releases. Begin with the [shared architecture/foundation setup](../../guides/presentation/README.md); the module plans above do not imply registry availability.
+
+## Liberu Music planned modules
+
+See the [22 Music Nuxt plans](../../projects/music/nuxt/README.md) and [DAW scope](../../projects/music/MUSIC.md). These are proposed adapters and domain boundaries, not verified package releases.

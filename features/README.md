@@ -17,6 +17,7 @@ Each application directory contains one specification for every independent modu
 | [Genealogy](../projects/genealogy/features/README.md)           |      14 | [GENEALOGY.md](../projects/genealogy/GENEALOGY.md)                |
 | [Liberu platform](../projects/liberu/features/README.md)        |       3 | [LIBERU.md](../projects/LIBERU.md)                                |
 | [Maintenance](../projects/maintenance/features/README.md)       |      14 | [MAINTENANCE.md](../projects/maintenance/MAINTENANCE.md)          |
+| [Liberu Music](../projects/music/features/README.md) | 22 | [MUSIC.md](../projects/music/MUSIC.md) |
 | [Real Estate](../projects/real-estate/features/README.md)       |      15 | [REAL-ESTATE.md](../projects/real-estate/REAL-ESTATE.md)          |
 | [SAP](../projects/sap/features/README.md)                       |      16 | [SAP.md](../projects/sap/SAP.md)                                  |
 | [Social Network](../projects/social-network/features/README.md) |      15 | [SOCIAL-NETWORK.md](../projects/social-network/SOCIAL-NETWORK.md) |

@@ -37,3 +37,7 @@ Create one adapter per independently installable domain capability. Keep API sch
 | Social Network | [React Native](../../projects/social-network/react-native/README.md) | [Flutter](../../projects/social-network/flutter/README.md) |
 
 See [mobile architecture](../../architecture/MOBILE.md), [mobile standard](../../standards/MOBILE.md), [React Native](../../technologies/REACT-NATIVE.md), and [Flutter](../../technologies/FLUTTER.md).
+
+## Liberu Music mobile plans
+
+[React Native + Expo](../../projects/music/react-native/README.md) and [Flutter](../../projects/music/flutter/README.md) cover all 22 proposed Music capabilities. Begin with capture, sketching, review and sync according to the [surface support matrix](../../projects/music/PRESENTATION.md).

@@ -40,3 +40,7 @@ These counts describe documents, not released packages. Consult the [source inve
 ## Build the application and adapter
 
 Follow the [implementation runbook](../../guides/presentation/REACT-NATIVE.md) for a skeleton, concrete integration steps, package builds and releases. Begin with the [shared architecture/foundation setup](../../guides/presentation/README.md); the module plans above do not imply registry availability.
+
+## Liberu Music planned modules
+
+See the [22 Music React Native + Expo plans](../../projects/music/react-native/README.md) and [DAW scope](../../projects/music/MUSIC.md). These are proposed adapters and domain boundaries, not verified package releases.
