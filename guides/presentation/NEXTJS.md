@@ -1,5 +1,20 @@
 # Implement the Next.js presentation layer with React
 
+## Liberu boilerplate repository
+
+Start from [project-boilerplate-next-react](https://github.com/liberusoftware/project-boilerplate-next-react), a Next.js and React application template with a committed npm lockfile, architecture guidance and CI checks:
+
+```bash
+gh repo create YOUR-OWNER/YOUR-PROJECT --template liberusoftware/project-boilerplate-next-react --private --clone
+cd YOUR-PROJECT
+cp .env.example .env.local
+npm ci
+npm run dev
+```
+
+Use the Node version in `.node-version`. Run `npm run lint`, `npm run typecheck` and `npm run build` before extending it. The shell does not implement authentication or a product API; follow the contract and tenant boundaries below when adding those workflows.
+
+
 Next.js is a separate React application consuming reviewed Laravel APIs. Start with the [foundation and contract guide](README.md). Laravel remains the domain owner; Next.js owns routes, server/client composition, session integration and deployment. Do not add Inertia to this shell. Example endpoints/types below must be replaced with the actual reviewed API.
 
 ## 1. Generate a private App Router skeleton
