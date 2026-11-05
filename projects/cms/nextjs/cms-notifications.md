@@ -40,7 +40,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [NotificationLog.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Models/NotificationLog.php) | `event`, `channel`, `recipient`, `team_id`, `context`, `status` |
+| [NotificationLog.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Models/NotificationLog.php) | `event`, `channel`, `recipient`, `team_id`, `context`, `status` |
 
 ## Server/client and React reuse
 

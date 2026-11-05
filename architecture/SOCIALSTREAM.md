@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Socialstream provides OAuth login and account linking for Jetstream and Filament. Liberu applications must use the Laravel 13-compatible fork declared by `liberusoftware/genealogy-laravel`:
+Socialstream provides OAuth login and account linking for Jetstream and Filament. Liberu applications must use the Laravel 13-compatible fork declared by `liberusoftware/project-genealogy-laravel-filament`:
 
 ```json
 "bursteri/socialstream": "^7.0"

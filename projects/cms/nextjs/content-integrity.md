@@ -39,7 +39,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [ContentIntegrityService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-integrity/src/Services/ContentIntegrityService.php) | `public function findings(?int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function startScan(?int $teamId, string $scope = 'all'): IntegrityScan`<br>`public function finding(IntegrityScan $scan, array $data): IntegrityFinding`<br>`public function completeScan(IntegrityScan $scan): IntegrityScan`<br>`public function resolve(IntegrityFinding $finding): IntegrityFinding` |
+| [ContentIntegrityService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-integrity/src/Services/ContentIntegrityService.php) | `public function findings(?int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function startScan(?int $teamId, string $scope = 'all'): IntegrityScan`<br>`public function finding(IntegrityScan $scan, array $data): IntegrityFinding`<br>`public function completeScan(IntegrityScan $scan): IntegrityScan`<br>`public function resolve(IntegrityFinding $finding): IntegrityFinding` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -49,8 +49,8 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [IntegrityFinding.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-integrity/src/Models/IntegrityFinding.php) | `scan_id`, `team_id`, `subject_type`, `subject_key`, `kind`, `severity`, `message`, `context`, `status`, `resolved_at` |
-| [IntegrityScan.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-integrity/src/Models/IntegrityScan.php) | `team_id`, `scope`, `status`, `finding_count`, `started_at`, `completed_at` |
+| [IntegrityFinding.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-integrity/src/Models/IntegrityFinding.php) | `scan_id`, `team_id`, `subject_type`, `subject_key`, `kind`, `severity`, `message`, `context`, `status`, `resolved_at` |
+| [IntegrityScan.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-integrity/src/Models/IntegrityScan.php) | `team_id`, `scope`, `status`, `finding_count`, `started_at`, `completed_at` |
 
 ## Server/client and React reuse
 

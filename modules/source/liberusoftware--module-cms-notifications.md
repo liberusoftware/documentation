@@ -8,7 +8,7 @@ Notifications module for Liberu CMS: turns CMS events into queued notifications 
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-notifications](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
+| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-notifications](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: cms-laravel, `cms-notifications`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-cms-laravel-filament, `cms-notifications`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: cms-laravel, `cms-notifications`. Matching reference files in th
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/composer.json) · [module.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/composer.json) · [module.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/module.json).
 
 ### Dependencies and namespace mapping
 
@@ -59,19 +59,19 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Contracts/NotificationChannelInterface.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Contracts/NotificationChannelInterface.php) | `public function key(): string`<br>`public function send(NotificationMessage $message): void` |
-| [src/Filament/NotificationLogResource.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Filament/NotificationLogResource.php) | `public static function canCreate(): bool`<br>`public static function table(Table $table): Table`<br>`public static function getPages(): array` |
-| [src/Filament/Pages/ListNotificationLogs.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Filament/Pages/ListNotificationLogs.php) | No named public method detected by the static index. |
+| [src/Contracts/NotificationChannelInterface.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Contracts/NotificationChannelInterface.php) | `public function key(): string`<br>`public function send(NotificationMessage $message): void` |
+| [src/Filament/NotificationLogResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Filament/NotificationLogResource.php) | `public static function canCreate(): bool`<br>`public static function table(Table $table): Table`<br>`public static function getPages(): array` |
+| [src/Filament/Pages/ListNotificationLogs.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Filament/Pages/ListNotificationLogs.php) | No named public method detected by the static index. |
 
-Other non-legacy PHP sources: [src/Channels/ChannelManager.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Channels/ChannelManager.php) · [src/Channels/LogChannel.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Channels/LogChannel.php) · [src/Channels/MailChannel.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Channels/MailChannel.php) · [src/CmsNotificationsModule.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/CmsNotificationsModule.php) · [src/CmsNotificationsServiceProvider.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/CmsNotificationsServiceProvider.php) · [src/Enums/NotificationStatus.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Enums/NotificationStatus.php) · [src/Jobs/SendNotification.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Jobs/SendNotification.php) · [src/Messages/NotificationMessage.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Messages/NotificationMessage.php) · [src/Models/NotificationLog.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Models/NotificationLog.php) · [src/NotificationDispatcher.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/NotificationDispatcher.php).
+Other non-legacy PHP sources: [src/Channels/ChannelManager.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Channels/ChannelManager.php) · [src/Channels/LogChannel.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Channels/LogChannel.php) · [src/Channels/MailChannel.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Channels/MailChannel.php) · [src/CmsNotificationsModule.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/CmsNotificationsModule.php) · [src/CmsNotificationsServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/CmsNotificationsServiceProvider.php) · [src/Enums/NotificationStatus.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Enums/NotificationStatus.php) · [src/Jobs/SendNotification.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Jobs/SendNotification.php) · [src/Messages/NotificationMessage.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Messages/NotificationMessage.php) · [src/Models/NotificationLog.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Models/NotificationLog.php) · [src/NotificationDispatcher.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/NotificationDispatcher.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_03_01_000000_create_cms_notification_logs_table.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/database/migrations/2026_03_01_000000_create_cms_notification_logs_table.php)
+- [database/migrations/2026_03_01_000000_create_cms_notification_logs_table.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/database/migrations/2026_03_01_000000_create_cms_notification_logs_table.php)
 
-[src/Enums/NotificationStatus.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Enums/NotificationStatus.php): `Pending = 'pending'`, `Sent = 'sent'`, `Failed = 'failed'`.
+[src/Enums/NotificationStatus.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-notifications/src/Enums/NotificationStatus.php): `Pending = 'pending'`, `Sent = 'sent'`, `Failed = 'failed'`.
 
 ### Verification and consumer use
 

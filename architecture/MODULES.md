@@ -145,7 +145,7 @@ Applications and modules are independent repositories. An application repository
 Application repository:
 
 ```text
-cms-laravel/
+project-cms-laravel-filament/
 ├── modules/             # Composer-installed Liberu modules; tracked in Git
 │   ├── cms-core/
 │   ├── cms-content/
@@ -650,7 +650,7 @@ No product owns Stripe. Ecommerce owns cart/checkout/order policy. Billing owns 
 ### 27.2 CMS product ecosystem
 
 ```text
-cms-laravel
+project-cms-laravel-filament
 ├── cms-core
 ├── cms-content
 ├── cms-pages

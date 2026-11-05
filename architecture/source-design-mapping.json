@@ -1,7 +1,7 @@
 {
   "projects": {
     "accounting": {
-      "repository": "accounting-erp-laravel",
+      "repository": "project-accounting-erp-laravel-filament",
       "designs": {
         "account-reconciliations": {
           "design_alias": null,
@@ -8794,7 +8794,7 @@
       "unmapped_observed_packages": []
     },
     "automation": {
-      "repository": "automation-laravel",
+      "repository": "project-automation-laravel-filament",
       "designs": {
         "activity-comments": {
           "design_alias": null,
@@ -10519,7 +10519,7 @@
       "unmapped_observed_packages": []
     },
     "billing": {
-      "repository": "billing-laravel",
+      "repository": "project-billing-laravel-filament",
       "designs": {
         "activity-comments": {
           "design_alias": null,
@@ -13023,7 +13023,7 @@
       "unmapped_observed_packages": []
     },
     "boilerplate": {
-      "repository": "boilerplate-laravel",
+      "repository": "project-boilerplate-laravel-filament",
       "designs": {
         "activity-and-comments": {
           "design_alias": "activity-comments",
@@ -14016,7 +14016,7 @@
       "unmapped_observed_packages": []
     },
     "browser-game": {
-      "repository": "browser-game-laravel",
+      "repository": "project-browser-game-laravel-filament",
       "designs": {
         "accounts": {
           "design_alias": null,
@@ -15897,7 +15897,7 @@
       "unmapped_observed_packages": []
     },
     "cms": {
-      "repository": "cms-laravel",
+      "repository": "project-cms-laravel-filament",
       "designs": {
         "accessibility-assistant": {
           "design_alias": null,
@@ -24585,7 +24585,7 @@
       "unmapped_observed_packages": []
     },
     "control-panel": {
-      "repository": "control-panel-laravel",
+      "repository": "project-control-panel-laravel-filament",
       "designs": {
         "accounts": {
           "design_alias": null,
@@ -26466,7 +26466,7 @@
       "unmapped_observed_packages": []
     },
     "crm": {
-      "repository": "crm-laravel",
+      "repository": "project-crm-laravel-filament",
       "designs": {
         "account-based-marketing": {
           "design_alias": null,
@@ -34842,7 +34842,7 @@
       "unmapped_observed_packages": []
     },
     "ecommerce": {
-      "repository": "ecommerce-laravel",
+      "repository": "project-ecommerce-laravel-filament",
       "designs": {
         "abandoned-checkout": {
           "design_alias": null,
@@ -36453,7 +36453,7 @@
       "unmapped_observed_packages": []
     },
     "genealogy": {
-      "repository": "genealogy-laravel",
+      "repository": "project-genealogy-laravel-filament",
       "designs": {
         "activity-comments": {
           "design_alias": null,
@@ -38439,7 +38439,7 @@
       "unmapped_observed_packages": []
     },
     "maintenance": {
-      "repository": "maintenance-laravel",
+      "repository": "project-maintenance-laravel-filament",
       "designs": {
         "activity-comments": {
           "design_alias": null,
@@ -40281,7 +40281,7 @@
       "unmapped_observed_packages": []
     },
     "real-estate": {
-      "repository": "real-estate-laravel",
+      "repository": "project-real-estate-laravel-filament",
       "designs": {
         ".graphify": {
           "design_alias": null,
@@ -42819,7 +42819,7 @@
       "unmapped_observed_packages": []
     },
     "sap": {
-      "repository": "enterprise-sap-laravel",
+      "repository": "project-enterprise-sap-laravel-filament",
       "designs": {
         "assets-and-facilities": {
           "design_alias": null,
@@ -43266,7 +43266,7 @@
       ]
     },
     "social-network": {
-      "repository": "social-network-laravel",
+      "repository": "project-social-network-laravel-filament",
       "designs": {
         "activity-comments": {
           "design_alias": null,

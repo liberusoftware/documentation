@@ -8,7 +8,7 @@ Accounting asset events
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-asset-events](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-asset-events](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: accounting-erp-laravel, `accounting-asset-events`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `accounting-asset-events`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: accounting-erp-laravel, `accounting-asset-events`. Matching refe
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/module.json).
 
 **Declared capabilities:** accounting.asset-events
 
@@ -56,16 +56,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/RecordAssetEvent.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/Actions/RecordAssetEvent.php) | `public function handle(array $attributes): AssetEvent` |
-| [src/Queries/AssetEventQuery.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/Queries/AssetEventQuery.php) | `public function paginate(int $teamId, ?int $assetId = null, int $perPage = 25): LengthAwarePaginator` |
+| [src/Actions/RecordAssetEvent.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/Actions/RecordAssetEvent.php) | `public function handle(array $attributes): AssetEvent` |
+| [src/Queries/AssetEventQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/Queries/AssetEventQuery.php) | `public function paginate(int $teamId, ?int $assetId = null, int $perPage = 25): LengthAwarePaginator` |
 
-Other non-legacy PHP sources: [src/AssetEventsServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/AssetEventsServiceProvider.php) · [src/Models/AssetEvent.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/Models/AssetEvent.php).
+Other non-legacy PHP sources: [src/AssetEventsServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/AssetEventsServiceProvider.php) · [src/Models/AssetEvent.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/src/Models/AssetEvent.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_31_190000_create_accounting_asset_events_table.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/database/migrations/2026_08_31_190000_create_accounting_asset_events_table.php)
+- [database/migrations/2026_08_31_190000_create_accounting_asset_events_table.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-asset-events/database/migrations/2026_08_31_190000_create_accounting_asset_events_table.php)
 
 ### Verification and consumer use
 

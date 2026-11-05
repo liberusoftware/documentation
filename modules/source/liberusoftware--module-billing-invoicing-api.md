@@ -8,7 +8,7 @@ HTTP API adapter for Liberu Billing Invoicing.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-billing-invoicing-api](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 0 |
+| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-billing-invoicing-api](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: billing-laravel, `module-billing-invoicing-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-billing-laravel-filament, `module-billing-invoicing-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: billing-laravel, `module-billing-invoicing-api`. Matching refere
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/composer.json) · [module.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/composer.json) · [module.json](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/module.json).
 
 **Declared capabilities:** billing.invoicing.api
 
@@ -62,17 +62,17 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/InvoiceController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/src/Http/Controllers/InvoiceController.php) | `public function index(Request $request, ListInvoices $query): JsonResponse`<br>`public function store(Request $request, CreateInvoice $create): JsonResponse`<br>`public function line(Request $request, Invoice $invoice, AddInvoiceLine $add): JsonResponse`<br>`public function finalize(Request $request, Invoice $invoice, FinalizeInvoice $finalize): JsonResponse`<br>`public function schedule(Request $request, CreateInvoiceSchedule $create): JsonResponse`<br>`public function runSchedule(Request $request, InvoiceSchedule $schedule, RunInvoiceSchedule $run): JsonResponse`<br>`public function paymentPlan(Request $request, CreatePaymentPlan $create): JsonResponse`<br>`public function runPaymentPlan(Request $request, PaymentPlan $paymentPlan, RunPaymentPlan $run): JsonResponse`<br>`public function adjust(Request $request, Invoice $invoice, ApplyInvoiceAdjustment $adjust): JsonResponse`<br>`public function lateFee(Request $request, Invoice $invoice, ApplyInvoiceLateFee $lateFee): JsonResponse`<br>`public function document(Request $request, Invoice $invoice, GenerateInvoiceDocument $document): JsonResponse`<br>`public function deliver(Request $request, Invoice $invoice, DeliverInvoice $deliver): JsonResponse` |
-| [src/Http/Controllers/InvoiceSupportController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/src/Http/Controllers/InvoiceSupportController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateInvoiceSupport $create): JsonResponse` |
+| [src/Http/Controllers/InvoiceController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/src/Http/Controllers/InvoiceController.php) | `public function index(Request $request, ListInvoices $query): JsonResponse`<br>`public function store(Request $request, CreateInvoice $create): JsonResponse`<br>`public function line(Request $request, Invoice $invoice, AddInvoiceLine $add): JsonResponse`<br>`public function finalize(Request $request, Invoice $invoice, FinalizeInvoice $finalize): JsonResponse`<br>`public function schedule(Request $request, CreateInvoiceSchedule $create): JsonResponse`<br>`public function runSchedule(Request $request, InvoiceSchedule $schedule, RunInvoiceSchedule $run): JsonResponse`<br>`public function paymentPlan(Request $request, CreatePaymentPlan $create): JsonResponse`<br>`public function runPaymentPlan(Request $request, PaymentPlan $paymentPlan, RunPaymentPlan $run): JsonResponse`<br>`public function adjust(Request $request, Invoice $invoice, ApplyInvoiceAdjustment $adjust): JsonResponse`<br>`public function lateFee(Request $request, Invoice $invoice, ApplyInvoiceLateFee $lateFee): JsonResponse`<br>`public function document(Request $request, Invoice $invoice, GenerateInvoiceDocument $document): JsonResponse`<br>`public function deliver(Request $request, Invoice $invoice, DeliverInvoice $deliver): JsonResponse` |
+| [src/Http/Controllers/InvoiceSupportController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/src/Http/Controllers/InvoiceSupportController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateInvoiceSupport $create): JsonResponse` |
 
-Other non-legacy PHP sources: [src/InvoicingApiServiceProvider.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/src/InvoicingApiServiceProvider.php).
+Other non-legacy PHP sources: [src/InvoicingApiServiceProvider.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/src/InvoicingApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/billing-invoicing.yaml](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/openapi/v1/billing-invoicing.yaml)
-- [routes/api.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/routes/api.php)
+- [openapi/v1/billing-invoicing.yaml](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/openapi/v1/billing-invoicing.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-invoicing-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

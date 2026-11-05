@@ -8,7 +8,7 @@ No Composer description declared.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-learning-and-courses-api](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-learning-and-courses-api](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `crm-learning-and-courses-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `crm-learning-and-courses-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: crm-laravel, `crm-learning-and-courses-api`. Matching reference 
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/module.json).
 
 **Declared capabilities:** crm.learning-and-courses.api
 
@@ -56,9 +56,9 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/LearningController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/src/Http/Controllers/LearningController.php) | `public function index(Request $r, LearningQuery $q): JsonResponse`<br>`public function store(Request $r, CreateCourse $a): JsonResponse`<br>`public function enroll(Request $r, LearningCourse $course, EnrollLearner $a): JsonResponse`<br>`public function record(Request $r, LearningEnrollment $enrollment, RecordLearningProgress $a): JsonResponse`<br>`public function records(Request $r, LearningEnrollment $enrollment, LearningQuery $q): JsonResponse` |
+| [src/Http/Controllers/LearningController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/src/Http/Controllers/LearningController.php) | `public function index(Request $r, LearningQuery $q): JsonResponse`<br>`public function store(Request $r, CreateCourse $a): JsonResponse`<br>`public function enroll(Request $r, LearningCourse $course, EnrollLearner $a): JsonResponse`<br>`public function record(Request $r, LearningEnrollment $enrollment, RecordLearningProgress $a): JsonResponse`<br>`public function records(Request $r, LearningEnrollment $enrollment, LearningQuery $q): JsonResponse` |
 
-Other non-legacy PHP sources: [src/Providers/LearningAndCoursesApiServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/src/Providers/LearningAndCoursesApiServiceProvider.php) · [src/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/src/routes/api.php).
+Other non-legacy PHP sources: [src/Providers/LearningAndCoursesApiServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/src/Providers/LearningAndCoursesApiServiceProvider.php) · [src/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-learning-and-courses-api/src/routes/api.php).
 
 ### Persistence and lifecycle evidence
 

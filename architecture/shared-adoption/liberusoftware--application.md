@@ -14,18 +14,18 @@ See the [implementation reference](../../modules/source/liberusoftware--applicat
 
 | Consumer | Pinned module metadata | Variant | Test files |
 | --- | --- | ---: | ---: |
-| accounting | [application](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/application/composer.json) | 3 | 1 |
-| automation | [application](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/application/composer.json) | 2 | 1 |
-| billing | [application](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/application/composer.json) | 2 | 1 |
-| boilerplate | [application](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/application/composer.json) | 2 | 1 |
-| browser-game | [application](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/application/composer.json) | 2 | 1 |
-| control-panel | [application](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/application/composer.json) | 2 | 1 |
-| crm | [application](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/composer.json) | 1 | 10 |
-| sap | [application](https://github.com/liberusoftware/enterprise-sap-laravel/blob/b12a8c841c6a9054e52cac99d9ac1f233924a041/modules/application/composer.json) | 2 | 1 |
-| genealogy | [application](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/application/composer.json) | 2 | 1 |
-| maintenance | [application](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/application/composer.json) | 2 | 1 |
-| real-estate | [application](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/application/composer.json) | 2 | 1 |
-| social-network | [application](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/application/composer.json) | 2 | 1 |
+| accounting | [application](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/application/composer.json) | 3 | 1 |
+| automation | [application](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/application/composer.json) | 2 | 1 |
+| billing | [application](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/application/composer.json) | 2 | 1 |
+| boilerplate | [application](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/application/composer.json) | 2 | 1 |
+| browser-game | [application](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/application/composer.json) | 2 | 1 |
+| control-panel | [application](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/application/composer.json) | 2 | 1 |
+| crm | [application](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/composer.json) | 1 | 10 |
+| sap | [application](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament/blob/b12a8c841c6a9054e52cac99d9ac1f233924a041/modules/application/composer.json) | 2 | 1 |
+| genealogy | [application](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/application/composer.json) | 2 | 1 |
+| maintenance | [application](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/application/composer.json) | 2 | 1 |
+| real-estate | [application](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/application/composer.json) | 2 | 1 |
+| social-network | [application](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/application/composer.json) | 2 | 1 |
 
 ## Manifest and dependency differences
 
@@ -43,10 +43,10 @@ The following database paths differ or are missing in at least one consumer. A m
 
 | Differing database path | Variant source and declared table operation |
 | --- | --- |
-| `database/migrations/0001_01_01_000001_create_cache_table.php` | V1: [627513417f](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/database/migrations/0001_01_01_000001_create_cache_table.php); create cache, create cache_locks, dropIfExists cache, dropIfExists cache_locks<br>V2: absent<br>V3: absent |
-| `database/migrations/0001_01_01_000002_create_jobs_table.php` | V1: [758acd3f7a](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/database/migrations/0001_01_01_000002_create_jobs_table.php); create jobs, create job_batches, create failed_jobs, dropIfExists jobs, dropIfExists job_batches, dropIfExists failed_jobs<br>V2: absent<br>V3: absent |
-| `database/migrations/2019_09_15_000010_create_tenants_table.php` | V1: [737b110129](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/database/migrations/2019_09_15_000010_create_tenants_table.php); create tenants, dropIfExists tenants<br>V2: absent<br>V3: absent |
-| `database/seeders/DatabaseSeeder.php` | V1: [49e276a32c](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/database/seeders/DatabaseSeeder.php); inspect file (no literal Schema operation indexed)<br>V2: absent<br>V3: absent |
+| `database/migrations/0001_01_01_000001_create_cache_table.php` | V1: [627513417f](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/database/migrations/0001_01_01_000001_create_cache_table.php); create cache, create cache_locks, dropIfExists cache, dropIfExists cache_locks<br>V2: absent<br>V3: absent |
+| `database/migrations/0001_01_01_000002_create_jobs_table.php` | V1: [758acd3f7a](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/database/migrations/0001_01_01_000002_create_jobs_table.php); create jobs, create job_batches, create failed_jobs, dropIfExists jobs, dropIfExists job_batches, dropIfExists failed_jobs<br>V2: absent<br>V3: absent |
+| `database/migrations/2019_09_15_000010_create_tenants_table.php` | V1: [737b110129](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/database/migrations/2019_09_15_000010_create_tenants_table.php); create tenants, dropIfExists tenants<br>V2: absent<br>V3: absent |
+| `database/seeders/DatabaseSeeder.php` | V1: [49e276a32c](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/database/seeders/DatabaseSeeder.php); inspect file (no literal Schema operation indexed)<br>V2: absent<br>V3: absent |
 
 Before a shared release, inventory affected tables/columns and tenant/source identifiers in every consumer, then map legacy/current record identities and callers. Use additive backfills or a separate migration with reconciliation and recovery; do not drop a historical table because the chosen package tree lacks its old migration. Reconcile counts, ownership and required evidence before moving callers or removing obsolete implementations.
 
@@ -62,7 +62,7 @@ Resolve host-model lookups, actor/tenant policy, source-record references and pr
 
 ## Registration, route and presentation review
 
-- `src/ApplicationCoreServiceProvider.php`: V1 [source](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/src/ApplicationCoreServiceProvider.php), V2 [source](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/application/src/ApplicationCoreServiceProvider.php), V3 [source](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/application/src/ApplicationCoreServiceProvider.php)
+- `src/ApplicationCoreServiceProvider.php`: V1 [source](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/application/src/ApplicationCoreServiceProvider.php), V2 [source](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/application/src/ApplicationCoreServiceProvider.php), V3 [source](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/application/src/ApplicationCoreServiceProvider.php)
 
 Validate discovery, manifest schema/version handling, dependency selection, provider boot order and route/plugin identifiers against the consuming host. For UI/API adapters, retain the authorized DTO and domain action semantics rather than exposing private models or bypassing transitions through generic record saves.
 

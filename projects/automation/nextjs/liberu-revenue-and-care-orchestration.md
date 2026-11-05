@@ -31,8 +31,8 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateCarePlan.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-revenue-and-care-orchestration/src/Actions/CreateCarePlan.php) | `public function execute(array $attributes): CarePlan` |
-| [TransitionCarePlan.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-revenue-and-care-orchestration/src/Actions/TransitionCarePlan.php) | `public function execute(CarePlan $record, LifecycleStatus $to): CarePlan` |
+| [CreateCarePlan.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-revenue-and-care-orchestration/src/Actions/CreateCarePlan.php) | `public function execute(array $attributes): CarePlan` |
+| [TransitionCarePlan.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-revenue-and-care-orchestration/src/Actions/TransitionCarePlan.php) | `public function execute(CarePlan $record, LifecycleStatus $to): CarePlan` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -42,7 +42,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [CarePlan.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-revenue-and-care-orchestration/src/Models/CarePlan.php) | `tenant_id`, `idempotency_key`, `name`, `status`, `metadata` |
+| [CarePlan.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-revenue-and-care-orchestration/src/Models/CarePlan.php) | `tenant_id`, `idempotency_key`, `name`, `status`, `metadata` |
 
 ## Server/client and React reuse
 

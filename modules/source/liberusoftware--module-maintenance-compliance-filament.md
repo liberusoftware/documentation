@@ -8,7 +8,7 @@ Compliance filament adapter for Liberu Maintenance
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [maintenance](../../projects/maintenance/SOURCE-MODULES.md) | [module-maintenance-compliance-filament](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/composer.json) | `c267d625e264` | [Variant 1](#variant-1) | 0 |
+| [maintenance](../../projects/maintenance/SOURCE-MODULES.md) | [module-maintenance-compliance-filament](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/composer.json) | `c267d625e264` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: maintenance-laravel, `module-maintenance-compliance-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-maintenance-laravel-filament, `module-maintenance-compliance-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: maintenance-laravel, `module-maintenance-compliance-filament`. M
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/composer.json) · [module.json](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/composer.json) · [module.json](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/module.json).
 
 **Declared capabilities:** maintenance.compliance.filament
 
@@ -58,7 +58,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/ComplianceFilamentPlugin.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/ComplianceFilamentPlugin.php) · [src/ComplianceFilamentServiceProvider.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/ComplianceFilamentServiceProvider.php) · [src/Resources/ComplianceResource.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource.php) · [src/Resources/ComplianceResource/Pages/CreateCompliance.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource/Pages/CreateCompliance.php) · [src/Resources/ComplianceResource/Pages/EditCompliance.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource/Pages/EditCompliance.php) · [src/Resources/ComplianceResource/Pages/ListCompliance.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource/Pages/ListCompliance.php).
+Other non-legacy PHP sources: [src/ComplianceFilamentPlugin.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/ComplianceFilamentPlugin.php) · [src/ComplianceFilamentServiceProvider.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/ComplianceFilamentServiceProvider.php) · [src/Resources/ComplianceResource.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource.php) · [src/Resources/ComplianceResource/Pages/CreateCompliance.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource/Pages/CreateCompliance.php) · [src/Resources/ComplianceResource/Pages/EditCompliance.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource/Pages/EditCompliance.php) · [src/Resources/ComplianceResource/Pages/ListCompliance.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-compliance-filament/src/Resources/ComplianceResource/Pages/ListCompliance.php).
 
 ### Persistence and lifecycle evidence
 

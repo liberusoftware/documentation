@@ -38,7 +38,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CacheAndPerformanceService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Services/CacheAndPerformanceService.php) | `public function remember(?int $teamId, string $key, string $type, int $ttl, callable $resolver, array $tags = [], array $metadata = []): array`<br>`public function invalidate(?int $teamId, array $tags = [], array $keys = [], string $idempotencyKey = ''): CacheInvalidation`<br>`public function diagnostics(?int $teamId): array` |
+| [CacheAndPerformanceService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Services/CacheAndPerformanceService.php) | `public function remember(?int $teamId, string $key, string $type, int $ttl, callable $resolver, array $tags = [], array $metadata = []): array`<br>`public function invalidate(?int $teamId, array $tags = [], array $keys = [], string $idempotencyKey = ''): CacheInvalidation`<br>`public function diagnostics(?int $teamId): array` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -48,8 +48,8 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [CacheEntry.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Models/CacheEntry.php) | `team_id`, `cache_key`, `cache_type`, `tags`, `status`, `ttl_seconds`, `size_bytes`, `hits`, `misses`, `warmed_at`, `last_invalidated_at`, `metadata` |
-| [CacheInvalidation.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Models/CacheInvalidation.php) | `team_id`, `idempotency_key`, `tags`, `cache_keys`, `status`, `invalidated_count`, `failure_reason`, `completed_at` |
+| [CacheEntry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Models/CacheEntry.php) | `team_id`, `cache_key`, `cache_type`, `tags`, `status`, `ttl_seconds`, `size_bytes`, `hits`, `misses`, `warmed_at`, `last_invalidated_at`, `metadata` |
+| [CacheInvalidation.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-cache-and-performance/src/Models/CacheInvalidation.php) | `team_id`, `idempotency_key`, `tags`, `cache_keys`, `status`, `invalidated_count`, `failure_reason`, `completed_at` |
 
 ## Server/client and React reuse
 

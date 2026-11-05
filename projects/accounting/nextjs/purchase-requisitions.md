@@ -40,9 +40,9 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateRequisition.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions/src/Actions/CreateRequisition.php) | `public function handle(array $attributes): PurchaseRequisition` |
-| [RecordApproval.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions/src/Actions/RecordApproval.php) | `public function handle(PurchaseRequisition $requisition, array $attributes): RequisitionApproval` |
-| [TransitionRequisition.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions/src/Actions/TransitionRequisition.php) | `public function handle(PurchaseRequisition $requisition, RequisitionStatus $status, array $attributes = []): PurchaseRequisition` |
+| [CreateRequisition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions/src/Actions/CreateRequisition.php) | `public function handle(array $attributes): PurchaseRequisition` |
+| [RecordApproval.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions/src/Actions/RecordApproval.php) | `public function handle(PurchaseRequisition $requisition, array $attributes): RequisitionApproval` |
+| [TransitionRequisition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions/src/Actions/TransitionRequisition.php) | `public function handle(PurchaseRequisition $requisition, RequisitionStatus $status, array $attributes = []): PurchaseRequisition` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -52,14 +52,14 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [PurchaseRequisition.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions/src/Models/PurchaseRequisition.php) | `team_id`, `requester_ref`, `title`, `currency`, `total_amount`, `lines`, `coding`, `budget`, `attachments`, `status`, `submitted_at`, `approved_at`, `sourcing_ref`, `converted_ref`, `metadata` |
-| [RequisitionApproval.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions/src/Models/RequisitionApproval.php) | `requisition_id`, `approver_ref`, `decision`, `reason`, `decided_at`, `metadata` |
+| [PurchaseRequisition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions/src/Models/PurchaseRequisition.php) | `team_id`, `requester_ref`, `title`, `currency`, `total_amount`, `lines`, `coding`, `budget`, `attachments`, `status`, `submitted_at`, `approved_at`, `sourcing_ref`, `converted_ref`, `metadata` |
+| [RequisitionApproval.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions/src/Models/RequisitionApproval.php) | `requisition_id`, `approver_ref`, `decision`, `reason`, `decided_at`, `metadata` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/accounting-purchase-requisitions-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions-api/routes/api.php)
+[modules/accounting-purchase-requisitions-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-purchase-requisitions-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/purchase-requisitions')->group(function (): void {

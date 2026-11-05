@@ -47,7 +47,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-matching-intelligence-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-matching-intelligence-api/routes/api.php)
+[modules/accounting-matching-intelligence-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-matching-intelligence-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/matching-intelligence')->group(function (): void {
@@ -65,7 +65,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [MatchingIntelligenceController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-matching-intelligence-api/src/Http/Controllers/MatchingIntelligenceController.php) | `public function index(Request $request, MatchingQuery $query): mixed`<br>`public function store(Request $request, CreateSuggestion $action): MatchingSuggestionResource`<br>`public function show(MatchingSuggestion $suggestion): MatchingSuggestionResource`<br>`public function decide(Request $request, MatchingSuggestion $suggestion, DecideSuggestion $action): MatchingSuggestionResource`<br>`public function feedback(Request $request, MatchingSuggestion $suggestion, RecordFeedback $action): JsonResponse`<br>`public function threshold(Request $request, ConfigureThreshold $action): JsonResponse` |
+| [MatchingIntelligenceController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-matching-intelligence-api/src/Http/Controllers/MatchingIntelligenceController.php) | `public function index(Request $request, MatchingQuery $query): mixed`<br>`public function store(Request $request, CreateSuggestion $action): MatchingSuggestionResource`<br>`public function show(MatchingSuggestion $suggestion): MatchingSuggestionResource`<br>`public function decide(Request $request, MatchingSuggestion $suggestion, DecideSuggestion $action): MatchingSuggestionResource`<br>`public function feedback(Request $request, MatchingSuggestion $suggestion, RecordFeedback $action): JsonResponse`<br>`public function threshold(Request $request, ConfigureThreshold $action): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -73,7 +73,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/accounting-matching-intelligence-api/openapi/v1/accounting-matching-intelligence.yaml](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-matching-intelligence-api/openapi/v1/accounting-matching-intelligence.yaml)
+- [modules/accounting-matching-intelligence-api/openapi/v1/accounting-matching-intelligence.yaml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-matching-intelligence-api/openapi/v1/accounting-matching-intelligence.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

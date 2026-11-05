@@ -41,16 +41,16 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [DimensionalBalances.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Queries/DimensionalBalances.php) | `public function handle(?string $key = null): array` |
+| [DimensionalBalances.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Queries/DimensionalBalances.php) | `public function handle(?string $key = null): array` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [AllocateDimensions.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/AllocateDimensions.php) | `public function handle(string $key, string\|int\|float $amount, array $allocations, ?string $currency = null, ?string $actor = null): array` |
-| [SaveDimension.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/SaveDimension.php) | `public function handle(array $attributes, ?Dimension $dimension = null): Dimension` |
-| [SaveDimensionValue.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/SaveDimensionValue.php) | `public function handle(Dimension $dimension, array $attributes, ?DimensionValue $value = null): DimensionValue` |
-| [ValidateDimensions.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/ValidateDimensions.php) | `public function handle(array $values): array` |
+| [AllocateDimensions.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/AllocateDimensions.php) | `public function handle(string $key, string\|int\|float $amount, array $allocations, ?string $currency = null, ?string $actor = null): array` |
+| [SaveDimension.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/SaveDimension.php) | `public function handle(array $attributes, ?Dimension $dimension = null): Dimension` |
+| [SaveDimensionValue.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/SaveDimensionValue.php) | `public function handle(Dimension $dimension, array $attributes, ?DimensionValue $value = null): DimensionValue` |
+| [ValidateDimensions.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/ValidateDimensions.php) | `public function handle(array $values): array` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -60,15 +60,15 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [Dimension.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/Dimension.php) | `code`, `name`, `kind`, `description`, `is_required`, `is_active`, `metadata` |
-| [DimensionAllocation.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/DimensionAllocation.php) | `allocation_key`, `amount`, `currency`, `percentage`, `dimensions`, `created_by` |
-| [DimensionValue.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/DimensionValue.php) | `dimension_id`, `code`, `name`, `parent_id`, `is_active`, `metadata` |
+| [Dimension.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/Dimension.php) | `code`, `name`, `kind`, `description`, `is_required`, `is_active`, `metadata` |
+| [DimensionAllocation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/DimensionAllocation.php) | `allocation_key`, `amount`, `currency`, `percentage`, `dimensions`, `created_by` |
+| [DimensionValue.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/DimensionValue.php) | `dimension_id`, `code`, `name`, `parent_id`, `is_active`, `metadata` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/accounting-dimensions-and-tracking-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking-api/routes/api.php)
+[modules/accounting-dimensions-and-tracking-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking-api/routes/api.php)
 
 ```php
 Route::middleware(['auth:sanctum', 'throttle:60,1'])->prefix('api/v1/accounting/dimensions-and-tracking')->group(function (): void {

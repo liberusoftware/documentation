@@ -8,7 +8,7 @@ Filament 5 adapter for module-automation-connectors.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [automation](../../projects/automation/SOURCE-MODULES.md) | [module-automation-connectors-filament](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 0 |
+| [automation](../../projects/automation/SOURCE-MODULES.md) | [module-automation-connectors-filament](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: automation-laravel, `module-automation-connectors-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-automation-laravel-filament, `module-automation-connectors-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: automation-laravel, `module-automation-connectors-filament`. Mat
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/composer.json) · [module.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/composer.json) · [module.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/module.json).
 
 **Declared capabilities:** automation.connectors.filament
 
@@ -58,7 +58,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/ConnectorsFilamentPlugin.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/ConnectorsFilamentPlugin.php) · [src/ConnectorsFilamentServiceProvider.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/ConnectorsFilamentServiceProvider.php) · [src/Resources/ConnectorsResource.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/Resources/ConnectorsResource.php) · [src/Resources/ConnectorsResource/Pages/CreateConnectors.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/Resources/ConnectorsResource/Pages/CreateConnectors.php) · [src/Resources/ConnectorsResource/Pages/EditConnectors.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/Resources/ConnectorsResource/Pages/EditConnectors.php) · [src/Resources/ConnectorsResource/Pages/ListConnectors.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/Resources/ConnectorsResource/Pages/ListConnectors.php).
+Other non-legacy PHP sources: [src/ConnectorsFilamentPlugin.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/ConnectorsFilamentPlugin.php) · [src/ConnectorsFilamentServiceProvider.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/ConnectorsFilamentServiceProvider.php) · [src/Resources/ConnectorsResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/Resources/ConnectorsResource.php) · [src/Resources/ConnectorsResource/Pages/CreateConnectors.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/Resources/ConnectorsResource/Pages/CreateConnectors.php) · [src/Resources/ConnectorsResource/Pages/EditConnectors.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/Resources/ConnectorsResource/Pages/EditConnectors.php) · [src/Resources/ConnectorsResource/Pages/ListConnectors.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-connectors-filament/src/Resources/ConnectorsResource/Pages/ListConnectors.php).
 
 ### Persistence and lifecycle evidence
 

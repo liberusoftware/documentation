@@ -8,7 +8,7 @@ CRM work management API presentation package
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-work-management-api](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-work-management-api](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `crm-work-management-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `crm-work-management-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: crm-laravel, `crm-work-management-api`. Matching reference files
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/module.json).
 
 **Declared capabilities:** crm.work-management.api
 
@@ -60,16 +60,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/WorkManagementController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/src/Http/Controllers/WorkManagementController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateWorkItem $create, IdempotencyStore $idempotency): JsonResponse`<br>`public function show(Request $request, int $workItem): JsonResponse`<br>`public function update(Request $request, int $workItem, UpdateWorkItem $update): JsonResponse`<br>`public function complete(Request $request, int $workItem, CompleteWorkItem $complete, IdempotencyStore $idempotency): JsonResponse`<br>`public function checklist(Request $request, int $workItem, AddChecklistItem $add): JsonResponse`<br>`public function requestApproval(Request $request, int $workItem, ReviewApproval $approval, IdempotencyStore $idempotency): JsonResponse`<br>`public function dependency(Request $request, int $workItem, AddDependency $add): JsonResponse`<br>`public function queues(Request $request): JsonResponse`<br>`public function storeQueue(Request $request, CreateWorkQueue $create, IdempotencyStore $idempotency): JsonResponse`<br>`public function workload(Request $request, WorkloadQuery $workload): JsonResponse` |
+| [src/Http/Controllers/WorkManagementController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/src/Http/Controllers/WorkManagementController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateWorkItem $create, IdempotencyStore $idempotency): JsonResponse`<br>`public function show(Request $request, int $workItem): JsonResponse`<br>`public function update(Request $request, int $workItem, UpdateWorkItem $update): JsonResponse`<br>`public function complete(Request $request, int $workItem, CompleteWorkItem $complete, IdempotencyStore $idempotency): JsonResponse`<br>`public function checklist(Request $request, int $workItem, AddChecklistItem $add): JsonResponse`<br>`public function requestApproval(Request $request, int $workItem, ReviewApproval $approval, IdempotencyStore $idempotency): JsonResponse`<br>`public function dependency(Request $request, int $workItem, AddDependency $add): JsonResponse`<br>`public function queues(Request $request): JsonResponse`<br>`public function storeQueue(Request $request, CreateWorkQueue $create, IdempotencyStore $idempotency): JsonResponse`<br>`public function workload(Request $request, WorkloadQuery $workload): JsonResponse` |
 
-Other non-legacy PHP sources: [src/WorkManagementApiServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/src/WorkManagementApiServiceProvider.php).
+Other non-legacy PHP sources: [src/WorkManagementApiServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/src/WorkManagementApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/crm-work-management.yaml](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/openapi/v1/crm-work-management.yaml)
-- [routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/routes/api.php)
+- [openapi/v1/crm-work-management.yaml](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/openapi/v1/crm-work-management.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-work-management-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

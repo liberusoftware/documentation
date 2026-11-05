@@ -48,7 +48,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/browser-game-game-core-api/routes/api.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-game-core-api/routes/api.php)
+[modules/browser-game-game-core-api/routes/api.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-game-core-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/browser-game/game-core')
@@ -70,7 +70,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [GameCoreController.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-game-core-api/src/Http/Controllers/GameCoreController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(Request $request, string $world): JsonResponse`<br>`public function store(Request $request): JsonResponse`<br>`public function update(Request $request, GameWorld $world): JsonResponse`<br>`public function clock(Request $request, GameWorld $world): JsonResponse`<br>`public function ruleset(Request $request, GameWorld $world): JsonResponse`<br>`public function content(Request $request, GameWorld $world): JsonResponse`<br>`public function flag(Request $request, GameWorld $world, string $key): JsonResponse`<br>`public function evaluateFlag(Request $request, GameWorld $world, string $key): JsonResponse`<br>`public function maintenance(Request $request, GameWorld $world): JsonResponse` |
+| [GameCoreController.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-game-core-api/src/Http/Controllers/GameCoreController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(Request $request, string $world): JsonResponse`<br>`public function store(Request $request): JsonResponse`<br>`public function update(Request $request, GameWorld $world): JsonResponse`<br>`public function clock(Request $request, GameWorld $world): JsonResponse`<br>`public function ruleset(Request $request, GameWorld $world): JsonResponse`<br>`public function content(Request $request, GameWorld $world): JsonResponse`<br>`public function flag(Request $request, GameWorld $world, string $key): JsonResponse`<br>`public function evaluateFlag(Request $request, GameWorld $world, string $key): JsonResponse`<br>`public function maintenance(Request $request, GameWorld $world): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -78,7 +78,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/browser-game-game-core-api/openapi/v1-browser-game-game-core.yaml](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-game-core-api/openapi/v1-browser-game-game-core.yaml)
+- [modules/browser-game-game-core-api/openapi/v1-browser-game-game-core.yaml](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-game-core-api/openapi/v1-browser-game-game-core.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

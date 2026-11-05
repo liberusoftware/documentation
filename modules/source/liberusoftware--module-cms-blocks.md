@@ -8,7 +8,7 @@ Block system and page-builder rendering for Liberu CMS: a registry of block type
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-blocks](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
+| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-blocks](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: cms-laravel, `cms-blocks`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-cms-laravel-filament, `cms-blocks`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: cms-laravel, `cms-blocks`. Matching reference files in this vari
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/composer.json) · [module.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/composer.json) · [module.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/module.json).
 
 ### Dependencies and namespace mapping
 
@@ -53,7 +53,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/BlockRenderer.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/BlockRenderer.php) · [src/BlockTypeRegistry.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/BlockTypeRegistry.php) · [src/BlocksModule.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/BlocksModule.php) · [src/BlocksServiceProvider.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/BlocksServiceProvider.php) · [src/Types/AbstractBlockType.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/AbstractBlockType.php) · [src/Types/CodeBlock.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/CodeBlock.php) · [src/Types/ColumnsBlock.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/ColumnsBlock.php) · [src/Types/CtaBlock.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/CtaBlock.php) · [src/Types/HeadingBlock.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/HeadingBlock.php) · [src/Types/ImageBlock.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/ImageBlock.php) · [src/Types/TextBlock.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/TextBlock.php).
+Other non-legacy PHP sources: [src/BlockRenderer.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/BlockRenderer.php) · [src/BlockTypeRegistry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/BlockTypeRegistry.php) · [src/BlocksModule.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/BlocksModule.php) · [src/BlocksServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/BlocksServiceProvider.php) · [src/Types/AbstractBlockType.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/AbstractBlockType.php) · [src/Types/CodeBlock.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/CodeBlock.php) · [src/Types/ColumnsBlock.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/ColumnsBlock.php) · [src/Types/CtaBlock.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/CtaBlock.php) · [src/Types/HeadingBlock.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/HeadingBlock.php) · [src/Types/ImageBlock.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/ImageBlock.php) · [src/Types/TextBlock.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-blocks/src/Types/TextBlock.php).
 
 ### Persistence and lifecycle evidence
 

@@ -8,7 +8,7 @@ Accounting dimensions, tracking values, validation, allocations, and dimensional
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-dimensions-and-tracking](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-dimensions-and-tracking](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: accounting-erp-laravel, `accounting-dimensions-and-tracking`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `accounting-dimensions-and-tracking`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: accounting-erp-laravel, `accounting-dimensions-and-tracking`. Ma
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/module.json).
 
 **Declared capabilities:** accounting.dimensions-and-tracking
 
@@ -59,21 +59,21 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/AllocateDimensions.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/AllocateDimensions.php) | `public function handle(string $key, string\|int\|float $amount, array $allocations, ?string $currency = null, ?string $actor = null): array` |
-| [src/Actions/SaveDimension.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/SaveDimension.php) | `public function handle(array $attributes, ?Dimension $dimension = null): Dimension` |
-| [src/Actions/SaveDimensionValue.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/SaveDimensionValue.php) | `public function handle(Dimension $dimension, array $attributes, ?DimensionValue $value = null): DimensionValue` |
-| [src/Actions/ValidateDimensions.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/ValidateDimensions.php) | `public function handle(array $values): array` |
-| [src/Queries/DimensionalBalances.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Queries/DimensionalBalances.php) | `public function handle(?string $key = null): array` |
+| [src/Actions/AllocateDimensions.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/AllocateDimensions.php) | `public function handle(string $key, string\|int\|float $amount, array $allocations, ?string $currency = null, ?string $actor = null): array` |
+| [src/Actions/SaveDimension.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/SaveDimension.php) | `public function handle(array $attributes, ?Dimension $dimension = null): Dimension` |
+| [src/Actions/SaveDimensionValue.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/SaveDimensionValue.php) | `public function handle(Dimension $dimension, array $attributes, ?DimensionValue $value = null): DimensionValue` |
+| [src/Actions/ValidateDimensions.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Actions/ValidateDimensions.php) | `public function handle(array $values): array` |
+| [src/Queries/DimensionalBalances.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Queries/DimensionalBalances.php) | `public function handle(?string $key = null): array` |
 
-Other non-legacy PHP sources: [src/DimensionsServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/DimensionsServiceProvider.php) · [src/Enums/DimensionKind.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Enums/DimensionKind.php) · [src/Exceptions/InvalidDimension.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Exceptions/InvalidDimension.php) · [src/Models/Dimension.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/Dimension.php) · [src/Models/DimensionAllocation.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/DimensionAllocation.php) · [src/Models/DimensionValue.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/DimensionValue.php).
+Other non-legacy PHP sources: [src/DimensionsServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/DimensionsServiceProvider.php) · [src/Enums/DimensionKind.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Enums/DimensionKind.php) · [src/Exceptions/InvalidDimension.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Exceptions/InvalidDimension.php) · [src/Models/Dimension.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/Dimension.php) · [src/Models/DimensionAllocation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/DimensionAllocation.php) · [src/Models/DimensionValue.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Models/DimensionValue.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_24_060000_create_accounting_dimensions_tables.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/database/migrations/2026_08_24_060000_create_accounting_dimensions_tables.php)
+- [database/migrations/2026_08_24_060000_create_accounting_dimensions_tables.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/database/migrations/2026_08_24_060000_create_accounting_dimensions_tables.php)
 
-[src/Enums/DimensionKind.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Enums/DimensionKind.php): `ClassCategory = 'class'`, `Location = 'location'`, `Department = 'department'`, `CostCenter = 'cost_center'`, `ProfitCenter = 'profit_center'`, `Project = 'project'`, `Tag = 'tag'`.
+[src/Enums/DimensionKind.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-dimensions-and-tracking/src/Enums/DimensionKind.php): `ClassCategory = 'class'`, `Location = 'location'`, `Department = 'department'`, `CostCenter = 'cost_center'`, `ProfitCenter = 'profit_center'`, `Project = 'project'`, `Tag = 'tag'`.
 
 ### Verification and consumer use
 

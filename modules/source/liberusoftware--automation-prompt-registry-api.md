@@ -8,7 +8,7 @@ HTTP API adapter for module-automation-prompt-registry.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [automation](../../projects/automation/SOURCE-MODULES.md) | [module-automation-prompt-registry-api](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 0 |
+| [automation](../../projects/automation/SOURCE-MODULES.md) | [module-automation-prompt-registry-api](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: automation-laravel, `module-automation-prompt-registry-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-automation-laravel-filament, `module-automation-prompt-registry-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: automation-laravel, `module-automation-prompt-registry-api`. Mat
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/composer.json) · [module.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/composer.json) · [module.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/module.json).
 
 **Declared capabilities:** automation.prompt-registry.api
 
@@ -59,17 +59,17 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/PromptRegistryResourceController.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/src/Http/Controllers/PromptRegistryResourceController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreatePromptRegistryResource $create): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function update(Request $request, string $id): JsonResponse`<br>`public function destroy(Request $request, string $id): JsonResponse`<br>`public function transition(Request $request, string $id, TransitionPromptRegistryResource $transition): JsonResponse` |
-| [src/Support/ResourcePayload.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/src/Support/ResourcePayload.php) | `public static function one(Model $resource): array`<br>`public static function collection(LengthAwarePaginator $resources): array` |
+| [src/Http/Controllers/PromptRegistryResourceController.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/src/Http/Controllers/PromptRegistryResourceController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreatePromptRegistryResource $create): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function update(Request $request, string $id): JsonResponse`<br>`public function destroy(Request $request, string $id): JsonResponse`<br>`public function transition(Request $request, string $id, TransitionPromptRegistryResource $transition): JsonResponse` |
+| [src/Support/ResourcePayload.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/src/Support/ResourcePayload.php) | `public static function one(Model $resource): array`<br>`public static function collection(LengthAwarePaginator $resources): array` |
 
-Other non-legacy PHP sources: [src/PromptRegistryApiServiceProvider.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/src/PromptRegistryApiServiceProvider.php).
+Other non-legacy PHP sources: [src/PromptRegistryApiServiceProvider.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/src/PromptRegistryApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/prompt-registry.yaml](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/openapi/v1/prompt-registry.yaml)
-- [routes/api.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/routes/api.php)
+- [openapi/v1/prompt-registry.yaml](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/openapi/v1/prompt-registry.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

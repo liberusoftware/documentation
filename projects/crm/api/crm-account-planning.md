@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/crm-account-planning-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning-api/routes/api.php)
+[modules/crm-account-planning-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning-api/routes/api.php)
 
 ```php
 Route::middleware('auth:sanctum')->prefix('api/v1/crm/account-planning')->group(function (): void {
@@ -62,7 +62,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [AccountPlanningController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning-api/src/Http/Controllers/AccountPlanningController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(int $record): AccountPlanningResource`<br>`public function store(Request $request, UpsertRecord $upsert): JsonResponse`<br>`public function update(Request $request, int $record, UpsertRecord $upsert): JsonResponse`<br>`public function transition(Request $request, int $record, TransitionRecord $transition): JsonResponse`<br>`public function destroy(int $record, TransitionRecord $transition): JsonResponse` |
+| [AccountPlanningController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning-api/src/Http/Controllers/AccountPlanningController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(int $record): AccountPlanningResource`<br>`public function store(Request $request, UpsertRecord $upsert): JsonResponse`<br>`public function update(Request $request, int $record, UpsertRecord $upsert): JsonResponse`<br>`public function transition(Request $request, int $record, TransitionRecord $transition): JsonResponse`<br>`public function destroy(int $record, TransitionRecord $transition): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -70,7 +70,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/crm-account-planning-api/openapi/v1/crm-account-planning.yaml](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning-api/openapi/v1/crm-account-planning.yaml)
+- [modules/crm-account-planning-api/openapi/v1/crm-account-planning.yaml](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-account-planning-api/openapi/v1/crm-account-planning.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

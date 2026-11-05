@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/real-estate-parties-api/routes/api.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-api/routes/api.php)
+[modules/real-estate-parties-api/routes/api.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/real-estate/parties')->middleware(['api', 'auth:sanctum', 'throttle:api', 'api.idempotency'])->group(function (): void {
@@ -68,8 +68,8 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [ContactController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-api/src/Http/Controllers/ContactController.php) | `public function store(Request $request, CreateContact $create): JsonResponse`<br>`public function update(Request $request, Contact $contact): JsonResponse`<br>`public function show(Request $request, Contact $contact): JsonResponse`<br>`public function destroy(Request $request, Contact $contact): Response` |
-| [PartyController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-api/src/Http/Controllers/PartyController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateParty $create): JsonResponse`<br>`public function show(Request $request, Party $party): JsonResponse`<br>`public function update(Request $request, Party $party, UpdateParty $update): JsonResponse`<br>`public function consent(Request $request, Party $party, ManagePartyConsent $manage): JsonResponse`<br>`public function relationships(Request $request, Party $party): JsonResponse`<br>`public function relationship(Request $request, Party $party, CreatePartyRelationship $create): JsonResponse`<br>`public function destroyRelationship(Request $request, Party $party, PartyRelationship $relationship, DeletePartyRelationship $delete): Response`<br>`public function destroy(Request $request, Party $party, DeleteParty $delete): Response` |
+| [ContactController.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-api/src/Http/Controllers/ContactController.php) | `public function store(Request $request, CreateContact $create): JsonResponse`<br>`public function update(Request $request, Contact $contact): JsonResponse`<br>`public function show(Request $request, Contact $contact): JsonResponse`<br>`public function destroy(Request $request, Contact $contact): Response` |
+| [PartyController.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-api/src/Http/Controllers/PartyController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateParty $create): JsonResponse`<br>`public function show(Request $request, Party $party): JsonResponse`<br>`public function update(Request $request, Party $party, UpdateParty $update): JsonResponse`<br>`public function consent(Request $request, Party $party, ManagePartyConsent $manage): JsonResponse`<br>`public function relationships(Request $request, Party $party): JsonResponse`<br>`public function relationship(Request $request, Party $party, CreatePartyRelationship $create): JsonResponse`<br>`public function destroyRelationship(Request $request, Party $party, PartyRelationship $relationship, DeletePartyRelationship $delete): Response`<br>`public function destroy(Request $request, Party $party, DeleteParty $delete): Response` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -77,7 +77,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/real-estate-parties-api/openapi/v1/real-estate-parties.yaml](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-api/openapi/v1/real-estate-parties.yaml)
+- [modules/real-estate-parties-api/openapi/v1/real-estate-parties.yaml](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-parties-api/openapi/v1/real-estate-parties.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

@@ -33,10 +33,10 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreatePortalRecord.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals/src/Actions/CreatePortalRecord.php) | `public function handle(int $teamId, array $attributes): PortalRecord` |
-| [DeletePortalRecord.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals/src/Actions/DeletePortalRecord.php) | `public function handle(int $teamId, PortalRecord $record): void` |
-| [TransitionPortalRecord.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals/src/Actions/TransitionPortalRecord.php) | `public function handle(int $teamId, PortalRecord $record, string $status): PortalRecord` |
-| [UpdatePortalRecord.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals/src/Actions/UpdatePortalRecord.php) | `public function handle(int $teamId, PortalRecord $record, array $attributes): PortalRecord` |
+| [CreatePortalRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals/src/Actions/CreatePortalRecord.php) | `public function handle(int $teamId, array $attributes): PortalRecord` |
+| [DeletePortalRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals/src/Actions/DeletePortalRecord.php) | `public function handle(int $teamId, PortalRecord $record): void` |
+| [TransitionPortalRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals/src/Actions/TransitionPortalRecord.php) | `public function handle(int $teamId, PortalRecord $record, string $status): PortalRecord` |
+| [UpdatePortalRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals/src/Actions/UpdatePortalRecord.php) | `public function handle(int $teamId, PortalRecord $record, array $attributes): PortalRecord` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -46,13 +46,13 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [PortalRecord.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals/src/Models/PortalRecord.php) | `kind`, `title`, `description`, `status`, `requested_by`, `metadata`, `team_id` |
+| [PortalRecord.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals/src/Models/PortalRecord.php) | `kind`, `title`, `description`, `status`, `requested_by`, `metadata`, `team_id` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/module-maintenance-portals-api/routes/api.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals-api/routes/api.php)
+[modules/module-maintenance-portals-api/routes/api.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-portals-api/routes/api.php)
 
 ```php
 Route::middleware('auth:sanctum')->prefix('api/v1/maintenance/portals')->group(function (): void {

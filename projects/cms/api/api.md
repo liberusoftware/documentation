@@ -47,8 +47,8 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [OpenApiController.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Http/Controllers/OpenApiController.php) | `public function __invoke(): JsonResponse` |
-| [PreviewController.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Http/Controllers/PreviewController.php) | `public function __invoke(Request $request, string $type, int $id): JsonResource` |
+| [OpenApiController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Http/Controllers/OpenApiController.php) | `public function __invoke(): JsonResponse` |
+| [PreviewController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-api/src/Http/Controllers/PreviewController.php) | `public function __invoke(Request $request, string $type, int $id): JsonResource` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

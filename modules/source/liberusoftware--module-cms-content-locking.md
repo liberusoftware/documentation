@@ -8,7 +8,7 @@ CMS optimistic locks, presence, conflict comparison, merge, and recovery.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-content-locking](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
+| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-content-locking](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: cms-laravel, `cms-content-locking`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-cms-laravel-filament, `cms-content-locking`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: cms-laravel, `cms-content-locking`. Matching reference files in 
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/composer.json) · [module.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/composer.json) · [module.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/module.json).
 
 ### Dependencies and namespace mapping
 
@@ -52,15 +52,15 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Services/ContentLockingService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/src/Services/ContentLockingService.php) | `public function acquire(string $subjectType, string $subjectKey, ?int $teamId, ?int $holderId, array $snapshot = [], ?int $ttlMinutes = null): ContentLock`<br>`public function renew(ContentLock $lock, string $token, ?int $ttlMinutes = null): ContentLock`<br>`public function release(ContentLock $lock, string $token): void`<br>`public function compare(ContentLock $lock, array $current): array`<br>`public function merge(ContentLock $lock, array $current, string $token): array` |
+| [src/Services/ContentLockingService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/src/Services/ContentLockingService.php) | `public function acquire(string $subjectType, string $subjectKey, ?int $teamId, ?int $holderId, array $snapshot = [], ?int $ttlMinutes = null): ContentLock`<br>`public function renew(ContentLock $lock, string $token, ?int $ttlMinutes = null): ContentLock`<br>`public function release(ContentLock $lock, string $token): void`<br>`public function compare(ContentLock $lock, array $current): array`<br>`public function merge(ContentLock $lock, array $current, string $token): array` |
 
-Other non-legacy PHP sources: [src/ContentLockingModule.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/src/ContentLockingModule.php) · [src/ContentLockingServiceProvider.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/src/ContentLockingServiceProvider.php) · [src/Models/ContentLock.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/src/Models/ContentLock.php).
+Other non-legacy PHP sources: [src/ContentLockingModule.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/src/ContentLockingModule.php) · [src/ContentLockingServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/src/ContentLockingServiceProvider.php) · [src/Models/ContentLock.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/src/Models/ContentLock.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_25_000900_create_cms_content_locks_table.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/database/migrations/2026_08_25_000900_create_cms_content_locks_table.php)
+- [database/migrations/2026_08_25_000900_create_cms_content_locks_table.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-locking/database/migrations/2026_08_25_000900_create_cms_content_locks_table.php)
 
 ### Verification and consumer use
 

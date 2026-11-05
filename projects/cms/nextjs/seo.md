@@ -46,13 +46,13 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [SeoMetadata.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-seo/src/Models/SeoMetadata.php) | `seoable_type`, `seoable_id`, `title`, `description`, `canonical_url`, `robots`, `structured_data`, `social_cards`, `hreflang`, `noindex`, `noarchive`, `team_id` |
+| [SeoMetadata.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-seo/src/Models/SeoMetadata.php) | `seoable_type`, `seoable_id`, `title`, `description`, `canonical_url`, `robots`, `structured_data`, `social_cards`, `hreflang`, `noindex`, `noarchive`, `team_id` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/cms-seo/routes/web.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-seo/routes/web.php)
+[modules/cms-seo/routes/web.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-seo/routes/web.php)
 
 ```php
 Route::get('/sitemap.xml', SitemapController::class)->name('cms-seo.sitemap');

@@ -8,7 +8,7 @@ CMS Copilot permission-bounded requests, results, and confirmations.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-copilot](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
+| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-copilot](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: cms-laravel, `cms-copilot`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-cms-laravel-filament, `cms-copilot`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: cms-laravel, `cms-copilot`. Matching reference files in this var
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/composer.json) · [module.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/composer.json) · [module.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/module.json).
 
 ### Dependencies and namespace mapping
 
@@ -52,16 +52,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Contracts/CopilotHandlerInterface.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/src/Contracts/CopilotHandlerInterface.php) | `public function capability(): string`<br>`public function handle(string $prompt, array $input): array` |
-| [src/Services/CopilotService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/src/Services/CopilotService.php) | `public function submit(?int $teamId, string $capability, string $prompt, array $input = [], ?string $idempotencyKey = null): CopilotRequest`<br>`public function execute(CopilotRequest $request): CopilotRequest`<br>`public function requireConfirmation(CopilotRequest $request): string`<br>`public function confirm(CopilotRequest $request, string $token): CopilotRequest`<br>`public function registerHandler(CopilotHandlerInterface $handler): void` |
+| [src/Contracts/CopilotHandlerInterface.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/src/Contracts/CopilotHandlerInterface.php) | `public function capability(): string`<br>`public function handle(string $prompt, array $input): array` |
+| [src/Services/CopilotService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/src/Services/CopilotService.php) | `public function submit(?int $teamId, string $capability, string $prompt, array $input = [], ?string $idempotencyKey = null): CopilotRequest`<br>`public function execute(CopilotRequest $request): CopilotRequest`<br>`public function requireConfirmation(CopilotRequest $request): string`<br>`public function confirm(CopilotRequest $request, string $token): CopilotRequest`<br>`public function registerHandler(CopilotHandlerInterface $handler): void` |
 
-Other non-legacy PHP sources: [src/CopilotModule.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/src/CopilotModule.php) · [src/CopilotServiceProvider.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/src/CopilotServiceProvider.php) · [src/Models/CopilotRequest.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/src/Models/CopilotRequest.php).
+Other non-legacy PHP sources: [src/CopilotModule.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/src/CopilotModule.php) · [src/CopilotServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/src/CopilotServiceProvider.php) · [src/Models/CopilotRequest.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/src/Models/CopilotRequest.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_29_000400_create_cms_copilot_tables.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/database/migrations/2026_08_29_000400_create_cms_copilot_tables.php)
+- [database/migrations/2026_08_29_000400_create_cms_copilot_tables.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-copilot/database/migrations/2026_08_29_000400_create_cms_copilot_tables.php)
 
 ### Verification and consumer use
 

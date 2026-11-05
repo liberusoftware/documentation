@@ -48,7 +48,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [LoyaltyController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty-api/src/Http/Controllers/LoyaltyController.php) | `public function index(Request $r, LoyaltyQuery $q): JsonResponse`<br>`public function store(Request $r, CreateProgram $a): JsonResponse`<br>`public function enroll(Request $r, LoyaltyProgram $program, EnrollMember $a): JsonResponse`<br>`public function points(Request $r, LoyaltyMember $member, RecordPoints $a): JsonResponse`<br>`public function statement(Request $r, LoyaltyMember $member, LoyaltyQuery $q): JsonResponse` |
+| [LoyaltyController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-loyalty-api/src/Http/Controllers/LoyaltyController.php) | `public function index(Request $r, LoyaltyQuery $q): JsonResponse`<br>`public function store(Request $r, CreateProgram $a): JsonResponse`<br>`public function enroll(Request $r, LoyaltyProgram $program, EnrollMember $a): JsonResponse`<br>`public function points(Request $r, LoyaltyMember $member, RecordPoints $a): JsonResponse`<br>`public function statement(Request $r, LoyaltyMember $member, LoyaltyQuery $q): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

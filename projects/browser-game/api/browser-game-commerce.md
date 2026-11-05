@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/browser-game-commerce-api/routes/api.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce-api/routes/api.php)
+[modules/browser-game-commerce-api/routes/api.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/browser-game/commerce')->middleware(['api', 'auth:sanctum', 'throttle:api'])->group(function (): void {
@@ -62,7 +62,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [CommerceController.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce-api/src/Http/Controllers/CommerceController.php) | `public function index(Request $request): JsonResponse`<br>`public function products(Request $request): JsonResponse`<br>`public function checkout(Request $request): JsonResponse`<br>`public function complete(Request $request, CommerceOrder $order): JsonResponse`<br>`public function refund(Request $request, CommerceOrder $order): JsonResponse`<br>`public function show(Request $request, CommerceRecord $commerce): JsonResponse` |
+| [CommerceController.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce-api/src/Http/Controllers/CommerceController.php) | `public function index(Request $request): JsonResponse`<br>`public function products(Request $request): JsonResponse`<br>`public function checkout(Request $request): JsonResponse`<br>`public function complete(Request $request, CommerceOrder $order): JsonResponse`<br>`public function refund(Request $request, CommerceOrder $order): JsonResponse`<br>`public function show(Request $request, CommerceRecord $commerce): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -70,7 +70,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/browser-game-commerce-api/openapi/v1-browser-game-commerce.yaml](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce-api/openapi/v1-browser-game-commerce.yaml)
+- [modules/browser-game-commerce-api/openapi/v1-browser-game-commerce.yaml](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce-api/openapi/v1-browser-game-commerce.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

@@ -49,7 +49,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/module-billing-usage-api/routes/api.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-usage-api/routes/api.php)
+[modules/module-billing-usage-api/routes/api.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-usage-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'throttle:api', 'auth:sanctum', 'ability:billing.usage.read'])->prefix('api/v1/billing/usage')->name('billing.usage.')->group(function (): void {
@@ -73,7 +73,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [UsageController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-usage-api/src/Http/Controllers/UsageController.php) | `public function meters(Request $request, ListMeters $meters): JsonResponse`<br>`public function storeMeter(Request $request, DefineMeter $define): JsonResponse`<br>`public function transitionMeter(Request $request, Meter $meter, TransitionMeter $transition): JsonResponse`<br>`public function defineMeter(Request $request, DefineMeter $define): JsonResponse`<br>`public function ingest(Request $request, Meter $meter, IngestUsage $ingest): JsonResponse`<br>`public function records(Request $request, ListUsageRecords $records): JsonResponse`<br>`public function aggregate(Request $request, AggregateUsage $aggregate): JsonResponse`<br>`public function aggregateForMeter(Request $request, Meter $meter, AggregateUsage $aggregate): JsonResponse`<br>`public function rate(Request $request, Meter $meter, RateUsage $rate, CheckUsageThreshold $threshold): JsonResponse`<br>`public function correct(Request $request, UsageRecord $record, CorrectUsage $correct): JsonResponse` |
+| [UsageController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-usage-api/src/Http/Controllers/UsageController.php) | `public function meters(Request $request, ListMeters $meters): JsonResponse`<br>`public function storeMeter(Request $request, DefineMeter $define): JsonResponse`<br>`public function transitionMeter(Request $request, Meter $meter, TransitionMeter $transition): JsonResponse`<br>`public function defineMeter(Request $request, DefineMeter $define): JsonResponse`<br>`public function ingest(Request $request, Meter $meter, IngestUsage $ingest): JsonResponse`<br>`public function records(Request $request, ListUsageRecords $records): JsonResponse`<br>`public function aggregate(Request $request, AggregateUsage $aggregate): JsonResponse`<br>`public function aggregateForMeter(Request $request, Meter $meter, AggregateUsage $aggregate): JsonResponse`<br>`public function rate(Request $request, Meter $meter, RateUsage $rate, CheckUsageThreshold $threshold): JsonResponse`<br>`public function correct(Request $request, UsageRecord $record, CorrectUsage $correct): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -81,7 +81,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/module-billing-usage-api/openapi/v1/billing-usage.yaml](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-usage-api/openapi/v1/billing-usage.yaml)
+- [modules/module-billing-usage-api/openapi/v1/billing-usage.yaml](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-usage-api/openapi/v1/billing-usage.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

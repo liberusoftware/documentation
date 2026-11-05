@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/crm-customer-success-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-success-api/routes/api.php)
+[modules/crm-customer-success-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-success-api/routes/api.php)
 
 ```php
 Route::middleware('auth:sanctum')->prefix('api/v1/crm/customer-success')->group(function (): void {
@@ -61,7 +61,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [CustomerSuccessController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-success-api/src/Http/Controllers/CustomerSuccessController.php) | `public function index(): JsonResponse`<br>`public function store(UpsertSuccessCustomer $action): JsonResponse`<br>`public function signal(SuccessCustomer $customer, RecordHealthSignal $action): JsonResponse`<br>`public function risk(SuccessCustomer $customer, OpenSuccessRisk $action): JsonResponse`<br>`public function renewal(SuccessCustomer $customer, PlanRenewal $action): JsonResponse` |
+| [CustomerSuccessController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-success-api/src/Http/Controllers/CustomerSuccessController.php) | `public function index(): JsonResponse`<br>`public function store(UpsertSuccessCustomer $action): JsonResponse`<br>`public function signal(SuccessCustomer $customer, RecordHealthSignal $action): JsonResponse`<br>`public function risk(SuccessCustomer $customer, OpenSuccessRisk $action): JsonResponse`<br>`public function renewal(SuccessCustomer $customer, PlanRenewal $action): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

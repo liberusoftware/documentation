@@ -14,18 +14,18 @@ See the [implementation reference](../../modules/source/liberusoftware--sessions
 
 | Consumer | Pinned module metadata | Variant | Test files |
 | --- | --- | ---: | ---: |
-| accounting | [sessions-devices](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/sessions-devices/composer.json) | 1 | 1 |
-| automation | [sessions-devices](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/sessions-devices/composer.json) | 1 | 1 |
-| billing | [sessions-devices](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/sessions-devices/composer.json) | 1 | 1 |
-| boilerplate | [sessions-devices](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/sessions-devices/composer.json) | 1 | 1 |
-| browser-game | [sessions-devices](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/sessions-devices/composer.json) | 1 | 1 |
-| control-panel | [sessions-devices](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/sessions-devices/composer.json) | 1 | 1 |
-| crm | [sessions-devices](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/sessions-devices/composer.json) | 2 | 1 |
-| sap | [sessions-devices](https://github.com/liberusoftware/enterprise-sap-laravel/blob/b12a8c841c6a9054e52cac99d9ac1f233924a041/modules/sessions-devices/composer.json) | 1 | 1 |
-| genealogy | [sessions-devices](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/sessions-devices/composer.json) | 1 | 1 |
-| maintenance | [sessions-devices](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/sessions-devices/composer.json) | 1 | 1 |
-| real-estate | [sessions-devices](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/sessions-devices/composer.json) | 1 | 1 |
-| social-network | [sessions-devices](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/sessions-devices/composer.json) | 1 | 1 |
+| accounting | [sessions-devices](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/sessions-devices/composer.json) | 1 | 1 |
+| automation | [sessions-devices](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/sessions-devices/composer.json) | 1 | 1 |
+| billing | [sessions-devices](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/sessions-devices/composer.json) | 1 | 1 |
+| boilerplate | [sessions-devices](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/sessions-devices/composer.json) | 1 | 1 |
+| browser-game | [sessions-devices](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/sessions-devices/composer.json) | 1 | 1 |
+| control-panel | [sessions-devices](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/sessions-devices/composer.json) | 1 | 1 |
+| crm | [sessions-devices](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/sessions-devices/composer.json) | 2 | 1 |
+| sap | [sessions-devices](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament/blob/b12a8c841c6a9054e52cac99d9ac1f233924a041/modules/sessions-devices/composer.json) | 1 | 1 |
+| genealogy | [sessions-devices](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/sessions-devices/composer.json) | 1 | 1 |
+| maintenance | [sessions-devices](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/sessions-devices/composer.json) | 1 | 1 |
+| real-estate | [sessions-devices](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/sessions-devices/composer.json) | 1 | 1 |
+| social-network | [sessions-devices](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/sessions-devices/composer.json) | 1 | 1 |
 
 ## Manifest and dependency differences
 
@@ -42,8 +42,8 @@ The following database paths differ or are missing in at least one consumer. A m
 
 | Differing database path | Variant source and declared table operation |
 | --- | --- |
-| `database/migrations/0001_01_01_000003_create_sessions_table.php` | V1: [8d9070a798](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/sessions-devices/database/migrations/0001_01_01_000003_create_sessions_table.php); create sessions, dropIfExists sessions<br>V2: [96bbabe9dc](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/sessions-devices/database/migrations/0001_01_01_000003_create_sessions_table.php); create sessions, dropIfExists sessions |
-| `database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php` | V1: absent<br>V2: [421278ed69](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/sessions-devices/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php); create personal_access_tokens, dropIfExists personal_access_tokens |
+| `database/migrations/0001_01_01_000003_create_sessions_table.php` | V1: [8d9070a798](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/sessions-devices/database/migrations/0001_01_01_000003_create_sessions_table.php); create sessions, dropIfExists sessions<br>V2: [96bbabe9dc](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/sessions-devices/database/migrations/0001_01_01_000003_create_sessions_table.php); create sessions, dropIfExists sessions |
+| `database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php` | V1: absent<br>V2: [421278ed69](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/sessions-devices/database/migrations/2019_12_14_000001_create_personal_access_tokens_table.php); create personal_access_tokens, dropIfExists personal_access_tokens |
 
 Before a shared release, inventory affected tables/columns and tenant/source identifiers in every consumer, then map legacy/current record identities and callers. Use additive backfills or a separate migration with reconciliation and recovery; do not drop a historical table because the chosen package tree lacks its old migration. Reconcile counts, ownership and required evidence before moving callers or removing obsolete implementations.
 

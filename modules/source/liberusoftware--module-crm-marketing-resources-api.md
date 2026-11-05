@@ -8,7 +8,7 @@ No Composer description declared.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-marketing-resources-api](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-marketing-resources-api](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `crm-marketing-resources-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `crm-marketing-resources-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: crm-laravel, `crm-marketing-resources-api`. Matching reference f
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/module.json).
 
 **Declared capabilities:** crm.marketing-resources.api
 
@@ -56,9 +56,9 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/MarketingResourcesController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/src/Http/Controllers/MarketingResourcesController.php) | `public function index(Request $r, MarketingResourceQuery $q): JsonResponse`<br>`public function store(Request $r, CreateMarketingResource $a): JsonResponse`<br>`public function event(Request $r, MarketingResource $resource, RecordResourceEvent $a): JsonResponse` |
+| [src/Http/Controllers/MarketingResourcesController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/src/Http/Controllers/MarketingResourcesController.php) | `public function index(Request $r, MarketingResourceQuery $q): JsonResponse`<br>`public function store(Request $r, CreateMarketingResource $a): JsonResponse`<br>`public function event(Request $r, MarketingResource $resource, RecordResourceEvent $a): JsonResponse` |
 
-Other non-legacy PHP sources: [src/Providers/MarketingResourcesApiServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/src/Providers/MarketingResourcesApiServiceProvider.php) · [src/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/src/routes/api.php).
+Other non-legacy PHP sources: [src/Providers/MarketingResourcesApiServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/src/Providers/MarketingResourcesApiServiceProvider.php) · [src/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-resources-api/src/routes/api.php).
 
 ### Persistence and lifecycle evidence
 

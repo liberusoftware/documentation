@@ -39,17 +39,17 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [SalesOrderQuery.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Queries/SalesOrderQuery.php) | `public function paginate(?string $customer = null, ?string $status = null, int $perPage = 25, ?int $teamId = null): LengthAwarePaginator` |
+| [SalesOrderQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Queries/SalesOrderQuery.php) | `public function paginate(?string $customer = null, ?string $status = null, int $perPage = 25, ?int $teamId = null): LengthAwarePaginator` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [AddFulfillmentReference.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Actions/AddFulfillmentReference.php) | `public function handle(SalesOrder $order, array $attributes): SalesOrderAllocation` |
-| [AddSalesOrderDeposit.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Actions/AddSalesOrderDeposit.php) | `public function handle(SalesOrder $order, array $attributes): SalesOrderDeposit` |
-| [CreateSalesOrder.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Actions/CreateSalesOrder.php) | `public function handle(array $attributes, array $lines): SalesOrder` |
-| [RecordPartialInvoice.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Actions/RecordPartialInvoice.php) | `public function handle(SalesOrder $order, float $amount, string $invoiceReference): SalesOrder` |
-| [TransitionSalesOrder.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Actions/TransitionSalesOrder.php) | `public function handle(SalesOrder $order, OrderStatus\|string $status): SalesOrder` |
+| [AddFulfillmentReference.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Actions/AddFulfillmentReference.php) | `public function handle(SalesOrder $order, array $attributes): SalesOrderAllocation` |
+| [AddSalesOrderDeposit.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Actions/AddSalesOrderDeposit.php) | `public function handle(SalesOrder $order, array $attributes): SalesOrderDeposit` |
+| [CreateSalesOrder.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Actions/CreateSalesOrder.php) | `public function handle(array $attributes, array $lines): SalesOrder` |
+| [RecordPartialInvoice.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Actions/RecordPartialInvoice.php) | `public function handle(SalesOrder $order, float $amount, string $invoiceReference): SalesOrder` |
+| [TransitionSalesOrder.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Actions/TransitionSalesOrder.php) | `public function handle(SalesOrder $order, OrderStatus\|string $status): SalesOrder` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -59,17 +59,17 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [SalesOrder.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Models/SalesOrder.php) | `team_id`, `customer_id`, `estimate_id`, `order_number`, `order_date`, `status`, `currency`, `subtotal`, `tax_total`, `total`, `invoiced_total`, `notes`, `metadata` |
-| [SalesOrderAllocation.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Models/SalesOrderAllocation.php) | `sales_order_id`, `item_id`, `fulfillment_type`, `fulfillment_id`, `quantity`, `status`, `metadata` |
-| [SalesOrderDeposit.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Models/SalesOrderDeposit.php) | `sales_order_id`, `reference`, `amount`, `currency`, `status`, `metadata` |
-| [SalesOrderItem.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Models/SalesOrderItem.php) | `sales_order_id`, `sku`, `description`, `quantity`, `unit_price`, `amount`, `tax_rate`, `tax_amount`, `invoiced_quantity`, `metadata` |
-| [SalesOrder.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders-api/src/Models/SalesOrder.php) | `customer_id`, `estimate_id`, `sales_order_number`, `order_date`, `subtotal_amount`, `tax_amount`, `total_amount`, `status`, `notes`, `team_id` |
+| [SalesOrder.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Models/SalesOrder.php) | `team_id`, `customer_id`, `estimate_id`, `order_number`, `order_date`, `status`, `currency`, `subtotal`, `tax_total`, `total`, `invoiced_total`, `notes`, `metadata` |
+| [SalesOrderAllocation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Models/SalesOrderAllocation.php) | `sales_order_id`, `item_id`, `fulfillment_type`, `fulfillment_id`, `quantity`, `status`, `metadata` |
+| [SalesOrderDeposit.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Models/SalesOrderDeposit.php) | `sales_order_id`, `reference`, `amount`, `currency`, `status`, `metadata` |
+| [SalesOrderItem.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders/src/Models/SalesOrderItem.php) | `sales_order_id`, `sku`, `description`, `quantity`, `unit_price`, `amount`, `tax_rate`, `tax_amount`, `invoiced_quantity`, `metadata` |
+| [SalesOrder.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders-api/src/Models/SalesOrder.php) | `customer_id`, `estimate_id`, `sales_order_number`, `order_date`, `subtotal_amount`, `tax_amount`, `total_amount`, `status`, `notes`, `team_id` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/accounting-sales-orders-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders-api/routes/api.php)
+[modules/accounting-sales-orders-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-orders-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/sales-orders')->group(function (): void {

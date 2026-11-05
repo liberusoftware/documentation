@@ -8,7 +8,7 @@ No Composer description declared.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-personalization](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 1 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-personalization](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 1 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `crm-personalization`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `crm-personalization`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: crm-laravel, `crm-personalization`. Matching reference files in 
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/module.json).
 
 **Declared capabilities:** crm.personalization
 
@@ -56,20 +56,20 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/CreatePersonalizationRule.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Actions/CreatePersonalizationRule.php) | `public function __construct(private readonly PersonalizationPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): PersonalizationRule` |
-| [src/Actions/DecidePersonalization.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Actions/DecidePersonalization.php) | `public function __construct(private readonly PersonalizationPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): PersonalizationDecision` |
-| [src/Actions/RecordPersonalizationOutcome.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Actions/RecordPersonalizationOutcome.php) | `public function __construct(private readonly PersonalizationPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): PersonalizationOutcome` |
-| [src/Actions/UpdatePersonalizationRule.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Actions/UpdatePersonalizationRule.php) | `public function __construct(private readonly PersonalizationPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $ruleId, array $input): PersonalizationRule` |
-| [src/Queries/PersonalizationQuery.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Queries/PersonalizationQuery.php) | `public function rules(int $teamId)`<br>`public function decisions(int $teamId)`<br>`public function outcomes(int $teamId)` |
-| [src/Services/PersonalizationPolicy.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Services/PersonalizationPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+| [src/Actions/CreatePersonalizationRule.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Actions/CreatePersonalizationRule.php) | `public function __construct(private readonly PersonalizationPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): PersonalizationRule` |
+| [src/Actions/DecidePersonalization.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Actions/DecidePersonalization.php) | `public function __construct(private readonly PersonalizationPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): PersonalizationDecision` |
+| [src/Actions/RecordPersonalizationOutcome.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Actions/RecordPersonalizationOutcome.php) | `public function __construct(private readonly PersonalizationPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): PersonalizationOutcome` |
+| [src/Actions/UpdatePersonalizationRule.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Actions/UpdatePersonalizationRule.php) | `public function __construct(private readonly PersonalizationPolicy $policy)`<br>`public function execute(int $teamId, int $userId, int $ruleId, array $input): PersonalizationRule` |
+| [src/Queries/PersonalizationQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Queries/PersonalizationQuery.php) | `public function rules(int $teamId)`<br>`public function decisions(int $teamId)`<br>`public function outcomes(int $teamId)` |
+| [src/Services/PersonalizationPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Services/PersonalizationPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
 
-Other non-legacy PHP sources: [src/Events/PersonalizationDecided.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Events/PersonalizationDecided.php) · [src/Models/PersonalizationDecision.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Models/PersonalizationDecision.php) · [src/Models/PersonalizationOutcome.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Models/PersonalizationOutcome.php) · [src/Models/PersonalizationRule.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Models/PersonalizationRule.php) · [src/PersonalizationServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/PersonalizationServiceProvider.php).
+Other non-legacy PHP sources: [src/Events/PersonalizationDecided.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Events/PersonalizationDecided.php) · [src/Models/PersonalizationDecision.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Models/PersonalizationDecision.php) · [src/Models/PersonalizationOutcome.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Models/PersonalizationOutcome.php) · [src/Models/PersonalizationRule.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/Models/PersonalizationRule.php) · [src/PersonalizationServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/src/PersonalizationServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_26_080000_create_crm_personalization_tables.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/database/migrations/2026_08_26_080000_create_crm_personalization_tables.php)
+- [database/migrations/2026_08_26_080000_create_crm_personalization_tables.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/database/migrations/2026_08_26_080000_create_crm_personalization_tables.php)
 
 ### Verification and consumer use
 
@@ -77,6 +77,6 @@ Declared Composer scripts: `{}`.
 
 Tracked files under `tests/`: **1**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Feature/Personalization/PersonalizationModuleTest.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/tests/Feature/Personalization/PersonalizationModuleTest.php)
+- [tests/Feature/Personalization/PersonalizationModuleTest.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-personalization/tests/Feature/Personalization/PersonalizationModuleTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

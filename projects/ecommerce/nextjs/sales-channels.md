@@ -16,7 +16,7 @@ No dedicated API package name match is established among the mapped consumers of
 
 Ecommerce implementation also lives outside `modules/`. Preserve this scope and use the [application capability map](../SOURCE-APPLICATION.md) for current services, policies, REST/GraphQL entry points and checkout behavior. A blank package match does not remove the capability.
 
-Observed application sources for this capability: [app/Models/ProductFacebookListing.php](https://github.com/liberusoftware/ecommerce-laravel/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Models/ProductFacebookListing.php) · [app/Services/Facebook/FacebookCatalog.php](https://github.com/liberusoftware/ecommerce-laravel/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Services/Facebook/FacebookCatalog.php) · [app/Services/Facebook/CatalogItemMapper.php](https://github.com/liberusoftware/ecommerce-laravel/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Services/Facebook/CatalogItemMapper.php).
+Observed application sources for this capability: [app/Models/ProductFacebookListing.php](https://github.com/liberusoftware/project-ecommerce-laravel-filament/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Models/ProductFacebookListing.php) · [app/Services/Facebook/FacebookCatalog.php](https://github.com/liberusoftware/project-ecommerce-laravel-filament/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Services/Facebook/FacebookCatalog.php) · [app/Services/Facebook/CatalogItemMapper.php](https://github.com/liberusoftware/project-ecommerce-laravel-filament/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Services/Facebook/CatalogItemMapper.php).
 
 ## Module surfaces and component contracts
 

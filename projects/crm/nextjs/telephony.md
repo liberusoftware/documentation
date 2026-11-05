@@ -45,20 +45,20 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [TelephonyQuery.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Queries/TelephonyQuery.php) | `public function numbers(int $teamId)`<br>`public function queues(int $teamId)`<br>`public function calls(int $teamId)`<br>`public function settings(int $teamId): ?TelephonySettings` |
+| [TelephonyQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Queries/TelephonyQuery.php) | `public function numbers(int $teamId)`<br>`public function queues(int $teamId)`<br>`public function calls(int $teamId)`<br>`public function settings(int $teamId): ?TelephonySettings` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [ConfigureTelephony.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Actions/ConfigureTelephony.php) | `public function execute(int $teamId, int $actorId, array $data): TelephonySettings` |
-| [CreateTelephonyQueue.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Actions/CreateTelephonyQueue.php) | `public function execute(int $teamId, int $actorId, array $data): TelephonyQueue` |
-| [LogTelephonyCall.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Actions/LogTelephonyCall.php) | `public function execute(int $teamId, int $actorId, array $data): TelephonyCall` |
-| [UpdateCall.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Actions/UpdateCall.php) | `public function execute(int $teamId, int $actorId, int $callId, array $data): TelephonyCall` |
-| [UpsertTelephonyNumber.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Actions/UpsertTelephonyNumber.php) | `public function execute(int $teamId, int $actorId, array $data, ?int $id = null): TelephonyNumber` |
-| [TelephonyAudit.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Services/TelephonyAudit.php) | `public function record(int $teamId, ?int $actorId, string $event, array $details = []): Audit` |
-| [TelephonyPolicy.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Services/TelephonyPolicy.php) | `public function canManage(int $teamId, int $userId): bool`<br>`public function isTeamMember(int $teamId, int $userId, array $roles = [], bool $includeOwner = false): bool` |
-| [TenantTwilioService.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Services/TenantTwilioService.php) | `public function client(int $teamId): Client`<br>`public function sendMessage(int $teamId, string $to, string $body): object`<br>`public function usage(int $teamId, array $filters = []): array` |
+| [ConfigureTelephony.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Actions/ConfigureTelephony.php) | `public function execute(int $teamId, int $actorId, array $data): TelephonySettings` |
+| [CreateTelephonyQueue.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Actions/CreateTelephonyQueue.php) | `public function execute(int $teamId, int $actorId, array $data): TelephonyQueue` |
+| [LogTelephonyCall.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Actions/LogTelephonyCall.php) | `public function execute(int $teamId, int $actorId, array $data): TelephonyCall` |
+| [UpdateCall.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Actions/UpdateCall.php) | `public function execute(int $teamId, int $actorId, int $callId, array $data): TelephonyCall` |
+| [UpsertTelephonyNumber.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Actions/UpsertTelephonyNumber.php) | `public function execute(int $teamId, int $actorId, array $data, ?int $id = null): TelephonyNumber` |
+| [TelephonyAudit.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Services/TelephonyAudit.php) | `public function record(int $teamId, ?int $actorId, string $event, array $details = []): Audit` |
+| [TelephonyPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Services/TelephonyPolicy.php) | `public function canManage(int $teamId, int $userId): bool`<br>`public function isTeamMember(int $teamId, int $userId, array $roles = [], bool $includeOwner = false): bool` |
+| [TenantTwilioService.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Services/TenantTwilioService.php) | `public function client(int $teamId): Client`<br>`public function sendMessage(int $teamId, string $to, string $body): object`<br>`public function usage(int $teamId, array $filters = []): array` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -68,17 +68,17 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [TelephonyAudit.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Models/TelephonyAudit.php) | No literal fillable array detected; inspect the model and API schema. |
-| [TelephonyCall.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Models/TelephonyCall.php) | No literal fillable array detected; inspect the model and API schema. |
-| [TelephonyNumber.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Models/TelephonyNumber.php) | No literal fillable array detected; inspect the model and API schema. |
-| [TelephonyQueue.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Models/TelephonyQueue.php) | No literal fillable array detected; inspect the model and API schema. |
-| [TelephonySettings.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Models/TelephonySettings.php) | No literal fillable array detected; inspect the model and API schema. |
+| [TelephonyAudit.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Models/TelephonyAudit.php) | No literal fillable array detected; inspect the model and API schema. |
+| [TelephonyCall.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Models/TelephonyCall.php) | No literal fillable array detected; inspect the model and API schema. |
+| [TelephonyNumber.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Models/TelephonyNumber.php) | No literal fillable array detected; inspect the model and API schema. |
+| [TelephonyQueue.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Models/TelephonyQueue.php) | No literal fillable array detected; inspect the model and API schema. |
+| [TelephonySettings.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony/src/Models/TelephonySettings.php) | No literal fillable array detected; inspect the model and API schema. |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/crm-telephony-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony-api/routes/api.php)
+[modules/crm-telephony-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-telephony-api/routes/api.php)
 
 ```php
 Route::middleware(['auth:sanctum', 'throttle:api'])->prefix('api/v1/crm/telephony')->group(function (): void {

@@ -49,7 +49,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-bill-payments-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-bill-payments-api/routes/api.php)
+[modules/accounting-bill-payments-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-bill-payments-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/accounting/bill-payments')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
@@ -68,7 +68,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [BillPaymentController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-bill-payments-api/src/Http/Controllers/BillPaymentController.php) | `public function index(Request $request): mixed`<br>`public function store(Request $request, CreateBillPaymentProposal $action): BillPaymentResource`<br>`public function show(string $payment): BillPaymentResource`<br>`public function requestApproval(string $payment, RequestBillPaymentApproval $action): BillPaymentResource`<br>`public function approve(string $payment, ApproveBillPayment $action): BillPaymentResource`<br>`public function reject(Request $request, string $payment, RejectBillPayment $action): BillPaymentResource`<br>`public function optimization(string $payment, BillPaymentOptimizationQuery $query): mixed` |
+| [BillPaymentController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-bill-payments-api/src/Http/Controllers/BillPaymentController.php) | `public function index(Request $request): mixed`<br>`public function store(Request $request, CreateBillPaymentProposal $action): BillPaymentResource`<br>`public function show(string $payment): BillPaymentResource`<br>`public function requestApproval(string $payment, RequestBillPaymentApproval $action): BillPaymentResource`<br>`public function approve(string $payment, ApproveBillPayment $action): BillPaymentResource`<br>`public function reject(Request $request, string $payment, RejectBillPayment $action): BillPaymentResource`<br>`public function optimization(string $payment, BillPaymentOptimizationQuery $query): mixed` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -76,7 +76,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/accounting-bill-payments-api/openapi/v1/accounting-bill-payments.yaml](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-bill-payments-api/openapi/v1/accounting-bill-payments.yaml)
+- [modules/accounting-bill-payments-api/openapi/v1/accounting-bill-payments.yaml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-bill-payments-api/openapi/v1/accounting-bill-payments.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

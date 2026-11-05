@@ -8,7 +8,7 @@ HTTP API for journal approvals.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-journal-approvals-api](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-journal-approvals-api](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: accounting-erp-laravel, `accounting-journal-approvals-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `accounting-journal-approvals-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: accounting-erp-laravel, `accounting-journal-approvals-api`. Matc
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/module.json).
 
 **Declared capabilities:** accounting.journal-approvals.api
 
@@ -59,15 +59,15 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/JournalApprovalsController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/src/Http/Controllers/JournalApprovalsController.php) | `public function __construct(private readonly JournalApprovalQuery $query)`<br>`public function index(Request $request): JournalApprovalResource`<br>`public function store(Request $request, SubmitJournal $action): JournalApprovalResource`<br>`public function show(JournalApproval $approval): JournalApprovalResource`<br>`public function decide(Request $request, JournalApproval $approval, DecideJournal $action): JournalApprovalResource`<br>`public function post(Request $request, JournalApproval $approval, PostJournal $action): JournalApprovalResource`<br>`public function evidence(Request $request, JournalApproval $approval, AddEvidence $action): JournalApprovalResource`<br>`public function threshold(Request $request, ConfigureThreshold $action): JsonResponse` |
+| [src/Http/Controllers/JournalApprovalsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/src/Http/Controllers/JournalApprovalsController.php) | `public function __construct(private readonly JournalApprovalQuery $query)`<br>`public function index(Request $request): JournalApprovalResource`<br>`public function store(Request $request, SubmitJournal $action): JournalApprovalResource`<br>`public function show(JournalApproval $approval): JournalApprovalResource`<br>`public function decide(Request $request, JournalApproval $approval, DecideJournal $action): JournalApprovalResource`<br>`public function post(Request $request, JournalApproval $approval, PostJournal $action): JournalApprovalResource`<br>`public function evidence(Request $request, JournalApproval $approval, AddEvidence $action): JournalApprovalResource`<br>`public function threshold(Request $request, ConfigureThreshold $action): JsonResponse` |
 
-Other non-legacy PHP sources: [src/Http/Resources/JournalApprovalResource.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/src/Http/Resources/JournalApprovalResource.php) · [src/JournalApprovalsApiServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/src/JournalApprovalsApiServiceProvider.php).
+Other non-legacy PHP sources: [src/Http/Resources/JournalApprovalResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/src/Http/Resources/JournalApprovalResource.php) · [src/JournalApprovalsApiServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/src/JournalApprovalsApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/routes/api.php)
+- [routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-journal-approvals-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

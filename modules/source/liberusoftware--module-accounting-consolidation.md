@@ -8,7 +8,7 @@ Accounting consolidation domain module.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-consolidation](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-consolidation](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: accounting-erp-laravel, `accounting-consolidation`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `accounting-consolidation`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: accounting-erp-laravel, `accounting-consolidation`. Matching ref
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/module.json).
 
 **Declared capabilities:** accounting.consolidation
 
@@ -58,22 +58,22 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/AddConsolidationEntity.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/AddConsolidationEntity.php) | `public function handle(ConsolidationGroup $group, array $entity): ConsolidationGroup` |
-| [src/Actions/CreateConsolidationGroup.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/CreateConsolidationGroup.php) | `public function handle(array $attributes): ConsolidationGroup` |
-| [src/Actions/PrepareConsolidatedReport.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/PrepareConsolidatedReport.php) | `public function handle(ConsolidationGroup $group, array $report): ConsolidationGroup` |
-| [src/Actions/PublishConsolidatedReport.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/PublishConsolidatedReport.php) | `public function handle(ConsolidationGroup $group, array $translation = []): ConsolidationGroup` |
-| [src/Actions/RecordEliminations.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/RecordEliminations.php) | `public function handle(ConsolidationGroup $group, array $elimination): ConsolidationGroup` |
-| [src/Queries/ConsolidationQuery.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Queries/ConsolidationQuery.php) | `public function forTeam(int $teamId): Collection` |
+| [src/Actions/AddConsolidationEntity.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/AddConsolidationEntity.php) | `public function handle(ConsolidationGroup $group, array $entity): ConsolidationGroup` |
+| [src/Actions/CreateConsolidationGroup.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/CreateConsolidationGroup.php) | `public function handle(array $attributes): ConsolidationGroup` |
+| [src/Actions/PrepareConsolidatedReport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/PrepareConsolidatedReport.php) | `public function handle(ConsolidationGroup $group, array $report): ConsolidationGroup` |
+| [src/Actions/PublishConsolidatedReport.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/PublishConsolidatedReport.php) | `public function handle(ConsolidationGroup $group, array $translation = []): ConsolidationGroup` |
+| [src/Actions/RecordEliminations.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Actions/RecordEliminations.php) | `public function handle(ConsolidationGroup $group, array $elimination): ConsolidationGroup` |
+| [src/Queries/ConsolidationQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Queries/ConsolidationQuery.php) | `public function forTeam(int $teamId): Collection` |
 
-Other non-legacy PHP sources: [src/ConsolidationServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/ConsolidationServiceProvider.php) · [src/Enums/ConsolidationStatus.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Enums/ConsolidationStatus.php) · [src/Exceptions/InvalidConsolidation.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Exceptions/InvalidConsolidation.php) · [src/Models/ConsolidationGroup.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Models/ConsolidationGroup.php).
+Other non-legacy PHP sources: [src/ConsolidationServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/ConsolidationServiceProvider.php) · [src/Enums/ConsolidationStatus.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Enums/ConsolidationStatus.php) · [src/Exceptions/InvalidConsolidation.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Exceptions/InvalidConsolidation.php) · [src/Models/ConsolidationGroup.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Models/ConsolidationGroup.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_29_000023_create_accounting_consolidation_tables.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/database/migrations/2026_08_29_000023_create_accounting_consolidation_tables.php)
+- [database/migrations/2026_08_29_000023_create_accounting_consolidation_tables.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/database/migrations/2026_08_29_000023_create_accounting_consolidation_tables.php)
 
-[src/Enums/ConsolidationStatus.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Enums/ConsolidationStatus.php): `Draft = 'draft'`, `Ready = 'ready'`, `Reported = 'reported'`.
+[src/Enums/ConsolidationStatus.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-consolidation/src/Enums/ConsolidationStatus.php): `Draft = 'draft'`, `Ready = 'ready'`, `Reported = 'reported'`.
 
 ### Verification and consumer use
 

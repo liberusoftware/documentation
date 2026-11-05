@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/module-billing-reporting-api/routes/api.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-reporting-api/routes/api.php)
+[modules/module-billing-reporting-api/routes/api.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-reporting-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'throttle:api', 'auth:sanctum', 'ability:billing.reporting.read'])->prefix('api/v1/billing/reporting/metrics')->group(function (): void {
@@ -67,8 +67,8 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [ReportingController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-reporting-api/src/Http/Controllers/ReportingController.php) | `public function metrics(Request $request, ListReportingMetrics $metrics): JsonResponse`<br>`public function exportMetrics(Request $request, ExportReportingMetrics $export): Response`<br>`public function recordMetric(Request $request, RecordReportingMetric $record): JsonResponse`<br>`public function calculateMetric(Request $request, CalculateReportingMetric $calculate, RecordReportingMetric $record): JsonResponse`<br>`public function snapshots(Request $request, ListMetricSnapshots $snapshots): JsonResponse`<br>`public function customerSummary(Request $request, GenerateCustomerBillingSummary $summary, int $customer): JsonResponse`<br>`public function createSnapshot(Request $request, CreateMetricSnapshot $create): JsonResponse`<br>`public function snapshot(Request $request, int $record): JsonResponse` |
-| [ReportingMetricController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-reporting-api/src/Http/Controllers/ReportingMetricController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, RecordReportingMetric $record): JsonResponse` |
+| [ReportingController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-reporting-api/src/Http/Controllers/ReportingController.php) | `public function metrics(Request $request, ListReportingMetrics $metrics): JsonResponse`<br>`public function exportMetrics(Request $request, ExportReportingMetrics $export): Response`<br>`public function recordMetric(Request $request, RecordReportingMetric $record): JsonResponse`<br>`public function calculateMetric(Request $request, CalculateReportingMetric $calculate, RecordReportingMetric $record): JsonResponse`<br>`public function snapshots(Request $request, ListMetricSnapshots $snapshots): JsonResponse`<br>`public function customerSummary(Request $request, GenerateCustomerBillingSummary $summary, int $customer): JsonResponse`<br>`public function createSnapshot(Request $request, CreateMetricSnapshot $create): JsonResponse`<br>`public function snapshot(Request $request, int $record): JsonResponse` |
+| [ReportingMetricController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-reporting-api/src/Http/Controllers/ReportingMetricController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, RecordReportingMetric $record): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -76,7 +76,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/module-billing-reporting-api/openapi/v1/billing-reporting.yaml](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-reporting-api/openapi/v1/billing-reporting.yaml)
+- [modules/module-billing-reporting-api/openapi/v1/billing-reporting.yaml](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-reporting-api/openapi/v1/billing-reporting.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

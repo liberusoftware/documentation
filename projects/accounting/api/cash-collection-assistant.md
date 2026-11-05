@@ -48,7 +48,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-cash-collection-assistant-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-collection-assistant-api/routes/api.php)
+[modules/accounting-cash-collection-assistant-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-collection-assistant-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/accounting/cash-collection-assistant')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
@@ -66,7 +66,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [CashCollectionAssistantsController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-collection-assistant-api/src/Http/Controllers/CashCollectionAssistantsController.php) | `public function index(CashCollectionAssistantQuery $query): JsonResponse`<br>`public function store(Request $request, CreateCashCollectionAssistant $action): JsonResponse`<br>`public function update(Request $request, string $assistant, UpdateCashCollectionAssistant $action): JsonResponse`<br>`public function reminder(Request $request, string $assistant, ScheduleCollectionReminder $action): JsonResponse`<br>`public function promise(Request $request, string $assistant, RecordCollectionPromise $action): JsonResponse` |
+| [CashCollectionAssistantsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-cash-collection-assistant-api/src/Http/Controllers/CashCollectionAssistantsController.php) | `public function index(CashCollectionAssistantQuery $query): JsonResponse`<br>`public function store(Request $request, CreateCashCollectionAssistant $action): JsonResponse`<br>`public function update(Request $request, string $assistant, UpdateCashCollectionAssistant $action): JsonResponse`<br>`public function reminder(Request $request, string $assistant, ScheduleCollectionReminder $action): JsonResponse`<br>`public function promise(Request $request, string $assistant, RecordCollectionPromise $action): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

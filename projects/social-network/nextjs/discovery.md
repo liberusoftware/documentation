@@ -38,9 +38,9 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [IndexResource.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-discovery/src/Actions/IndexResource.php) | `public function handle(Profile $owner, array $attributes): DiscoveryIndex` |
-| [ListTrends.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-discovery/src/Actions/ListTrends.php) | `public function handle(Profile $viewer, int $limit = 20): array` |
-| [SearchDiscovery.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-discovery/src/Actions/SearchDiscovery.php) | `public function handle(Profile $viewer, string $query, int $limit = 25): Collection` |
+| [IndexResource.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-discovery/src/Actions/IndexResource.php) | `public function handle(Profile $owner, array $attributes): DiscoveryIndex` |
+| [ListTrends.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-discovery/src/Actions/ListTrends.php) | `public function handle(Profile $viewer, int $limit = 20): array` |
+| [SearchDiscovery.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-discovery/src/Actions/SearchDiscovery.php) | `public function handle(Profile $viewer, string $query, int $limit = 25): Collection` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -50,13 +50,13 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [DiscoveryIndex.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-discovery/src/Models/DiscoveryIndex.php) | `id`, `resource_type`, `resource_id`, `owner_profile_id`, `visibility`, `body`, `terms`, `engagement_score`, `published_at` |
+| [DiscoveryIndex.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-discovery/src/Models/DiscoveryIndex.php) | `id`, `resource_type`, `resource_id`, `owner_profile_id`, `visibility`, `body`, `terms`, `engagement_score`, `published_at` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/social-network-discovery-api/routes/api.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-discovery-api/routes/api.php)
+[modules/social-network-discovery-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-discovery-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/social-network/discovery')->middleware(['auth:sanctum', 'throttle:60,1'])->name('social-network.discovery.api.')->group(function (): void {

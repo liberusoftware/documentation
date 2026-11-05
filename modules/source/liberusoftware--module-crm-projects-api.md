@@ -8,7 +8,7 @@ No Composer description declared.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-projects-api](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-projects-api](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `crm-projects-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `crm-projects-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: crm-laravel, `crm-projects-api`. Matching reference files in thi
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/module.json).
 
 **Declared capabilities:** crm.projects.api
 
@@ -56,16 +56,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/ProjectsController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/src/Http/Controllers/ProjectsController.php) | `public function projects(Request $r, ProjectQuery $q)`<br>`public function project(Request $r, CreateProject $a)`<br>`public function task(Request $r, CreateProjectTask $a)`<br>`public function time(Request $r, LogProjectTime $a)`<br>`public function status(Request $r, int $project, string $status, ChangeProjectStatus $a)`<br>`public function risk(Request $r, RecordProjectRisk $a)`<br>`public function handoff(Request $r, int $project, HandoffOpportunity $a)` |
+| [src/Http/Controllers/ProjectsController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/src/Http/Controllers/ProjectsController.php) | `public function projects(Request $r, ProjectQuery $q)`<br>`public function project(Request $r, CreateProject $a)`<br>`public function task(Request $r, CreateProjectTask $a)`<br>`public function time(Request $r, LogProjectTime $a)`<br>`public function status(Request $r, int $project, string $status, ChangeProjectStatus $a)`<br>`public function risk(Request $r, RecordProjectRisk $a)`<br>`public function handoff(Request $r, int $project, HandoffOpportunity $a)` |
 
-Other non-legacy PHP sources: [src/Providers/ProjectsApiServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/src/Providers/ProjectsApiServiceProvider.php).
+Other non-legacy PHP sources: [src/Providers/ProjectsApiServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/src/Providers/ProjectsApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/projects.yaml](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/openapi/v1/projects.yaml)
-- [routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/routes/api.php)
+- [openapi/v1/projects.yaml](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/openapi/v1/projects.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-projects-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

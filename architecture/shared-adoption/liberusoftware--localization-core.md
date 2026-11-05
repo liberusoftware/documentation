@@ -14,18 +14,18 @@ See the [implementation reference](../../modules/source/liberusoftware--localiza
 
 | Consumer | Pinned module metadata | Variant | Test files |
 | --- | --- | ---: | ---: |
-| accounting | [localization-core](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/localization-core/composer.json) | 1 | 5 |
-| automation | [localization-core](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/localization-core/composer.json) | 3 | 5 |
-| billing | [localization-core](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/localization-core/composer.json) | 2 | 5 |
-| boilerplate | [localization-core](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/localization-core/composer.json) | 3 | 5 |
-| browser-game | [localization-core](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/localization-core/composer.json) | 3 | 5 |
-| control-panel | [localization-core](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/localization-core/composer.json) | 3 | 5 |
-| crm | [localization-core](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/localization-core/composer.json) | 3 | 5 |
-| sap | [localization-core](https://github.com/liberusoftware/enterprise-sap-laravel/blob/b12a8c841c6a9054e52cac99d9ac1f233924a041/modules/localization-core/composer.json) | 3 | 5 |
-| genealogy | [localization-core](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/localization-core/composer.json) | 3 | 5 |
-| maintenance | [localization-core](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/localization-core/composer.json) | 3 | 5 |
-| real-estate | [localization-core](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/localization-core/composer.json) | 4 | 5 |
-| social-network | [localization-core](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/localization-core/composer.json) | 3 | 5 |
+| accounting | [localization-core](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/localization-core/composer.json) | 1 | 5 |
+| automation | [localization-core](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/localization-core/composer.json) | 3 | 5 |
+| billing | [localization-core](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/localization-core/composer.json) | 2 | 5 |
+| boilerplate | [localization-core](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/localization-core/composer.json) | 3 | 5 |
+| browser-game | [localization-core](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/localization-core/composer.json) | 3 | 5 |
+| control-panel | [localization-core](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/localization-core/composer.json) | 3 | 5 |
+| crm | [localization-core](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/localization-core/composer.json) | 3 | 5 |
+| sap | [localization-core](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament/blob/b12a8c841c6a9054e52cac99d9ac1f233924a041/modules/localization-core/composer.json) | 3 | 5 |
+| genealogy | [localization-core](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/localization-core/composer.json) | 3 | 5 |
+| maintenance | [localization-core](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/localization-core/composer.json) | 3 | 5 |
+| real-estate | [localization-core](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/localization-core/composer.json) | 4 | 5 |
+| social-network | [localization-core](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/localization-core/composer.json) | 3 | 5 |
 
 ## Manifest and dependency differences
 
@@ -48,7 +48,7 @@ Changed action/query/contract/service/context paths are indexed below. Signature
 
 | Path | Variant entry points |
 | --- | --- |
-| `src/Context/LocaleResolver.php` | V1: [LocaleResolver.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/localization-core/src/Context/LocaleResolver.php) — `public function resolve(Request $request): LocaleContext`<br>V2: [LocaleResolver.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/localization-core/src/Context/LocaleResolver.php) — `public function resolve(Request $request): LocaleContext`<br>V3: [LocaleResolver.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/localization-core/src/Context/LocaleResolver.php) — `public function resolve(Request $request): LocaleContext`<br>V4: [LocaleResolver.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/localization-core/src/Context/LocaleResolver.php) — `public function resolve(Request $request): LocaleContext` |
+| `src/Context/LocaleResolver.php` | V1: [LocaleResolver.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/localization-core/src/Context/LocaleResolver.php) — `public function resolve(Request $request): LocaleContext`<br>V2: [LocaleResolver.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/localization-core/src/Context/LocaleResolver.php) — `public function resolve(Request $request): LocaleContext`<br>V3: [LocaleResolver.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/localization-core/src/Context/LocaleResolver.php) — `public function resolve(Request $request): LocaleContext`<br>V4: [LocaleResolver.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/localization-core/src/Context/LocaleResolver.php) — `public function resolve(Request $request): LocaleContext` |
 
 Resolve host-model lookups, actor/tenant policy, source-record references and provider dependencies through explicit public contracts/configuration. Keep product policy and presentation composition outside shared core. Consumer tests must cover the real call paths, including jobs/exports and private-data visibility; do not widen a contract solely to accommodate one host's internal model.
 

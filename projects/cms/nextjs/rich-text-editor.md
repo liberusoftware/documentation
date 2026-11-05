@@ -41,7 +41,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [RichTextService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-rich-text-editor/src/Services/RichTextService.php) | `public function sanitize(?string $html): string`<br>`public function cleanPaste(string $html): string`<br>`public function prepare(string $html, string $format = 'html'): array`<br>`public function accessibilityHints(string $html): array`<br>`public function embed(string $url, ?string $title = null): string` |
+| [RichTextService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-rich-text-editor/src/Services/RichTextService.php) | `public function sanitize(?string $html): string`<br>`public function cleanPaste(string $html): string`<br>`public function prepare(string $html, string $format = 'html'): array`<br>`public function accessibilityHints(string $html): array`<br>`public function embed(string $url, ?string $title = null): string` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 

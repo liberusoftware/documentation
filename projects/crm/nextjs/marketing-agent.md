@@ -38,16 +38,16 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [AgentQuery.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Queries/AgentQuery.php) | `public function forTeam(int $teamId)` |
+| [AgentQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Queries/AgentQuery.php) | `public function forTeam(int $teamId)` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateAgentRequest.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Actions/CreateAgentRequest.php) | `public function execute(int $teamId, int $userId, array $input): AgentRequest` |
-| [CreateExperiment.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Actions/CreateExperiment.php) | `public function execute(int $teamId, int $userId, AgentRequest $request, array $input): AgentExperiment` |
-| [RecordAgentCheck.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Actions/RecordAgentCheck.php) | `public function execute(int $teamId, int $userId, AgentRequest $request, array $input): AgentCheck` |
-| [MarketingAgentPolicy.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Services/MarketingAgentPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+| [CreateAgentRequest.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Actions/CreateAgentRequest.php) | `public function execute(int $teamId, int $userId, array $input): AgentRequest` |
+| [CreateExperiment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Actions/CreateExperiment.php) | `public function execute(int $teamId, int $userId, AgentRequest $request, array $input): AgentExperiment` |
+| [RecordAgentCheck.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Actions/RecordAgentCheck.php) | `public function execute(int $teamId, int $userId, AgentRequest $request, array $input): AgentCheck` |
+| [MarketingAgentPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Services/MarketingAgentPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -57,9 +57,9 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [AgentCheck.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Models/AgentCheck.php) | No literal fillable array detected; inspect the model and API schema. |
-| [AgentExperiment.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Models/AgentExperiment.php) | No literal fillable array detected; inspect the model and API schema. |
-| [AgentRequest.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Models/AgentRequest.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AgentCheck.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Models/AgentCheck.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AgentExperiment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Models/AgentExperiment.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AgentRequest.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent/src/Models/AgentRequest.php) | No literal fillable array detected; inspect the model and API schema. |
 
 ## Server/client and React reuse
 

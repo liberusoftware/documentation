@@ -53,7 +53,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [MembershipsController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-memberships-api/src/Http/Controllers/MembershipsController.php) | `public function index(Request $r, MembershipQuery $q): JsonResponse`<br>`public function store(Request $r, CreatePlan $a): JsonResponse`<br>`public function grant(Request $r, MembershipPlan $plan, GrantAccess $a): JsonResponse`<br>`public function status(Request $r, MembershipGrant $grant, ChangeGrantStatus $a): JsonResponse` |
+| [MembershipsController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-memberships-api/src/Http/Controllers/MembershipsController.php) | `public function index(Request $r, MembershipQuery $q): JsonResponse`<br>`public function store(Request $r, CreatePlan $a): JsonResponse`<br>`public function grant(Request $r, MembershipPlan $plan, GrantAccess $a): JsonResponse`<br>`public function status(Request $r, MembershipGrant $grant, ChangeGrantStatus $a): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

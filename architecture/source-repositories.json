@@ -1,85 +1,85 @@
 [
   {
-    "name": "accounting-erp-laravel",
-    "clone_url": "https://github.com/liberusoftware/accounting-erp-laravel.git",
+    "name": "project-accounting-erp-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-accounting-erp-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "automation-laravel",
-    "clone_url": "https://github.com/liberusoftware/automation-laravel.git",
+    "name": "project-automation-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-automation-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "billing-laravel",
-    "clone_url": "https://github.com/liberusoftware/billing-laravel.git",
+    "name": "project-billing-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-billing-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "boilerplate-laravel",
-    "clone_url": "https://github.com/liberusoftware/boilerplate-laravel.git",
+    "name": "project-boilerplate-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-boilerplate-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "browser-game-laravel",
-    "clone_url": "https://github.com/liberusoftware/browser-game-laravel.git",
+    "name": "project-browser-game-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-browser-game-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "cms-laravel",
-    "clone_url": "https://github.com/liberusoftware/cms-laravel.git",
+    "name": "project-cms-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-cms-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "control-panel-laravel",
-    "clone_url": "https://github.com/liberusoftware/control-panel-laravel.git",
+    "name": "project-control-panel-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-control-panel-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "crm-laravel",
-    "clone_url": "https://github.com/liberusoftware/crm-laravel.git",
+    "name": "project-crm-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-crm-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "ecommerce-laravel",
-    "clone_url": "https://github.com/liberusoftware/ecommerce-laravel.git",
+    "name": "project-ecommerce-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-ecommerce-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "enterprise-sap-laravel",
-    "clone_url": "https://github.com/liberusoftware/enterprise-sap-laravel.git",
+    "name": "project-enterprise-sap-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-enterprise-sap-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "genealogy-laravel",
-    "clone_url": "https://github.com/liberusoftware/genealogy-laravel.git",
+    "name": "project-genealogy-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-genealogy-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "maintenance-laravel",
-    "clone_url": "https://github.com/liberusoftware/maintenance-laravel.git",
+    "name": "project-maintenance-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-maintenance-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "real-estate-laravel",
-    "clone_url": "https://github.com/liberusoftware/real-estate-laravel.git",
+    "name": "project-real-estate-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-real-estate-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   },
   {
-    "name": "social-network-laravel",
-    "clone_url": "https://github.com/liberusoftware/social-network-laravel.git",
+    "name": "project-social-network-laravel-filament",
+    "clone_url": "https://github.com/liberusoftware/project-social-network-laravel-filament.git",
     "default_branch": "main",
     "archived": false
   }

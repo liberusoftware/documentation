@@ -14,9 +14,9 @@ See the [implementation reference](../../modules/source/liberusoftware--module-l
 
 | Consumer | Pinned module metadata | Variant | Test files |
 | --- | --- | ---: | ---: |
-| billing | [liberu-revenue-and-care-orchestration-api](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-api/composer.json) | 2 | 1 |
-| billing | [module-liberu-revenue-and-care-orchestration-api](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-liberu-revenue-and-care-orchestration-api/composer.json) | 2 | 1 |
-| genealogy | [liberu-revenue-and-care-orchestration-api](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-api/composer.json) | 1 | 1 |
+| billing | [liberu-revenue-and-care-orchestration-api](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-api/composer.json) | 2 | 1 |
+| billing | [module-liberu-revenue-and-care-orchestration-api](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-liberu-revenue-and-care-orchestration-api/composer.json) | 2 | 1 |
+| genealogy | [liberu-revenue-and-care-orchestration-api](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-api/composer.json) | 1 | 1 |
 
 ## Manifest and dependency differences
 
@@ -39,9 +39,9 @@ Resolve host-model lookups, actor/tenant policy, source-record references and pr
 
 ## Registration, route and presentation review
 
-- `module.json`: V1 [source](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-api/module.json), V2 [source](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-api/module.json)
-- `resources/openapi.yaml`: V1 [source](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-api/resources/openapi.yaml)
-- `src/RevenueAndCareOrchestrationApiServiceProvider.php`: V1 [source](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-api/src/RevenueAndCareOrchestrationApiServiceProvider.php), V2 [source](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-api/src/RevenueAndCareOrchestrationApiServiceProvider.php)
+- `module.json`: V1 [source](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-api/module.json), V2 [source](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-api/module.json)
+- `resources/openapi.yaml`: V1 [source](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-api/resources/openapi.yaml)
+- `src/RevenueAndCareOrchestrationApiServiceProvider.php`: V1 [source](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-api/src/RevenueAndCareOrchestrationApiServiceProvider.php), V2 [source](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-api/src/RevenueAndCareOrchestrationApiServiceProvider.php)
 
 Validate discovery, manifest schema/version handling, dependency selection, provider boot order and route/plugin identifiers against the consuming host. For UI/API adapters, retain the authorized DTO and domain action semantics rather than exposing private models or bypassing transitions through generic record saves.
 

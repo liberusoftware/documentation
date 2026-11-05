@@ -8,7 +8,7 @@ No Composer description declared.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-forecasting](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 1 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-forecasting](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 1 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `crm-forecasting`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `crm-forecasting`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: crm-laravel, `crm-forecasting`. Matching reference files in this
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/module.json).
 
 **Declared capabilities:** crm.forecasting
 
@@ -56,19 +56,19 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/CreateCategory.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/CreateCategory.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ForecastCategory` |
-| [src/Actions/RecordForecast.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/RecordForecast.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): Forecast` |
-| [src/Actions/SubmitForecast.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/SubmitForecast.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, Forecast $forecast): ForecastSubmission` |
-| [src/Queries/ForecastingQuery.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Queries/ForecastingQuery.php) | `public function categories(int $teamId)`<br>`public function forecasts(int $teamId, string $period)`<br>`public function summary(int $teamId, string $period): array` |
-| [src/Services/ForecastingPolicy.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Services/ForecastingPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+| [src/Actions/CreateCategory.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/CreateCategory.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): ForecastCategory` |
+| [src/Actions/RecordForecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/RecordForecast.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): Forecast` |
+| [src/Actions/SubmitForecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Actions/SubmitForecast.php) | `public function __construct(private readonly ForecastingPolicy $policy)`<br>`public function execute(int $teamId, int $userId, Forecast $forecast): ForecastSubmission` |
+| [src/Queries/ForecastingQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Queries/ForecastingQuery.php) | `public function categories(int $teamId)`<br>`public function forecasts(int $teamId, string $period)`<br>`public function summary(int $teamId, string $period): array` |
+| [src/Services/ForecastingPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Services/ForecastingPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
 
-Other non-legacy PHP sources: [src/ForecastingServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/ForecastingServiceProvider.php) · [src/Models/Forecast.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/Forecast.php) · [src/Models/ForecastAdjustment.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastAdjustment.php) · [src/Models/ForecastCategory.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastCategory.php) · [src/Models/ForecastSubmission.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastSubmission.php).
+Other non-legacy PHP sources: [src/ForecastingServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/ForecastingServiceProvider.php) · [src/Models/Forecast.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/Forecast.php) · [src/Models/ForecastAdjustment.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastAdjustment.php) · [src/Models/ForecastCategory.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastCategory.php) · [src/Models/ForecastSubmission.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/src/Models/ForecastSubmission.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_27_010000_create_crm_forecasting_tables.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/database/migrations/2026_08_27_010000_create_crm_forecasting_tables.php)
+- [database/migrations/2026_08_27_010000_create_crm_forecasting_tables.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/database/migrations/2026_08_27_010000_create_crm_forecasting_tables.php)
 
 ### Verification and consumer use
 
@@ -76,6 +76,6 @@ Declared Composer scripts: `{}`.
 
 Tracked files under `tests/`: **1**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Feature/Forecasting/ForecastingModuleTest.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/tests/Feature/Forecasting/ForecastingModuleTest.php)
+- [tests/Feature/Forecasting/ForecastingModuleTest.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-forecasting/tests/Feature/Forecasting/ForecastingModuleTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

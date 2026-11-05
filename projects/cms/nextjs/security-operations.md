@@ -39,7 +39,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [SecurityOperationsService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-security-operations/src/Services/SecurityOperationsService.php) | `public function inventory(array $packages, ?int $actorId = null): SecurityOperation`<br>`public function provenance(string $extension, string $version, string $source, ?int $actorId = null): SecurityOperation`<br>`public function integrity(string $subject, string $content, ?int $actorId = null): SecurityOperation`<br>`public function scan(UploadedFile $file, ?int $actorId = null): SecurityOperation`<br>`public function advisory(string $title, string $severity, array $details = [], ?int $actorId = null): SecurityOperation`<br>`public function incidentBundle(string $incident): array` |
+| [SecurityOperationsService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-security-operations/src/Services/SecurityOperationsService.php) | `public function inventory(array $packages, ?int $actorId = null): SecurityOperation`<br>`public function provenance(string $extension, string $version, string $source, ?int $actorId = null): SecurityOperation`<br>`public function integrity(string $subject, string $content, ?int $actorId = null): SecurityOperation`<br>`public function scan(UploadedFile $file, ?int $actorId = null): SecurityOperation`<br>`public function advisory(string $title, string $severity, array $details = [], ?int $actorId = null): SecurityOperation`<br>`public function incidentBundle(string $incident): array` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -49,7 +49,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [SecurityOperation.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-security-operations/src/Models/SecurityOperation.php) | `kind`, `subject`, `status`, `evidence`, `content_hash`, `actor_id` |
+| [SecurityOperation.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-security-operations/src/Models/SecurityOperation.php) | `kind`, `subject`, `status`, `evidence`, `content_hash`, `actor_id` |
 
 ## Server/client and React reuse
 

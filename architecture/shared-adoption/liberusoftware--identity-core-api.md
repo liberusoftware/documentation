@@ -14,8 +14,8 @@ See the [implementation reference](../../modules/source/liberusoftware--identity
 
 | Consumer | Pinned module metadata | Variant | Test files |
 | --- | --- | ---: | ---: |
-| crm | [identity-core-api](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/composer.json) | 2 | 0 |
-| real-estate | [identity-core-api](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/composer.json) | 1 | 1 |
+| crm | [identity-core-api](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/composer.json) | 2 | 0 |
+| real-estate | [identity-core-api](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/composer.json) | 1 | 1 |
 
 ## Manifest and dependency differences
 
@@ -38,8 +38,8 @@ Resolve host-model lookups, actor/tenant policy, source-record references and pr
 
 ## Registration, route and presentation review
 
-- `module.json`: V1 [source](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/module.json), V2 [source](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/module.json)
-- `routes/api.php`: V1 [source](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/routes/api.php), V2 [source](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/routes/api.php)
+- `module.json`: V1 [source](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/module.json), V2 [source](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/module.json)
+- `routes/api.php`: V1 [source](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/routes/api.php), V2 [source](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/routes/api.php)
 
 Validate discovery, manifest schema/version handling, dependency selection, provider boot order and route/plugin identifiers against the consuming host. For UI/API adapters, retain the authorized DTO and domain action semantics rather than exposing private models or bypassing transitions through generic record saves.
 

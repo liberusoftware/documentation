@@ -39,7 +39,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [PollService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-polls-and-surveys/src/Services/PollService.php) | `public function create(array $attributes, ?int $teamId = null): Poll`<br>`public function update(Poll $poll, array $attributes): Poll`<br>`public function saveQuestion(Poll $poll, array $attributes, ?Question $question = null): Question`<br>`public function deleteQuestion(Question $question): void`<br>`public function submit(Poll $poll, array $answers, ?int $userId = null, ?string $respondentKey = null): Response`<br>`public function results(Poll $poll): array`<br>`public function export(Poll $poll, bool $includeRespondentIdentity = false): array`<br>`public function eraseResponse(Response $response): void` |
+| [PollService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-polls-and-surveys/src/Services/PollService.php) | `public function create(array $attributes, ?int $teamId = null): Poll`<br>`public function update(Poll $poll, array $attributes): Poll`<br>`public function saveQuestion(Poll $poll, array $attributes, ?Question $question = null): Question`<br>`public function deleteQuestion(Question $question): void`<br>`public function submit(Poll $poll, array $answers, ?int $userId = null, ?string $respondentKey = null): Response`<br>`public function results(Poll $poll): array`<br>`public function export(Poll $poll, bool $includeRespondentIdentity = false): array`<br>`public function eraseResponse(Response $response): void` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -49,9 +49,9 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [Poll.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-polls-and-surveys/src/Models/Poll.php) | `title`, `key`, `description`, `starts_at`, `ends_at`, `allow_anonymous`, `allow_multiple`, `active`, `results_public`, `team_id` |
-| [Question.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-polls-and-surveys/src/Models/Question.php) | `poll_id`, `key`, `type`, `prompt`, `options`, `branching`, `position`, `required` |
-| [Response.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-polls-and-surveys/src/Models/Response.php) | `poll_id`, `user_id`, `respondent_hash`, `answers`, `submitted_at`, `team_id` |
+| [Poll.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-polls-and-surveys/src/Models/Poll.php) | `title`, `key`, `description`, `starts_at`, `ends_at`, `allow_anonymous`, `allow_multiple`, `active`, `results_public`, `team_id` |
+| [Question.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-polls-and-surveys/src/Models/Question.php) | `poll_id`, `key`, `type`, `prompt`, `options`, `branching`, `position`, `required` |
+| [Response.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-polls-and-surveys/src/Models/Response.php) | `poll_id`, `user_id`, `respondent_hash`, `answers`, `submitted_at`, `team_id` |
 
 ## Server/client and React reuse
 

@@ -34,7 +34,7 @@ Use one canonical core package for a capability, a reviewed API adapter for remo
 For a new local application based on the existing foundation repository:
 
 ```bash
-git clone https://github.com/liberusoftware/boilerplate-laravel.git example-api
+git clone https://github.com/liberusoftware/project-boilerplate-laravel-filament.git example-api
 cd example-api
 cp .env.example .env
 composer install

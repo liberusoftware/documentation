@@ -20,20 +20,20 @@ Compatibility symlinks are recorded as aliases of their repository-local target.
 
 | Repository | Commit | Immediate module directories | Inventory |
 | --- | --- | ---: | --- |
-| accounting-erp-laravel | `39a49babafc0b8caf12c018abdd765f215ecf207` | 466 | [accounting](../projects/accounting/SOURCE-MODULES.md) |
-| automation-laravel | `68e5f07a67041f8438530c71bc86515cbd11da70` | 100 | [automation](../projects/automation/SOURCE-MODULES.md) |
-| billing-laravel | `4743bdfebd1c122e10bf80171d0210ab27e34a54` | 146 | [billing](../projects/billing/SOURCE-MODULES.md) |
-| boilerplate-laravel | `3ade34046c3de1e2f0fc8e498a2451241c0584dc` | 40 | [boilerplate](../projects/boilerplate/SOURCE-MODULES.md) |
-| browser-game-laravel | `790fdffebd3a19bf914aea8a4ef049f87f52c62d` | 100 | [browser-game](../projects/browser-game/SOURCE-MODULES.md) |
-| cms-laravel | `5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7` | 357 | [cms](../projects/cms/SOURCE-MODULES.md) |
-| control-panel-laravel | `1797f25d705f780bacddcdf228c9a1dc995c3580` | 100 | [control-panel](../projects/control-panel/SOURCE-MODULES.md) |
-| crm-laravel | `63aad94e94c0f9a18038e301eb979138c657be64` | 500 | [crm](../projects/crm/SOURCE-MODULES.md) |
-| ecommerce-laravel | `af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f` | 0 | [ecommerce](../projects/ecommerce/SOURCE-MODULES.md) |
-| enterprise-sap-laravel | `b12a8c841c6a9054e52cac99d9ac1f233924a041` | 40 | [sap](../projects/sap/SOURCE-MODULES.md) |
-| genealogy-laravel | `577e93db23cc969fd532086c06524f9f2bb2b5ea` | 113 | [genealogy](../projects/genealogy/SOURCE-MODULES.md) |
-| maintenance-laravel | `c267d625e264e86ad223be8a3a08a3728afc7344` | 96 | [maintenance](../projects/maintenance/SOURCE-MODULES.md) |
-| real-estate-laravel | `178d8015b601c99dec43acfdc12724aae2b3731a` | 197 | [real-estate](../projects/real-estate/SOURCE-MODULES.md) |
-| social-network-laravel | `08bbc484b50fc7e841a499375329c6de32614145` | 101 | [social-network](../projects/social-network/SOURCE-MODULES.md) |
+| project-accounting-erp-laravel-filament | `39a49babafc0b8caf12c018abdd765f215ecf207` | 466 | [accounting](../projects/accounting/SOURCE-MODULES.md) |
+| project-automation-laravel-filament | `68e5f07a67041f8438530c71bc86515cbd11da70` | 100 | [automation](../projects/automation/SOURCE-MODULES.md) |
+| project-billing-laravel-filament | `4743bdfebd1c122e10bf80171d0210ab27e34a54` | 146 | [billing](../projects/billing/SOURCE-MODULES.md) |
+| project-boilerplate-laravel-filament | `3ade34046c3de1e2f0fc8e498a2451241c0584dc` | 40 | [boilerplate](../projects/boilerplate/SOURCE-MODULES.md) |
+| project-browser-game-laravel-filament | `790fdffebd3a19bf914aea8a4ef049f87f52c62d` | 100 | [browser-game](../projects/browser-game/SOURCE-MODULES.md) |
+| project-cms-laravel-filament | `5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7` | 357 | [cms](../projects/cms/SOURCE-MODULES.md) |
+| project-control-panel-laravel-filament | `1797f25d705f780bacddcdf228c9a1dc995c3580` | 100 | [control-panel](../projects/control-panel/SOURCE-MODULES.md) |
+| project-crm-laravel-filament | `63aad94e94c0f9a18038e301eb979138c657be64` | 500 | [crm](../projects/crm/SOURCE-MODULES.md) |
+| project-ecommerce-laravel-filament | `af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f` | 0 | [ecommerce](../projects/ecommerce/SOURCE-MODULES.md) |
+| project-enterprise-sap-laravel-filament | `b12a8c841c6a9054e52cac99d9ac1f233924a041` | 40 | [sap](../projects/sap/SOURCE-MODULES.md) |
+| project-genealogy-laravel-filament | `577e93db23cc969fd532086c06524f9f2bb2b5ea` | 113 | [genealogy](../projects/genealogy/SOURCE-MODULES.md) |
+| project-maintenance-laravel-filament | `c267d625e264e86ad223be8a3a08a3728afc7344` | 96 | [maintenance](../projects/maintenance/SOURCE-MODULES.md) |
+| project-real-estate-laravel-filament | `178d8015b601c99dec43acfdc12724aae2b3731a` | 197 | [real-estate](../projects/real-estate/SOURCE-MODULES.md) |
+| project-social-network-laravel-filament | `08bbc484b50fc7e841a499375329c6de32614145` | 101 | [social-network](../projects/social-network/SOURCE-MODULES.md) |
 
 ## Repeated package identities
 
@@ -41,136 +41,136 @@ The same identity in multiple applications is a candidate for one shared owner a
 
 | Manifest | Package | Source applications |
 | --- | --- | --- |
-| composer.json | `liberusoftware/activity-comments` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/activity-comments-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/activity-comments-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/activity-comments-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/analytics-core` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/analytics-core-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/analytics-core-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/analytics-core-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/analytics-google` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/analytics-google-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/analytics-google-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/analytics-google-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/analytics-meta` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/analytics-meta-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/analytics-meta-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/analytics-meta-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/api-access` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/api-access-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/api-access-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/api-access-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/application` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/application-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/application-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/application-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/audit` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/audit-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/audit-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/audit-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/currency-context` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/currency-context-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/currency-context-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/currency-context-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/developer-experience` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/developer-experience-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/developer-experience-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/developer-experience-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/feature-flags` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/feature-flags-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/feature-flags-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/feature-flags-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/files-media` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/files-media-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/files-media-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/files-media-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/identity-core` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/identity-core-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/identity-core-filament` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/identity-core-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/identity-socialstream` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/import-export` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/import-export-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/import-export-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/import-export-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/integrations` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/integrations-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/integrations-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/integrations-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/jetstream-bridge` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/jetstream-bridge-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/jetstream-bridge-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/jetstream-bridge-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/localization-core` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/localization-core-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/localization-core-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/localization-core-livewire` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/localization-mymemory` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/module-billing-billing-core` | billing-laravel, billing-laravel |
-| composer.json | `liberusoftware/module-liberu-business-workflow-reconciliation` | accounting-erp-laravel, billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-business-workflow-reconciliation-api` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-business-workflow-reconciliation-filament` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-business-workflow-reconciliation-livewire` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-executive-insights` | accounting-erp-laravel, billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-executive-insights-api` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-executive-insights-filament` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-executive-insights-livewire` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-platform-orchestration` | accounting-erp-laravel, billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-platform-orchestration-api` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-platform-orchestration-filament` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-platform-orchestration-livewire` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-revenue-and-care-orchestration` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-revenue-and-care-orchestration-api` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-revenue-and-care-orchestration-filament` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-liberu-revenue-and-care-orchestration-livewire` | billing-laravel, billing-laravel, genealogy-laravel |
-| composer.json | `liberusoftware/module-manager` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/module-manager-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/module-manager-filament` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/module-manager-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/notifications` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/notifications-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/notifications-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/notifications-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/observability` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/observability-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/observability-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/observability-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/organizations-teams` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/organizations-teams-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/organizations-teams-filament` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/organizations-teams-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/profiles` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/profiles-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/profiles-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/profiles-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/roles-permissions` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/roles-permissions-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/roles-permissions-filament` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/roles-permissions-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/scheduler-queues` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/scheduler-queues-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/scheduler-queues-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/scheduler-queues-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/search` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/search-api` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/search-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/search-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/sessions-devices` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/sessions-devices-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/sessions-devices-filament` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/sessions-devices-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/settings` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/settings-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/settings-filament` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/settings-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/theme-support` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/theme-support-livewire` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/two-factor-authentication` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/two-factor-authentication-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/two-factor-authentication-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/two-factor-authentication-livewire` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/webhooks` | accounting-erp-laravel, automation-laravel, billing-laravel, boilerplate-laravel, browser-game-laravel, control-panel-laravel, crm-laravel, enterprise-sap-laravel, genealogy-laravel, maintenance-laravel, real-estate-laravel, social-network-laravel |
-| composer.json | `liberusoftware/webhooks-api` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/webhooks-filament` | crm-laravel, real-estate-laravel |
-| composer.json | `liberusoftware/webhooks-livewire` | crm-laravel, real-estate-laravel |
+| composer.json | `liberusoftware/activity-comments` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/activity-comments-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/activity-comments-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/activity-comments-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/analytics-core` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/analytics-core-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/analytics-core-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/analytics-core-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/analytics-google` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/analytics-google-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/analytics-google-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/analytics-google-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/analytics-meta` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/analytics-meta-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/analytics-meta-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/analytics-meta-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/api-access` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/api-access-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/api-access-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/api-access-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/application` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/application-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/application-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/application-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/audit` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/audit-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/audit-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/audit-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/currency-context` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/currency-context-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/currency-context-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/currency-context-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/developer-experience` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/developer-experience-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/developer-experience-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/developer-experience-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/feature-flags` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/feature-flags-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/feature-flags-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/feature-flags-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/files-media` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/files-media-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/files-media-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/files-media-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/identity-core` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/identity-core-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/identity-core-filament` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/identity-core-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/identity-socialstream` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/import-export` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/import-export-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/import-export-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/import-export-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/integrations` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/integrations-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/integrations-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/integrations-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/jetstream-bridge` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/jetstream-bridge-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/jetstream-bridge-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/jetstream-bridge-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/localization-core` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/localization-core-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/localization-core-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/localization-core-livewire` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/localization-mymemory` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/module-billing-billing-core` | project-billing-laravel-filament, project-billing-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-business-workflow-reconciliation` | project-accounting-erp-laravel-filament, project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-business-workflow-reconciliation-api` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-business-workflow-reconciliation-filament` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-business-workflow-reconciliation-livewire` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-executive-insights` | project-accounting-erp-laravel-filament, project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-executive-insights-api` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-executive-insights-filament` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-executive-insights-livewire` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-platform-orchestration` | project-accounting-erp-laravel-filament, project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-platform-orchestration-api` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-platform-orchestration-filament` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-platform-orchestration-livewire` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-revenue-and-care-orchestration` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-revenue-and-care-orchestration-api` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-revenue-and-care-orchestration-filament` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-liberu-revenue-and-care-orchestration-livewire` | project-billing-laravel-filament, project-billing-laravel-filament, project-genealogy-laravel-filament |
+| composer.json | `liberusoftware/module-manager` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/module-manager-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/module-manager-filament` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/module-manager-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/notifications` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/notifications-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/notifications-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/notifications-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/observability` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/observability-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/observability-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/observability-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/organizations-teams` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/organizations-teams-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/organizations-teams-filament` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/organizations-teams-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/profiles` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/profiles-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/profiles-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/profiles-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/roles-permissions` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/roles-permissions-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/roles-permissions-filament` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/roles-permissions-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/scheduler-queues` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/scheduler-queues-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/scheduler-queues-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/scheduler-queues-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/search` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/search-api` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/search-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/search-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/sessions-devices` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/sessions-devices-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/sessions-devices-filament` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/sessions-devices-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/settings` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/settings-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/settings-filament` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/settings-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/theme-support` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/theme-support-livewire` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/two-factor-authentication` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/two-factor-authentication-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/two-factor-authentication-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/two-factor-authentication-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/webhooks` | project-accounting-erp-laravel-filament, project-automation-laravel-filament, project-billing-laravel-filament, project-boilerplate-laravel-filament, project-browser-game-laravel-filament, project-control-panel-laravel-filament, project-crm-laravel-filament, project-enterprise-sap-laravel-filament, project-genealogy-laravel-filament, project-maintenance-laravel-filament, project-real-estate-laravel-filament, project-social-network-laravel-filament |
+| composer.json | `liberusoftware/webhooks-api` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/webhooks-filament` | project-crm-laravel-filament, project-real-estate-laravel-filament |
+| composer.json | `liberusoftware/webhooks-livewire` | project-crm-laravel-filament, project-real-estate-laravel-filament |

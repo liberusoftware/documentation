@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/crm-quotas-and-incentives-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-quotas-and-incentives-api/routes/api.php)
+[modules/crm-quotas-and-incentives-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-quotas-and-incentives-api/routes/api.php)
 
 ```php
 Route::middleware('auth:sanctum')->prefix('api/v1/crm/quotas-and-incentives')->group(function (): void {
@@ -65,7 +65,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [QuotasAndIncentivesController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-quotas-and-incentives-api/src/Http/Controllers/QuotasAndIncentivesController.php) | `public function quotas(Request $r, QuotaQuery $q)`<br>`public function quota(Request $r, CreateQuota $a)`<br>`public function plans(Request $r, QuotaQuery $q)`<br>`public function plan(Request $r, CreateCommissionPlan $a)`<br>`public function credits(Request $r, QuotaQuery $q)`<br>`public function credit(Request $r, CreditCommission $a)`<br>`public function dispute(Request $r, OpenDispute $a)`<br>`public function resolve(Request $r, int $dispute, ResolveDispute $a)`<br>`public function export(Request $r, ExportCommissions $a)` |
+| [QuotasAndIncentivesController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-quotas-and-incentives-api/src/Http/Controllers/QuotasAndIncentivesController.php) | `public function quotas(Request $r, QuotaQuery $q)`<br>`public function quota(Request $r, CreateQuota $a)`<br>`public function plans(Request $r, QuotaQuery $q)`<br>`public function plan(Request $r, CreateCommissionPlan $a)`<br>`public function credits(Request $r, QuotaQuery $q)`<br>`public function credit(Request $r, CreditCommission $a)`<br>`public function dispute(Request $r, OpenDispute $a)`<br>`public function resolve(Request $r, int $dispute, ResolveDispute $a)`<br>`public function export(Request $r, ExportCommissions $a)` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -73,7 +73,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/crm-quotas-and-incentives-api/openapi/v1/quotas-and-incentives.yaml](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-quotas-and-incentives-api/openapi/v1/quotas-and-incentives.yaml)
+- [modules/crm-quotas-and-incentives-api/openapi/v1/quotas-and-incentives.yaml](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-quotas-and-incentives-api/openapi/v1/quotas-and-incentives.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

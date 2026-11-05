@@ -8,8 +8,8 @@ API Access filament presentation adapter.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [api-access-filament](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
-| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [api-access-filament](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/api-access-filament/composer.json) | `178d8015b601` | [Variant 1](#variant-1) | 0 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [api-access-filament](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
+| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [api-access-filament](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/api-access-filament/composer.json) | `178d8015b601` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **2**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -17,7 +17,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `api-access-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `api-access-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -35,7 +35,7 @@ Representative: crm-laravel, `api-access-filament`. Matching reference files in 
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/module.json).
 
 **Declared capabilities:** foundation.api-access.filament
 
@@ -59,7 +59,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/ApiAccessFilamentPlugin.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/src/ApiAccessFilamentPlugin.php) · [src/ApiAccessFilamentServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/src/ApiAccessFilamentServiceProvider.php) · [src/Pages/Overview.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/src/Pages/Overview.php).
+Other non-legacy PHP sources: [src/ApiAccessFilamentPlugin.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/src/ApiAccessFilamentPlugin.php) · [src/ApiAccessFilamentServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/src/ApiAccessFilamentServiceProvider.php) · [src/Pages/Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/api-access-filament/src/Pages/Overview.php).
 
 ### Persistence and lifecycle evidence
 

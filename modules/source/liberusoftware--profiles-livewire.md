@@ -8,8 +8,8 @@ Profiles livewire presentation adapter.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [profiles-livewire](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-livewire/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
-| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [profiles-livewire](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/profiles-livewire/composer.json) | `178d8015b601` | [Variant 1](#variant-1) | 0 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [profiles-livewire](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-livewire/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
+| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [profiles-livewire](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/profiles-livewire/composer.json) | `178d8015b601` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **2**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -17,7 +17,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `profiles-livewire`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `profiles-livewire`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -35,7 +35,7 @@ Representative: crm-laravel, `profiles-livewire`. Matching reference files in th
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-livewire/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-livewire/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-livewire/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-livewire/module.json).
 
 **Declared capabilities:** foundation.profiles.livewire
 
@@ -59,9 +59,9 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Livewire/Overview.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-livewire/src/Livewire/Overview.php) | `public function render(): mixed` |
+| [src/Livewire/Overview.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-livewire/src/Livewire/Overview.php) | `public function render(): mixed` |
 
-Other non-legacy PHP sources: [src/ProfilesLivewireServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-livewire/src/ProfilesLivewireServiceProvider.php).
+Other non-legacy PHP sources: [src/ProfilesLivewireServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/profiles-livewire/src/ProfilesLivewireServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 

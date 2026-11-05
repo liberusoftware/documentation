@@ -8,8 +8,8 @@ Identity api presentation adapter.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [identity-core-api](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
-| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [identity-core-api](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/composer.json) | `178d8015b601` | [Variant 2](#variant-2) | 1 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [identity-core-api](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
+| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [identity-core-api](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/composer.json) | `178d8015b601` | [Variant 2](#variant-2) | 1 |
 
 Physical source locations: **2**. Reference variants: **2**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -17,7 +17,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `identity-core-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `identity-core-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -35,7 +35,7 @@ Representative: crm-laravel, `identity-core-api`. Matching reference files in th
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/module.json).
 
 **Declared capabilities:** foundation.identity-core.api
 
@@ -60,15 +60,15 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/StatusController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/src/Http/Controllers/StatusController.php) | `public function __invoke(Request $request): JsonResponse` |
+| [src/Http/Controllers/StatusController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/src/Http/Controllers/StatusController.php) | `public function __invoke(Request $request): JsonResponse` |
 
-Other non-legacy PHP sources: [src/IdentityCoreApiServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/src/IdentityCoreApiServiceProvider.php).
+Other non-legacy PHP sources: [src/IdentityCoreApiServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/src/IdentityCoreApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/routes/api.php)
+- [routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/identity-core-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 
@@ -85,7 +85,7 @@ Before adoption, verify module enablement, clean consumer resolution, actor/tena
 
 ## Variant 2
 
-Representative: real-estate-laravel, `identity-core-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-real-estate-laravel-filament, `identity-core-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -103,7 +103,7 @@ Representative: real-estate-laravel, `identity-core-api`. Matching reference fil
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/composer.json) · [module.json](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/composer.json) · [module.json](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/module.json).
 
 **Declared capabilities:** identity.authenticate.api
 
@@ -131,15 +131,15 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/AuthTokenController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/src/Http/Controllers/AuthTokenController.php) | `public function register(Request $request, CreatesNewUsers $creator): JsonResponse`<br>`public function store(Request $request): JsonResponse`<br>`public function destroy(Request $request): JsonResponse` |
+| [src/Http/Controllers/AuthTokenController.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/src/Http/Controllers/AuthTokenController.php) | `public function register(Request $request, CreatesNewUsers $creator): JsonResponse`<br>`public function store(Request $request): JsonResponse`<br>`public function destroy(Request $request): JsonResponse` |
 
-Other non-legacy PHP sources: [src/IdentityCoreApiServiceProvider.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/src/IdentityCoreApiServiceProvider.php).
+Other non-legacy PHP sources: [src/IdentityCoreApiServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/src/IdentityCoreApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [routes/api.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/routes/api.php)
+- [routes/api.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 
@@ -151,6 +151,6 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **1**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/.gitkeep](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/tests/.gitkeep)
+- [tests/.gitkeep](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/identity-core-api/tests/.gitkeep)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

@@ -27,7 +27,7 @@ That separation is the reason a package declares **no** `extra.laravel.providers
 
 ## Evidence
 
-This guide is derived from bringing 44 packages and 4 themes onto these conventions in [liberusoftware/boilerplate-laravel](https://github.com/liberusoftware/boilerplate-laravel), and from five packages subsequently developed repository-first. Each trap recorded here failed at least once in that work. Where a claim is a measurement rather than a rule, it says so.
+This guide is derived from bringing 44 packages and 4 themes onto these conventions in [liberusoftware/project-boilerplate-laravel-filament](https://github.com/liberusoftware/project-boilerplate-laravel-filament), and from five packages subsequently developed repository-first. Each trap recorded here failed at least once in that work. Where a claim is a measurement rather than a rule, it says so.
 
 ## A known inconsistency
 

@@ -8,7 +8,7 @@ Filament 5 adapter for module-automation-evaluation.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [automation](../../projects/automation/SOURCE-MODULES.md) | [module-automation-evaluation-filament](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 0 |
+| [automation](../../projects/automation/SOURCE-MODULES.md) | [module-automation-evaluation-filament](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: automation-laravel, `module-automation-evaluation-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-automation-laravel-filament, `module-automation-evaluation-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: automation-laravel, `module-automation-evaluation-filament`. Mat
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/composer.json) · [module.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/composer.json) · [module.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/module.json).
 
 **Declared capabilities:** automation.evaluation.filament
 
@@ -58,7 +58,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/EvaluationFilamentPlugin.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/EvaluationFilamentPlugin.php) · [src/EvaluationFilamentServiceProvider.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/EvaluationFilamentServiceProvider.php) · [src/Resources/EvaluationResource.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource.php) · [src/Resources/EvaluationResource/Pages/CreateEvaluation.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource/Pages/CreateEvaluation.php) · [src/Resources/EvaluationResource/Pages/EditEvaluation.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource/Pages/EditEvaluation.php) · [src/Resources/EvaluationResource/Pages/ListEvaluation.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource/Pages/ListEvaluation.php).
+Other non-legacy PHP sources: [src/EvaluationFilamentPlugin.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/EvaluationFilamentPlugin.php) · [src/EvaluationFilamentServiceProvider.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/EvaluationFilamentServiceProvider.php) · [src/Resources/EvaluationResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource.php) · [src/Resources/EvaluationResource/Pages/CreateEvaluation.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource/Pages/CreateEvaluation.php) · [src/Resources/EvaluationResource/Pages/EditEvaluation.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource/Pages/EditEvaluation.php) · [src/Resources/EvaluationResource/Pages/ListEvaluation.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-evaluation-filament/src/Resources/EvaluationResource/Pages/ListEvaluation.php).
 
 ### Persistence and lifecycle evidence
 

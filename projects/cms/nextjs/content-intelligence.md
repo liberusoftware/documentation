@@ -42,7 +42,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [ContentIntelligenceService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-intelligence/src/Services/ContentIntelligenceService.php) | `public function insights(?int $teamId, ?string $metric = null, ?string $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function analyze(array $data, ?int $teamId = null): ContentInsight`<br>`public function review(ContentInsight $insight, string $status): ContentInsight` |
+| [ContentIntelligenceService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-intelligence/src/Services/ContentIntelligenceService.php) | `public function insights(?int $teamId, ?string $metric = null, ?string $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function analyze(array $data, ?int $teamId = null): ContentInsight`<br>`public function review(ContentInsight $insight, string $status): ContentInsight` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -52,7 +52,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [ContentInsight.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-intelligence/src/Models/ContentInsight.php) | `team_id`, `subject_type`, `subject_key`, `metric`, `score`, `severity`, `summary`, `rationale`, `context`, `status`, `reviewed_at` |
+| [ContentInsight.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-intelligence/src/Models/ContentInsight.php) | `team_id`, `subject_type`, `subject_key`, `metric`, `score`, `severity`, `summary`, `rationale`, `context`, `status`, `reviewed_at` |
 
 ## Server/client and React reuse
 

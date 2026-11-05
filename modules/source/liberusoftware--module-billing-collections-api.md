@@ -8,7 +8,7 @@ HTTP API adapter for Liberu Billing Collections.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-billing-collections-api](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 0 |
+| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-billing-collections-api](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: billing-laravel, `module-billing-collections-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-billing-laravel-filament, `module-billing-collections-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: billing-laravel, `module-billing-collections-api`. Matching refe
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/composer.json) · [module.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/composer.json) · [module.json](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/module.json).
 
 **Declared capabilities:** billing.collections.api
 
@@ -62,16 +62,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/CollectionCaseController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/src/Http/Controllers/CollectionCaseController.php) | `public function index(Request $request, ListCollectionCases $query): JsonResponse`<br>`public function store(Request $request, OpenCollectionCase $open): JsonResponse`<br>`public function promise(Request $request, CollectionCase $case, PromisePayment $promise): JsonResponse`<br>`public function suspend(Request $request, CollectionCase $case, SuspendCollectionCase $suspend): JsonResponse`<br>`public function recover(Request $request, CollectionCase $case, RecoverCollectionCase $recover): JsonResponse`<br>`public function retry(Request $request, CollectionCase $case, RetryCollectionCase $retry): JsonResponse`<br>`public function writeOff(Request $request, CollectionCase $case, WriteOffCollectionCase $writeOff): JsonResponse`<br>`public function dunning(Request $request, CollectionCase $case, ScheduleDunning $schedule): JsonResponse`<br>`public function reminder(Request $request, CollectionCase $case, ScheduleReminder $schedule): JsonResponse`<br>`public function creditControl(Request $request, CollectionCase $case, ApplyCreditControl $apply): JsonResponse` |
+| [src/Http/Controllers/CollectionCaseController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/src/Http/Controllers/CollectionCaseController.php) | `public function index(Request $request, ListCollectionCases $query): JsonResponse`<br>`public function store(Request $request, OpenCollectionCase $open): JsonResponse`<br>`public function promise(Request $request, CollectionCase $case, PromisePayment $promise): JsonResponse`<br>`public function suspend(Request $request, CollectionCase $case, SuspendCollectionCase $suspend): JsonResponse`<br>`public function recover(Request $request, CollectionCase $case, RecoverCollectionCase $recover): JsonResponse`<br>`public function retry(Request $request, CollectionCase $case, RetryCollectionCase $retry): JsonResponse`<br>`public function writeOff(Request $request, CollectionCase $case, WriteOffCollectionCase $writeOff): JsonResponse`<br>`public function dunning(Request $request, CollectionCase $case, ScheduleDunning $schedule): JsonResponse`<br>`public function reminder(Request $request, CollectionCase $case, ScheduleReminder $schedule): JsonResponse`<br>`public function creditControl(Request $request, CollectionCase $case, ApplyCreditControl $apply): JsonResponse` |
 
-Other non-legacy PHP sources: [src/CollectionsApiServiceProvider.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/src/CollectionsApiServiceProvider.php).
+Other non-legacy PHP sources: [src/CollectionsApiServiceProvider.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/src/CollectionsApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/billing-collections.yaml](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/openapi/v1/billing-collections.yaml)
-- [routes/api.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/routes/api.php)
+- [openapi/v1/billing-collections.yaml](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/openapi/v1/billing-collections.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-collections-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

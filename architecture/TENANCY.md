@@ -4,7 +4,7 @@
 
 **Status:** Source of truth
 **Applies to:** Laravel 13 applications, PHP 8.5 modules, Jetstream teams, Filament tenants, APIs, jobs, storage, and presentation layers
-**Reference implementation:** [`liberusoftware/genealogy-laravel`](https://github.com/liberusoftware/genealogy-laravel)
+**Reference implementation:** [`liberusoftware/project-genealogy-laravel-filament`](https://github.com/liberusoftware/project-genealogy-laravel-filament)
 **Related specifications:** [JETSTREAM.md](JETSTREAM.md) · [TEAMS.md](TEAMS.md) · [POLICY.md](POLICY.md) · [API.md](API.md) · [MODULES.md](MODULES.md) · [SECURITY.md](SECURITY.md)
 
 ## Decision
@@ -150,11 +150,11 @@ Tenancy is complete when the owning module has one authoritative team context, e
 
 ## References
 
-- [Reference tenant scope](https://github.com/liberusoftware/genealogy-laravel/blob/main/app/Traits/BelongsToTenant.php)
-- [Reference team/tenant access model](https://github.com/liberusoftware/genealogy-laravel/blob/main/app/Models/User.php)
-- [Reference permission-context middleware](https://github.com/liberusoftware/genealogy-laravel/blob/main/app/Http/Middleware/TeamsPermission.php)
-- [Reference single-team job context](https://github.com/liberusoftware/genealogy-laravel/blob/main/app/Jobs/Concerns/EstablishesTeam.php)
-- [Reference tenancy test suite](https://github.com/liberusoftware/genealogy-laravel/tree/main/tests/Feature/Tenancy)
+- [Reference tenant scope](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/main/app/Traits/BelongsToTenant.php)
+- [Reference team/tenant access model](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/main/app/Models/User.php)
+- [Reference permission-context middleware](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/main/app/Http/Middleware/TeamsPermission.php)
+- [Reference single-team job context](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/main/app/Jobs/Concerns/EstablishesTeam.php)
+- [Reference tenancy test suite](https://github.com/liberusoftware/project-genealogy-laravel-filament/tree/main/tests/Feature/Tenancy)
 - [Jetstream](JETSTREAM.md)
 - [Teams](TEAMS.md)
 - [Policy and permissions](POLICY.md)

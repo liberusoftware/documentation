@@ -34,13 +34,13 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateConnectedAccount.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/CreateConnectedAccount.php) | `public function create(mixed $user, string $provider, ProviderUser $providerUser): ConnectedAccount` |
-| [CreateUserFromProvider.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/CreateUserFromProvider.php) | `public function create(string $provider, ProviderUserContract $providerUser): User` |
-| [GenerateRedirectForProvider.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/GenerateRedirectForProvider.php) | `public function generate(string $provider): RedirectResponse` |
-| [HandleInvalidState.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/HandleInvalidState.php) | `public function handle(InvalidStateException $exception): Response` |
-| [ResolveSocialiteUser.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/ResolveSocialiteUser.php) | `public function resolve(string $provider): User` |
-| [SetUserPassword.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/SetUserPassword.php) | `public function set(mixed $user, array $input): void` |
-| [UpdateConnectedAccount.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/UpdateConnectedAccount.php) | `public function update(mixed $user, ConnectedAccount $connectedAccount, string $provider, User $providerUser): ConnectedAccount`<br>`public function updateRefreshToken(ConnectedAccount $connectedAccount): ConnectedAccount` |
+| [CreateConnectedAccount.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/CreateConnectedAccount.php) | `public function create(mixed $user, string $provider, ProviderUser $providerUser): ConnectedAccount` |
+| [CreateUserFromProvider.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/CreateUserFromProvider.php) | `public function create(string $provider, ProviderUserContract $providerUser): User` |
+| [GenerateRedirectForProvider.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/GenerateRedirectForProvider.php) | `public function generate(string $provider): RedirectResponse` |
+| [HandleInvalidState.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/HandleInvalidState.php) | `public function handle(InvalidStateException $exception): Response` |
+| [ResolveSocialiteUser.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/ResolveSocialiteUser.php) | `public function resolve(string $provider): User` |
+| [SetUserPassword.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/SetUserPassword.php) | `public function set(mixed $user, array $input): void` |
+| [UpdateConnectedAccount.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Actions/UpdateConnectedAccount.php) | `public function update(mixed $user, ConnectedAccount $connectedAccount, string $provider, User $providerUser): ConnectedAccount`<br>`public function updateRefreshToken(ConnectedAccount $connectedAccount): ConnectedAccount` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -50,7 +50,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [ConnectedAccount.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Models/ConnectedAccount.php) | `provider`, `provider_id`, `name`, `nickname`, `email`, `avatar_path`, `token`, `secret`, `refresh_token`, `expires_at` |
+| [ConnectedAccount.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/identity-socialstream/src/Models/ConnectedAccount.php) | `provider`, `provider_id`, `name`, `nickname`, `email`, `avatar_path`, `token`, `secret`, `refresh_token`, `expires_at` |
 
 ## Server/client and React reuse
 

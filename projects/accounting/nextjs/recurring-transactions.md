@@ -40,9 +40,9 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [ApproveRecurringTemplate.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/ApproveRecurringTemplate.php) | `public function handle(RecurringTemplate $template, ?int $actorId = null): RecurringTemplate` |
-| [CreateRecurringTemplate.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/CreateRecurringTemplate.php) | `public function handle(array $attributes): RecurringTemplate` |
-| [GenerateRecurringOccurrences.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/GenerateRecurringOccurrences.php) | `public function handle(RecurringTemplate $template, string $throughDate, ?int $safetyCap = 120): int` |
+| [ApproveRecurringTemplate.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/ApproveRecurringTemplate.php) | `public function handle(RecurringTemplate $template, ?int $actorId = null): RecurringTemplate` |
+| [CreateRecurringTemplate.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/CreateRecurringTemplate.php) | `public function handle(array $attributes): RecurringTemplate` |
+| [GenerateRecurringOccurrences.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/GenerateRecurringOccurrences.php) | `public function handle(RecurringTemplate $template, string $throughDate, ?int $safetyCap = 120): int` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -52,15 +52,15 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [RecurringException.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringException.php) | `template_id`, `occurrence_id`, `kind`, `message`, `status`, `resolved_at`, `metadata` |
-| [RecurringOccurrence.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringOccurrence.php) | `template_id`, `occurrence_on`, `idempotency_key`, `status`, `generated_payload`, `error_message`, `generated_at`, `metadata` |
-| [RecurringTemplate.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringTemplate.php) | `team_id`, `name`, `transaction_type`, `frequency`, `starts_on`, `next_run_on`, `ends_on`, `status`, `automatic`, `date_rules`, `amount_rules`, `payload`, `approved_by`, `approved_at`, `metadata` |
+| [RecurringException.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringException.php) | `template_id`, `occurrence_id`, `kind`, `message`, `status`, `resolved_at`, `metadata` |
+| [RecurringOccurrence.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringOccurrence.php) | `template_id`, `occurrence_on`, `idempotency_key`, `status`, `generated_payload`, `error_message`, `generated_at`, `metadata` |
+| [RecurringTemplate.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringTemplate.php) | `team_id`, `name`, `transaction_type`, `frequency`, `starts_on`, `next_run_on`, `ends_on`, `status`, `automatic`, `date_rules`, `amount_rules`, `payload`, `approved_by`, `approved_at`, `metadata` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/accounting-recurring-transactions-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions-api/routes/api.php)
+[modules/accounting-recurring-transactions-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/recurring-transactions')->group(function (): void {

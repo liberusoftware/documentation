@@ -8,7 +8,7 @@ Independent API adapter for OnTheMarket synchronization.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [real-estate-onthemarket-api](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/composer.json) | `178d8015b601` | [Variant 1](#variant-1) | 0 |
+| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [real-estate-onthemarket-api](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/composer.json) | `178d8015b601` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: real-estate-laravel, `real-estate-onthemarket-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-real-estate-laravel-filament, `real-estate-onthemarket-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: real-estate-laravel, `real-estate-onthemarket-api`. Matching ref
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/composer.json) · [module.json](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/composer.json) · [module.json](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/module.json).
 
 **Declared capabilities:** real-estate.integrations.onthemarket.api
 
@@ -59,16 +59,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/OnTheMarketSyncController.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/src/Http/Controllers/OnTheMarketSyncController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateOnTheMarketSync $create): JsonResponse`<br>`public function show(Request $request, OnTheMarketSync $onTheMarketSync): JsonResponse`<br>`public function sync(Request $request, OnTheMarketSync $onTheMarketSync, SyncOnTheMarketListing $sync): JsonResponse`<br>`public function update(Request $request, OnTheMarketSync $onTheMarketSync, UpdateOnTheMarketSync $update): JsonResponse`<br>`public function destroy(Request $request, OnTheMarketSync $onTheMarketSync, DeleteOnTheMarketSync $delete): Response` |
+| [src/Http/Controllers/OnTheMarketSyncController.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/src/Http/Controllers/OnTheMarketSyncController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateOnTheMarketSync $create): JsonResponse`<br>`public function show(Request $request, OnTheMarketSync $onTheMarketSync): JsonResponse`<br>`public function sync(Request $request, OnTheMarketSync $onTheMarketSync, SyncOnTheMarketListing $sync): JsonResponse`<br>`public function update(Request $request, OnTheMarketSync $onTheMarketSync, UpdateOnTheMarketSync $update): JsonResponse`<br>`public function destroy(Request $request, OnTheMarketSync $onTheMarketSync, DeleteOnTheMarketSync $delete): Response` |
 
-Other non-legacy PHP sources: [src/Http/Resources/OnTheMarketSyncResource.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/src/Http/Resources/OnTheMarketSyncResource.php) · [src/OnTheMarketApiServiceProvider.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/src/OnTheMarketApiServiceProvider.php).
+Other non-legacy PHP sources: [src/Http/Resources/OnTheMarketSyncResource.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/src/Http/Resources/OnTheMarketSyncResource.php) · [src/OnTheMarketApiServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/src/OnTheMarketApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/real-estate-onthemarket.yaml](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/openapi/v1/real-estate-onthemarket.yaml)
-- [routes/api.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/routes/api.php)
+- [openapi/v1/real-estate-onthemarket.yaml](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/openapi/v1/real-estate-onthemarket.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-onthemarket-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

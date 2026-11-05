@@ -40,19 +40,19 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [ActiveTaxRuleQuery.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Queries/ActiveTaxRuleQuery.php) | `public function handle(string $code, ?string $jurisdiction = null, ?string $on = null): ?TaxRule` |
-| [TaxRuleQuery.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Queries/TaxRuleQuery.php) | `public function paginate(?string $status = null, int $perPage = 25): LengthAwarePaginator` |
+| [ActiveTaxRuleQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Queries/ActiveTaxRuleQuery.php) | `public function handle(string $code, ?string $jurisdiction = null, ?string $on = null): ?TaxRule` |
+| [TaxRuleQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Queries/TaxRuleQuery.php) | `public function paginate(?string $status = null, int $perPage = 25): LengthAwarePaginator` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [ActivateTaxRule.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/ActivateTaxRule.php) | `public function handle(TaxRule $rule): TaxRule` |
-| [ArchiveTaxRule.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/ArchiveTaxRule.php) | `public function handle(TaxRule $rule): TaxRule` |
-| [CalculateTax.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/CalculateTax.php) | `public function handle(TaxRule $rule, float $amount): array` |
-| [CaptureTaxEvidence.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/CaptureTaxEvidence.php) | `public function handle(TaxRule $rule, string $sourceType, string $sourceId, array $snapshot, ?int $actorId = null): TaxEvidence` |
-| [CreateTaxRule.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/CreateTaxRule.php) | `public function handle(array $attributes): TaxRule` |
-| [UpdateTaxRule.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/UpdateTaxRule.php) | `public function handle(TaxRule $rule, array $attributes): TaxRule` |
+| [ActivateTaxRule.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/ActivateTaxRule.php) | `public function handle(TaxRule $rule): TaxRule` |
+| [ArchiveTaxRule.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/ArchiveTaxRule.php) | `public function handle(TaxRule $rule): TaxRule` |
+| [CalculateTax.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/CalculateTax.php) | `public function handle(TaxRule $rule, float $amount): array` |
+| [CaptureTaxEvidence.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/CaptureTaxEvidence.php) | `public function handle(TaxRule $rule, string $sourceType, string $sourceId, array $snapshot, ?int $actorId = null): TaxEvidence` |
+| [CreateTaxRule.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/CreateTaxRule.php) | `public function handle(array $attributes): TaxRule` |
+| [UpdateTaxRule.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Actions/UpdateTaxRule.php) | `public function handle(TaxRule $rule, array $attributes): TaxRule` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -62,14 +62,14 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [TaxEvidence.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Models/TaxEvidence.php) | `tax_rule_id`, `source_type`, `source_id`, `snapshot_hash`, `snapshot`, `captured_by`, `metadata` |
-| [TaxRule.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Models/TaxRule.php) | `code`, `name`, `tax_type`, `jurisdiction_code`, `rate`, `treatment`, `effective_from`, `effective_until`, `status`, `exemption_code`, `control_account_code`, `rounding_method`, `rounding_scale`, `metadata` |
+| [TaxEvidence.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Models/TaxEvidence.php) | `tax_rule_id`, `source_type`, `source_id`, `snapshot_hash`, `snapshot`, `captured_by`, `metadata` |
+| [TaxRule.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core/src/Models/TaxRule.php) | `code`, `name`, `tax_type`, `jurisdiction_code`, `rate`, `treatment`, `effective_from`, `effective_until`, `status`, `exemption_code`, `control_account_code`, `rounding_method`, `rounding_scale`, `metadata` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/accounting-tax-core-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/routes/api.php)
+[modules/accounting-tax-core-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/tax-core')->group(function (): void {

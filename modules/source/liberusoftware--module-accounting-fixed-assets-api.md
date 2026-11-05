@@ -8,7 +8,7 @@ HTTP API for fixed assets.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-fixed-assets-api](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-fixed-assets-api](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: accounting-erp-laravel, `accounting-fixed-assets-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `accounting-fixed-assets-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: accounting-erp-laravel, `accounting-fixed-assets-api`. Matching 
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/module.json).
 
 **Declared capabilities:** accounting.fixed-assets.api
 
@@ -59,16 +59,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/FixedAssetsController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/src/Http/Controllers/FixedAssetsController.php) | `public function __construct(private readonly AssetQuery $query)`<br>`public function index(Request $request): AnonymousResourceCollection`<br>`public function show(Request $request, Asset $asset): AssetResource`<br>`public function store(Request $request, AcquireAsset $action): AssetResource`<br>`public function category(Request $request, CreateCategory $action): JsonResponse`<br>`public function location(Request $request, CreateLocation $action): JsonResponse`<br>`public function custodian(Request $request, CreateCustodian $action): JsonResponse`<br>`public function update(Request $request, Asset $asset, UpdateAsset $action): AssetResource`<br>`public function delete(Request $request, Asset $asset, ArchiveAsset $action): JsonResponse`<br>`public function capitalize(Request $request, Asset $asset, CapitalizeAsset $action): AssetResource`<br>`public function dispose(Request $request, Asset $asset, DisposeAsset $action): AssetResource`<br>`public function document(Request $request, Asset $asset, AddAssetDocument $action): AssetResource`<br>`public function component(Request $request, Asset $asset, AddAssetComponent $action): AssetResource`<br>`public function assignLocation(Request $request, Asset $asset, AssignAssetLocation $action): AssetResource`<br>`public function assignCustodian(Request $request, Asset $asset, AssignAssetCustodian $action): AssetResource`<br>`public function summary(Request $request, Asset $asset): JsonResponse` |
+| [src/Http/Controllers/FixedAssetsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/src/Http/Controllers/FixedAssetsController.php) | `public function __construct(private readonly AssetQuery $query)`<br>`public function index(Request $request): AnonymousResourceCollection`<br>`public function show(Request $request, Asset $asset): AssetResource`<br>`public function store(Request $request, AcquireAsset $action): AssetResource`<br>`public function category(Request $request, CreateCategory $action): JsonResponse`<br>`public function location(Request $request, CreateLocation $action): JsonResponse`<br>`public function custodian(Request $request, CreateCustodian $action): JsonResponse`<br>`public function update(Request $request, Asset $asset, UpdateAsset $action): AssetResource`<br>`public function delete(Request $request, Asset $asset, ArchiveAsset $action): JsonResponse`<br>`public function capitalize(Request $request, Asset $asset, CapitalizeAsset $action): AssetResource`<br>`public function dispose(Request $request, Asset $asset, DisposeAsset $action): AssetResource`<br>`public function document(Request $request, Asset $asset, AddAssetDocument $action): AssetResource`<br>`public function component(Request $request, Asset $asset, AddAssetComponent $action): AssetResource`<br>`public function assignLocation(Request $request, Asset $asset, AssignAssetLocation $action): AssetResource`<br>`public function assignCustodian(Request $request, Asset $asset, AssignAssetCustodian $action): AssetResource`<br>`public function summary(Request $request, Asset $asset): JsonResponse` |
 
-Other non-legacy PHP sources: [src/FixedAssetsApiServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/src/FixedAssetsApiServiceProvider.php) · [src/Http/Resources/AssetResource.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/src/Http/Resources/AssetResource.php).
+Other non-legacy PHP sources: [src/FixedAssetsApiServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/src/FixedAssetsApiServiceProvider.php) · [src/Http/Resources/AssetResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/src/Http/Resources/AssetResource.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/accounting-fixed-assets.yaml](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/openapi/v1/accounting-fixed-assets.yaml)
-- [routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/routes/api.php)
+- [openapi/v1/accounting-fixed-assets.yaml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/openapi/v1/accounting-fixed-assets.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-fixed-assets-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

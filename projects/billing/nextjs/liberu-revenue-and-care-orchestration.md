@@ -33,7 +33,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateCarePlan.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/src/Actions/CreateCarePlan.php) | `public function execute(array $attributes): CarePlan` |
+| [CreateCarePlan.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/src/Actions/CreateCarePlan.php) | `public function execute(array $attributes): CarePlan` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -43,7 +43,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [CarePlan.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/src/Models/CarePlan.php) | `name`, `status`, `metadata` |
+| [CarePlan.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/src/Models/CarePlan.php) | `name`, `status`, `metadata` |
 
 ## Server/client and React reuse
 

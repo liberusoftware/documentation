@@ -38,7 +38,7 @@ The server transport resolves the authenticated actor and tenant/entity membersh
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/cms-observability/routes/web.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-observability/routes/web.php)
+[modules/cms-observability/routes/web.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-observability/routes/web.php)
 
 ```php
 Route::get('/health/ready', ReadinessController::class)

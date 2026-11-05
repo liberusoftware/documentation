@@ -1,6 +1,6 @@
 # Ecommerce: observed source modules
 
-Observed repository: [ecommerce-laravel](https://github.com/liberusoftware/ecommerce-laravel/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f).
+Observed repository: [project-ecommerce-laravel-filament](https://github.com/liberusoftware/project-ecommerce-laravel-filament/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f).
 
 This is a manifest inventory, not a claim that a module is complete, tested, independently released, or available from a registry. Planned feature specifications may use different names. Use the exact manifest identity for dependency resolution.
 
@@ -14,11 +14,11 @@ Application-owned implementation can precede package extraction. These tracked l
 
 | Source root | Tracked files |
 | --- | ---: |
-| [app/](https://github.com/liberusoftware/ecommerce-laravel/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app) | 337 |
-| [routes/](https://github.com/liberusoftware/ecommerce-laravel/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/routes) | 5 |
-| [resources/](https://github.com/liberusoftware/ecommerce-laravel/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/resources) | 136 |
-| [database/](https://github.com/liberusoftware/ecommerce-laravel/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/database) | 181 |
-| [tests/](https://github.com/liberusoftware/ecommerce-laravel/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/tests) | 219 |
+| [app/](https://github.com/liberusoftware/project-ecommerce-laravel-filament/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app) | 337 |
+| [routes/](https://github.com/liberusoftware/project-ecommerce-laravel-filament/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/routes) | 5 |
+| [resources/](https://github.com/liberusoftware/project-ecommerce-laravel-filament/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/resources) | 136 |
+| [database/](https://github.com/liberusoftware/project-ecommerce-laravel-filament/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/database) | 181 |
+| [tests/](https://github.com/liberusoftware/project-ecommerce-laravel-filament/tree/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/tests) | 219 |
 
 Other manifest paths: `composer.json`, `package.json`.
 

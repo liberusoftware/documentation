@@ -40,8 +40,8 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [DecisionEngine.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Services/DecisionEngine.php) | `public function decide(string $audienceKey, array $context = [], ?string $subjectKey = null, bool $consent = false): array` |
-| [PersonalizationService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Services/PersonalizationService.php) | `public function createAudience(array $attributes, ?int $teamId = null): Audience`<br>`public function updateAudience(Audience $audience, array $attributes): Audience`<br>`public function saveVariant(Audience $audience, array $attributes, ?Variant $variant = null): Variant`<br>`public function deleteVariant(Variant $variant): void` |
+| [DecisionEngine.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Services/DecisionEngine.php) | `public function decide(string $audienceKey, array $context = [], ?string $subjectKey = null, bool $consent = false): array` |
+| [PersonalizationService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Services/PersonalizationService.php) | `public function createAudience(array $attributes, ?int $teamId = null): Audience`<br>`public function updateAudience(Audience $audience, array $attributes): Audience`<br>`public function saveVariant(Audience $audience, array $attributes, ?Variant $variant = null): Variant`<br>`public function deleteVariant(Variant $variant): void` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -51,9 +51,9 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [Audience.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Models/Audience.php) | `name`, `key`, `rules`, `requires_consent`, `active`, `team_id` |
-| [Decision.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Models/Decision.php) | `audience_key`, `variant_key`, `subject_key`, `context`, `reason`, `team_id` |
-| [Variant.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Models/Variant.php) | `audience_id`, `key`, `payload`, `priority`, `holdout_percent`, `fallback`, `active`, `team_id` |
+| [Audience.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Models/Audience.php) | `name`, `key`, `rules`, `requires_consent`, `active`, `team_id` |
+| [Decision.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Models/Decision.php) | `audience_key`, `variant_key`, `subject_key`, `context`, `reason`, `team_id` |
+| [Variant.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-personalization/src/Models/Variant.php) | `audience_id`, `key`, `payload`, `priority`, `holdout_percent`, `fallback`, `active`, `team_id` |
 
 ## Server/client and React reuse
 

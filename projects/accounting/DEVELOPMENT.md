@@ -1,10 +1,10 @@
 # Accounting: work with a project clone
 
-**Source snapshot:** `accounting-erp-laravel` at `39a49babafc0b8caf12c018abdd765f215ecf207`. This guide reads the root manifests and setup paths; it does not claim a completed local installation or passing application tests. Start with the [project documentation](README.md) and [source mapping](SOURCE-MAPPING.md).
+**Source snapshot:** `project-accounting-erp-laravel-filament` at `39a49babafc0b8caf12c018abdd765f215ecf207`. This guide reads the root manifests and setup paths; it does not claim a completed local installation or passing application tests. Start with the [project documentation](README.md) and [source mapping](SOURCE-MAPPING.md).
 
 ## Choose the source and environment
 
-The requested clone is available at `/home/liberu/projects/accounting-erp-laravel`. It is a shallow application checkout; deepen history when a migration or implementation review needs earlier commits. Read its README and contribution instructions before changing it.
+The requested clone is available at `/home/liberu/projects/project-accounting-erp-laravel-filament`. It is a shallow application checkout; deepen history when a migration or implementation review needs earlier commits. Read its README and contribution instructions before changing it.
 
 | Requirement | Observed constraint or source |
 | --- | --- |
@@ -13,19 +13,19 @@ The requested clone is available at `/home/liberu/projects/accounting-erp-larave
 | Installer | `^1.1` |
 | Node/npm engines | `{}` |
 | npm application private flag | `true` |
-| PHP dependency lock | [composer.lock](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/composer.lock) |
-| npm dependency lock | [package-lock.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/package-lock.json) |
+| PHP dependency lock | [composer.lock](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/composer.lock) |
+| npm dependency lock | [package-lock.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/package-lock.json) |
 
 Use the actual package constraints and CI/build images to select runtime versions. A PHP constraint does not list every required extension; `composer check-platform-reqs` checks the resolved installation. A missing Node engine field is not proof of compatibility with every Node release.
 
-Setup entry points: [README.md](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/README.md) · [CONTRIBUTING.md](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/CONTRIBUTING.md) · [AGENTS.md](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/AGENTS.md) · [docker-compose.yml](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/docker-compose.yml) · [.env.example](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/.env.example) · [config/database.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/config/database.php).
+Setup entry points: [README.md](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/README.md) · [CONTRIBUTING.md](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/CONTRIBUTING.md) · [AGENTS.md](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/AGENTS.md) · [docker-compose.yml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/docker-compose.yml) · [.env.example](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/.env.example) · [config/database.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/config/database.php).
 
 ## First local setup
 
 Work in the clone root. For a new local environment, create `.env` from the example only if it is absent, then configure application URL, database, cache, queues, mail and any required integration sandbox settings. Use the source setup guide for its service topology; a Compose file may have additional environment requirements.
 
 ```bash
-cd /home/liberu/projects/accounting-erp-laravel
+cd /home/liberu/projects/project-accounting-erp-laravel-filament
 test -f .env || cp .env.example .env
 composer install
 composer check-platform-reqs
@@ -41,7 +41,7 @@ Inspect available Artisan commands with `php artisan list`. Start the applicatio
 
 ## Root Composer scripts
 
-These script definitions come from [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/composer.json); they are reported without execution.
+These script definitions come from [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/composer.json); they are reported without execution.
 
 | Script | Declared command(s) |
 | --- | --- |
@@ -54,7 +54,7 @@ These script definitions come from [composer.json](https://github.com/liberusoft
 
 ## JavaScript build scripts
 
-These definitions come from [package.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/package.json). The root application can be private while separate presentation libraries are independently publishable.
+These definitions come from [package.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/package.json). The root application can be private while separate presentation libraries are independently publishable.
 
 | Script | Command |
 | --- | --- |
@@ -71,7 +71,7 @@ If a local module edit changes an installed tracked copy, make the durable chang
 
 ## Verify the changed behavior
 
-The root [phpunit.xml](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/phpunit.xml) declares test suites: `Unit`, `Feature`, `Architecture`. Read its bootstrap and environment configuration before running database tests.
+The root [phpunit.xml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/phpunit.xml) declares test suites: `Unit`, `Feature`, `Architecture`. Read its bootstrap and environment configuration before running database tests.
 
 The root declares a `test` script. Run `composer run test` in the configured test environment, plus the relevant module/consumer checks. Use targeted test selection supported by the declared runner when validating a focused change.
 

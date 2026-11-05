@@ -3,7 +3,7 @@
 ## Canonical Design and Content Specification
 
 **Applies to:** Main application repositories, module repositories, theme repositories, and reusable packages under Liberu organizations
-**Reference implementation:** [`liberusoftware/boilerplate-laravel`](https://github.com/liberusoftware/boilerplate-laravel)
+**Reference implementation:** [`liberusoftware/project-boilerplate-laravel-filament`](https://github.com/liberusoftware/project-boilerplate-laravel-filament)
 **Related standards:** [MODULES.md](MODULES.md) · [THEMES.md](../standards/THEMES.md) · [projects/boilerplate/BOILERPLATE.md](../projects/boilerplate/BOILERPLATE.md) · [API.md](API.md) · [DOCUMENTATION.md](../standards/DOCUMENTATION.md) · [TESTING.md](../standards/TESTING.md)
 
 ## 1. Purpose
@@ -259,14 +259,14 @@ Applications should include a curated table of the primary ecosystem. Modules an
 
 | Project       | Repository                                                                                                  | Purpose                                                                         |
 | ------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
-| Boilerplate   | [liberusoftware/boilerplate-laravel](https://github.com/liberusoftware/boilerplate-laravel)                 | Shared Laravel application foundation and reference composition                 |
-| CMS           | [liberu-cms/cms-laravel](https://github.com/liberu-cms/cms-laravel)                                         | Structured content, publishing, media, multisite, and headless delivery         |
-| CRM           | [liberu-crm/crm-laravel](https://github.com/liberu-crm/crm-laravel)                                         | Customer data, sales, marketing, service, and customer success                  |
-| Billing       | [liberu-billing/billing-laravel](https://github.com/liberu-billing/billing-laravel)                         | Products, subscriptions, invoicing, payments, and provisioning                  |
+| Boilerplate   | [liberusoftware/project-boilerplate-laravel-filament](https://github.com/liberusoftware/project-boilerplate-laravel-filament)                 | Shared Laravel application foundation and reference composition                 |
+| CMS           | [liberu-cms/project-cms-laravel-filament](https://github.com/liberu-cms/project-cms-laravel-filament)                                         | Structured content, publishing, media, multisite, and headless delivery         |
+| CRM           | [liberu-crm/project-crm-laravel-filament](https://github.com/liberu-crm/project-crm-laravel-filament)                                         | Customer data, sales, marketing, service, and customer success                  |
+| Billing       | [liberu-billing/project-billing-laravel-filament](https://github.com/liberu-billing/project-billing-laravel-filament)                         | Products, subscriptions, invoicing, payments, and provisioning                  |
 | Accounting    | [liberu-accounting/accounting-laravel](https://github.com/liberu-accounting/accounting-laravel)             | Ledgers, banking, tax, expenses, close, and financial reporting                 |
-| Ecommerce     | [liberu-ecommerce/ecommerce-laravel](https://github.com/liberu-ecommerce/ecommerce-laravel)                 | Catalog, checkout, orders, fulfillment, returns, B2B, and omnichannel commerce  |
-| Control Panel | [liberu-control-panel/control-panel-laravel](https://github.com/liberu-control-panel/control-panel-laravel) | Hosting, infrastructure, DNS, mail, databases, backups, and security operations |
-| Automation    | [liberu-automation/automation-laravel](https://github.com/liberu-automation/automation-laravel)             | Governed workflows, provider-neutral AI, approvals, and connectors              |
+| Ecommerce     | [liberu-ecommerce/project-ecommerce-laravel-filament](https://github.com/liberu-ecommerce/project-ecommerce-laravel-filament)                 | Catalog, checkout, orders, fulfillment, returns, B2B, and omnichannel commerce  |
+| Control Panel | [liberu-control-panel/project-control-panel-laravel-filament](https://github.com/liberu-control-panel/project-control-panel-laravel-filament) | Hosting, infrastructure, DNS, mail, databases, backups, and security operations |
+| Automation    | [liberu-automation/project-automation-laravel-filament](https://github.com/liberu-automation/project-automation-laravel-filament)             | Governed workflows, provider-neutral AI, approvals, and connectors              |
 ```
 
 Descriptions should be one sentence, factual, and updated centrally when names or ownership change. Avoid listing every experimental repository.

@@ -8,7 +8,7 @@ Provider-neutral Browser Game Commerce capability.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [browser-game](../../projects/browser-game/SOURCE-MODULES.md) | [browser-game-commerce](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/composer.json) | `790fdffebd3a` | [Variant 1](#variant-1) | 2 |
+| [browser-game](../../projects/browser-game/SOURCE-MODULES.md) | [browser-game-commerce](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/composer.json) | `790fdffebd3a` | [Variant 1](#variant-1) | 2 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: browser-game-laravel, `browser-game-commerce`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-browser-game-laravel-filament, `browser-game-commerce`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: browser-game-laravel, `browser-game-commerce`. Matching referenc
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/composer.json) · [module.json](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/composer.json) · [module.json](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/module.json).
 
 **Declared capabilities:** browser-game.commerce
 
@@ -59,17 +59,17 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Queries/CommerceQuery.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Queries/CommerceQuery.php) | `public function visible(?string $tenantId, ?string $teamId): Builder` |
-| [src/Support/CommerceManager.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Support/CommerceManager.php) | `public function define(string $name, array $data = [], ?string $tenantId = null, ?string $teamId = null): CommerceRecord`<br>`public function createProduct(string $sku, string $name, string $currencyCode, int $price, array $delivery = [], ?int $stock = null, ?int $maxPerActor = null, array $data = [], ?string $tenantId = null, ?string $teamId = null): CommerceProduct`<br>`public function checkout(string $actorId, array $lines, ?string $idempotencyKey = null, ?string $tenantId = null, ?string $teamId = null): CommerceOrder`<br>`public function complete(CommerceOrder $order, ?string $actorId = null, ?string $tenantId = null, ?string $teamId = null): CommerceOrder`<br>`public function refund(CommerceOrder $order, ?string $actorId = null, ?string $tenantId = null, ?string $teamId = null): CommerceOrder` |
+| [src/Queries/CommerceQuery.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Queries/CommerceQuery.php) | `public function visible(?string $tenantId, ?string $teamId): Builder` |
+| [src/Support/CommerceManager.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Support/CommerceManager.php) | `public function define(string $name, array $data = [], ?string $tenantId = null, ?string $teamId = null): CommerceRecord`<br>`public function createProduct(string $sku, string $name, string $currencyCode, int $price, array $delivery = [], ?int $stock = null, ?int $maxPerActor = null, array $data = [], ?string $tenantId = null, ?string $teamId = null): CommerceProduct`<br>`public function checkout(string $actorId, array $lines, ?string $idempotencyKey = null, ?string $tenantId = null, ?string $teamId = null): CommerceOrder`<br>`public function complete(CommerceOrder $order, ?string $actorId = null, ?string $tenantId = null, ?string $teamId = null): CommerceOrder`<br>`public function refund(CommerceOrder $order, ?string $actorId = null, ?string $tenantId = null, ?string $teamId = null): CommerceOrder` |
 
-Other non-legacy PHP sources: [src/CommerceServiceProvider.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/CommerceServiceProvider.php) · [src/Events/CommerceDefined.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Events/CommerceDefined.php) · [src/Models/CommerceEntitlement.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceEntitlement.php) · [src/Models/CommerceOrder.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceOrder.php) · [src/Models/CommerceOrderLine.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceOrderLine.php) · [src/Models/CommerceProduct.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceProduct.php) · [src/Models/CommerceRecord.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceRecord.php).
+Other non-legacy PHP sources: [src/CommerceServiceProvider.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/CommerceServiceProvider.php) · [src/Events/CommerceDefined.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Events/CommerceDefined.php) · [src/Models/CommerceEntitlement.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceEntitlement.php) · [src/Models/CommerceOrder.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceOrder.php) · [src/Models/CommerceOrderLine.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceOrderLine.php) · [src/Models/CommerceProduct.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceProduct.php) · [src/Models/CommerceRecord.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/src/Models/CommerceRecord.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_24_000509_create_browser_game_commerce_tables.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/database/migrations/2026_08_24_000509_create_browser_game_commerce_tables.php)
-- [database/migrations/2026_08_25_000100_add_scope_to_commerce_products_and_orders.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/database/migrations/2026_08_25_000100_add_scope_to_commerce_products_and_orders.php)
+- [database/migrations/2026_08_24_000509_create_browser_game_commerce_tables.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/database/migrations/2026_08_24_000509_create_browser_game_commerce_tables.php)
+- [database/migrations/2026_08_25_000100_add_scope_to_commerce_products_and_orders.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/database/migrations/2026_08_25_000100_add_scope_to_commerce_products_and_orders.php)
 
 ### Verification and consumer use
 
@@ -77,7 +77,7 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **2**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Pest.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/tests/Pest.php)
-- [tests/Unit/CommerceBoundaryTest.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/tests/Unit/CommerceBoundaryTest.php)
+- [tests/Pest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/tests/Pest.php)
+- [tests/Unit/CommerceBoundaryTest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-commerce/tests/Unit/CommerceBoundaryTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

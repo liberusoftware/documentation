@@ -8,7 +8,7 @@ Accounting tax core API adapter.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-tax-core-api](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-tax-core-api](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: accounting-erp-laravel, `accounting-tax-core-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `accounting-tax-core-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: accounting-erp-laravel, `accounting-tax-core-api`. Matching refe
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/module.json).
 
 **Declared capabilities:** accounting.tax-core.api
 
@@ -59,16 +59,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/TaxRuleController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/src/Http/Controllers/TaxRuleController.php) | `public function index(Request $request): mixed`<br>`public function show(TaxRule $taxRule): TaxRuleResource`<br>`public function store(Request $request, CreateTaxRule $action): mixed`<br>`public function update(Request $request, TaxRule $taxRule, UpdateTaxRule $action): TaxRuleResource`<br>`public function activate(TaxRule $taxRule, ActivateTaxRule $action): TaxRuleResource`<br>`public function archive(TaxRule $taxRule, ArchiveTaxRule $action): TaxRuleResource` |
-| [src/Policies/TaxCorePolicy.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/src/Policies/TaxCorePolicy.php) | `public function viewAny($user): bool`<br>`public function view($user, TaxRule $rule): bool`<br>`public function create($user): bool`<br>`public function update($user, TaxRule $rule): bool`<br>`public function delete($user, TaxRule $rule): bool` |
+| [src/Http/Controllers/TaxRuleController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/src/Http/Controllers/TaxRuleController.php) | `public function index(Request $request): mixed`<br>`public function show(TaxRule $taxRule): TaxRuleResource`<br>`public function store(Request $request, CreateTaxRule $action): mixed`<br>`public function update(Request $request, TaxRule $taxRule, UpdateTaxRule $action): TaxRuleResource`<br>`public function activate(TaxRule $taxRule, ActivateTaxRule $action): TaxRuleResource`<br>`public function archive(TaxRule $taxRule, ArchiveTaxRule $action): TaxRuleResource` |
+| [src/Policies/TaxCorePolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/src/Policies/TaxCorePolicy.php) | `public function viewAny($user): bool`<br>`public function view($user, TaxRule $rule): bool`<br>`public function create($user): bool`<br>`public function update($user, TaxRule $rule): bool`<br>`public function delete($user, TaxRule $rule): bool` |
 
-Other non-legacy PHP sources: [src/Http/Resources/TaxRuleResource.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/src/Http/Resources/TaxRuleResource.php) · [src/TaxCoreApiServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/src/TaxCoreApiServiceProvider.php).
+Other non-legacy PHP sources: [src/Http/Resources/TaxRuleResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/src/Http/Resources/TaxRuleResource.php) · [src/TaxCoreApiServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/src/TaxCoreApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/routes/api.php)
+- [routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

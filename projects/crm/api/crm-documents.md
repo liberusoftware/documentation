@@ -51,7 +51,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/crm-documents-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-documents-api/routes/api.php)
+[modules/crm-documents-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-documents-api/routes/api.php)
 
 ```php
 Route::middleware('auth:sanctum')->prefix('api/v1/crm/crm-documents')->group(function (): void {
@@ -68,7 +68,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [DocumentsController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-documents-api/src/Http/Controllers/DocumentsController.php) | `public function index(): JsonResponse`<br>`public function store(CreateDocument $action): JsonResponse`<br>`public function version(CrmDocument $document, CreateDocumentVersion $action): JsonResponse`<br>`public function link(CrmDocument $document, CreateDocumentLink $action): JsonResponse`<br>`public function engagement(CrmDocument $document, RecordDocumentEngagement $action): JsonResponse` |
+| [DocumentsController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-documents-api/src/Http/Controllers/DocumentsController.php) | `public function index(): JsonResponse`<br>`public function store(CreateDocument $action): JsonResponse`<br>`public function version(CrmDocument $document, CreateDocumentVersion $action): JsonResponse`<br>`public function link(CrmDocument $document, CreateDocumentLink $action): JsonResponse`<br>`public function engagement(CrmDocument $document, RecordDocumentEngagement $action): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

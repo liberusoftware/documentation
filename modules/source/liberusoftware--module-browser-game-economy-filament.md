@@ -8,7 +8,7 @@ Filament 5 adapter for Browser Game Economy.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [browser-game](../../projects/browser-game/SOURCE-MODULES.md) | [browser-game-economy-filament](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/composer.json) | `790fdffebd3a` | [Variant 1](#variant-1) | 2 |
+| [browser-game](../../projects/browser-game/SOURCE-MODULES.md) | [browser-game-economy-filament](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/composer.json) | `790fdffebd3a` | [Variant 1](#variant-1) | 2 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: browser-game-laravel, `browser-game-economy-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-browser-game-laravel-filament, `browser-game-economy-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: browser-game-laravel, `browser-game-economy-filament`. Matching 
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/composer.json) · [module.json](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/composer.json) · [module.json](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/module.json).
 
 **Declared capabilities:** browser-game.economy.filament
 
@@ -58,7 +58,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/EconomyFilamentPlugin.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/EconomyFilamentPlugin.php) · [src/EconomyFilamentServiceProvider.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/EconomyFilamentServiceProvider.php) · [src/Resources/EconomyResource.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/Resources/EconomyResource.php) · [src/Resources/EconomyResource/Pages/CreateEconomy.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/Resources/EconomyResource/Pages/CreateEconomy.php) · [src/Resources/EconomyResource/Pages/EditEconomy.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/Resources/EconomyResource/Pages/EditEconomy.php) · [src/Resources/EconomyResource/Pages/ListEconomy.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/Resources/EconomyResource/Pages/ListEconomy.php).
+Other non-legacy PHP sources: [src/EconomyFilamentPlugin.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/EconomyFilamentPlugin.php) · [src/EconomyFilamentServiceProvider.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/EconomyFilamentServiceProvider.php) · [src/Resources/EconomyResource.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/Resources/EconomyResource.php) · [src/Resources/EconomyResource/Pages/CreateEconomy.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/Resources/EconomyResource/Pages/CreateEconomy.php) · [src/Resources/EconomyResource/Pages/EditEconomy.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/Resources/EconomyResource/Pages/EditEconomy.php) · [src/Resources/EconomyResource/Pages/ListEconomy.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/src/Resources/EconomyResource/Pages/ListEconomy.php).
 
 ### Persistence and lifecycle evidence
 
@@ -70,7 +70,7 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **2**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Pest.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/tests/Pest.php)
-- [tests/Unit/PackageBoundaryTest.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/tests/Unit/PackageBoundaryTest.php)
+- [tests/Pest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/tests/Pest.php)
+- [tests/Unit/PackageBoundaryTest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-economy-filament/tests/Unit/PackageBoundaryTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

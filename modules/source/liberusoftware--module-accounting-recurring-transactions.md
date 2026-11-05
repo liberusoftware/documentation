@@ -8,7 +8,7 @@ Accounting recurring transactions domain module
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-recurring-transactions](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-recurring-transactions](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: accounting-erp-laravel, `accounting-recurring-transactions`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `accounting-recurring-transactions`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: accounting-erp-laravel, `accounting-recurring-transactions`. Mat
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/module.json).
 
 **Declared capabilities:** accounting.recurring-transactions
 
@@ -58,21 +58,21 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/ApproveRecurringTemplate.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/ApproveRecurringTemplate.php) | `public function handle(RecurringTemplate $template, ?int $actorId = null): RecurringTemplate` |
-| [src/Actions/CreateRecurringTemplate.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/CreateRecurringTemplate.php) | `public function handle(array $attributes): RecurringTemplate` |
-| [src/Actions/GenerateRecurringOccurrences.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/GenerateRecurringOccurrences.php) | `public function handle(RecurringTemplate $template, string $throughDate, ?int $safetyCap = 120): int` |
+| [src/Actions/ApproveRecurringTemplate.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/ApproveRecurringTemplate.php) | `public function handle(RecurringTemplate $template, ?int $actorId = null): RecurringTemplate` |
+| [src/Actions/CreateRecurringTemplate.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/CreateRecurringTemplate.php) | `public function handle(array $attributes): RecurringTemplate` |
+| [src/Actions/GenerateRecurringOccurrences.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Actions/GenerateRecurringOccurrences.php) | `public function handle(RecurringTemplate $template, string $throughDate, ?int $safetyCap = 120): int` |
 
-Other non-legacy PHP sources: [src/Enums/OccurrenceStatus.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Enums/OccurrenceStatus.php) · [src/Enums/RecurringStatus.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Enums/RecurringStatus.php) · [src/Exceptions/InvalidRecurringTransaction.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Exceptions/InvalidRecurringTransaction.php) · [src/Models/RecurringException.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringException.php) · [src/Models/RecurringOccurrence.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringOccurrence.php) · [src/Models/RecurringTemplate.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringTemplate.php) · [src/RecurringTransactionsServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/RecurringTransactionsServiceProvider.php).
+Other non-legacy PHP sources: [src/Enums/OccurrenceStatus.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Enums/OccurrenceStatus.php) · [src/Enums/RecurringStatus.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Enums/RecurringStatus.php) · [src/Exceptions/InvalidRecurringTransaction.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Exceptions/InvalidRecurringTransaction.php) · [src/Models/RecurringException.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringException.php) · [src/Models/RecurringOccurrence.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringOccurrence.php) · [src/Models/RecurringTemplate.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Models/RecurringTemplate.php) · [src/RecurringTransactionsServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/RecurringTransactionsServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_25_190000_create_accounting_recurring_transaction_tables.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/database/migrations/2026_08_25_190000_create_accounting_recurring_transaction_tables.php)
+- [database/migrations/2026_08_25_190000_create_accounting_recurring_transaction_tables.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/database/migrations/2026_08_25_190000_create_accounting_recurring_transaction_tables.php)
 
-[src/Enums/OccurrenceStatus.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Enums/OccurrenceStatus.php): `Draft = 'draft'`, `Generated = 'generated'`, `Failed = 'failed'`, `Skipped = 'skipped'`.
+[src/Enums/OccurrenceStatus.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Enums/OccurrenceStatus.php): `Draft = 'draft'`, `Generated = 'generated'`, `Failed = 'failed'`, `Skipped = 'skipped'`.
 
-[src/Enums/RecurringStatus.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Enums/RecurringStatus.php): `Draft = 'draft'`, `PendingApproval = 'pending_approval'`, `Approved = 'approved'`, `Active = 'active'`, `Expired = 'expired'`, `Suspended = 'suspended'`, `Failed = 'failed'`.
+[src/Enums/RecurringStatus.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-recurring-transactions/src/Enums/RecurringStatus.php): `Draft = 'draft'`, `PendingApproval = 'pending_approval'`, `Approved = 'approved'`, `Active = 'active'`, `Expired = 'expired'`, `Suspended = 'suspended'`, `Failed = 'failed'`.
 
 ### Verification and consumer use
 

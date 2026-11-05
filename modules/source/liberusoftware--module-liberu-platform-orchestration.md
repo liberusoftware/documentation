@@ -8,10 +8,10 @@ Provider-neutral Liberu platform composition and lifecycle orchestration.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [liberu-platform-orchestration](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/composer.json) | `39a49babafc0` | [Variant 2](#variant-2) | 0 |
-| [billing](../../projects/billing/SOURCE-MODULES.md) | [liberu-platform-orchestration](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 2 |
-| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-liberu-platform-orchestration](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-liberu-platform-orchestration/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 2 |
-| [genealogy](../../projects/genealogy/SOURCE-MODULES.md) | [liberu-platform-orchestration](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/composer.json) | `577e93db23cc` | [Variant 3](#variant-3) | 2 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [liberu-platform-orchestration](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/composer.json) | `39a49babafc0` | [Variant 2](#variant-2) | 0 |
+| [billing](../../projects/billing/SOURCE-MODULES.md) | [liberu-platform-orchestration](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 2 |
+| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-liberu-platform-orchestration](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-liberu-platform-orchestration/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 2 |
+| [genealogy](../../projects/genealogy/SOURCE-MODULES.md) | [liberu-platform-orchestration](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/composer.json) | `577e93db23cc` | [Variant 3](#variant-3) | 2 |
 
 Physical source locations: **4**. Reference variants: **3**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -19,7 +19,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: billing-laravel, `liberu-platform-orchestration`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-billing-laravel-filament, `liberu-platform-orchestration`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -37,7 +37,7 @@ Representative: billing-laravel, `liberu-platform-orchestration`. Matching refer
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/composer.json) · [module.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/composer.json) · [module.json](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/module.json).
 
 **Declared capabilities:** liberu.platform-orchestration, liberu.platform-orchestration.lifecycle
 
@@ -61,15 +61,15 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/CreatePlatformWorkflow.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/src/Actions/CreatePlatformWorkflow.php) | `public function execute(array $attributes): PlatformWorkflow` |
+| [src/Actions/CreatePlatformWorkflow.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/src/Actions/CreatePlatformWorkflow.php) | `public function execute(array $attributes): PlatformWorkflow` |
 
-Other non-legacy PHP sources: [src/Capability.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/src/Capability.php) · [src/Models/PlatformWorkflow.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/src/Models/PlatformWorkflow.php) · [src/PlatformOrchestrationServiceProvider.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/src/PlatformOrchestrationServiceProvider.php).
+Other non-legacy PHP sources: [src/Capability.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/src/Capability.php) · [src/Models/PlatformWorkflow.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/src/Models/PlatformWorkflow.php) · [src/PlatformOrchestrationServiceProvider.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/src/PlatformOrchestrationServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_24_010000_create_liberu_platform_workflows_table.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/database/migrations/2026_08_24_010000_create_liberu_platform_workflows_table.php)
+- [database/migrations/2026_08_24_010000_create_liberu_platform_workflows_table.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/database/migrations/2026_08_24_010000_create_liberu_platform_workflows_table.php)
 
 ### Verification and consumer use
 
@@ -77,15 +77,15 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **2**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Feature/DomainTest.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/tests/Feature/DomainTest.php)
-- [tests/Unit/CapabilityTest.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/tests/Unit/CapabilityTest.php)
+- [tests/Feature/DomainTest.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/tests/Feature/DomainTest.php)
+- [tests/Unit/CapabilityTest.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-platform-orchestration/tests/Unit/CapabilityTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.
 
 
 ## Variant 2
 
-Representative: accounting-erp-laravel, `liberu-platform-orchestration`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `liberu-platform-orchestration`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -103,7 +103,7 @@ Representative: accounting-erp-laravel, `liberu-platform-orchestration`. Matchin
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/module.json).
 
 **Declared capabilities:** liberu.platform.orchestration
 
@@ -128,18 +128,18 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/CreateComposition.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Actions/CreateComposition.php) | `public function __construct(private readonly Dispatcher $events)`<br>`public function handle(array $attributes): PlatformComposition` |
-| [src/Actions/TransitionComposition.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Actions/TransitionComposition.php) | `public function __construct(private readonly Dispatcher $events)`<br>`public function handle(PlatformComposition $composition, CompositionState $state): PlatformComposition` |
+| [src/Actions/CreateComposition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Actions/CreateComposition.php) | `public function __construct(private readonly Dispatcher $events)`<br>`public function handle(array $attributes): PlatformComposition` |
+| [src/Actions/TransitionComposition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Actions/TransitionComposition.php) | `public function __construct(private readonly Dispatcher $events)`<br>`public function handle(PlatformComposition $composition, CompositionState $state): PlatformComposition` |
 
-Other non-legacy PHP sources: [src/Enums/CompositionState.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Enums/CompositionState.php) · [src/Events/CompositionCreated.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Events/CompositionCreated.php) · [src/Events/CompositionStateChanged.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Events/CompositionStateChanged.php) · [src/Exceptions/InvalidCompositionTransition.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Exceptions/InvalidCompositionTransition.php) · [src/Models/PlatformComposition.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Models/PlatformComposition.php) · [src/PlatformOrchestrationServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/PlatformOrchestrationServiceProvider.php).
+Other non-legacy PHP sources: [src/Enums/CompositionState.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Enums/CompositionState.php) · [src/Events/CompositionCreated.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Events/CompositionCreated.php) · [src/Events/CompositionStateChanged.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Events/CompositionStateChanged.php) · [src/Exceptions/InvalidCompositionTransition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Exceptions/InvalidCompositionTransition.php) · [src/Models/PlatformComposition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Models/PlatformComposition.php) · [src/PlatformOrchestrationServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/PlatformOrchestrationServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_24_000000_create_liberu_platform_compositions_table.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/database/migrations/2026_08_24_000000_create_liberu_platform_compositions_table.php)
+- [database/migrations/2026_08_24_000000_create_liberu_platform_compositions_table.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/database/migrations/2026_08_24_000000_create_liberu_platform_compositions_table.php)
 
-[src/Enums/CompositionState.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Enums/CompositionState.php): `Draft = 'draft'`, `Installed = 'installed'`, `Enabled = 'enabled'`, `Entitled = 'entitled'`, `Active = 'active'`, `Disabled = 'disabled'`, `Failed = 'failed'`.
+[src/Enums/CompositionState.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Enums/CompositionState.php): `Draft = 'draft'`, `Installed = 'installed'`, `Enabled = 'enabled'`, `Entitled = 'entitled'`, `Active = 'active'`, `Disabled = 'disabled'`, `Failed = 'failed'`.
 
 ### Verification and consumer use
 
@@ -152,7 +152,7 @@ Before adoption, verify module enablement, clean consumer resolution, actor/tena
 
 ## Variant 3
 
-Representative: genealogy-laravel, `liberu-platform-orchestration`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-genealogy-laravel-filament, `liberu-platform-orchestration`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -170,7 +170,7 @@ Representative: genealogy-laravel, `liberu-platform-orchestration`. Matching ref
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/composer.json) · [module.json](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/composer.json) · [module.json](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/module.json).
 
 **Declared capabilities:** liberu.platform-orchestration, liberu.platform-orchestration.lifecycle
 
@@ -195,18 +195,18 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/CreatePlatformWorkflow.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Actions/CreatePlatformWorkflow.php) | `public function execute(array $attributes): PlatformWorkflow` |
-| [src/Actions/TransitionPlatformWorkflow.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Actions/TransitionPlatformWorkflow.php) | `public function execute(PlatformWorkflow $record, LifecycleStatus $to): PlatformWorkflow` |
+| [src/Actions/CreatePlatformWorkflow.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Actions/CreatePlatformWorkflow.php) | `public function execute(array $attributes): PlatformWorkflow` |
+| [src/Actions/TransitionPlatformWorkflow.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Actions/TransitionPlatformWorkflow.php) | `public function execute(PlatformWorkflow $record, LifecycleStatus $to): PlatformWorkflow` |
 
-Other non-legacy PHP sources: [src/Capability.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Capability.php) · [src/Enums/LifecycleStatus.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Enums/LifecycleStatus.php) · [src/Events/PlatformWorkflowTransitioned.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Events/PlatformWorkflowTransitioned.php) · [src/Exceptions/InvalidLifecycleTransition.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Exceptions/InvalidLifecycleTransition.php) · [src/Models/PlatformWorkflow.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Models/PlatformWorkflow.php) · [src/PlatformOrchestrationServiceProvider.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/PlatformOrchestrationServiceProvider.php).
+Other non-legacy PHP sources: [src/Capability.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Capability.php) · [src/Enums/LifecycleStatus.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Enums/LifecycleStatus.php) · [src/Events/PlatformWorkflowTransitioned.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Events/PlatformWorkflowTransitioned.php) · [src/Exceptions/InvalidLifecycleTransition.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Exceptions/InvalidLifecycleTransition.php) · [src/Models/PlatformWorkflow.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Models/PlatformWorkflow.php) · [src/PlatformOrchestrationServiceProvider.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/PlatformOrchestrationServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_24_010000_create_liberu_platform_workflows_table.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/database/migrations/2026_08_24_010000_create_liberu_platform_workflows_table.php)
+- [database/migrations/2026_08_24_010000_create_liberu_platform_workflows_table.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/database/migrations/2026_08_24_010000_create_liberu_platform_workflows_table.php)
 
-[src/Enums/LifecycleStatus.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Enums/LifecycleStatus.php): `Draft = 'draft'`, `Active = 'active'`, `Completed = 'completed'`, `Archived = 'archived'`.
+[src/Enums/LifecycleStatus.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/src/Enums/LifecycleStatus.php): `Draft = 'draft'`, `Active = 'active'`, `Completed = 'completed'`, `Archived = 'archived'`.
 
 ### Verification and consumer use
 
@@ -214,7 +214,7 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **2**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Feature/DomainTest.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/tests/Feature/DomainTest.php)
-- [tests/Unit/CapabilityTest.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/tests/Unit/CapabilityTest.php)
+- [tests/Feature/DomainTest.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/tests/Feature/DomainTest.php)
+- [tests/Unit/CapabilityTest.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-platform-orchestration/tests/Unit/CapabilityTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

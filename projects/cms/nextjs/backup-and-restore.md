@@ -39,7 +39,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [BackupAndRestoreService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-backup-and-restore/src/Services/BackupAndRestoreService.php) | `public function createArtifact(?int $teamId, array $data): BackupArtifact`<br>`public function verify(BackupArtifact $artifact): BackupArtifact`<br>`public function restorePreview(BackupArtifact $artifact): array`<br>`public function schedule(?int $teamId, array $data): BackupSchedule` |
+| [BackupAndRestoreService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-backup-and-restore/src/Services/BackupAndRestoreService.php) | `public function createArtifact(?int $teamId, array $data): BackupArtifact`<br>`public function verify(BackupArtifact $artifact): BackupArtifact`<br>`public function restorePreview(BackupArtifact $artifact): array`<br>`public function schedule(?int $teamId, array $data): BackupSchedule` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -49,8 +49,8 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [BackupArtifact.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-backup-and-restore/src/Models/BackupArtifact.php) | `team_id`, `name`, `artifact_type`, `status`, `disk`, `path`, `size`, `checksum`, `encrypted`, `metadata`, `verified_at`, `expires_at` |
-| [BackupSchedule.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-backup-and-restore/src/Models/BackupSchedule.php) | `team_id`, `name`, `frequency`, `artifact_types`, `retention_days`, `enabled`, `next_run_at`, `last_run_at` |
+| [BackupArtifact.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-backup-and-restore/src/Models/BackupArtifact.php) | `team_id`, `name`, `artifact_type`, `status`, `disk`, `path`, `size`, `checksum`, `encrypted`, `metadata`, `verified_at`, `expires_at` |
+| [BackupSchedule.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-backup-and-restore/src/Models/BackupSchedule.php) | `team_id`, `name`, `frequency`, `artifact_types`, `retention_days`, `enabled`, `next_run_at`, `last_run_at` |
 
 ## Server/client and React reuse
 

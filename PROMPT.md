@@ -3,12 +3,12 @@
 ```text
 /goal
 
-Refactor the repository into a complete Liberu Laravel application based on a cloned copy of `liberusoftware/boilerplate-laravel`. Generate implementation code only for core, API, Filament, and Livewire modules. Do not create React, Vue, Nuxt, Inertia, React Native, Flutter, or any other separate presentation module in this run; those are later implementation phases. Use the module- prefix for modules and theme- prefix for themes at github.com/liberusoftware however for themes at packagist do not use the module- prefix but keep it for themes as theme- prefix
+Refactor the repository into a complete Liberu Laravel application based on a cloned copy of `liberusoftware/project-boilerplate-laravel-filament`. Generate implementation code only for core, API, Filament, and Livewire modules. Do not create React, Vue, Nuxt, Inertia, React Native, Flutter, or any other separate presentation module in this run; those are later implementation phases. Use the module- prefix for modules and theme- prefix for themes at github.com/liberusoftware however for themes at packagist do not use the module- prefix but keep it for themes as theme- prefix
 
 Use this exact repository bootstrap and promotion order:
 
 1. Inspect the target repository, remotes, current default branch, uncommitted changes, tags, and branch protection. Stop if the target or remote is ambiguous.
-2. Clone `https://github.com/liberusoftware/boilerplate-laravel.git` into a temporary source directory at the pinned source commit/tag. Do not use a shallow clone when history, tags, or package provenance are required.
+2. Clone `https://github.com/liberusoftware/project-boilerplate-laravel-filament.git` into a temporary source directory at the pinned source commit/tag. Do not use a shallow clone when history, tags, or package provenance are required.
 3. Create the target branch `development` from the target repository's current `main`, then import the complete Boilerplate Laravel working tree into `development` while preserving the target repository's `.git` directory, remotes, and branch metadata. Commit this as the new application foundation before implementing project modules.
 4. Preserve the original target `main` remotely as `old` before any final branch promotion: verify that `old` does not point to unrelated work, then run `git push origin main:old`. Never delete or overwrite `old` without explicit authorization.
 5. Implement and verify only the project-relevant core, API, Filament, and Livewire modules on `development`. Keep the original target state recoverable through `old`.
@@ -52,7 +52,7 @@ git branch --show-current
 git ls-remote --heads origin main old development
 
 # Clone the source foundation separately, then create/import development
-git clone --branch main https://github.com/liberusoftware/boilerplate-laravel.git "${TMPDIR:-/tmp}/liberu-boilerplate"
+git clone --branch main https://github.com/liberusoftware/project-boilerplate-laravel-filament.git "${TMPDIR:-/tmp}/liberu-boilerplate"
 git switch -c development
 rsync -a --delete --exclude='.git' "${TMPDIR:-/tmp}/liberu-boilerplate/" ./
 git add -A

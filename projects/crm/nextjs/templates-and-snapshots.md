@@ -45,19 +45,19 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [SnapshotQuery.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Queries/SnapshotQuery.php) | `public function list(int $teamId)`<br>`public function find(int $teamId, int $id): SnapshotBundle`<br>`public function preview(int $teamId, int $id): array` |
+| [SnapshotQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Queries/SnapshotQuery.php) | `public function list(int $teamId)`<br>`public function find(int $teamId, int $id): SnapshotBundle`<br>`public function preview(int $teamId, int $id): array` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateSnapshot.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Actions/CreateSnapshot.php) | `public function execute(int $teamId, int $actorId, array $data): SnapshotBundle` |
-| [InstallSnapshot.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Actions/InstallSnapshot.php) | `public function execute(int $teamId, int $actorId, int $bundleId): SnapshotInstall` |
-| [RollbackSnapshot.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Actions/RollbackSnapshot.php) | `public function execute(int $teamId, int $actorId, int $bundleId, int $version): SnapshotInstall` |
-| [ShareSnapshot.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Actions/ShareSnapshot.php) | `public function execute(int $teamId, int $actorId, int $bundleId): string` |
-| [UpdateSnapshot.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Actions/UpdateSnapshot.php) | `public function execute(int $teamId, int $actorId, int $bundleId, array $data): SnapshotBundle` |
-| [SnapshotAudit.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Services/SnapshotAudit.php) | `public function record(int $teamId, ?int $actorId, string $event, array $details = []): void` |
-| [SnapshotPolicy.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Services/SnapshotPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+| [CreateSnapshot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Actions/CreateSnapshot.php) | `public function execute(int $teamId, int $actorId, array $data): SnapshotBundle` |
+| [InstallSnapshot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Actions/InstallSnapshot.php) | `public function execute(int $teamId, int $actorId, int $bundleId): SnapshotInstall` |
+| [RollbackSnapshot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Actions/RollbackSnapshot.php) | `public function execute(int $teamId, int $actorId, int $bundleId, int $version): SnapshotInstall` |
+| [ShareSnapshot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Actions/ShareSnapshot.php) | `public function execute(int $teamId, int $actorId, int $bundleId): string` |
+| [UpdateSnapshot.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Actions/UpdateSnapshot.php) | `public function execute(int $teamId, int $actorId, int $bundleId, array $data): SnapshotBundle` |
+| [SnapshotAudit.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Services/SnapshotAudit.php) | `public function record(int $teamId, ?int $actorId, string $event, array $details = []): void` |
+| [SnapshotPolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Services/SnapshotPolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -67,15 +67,15 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [SnapshotAudit.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Models/SnapshotAudit.php) | `team_id`, `actor_id`, `event`, `details` |
-| [SnapshotBundle.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Models/SnapshotBundle.php) | `team_id`, `name`, `version`, `status`, `payload`, `checksum`, `share_token_hash`, `shared_at`, `created_by` |
-| [SnapshotInstall.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Models/SnapshotInstall.php) | `team_id`, `bundle_id`, `version`, `status`, `installed_by` |
+| [SnapshotAudit.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Models/SnapshotAudit.php) | `team_id`, `actor_id`, `event`, `details` |
+| [SnapshotBundle.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Models/SnapshotBundle.php) | `team_id`, `name`, `version`, `status`, `payload`, `checksum`, `share_token_hash`, `shared_at`, `created_by` |
+| [SnapshotInstall.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots/src/Models/SnapshotInstall.php) | `team_id`, `bundle_id`, `version`, `status`, `installed_by` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/crm-templates-and-snapshots-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots-api/routes/api.php)
+[modules/crm-templates-and-snapshots-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-templates-and-snapshots-api/routes/api.php)
 
 ```php
 Route::middleware(['auth:sanctum', 'throttle:api'])->prefix('api/v1/crm/templates-and-snapshots')->group(function () {

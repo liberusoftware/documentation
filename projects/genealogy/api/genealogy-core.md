@@ -48,7 +48,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/genealogy-core-api/routes/api.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/routes/api.php)
+[modules/genealogy-core-api/routes/api.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/routes/api.php)
 
 ```php
 Route::get('/', [TreeController::class, 'index'])->name('genealogy.core.index');
@@ -67,7 +67,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [TreeController.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/src/Http/Controllers/TreeController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(Request $request, Tree $tree): TreeResource`<br>`public function store(Request $request, CreateTree $createTree): TreeResource`<br>`public function update(Request $request, Tree $tree, UpdateTree $updateTree): TreeResource`<br>`public function visibility(Request $request, Tree $tree, SetTreeVisibility $visibility): TreeResource`<br>`public function owner(Request $request, Tree $tree, SetTreeOwner $owner): TreeResource`<br>`public function destroy(Request $request, Tree $tree, DeleteTree $delete): void` |
+| [TreeController.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/src/Http/Controllers/TreeController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(Request $request, Tree $tree): TreeResource`<br>`public function store(Request $request, CreateTree $createTree): TreeResource`<br>`public function update(Request $request, Tree $tree, UpdateTree $updateTree): TreeResource`<br>`public function visibility(Request $request, Tree $tree, SetTreeVisibility $visibility): TreeResource`<br>`public function owner(Request $request, Tree $tree, SetTreeOwner $owner): TreeResource`<br>`public function destroy(Request $request, Tree $tree, DeleteTree $delete): void` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

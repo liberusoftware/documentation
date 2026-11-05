@@ -40,7 +40,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [Media.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-media/src/Models/Media.php) | `disk`, `path`, `file_name`, `mime_type`, `size`, `folder`, `metadata`, `team_id` |
+| [Media.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-media/src/Models/Media.php) | `disk`, `path`, `file_name`, `mime_type`, `size`, `folder`, `metadata`, `team_id` |
 
 ## Server/client and React reuse
 

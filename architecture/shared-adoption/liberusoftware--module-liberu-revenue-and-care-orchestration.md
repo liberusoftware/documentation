@@ -14,9 +14,9 @@ See the [implementation reference](../../modules/source/liberusoftware--module-l
 
 | Consumer | Pinned module metadata | Variant | Test files |
 | --- | --- | ---: | ---: |
-| billing | [liberu-revenue-and-care-orchestration](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/composer.json) | 1 | 2 |
-| billing | [module-liberu-revenue-and-care-orchestration](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-liberu-revenue-and-care-orchestration/composer.json) | 1 | 2 |
-| genealogy | [liberu-revenue-and-care-orchestration](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration/composer.json) | 2 | 2 |
+| billing | [liberu-revenue-and-care-orchestration](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/composer.json) | 1 | 2 |
+| billing | [module-liberu-revenue-and-care-orchestration](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-liberu-revenue-and-care-orchestration/composer.json) | 1 | 2 |
+| genealogy | [liberu-revenue-and-care-orchestration](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration/composer.json) | 2 | 2 |
 
 ## Manifest and dependency differences
 
@@ -33,7 +33,7 @@ The following database paths differ or are missing in at least one consumer. A m
 
 | Differing database path | Variant source and declared table operation |
 | --- | --- |
-| `database/migrations/2026_08_24_010000_create_liberu_care_plans_table.php` | V1: [e9c9bd1e90](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/database/migrations/2026_08_24_010000_create_liberu_care_plans_table.php); create liberu_care_plans, dropIfExists liberu_care_plans<br>V2: [f975118daf](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration/database/migrations/2026_08_24_010000_create_liberu_care_plans_table.php); create liberu_care_plans, dropIfExists liberu_care_plans |
+| `database/migrations/2026_08_24_010000_create_liberu_care_plans_table.php` | V1: [e9c9bd1e90](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/database/migrations/2026_08_24_010000_create_liberu_care_plans_table.php); create liberu_care_plans, dropIfExists liberu_care_plans<br>V2: [f975118daf](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration/database/migrations/2026_08_24_010000_create_liberu_care_plans_table.php); create liberu_care_plans, dropIfExists liberu_care_plans |
 
 Before a shared release, inventory affected tables/columns and tenant/source identifiers in every consumer, then map legacy/current record identities and callers. Use additive backfills or a separate migration with reconciliation and recovery; do not drop a historical table because the chosen package tree lacks its old migration. Reconcile counts, ownership and required evidence before moving callers or removing obsolete implementations.
 
@@ -43,14 +43,14 @@ Changed action/query/contract/service/context paths are indexed below. Signature
 
 | Path | Variant entry points |
 | --- | --- |
-| `src/Actions/CreateCarePlan.php` | V1: [CreateCarePlan.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/src/Actions/CreateCarePlan.php) — `public function execute(array $attributes): CarePlan`<br>V2: [CreateCarePlan.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration/src/Actions/CreateCarePlan.php) — `public function execute(array $attributes): CarePlan` |
-| `src/Actions/TransitionCarePlan.php` | V1: absent<br>V2: [TransitionCarePlan.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration/src/Actions/TransitionCarePlan.php) — `public function execute(CarePlan $record, LifecycleStatus $to): CarePlan` |
+| `src/Actions/CreateCarePlan.php` | V1: [CreateCarePlan.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/src/Actions/CreateCarePlan.php) — `public function execute(array $attributes): CarePlan`<br>V2: [CreateCarePlan.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration/src/Actions/CreateCarePlan.php) — `public function execute(array $attributes): CarePlan` |
+| `src/Actions/TransitionCarePlan.php` | V1: absent<br>V2: [TransitionCarePlan.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration/src/Actions/TransitionCarePlan.php) — `public function execute(CarePlan $record, LifecycleStatus $to): CarePlan` |
 
 Resolve host-model lookups, actor/tenant policy, source-record references and provider dependencies through explicit public contracts/configuration. Keep product policy and presentation composition outside shared core. Consumer tests must cover the real call paths, including jobs/exports and private-data visibility; do not widen a contract solely to accommodate one host's internal model.
 
 ## Registration, route and presentation review
 
-- `module.json`: V1 [source](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/module.json), V2 [source](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration/module.json)
+- `module.json`: V1 [source](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration/module.json), V2 [source](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration/module.json)
 
 Validate discovery, manifest schema/version handling, dependency selection, provider boot order and route/plugin identifiers against the consuming host. For UI/API adapters, retain the authorized DTO and domain action semantics rather than exposing private models or bypassing transitions through generic record saves.
 

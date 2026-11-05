@@ -54,7 +54,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/crm-core-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-core-api/routes/api.php)
+[modules/crm-core-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-core-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/crm/crm-core')->middleware(['auth:sanctum', 'throttle:api'])->group(function (): void {
@@ -78,7 +78,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [RecordController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-core-api/src/Http/Controllers/RecordController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateRecord $create): JsonResponse`<br>`public function show(Request $request, int $record): JsonResponse`<br>`public function tags(Request $request): JsonResponse`<br>`public function createTag(Request $request, CreateTag $create): JsonResponse`<br>`public function addNote(Request $request, int $record, AddNote $add): JsonResponse`<br>`public function timeline(Request $request, int $record): JsonResponse`<br>`public function relationship(Request $request, int $record, CreateRelationship $create): JsonResponse`<br>`public function tag(Request $request, int $record, int $tag, TagRecord $attach): JsonResponse`<br>`public function favorite(Request $request, int $record, ToggleFavorite $toggle): JsonResponse`<br>`public function update(Request $request, int $record, UpdateRecord $update): JsonResponse`<br>`public function destroy(Request $request, int $record, ArchiveRecord $archive): JsonResponse` |
+| [RecordController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-core-api/src/Http/Controllers/RecordController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateRecord $create): JsonResponse`<br>`public function show(Request $request, int $record): JsonResponse`<br>`public function tags(Request $request): JsonResponse`<br>`public function createTag(Request $request, CreateTag $create): JsonResponse`<br>`public function addNote(Request $request, int $record, AddNote $add): JsonResponse`<br>`public function timeline(Request $request, int $record): JsonResponse`<br>`public function relationship(Request $request, int $record, CreateRelationship $create): JsonResponse`<br>`public function tag(Request $request, int $record, int $tag, TagRecord $attach): JsonResponse`<br>`public function favorite(Request $request, int $record, ToggleFavorite $toggle): JsonResponse`<br>`public function update(Request $request, int $record, UpdateRecord $update): JsonResponse`<br>`public function destroy(Request $request, int $record, ArchiveRecord $archive): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -86,7 +86,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/crm-core-api/openapi/v1/crm-core.yaml](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-core-api/openapi/v1/crm-core.yaml)
+- [modules/crm-core-api/openapi/v1/crm-core.yaml](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-core-api/openapi/v1/crm-core.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

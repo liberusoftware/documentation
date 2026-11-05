@@ -8,7 +8,7 @@ Admin module for Liberu CMS: a Filament panel plugin that surfaces the module sy
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-admin](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
+| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-admin](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: cms-laravel, `cms-admin`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-cms-laravel-filament, `cms-admin`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: cms-laravel, `cms-admin`. Matching reference files in this varia
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/composer.json) · [module.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/composer.json) · [module.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/module.json).
 
 ### Dependencies and namespace mapping
 
@@ -55,13 +55,13 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Filament/CmsAdminPlugin.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/Filament/CmsAdminPlugin.php) | `public static function make(): static`<br>`public function getId(): string`<br>`public function register(Panel $panel): void`<br>`public function boot(Panel $panel): void` |
-| [src/Filament/Pages/ModuleManagement.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/Filament/Pages/ModuleManagement.php) | `public static function canAccess(): bool`<br>`public static function getNavigationGroup(): string\|UnitEnum\|null`<br>`public function modules(): array`<br>`public function enable(string $key): void`<br>`public function disable(string $key): void` |
-| [src/Filament/Support/ModuleView.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/Filament/Support/ModuleView.php) | `public function __construct( public string $key, public string $name, public string $version, public bool $enabled, public bool $foundational, public array $dependencies, public array $dependents, )`<br>`public function isToggleable(): bool`<br>`public function lockReason(): ?string` |
-| [src/Filament/Widgets/ContentOverviewWidget.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/Filament/Widgets/ContentOverviewWidget.php) | No named public method detected by the static index. |
-| [src/Filament/Widgets/ModulesOverviewWidget.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/Filament/Widgets/ModulesOverviewWidget.php) | No named public method detected by the static index. |
+| [src/Filament/CmsAdminPlugin.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/Filament/CmsAdminPlugin.php) | `public static function make(): static`<br>`public function getId(): string`<br>`public function register(Panel $panel): void`<br>`public function boot(Panel $panel): void` |
+| [src/Filament/Pages/ModuleManagement.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/Filament/Pages/ModuleManagement.php) | `public static function canAccess(): bool`<br>`public static function getNavigationGroup(): string\|UnitEnum\|null`<br>`public function modules(): array`<br>`public function enable(string $key): void`<br>`public function disable(string $key): void` |
+| [src/Filament/Support/ModuleView.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/Filament/Support/ModuleView.php) | `public function __construct( public string $key, public string $name, public string $version, public bool $enabled, public bool $foundational, public array $dependencies, public array $dependents, )`<br>`public function isToggleable(): bool`<br>`public function lockReason(): ?string` |
+| [src/Filament/Widgets/ContentOverviewWidget.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/Filament/Widgets/ContentOverviewWidget.php) | No named public method detected by the static index. |
+| [src/Filament/Widgets/ModulesOverviewWidget.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/Filament/Widgets/ModulesOverviewWidget.php) | No named public method detected by the static index. |
 
-Other non-legacy PHP sources: [src/AdminDashboardRegistry.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/AdminDashboardRegistry.php) · [src/AdminModule.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/AdminModule.php) · [src/AdminResourceRegistry.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/AdminResourceRegistry.php) · [src/AdminServiceProvider.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/AdminServiceProvider.php).
+Other non-legacy PHP sources: [src/AdminDashboardRegistry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/AdminDashboardRegistry.php) · [src/AdminModule.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/AdminModule.php) · [src/AdminResourceRegistry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/AdminResourceRegistry.php) · [src/AdminServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-admin/src/AdminServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 

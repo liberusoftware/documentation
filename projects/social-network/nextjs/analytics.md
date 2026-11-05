@@ -39,9 +39,9 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [BuildSnapshot.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/BuildSnapshot.php) | `public function handle(object $actor, string $metric, string $periodStart, string $periodEnd, int $cohortSize, float $value, array $dimensions = []): MetricSnapshot` |
-| [GetMetrics.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/GetMetrics.php) | `public function handle(object $actor, string $metric, int $limit = 30): Collection` |
-| [RecordMetric.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/RecordMetric.php) | `public function handle(object $actor, string $name, array $dimensions = [], int $value = 1): AnalyticsEvent` |
+| [BuildSnapshot.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/BuildSnapshot.php) | `public function handle(object $actor, string $metric, string $periodStart, string $periodEnd, int $cohortSize, float $value, array $dimensions = []): MetricSnapshot` |
+| [GetMetrics.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/GetMetrics.php) | `public function handle(object $actor, string $metric, int $limit = 30): Collection` |
+| [RecordMetric.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/RecordMetric.php) | `public function handle(object $actor, string $name, array $dimensions = [], int $value = 1): AnalyticsEvent` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -51,14 +51,14 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [AnalyticsEvent.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Models/AnalyticsEvent.php) | No literal fillable array detected; inspect the model and API schema. |
-| [MetricSnapshot.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Models/MetricSnapshot.php) | No literal fillable array detected; inspect the model and API schema. |
+| [AnalyticsEvent.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Models/AnalyticsEvent.php) | No literal fillable array detected; inspect the model and API schema. |
+| [MetricSnapshot.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Models/MetricSnapshot.php) | No literal fillable array detected; inspect the model and API schema. |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/social-network-analytics-api/routes/api.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics-api/routes/api.php)
+[modules/social-network-analytics-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/social-network/analytics')

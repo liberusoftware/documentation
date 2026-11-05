@@ -33,8 +33,8 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [LocalSearchIndexer.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/search/src/Services/LocalSearchIndexer.php) | `public function index(string $type, Model $record): void`<br>`public function remove(string $type, string\|int $id): void`<br>`public function flush(string $type): void` |
-| [SearchService.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/search/src/Services/SearchService.php) | `public function searchUsers(array $filters): LengthAwarePaginator`<br>`public function searchAll(array $filters): array` |
+| [LocalSearchIndexer.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/search/src/Services/LocalSearchIndexer.php) | `public function index(string $type, Model $record): void`<br>`public function remove(string $type, string\|int $id): void`<br>`public function flush(string $type): void` |
+| [SearchService.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/search/src/Services/SearchService.php) | `public function searchUsers(array $filters): LengthAwarePaginator`<br>`public function searchAll(array $filters): array` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -42,7 +42,7 @@ The server transport resolves the authenticated actor and tenant/entity membersh
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/search-api/routes/api.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/search-api/routes/api.php)
+[modules/search-api/routes/api.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/search-api/routes/api.php)
 
 ```php
 Route::prefix('api/search')->name('search.')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {

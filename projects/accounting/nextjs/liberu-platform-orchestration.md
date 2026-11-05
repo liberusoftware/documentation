@@ -33,8 +33,8 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateComposition.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Actions/CreateComposition.php) | `public function handle(array $attributes): PlatformComposition` |
-| [TransitionComposition.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Actions/TransitionComposition.php) | `public function handle(PlatformComposition $composition, CompositionState $state): PlatformComposition` |
+| [CreateComposition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Actions/CreateComposition.php) | `public function handle(array $attributes): PlatformComposition` |
+| [TransitionComposition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Actions/TransitionComposition.php) | `public function handle(PlatformComposition $composition, CompositionState $state): PlatformComposition` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -44,7 +44,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [PlatformComposition.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Models/PlatformComposition.php) | `team_id`, `key`, `display_name`, `application`, `state`, `manifest`, `metadata` |
+| [PlatformComposition.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/liberu-platform-orchestration/src/Models/PlatformComposition.php) | `team_id`, `key`, `display_name`, `application`, `state`, `manifest`, `metadata` |
 
 ## Server/client and React reuse
 

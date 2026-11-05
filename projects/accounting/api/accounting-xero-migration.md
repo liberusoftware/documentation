@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-xero-migration-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-xero-migration-api/routes/api.php)
+[modules/accounting-xero-migration-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-xero-migration-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/accounting/xero-migration')->middleware(['auth:sanctum'])->group(function (): void {
@@ -59,7 +59,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [XeroMigrationController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-xero-migration-api/src/Http/Controllers/XeroMigrationController.php) | `public function connections(Request $request): mixed`<br>`public function connect(Request $request, ConnectXeroTenant $action): mixed`<br>`public function record(Request $request, string $connection, RecordMigration $action): mixed` |
+| [XeroMigrationController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-xero-migration-api/src/Http/Controllers/XeroMigrationController.php) | `public function connections(Request $request): mixed`<br>`public function connect(Request $request, ConnectXeroTenant $action): mixed`<br>`public function record(Request $request, string $connection, RecordMigration $action): mixed` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

@@ -40,7 +40,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [AuditLog.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-audit/src/Models/AuditLog.php) | `action`, `actor_id`, `actor_label`, `subject_type`, `subject_id`, `team_id`, `ip_address`, `metadata` |
+| [AuditLog.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-audit/src/Models/AuditLog.php) | `action`, `actor_id`, `actor_label`, `subject_type`, `subject_id`, `team_id`, `ip_address`, `metadata` |
 
 ## Server/client and React reuse
 

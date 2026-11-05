@@ -161,8 +161,8 @@ Every theme provides `theme.json`:
   "provider": "Liberu\\Themes\\Corporate\\CorporateThemeServiceProvider",
   "type": "public",
   "parent": "liberu-base",
-  "optimized_for": ["liberu-cms/cms-laravel"],
-  "tested_with": ["liberu-cms/cms-laravel", "liberusoftware/boilerplate-laravel"],
+  "optimized_for": ["liberu-cms/project-cms-laravel-filament"],
+  "tested_with": ["liberu-cms/project-cms-laravel-filament", "liberusoftware/project-boilerplate-laravel-filament"],
   "supports": ["cms.pages", "cms.posts", "search"],
   "adapters": {
     "blade": {

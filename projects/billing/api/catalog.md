@@ -50,7 +50,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/module-billing-catalog-api/routes/api.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-catalog-api/routes/api.php)
+[modules/module-billing-catalog-api/routes/api.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-catalog-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'throttle:api', 'auth:sanctum', 'ability:billing.catalog.read'])
@@ -71,8 +71,8 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [CatalogRecordController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-catalog-api/src/Http/Controllers/CatalogRecordController.php) | `public function index(string $type, Request $request, ListCatalogRecords $query): JsonResponse`<br>`public function store(string $type, Request $request, CreateCatalogRecord $create): JsonResponse`<br>`public function transition(string $type, int $record, Request $request, TransitionCatalogLifecycle $transition): JsonResponse` |
-| [ProductController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-catalog-api/src/Http/Controllers/ProductController.php) | `public function index(Request $request, ListProducts $query): JsonResponse`<br>`public function store(Request $request, CreateProduct $create): JsonResponse`<br>`public function transition(Request $request, int $product, TransitionProductLifecycle $transition): JsonResponse` |
+| [CatalogRecordController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-catalog-api/src/Http/Controllers/CatalogRecordController.php) | `public function index(string $type, Request $request, ListCatalogRecords $query): JsonResponse`<br>`public function store(string $type, Request $request, CreateCatalogRecord $create): JsonResponse`<br>`public function transition(string $type, int $record, Request $request, TransitionCatalogLifecycle $transition): JsonResponse` |
+| [ProductController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-catalog-api/src/Http/Controllers/ProductController.php) | `public function index(Request $request, ListProducts $query): JsonResponse`<br>`public function store(Request $request, CreateProduct $create): JsonResponse`<br>`public function transition(Request $request, int $product, TransitionProductLifecycle $transition): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -80,7 +80,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/module-billing-catalog-api/openapi/v1/catalog.yaml](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-catalog-api/openapi/v1/catalog.yaml)
+- [modules/module-billing-catalog-api/openapi/v1/catalog.yaml](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-catalog-api/openapi/v1/catalog.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

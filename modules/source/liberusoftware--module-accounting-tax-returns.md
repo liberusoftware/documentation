@@ -8,7 +8,7 @@ Accounting tax returns domain module.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-tax-returns](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-tax-returns](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: accounting-erp-laravel, `accounting-tax-returns`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `accounting-tax-returns`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: accounting-erp-laravel, `accounting-tax-returns`. Matching refer
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/module.json).
 
 **Declared capabilities:** accounting.tax-returns
 
@@ -58,19 +58,19 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/AmendTaxReturn.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Actions/AmendTaxReturn.php) | `public function handle(TaxReturn $taxReturn): TaxReturn` |
-| [src/Actions/CreateTaxReturn.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Actions/CreateTaxReturn.php) | `public function handle(array $attributes): TaxReturn` |
-| [src/Actions/SubmitTaxReturn.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Actions/SubmitTaxReturn.php) | `public function handle(TaxReturn $taxReturn, string $externalReference): TaxReturn` |
+| [src/Actions/AmendTaxReturn.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Actions/AmendTaxReturn.php) | `public function handle(TaxReturn $taxReturn): TaxReturn` |
+| [src/Actions/CreateTaxReturn.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Actions/CreateTaxReturn.php) | `public function handle(array $attributes): TaxReturn` |
+| [src/Actions/SubmitTaxReturn.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Actions/SubmitTaxReturn.php) | `public function handle(TaxReturn $taxReturn, string $externalReference): TaxReturn` |
 
-Other non-legacy PHP sources: [src/Enums/TaxReturnStatus.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Enums/TaxReturnStatus.php) · [src/Exceptions/InvalidTaxReturn.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Exceptions/InvalidTaxReturn.php) · [src/Models/TaxReturn.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Models/TaxReturn.php) · [src/Models/TaxReturnLine.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Models/TaxReturnLine.php) · [src/TaxReturnsServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/TaxReturnsServiceProvider.php).
+Other non-legacy PHP sources: [src/Enums/TaxReturnStatus.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Enums/TaxReturnStatus.php) · [src/Exceptions/InvalidTaxReturn.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Exceptions/InvalidTaxReturn.php) · [src/Models/TaxReturn.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Models/TaxReturn.php) · [src/Models/TaxReturnLine.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Models/TaxReturnLine.php) · [src/TaxReturnsServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/TaxReturnsServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_29_000004_create_accounting_tax_returns_tables.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/database/migrations/2026_08_29_000004_create_accounting_tax_returns_tables.php)
+- [database/migrations/2026_08_29_000004_create_accounting_tax_returns_tables.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/database/migrations/2026_08_29_000004_create_accounting_tax_returns_tables.php)
 
-[src/Enums/TaxReturnStatus.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Enums/TaxReturnStatus.php): `Draft = 'draft'`, `Ready = 'ready'`, `Submitted = 'submitted'`, `Accepted = 'accepted'`, `Rejected = 'rejected'`, `Amended = 'amended'`.
+[src/Enums/TaxReturnStatus.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns/src/Enums/TaxReturnStatus.php): `Draft = 'draft'`, `Ready = 'ready'`, `Submitted = 'submitted'`, `Accepted = 'accepted'`, `Rejected = 'rejected'`, `Amended = 'amended'`.
 
 ### Verification and consumer use
 

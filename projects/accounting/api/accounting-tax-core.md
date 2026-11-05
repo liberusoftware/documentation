@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-tax-core-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/routes/api.php)
+[modules/accounting-tax-core-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/tax-core')->group(function (): void {
@@ -64,7 +64,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [TaxRuleController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/src/Http/Controllers/TaxRuleController.php) | `public function index(Request $request): mixed`<br>`public function show(TaxRule $taxRule): TaxRuleResource`<br>`public function store(Request $request, CreateTaxRule $action): mixed`<br>`public function update(Request $request, TaxRule $taxRule, UpdateTaxRule $action): TaxRuleResource`<br>`public function activate(TaxRule $taxRule, ActivateTaxRule $action): TaxRuleResource`<br>`public function archive(TaxRule $taxRule, ArchiveTaxRule $action): TaxRuleResource` |
+| [TaxRuleController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-core-api/src/Http/Controllers/TaxRuleController.php) | `public function index(Request $request): mixed`<br>`public function show(TaxRule $taxRule): TaxRuleResource`<br>`public function store(Request $request, CreateTaxRule $action): mixed`<br>`public function update(Request $request, TaxRule $taxRule, UpdateTaxRule $action): TaxRuleResource`<br>`public function activate(TaxRule $taxRule, ActivateTaxRule $action): TaxRuleResource`<br>`public function archive(TaxRule $taxRule, ArchiveTaxRule $action): TaxRuleResource` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

@@ -40,9 +40,9 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [Category.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Models/Category.php) | `name`, `slug`, `description`, `team_id` |
-| [Post.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Models/Post.php) | `title`, `slug`, `content`, `excerpt`, `status`, `published_at`, `is_featured`, `featured_media_id`, `author_id`, `team_id` |
-| [Tag.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Models/Tag.php) | `name`, `slug`, `team_id` |
+| [Category.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Models/Category.php) | `name`, `slug`, `description`, `team_id` |
+| [Post.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Models/Post.php) | `title`, `slug`, `content`, `excerpt`, `status`, `published_at`, `is_featured`, `featured_media_id`, `author_id`, `team_id` |
+| [Tag.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-posts/src/Models/Tag.php) | `name`, `slug`, `team_id` |
 
 ## Server/client and React reuse
 

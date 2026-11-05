@@ -36,7 +36,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [AnalyticsIntegrationService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-analytics-integration/src/Services/AnalyticsIntegrationService.php) | `public function recordEvent(?int $teamId, array $data): AnalyticsEvent`<br>`public function saveMapping(?int $teamId, array $data): AnalyticsMapping`<br>`public function dashboard(?int $teamId, ?string $from = null, ?string $to = null): array`<br>`public function registerAdapter(AnalyticsAdapterInterface $adapter): void`<br>`public function adapterPayload(string $provider, AnalyticsEvent $event, AnalyticsMapping $mapping): array` |
+| [AnalyticsIntegrationService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-analytics-integration/src/Services/AnalyticsIntegrationService.php) | `public function recordEvent(?int $teamId, array $data): AnalyticsEvent`<br>`public function saveMapping(?int $teamId, array $data): AnalyticsMapping`<br>`public function dashboard(?int $teamId, ?string $from = null, ?string $to = null): array`<br>`public function registerAdapter(AnalyticsAdapterInterface $adapter): void`<br>`public function adapterPayload(string $provider, AnalyticsEvent $event, AnalyticsMapping $mapping): array` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -46,8 +46,8 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [AnalyticsEvent.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-analytics-integration/src/Models/AnalyticsEvent.php) | `team_id`, `event_type`, `event_name`, `subject_type`, `subject_id`, `consent_category`, `consent_granted`, `status`, `idempotency_key`, `payload`, `occurred_at` |
-| [AnalyticsMapping.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-analytics-integration/src/Models/AnalyticsMapping.php) | `team_id`, `event_type`, `provider`, `measurement_key`, `consent_category`, `config`, `enabled` |
+| [AnalyticsEvent.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-analytics-integration/src/Models/AnalyticsEvent.php) | `team_id`, `event_type`, `event_name`, `subject_type`, `subject_id`, `consent_category`, `consent_granted`, `status`, `idempotency_key`, `payload`, `occurred_at` |
+| [AnalyticsMapping.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-analytics-integration/src/Models/AnalyticsMapping.php) | `team_id`, `event_type`, `provider`, `measurement_key`, `consent_category`, `config`, `enabled` |
 
 ## Server/client and React reuse
 

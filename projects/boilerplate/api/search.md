@@ -36,7 +36,7 @@ The package is optional and installable independently. Applications may omit it,
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/search-api/routes/api.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/search-api/routes/api.php)
+[modules/search-api/routes/api.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/search-api/routes/api.php)
 
 ```php
 Route::prefix('api/search')->name('search.')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function () {
@@ -50,7 +50,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [SearchController.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/search-api/src/Http/Controllers/SearchController.php) | `public function users(Request $request): JsonResponse`<br>`public function all(Request $request): JsonResponse` |
+| [SearchController.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/search-api/src/Http/Controllers/SearchController.php) | `public function users(Request $request): JsonResponse`<br>`public function all(Request $request): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

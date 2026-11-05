@@ -14,18 +14,18 @@ See the [implementation reference](../../modules/source/liberusoftware--schedule
 
 | Consumer | Pinned module metadata | Variant | Test files |
 | --- | --- | ---: | ---: |
-| accounting | [scheduler-queues](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/scheduler-queues/composer.json) | 2 | 1 |
-| automation | [scheduler-queues](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/scheduler-queues/composer.json) | 2 | 1 |
-| billing | [scheduler-queues](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/scheduler-queues/composer.json) | 2 | 1 |
-| boilerplate | [scheduler-queues](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/scheduler-queues/composer.json) | 2 | 1 |
-| browser-game | [scheduler-queues](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/scheduler-queues/composer.json) | 2 | 1 |
-| control-panel | [scheduler-queues](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/scheduler-queues/composer.json) | 2 | 1 |
-| crm | [scheduler-queues](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/scheduler-queues/composer.json) | 1 | 5 |
-| sap | [scheduler-queues](https://github.com/liberusoftware/enterprise-sap-laravel/blob/b12a8c841c6a9054e52cac99d9ac1f233924a041/modules/scheduler-queues/composer.json) | 2 | 1 |
-| genealogy | [scheduler-queues](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/scheduler-queues/composer.json) | 2 | 1 |
-| maintenance | [scheduler-queues](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/scheduler-queues/composer.json) | 2 | 1 |
-| real-estate | [scheduler-queues](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/scheduler-queues/composer.json) | 2 | 1 |
-| social-network | [scheduler-queues](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/scheduler-queues/composer.json) | 2 | 1 |
+| accounting | [scheduler-queues](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/scheduler-queues/composer.json) | 2 | 1 |
+| automation | [scheduler-queues](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/scheduler-queues/composer.json) | 2 | 1 |
+| billing | [scheduler-queues](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/scheduler-queues/composer.json) | 2 | 1 |
+| boilerplate | [scheduler-queues](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/scheduler-queues/composer.json) | 2 | 1 |
+| browser-game | [scheduler-queues](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/scheduler-queues/composer.json) | 2 | 1 |
+| control-panel | [scheduler-queues](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/scheduler-queues/composer.json) | 2 | 1 |
+| crm | [scheduler-queues](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/scheduler-queues/composer.json) | 1 | 5 |
+| sap | [scheduler-queues](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament/blob/b12a8c841c6a9054e52cac99d9ac1f233924a041/modules/scheduler-queues/composer.json) | 2 | 1 |
+| genealogy | [scheduler-queues](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/scheduler-queues/composer.json) | 2 | 1 |
+| maintenance | [scheduler-queues](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/scheduler-queues/composer.json) | 2 | 1 |
+| real-estate | [scheduler-queues](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/scheduler-queues/composer.json) | 2 | 1 |
+| social-network | [scheduler-queues](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/scheduler-queues/composer.json) | 2 | 1 |
 
 ## Manifest and dependency differences
 

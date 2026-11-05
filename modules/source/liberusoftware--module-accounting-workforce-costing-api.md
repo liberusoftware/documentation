@@ -8,7 +8,7 @@ Accounting workforce costing API presentation module.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-workforce-costing-api](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-workforce-costing-api](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: accounting-erp-laravel, `accounting-workforce-costing-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `accounting-workforce-costing-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: accounting-erp-laravel, `accounting-workforce-costing-api`. Matc
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/module.json).
 
 **Declared capabilities:** accounting.workforce-costing.api
 
@@ -59,15 +59,15 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/WorkforceCostingController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/src/Http/Controllers/WorkforceCostingController.php) | `public function costs(Request $request): mixed`<br>`public function record(Request $request, RecordWorkforceCost $action): mixed`<br>`public function allocate(Request $request, string $cost, AllocateWorkforceCost $action): mixed`<br>`public function capitalize(Request $request, string $cost, CapitalizeWorkforceCost $action): mixed`<br>`public function rules(Request $request): mixed`<br>`public function createRule(Request $request, CreateWorkforceCostingRule $action): mixed`<br>`public function profitability(Request $request, WorkforceProfitability $query): mixed` |
+| [src/Http/Controllers/WorkforceCostingController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/src/Http/Controllers/WorkforceCostingController.php) | `public function costs(Request $request): mixed`<br>`public function record(Request $request, RecordWorkforceCost $action): mixed`<br>`public function allocate(Request $request, string $cost, AllocateWorkforceCost $action): mixed`<br>`public function capitalize(Request $request, string $cost, CapitalizeWorkforceCost $action): mixed`<br>`public function rules(Request $request): mixed`<br>`public function createRule(Request $request, CreateWorkforceCostingRule $action): mixed`<br>`public function profitability(Request $request, WorkforceProfitability $query): mixed` |
 
-Other non-legacy PHP sources: [src/WorkforceCostingApiServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/src/WorkforceCostingApiServiceProvider.php).
+Other non-legacy PHP sources: [src/WorkforceCostingApiServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/src/WorkforceCostingApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/routes/api.php)
+- [routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-workforce-costing-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

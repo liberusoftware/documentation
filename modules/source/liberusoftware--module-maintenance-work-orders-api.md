@@ -8,7 +8,7 @@ Work orders API adapter for Liberu Maintenance
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [maintenance](../../projects/maintenance/SOURCE-MODULES.md) | [module-maintenance-work-orders-api](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/composer.json) | `c267d625e264` | [Variant 1](#variant-1) | 0 |
+| [maintenance](../../projects/maintenance/SOURCE-MODULES.md) | [module-maintenance-work-orders-api](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/composer.json) | `c267d625e264` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: maintenance-laravel, `module-maintenance-work-orders-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-maintenance-laravel-filament, `module-maintenance-work-orders-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: maintenance-laravel, `module-maintenance-work-orders-api`. Match
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/composer.json) · [module.json](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/composer.json) · [module.json](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/module.json).
 
 **Declared capabilities:** maintenance.work-orders.api
 
@@ -60,16 +60,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/WorkOrderController.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/src/Http/Controllers/WorkOrderController.php) | `public function index(Request $r): JsonResponse`<br>`public function store(Request $r, CreateWorkOrder $create): JsonResponse`<br>`public function show(Request $r, WorkOrder $workOrder): JsonResponse`<br>`public function update(Request $r, WorkOrder $workOrder, UpdateWorkOrder $update): JsonResponse`<br>`public function destroy(Request $r, WorkOrder $workOrder, DeleteWorkOrder $delete): JsonResponse`<br>`public function transition(Request $r, WorkOrder $workOrder, TransitionWorkOrder $transition): JsonResponse`<br>`public function comments(Request $r, WorkOrder $workOrder): JsonResponse`<br>`public function comment(Request $r, WorkOrder $workOrder, AddWorkOrderComment $add): JsonResponse`<br>`public function dependencies(Request $r, WorkOrder $workOrder): JsonResponse`<br>`public function addDependency(Request $r, WorkOrder $workOrder, AddWorkOrderDependency $add): JsonResponse`<br>`public function removeDependency(Request $r, WorkOrder $workOrder, WorkOrderDependency $dependency, RemoveWorkOrderDependency $remove): JsonResponse`<br>`public function evidence(Request $r, WorkOrder $workOrder): JsonResponse`<br>`public function addEvidence(Request $r, WorkOrder $workOrder, AddWorkOrderEvidence $add): JsonResponse`<br>`public function removeEvidence(Request $r, WorkOrder $workOrder, WorkOrderEvidence $evidence, RemoveWorkOrderEvidence $remove): JsonResponse` |
+| [src/Http/Controllers/WorkOrderController.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/src/Http/Controllers/WorkOrderController.php) | `public function index(Request $r): JsonResponse`<br>`public function store(Request $r, CreateWorkOrder $create): JsonResponse`<br>`public function show(Request $r, WorkOrder $workOrder): JsonResponse`<br>`public function update(Request $r, WorkOrder $workOrder, UpdateWorkOrder $update): JsonResponse`<br>`public function destroy(Request $r, WorkOrder $workOrder, DeleteWorkOrder $delete): JsonResponse`<br>`public function transition(Request $r, WorkOrder $workOrder, TransitionWorkOrder $transition): JsonResponse`<br>`public function comments(Request $r, WorkOrder $workOrder): JsonResponse`<br>`public function comment(Request $r, WorkOrder $workOrder, AddWorkOrderComment $add): JsonResponse`<br>`public function dependencies(Request $r, WorkOrder $workOrder): JsonResponse`<br>`public function addDependency(Request $r, WorkOrder $workOrder, AddWorkOrderDependency $add): JsonResponse`<br>`public function removeDependency(Request $r, WorkOrder $workOrder, WorkOrderDependency $dependency, RemoveWorkOrderDependency $remove): JsonResponse`<br>`public function evidence(Request $r, WorkOrder $workOrder): JsonResponse`<br>`public function addEvidence(Request $r, WorkOrder $workOrder, AddWorkOrderEvidence $add): JsonResponse`<br>`public function removeEvidence(Request $r, WorkOrder $workOrder, WorkOrderEvidence $evidence, RemoveWorkOrderEvidence $remove): JsonResponse` |
 
-Other non-legacy PHP sources: [src/WorkOrdersApiServiceProvider.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/src/WorkOrdersApiServiceProvider.php).
+Other non-legacy PHP sources: [src/WorkOrdersApiServiceProvider.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/src/WorkOrdersApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/maintenance-work-orders.yaml](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/openapi/v1/maintenance-work-orders.yaml)
-- [routes/api.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/routes/api.php)
+- [openapi/v1/maintenance-work-orders.yaml](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/openapi/v1/maintenance-work-orders.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-work-orders-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

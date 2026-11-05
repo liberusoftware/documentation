@@ -16,7 +16,7 @@ No dedicated API package name match is established among the mapped consumers of
 
 Ecommerce implementation also lives outside `modules/`. Preserve this scope and use the [application capability map](../SOURCE-APPLICATION.md) for current services, policies, REST/GraphQL entry points and checkout behavior. A blank package match does not remove the capability.
 
-Observed application sources for this capability: [app/Services/CheckoutService.php](https://github.com/liberusoftware/ecommerce-laravel/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Services/CheckoutService.php) · [app/Services/HeadlessCheckoutService.php](https://github.com/liberusoftware/ecommerce-laravel/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Services/HeadlessCheckoutService.php) · [app/Http/Controllers/CheckoutController.php](https://github.com/liberusoftware/ecommerce-laravel/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Http/Controllers/CheckoutController.php).
+Observed application sources for this capability: [app/Services/CheckoutService.php](https://github.com/liberusoftware/project-ecommerce-laravel-filament/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Services/CheckoutService.php) · [app/Services/HeadlessCheckoutService.php](https://github.com/liberusoftware/project-ecommerce-laravel-filament/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Services/HeadlessCheckoutService.php) · [app/Http/Controllers/CheckoutController.php](https://github.com/liberusoftware/project-ecommerce-laravel-filament/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/app/Http/Controllers/CheckoutController.php).
 
 ## Module surfaces and component contracts
 

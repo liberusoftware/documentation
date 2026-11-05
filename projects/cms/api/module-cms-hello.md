@@ -43,7 +43,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/cms-hello/routes/api.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/routes/api.php)
+[modules/cms-hello/routes/api.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/routes/api.php)
 
 ```php
 Route::get('api/v1/hello/{name?}', HelloController::class)->name('cms.hello.greet');
@@ -55,8 +55,8 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [GreetingApiController.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Http/Controllers/GreetingApiController.php) | `public function index(): AnonymousResourceCollection` |
-| [HelloController.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Http/Controllers/HelloController.php) | `public function __invoke(string $name = 'world'): JsonResponse` |
+| [GreetingApiController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Http/Controllers/GreetingApiController.php) | `public function index(): AnonymousResourceCollection` |
+| [HelloController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-hello/src/Http/Controllers/HelloController.php) | `public function __invoke(string $name = 'world'): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

@@ -40,7 +40,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [DocumentManagementService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-document-management/src/Services/DocumentManagementService.php) | `public function documents(?int $teamId, int $perPage = 25): LengthAwarePaginator`<br>`public function create(array $data, ?int $teamId = null): Document`<br>`public function transition(Document $document, string $status): Document`<br>`public function recordDownload(Document $document, ?int $userId = null, ?string $ip = null): void` |
+| [DocumentManagementService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-document-management/src/Services/DocumentManagementService.php) | `public function documents(?int $teamId, int $perPage = 25): LengthAwarePaginator`<br>`public function create(array $data, ?int $teamId = null): Document`<br>`public function transition(Document $document, string $status): Document`<br>`public function recordDownload(Document $document, ?int $userId = null, ?string $ip = null): void` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -50,8 +50,8 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [Document.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-document-management/src/Models/Document.php) | `team_id`, `title`, `slug`, `path`, `mime_type`, `size`, `status`, `extracted_text`, `retention_until` |
-| [DocumentDownload.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-document-management/src/Models/DocumentDownload.php) | `user_id`, `ip_address`, `downloaded_at` |
+| [Document.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-document-management/src/Models/Document.php) | `team_id`, `title`, `slug`, `path`, `mime_type`, `size`, `status`, `extracted_text`, `retention_until` |
+| [DocumentDownload.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-document-management/src/Models/DocumentDownload.php) | `user_id`, `ip_address`, `downloaded_at` |
 
 ## Server/client and React reuse
 

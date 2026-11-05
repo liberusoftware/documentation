@@ -8,9 +8,9 @@ Liberu liberu-revenue-and-care-orchestration-filament module.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [billing](../../projects/billing/SOURCE-MODULES.md) | [liberu-revenue-and-care-orchestration-filament](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/composer.json) | `4743bdfebd1c` | [Variant 2](#variant-2) | 1 |
-| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-liberu-revenue-and-care-orchestration-filament](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-liberu-revenue-and-care-orchestration-filament/composer.json) | `4743bdfebd1c` | [Variant 2](#variant-2) | 1 |
-| [genealogy](../../projects/genealogy/SOURCE-MODULES.md) | [liberu-revenue-and-care-orchestration-filament](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/composer.json) | `577e93db23cc` | [Variant 1](#variant-1) | 1 |
+| [billing](../../projects/billing/SOURCE-MODULES.md) | [liberu-revenue-and-care-orchestration-filament](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/composer.json) | `4743bdfebd1c` | [Variant 2](#variant-2) | 1 |
+| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-liberu-revenue-and-care-orchestration-filament](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-liberu-revenue-and-care-orchestration-filament/composer.json) | `4743bdfebd1c` | [Variant 2](#variant-2) | 1 |
+| [genealogy](../../projects/genealogy/SOURCE-MODULES.md) | [liberu-revenue-and-care-orchestration-filament](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/composer.json) | `577e93db23cc` | [Variant 1](#variant-1) | 1 |
 
 Physical source locations: **3**. Reference variants: **2**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -18,7 +18,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: genealogy-laravel, `liberu-revenue-and-care-orchestration-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-genealogy-laravel-filament, `liberu-revenue-and-care-orchestration-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -36,7 +36,7 @@ Representative: genealogy-laravel, `liberu-revenue-and-care-orchestration-filame
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/composer.json) · [module.json](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/composer.json) · [module.json](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/module.json).
 
 **Declared capabilities:** liberu.revenue-and-care-orchestration.filament
 
@@ -60,7 +60,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/Resources/CarePlanResource.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource.php) · [src/Resources/CarePlanResource/Pages/CreateCarePlan.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/CreateCarePlan.php) · [src/Resources/CarePlanResource/Pages/EditCarePlan.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/EditCarePlan.php) · [src/Resources/CarePlanResource/Pages/ListCarePlans.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/ListCarePlans.php) · [src/RevenueAndCareOrchestrationFilamentServiceProvider.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/RevenueAndCareOrchestrationFilamentServiceProvider.php).
+Other non-legacy PHP sources: [src/Resources/CarePlanResource.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource.php) · [src/Resources/CarePlanResource/Pages/CreateCarePlan.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/CreateCarePlan.php) · [src/Resources/CarePlanResource/Pages/EditCarePlan.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/EditCarePlan.php) · [src/Resources/CarePlanResource/Pages/ListCarePlans.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/ListCarePlans.php) · [src/RevenueAndCareOrchestrationFilamentServiceProvider.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/src/RevenueAndCareOrchestrationFilamentServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
@@ -72,14 +72,14 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **1**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Unit/BoundaryTest.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/tests/Unit/BoundaryTest.php)
+- [tests/Unit/BoundaryTest.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/liberu-revenue-and-care-orchestration-filament/tests/Unit/BoundaryTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.
 
 
 ## Variant 2
 
-Representative: billing-laravel, `liberu-revenue-and-care-orchestration-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-billing-laravel-filament, `liberu-revenue-and-care-orchestration-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -97,7 +97,7 @@ Representative: billing-laravel, `liberu-revenue-and-care-orchestration-filament
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/composer.json) · [module.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/composer.json) · [module.json](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/module.json).
 
 **Declared capabilities:** liberu.revenue-and-care-orchestration.filament
 
@@ -121,7 +121,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/Resources/CarePlanResource.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource.php) · [src/Resources/CarePlanResource/Pages/CreateCarePlan.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/CreateCarePlan.php) · [src/Resources/CarePlanResource/Pages/EditCarePlan.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/EditCarePlan.php) · [src/Resources/CarePlanResource/Pages/ListCarePlans.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/ListCarePlans.php) · [src/RevenueAndCareOrchestrationFilamentServiceProvider.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/src/RevenueAndCareOrchestrationFilamentServiceProvider.php).
+Other non-legacy PHP sources: [src/Resources/CarePlanResource.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource.php) · [src/Resources/CarePlanResource/Pages/CreateCarePlan.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/CreateCarePlan.php) · [src/Resources/CarePlanResource/Pages/EditCarePlan.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/EditCarePlan.php) · [src/Resources/CarePlanResource/Pages/ListCarePlans.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/src/Resources/CarePlanResource/Pages/ListCarePlans.php) · [src/RevenueAndCareOrchestrationFilamentServiceProvider.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/src/RevenueAndCareOrchestrationFilamentServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
@@ -133,6 +133,6 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **1**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Unit/BoundaryTest.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/tests/Unit/BoundaryTest.php)
+- [tests/Unit/BoundaryTest.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/liberu-revenue-and-care-orchestration-filament/tests/Unit/BoundaryTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

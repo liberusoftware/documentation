@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/crm-customer-data-platform-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-data-platform-api/routes/api.php)
+[modules/crm-customer-data-platform-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-data-platform-api/routes/api.php)
 
 ```php
 Route::middleware('auth:sanctum')->prefix('api/v1/crm/customer-data-platform')->group(function (): void {
@@ -62,7 +62,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [CdpController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-data-platform-api/src/Http/Controllers/CdpController.php) | `public function profiles(): JsonResponse`<br>`public function storeProfile(UpsertCdpProfile $action): JsonResponse`<br>`public function event(CdpProfile $profile, IngestCdpEvent $action): JsonResponse`<br>`public function audiences(): JsonResponse`<br>`public function storeAudience(CreateCdpAudience $action): JsonResponse`<br>`public function activate(CdpAudience $audience, ActivateCdpAudience $action): JsonResponse` |
+| [CdpController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-customer-data-platform-api/src/Http/Controllers/CdpController.php) | `public function profiles(): JsonResponse`<br>`public function storeProfile(UpsertCdpProfile $action): JsonResponse`<br>`public function event(CdpProfile $profile, IngestCdpEvent $action): JsonResponse`<br>`public function audiences(): JsonResponse`<br>`public function storeAudience(CreateCdpAudience $action): JsonResponse`<br>`public function activate(CdpAudience $audience, ActivateCdpAudience $action): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

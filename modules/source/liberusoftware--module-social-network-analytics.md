@@ -8,7 +8,7 @@ Privacy-aware social network analytics and metric snapshots.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [social-network](../../projects/social-network/SOURCE-MODULES.md) | [social-network-analytics](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/composer.json) | `08bbc484b50f` | [Variant 1](#variant-1) | 0 |
+| [social-network](../../projects/social-network/SOURCE-MODULES.md) | [social-network-analytics](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/composer.json) | `08bbc484b50f` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: social-network-laravel, `social-network-analytics`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-social-network-laravel-filament, `social-network-analytics`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: social-network-laravel, `social-network-analytics`. Matching ref
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/composer.json) · [module.json](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/composer.json) · [module.json](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/module.json).
 
 **Declared capabilities:** analytics.growth, analytics.engagement, analytics.retention, analytics.health, analytics.delivery, analytics.moderation, analytics.privacy-governed-insights
 
@@ -57,18 +57,18 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/BuildSnapshot.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/BuildSnapshot.php) | `public function __construct( private AnalyticsAuthorizer $authorizer, private Dispatcher $events, )`<br>`public function handle(object $actor, string $metric, string $periodStart, string $periodEnd, int $cohortSize, float $value, array $dimensions = []): MetricSnapshot` |
-| [src/Actions/GetMetrics.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/GetMetrics.php) | `public function __construct(private AnalyticsAuthorizer $authorizer)`<br>`public function handle(object $actor, string $metric, int $limit = 30): Collection` |
-| [src/Actions/RecordMetric.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/RecordMetric.php) | `public function __construct( private AnalyticsAuthorizer $authorizer, private Dispatcher $events, )`<br>`public function handle(object $actor, string $name, array $dimensions = [], int $value = 1): AnalyticsEvent` |
-| [src/Contracts/AnalyticsAuthorizer.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Contracts/AnalyticsAuthorizer.php) | `public function view(object $actor, string $metric): void`<br>`public function record(object $actor, string $metric): void` |
+| [src/Actions/BuildSnapshot.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/BuildSnapshot.php) | `public function __construct( private AnalyticsAuthorizer $authorizer, private Dispatcher $events, )`<br>`public function handle(object $actor, string $metric, string $periodStart, string $periodEnd, int $cohortSize, float $value, array $dimensions = []): MetricSnapshot` |
+| [src/Actions/GetMetrics.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/GetMetrics.php) | `public function __construct(private AnalyticsAuthorizer $authorizer)`<br>`public function handle(object $actor, string $metric, int $limit = 30): Collection` |
+| [src/Actions/RecordMetric.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Actions/RecordMetric.php) | `public function __construct( private AnalyticsAuthorizer $authorizer, private Dispatcher $events, )`<br>`public function handle(object $actor, string $name, array $dimensions = [], int $value = 1): AnalyticsEvent` |
+| [src/Contracts/AnalyticsAuthorizer.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Contracts/AnalyticsAuthorizer.php) | `public function view(object $actor, string $metric): void`<br>`public function record(object $actor, string $metric): void` |
 
-Other non-legacy PHP sources: [src/AnalyticsServiceProvider.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/AnalyticsServiceProvider.php) · [src/Authorization/GateAnalyticsAuthorizer.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Authorization/GateAnalyticsAuthorizer.php) · [src/Events/MetricRecorded.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Events/MetricRecorded.php) · [src/Events/MetricSnapshotCreated.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Events/MetricSnapshotCreated.php) · [src/Models/AnalyticsEvent.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Models/AnalyticsEvent.php) · [src/Models/MetricSnapshot.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Models/MetricSnapshot.php).
+Other non-legacy PHP sources: [src/AnalyticsServiceProvider.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/AnalyticsServiceProvider.php) · [src/Authorization/GateAnalyticsAuthorizer.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Authorization/GateAnalyticsAuthorizer.php) · [src/Events/MetricRecorded.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Events/MetricRecorded.php) · [src/Events/MetricSnapshotCreated.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Events/MetricSnapshotCreated.php) · [src/Models/AnalyticsEvent.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Models/AnalyticsEvent.php) · [src/Models/MetricSnapshot.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/src/Models/MetricSnapshot.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_24_150000_create_social_analytics_tables.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/database/migrations/2026_08_24_150000_create_social_analytics_tables.php)
+- [database/migrations/2026_08_24_150000_create_social_analytics_tables.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-analytics/database/migrations/2026_08_24_150000_create_social_analytics_tables.php)
 
 ### Verification and consumer use
 

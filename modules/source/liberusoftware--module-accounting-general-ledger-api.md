@@ -8,7 +8,7 @@ Authenticated API adapter for the accounting general ledger.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-general-ledger-api](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
+| [accounting](../../projects/accounting/SOURCE-MODULES.md) | [accounting-general-ledger-api](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/composer.json) | `39a49babafc0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: accounting-erp-laravel, `accounting-general-ledger-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-accounting-erp-laravel-filament, `accounting-general-ledger-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: accounting-erp-laravel, `accounting-general-ledger-api`. Matchin
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/composer.json) · [module.json](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/composer.json) · [module.json](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/module.json).
 
 **Declared capabilities:** accounting.general-ledger.api
 
@@ -59,17 +59,17 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/GeneralLedgerController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/src/Http/Controllers/GeneralLedgerController.php) | `public function index(Request $request)`<br>`public function show(string $journal): JournalResource`<br>`public function store(Request $request, CreateJournal $create)`<br>`public function storeTyped(Request $request, string $type, CreateTypedJournal $create): JsonResource`<br>`public function post(Request $request, string $journal, PostJournal $post): JournalResource`<br>`public function reverse(Request $request, string $journal, ReverseJournal $reverse): JournalResource`<br>`public function balances(Request $request, AccountBalances $balances)`<br>`public function saveRecurring(Request $request, SaveRecurringJournal $save)`<br>`public function generateRecurring(Request $request, string $recurring, GenerateRecurringJournal $generate): JournalResource`<br>`public function destroy(string $journal): Response` |
-| [src/Policies/GeneralLedgerPolicy.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/src/Policies/GeneralLedgerPolicy.php) | `public function viewAny($user): bool`<br>`public function view($user, JournalEntry $entry): bool`<br>`public function create($user): bool`<br>`public function update($user, JournalEntry $entry): bool`<br>`public function delete($user, JournalEntry $entry): bool` |
+| [src/Http/Controllers/GeneralLedgerController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/src/Http/Controllers/GeneralLedgerController.php) | `public function index(Request $request)`<br>`public function show(string $journal): JournalResource`<br>`public function store(Request $request, CreateJournal $create)`<br>`public function storeTyped(Request $request, string $type, CreateTypedJournal $create): JsonResource`<br>`public function post(Request $request, string $journal, PostJournal $post): JournalResource`<br>`public function reverse(Request $request, string $journal, ReverseJournal $reverse): JournalResource`<br>`public function balances(Request $request, AccountBalances $balances)`<br>`public function saveRecurring(Request $request, SaveRecurringJournal $save)`<br>`public function generateRecurring(Request $request, string $recurring, GenerateRecurringJournal $generate): JournalResource`<br>`public function destroy(string $journal): Response` |
+| [src/Policies/GeneralLedgerPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/src/Policies/GeneralLedgerPolicy.php) | `public function viewAny($user): bool`<br>`public function view($user, JournalEntry $entry): bool`<br>`public function create($user): bool`<br>`public function update($user, JournalEntry $entry): bool`<br>`public function delete($user, JournalEntry $entry): bool` |
 
-Other non-legacy PHP sources: [src/GeneralLedgerApiServiceProvider.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/src/GeneralLedgerApiServiceProvider.php) · [src/Http/Resources/JournalResource.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/src/Http/Resources/JournalResource.php).
+Other non-legacy PHP sources: [src/GeneralLedgerApiServiceProvider.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/src/GeneralLedgerApiServiceProvider.php) · [src/Http/Resources/JournalResource.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/src/Http/Resources/JournalResource.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/accounting-general-ledger.yaml](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/openapi/v1/accounting-general-ledger.yaml)
-- [routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/routes/api.php)
+- [openapi/v1/accounting-general-ledger.yaml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/openapi/v1/accounting-general-ledger.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-general-ledger-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

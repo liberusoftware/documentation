@@ -8,7 +8,7 @@ API adapter for Control Panel Monitoring.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [control-panel](../../projects/control-panel/SOURCE-MODULES.md) | [control-panel-monitoring-api](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/composer.json) | `1797f25d705f` | [Variant 1](#variant-1) | 0 |
+| [control-panel](../../projects/control-panel/SOURCE-MODULES.md) | [control-panel-monitoring-api](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/composer.json) | `1797f25d705f` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: control-panel-laravel, `control-panel-monitoring-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-control-panel-laravel-filament, `control-panel-monitoring-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: control-panel-laravel, `control-panel-monitoring-api`. Matching 
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/composer.json) · [module.json](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/composer.json) · [module.json](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/module.json).
 
 **Declared capabilities:** control-panel.monitoring.api
 
@@ -59,16 +59,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/MonitorController.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/src/Http/Controllers/MonitorController.php) | `public function index(Request $request, ListMonitors $list): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function store(Request $request, RegisterMonitor $register): JsonResponse`<br>`public function event(Request $request, RecordMonitoringEvent $record): JsonResponse`<br>`public function record(Request $request, RecordMonitoringResource $record): JsonResponse`<br>`public function resolveEvent(Request $request, string $id, ResolveMonitoringEvent $resolve): JsonResponse`<br>`public function cancelMaintenance(Request $request, MaintenanceWindow $window, CancelMaintenanceWindow $cancel): JsonResponse`<br>`public function deleteMaintenance(Request $request, string $id, DeleteMaintenanceWindow $delete): JsonResponse`<br>`public function updateMaintenance(Request $request, string $id, UpdateMaintenanceWindow $update): JsonResponse` |
+| [src/Http/Controllers/MonitorController.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/src/Http/Controllers/MonitorController.php) | `public function index(Request $request, ListMonitors $list): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function store(Request $request, RegisterMonitor $register): JsonResponse`<br>`public function event(Request $request, RecordMonitoringEvent $record): JsonResponse`<br>`public function record(Request $request, RecordMonitoringResource $record): JsonResponse`<br>`public function resolveEvent(Request $request, string $id, ResolveMonitoringEvent $resolve): JsonResponse`<br>`public function cancelMaintenance(Request $request, MaintenanceWindow $window, CancelMaintenanceWindow $cancel): JsonResponse`<br>`public function deleteMaintenance(Request $request, string $id, DeleteMaintenanceWindow $delete): JsonResponse`<br>`public function updateMaintenance(Request $request, string $id, UpdateMaintenanceWindow $update): JsonResponse` |
 
-Other non-legacy PHP sources: [src/MonitoringApiServiceProvider.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/src/MonitoringApiServiceProvider.php).
+Other non-legacy PHP sources: [src/MonitoringApiServiceProvider.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/src/MonitoringApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/control-panel-monitoring.yaml](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/openapi/v1/control-panel-monitoring.yaml)
-- [routes/api.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/routes/api.php)
+- [openapi/v1/control-panel-monitoring.yaml](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/openapi/v1/control-panel-monitoring.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

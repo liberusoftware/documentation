@@ -41,7 +41,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [DigitalAssetManagementService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-digital-asset-management/src/Services/DigitalAssetManagementService.php) | `public function assets(?int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function register(array $data, ?int $teamId = null): DigitalAsset`<br>`public function approve(DigitalAsset $asset): DigitalAsset`<br>`public function addRendition(DigitalAsset $asset, string $name, string $storageKey): DigitalAsset`<br>`public function distribute(DigitalAsset $asset, array $channels): DigitalAsset` |
+| [DigitalAssetManagementService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-digital-asset-management/src/Services/DigitalAssetManagementService.php) | `public function assets(?int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator`<br>`public function register(array $data, ?int $teamId = null): DigitalAsset`<br>`public function approve(DigitalAsset $asset): DigitalAsset`<br>`public function addRendition(DigitalAsset $asset, string $name, string $storageKey): DigitalAsset`<br>`public function distribute(DigitalAsset $asset, array $channels): DigitalAsset` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -51,7 +51,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [DigitalAsset.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-digital-asset-management/src/Models/DigitalAsset.php) | `team_id`, `name`, `asset_type`, `storage_key`, `license`, `attribution`, `release_reference`, `expires_at`, `renditions`, `status`, `brand_asset`, `approved`, `approved_at`, `distribution` |
+| [DigitalAsset.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-digital-asset-management/src/Models/DigitalAsset.php) | `team_id`, `name`, `asset_type`, `storage_key`, `license`, `attribution`, `release_reference`, `expires_at`, `renditions`, `status`, `brand_asset`, `approved`, `approved_at`, `distribution` |
 
 ## Server/client and React reuse
 

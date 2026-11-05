@@ -8,7 +8,7 @@ Versioned API adapter for Messaging.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [social-network](../../projects/social-network/SOURCE-MODULES.md) | [social-network-messaging-api](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/composer.json) | `08bbc484b50f` | [Variant 1](#variant-1) | 2 |
+| [social-network](../../projects/social-network/SOURCE-MODULES.md) | [social-network-messaging-api](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/composer.json) | `08bbc484b50f` | [Variant 1](#variant-1) | 2 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: social-network-laravel, `social-network-messaging-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-social-network-laravel-filament, `social-network-messaging-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: social-network-laravel, `social-network-messaging-api`. Matching
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/composer.json) · [module.json](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/composer.json) · [module.json](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/module.json).
 
 **Declared capabilities:** social-network.messaging.api
 
@@ -61,16 +61,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/MessagingController.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/src/Http/Controllers/MessagingController.php) | `public function conversation(Request $request, GetProfile $get, CreateConversation $create): JsonResponse`<br>`public function index(Request $request, GetProfile $get, ListConversations $list): JsonResponse`<br>`public function unreadCount(Request $request, GetProfile $get, UnreadMessageCount $count): JsonResponse`<br>`public function show(string $conversation, Request $request, GetProfile $get, GetConversation $view): JsonResponse`<br>`public function messages(string $conversation, Request $request, GetProfile $get, GetConversation $view): JsonResponse`<br>`public function message(string $conversation, Request $request, GetProfile $get, SendMessage $send): JsonResponse`<br>`public function reaction(string $conversation, Message $message, Request $request, GetProfile $get, AddReaction $add): JsonResponse`<br>`public function removeReaction(string $conversation, Message $message, string $emoji, Request $request, GetProfile $get, RemoveReaction $remove): JsonResponse`<br>`public function typing(string $conversation, Request $request, GetProfile $get): JsonResponse`<br>`public function read(string $conversation, Request $request, GetProfile $get, MarkConversationRead $read): JsonResponse`<br>`public function destroyMessage(string $conversation, string $message, Request $request, GetProfile $get, DeleteMessage $delete): JsonResponse`<br>`public function addParticipant(string $conversation, Request $request, GetProfile $get, AddParticipant $add): JsonResponse`<br>`public function removeParticipant(string $conversation, string $profile, Request $request, GetProfile $get, RemoveParticipant $remove): JsonResponse` |
+| [src/Http/Controllers/MessagingController.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/src/Http/Controllers/MessagingController.php) | `public function conversation(Request $request, GetProfile $get, CreateConversation $create): JsonResponse`<br>`public function index(Request $request, GetProfile $get, ListConversations $list): JsonResponse`<br>`public function unreadCount(Request $request, GetProfile $get, UnreadMessageCount $count): JsonResponse`<br>`public function show(string $conversation, Request $request, GetProfile $get, GetConversation $view): JsonResponse`<br>`public function messages(string $conversation, Request $request, GetProfile $get, GetConversation $view): JsonResponse`<br>`public function message(string $conversation, Request $request, GetProfile $get, SendMessage $send): JsonResponse`<br>`public function reaction(string $conversation, Message $message, Request $request, GetProfile $get, AddReaction $add): JsonResponse`<br>`public function removeReaction(string $conversation, Message $message, string $emoji, Request $request, GetProfile $get, RemoveReaction $remove): JsonResponse`<br>`public function typing(string $conversation, Request $request, GetProfile $get): JsonResponse`<br>`public function read(string $conversation, Request $request, GetProfile $get, MarkConversationRead $read): JsonResponse`<br>`public function destroyMessage(string $conversation, string $message, Request $request, GetProfile $get, DeleteMessage $delete): JsonResponse`<br>`public function addParticipant(string $conversation, Request $request, GetProfile $get, AddParticipant $add): JsonResponse`<br>`public function removeParticipant(string $conversation, string $profile, Request $request, GetProfile $get, RemoveParticipant $remove): JsonResponse` |
 
-Other non-legacy PHP sources: [src/MessagingApiServiceProvider.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/src/MessagingApiServiceProvider.php).
+Other non-legacy PHP sources: [src/MessagingApiServiceProvider.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/src/MessagingApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/social-network-messaging.yaml](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/openapi/v1/social-network-messaging.yaml)
-- [routes/api.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/routes/api.php)
+- [openapi/v1/social-network-messaging.yaml](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/openapi/v1/social-network-messaging.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 
@@ -82,7 +82,7 @@ Declared Composer scripts: `{"test": "pest", "test:coverage": "pest --coverage -
 
 Tracked files under `tests/`: **2**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Pest.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/tests/Pest.php)
-- [tests/Unit/PackageStructureTest.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/tests/Unit/PackageStructureTest.php)
+- [tests/Pest.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/tests/Pest.php)
+- [tests/Unit/PackageStructureTest.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-messaging-api/tests/Unit/PackageStructureTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

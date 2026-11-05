@@ -37,7 +37,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [DisplayModesService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-display-modes/src/Services/DisplayModesService.php) | `public function modes(?int $teamId, ?string $contentType = null, int $perPage = 25): LengthAwarePaginator`<br>`public function create(array $data, ?int $teamId = null): DisplayMode`<br>`public function select(string $contentType, ?int $teamId, string $slug = 'default', ?string $variant = null): ?DisplayMode` |
+| [DisplayModesService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-display-modes/src/Services/DisplayModesService.php) | `public function modes(?int $teamId, ?string $contentType = null, int $perPage = 25): LengthAwarePaginator`<br>`public function create(array $data, ?int $teamId = null): DisplayMode`<br>`public function select(string $contentType, ?int $teamId, string $slug = 'default', ?string $variant = null): ?DisplayMode` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -47,7 +47,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [DisplayMode.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-display-modes/src/Models/DisplayMode.php) | `team_id`, `name`, `slug`, `content_type`, `mode_type`, `formatters`, `configuration`, `responsive_variants`, `projection`, `active` |
+| [DisplayMode.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-display-modes/src/Models/DisplayMode.php) | `team_id`, `name`, `slug`, `content_type`, `mode_type`, `formatters`, `configuration`, `responsive_variants`, `projection`, `active` |
 
 ## Server/client and React reuse
 

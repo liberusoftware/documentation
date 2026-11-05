@@ -8,7 +8,7 @@ Liberu liberu-executive-insights-livewire module.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [automation](../../projects/automation/SOURCE-MODULES.md) | [liberu-executive-insights-livewire](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 1 |
+| [automation](../../projects/automation/SOURCE-MODULES.md) | [liberu-executive-insights-livewire](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 1 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: automation-laravel, `liberu-executive-insights-livewire`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-automation-laravel-filament, `liberu-executive-insights-livewire`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: automation-laravel, `liberu-executive-insights-livewire`. Matchi
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/composer.json) · [module.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/composer.json) · [module.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/module.json).
 
 **Declared capabilities:** liberu.executive-insights.livewire
 
@@ -58,7 +58,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/ExecutiveInsightsLivewireServiceProvider.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/src/ExecutiveInsightsLivewireServiceProvider.php) · [src/InsightSnapshotList.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/src/InsightSnapshotList.php).
+Other non-legacy PHP sources: [src/ExecutiveInsightsLivewireServiceProvider.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/src/ExecutiveInsightsLivewireServiceProvider.php) · [src/InsightSnapshotList.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/src/InsightSnapshotList.php).
 
 ### Persistence and lifecycle evidence
 
@@ -70,6 +70,6 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **1**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Unit/BoundaryTest.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/tests/Unit/BoundaryTest.php)
+- [tests/Unit/BoundaryTest.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-executive-insights-livewire/tests/Unit/BoundaryTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

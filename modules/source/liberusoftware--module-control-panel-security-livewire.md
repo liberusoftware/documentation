@@ -8,7 +8,7 @@ Livewire 4 adapter for Control Panel Security.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [control-panel](../../projects/control-panel/SOURCE-MODULES.md) | [control-panel-security-livewire](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/composer.json) | `1797f25d705f` | [Variant 1](#variant-1) | 0 |
+| [control-panel](../../projects/control-panel/SOURCE-MODULES.md) | [control-panel-security-livewire](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/composer.json) | `1797f25d705f` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: control-panel-laravel, `control-panel-security-livewire`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-control-panel-laravel-filament, `control-panel-security-livewire`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: control-panel-laravel, `control-panel-security-livewire`. Matchi
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/composer.json) · [module.json](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/composer.json) · [module.json](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/module.json).
 
 **Declared capabilities:** control-panel.security.livewire
 
@@ -58,7 +58,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/Components/ComplianceInventory.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/Components/ComplianceInventory.php) · [src/Components/Fail2banInventory.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/Components/Fail2banInventory.php) · [src/Components/FindingInventory.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/Components/FindingInventory.php) · [src/Components/HardeningInventory.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/Components/HardeningInventory.php) · [src/Components/SecurityOperationsInventory.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/Components/SecurityOperationsInventory.php) · [src/SecurityLivewireServiceProvider.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/SecurityLivewireServiceProvider.php).
+Other non-legacy PHP sources: [src/Components/ComplianceInventory.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/Components/ComplianceInventory.php) · [src/Components/Fail2banInventory.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/Components/Fail2banInventory.php) · [src/Components/FindingInventory.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/Components/FindingInventory.php) · [src/Components/HardeningInventory.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/Components/HardeningInventory.php) · [src/Components/SecurityOperationsInventory.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/Components/SecurityOperationsInventory.php) · [src/SecurityLivewireServiceProvider.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-security-livewire/src/SecurityLivewireServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 

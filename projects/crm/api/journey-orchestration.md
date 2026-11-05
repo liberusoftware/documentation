@@ -56,7 +56,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [JourneyController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-journey-orchestration-api/src/Http/Controllers/JourneyController.php) | `public function index(Request $r, JourneyQuery $q): JsonResponse`<br>`public function store(Request $r, CreateJourney $a): JsonResponse`<br>`public function publish(Request $r, Journey $journey, PublishJourney $a): JsonResponse`<br>`public function run(Request $r, Journey $journey, StartJourneyRun $a): JsonResponse`<br>`public function stop(Request $r, JourneyRun $run, StopJourneyRun $a): JsonResponse` |
+| [JourneyController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-journey-orchestration-api/src/Http/Controllers/JourneyController.php) | `public function index(Request $r, JourneyQuery $q): JsonResponse`<br>`public function store(Request $r, CreateJourney $a): JsonResponse`<br>`public function publish(Request $r, Journey $journey, PublishJourney $a): JsonResponse`<br>`public function run(Request $r, Journey $journey, StartJourneyRun $a): JsonResponse`<br>`public function stop(Request $r, JourneyRun $run, StopJourneyRun $a): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

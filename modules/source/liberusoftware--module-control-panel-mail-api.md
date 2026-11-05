@@ -8,7 +8,7 @@ API adapter for Control Panel Mail.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [control-panel](../../projects/control-panel/SOURCE-MODULES.md) | [control-panel-mail-api](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/composer.json) | `1797f25d705f` | [Variant 1](#variant-1) | 0 |
+| [control-panel](../../projects/control-panel/SOURCE-MODULES.md) | [control-panel-mail-api](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/composer.json) | `1797f25d705f` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: control-panel-laravel, `control-panel-mail-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-control-panel-laravel-filament, `control-panel-mail-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: control-panel-laravel, `control-panel-mail-api`. Matching refere
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/composer.json) · [module.json](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/composer.json) · [module.json](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/module.json).
 
 **Declared capabilities:** control-panel.mail.api
 
@@ -59,16 +59,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/MailAccountController.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/src/Http/Controllers/MailAccountController.php) | `public function index(Request $request, ListMailAccounts $list): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function store(Request $request, CreateMailAccount $create): JsonResponse`<br>`public function update(Request $request, string $id, UpdateMailAccount $update): JsonResponse`<br>`public function delete(Request $request, string $id, DeleteMailAccount $delete): JsonResponse`<br>`public function operation(Request $request, RecordMailOperation $record): JsonResponse`<br>`public function alias(Request $request, CreateMailAlias $create): JsonResponse`<br>`public function updateAlias(Request $request, string $id, UpdateMailAlias $update): JsonResponse`<br>`public function deleteAlias(Request $request, string $id, DeleteMailAlias $delete): JsonResponse`<br>`public function updateRoute(Request $request, string $id, UpdateMailRoute $update): JsonResponse`<br>`public function deleteRoute(Request $request, string $id, DeleteMailRoute $delete): JsonResponse`<br>`public function route(Request $request, CreateMailRoute $create): JsonResponse`<br>`public function controls(Request $request, ConfigureMailControls $configure): JsonResponse`<br>`public function diagnostic(Request $request, RecordDeliveryDiagnostic $record): JsonResponse`<br>`public function rotateDkim(Request $request, RotateDkimKey $rotate): JsonResponse`<br>`public function authentication(Request $request, ConfigureMailAuthentication $configure): JsonResponse`<br>`public function domain(Request $request, RegisterMailDomain $register): JsonResponse` |
+| [src/Http/Controllers/MailAccountController.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/src/Http/Controllers/MailAccountController.php) | `public function index(Request $request, ListMailAccounts $list): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function store(Request $request, CreateMailAccount $create): JsonResponse`<br>`public function update(Request $request, string $id, UpdateMailAccount $update): JsonResponse`<br>`public function delete(Request $request, string $id, DeleteMailAccount $delete): JsonResponse`<br>`public function operation(Request $request, RecordMailOperation $record): JsonResponse`<br>`public function alias(Request $request, CreateMailAlias $create): JsonResponse`<br>`public function updateAlias(Request $request, string $id, UpdateMailAlias $update): JsonResponse`<br>`public function deleteAlias(Request $request, string $id, DeleteMailAlias $delete): JsonResponse`<br>`public function updateRoute(Request $request, string $id, UpdateMailRoute $update): JsonResponse`<br>`public function deleteRoute(Request $request, string $id, DeleteMailRoute $delete): JsonResponse`<br>`public function route(Request $request, CreateMailRoute $create): JsonResponse`<br>`public function controls(Request $request, ConfigureMailControls $configure): JsonResponse`<br>`public function diagnostic(Request $request, RecordDeliveryDiagnostic $record): JsonResponse`<br>`public function rotateDkim(Request $request, RotateDkimKey $rotate): JsonResponse`<br>`public function authentication(Request $request, ConfigureMailAuthentication $configure): JsonResponse`<br>`public function domain(Request $request, RegisterMailDomain $register): JsonResponse` |
 
-Other non-legacy PHP sources: [src/MailApiServiceProvider.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/src/MailApiServiceProvider.php).
+Other non-legacy PHP sources: [src/MailApiServiceProvider.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/src/MailApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/control-panel-mail.yaml](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/openapi/v1/control-panel-mail.yaml)
-- [routes/api.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/routes/api.php)
+- [openapi/v1/control-panel-mail.yaml](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/openapi/v1/control-panel-mail.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-mail-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

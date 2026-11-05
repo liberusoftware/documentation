@@ -8,7 +8,7 @@ Labor and time API adapter for Liberu Maintenance
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [maintenance](../../projects/maintenance/SOURCE-MODULES.md) | [module-maintenance-labor-and-time-api](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/composer.json) | `c267d625e264` | [Variant 1](#variant-1) | 0 |
+| [maintenance](../../projects/maintenance/SOURCE-MODULES.md) | [module-maintenance-labor-and-time-api](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/composer.json) | `c267d625e264` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: maintenance-laravel, `module-maintenance-labor-and-time-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-maintenance-laravel-filament, `module-maintenance-labor-and-time-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: maintenance-laravel, `module-maintenance-labor-and-time-api`. Ma
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/composer.json) · [module.json](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/composer.json) · [module.json](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/module.json).
 
 **Declared capabilities:** maintenance.labor-and-time.api
 
@@ -60,16 +60,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/TimeEntryController.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/src/Http/Controllers/TimeEntryController.php) | `public function index(Request $r): JsonResponse`<br>`public function store(Request $r, CreateTimeEntry $create): JsonResponse`<br>`public function show(Request $r, TimeEntry $timeEntry): JsonResponse`<br>`public function approve(Request $r, TimeEntry $timeEntry, ApproveTimeEntry $approve): JsonResponse`<br>`public function reject(Request $r, TimeEntry $timeEntry, RejectTimeEntry $reject): JsonResponse`<br>`public function update(Request $r, TimeEntry $timeEntry, UpdateTimeEntry $update): JsonResponse`<br>`public function destroy(Request $r, TimeEntry $timeEntry, DeleteTimeEntry $delete): JsonResponse` |
+| [src/Http/Controllers/TimeEntryController.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/src/Http/Controllers/TimeEntryController.php) | `public function index(Request $r): JsonResponse`<br>`public function store(Request $r, CreateTimeEntry $create): JsonResponse`<br>`public function show(Request $r, TimeEntry $timeEntry): JsonResponse`<br>`public function approve(Request $r, TimeEntry $timeEntry, ApproveTimeEntry $approve): JsonResponse`<br>`public function reject(Request $r, TimeEntry $timeEntry, RejectTimeEntry $reject): JsonResponse`<br>`public function update(Request $r, TimeEntry $timeEntry, UpdateTimeEntry $update): JsonResponse`<br>`public function destroy(Request $r, TimeEntry $timeEntry, DeleteTimeEntry $delete): JsonResponse` |
 
-Other non-legacy PHP sources: [src/LaborAndTimeApiServiceProvider.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/src/LaborAndTimeApiServiceProvider.php).
+Other non-legacy PHP sources: [src/LaborAndTimeApiServiceProvider.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/src/LaborAndTimeApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/maintenance-labor-and-time.yaml](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/openapi/v1/maintenance-labor-and-time.yaml)
-- [routes/api.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/routes/api.php)
+- [openapi/v1/maintenance-labor-and-time.yaml](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/openapi/v1/maintenance-labor-and-time.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-labor-and-time-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

@@ -8,7 +8,7 @@ HTTP API adapter for module-automation-voice.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [automation](../../projects/automation/SOURCE-MODULES.md) | [module-automation-voice-api](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 0 |
+| [automation](../../projects/automation/SOURCE-MODULES.md) | [module-automation-voice-api](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: automation-laravel, `module-automation-voice-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-automation-laravel-filament, `module-automation-voice-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: automation-laravel, `module-automation-voice-api`. Matching refe
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/composer.json) · [module.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/composer.json) · [module.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/module.json).
 
 **Declared capabilities:** automation.voice.api
 
@@ -59,17 +59,17 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/VoiceResourceController.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/src/Http/Controllers/VoiceResourceController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateVoiceResource $create): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function update(Request $request, string $id): JsonResponse`<br>`public function destroy(Request $request, string $id): JsonResponse`<br>`public function transition(Request $request, string $id, TransitionVoiceResource $transition): JsonResponse` |
-| [src/Support/ResourcePayload.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/src/Support/ResourcePayload.php) | `public static function one(Model $resource): array`<br>`public static function collection(LengthAwarePaginator $resources): array` |
+| [src/Http/Controllers/VoiceResourceController.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/src/Http/Controllers/VoiceResourceController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateVoiceResource $create): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function update(Request $request, string $id): JsonResponse`<br>`public function destroy(Request $request, string $id): JsonResponse`<br>`public function transition(Request $request, string $id, TransitionVoiceResource $transition): JsonResponse` |
+| [src/Support/ResourcePayload.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/src/Support/ResourcePayload.php) | `public static function one(Model $resource): array`<br>`public static function collection(LengthAwarePaginator $resources): array` |
 
-Other non-legacy PHP sources: [src/VoiceApiServiceProvider.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/src/VoiceApiServiceProvider.php).
+Other non-legacy PHP sources: [src/VoiceApiServiceProvider.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/src/VoiceApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/voice.yaml](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/openapi/v1/voice.yaml)
-- [routes/api.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/routes/api.php)
+- [openapi/v1/voice.yaml](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/openapi/v1/voice.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-voice-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

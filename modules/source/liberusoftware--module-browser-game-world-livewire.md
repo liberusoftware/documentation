@@ -8,7 +8,7 @@ Livewire 4 adapter for Browser Game World.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [browser-game](../../projects/browser-game/SOURCE-MODULES.md) | [browser-game-world-livewire](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/composer.json) | `790fdffebd3a` | [Variant 1](#variant-1) | 2 |
+| [browser-game](../../projects/browser-game/SOURCE-MODULES.md) | [browser-game-world-livewire](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/composer.json) | `790fdffebd3a` | [Variant 1](#variant-1) | 2 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: browser-game-laravel, `browser-game-world-livewire`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-browser-game-laravel-filament, `browser-game-world-livewire`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: browser-game-laravel, `browser-game-world-livewire`. Matching re
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/composer.json) · [module.json](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/composer.json) · [module.json](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/module.json).
 
 **Declared capabilities:** browser-game.world.livewire
 
@@ -58,9 +58,9 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Livewire/WorldCatalog.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/src/Livewire/WorldCatalog.php) | `public function unlock(string $entityId): void`<br>`public function travel(string $originId, string $destinationId): void`<br>`public function render(): mixed` |
+| [src/Livewire/WorldCatalog.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/src/Livewire/WorldCatalog.php) | `public function unlock(string $entityId): void`<br>`public function travel(string $originId, string $destinationId): void`<br>`public function render(): mixed` |
 
-Other non-legacy PHP sources: [src/WorldLivewireServiceProvider.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/src/WorldLivewireServiceProvider.php).
+Other non-legacy PHP sources: [src/WorldLivewireServiceProvider.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/src/WorldLivewireServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
@@ -72,7 +72,7 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **2**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Pest.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/tests/Pest.php)
-- [tests/Unit/PackageBoundaryTest.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/tests/Unit/PackageBoundaryTest.php)
+- [tests/Pest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/tests/Pest.php)
+- [tests/Unit/PackageBoundaryTest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-world-livewire/tests/Unit/PackageBoundaryTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

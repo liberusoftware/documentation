@@ -8,7 +8,7 @@ No Composer description declared.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-knowledge](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 1 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-knowledge](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 1 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `crm-knowledge`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `crm-knowledge`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: crm-laravel, `crm-knowledge`. Matching reference files in this v
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/module.json).
 
 **Declared capabilities:** crm.knowledge
 
@@ -56,12 +56,12 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/CreateArticle.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Actions/CreateArticle.php) | `public function __construct(private readonly KnowledgePolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): KnowledgeArticle` |
-| [src/Actions/RecordKnowledgeEvent.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Actions/RecordKnowledgeEvent.php) | `public function __construct(private readonly KnowledgePolicy $policy)`<br>`public function execute(int $teamId, int $userId, KnowledgeArticle $article, array $input): KnowledgeEvent` |
-| [src/Queries/KnowledgeQuery.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Queries/KnowledgeQuery.php) | `public function forTeam(int $teamId, ?string $search = null)` |
-| [src/Services/KnowledgePolicy.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Services/KnowledgePolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
+| [src/Actions/CreateArticle.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Actions/CreateArticle.php) | `public function __construct(private readonly KnowledgePolicy $policy)`<br>`public function execute(int $teamId, int $userId, array $input): KnowledgeArticle` |
+| [src/Actions/RecordKnowledgeEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Actions/RecordKnowledgeEvent.php) | `public function __construct(private readonly KnowledgePolicy $policy)`<br>`public function execute(int $teamId, int $userId, KnowledgeArticle $article, array $input): KnowledgeEvent` |
+| [src/Queries/KnowledgeQuery.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Queries/KnowledgeQuery.php) | `public function forTeam(int $teamId, ?string $search = null)` |
+| [src/Services/KnowledgePolicy.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Services/KnowledgePolicy.php) | `public function canManage(int $teamId, int $userId): bool` |
 
-Other non-legacy PHP sources: [src/KnowledgeServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/KnowledgeServiceProvider.php) · [src/Models/KnowledgeArticle.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Models/KnowledgeArticle.php) · [src/Models/KnowledgeEvent.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Models/KnowledgeEvent.php) · [src/Models/KnowledgeVersion.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Models/KnowledgeVersion.php).
+Other non-legacy PHP sources: [src/KnowledgeServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/KnowledgeServiceProvider.php) · [src/Models/KnowledgeArticle.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Models/KnowledgeArticle.php) · [src/Models/KnowledgeEvent.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Models/KnowledgeEvent.php) · [src/Models/KnowledgeVersion.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/src/Models/KnowledgeVersion.php).
 
 **Legacy review:** 6 files are under `src/Legacy/`. Their location does not prove they are unused. Review registration, host imports and migrations before moving or removing them.
 
@@ -69,10 +69,10 @@ Other non-legacy PHP sources: [src/KnowledgeServiceProvider.php](https://github.
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2024_10_13_030000_create_knowledge_base_articles_table.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/database/migrations/2024_10_13_030000_create_knowledge_base_articles_table.php)
-- [database/migrations/2026_07_07_140000_add_portal_fields_to_knowledge_base_articles_table.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/database/migrations/2026_07_07_140000_add_portal_fields_to_knowledge_base_articles_table.php)
-- [database/migrations/2026_07_08_070000_create_kb_article_votes_table.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/database/migrations/2026_07_08_070000_create_kb_article_votes_table.php)
-- [database/migrations/2026_08_26_220000_create_crm_knowledge_tables.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/database/migrations/2026_08_26_220000_create_crm_knowledge_tables.php)
+- [database/migrations/2024_10_13_030000_create_knowledge_base_articles_table.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/database/migrations/2024_10_13_030000_create_knowledge_base_articles_table.php)
+- [database/migrations/2026_07_07_140000_add_portal_fields_to_knowledge_base_articles_table.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/database/migrations/2026_07_07_140000_add_portal_fields_to_knowledge_base_articles_table.php)
+- [database/migrations/2026_07_08_070000_create_kb_article_votes_table.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/database/migrations/2026_07_08_070000_create_kb_article_votes_table.php)
+- [database/migrations/2026_08_26_220000_create_crm_knowledge_tables.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/database/migrations/2026_08_26_220000_create_crm_knowledge_tables.php)
 
 ### Verification and consumer use
 
@@ -80,6 +80,6 @@ Declared Composer scripts: `{}`.
 
 Tracked files under `tests/`: **1**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Feature/Knowledge/KnowledgeModuleTest.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/tests/Feature/Knowledge/KnowledgeModuleTest.php)
+- [tests/Feature/Knowledge/KnowledgeModuleTest.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-knowledge/tests/Feature/Knowledge/KnowledgeModuleTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

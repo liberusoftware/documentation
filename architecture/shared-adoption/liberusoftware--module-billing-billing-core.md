@@ -14,8 +14,8 @@ See the [implementation reference](../../modules/source/liberusoftware--module-b
 
 | Consumer | Pinned module metadata | Variant | Test files |
 | --- | --- | ---: | ---: |
-| billing | [billing-core](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/billing-core/composer.json) | 2 | 3 |
-| billing | [module-billing-billing-core](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-billing-core/composer.json) | 1 | 3 |
+| billing | [billing-core](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/billing-core/composer.json) | 2 | 3 |
+| billing | [module-billing-billing-core](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-billing-core/composer.json) | 1 | 3 |
 
 ## Manifest and dependency differences
 
@@ -38,7 +38,7 @@ Resolve host-model lookups, actor/tenant policy, source-record references and pr
 
 ## Registration, route and presentation review
 
-- `module.json`: V1 [source](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-billing-core/module.json), V2 [source](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/billing-core/module.json)
+- `module.json`: V1 [source](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-billing-core/module.json), V2 [source](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/billing-core/module.json)
 
 Validate discovery, manifest schema/version handling, dependency selection, provider boot order and route/plugin identifiers against the consuming host. For UI/API adapters, retain the authorized DTO and domain action semantics rather than exposing private models or bypassing transitions through generic record saves.
 

@@ -39,7 +39,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [ContentGovernanceService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-governance/src/Services/ContentGovernanceService.php) | `public function records(?int $teamId, int $perPage = 25): LengthAwarePaginator`<br>`public function record(string $subjectType, string $subjectKey, array $data = [], ?int $teamId = null): GovernanceRecord`<br>`public function placeLegalHold(GovernanceRecord $record, string $reason): GovernanceRecord`<br>`public function releaseLegalHold(GovernanceRecord $record): GovernanceRecord`<br>`public function addEvidence(GovernanceRecord $record, array $evidence): GovernanceRecord` |
+| [ContentGovernanceService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-governance/src/Services/ContentGovernanceService.php) | `public function records(?int $teamId, int $perPage = 25): LengthAwarePaginator`<br>`public function record(string $subjectType, string $subjectKey, array $data = [], ?int $teamId = null): GovernanceRecord`<br>`public function placeLegalHold(GovernanceRecord $record, string $reason): GovernanceRecord`<br>`public function releaseLegalHold(GovernanceRecord $record): GovernanceRecord`<br>`public function addEvidence(GovernanceRecord $record, array $evidence): GovernanceRecord` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -49,7 +49,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [GovernanceRecord.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-governance/src/Models/GovernanceRecord.php) | `team_id`, `subject_type`, `subject_key`, `owner_id`, `steward_id`, `policy_labels`, `classification`, `review_due_at`, `retention_until`, `legal_hold`, `legal_hold_at`, `legal_hold_reason`, `evidence` |
+| [GovernanceRecord.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-content-governance/src/Models/GovernanceRecord.php) | `team_id`, `subject_type`, `subject_key`, `owner_id`, `steward_id`, `policy_labels`, `classification`, `review_due_at`, `retention_until`, `legal_hold`, `legal_hold_at`, `legal_hold_reason`, `evidence` |
 
 ## Server/client and React reuse
 

@@ -8,7 +8,7 @@ Liberu genealogy-core-api module.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [genealogy](../../projects/genealogy/SOURCE-MODULES.md) | [genealogy-core-api](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/composer.json) | `577e93db23cc` | [Variant 1](#variant-1) | 1 |
+| [genealogy](../../projects/genealogy/SOURCE-MODULES.md) | [genealogy-core-api](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/composer.json) | `577e93db23cc` | [Variant 1](#variant-1) | 1 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: genealogy-laravel, `genealogy-core-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-genealogy-laravel-filament, `genealogy-core-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: genealogy-laravel, `genealogy-core-api`. Matching reference file
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/composer.json) · [module.json](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/composer.json) · [module.json](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/module.json).
 
 **Declared capabilities:** genealogy.genealogy-core.api
 
@@ -59,15 +59,15 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/TreeController.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/src/Http/Controllers/TreeController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(Request $request, Tree $tree): TreeResource`<br>`public function store(Request $request, CreateTree $createTree): TreeResource`<br>`public function update(Request $request, Tree $tree, UpdateTree $updateTree): TreeResource`<br>`public function visibility(Request $request, Tree $tree, SetTreeVisibility $visibility): TreeResource`<br>`public function owner(Request $request, Tree $tree, SetTreeOwner $owner): TreeResource`<br>`public function destroy(Request $request, Tree $tree, DeleteTree $delete): void` |
+| [src/Http/Controllers/TreeController.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/src/Http/Controllers/TreeController.php) | `public function index(Request $request): JsonResponse`<br>`public function show(Request $request, Tree $tree): TreeResource`<br>`public function store(Request $request, CreateTree $createTree): TreeResource`<br>`public function update(Request $request, Tree $tree, UpdateTree $updateTree): TreeResource`<br>`public function visibility(Request $request, Tree $tree, SetTreeVisibility $visibility): TreeResource`<br>`public function owner(Request $request, Tree $tree, SetTreeOwner $owner): TreeResource`<br>`public function destroy(Request $request, Tree $tree, DeleteTree $delete): void` |
 
-Other non-legacy PHP sources: [src/GenealogyCoreApiServiceProvider.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/src/GenealogyCoreApiServiceProvider.php) · [src/Http/Resources/TreeResource.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/src/Http/Resources/TreeResource.php).
+Other non-legacy PHP sources: [src/GenealogyCoreApiServiceProvider.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/src/GenealogyCoreApiServiceProvider.php) · [src/Http/Resources/TreeResource.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/src/Http/Resources/TreeResource.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [routes/api.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/routes/api.php)
+- [routes/api.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 
@@ -79,6 +79,6 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **1**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Unit/BoundaryTest.php](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/tests/Unit/BoundaryTest.php)
+- [tests/Unit/BoundaryTest.php](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/genealogy-core-api/tests/Unit/BoundaryTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

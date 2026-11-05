@@ -33,7 +33,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [ScopedSettings.php](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/settings/src/Services/ScopedSettings.php) | `public function put(SettingDefinition $definition, string $scopeType, string $scopeId, mixed $value): void`<br>`public function resolve(string $key, array $scopes, mixed $fallback = null): mixed` |
+| [ScopedSettings.php](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/settings/src/Services/ScopedSettings.php) | `public function put(SettingDefinition $definition, string $scopeType, string $scopeId, mixed $value): void`<br>`public function resolve(string $key, array $scopes, mixed $fallback = null): mixed` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -41,7 +41,7 @@ The server transport resolves the authenticated actor and tenant/entity membersh
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/settings-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/settings-api/routes/api.php)
+[modules/settings-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/settings-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/settings')->middleware('api')->group(function (): void {

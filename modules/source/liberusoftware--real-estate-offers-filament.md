@@ -8,7 +8,7 @@ Filament 5 adapter for real-estate offers.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [real-estate-offers-filament](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/composer.json) | `178d8015b601` | [Variant 1](#variant-1) | 0 |
+| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [real-estate-offers-filament](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/composer.json) | `178d8015b601` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: real-estate-laravel, `real-estate-offers-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-real-estate-laravel-filament, `real-estate-offers-filament`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: real-estate-laravel, `real-estate-offers-filament`. Matching ref
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/composer.json) · [module.json](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/composer.json) · [module.json](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/module.json).
 
 **Declared capabilities:** real-estate.offers.filament
 
@@ -58,7 +58,7 @@ The following paths identify contracts, actions, queries, policies, services and
 
 No files were found in the indexed contract/action/query/policy/service/presentation roots. Check provider/module classes and the complete source tree; this is not a claim that the package has no behavior.
 
-Other non-legacy PHP sources: [src/OffersFilamentPlugin.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/OffersFilamentPlugin.php) · [src/OffersFilamentServiceProvider.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/OffersFilamentServiceProvider.php) · [src/Resources/OfferResource.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/Resources/OfferResource.php) · [src/Resources/OfferResource/Pages/CreateOffer.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/Resources/OfferResource/Pages/CreateOffer.php) · [src/Resources/OfferResource/Pages/EditOffer.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/Resources/OfferResource/Pages/EditOffer.php) · [src/Resources/OfferResource/Pages/ListOffers.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/Resources/OfferResource/Pages/ListOffers.php).
+Other non-legacy PHP sources: [src/OffersFilamentPlugin.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/OffersFilamentPlugin.php) · [src/OffersFilamentServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/OffersFilamentServiceProvider.php) · [src/Resources/OfferResource.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/Resources/OfferResource.php) · [src/Resources/OfferResource/Pages/CreateOffer.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/Resources/OfferResource/Pages/CreateOffer.php) · [src/Resources/OfferResource/Pages/EditOffer.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/Resources/OfferResource/Pages/EditOffer.php) · [src/Resources/OfferResource/Pages/ListOffers.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-offers-filament/src/Resources/OfferResource/Pages/ListOffers.php).
 
 ### Persistence and lifecycle evidence
 

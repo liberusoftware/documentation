@@ -48,7 +48,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-transfers-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-transfers-api/routes/api.php)
+[modules/accounting-transfers-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-transfers-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/accounting/transfers')->middleware(['auth:sanctum'])->group(function (): void {
@@ -64,7 +64,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [TransfersController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-transfers-api/src/Http/Controllers/TransfersController.php) | `public function index(Request $request): mixed`<br>`public function store(Request $request, CreateTransfer $action): mixed`<br>`public function complete(Request $request, string $transfer, CompleteTransfer $action): mixed`<br>`public function reconcile(Request $request, string $transfer, ReconcileTransfer $action): mixed` |
+| [TransfersController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-transfers-api/src/Http/Controllers/TransfersController.php) | `public function index(Request $request): mixed`<br>`public function store(Request $request, CreateTransfer $action): mixed`<br>`public function complete(Request $request, string $transfer, CompleteTransfer $action): mixed`<br>`public function reconcile(Request $request, string $transfer, ReconcileTransfer $action): mixed` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

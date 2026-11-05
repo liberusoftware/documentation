@@ -8,7 +8,7 @@ No Composer description declared.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-resource-planning-api](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
+| [crm](../../projects/crm/SOURCE-MODULES.md) | [crm-resource-planning-api](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/composer.json) | `63aad94e94c0` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: crm-laravel, `crm-resource-planning-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-crm-laravel-filament, `crm-resource-planning-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: crm-laravel, `crm-resource-planning-api`. Matching reference fil
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/composer.json) · [module.json](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/composer.json) · [module.json](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/module.json).
 
 **Declared capabilities:** crm.resource-planning.api
 
@@ -56,16 +56,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/ResourcePlanningController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/src/Http/Controllers/ResourcePlanningController.php) | `public function skills(Request $r, ResourcePlanningQuery $q)`<br>`public function skill(Request $r, UpsertSkill $a)`<br>`public function capacity(Request $r, ResourcePlanningQuery $q)`<br>`public function setCapacity(Request $r, SetCapacity $a)`<br>`public function bookings(Request $r, ResourcePlanningQuery $q)`<br>`public function booking(Request $r, CreateBooking $a)`<br>`public function rate(Request $r, SetRate $a)`<br>`public function forecast(Request $r, RecordForecast $a)` |
+| [src/Http/Controllers/ResourcePlanningController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/src/Http/Controllers/ResourcePlanningController.php) | `public function skills(Request $r, ResourcePlanningQuery $q)`<br>`public function skill(Request $r, UpsertSkill $a)`<br>`public function capacity(Request $r, ResourcePlanningQuery $q)`<br>`public function setCapacity(Request $r, SetCapacity $a)`<br>`public function bookings(Request $r, ResourcePlanningQuery $q)`<br>`public function booking(Request $r, CreateBooking $a)`<br>`public function rate(Request $r, SetRate $a)`<br>`public function forecast(Request $r, RecordForecast $a)` |
 
-Other non-legacy PHP sources: [src/Providers/ResourcePlanningApiServiceProvider.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/src/Providers/ResourcePlanningApiServiceProvider.php).
+Other non-legacy PHP sources: [src/Providers/ResourcePlanningApiServiceProvider.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/src/Providers/ResourcePlanningApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/resource-planning.yaml](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/openapi/v1/resource-planning.yaml)
-- [routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/routes/api.php)
+- [openapi/v1/resource-planning.yaml](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/openapi/v1/resource-planning.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-resource-planning-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

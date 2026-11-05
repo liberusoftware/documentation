@@ -39,7 +39,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [RedirectService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-redirects/src/Services/RedirectService.php) | `public function create(string $from, string $to, int $statusCode = 301, ?string $source = null, ?int $teamId = null): Redirect`<br>`public function resolve(string $path, int $maxHops = 10, ?int $teamId = null): array`<br>`public function import(iterable $rows, ?int $teamId = null): int`<br>`public function recordSlugChange(string $oldPath, string $newPath, ?int $teamId = null): Redirect`<br>`public function suggestions(string $missingPath, int $limit = 5, ?int $teamId = null): array` |
+| [RedirectService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-redirects/src/Services/RedirectService.php) | `public function create(string $from, string $to, int $statusCode = 301, ?string $source = null, ?int $teamId = null): Redirect`<br>`public function resolve(string $path, int $maxHops = 10, ?int $teamId = null): array`<br>`public function import(iterable $rows, ?int $teamId = null): int`<br>`public function recordSlugChange(string $oldPath, string $newPath, ?int $teamId = null): Redirect`<br>`public function suggestions(string $missingPath, int $limit = 5, ?int $teamId = null): array` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -49,7 +49,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [Redirect.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-redirects/src/Models/Redirect.php) | `from_path`, `to_path`, `status_code`, `hit_count`, `expires_at`, `active`, `source`, `team_id` |
+| [Redirect.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-redirects/src/Models/Redirect.php) | `from_path`, `to_path`, `status_code`, `hit_count`, `expires_at`, `active`, `source`, `team_id` |
 
 ## Server/client and React reuse
 

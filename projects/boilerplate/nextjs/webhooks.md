@@ -38,14 +38,14 @@ The server transport resolves the authenticated actor and tenant/entity membersh
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/webhooks-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/webhooks-api/routes/api.php)
+[modules/webhooks-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/webhooks-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/webhooks')->middleware('api')->group(function (): void {
 Route::get('/status', StatusController::class)->name('webhooks-api.status');
 ```
 
-[modules/webhooks-api/routes/api.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/webhooks-api/routes/api.php)
+[modules/webhooks-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/webhooks-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/webhooks')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {

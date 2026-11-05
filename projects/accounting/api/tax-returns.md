@@ -51,7 +51,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-tax-returns-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns-api/routes/api.php)
+[modules/accounting-tax-returns-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/accounting/tax-returns')->middleware(['auth:sanctum'])->group(function (): void {
@@ -67,7 +67,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [TaxReturnsController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns-api/src/Http/Controllers/TaxReturnsController.php) | `public function index(Request $request): mixed`<br>`public function store(Request $request, CreateTaxReturn $action): mixed`<br>`public function submit(Request $request, string $taxReturn, SubmitTaxReturn $action): mixed`<br>`public function amend(Request $request, string $taxReturn, AmendTaxReturn $action): mixed` |
+| [TaxReturnsController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-tax-returns-api/src/Http/Controllers/TaxReturnsController.php) | `public function index(Request $request): mixed`<br>`public function store(Request $request, CreateTaxReturn $action): mixed`<br>`public function submit(Request $request, string $taxReturn, SubmitTaxReturn $action): mixed`<br>`public function amend(Request $request, string $taxReturn, AmendTaxReturn $action): mixed` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

@@ -8,7 +8,7 @@ Independent Zoopla listing synchronization core for Liberu Real Estate.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [real-estate-zoopla](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/composer.json) | `178d8015b601` | [Variant 1](#variant-1) | 0 |
+| [real-estate](../../projects/real-estate/SOURCE-MODULES.md) | [real-estate-zoopla](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/composer.json) | `178d8015b601` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: real-estate-laravel, `real-estate-zoopla`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-real-estate-laravel-filament, `real-estate-zoopla`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: real-estate-laravel, `real-estate-zoopla`. Matching reference fi
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/composer.json) · [module.json](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/composer.json) · [module.json](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/module.json).
 
 **Declared capabilities:** real-estate.integrations.zoopla
 
@@ -61,15 +61,15 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Contracts/ZooplaTransport.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Contracts/ZooplaTransport.php) | `public function sendProperty(string $reference, array $payload, array $credentials): array`<br>`public function removeProperty(string $reference, array $credentials): array`<br>`public function branchPropertyList(array $credentials): array` |
+| [src/Contracts/ZooplaTransport.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Contracts/ZooplaTransport.php) | `public function sendProperty(string $reference, array $payload, array $credentials): array`<br>`public function removeProperty(string $reference, array $credentials): array`<br>`public function branchPropertyList(array $credentials): array` |
 
-Other non-legacy PHP sources: [src/Application/CreateZooplaSync.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Application/CreateZooplaSync.php) · [src/Application/DeleteZooplaSync.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Application/DeleteZooplaSync.php) · [src/Application/SyncZooplaListing.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Application/SyncZooplaListing.php) · [src/Application/UpdateZooplaSync.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Application/UpdateZooplaSync.php) · [src/Domain/ZooplaSyncStatus.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Domain/ZooplaSyncStatus.php) · [src/Models/ZooplaSync.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Models/ZooplaSync.php) · [src/Transport/ZooplaClient.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Transport/ZooplaClient.php) · [src/ZooplaServiceProvider.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/ZooplaServiceProvider.php).
+Other non-legacy PHP sources: [src/Application/CreateZooplaSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Application/CreateZooplaSync.php) · [src/Application/DeleteZooplaSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Application/DeleteZooplaSync.php) · [src/Application/SyncZooplaListing.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Application/SyncZooplaListing.php) · [src/Application/UpdateZooplaSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Application/UpdateZooplaSync.php) · [src/Domain/ZooplaSyncStatus.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Domain/ZooplaSyncStatus.php) · [src/Models/ZooplaSync.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Models/ZooplaSync.php) · [src/Transport/ZooplaClient.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/Transport/ZooplaClient.php) · [src/ZooplaServiceProvider.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/src/ZooplaServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_23_000015_create_real_estate_zoopla_syncs_table.php](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/database/migrations/2026_08_23_000015_create_real_estate_zoopla_syncs_table.php)
+- [database/migrations/2026_08_23_000015_create_real_estate_zoopla_syncs_table.php](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/real-estate-zoopla/database/migrations/2026_08_23_000015_create_real_estate_zoopla_syncs_table.php)
 
 ### Verification and consumer use
 

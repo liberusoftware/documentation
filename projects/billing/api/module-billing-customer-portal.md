@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/module-billing-customer-portal-api/routes/api.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-customer-portal-api/routes/api.php)
+[modules/module-billing-customer-portal-api/routes/api.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-customer-portal-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'throttle:api', 'auth:sanctum', 'ability:billing.customer-portal.read'])->prefix('api/v1/billing/customer-portal/items')->group(function (): void {
@@ -67,9 +67,9 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [CustomerBillingController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-customer-portal-api/src/Http/Controllers/CustomerBillingController.php) | `public function show(Request $request, int $customer, GetCustomerBillingSummary $summary): JsonResponse` |
-| [PortalItemController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-customer-portal-api/src/Http/Controllers/PortalItemController.php) | `public function index(Request $request, ListPortalItems $list): JsonResponse`<br>`public function store(Request $request, CreatePortalItem $create): JsonResponse`<br>`public function transition(Request $request, int $item, TransitionPortalItem $transition): JsonResponse` |
-| [PortalRequestController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-customer-portal-api/src/Http/Controllers/PortalRequestController.php) | `public function index(Request $request, ListCustomerPortalRecords $list): JsonResponse`<br>`public function store(Request $request, CreatePortalRequest $create): JsonResponse`<br>`public function transition(Request $request, int $record, TransitionPortalRequest $transition): JsonResponse`<br>`public function show(Request $request, int $record): JsonResponse` |
+| [CustomerBillingController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-customer-portal-api/src/Http/Controllers/CustomerBillingController.php) | `public function show(Request $request, int $customer, GetCustomerBillingSummary $summary): JsonResponse` |
+| [PortalItemController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-customer-portal-api/src/Http/Controllers/PortalItemController.php) | `public function index(Request $request, ListPortalItems $list): JsonResponse`<br>`public function store(Request $request, CreatePortalItem $create): JsonResponse`<br>`public function transition(Request $request, int $item, TransitionPortalItem $transition): JsonResponse` |
+| [PortalRequestController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-customer-portal-api/src/Http/Controllers/PortalRequestController.php) | `public function index(Request $request, ListCustomerPortalRecords $list): JsonResponse`<br>`public function store(Request $request, CreatePortalRequest $create): JsonResponse`<br>`public function transition(Request $request, int $record, TransitionPortalRequest $transition): JsonResponse`<br>`public function show(Request $request, int $record): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -77,7 +77,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/module-billing-customer-portal-api/openapi/v1/billing-customer-portal.yaml](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-customer-portal-api/openapi/v1/billing-customer-portal.yaml)
+- [modules/module-billing-customer-portal-api/openapi/v1/billing-customer-portal.yaml](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-customer-portal-api/openapi/v1/billing-customer-portal.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

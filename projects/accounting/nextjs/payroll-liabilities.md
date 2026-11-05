@@ -38,14 +38,14 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [PayrollLiabilitySummary.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Queries/PayrollLiabilitySummary.php) | `public function forTeam(?int $teamId = null): array` |
+| [PayrollLiabilitySummary.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Queries/PayrollLiabilitySummary.php) | `public function forTeam(?int $teamId = null): array` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [AllocatePayrollLiability.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Actions/AllocatePayrollLiability.php) | `public function handle(PayrollLiability $liability, float $amount, string $allocationRef): PayrollLiability` |
-| [RecordPayrollLiability.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Actions/RecordPayrollLiability.php) | `public function handle(array $attributes): PayrollLiability` |
+| [AllocatePayrollLiability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Actions/AllocatePayrollLiability.php) | `public function handle(PayrollLiability $liability, float $amount, string $allocationRef): PayrollLiability` |
+| [RecordPayrollLiability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Actions/RecordPayrollLiability.php) | `public function handle(array $attributes): PayrollLiability` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -55,13 +55,13 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [PayrollLiability.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Models/PayrollLiability.php) | `team_id`, `agency_ref`, `payee_ref`, `liability_ref`, `currency`, `amount`, `paid_amount`, `due_on`, `status`, `payment_ref`, `allocation_ref`, `exception_code`, `exception_message`, `reconciliation_ref`, `reconciled_at`, `metadata` |
+| [PayrollLiability.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities/src/Models/PayrollLiability.php) | `team_id`, `agency_ref`, `payee_ref`, `liability_ref`, `currency`, `amount`, `paid_amount`, `due_on`, `status`, `payment_ref`, `allocation_ref`, `exception_code`, `exception_message`, `reconciliation_ref`, `reconciled_at`, `metadata` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/accounting-payroll-liabilities-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities-api/routes/api.php)
+[modules/accounting-payroll-liabilities-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-payroll-liabilities-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/payroll-liabilities')->group(function (): void {

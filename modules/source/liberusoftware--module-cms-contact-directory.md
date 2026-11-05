@@ -8,7 +8,7 @@ CMS contact directory domain module.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-contact-directory](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
+| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-contact-directory](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: cms-laravel, `cms-contact-directory`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-cms-laravel-filament, `cms-contact-directory`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: cms-laravel, `cms-contact-directory`. Matching reference files i
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/composer.json) · [module.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/composer.json) · [module.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/module.json).
 
 ### Dependencies and namespace mapping
 
@@ -52,15 +52,15 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Services/ContactDirectoryService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/Services/ContactDirectoryService.php) | `public function contacts(?int $teamId, bool $publicOnly = false, int $perPage = 25): LengthAwarePaginator`<br>`public function saveContact(array $data, ?int $teamId = null): Contact`<br>`public function category(array $data, ?int $teamId = null): ContactCategory`<br>`public function location(array $data, ?int $teamId = null): ContactLocation`<br>`public function form(array $data, ?int $teamId = null): ContactForm` |
+| [src/Services/ContactDirectoryService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/Services/ContactDirectoryService.php) | `public function contacts(?int $teamId, bool $publicOnly = false, int $perPage = 25): LengthAwarePaginator`<br>`public function saveContact(array $data, ?int $teamId = null): Contact`<br>`public function category(array $data, ?int $teamId = null): ContactCategory`<br>`public function location(array $data, ?int $teamId = null): ContactLocation`<br>`public function form(array $data, ?int $teamId = null): ContactForm` |
 
-Other non-legacy PHP sources: [src/ContactDirectoryModule.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/ContactDirectoryModule.php) · [src/ContactDirectoryServiceProvider.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/ContactDirectoryServiceProvider.php) · [src/Models/Contact.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/Models/Contact.php) · [src/Models/ContactCategory.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/Models/ContactCategory.php) · [src/Models/ContactForm.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/Models/ContactForm.php) · [src/Models/ContactLocation.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/Models/ContactLocation.php).
+Other non-legacy PHP sources: [src/ContactDirectoryModule.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/ContactDirectoryModule.php) · [src/ContactDirectoryServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/ContactDirectoryServiceProvider.php) · [src/Models/Contact.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/Models/Contact.php) · [src/Models/ContactCategory.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/Models/ContactCategory.php) · [src/Models/ContactForm.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/Models/ContactForm.php) · [src/Models/ContactLocation.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/src/Models/ContactLocation.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_25_000200_create_cms_contact_directory_tables.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/database/migrations/2026_08_25_000200_create_cms_contact_directory_tables.php)
+- [database/migrations/2026_08_25_000200_create_cms_contact_directory_tables.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-contact-directory/database/migrations/2026_08_25_000200_create_cms_contact_directory_tables.php)
 
 ### Verification and consumer use
 

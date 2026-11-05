@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-sales-tax-and-gst-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-tax-and-gst-api/routes/api.php)
+[modules/accounting-sales-tax-and-gst-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-tax-and-gst-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/sales-tax-and-gst')->group(function (): void {
@@ -63,7 +63,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [SalesTaxController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-tax-and-gst-api/src/Http/Controllers/SalesTaxController.php) | `public function index(Request $request, SalesTaxRecordQuery $query): mixed`<br>`public function show(SalesTaxRecord $record): SalesTaxResource`<br>`public function store(Request $request, CreateSalesTaxRecord $action): SalesTaxResource`<br>`public function activate(SalesTaxRecord $record, ActivateSalesTaxRecord $action): SalesTaxResource`<br>`public function close(SalesTaxRecord $record, CloseSalesTaxRecord $action): SalesTaxResource` |
+| [SalesTaxController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-tax-and-gst-api/src/Http/Controllers/SalesTaxController.php) | `public function index(Request $request, SalesTaxRecordQuery $query): mixed`<br>`public function show(SalesTaxRecord $record): SalesTaxResource`<br>`public function store(Request $request, CreateSalesTaxRecord $action): SalesTaxResource`<br>`public function activate(SalesTaxRecord $record, ActivateSalesTaxRecord $action): SalesTaxResource`<br>`public function close(SalesTaxRecord $record, CloseSalesTaxRecord $action): SalesTaxResource` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -71,7 +71,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/accounting-sales-tax-and-gst-api/openapi/v1/accounting-sales-tax-and-gst.yaml](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-tax-and-gst-api/openapi/v1/accounting-sales-tax-and-gst.yaml)
+- [modules/accounting-sales-tax-and-gst-api/openapi/v1/accounting-sales-tax-and-gst.yaml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-sales-tax-and-gst-api/openapi/v1/accounting-sales-tax-and-gst.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

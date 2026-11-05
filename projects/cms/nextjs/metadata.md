@@ -39,7 +39,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [MetadataService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-metadata/src/Services/MetadataService.php) | `public function all(string $subjectType, int\|string $subjectId): array`<br>`public function get(string $subjectType, int\|string $subjectId, string $key, mixed $default = null): mixed`<br>`public function set(string $subjectType, int\|string $subjectId, string $key, mixed $value, ?int $teamId = null): MetadataEntry`<br>`public function remove(string $subjectType, int\|string $subjectId, string $key): bool` |
+| [MetadataService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-metadata/src/Services/MetadataService.php) | `public function all(string $subjectType, int\|string $subjectId): array`<br>`public function get(string $subjectType, int\|string $subjectId, string $key, mixed $default = null): mixed`<br>`public function set(string $subjectType, int\|string $subjectId, string $key, mixed $value, ?int $teamId = null): MetadataEntry`<br>`public function remove(string $subjectType, int\|string $subjectId, string $key): bool` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -49,7 +49,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [MetadataEntry.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-metadata/src/Models/MetadataEntry.php) | `subject_type`, `subject_id`, `key`, `value`, `value_type`, `team_id` |
+| [MetadataEntry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-metadata/src/Models/MetadataEntry.php) | `subject_type`, `subject_id`, `key`, `value`, `value_type`, `team_id` |
 
 ## Server/client and React reuse
 

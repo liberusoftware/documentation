@@ -38,22 +38,22 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [ListCertificates.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Queries/ListCertificates.php) | `public function execute(?string $teamId, int $perPage = 25): LengthAwarePaginator` |
+| [ListCertificates.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Queries/ListCertificates.php) | `public function execute(?string $teamId, int $perPage = 25): LengthAwarePaginator` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CheckCertificateExpiry.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/CheckCertificateExpiry.php) | `public function execute(Certificate $certificate, int $thresholdDays = 30): CertificateExpiryAlert` |
-| [ExpireCertificate.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/ExpireCertificate.php) | `public function execute(Certificate $certificate): Certificate` |
-| [IssueCertificate.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/IssueCertificate.php) | `public function execute(array $attributes): Certificate` |
-| [RecordCertificateOperation.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RecordCertificateOperation.php) | `public function execute(array $attributes): CertificateOperation` |
-| [RegisterAcmeAccount.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RegisterAcmeAccount.php) | `public function execute(array $attributes): AcmeAccount` |
-| [RegisterCertificateLifecycle.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RegisterCertificateLifecycle.php) | `public function execute(array $a): Model` |
-| [RequestCertificateDeployment.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RequestCertificateDeployment.php) | `public function execute(Certificate $certificate, array $attributes): CertificateDeployment` |
-| [RequestCertificateRenewal.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RequestCertificateRenewal.php) | `public function execute(Certificate $certificate, ?\DateTimeInterface $scheduledAt = null): CertificateRenewal` |
-| [RevokeCertificate.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RevokeCertificate.php) | `public function execute(Certificate $certificate): Certificate` |
-| [UpdateCertificate.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/UpdateCertificate.php) | `public function execute(Certificate $certificate, array $attributes): Certificate` |
+| [CheckCertificateExpiry.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/CheckCertificateExpiry.php) | `public function execute(Certificate $certificate, int $thresholdDays = 30): CertificateExpiryAlert` |
+| [ExpireCertificate.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/ExpireCertificate.php) | `public function execute(Certificate $certificate): Certificate` |
+| [IssueCertificate.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/IssueCertificate.php) | `public function execute(array $attributes): Certificate` |
+| [RecordCertificateOperation.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RecordCertificateOperation.php) | `public function execute(array $attributes): CertificateOperation` |
+| [RegisterAcmeAccount.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RegisterAcmeAccount.php) | `public function execute(array $attributes): AcmeAccount` |
+| [RegisterCertificateLifecycle.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RegisterCertificateLifecycle.php) | `public function execute(array $a): Model` |
+| [RequestCertificateDeployment.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RequestCertificateDeployment.php) | `public function execute(Certificate $certificate, array $attributes): CertificateDeployment` |
+| [RequestCertificateRenewal.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RequestCertificateRenewal.php) | `public function execute(Certificate $certificate, ?\DateTimeInterface $scheduledAt = null): CertificateRenewal` |
+| [RevokeCertificate.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/RevokeCertificate.php) | `public function execute(Certificate $certificate): Certificate` |
+| [UpdateCertificate.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Actions/UpdateCertificate.php) | `public function execute(Certificate $certificate, array $attributes): Certificate` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -63,18 +63,18 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [AcmeAccount.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/AcmeAccount.php) | `id`, `team_id`, `email`, `directory`, `credentials`, `active` |
-| [Certificate.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/Certificate.php) | `team_id`, `domains`, `status`, `issuer`, `certificate_pem`, `private_key`, `issued_at`, `expires_at`, `metadata` |
-| [CertificateDeployment.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/CertificateDeployment.php) | `id`, `team_id`, `certificate_id`, `target_type`, `target_id`, `status`, `deployed_at`, `error`, `metadata` |
-| [CertificateExpiryAlert.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/CertificateExpiryAlert.php) | `id`, `team_id`, `certificate_id`, `threshold_days`, `status`, `notified_at`, `metadata` |
-| [CertificateOperation.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/CertificateOperation.php) | `id`, `team_id`, `certificate_id`, `operation`, `status`, `details`, `completed_at` |
-| [CertificateRenewal.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/CertificateRenewal.php) | `id`, `team_id`, `certificate_id`, `scheduled_at`, `started_at`, `completed_at`, `status`, `attempts`, `error` |
+| [AcmeAccount.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/AcmeAccount.php) | `id`, `team_id`, `email`, `directory`, `credentials`, `active` |
+| [Certificate.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/Certificate.php) | `team_id`, `domains`, `status`, `issuer`, `certificate_pem`, `private_key`, `issued_at`, `expires_at`, `metadata` |
+| [CertificateDeployment.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/CertificateDeployment.php) | `id`, `team_id`, `certificate_id`, `target_type`, `target_id`, `status`, `deployed_at`, `error`, `metadata` |
+| [CertificateExpiryAlert.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/CertificateExpiryAlert.php) | `id`, `team_id`, `certificate_id`, `threshold_days`, `status`, `notified_at`, `metadata` |
+| [CertificateOperation.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/CertificateOperation.php) | `id`, `team_id`, `certificate_id`, `operation`, `status`, `details`, `completed_at` |
+| [CertificateRenewal.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates/src/Models/CertificateRenewal.php) | `id`, `team_id`, `certificate_id`, `scheduled_at`, `started_at`, `completed_at`, `status`, `attempts`, `error` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/control-panel-certificates-api/routes/api.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates-api/routes/api.php)
+[modules/control-panel-certificates-api/routes/api.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-certificates-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/control-panel/certificates')->middleware(['api', 'auth:sanctum', 'throttle:60,1'])->group(function (): void {

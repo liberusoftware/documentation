@@ -8,7 +8,7 @@ Search module for Liberu CMS: full-text search over published content across eve
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-search](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
+| [cms](../../projects/cms/SOURCE-MODULES.md) | [cms-search](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/composer.json) | `5d91aa9c0a3d` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: cms-laravel, `cms-search`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-cms-laravel-filament, `cms-search`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: cms-laravel, `cms-search`. Matching reference files in this vari
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/composer.json) · [module.json](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/composer.json) · [module.json](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/module.json).
 
 ### Dependencies and namespace mapping
 
@@ -57,16 +57,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/SearchController.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Http/Controllers/SearchController.php) | `public function __construct( private SearchIndexInterface $index, private Container $container, )`<br>`public function index(SearchRequest $request): AnonymousResourceCollection` |
-| [src/Services/ContentSearchService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Services/ContentSearchService.php) | `public function __construct(private SearchIndexInterface $index)`<br>`public function search(string $query, ?int $teamId = null, string $source = 'api'): array`<br>`public function analytics(?int $teamId, int $perPage = 25): LengthAwarePaginator`<br>`public function autocomplete(string $prefix, ?int $teamId = null): array` |
+| [src/Http/Controllers/SearchController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Http/Controllers/SearchController.php) | `public function __construct( private SearchIndexInterface $index, private Container $container, )`<br>`public function index(SearchRequest $request): AnonymousResourceCollection` |
+| [src/Services/ContentSearchService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Services/ContentSearchService.php) | `public function __construct(private SearchIndexInterface $index)`<br>`public function search(string $query, ?int $teamId = null, string $source = 'api'): array`<br>`public function analytics(?int $teamId, int $perPage = 25): LengthAwarePaginator`<br>`public function autocomplete(string $prefix, ?int $teamId = null): array` |
 
-Other non-legacy PHP sources: [src/CmsSearchModule.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/CmsSearchModule.php) · [src/CmsSearchServiceProvider.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/CmsSearchServiceProvider.php) · [src/Health/SearchHealthCheck.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Health/SearchHealthCheck.php) · [src/Http/Requests/SearchRequest.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Http/Requests/SearchRequest.php) · [src/Http/Resources/SearchResultResource.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Http/Resources/SearchResultResource.php) · [src/Index/DatabaseSearchIndex.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Index/DatabaseSearchIndex.php) · [src/Index/ScoutSearchIndex.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Index/ScoutSearchIndex.php) · [src/Models/SearchAnalytic.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Models/SearchAnalytic.php) · [src/SearchRegistry.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/SearchRegistry.php).
+Other non-legacy PHP sources: [src/CmsSearchModule.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/CmsSearchModule.php) · [src/CmsSearchServiceProvider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/CmsSearchServiceProvider.php) · [src/Health/SearchHealthCheck.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Health/SearchHealthCheck.php) · [src/Http/Requests/SearchRequest.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Http/Requests/SearchRequest.php) · [src/Http/Resources/SearchResultResource.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Http/Resources/SearchResultResource.php) · [src/Index/DatabaseSearchIndex.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Index/DatabaseSearchIndex.php) · [src/Index/ScoutSearchIndex.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Index/ScoutSearchIndex.php) · [src/Models/SearchAnalytic.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/Models/SearchAnalytic.php) · [src/SearchRegistry.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/src/SearchRegistry.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_25_001000_create_cms_search_analytics_table.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/database/migrations/2026_08_25_001000_create_cms_search_analytics_table.php)
+- [database/migrations/2026_08_25_001000_create_cms_search_analytics_table.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-search/database/migrations/2026_08_25_001000_create_cms_search_analytics_table.php)
 
 ### Verification and consumer use
 

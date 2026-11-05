@@ -2,7 +2,7 @@
 
 ## Canonical Application Foundation Scope
 
-**Repository:** `liberusoftware/boilerplate-laravel`
+**Repository:** `liberusoftware/project-boilerplate-laravel-filament`
 **Purpose:** Reusable application foundation for every Liberu Laravel repository.
 **Target stack:** Laravel 13, PHP 8.5, Filament 5, Livewire 4
 **Architecture:** Modules conform to [MODULES.md](../../architecture/MODULES.md); API access, integrations, and webhooks conform to [API.md](../../architecture/API.md); foundation UI and assets conform to [THEMES.md](../../standards/THEMES.md).
@@ -18,7 +18,7 @@ Each consuming repository must:
 2. declare those modules and versions in its application manifest/Composer dependencies;
 3. configure or extend public contracts rather than copy foundation code;
 4. keep domain features in product-owned modules;
-5. contribute generic improvements back to `boilerplate-laravel`;
+5. contribute generic improvements back to `project-boilerplate-laravel-filament`;
 6. document excluded foundation modules and the reason when an expected capability is intentionally omitted.
 
 The boilerplate is a runnable reference application and package integration test bed. It is not a dumping ground for product-specific models or workflows.
@@ -329,7 +329,7 @@ Repository adoption issues must list selected modules, excluded modules, configu
 
 ## Canonical Application Foundation Scope
 
-**Repository:** `liberusoftware/boilerplate-laravel`
+**Repository:** `liberusoftware/project-boilerplate-laravel-filament`
 **Purpose:** Reusable application foundation for every Liberu Laravel repository.
 **Target stack:** Laravel 13, PHP 8.5, Filament 5, Livewire 4
 **Architecture:** Modules conform to [MODULES.md](../../architecture/MODULES.md); API access, integrations, and webhooks conform to [API.md](../../architecture/API.md); foundation UI and assets conform to [THEMES.md](../../standards/THEMES.md).
@@ -345,7 +345,7 @@ Each consuming repository must:
 2. declare those modules and versions in its application manifest/Composer dependencies;
 3. configure or extend public contracts rather than copy foundation code;
 4. keep domain features in product-owned modules;
-5. contribute generic improvements back to `boilerplate-laravel`;
+5. contribute generic improvements back to `project-boilerplate-laravel-filament`;
 6. document excluded foundation modules and the reason when an expected capability is intentionally omitted.
 
 The boilerplate is a runnable reference application and package integration test bed. It is not a dumping ground for product-specific models or workflows.
@@ -656,7 +656,7 @@ Repository adoption issues must list selected modules, excluded modules, configu
 
 ## Canonical Application Foundation Scope
 
-**Repository:** `liberusoftware/boilerplate-laravel`
+**Repository:** `liberusoftware/project-boilerplate-laravel-filament`
 **Purpose:** Reusable application foundation for every Liberu Laravel repository.
 **Target stack:** Laravel 13, PHP 8.5, Filament 5, Livewire 4
 **Architecture:** Modules conform to [MODULES.md](../../architecture/MODULES.md); API access, integrations, and webhooks conform to [API.md](../../architecture/API.md); foundation UI and assets conform to [THEMES.md](../../standards/THEMES.md).
@@ -672,7 +672,7 @@ Each consuming repository must:
 2. declare those modules and versions in its application manifest/Composer dependencies;
 3. configure or extend public contracts rather than copy foundation code;
 4. keep domain features in product-owned modules;
-5. contribute generic improvements back to `boilerplate-laravel`;
+5. contribute generic improvements back to `project-boilerplate-laravel-filament`;
 6. document excluded foundation modules and the reason when an expected capability is intentionally omitted.
 
 The boilerplate is a runnable reference application and package integration test bed. It is not a dumping ground for product-specific models or workflows.

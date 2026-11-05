@@ -1,7 +1,7 @@
 {
   "repositories": [
     {
-      "repository": "accounting-erp-laravel",
+      "repository": "project-accounting-erp-laravel-filament",
       "commit": "39a49babafc0b8caf12c018abdd765f215ecf207",
       "project": "accounting",
       "modules": [
@@ -8979,7 +8979,7 @@
       ]
     },
     {
-      "repository": "automation-laravel",
+      "repository": "project-automation-laravel-filament",
       "commit": "68e5f07a67041f8438530c71bc86515cbd11da70",
       "project": "automation",
       "modules": [
@@ -10910,7 +10910,7 @@
       ]
     },
     {
-      "repository": "billing-laravel",
+      "repository": "project-billing-laravel-filament",
       "commit": "4743bdfebd1c122e10bf80171d0210ab27e34a54",
       "project": "billing",
       "modules": [
@@ -14711,7 +14711,7 @@
       ]
     },
     {
-      "repository": "boilerplate-laravel",
+      "repository": "project-boilerplate-laravel-filament",
       "commit": "3ade34046c3de1e2f0fc8e498a2451241c0584dc",
       "project": "boilerplate",
       "modules": [
@@ -15646,7 +15646,7 @@
       ]
     },
     {
-      "repository": "browser-game-laravel",
+      "repository": "project-browser-game-laravel-filament",
       "commit": "790fdffebd3a19bf914aea8a4ef049f87f52c62d",
       "project": "browser-game",
       "modules": [
@@ -18008,7 +18008,7 @@
       ]
     },
     {
-      "repository": "cms-laravel",
+      "repository": "project-cms-laravel-filament",
       "commit": "5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7",
       "project": "cms",
       "modules": [
@@ -24212,7 +24212,7 @@
       ]
     },
     {
-      "repository": "control-panel-laravel",
+      "repository": "project-control-panel-laravel-filament",
       "commit": "1797f25d705f780bacddcdf228c9a1dc995c3580",
       "project": "control-panel",
       "modules": [
@@ -26217,7 +26217,7 @@
       ]
     },
     {
-      "repository": "crm-laravel",
+      "repository": "project-crm-laravel-filament",
       "commit": "63aad94e94c0f9a18038e301eb979138c657be64",
       "project": "crm",
       "modules": [
@@ -32895,7 +32895,7 @@
       ]
     },
     {
-      "repository": "ecommerce-laravel",
+      "repository": "project-ecommerce-laravel-filament",
       "commit": "af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f",
       "project": "ecommerce",
       "modules": [],
@@ -33796,7 +33796,7 @@
       ]
     },
     {
-      "repository": "enterprise-sap-laravel",
+      "repository": "project-enterprise-sap-laravel-filament",
       "commit": "b12a8c841c6a9054e52cac99d9ac1f233924a041",
       "project": "sap",
       "modules": [
@@ -34731,7 +34731,7 @@
       ]
     },
     {
-      "repository": "genealogy-laravel",
+      "repository": "project-genealogy-laravel-filament",
       "commit": "577e93db23cc969fd532086c06524f9f2bb2b5ea",
       "project": "genealogy",
       "modules": [
@@ -37201,7 +37201,7 @@
       ]
     },
     {
-      "repository": "maintenance-laravel",
+      "repository": "project-maintenance-laravel-filament",
       "commit": "c267d625e264e86ad223be8a3a08a3728afc7344",
       "project": "maintenance",
       "modules": [
@@ -39095,7 +39095,7 @@
       ]
     },
     {
-      "repository": "real-estate-laravel",
+      "repository": "project-real-estate-laravel-filament",
       "commit": "178d8015b601c99dec43acfdc12724aae2b3731a",
       "project": "real-estate",
       "modules": [
@@ -43134,7 +43134,7 @@
       ]
     },
     {
-      "repository": "social-network-laravel",
+      "repository": "project-social-network-laravel-filament",
       "commit": "08bbc484b50fc7e841a499375329c6de32614145",
       "project": "social-network",
       "modules": [

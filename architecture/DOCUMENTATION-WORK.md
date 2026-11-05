@@ -4,7 +4,7 @@ This record preserves the work history and corrections for the full documentatio
 
 ## Current evidence and corrections
 
-The initial 13-repository discovery was incomplete: it stopped at page 19. The corrected discovery tool consumed all 24 public organization API pages and found **14** `-laravel` repositories, including `enterprise-sap-laravel` on page 23. All 14 are now cloned under `/home/liberu/projects`; their origins, clean worktrees and pinned HEADs were verified against the inventory. Earlier statements below that no SAP source repository existed are superseded.
+The initial 13-repository discovery was incomplete: it stopped at page 19. The corrected discovery tool consumed all 24 public organization API pages and found **14** `-laravel` repositories, including `project-enterprise-sap-laravel-filament` on page 23. All 14 are now cloned under `/home/liberu/projects`; their origins, clean worktrees and pinned HEADs were verified against the inventory. Earlier statements below that no SAP source repository existed are superseded.
 
 The first duplicate totals also counted compatibility symlinks. The corrected inventory records **2,356 immediate module directory entries**, including **70 symlink aliases** and **13 non-package physical directories**. There are **2,273 physical package locations** and **1,721 manifest identities**. The corrected shared comparison covers **133 repeated physical identities**: **89** match the selected runtime/metadata inputs and **44** differ. Earlier 203/114 totals are historical intermediate results, not current duplication counts.
 

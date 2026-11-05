@@ -38,14 +38,14 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [AuditRequestQuery.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Queries/AuditRequestQuery.php) | `public function paginate(int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator` |
+| [AuditRequestQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Queries/AuditRequestQuery.php) | `public function paginate(int $teamId, ?string $status = null, int $perPage = 25): LengthAwarePaginator` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateAuditRequest.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Actions/CreateAuditRequest.php) | `public function handle(array $attributes): AuditRequest` |
-| [SubmitAuditRequest.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Actions/SubmitAuditRequest.php) | `public function handle(AuditRequest $request): AuditRequest` |
+| [CreateAuditRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Actions/CreateAuditRequest.php) | `public function handle(array $attributes): AuditRequest` |
+| [SubmitAuditRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Actions/SubmitAuditRequest.php) | `public function handle(AuditRequest $request): AuditRequest` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -55,13 +55,13 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [AuditRequest.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Models/AuditRequest.php) | `team_id`, `reference`, `title`, `description`, `owner_id`, `status`, `due_at`, `evidence`, `submitted_at`, `closed_at` |
+| [AuditRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support/src/Models/AuditRequest.php) | `team_id`, `reference`, `title`, `description`, `owner_id`, `status`, `due_at`, `evidence`, `submitted_at`, `closed_at` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/accounting-audit-support-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support-api/routes/api.php)
+[modules/accounting-audit-support-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-audit-support-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/accounting/audit-support')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {

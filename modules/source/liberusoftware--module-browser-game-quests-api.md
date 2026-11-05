@@ -8,7 +8,7 @@ HTTP API adapter for Browser Game Quests.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [browser-game](../../projects/browser-game/SOURCE-MODULES.md) | [browser-game-quests-api](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/composer.json) | `790fdffebd3a` | [Variant 1](#variant-1) | 2 |
+| [browser-game](../../projects/browser-game/SOURCE-MODULES.md) | [browser-game-quests-api](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/composer.json) | `790fdffebd3a` | [Variant 1](#variant-1) | 2 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: browser-game-laravel, `browser-game-quests-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-browser-game-laravel-filament, `browser-game-quests-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: browser-game-laravel, `browser-game-quests-api`. Matching refere
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/composer.json) · [module.json](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/composer.json) · [module.json](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/module.json).
 
 **Declared capabilities:** browser-game.quests.api
 
@@ -59,16 +59,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/QuestsController.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/src/Http/Controllers/QuestsController.php) | `public function index(Request $request): JsonResponse`<br>`public function available(Request $request): JsonResponse`<br>`public function active(Request $request): JsonResponse`<br>`public function completed(Request $request): JsonResponse`<br>`public function show(Request $request, Quest $quest): JsonResponse`<br>`public function progress(Request $request, Quest $quest): JsonResponse`<br>`public function accept(Request $request, Quest $quest): JsonResponse`<br>`public function complete(Request $request, Quest $quest): JsonResponse`<br>`public function abandon(Request $request, Quest $quest): JsonResponse` |
+| [src/Http/Controllers/QuestsController.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/src/Http/Controllers/QuestsController.php) | `public function index(Request $request): JsonResponse`<br>`public function available(Request $request): JsonResponse`<br>`public function active(Request $request): JsonResponse`<br>`public function completed(Request $request): JsonResponse`<br>`public function show(Request $request, Quest $quest): JsonResponse`<br>`public function progress(Request $request, Quest $quest): JsonResponse`<br>`public function accept(Request $request, Quest $quest): JsonResponse`<br>`public function complete(Request $request, Quest $quest): JsonResponse`<br>`public function abandon(Request $request, Quest $quest): JsonResponse` |
 
-Other non-legacy PHP sources: [src/QuestsApiServiceProvider.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/src/QuestsApiServiceProvider.php).
+Other non-legacy PHP sources: [src/QuestsApiServiceProvider.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/src/QuestsApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1-browser-game-quests.yaml](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/openapi/v1-browser-game-quests.yaml)
-- [routes/api.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/routes/api.php)
+- [openapi/v1-browser-game-quests.yaml](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/openapi/v1-browser-game-quests.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 
@@ -80,7 +80,7 @@ Declared Composer scripts: `{"test": "pest"}`.
 
 Tracked files under `tests/`: **2**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Pest.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/tests/Pest.php)
-- [tests/Unit/PackageBoundaryTest.php](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/tests/Unit/PackageBoundaryTest.php)
+- [tests/Pest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/tests/Pest.php)
+- [tests/Unit/PackageBoundaryTest.php](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/browser-game-quests-api/tests/Unit/PackageBoundaryTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

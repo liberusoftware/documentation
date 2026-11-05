@@ -52,7 +52,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [MarketingAgentController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent-api/src/Http/Controllers/MarketingAgentController.php) | `public function index(Request $r, AgentQuery $q): JsonResponse`<br>`public function store(Request $r, CreateAgentRequest $a): JsonResponse`<br>`public function check(Request $r, AgentRequest $request, RecordAgentCheck $a): JsonResponse`<br>`public function experiment(Request $r, AgentRequest $request, CreateExperiment $a): JsonResponse` |
+| [MarketingAgentController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-marketing-agent-api/src/Http/Controllers/MarketingAgentController.php) | `public function index(Request $r, AgentQuery $q): JsonResponse`<br>`public function store(Request $r, CreateAgentRequest $a): JsonResponse`<br>`public function check(Request $r, AgentRequest $request, RecordAgentCheck $a): JsonResponse`<br>`public function experiment(Request $r, AgentRequest $request, CreateExperiment $a): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

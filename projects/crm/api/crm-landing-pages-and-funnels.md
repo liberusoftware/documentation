@@ -48,7 +48,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [FunnelController.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-landing-pages-and-funnels-api/src/Http/Controllers/FunnelController.php) | `public function index(Request $r, FunnelQuery $q): JsonResponse`<br>`public function store(Request $r, CreateFunnel $a): JsonResponse`<br>`public function page(Request $r, Funnel $funnel, AddFunnelPage $a): JsonResponse`<br>`public function publish(Request $r, Funnel $funnel, PublishFunnel $a): JsonResponse`<br>`public function event(Request $r, Funnel $funnel, RecordFunnelEvent $a): JsonResponse` |
+| [FunnelController.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/crm-landing-pages-and-funnels-api/src/Http/Controllers/FunnelController.php) | `public function index(Request $r, FunnelQuery $q): JsonResponse`<br>`public function store(Request $r, CreateFunnel $a): JsonResponse`<br>`public function page(Request $r, Funnel $funnel, AddFunnelPage $a): JsonResponse`<br>`public function publish(Request $r, Funnel $funnel, PublishFunnel $a): JsonResponse`<br>`public function event(Request $r, Funnel $funnel, RecordFunnelEvent $a): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

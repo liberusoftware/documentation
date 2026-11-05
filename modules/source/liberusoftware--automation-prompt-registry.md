@@ -8,7 +8,7 @@ Provider-neutral prompt-registry domain module for Liberu Automation.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [automation](../../projects/automation/SOURCE-MODULES.md) | [module-automation-prompt-registry](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 1 |
+| [automation](../../projects/automation/SOURCE-MODULES.md) | [module-automation-prompt-registry](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/composer.json) | `68e5f07a6704` | [Variant 1](#variant-1) | 1 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: automation-laravel, `module-automation-prompt-registry`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-automation-laravel-filament, `module-automation-prompt-registry`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: automation-laravel, `module-automation-prompt-registry`. Matchin
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/composer.json) · [module.json](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/composer.json) · [module.json](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/module.json).
 
 **Declared capabilities:** automation.prompt-registry.versioned-prompts, automation.prompt-registry.variables, automation.prompt-registry.evaluation-sets, automation.prompt-registry.tenant-overrides, automation.prompt-registry.approvals, automation.prompt-registry.rollback
 
@@ -58,17 +58,17 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Actions/CreatePromptRegistryResource.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Actions/CreatePromptRegistryResource.php) | `public function execute(string $teamId, string $name, array $payload = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): PromptRegistryResource` |
-| [src/Actions/TransitionPromptRegistryResource.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Actions/TransitionPromptRegistryResource.php) | `public function execute(PromptRegistryResource $resource, string $teamId, string $status, array $allowedStatuses = ['draft', 'active', 'paused', 'completed', 'failed', 'cancelled'], ?string $actorId = null, ?string $correlationId = null): PromptRegistryResource` |
+| [src/Actions/CreatePromptRegistryResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Actions/CreatePromptRegistryResource.php) | `public function execute(string $teamId, string $name, array $payload = [], ?string $idempotencyKey = null, ?string $actorId = null, ?string $correlationId = null): PromptRegistryResource` |
+| [src/Actions/TransitionPromptRegistryResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Actions/TransitionPromptRegistryResource.php) | `public function execute(PromptRegistryResource $resource, string $teamId, string $status, array $allowedStatuses = ['draft', 'active', 'paused', 'completed', 'failed', 'cancelled'], ?string $actorId = null, ?string $correlationId = null): PromptRegistryResource` |
 
-Other non-legacy PHP sources: [src/Domain/PromptApproval.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Domain/PromptApproval.php) · [src/Domain/PromptEvaluationSet.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Domain/PromptEvaluationSet.php) · [src/Domain/PromptOverride.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Domain/PromptOverride.php) · [src/Domain/PromptRelease.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Domain/PromptRelease.php) · [src/Domain/PromptVersion.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Domain/PromptVersion.php) · [src/Events/ResourceTransitioned.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Events/ResourceTransitioned.php) · [src/Models/PromptRegistryResource.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Models/PromptRegistryResource.php) · [src/PromptRegistryServiceProvider.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/PromptRegistryServiceProvider.php).
+Other non-legacy PHP sources: [src/Domain/PromptApproval.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Domain/PromptApproval.php) · [src/Domain/PromptEvaluationSet.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Domain/PromptEvaluationSet.php) · [src/Domain/PromptOverride.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Domain/PromptOverride.php) · [src/Domain/PromptRelease.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Domain/PromptRelease.php) · [src/Domain/PromptVersion.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Domain/PromptVersion.php) · [src/Events/ResourceTransitioned.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Events/ResourceTransitioned.php) · [src/Models/PromptRegistryResource.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/Models/PromptRegistryResource.php) · [src/PromptRegistryServiceProvider.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/src/PromptRegistryServiceProvider.php).
 
 ### Persistence and lifecycle evidence
 
 Migrations/settings files are source history, not proof they were applied. Check existing tables, migration records, locks, backfills and recovery before adoption.
 
-- [database/migrations/2026_08_23_000000_create_automation_prompt_registry_resources_table.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/database/migrations/2026_08_23_000000_create_automation_prompt_registry_resources_table.php)
-- [database/migrations/2026_08_30_000003_add_lifecycle_metadata_to_automation_prompt_registry_resources.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/database/migrations/2026_08_30_000003_add_lifecycle_metadata_to_automation_prompt_registry_resources.php)
+- [database/migrations/2026_08_23_000000_create_automation_prompt_registry_resources_table.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/database/migrations/2026_08_23_000000_create_automation_prompt_registry_resources_table.php)
+- [database/migrations/2026_08_30_000003_add_lifecycle_metadata_to_automation_prompt_registry_resources.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/database/migrations/2026_08_30_000003_add_lifecycle_metadata_to_automation_prompt_registry_resources.php)
 
 ### Verification and consumer use
 
@@ -76,6 +76,6 @@ Declared Composer scripts: `{}`.
 
 Tracked files under `tests/`: **1**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Unit/DomainTest.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/tests/Unit/DomainTest.php)
+- [tests/Unit/DomainTest.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-automation-prompt-registry/tests/Unit/DomainTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

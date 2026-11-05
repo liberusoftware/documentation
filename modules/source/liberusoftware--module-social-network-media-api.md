@@ -8,7 +8,7 @@ Versioned API adapter for Media.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [social-network](../../projects/social-network/SOURCE-MODULES.md) | [social-network-media-api](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/composer.json) | `08bbc484b50f` | [Variant 1](#variant-1) | 2 |
+| [social-network](../../projects/social-network/SOURCE-MODULES.md) | [social-network-media-api](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/composer.json) | `08bbc484b50f` | [Variant 1](#variant-1) | 2 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: social-network-laravel, `social-network-media-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-social-network-laravel-filament, `social-network-media-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: social-network-laravel, `social-network-media-api`. Matching ref
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/composer.json) · [module.json](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/composer.json) · [module.json](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/module.json).
 
 **Declared capabilities:** social-network.media.api
 
@@ -61,16 +61,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/MediaController.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/src/Http/Controllers/MediaController.php) | `public function store(Request $request, GetProfile $get, RegisterMediaAsset $register): JsonResponse`<br>`public function index(Request $request, GetProfile $get): JsonResponse`<br>`public function show(string $asset, Request $request, GetProfile $get): JsonResponse`<br>`public function update(string $asset, Request $request, GetProfile $get, UpdateMediaAsset $update): JsonResponse`<br>`public function ready(string $asset, Request $request, GetProfile $get, MarkMediaReady $ready): JsonResponse`<br>`public function destroy(string $asset, Request $request, GetProfile $get, DeleteMediaAsset $delete): JsonResponse`<br>`public function albums(Request $request, GetProfile $get): JsonResponse`<br>`public function storeAlbum(Request $request, GetProfile $get, CreateAlbum $create): JsonResponse`<br>`public function showAlbum(string $album, Request $request, GetProfile $get): JsonResponse`<br>`public function updateAlbum(string $album, Request $request, GetProfile $get, UpdateAlbum $update): JsonResponse`<br>`public function destroyAlbum(string $album, Request $request, GetProfile $get, DeleteAlbum $delete): JsonResponse` |
+| [src/Http/Controllers/MediaController.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/src/Http/Controllers/MediaController.php) | `public function store(Request $request, GetProfile $get, RegisterMediaAsset $register): JsonResponse`<br>`public function index(Request $request, GetProfile $get): JsonResponse`<br>`public function show(string $asset, Request $request, GetProfile $get): JsonResponse`<br>`public function update(string $asset, Request $request, GetProfile $get, UpdateMediaAsset $update): JsonResponse`<br>`public function ready(string $asset, Request $request, GetProfile $get, MarkMediaReady $ready): JsonResponse`<br>`public function destroy(string $asset, Request $request, GetProfile $get, DeleteMediaAsset $delete): JsonResponse`<br>`public function albums(Request $request, GetProfile $get): JsonResponse`<br>`public function storeAlbum(Request $request, GetProfile $get, CreateAlbum $create): JsonResponse`<br>`public function showAlbum(string $album, Request $request, GetProfile $get): JsonResponse`<br>`public function updateAlbum(string $album, Request $request, GetProfile $get, UpdateAlbum $update): JsonResponse`<br>`public function destroyAlbum(string $album, Request $request, GetProfile $get, DeleteAlbum $delete): JsonResponse` |
 
-Other non-legacy PHP sources: [src/MediaApiServiceProvider.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/src/MediaApiServiceProvider.php).
+Other non-legacy PHP sources: [src/MediaApiServiceProvider.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/src/MediaApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/social-network-media.yaml](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/openapi/v1/social-network-media.yaml)
-- [routes/api.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/routes/api.php)
+- [openapi/v1/social-network-media.yaml](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/openapi/v1/social-network-media.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 
@@ -82,7 +82,7 @@ Declared Composer scripts: `{"test": "pest", "test:coverage": "pest --coverage -
 
 Tracked files under `tests/`: **2**. Presence and counts do not establish assertions, coverage or a passing run.
 
-- [tests/Pest.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/tests/Pest.php)
-- [tests/Unit/PackageStructureTest.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/tests/Unit/PackageStructureTest.php)
+- [tests/Pest.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/tests/Pest.php)
+- [tests/Unit/PackageStructureTest.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-media-api/tests/Unit/PackageStructureTest.php)
 
 Before adoption, verify module enablement, clean consumer resolution, actor/tenant authorization, invalid input, duplicates/concurrency, migration compatibility and failure recovery for the actual call path. Use the owning application/package scripts and supported PHP/framework versions. This documentation extraction did not install, boot, test or release the package.

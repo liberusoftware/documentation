@@ -48,11 +48,11 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [PageRoutingController.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-pages-api/src/Http/Controllers/PageRoutingController.php) | `public function alias(Request $request, int $id): JsonResponse`<br>`public function redirect(Request $request): JsonResponse`<br>`public function deleteRedirect(int $id): JsonResponse` |
-| [PageApiController.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-pages/src/Http/Controllers/PageApiController.php) | `public function index(): AnonymousResourceCollection`<br>`public function show(string $slug): PageResource` |
-| [PageWriteController.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-pages/src/Http/Controllers/PageWriteController.php) | `public function store(StorePageRequest $request): JsonResponse`<br>`public function update(UpdatePageRequest $request, int $id): PageResource`<br>`public function destroy(int $id): Response` |
+| [PageRoutingController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-pages-api/src/Http/Controllers/PageRoutingController.php) | `public function alias(Request $request, int $id): JsonResponse`<br>`public function redirect(Request $request): JsonResponse`<br>`public function deleteRedirect(int $id): JsonResponse` |
+| [PageApiController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-pages/src/Http/Controllers/PageApiController.php) | `public function index(): AnonymousResourceCollection`<br>`public function show(string $slug): PageResource` |
+| [PageWriteController.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-pages/src/Http/Controllers/PageWriteController.php) | `public function store(StorePageRequest $request): JsonResponse`<br>`public function update(UpdatePageRequest $request, int $id): PageResource`<br>`public function destroy(int $id): Response` |
 
-Request validation sources: [StorePageRequest.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-pages/src/Http/Requests/StorePageRequest.php) · [UpdatePageRequest.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-pages/src/Http/Requests/UpdatePageRequest.php).
+Request validation sources: [StorePageRequest.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-pages/src/Http/Requests/StorePageRequest.php) · [UpdatePageRequest.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-pages/src/Http/Requests/UpdatePageRequest.php).
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -60,7 +60,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/module-cms-pages-api/openapi/v1/cms-pages.yaml](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-pages-api/openapi/v1/cms-pages.yaml)
+- [modules/module-cms-pages-api/openapi/v1/cms-pages.yaml](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/module-cms-pages-api/openapi/v1/cms-pages.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

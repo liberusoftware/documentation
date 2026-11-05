@@ -39,13 +39,13 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [EmbedsQuery.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-embeds/src/Queries/EmbedsQuery.php) | `public function list(int $perPage = 15, string $search = ''): mixed`<br>`public function find(int $id): ?Embed` |
+| [EmbedsQuery.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-embeds/src/Queries/EmbedsQuery.php) | `public function list(int $perPage = 15, string $search = ''): mixed`<br>`public function find(int $id): ?Embed` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [EmbedsService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-embeds/src/Services/EmbedsService.php) | `public function provider(array $a, ?int $teamId = null): Provider`<br>`public function embed(array $a, ?int $teamId = null): Embed`<br>`public function publish(Embed $e): Embed`<br>`public function render(Embed $e, bool $consented = false): array` |
+| [EmbedsService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-embeds/src/Services/EmbedsService.php) | `public function provider(array $a, ?int $teamId = null): Provider`<br>`public function embed(array $a, ?int $teamId = null): Embed`<br>`public function publish(Embed $e): Embed`<br>`public function render(Embed $e, bool $consented = false): array` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -55,8 +55,8 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [Embed.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-embeds/src/Models/Embed.php) | No literal fillable array detected; inspect the model and API schema. |
-| [Provider.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-embeds/src/Models/Provider.php) | No literal fillable array detected; inspect the model and API schema. |
+| [Embed.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-embeds/src/Models/Embed.php) | No literal fillable array detected; inspect the model and API schema. |
+| [Provider.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-embeds/src/Models/Provider.php) | No literal fillable array detected; inspect the model and API schema. |
 
 ## Server/client and React reuse
 

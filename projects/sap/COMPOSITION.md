@@ -1,6 +1,6 @@
 # Enterprise suite composition and delivery design
 
-**Status:** target enterprise design over an observed foundation host. The complete organization scan includes [`enterprise-sap-laravel`](https://github.com/liberusoftware/enterprise-sap-laravel); read its [current source/foundation map](SOURCE-APPLICATION.md). The host does not by itself establish implementation of the business-domain contracts below, and this design does not certify production readiness.
+**Status:** target enterprise design over an observed foundation host. The complete organization scan includes [`project-enterprise-sap-laravel-filament`](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament); read its [current source/foundation map](SOURCE-APPLICATION.md). The host does not by itself establish implementation of the business-domain contracts below, and this design does not certify production readiness.
 
 The [enterprise scope](SAP.md) describes outcomes and capability groups. Those groups are solution workspaces, not instructions to duplicate every underlying domain in a new `sap-*` package. Reuse the owning product package, then add enterprise orchestration or missing capabilities only when its public contracts cannot meet the requirement.
 

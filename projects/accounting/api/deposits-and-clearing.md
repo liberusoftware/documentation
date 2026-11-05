@@ -49,7 +49,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-deposits-and-clearing-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-deposits-and-clearing-api/routes/api.php)
+[modules/accounting-deposits-and-clearing-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-deposits-and-clearing-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/accounting/deposits-and-clearing')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
@@ -68,7 +68,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [ClearingController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-deposits-and-clearing-api/src/Http/Controllers/ClearingController.php) | `public function funds(ClearingQuery $query): JsonResponse`<br>`public function deposits(ClearingQuery $query): JsonResponse`<br>`public function recordFund(Request $request, RecordUndepositedFund $action): JsonResponse`<br>`public function createDeposit(Request $request, CreateGroupedDeposit $action): JsonResponse`<br>`public function reconcile(Request $request, string $deposit, ReconcileDeposit $action): JsonResponse` |
+| [ClearingController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-deposits-and-clearing-api/src/Http/Controllers/ClearingController.php) | `public function funds(ClearingQuery $query): JsonResponse`<br>`public function deposits(ClearingQuery $query): JsonResponse`<br>`public function recordFund(Request $request, RecordUndepositedFund $action): JsonResponse`<br>`public function createDeposit(Request $request, CreateGroupedDeposit $action): JsonResponse`<br>`public function reconcile(Request $request, string $deposit, ReconcileDeposit $action): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

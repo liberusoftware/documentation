@@ -222,7 +222,7 @@ These are cross-product read models and workspaces. They do not become a new own
 
 ## 8. Developer implementation plan
 
-1. **Create the composition repository.** Start from `boilerplate-laravel`; keep root `app/` limited to composition, brand policy, deployment configuration, and application-specific adapters.
+1. **Create the composition repository.** Start from `project-boilerplate-laravel-filament`; keep root `app/` limited to composition, brand policy, deployment configuration, and application-specific adapters.
 2. **Record package decisions.** Create ADRs for selected packages, excluded packages, dependency direction, authoritative records, project ownership, event transport, tenancy model, and deployment topology.
 3. **Define the application manifest.** Pin Composer packages and compatibility ranges; declare enabled modules by environment/site; distinguish installed, enabled, entitled, and authorized states.
 4. **Implement organization context.** Seed legal entity, four brands/divisions, teams, sites/domains, cost/profit centers, projects, and locations; add least-privilege roles and approval matrices.

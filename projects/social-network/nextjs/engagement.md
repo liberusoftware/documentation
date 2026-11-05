@@ -39,10 +39,10 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateEngagement.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement/src/Actions/CreateEngagement.php) | `public function handle(Profile $actor, array $attributes): Engagement` |
-| [DeleteEngagement.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement/src/Actions/DeleteEngagement.php) | `public function handle(Profile $actor, Engagement $engagement): void` |
-| [ListEngagements.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement/src/Actions/ListEngagements.php) | `public function handle(string $targetType, string $targetId, ?string $kind = null, int $limit = 50): Collection`<br>`public function count(string $targetType, string $targetId, ?string $kind = null): int` |
-| [UpdateEngagement.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement/src/Actions/UpdateEngagement.php) | `public function handle(Profile $actor, Engagement $engagement, string $body): Engagement` |
+| [CreateEngagement.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement/src/Actions/CreateEngagement.php) | `public function handle(Profile $actor, array $attributes): Engagement` |
+| [DeleteEngagement.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement/src/Actions/DeleteEngagement.php) | `public function handle(Profile $actor, Engagement $engagement): void` |
+| [ListEngagements.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement/src/Actions/ListEngagements.php) | `public function handle(string $targetType, string $targetId, ?string $kind = null, int $limit = 50): Collection`<br>`public function count(string $targetType, string $targetId, ?string $kind = null): int` |
+| [UpdateEngagement.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement/src/Actions/UpdateEngagement.php) | `public function handle(Profile $actor, Engagement $engagement, string $body): Engagement` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -52,13 +52,13 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [Engagement.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement/src/Models/Engagement.php) | `id`, `actor_profile_id`, `target_type`, `target_id`, `kind`, `reaction_type`, `body` |
+| [Engagement.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement/src/Models/Engagement.php) | `id`, `actor_profile_id`, `target_type`, `target_id`, `kind`, `reaction_type`, `body` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/social-network-engagement-api/routes/api.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement-api/routes/api.php)
+[modules/social-network-engagement-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-engagement-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/social-network/engagement')->middleware(['auth:sanctum', 'throttle:60,1'])->name('social-network.engagement.api.')->group(function (): void {

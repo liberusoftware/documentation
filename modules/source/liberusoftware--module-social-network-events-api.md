@@ -8,7 +8,7 @@ No Composer description declared.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [social-network](../../projects/social-network/SOURCE-MODULES.md) | [social-network-events-api](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/composer.json) | `08bbc484b50f` | [Variant 1](#variant-1) | 0 |
+| [social-network](../../projects/social-network/SOURCE-MODULES.md) | [social-network-events-api](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/composer.json) | `08bbc484b50f` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: social-network-laravel, `social-network-events-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-social-network-laravel-filament, `social-network-events-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: social-network-laravel, `social-network-events-api`. Matching re
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/composer.json) · [module.json](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/composer.json) · [module.json](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/module.json).
 
 **Declared capabilities:** social-network.events.api
 
@@ -59,16 +59,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/EventsController.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/src/Http/Controllers/EventsController.php) | `public function index(Request $request, GetProfile $get, ListEvents $list): JsonResponse`<br>`public function store(Request $request, GetProfile $get, CreateEvent $create): JsonResponse`<br>`public function update(Event $event, Request $request, GetProfile $get, UpdateEvent $update): JsonResponse`<br>`public function publish(Event $event, Request $request, GetProfile $get, PublishEvent $publish): JsonResponse`<br>`public function invite(Event $event, Request $request, GetProfile $get, InviteProfile $invite): JsonResponse`<br>`public function attendance(Event $event, Request $request, GetProfile $get, SetAttendance $set): JsonResponse`<br>`public function updateLog(Event $event, Request $request, GetProfile $get, AddEventUpdate $add): JsonResponse`<br>`public function reminder(Event $event, Request $request, GetProfile $get, ScheduleReminder $schedule): JsonResponse` |
+| [src/Http/Controllers/EventsController.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/src/Http/Controllers/EventsController.php) | `public function index(Request $request, GetProfile $get, ListEvents $list): JsonResponse`<br>`public function store(Request $request, GetProfile $get, CreateEvent $create): JsonResponse`<br>`public function update(Event $event, Request $request, GetProfile $get, UpdateEvent $update): JsonResponse`<br>`public function publish(Event $event, Request $request, GetProfile $get, PublishEvent $publish): JsonResponse`<br>`public function invite(Event $event, Request $request, GetProfile $get, InviteProfile $invite): JsonResponse`<br>`public function attendance(Event $event, Request $request, GetProfile $get, SetAttendance $set): JsonResponse`<br>`public function updateLog(Event $event, Request $request, GetProfile $get, AddEventUpdate $add): JsonResponse`<br>`public function reminder(Event $event, Request $request, GetProfile $get, ScheduleReminder $schedule): JsonResponse` |
 
-Other non-legacy PHP sources: [src/EventsApiServiceProvider.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/src/EventsApiServiceProvider.php).
+Other non-legacy PHP sources: [src/EventsApiServiceProvider.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/src/EventsApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/social-network-events.yaml](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/openapi/v1/social-network-events.yaml)
-- [routes/api.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/routes/api.php)
+- [openapi/v1/social-network-events.yaml](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/openapi/v1/social-network-events.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-events-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

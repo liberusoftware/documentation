@@ -8,7 +8,7 @@ API adapter for Control Panel OS Adapters.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [control-panel](../../projects/control-panel/SOURCE-MODULES.md) | [control-panel-os-adapters-api](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/composer.json) | `1797f25d705f` | [Variant 1](#variant-1) | 0 |
+| [control-panel](../../projects/control-panel/SOURCE-MODULES.md) | [control-panel-os-adapters-api](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/composer.json) | `1797f25d705f` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: control-panel-laravel, `control-panel-os-adapters-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-control-panel-laravel-filament, `control-panel-os-adapters-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: control-panel-laravel, `control-panel-os-adapters-api`. Matching
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/composer.json) · [module.json](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/composer.json) · [module.json](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/module.json).
 
 **Declared capabilities:** control-panel.os-adapters.api
 
@@ -59,16 +59,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/OsAdapterController.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/src/Http/Controllers/OsAdapterController.php) | `public function index(Request $request, ListOsAdapters $list): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function serviceStatuses(Request $request, ServiceStatusReport $report): JsonResponse`<br>`public function missingServices(Request $request, ServiceStatusReport $report): JsonResponse`<br>`public function stoppedServices(Request $request, ServiceStatusReport $report): JsonResponse`<br>`public function installationCommands(Request $request, InstallationCommandReport $report): JsonResponse`<br>`public function checkService(Request $request, string $service, ServiceStatusReport $report): JsonResponse`<br>`public function store(Request $request, RegisterOsAdapter $register): JsonResponse`<br>`public function package(Request $request, RecordOsResource $record): JsonResponse`<br>`public function service(Request $request, RecordOsResource $record): JsonResponse`<br>`public function updateService(Request $request, string $service, UpdateOsService $update): JsonResponse`<br>`public function firewall(Request $request, CreateFirewallRule $create): JsonResponse`<br>`public function updateFirewall(Request $request, string $rule, UpdateFirewallRule $update): JsonResponse`<br>`public function deleteFirewall(Request $request, string $rule, DeleteFirewallRule $delete): JsonResponse`<br>`public function user(Request $request, RecordOsResource $record): JsonResponse`<br>`public function filesystem(Request $request, RecordOsResource $record): JsonResponse`<br>`public function repository(Request $request, RecordOsResource $record): JsonResponse`<br>`public function supportMatrix(Request $request, RecordSupportMatrix $record): JsonResponse` |
+| [src/Http/Controllers/OsAdapterController.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/src/Http/Controllers/OsAdapterController.php) | `public function index(Request $request, ListOsAdapters $list): JsonResponse`<br>`public function show(Request $request, string $id): JsonResponse`<br>`public function serviceStatuses(Request $request, ServiceStatusReport $report): JsonResponse`<br>`public function missingServices(Request $request, ServiceStatusReport $report): JsonResponse`<br>`public function stoppedServices(Request $request, ServiceStatusReport $report): JsonResponse`<br>`public function installationCommands(Request $request, InstallationCommandReport $report): JsonResponse`<br>`public function checkService(Request $request, string $service, ServiceStatusReport $report): JsonResponse`<br>`public function store(Request $request, RegisterOsAdapter $register): JsonResponse`<br>`public function package(Request $request, RecordOsResource $record): JsonResponse`<br>`public function service(Request $request, RecordOsResource $record): JsonResponse`<br>`public function updateService(Request $request, string $service, UpdateOsService $update): JsonResponse`<br>`public function firewall(Request $request, CreateFirewallRule $create): JsonResponse`<br>`public function updateFirewall(Request $request, string $rule, UpdateFirewallRule $update): JsonResponse`<br>`public function deleteFirewall(Request $request, string $rule, DeleteFirewallRule $delete): JsonResponse`<br>`public function user(Request $request, RecordOsResource $record): JsonResponse`<br>`public function filesystem(Request $request, RecordOsResource $record): JsonResponse`<br>`public function repository(Request $request, RecordOsResource $record): JsonResponse`<br>`public function supportMatrix(Request $request, RecordSupportMatrix $record): JsonResponse` |
 
-Other non-legacy PHP sources: [src/OsAdaptersApiServiceProvider.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/src/OsAdaptersApiServiceProvider.php).
+Other non-legacy PHP sources: [src/OsAdaptersApiServiceProvider.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/src/OsAdaptersApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/control-panel-os-adapters.yaml](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/openapi/v1/control-panel-os-adapters.yaml)
-- [routes/api.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/routes/api.php)
+- [openapi/v1/control-panel-os-adapters.yaml](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/openapi/v1/control-panel-os-adapters.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-os-adapters-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

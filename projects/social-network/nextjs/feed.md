@@ -39,9 +39,9 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [AddFeedEntry.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/AddFeedEntry.php) | `public function handle(Profile $viewer, string $itemType, string $itemId, float $rank = 0): FeedEntry` |
-| [GetFeed.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/GetFeed.php) | `public function handle(Profile $viewer, int $limit = 20, ?string $after = null): Collection` |
-| [UpdateFeedControls.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/UpdateFeedControls.php) | `public function handle(Profile $profile, array $data): array` |
+| [AddFeedEntry.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/AddFeedEntry.php) | `public function handle(Profile $viewer, string $itemType, string $itemId, float $rank = 0): FeedEntry` |
+| [GetFeed.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/GetFeed.php) | `public function handle(Profile $viewer, int $limit = 20, ?string $after = null): Collection` |
+| [UpdateFeedControls.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Actions/UpdateFeedControls.php) | `public function handle(Profile $profile, array $data): array` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -51,13 +51,13 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [FeedEntry.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Models/FeedEntry.php) | `id`, `viewer_profile_id`, `item_type`, `item_id`, `rank`, `visible_at` |
+| [FeedEntry.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed/src/Models/FeedEntry.php) | `id`, `viewer_profile_id`, `item_type`, `item_id`, `rank`, `visible_at` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/social-network-feed-api/routes/api.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed-api/routes/api.php)
+[modules/social-network-feed-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-feed-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/social-network/feed')->middleware(['auth:sanctum', 'throttle:60,1'])->name('social-network.feed.api.')->group(function (): void {

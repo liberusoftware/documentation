@@ -50,7 +50,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-time-tracking-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-time-tracking-api/routes/api.php)
+[modules/accounting-time-tracking-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-time-tracking-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/accounting/time-tracking')->middleware(['auth:sanctum'])->group(function (): void {
@@ -68,7 +68,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [TimeTrackingController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-time-tracking-api/src/Http/Controllers/TimeTrackingController.php) | `public function entries(Request $request): mixed`<br>`public function createEntry(Request $request, CreateTimeEntry $action): mixed`<br>`public function submit(Request $request, string $entry, SubmitTimeEntry $action): mixed`<br>`public function approve(Request $request, string $entry, ApproveTimeEntry $action): mixed`<br>`public function startTimer(Request $request, StartTimer $action): mixed`<br>`public function stopTimer(Request $request, string $timer, StopTimer $action): mixed` |
+| [TimeTrackingController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-time-tracking-api/src/Http/Controllers/TimeTrackingController.php) | `public function entries(Request $request): mixed`<br>`public function createEntry(Request $request, CreateTimeEntry $action): mixed`<br>`public function submit(Request $request, string $entry, SubmitTimeEntry $action): mixed`<br>`public function approve(Request $request, string $entry, ApproveTimeEntry $action): mixed`<br>`public function startTimer(Request $request, StartTimer $action): mixed`<br>`public function stopTimer(Request $request, string $timer, StopTimer $action): mixed` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

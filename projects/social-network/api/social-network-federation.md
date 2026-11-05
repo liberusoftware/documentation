@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/social-network-federation-api/routes/api.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-federation-api/routes/api.php)
+[modules/social-network-federation-api/routes/api.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-federation-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/social-network/federation')->middleware('api')->group(function (): void {
@@ -59,7 +59,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [FederationController.php](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-federation-api/src/Http/Controllers/FederationController.php) | `public function inbox(Request $request, ReceiveActivity $receive): JsonResponse`<br>`public function outbox(Request $request): JsonResponse`<br>`public function actor(Request $request, GetProfile $get, RegisterActor $register): JsonResponse` |
+| [FederationController.php](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-federation-api/src/Http/Controllers/FederationController.php) | `public function inbox(Request $request, ReceiveActivity $receive): JsonResponse`<br>`public function outbox(Request $request): JsonResponse`<br>`public function actor(Request $request, GetProfile $get, RegisterActor $register): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -67,7 +67,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/social-network-federation-api/openapi/v1/social-network-federation.yaml](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-federation-api/openapi/v1/social-network-federation.yaml)
+- [modules/social-network-federation-api/openapi/v1/social-network-federation.yaml](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/social-network-federation-api/openapi/v1/social-network-federation.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

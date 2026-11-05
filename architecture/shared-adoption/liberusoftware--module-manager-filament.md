@@ -14,18 +14,18 @@ See the [implementation reference](../../modules/source/liberusoftware--module-m
 
 | Consumer | Pinned module metadata | Variant | Test files |
 | --- | --- | ---: | ---: |
-| accounting | [module-manager-filament](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/module-manager-filament/composer.json) | 3 | 1 |
-| automation | [module-manager-filament](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-manager-filament/composer.json) | 2 | 1 |
-| billing | [module-manager-filament](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-manager-filament/composer.json) | 2 | 1 |
-| boilerplate | [module-manager-filament](https://github.com/liberusoftware/boilerplate-laravel/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/module-manager-filament/composer.json) | 2 | 1 |
-| browser-game | [module-manager-filament](https://github.com/liberusoftware/browser-game-laravel/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/module-manager-filament/composer.json) | 2 | 1 |
-| control-panel | [module-manager-filament](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/module-manager-filament/composer.json) | 1 | 1 |
-| crm | [module-manager-filament](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/module-manager-filament/composer.json) | 2 | 1 |
-| sap | [module-manager-filament](https://github.com/liberusoftware/enterprise-sap-laravel/blob/b12a8c841c6a9054e52cac99d9ac1f233924a041/modules/module-manager-filament/composer.json) | 2 | 1 |
-| genealogy | [module-manager-filament](https://github.com/liberusoftware/genealogy-laravel/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/module-manager-filament/composer.json) | 2 | 1 |
-| maintenance | [module-manager-filament](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-manager-filament/composer.json) | 2 | 1 |
-| real-estate | [module-manager-filament](https://github.com/liberusoftware/real-estate-laravel/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/module-manager-filament/composer.json) | 2 | 1 |
-| social-network | [module-manager-filament](https://github.com/liberusoftware/social-network-laravel/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/module-manager-filament/composer.json) | 2 | 1 |
+| accounting | [module-manager-filament](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/module-manager-filament/composer.json) | 3 | 1 |
+| automation | [module-manager-filament](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-manager-filament/composer.json) | 2 | 1 |
+| billing | [module-manager-filament](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-manager-filament/composer.json) | 2 | 1 |
+| boilerplate | [module-manager-filament](https://github.com/liberusoftware/project-boilerplate-laravel-filament/blob/3ade34046c3de1e2f0fc8e498a2451241c0584dc/modules/module-manager-filament/composer.json) | 2 | 1 |
+| browser-game | [module-manager-filament](https://github.com/liberusoftware/project-browser-game-laravel-filament/blob/790fdffebd3a19bf914aea8a4ef049f87f52c62d/modules/module-manager-filament/composer.json) | 2 | 1 |
+| control-panel | [module-manager-filament](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/module-manager-filament/composer.json) | 1 | 1 |
+| crm | [module-manager-filament](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/module-manager-filament/composer.json) | 2 | 1 |
+| sap | [module-manager-filament](https://github.com/liberusoftware/project-enterprise-sap-laravel-filament/blob/b12a8c841c6a9054e52cac99d9ac1f233924a041/modules/module-manager-filament/composer.json) | 2 | 1 |
+| genealogy | [module-manager-filament](https://github.com/liberusoftware/project-genealogy-laravel-filament/blob/577e93db23cc969fd532086c06524f9f2bb2b5ea/modules/module-manager-filament/composer.json) | 2 | 1 |
+| maintenance | [module-manager-filament](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-manager-filament/composer.json) | 2 | 1 |
+| real-estate | [module-manager-filament](https://github.com/liberusoftware/project-real-estate-laravel-filament/blob/178d8015b601c99dec43acfdc12724aae2b3731a/modules/module-manager-filament/composer.json) | 2 | 1 |
+| social-network | [module-manager-filament](https://github.com/liberusoftware/project-social-network-laravel-filament/blob/08bbc484b50fc7e841a499375329c6de32614145/modules/module-manager-filament/composer.json) | 2 | 1 |
 
 ## Manifest and dependency differences
 
@@ -49,7 +49,7 @@ Resolve host-model lookups, actor/tenant policy, source-record references and pr
 
 ## Registration, route and presentation review
 
-- `resources/views/pages/foundation-operations.blade.php`: V1 [source](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/module-manager-filament/resources/views/pages/foundation-operations.blade.php), V2 [source](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-manager-filament/resources/views/pages/foundation-operations.blade.php), V3 [source](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/module-manager-filament/resources/views/pages/foundation-operations.blade.php)
+- `resources/views/pages/foundation-operations.blade.php`: V1 [source](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/module-manager-filament/resources/views/pages/foundation-operations.blade.php), V2 [source](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/module-manager-filament/resources/views/pages/foundation-operations.blade.php), V3 [source](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/module-manager-filament/resources/views/pages/foundation-operations.blade.php)
 
 Validate discovery, manifest schema/version handling, dependency selection, provider boot order and route/plugin identifiers against the consuming host. For UI/API adapters, retain the authorized DTO and domain action semantics rather than exposing private models or bypassing transitions through generic record saves.
 

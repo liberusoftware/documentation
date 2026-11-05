@@ -37,7 +37,7 @@ The server transport resolves the authenticated actor and tenant/entity membersh
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/developer-experience-api/routes/api.php](https://github.com/liberusoftware/crm-laravel/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/developer-experience-api/routes/api.php)
+[modules/developer-experience-api/routes/api.php](https://github.com/liberusoftware/project-crm-laravel-filament/blob/63aad94e94c0f9a18038e301eb979138c657be64/modules/developer-experience-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/developer-experience')->middleware('api')->group(function (): void {

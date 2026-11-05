@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-chart-of-accounts-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-chart-of-accounts-api/routes/api.php)
+[modules/accounting-chart-of-accounts-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-chart-of-accounts-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/accounting/chart-of-accounts')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {
@@ -61,9 +61,9 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [AccountController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-chart-of-accounts-api/src/Http/Controllers/AccountController.php) | `public function index(Request $request): JsonResponse`<br>`public function tree(Request $request): JsonResponse`<br>`public function show(string $account): AccountResource`<br>`public function store(StoreAccountRequest $request, SaveAccount $save): JsonResponse`<br>`public function update(UpdateAccountRequest $request, string $account, SaveAccount $save): AccountResource`<br>`public function destroy(string $account, ArchiveAccount $archive): Response` |
+| [AccountController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-chart-of-accounts-api/src/Http/Controllers/AccountController.php) | `public function index(Request $request): JsonResponse`<br>`public function tree(Request $request): JsonResponse`<br>`public function show(string $account): AccountResource`<br>`public function store(StoreAccountRequest $request, SaveAccount $save): JsonResponse`<br>`public function update(UpdateAccountRequest $request, string $account, SaveAccount $save): AccountResource`<br>`public function destroy(string $account, ArchiveAccount $archive): Response` |
 
-Request validation sources: [StoreAccountRequest.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-chart-of-accounts-api/src/Http/Requests/StoreAccountRequest.php) · [UpdateAccountRequest.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-chart-of-accounts-api/src/Http/Requests/UpdateAccountRequest.php).
+Request validation sources: [StoreAccountRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-chart-of-accounts-api/src/Http/Requests/StoreAccountRequest.php) · [UpdateAccountRequest.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-chart-of-accounts-api/src/Http/Requests/UpdateAccountRequest.php).
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -71,7 +71,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/accounting-chart-of-accounts-api/openapi/v1/accounting-chart-of-accounts.yaml](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-chart-of-accounts-api/openapi/v1/accounting-chart-of-accounts.yaml)
+- [modules/accounting-chart-of-accounts-api/openapi/v1/accounting-chart-of-accounts.yaml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-chart-of-accounts-api/openapi/v1/accounting-chart-of-accounts.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

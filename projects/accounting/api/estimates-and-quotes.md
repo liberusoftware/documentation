@@ -51,7 +51,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-estimates-and-quotes-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-estimates-and-quotes-api/routes/api.php)
+[modules/accounting-estimates-and-quotes-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-estimates-and-quotes-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/estimates-and-quotes')->group(function (): void {
@@ -73,7 +73,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [EstimatesController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-estimates-and-quotes-api/src/Http/Controllers/EstimatesController.php) | `public function index(Request $r): mixed`<br>`public function store(Request $r, CreateEstimate $a): EstimateResource`<br>`public function show(Estimate $e): EstimateResource`<br>`public function item(Request $r, Estimate $e, AddEstimateItem $a): EstimateResource`<br>`public function send(Request $r, Estimate $e, SendEstimate $a): EstimateResource`<br>`public function decide(Request $r, Estimate $e, DecideEstimate $a): EstimateResource`<br>`public function expire(Request $r, Estimate $e, ExpireEstimate $a): EstimateResource`<br>`public function convert(Request $r, Estimate $e, ConvertEstimate $a): EstimateResource` |
+| [EstimatesController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-estimates-and-quotes-api/src/Http/Controllers/EstimatesController.php) | `public function index(Request $r): mixed`<br>`public function store(Request $r, CreateEstimate $a): EstimateResource`<br>`public function show(Estimate $e): EstimateResource`<br>`public function item(Request $r, Estimate $e, AddEstimateItem $a): EstimateResource`<br>`public function send(Request $r, Estimate $e, SendEstimate $a): EstimateResource`<br>`public function decide(Request $r, Estimate $e, DecideEstimate $a): EstimateResource`<br>`public function expire(Request $r, Estimate $e, ExpireEstimate $a): EstimateResource`<br>`public function convert(Request $r, Estimate $e, ConvertEstimate $a): EstimateResource` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -81,7 +81,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/accounting-estimates-and-quotes-api/openapi/v1/accounting-estimates-and-quotes.yaml](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-estimates-and-quotes-api/openapi/v1/accounting-estimates-and-quotes.yaml)
+- [modules/accounting-estimates-and-quotes-api/openapi/v1/accounting-estimates-and-quotes.yaml](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-estimates-and-quotes-api/openapi/v1/accounting-estimates-and-quotes.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

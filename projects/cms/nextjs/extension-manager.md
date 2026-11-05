@@ -40,7 +40,7 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [ExtensionManagerService.php](https://github.com/liberusoftware/cms-laravel/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-extension-manager/src/Services/ExtensionManagerService.php) | `public function all(): array`<br>`public function enable(string $key): void`<br>`public function disable(string $key): void` |
+| [ExtensionManagerService.php](https://github.com/liberusoftware/project-cms-laravel-filament/blob/5d91aa9c0a3d4ae6b1cf238b324e9d0a05ba68e7/modules/cms-extension-manager/src/Services/ExtensionManagerService.php) | `public function all(): array`<br>`public function enable(string $key): void`<br>`public function disable(string $key): void` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 

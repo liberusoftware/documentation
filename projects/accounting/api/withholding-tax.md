@@ -49,7 +49,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/accounting-withholding-tax-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-withholding-tax-api/routes/api.php)
+[modules/accounting-withholding-tax-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-withholding-tax-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'auth:sanctum', 'throttle:api'])->prefix('api/v1/accounting/withholding-tax')->group(function (): void {
@@ -68,7 +68,7 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [WithholdingTaxController.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-withholding-tax-api/src/Http/Controllers/WithholdingTaxController.php) | `public function rules(Request $request): mixed`<br>`public function deductions(Request $request): mixed`<br>`public function createRule(Request $request, CreateWithholdingTaxRule $action): mixed`<br>`public function calculate(Request $request, WithholdingTaxRule $rule, CalculateWithholdingTax $action): mixed`<br>`public function remit(Request $request, WithholdingTaxLiability $liability, RemitWithholdingTax $action): mixed` |
+| [WithholdingTaxController.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-withholding-tax-api/src/Http/Controllers/WithholdingTaxController.php) | `public function rules(Request $request): mixed`<br>`public function deductions(Request $request): mixed`<br>`public function createRule(Request $request, CreateWithholdingTaxRule $action): mixed`<br>`public function calculate(Request $request, WithholdingTaxRule $rule, CalculateWithholdingTax $action): mixed`<br>`public function remit(Request $request, WithholdingTaxLiability $liability, RemitWithholdingTax $action): mixed` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 

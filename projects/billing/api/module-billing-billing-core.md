@@ -44,7 +44,7 @@ Installation does not expose every capability automatically. The host applicatio
 
 These are literal excerpts, not runnable standalone route files or expanded final URLs. Read group middleware/prefixes, provider loading and the host route configuration together. Authentication middleware alone does not establish the controller/domain permission policy.
 
-[modules/module-billing-core-api/routes/api.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-api/routes/api.php)
+[modules/module-billing-core-api/routes/api.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-api/routes/api.php)
 
 ```php
 Route::middleware(['api', 'throttle:api', 'auth:sanctum', 'ability:billing.billing-core.read'])
@@ -68,8 +68,8 @@ The signatures identify request handlers to review; their argument names are not
 
 | Controller source | Public handler signatures |
 | --- | --- |
-| [BillingAccountController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-api/src/Http/Controllers/BillingAccountController.php) | `public function index(Request $request, ListBillingAccounts $query): JsonResponse`<br>`public function store(Request $request, CreateBillingAccount $create): JsonResponse`<br>`public function update(Request $request, int $account, UpdateBillingAccount $update): JsonResponse`<br>`public function transition(Request $request, int $account, TransitionBillingAccount $transition): JsonResponse`<br>`public function destroy(Request $request, int $account, DeleteBillingAccount $delete): JsonResponse` |
-| [BillingCoreRecordController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-api/src/Http/Controllers/BillingCoreRecordController.php) | `public function index(Request $request, string $type, ListBillingRecords $list): JsonResponse`<br>`public function store(Request $request, string $type, CreateBillingRecord $create): JsonResponse`<br>`public function convertCurrency(Request $request, ConvertCurrency $convert): JsonResponse`<br>`public function calculateTax(Request $request, CalculateTax $calculate): JsonResponse`<br>`public function update(Request $request, string $type, int $record, UpdateBillingRecord $update): JsonResponse`<br>`public function destroy(Request $request, string $type, int $record, DeleteBillingRecord $delete): JsonResponse` |
+| [BillingAccountController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-api/src/Http/Controllers/BillingAccountController.php) | `public function index(Request $request, ListBillingAccounts $query): JsonResponse`<br>`public function store(Request $request, CreateBillingAccount $create): JsonResponse`<br>`public function update(Request $request, int $account, UpdateBillingAccount $update): JsonResponse`<br>`public function transition(Request $request, int $account, TransitionBillingAccount $transition): JsonResponse`<br>`public function destroy(Request $request, int $account, DeleteBillingAccount $delete): JsonResponse` |
+| [BillingCoreRecordController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-api/src/Http/Controllers/BillingCoreRecordController.php) | `public function index(Request $request, string $type, ListBillingRecords $list): JsonResponse`<br>`public function store(Request $request, string $type, CreateBillingRecord $create): JsonResponse`<br>`public function convertCurrency(Request $request, ConvertCurrency $convert): JsonResponse`<br>`public function calculateTax(Request $request, CalculateTax $calculate): JsonResponse`<br>`public function update(Request $request, string $type, int $record, UpdateBillingRecord $update): JsonResponse`<br>`public function destroy(Request $request, string $type, int $record, DeleteBillingRecord $delete): JsonResponse` |
 
 A client example is valid only after its exact request/response contract is established. Record required/nullable fields, business units, allowed values, operation identity/concurrency support, result/pagination envelope and recovery. An `Idempotency-Key` or `If-Match` example does not establish server support by itself.
 
@@ -77,7 +77,7 @@ A client example is valid only after its exact request/response contract is esta
 
 The matched source contains these machine-readable contract/schema files. Verify their version and parity with handlers; file presence does not prove deployed compatibility or a passing validation run.
 
-- [modules/module-billing-core-api/openapi/v1/billing-core.yaml](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-api/openapi/v1/billing-core.yaml)
+- [modules/module-billing-core-api/openapi/v1/billing-core.yaml](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-core-api/openapi/v1/billing-core.yaml)
 
 For the target contract, define stable operation IDs, explicit request/resource/collection/error schemas, allowed audiences/scopes, actor/tenant resolution, field sensitivity, pagination/filter limits, concurrency and retry semantics. Use the real manifest identity and actual route namespace, not a guessed repository-derived package or path.
 

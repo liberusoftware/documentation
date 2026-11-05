@@ -38,16 +38,16 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [CodingSuggestionQuery.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Queries/CodingSuggestionQuery.php) | `public function forTeam(int $teamId): Collection` |
+| [CodingSuggestionQuery.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Queries/CodingSuggestionQuery.php) | `public function forTeam(int $teamId): Collection` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [ApplySuggestionFeedback.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/ApplySuggestionFeedback.php) | `public function handle(CodingSuggestion $suggestion, array $feedback): CodingSuggestion` |
-| [CreateCodingSuggestion.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/CreateCodingSuggestion.php) | `public function handle(array $attributes): CodingSuggestion` |
-| [ReviewCodingSuggestion.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/ReviewCodingSuggestion.php) | `public function handle(CodingSuggestion $suggestion, array $review): CodingSuggestion` |
-| [SetSuggestionPolicy.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/SetSuggestionPolicy.php) | `public function handle(CodingSuggestion $suggestion, array $policy): CodingSuggestion` |
+| [ApplySuggestionFeedback.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/ApplySuggestionFeedback.php) | `public function handle(CodingSuggestion $suggestion, array $feedback): CodingSuggestion` |
+| [CreateCodingSuggestion.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/CreateCodingSuggestion.php) | `public function handle(array $attributes): CodingSuggestion` |
+| [ReviewCodingSuggestion.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/ReviewCodingSuggestion.php) | `public function handle(CodingSuggestion $suggestion, array $review): CodingSuggestion` |
+| [SetSuggestionPolicy.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Actions/SetSuggestionPolicy.php) | `public function handle(CodingSuggestion $suggestion, array $policy): CodingSuggestion` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -57,13 +57,13 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [CodingSuggestion.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Models/CodingSuggestion.php) | `team_id`, `source_ref`, `target_type`, `target_ref`, `confidence`, `explanation`, `status`, `feedback`, `policy`, `review` |
+| [CodingSuggestion.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions/src/Models/CodingSuggestion.php) | `team_id`, `source_ref`, `target_type`, `target_ref`, `confidence`, `explanation`, `status`, `feedback`, `policy`, `review` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/accounting-coding-suggestions-api/routes/api.php](https://github.com/liberusoftware/accounting-erp-laravel/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions-api/routes/api.php)
+[modules/accounting-coding-suggestions-api/routes/api.php](https://github.com/liberusoftware/project-accounting-erp-laravel-filament/blob/39a49babafc0b8caf12c018abdd765f215ecf207/modules/accounting-coding-suggestions-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/accounting/coding-suggestions')->middleware(['auth:sanctum', 'throttle:60,1'])->group(function (): void {

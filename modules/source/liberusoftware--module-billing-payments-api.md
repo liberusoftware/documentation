@@ -8,7 +8,7 @@ HTTP API adapter for Liberu Billing Payments.
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-billing-payments-api](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 0 |
+| [billing](../../projects/billing/SOURCE-MODULES.md) | [module-billing-payments-api](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/composer.json) | `4743bdfebd1c` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: billing-laravel, `module-billing-payments-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-billing-laravel-filament, `module-billing-payments-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: billing-laravel, `module-billing-payments-api`. Matching referen
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/composer.json) · [module.json](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/composer.json) · [module.json](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/module.json).
 
 **Declared capabilities:** billing.payments.api
 
@@ -62,17 +62,17 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/PaymentController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/src/Http/Controllers/PaymentController.php) | `public function index(Request $request, ListPayments $query): JsonResponse`<br>`public function show(Request $request, Payment $payment): JsonResponse`<br>`public function store(Request $request, CreatePayment $create): JsonResponse`<br>`public function capture(Request $request, Payment $payment, CapturePayment $capture): JsonResponse`<br>`public function refund(Request $request, Payment $payment, RefundPayment $refund): JsonResponse`<br>`public function dispute(Request $request, Payment $payment, OpenDispute $dispute): JsonResponse`<br>`public function allocate(Request $request, Payment $payment, AllocatePayment $allocate): JsonResponse`<br>`public function reconcile(Request $request, Payment $payment, ReconcilePayment $reconcile): JsonResponse` |
-| [src/Http/Controllers/PaymentMethodController.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/src/Http/Controllers/PaymentMethodController.php) | `public function methods(Request $request): JsonResponse`<br>`public function storeMethod(Request $request, CreatePaymentMethod $create): JsonResponse`<br>`public function mandates(Request $request): JsonResponse`<br>`public function storeMandate(Request $request, CreatePaymentMandate $create): JsonResponse`<br>`public function transitionMethod(Request $request, PaymentMethod $method, TransitionPaymentMethod $transition): JsonResponse`<br>`public function transitionMandate(Request $request, PaymentMandate $mandate, TransitionPaymentMandate $transition): JsonResponse` |
+| [src/Http/Controllers/PaymentController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/src/Http/Controllers/PaymentController.php) | `public function index(Request $request, ListPayments $query): JsonResponse`<br>`public function show(Request $request, Payment $payment): JsonResponse`<br>`public function store(Request $request, CreatePayment $create): JsonResponse`<br>`public function capture(Request $request, Payment $payment, CapturePayment $capture): JsonResponse`<br>`public function refund(Request $request, Payment $payment, RefundPayment $refund): JsonResponse`<br>`public function dispute(Request $request, Payment $payment, OpenDispute $dispute): JsonResponse`<br>`public function allocate(Request $request, Payment $payment, AllocatePayment $allocate): JsonResponse`<br>`public function reconcile(Request $request, Payment $payment, ReconcilePayment $reconcile): JsonResponse` |
+| [src/Http/Controllers/PaymentMethodController.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/src/Http/Controllers/PaymentMethodController.php) | `public function methods(Request $request): JsonResponse`<br>`public function storeMethod(Request $request, CreatePaymentMethod $create): JsonResponse`<br>`public function mandates(Request $request): JsonResponse`<br>`public function storeMandate(Request $request, CreatePaymentMandate $create): JsonResponse`<br>`public function transitionMethod(Request $request, PaymentMethod $method, TransitionPaymentMethod $transition): JsonResponse`<br>`public function transitionMandate(Request $request, PaymentMandate $mandate, TransitionPaymentMandate $transition): JsonResponse` |
 
-Other non-legacy PHP sources: [src/PaymentsApiServiceProvider.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/src/PaymentsApiServiceProvider.php).
+Other non-legacy PHP sources: [src/PaymentsApiServiceProvider.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/src/PaymentsApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/billing-payments.yaml](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/openapi/v1/billing-payments.yaml)
-- [routes/api.php](https://github.com/liberusoftware/billing-laravel/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/routes/api.php)
+- [openapi/v1/billing-payments.yaml](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/openapi/v1/billing-payments.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-billing-laravel-filament/blob/4743bdfebd1c122e10bf80171d0210ab27e34a54/modules/module-billing-payments-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

@@ -8,7 +8,7 @@ Commercial api adapter for Liberu Maintenance
 
 | Application | Actual directory | Commit | Reference variant | Test files |
 | --- | --- | --- | --- | ---: |
-| [maintenance](../../projects/maintenance/SOURCE-MODULES.md) | [module-maintenance-commercial-api](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/composer.json) | `c267d625e264` | [Variant 1](#variant-1) | 0 |
+| [maintenance](../../projects/maintenance/SOURCE-MODULES.md) | [module-maintenance-commercial-api](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/composer.json) | `c267d625e264` | [Variant 1](#variant-1) | 0 |
 
 Physical source locations: **1**. Reference variants: **1**. Compatibility symlinks are excluded as separate implementations. Reference variants also include tests, scripts and OpenAPI files, so they can be more granular than the runtime-only [shared comparison](../../architecture/SHARED-MODULE-COMPARISON.md).
 
@@ -16,7 +16,7 @@ Use the manifest identity above for resolution. A `module-...` repository or des
 
 ## Variant 1
 
-Representative: maintenance-laravel, `module-maintenance-commercial-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
+Representative: project-maintenance-laravel-filament, `module-maintenance-commercial-api`. Matching reference files in this variant are indexed once; the location table preserves every consuming application.
 
 ### Manifest and registration
 
@@ -34,7 +34,7 @@ Representative: maintenance-laravel, `module-maintenance-commercial-api`. Matchi
 
 The manifest default is not proof of deployment enablement. Providers, manifest schemas and registration mechanisms differ across packages; inspect the actual host resolver before adoption. Both Composer auto-discovery and module-manager registration may need review when both are declared.
 
-Source metadata: [composer.json](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/composer.json) · [module.json](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/module.json).
+Source metadata: [composer.json](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/composer.json) · [module.json](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/module.json).
 
 **Declared capabilities:** maintenance.commercial.api
 
@@ -60,16 +60,16 @@ The following paths identify contracts, actions, queries, policies, services and
 
 | Source file | Public method signatures observed |
 | --- | --- |
-| [src/Http/Controllers/CommercialRecordController.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/src/Http/Controllers/CommercialRecordController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateCommercialRecord $create): JsonResponse`<br>`public function show(Request $request, CommercialRecord $record): JsonResponse`<br>`public function update(Request $request, CommercialRecord $record, UpdateCommercialRecord $update): JsonResponse`<br>`public function destroy(Request $request, CommercialRecord $record, DeleteCommercialRecord $delete): JsonResponse`<br>`public function transition(Request $request, CommercialRecord $record, TransitionCommercialRecord $transition): JsonResponse` |
+| [src/Http/Controllers/CommercialRecordController.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/src/Http/Controllers/CommercialRecordController.php) | `public function index(Request $request): JsonResponse`<br>`public function store(Request $request, CreateCommercialRecord $create): JsonResponse`<br>`public function show(Request $request, CommercialRecord $record): JsonResponse`<br>`public function update(Request $request, CommercialRecord $record, UpdateCommercialRecord $update): JsonResponse`<br>`public function destroy(Request $request, CommercialRecord $record, DeleteCommercialRecord $delete): JsonResponse`<br>`public function transition(Request $request, CommercialRecord $record, TransitionCommercialRecord $transition): JsonResponse` |
 
-Other non-legacy PHP sources: [src/CommercialApiServiceProvider.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/src/CommercialApiServiceProvider.php).
+Other non-legacy PHP sources: [src/CommercialApiServiceProvider.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/src/CommercialApiServiceProvider.php).
 
 ### HTTP and schema sources
 
 Read route groups, middleware, controller checks and the host route provider together. These source links do not resolve a final deployment URL or prove that the specification matches runtime behavior.
 
-- [openapi/v1/maintenance-commercial.yaml](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/openapi/v1/maintenance-commercial.yaml)
-- [routes/api.php](https://github.com/liberusoftware/maintenance-laravel/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/routes/api.php)
+- [openapi/v1/maintenance-commercial.yaml](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/openapi/v1/maintenance-commercial.yaml)
+- [routes/api.php](https://github.com/liberusoftware/project-maintenance-laravel-filament/blob/c267d625e264e86ad223be8a3a08a3728afc7344/modules/module-maintenance-commercial-api/routes/api.php)
 
 ### Persistence and lifecycle evidence
 

@@ -40,19 +40,19 @@ These are observed PHP query entry points, not assumed HTTP endpoints. Use an ow
 
 | Source query | Signatures |
 | --- | --- |
-| [ListMonitors.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Queries/ListMonitors.php) | `public function execute(?string $teamId, int $perPage = 25, string $search = ''): LengthAwarePaginator` |
+| [ListMonitors.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Queries/ListMonitors.php) | `public function execute(?string $teamId, int $perPage = 25, string $search = ''): LengthAwarePaginator` |
 
 Observed action/service candidates for the transport review are below. A service method is not automatically a command, an authorized public API or a safe server action; inspect its implementation and calling policies.
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CancelMaintenanceWindow.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/CancelMaintenanceWindow.php) | `public function execute(MaintenanceWindow $window): MaintenanceWindow` |
-| [DeleteMaintenanceWindow.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/DeleteMaintenanceWindow.php) | `public function execute(MaintenanceWindow $window): void` |
-| [RecordMonitoringEvent.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/RecordMonitoringEvent.php) | `public function execute(array $a): MonitoringEvent` |
-| [RecordMonitoringResource.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/RecordMonitoringResource.php) | `public function execute(array $a): Model` |
-| [RegisterMonitor.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/RegisterMonitor.php) | `public function execute(array $attributes): Monitor` |
-| [ResolveMonitoringEvent.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/ResolveMonitoringEvent.php) | `public function execute(MonitoringEvent $event): MonitoringEvent` |
-| [UpdateMaintenanceWindow.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/UpdateMaintenanceWindow.php) | `public function execute(MaintenanceWindow $window, array $attributes): MaintenanceWindow` |
+| [CancelMaintenanceWindow.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/CancelMaintenanceWindow.php) | `public function execute(MaintenanceWindow $window): MaintenanceWindow` |
+| [DeleteMaintenanceWindow.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/DeleteMaintenanceWindow.php) | `public function execute(MaintenanceWindow $window): void` |
+| [RecordMonitoringEvent.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/RecordMonitoringEvent.php) | `public function execute(array $a): MonitoringEvent` |
+| [RecordMonitoringResource.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/RecordMonitoringResource.php) | `public function execute(array $a): Model` |
+| [RegisterMonitor.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/RegisterMonitor.php) | `public function execute(array $attributes): Monitor` |
+| [ResolveMonitoringEvent.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/ResolveMonitoringEvent.php) | `public function execute(MonitoringEvent $event): MonitoringEvent` |
+| [UpdateMaintenanceWindow.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Actions/UpdateMaintenanceWindow.php) | `public function execute(MaintenanceWindow $window, array $attributes): MaintenanceWindow` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -62,22 +62,22 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [AlertRule.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/AlertRule.php) | `id`, `team_id`, `name`, `condition`, `threshold`, `channels`, `active` |
-| [CapacitySnapshot.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/CapacitySnapshot.php) | `id`, `team_id`, `resource`, `used`, `available`, `unit`, `captured_at`, `details` |
-| [Incident.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/Incident.php) | `id`, `team_id`, `title`, `severity`, `status`, `summary`, `started_at`, `resolved_at`, `metadata` |
-| [LogEntry.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/LogEntry.php) | `id`, `team_id`, `source`, `level`, `message`, `context`, `logged_at` |
-| [MaintenanceWindow.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/MaintenanceWindow.php) | `id`, `team_id`, `name`, `starts_at`, `ends_at`, `scope`, `status`, `details` |
-| [MetricSample.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/MetricSample.php) | `id`, `team_id`, `monitor_id`, `name`, `value`, `unit`, `dimensions`, `sampled_at` |
-| [Monitor.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/Monitor.php) | `team_id`, `subject_type`, `subject_id`, `name`, `status`, `last_checked_at`, `metrics` |
-| [MonitoringEvent.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/MonitoringEvent.php) | `id`, `team_id`, `monitor_id`, `kind`, `status`, `payload`, `starts_at`, `ends_at` |
-| [StatusSnapshot.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/StatusSnapshot.php) | `id`, `team_id`, `component`, `status`, `message`, `checked_at`, `metadata` |
-| [UptimeCheck.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/UptimeCheck.php) | `id`, `team_id`, `monitor_id`, `endpoint`, `status_code`, `response_time_ms`, `healthy`, `checked_at`, `details` |
+| [AlertRule.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/AlertRule.php) | `id`, `team_id`, `name`, `condition`, `threshold`, `channels`, `active` |
+| [CapacitySnapshot.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/CapacitySnapshot.php) | `id`, `team_id`, `resource`, `used`, `available`, `unit`, `captured_at`, `details` |
+| [Incident.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/Incident.php) | `id`, `team_id`, `title`, `severity`, `status`, `summary`, `started_at`, `resolved_at`, `metadata` |
+| [LogEntry.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/LogEntry.php) | `id`, `team_id`, `source`, `level`, `message`, `context`, `logged_at` |
+| [MaintenanceWindow.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/MaintenanceWindow.php) | `id`, `team_id`, `name`, `starts_at`, `ends_at`, `scope`, `status`, `details` |
+| [MetricSample.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/MetricSample.php) | `id`, `team_id`, `monitor_id`, `name`, `value`, `unit`, `dimensions`, `sampled_at` |
+| [Monitor.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/Monitor.php) | `team_id`, `subject_type`, `subject_id`, `name`, `status`, `last_checked_at`, `metrics` |
+| [MonitoringEvent.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/MonitoringEvent.php) | `id`, `team_id`, `monitor_id`, `kind`, `status`, `payload`, `starts_at`, `ends_at` |
+| [StatusSnapshot.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/StatusSnapshot.php) | `id`, `team_id`, `component`, `status`, `message`, `checked_at`, `metadata` |
+| [UptimeCheck.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring/src/Models/UptimeCheck.php) | `id`, `team_id`, `monitor_id`, `endpoint`, `status_code`, `response_time_ms`, `healthy`, `checked_at`, `details` |
 
 ### Route source evidence
 
 The following are literal declaration excerpts. They are not expanded final URLs: group prefixes, middleware, provider registration and host routing must be read together. Target API examples elsewhere do not override these source contracts.
 
-[modules/control-panel-monitoring-api/routes/api.php](https://github.com/liberusoftware/control-panel-laravel/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/routes/api.php)
+[modules/control-panel-monitoring-api/routes/api.php](https://github.com/liberusoftware/project-control-panel-laravel-filament/blob/1797f25d705f780bacddcdf228c9a1dc995c3580/modules/control-panel-monitoring-api/routes/api.php)
 
 ```php
 Route::prefix('api/v1/control-panel/monitoring')->middleware(['api', 'auth:sanctum', 'throttle:60,1'])->group(function (): void {

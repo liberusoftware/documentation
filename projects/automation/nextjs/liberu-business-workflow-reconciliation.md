@@ -31,8 +31,8 @@ Observed action/service candidates for the transport review are below. A service
 
 | Source action/service | Signatures |
 | --- | --- |
-| [CreateReconciliationCase.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Actions/CreateReconciliationCase.php) | `public function execute(array $attributes): ReconciliationCase` |
-| [TransitionReconciliationCase.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Actions/TransitionReconciliationCase.php) | `public function execute(ReconciliationCase $record, LifecycleStatus $to): ReconciliationCase` |
+| [CreateReconciliationCase.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Actions/CreateReconciliationCase.php) | `public function execute(array $attributes): ReconciliationCase` |
+| [TransitionReconciliationCase.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Actions/TransitionReconciliationCase.php) | `public function execute(ReconciliationCase $record, LifecycleStatus $to): ReconciliationCase` |
 
 The server transport resolves the authenticated actor and tenant/entity membership, calls a fixed configured Laravel origin and validates the response DTO. Every server action/route handler authorizes its invocation; Laravel independently authorizes its operation. Browser input can select a scope but cannot establish membership or change the trusted API origin.
 
@@ -42,7 +42,7 @@ These are observed storage models and fillable field names, not a browser DTO sc
 
 | Source model | Observed fillable fields |
 | --- | --- |
-| [ReconciliationCase.php](https://github.com/liberusoftware/automation-laravel/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Models/ReconciliationCase.php) | `tenant_id`, `idempotency_key`, `name`, `status`, `metadata` |
+| [ReconciliationCase.php](https://github.com/liberusoftware/project-automation-laravel-filament/blob/68e5f07a67041f8438530c71bc86515cbd11da70/modules/liberu-business-workflow-reconciliation/src/Models/ReconciliationCase.php) | `tenant_id`, `idempotency_key`, `name`, `status`, `metadata` |
 
 ## Server/client and React reuse
 
