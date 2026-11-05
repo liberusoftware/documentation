@@ -1,5 +1,7 @@
 # Build and release presentation layers
 
+Start with the [project repository catalog](../../projects/REPOSITORIES.md) for Boilerplate templates, all product skeletons and layer-specific initialization commands.
+
 Use these implementation runbooks after choosing a capability and its canonical core owner. They describe new skeletons and adapter implementations, not packages that are already published. Confirm actual package names, callable contracts and availability in the [source inventory](../../architecture/SOURCE-INVENTORY.md), the project's `DEVELOPMENT.md` and `SOURCE-MAPPING.md`, and [source references](../../modules/source/README.md). All `example` names, DTOs and routes below are teaching examples to replace with reviewed contracts.
 
 | Surface | Skeleton and implementation | Package and release |
@@ -10,6 +12,8 @@ Use these implementation runbooks after choosing a capability and its canonical 
 | Next.js (React) | [Next.js application and adapter](NEXTJS.md) | React library with server/client exports, then npm release |
 | React Native, including Expo | [Device application and adapter](REACT-NATIVE.md) | [Metro-compatible npm library](REACT-NATIVE.md#7-build-a-reusable-mobile-package), signed iOS/Android builds |
 | Flutter | [Device application and Dart package](FLUTTER.md) | Dart/pub release, signed iOS/Android builds |
+| Dart desktop | [Separate native desktop application](DART.md) | Dart/pub modules; Linux, macOS and Windows native builds |
+| Dart mobile | [Separate native mobile application](DART.md) | Dart/pub modules; signed iOS/Android builds |
 
 For a concrete source-backed capability, compare the [CRM sales-pipeline walkthrough](../../projects/crm/guides/SALES-PIPELINES.md) with the matching core/API/presentation plans. Use its recorded source contracts as evidence, while keeping any new frontend implementation explicitly planned until built and verified.
 

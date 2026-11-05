@@ -6,7 +6,7 @@
 
 A capability, a source directory, an installable package, and a published release are different things. Ecommerce currently contains application-owned domain models, services, controllers, policies, Filament resources, routes, views, migrations, and tests. Package extraction can relocate these without changing the product catalogue. Do not remove a documented module because its implementation is outside `modules/`.
 
-The root Composer manifest declares `liberusoftware/project-ecommerce-laravel-filament` as a project, while the root npm manifest is private and builds application assets with Vite. Neither is evidence of an independently published npm presentation module. See [composer.json](https://github.com/liberusoftware/project-ecommerce-laravel-filament/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/composer.json) and [package.json](https://github.com/liberusoftware/project-ecommerce-laravel-filament/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/package.json).
+The root Composer manifest declares `liberusoftware/ecommerce-laravel` as a project, while the root npm manifest is private and builds application assets with Vite. Neither is evidence of an independently published npm presentation module. See [composer.json](https://github.com/liberusoftware/project-ecommerce-laravel-filament/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/composer.json) and [package.json](https://github.com/liberusoftware/project-ecommerce-laravel-filament/blob/af5a2b29c9c26ba89c97b9daccbb3facf20a8c2f/package.json).
 
 ## Source-backed capability examples
 

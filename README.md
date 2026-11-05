@@ -2,6 +2,8 @@
 
 This repository is the documentation hub for the Liberu ecosystem: Laravel applications, independent domain modules, APIs, presentation adapters, themes, engineering standards, deployment, and product scopes.
 
+Choose a [project repository and presentation](projects/REPOSITORIES.md) for a ready-to-extend web, mobile or desktop structure.
+
 If you are new, start with [GETTING-STARTED.md](GETTING-STARTED.md). If you already know the solution or technology you need, use the indexes below.
 
 ## Choose your path

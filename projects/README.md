@@ -2,6 +2,8 @@
 
 This is the canonical index of application, foundation, and product scopes documented in this repository. Each project owns its domain feature specifications and optional core, API, web, and mobile presentation indexes. Start with the scope document, then select only the adapters required by the application.
 
+Use the [repository catalog](REPOSITORIES.md) to choose a project skeleton by presentation, including mobile and desktop, and follow its initialization instructions.
+
 | Project                    | Scope                                                 | Core modules                          | API modules                         | Mobile indexes                                                                                      |
 | -------------------------- | ----------------------------------------------------- | ------------------------------------- | ----------------------------------- | --------------------------------------------------------------------------------------------------- |
 | Boilerplate foundation     | [BOILERPLATE.md](boilerplate/BOILERPLATE.md)          | [Core](boilerplate/core/README.md)    | [API](boilerplate/api/README.md)    | [React Native](boilerplate/react-native/README.md) · [Flutter](boilerplate/flutter/README.md)       |
