@@ -1,10 +1,10 @@
 # CMS Feature Specifications
 
 <!-- catalogue-status:start -->
-This index preserves **252 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **249 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
-Each file defines one independent module. Modules remain independently installable, testable, versioned, and presentation-neutral.
+Each listed capability defines an independent module boundary. Source-index reference pages are excluded from the capability catalog. Modules remain independently installable, testable, versioned, and presentation-neutral.
 
 | Module document | Source/target reference | Related plans |
 | --- | --- | --- |
@@ -123,9 +123,7 @@ Each file defines one independent module. Modules remain independently installab
 | [Experimentation](experimentation.md) | [liberusoftware/module-cms-experimentation](../../../modules/source/liberusoftware--module-cms-experimentation.md) | [core](../core/experimentation.md) · [api](../api/experimentation.md) · [nextjs](../nextjs/experimentation.md) |
 | [Extension Manager](extension-manager.md) | [liberusoftware/module-cms-extension-manager](../../../modules/source/liberusoftware--module-cms-extension-manager.md) | [core](../core/extension-manager.md) · [api](../api/extension-manager.md) · [nextjs](../nextjs/extension-manager.md) |
 | [Extension Marketplace](extension-marketplace.md) | [liberusoftware/module-cms-extension-marketplace](../../../modules/source/liberusoftware--module-cms-extension-marketplace.md) | [core](../core/extension-marketplace.md) · [api](../api/extension-marketplace.md) · [nextjs](../nextjs/extension-marketplace.md) |
-| [Features](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [core](../core/features.md) · [api](../api/features.md) · [nextjs](../nextjs/features.md) |
 | [Field System](field-system.md) | [liberusoftware/module-cms-field-system](../../../modules/source/liberusoftware--module-cms-field-system.md) | [core](../core/field-system.md) · [api](../api/field-system.md) · [nextjs](../nextjs/field-system.md) |
-| [Filament](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [core](../core/filament.md) · [api](../api/filament.md) · [nextjs](../nextjs/filament.md) |
 | [Form Builder](form-builder.md) | [Target/source map](../SOURCE-MAPPING.md#form-builder) | [core](../core/form-builder.md) · [api](../api/form-builder.md) · [nextjs](../nextjs/form-builder.md) |
 | [Form Operations](form-operations.md) | [Target/source map](../SOURCE-MAPPING.md#form-operations) | [core](../core/form-operations.md) · [api](../api/form-operations.md) · [nextjs](../nextjs/form-operations.md) |
 | [Forums Integration](forums-integration.md) | [Target/source map](../SOURCE-MAPPING.md#forums-integration) | [core](../core/forums-integration.md) · [api](../api/forums-integration.md) · [nextjs](../nextjs/forums-integration.md) |
@@ -136,7 +134,6 @@ Each file defines one independent module. Modules remain independently installab
 | [Joomla Migration](joomla-migration.md) | [liberusoftware/module-cms-joomla-migration](../../../modules/source/liberusoftware--module-cms-joomla-migration.md) | [core](../core/joomla-migration.md) · [api](../api/joomla-migration.md) · [nextjs](../nextjs/joomla-migration.md) |
 | [Knowledge Base](knowledge-base.md) | [Target/source map](../SOURCE-MAPPING.md#knowledge-base) | [core](../core/knowledge-base.md) · [api](../api/knowledge-base.md) · [nextjs](../nextjs/knowledge-base.md) |
 | [Layout Builder](layout-builder.md) | [liberusoftware/module-cms-layout-builder](../../../modules/source/liberusoftware--module-cms-layout-builder.md) | [core](../core/layout-builder.md) · [api](../api/layout-builder.md) · [nextjs](../nextjs/layout-builder.md) |
-| [Livewire](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [core](../core/livewire.md) · [api](../api/livewire.md) · [nextjs](../nextjs/livewire.md) |
 | [Localization](localization.md) | [Target/source map](../SOURCE-MAPPING.md#localization) | [core](../core/localization.md) · [api](../api/localization.md) · [nextjs](../nextjs/localization.md) |
 | [Media Assistant](media-assistant.md) | [Target/source map](../SOURCE-MAPPING.md#media-assistant) | [core](../core/media-assistant.md) · [api](../api/media-assistant.md) · [nextjs](../nextjs/media-assistant.md) |
 | [Media Library](media-library.md) | [Target/source map](../SOURCE-MAPPING.md#media-library) | [core](../core/media-library.md) · [api](../api/media-library.md) · [nextjs](../nextjs/media-library.md) |

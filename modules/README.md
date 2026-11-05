@@ -1,5 +1,7 @@
 # Module indexes
 
+Browse the [capability repository catalogs](skeletons/README.md) for all nine presentations, actual repository availability and package identities.
+
 This directory maps Liberu’s reusable module scopes. The indexes separate framework-neutral domain capabilities from technology-specific implementations.
 
 ## Guides

@@ -9431,30 +9431,6 @@
         }
       ]
     },
-    "planned:cms:features": {
-      "home": "projects/cms/nextjs/features.md",
-      "proposed_name": "module-cms-features-nextjs",
-      "source_identity_review_required": false,
-      "consumers": [
-        {
-          "project": "cms",
-          "design": "features",
-          "document": "projects/cms/nextjs/features.md"
-        }
-      ]
-    },
-    "planned:cms:filament": {
-      "home": "projects/cms/nextjs/filament.md",
-      "proposed_name": "module-cms-filament-nextjs",
-      "source_identity_review_required": false,
-      "consumers": [
-        {
-          "project": "cms",
-          "design": "filament",
-          "document": "projects/cms/nextjs/filament.md"
-        }
-      ]
-    },
     "planned:cms:form-builder": {
       "home": "projects/cms/nextjs/form-builder.md",
       "proposed_name": "module-cms-form-builder-nextjs",
@@ -9536,18 +9512,6 @@
           "project": "cms",
           "design": "knowledge-base",
           "document": "projects/cms/nextjs/knowledge-base.md"
-        }
-      ]
-    },
-    "planned:cms:livewire": {
-      "home": "projects/cms/nextjs/livewire.md",
-      "proposed_name": "module-cms-livewire-nextjs",
-      "source_identity_review_required": false,
-      "consumers": [
-        {
-          "project": "cms",
-          "design": "livewire",
-          "document": "projects/cms/nextjs/livewire.md"
         }
       ]
     },
@@ -11015,66 +10979,6 @@
         }
       ]
     },
-    "planned:real-estate:.graphify": {
-      "home": "projects/real-estate/nextjs/.graphify.md",
-      "proposed_name": "module-real-estate-.graphify-nextjs",
-      "source_identity_review_required": false,
-      "consumers": [
-        {
-          "project": "real-estate",
-          "design": ".graphify",
-          "document": "projects/real-estate/nextjs/.graphify.md"
-        }
-      ]
-    },
-    "planned:real-estate:api": {
-      "home": "projects/real-estate/nextjs/api.md",
-      "proposed_name": "module-real-estate-api-nextjs",
-      "source_identity_review_required": false,
-      "consumers": [
-        {
-          "project": "real-estate",
-          "design": "api",
-          "document": "projects/real-estate/nextjs/api.md"
-        }
-      ]
-    },
-    "planned:real-estate:features": {
-      "home": "projects/real-estate/nextjs/features.md",
-      "proposed_name": "module-real-estate-features-nextjs",
-      "source_identity_review_required": false,
-      "consumers": [
-        {
-          "project": "real-estate",
-          "design": "features",
-          "document": "projects/real-estate/nextjs/features.md"
-        }
-      ]
-    },
-    "planned:real-estate:filament": {
-      "home": "projects/real-estate/nextjs/filament.md",
-      "proposed_name": "module-real-estate-filament-nextjs",
-      "source_identity_review_required": false,
-      "consumers": [
-        {
-          "project": "real-estate",
-          "design": "filament",
-          "document": "projects/real-estate/nextjs/filament.md"
-        }
-      ]
-    },
-    "planned:real-estate:livewire": {
-      "home": "projects/real-estate/nextjs/livewire.md",
-      "proposed_name": "module-real-estate-livewire-nextjs",
-      "source_identity_review_required": false,
-      "consumers": [
-        {
-          "project": "real-estate",
-          "design": "livewire",
-          "document": "projects/real-estate/nextjs/livewire.md"
-        }
-      ]
-    },
     "planned:real-estate:portals-and-reporting": {
       "home": "projects/real-estate/nextjs/portals-and-reporting.md",
       "proposed_name": "module-real-estate-portals-and-reporting-nextjs",
@@ -11278,6 +11182,40 @@
           "document": "projects/sap/nextjs/service-management.md"
         }
       ]
+    }
+  },
+  "excluded_non_capabilities": {
+    "planned:cms:features": {
+      "reason": "Feature specification navigation index",
+      "sourceDirectory": "modules/features"
+    },
+    "planned:cms:filament": {
+      "reason": "Filament presentation navigation index",
+      "sourceDirectory": "modules/filament"
+    },
+    "planned:cms:livewire": {
+      "reason": "Livewire presentation navigation index",
+      "sourceDirectory": "modules/livewire"
+    },
+    "planned:real-estate:.graphify": {
+      "reason": "Local code-analysis cache, not application source",
+      "sourceDirectory": "modules/.graphify"
+    },
+    "planned:real-estate:api": {
+      "reason": "API adapter navigation index",
+      "sourceDirectory": "modules/api"
+    },
+    "planned:real-estate:features": {
+      "reason": "Feature specification navigation index",
+      "sourceDirectory": "modules/features"
+    },
+    "planned:real-estate:filament": {
+      "reason": "Filament presentation navigation index",
+      "sourceDirectory": "modules/filament"
+    },
+    "planned:real-estate:livewire": {
+      "reason": "Livewire presentation navigation index",
+      "sourceDirectory": "modules/livewire"
     }
   }
 }

@@ -119,9 +119,7 @@ End-user guides for each CMS module.
 | [Experimentation](experimentation.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#experimentation) |
 | [Extension Manager](extension-manager.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#extension-manager) |
 | [Extension Marketplace](extension-marketplace.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#extension-marketplace) |
-| [CMS Features](features.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#features) |
 | [Field System](field-system.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#field-system) |
-| [CMS Filament](filament.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#filament) |
 | [Form Builder](form-builder.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#form-builder) |
 | [Form Operations](form-operations.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#form-operations) |
 | [Forums Integration](forums-integration.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#forums-integration) |
@@ -132,7 +130,6 @@ End-user guides for each CMS module.
 | [Joomla Migration](joomla-migration.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#joomla-migration) |
 | [Knowledge Base](knowledge-base.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#knowledge-base) |
 | [Layout Builder](layout-builder.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#layout-builder) |
-| [CMS Livewire](livewire.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#livewire) |
 | [Localization](localization.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#localization) |
 | [Media Assistant](media-assistant.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#media-assistant) |
 | [Media Library](media-library.md) | [Context](../../../../projects/cms/SOURCE-MAPPING.md#media-library) |

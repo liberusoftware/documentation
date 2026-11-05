@@ -50,7 +50,7 @@ def main():
                 identity = m['manifests'].get('composer.json', {}).get('name') or m['manifests'].get('package.json', {}).get('name')
                 if identity:
                     available.append((m['directory'], identity))
-        slugs = sorted({p.stem for layer in LAYERS for p in (project/layer).glob('*.md') if p.name != 'README.md'})
+        slugs = sorted({p.stem for layer in LAYERS for p in (project/layer).glob('*.md') if p.name != 'README.md' and '<!-- documentation-kind: source-index -->' not in p.read_text()})
         matches = {}
         mapped = set()
         for feature in slugs:
@@ -148,7 +148,11 @@ def main():
         readme = project/'README.md'
         if readme.exists() and '(SOURCE-MAPPING.md)' not in readme.read_text():
             readme.write_text(readme.read_text()+'\n- [Design-to-source reconciliation](SOURCE-MAPPING.md) — exact package identities, retained aliases, unmatched observed modules, and source implementation references.\n')
-    (ROOT/'architecture/source-design-mapping.json').write_text(json.dumps({'projects': result},indent=2)+'\n')
+    mapping_path=ROOT/'architecture/source-design-mapping.json'
+    previous=json.loads(mapping_path.read_text()) if mapping_path.exists() else {}
+    payload={'projects': result}
+    if previous.get('excluded_non_capabilities'):payload['excluded_non_capabilities']=previous['excluded_non_capabilities']
+    mapping_path.write_text(json.dumps(payload,indent=2)+'\n')
     print(f'Reconciled {sum(len(r["designs"]) for r in result.values())} design spellings across {len(result)} projects; updated {annotations} source annotations.')
     print(f'Observed physical package locations without a design-name match: {sum(len(r["unmapped_observed_packages"]) for r in result.values())}')
 

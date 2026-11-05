@@ -1,28 +1,24 @@
 # Real Estate Filament Implementations
 
 <!-- catalogue-status:start -->
-This index preserves **70 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **65 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
 
 | Module document | Source/target reference | Related plans |
 | --- | --- | --- |
-| [.graphify Filament](.graphify.md) | [Target/source map](../SOURCE-MAPPING.md#.graphify) | [core](../core/.graphify.md) · [api](../api/.graphify.md) · [nextjs](../nextjs/.graphify.md) |
 | [Activity Comments Filament](activity-comments.md) | [liberusoftware/activity-comments-filament](../../../modules/source/liberusoftware--activity-comments-filament.md) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
 | [Analytics Core Filament](analytics-core.md) | [liberusoftware/analytics-core-filament](../../../modules/source/liberusoftware--analytics-core-filament.md) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
 | [Analytics Google Filament](analytics-google.md) | [liberusoftware/analytics-google-filament](../../../modules/source/liberusoftware--analytics-google-filament.md) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
 | [Analytics Meta Filament](analytics-meta.md) | [liberusoftware/analytics-meta-filament](../../../modules/source/liberusoftware--analytics-meta-filament.md) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
 | [Api Access Filament](api-access.md) | [liberusoftware/api-access-filament](../../../modules/source/liberusoftware--api-access-filament.md) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
-| [Api Filament](api.md) | [Target/source map](../SOURCE-MAPPING.md#api) | [core](../core/api.md) · [api](../api/api.md) · [nextjs](../nextjs/api.md) |
 | [Application Filament](application.md) | [liberusoftware/application-filament](../../../modules/source/liberusoftware--application-filament.md) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
 | [Audit Filament](audit.md) | [liberusoftware/audit-filament](../../../modules/source/liberusoftware--audit-filament.md) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
 | [Core Filament](core.md) | [liberusoftware/real-estate-core-filament](../../../modules/source/liberusoftware--real-estate-core-filament.md) | [core](../core/core.md) · [api](../api/core.md) · [nextjs](../nextjs/core.md) |
 | [Currency Context Filament](currency-context.md) | [liberusoftware/currency-context-filament](../../../modules/source/liberusoftware--currency-context-filament.md) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
 | [Developer Experience Filament](developer-experience.md) | [liberusoftware/developer-experience-filament](../../../modules/source/liberusoftware--developer-experience-filament.md) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
 | [Feature Flags Filament](feature-flags.md) | [liberusoftware/feature-flags-filament](../../../modules/source/liberusoftware--feature-flags-filament.md) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
-| [Features Filament](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [core](../core/features.md) · [api](../api/features.md) · [nextjs](../nextjs/features.md) |
-| [Filament Filament](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [core](../core/filament.md) · [api](../api/filament.md) · [nextjs](../nextjs/filament.md) |
 | [Files Media Filament](files-media.md) | [liberusoftware/files-media-filament](../../../modules/source/liberusoftware--files-media-filament.md) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
 | [Identity Core Filament](identity-core.md) | [liberusoftware/identity-core-filament](../../../modules/source/liberusoftware--identity-core-filament.md) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
 | [Identity Socialstream Filament](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
@@ -32,7 +28,6 @@ Each file defines the optional Filament 5 presentation package for exactly one m
 | [Jetstream Bridge Filament](jetstream-bridge.md) | [liberusoftware/jetstream-bridge-filament](../../../modules/source/liberusoftware--jetstream-bridge-filament.md) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
 | [Lettings Filament](lettings.md) | [liberusoftware/real-estate-lettings-filament](../../../modules/source/liberusoftware--real-estate-lettings-filament.md) | [core](../core/lettings.md) · [api](../api/lettings.md) · [nextjs](../nextjs/lettings.md) |
 | [Listings Filament](listings.md) | [liberusoftware/real-estate-listings-filament](../../../modules/source/liberusoftware--real-estate-listings-filament.md) | [core](../core/listings.md) · [api](../api/listings.md) · [nextjs](../nextjs/listings.md) |
-| [Livewire Filament](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [core](../core/livewire.md) · [api](../api/livewire.md) · [nextjs](../nextjs/livewire.md) |
 | [Localization Core Filament](localization-core.md) | [liberusoftware/localization-core-filament](../../../modules/source/liberusoftware--localization-core-filament.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
 | [Localization Mymemory Filament](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
 | [Marketing Filament](marketing.md) | [liberusoftware/real-estate-marketing-filament](../../../modules/source/liberusoftware--real-estate-marketing-filament.md) | [core](../core/marketing.md) · [api](../api/marketing.md) · [nextjs](../nextjs/marketing.md) |

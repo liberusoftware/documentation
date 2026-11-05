@@ -1,6 +1,6 @@
 # Next.js adapter ownership and reuse
 
-The documentation preserves **1392 module spellings** across **15 scopes**, with **617 adapter plan groups**. 775 consumer/alias documents reference shared homes rather than claiming separate implementations. These are design/documentation homes, not a registry availability or stability claim.
+The documentation preserves **1384 module spellings** across **15 scopes**, with **609 adapter plan groups**. 775 consumer/alias documents reference shared homes rather than claiming separate implementations. These are design/documentation homes, not a registry availability or stability claim.
 
 Groups use exact observed core identities where one name match exists. Different PHP identities are not silently merged by similar spelling. Planned scopes without a source match remain separate, including all Ecommerce modules. Source variants and PHP/API compatibility must be reviewed before a shared npm release.
 
@@ -471,8 +471,6 @@ Groups use exact observed core identities where one name match exists. Different
 | `planned:cms:editorial-content` | [Plan](../../projects/cms/nextjs/editorial-content.md) | 1 |
 | `planned:cms:editorial-workflow` | [Plan](../../projects/cms/nextjs/editorial-workflow.md) | 1 |
 | `planned:cms:experience-assistant` | [Plan](../../projects/cms/nextjs/experience-assistant.md) | 1 |
-| `planned:cms:features` | [Plan](../../projects/cms/nextjs/features.md) | 1 |
-| `planned:cms:filament` | [Plan](../../projects/cms/nextjs/filament.md) | 1 |
 | `planned:cms:form-builder` | [Plan](../../projects/cms/nextjs/form-builder.md) | 1 |
 | `planned:cms:form-operations` | [Plan](../../projects/cms/nextjs/form-operations.md) | 1 |
 | `planned:cms:forums-integration` | [Plan](../../projects/cms/nextjs/forums-integration.md) | 1 |
@@ -480,7 +478,6 @@ Groups use exact observed core identities where one name match exists. Different
 | `planned:cms:hook-and-event-sdk` | [Plan](../../projects/cms/nextjs/hook-and-event-sdk.md) | 1 |
 | `planned:cms:image-processing` | [Plan](../../projects/cms/nextjs/image-processing.md) | 1 |
 | `planned:cms:knowledge-base` | [Plan](../../projects/cms/nextjs/knowledge-base.md) | 1 |
-| `planned:cms:livewire` | [Plan](../../projects/cms/nextjs/livewire.md) | 1 |
 | `planned:cms:localization` | [Plan](../../projects/cms/nextjs/localization.md) | 1 |
 | `planned:cms:media-assistant` | [Plan](../../projects/cms/nextjs/media-assistant.md) | 1 |
 | `planned:cms:media-library` | [Plan](../../projects/cms/nextjs/media-library.md) | 1 |
@@ -603,11 +600,6 @@ Groups use exact observed core identities where one name match exists. Different
 | `planned:liberu:executive-insights` | [Plan](../../projects/liberu/nextjs/executive-insights.md) | 1 |
 | `planned:liberu:platform-orchestration` | [Plan](../../projects/liberu/nextjs/platform-orchestration.md) | 1 |
 | `planned:liberu:revenue-and-care-orchestration` | [Plan](../../projects/liberu/nextjs/revenue-and-care-orchestration.md) | 1 |
-| `planned:real-estate:.graphify` | [Plan](../../projects/real-estate/nextjs/.graphify.md) | 1 |
-| `planned:real-estate:api` | [Plan](../../projects/real-estate/nextjs/api.md) | 1 |
-| `planned:real-estate:features` | [Plan](../../projects/real-estate/nextjs/features.md) | 1 |
-| `planned:real-estate:filament` | [Plan](../../projects/real-estate/nextjs/filament.md) | 1 |
-| `planned:real-estate:livewire` | [Plan](../../projects/real-estate/nextjs/livewire.md) | 1 |
 | `planned:real-estate:portals-and-reporting` | [Plan](../../projects/real-estate/nextjs/portals-and-reporting.md) | 1 |
 | `planned:sap:assets-and-facilities` | [Plan](../../projects/sap/nextjs/assets-and-facilities.md) | 1 |
 | `planned:sap:controlling` | [Plan](../../projects/sap/nextjs/controlling.md) | 1 |
@@ -636,3 +628,5 @@ Some Liberu platform capabilities have both prefixed and unprefixed PHP identiti
 - `module-liberu-revenue-and-care-orchestration-nextjs`: `liberusoftware/liberu-revenue-and-care-orchestration`, `liberusoftware/module-liberu-revenue-and-care-orchestration`, `planned:liberu:revenue-and-care-orchestration`
 
 Reproduce with `python3 tools/build_nextjs_plans.py` after rebuilding source references/mapping. Authored enterprise module plans are retained; generated plans carry a marker. [Machine-readable adapter registry](../../architecture/nextjs-adapter-plans.json).
+
+Eight source navigation/cache entries are excluded from capability ownership. Their reference pages remain available to explain the classification; see the registry JSON exclusions.

@@ -6,12 +6,10 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 
 | Module scope | Adapter plan | Shared home |
 | --- | --- | --- |
-| [.graphify](../features/.graphify.md) | [Next.js plan](.graphify.md) | [This module](.graphify.md) |
 | [Activity Comments](../features/activity-comments.md) | [Next.js plan](activity-comments.md) | [Shared plan](../../boilerplate/nextjs/activity-comments.md) |
 | [Analytics Core](../features/analytics-core.md) | [Next.js plan](analytics-core.md) | [Shared plan](../../boilerplate/nextjs/analytics-core.md) |
 | [Analytics Google](../features/analytics-google.md) | [Next.js plan](analytics-google.md) | [Shared plan](../../boilerplate/nextjs/analytics-google.md) |
 | [Analytics Meta](../features/analytics-meta.md) | [Next.js plan](analytics-meta.md) | [Shared plan](../../boilerplate/nextjs/analytics-meta.md) |
-| [Api](../features/api.md) | [Next.js plan](api.md) | [This module](api.md) |
 | [Api Access](../features/api-access.md) | [Next.js plan](api-access.md) | [Shared plan](../../boilerplate/nextjs/api-access.md) |
 | [Application](../features/application.md) | [Next.js plan](application.md) | [Shared plan](../../boilerplate/nextjs/application.md) |
 | [Audit](../features/audit.md) | [Next.js plan](audit.md) | [Shared plan](../../boilerplate/nextjs/audit.md) |
@@ -19,8 +17,6 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | [Currency Context](../features/currency-context.md) | [Next.js plan](currency-context.md) | [Shared plan](../../boilerplate/nextjs/currency-context.md) |
 | [Developer Experience](../features/developer-experience.md) | [Next.js plan](developer-experience.md) | [Shared plan](../../boilerplate/nextjs/developer-experience.md) |
 | [Feature Flags](../features/feature-flags.md) | [Next.js plan](feature-flags.md) | [Shared plan](../../boilerplate/nextjs/feature-flags.md) |
-| [Features](../features/features.md) | [Next.js plan](features.md) | [This module](features.md) |
-| [Filament](../features/filament.md) | [Next.js plan](filament.md) | [This module](filament.md) |
 | [Files Media](../features/files-media.md) | [Next.js plan](files-media.md) | [Shared plan](../../boilerplate/nextjs/files-media.md) |
 | [Identity Core](../features/identity-core.md) | [Next.js plan](identity-core.md) | [Shared plan](../../boilerplate/nextjs/identity-core.md) |
 | [Identity Socialstream](../features/identity-socialstream.md) | [Next.js plan](identity-socialstream.md) | [Shared plan](../../boilerplate/nextjs/identity-socialstream.md) |
@@ -30,7 +26,6 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | [Jetstream Bridge](../features/jetstream-bridge.md) | [Next.js plan](jetstream-bridge.md) | [Shared plan](../../boilerplate/nextjs/jetstream-bridge.md) |
 | [Lettings](../features/lettings.md) | [Next.js plan](lettings.md) | [This module](lettings.md) |
 | [Listings](../features/listings.md) | [Next.js plan](listings.md) | [This module](listings.md) |
-| [Livewire](../features/livewire.md) | [Next.js plan](livewire.md) | [This module](livewire.md) |
 | [Localization Core](../features/localization-core.md) | [Next.js plan](localization-core.md) | [Shared plan](../../boilerplate/nextjs/localization-core.md) |
 | [Localization Mymemory](../features/localization-mymemory.md) | [Next.js plan](localization-mymemory.md) | [Shared plan](../../boilerplate/nextjs/localization-mymemory.md) |
 | [Marketing](../features/marketing.md) | [Next.js plan](marketing.md) | [This module](marketing.md) |

@@ -1,25 +1,11 @@
-# Livewire Flutter + Dart
+# Cms: livewire source index reference
 
-<!-- source-reconciliation:start -->
-**Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#livewire). No dedicated package name match was found for this layer in the scanned module manifests. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
-<!-- source-reconciliation:end -->
+<!-- documentation-kind: source-index -->
 
-**Package:** module-cms-livewire-flutter
-**Matching core package:** module-cms-livewire ([implementation](../core/livewire.md))
-**Matching API package:** module-cms-livewire-api ([contract](../api/livewire.md))
+**Classification: source navigation/tooling, not an independent product capability.** Livewire presentation navigation index.
 
-## Implementation plan
+This page was previously generated from the source directory `modules/livewire`. That directory does not establish a canonical domain owner or a separately installable module. Do not create Composer/npm/pub presentation packages for the index or cache itself.
 
-This adapter presents Livewire for the Flutter + Dart surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
+Use the [actual capability specifications](../features/README.md), [core owners](../core/README.md), [API adapters](../api/README.md) and [project scope](../README.md) to select real packages. The [presentation catalog](../../../modules/skeletons/README.md) lists capability repositories across the requested layers.
 
-- Use sound Dart null safety, typed DTOs, stable Flutter plugins, secure platform storage, and explicit application state models.
-- Preserve the API contract, tenant/team context, field visibility, localization, timezone/currency formatting, and server-side authorization.
-- Model loading, empty, denied, offline, queued, conflict, retry, and recovery states; make writes idempotent and safe to resume after interruption.
-- Support screen readers, dynamic text, keyboard/switch access, contrast, reduced motion, RTL, rotation, deep links, and platform back behavior.
-- Document cache classification, expiry/invalidation, native permissions, push/deep-link handling, supported OS versions, and release configuration.
-
-## Verification
-
-Test Livewire API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
-
-See [Flutter + Dart standard](../../../standards/FLUTTER.md), [mobile architecture](../../../architecture/MOBILE.md), [Flutter + Dart technology](../../../technologies/FLUTTER.md), [core module](../core/livewire.md), and [API module](../api/livewire.md).
+Filament and Livewire are presentation boundaries; API and feature indexes are navigation. Local code-analysis caches are development artifacts. Keep those roles separate from business ownership and package identity.

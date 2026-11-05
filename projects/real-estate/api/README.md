@@ -1,28 +1,24 @@
 # Real Estate API Module Specifications
 
 <!-- catalogue-status:start -->
-This index preserves **70 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **65 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional API presentation package for exactly one matching domain module.
 
 | Module document | Source/target reference | Related plans |
 | --- | --- | --- |
-| [.graphify API](.graphify.md) | [Target/source map](../SOURCE-MAPPING.md#.graphify) | [core](../core/.graphify.md) · [nextjs](../nextjs/.graphify.md) |
 | [Activity Comments API](activity-comments.md) | [liberusoftware/activity-comments-api](../../../modules/source/liberusoftware--activity-comments-api.md) | [core](../core/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
 | [Analytics Core API](analytics-core.md) | [liberusoftware/analytics-core-api](../../../modules/source/liberusoftware--analytics-core-api.md) | [core](../core/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
 | [Analytics Google API](analytics-google.md) | [liberusoftware/analytics-google-api](../../../modules/source/liberusoftware--analytics-google-api.md) | [core](../core/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
 | [Analytics Meta API](analytics-meta.md) | [liberusoftware/analytics-meta-api](../../../modules/source/liberusoftware--analytics-meta-api.md) | [core](../core/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
 | [Api Access API](api-access.md) | [liberusoftware/api-access-api](../../../modules/source/liberusoftware--api-access-api.md) | [core](../core/api-access.md) · [nextjs](../nextjs/api-access.md) |
-| [Api API](api.md) | [Target/source map](../SOURCE-MAPPING.md#api) | [core](../core/api.md) · [nextjs](../nextjs/api.md) |
 | [Application API](application.md) | [liberusoftware/application-api](../../../modules/source/liberusoftware--application-api.md) | [core](../core/application.md) · [nextjs](../nextjs/application.md) |
 | [Audit API](audit.md) | [liberusoftware/audit-api](../../../modules/source/liberusoftware--audit-api.md) | [core](../core/audit.md) · [nextjs](../nextjs/audit.md) |
 | [Core API](core.md) | [liberusoftware/real-estate-core-api](../../../modules/source/liberusoftware--real-estate-core-api.md) | [core](../core/core.md) · [nextjs](../nextjs/core.md) |
 | [Currency Context API](currency-context.md) | [liberusoftware/currency-context-api](../../../modules/source/liberusoftware--currency-context-api.md) | [core](../core/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
 | [Developer Experience API](developer-experience.md) | [liberusoftware/developer-experience-api](../../../modules/source/liberusoftware--developer-experience-api.md) | [core](../core/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
 | [Feature Flags API](feature-flags.md) | [liberusoftware/feature-flags-api](../../../modules/source/liberusoftware--feature-flags-api.md) | [core](../core/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
-| [Features API](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [core](../core/features.md) · [nextjs](../nextjs/features.md) |
-| [Filament API](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [core](../core/filament.md) · [nextjs](../nextjs/filament.md) |
 | [Files Media API](files-media.md) | [liberusoftware/files-media-api](../../../modules/source/liberusoftware--files-media-api.md) | [core](../core/files-media.md) · [nextjs](../nextjs/files-media.md) |
 | [Identity Core API](identity-core.md) | [liberusoftware/identity-core-api](../../../modules/source/liberusoftware--identity-core-api.md) | [core](../core/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
 | [Identity Socialstream API](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
@@ -32,7 +28,6 @@ Each file defines the optional API presentation package for exactly one matching
 | [Jetstream Bridge API](jetstream-bridge.md) | [liberusoftware/jetstream-bridge-api](../../../modules/source/liberusoftware--jetstream-bridge-api.md) | [core](../core/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
 | [Lettings API](lettings.md) | [liberusoftware/real-estate-lettings-api](../../../modules/source/liberusoftware--real-estate-lettings-api.md) | [core](../core/lettings.md) · [nextjs](../nextjs/lettings.md) |
 | [Listings API](listings.md) | [liberusoftware/real-estate-listings-api](../../../modules/source/liberusoftware--real-estate-listings-api.md) | [core](../core/listings.md) · [nextjs](../nextjs/listings.md) |
-| [Livewire API](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [core](../core/livewire.md) · [nextjs](../nextjs/livewire.md) |
 | [Localization Core API](localization-core.md) | [liberusoftware/localization-core-api](../../../modules/source/liberusoftware--localization-core-api.md) | [core](../core/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
 | [Localization Mymemory API](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
 | [Marketing API](marketing.md) | [liberusoftware/real-estate-marketing-api](../../../modules/source/liberusoftware--real-estate-marketing-api.md) | [core](../core/marketing.md) · [nextjs](../nextjs/marketing.md) |

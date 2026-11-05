@@ -121,9 +121,7 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | [Experimentation](../features/experimentation.md) | [Next.js plan](experimentation.md) | [This module](experimentation.md) |
 | [Extension Manager](../features/extension-manager.md) | [Next.js plan](extension-manager.md) | [This module](extension-manager.md) |
 | [Extension Marketplace](../features/extension-marketplace.md) | [Next.js plan](extension-marketplace.md) | [This module](extension-marketplace.md) |
-| [Features](../features/features.md) | [Next.js plan](features.md) | [This module](features.md) |
 | [Field System](../features/field-system.md) | [Next.js plan](field-system.md) | [This module](field-system.md) |
-| [Filament](../features/filament.md) | [Next.js plan](filament.md) | [This module](filament.md) |
 | [Form Builder](../features/form-builder.md) | [Next.js plan](form-builder.md) | [This module](form-builder.md) |
 | [Form Operations](../features/form-operations.md) | [Next.js plan](form-operations.md) | [This module](form-operations.md) |
 | [Forums Integration](../features/forums-integration.md) | [Next.js plan](forums-integration.md) | [This module](forums-integration.md) |
@@ -134,7 +132,6 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | [Joomla Migration](../features/joomla-migration.md) | [Next.js plan](joomla-migration.md) | [This module](joomla-migration.md) |
 | [Knowledge Base](../features/knowledge-base.md) | [Next.js plan](knowledge-base.md) | [This module](knowledge-base.md) |
 | [Layout Builder](../features/layout-builder.md) | [Next.js plan](layout-builder.md) | [This module](layout-builder.md) |
-| [Livewire](../features/livewire.md) | [Next.js plan](livewire.md) | [This module](livewire.md) |
 | [Localization](../features/localization.md) | [Next.js plan](localization.md) | [This module](localization.md) |
 | [Media Assistant](../features/media-assistant.md) | [Next.js plan](media-assistant.md) | [This module](media-assistant.md) |
 | [Media Library](../features/media-library.md) | [Next.js plan](media-library.md) | [This module](media-library.md) |

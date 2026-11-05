@@ -66,7 +66,7 @@ def main():
                 if split<0:updated=original+'\n'+block+'\n'
                 else:updated=original[:split]+'\n\n'+block+'\n'+original[split:]
             if updated!=original:page.write_text(updated);count+=1
-        module_counts[project]=len([p for p in folder.glob('*.md') if p.name!='README.md'])
+        module_counts[project]=len([p for p in folder.glob('*.md') if p.name!='README.md' and '<!-- documentation-kind: source-index -->' not in p.read_text()])
         project_readme=ROOT/'user-guides/projects'/project/'README.md'
         if project_readme.exists() and '## Availability and implementation' not in project_readme.read_text():
             source_map=ROOT/'projects'/project/'SOURCE-MAPPING.md'

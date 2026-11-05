@@ -1,28 +1,24 @@
 # Real Estate Livewire Implementations
 
 <!-- catalogue-status:start -->
-This index preserves **70 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **65 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional Livewire 4 presentation package for exactly one matching domain module.
 
 | Module document | Source/target reference | Related plans |
 | --- | --- | --- |
-| [.graphify Livewire](.graphify.md) | [Target/source map](../SOURCE-MAPPING.md#.graphify) | [core](../core/.graphify.md) · [api](../api/.graphify.md) · [nextjs](../nextjs/.graphify.md) |
 | [Activity Comments Livewire](activity-comments.md) | [liberusoftware/activity-comments-livewire](../../../modules/source/liberusoftware--activity-comments-livewire.md) | [core](../core/activity-comments.md) · [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
 | [Analytics Core Livewire](analytics-core.md) | [liberusoftware/analytics-core-livewire](../../../modules/source/liberusoftware--analytics-core-livewire.md) | [core](../core/analytics-core.md) · [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
 | [Analytics Google Livewire](analytics-google.md) | [liberusoftware/analytics-google-livewire](../../../modules/source/liberusoftware--analytics-google-livewire.md) | [core](../core/analytics-google.md) · [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
 | [Analytics Meta Livewire](analytics-meta.md) | [liberusoftware/analytics-meta-livewire](../../../modules/source/liberusoftware--analytics-meta-livewire.md) | [core](../core/analytics-meta.md) · [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
 | [Api Access Livewire](api-access.md) | [liberusoftware/api-access-livewire](../../../modules/source/liberusoftware--api-access-livewire.md) | [core](../core/api-access.md) · [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
-| [Api Livewire](api.md) | [Target/source map](../SOURCE-MAPPING.md#api) | [core](../core/api.md) · [api](../api/api.md) · [nextjs](../nextjs/api.md) |
 | [Application Livewire](application.md) | [liberusoftware/application-livewire](../../../modules/source/liberusoftware--application-livewire.md) | [core](../core/application.md) · [api](../api/application.md) · [nextjs](../nextjs/application.md) |
 | [Audit Livewire](audit.md) | [liberusoftware/audit-livewire](../../../modules/source/liberusoftware--audit-livewire.md) | [core](../core/audit.md) · [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
 | [Core Livewire](core.md) | [liberusoftware/real-estate-core-livewire](../../../modules/source/liberusoftware--real-estate-core-livewire.md) | [core](../core/core.md) · [api](../api/core.md) · [nextjs](../nextjs/core.md) |
 | [Currency Context Livewire](currency-context.md) | [liberusoftware/currency-context-livewire](../../../modules/source/liberusoftware--currency-context-livewire.md) | [core](../core/currency-context.md) · [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
 | [Developer Experience Livewire](developer-experience.md) | [liberusoftware/developer-experience-livewire](../../../modules/source/liberusoftware--developer-experience-livewire.md) | [core](../core/developer-experience.md) · [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
 | [Feature Flags Livewire](feature-flags.md) | [liberusoftware/feature-flags-livewire](../../../modules/source/liberusoftware--feature-flags-livewire.md) | [core](../core/feature-flags.md) · [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
-| [Features Livewire](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [core](../core/features.md) · [api](../api/features.md) · [nextjs](../nextjs/features.md) |
-| [Filament Livewire](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [core](../core/filament.md) · [api](../api/filament.md) · [nextjs](../nextjs/filament.md) |
 | [Files Media Livewire](files-media.md) | [liberusoftware/files-media-livewire](../../../modules/source/liberusoftware--files-media-livewire.md) | [core](../core/files-media.md) · [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
 | [Identity Core Livewire](identity-core.md) | [liberusoftware/identity-core-livewire](../../../modules/source/liberusoftware--identity-core-livewire.md) | [core](../core/identity-core.md) · [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
 | [Identity Socialstream Livewire](identity-socialstream.md) | [Target/source map](../SOURCE-MAPPING.md#identity-socialstream) | [core](../core/identity-socialstream.md) · [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
@@ -32,7 +28,6 @@ Each file defines the optional Livewire 4 presentation package for exactly one m
 | [Jetstream Bridge Livewire](jetstream-bridge.md) | [liberusoftware/jetstream-bridge-livewire](../../../modules/source/liberusoftware--jetstream-bridge-livewire.md) | [core](../core/jetstream-bridge.md) · [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
 | [Lettings Livewire](lettings.md) | [liberusoftware/real-estate-lettings-livewire](../../../modules/source/liberusoftware--real-estate-lettings-livewire.md) | [core](../core/lettings.md) · [api](../api/lettings.md) · [nextjs](../nextjs/lettings.md) |
 | [Listings Livewire](listings.md) | [liberusoftware/real-estate-listings-livewire](../../../modules/source/liberusoftware--real-estate-listings-livewire.md) | [core](../core/listings.md) · [api](../api/listings.md) · [nextjs](../nextjs/listings.md) |
-| [Livewire Livewire](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [core](../core/livewire.md) · [api](../api/livewire.md) · [nextjs](../nextjs/livewire.md) |
 | [Localization Core Livewire](localization-core.md) | [liberusoftware/localization-core-livewire](../../../modules/source/liberusoftware--localization-core-livewire.md) | [core](../core/localization-core.md) · [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
 | [Localization Mymemory Livewire](localization-mymemory.md) | [Target/source map](../SOURCE-MAPPING.md#localization-mymemory) | [core](../core/localization-mymemory.md) · [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
 | [Marketing Livewire](marketing.md) | [liberusoftware/real-estate-marketing-livewire](../../../modules/source/liberusoftware--real-estate-marketing-livewire.md) | [core](../core/marketing.md) · [api](../api/marketing.md) · [nextjs](../nextjs/marketing.md) |

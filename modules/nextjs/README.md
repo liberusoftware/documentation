@@ -1,6 +1,6 @@
 # Next.js presentation module plans
 
-Optional API-consuming React adapters cover **1392 documented module spellings** in **15 scopes**. The [ownership registry](OWNERSHIP.md) consolidates them into **617 plan groups** using observed core identities where established. These are target plans, not published packages.
+Optional API-consuming React adapters cover **1384 documented module spellings** in **15 scopes**. The [ownership registry](OWNERSHIP.md) consolidates them into **609 plan groups** using observed core identities where established. These are target plans, not published packages.
 
 Use the [Next.js standard](../../standards/NEXTJS.md) for server/client boundaries, sessions, authorization, caching and deployment, and the [npm lifecycle guide](../../guides/NPM.md) for development and release. Framework-independent React UI can be shared with Inertia; routing, forms and transport require distinct adapters.
 

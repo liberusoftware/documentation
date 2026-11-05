@@ -1,7 +1,7 @@
 # CMS React + Inertia Implementations
 
 <!-- catalogue-status:start -->
-This index preserves **252 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **249 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
@@ -123,9 +123,7 @@ Each file defines the optional React 19.2 + Inertia 3 presentation package for e
 | [Experimentation React + Inertia](experimentation.md) | [Target/source map](../SOURCE-MAPPING.md#experimentation) | [core](../core/experimentation.md) · [api](../api/experimentation.md) · [nextjs](../nextjs/experimentation.md) |
 | [Extension Manager React + Inertia](extension-manager.md) | [Target/source map](../SOURCE-MAPPING.md#extension-manager) | [core](../core/extension-manager.md) · [api](../api/extension-manager.md) · [nextjs](../nextjs/extension-manager.md) |
 | [Extension Marketplace React + Inertia](extension-marketplace.md) | [Target/source map](../SOURCE-MAPPING.md#extension-marketplace) | [core](../core/extension-marketplace.md) · [api](../api/extension-marketplace.md) · [nextjs](../nextjs/extension-marketplace.md) |
-| [Features React + Inertia](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [core](../core/features.md) · [api](../api/features.md) · [nextjs](../nextjs/features.md) |
 | [Field System React + Inertia](field-system.md) | [Target/source map](../SOURCE-MAPPING.md#field-system) | [core](../core/field-system.md) · [api](../api/field-system.md) · [nextjs](../nextjs/field-system.md) |
-| [Filament React + Inertia](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [core](../core/filament.md) · [api](../api/filament.md) · [nextjs](../nextjs/filament.md) |
 | [Form Builder React + Inertia](form-builder.md) | [Target/source map](../SOURCE-MAPPING.md#form-builder) | [core](../core/form-builder.md) · [api](../api/form-builder.md) · [nextjs](../nextjs/form-builder.md) |
 | [Form Operations React + Inertia](form-operations.md) | [Target/source map](../SOURCE-MAPPING.md#form-operations) | [core](../core/form-operations.md) · [api](../api/form-operations.md) · [nextjs](../nextjs/form-operations.md) |
 | [Forums Integration React + Inertia](forums-integration.md) | [Target/source map](../SOURCE-MAPPING.md#forums-integration) | [core](../core/forums-integration.md) · [api](../api/forums-integration.md) · [nextjs](../nextjs/forums-integration.md) |
@@ -136,7 +134,6 @@ Each file defines the optional React 19.2 + Inertia 3 presentation package for e
 | [Joomla Migration React + Inertia](joomla-migration.md) | [Target/source map](../SOURCE-MAPPING.md#joomla-migration) | [core](../core/joomla-migration.md) · [api](../api/joomla-migration.md) · [nextjs](../nextjs/joomla-migration.md) |
 | [Knowledge Base React + Inertia](knowledge-base.md) | [Target/source map](../SOURCE-MAPPING.md#knowledge-base) | [core](../core/knowledge-base.md) · [api](../api/knowledge-base.md) · [nextjs](../nextjs/knowledge-base.md) |
 | [Layout Builder React + Inertia](layout-builder.md) | [Target/source map](../SOURCE-MAPPING.md#layout-builder) | [core](../core/layout-builder.md) · [api](../api/layout-builder.md) · [nextjs](../nextjs/layout-builder.md) |
-| [Livewire React + Inertia](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [core](../core/livewire.md) · [api](../api/livewire.md) · [nextjs](../nextjs/livewire.md) |
 | [Localization React + Inertia](localization.md) | [Target/source map](../SOURCE-MAPPING.md#localization) | [core](../core/localization.md) · [api](../api/localization.md) · [nextjs](../nextjs/localization.md) |
 | [Media Assistant React + Inertia](media-assistant.md) | [Target/source map](../SOURCE-MAPPING.md#media-assistant) | [core](../core/media-assistant.md) · [api](../api/media-assistant.md) · [nextjs](../nextjs/media-assistant.md) |
 | [Media Library React + Inertia](media-library.md) | [Target/source map](../SOURCE-MAPPING.md#media-library) | [core](../core/media-library.md) · [api](../api/media-library.md) · [nextjs](../nextjs/media-library.md) |

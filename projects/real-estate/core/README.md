@@ -1,28 +1,24 @@
 # Real Estate Core Modules
 
 <!-- catalogue-status:start -->
-This index preserves **70 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **65 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 This index covers the Laravel 13/PHP 8.5 core Composer packages for the Real Estate domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
 
 | Module document | Source/target reference | Related plans |
 | --- | --- | --- |
-| [.graphify Core Module](.graphify.md) | [Target/source map](../SOURCE-MAPPING.md#.graphify) | [api](../api/.graphify.md) · [nextjs](../nextjs/.graphify.md) |
 | [Activity Comments Core Module](activity-comments.md) | [liberusoftware/activity-comments](../../../modules/source/liberusoftware--activity-comments.md) | [api](../api/activity-comments.md) · [nextjs](../nextjs/activity-comments.md) |
 | [Analytics Core Core Module](analytics-core.md) | [liberusoftware/analytics-core](../../../modules/source/liberusoftware--analytics-core.md) | [api](../api/analytics-core.md) · [nextjs](../nextjs/analytics-core.md) |
 | [Analytics Google Core Module](analytics-google.md) | [liberusoftware/analytics-google](../../../modules/source/liberusoftware--analytics-google.md) | [api](../api/analytics-google.md) · [nextjs](../nextjs/analytics-google.md) |
 | [Analytics Meta Core Module](analytics-meta.md) | [liberusoftware/analytics-meta](../../../modules/source/liberusoftware--analytics-meta.md) | [api](../api/analytics-meta.md) · [nextjs](../nextjs/analytics-meta.md) |
 | [Api Access Core Module](api-access.md) | [liberusoftware/api-access](../../../modules/source/liberusoftware--api-access.md) | [api](../api/api-access.md) · [nextjs](../nextjs/api-access.md) |
-| [Api Core Module](api.md) | [Target/source map](../SOURCE-MAPPING.md#api) | [api](../api/api.md) · [nextjs](../nextjs/api.md) |
 | [Application Core Module](application.md) | [liberusoftware/application](../../../modules/source/liberusoftware--application.md) | [api](../api/application.md) · [nextjs](../nextjs/application.md) |
 | [Audit Core Module](audit.md) | [liberusoftware/audit](../../../modules/source/liberusoftware--audit.md) | [api](../api/audit.md) · [nextjs](../nextjs/audit.md) |
 | [Core Core Module](core.md) | [liberusoftware/real-estate-core](../../../modules/source/liberusoftware--real-estate-core.md) | [api](../api/core.md) · [nextjs](../nextjs/core.md) |
 | [Currency Context Core Module](currency-context.md) | [liberusoftware/currency-context](../../../modules/source/liberusoftware--currency-context.md) | [api](../api/currency-context.md) · [nextjs](../nextjs/currency-context.md) |
 | [Developer Experience Core Module](developer-experience.md) | [liberusoftware/developer-experience](../../../modules/source/liberusoftware--developer-experience.md) | [api](../api/developer-experience.md) · [nextjs](../nextjs/developer-experience.md) |
 | [Feature Flags Core Module](feature-flags.md) | [liberusoftware/feature-flags](../../../modules/source/liberusoftware--feature-flags.md) | [api](../api/feature-flags.md) · [nextjs](../nextjs/feature-flags.md) |
-| [Features Core Module](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [api](../api/features.md) · [nextjs](../nextjs/features.md) |
-| [Filament Core Module](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [api](../api/filament.md) · [nextjs](../nextjs/filament.md) |
 | [Files Media Core Module](files-media.md) | [liberusoftware/files-media](../../../modules/source/liberusoftware--files-media.md) | [api](../api/files-media.md) · [nextjs](../nextjs/files-media.md) |
 | [Identity Core Core Module](identity-core.md) | [liberusoftware/identity-core](../../../modules/source/liberusoftware--identity-core.md) | [api](../api/identity-core.md) · [nextjs](../nextjs/identity-core.md) |
 | [Identity Socialstream Core Module](identity-socialstream.md) | [liberusoftware/identity-socialstream](../../../modules/source/liberusoftware--identity-socialstream.md) | [api](../api/identity-socialstream.md) · [nextjs](../nextjs/identity-socialstream.md) |
@@ -32,7 +28,6 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Real Est
 | [Jetstream Bridge Core Module](jetstream-bridge.md) | [liberusoftware/jetstream-bridge](../../../modules/source/liberusoftware--jetstream-bridge.md) | [api](../api/jetstream-bridge.md) · [nextjs](../nextjs/jetstream-bridge.md) |
 | [Lettings Core Module](lettings.md) | [liberusoftware/real-estate-lettings](../../../modules/source/liberusoftware--real-estate-lettings.md) | [api](../api/lettings.md) · [nextjs](../nextjs/lettings.md) |
 | [Listings Core Module](listings.md) | [liberusoftware/real-estate-listings](../../../modules/source/liberusoftware--real-estate-listings.md) | [api](../api/listings.md) · [nextjs](../nextjs/listings.md) |
-| [Livewire Core Module](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [api](../api/livewire.md) · [nextjs](../nextjs/livewire.md) |
 | [Localization Core Core Module](localization-core.md) | [liberusoftware/localization-core](../../../modules/source/liberusoftware--localization-core.md) | [api](../api/localization-core.md) · [nextjs](../nextjs/localization-core.md) |
 | [Localization Mymemory Core Module](localization-mymemory.md) | [liberusoftware/localization-mymemory](../../../modules/source/liberusoftware--localization-mymemory.md) | [api](../api/localization-mymemory.md) · [nextjs](../nextjs/localization-mymemory.md) |
 | [Marketing Core Module](marketing.md) | [liberusoftware/real-estate-marketing](../../../modules/source/liberusoftware--real-estate-marketing.md) | [api](../api/marketing.md) · [nextjs](../nextjs/marketing.md) |

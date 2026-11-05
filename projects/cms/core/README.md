@@ -1,7 +1,7 @@
 # CMS Core Modules
 
 <!-- catalogue-status:start -->
-This index preserves **252 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **249 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 This index covers the Laravel 13/PHP 8.5 core Composer packages for the CMS domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
@@ -123,9 +123,7 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the CMS doma
 | [Experimentation Core Module](experimentation.md) | [liberusoftware/module-cms-experimentation](../../../modules/source/liberusoftware--module-cms-experimentation.md) | [api](../api/experimentation.md) · [nextjs](../nextjs/experimentation.md) |
 | [Extension Manager Core Module](extension-manager.md) | [liberusoftware/module-cms-extension-manager](../../../modules/source/liberusoftware--module-cms-extension-manager.md) | [api](../api/extension-manager.md) · [nextjs](../nextjs/extension-manager.md) |
 | [Extension Marketplace Core Module](extension-marketplace.md) | [liberusoftware/module-cms-extension-marketplace](../../../modules/source/liberusoftware--module-cms-extension-marketplace.md) | [api](../api/extension-marketplace.md) · [nextjs](../nextjs/extension-marketplace.md) |
-| [Features Core Module](features.md) | [Target/source map](../SOURCE-MAPPING.md#features) | [api](../api/features.md) · [nextjs](../nextjs/features.md) |
 | [Field System Core Module](field-system.md) | [liberusoftware/module-cms-field-system](../../../modules/source/liberusoftware--module-cms-field-system.md) | [api](../api/field-system.md) · [nextjs](../nextjs/field-system.md) |
-| [Filament Core Module](filament.md) | [Target/source map](../SOURCE-MAPPING.md#filament) | [api](../api/filament.md) · [nextjs](../nextjs/filament.md) |
 | [Form Builder Core Module](form-builder.md) | [Target/source map](../SOURCE-MAPPING.md#form-builder) | [api](../api/form-builder.md) · [nextjs](../nextjs/form-builder.md) |
 | [Form Operations Core Module](form-operations.md) | [Target/source map](../SOURCE-MAPPING.md#form-operations) | [api](../api/form-operations.md) · [nextjs](../nextjs/form-operations.md) |
 | [Forums Integration Core Module](forums-integration.md) | [Target/source map](../SOURCE-MAPPING.md#forums-integration) | [api](../api/forums-integration.md) · [nextjs](../nextjs/forums-integration.md) |
@@ -136,7 +134,6 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the CMS doma
 | [Joomla Migration Core Module](joomla-migration.md) | [liberusoftware/module-cms-joomla-migration](../../../modules/source/liberusoftware--module-cms-joomla-migration.md) | [api](../api/joomla-migration.md) · [nextjs](../nextjs/joomla-migration.md) |
 | [Knowledge Base Core Module](knowledge-base.md) | [Target/source map](../SOURCE-MAPPING.md#knowledge-base) | [api](../api/knowledge-base.md) · [nextjs](../nextjs/knowledge-base.md) |
 | [Layout Builder Core Module](layout-builder.md) | [liberusoftware/module-cms-layout-builder](../../../modules/source/liberusoftware--module-cms-layout-builder.md) | [api](../api/layout-builder.md) · [nextjs](../nextjs/layout-builder.md) |
-| [Livewire Core Module](livewire.md) | [Target/source map](../SOURCE-MAPPING.md#livewire) | [api](../api/livewire.md) · [nextjs](../nextjs/livewire.md) |
 | [Localization Core Module](localization.md) | [Target/source map](../SOURCE-MAPPING.md#localization) | [api](../api/localization.md) · [nextjs](../nextjs/localization.md) |
 | [Media Assistant Core Module](media-assistant.md) | [Target/source map](../SOURCE-MAPPING.md#media-assistant) | [api](../api/media-assistant.md) · [nextjs](../nextjs/media-assistant.md) |
 | [Media Library Core Module](media-library.md) | [Target/source map](../SOURCE-MAPPING.md#media-library) | [api](../api/media-library.md) · [nextjs](../nextjs/media-library.md) |

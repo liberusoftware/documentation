@@ -66,7 +66,7 @@ This is an illustrative UI contract, not a claim about existing API response fie
 
 ## Reuse without competing owners
 
-Reuse one canonical domain owner and an explicit adapter home where compatibility is established. The [Next.js registry](../modules/nextjs/OWNERSHIP.md) maps 1,392 documented spellings to 617 plan groups and preserves source-identity naming collisions for review. Other layers should follow the same ownership principle rather than publishing a new implementation for every alternate design spelling.
+Reuse one canonical domain owner and an explicit adapter home where compatibility is established. The [Next.js registry](../modules/nextjs/OWNERSHIP.md) maps 1,384 documented spellings to 609 plan groups and preserves source-identity naming collisions for review. Other layers should follow the same ownership principle rather than publishing a new implementation for every alternate design spelling.
 
 An enterprise workspace can compose many existing product adapters. Accounting retains postings, Billing retains recurring commercial records, CRM retains relationship workflows, and physical operational owners retain their records. The workspace owns only its orchestration and authorized read model. See [shared ownership](SHARED-MODULES.md) and the [enterprise composition design](../projects/sap/COMPOSITION.md).
 

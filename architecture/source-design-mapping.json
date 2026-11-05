@@ -19928,21 +19928,6 @@
             "nextjs": []
           }
         },
-        "features": {
-          "design_alias": null,
-          "layers": {
-            "core": [],
-            "api": [],
-            "filament": [],
-            "livewire": [],
-            "react": [],
-            "vue": [],
-            "nuxt": [],
-            "react-native": [],
-            "flutter": [],
-            "nextjs": []
-          }
-        },
         "field-system": {
           "design_alias": null,
           "layers": {
@@ -19974,21 +19959,6 @@
                 "reference": "modules/source/liberusoftware--module-cms-field-system-livewire.md"
               }
             ],
-            "react": [],
-            "vue": [],
-            "nuxt": [],
-            "react-native": [],
-            "flutter": [],
-            "nextjs": []
-          }
-        },
-        "filament": {
-          "design_alias": null,
-          "layers": {
-            "core": [],
-            "api": [],
-            "filament": [],
-            "livewire": [],
             "react": [],
             "vue": [],
             "nuxt": [],
@@ -20211,21 +20181,6 @@
                 "reference": "modules/source/liberusoftware--module-cms-layout-builder-livewire.md"
               }
             ],
-            "react": [],
-            "vue": [],
-            "nuxt": [],
-            "react-native": [],
-            "flutter": [],
-            "nextjs": []
-          }
-        },
-        "livewire": {
-          "design_alias": null,
-          "layers": {
-            "core": [],
-            "api": [],
-            "filament": [],
-            "livewire": [],
             "react": [],
             "vue": [],
             "nuxt": [],
@@ -40283,21 +40238,6 @@
     "real-estate": {
       "repository": "project-real-estate-laravel-filament",
       "designs": {
-        ".graphify": {
-          "design_alias": null,
-          "layers": {
-            "core": [],
-            "api": [],
-            "filament": [],
-            "livewire": [],
-            "react": [],
-            "vue": [],
-            "nuxt": [],
-            "react-native": [],
-            "flutter": [],
-            "nextjs": []
-          }
-        },
         "activity-comments": {
           "design_alias": null,
           "layers": {
@@ -40446,21 +40386,6 @@
                 "reference": "modules/source/liberusoftware--analytics-meta-livewire.md"
               }
             ],
-            "react": [],
-            "vue": [],
-            "nuxt": [],
-            "react-native": [],
-            "flutter": [],
-            "nextjs": []
-          }
-        },
-        "api": {
-          "design_alias": null,
-          "layers": {
-            "core": [],
-            "api": [],
-            "filament": [],
-            "livewire": [],
             "react": [],
             "vue": [],
             "nuxt": [],
@@ -40734,36 +40659,6 @@
                 "reference": "modules/source/liberusoftware--feature-flags-livewire.md"
               }
             ],
-            "react": [],
-            "vue": [],
-            "nuxt": [],
-            "react-native": [],
-            "flutter": [],
-            "nextjs": []
-          }
-        },
-        "features": {
-          "design_alias": null,
-          "layers": {
-            "core": [],
-            "api": [],
-            "filament": [],
-            "livewire": [],
-            "react": [],
-            "vue": [],
-            "nuxt": [],
-            "react-native": [],
-            "flutter": [],
-            "nextjs": []
-          }
-        },
-        "filament": {
-          "design_alias": null,
-          "layers": {
-            "core": [],
-            "api": [],
-            "filament": [],
-            "livewire": [],
             "react": [],
             "vue": [],
             "nuxt": [],
@@ -41097,21 +40992,6 @@
                 "reference": "modules/source/liberusoftware--real-estate-listings-livewire.md"
               }
             ],
-            "react": [],
-            "vue": [],
-            "nuxt": [],
-            "react-native": [],
-            "flutter": [],
-            "nextjs": []
-          }
-        },
-        "livewire": {
-          "design_alias": null,
-          "layers": {
-            "core": [],
-            "api": [],
-            "filament": [],
-            "livewire": [],
             "react": [],
             "vue": [],
             "nuxt": [],
@@ -45109,6 +44989,40 @@
         }
       },
       "unmapped_observed_packages": []
+    }
+  },
+  "excluded_non_capabilities": {
+    "planned:cms:features": {
+      "reason": "Feature specification navigation index",
+      "sourceDirectory": "modules/features"
+    },
+    "planned:cms:filament": {
+      "reason": "Filament presentation navigation index",
+      "sourceDirectory": "modules/filament"
+    },
+    "planned:cms:livewire": {
+      "reason": "Livewire presentation navigation index",
+      "sourceDirectory": "modules/livewire"
+    },
+    "planned:real-estate:.graphify": {
+      "reason": "Local code-analysis cache, not application source",
+      "sourceDirectory": "modules/.graphify"
+    },
+    "planned:real-estate:api": {
+      "reason": "API adapter navigation index",
+      "sourceDirectory": "modules/api"
+    },
+    "planned:real-estate:features": {
+      "reason": "Feature specification navigation index",
+      "sourceDirectory": "modules/features"
+    },
+    "planned:real-estate:filament": {
+      "reason": "Filament presentation navigation index",
+      "sourceDirectory": "modules/filament"
+    },
+    "planned:real-estate:livewire": {
+      "reason": "Livewire presentation navigation index",
+      "sourceDirectory": "modules/livewire"
     }
   }
 }
