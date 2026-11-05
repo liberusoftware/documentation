@@ -12299,8 +12299,8 @@
       "intendedPackageIdentity": "liberusoftware/billing-cpanel-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "652abac6fe8d559343848962fb366a0129702bac",
       "identityReviewRequired": false
     },
     {
@@ -19240,8 +19240,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-cpanel-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "67180c63a2598ad273b0f89dee2db680334f3847",
       "identityReviewRequired": false
     },
     {
@@ -26181,8 +26181,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-cpanel-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4b005f05b3c55ada93d68e05319df8147048dd01",
       "identityReviewRequired": false
     },
     {
@@ -33122,7 +33122,7 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-cpanel-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -67816,8 +67816,8 @@
       "intendedPackageIdentity": "module_automation_voice_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "57cbbe51406b572add4b1404b5d20f85e06bc9cd",
       "identityReviewRequired": false
     },
     {
