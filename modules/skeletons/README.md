@@ -7,14 +7,14 @@ The complete matrix contains **5,679 module repository slots**. Of these, 567 we
 | Presentation | Catalog | Published skeletons | Verified existing source | Other slots |
 | --- | --- | ---: | ---: | ---: |
 | Laravel · Filament | [631 capabilities](laravel-filament.md) | 154 | 443 | 34 |
-| Laravel · Inertia · Vue | [631 capabilities](laravel-inertia-vue.md) | 269 | 0 | 362 |
-| Laravel · Inertia · React | [631 capabilities](laravel-inertia-react.md) | 269 | 0 | 362 |
-| Nuxt · Vue | [631 capabilities](nuxt-vue.md) | 269 | 0 | 362 |
-| Next.js · React | [631 capabilities](next-react.md) | 269 | 0 | 362 |
-| React Native · Expo | [631 capabilities](mobile-react.md) | 267 | 0 | 364 |
-| Flutter · Mobile | [631 capabilities](mobile-flutter.md) | 267 | 0 | 364 |
-| Dart · Desktop | [631 capabilities](dart-desktop.md) | 267 | 0 | 364 |
-| Dart · Mobile | [631 capabilities](dart-mobile.md) | 267 | 0 | 364 |
+| Laravel · Inertia · Vue | [631 capabilities](laravel-inertia-vue.md) | 285 | 0 | 346 |
+| Laravel · Inertia · React | [631 capabilities](laravel-inertia-react.md) | 285 | 0 | 346 |
+| Nuxt · Vue | [631 capabilities](nuxt-vue.md) | 285 | 0 | 346 |
+| Next.js · React | [631 capabilities](next-react.md) | 284 | 0 | 347 |
+| React Native · Expo | [631 capabilities](mobile-react.md) | 283 | 0 | 348 |
+| Flutter · Mobile | [631 capabilities](mobile-flutter.md) | 283 | 0 | 348 |
+| Dart · Desktop | [631 capabilities](dart-desktop.md) | 283 | 0 | 348 |
+| Dart · Mobile | [631 capabilities](dart-mobile.md) | 283 | 0 | 348 |
 
 ## Use and verify
 
