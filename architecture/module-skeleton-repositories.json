@@ -17227,8 +17227,8 @@
       "intendedPackageIdentity": "liberusoftware/real-estate-vr-design-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "db37c4b6b4ea5f834b7c271d258e319616077fc6",
       "identityReviewRequired": false
     },
     {
@@ -17304,8 +17304,8 @@
       "intendedPackageIdentity": "liberusoftware/theme-support-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "17f4df49366d5a47480a0d39319d58267cfb311e",
       "identityReviewRequired": false
     },
     {
@@ -17337,8 +17337,8 @@
       "intendedPackageIdentity": "liberusoftware/billing-module-billing-core-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bd83969ab41358a710e936f982456dc439f261ee",
       "identityReviewRequired": false
     },
     {
@@ -24124,8 +24124,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-rightmove-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "28dda654ecb8605b8badbd7f1d2c6a02281c7b92",
       "identityReviewRequired": false
     },
     {
@@ -24135,8 +24135,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-sales-progression-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d36bdc546882a3c1de3519c19a0c502241c0a808",
       "identityReviewRequired": false
     },
     {
@@ -24146,8 +24146,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-valuations-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8813a5a5eca3363b54720da91824929957a14d52",
       "identityReviewRequired": false
     },
     {
@@ -24157,8 +24157,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-viewings-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "692a24dc1945722e5404526846694d11ddbe83c8",
       "identityReviewRequired": false
     },
     {
@@ -24168,8 +24168,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-vr-design-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "accc32f4b33ac54d6226942dc8cc379ab2cc9f61",
       "identityReviewRequired": false
     },
     {
@@ -24179,8 +24179,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-zoopla-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d43910f5770b0d9fe27f82b0f99bafaf894b0ee7",
       "identityReviewRequired": false
     },
     {
@@ -24190,8 +24190,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-roles-permissions-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "09cfce958b1bf3958ef36db8573cd3d58f80f17e",
       "identityReviewRequired": false
     },
     {
@@ -24201,8 +24201,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-scheduler-queues-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c8875ebdb7b8dccce3eda071679b9d3b4c11ce9d",
       "identityReviewRequired": false
     },
     {
@@ -24212,8 +24212,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-search-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1a1e2bec29f33dc91218b56522dca40bd0cbf217",
       "identityReviewRequired": false
     },
     {
@@ -24223,8 +24223,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sessions-devices-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6a15a0eff713e54dd5b157f9abc2c9f142e68d2e",
       "identityReviewRequired": false
     },
     {
@@ -24234,8 +24234,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-settings-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "08852077ce34f4f9e92955bb8570f39c93e5ac3d",
       "identityReviewRequired": false
     },
     {
@@ -24245,8 +24245,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-theme-support-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "873a16b70a60a51db1eb6faf29c3164b52be739d",
       "identityReviewRequired": false
     },
     {
@@ -24256,8 +24256,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-two-factor-authentication-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a5a9d6c84ab2a46cb63983e8ed7f5b2f985a2ba1",
       "identityReviewRequired": false
     },
     {
@@ -24267,8 +24267,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-webhooks-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "203d672364881a98843812c7c95e9a8cb4d36087",
       "identityReviewRequired": false
     },
     {
@@ -24278,8 +24278,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-module-billing-core-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "76774972b6df59762ff7b8f208bdcbfae1f51528",
       "identityReviewRequired": false
     },
     {
@@ -24289,7 +24289,7 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-audit-and-history-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -31065,8 +31065,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-rightmove-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6390b9aff73d7a2a4748c278d6d5dc0f7a990902",
       "identityReviewRequired": false
     },
     {
@@ -31076,8 +31076,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-sales-progression-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c37546ff48d2ff1057d60c4d6d330503cca31a87",
       "identityReviewRequired": false
     },
     {
@@ -31087,8 +31087,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-valuations-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4cce21a6366d7b6c695be43304d688ad95ad8cf2",
       "identityReviewRequired": false
     },
     {
@@ -31098,8 +31098,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-viewings-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a623a045b75226750a834204eeb0441bd0235497",
       "identityReviewRequired": false
     },
     {
@@ -31109,8 +31109,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-vr-design-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "76d6d9759d5bb973148708408a26c64cb0dc0232",
       "identityReviewRequired": false
     },
     {
@@ -31120,8 +31120,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-zoopla-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3701a39b4cce0c548657ff0fbdf0a9e2b7857c1c",
       "identityReviewRequired": false
     },
     {
@@ -31131,8 +31131,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-roles-permissions-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "aa9a147cfa8ede544493e5d81c1e4e852924a846",
       "identityReviewRequired": false
     },
     {
@@ -31142,8 +31142,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-scheduler-queues-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0e1c9ad864a323b4c8319e408e80a63870808dee",
       "identityReviewRequired": false
     },
     {
@@ -31153,8 +31153,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-search-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "60a6b3b7fc911ba46e5835690fd0485bbe30e120",
       "identityReviewRequired": false
     },
     {
@@ -31164,8 +31164,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sessions-devices-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f0e3e7cf4bcdcb865afea250ed667824263d4be9",
       "identityReviewRequired": false
     },
     {
@@ -31175,8 +31175,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-settings-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9811387268c72ee4a3556c73038975f540818919",
       "identityReviewRequired": false
     },
     {
@@ -31186,8 +31186,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-theme-support-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "28d7c10421ae88a2770a4594b38d04deb73ed1fe",
       "identityReviewRequired": false
     },
     {
@@ -31197,8 +31197,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-two-factor-authentication-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ad6bb8c949001a02cde96682ef655ed061bc43c0",
       "identityReviewRequired": false
     },
     {
@@ -31208,8 +31208,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-webhooks-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e0545de3e11448843b5187a2dc4745766f7a3070",
       "identityReviewRequired": false
     },
     {
@@ -31219,8 +31219,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-module-billing-core-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b26fce9811ee9b082e5c6e0d78a4bc89e9a9b14e",
       "identityReviewRequired": false
     },
     {
@@ -38006,8 +38006,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-rightmove-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d1493a2d46918eba0d2ca2c465eb2197bb5a0699",
       "identityReviewRequired": false
     },
     {
@@ -38017,8 +38017,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-sales-progression-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "855284f7656d19a046dc99a62c899284a5e4f161",
       "identityReviewRequired": false
     },
     {
@@ -38028,8 +38028,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-valuations-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "df0a6de482063df1a59e9c7b6814468ff590202a",
       "identityReviewRequired": false
     },
     {
@@ -38039,8 +38039,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-viewings-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "165a3c12e606c0cf9075c5c778c279ba195e6b78",
       "identityReviewRequired": false
     },
     {
@@ -38050,8 +38050,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-vr-design-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2b078d6208357f987b8ff3ac703080b6bff4186a",
       "identityReviewRequired": false
     },
     {
@@ -38061,8 +38061,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-zoopla-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "de00ecd109b8219b982299698062fb12cc9b016e",
       "identityReviewRequired": false
     },
     {
@@ -38072,8 +38072,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-roles-permissions-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2304efe7b1cf24ff1668550a04d5dce981c87ef9",
       "identityReviewRequired": false
     },
     {
@@ -38083,8 +38083,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-scheduler-queues-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7611ad50067cf31d7d3d3e55acc6de8ea7596ef2",
       "identityReviewRequired": false
     },
     {
@@ -38094,8 +38094,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-search-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e1f82803112843aa96f28a810f7bbdf5a05fb80d",
       "identityReviewRequired": false
     },
     {
@@ -38105,8 +38105,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sessions-devices-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "397de3a1beef8978aa23c0f7d0c69417fcaa7e40",
       "identityReviewRequired": false
     },
     {
@@ -38116,8 +38116,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-settings-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "541e004d6a31caa7ec863f10f7334dee36b029f0",
       "identityReviewRequired": false
     },
     {
@@ -38127,8 +38127,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-theme-support-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a749e81e15807f87f64be9efd85fefbe9444d106",
       "identityReviewRequired": false
     },
     {
@@ -38138,8 +38138,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-two-factor-authentication-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "990f4d17c5ffa86d05b83e713ffccb0d63e63229",
       "identityReviewRequired": false
     },
     {
@@ -38149,8 +38149,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-webhooks-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "66b008c0e54402276e35dacce0975b252d3611b2",
       "identityReviewRequired": false
     },
     {
@@ -38160,8 +38160,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-module-billing-core-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "39203529f53e91e4fad40249a1e4e27fa2a6a346",
       "identityReviewRequired": false
     },
     {
@@ -44947,8 +44947,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-rightmove-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e2942f97a10b948fdecdfbdc278b39af2ffe8354",
       "identityReviewRequired": false
     },
     {
@@ -44958,8 +44958,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-sales-progression-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "996da5ecff4e12a022dad4d3779c1168c4201605",
       "identityReviewRequired": false
     },
     {
@@ -44969,8 +44969,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-valuations-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "385409a0c5826370b5b0544fc475bfe1beb62845",
       "identityReviewRequired": false
     },
     {
@@ -44980,8 +44980,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-viewings-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3515e633fa173da789c13e25e95ede9a04f5fac2",
       "identityReviewRequired": false
     },
     {
@@ -44991,8 +44991,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-vr-design-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "85eeb7a609741f0bbd6be8342fd76cb72619e1ee",
       "identityReviewRequired": false
     },
     {
@@ -45002,8 +45002,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-zoopla-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "99971df4b6e7c32e90e7bd414707d8f6c5ffa24e",
       "identityReviewRequired": false
     },
     {
@@ -45013,8 +45013,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-roles-permissions-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d77f5c8d13ac8ef8b8196dfdba115e5987fc49e4",
       "identityReviewRequired": false
     },
     {
@@ -45024,8 +45024,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-scheduler-queues-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8927b3cb0a84fd6d59258b131b3bd33f797ea3de",
       "identityReviewRequired": false
     },
     {
@@ -45035,8 +45035,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-search-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e13707774c007b2a3624cb33db92140580e42ad8",
       "identityReviewRequired": false
     },
     {
@@ -45046,8 +45046,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sessions-devices-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "56074f8175d2ed4638701d1bb2bee071bac897de",
       "identityReviewRequired": false
     },
     {
@@ -45057,8 +45057,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-settings-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "27c884b2d7ca90f65e50e827a30cf03426f1d6a7",
       "identityReviewRequired": false
     },
     {
@@ -45068,8 +45068,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-theme-support-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "431398188c5f342619db99f1f0506cfac2a21ec2",
       "identityReviewRequired": false
     },
     {
@@ -45079,8 +45079,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-two-factor-authentication-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8f0150748cb9e6b32e17babfeef9d6f8f35adbea",
       "identityReviewRequired": false
     },
     {
@@ -45090,8 +45090,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-webhooks-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cd8ff0e65523deb13c0c869804d2fb82661bf724",
       "identityReviewRequired": false
     },
     {
@@ -45101,8 +45101,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-module-billing-core-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bef08777352277b0d48188c36e0f90915261564d",
       "identityReviewRequired": false
     },
     {
@@ -51888,8 +51888,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-rightmove-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dfce0eda05754e52b11030f2964c3c5bb2bdaa89",
       "identityReviewRequired": false
     },
     {
@@ -51899,8 +51899,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-sales-progression-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fa1d0b4c26e54f5f397d85c16e7e9fe819b4a9ea",
       "identityReviewRequired": false
     },
     {
@@ -51910,8 +51910,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-valuations-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e77957a1f21320e3ddd81b5417b165294e0a1ab8",
       "identityReviewRequired": false
     },
     {
@@ -51921,8 +51921,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-viewings-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4ea833b51dcf91c5e80fe7733d01fb618d404c03",
       "identityReviewRequired": false
     },
     {
@@ -51932,8 +51932,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-vr-design-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d2cd2ab7fe954afacc152f74f97e37b1e9755a43",
       "identityReviewRequired": false
     },
     {
@@ -51943,8 +51943,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-zoopla-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bfd34db44480cde08419e84d6f6e24aa34f762e0",
       "identityReviewRequired": false
     },
     {
@@ -51954,8 +51954,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-roles-permissions-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "09e288cb9598b5163795ffd95e48f72b627f9604",
       "identityReviewRequired": false
     },
     {
@@ -51965,8 +51965,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-scheduler-queues-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2b8f608057ac19741310a99bcfc7bf650cf671b5",
       "identityReviewRequired": false
     },
     {
@@ -51976,8 +51976,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-search-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2328e90572ac6d510d80fca31f59eec42e8205df",
       "identityReviewRequired": false
     },
     {
@@ -51987,8 +51987,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sessions-devices-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "543e60a3ab37160ed1cf06e1c85d1eb0c0536267",
       "identityReviewRequired": false
     },
     {
@@ -51998,8 +51998,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-settings-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "32c48092753663e6a001f4759c4e0911e76a97fc",
       "identityReviewRequired": false
     },
     {
@@ -52009,8 +52009,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-theme-support-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "469051890547dd925f9b5fb2e8a24730291e29de",
       "identityReviewRequired": false
     },
     {
@@ -52020,8 +52020,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-two-factor-authentication-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "42a7dbd26434b51c0219452b1df3e400a128b207",
       "identityReviewRequired": false
     },
     {
@@ -52031,8 +52031,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-webhooks-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ead17c0469e802118e67558895158c4934eb1882",
       "identityReviewRequired": false
     },
     {
@@ -52042,8 +52042,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-module-billing-core-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6b0e46216365f5f72d1aede43583f31031f3b302",
       "identityReviewRequired": false
     },
     {
@@ -58829,8 +58829,8 @@
       "intendedPackageIdentity": "module_real_estate_rightmove_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bdec103daa05a437d3785fda634f2b2937d636fd",
       "identityReviewRequired": false
     },
     {
@@ -58840,8 +58840,8 @@
       "intendedPackageIdentity": "module_real_estate_sales_progression_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "63018d10d1daf6e2b62cc8eabdbf51c40f27c82f",
       "identityReviewRequired": false
     },
     {
@@ -58851,8 +58851,8 @@
       "intendedPackageIdentity": "module_real_estate_valuations_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "81020ba6dd1cca1773e99d41b4d99d0c0009a9b2",
       "identityReviewRequired": false
     },
     {
@@ -58862,8 +58862,8 @@
       "intendedPackageIdentity": "module_real_estate_viewings_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d2076978c4b84f4191f2ac1b38d15b10ca3dd4a6",
       "identityReviewRequired": false
     },
     {
@@ -58873,8 +58873,8 @@
       "intendedPackageIdentity": "module_real_estate_vr_design_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cea898d48e20befacb9b65d9f0f03b85c5934d65",
       "identityReviewRequired": false
     },
     {
@@ -58884,8 +58884,8 @@
       "intendedPackageIdentity": "module_real_estate_zoopla_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fe9e18d2dd1450dd21a1b1f7a9c83b658e2b9c1f",
       "identityReviewRequired": false
     },
     {
@@ -58895,8 +58895,8 @@
       "intendedPackageIdentity": "module_roles_permissions_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4e8fd2c0105894ac6bb1a1d38f06739b61bafff8",
       "identityReviewRequired": false
     },
     {
@@ -58906,8 +58906,8 @@
       "intendedPackageIdentity": "module_scheduler_queues_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "02fd2e3082a59dd81f7745dc0bb597f921a488c8",
       "identityReviewRequired": false
     },
     {
@@ -58917,8 +58917,8 @@
       "intendedPackageIdentity": "module_search_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "70699cb8ddc530065f7b1504c577c41234ad81f0",
       "identityReviewRequired": false
     },
     {
@@ -58928,8 +58928,8 @@
       "intendedPackageIdentity": "module_sessions_devices_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "26e6d0be6e2d2a99c6c407f969acef60386a666b",
       "identityReviewRequired": false
     },
     {
@@ -58939,8 +58939,8 @@
       "intendedPackageIdentity": "module_settings_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4af25385b36bd0dcae7c5f538e68b3229f95a118",
       "identityReviewRequired": false
     },
     {
@@ -58950,8 +58950,8 @@
       "intendedPackageIdentity": "module_theme_support_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "76e14b9e9f89844862d632f77f1886fe58815b79",
       "identityReviewRequired": false
     },
     {
@@ -58961,8 +58961,8 @@
       "intendedPackageIdentity": "module_two_factor_authentication_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d2e6ff8ab32e2a69b55ddf6e00ff716a49d5886f",
       "identityReviewRequired": false
     },
     {
@@ -58972,8 +58972,8 @@
       "intendedPackageIdentity": "module_webhooks_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a97fe13980c1c452887c649a7b4bf0cf8b3d30b8",
       "identityReviewRequired": false
     },
     {
@@ -58983,8 +58983,8 @@
       "intendedPackageIdentity": "module_billing_module_billing_core_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e70d9fd55a9343996da48f2ebf4951d0e47ba3c2",
       "identityReviewRequired": false
     },
     {
@@ -65759,8 +65759,8 @@
       "intendedPackageIdentity": "module_real_estate_property_management_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "76faf2b8bb481b491914f7b401f48c0f84e1d825",
       "identityReviewRequired": false
     },
     {
@@ -65770,8 +65770,8 @@
       "intendedPackageIdentity": "module_real_estate_rightmove_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "24be5a34599e8ff7ac777f20365f70d8c1917047",
       "identityReviewRequired": false
     },
     {
@@ -65781,8 +65781,8 @@
       "intendedPackageIdentity": "module_real_estate_sales_progression_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b7fdfa8194a3abb0b662a07ac6e73a3325a24e2e",
       "identityReviewRequired": false
     },
     {
@@ -65792,8 +65792,8 @@
       "intendedPackageIdentity": "module_real_estate_valuations_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b0c2859f3e716d98db6842f2a508c4ebe220ea93",
       "identityReviewRequired": false
     },
     {
@@ -65803,8 +65803,8 @@
       "intendedPackageIdentity": "module_real_estate_viewings_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a19cf4804af038a5604e5a388cd0a82183c6141a",
       "identityReviewRequired": false
     },
     {
@@ -65814,8 +65814,8 @@
       "intendedPackageIdentity": "module_real_estate_vr_design_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "083366d72094ca249ce9e14a627ce18e97b35b75",
       "identityReviewRequired": false
     },
     {
@@ -65825,8 +65825,8 @@
       "intendedPackageIdentity": "module_real_estate_zoopla_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fe9471e74413e8d8b053f0a89330128731ac741e",
       "identityReviewRequired": false
     },
     {
@@ -65836,8 +65836,8 @@
       "intendedPackageIdentity": "module_roles_permissions_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b26a0a90acd44d52728237fa0149cb1c4a9f17fd",
       "identityReviewRequired": false
     },
     {
@@ -65847,8 +65847,8 @@
       "intendedPackageIdentity": "module_scheduler_queues_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b1646a74ac31fa418f6866f3b3417385607e92eb",
       "identityReviewRequired": false
     },
     {
@@ -65858,8 +65858,8 @@
       "intendedPackageIdentity": "module_search_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3a91ef8f6e443d8f3f20eaaefa25f7878a760445",
       "identityReviewRequired": false
     },
     {
@@ -65869,8 +65869,8 @@
       "intendedPackageIdentity": "module_sessions_devices_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9ecc036ed9e7e715c5be2fb6a6b66280f1b397cc",
       "identityReviewRequired": false
     },
     {
@@ -65880,8 +65880,8 @@
       "intendedPackageIdentity": "module_settings_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6aff271c04324fd674f808d484209dc4c04e15be",
       "identityReviewRequired": false
     },
     {
@@ -65891,8 +65891,8 @@
       "intendedPackageIdentity": "module_theme_support_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bb3469a1ffb930aa36276382829bf8ead35825a1",
       "identityReviewRequired": false
     },
     {
@@ -65902,8 +65902,8 @@
       "intendedPackageIdentity": "module_two_factor_authentication_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0b6f880b3a7cf77ad25fe153099df03229150448",
       "identityReviewRequired": false
     },
     {
@@ -65913,8 +65913,8 @@
       "intendedPackageIdentity": "module_webhooks_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "49e86fbf2ce8069be6278fc8e577701f9e42f2f4",
       "identityReviewRequired": false
     },
     {
@@ -65924,8 +65924,8 @@
       "intendedPackageIdentity": "module_billing_module_billing_core_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "425840467bfc4990ec7a4f1c869ab864d17364cf",
       "identityReviewRequired": false
     },
     {
@@ -72700,8 +72700,8 @@
       "intendedPackageIdentity": "module_real_estate_property_management_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2d21b93d170b2502fd005f97c644867c683ba15f",
       "identityReviewRequired": false
     },
     {
@@ -72711,8 +72711,8 @@
       "intendedPackageIdentity": "module_real_estate_rightmove_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ccd2608ddc90a6caba58aeddbecc3f7f7c7bd4e2",
       "identityReviewRequired": false
     },
     {
@@ -72722,8 +72722,8 @@
       "intendedPackageIdentity": "module_real_estate_sales_progression_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "afa984a4d68f56043ab555215b920b4cbc649f0f",
       "identityReviewRequired": false
     },
     {
@@ -72733,8 +72733,8 @@
       "intendedPackageIdentity": "module_real_estate_valuations_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c74facba5e1d75de85049b34228b20039d9d333c",
       "identityReviewRequired": false
     },
     {
@@ -72744,8 +72744,8 @@
       "intendedPackageIdentity": "module_real_estate_viewings_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6b557cabb09b5ececa9d863fa2139519fefc9f04",
       "identityReviewRequired": false
     },
     {
@@ -72755,8 +72755,8 @@
       "intendedPackageIdentity": "module_real_estate_vr_design_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "46a16c498a3e5031ec3aae4514611e70a07732a3",
       "identityReviewRequired": false
     },
     {
@@ -72766,8 +72766,8 @@
       "intendedPackageIdentity": "module_real_estate_zoopla_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7ccfaeada8f2d00ee90d8aa1f90f027b3fdef5e2",
       "identityReviewRequired": false
     },
     {
@@ -72777,8 +72777,8 @@
       "intendedPackageIdentity": "module_roles_permissions_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4386a2cfefb3864eeb45f60aa8c360ef1b7edb07",
       "identityReviewRequired": false
     },
     {
@@ -72788,8 +72788,8 @@
       "intendedPackageIdentity": "module_scheduler_queues_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1f02b737e6a6b6810fa5f70956666cafa7e09630",
       "identityReviewRequired": false
     },
     {
@@ -72799,8 +72799,8 @@
       "intendedPackageIdentity": "module_search_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "689e139e493029806d0bc18d9876f2fe401f8e59",
       "identityReviewRequired": false
     },
     {
@@ -72810,8 +72810,8 @@
       "intendedPackageIdentity": "module_sessions_devices_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1614b8f26ab50bf245dc674168d7e66c1f8ba576",
       "identityReviewRequired": false
     },
     {
@@ -72821,8 +72821,8 @@
       "intendedPackageIdentity": "module_settings_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d6f2089c33f2306cb6df83ded59f2aaa4bc47a17",
       "identityReviewRequired": false
     },
     {
@@ -72832,8 +72832,8 @@
       "intendedPackageIdentity": "module_theme_support_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "462c3ed3782e4aa7abf9ca03d89f0464dbc501fa",
       "identityReviewRequired": false
     },
     {
@@ -72843,8 +72843,8 @@
       "intendedPackageIdentity": "module_two_factor_authentication_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "625afe14caed932254ddb9316e7ff1b7ebf34800",
       "identityReviewRequired": false
     },
     {
@@ -72854,8 +72854,8 @@
       "intendedPackageIdentity": "module_webhooks_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ff031432e942ee52ee138443e4529298509e88bd",
       "identityReviewRequired": false
     },
     {
@@ -72865,8 +72865,8 @@
       "intendedPackageIdentity": "module_billing_module_billing_core_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7b203dee4def0f08e9f73cea815ab989e1858b05",
       "identityReviewRequired": false
     },
     {
