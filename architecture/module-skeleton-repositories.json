@@ -14114,8 +14114,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-admin-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ac4686f8c76d335897e962e749a6bc640d5b08ac",
       "identityReviewRequired": false
     },
     {
@@ -20868,8 +20868,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-usage-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a7ac4b122137d9cedd31aa279fad68f92ac38ff7",
       "identityReviewRequired": false
     },
     {
@@ -20879,8 +20879,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-accounts-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "70b2d0db8c1911feb51a51258253bed5a789cf4d",
       "identityReviewRequired": false
     },
     {
@@ -20890,8 +20890,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-characters-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "48c94386fa984901053fa1451dae3213353a6207",
       "identityReviewRequired": false
     },
     {
@@ -20901,8 +20901,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-collections-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "98c3e1eae1e7f204af7772390281aa1534e4bba4",
       "identityReviewRequired": false
     },
     {
@@ -20912,8 +20912,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-combat-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2122cbaab0cd5b2abc2463a4e91360832d6fd6d4",
       "identityReviewRequired": false
     },
     {
@@ -20923,8 +20923,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-commerce-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cef1de7a334bbc07eb47aa0ea3d85fec55e34502",
       "identityReviewRequired": false
     },
     {
@@ -20934,8 +20934,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-competition-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "29225ba03b23df60d71eaae25ceeef9a9b7cc3f4",
       "identityReviewRequired": false
     },
     {
@@ -20945,8 +20945,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-crafting-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9fce6dcaccc80aced514d118b7a68ebdbc44a40a",
       "identityReviewRequired": false
     },
     {
@@ -20956,8 +20956,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-economy-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8711e7352da6bf4a188104dcb03d8723b3652cf8",
       "identityReviewRequired": false
     },
     {
@@ -20967,8 +20967,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-game-core-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c3e34ce4849351aa77b21ed6dbc79937e0dc7e81",
       "identityReviewRequired": false
     },
     {
@@ -20978,8 +20978,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-items-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8462aeb10bb3117d96454933089cd3e19bab3ad2",
       "identityReviewRequired": false
     },
     {
@@ -20989,8 +20989,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-live-ops-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d8282db60ca97a6f0f2cdffe56f34adc96b85201",
       "identityReviewRequired": false
     },
     {
@@ -21000,8 +21000,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-moderation-and-analytics-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "93b0c3ac5c79cf0c7fe834175537f66cc8c606a0",
       "identityReviewRequired": false
     },
     {
@@ -21011,8 +21011,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-quests-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b0550fa667470e5466627cc9791c7e666f5ea0d0",
       "identityReviewRequired": false
     },
     {
@@ -21022,8 +21022,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-social-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "763a9e3e59ae0fd0b287b64e345f1b943548fc48",
       "identityReviewRequired": false
     },
     {
@@ -21033,8 +21033,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-world-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6c319b45c25ef66661fbab228c35e1ddaf1b5651",
       "identityReviewRequired": false
     },
     {
@@ -21044,8 +21044,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-accessibility-assistant-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "75c8c46c7b3306e6a00ae01547bfaf1425f06ccf",
       "identityReviewRequired": false
     },
     {
@@ -21055,8 +21055,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-admin-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9726d837d294c8db8def775952e9afce8d5e9880",
       "identityReviewRequired": false
     },
     {
@@ -21066,8 +21066,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-analytics-integration-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b84ec909faaf1a52148cde5ecbeb417b4ca2d545",
       "identityReviewRequired": false
     },
     {
@@ -27809,8 +27809,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-usage-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "856f01f7a5f11d131c1c2eee8004f69e2a6744ee",
       "identityReviewRequired": false
     },
     {
@@ -27820,8 +27820,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-accounts-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c3ef4c68b834e16c634327e889461d5bf22c9403",
       "identityReviewRequired": false
     },
     {
@@ -27831,8 +27831,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-characters-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fcc9ab4cfeb1db45b09f1cbdf20a9d4756158dbe",
       "identityReviewRequired": false
     },
     {
@@ -27842,8 +27842,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-collections-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e319e57e71965a0c0b76db34ca283f54c52a946a",
       "identityReviewRequired": false
     },
     {
@@ -27853,8 +27853,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-combat-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "870780c623c67fa2aa6049db45536b7c49a07eac",
       "identityReviewRequired": false
     },
     {
@@ -27864,8 +27864,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-commerce-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6b416bea9198e0f52786e8e729f3b1a65077454c",
       "identityReviewRequired": false
     },
     {
@@ -27875,8 +27875,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-competition-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "925457d31a8fe82b26c81fab694f7dd08de127e3",
       "identityReviewRequired": false
     },
     {
@@ -27886,8 +27886,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-crafting-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d03e95635a183aa8edd922fcea3134f5289300a2",
       "identityReviewRequired": false
     },
     {
@@ -27897,8 +27897,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-economy-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6c26d8b46b715a04e2243c52c6803a26d92e2fdd",
       "identityReviewRequired": false
     },
     {
@@ -27908,8 +27908,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-game-core-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a87cd7071f7871388f22f8530133a0a19e83cc4a",
       "identityReviewRequired": false
     },
     {
@@ -27919,8 +27919,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-items-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "08397c9bfa9aa6b90d9cc82fff5f23b75fa7116f",
       "identityReviewRequired": false
     },
     {
@@ -27930,8 +27930,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-live-ops-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5088fe09f18a0326fd310e0acd89b7a5127ddd1c",
       "identityReviewRequired": false
     },
     {
@@ -27941,8 +27941,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-moderation-and-analytics-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a713fca1ae88cead8a650d58176b630f54f1c92b",
       "identityReviewRequired": false
     },
     {
@@ -27952,8 +27952,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-quests-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "274ed1c46f8c5510dde1b9613bd2389f80d8efe2",
       "identityReviewRequired": false
     },
     {
@@ -27963,8 +27963,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-social-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4199fda01f4ee828c13623600aa16625541b94c2",
       "identityReviewRequired": false
     },
     {
@@ -27974,8 +27974,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-world-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "18055c3e386943707d0217f76fcbfc0aa2403013",
       "identityReviewRequired": false
     },
     {
@@ -27985,8 +27985,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-accessibility-assistant-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9ed97b0d5e677fa2eab108ce30835f8b06e67611",
       "identityReviewRequired": false
     },
     {
@@ -27996,8 +27996,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-admin-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bfe3b5f44e083a792155225d07f03e017950d103",
       "identityReviewRequired": false
     },
     {
@@ -28007,8 +28007,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-analytics-integration-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "97cd24ca83244717b4e26afc4eb3152d2d82739d",
       "identityReviewRequired": false
     },
     {
@@ -34750,8 +34750,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-usage-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "54edda2851160eeadbbd2e52d9fb8ac2f9bcab88",
       "identityReviewRequired": false
     },
     {
@@ -34761,8 +34761,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-accounts-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bc34cb34333d553d8bb51d239c0120d596957320",
       "identityReviewRequired": false
     },
     {
@@ -34772,8 +34772,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-characters-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7aebbb8219d5d97adb71866bef84ed320942cf50",
       "identityReviewRequired": false
     },
     {
@@ -34783,8 +34783,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-collections-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "590a0a40b27eec10706a16316da01a46519cf03d",
       "identityReviewRequired": false
     },
     {
@@ -34794,8 +34794,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-combat-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "222bc205192ceb766c75fb9bfc951ddfbd747ff6",
       "identityReviewRequired": false
     },
     {
@@ -34805,8 +34805,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-commerce-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c46fe15014962a2c201e020d0a1dbe3ca3a0be49",
       "identityReviewRequired": false
     },
     {
@@ -34816,8 +34816,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-competition-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7108de4c33b13a96935b1906574181ce5b478cd2",
       "identityReviewRequired": false
     },
     {
@@ -34827,8 +34827,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-crafting-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0761f46c6ef6fa7a848423cd98712aa6bab90c9c",
       "identityReviewRequired": false
     },
     {
@@ -34838,8 +34838,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-economy-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "da3755513d8b7003ab6e44b5b5dc554961411200",
       "identityReviewRequired": false
     },
     {
@@ -34849,8 +34849,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-game-core-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a566505f6861dc68342842be797447eb9af1d047",
       "identityReviewRequired": false
     },
     {
@@ -34860,8 +34860,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-items-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4f071d1ad65636cc605d5a2423699b93ff5109bb",
       "identityReviewRequired": false
     },
     {
@@ -34871,8 +34871,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-live-ops-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1393671661a37fdeb354ce204a32072271a6af2e",
       "identityReviewRequired": false
     },
     {
@@ -34882,8 +34882,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-moderation-and-analytics-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f3c99d364bf7752060b08e010a5492ff1169a337",
       "identityReviewRequired": false
     },
     {
@@ -34893,8 +34893,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-quests-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5e8bbe8822cf69eae4fafe8209359feb3fee9bb6",
       "identityReviewRequired": false
     },
     {
@@ -34904,8 +34904,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-social-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d0cdd4e13d21efd06a81c5bf6f74949ee8a552b0",
       "identityReviewRequired": false
     },
     {
@@ -34915,8 +34915,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-world-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f0d930a86ff20fc8b2f506856446e5e7a184421d",
       "identityReviewRequired": false
     },
     {
@@ -34926,8 +34926,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-accessibility-assistant-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ec10583b374bf0a5ff772a006f2825f2842e4463",
       "identityReviewRequired": false
     },
     {
@@ -34937,8 +34937,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-admin-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "311a58c43fdec2419372d3e48f21f8dc73dd6475",
       "identityReviewRequired": false
     },
     {
@@ -34948,8 +34948,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-analytics-integration-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a9dd30ca839bb71546cd0e19b6a33a80d88b68a1",
       "identityReviewRequired": false
     },
     {
@@ -41691,8 +41691,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-usage-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "18da891197da5a87a1f0176a4f9b5638f1f925fd",
       "identityReviewRequired": false
     },
     {
@@ -41702,8 +41702,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-accounts-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "246ff01d627fc9d24183a494e3ef598c0ee95e8a",
       "identityReviewRequired": false
     },
     {
@@ -41713,8 +41713,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-characters-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7e1ad4a3df14717e693e00f4ccb11e70c785f8f6",
       "identityReviewRequired": false
     },
     {
@@ -41724,8 +41724,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-collections-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e240259277320e287f596cfbcd6d3bf6a91e4317",
       "identityReviewRequired": false
     },
     {
@@ -41735,8 +41735,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-combat-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b229b16f8fb7e3039aa0f146428c319ecd31d91f",
       "identityReviewRequired": false
     },
     {
@@ -41746,8 +41746,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-commerce-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3b87d144eaec5a782fd8e0783e6d6985f39f6f27",
       "identityReviewRequired": false
     },
     {
@@ -41757,8 +41757,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-competition-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "330d2d9e01d9395bfd819c454a1a4fa9973f0598",
       "identityReviewRequired": false
     },
     {
@@ -41768,8 +41768,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-crafting-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "14b6c113ca885463d893cdb1a78d4a61fa83e2e1",
       "identityReviewRequired": false
     },
     {
@@ -41779,8 +41779,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-economy-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "97f9e28c4cea83c6fd0defde8e65c9a592744b87",
       "identityReviewRequired": false
     },
     {
@@ -41790,8 +41790,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-game-core-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "02383ebe823311da898b0e3fae4251b6cd624d6d",
       "identityReviewRequired": false
     },
     {
@@ -41801,8 +41801,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-items-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a48c0aa7e94b97d020b61cf81d91b98e2b9de1ed",
       "identityReviewRequired": false
     },
     {
@@ -41812,8 +41812,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-live-ops-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "24bcf4c01c870f98b960c182dd9afb23053d4969",
       "identityReviewRequired": false
     },
     {
@@ -41823,8 +41823,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-moderation-and-analytics-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "421f28be88a6295ac752f2e8e6a18849ec7d384d",
       "identityReviewRequired": false
     },
     {
@@ -41834,8 +41834,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-quests-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ed2a93769132fec0d73f617f67a3fca07a7ef124",
       "identityReviewRequired": false
     },
     {
@@ -41845,8 +41845,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-social-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6b84302445329c8f973b24e05627a9b57f4bb22c",
       "identityReviewRequired": false
     },
     {
@@ -41856,8 +41856,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-world-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f25630d3cbdab0539a3b10eb9dbf99779b177bed",
       "identityReviewRequired": false
     },
     {
@@ -41867,8 +41867,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-accessibility-assistant-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "31c6635c4656e2693f9627425bc6c78d60846e7d",
       "identityReviewRequired": false
     },
     {
@@ -41878,8 +41878,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-admin-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a7c0935b741d16e404ddcf98ff200735684e54e1",
       "identityReviewRequired": false
     },
     {
@@ -41889,7 +41889,7 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-analytics-integration-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -48632,8 +48632,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-billing-usage-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a2f299045c700060e1969fc0bc62d3b4217d7b14",
       "identityReviewRequired": false
     },
     {
@@ -48643,8 +48643,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-accounts-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9ee9528493b781fd1d5be97a5e1769eaf2a6e251",
       "identityReviewRequired": false
     },
     {
@@ -48654,8 +48654,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-characters-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7a77cfbd8525f4a5b4659270d85ef52a64120a12",
       "identityReviewRequired": false
     },
     {
@@ -48665,8 +48665,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-collections-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "788c4c5b8d0e534a7402ac074842f2803c8aca1d",
       "identityReviewRequired": false
     },
     {
@@ -48676,8 +48676,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-combat-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b2cb995ca840890e9e9cf776c02926bab5783671",
       "identityReviewRequired": false
     },
     {
@@ -48687,8 +48687,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-commerce-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4d0bbae96459cc39d027f7bee9acd13bb2dfd87b",
       "identityReviewRequired": false
     },
     {
@@ -48698,8 +48698,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-competition-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c5c9fe63bebaf51d8393598544045ae3665a0e4f",
       "identityReviewRequired": false
     },
     {
@@ -48709,8 +48709,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-crafting-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6b32129d749b8c8c89ae55788434662a423c5372",
       "identityReviewRequired": false
     },
     {
@@ -48720,8 +48720,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-economy-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "388c9a9b15d05d6b2f6b2ee59093919c5f57dba7",
       "identityReviewRequired": false
     },
     {
@@ -48731,8 +48731,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-game-core-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6692dc8e6e72976a225daa5ad3a101360b797d89",
       "identityReviewRequired": false
     },
     {
@@ -48742,8 +48742,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-items-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "683ece70765e552d614afdd0798ce76a9d8ec992",
       "identityReviewRequired": false
     },
     {
@@ -48753,8 +48753,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-live-ops-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e9ae3a4a66d86006c5598edee48072c07111af4a",
       "identityReviewRequired": false
     },
     {
@@ -48764,8 +48764,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-moderation-and-analytics-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b42c274c3d8f5e6de45f51c8827bc36db3fe7871",
       "identityReviewRequired": false
     },
     {
@@ -48775,8 +48775,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-quests-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bac192651c8c1fe9a0159c36b2c205af56c8c562",
       "identityReviewRequired": false
     },
     {
@@ -48786,8 +48786,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-social-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d877847dbb1732ecc4ef6d32e930681e188abdbb",
       "identityReviewRequired": false
     },
     {
@@ -48797,8 +48797,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-browser-game-world-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a4c1a946160d2751101e38d30aadc011741d20e3",
       "identityReviewRequired": false
     },
     {
@@ -48808,8 +48808,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-accessibility-assistant-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3e485c6acbb7506b5d54042ff0b41efe2e231664",
       "identityReviewRequired": false
     },
     {
@@ -48819,8 +48819,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-admin-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "05818e2b7ebe2494eb10cba15833102f6ee435ce",
       "identityReviewRequired": false
     },
     {
@@ -55573,8 +55573,8 @@
       "intendedPackageIdentity": "module_billing_usage_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d2d0fed02efa9390ffca04ab17886b69bd6ee4ab",
       "identityReviewRequired": false
     },
     {
@@ -55584,8 +55584,8 @@
       "intendedPackageIdentity": "module_browser_game_accounts_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "df9db2ebc1a452ee3a2422820aefa0468baa503c",
       "identityReviewRequired": false
     },
     {
@@ -55595,8 +55595,8 @@
       "intendedPackageIdentity": "module_browser_game_characters_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "be1bb979862c522d90823b25cafe702aefb12228",
       "identityReviewRequired": false
     },
     {
@@ -55606,8 +55606,8 @@
       "intendedPackageIdentity": "module_browser_game_collections_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f423190f882fb286ec65525d86f604340425f578",
       "identityReviewRequired": false
     },
     {
@@ -55617,8 +55617,8 @@
       "intendedPackageIdentity": "module_browser_game_combat_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "96255c484f34911b05c25c9c565d18392c1befa3",
       "identityReviewRequired": false
     },
     {
@@ -55628,8 +55628,8 @@
       "intendedPackageIdentity": "module_browser_game_commerce_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0d8822736b151985b3d28a2027962e4d7de0fdb4",
       "identityReviewRequired": false
     },
     {
@@ -55639,8 +55639,8 @@
       "intendedPackageIdentity": "module_browser_game_competition_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "56e323ff0a64c3f81be19a292b098b377438d042",
       "identityReviewRequired": false
     },
     {
@@ -55650,8 +55650,8 @@
       "intendedPackageIdentity": "module_browser_game_crafting_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "52e6b9aae5943afc4eb60c5b27f1fa79df0dbb72",
       "identityReviewRequired": false
     },
     {
@@ -55661,8 +55661,8 @@
       "intendedPackageIdentity": "module_browser_game_economy_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "89cafe4e98238b3db99e9a4d94154ec3cc10225d",
       "identityReviewRequired": false
     },
     {
@@ -55672,8 +55672,8 @@
       "intendedPackageIdentity": "module_browser_game_game_core_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "db002a423df5ae9af4af4e2cf45bacc66256820d",
       "identityReviewRequired": false
     },
     {
@@ -55683,8 +55683,8 @@
       "intendedPackageIdentity": "module_browser_game_items_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "54a48800603358fc619ea5d52153effbdc970b84",
       "identityReviewRequired": false
     },
     {
@@ -55694,8 +55694,8 @@
       "intendedPackageIdentity": "module_browser_game_live_ops_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1d42d0253f92febffaae945b1f94cad928a3d915",
       "identityReviewRequired": false
     },
     {
@@ -55705,8 +55705,8 @@
       "intendedPackageIdentity": "module_browser_game_moderation_and_analytics_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4a11183337a585eec2885b4d1d8c40d558c40b7e",
       "identityReviewRequired": false
     },
     {
@@ -55716,8 +55716,8 @@
       "intendedPackageIdentity": "module_browser_game_quests_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7709798d8723b2995b5380c3529c579a196b391f",
       "identityReviewRequired": false
     },
     {
@@ -55727,8 +55727,8 @@
       "intendedPackageIdentity": "module_browser_game_social_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d9b8c73995159b62450afcbf25b977b0f57dfaf4",
       "identityReviewRequired": false
     },
     {
@@ -55738,8 +55738,8 @@
       "intendedPackageIdentity": "module_browser_game_world_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b95b46985936f7d5626a60f443a8e50dc5a442da",
       "identityReviewRequired": false
     },
     {
@@ -55749,8 +55749,8 @@
       "intendedPackageIdentity": "module_cms_accessibility_assistant_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "29855864518322f3bf1cca9d15ce816cc5349b42",
       "identityReviewRequired": false
     },
     {
@@ -55760,8 +55760,8 @@
       "intendedPackageIdentity": "module_cms_admin_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a0d710fc8c2ef786caa7f7cb6fa3add97ab8a073",
       "identityReviewRequired": false
     },
     {
@@ -62503,8 +62503,8 @@
       "intendedPackageIdentity": "module_billing_subscriptions_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cb778de7917d929ed6a952b42aa6eb48e93cb396",
       "identityReviewRequired": false
     },
     {
@@ -62514,8 +62514,8 @@
       "intendedPackageIdentity": "module_billing_usage_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dda4c7676d3918ee5352451e536eeec3e7c1ba87",
       "identityReviewRequired": false
     },
     {
@@ -62525,8 +62525,8 @@
       "intendedPackageIdentity": "module_browser_game_accounts_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "daa33056dd7621b6c0b2f476869ed8ce5046ed2a",
       "identityReviewRequired": false
     },
     {
@@ -62536,8 +62536,8 @@
       "intendedPackageIdentity": "module_browser_game_characters_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2e01b9b99e8e731a2460041a3bd98e6f13d2437e",
       "identityReviewRequired": false
     },
     {
@@ -62547,8 +62547,8 @@
       "intendedPackageIdentity": "module_browser_game_collections_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "859bb6143e3ae61125f85caf37236d9a57e71669",
       "identityReviewRequired": false
     },
     {
@@ -62558,8 +62558,8 @@
       "intendedPackageIdentity": "module_browser_game_combat_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "94d461698753de7706e2d615957a9af2f19cd359",
       "identityReviewRequired": false
     },
     {
@@ -62569,8 +62569,8 @@
       "intendedPackageIdentity": "module_browser_game_commerce_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c6048da29e2209a022296fbd75b9050c217c0413",
       "identityReviewRequired": false
     },
     {
@@ -62580,8 +62580,8 @@
       "intendedPackageIdentity": "module_browser_game_competition_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "54b743261cfefbc5d1983954a3a5f5b5bf06d157",
       "identityReviewRequired": false
     },
     {
@@ -62591,8 +62591,8 @@
       "intendedPackageIdentity": "module_browser_game_crafting_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6bf9fa87fa39794b77f92cbca78718342e4d15f7",
       "identityReviewRequired": false
     },
     {
@@ -62602,8 +62602,8 @@
       "intendedPackageIdentity": "module_browser_game_economy_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "29f6c82b984fb5de394540fec840a7531d3a657f",
       "identityReviewRequired": false
     },
     {
@@ -62613,8 +62613,8 @@
       "intendedPackageIdentity": "module_browser_game_game_core_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e03979bfdcaf1996c955ea1bf3a546d6ebe960d0",
       "identityReviewRequired": false
     },
     {
@@ -62624,8 +62624,8 @@
       "intendedPackageIdentity": "module_browser_game_items_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a08f6026cadf4eb63e42de9d319f41fb762cff9e",
       "identityReviewRequired": false
     },
     {
@@ -62635,8 +62635,8 @@
       "intendedPackageIdentity": "module_browser_game_live_ops_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "87b29d031c37c636d93681d7e3e5be61d277ea69",
       "identityReviewRequired": false
     },
     {
@@ -62646,8 +62646,8 @@
       "intendedPackageIdentity": "module_browser_game_moderation_and_analytics_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c894ec7abbf8d8a74984536d303e11130b61c1ef",
       "identityReviewRequired": false
     },
     {
@@ -62657,8 +62657,8 @@
       "intendedPackageIdentity": "module_browser_game_quests_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3dd998e036ec660e4d77e4689236c54a6855cfef",
       "identityReviewRequired": false
     },
     {
@@ -62668,8 +62668,8 @@
       "intendedPackageIdentity": "module_browser_game_social_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d681d0c9d23a1df24dcf547824017d0b1daaeb54",
       "identityReviewRequired": false
     },
     {
@@ -62679,8 +62679,8 @@
       "intendedPackageIdentity": "module_browser_game_world_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6b3694c93f9f46e10774f4c73549b21f2494cfde",
       "identityReviewRequired": false
     },
     {
@@ -62690,8 +62690,8 @@
       "intendedPackageIdentity": "module_cms_accessibility_assistant_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "10278b7c7a8528e3adca471c0b45eac9e411aa2f",
       "identityReviewRequired": false
     },
     {
@@ -62701,8 +62701,8 @@
       "intendedPackageIdentity": "module_cms_admin_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a7054c7f0dea271bd37257346975b8f361b145cd",
       "identityReviewRequired": false
     },
     {
@@ -69444,8 +69444,8 @@
       "intendedPackageIdentity": "module_billing_subscriptions_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "981eef0f406a25b8851cb4121d2a51f8774d4b45",
       "identityReviewRequired": false
     },
     {
@@ -69455,8 +69455,8 @@
       "intendedPackageIdentity": "module_billing_usage_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7690b90616f6815acf874f1816d8fee87a027803",
       "identityReviewRequired": false
     },
     {
@@ -69466,8 +69466,8 @@
       "intendedPackageIdentity": "module_browser_game_accounts_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "081836fb5f73970fea0b56e227f27fb9cc48002a",
       "identityReviewRequired": false
     },
     {
@@ -69477,8 +69477,8 @@
       "intendedPackageIdentity": "module_browser_game_characters_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5caa510f4d9c845be1b8bc15f96e93d6146cbc9a",
       "identityReviewRequired": false
     },
     {
@@ -69488,8 +69488,8 @@
       "intendedPackageIdentity": "module_browser_game_collections_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0979d5670d1d41a586658ff1b0a964455c413e30",
       "identityReviewRequired": false
     },
     {
@@ -69499,8 +69499,8 @@
       "intendedPackageIdentity": "module_browser_game_combat_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f8bedafc59c20f0f99c044b14c35045eafd60e78",
       "identityReviewRequired": false
     },
     {
@@ -69510,8 +69510,8 @@
       "intendedPackageIdentity": "module_browser_game_commerce_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "68b3b8f5f22015f6d6120ef0394f3cbfb69778e6",
       "identityReviewRequired": false
     },
     {
@@ -69521,8 +69521,8 @@
       "intendedPackageIdentity": "module_browser_game_competition_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d64074a117f706e6342bbfb258fa7fac96131cf9",
       "identityReviewRequired": false
     },
     {
@@ -69532,8 +69532,8 @@
       "intendedPackageIdentity": "module_browser_game_crafting_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2b034c0b991b97cb95cd33a6c5752fda6ec2e8b0",
       "identityReviewRequired": false
     },
     {
@@ -69543,8 +69543,8 @@
       "intendedPackageIdentity": "module_browser_game_economy_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0a439495ee7e0f7c75b9f698dc7adef212571e2d",
       "identityReviewRequired": false
     },
     {
@@ -69554,8 +69554,8 @@
       "intendedPackageIdentity": "module_browser_game_game_core_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ff613d8fdc200ace561ff9d1004de640a556473f",
       "identityReviewRequired": false
     },
     {
@@ -69565,8 +69565,8 @@
       "intendedPackageIdentity": "module_browser_game_items_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7bc64e5e29337bb928d493c7d82b94d3c8e3fd6b",
       "identityReviewRequired": false
     },
     {
@@ -69576,8 +69576,8 @@
       "intendedPackageIdentity": "module_browser_game_live_ops_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c7b37498eb4f943784afce932c1f8642fb6aaae7",
       "identityReviewRequired": false
     },
     {
@@ -69587,8 +69587,8 @@
       "intendedPackageIdentity": "module_browser_game_moderation_and_analytics_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "43ba194c345c4e69840fc3d9536cb6398f19166f",
       "identityReviewRequired": false
     },
     {
@@ -69598,8 +69598,8 @@
       "intendedPackageIdentity": "module_browser_game_quests_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0d7efb388e92a9383fe4e55702e3dd63013da8c2",
       "identityReviewRequired": false
     },
     {
@@ -69609,8 +69609,8 @@
       "intendedPackageIdentity": "module_browser_game_social_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b4dba4b7e3860c3d070d5d1dbc24eeb27f838dd0",
       "identityReviewRequired": false
     },
     {
@@ -69620,8 +69620,8 @@
       "intendedPackageIdentity": "module_browser_game_world_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "af99b7d5da71c20ed173e23863d657b1ce970ff5",
       "identityReviewRequired": false
     },
     {
@@ -69631,8 +69631,8 @@
       "intendedPackageIdentity": "module_cms_accessibility_assistant_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f0b029691026ebb611b5e92d171b7e606c3c9b81",
       "identityReviewRequired": false
     },
     {
@@ -69642,8 +69642,8 @@
       "intendedPackageIdentity": "module_cms_admin_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3fbd2ede4c264b65c8f371f9b992b4a26162fb26",
       "identityReviewRequired": false
     },
     {
