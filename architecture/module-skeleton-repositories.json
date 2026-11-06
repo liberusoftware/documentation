@@ -23959,8 +23959,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-organizations-teams-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1d94ffd5e0586fedc211319e11b77dc3604e31c7",
       "identityReviewRequired": false
     },
     {
@@ -23970,8 +23970,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-profiles-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f59331d6428254e06c4773e349153b1adf579dc2",
       "identityReviewRequired": false
     },
     {
@@ -23981,8 +23981,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-core-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bbe4a905b26b5cbcbeff3eba4b5017740af36857",
       "identityReviewRequired": false
     },
     {
@@ -23992,8 +23992,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-instructions-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "afe1118af7195d7b5dd46486dff735f4230e4e5d",
       "identityReviewRequired": false
     },
     {
@@ -24003,8 +24003,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-lettings-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "573e1e3b39a3a235916bb8d55ecfec7bfab1fe53",
       "identityReviewRequired": false
     },
     {
@@ -24014,8 +24014,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-listings-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "798932e4f16edff4a777a95557c410504b118633",
       "identityReviewRequired": false
     },
     {
@@ -24025,8 +24025,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-marketing-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fad5084977ba7fd47b052af54350ea8a4325d099",
       "identityReviewRequired": false
     },
     {
@@ -24036,8 +24036,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-matching-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2b7a07a4672bd35f00bc362ad9305d32fe54a37a",
       "identityReviewRequired": false
     },
     {
@@ -24047,8 +24047,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-media-and-documents-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "53734bad76aea148633f2bf9585e623f542bd7b2",
       "identityReviewRequired": false
     },
     {
@@ -24058,8 +24058,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-offers-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "54a977c8e1c6a7e7275f58c680400d6a1f8d7bf7",
       "identityReviewRequired": false
     },
     {
@@ -24069,8 +24069,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-onthemarket-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a63f75c10371679c658309c8c8696f0df6a9510e",
       "identityReviewRequired": false
     },
     {
@@ -24080,8 +24080,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-parties-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2c529218f041586dc8c7ff9606a5816d7f482863",
       "identityReviewRequired": false
     },
     {
@@ -24091,8 +24091,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-portals-reporting-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c60d3500b23483c4f8508f62e7013c5499996aba",
       "identityReviewRequired": false
     },
     {
@@ -24102,8 +24102,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-properties-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3ba9d9d38bf82eb2ecda56ee9c0bffcd3d50252e",
       "identityReviewRequired": false
     },
     {
@@ -24113,8 +24113,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-property-management-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2a7ab2d435bd8f585d04c25ee378f5f0f8213350",
       "identityReviewRequired": false
     },
     {
@@ -30900,8 +30900,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-organizations-teams-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a2ab87409e4269024b9826871b94872bb43b4138",
       "identityReviewRequired": false
     },
     {
@@ -30911,8 +30911,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-profiles-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a98ff1caa6d9ec86b42ed67bcd3d40b471576e76",
       "identityReviewRequired": false
     },
     {
@@ -30922,8 +30922,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-core-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6c14e92ce42934ff324a684598034433be9bc7b3",
       "identityReviewRequired": false
     },
     {
@@ -30933,8 +30933,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-instructions-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ccb1c21bf88b8f7c7804844f1ac04c914286c7a0",
       "identityReviewRequired": false
     },
     {
@@ -30944,8 +30944,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-lettings-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1694f5d5f320e54bf9f5fce1882d9879c3fd9b06",
       "identityReviewRequired": false
     },
     {
@@ -30955,8 +30955,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-listings-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3b6f2c4a98ed194b5e93f02d04d41bcbe52fc253",
       "identityReviewRequired": false
     },
     {
@@ -30966,8 +30966,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-marketing-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1dbf8562862dd25931ec4e3cd1a7467cea8e32a6",
       "identityReviewRequired": false
     },
     {
@@ -30977,8 +30977,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-matching-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "32ca52361bac67bb6fe3aa307ba65bb047ba5128",
       "identityReviewRequired": false
     },
     {
@@ -30988,8 +30988,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-media-and-documents-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "08bf58176d065f216ef3caa6a26009346a4412ab",
       "identityReviewRequired": false
     },
     {
@@ -30999,8 +30999,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-offers-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3b81a924aba18626568a4769f5166be0ab54b405",
       "identityReviewRequired": false
     },
     {
@@ -31010,8 +31010,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-onthemarket-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "48ece7030a2f24bdbe03a49b93d5e1af1b77d849",
       "identityReviewRequired": false
     },
     {
@@ -31021,8 +31021,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-parties-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7606284eda644f0518d54f2c94f563e988b990b4",
       "identityReviewRequired": false
     },
     {
@@ -31032,8 +31032,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-portals-reporting-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "12fc6f934513d725b8ba201956b5b2e3a7df15e2",
       "identityReviewRequired": false
     },
     {
@@ -31043,8 +31043,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-properties-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8e246bb3f2d58f13b1704c02bd1276c391571378",
       "identityReviewRequired": false
     },
     {
@@ -31054,8 +31054,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-property-management-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6bbdf99dc1211c54db606b3270598afcdef0209f",
       "identityReviewRequired": false
     },
     {
@@ -37841,8 +37841,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-organizations-teams-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dcb9cb57c739044669a9e05685d2ef57c15652e0",
       "identityReviewRequired": false
     },
     {
@@ -37852,8 +37852,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-profiles-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d50ff17a6f21458cd9f0c47461ffc93af555c87f",
       "identityReviewRequired": false
     },
     {
@@ -37863,8 +37863,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-core-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "624c59a03262ebc09f5c4a76520b3f094002d8ad",
       "identityReviewRequired": false
     },
     {
@@ -37874,8 +37874,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-instructions-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9550c42320264aebd5da83367e2b2d45ea5b32b0",
       "identityReviewRequired": false
     },
     {
@@ -37885,8 +37885,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-lettings-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c7ed71d85d3f119778fd30535d993a4f1afeff62",
       "identityReviewRequired": false
     },
     {
@@ -37896,8 +37896,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-listings-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "327a07627f952e3b11ff580c32f4abb619436726",
       "identityReviewRequired": false
     },
     {
@@ -37907,8 +37907,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-marketing-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c6ad37ff6cf834b897242d8fc6bcf072d6fce564",
       "identityReviewRequired": false
     },
     {
@@ -37918,8 +37918,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-matching-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c31ae6701ca82fe20c10df6d0d521f5305c3cd84",
       "identityReviewRequired": false
     },
     {
@@ -37929,8 +37929,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-media-and-documents-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "94a9587902c1f4a3ea767382ac74ce99911e59eb",
       "identityReviewRequired": false
     },
     {
@@ -37940,8 +37940,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-offers-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "00ff697504e766062abb2633076a79816c7c2dca",
       "identityReviewRequired": false
     },
     {
@@ -37951,8 +37951,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-onthemarket-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5676acb9cfc679ea810b4f2c76d8ddfde264bc9a",
       "identityReviewRequired": false
     },
     {
@@ -37962,8 +37962,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-parties-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a79a8723ac4bcf5db9d1cac19240f6d2a235e5e4",
       "identityReviewRequired": false
     },
     {
@@ -37973,8 +37973,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-portals-reporting-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4e2c9d0cf591a7f89937d756dd976a81985a0967",
       "identityReviewRequired": false
     },
     {
@@ -37984,8 +37984,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-properties-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3c736f88cdf3b94cd69d5792061fd00a446568ba",
       "identityReviewRequired": false
     },
     {
@@ -37995,8 +37995,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-property-management-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "87458fad1fd3e5c53d3fea2ad0f794dc6f0cafdb",
       "identityReviewRequired": false
     },
     {
@@ -44771,8 +44771,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-observability-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "de29cca3bff3712f7becb1af9ebc49f598885c9e",
       "identityReviewRequired": false
     },
     {
@@ -44782,8 +44782,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-organizations-teams-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "aee8b15572f1df51817eb7b2b3f8569646507b1c",
       "identityReviewRequired": false
     },
     {
@@ -44793,8 +44793,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-profiles-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "39a2594ca5361a0e758c11e2cbaab00b730b6bf9",
       "identityReviewRequired": false
     },
     {
@@ -44804,8 +44804,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-core-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d195d2b28579b8c963ad632197e43a83a3e739b0",
       "identityReviewRequired": false
     },
     {
@@ -44815,8 +44815,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-instructions-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7ddb7a56370d23f6906c757b834d26c796008a59",
       "identityReviewRequired": false
     },
     {
@@ -44826,8 +44826,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-lettings-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5e56d6a703a643cc49abb23983cef1e7ac9954f0",
       "identityReviewRequired": false
     },
     {
@@ -44837,8 +44837,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-listings-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bc16b5c33516fe3786b137c07ce6e3126027a9cf",
       "identityReviewRequired": false
     },
     {
@@ -44848,8 +44848,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-marketing-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c87a3643e8ecbc596267cee37618d3894f5cf47f",
       "identityReviewRequired": false
     },
     {
@@ -44859,8 +44859,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-matching-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "79f0386b509edfe5173faaa6ddd6a7b12e3c201c",
       "identityReviewRequired": false
     },
     {
@@ -44870,8 +44870,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-media-and-documents-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5cbf93a69b3ca346553e03141d607ed41431f7e5",
       "identityReviewRequired": false
     },
     {
@@ -44881,8 +44881,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-offers-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "350bc2b50c0fa8893f2704ab3978c43c07e633fb",
       "identityReviewRequired": false
     },
     {
@@ -44892,8 +44892,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-onthemarket-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dd1747e786ea630e944fbfaf15768b4e36659fe9",
       "identityReviewRequired": false
     },
     {
@@ -44903,8 +44903,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-parties-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b1a805f7f5b4db9303ce82a28187126c308fc084",
       "identityReviewRequired": false
     },
     {
@@ -44914,8 +44914,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-portals-reporting-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0f089d868f07d89cca25a9f3d7e64ee42aa9774c",
       "identityReviewRequired": false
     },
     {
@@ -44925,8 +44925,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-properties-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3b3d6e03dd68530a00638025e8f40f9ffc956550",
       "identityReviewRequired": false
     },
     {
@@ -44936,8 +44936,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-property-management-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "106b9fa39601815b6c57c2fb8ee860abd25c672b",
       "identityReviewRequired": false
     },
     {
@@ -51712,8 +51712,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-observability-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3b0b5d76497c20dcde1f015f1797e56785417710",
       "identityReviewRequired": false
     },
     {
@@ -51723,8 +51723,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-organizations-teams-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ced5c872f083ecddb355d3d9e9b4c103111e5633",
       "identityReviewRequired": false
     },
     {
@@ -51734,8 +51734,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-profiles-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "88ed9a6f1206daa539601c84a4048437927a099c",
       "identityReviewRequired": false
     },
     {
@@ -51745,8 +51745,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-core-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b4d9c8729b58ae67d4506e3781fcbc28238266a2",
       "identityReviewRequired": false
     },
     {
@@ -51756,8 +51756,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-instructions-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8966f50de21ea7b82e9e700482c081bdc1e802ce",
       "identityReviewRequired": false
     },
     {
@@ -51767,8 +51767,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-lettings-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0e9760650e64be387f8098f7a676b7144c9f0193",
       "identityReviewRequired": false
     },
     {
@@ -51778,8 +51778,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-listings-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "87267074e18bd6bc6755f16f89c03dac41601e26",
       "identityReviewRequired": false
     },
     {
@@ -51789,8 +51789,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-marketing-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4a41b301d24d94f168b75f769c61d41465f4053f",
       "identityReviewRequired": false
     },
     {
@@ -51800,8 +51800,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-matching-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "39ede352202d870d174a421820a1f79446d3b001",
       "identityReviewRequired": false
     },
     {
@@ -51811,8 +51811,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-media-and-documents-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "10f15c0a908d54fc714fdaf288444b81de3174b8",
       "identityReviewRequired": false
     },
     {
@@ -51822,8 +51822,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-offers-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f8f5e01e298a78ecd43b8bf9f9d2ed68681a94e4",
       "identityReviewRequired": false
     },
     {
@@ -51833,8 +51833,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-onthemarket-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "eff399769a36dfdcf84e1f5b80dd3d4161e73ebd",
       "identityReviewRequired": false
     },
     {
@@ -51844,8 +51844,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-parties-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1477b17fc4d42b7d73d6c62eccea31dbd5313d80",
       "identityReviewRequired": false
     },
     {
@@ -51855,8 +51855,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-portals-reporting-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "63316b6baeb7c16315c3a5af45f8f349af7635d0",
       "identityReviewRequired": false
     },
     {
@@ -51866,8 +51866,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-properties-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2d8788b9e27135247ee9900a9b51559d3b357570",
       "identityReviewRequired": false
     },
     {
@@ -51877,8 +51877,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-property-management-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8591e214354bbe933680b5534c1fc1a9c7eb228f",
       "identityReviewRequired": false
     },
     {
@@ -58653,8 +58653,8 @@
       "intendedPackageIdentity": "module_observability_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f225c403401288206c83a8e5e16a09d9d4ca0d6",
       "identityReviewRequired": false
     },
     {
@@ -58664,8 +58664,8 @@
       "intendedPackageIdentity": "module_organizations_teams_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "007f2951951889f3853c6da14f769f9af03f26d5",
       "identityReviewRequired": false
     },
     {
@@ -58675,8 +58675,8 @@
       "intendedPackageIdentity": "module_profiles_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8d2fe374f33006a050af39af4b66951fc2781145",
       "identityReviewRequired": false
     },
     {
@@ -58686,8 +58686,8 @@
       "intendedPackageIdentity": "module_real_estate_core_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f4545f9776e6445239d8dc3b37587cf96deeef92",
       "identityReviewRequired": false
     },
     {
@@ -58697,8 +58697,8 @@
       "intendedPackageIdentity": "module_real_estate_instructions_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2cfbe8dd55bfac99d416cf6645f67670da017be5",
       "identityReviewRequired": false
     },
     {
@@ -58708,8 +58708,8 @@
       "intendedPackageIdentity": "module_real_estate_lettings_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5eae2ef7cdc0b32234d0edfe3108e372741f0bec",
       "identityReviewRequired": false
     },
     {
@@ -58719,8 +58719,8 @@
       "intendedPackageIdentity": "module_real_estate_listings_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "21fa77d04629403cb538509c9d290d82e0791a0b",
       "identityReviewRequired": false
     },
     {
@@ -58730,8 +58730,8 @@
       "intendedPackageIdentity": "module_real_estate_marketing_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1c889c4d97493a2e2408d7c029ffaf42d07b34b6",
       "identityReviewRequired": false
     },
     {
@@ -58741,8 +58741,8 @@
       "intendedPackageIdentity": "module_real_estate_matching_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e4ec0765649f4566ca55e8c4bfd054908cd49582",
       "identityReviewRequired": false
     },
     {
@@ -58752,8 +58752,8 @@
       "intendedPackageIdentity": "module_real_estate_media_and_documents_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f4d295e26c96d2b6dd5f6cb3c673e8317e262e23",
       "identityReviewRequired": false
     },
     {
@@ -58763,8 +58763,8 @@
       "intendedPackageIdentity": "module_real_estate_offers_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b72ce6e115f740ae3ad395839ffc02e682a16e04",
       "identityReviewRequired": false
     },
     {
@@ -58774,8 +58774,8 @@
       "intendedPackageIdentity": "module_real_estate_onthemarket_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d2fb1ef998de8b50fd83f80752af44df4d828526",
       "identityReviewRequired": false
     },
     {
@@ -58785,8 +58785,8 @@
       "intendedPackageIdentity": "module_real_estate_parties_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "73a47d765720109234202f0ad8c18718f9567db4",
       "identityReviewRequired": false
     },
     {
@@ -58796,8 +58796,8 @@
       "intendedPackageIdentity": "module_real_estate_portals_reporting_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2897b9c935c0473f3a9b1849cf9735b3b6685642",
       "identityReviewRequired": false
     },
     {
@@ -58807,8 +58807,8 @@
       "intendedPackageIdentity": "module_real_estate_properties_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3c4d1678d6e13194068f94a5c68754dabd1dfc57",
       "identityReviewRequired": false
     },
     {
@@ -58818,8 +58818,8 @@
       "intendedPackageIdentity": "module_real_estate_property_management_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6fab8c62a82789b9458b28ab777380ba3cfbe4be",
       "identityReviewRequired": false
     },
     {
@@ -65594,8 +65594,8 @@
       "intendedPackageIdentity": "module_observability_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "993c5b4f2dfffc11b709bb93672bf11719f75bbf",
       "identityReviewRequired": false
     },
     {
@@ -65605,8 +65605,8 @@
       "intendedPackageIdentity": "module_organizations_teams_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "84824d4da6beed173c0ed14568193d8522cbf532",
       "identityReviewRequired": false
     },
     {
@@ -65616,8 +65616,8 @@
       "intendedPackageIdentity": "module_profiles_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3bb8e185d2fbe68795de80252d963f1af953a7dc",
       "identityReviewRequired": false
     },
     {
@@ -65627,8 +65627,8 @@
       "intendedPackageIdentity": "module_real_estate_core_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9593caae6e3c03b480f34ef7669217f924fa013f",
       "identityReviewRequired": false
     },
     {
@@ -65638,8 +65638,8 @@
       "intendedPackageIdentity": "module_real_estate_instructions_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2394c4516734eac30ec304ff1fc941d96957158e",
       "identityReviewRequired": false
     },
     {
@@ -65649,8 +65649,8 @@
       "intendedPackageIdentity": "module_real_estate_lettings_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a95926cce9c3b0ea7acbea4fe6ac8469f23f2a70",
       "identityReviewRequired": false
     },
     {
@@ -65660,8 +65660,8 @@
       "intendedPackageIdentity": "module_real_estate_listings_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "48a57642d12f6e1e71b98856d0170167472dbdc2",
       "identityReviewRequired": false
     },
     {
@@ -65671,8 +65671,8 @@
       "intendedPackageIdentity": "module_real_estate_marketing_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "db97b1fbc5a810ae31450cb3304b7697263cce5f",
       "identityReviewRequired": false
     },
     {
@@ -65682,8 +65682,8 @@
       "intendedPackageIdentity": "module_real_estate_matching_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fe0ae5118e9949d6e4e8610a5fef8786f76b5437",
       "identityReviewRequired": false
     },
     {
@@ -65693,8 +65693,8 @@
       "intendedPackageIdentity": "module_real_estate_media_and_documents_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "91b6c3bbdc09b829cdaac9567d25c72bf654e1d1",
       "identityReviewRequired": false
     },
     {
@@ -65704,8 +65704,8 @@
       "intendedPackageIdentity": "module_real_estate_offers_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a560085557c0441453296f17856cee8b8253cf57",
       "identityReviewRequired": false
     },
     {
@@ -65715,8 +65715,8 @@
       "intendedPackageIdentity": "module_real_estate_onthemarket_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1c32df46cadd880c6669d674a79c114d35b23341",
       "identityReviewRequired": false
     },
     {
@@ -65726,8 +65726,8 @@
       "intendedPackageIdentity": "module_real_estate_parties_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fb09f382a6d49dfc4c1e67456eb22597bd6e65f0",
       "identityReviewRequired": false
     },
     {
@@ -65737,8 +65737,8 @@
       "intendedPackageIdentity": "module_real_estate_portals_reporting_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "24b435d25ccfd74b935fe2a578b3ccf24a386dbd",
       "identityReviewRequired": false
     },
     {
@@ -65748,8 +65748,8 @@
       "intendedPackageIdentity": "module_real_estate_properties_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "57ddb202cb7e6caa0455ba3b68a586fe122ef036",
       "identityReviewRequired": false
     },
     {
@@ -65759,7 +65759,7 @@
       "intendedPackageIdentity": "module_real_estate_property_management_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -72535,8 +72535,8 @@
       "intendedPackageIdentity": "module_observability_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9ccfb9d1af442570a0510eb6a79678d78e80fb11",
       "identityReviewRequired": false
     },
     {
@@ -72546,8 +72546,8 @@
       "intendedPackageIdentity": "module_organizations_teams_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2e93f057adec75c6dc6a75799e92d1f540d5c94b",
       "identityReviewRequired": false
     },
     {
@@ -72557,8 +72557,8 @@
       "intendedPackageIdentity": "module_profiles_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bce6fbad3c5b9c43516d094531e8045185a7d808",
       "identityReviewRequired": false
     },
     {
@@ -72568,8 +72568,8 @@
       "intendedPackageIdentity": "module_real_estate_core_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fa28ec09b684fa81eac61e9c09fbe8ab08449619",
       "identityReviewRequired": false
     },
     {
@@ -72579,8 +72579,8 @@
       "intendedPackageIdentity": "module_real_estate_instructions_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fb3e66d22c9b3048ff6bc91d2da3e35daddfb4a1",
       "identityReviewRequired": false
     },
     {
@@ -72590,8 +72590,8 @@
       "intendedPackageIdentity": "module_real_estate_lettings_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "452754d818588d29fd9690c88bcfd0c625f15df3",
       "identityReviewRequired": false
     },
     {
@@ -72601,8 +72601,8 @@
       "intendedPackageIdentity": "module_real_estate_listings_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8c7bca2ce9ddb78912849c78214fef99e9da66b7",
       "identityReviewRequired": false
     },
     {
@@ -72612,8 +72612,8 @@
       "intendedPackageIdentity": "module_real_estate_marketing_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b905cae02c3ef6ad5b14942f1116c9889ed8d4f2",
       "identityReviewRequired": false
     },
     {
@@ -72623,8 +72623,8 @@
       "intendedPackageIdentity": "module_real_estate_matching_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1e0b3fb10d3e8f50f55e9fe997cad778a3e84d85",
       "identityReviewRequired": false
     },
     {
@@ -72634,8 +72634,8 @@
       "intendedPackageIdentity": "module_real_estate_media_and_documents_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a8f0eee352d41c951b3e206314ec6254e3481be1",
       "identityReviewRequired": false
     },
     {
@@ -72645,8 +72645,8 @@
       "intendedPackageIdentity": "module_real_estate_offers_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0bc8c0bc7bc14b21fb7c5babdf75df27594c4bed",
       "identityReviewRequired": false
     },
     {
@@ -72656,8 +72656,8 @@
       "intendedPackageIdentity": "module_real_estate_onthemarket_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "872cb33b974b1581e84e2acf08fa5089c5b4d766",
       "identityReviewRequired": false
     },
     {
@@ -72667,8 +72667,8 @@
       "intendedPackageIdentity": "module_real_estate_parties_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f7d4785015f5c46219653456f338664ee555c126",
       "identityReviewRequired": false
     },
     {
@@ -72678,8 +72678,8 @@
       "intendedPackageIdentity": "module_real_estate_portals_reporting_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f2825ce34513c12ab1d26d141e24bac9066ba47",
       "identityReviewRequired": false
     },
     {
@@ -72689,8 +72689,8 @@
       "intendedPackageIdentity": "module_real_estate_properties_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "03c57ad2ef1e0a273eee1ee9c854a74a94b3d937",
       "identityReviewRequired": false
     },
     {
