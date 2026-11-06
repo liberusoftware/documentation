@@ -14136,8 +14136,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-api-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "40fa16d6dbca10258671952b3b31d3a852385336",
       "identityReviewRequired": false
     },
     {
@@ -14147,8 +14147,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-audit-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cabea8c2078104eb7ceed607a9015663ba252882",
       "identityReviewRequired": false
     },
     {
@@ -14180,8 +14180,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-blocks-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ce6c65e6b83cb1936513cb8d293baf11d6ceb957",
       "identityReviewRequired": false
     },
     {
@@ -14202,8 +14202,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-cms-copilot-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "af34433ef678b3ccc7dfab8618bff759b6bded1e",
       "identityReviewRequired": false
     },
     {
@@ -14213,8 +14213,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-collections-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "673d943d00b4dce3041384f98ceb3cc86f27ff26",
       "identityReviewRequired": false
     },
     {
@@ -14257,8 +14257,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-content-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "393e3314482c2d45ba305a6763a4fa3b083c1ef8",
       "identityReviewRequired": false
     },
     {
@@ -21077,8 +21077,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-api-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dc6f6f6dabeaccf9c55bfda322659df49a333bb0",
       "identityReviewRequired": false
     },
     {
@@ -21088,8 +21088,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-audit-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dcf4db89e9b15c3a83b779ac949109fab7236e80",
       "identityReviewRequired": false
     },
     {
@@ -21099,8 +21099,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-backup-and-restore-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0cb0cb67455fa42556e632a51d8e343906bc5af0",
       "identityReviewRequired": false
     },
     {
@@ -21110,8 +21110,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-block-editor-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "27ba8f7cb36b910dd886456742495815140d1861",
       "identityReviewRequired": false
     },
     {
@@ -21121,8 +21121,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-blocks-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e43d78928dcdf65da94df052a67bf5d4cb7168b1",
       "identityReviewRequired": false
     },
     {
@@ -21132,8 +21132,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-cache-and-performance-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9154e9b87912996d0ba318498600cc18da833890",
       "identityReviewRequired": false
     },
     {
@@ -21143,8 +21143,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-cms-copilot-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "830ecd30b20c65bf7e6da874a4e486ad596e9d15",
       "identityReviewRequired": false
     },
     {
@@ -21154,8 +21154,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-collections-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ceb83ad527e7842a016bbbca14c449a9875e86bc",
       "identityReviewRequired": false
     },
     {
@@ -21165,8 +21165,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-comments-and-discussion-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "14d0e079b4a4144d6a40ba72a26f965b4c20c531",
       "identityReviewRequired": false
     },
     {
@@ -21176,8 +21176,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-configuration-management-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b441251b73e1604e1d16a530ce29a8322358060b",
       "identityReviewRequired": false
     },
     {
@@ -21187,8 +21187,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-contact-directory-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "18c6353a277e525fec4821f229784af55c3ff960",
       "identityReviewRequired": false
     },
     {
@@ -21198,8 +21198,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "658e4f9ea279cf4f589c68cedbae826a32050751",
       "identityReviewRequired": false
     },
     {
@@ -21209,8 +21209,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-access-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f745bf8da0094f33183dc603b380ff5532155f5",
       "identityReviewRequired": false
     },
     {
@@ -21220,8 +21220,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-calendar-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "468bc839d94b1110deacf3a7cad5e3c6a9c6295f",
       "identityReviewRequired": false
     },
     {
@@ -21231,8 +21231,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-federation-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "85518128f2b8b4e8e9d08b70e7522e946b37e75c",
       "identityReviewRequired": false
     },
     {
@@ -21242,8 +21242,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-governance-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5b39d9b4732e6dbe3da89a1d6cbe5456ecda22c0",
       "identityReviewRequired": false
     },
     {
@@ -21253,8 +21253,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-integrity-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "45ef6b8f60b2b84f67eab4580e4144856ec376f7",
       "identityReviewRequired": false
     },
     {
@@ -21264,8 +21264,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-intelligence-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "26af6cb739e8600ee70361ebb071e20d4a585dcf",
       "identityReviewRequired": false
     },
     {
@@ -28018,8 +28018,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-api-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e2931f98738ebfdf531682bf37965f516f6a4320",
       "identityReviewRequired": false
     },
     {
@@ -28029,8 +28029,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-audit-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fd51beb296d5fc435abf19b03ebc92333a570dc1",
       "identityReviewRequired": false
     },
     {
@@ -28040,8 +28040,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-backup-and-restore-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "22f272eccb946a8a560dbd75edd5e1db09529395",
       "identityReviewRequired": false
     },
     {
@@ -28051,8 +28051,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-block-editor-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3c1783b1d32394af03b6e60475011d8dd293bb0e",
       "identityReviewRequired": false
     },
     {
@@ -28062,8 +28062,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-blocks-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a3e9addfb09bfe3c1dddc3e2ec29bb713c825c3a",
       "identityReviewRequired": false
     },
     {
@@ -28073,8 +28073,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-cache-and-performance-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1b206d64888e578beb608f14ff7f116d796570f2",
       "identityReviewRequired": false
     },
     {
@@ -28084,8 +28084,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-cms-copilot-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e9f1ba7f81def87e860400564cf41ff0fddde931",
       "identityReviewRequired": false
     },
     {
@@ -28095,8 +28095,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-collections-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4198fd496d1836c40582891fb285c09567c563cd",
       "identityReviewRequired": false
     },
     {
@@ -28106,8 +28106,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-comments-and-discussion-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fa8654bd66203b6d8ffddb1244b99bd34733ec10",
       "identityReviewRequired": false
     },
     {
@@ -28117,8 +28117,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-configuration-management-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "288ea4ad30361095c0f419676c5b713207647185",
       "identityReviewRequired": false
     },
     {
@@ -28128,8 +28128,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-contact-directory-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "37f7787b7c3864e8c8adca3c71592de8ad9adb85",
       "identityReviewRequired": false
     },
     {
@@ -28139,8 +28139,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9963d47f9f35b0908b842fd9432f79c4f77169b0",
       "identityReviewRequired": false
     },
     {
@@ -28150,8 +28150,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-access-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2d95ba11fb24c1925e63b8f92d04f517bdc92ea2",
       "identityReviewRequired": false
     },
     {
@@ -28161,8 +28161,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-calendar-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "df09c446bc159155b032cf723159d7dc9e33b618",
       "identityReviewRequired": false
     },
     {
@@ -28172,8 +28172,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-federation-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "18bfcb5b100c6b0c5da87a05e458082d3dabc93f",
       "identityReviewRequired": false
     },
     {
@@ -28183,8 +28183,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-governance-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ac6cd485e1c6e1ef11e1dbe33c5d5ec22b5fe38c",
       "identityReviewRequired": false
     },
     {
@@ -28194,8 +28194,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-integrity-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1202ae022431a13e515ca4cf225a7f73f6554996",
       "identityReviewRequired": false
     },
     {
@@ -28205,8 +28205,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-intelligence-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0b0ebdb8050dcdd0e4ca6b95fca838132d48e859",
       "identityReviewRequired": false
     },
     {
@@ -34959,8 +34959,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-api-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "064cf7a30f93a926b0f7416406f8521efcc47872",
       "identityReviewRequired": false
     },
     {
@@ -34970,8 +34970,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-audit-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "57350f342e84ce45d58f5194e27c9d9545be3864",
       "identityReviewRequired": false
     },
     {
@@ -34981,8 +34981,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-backup-and-restore-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3e78794e1d259d407463789f12629ce043f39629",
       "identityReviewRequired": false
     },
     {
@@ -34992,8 +34992,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-block-editor-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9fcbbc06085ff326a851a9f85aefda8027edec66",
       "identityReviewRequired": false
     },
     {
@@ -35003,8 +35003,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-blocks-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "015570b425c081d878fc8110f9d95548c48439e1",
       "identityReviewRequired": false
     },
     {
@@ -35014,8 +35014,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-cache-and-performance-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9e22513217e40bc937d6a28cd0e8929ff7d978a6",
       "identityReviewRequired": false
     },
     {
@@ -35025,8 +35025,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-cms-copilot-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9b05868520dd2876a0137301d748df5c69b9b89f",
       "identityReviewRequired": false
     },
     {
@@ -35036,8 +35036,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-collections-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "eacce28e692bedfbe64850c01bcd942ca9cb318c",
       "identityReviewRequired": false
     },
     {
@@ -35047,8 +35047,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-comments-and-discussion-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f31cb5c49212bc4a506270d740552ed23601924",
       "identityReviewRequired": false
     },
     {
@@ -35058,8 +35058,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-configuration-management-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ba9685657df1ae19d71521040daffaabaa284975",
       "identityReviewRequired": false
     },
     {
@@ -35069,8 +35069,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-contact-directory-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0e8560c326dd6680e8a61ced55f6acf6df05f595",
       "identityReviewRequired": false
     },
     {
@@ -35080,8 +35080,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c7fddc8936c361e575d8725b021e0744eb853e61",
       "identityReviewRequired": false
     },
     {
@@ -35091,8 +35091,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-access-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e2d004cb631ba67c0f0747e8385596c3d7d8878a",
       "identityReviewRequired": false
     },
     {
@@ -35102,8 +35102,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-calendar-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5e402d36ce65d64a46e7faf4fb20626f1178b664",
       "identityReviewRequired": false
     },
     {
@@ -35113,8 +35113,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-federation-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3f2ebee640ed6e2e148c20c6bfb0556adf48ecd3",
       "identityReviewRequired": false
     },
     {
@@ -35124,8 +35124,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-governance-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c1785253c5b8a13c63039a6bf8a2ead5ce387b7e",
       "identityReviewRequired": false
     },
     {
@@ -35135,8 +35135,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-integrity-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "09fbde508d4ab0cccaccbf02db615dd40d418f6e",
       "identityReviewRequired": false
     },
     {
@@ -35146,8 +35146,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-intelligence-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fd36e432ec6b263d2fbe8ebdea3f837fb3beab5b",
       "identityReviewRequired": false
     },
     {
@@ -41889,8 +41889,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-analytics-integration-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a8211f9954a9209575f4bdbfc86ab08c77e3334f",
       "identityReviewRequired": false
     },
     {
@@ -41900,8 +41900,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-api-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9fc941c09b4eb1234db04d2c0b3869626c80391c",
       "identityReviewRequired": false
     },
     {
@@ -41911,8 +41911,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-audit-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "edc469de0603ae15a64edbdaf16bdc9bf87741b6",
       "identityReviewRequired": false
     },
     {
@@ -41922,8 +41922,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-backup-and-restore-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5f0060266d698ccc102929129ec8798e4893a7eb",
       "identityReviewRequired": false
     },
     {
@@ -41933,8 +41933,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-block-editor-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0892a5dd07821baf232c68f84f1ccd8917ec55ba",
       "identityReviewRequired": false
     },
     {
@@ -41944,8 +41944,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-blocks-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c36e878fe3505c5b54202a59e19479fa6bb0ad95",
       "identityReviewRequired": false
     },
     {
@@ -41955,8 +41955,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-cache-and-performance-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5ddf7b41561f8c009b1189933fde9fa3cd073a88",
       "identityReviewRequired": false
     },
     {
@@ -41966,8 +41966,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-cms-copilot-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a2f0f52a1f1d0de7f7a959465c4049e195b3df16",
       "identityReviewRequired": false
     },
     {
@@ -41977,8 +41977,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-collections-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2c2f01fc00c2ba0891269f00ca512def4a9dfc95",
       "identityReviewRequired": false
     },
     {
@@ -41988,8 +41988,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-comments-and-discussion-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5ef9becbe6ed88281143cf95192cb03658d09982",
       "identityReviewRequired": false
     },
     {
@@ -41999,8 +41999,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-configuration-management-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5de394724a26d32ba5c3972596b69f159fab17e9",
       "identityReviewRequired": false
     },
     {
@@ -42010,8 +42010,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-contact-directory-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4d50ef9ba547bfa4071327f0bfa59e3a61cc6046",
       "identityReviewRequired": false
     },
     {
@@ -42021,8 +42021,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f4bb72786b02f01cf3e57422a1b964f0efde7888",
       "identityReviewRequired": false
     },
     {
@@ -42032,8 +42032,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-access-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fe51bb4230c1bc4882f130d33beb5c8501980eb4",
       "identityReviewRequired": false
     },
     {
@@ -42043,8 +42043,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-calendar-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "95f3fda0ea49ca9a3e7d49e21466913bf71d9448",
       "identityReviewRequired": false
     },
     {
@@ -42054,8 +42054,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-federation-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7ee1c3ed7a50ac3b7f4b6b6eb1651aac7ef7bd03",
       "identityReviewRequired": false
     },
     {
@@ -42065,8 +42065,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-governance-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "003b4e1394d5b73f98d5a3ccce68632a818e2299",
       "identityReviewRequired": false
     },
     {
@@ -42076,8 +42076,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-integrity-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ef293e290c220cabe506ae8ea0bd380044aa17d9",
       "identityReviewRequired": false
     },
     {
@@ -42087,7 +42087,7 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-intelligence-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -48830,8 +48830,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-analytics-integration-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8390505f5e303d81d1061ffa34ce698785567576",
       "identityReviewRequired": false
     },
     {
@@ -48841,8 +48841,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-api-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "74927b7df47e9d630e29634da3cc0c3875286c1c",
       "identityReviewRequired": false
     },
     {
@@ -48852,8 +48852,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-audit-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "36b60201bb5f02f26a323ef5fd740d6ee6c20a3a",
       "identityReviewRequired": false
     },
     {
@@ -48863,8 +48863,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-backup-and-restore-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "413c8deb5aad3e1a7f0119c23f5987887a7a439d",
       "identityReviewRequired": false
     },
     {
@@ -48874,8 +48874,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-block-editor-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8b5eefd0c5d3fa897eb356f02d143261a2f56ff2",
       "identityReviewRequired": false
     },
     {
@@ -48885,8 +48885,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-blocks-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4b05d07687706e5ae41a09221eae9c02a7ae739f",
       "identityReviewRequired": false
     },
     {
@@ -48896,8 +48896,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-cache-and-performance-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3730579907860f0ed5acf12d541338b1c05aaf9b",
       "identityReviewRequired": false
     },
     {
@@ -48907,8 +48907,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-cms-copilot-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d1537bddf61c850a3b3070ef2319714fa9cd769e",
       "identityReviewRequired": false
     },
     {
@@ -48918,8 +48918,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-collections-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f82c6c1469fa0d497c589c7bf78f654a204040de",
       "identityReviewRequired": false
     },
     {
@@ -48929,8 +48929,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-comments-and-discussion-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e9b2dcce84c99a2b94b1321404341b7ab1b74e0f",
       "identityReviewRequired": false
     },
     {
@@ -48940,8 +48940,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-configuration-management-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ecfebe36c7d3229724ee4a98623cdf72578b9bad",
       "identityReviewRequired": false
     },
     {
@@ -48951,8 +48951,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-contact-directory-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "25f750e6887092ec846aa85a99411482a0a3959f",
       "identityReviewRequired": false
     },
     {
@@ -48962,8 +48962,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ef955b1d4aa301b8e76d0354f2ba5a118d1a4e3a",
       "identityReviewRequired": false
     },
     {
@@ -48973,8 +48973,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-access-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3ac2f3992e31b266b43a8004a16246e0b4f0951b",
       "identityReviewRequired": false
     },
     {
@@ -48984,8 +48984,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-calendar-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cadd3dc1cdb399cb71923cfd1ada89781983769c",
       "identityReviewRequired": false
     },
     {
@@ -48995,8 +48995,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-federation-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "be0bf8e3880fc1689b00782381213c3824d36c2a",
       "identityReviewRequired": false
     },
     {
@@ -49006,8 +49006,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-governance-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7a6548ce9be90f322dc3d8d37a76dff5c0ce67f3",
       "identityReviewRequired": false
     },
     {
@@ -49017,8 +49017,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-cms-content-integrity-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "942184134280b0ff8405ebed29900f1a8ac9a19d",
       "identityReviewRequired": false
     },
     {
@@ -55771,8 +55771,8 @@
       "intendedPackageIdentity": "module_cms_analytics_integration_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9e0bdc5a01f365d67f34f5394b624e7b37391cec",
       "identityReviewRequired": false
     },
     {
@@ -55782,8 +55782,8 @@
       "intendedPackageIdentity": "module_cms_api_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8bbe6009d594d91d0a2ede7ae6818de9128aad22",
       "identityReviewRequired": false
     },
     {
@@ -55793,8 +55793,8 @@
       "intendedPackageIdentity": "module_cms_audit_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0b0612b2ba97871e51d34d3c873e8cf435383a11",
       "identityReviewRequired": false
     },
     {
@@ -55804,8 +55804,8 @@
       "intendedPackageIdentity": "module_cms_backup_and_restore_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "96370b47e3cb08ed6ab3e560c9b6b45545853e39",
       "identityReviewRequired": false
     },
     {
@@ -55815,8 +55815,8 @@
       "intendedPackageIdentity": "module_cms_block_editor_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "eb6ff4cce221b5cec0ecbfdfb7076854d56a2cd1",
       "identityReviewRequired": false
     },
     {
@@ -55826,8 +55826,8 @@
       "intendedPackageIdentity": "module_cms_blocks_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "92f4ee4298a7d23b9a530b5a6db3974800d64c96",
       "identityReviewRequired": false
     },
     {
@@ -55837,8 +55837,8 @@
       "intendedPackageIdentity": "module_cms_cache_and_performance_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e9e6ac90634debf4da28c5917223f6f56c00869e",
       "identityReviewRequired": false
     },
     {
@@ -55848,8 +55848,8 @@
       "intendedPackageIdentity": "module_cms_cms_copilot_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "de3249a1b0fd23296ae53bc5f764857aa44a5767",
       "identityReviewRequired": false
     },
     {
@@ -55859,8 +55859,8 @@
       "intendedPackageIdentity": "module_cms_collections_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "044a90c95aad137a1073207e27f165603fdf849e",
       "identityReviewRequired": false
     },
     {
@@ -55870,8 +55870,8 @@
       "intendedPackageIdentity": "module_cms_comments_and_discussion_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "114a74df4997c8bbd236382c0a15149c95ad07ad",
       "identityReviewRequired": false
     },
     {
@@ -55881,8 +55881,8 @@
       "intendedPackageIdentity": "module_cms_configuration_management_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "687a7b71e9a44a7c7f9f4fe4522f905207a3e79e",
       "identityReviewRequired": false
     },
     {
@@ -55892,8 +55892,8 @@
       "intendedPackageIdentity": "module_cms_contact_directory_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "689d777e65c6807fda61dd22d04f029b56cfd1c9",
       "identityReviewRequired": false
     },
     {
@@ -55903,8 +55903,8 @@
       "intendedPackageIdentity": "module_cms_content_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fc938ec89dd0ce86b18eb2a70feaed25b7b87c42",
       "identityReviewRequired": false
     },
     {
@@ -55914,8 +55914,8 @@
       "intendedPackageIdentity": "module_cms_content_access_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4230022c8dcb89f2ea2c901e9dcbd5ab84a83fea",
       "identityReviewRequired": false
     },
     {
@@ -55925,8 +55925,8 @@
       "intendedPackageIdentity": "module_cms_content_calendar_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "db1293f1b927f4565813009c6a4fbc2fa90639ff",
       "identityReviewRequired": false
     },
     {
@@ -55936,8 +55936,8 @@
       "intendedPackageIdentity": "module_cms_content_federation_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "09e3346854ac9b9eb8235171fc70b1bb7aa71b12",
       "identityReviewRequired": false
     },
     {
@@ -55947,8 +55947,8 @@
       "intendedPackageIdentity": "module_cms_content_governance_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "18ca6fd31b9edff8f25076327d7f6e9c417cf735",
       "identityReviewRequired": false
     },
     {
@@ -55958,7 +55958,7 @@
       "intendedPackageIdentity": "module_cms_content_integrity_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
+      "state": "publish-error",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -62712,8 +62712,8 @@
       "intendedPackageIdentity": "module_cms_analytics_integration_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5c4ddb604ce4648860233824675c5330f4a360bb",
       "identityReviewRequired": false
     },
     {
@@ -62723,8 +62723,8 @@
       "intendedPackageIdentity": "module_cms_api_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "31da8ddf3468c309806deb8cae00f0af7c8d0345",
       "identityReviewRequired": false
     },
     {
@@ -62734,8 +62734,8 @@
       "intendedPackageIdentity": "module_cms_audit_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "065a9f5726fb36b2b2f71648ff4d960852b7cd7f",
       "identityReviewRequired": false
     },
     {
@@ -62745,8 +62745,8 @@
       "intendedPackageIdentity": "module_cms_backup_and_restore_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7fc1b303e683f682b5f206f9b1f68e2ac4064715",
       "identityReviewRequired": false
     },
     {
@@ -62756,8 +62756,8 @@
       "intendedPackageIdentity": "module_cms_block_editor_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a0f917ecee6a8f5aeffa717585f271defc3db2fe",
       "identityReviewRequired": false
     },
     {
@@ -62767,8 +62767,8 @@
       "intendedPackageIdentity": "module_cms_blocks_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ad794d3daae5ee3a0329ec6c0c60705e3c55b8a8",
       "identityReviewRequired": false
     },
     {
@@ -62778,8 +62778,8 @@
       "intendedPackageIdentity": "module_cms_cache_and_performance_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "64d167f977d738df1f03834cc78067a739606868",
       "identityReviewRequired": false
     },
     {
@@ -62789,8 +62789,8 @@
       "intendedPackageIdentity": "module_cms_cms_copilot_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2ba480d7df8e3b5991019c7576466bdec524f103",
       "identityReviewRequired": false
     },
     {
@@ -62800,8 +62800,8 @@
       "intendedPackageIdentity": "module_cms_collections_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "60c2745481263eef823bb3d34ade935d2c0cac33",
       "identityReviewRequired": false
     },
     {
@@ -62811,8 +62811,8 @@
       "intendedPackageIdentity": "module_cms_comments_and_discussion_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7a689fb833d82a6ccb52607e2271e9fae03621c0",
       "identityReviewRequired": false
     },
     {
@@ -62822,8 +62822,8 @@
       "intendedPackageIdentity": "module_cms_configuration_management_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "771f09bf0ebe46c75f191108862161cebd4f94d1",
       "identityReviewRequired": false
     },
     {
@@ -62833,8 +62833,8 @@
       "intendedPackageIdentity": "module_cms_contact_directory_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "50ae640bb8cc1d61c0061a94871c39de65f0c48b",
       "identityReviewRequired": false
     },
     {
@@ -62844,8 +62844,8 @@
       "intendedPackageIdentity": "module_cms_content_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "561f0d4eacee57fd40584f3d712f3b2a84c9ba4e",
       "identityReviewRequired": false
     },
     {
@@ -62855,8 +62855,8 @@
       "intendedPackageIdentity": "module_cms_content_access_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b71f88d19b34a39cefa44c48f06ec5b3427fe7e0",
       "identityReviewRequired": false
     },
     {
@@ -62866,8 +62866,8 @@
       "intendedPackageIdentity": "module_cms_content_calendar_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fa590a8a6397fdec0e56657fb202a2392fe95ff1",
       "identityReviewRequired": false
     },
     {
@@ -62877,8 +62877,8 @@
       "intendedPackageIdentity": "module_cms_content_federation_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3bcb05ff7e775d593a260a49164ee30d1ba22f62",
       "identityReviewRequired": false
     },
     {
@@ -62888,8 +62888,8 @@
       "intendedPackageIdentity": "module_cms_content_governance_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d430129f7f47c299734bc51cad0d1ec352a75898",
       "identityReviewRequired": false
     },
     {
@@ -62899,8 +62899,8 @@
       "intendedPackageIdentity": "module_cms_content_integrity_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9be769b639672610642a8bf4d3d9c792afe41c0b",
       "identityReviewRequired": false
     },
     {
@@ -69653,8 +69653,8 @@
       "intendedPackageIdentity": "module_cms_analytics_integration_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "84b054e6ada2b25134ef8a003bb4a6c8f33db89a",
       "identityReviewRequired": false
     },
     {
@@ -69664,8 +69664,8 @@
       "intendedPackageIdentity": "module_cms_api_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "53a33e169649a840d1df275eb71a6a7a78f007b2",
       "identityReviewRequired": false
     },
     {
@@ -69675,8 +69675,8 @@
       "intendedPackageIdentity": "module_cms_audit_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "916b6e581104cf6317244b17d47a994bf751d6ef",
       "identityReviewRequired": false
     },
     {
@@ -69686,8 +69686,8 @@
       "intendedPackageIdentity": "module_cms_backup_and_restore_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5d62e95837974ee6794b5806168cc403ec87088e",
       "identityReviewRequired": false
     },
     {
@@ -69697,8 +69697,8 @@
       "intendedPackageIdentity": "module_cms_block_editor_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "37c971985f887498a17e743aa54863e5894d1973",
       "identityReviewRequired": false
     },
     {
@@ -69708,8 +69708,8 @@
       "intendedPackageIdentity": "module_cms_blocks_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "46cf020b9a2b148ced9dd677962b4b83acbf4836",
       "identityReviewRequired": false
     },
     {
@@ -69719,8 +69719,8 @@
       "intendedPackageIdentity": "module_cms_cache_and_performance_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a6200d2446b18efad5ee1137f2f18547cc5b0212",
       "identityReviewRequired": false
     },
     {
@@ -69730,8 +69730,8 @@
       "intendedPackageIdentity": "module_cms_cms_copilot_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4088c7dc4096270cf45f87c79c21eb409b3b9b59",
       "identityReviewRequired": false
     },
     {
@@ -69741,8 +69741,8 @@
       "intendedPackageIdentity": "module_cms_collections_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7e7ca31077454e50c0be80c7fbd7431e1504d62b",
       "identityReviewRequired": false
     },
     {
@@ -69752,8 +69752,8 @@
       "intendedPackageIdentity": "module_cms_comments_and_discussion_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9016b0c278342c9c49ac912a9cd0b7aaec113cf2",
       "identityReviewRequired": false
     },
     {
@@ -69763,8 +69763,8 @@
       "intendedPackageIdentity": "module_cms_configuration_management_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bbbba3ff4d6c02ce4d8aa52da44dd9f9c569778c",
       "identityReviewRequired": false
     },
     {
@@ -69774,8 +69774,8 @@
       "intendedPackageIdentity": "module_cms_contact_directory_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0ede79c8d7e22b488cc063ab054cb7901fa5dbe2",
       "identityReviewRequired": false
     },
     {
@@ -69785,8 +69785,8 @@
       "intendedPackageIdentity": "module_cms_content_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6cec8d0c8d908cf98f3753fa43bfe6280a04c179",
       "identityReviewRequired": false
     },
     {
@@ -69796,8 +69796,8 @@
       "intendedPackageIdentity": "module_cms_content_access_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2b1cd29c9761596e0791ffffe852b7720c21cd6d",
       "identityReviewRequired": false
     },
     {
@@ -69807,8 +69807,8 @@
       "intendedPackageIdentity": "module_cms_content_calendar_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b013917e526bf80ceea79df095941ececa6187e8",
       "identityReviewRequired": false
     },
     {
@@ -69818,8 +69818,8 @@
       "intendedPackageIdentity": "module_cms_content_federation_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ff08f83f0b3978553a78c35484d9fa01cf7c54c2",
       "identityReviewRequired": false
     },
     {
@@ -69829,8 +69829,8 @@
       "intendedPackageIdentity": "module_cms_content_governance_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5c066f50977a6074def6bc7b6eda793be95652aa",
       "identityReviewRequired": false
     },
     {
@@ -69840,8 +69840,8 @@
       "intendedPackageIdentity": "module_cms_content_integrity_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e5f5213b9b49847063705e0aa34b6606ffc789c2",
       "identityReviewRequired": false
     },
     {
