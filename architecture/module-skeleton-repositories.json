@@ -16270,8 +16270,8 @@
       "intendedPackageIdentity": "liberusoftware/genealogy-gamification-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "20bbb5fe6850ccea45238492d9ade82d6fc7e942",
       "identityReviewRequired": false
     },
     {
@@ -23112,8 +23112,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-usage-wallet-and-rebilling-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "05d40eaf56261822234de78bb50cba84d1e28560",
       "identityReviewRequired": false
     },
     {
@@ -23123,8 +23123,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-web-intent-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d620fdcf43a0c03809f2df4ee7ee4df453981e87",
       "identityReviewRequired": false
     },
     {
@@ -23134,8 +23134,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-white-label-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "90dc2cb7ce8871e002506b0123992a13ea3a33df",
       "identityReviewRequired": false
     },
     {
@@ -23145,8 +23145,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-work-management-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "408735cd9589ba7f5bd0458caf444942c859490b",
       "identityReviewRequired": false
     },
     {
@@ -23156,8 +23156,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-collaboration-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "61c3504e5ace35e4436909d18e9fe8540a3bd07b",
       "identityReviewRequired": false
     },
     {
@@ -23167,8 +23167,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-core-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0ec246c9cf22a2e8ed35e68bef21ec8c309b8dc7",
       "identityReviewRequired": false
     },
     {
@@ -23178,8 +23178,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-discovery-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "79924f1ccc2b25be904e9380cd6c9712b3e64956",
       "identityReviewRequired": false
     },
     {
@@ -23189,8 +23189,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-dna-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c274801ebe5809ab722453c35b79c34406a96d6e",
       "identityReviewRequired": false
     },
     {
@@ -23200,8 +23200,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-evidence-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "06f949f2b00bc81a4ddb60c4b914de3cc76d66db",
       "identityReviewRequired": false
     },
     {
@@ -23211,8 +23211,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-gamification-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ce01c638d5d92e76e4b727597609720e9c48da49",
       "identityReviewRequired": false
     },
     {
@@ -23222,8 +23222,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-import-export-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "abfbdc4ab2b4a70686ebbb072b9967fc1a068f91",
       "identityReviewRequired": false
     },
     {
@@ -23233,8 +23233,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-media-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "418ac01f7b097bac4fd069f5efc79847ad663e04",
       "identityReviewRequired": false
     },
     {
@@ -23244,8 +23244,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-people-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c38cb22d23507505d4287b4954138b4bebf06b34",
       "identityReviewRequired": false
     },
     {
@@ -23255,8 +23255,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-places-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a1d410bd3db4e8a29960ed2d3dc9a95d5233eb05",
       "identityReviewRequired": false
     },
     {
@@ -23266,8 +23266,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-relationships-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c65db460b9c087522d36870e28985387ba7dc81a",
       "identityReviewRequired": false
     },
     {
@@ -23277,8 +23277,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-reports-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1dbb66414026183befb4422be407fe9d3fbdf9ea",
       "identityReviewRequired": false
     },
     {
@@ -23288,8 +23288,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-research-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "20e09083c32c8e656bba8d0f6b5a00b60bb01ece",
       "identityReviewRequired": false
     },
     {
@@ -23299,8 +23299,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-timeline-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f65757d334baece7d898fb13001a9aa9b765da35",
       "identityReviewRequired": false
     },
     {
@@ -23310,8 +23310,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-tree-viewer-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6404e6457751cf389c51a9aedb55dc2fce25e42b",
       "identityReviewRequired": false
     },
     {
@@ -30053,8 +30053,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-usage-wallet-and-rebilling-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "90abd5593ed8a62eee224fbf89680458448a4b30",
       "identityReviewRequired": false
     },
     {
@@ -30064,8 +30064,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-web-intent-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "04ba0c715982f26a71533494b601f09b46cb512a",
       "identityReviewRequired": false
     },
     {
@@ -30075,8 +30075,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-white-label-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "565972443db41c3f9c4ad8096a70cf32d8db3058",
       "identityReviewRequired": false
     },
     {
@@ -30086,8 +30086,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-work-management-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ca5a8276c801171a6eb435d23c6c068e918d29a7",
       "identityReviewRequired": false
     },
     {
@@ -30097,8 +30097,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-collaboration-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3757a2bb23e691d3c851db5427f175590714ab14",
       "identityReviewRequired": false
     },
     {
@@ -30108,8 +30108,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-core-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fefb14942edb265359ff043c63ccbedacbd42592",
       "identityReviewRequired": false
     },
     {
@@ -30119,8 +30119,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-discovery-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f2ed57f79b7cea17045ebc4afe2aae06177b7d1b",
       "identityReviewRequired": false
     },
     {
@@ -30130,8 +30130,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-dna-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5fcb340c9f35b677144d4224d17b33694b967b95",
       "identityReviewRequired": false
     },
     {
@@ -30141,8 +30141,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-evidence-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0a599fa02efed89de4b1ce81c9f3702e9b3ec1dd",
       "identityReviewRequired": false
     },
     {
@@ -30152,8 +30152,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-gamification-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "47dec4babe9b4c19787423c614e82356a2ddbc4e",
       "identityReviewRequired": false
     },
     {
@@ -30163,8 +30163,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-import-export-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7e7616aa8fc68ce7ea6dd6f2823021e3c7433495",
       "identityReviewRequired": false
     },
     {
@@ -30174,8 +30174,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-media-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b7745fc0c9920ba03c9f8c843aeb75e945e8b553",
       "identityReviewRequired": false
     },
     {
@@ -30185,8 +30185,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-people-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f6cef546a5cc3765a4da2c14144115a0934a2a4",
       "identityReviewRequired": false
     },
     {
@@ -30196,8 +30196,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-places-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "796953621aa4053ccce3c0032ad84a8059f9c1af",
       "identityReviewRequired": false
     },
     {
@@ -30207,8 +30207,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-relationships-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "846e31494b2e481b7b590d31098b6f8bb860d948",
       "identityReviewRequired": false
     },
     {
@@ -30218,8 +30218,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-reports-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "11d9ded33982372201a7cd8981e300892a40b26f",
       "identityReviewRequired": false
     },
     {
@@ -30229,8 +30229,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-research-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8281d8f59216e7d2ceadf7901e9000e221f43bd2",
       "identityReviewRequired": false
     },
     {
@@ -30240,8 +30240,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-timeline-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e32400681c6b72a696be7d689b971cb5a95e8095",
       "identityReviewRequired": false
     },
     {
@@ -30251,8 +30251,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-tree-viewer-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "808451a838cec99c5311e3989c0945083e445690",
       "identityReviewRequired": false
     },
     {
@@ -36994,8 +36994,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-usage-wallet-and-rebilling-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a3264bcf403ca9ff1167dcb4c0349f6bc4d31691",
       "identityReviewRequired": false
     },
     {
@@ -37005,8 +37005,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-web-intent-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f12796fd76be99f82bdbb3cbb3651607e375a346",
       "identityReviewRequired": false
     },
     {
@@ -37016,8 +37016,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-white-label-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c181a49035407e3a386ac13d0ebfef9f98384eea",
       "identityReviewRequired": false
     },
     {
@@ -37027,8 +37027,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-work-management-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f643593bf5d183cefeb2d240d6c3806148da8a6c",
       "identityReviewRequired": false
     },
     {
@@ -37038,8 +37038,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-collaboration-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "55e4510f657a6d43c981357e029c9b200e90ee11",
       "identityReviewRequired": false
     },
     {
@@ -37049,8 +37049,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-core-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c1c210e098e1621304a64ecb7fe22a888d1f961a",
       "identityReviewRequired": false
     },
     {
@@ -37060,8 +37060,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-discovery-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "259c3389e09cd8505b2270dbfb9d0ede20ed5cd4",
       "identityReviewRequired": false
     },
     {
@@ -37071,8 +37071,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-dna-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7be64eae26eff8b9301438a6059c3a6886b63fd1",
       "identityReviewRequired": false
     },
     {
@@ -37082,8 +37082,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-evidence-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bace5cc4f36b2e6643237e799f69bf9d5c4345e5",
       "identityReviewRequired": false
     },
     {
@@ -37093,8 +37093,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-gamification-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ea0a405d0977ac7d19b9168ab5f0d16daaaeec70",
       "identityReviewRequired": false
     },
     {
@@ -37104,8 +37104,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-import-export-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2a6d6134af1f7f633024aee45480bddc64733d75",
       "identityReviewRequired": false
     },
     {
@@ -37115,8 +37115,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-media-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4c38f015a48cf67cad4347c537c60790c9de4150",
       "identityReviewRequired": false
     },
     {
@@ -37126,8 +37126,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-people-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c7f76861e983e655c5e0e42961b0d1f53e8bb451",
       "identityReviewRequired": false
     },
     {
@@ -37137,8 +37137,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-places-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "aa31570013929658a4b187e2a1c47b7f288d3ce2",
       "identityReviewRequired": false
     },
     {
@@ -37148,8 +37148,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-relationships-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1f3b13342357f34d9921930e7cbb4458e62df883",
       "identityReviewRequired": false
     },
     {
@@ -37159,8 +37159,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-reports-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "88a9b0f355f0674c107229b244cda509579a8414",
       "identityReviewRequired": false
     },
     {
@@ -37170,8 +37170,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-research-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d9838ab0476f0d29aa0205dbe2af39045532882d",
       "identityReviewRequired": false
     },
     {
@@ -37181,8 +37181,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-timeline-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5bf54331751f1e8738ae1378ea930ad2dd65a85d",
       "identityReviewRequired": false
     },
     {
@@ -37192,8 +37192,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-tree-viewer-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "89dc22da49557bc22fe0d2cf88364c4af8d2bddf",
       "identityReviewRequired": false
     },
     {
@@ -43935,8 +43935,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-usage-wallet-and-rebilling-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3e883be55f2fa5dd5a8ed2036fa1082930f0a702",
       "identityReviewRequired": false
     },
     {
@@ -43946,8 +43946,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-web-intent-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d3f4f27afd5cf8b0279223ae82bccb174ed4b88d",
       "identityReviewRequired": false
     },
     {
@@ -43957,8 +43957,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-white-label-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ce3d9373a05d346de0a4dd3c568072d9fd9b7f11",
       "identityReviewRequired": false
     },
     {
@@ -43968,8 +43968,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-work-management-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f57ed97e6e26816479ce364dc1fb47e6ea81d78c",
       "identityReviewRequired": false
     },
     {
@@ -43979,8 +43979,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-collaboration-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b62d39865b8a15745f0fd0ba5ea6b30769ab3740",
       "identityReviewRequired": false
     },
     {
@@ -43990,8 +43990,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-core-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f2e579906b374e55b4cec95fd817b849448ee589",
       "identityReviewRequired": false
     },
     {
@@ -44001,8 +44001,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-discovery-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8fac398f4c2a1373975073335f99e61787293325",
       "identityReviewRequired": false
     },
     {
@@ -44012,8 +44012,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-dna-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f9f02d1fc894fcd545eee161aedb6e74f7f6feb4",
       "identityReviewRequired": false
     },
     {
@@ -44023,8 +44023,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-evidence-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "016371f955182196a4fedbce3a9ea78eeff19d7e",
       "identityReviewRequired": false
     },
     {
@@ -44034,8 +44034,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-gamification-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "97dd067324a3ff71e229742f6318f2bd9052ae2d",
       "identityReviewRequired": false
     },
     {
@@ -44045,8 +44045,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-import-export-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b1f3341746e7ab640bee3d3cdb4f6520e82a9c38",
       "identityReviewRequired": false
     },
     {
@@ -44056,8 +44056,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-media-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "db527ed620f80e920808021930050c0e7e20600c",
       "identityReviewRequired": false
     },
     {
@@ -44067,8 +44067,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-people-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "778add652b115f6df835dea3c7b82bbafee5a8d9",
       "identityReviewRequired": false
     },
     {
@@ -44078,8 +44078,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-places-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "08d9d1f18fe1f59238d192384854353a2b2f02fb",
       "identityReviewRequired": false
     },
     {
@@ -44089,8 +44089,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-relationships-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "80ddcc2273145824313ebaf0ff38627f360f6b35",
       "identityReviewRequired": false
     },
     {
@@ -44100,8 +44100,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-reports-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1fb07576ee341cd72633a8313b7bd8c881872f51",
       "identityReviewRequired": false
     },
     {
@@ -44111,8 +44111,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-research-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "350231d5354a127b637d8199265aa09f51de2cde",
       "identityReviewRequired": false
     },
     {
@@ -44122,8 +44122,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-timeline-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a800dd64da81acfa63524ebe0132652954e29f1c",
       "identityReviewRequired": false
     },
     {
@@ -44133,7 +44133,7 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-tree-viewer-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -50876,8 +50876,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-usage-wallet-and-rebilling-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8ffbcf1e2d19a6b3bfcff6fd41e68b0fedd90f93",
       "identityReviewRequired": false
     },
     {
@@ -50887,8 +50887,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-web-intent-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6afa79c82c5fe86876cb1b399be90eafe096c2f7",
       "identityReviewRequired": false
     },
     {
@@ -50898,8 +50898,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-white-label-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "37eb3d4aeb499f0e53a28b7859cb48e16d023d88",
       "identityReviewRequired": false
     },
     {
@@ -50909,8 +50909,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-work-management-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dcbd71557e744665a0cac07aebbfdf3b8b0d459b",
       "identityReviewRequired": false
     },
     {
@@ -50920,8 +50920,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-collaboration-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ec3c7a9777fd7d67661a14707aae268a00704841",
       "identityReviewRequired": false
     },
     {
@@ -50931,8 +50931,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-core-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1587324ac53420663a6b04e8a837e0a21e1ccece",
       "identityReviewRequired": false
     },
     {
@@ -50942,8 +50942,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-discovery-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "098247370ee835ff795b620ffeb6516c849032ce",
       "identityReviewRequired": false
     },
     {
@@ -50953,8 +50953,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-dna-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "88d1acddecc7171445f2a00ad7b2af03d3d4ef09",
       "identityReviewRequired": false
     },
     {
@@ -50964,8 +50964,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-evidence-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9d1842ff44f89b81668eeb7502bcef098f11a434",
       "identityReviewRequired": false
     },
     {
@@ -50975,8 +50975,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-gamification-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f85b219451366ee90125683d72647082f34246e",
       "identityReviewRequired": false
     },
     {
@@ -50986,8 +50986,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-import-export-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ee419121976014132730ff18326152f5b7eb6ebb",
       "identityReviewRequired": false
     },
     {
@@ -50997,8 +50997,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-media-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4df8adacac9492f0b186e189ad8113f8f0b6a78c",
       "identityReviewRequired": false
     },
     {
@@ -51008,8 +51008,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-people-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8cc37f1f2376650f05fba7741ebb5e74ad683f2d",
       "identityReviewRequired": false
     },
     {
@@ -51019,8 +51019,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-places-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "839bad45569125739d8bbec3e860d27893b57956",
       "identityReviewRequired": false
     },
     {
@@ -51030,8 +51030,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-relationships-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6d4d3a9eff4fd0d84b24763b13c3594da63aa63f",
       "identityReviewRequired": false
     },
     {
@@ -51041,8 +51041,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-reports-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "545fbbd8855e5b2aa2af97b9b07b6bc2e013d5dd",
       "identityReviewRequired": false
     },
     {
@@ -51052,8 +51052,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-research-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7da26681d628d0be4f6df0937bc3638582415d87",
       "identityReviewRequired": false
     },
     {
@@ -51063,8 +51063,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-genealogy-timeline-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2b27a9458d23fbd30f44f987a2d5558a0bad229e",
       "identityReviewRequired": false
     },
     {
@@ -57817,8 +57817,8 @@
       "intendedPackageIdentity": "module_crm_usage_wallet_and_rebilling_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9d9f3407c247d4977e3e51a615e929f96b96926f",
       "identityReviewRequired": false
     },
     {
@@ -57828,8 +57828,8 @@
       "intendedPackageIdentity": "module_crm_web_intent_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e9b2840f7053add6b4264384f3b5a33b886d5161",
       "identityReviewRequired": false
     },
     {
@@ -57839,8 +57839,8 @@
       "intendedPackageIdentity": "module_crm_white_label_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5269d910db5d0cc60f3d2c6aa782190d3b6627c5",
       "identityReviewRequired": false
     },
     {
@@ -57850,8 +57850,8 @@
       "intendedPackageIdentity": "module_crm_work_management_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6da06b3d1751bd4fa09a877ccfe3327cec1d7349",
       "identityReviewRequired": false
     },
     {
@@ -57861,8 +57861,8 @@
       "intendedPackageIdentity": "module_genealogy_collaboration_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "edec1a2e194bf7d7fdf7993fc6382755a65fb2f2",
       "identityReviewRequired": false
     },
     {
@@ -57872,8 +57872,8 @@
       "intendedPackageIdentity": "module_genealogy_core_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9242a485ab26fcc07e0c5664434f38e2c7dd975c",
       "identityReviewRequired": false
     },
     {
@@ -57883,8 +57883,8 @@
       "intendedPackageIdentity": "module_genealogy_discovery_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a8fdf9f7b0cebb02b448ac45be8ca7a90ea36fa3",
       "identityReviewRequired": false
     },
     {
@@ -57894,8 +57894,8 @@
       "intendedPackageIdentity": "module_genealogy_dna_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "07e43c4ce8756312b0602a83db35b8e7f833e88c",
       "identityReviewRequired": false
     },
     {
@@ -57905,8 +57905,8 @@
       "intendedPackageIdentity": "module_genealogy_evidence_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "148dc6eeaf4e0fde244b15039f6095440b79451b",
       "identityReviewRequired": false
     },
     {
@@ -57916,8 +57916,8 @@
       "intendedPackageIdentity": "module_genealogy_gamification_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8798aada9e177dea95549877785462157dd88262",
       "identityReviewRequired": false
     },
     {
@@ -57927,8 +57927,8 @@
       "intendedPackageIdentity": "module_genealogy_import_export_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "11ae403629303763e131284dd765162d10d298a7",
       "identityReviewRequired": false
     },
     {
@@ -57938,8 +57938,8 @@
       "intendedPackageIdentity": "module_genealogy_media_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0fade41ae3f134a219e1510a485c35c1a7b91cf4",
       "identityReviewRequired": false
     },
     {
@@ -57949,8 +57949,8 @@
       "intendedPackageIdentity": "module_genealogy_people_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "369d6124eced8acab585dbfd5587738ff99a6e16",
       "identityReviewRequired": false
     },
     {
@@ -57960,8 +57960,8 @@
       "intendedPackageIdentity": "module_genealogy_places_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dfdd1564fec5b7e54740d3a62930ad98a8d9edb2",
       "identityReviewRequired": false
     },
     {
@@ -57971,8 +57971,8 @@
       "intendedPackageIdentity": "module_genealogy_relationships_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "744bd9c017bca987cf6b118437a0954f07474391",
       "identityReviewRequired": false
     },
     {
@@ -57982,8 +57982,8 @@
       "intendedPackageIdentity": "module_genealogy_reports_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "05fa3b8d19c3316048810512e4bcf86fafdf3ae8",
       "identityReviewRequired": false
     },
     {
@@ -57993,8 +57993,8 @@
       "intendedPackageIdentity": "module_genealogy_research_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2c0faa806e8900c5bf06ee2fa944d144c3673f98",
       "identityReviewRequired": false
     },
     {
@@ -58004,8 +58004,8 @@
       "intendedPackageIdentity": "module_genealogy_timeline_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2e6c93d592313493d0d3fe25b0c3bc2ac05113e3",
       "identityReviewRequired": false
     },
     {
@@ -64747,8 +64747,8 @@
       "intendedPackageIdentity": "module_crm_unified_conversations_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "58c8f1e4c534b282dbd66614389db7035672ecd2",
       "identityReviewRequired": false
     },
     {
@@ -64758,8 +64758,8 @@
       "intendedPackageIdentity": "module_crm_usage_wallet_and_rebilling_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "aefc196182793512e50820f689c2de8751f0822c",
       "identityReviewRequired": false
     },
     {
@@ -64769,8 +64769,8 @@
       "intendedPackageIdentity": "module_crm_web_intent_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "50c87eee07d7d8741f7d87a579cb4aa6c46063fa",
       "identityReviewRequired": false
     },
     {
@@ -64780,8 +64780,8 @@
       "intendedPackageIdentity": "module_crm_white_label_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3f6e8c8ad1ebc8677e44705d6cad81471238820a",
       "identityReviewRequired": false
     },
     {
@@ -64791,8 +64791,8 @@
       "intendedPackageIdentity": "module_crm_work_management_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "55e5ab0d290a42d0d9f0c6d32bb80e1787a594f7",
       "identityReviewRequired": false
     },
     {
@@ -64802,8 +64802,8 @@
       "intendedPackageIdentity": "module_genealogy_collaboration_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a6506b26dcb047151aefae2564bf2b9d341a712e",
       "identityReviewRequired": false
     },
     {
@@ -64813,8 +64813,8 @@
       "intendedPackageIdentity": "module_genealogy_core_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9c34efad4219e4d2b8e7ceec091d6d81a04e25bc",
       "identityReviewRequired": false
     },
     {
@@ -64824,8 +64824,8 @@
       "intendedPackageIdentity": "module_genealogy_discovery_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4dba789eb43658463b607710b7dc7ff4c36f845f",
       "identityReviewRequired": false
     },
     {
@@ -64835,8 +64835,8 @@
       "intendedPackageIdentity": "module_genealogy_dna_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ffd3b80b4c6fbb59eeb34c2815c25cde57481fde",
       "identityReviewRequired": false
     },
     {
@@ -64846,8 +64846,8 @@
       "intendedPackageIdentity": "module_genealogy_evidence_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dfb49d3bf0a6d270a588b9becefd1502bd8cc715",
       "identityReviewRequired": false
     },
     {
@@ -64857,8 +64857,8 @@
       "intendedPackageIdentity": "module_genealogy_gamification_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5922d770c65ff832fb440130b04bba22d7723877",
       "identityReviewRequired": false
     },
     {
@@ -64868,8 +64868,8 @@
       "intendedPackageIdentity": "module_genealogy_import_export_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dc642d60c71ceafc952cd12aa586faf6c87ca983",
       "identityReviewRequired": false
     },
     {
@@ -64879,8 +64879,8 @@
       "intendedPackageIdentity": "module_genealogy_media_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "321d4377d0b05063617481579b802d215dd684ce",
       "identityReviewRequired": false
     },
     {
@@ -64890,8 +64890,8 @@
       "intendedPackageIdentity": "module_genealogy_people_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8fc2abd89a8efa350efff12fb87b0c75cdb76c81",
       "identityReviewRequired": false
     },
     {
@@ -64901,8 +64901,8 @@
       "intendedPackageIdentity": "module_genealogy_places_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "679de9d084b71bb392bab78d4b469375ec9e6458",
       "identityReviewRequired": false
     },
     {
@@ -64912,8 +64912,8 @@
       "intendedPackageIdentity": "module_genealogy_relationships_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7e0faec1d417eff665e405b922b86e422f9b5ce5",
       "identityReviewRequired": false
     },
     {
@@ -64923,8 +64923,8 @@
       "intendedPackageIdentity": "module_genealogy_reports_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d20416a74abfbf738c1235b172f9e0b92b3896ca",
       "identityReviewRequired": false
     },
     {
@@ -64934,8 +64934,8 @@
       "intendedPackageIdentity": "module_genealogy_research_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "496cfa19b6e633369f610b9cd52220f645a38cf4",
       "identityReviewRequired": false
     },
     {
@@ -64945,8 +64945,8 @@
       "intendedPackageIdentity": "module_genealogy_timeline_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4d9dcd827779ae13411f024cf7a8f8e6b77069e4",
       "identityReviewRequired": false
     },
     {
@@ -71688,8 +71688,8 @@
       "intendedPackageIdentity": "module_crm_unified_conversations_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bdc294d8cafccce3d9e41720d4e323154a70e2ad",
       "identityReviewRequired": false
     },
     {
@@ -71699,8 +71699,8 @@
       "intendedPackageIdentity": "module_crm_usage_wallet_and_rebilling_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dedbf0bf8a767e14fd69a4dcb5a689af58f50d90",
       "identityReviewRequired": false
     },
     {
@@ -71710,8 +71710,8 @@
       "intendedPackageIdentity": "module_crm_web_intent_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5b5725204c52d5961341d168c403b06ccea9d464",
       "identityReviewRequired": false
     },
     {
@@ -71721,8 +71721,8 @@
       "intendedPackageIdentity": "module_crm_white_label_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b4ab8cb51b13fc96701b0c2b52e93b37faf2824e",
       "identityReviewRequired": false
     },
     {
@@ -71732,8 +71732,8 @@
       "intendedPackageIdentity": "module_crm_work_management_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f8d0aa219861f701c548b04f8d24c994cf6796bb",
       "identityReviewRequired": false
     },
     {
@@ -71743,8 +71743,8 @@
       "intendedPackageIdentity": "module_genealogy_collaboration_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2dbb73a9849da55d86cac8b2516e90a3b4006112",
       "identityReviewRequired": false
     },
     {
@@ -71754,8 +71754,8 @@
       "intendedPackageIdentity": "module_genealogy_core_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9593fdfdbace5bf3d3278aca0629ab2a7b9885eb",
       "identityReviewRequired": false
     },
     {
@@ -71765,8 +71765,8 @@
       "intendedPackageIdentity": "module_genealogy_discovery_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a5609d59672a96353d2e94ea184604db52c2afbf",
       "identityReviewRequired": false
     },
     {
@@ -71776,8 +71776,8 @@
       "intendedPackageIdentity": "module_genealogy_dna_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a6920b98dee30c909d86b46c90ddcce4c9b4fd50",
       "identityReviewRequired": false
     },
     {
@@ -71787,8 +71787,8 @@
       "intendedPackageIdentity": "module_genealogy_evidence_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1224e75fa7910105f0bf9bd063a816b8046d114b",
       "identityReviewRequired": false
     },
     {
@@ -71798,8 +71798,8 @@
       "intendedPackageIdentity": "module_genealogy_gamification_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "612646cac2fc48d40c1d6c4caf2d48ff1bd5695b",
       "identityReviewRequired": false
     },
     {
@@ -71809,8 +71809,8 @@
       "intendedPackageIdentity": "module_genealogy_import_export_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1bd66e9651386a98ac27accf5a1078869394e854",
       "identityReviewRequired": false
     },
     {
@@ -71820,8 +71820,8 @@
       "intendedPackageIdentity": "module_genealogy_media_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "171da9559bcfb4d25b795d7483a8fe1f140d5e87",
       "identityReviewRequired": false
     },
     {
@@ -71831,8 +71831,8 @@
       "intendedPackageIdentity": "module_genealogy_people_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "804563bdcd6580f7e035da96e8aec29f7f7375f4",
       "identityReviewRequired": false
     },
     {
@@ -71842,8 +71842,8 @@
       "intendedPackageIdentity": "module_genealogy_places_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f14ea3849a64a3267f12da53ae45e80478e428ab",
       "identityReviewRequired": false
     },
     {
@@ -71853,8 +71853,8 @@
       "intendedPackageIdentity": "module_genealogy_relationships_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "375cbe66c500dd7411b20eaafc6bbba77c5601ea",
       "identityReviewRequired": false
     },
     {
@@ -71864,8 +71864,8 @@
       "intendedPackageIdentity": "module_genealogy_reports_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a803ed7f6a2c6d49c9ba40ab4f0aeae8d5abd919",
       "identityReviewRequired": false
     },
     {
@@ -71875,8 +71875,8 @@
       "intendedPackageIdentity": "module_genealogy_research_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4b6925face979c9de0b5d3784de440ba9c61555a",
       "identityReviewRequired": false
     },
     {
@@ -71886,8 +71886,8 @@
       "intendedPackageIdentity": "module_genealogy_timeline_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bc16f8642fba612b05153dcc5dd12dc2bbb26dad",
       "identityReviewRequired": false
     },
     {
