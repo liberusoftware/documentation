@@ -20307,8 +20307,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-plaid-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "af95c3ae653b4e6122fe37d15423840eaa4e7862",
       "identityReviewRequired": false
     },
     {
@@ -20318,8 +20318,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-policies-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dd6c77ca492dd02cf4d5420a21eb652e5e051f4d",
       "identityReviewRequired": false
     },
     {
@@ -20329,8 +20329,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-product-and-service-items-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5ae8e5e59aba75df5b5d767aae149571ed83d5a8",
       "identityReviewRequired": false
     },
     {
@@ -20340,8 +20340,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-billing-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8a637ab157c1ad49bb0beccbebd463c8d879cbb8",
       "identityReviewRequired": false
     },
     {
@@ -20351,8 +20351,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-costing-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f1ad6ff2bda915fd23eefd1a080dcd2085027414",
       "identityReviewRequired": false
     },
     {
@@ -20362,8 +20362,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-profitability-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f180a325519d2e41cd9d35ad406b452fb36ddb8",
       "identityReviewRequired": false
     },
     {
@@ -20373,8 +20373,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-projects-and-jobs-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d74cb6b642ba831919cc10275e3ea92fa99db908",
       "identityReviewRequired": false
     },
     {
@@ -20384,8 +20384,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-purchase-orders-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "91783819a4f581e32da750c586f0eabebb906cf1",
       "identityReviewRequired": false
     },
     {
@@ -20395,8 +20395,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-purchase-requisitions-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4ea4cbd89cf35191e8f326f9347fd196cd9a1154",
       "identityReviewRequired": false
     },
     {
@@ -20406,8 +20406,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-quickbooks-online-migration-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ea6373c89ff533ac3ccda4b6969743a555040d62",
       "identityReviewRequired": false
     },
     {
@@ -20417,8 +20417,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-receipt-management-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "93ac9afc28ba849e7921cd95c113aceea04fb99e",
       "identityReviewRequired": false
     },
     {
@@ -20428,8 +20428,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-recurring-transactions-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b9c6f0b33b5d3ea7c40ae23fcd2e773aa39eefef",
       "identityReviewRequired": false
     },
     {
@@ -20439,8 +20439,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-regional-packs-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "89134c4bd41fb814874f91c940e5e80b0c585029",
       "identityReviewRequired": false
     },
     {
@@ -20450,8 +20450,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-reimbursements-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c8c9be1da638e2b43ee514fad9dd7551e8a84fcc",
       "identityReviewRequired": false
     },
     {
@@ -27248,8 +27248,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-plaid-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d638dac1be3a99778bd04896f4ac628ae6f209a1",
       "identityReviewRequired": false
     },
     {
@@ -27259,8 +27259,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-policies-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c5e6f9c5533d3fcab966c17190863acc096f0c0d",
       "identityReviewRequired": false
     },
     {
@@ -27270,8 +27270,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-product-and-service-items-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "51474dee513abb3875afaab4a5f6f8380d3dde87",
       "identityReviewRequired": false
     },
     {
@@ -27281,8 +27281,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-billing-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d04a23b682bcadc97d3b77b74aa9bd2aa178333e",
       "identityReviewRequired": false
     },
     {
@@ -27292,8 +27292,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-costing-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2793c61b5070f2d817902505ba551c88cdf567dd",
       "identityReviewRequired": false
     },
     {
@@ -27303,8 +27303,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-profitability-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a0061516c0c1fd6bf7aa4d85dcbc0136c04d4b3e",
       "identityReviewRequired": false
     },
     {
@@ -27314,8 +27314,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-projects-and-jobs-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e108b2ec2d9d1ac042eee6f7a9c7f3ff8d00eec8",
       "identityReviewRequired": false
     },
     {
@@ -27325,8 +27325,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-purchase-orders-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b920d2155f4f00ebb11dedf167d5267206ec0ef8",
       "identityReviewRequired": false
     },
     {
@@ -27336,8 +27336,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-purchase-requisitions-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d37ec14189bed6e0ad16b1270e366fe1bdce85e9",
       "identityReviewRequired": false
     },
     {
@@ -27347,8 +27347,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-quickbooks-online-migration-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2ccedcd8a94a4b0da4f43e6d216eb44a21084b84",
       "identityReviewRequired": false
     },
     {
@@ -27358,8 +27358,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-receipt-management-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8d852c9b81f1c0eff5cdd8d37bc0e01187522bbd",
       "identityReviewRequired": false
     },
     {
@@ -27369,8 +27369,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-recurring-transactions-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "26acb7f29ff183afd9b5e9f2b71a06113dc6b879",
       "identityReviewRequired": false
     },
     {
@@ -27380,8 +27380,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-regional-packs-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "aff97ade35580778c714d1f8fcbff069e223939a",
       "identityReviewRequired": false
     },
     {
@@ -27391,8 +27391,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-reimbursements-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "529462818bca120bec12ba1f8f94cbe7d0cdc2f4",
       "identityReviewRequired": false
     },
     {
@@ -34189,8 +34189,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-plaid-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4512af3ea6aa1b1a8c134e0df62286e4c81f1b53",
       "identityReviewRequired": false
     },
     {
@@ -34200,8 +34200,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-policies-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5c02e8f5db07b8889836eaac4ef5ad74254d8b3e",
       "identityReviewRequired": false
     },
     {
@@ -34211,8 +34211,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-product-and-service-items-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e7da2b751fd05b20b71a443fbd1c22831bd8dae4",
       "identityReviewRequired": false
     },
     {
@@ -34222,8 +34222,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-billing-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ab72f14d364ea409b36366687045e6727915b6b7",
       "identityReviewRequired": false
     },
     {
@@ -34233,8 +34233,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-costing-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5f445ffb567d3686dc195b9801cc54464e91eeec",
       "identityReviewRequired": false
     },
     {
@@ -34244,8 +34244,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-profitability-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "022afc4b51e79039fdb86b2e28a00b48512de233",
       "identityReviewRequired": false
     },
     {
@@ -34255,8 +34255,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-projects-and-jobs-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fcf3150036f422f41e9fbb11bec354ea8becbd8d",
       "identityReviewRequired": false
     },
     {
@@ -34266,8 +34266,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-purchase-orders-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "25e4e851a859cccb537caafe90037da995aa265f",
       "identityReviewRequired": false
     },
     {
@@ -34277,8 +34277,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-purchase-requisitions-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "35babfaa4ad62c9e11b6266baeafbc57a6360773",
       "identityReviewRequired": false
     },
     {
@@ -34288,8 +34288,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-quickbooks-online-migration-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "79120b2471872cd6e8c03dca7da451cceb76333c",
       "identityReviewRequired": false
     },
     {
@@ -34299,8 +34299,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-receipt-management-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7c9a6c823256f83b427fd17da0e612270f1601c3",
       "identityReviewRequired": false
     },
     {
@@ -34310,8 +34310,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-recurring-transactions-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2b90e3344e327ac76f6382174372a554aa2665fe",
       "identityReviewRequired": false
     },
     {
@@ -34321,8 +34321,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-regional-packs-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f24e58f466ae34baf99cf89fd695680511d6500e",
       "identityReviewRequired": false
     },
     {
@@ -34332,8 +34332,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-reimbursements-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e133aa8c201fe5545e4f03858ef3125b475b9998",
       "identityReviewRequired": false
     },
     {
@@ -41130,8 +41130,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-plaid-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "240bcff3906d795077c842958951e6c05410a53e",
       "identityReviewRequired": false
     },
     {
@@ -41141,8 +41141,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-policies-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ccff1d1afc70917cc97424d75403984eef934b46",
       "identityReviewRequired": false
     },
     {
@@ -41152,8 +41152,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-product-and-service-items-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5a68925d7ff077a27205267ba1939ecdef48ff5a",
       "identityReviewRequired": false
     },
     {
@@ -41163,8 +41163,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-billing-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7c4377666e5bf76f2d1701fca05515b0f18c4c1a",
       "identityReviewRequired": false
     },
     {
@@ -41174,8 +41174,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-costing-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9576f27c10dddc2e7198253e2131faaa9e0cc198",
       "identityReviewRequired": false
     },
     {
@@ -41185,8 +41185,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-profitability-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b31a24eb1ac2470f117dda2205b80a3ac526c6bc",
       "identityReviewRequired": false
     },
     {
@@ -41196,8 +41196,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-projects-and-jobs-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "991ca082f72addc2cd6a36cb5a4f277a081f4463",
       "identityReviewRequired": false
     },
     {
@@ -41207,8 +41207,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-purchase-orders-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7fe5c106779fe8dec4f1ce2d8253eac3be656e6b",
       "identityReviewRequired": false
     },
     {
@@ -41218,8 +41218,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-purchase-requisitions-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9ba6aa1e0ea578d4913e79cea06ab08f2fa51d38",
       "identityReviewRequired": false
     },
     {
@@ -41229,8 +41229,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-quickbooks-online-migration-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f88fec5f2e52ae7c76e7842fb2fceb388d92f63f",
       "identityReviewRequired": false
     },
     {
@@ -41240,8 +41240,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-receipt-management-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5beec23acaac238cd12eb0c85e45f198ab2ca8f5",
       "identityReviewRequired": false
     },
     {
@@ -41251,8 +41251,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-recurring-transactions-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ed6f598720c5f0ab384eee63d7a4c61f1df3c653",
       "identityReviewRequired": false
     },
     {
@@ -41262,8 +41262,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-regional-packs-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "716c1a113da84d80836d48ac0366d8570822e4c9",
       "identityReviewRequired": false
     },
     {
@@ -41273,8 +41273,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-reimbursements-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fead076e7034fb1c16eca993e041b0b02c915152",
       "identityReviewRequired": false
     },
     {
@@ -48071,8 +48071,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-plaid-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8f53e4e17fb2e8d05d20a548a0cea83c627dc34a",
       "identityReviewRequired": false
     },
     {
@@ -48082,8 +48082,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-policies-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3f50ebbf247cc03c81a0e72dbae4b45db7bcd73d",
       "identityReviewRequired": false
     },
     {
@@ -48093,8 +48093,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-product-and-service-items-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4c5853e4ec5a69d9d7b169983b7b5588782e4892",
       "identityReviewRequired": false
     },
     {
@@ -48104,8 +48104,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-billing-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f8d78eaf7d1a069d1b0e4db9f94c3b63ccf9f0ac",
       "identityReviewRequired": false
     },
     {
@@ -48115,8 +48115,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-costing-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "42b8537ec171e637f5f5e2da39bc53501f5c59af",
       "identityReviewRequired": false
     },
     {
@@ -48126,8 +48126,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-project-profitability-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7ad56850514c7d3b768361cb5e606b336e2b904e",
       "identityReviewRequired": false
     },
     {
@@ -48137,8 +48137,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-projects-and-jobs-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2798323b30523347fc8bb90fa5b35d03bc333d72",
       "identityReviewRequired": false
     },
     {
@@ -48148,8 +48148,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-purchase-orders-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0867c39b9cb09b7dda0e3be0a8cb428434d323e6",
       "identityReviewRequired": false
     },
     {
@@ -48159,8 +48159,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-purchase-requisitions-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9ca336d27146c60dd5692f953a53d52423a8b36a",
       "identityReviewRequired": false
     },
     {
@@ -48170,8 +48170,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-quickbooks-online-migration-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a30a3446efb402a09a6db68ab96e646043fe4737",
       "identityReviewRequired": false
     },
     {
@@ -48181,8 +48181,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-receipt-management-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8e78bc14ac5947759706e08037f2fb71debcf8ae",
       "identityReviewRequired": false
     },
     {
@@ -48192,8 +48192,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-recurring-transactions-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3bb19691a014cf17746db96967e26faf3622d3c7",
       "identityReviewRequired": false
     },
     {
@@ -48203,8 +48203,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-regional-packs-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c22fe1589092221d799f1805b4c423e296fa2df2",
       "identityReviewRequired": false
     },
     {
@@ -48214,8 +48214,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-accounting-reimbursements-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e4cfa722a227a14b312564aa2768abe9f746620f",
       "identityReviewRequired": false
     },
     {
@@ -55012,8 +55012,8 @@
       "intendedPackageIdentity": "module_accounting_plaid_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f779e471832921732ec97459adae9547181a9d9a",
       "identityReviewRequired": false
     },
     {
@@ -55023,8 +55023,8 @@
       "intendedPackageIdentity": "module_accounting_policies_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0b9e8aff4011c00104ec18cb4c68ffabb8407769",
       "identityReviewRequired": false
     },
     {
@@ -55034,8 +55034,8 @@
       "intendedPackageIdentity": "module_accounting_product_and_service_items_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a3bd5f436879f5e4d79f8c5b7cc66719b99964c9",
       "identityReviewRequired": false
     },
     {
@@ -55045,8 +55045,8 @@
       "intendedPackageIdentity": "module_accounting_project_billing_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a9d53bc01fc6f92fe685f1b2bf116e10d1fc1539",
       "identityReviewRequired": false
     },
     {
@@ -55056,8 +55056,8 @@
       "intendedPackageIdentity": "module_accounting_project_costing_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b46a5e19f15f8420d5a8dd11ea91aa7dbfb7568f",
       "identityReviewRequired": false
     },
     {
@@ -55067,8 +55067,8 @@
       "intendedPackageIdentity": "module_accounting_project_profitability_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "07b5405d86379ad31c5845a71b04de5cc29c5783",
       "identityReviewRequired": false
     },
     {
@@ -55078,8 +55078,8 @@
       "intendedPackageIdentity": "module_accounting_projects_and_jobs_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3096188810371097c41e06f19cd86113961e4c02",
       "identityReviewRequired": false
     },
     {
@@ -55089,8 +55089,8 @@
       "intendedPackageIdentity": "module_accounting_purchase_orders_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "86739d3d7e09a53f7008836e554f3f606253529a",
       "identityReviewRequired": false
     },
     {
@@ -55100,8 +55100,8 @@
       "intendedPackageIdentity": "module_accounting_purchase_requisitions_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5a39f065663f37a2ea0d17c599c5160b01d106d3",
       "identityReviewRequired": false
     },
     {
@@ -55111,8 +55111,8 @@
       "intendedPackageIdentity": "module_accounting_quickbooks_online_migration_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "27e95f59550cd51ce306644745d61e1129f00b33",
       "identityReviewRequired": false
     },
     {
@@ -55122,8 +55122,8 @@
       "intendedPackageIdentity": "module_accounting_receipt_management_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "672ad809d5f426edd603fa45994c62d41fc7c4e2",
       "identityReviewRequired": false
     },
     {
@@ -55133,8 +55133,8 @@
       "intendedPackageIdentity": "module_accounting_recurring_transactions_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7093d75c77199ed8d7bad74a0946a43aaa24dd5c",
       "identityReviewRequired": false
     },
     {
@@ -55144,8 +55144,8 @@
       "intendedPackageIdentity": "module_accounting_regional_packs_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "69efffaab111607b7b026e7ca5b3eec6b81bf574",
       "identityReviewRequired": false
     },
     {
@@ -55155,7 +55155,7 @@
       "intendedPackageIdentity": "module_accounting_reimbursements_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -61953,8 +61953,8 @@
       "intendedPackageIdentity": "module_accounting_plaid_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "86c1ab541e791b7aa4ef29fdcadc6894fc470baa",
       "identityReviewRequired": false
     },
     {
@@ -61964,8 +61964,8 @@
       "intendedPackageIdentity": "module_accounting_policies_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "218ad529e72686eaf8a08fc0fbda2d8f52ed824e",
       "identityReviewRequired": false
     },
     {
@@ -61975,8 +61975,8 @@
       "intendedPackageIdentity": "module_accounting_product_and_service_items_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "27c54d4099f03c54ad4cf559861bab53f07f01ee",
       "identityReviewRequired": false
     },
     {
@@ -61986,8 +61986,8 @@
       "intendedPackageIdentity": "module_accounting_project_billing_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3149f62f460789f3ca511b9221e930ed3ec06966",
       "identityReviewRequired": false
     },
     {
@@ -61997,8 +61997,8 @@
       "intendedPackageIdentity": "module_accounting_project_costing_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "317acb9a93b0e1af1505390591e6b84d7f2cde66",
       "identityReviewRequired": false
     },
     {
@@ -62008,8 +62008,8 @@
       "intendedPackageIdentity": "module_accounting_project_profitability_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "38ef158bde00e70cd58f3c91cc97d1426f4af522",
       "identityReviewRequired": false
     },
     {
@@ -62019,8 +62019,8 @@
       "intendedPackageIdentity": "module_accounting_projects_and_jobs_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7ea37de2031377ac9e81813ea04773cd56187f4f",
       "identityReviewRequired": false
     },
     {
@@ -62030,8 +62030,8 @@
       "intendedPackageIdentity": "module_accounting_purchase_orders_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e1e53529a6c8349345e68265383806220c8f72bd",
       "identityReviewRequired": false
     },
     {
@@ -62041,8 +62041,8 @@
       "intendedPackageIdentity": "module_accounting_purchase_requisitions_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "70c6349978bad931cd82c7a66b431074a61b2d08",
       "identityReviewRequired": false
     },
     {
@@ -62052,8 +62052,8 @@
       "intendedPackageIdentity": "module_accounting_quickbooks_online_migration_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "371997db95b1f0b96feaf6775ea0c973912aa7de",
       "identityReviewRequired": false
     },
     {
@@ -62063,8 +62063,8 @@
       "intendedPackageIdentity": "module_accounting_receipt_management_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5c1e559881eaa3c73ffc1af2f9371f41080f7cb4",
       "identityReviewRequired": false
     },
     {
@@ -62074,8 +62074,8 @@
       "intendedPackageIdentity": "module_accounting_recurring_transactions_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f796cf3c9fa7d8ce05ad227e64bdd87bb23b3671",
       "identityReviewRequired": false
     },
     {
@@ -62085,8 +62085,8 @@
       "intendedPackageIdentity": "module_accounting_regional_packs_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c534c2eb58ccbf79e206f0b15cfd7ac0583b768c",
       "identityReviewRequired": false
     },
     {
@@ -68894,8 +68894,8 @@
       "intendedPackageIdentity": "module_accounting_plaid_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cbea9fec82b0afd8adb7b15bde78b8454a010d45",
       "identityReviewRequired": false
     },
     {
@@ -68905,8 +68905,8 @@
       "intendedPackageIdentity": "module_accounting_policies_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5fbc8f14fcf4e32c505552c641752933eb6b36c0",
       "identityReviewRequired": false
     },
     {
@@ -68916,8 +68916,8 @@
       "intendedPackageIdentity": "module_accounting_product_and_service_items_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "59f5cc1a7db960e5875d81be24af6e60e84f6a8d",
       "identityReviewRequired": false
     },
     {
@@ -68927,8 +68927,8 @@
       "intendedPackageIdentity": "module_accounting_project_billing_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a14c13f9fb1e58b5417413029bd62a4f6f354f99",
       "identityReviewRequired": false
     },
     {
@@ -68938,8 +68938,8 @@
       "intendedPackageIdentity": "module_accounting_project_costing_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b0321df2d3a69e3a10b203be1de44a2de9be8599",
       "identityReviewRequired": false
     },
     {
@@ -68949,8 +68949,8 @@
       "intendedPackageIdentity": "module_accounting_project_profitability_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dbd20146e5042b2bc14ca936b82dab951580135a",
       "identityReviewRequired": false
     },
     {
@@ -68960,8 +68960,8 @@
       "intendedPackageIdentity": "module_accounting_projects_and_jobs_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0565514a97ab4d142352a5f47b5134afca5ee2d9",
       "identityReviewRequired": false
     },
     {
@@ -68971,8 +68971,8 @@
       "intendedPackageIdentity": "module_accounting_purchase_orders_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "05c236ff8145f86deda4cf80394686e3731a2b0f",
       "identityReviewRequired": false
     },
     {
@@ -68982,8 +68982,8 @@
       "intendedPackageIdentity": "module_accounting_purchase_requisitions_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "617e6ec262d8eb9e1432c42ebfbc7ad940bac5c2",
       "identityReviewRequired": false
     },
     {
@@ -68993,8 +68993,8 @@
       "intendedPackageIdentity": "module_accounting_quickbooks_online_migration_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8574763561d15712d28a3e626350fbf5ff5bfa93",
       "identityReviewRequired": false
     },
     {
@@ -69004,8 +69004,8 @@
       "intendedPackageIdentity": "module_accounting_receipt_management_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2b0e0232c33dbab9f5ab8859ef2e2deb5e5353b1",
       "identityReviewRequired": false
     },
     {
@@ -69015,8 +69015,8 @@
       "intendedPackageIdentity": "module_accounting_recurring_transactions_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0ee7a13541923fcc6a6fc45e3f3d55e6cb364ea5",
       "identityReviewRequired": false
     },
     {
@@ -69026,8 +69026,8 @@
       "intendedPackageIdentity": "module_accounting_regional_packs_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f24f375e6619ed889ad00418304b3e039e41be5b",
       "identityReviewRequired": false
     },
     {
