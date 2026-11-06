@@ -16578,8 +16578,8 @@
       "intendedPackageIdentity": "liberusoftware/manager-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "74f5aa814f2644b9fc16e340720e85c2d4aca14f",
       "identityReviewRequired": false
     },
     {
@@ -23519,8 +23519,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-manager-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "91ce7e97bedcd55d0a563df22c4bf6a4080d7e84",
       "identityReviewRequired": false
     },
     {
@@ -23530,8 +23530,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-analytics-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "beb7102ed25a9998767b5933edcb469972ae2436",
       "identityReviewRequired": false
     },
     {
@@ -23541,8 +23541,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-communities-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8beda5ad7664094bf40c4f5ec604755b583032ce",
       "identityReviewRequired": false
     },
     {
@@ -23552,8 +23552,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-discovery-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a0798eac96de1ee88bd6c585e0f00f6f8809c243",
       "identityReviewRequired": false
     },
     {
@@ -23563,8 +23563,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-engagement-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6817bc20644bc442d5f86a29f0f7fbcc15758bc9",
       "identityReviewRequired": false
     },
     {
@@ -23574,8 +23574,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-events-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c9419fcc7dad5fe37133826423bfc4fa1bbf9d84",
       "identityReviewRequired": false
     },
     {
@@ -23585,8 +23585,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-federation-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "726f0d4ede3eee294638016c39376533c983d0b6",
       "identityReviewRequired": false
     },
     {
@@ -23596,8 +23596,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-feed-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7ecd17ff580a0517b1c8419e154457e3d7e3f3e0",
       "identityReviewRequired": false
     },
     {
@@ -23607,8 +23607,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-media-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1ae1246912c0a72ee9019bf0718ff06994446bce",
       "identityReviewRequired": false
     },
     {
@@ -23618,8 +23618,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-messaging-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "28df2f7e9a832ad61295f0c212350502e966fcea",
       "identityReviewRequired": false
     },
     {
@@ -23629,8 +23629,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-moderation-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b34f81983707bed80439ea51446b53f13d11856c",
       "identityReviewRequired": false
     },
     {
@@ -23640,8 +23640,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-notifications-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a57c849583c90e84d225544170e58dacae13ecf3",
       "identityReviewRequired": false
     },
     {
@@ -23651,8 +23651,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-profiles-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "eff1c97fd30aa047fe69c6106077da1e333298bf",
       "identityReviewRequired": false
     },
     {
@@ -23662,8 +23662,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-publishing-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "aeb532f5babf2402d501f8f61da8732b7e7486ff",
       "identityReviewRequired": false
     },
     {
@@ -23673,8 +23673,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-social-core-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "904610305898a32f52cf04e74c2d006daf6e991e",
       "identityReviewRequired": false
     },
     {
@@ -23684,8 +23684,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-social-graph-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "741c2d81ea8345be6d84aea7d741282e8dd8b481",
       "identityReviewRequired": false
     },
     {
@@ -23937,8 +23937,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-notifications-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "134a0e25a61fee0fa665a566c7cf8d2e4366e5be",
       "identityReviewRequired": false
     },
     {
@@ -23948,8 +23948,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-observability-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "23341a487cd6a0332a6549ceee344176ee25d705",
       "identityReviewRequired": false
     },
     {
@@ -30460,8 +30460,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-manager-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ed670f1d2a299dec7487ea4684e67c559a1aa163",
       "identityReviewRequired": false
     },
     {
@@ -30471,8 +30471,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-analytics-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "316af808fa92353bec07c475560a3b55b1aca6bd",
       "identityReviewRequired": false
     },
     {
@@ -30482,8 +30482,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-communities-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "972ce2d4cb142ff78523c825475cccce4c452bde",
       "identityReviewRequired": false
     },
     {
@@ -30493,8 +30493,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-discovery-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6892b0a8dd05820fdc8400ceaa74271e6911adca",
       "identityReviewRequired": false
     },
     {
@@ -30504,8 +30504,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-engagement-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4a7a17496a82aa56d727cbad934d3ef2e10a845f",
       "identityReviewRequired": false
     },
     {
@@ -30515,8 +30515,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-events-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4e978de3e549a0d1a463155580ae2dd4d5d65854",
       "identityReviewRequired": false
     },
     {
@@ -30526,8 +30526,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-federation-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0e7c2008f03be4f627e1df8a1903006d2b55e251",
       "identityReviewRequired": false
     },
     {
@@ -30537,8 +30537,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-feed-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dc7321dfd558590784cb8672dca4d692d2346401",
       "identityReviewRequired": false
     },
     {
@@ -30548,8 +30548,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-media-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a938b73c0c33c80cefedaa00a4124303b6d98b5f",
       "identityReviewRequired": false
     },
     {
@@ -30559,8 +30559,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-messaging-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b4b1449900f391f5372cf65421a96da3f6c2f15a",
       "identityReviewRequired": false
     },
     {
@@ -30570,8 +30570,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-moderation-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "551b1cc36df3c51e0a7daa130d5e4ee90e5db241",
       "identityReviewRequired": false
     },
     {
@@ -30581,8 +30581,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-notifications-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5a3a4fd11f739b08e7a9037faad7fa8d6744b59f",
       "identityReviewRequired": false
     },
     {
@@ -30592,8 +30592,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-profiles-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e3e0e8b41d9d564656a82e6fb286022e4ded6475",
       "identityReviewRequired": false
     },
     {
@@ -30603,8 +30603,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-publishing-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c95618b03d4a18af5b7f3a0cc6301cf513b26345",
       "identityReviewRequired": false
     },
     {
@@ -30614,8 +30614,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-social-core-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "624e793a4a3e69d64267db9361a9243db1554e59",
       "identityReviewRequired": false
     },
     {
@@ -30625,8 +30625,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-social-graph-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2a47b36d21d7edd446e502d307a2e7199708a282",
       "identityReviewRequired": false
     },
     {
@@ -30878,8 +30878,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-notifications-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8d7a66f0462490ef48facb8bfa5d597da9477e24",
       "identityReviewRequired": false
     },
     {
@@ -30889,8 +30889,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-observability-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9a3e6ba2d97a2bcffff6530d60bb9f84d1417eff",
       "identityReviewRequired": false
     },
     {
@@ -37401,8 +37401,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-manager-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "020dd138f07637e906845d59f36f50c7bcab0874",
       "identityReviewRequired": false
     },
     {
@@ -37412,8 +37412,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-analytics-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4c8c2c72d12a03a5dd28130f7f2db436a73e5be4",
       "identityReviewRequired": false
     },
     {
@@ -37423,8 +37423,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-communities-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "58bc230c4257b6b94b08255c5b30ae113e57870d",
       "identityReviewRequired": false
     },
     {
@@ -37434,8 +37434,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-discovery-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5a8991251a3f475a3f4c3deacb7cc0b7818b2a28",
       "identityReviewRequired": false
     },
     {
@@ -37445,8 +37445,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-engagement-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "12250d86edc7cb67e1c5924ee02089b1fdd63c57",
       "identityReviewRequired": false
     },
     {
@@ -37456,8 +37456,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-events-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1feb3522074244c6f741896e93a2a4d4ef4b109c",
       "identityReviewRequired": false
     },
     {
@@ -37467,8 +37467,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-federation-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d5e8458a3d3fde02110be02bcc735efa4ce47420",
       "identityReviewRequired": false
     },
     {
@@ -37478,8 +37478,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-feed-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6dfe77a941ecce39f859faf6c4fb7a9d3a35f114",
       "identityReviewRequired": false
     },
     {
@@ -37489,8 +37489,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-media-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b21b4f58c15f71e2276224fe092b190bfb42283b",
       "identityReviewRequired": false
     },
     {
@@ -37500,8 +37500,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-messaging-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9aaaabb9fae3f289d7dc592465cce071a5eb30f7",
       "identityReviewRequired": false
     },
     {
@@ -37511,8 +37511,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-moderation-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "813b2ac45238eb082cafb17544ffb15946ef1acf",
       "identityReviewRequired": false
     },
     {
@@ -37522,8 +37522,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-notifications-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2e8a1aac732747cd2412385021e17d1c2cc3da57",
       "identityReviewRequired": false
     },
     {
@@ -37533,8 +37533,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-profiles-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9a9f11a1395150b50aef090566cba929275c8f59",
       "identityReviewRequired": false
     },
     {
@@ -37544,8 +37544,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-publishing-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8cbee6814d9aa35a09e10c237dd28e886c6841af",
       "identityReviewRequired": false
     },
     {
@@ -37555,8 +37555,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-social-core-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6990b3d1dec6012836cdb196a31e32993f65daa1",
       "identityReviewRequired": false
     },
     {
@@ -37566,8 +37566,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-social-graph-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "682981a075b5d5a89d8c54ee65ed6a77b51347ec",
       "identityReviewRequired": false
     },
     {
@@ -37819,8 +37819,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-notifications-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "58c738d91d848b9910066c002abe1d87563e1439",
       "identityReviewRequired": false
     },
     {
@@ -37830,8 +37830,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-observability-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "04b9cbb962d447466924317dc52f13ed666d4062",
       "identityReviewRequired": false
     },
     {
@@ -44342,8 +44342,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-manager-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "45ea7029336551931ee1449870b68d5f2d3a93b2",
       "identityReviewRequired": false
     },
     {
@@ -44353,8 +44353,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-analytics-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b81c35272bb06a94ec449bcf84440e8426f95040",
       "identityReviewRequired": false
     },
     {
@@ -44364,8 +44364,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-communities-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8dab367567bd18774f9e310153de0d114ff5687f",
       "identityReviewRequired": false
     },
     {
@@ -44375,8 +44375,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-discovery-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "de569ac0581144e07c553b1e21af322e5abd0e04",
       "identityReviewRequired": false
     },
     {
@@ -44386,8 +44386,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-engagement-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2d400cf537d91fa68cc8d31d6deab707cdabee2b",
       "identityReviewRequired": false
     },
     {
@@ -44397,8 +44397,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-events-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a47fc4eaa1aa53171bce8721d0ee39ec1225f0db",
       "identityReviewRequired": false
     },
     {
@@ -44408,8 +44408,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-federation-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "75698400ac5c902384d84d6c5fb3cde73048e374",
       "identityReviewRequired": false
     },
     {
@@ -44419,8 +44419,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-feed-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "680f4a15d692b951c6be1c287947fe676ba311b8",
       "identityReviewRequired": false
     },
     {
@@ -44430,8 +44430,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-media-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f1694c1cdb59e828a961cbf7c9d4a7f13fe180f",
       "identityReviewRequired": false
     },
     {
@@ -44441,8 +44441,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-messaging-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "16a3e5af222f8f7f3835889d57ad211f33dd1d24",
       "identityReviewRequired": false
     },
     {
@@ -44452,8 +44452,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-moderation-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "97af9911b61be433f87f2527c14b92bc1ae111df",
       "identityReviewRequired": false
     },
     {
@@ -44463,8 +44463,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-notifications-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ca68ad259e49edcc26d34c237ab736283980bf48",
       "identityReviewRequired": false
     },
     {
@@ -44474,8 +44474,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-profiles-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0f9561d3ba7970487c658dbef5bcf3118798141d",
       "identityReviewRequired": false
     },
     {
@@ -44485,8 +44485,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-publishing-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a6ff60bba92adceb770ece343596733b5d16fd04",
       "identityReviewRequired": false
     },
     {
@@ -44496,8 +44496,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-social-core-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c72057b293e69c25d38bfd5613b149d865c2652d",
       "identityReviewRequired": false
     },
     {
@@ -44507,8 +44507,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-social-graph-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b2c8ca1ef383fc05dac5686a70ee24c18f57c9f1",
       "identityReviewRequired": false
     },
     {
@@ -44760,8 +44760,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-notifications-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "197aa61cdf0cdc0b4722250527c7b0d02a444620",
       "identityReviewRequired": false
     },
     {
@@ -44771,7 +44771,7 @@
       "intendedPackageIdentity": "@liberusoftware/module-observability-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -51272,8 +51272,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-maintenance-work-orders-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b80a2dc3e9217a012f403008acd8a615ad387cd1",
       "identityReviewRequired": false
     },
     {
@@ -51283,8 +51283,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-manager-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3a131b6704636784c4dd0ea56546f52fc9a04965",
       "identityReviewRequired": false
     },
     {
@@ -51294,8 +51294,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-analytics-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b9db3e205e322f7aadf879db4aa7ce48b31a8b66",
       "identityReviewRequired": false
     },
     {
@@ -51305,8 +51305,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-communities-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "42a6d805ddba7dc91d2757f43bc826e894c10ea0",
       "identityReviewRequired": false
     },
     {
@@ -51316,8 +51316,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-discovery-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1ca2848b3dc6e06921d783504e13ac8ed10b1447",
       "identityReviewRequired": false
     },
     {
@@ -51327,8 +51327,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-engagement-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4965122e6a3c29d03a5c0571f2d040ca039806d4",
       "identityReviewRequired": false
     },
     {
@@ -51338,8 +51338,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-events-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6125e864409c6c3d3f6c799c85fc605c615fe71c",
       "identityReviewRequired": false
     },
     {
@@ -51349,8 +51349,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-federation-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e4111652b5aadb6c95dcaab14ef422c4a261a6f8",
       "identityReviewRequired": false
     },
     {
@@ -51360,8 +51360,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-feed-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a5057c1da595e8a035b3ba7960e12a2694579438",
       "identityReviewRequired": false
     },
     {
@@ -51371,8 +51371,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-media-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9f861ca527cf9a364c3ff7f7763f104998f20148",
       "identityReviewRequired": false
     },
     {
@@ -51382,8 +51382,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-messaging-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "521d06466894c84bce0fc73cf56b8ac72a6cf593",
       "identityReviewRequired": false
     },
     {
@@ -51393,8 +51393,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-moderation-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "384f8ac1742b04d44734883b2de6cf16a419e030",
       "identityReviewRequired": false
     },
     {
@@ -51404,8 +51404,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-notifications-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6a027abbaf4fd6cdff1c39816271f15f33281de9",
       "identityReviewRequired": false
     },
     {
@@ -51415,8 +51415,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-profiles-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1b16dd92e52e8c90cf98acc20fe888e5557cdae4",
       "identityReviewRequired": false
     },
     {
@@ -51426,8 +51426,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-publishing-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b278087d461c85cecf42d8b2e34ca8ba83c1242b",
       "identityReviewRequired": false
     },
     {
@@ -51437,8 +51437,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-social-core-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "08fbed25b13acc059684e4f8c0fdacdf6584403f",
       "identityReviewRequired": false
     },
     {
@@ -51448,8 +51448,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-social-network-social-graph-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "13ed830a6a6fb888aeb8b09080e57beed01dc005",
       "identityReviewRequired": false
     },
     {
@@ -51701,8 +51701,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-notifications-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "752d44d9d23566511e6b498df5f1d6c52b7d0a62",
       "identityReviewRequired": false
     },
     {
@@ -58213,8 +58213,8 @@
       "intendedPackageIdentity": "module_maintenance_work_orders_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "27b21e7a3b9f362fa307fae37f59606934343b90",
       "identityReviewRequired": false
     },
     {
@@ -58224,8 +58224,8 @@
       "intendedPackageIdentity": "module_manager_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8173957ffdd4bc22387579c5540e68408de2671d",
       "identityReviewRequired": false
     },
     {
@@ -58235,8 +58235,8 @@
       "intendedPackageIdentity": "module_social_network_analytics_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "41ca652c644bbbf8ac610a7732a423ca4f2d0c97",
       "identityReviewRequired": false
     },
     {
@@ -58246,8 +58246,8 @@
       "intendedPackageIdentity": "module_social_network_communities_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6fe2ee300260904c281a5ac70271da095487b7fe",
       "identityReviewRequired": false
     },
     {
@@ -58257,8 +58257,8 @@
       "intendedPackageIdentity": "module_social_network_discovery_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9bc6df70f706569308c2695a6dbec2ac61c59d7e",
       "identityReviewRequired": false
     },
     {
@@ -58268,8 +58268,8 @@
       "intendedPackageIdentity": "module_social_network_engagement_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "138fafbe47b9e36ddcfe60e6bb3dc97705c32bc7",
       "identityReviewRequired": false
     },
     {
@@ -58279,8 +58279,8 @@
       "intendedPackageIdentity": "module_social_network_events_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f028b374f3cb8c7baa61338a02ee58405c119531",
       "identityReviewRequired": false
     },
     {
@@ -58290,8 +58290,8 @@
       "intendedPackageIdentity": "module_social_network_federation_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1c8742cfda4afae969b31c445526563569ceb604",
       "identityReviewRequired": false
     },
     {
@@ -58301,8 +58301,8 @@
       "intendedPackageIdentity": "module_social_network_feed_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5c3584c04c5df9b4a85ea2c6bba32f56a5b4e074",
       "identityReviewRequired": false
     },
     {
@@ -58312,8 +58312,8 @@
       "intendedPackageIdentity": "module_social_network_media_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e9b7bab9e2255129f861f58ee5e4f9dca7b06ead",
       "identityReviewRequired": false
     },
     {
@@ -58323,8 +58323,8 @@
       "intendedPackageIdentity": "module_social_network_messaging_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "285efccdd01b28ed7ff244ac8aedc034d3e254e2",
       "identityReviewRequired": false
     },
     {
@@ -58334,8 +58334,8 @@
       "intendedPackageIdentity": "module_social_network_moderation_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "83407cefc26b8e06e9dab6c0a4a34150778e6d5c",
       "identityReviewRequired": false
     },
     {
@@ -58345,8 +58345,8 @@
       "intendedPackageIdentity": "module_social_network_notifications_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ba517f36c09c376fd9e72dc09214f1ef19a1e49c",
       "identityReviewRequired": false
     },
     {
@@ -58356,8 +58356,8 @@
       "intendedPackageIdentity": "module_social_network_profiles_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "201c0e27212eac0acdb503abaa552fb16242b780",
       "identityReviewRequired": false
     },
     {
@@ -58367,8 +58367,8 @@
       "intendedPackageIdentity": "module_social_network_publishing_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0f5239f2c3154df8fe12e92a89cca37a4b73bd08",
       "identityReviewRequired": false
     },
     {
@@ -58378,8 +58378,8 @@
       "intendedPackageIdentity": "module_social_network_social_core_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "32d7648f742702b745e40a45b29b25c6f0bfc9a8",
       "identityReviewRequired": false
     },
     {
@@ -58389,8 +58389,8 @@
       "intendedPackageIdentity": "module_social_network_social_graph_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0e679898fa710b3ff03ed178dba6b261dc163c2f",
       "identityReviewRequired": false
     },
     {
@@ -58642,8 +58642,8 @@
       "intendedPackageIdentity": "module_notifications_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7e8c32d0f6164a046189ff457d82699371213214",
       "identityReviewRequired": false
     },
     {
@@ -65154,8 +65154,8 @@
       "intendedPackageIdentity": "module_maintenance_work_orders_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6599884884a50dadeeb2583c036ddcd77c32d004",
       "identityReviewRequired": false
     },
     {
@@ -65165,8 +65165,8 @@
       "intendedPackageIdentity": "module_manager_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e406e042c853ae2656383f26f60c106243a64ded",
       "identityReviewRequired": false
     },
     {
@@ -65176,8 +65176,8 @@
       "intendedPackageIdentity": "module_social_network_analytics_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "979c2da2547a1ba0c7fb5d1c3d0ef3b24053b608",
       "identityReviewRequired": false
     },
     {
@@ -65187,8 +65187,8 @@
       "intendedPackageIdentity": "module_social_network_communities_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b7f326780e94e2cbc01f9b8f19ac4c0fcc1a7c33",
       "identityReviewRequired": false
     },
     {
@@ -65198,8 +65198,8 @@
       "intendedPackageIdentity": "module_social_network_discovery_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f4bde0031682020e0c14a5e885ff485c3c7277e6",
       "identityReviewRequired": false
     },
     {
@@ -65209,8 +65209,8 @@
       "intendedPackageIdentity": "module_social_network_engagement_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d8975c1e20ca3bc5e6b5bf6e8ced2d4e792f00b3",
       "identityReviewRequired": false
     },
     {
@@ -65220,8 +65220,8 @@
       "intendedPackageIdentity": "module_social_network_events_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "204667977541cd09dae236d60335be71893dbe7a",
       "identityReviewRequired": false
     },
     {
@@ -65231,8 +65231,8 @@
       "intendedPackageIdentity": "module_social_network_federation_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1d02a126b7e120c0750420920634cf24135d2821",
       "identityReviewRequired": false
     },
     {
@@ -65242,8 +65242,8 @@
       "intendedPackageIdentity": "module_social_network_feed_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "64fd443ebb5c77f2873b76874cbe09a6c04a71d6",
       "identityReviewRequired": false
     },
     {
@@ -65253,8 +65253,8 @@
       "intendedPackageIdentity": "module_social_network_media_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "84dcf7867979e99a3ab41e297c5b7d224032c13c",
       "identityReviewRequired": false
     },
     {
@@ -65264,8 +65264,8 @@
       "intendedPackageIdentity": "module_social_network_messaging_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3ca523dd326124c618ec1fafe59b51d46361bd12",
       "identityReviewRequired": false
     },
     {
@@ -65275,8 +65275,8 @@
       "intendedPackageIdentity": "module_social_network_moderation_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "498cdd3250ebdb2a355b52647968005d5779b434",
       "identityReviewRequired": false
     },
     {
@@ -65286,8 +65286,8 @@
       "intendedPackageIdentity": "module_social_network_notifications_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3b545eaea034f954095ec072fe6ba5b51dc15823",
       "identityReviewRequired": false
     },
     {
@@ -65297,8 +65297,8 @@
       "intendedPackageIdentity": "module_social_network_profiles_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ce95f64c9c57a372866eddd89440b412fe712b36",
       "identityReviewRequired": false
     },
     {
@@ -65308,8 +65308,8 @@
       "intendedPackageIdentity": "module_social_network_publishing_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1a6d4c5f412409e53065c2515232d961c7e06ae4",
       "identityReviewRequired": false
     },
     {
@@ -65319,8 +65319,8 @@
       "intendedPackageIdentity": "module_social_network_social_core_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a7202f33cf5aa0326d6d42ef13f6998b6b9e0798",
       "identityReviewRequired": false
     },
     {
@@ -65330,8 +65330,8 @@
       "intendedPackageIdentity": "module_social_network_social_graph_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "31dfa127a6990da78ef31bbab55c3edb5b1e2e2d",
       "identityReviewRequired": false
     },
     {
@@ -65583,8 +65583,8 @@
       "intendedPackageIdentity": "module_notifications_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "177f773efde9d40761acaa9dbc5999028b62ee5d",
       "identityReviewRequired": false
     },
     {
@@ -72095,8 +72095,8 @@
       "intendedPackageIdentity": "module_maintenance_work_orders_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1342c76f62dccad47ca279b2a30990464d4fec95",
       "identityReviewRequired": false
     },
     {
@@ -72106,8 +72106,8 @@
       "intendedPackageIdentity": "module_manager_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a6ff55532930c3dd3409284906e995b590a2b6d3",
       "identityReviewRequired": false
     },
     {
@@ -72117,8 +72117,8 @@
       "intendedPackageIdentity": "module_social_network_analytics_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "55410e81e44181e1a394fd83f77b215abe37618d",
       "identityReviewRequired": false
     },
     {
@@ -72128,8 +72128,8 @@
       "intendedPackageIdentity": "module_social_network_communities_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9de3390eecb1f9042570c86388ab2b34e489a745",
       "identityReviewRequired": false
     },
     {
@@ -72139,8 +72139,8 @@
       "intendedPackageIdentity": "module_social_network_discovery_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "890453ea97e0e7bbdb2171ad04ebddaaabdc632f",
       "identityReviewRequired": false
     },
     {
@@ -72150,8 +72150,8 @@
       "intendedPackageIdentity": "module_social_network_engagement_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6951822ab5c55af95d33d0542b5ee1767a79878e",
       "identityReviewRequired": false
     },
     {
@@ -72161,8 +72161,8 @@
       "intendedPackageIdentity": "module_social_network_events_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1b94b75d4329c2fd2ee3e393644b6c5f55b943c0",
       "identityReviewRequired": false
     },
     {
@@ -72172,8 +72172,8 @@
       "intendedPackageIdentity": "module_social_network_federation_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7934ef4865121bb699a40206ab20d365e93d1781",
       "identityReviewRequired": false
     },
     {
@@ -72183,8 +72183,8 @@
       "intendedPackageIdentity": "module_social_network_feed_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3d818399dd6aca07b8c38aae7829f2d463f49fb3",
       "identityReviewRequired": false
     },
     {
@@ -72194,8 +72194,8 @@
       "intendedPackageIdentity": "module_social_network_media_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4a2f097dcb800cc96f7edfe006a9c01cf6c037a8",
       "identityReviewRequired": false
     },
     {
@@ -72205,8 +72205,8 @@
       "intendedPackageIdentity": "module_social_network_messaging_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9cda22ffbe14eca187164d6676a37fe40d80bf05",
       "identityReviewRequired": false
     },
     {
@@ -72216,8 +72216,8 @@
       "intendedPackageIdentity": "module_social_network_moderation_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bdfabc54e080c571dd3ca57ac7f1e59e167f9fbf",
       "identityReviewRequired": false
     },
     {
@@ -72227,8 +72227,8 @@
       "intendedPackageIdentity": "module_social_network_notifications_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "10410de1c6893084ee5df8860a9944338b13e05d",
       "identityReviewRequired": false
     },
     {
@@ -72238,8 +72238,8 @@
       "intendedPackageIdentity": "module_social_network_profiles_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b6ec05f4656e6824842210328ad0976e126428b1",
       "identityReviewRequired": false
     },
     {
@@ -72249,8 +72249,8 @@
       "intendedPackageIdentity": "module_social_network_publishing_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "12810763bde2ab03ea4267bfd5ffbbb194c8f896",
       "identityReviewRequired": false
     },
     {
@@ -72260,8 +72260,8 @@
       "intendedPackageIdentity": "module_social_network_social_core_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "08072b0c7e95198e6628ed03daea68a874e2bac2",
       "identityReviewRequired": false
     },
     {
@@ -72271,8 +72271,8 @@
       "intendedPackageIdentity": "module_social_network_social_graph_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3c4f5c95d18bb79189f1fc9a7022a0aa6d2ac397",
       "identityReviewRequired": false
     },
     {
@@ -72524,8 +72524,8 @@
       "intendedPackageIdentity": "module_notifications_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6c4626c5fd8670282313acfe81c4f78ccedfb2d5",
       "identityReviewRequired": false
     },
     {
