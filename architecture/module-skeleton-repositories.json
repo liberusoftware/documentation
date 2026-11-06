@@ -22705,8 +22705,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-development-funds-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "28306d388c68df8e81a08688c7aecf21ab4ad99d",
       "identityReviewRequired": false
     },
     {
@@ -22716,8 +22716,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-resources-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7c0375f83660bf5a00a2e5c958ad46c81c00ddf3",
       "identityReviewRequired": false
     },
     {
@@ -22727,8 +22727,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-memberships-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c5c028d78d66f8552330d9be648beda4c78871f2",
       "identityReviewRequired": false
     },
     {
@@ -22738,8 +22738,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-mobile-messaging-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4e9f3e86ef15d27b64e5c683dde65352bf1540a1",
       "identityReviewRequired": false
     },
     {
@@ -22749,8 +22749,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-omnichannel-service-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5eafeefe0a6f45de276a6a18a474650bd70b4b8d",
       "identityReviewRequired": false
     },
     {
@@ -22760,8 +22760,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-orders-and-payments-workspace-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fac95c70601d12e7c8ccf6fce7f769faa5563de9",
       "identityReviewRequired": false
     },
     {
@@ -22771,8 +22771,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-partner-relationship-management-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4a3cb3c1427a723343d3253b4b85ae28ba519de7",
       "identityReviewRequired": false
     },
     {
@@ -22782,8 +22782,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-personalization-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8d854e3bb654f19b615e06c6e02eb4357cd4d89e",
       "identityReviewRequired": false
     },
     {
@@ -22793,8 +22793,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-playbooks-and-enablement-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0588f8f2d0a010fd25c302ef377eef8a2401ce5c",
       "identityReviewRequired": false
     },
     {
@@ -22804,8 +22804,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-predictive-models-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a7f70d4ad9eb8c6f8ffb9def990d4574b03d1676",
       "identityReviewRequired": false
     },
     {
@@ -22815,8 +22815,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-product-workspace-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "276e8f5a4a2a0ea7b32c93fe5c0f3aff85a80878",
       "identityReviewRequired": false
     },
     {
@@ -22826,8 +22826,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-projects-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ccf150fbe6723cd800d77611ae0278a91f47c36b",
       "identityReviewRequired": false
     },
     {
@@ -22837,8 +22837,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-proposals-and-quotes-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "24e314c1d633a50f4873422a86b28b99044ee74d",
       "identityReviewRequired": false
     },
     {
@@ -22848,8 +22848,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-prospecting-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dd2f365698f3b8f13452ce9826586a4fc8cfecfe",
       "identityReviewRequired": false
     },
     {
@@ -22859,8 +22859,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-prospecting-agent-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8201b8282283e0a35b73bc562d123b62dcafd654",
       "identityReviewRequired": false
     },
     {
@@ -22870,8 +22870,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-quotas-and-incentives-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8b44fc50de898b889457ca6894b28175cc0876c4",
       "identityReviewRequired": false
     },
     {
@@ -22881,8 +22881,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-referrals-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2e309dec6c3a27bf3126a34044865137d21a747f",
       "identityReviewRequired": false
     },
     {
@@ -22892,8 +22892,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-reputation-management-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a8138373d043b618df1072c512b92e80c3c496dd",
       "identityReviewRequired": false
     },
     {
@@ -22903,7 +22903,7 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-resource-planning-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -29635,7 +29635,7 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-agent-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "publishing",
+      "state": "publish-error",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -29646,8 +29646,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-development-funds-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a1e21d99c04bba0d7d6a64b2a76726b38aabad22",
       "identityReviewRequired": false
     },
     {
@@ -29657,8 +29657,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-resources-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bbcb97665b02fe0a0dcf016758ea71addfd96f2e",
       "identityReviewRequired": false
     },
     {
@@ -29668,8 +29668,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-memberships-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "856a22046ff2b9a652d4494d5b919de06c0e56fa",
       "identityReviewRequired": false
     },
     {
@@ -29679,8 +29679,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-mobile-messaging-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "21ec15d421f47eeaa2c718b1e29a4edeb98484b0",
       "identityReviewRequired": false
     },
     {
@@ -29690,8 +29690,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-omnichannel-service-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a3edb0d12dfc2cb484f51458a706de08539770d0",
       "identityReviewRequired": false
     },
     {
@@ -29701,8 +29701,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-orders-and-payments-workspace-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f35c34dec213d6fb70d7401626882125a3e31776",
       "identityReviewRequired": false
     },
     {
@@ -29712,8 +29712,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-partner-relationship-management-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e01448d2aec8fa9ea48c6c195129f31b0f168477",
       "identityReviewRequired": false
     },
     {
@@ -29723,8 +29723,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-personalization-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6465442fe708f61dd4b00c22012f099d2ef07314",
       "identityReviewRequired": false
     },
     {
@@ -29734,8 +29734,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-playbooks-and-enablement-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "50af1db03dd54f6e1d508d716734deb773de14e3",
       "identityReviewRequired": false
     },
     {
@@ -29745,8 +29745,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-predictive-models-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bb92a88dc830cc7e3caf552fffdbb43c80cc0064",
       "identityReviewRequired": false
     },
     {
@@ -29756,8 +29756,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-product-workspace-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "92c23cbc6ead8272e93e553295c3b3363d867cc3",
       "identityReviewRequired": false
     },
     {
@@ -29767,8 +29767,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-projects-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6f993edca1c25aeaf260349dfa81cd65321b1bc6",
       "identityReviewRequired": false
     },
     {
@@ -29778,8 +29778,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-proposals-and-quotes-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d246f7a1726f3fd32840e9e6bf52bb122bda9ad4",
       "identityReviewRequired": false
     },
     {
@@ -29789,8 +29789,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-prospecting-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e2e31e5ef0b39795232d16a4c7603cbe45df90e6",
       "identityReviewRequired": false
     },
     {
@@ -29800,8 +29800,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-prospecting-agent-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1cb1346add2737ea39dd9eeae5ec05b6161c7d63",
       "identityReviewRequired": false
     },
     {
@@ -29811,8 +29811,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-quotas-and-incentives-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ad9356490b26b093c28a182f97bf6b11c8427771",
       "identityReviewRequired": false
     },
     {
@@ -29822,8 +29822,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-referrals-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fa39ec518fccda9703c959b28ef26fd618c9211a",
       "identityReviewRequired": false
     },
     {
@@ -29833,8 +29833,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-reputation-management-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e969740865d74e826643da46d8fddced4a2bcd28",
       "identityReviewRequired": false
     },
     {
@@ -36576,8 +36576,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-agent-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "18d8e608dfaeb0a08811e62fbc919c770e231df7",
       "identityReviewRequired": false
     },
     {
@@ -36587,8 +36587,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-development-funds-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "72ebd3aa9350565058095ac7ed48b9c15ad8a062",
       "identityReviewRequired": false
     },
     {
@@ -36598,8 +36598,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-resources-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "52ee9180d8ff45e1f269a19aa8d5a1f954f8b0d9",
       "identityReviewRequired": false
     },
     {
@@ -36609,8 +36609,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-memberships-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3d9f628c1f963206e03db98ad1e3a2cc1e1e1624",
       "identityReviewRequired": false
     },
     {
@@ -36620,8 +36620,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-mobile-messaging-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f4ae59cf53b802eec263c5036a54256c32f52532",
       "identityReviewRequired": false
     },
     {
@@ -36631,8 +36631,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-omnichannel-service-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cbf216214b106be522fbc7f218772174259209f8",
       "identityReviewRequired": false
     },
     {
@@ -36642,8 +36642,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-orders-and-payments-workspace-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b73a1660d4f425dceed8d65d586d83e933493048",
       "identityReviewRequired": false
     },
     {
@@ -36653,8 +36653,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-partner-relationship-management-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "06a231c290ab650d017872e0f780cb89b482e297",
       "identityReviewRequired": false
     },
     {
@@ -36664,8 +36664,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-personalization-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d9fbfdea5a938026e333ee30ae3203d39fdfa2cf",
       "identityReviewRequired": false
     },
     {
@@ -36675,8 +36675,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-playbooks-and-enablement-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c67f3c31fdc988dd7018d2fed7b6fc8ccab59620",
       "identityReviewRequired": false
     },
     {
@@ -36686,8 +36686,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-predictive-models-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3a8e94b34dc62aa3de3f24765e6ced5e411abc6e",
       "identityReviewRequired": false
     },
     {
@@ -36697,8 +36697,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-product-workspace-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "05f452cda96df32a9ed19a6ee465621af0e237a1",
       "identityReviewRequired": false
     },
     {
@@ -36708,8 +36708,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-projects-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "83567fc2b4bf48ef136f101b8094de8ef44a68fa",
       "identityReviewRequired": false
     },
     {
@@ -36719,8 +36719,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-proposals-and-quotes-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "52528df5234d37bf55cbf2fb04ea0a376a037c4c",
       "identityReviewRequired": false
     },
     {
@@ -36730,8 +36730,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-prospecting-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b70c1534c35694d0e80cf0780e549746965a83f8",
       "identityReviewRequired": false
     },
     {
@@ -36741,8 +36741,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-prospecting-agent-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3843ae574e11db7c7e9ad8cde3b990fdd0b961e8",
       "identityReviewRequired": false
     },
     {
@@ -36752,8 +36752,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-quotas-and-incentives-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e1b0c8744e9099deecb9111dd546a0ff72b7a62d",
       "identityReviewRequired": false
     },
     {
@@ -36763,8 +36763,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-referrals-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "57f90b057740141a8e715afa5f6d737f2b8fef5b",
       "identityReviewRequired": false
     },
     {
@@ -36774,8 +36774,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-reputation-management-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3d26fd93e36d33ac7ab30e299b14c62e39779e1a",
       "identityReviewRequired": false
     },
     {
@@ -43517,8 +43517,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-agent-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "24acea7017cf1a75ddf75a8611c2d503d5a2c9db",
       "identityReviewRequired": false
     },
     {
@@ -43528,8 +43528,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-development-funds-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9b8234093582e6205af223f6301d5868818ea16f",
       "identityReviewRequired": false
     },
     {
@@ -43539,8 +43539,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-resources-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "25ac24d2cf4c1b148fd8718462a0182e910777b5",
       "identityReviewRequired": false
     },
     {
@@ -43550,8 +43550,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-memberships-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7a6b1f5959eb66c49a27f61d1c157612f9177a31",
       "identityReviewRequired": false
     },
     {
@@ -43561,8 +43561,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-mobile-messaging-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2e0b110d7631ad3bee5d39d9b20eb47da777c51c",
       "identityReviewRequired": false
     },
     {
@@ -43572,8 +43572,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-omnichannel-service-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "734f2be41f6879a7aa2b5cdcc8806f17753d5f54",
       "identityReviewRequired": false
     },
     {
@@ -43583,8 +43583,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-orders-and-payments-workspace-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "417074b9e8ea2344788fa8d08f10440019176f10",
       "identityReviewRequired": false
     },
     {
@@ -43594,8 +43594,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-partner-relationship-management-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2c2fe60410d385e8a7dafc3057bc56c71182ae21",
       "identityReviewRequired": false
     },
     {
@@ -43605,8 +43605,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-personalization-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9e54bcdae615c20f0c93cdb14e71c4ad2c852d19",
       "identityReviewRequired": false
     },
     {
@@ -43616,8 +43616,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-playbooks-and-enablement-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3c8a0831639d23b326facd8ef6f85eff8152ccfb",
       "identityReviewRequired": false
     },
     {
@@ -43627,8 +43627,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-predictive-models-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d9c334e58b60a5f796a5e709c99f165f3fd1b54a",
       "identityReviewRequired": false
     },
     {
@@ -43638,8 +43638,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-product-workspace-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ccd156cadd0614ea2e34f07698d91bda22c17705",
       "identityReviewRequired": false
     },
     {
@@ -43649,8 +43649,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-projects-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "75990c2a8def7062e3379b8f09a22758c266d364",
       "identityReviewRequired": false
     },
     {
@@ -43660,8 +43660,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-proposals-and-quotes-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ec7552fe91ed6e4e99b87a776b56afe08b233358",
       "identityReviewRequired": false
     },
     {
@@ -43671,8 +43671,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-prospecting-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2af55e1c56e6502255ff847c57a72cb81ab39227",
       "identityReviewRequired": false
     },
     {
@@ -43682,8 +43682,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-prospecting-agent-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d179d5ddc3f611b69b1b6827e0fffc3270b5c4c9",
       "identityReviewRequired": false
     },
     {
@@ -43693,8 +43693,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-quotas-and-incentives-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bfae3e5cd7edfdbef570528e45d716fd2e73ce40",
       "identityReviewRequired": false
     },
     {
@@ -43704,8 +43704,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-referrals-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "abe9e3affe95bc89609c5dde1d7d675e62b68975",
       "identityReviewRequired": false
     },
     {
@@ -43715,8 +43715,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-reputation-management-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c6e2e78f78a7ed2efe1294501a3d09dd081a68d2",
       "identityReviewRequired": false
     },
     {
@@ -50458,8 +50458,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-agent-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e835cde29fdad47138e83fdd9e5965a9426f0539",
       "identityReviewRequired": false
     },
     {
@@ -50469,8 +50469,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-development-funds-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c3a0b9c304dea09b3f8539c6402884422173cd3f",
       "identityReviewRequired": false
     },
     {
@@ -50480,8 +50480,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-marketing-resources-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3cb0cfad3f462c2a09e4bf0c01dc329544d3b916",
       "identityReviewRequired": false
     },
     {
@@ -50491,8 +50491,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-memberships-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0f18ab6c0a0680009cb13992f20e9e53cc6ca161",
       "identityReviewRequired": false
     },
     {
@@ -50502,8 +50502,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-mobile-messaging-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d520c672854e8d24d6cde5a738f5c160c6311428",
       "identityReviewRequired": false
     },
     {
@@ -50513,8 +50513,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-omnichannel-service-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "966e044eb6778b630e1ce11b0ef2c8ded279810f",
       "identityReviewRequired": false
     },
     {
@@ -50524,8 +50524,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-orders-and-payments-workspace-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1ebf36f71a5637e738870b3510e143003b7106df",
       "identityReviewRequired": false
     },
     {
@@ -50535,8 +50535,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-partner-relationship-management-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "62bf7bb1b1238da4bd61554573e06737b6558d3e",
       "identityReviewRequired": false
     },
     {
@@ -50546,8 +50546,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-personalization-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f1d252459cce4cc3efcedbfdbd4fce1c939e7d46",
       "identityReviewRequired": false
     },
     {
@@ -50557,8 +50557,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-playbooks-and-enablement-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d3a69c3e4a8df3c9f92d3d38ea09209980f96540",
       "identityReviewRequired": false
     },
     {
@@ -50568,8 +50568,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-predictive-models-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ad74a3be708f6df0cc9d465a0eb263b236351b00",
       "identityReviewRequired": false
     },
     {
@@ -50579,8 +50579,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-product-workspace-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "003b97b9b0422cd8341faf4530f7af133940cd21",
       "identityReviewRequired": false
     },
     {
@@ -50590,8 +50590,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-projects-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c7206dcde5054778731a35f3f8589b33c94ea998",
       "identityReviewRequired": false
     },
     {
@@ -50601,8 +50601,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-proposals-and-quotes-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1f1fd78ae72ef9499408da41bacc26fff4a6c193",
       "identityReviewRequired": false
     },
     {
@@ -50612,8 +50612,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-prospecting-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bcbc320866b9ffe03b43c5ce08590978e72a6ff4",
       "identityReviewRequired": false
     },
     {
@@ -50623,8 +50623,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-prospecting-agent-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "011d638957ecf3509b47308f7ef42825ba2b4a22",
       "identityReviewRequired": false
     },
     {
@@ -50634,8 +50634,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-quotas-and-incentives-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "69549361c371977300d18255a685dd73ad58e6d7",
       "identityReviewRequired": false
     },
     {
@@ -50645,8 +50645,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-referrals-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1cd75763b507bc94fa6f5b16fe26d36bfdc44cfa",
       "identityReviewRequired": false
     },
     {
@@ -50656,8 +50656,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-crm-reputation-management-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "62f0580c4807a848d1f16b459bfbd56b350be9aa",
       "identityReviewRequired": false
     },
     {
@@ -57399,8 +57399,8 @@
       "intendedPackageIdentity": "module_crm_marketing_agent_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "952a7653af9a44a008baf92cb79b7f7c599de065",
       "identityReviewRequired": false
     },
     {
@@ -57410,8 +57410,8 @@
       "intendedPackageIdentity": "module_crm_marketing_development_funds_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7f4d75727d0bde48f063b5c2a959454331c45f7b",
       "identityReviewRequired": false
     },
     {
@@ -57421,8 +57421,8 @@
       "intendedPackageIdentity": "module_crm_marketing_resources_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "32f7c8e8feeb9106fd281603f0dde6568bddf2dd",
       "identityReviewRequired": false
     },
     {
@@ -57432,8 +57432,8 @@
       "intendedPackageIdentity": "module_crm_memberships_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "674f8cb94353e2bbb5856f39846c857b0b491a98",
       "identityReviewRequired": false
     },
     {
@@ -57443,8 +57443,8 @@
       "intendedPackageIdentity": "module_crm_mobile_messaging_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "82cf50fa3102df20589beed926db0b0b77c92024",
       "identityReviewRequired": false
     },
     {
@@ -57454,8 +57454,8 @@
       "intendedPackageIdentity": "module_crm_omnichannel_service_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7d6739711956f5e2c78b87d778f092c7a3188bbe",
       "identityReviewRequired": false
     },
     {
@@ -57465,8 +57465,8 @@
       "intendedPackageIdentity": "module_crm_orders_and_payments_workspace_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2d78557ae41e1a50e2dc9678b72c3d383876e35e",
       "identityReviewRequired": false
     },
     {
@@ -57476,8 +57476,8 @@
       "intendedPackageIdentity": "module_crm_partner_relationship_management_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0ad8de41144c027e4b303a35b4de546e20c15ddf",
       "identityReviewRequired": false
     },
     {
@@ -57487,8 +57487,8 @@
       "intendedPackageIdentity": "module_crm_personalization_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6fe9604104749815e10e6a6cda7f7045c7d8e467",
       "identityReviewRequired": false
     },
     {
@@ -57498,8 +57498,8 @@
       "intendedPackageIdentity": "module_crm_playbooks_and_enablement_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e5801d3425f40b02584c8ddf2c21adf6db353e62",
       "identityReviewRequired": false
     },
     {
@@ -57509,8 +57509,8 @@
       "intendedPackageIdentity": "module_crm_predictive_models_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "75af075b0478e791f1c87764479d1a5a25bba9f2",
       "identityReviewRequired": false
     },
     {
@@ -57520,8 +57520,8 @@
       "intendedPackageIdentity": "module_crm_product_workspace_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4476f286068d85712984e442dd58fbed9b059ef7",
       "identityReviewRequired": false
     },
     {
@@ -57531,8 +57531,8 @@
       "intendedPackageIdentity": "module_crm_projects_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b8740108c22c4cf73245ac8ca6119fccffaafc21",
       "identityReviewRequired": false
     },
     {
@@ -57542,8 +57542,8 @@
       "intendedPackageIdentity": "module_crm_proposals_and_quotes_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7e1637d8dd9e8b2dda8694662cb69aa488b5691a",
       "identityReviewRequired": false
     },
     {
@@ -57553,8 +57553,8 @@
       "intendedPackageIdentity": "module_crm_prospecting_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "95639ba7f38a2e956deacd4eac75b0251b62924c",
       "identityReviewRequired": false
     },
     {
@@ -57564,8 +57564,8 @@
       "intendedPackageIdentity": "module_crm_prospecting_agent_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9322b7fc00a12a08fbd95668168ac6eec6a68199",
       "identityReviewRequired": false
     },
     {
@@ -57575,8 +57575,8 @@
       "intendedPackageIdentity": "module_crm_quotas_and_incentives_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "86c58a015e4bb57bb99049c59d40cb3beacd8d49",
       "identityReviewRequired": false
     },
     {
@@ -57586,8 +57586,8 @@
       "intendedPackageIdentity": "module_crm_referrals_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e8e544ac987f972f8dd8a47baf617a9fc12b2c90",
       "identityReviewRequired": false
     },
     {
@@ -57597,8 +57597,8 @@
       "intendedPackageIdentity": "module_crm_reputation_management_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "844c2b29885d5134445123d769cf0e2c0aef8d18",
       "identityReviewRequired": false
     },
     {
@@ -64340,8 +64340,8 @@
       "intendedPackageIdentity": "module_crm_marketing_agent_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "429d196f2a04dec5f83a48b96c778f7442194faf",
       "identityReviewRequired": false
     },
     {
@@ -64351,8 +64351,8 @@
       "intendedPackageIdentity": "module_crm_marketing_development_funds_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "134924bfef2b823df0af9d0ccf900ac056e8b265",
       "identityReviewRequired": false
     },
     {
@@ -64362,8 +64362,8 @@
       "intendedPackageIdentity": "module_crm_marketing_resources_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "251c1816c50e0bf0a36598092b0259d33a672a66",
       "identityReviewRequired": false
     },
     {
@@ -64373,8 +64373,8 @@
       "intendedPackageIdentity": "module_crm_memberships_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cc27a00b907b3d96e96edf667a487c6cf65c8df4",
       "identityReviewRequired": false
     },
     {
@@ -64384,8 +64384,8 @@
       "intendedPackageIdentity": "module_crm_mobile_messaging_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "de093d5147b17160a685d6457cf37a14f68df1f1",
       "identityReviewRequired": false
     },
     {
@@ -64395,8 +64395,8 @@
       "intendedPackageIdentity": "module_crm_omnichannel_service_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f5bc15f53794e1ff63ab8214e873033efc0dd437",
       "identityReviewRequired": false
     },
     {
@@ -64406,8 +64406,8 @@
       "intendedPackageIdentity": "module_crm_orders_and_payments_workspace_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9a1f80403d58e9232883d887fa6fb688e7be1f32",
       "identityReviewRequired": false
     },
     {
@@ -64417,8 +64417,8 @@
       "intendedPackageIdentity": "module_crm_partner_relationship_management_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bb61cd1786ac2bc45a0b396abf727b66d0eb7627",
       "identityReviewRequired": false
     },
     {
@@ -64428,8 +64428,8 @@
       "intendedPackageIdentity": "module_crm_personalization_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a7fcd6f1f9d9dcaf4ed8d1da2e2c8e87e50c3f84",
       "identityReviewRequired": false
     },
     {
@@ -64439,8 +64439,8 @@
       "intendedPackageIdentity": "module_crm_playbooks_and_enablement_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e22538ee192c20546be5ea0e4a81666e05baaa22",
       "identityReviewRequired": false
     },
     {
@@ -64450,8 +64450,8 @@
       "intendedPackageIdentity": "module_crm_predictive_models_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "395c471c22ede0a23c60db01edf267eb4517905e",
       "identityReviewRequired": false
     },
     {
@@ -64461,8 +64461,8 @@
       "intendedPackageIdentity": "module_crm_product_workspace_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0cec8b0b272cc9169548d9e77a1f70ee8ab0f852",
       "identityReviewRequired": false
     },
     {
@@ -64472,8 +64472,8 @@
       "intendedPackageIdentity": "module_crm_projects_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "14a4a24ab391804de25cf4ee59665b633f1eae33",
       "identityReviewRequired": false
     },
     {
@@ -64483,8 +64483,8 @@
       "intendedPackageIdentity": "module_crm_proposals_and_quotes_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "15b0538ccb158b3a94f2a050885dad7e38011e85",
       "identityReviewRequired": false
     },
     {
@@ -64494,8 +64494,8 @@
       "intendedPackageIdentity": "module_crm_prospecting_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5e198e31b27f2f4fc8f4ee4d72b993003ae08822",
       "identityReviewRequired": false
     },
     {
@@ -64505,8 +64505,8 @@
       "intendedPackageIdentity": "module_crm_prospecting_agent_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cd01d7bd4197bab8ac6f3b4a108d034a80856cc6",
       "identityReviewRequired": false
     },
     {
@@ -64516,8 +64516,8 @@
       "intendedPackageIdentity": "module_crm_quotas_and_incentives_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c17c8e99cae4fe00a1c6c13aaf61214fa206c02a",
       "identityReviewRequired": false
     },
     {
@@ -64527,8 +64527,8 @@
       "intendedPackageIdentity": "module_crm_referrals_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a5d182c39b0c950320e1f4b814fd8b2c1de9f04c",
       "identityReviewRequired": false
     },
     {
@@ -64538,8 +64538,8 @@
       "intendedPackageIdentity": "module_crm_reputation_management_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7a3c0ed67191d7fa3226f5c3542b1bd200eb1b01",
       "identityReviewRequired": false
     },
     {
@@ -71281,8 +71281,8 @@
       "intendedPackageIdentity": "module_crm_marketing_agent_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f432df7d62095856c338c283fb06423ff514651f",
       "identityReviewRequired": false
     },
     {
@@ -71292,8 +71292,8 @@
       "intendedPackageIdentity": "module_crm_marketing_development_funds_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e0f87fd768e18b9d7905786384c92fb5be47e379",
       "identityReviewRequired": false
     },
     {
@@ -71303,8 +71303,8 @@
       "intendedPackageIdentity": "module_crm_marketing_resources_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e2ed7b8214566d812e1e81cea4265af14d1c1e18",
       "identityReviewRequired": false
     },
     {
@@ -71314,8 +71314,8 @@
       "intendedPackageIdentity": "module_crm_memberships_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f3edec82ec2a8d636af546b3c8a2f829a05b674",
       "identityReviewRequired": false
     },
     {
@@ -71325,8 +71325,8 @@
       "intendedPackageIdentity": "module_crm_mobile_messaging_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2a5c8579e9f21449da60a4846ab4a683d1e6d1b5",
       "identityReviewRequired": false
     },
     {
@@ -71336,8 +71336,8 @@
       "intendedPackageIdentity": "module_crm_omnichannel_service_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7339c1b89ad57d7c74a97e1020b1ba92c26f9240",
       "identityReviewRequired": false
     },
     {
@@ -71347,8 +71347,8 @@
       "intendedPackageIdentity": "module_crm_orders_and_payments_workspace_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f6afa0aaff47ed1359c7494f677565165409fb24",
       "identityReviewRequired": false
     },
     {
@@ -71358,8 +71358,8 @@
       "intendedPackageIdentity": "module_crm_partner_relationship_management_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e837fc2d6d7b36cd6470e296cf053898b1deb445",
       "identityReviewRequired": false
     },
     {
@@ -71369,8 +71369,8 @@
       "intendedPackageIdentity": "module_crm_personalization_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fd8ad1e6d6c21f4ac0c7aeb9afe2a44f776fa7a9",
       "identityReviewRequired": false
     },
     {
@@ -71380,8 +71380,8 @@
       "intendedPackageIdentity": "module_crm_playbooks_and_enablement_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "46a913d62fa4c7b129388a903a87b9588e219b40",
       "identityReviewRequired": false
     },
     {
@@ -71391,8 +71391,8 @@
       "intendedPackageIdentity": "module_crm_predictive_models_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1230e51dc1120b8e25ed1f633bcb2ccfcfe5602c",
       "identityReviewRequired": false
     },
     {
@@ -71402,8 +71402,8 @@
       "intendedPackageIdentity": "module_crm_product_workspace_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8f0773be112844a67d9d46041a0e8185a100f9e7",
       "identityReviewRequired": false
     },
     {
@@ -71413,8 +71413,8 @@
       "intendedPackageIdentity": "module_crm_projects_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7a7d9acdbeb0ff4504eff2616d606d6d37ba5061",
       "identityReviewRequired": false
     },
     {
@@ -71424,8 +71424,8 @@
       "intendedPackageIdentity": "module_crm_proposals_and_quotes_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5c96a08a59bd2b3e95a25afbc82b81d8f9ed865d",
       "identityReviewRequired": false
     },
     {
@@ -71435,8 +71435,8 @@
       "intendedPackageIdentity": "module_crm_prospecting_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "620298b9cdb68e6947870e35a47edc946ef12a56",
       "identityReviewRequired": false
     },
     {
@@ -71446,8 +71446,8 @@
       "intendedPackageIdentity": "module_crm_prospecting_agent_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3b36bf3ac81e4a13c68d6f3270a75aa5ca544e2e",
       "identityReviewRequired": false
     },
     {
@@ -71457,8 +71457,8 @@
       "intendedPackageIdentity": "module_crm_quotas_and_incentives_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8cf55c2e8d4a297d458d40e97d0cdebbe7ec06cf",
       "identityReviewRequired": false
     },
     {
@@ -71468,8 +71468,8 @@
       "intendedPackageIdentity": "module_crm_referrals_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ea3f140be56cf48413cf8f0098912fefa645332e",
       "identityReviewRequired": false
     },
     {
@@ -71479,8 +71479,8 @@
       "intendedPackageIdentity": "module_crm_reputation_management_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b8e077bb56d5aca047233644fef57f14f8c9acfe",
       "identityReviewRequired": false
     },
     {
