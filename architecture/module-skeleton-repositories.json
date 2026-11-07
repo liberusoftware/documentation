@@ -23926,8 +23926,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-video-timecode-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f4cbedd02ddadd02b4d4a6ce900c9545e9b0c5c1",
       "identityReviewRequired": false
     },
     {
@@ -30867,8 +30867,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-video-timecode-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c7dcbaec3b02f8fc9cfd3a2febb883f296408cac",
       "identityReviewRequired": false
     },
     {
@@ -37808,8 +37808,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-video-timecode-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "06c645a8ee28da48b5fa473da770f7e7c612b90a",
       "identityReviewRequired": false
     },
     {
@@ -44749,8 +44749,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-video-timecode-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "34dc022fc39941e6f0bd6b6335771149c89cb565",
       "identityReviewRequired": false
     },
     {
@@ -51679,8 +51679,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-tempo-groove-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "25ac220a2d3682970369a9b3d7a5b04b6e2a1ab9",
       "identityReviewRequired": false
     },
     {
@@ -51690,8 +51690,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-video-timecode-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a64a206e93260bf16db079e2defe0d8724b41f58",
       "identityReviewRequired": false
     },
     {
@@ -58620,8 +58620,8 @@
       "intendedPackageIdentity": "module_music_tempo_groove_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cb3180c670644c829d22d4d84800638733a1f31c",
       "identityReviewRequired": false
     },
     {
@@ -58631,8 +58631,8 @@
       "intendedPackageIdentity": "module_music_video_timecode_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8d0c71b2006aa4bf7e11093fb243731244b48e94",
       "identityReviewRequired": false
     },
     {
@@ -65561,8 +65561,8 @@
       "intendedPackageIdentity": "module_music_tempo_groove_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b78552181fac1b3ea08627d99f5771fc5287c65c",
       "identityReviewRequired": false
     },
     {
@@ -65572,8 +65572,8 @@
       "intendedPackageIdentity": "module_music_video_timecode_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ddce0d8e326cb76a44b07cb9ed300dcc4e046300",
       "identityReviewRequired": false
     },
     {
@@ -72502,8 +72502,8 @@
       "intendedPackageIdentity": "module_music_tempo_groove_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7900a505aca48ae67495580780aba7b8b6e80328",
       "identityReviewRequired": false
     },
     {
@@ -72513,8 +72513,8 @@
       "intendedPackageIdentity": "module_music_video_timecode_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "442cd56135fbef56b0548a5a2af3337a2a0175df",
       "identityReviewRequired": false
     },
     {
