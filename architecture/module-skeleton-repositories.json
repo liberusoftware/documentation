@@ -18800,8 +18800,8 @@
       "intendedPackageIdentity": "liberusoftware/planned-liberu-business-workflow-reconciliation-c7cb9c4f-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "04ee29fd9c2404842e75176dd3eae946f431b39b",
       "identityReviewRequired": true
     },
     {
@@ -18811,8 +18811,8 @@
       "intendedPackageIdentity": "liberusoftware/planned-liberu-executive-insights-0532ffee-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "050c726f88b1fae0ab060506b927d303ecff7221",
       "identityReviewRequired": true
     },
     {
@@ -18822,8 +18822,8 @@
       "intendedPackageIdentity": "liberusoftware/planned-liberu-platform-orchestration-081c1f70-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "15fb7296e145053f1540409bdcb6f4c81eb51335",
       "identityReviewRequired": true
     },
     {
@@ -18833,8 +18833,8 @@
       "intendedPackageIdentity": "liberusoftware/planned-liberu-revenue-and-care-orchestration-40451d50-filament",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-filament",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "369603fe19c07cc39ff518eb5ec802259bfbf855",
       "identityReviewRequired": true
     },
     {
@@ -25598,8 +25598,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-saved-lists-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "38ae64f1fc901c3b2c9e71c7fd15e8dcced55bae",
       "identityReviewRequired": false
     },
     {
@@ -25609,8 +25609,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-search-and-discovery-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6b4bc61f41b2dbe8e8b08debb32e9e2dab112b3b",
       "identityReviewRequired": false
     },
     {
@@ -25620,8 +25620,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-seller-marketplace-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0a9316126abe11c77498e573c04dcd11d93ddbd4",
       "identityReviewRequired": false
     },
     {
@@ -25631,8 +25631,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-shared-catalogs-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b4116ca981374ff69202ce66d0ac3688a91758e1",
       "identityReviewRequired": false
     },
     {
@@ -25642,8 +25642,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-shipping-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e6339b29142491edb29db2ca736e4e8e578c92bb",
       "identityReviewRequired": false
     },
     {
@@ -25653,8 +25653,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-social-commerce-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "83042d77c71e62abf680bef45d2bda816c837680",
       "identityReviewRequired": false
     },
     {
@@ -25664,8 +25664,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-store-templates-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fcdedc7b2a5c8b9825a086142f1eb1007d2a9fc0",
       "identityReviewRequired": false
     },
     {
@@ -25675,8 +25675,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-subscription-commerce-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "24b62d79ad4d44367c9a8817cbdb27c1f5b974b2",
       "identityReviewRequired": false
     },
     {
@@ -25686,8 +25686,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-tax-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dad2368b455371d457cad4f6c536e85a863425fd",
       "identityReviewRequired": false
     },
     {
@@ -25697,8 +25697,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-transfers-and-replenishment-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "798681a4893a09f9b4e8b547f73d9369e6f44c8a",
       "identityReviewRequired": false
     },
     {
@@ -25708,8 +25708,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-unified-commerce-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d69de2fafa99485529cb695ddec5364ed5ef2236",
       "identityReviewRequired": false
     },
     {
@@ -25719,8 +25719,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-warehouse-operations-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "62a3e18ea264504c7098b6682d4a6bf477603a83",
       "identityReviewRequired": false
     },
     {
@@ -25730,8 +25730,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-warranty-and-claims-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "07d78c3afdaf3edcf3495c8b6f8c711521ee3b0c",
       "identityReviewRequired": false
     },
     {
@@ -25741,8 +25741,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-business-workflow-reconciliation-c7cb9c4f-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fabab29270c5b60178d071778ff5ad7811be0a1b",
       "identityReviewRequired": true
     },
     {
@@ -25752,8 +25752,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-executive-insights-0532ffee-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "854bca65130bd99e4f604f554cb36ece3eb6ac1e",
       "identityReviewRequired": true
     },
     {
@@ -25763,8 +25763,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-platform-orchestration-081c1f70-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6d5f2ac54dd5209627ef8e71008b9851b59c3109",
       "identityReviewRequired": true
     },
     {
@@ -25774,8 +25774,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-revenue-and-care-orchestration-40451d50-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "11924d73d18127e08374480968788735fc138b9b",
       "identityReviewRequired": true
     },
     {
@@ -25785,8 +25785,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-portals-and-reporting-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cdf30c20f7d31badc7581b8caf0e5345c2405844",
       "identityReviewRequired": false
     },
     {
@@ -32539,8 +32539,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-saved-lists-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a8b7f5a918e409fb46c47f2986d1413423092f6d",
       "identityReviewRequired": false
     },
     {
@@ -32550,8 +32550,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-search-and-discovery-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3c9fb40757e2487f9106bfd21ec6d8c07e6cd034",
       "identityReviewRequired": false
     },
     {
@@ -32561,8 +32561,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-seller-marketplace-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "247c32ef635cb834eecb5a20d83e297781c990ac",
       "identityReviewRequired": false
     },
     {
@@ -32572,8 +32572,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-shared-catalogs-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bf901c2155a124dd40806aa8d89e31ff17c776c9",
       "identityReviewRequired": false
     },
     {
@@ -32583,8 +32583,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-shipping-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "57598368a4683c759f84f7bcaab5851ba75aced2",
       "identityReviewRequired": false
     },
     {
@@ -32594,8 +32594,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-social-commerce-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "139015bb2433e702c6d9982befaf0bf627313960",
       "identityReviewRequired": false
     },
     {
@@ -32605,8 +32605,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-store-templates-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f0a58ce818bbeab372682538034e487385994d74",
       "identityReviewRequired": false
     },
     {
@@ -32616,8 +32616,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-subscription-commerce-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a994bfaf7666cef40e49f5eb12dc3c296b128df9",
       "identityReviewRequired": false
     },
     {
@@ -32627,8 +32627,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-tax-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f6c855705993e1f55ac126a4c35f65163fdfaef8",
       "identityReviewRequired": false
     },
     {
@@ -32638,8 +32638,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-transfers-and-replenishment-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "27958c2501582b7abbeed23b491f60cd6cbdef3a",
       "identityReviewRequired": false
     },
     {
@@ -32649,8 +32649,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-unified-commerce-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4b61e1acdd7468d1ba0728020ceb013b586cc39b",
       "identityReviewRequired": false
     },
     {
@@ -32660,8 +32660,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-warehouse-operations-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "87a2c48074fd7eb8a57595545c79bf66ceea069d",
       "identityReviewRequired": false
     },
     {
@@ -32671,8 +32671,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-warranty-and-claims-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "580760568ccca192066cfa0c327dfa7e15d76bf7",
       "identityReviewRequired": false
     },
     {
@@ -32682,8 +32682,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-business-workflow-reconciliation-c7cb9c4f-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fa218b95a9462601579222edf38c0b4737816478",
       "identityReviewRequired": true
     },
     {
@@ -32693,8 +32693,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-executive-insights-0532ffee-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "eea594de97a7638ea19cb12205c144eacc408d1f",
       "identityReviewRequired": true
     },
     {
@@ -32704,8 +32704,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-platform-orchestration-081c1f70-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "05f289d1c9832fdfe09ca268876cca9fe79f6f40",
       "identityReviewRequired": true
     },
     {
@@ -32715,8 +32715,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-revenue-and-care-orchestration-40451d50-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d2b5aac95cb172cea01d88aff873d68fe3a032f8",
       "identityReviewRequired": true
     },
     {
@@ -32726,8 +32726,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-portals-and-reporting-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "18e2ddd77677dd7df89df1bfa20187c9a07ac4de",
       "identityReviewRequired": false
     },
     {
@@ -39480,8 +39480,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-saved-lists-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9ce5780bad1155000981e3cea59b43bdf78eeaaa",
       "identityReviewRequired": false
     },
     {
@@ -39491,8 +39491,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-search-and-discovery-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "51e656eda744fd0d538d5fd8bb1252a836177443",
       "identityReviewRequired": false
     },
     {
@@ -39502,8 +39502,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-seller-marketplace-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "946ec360691d90dd03d0a638278509b62e6c06d1",
       "identityReviewRequired": false
     },
     {
@@ -39513,8 +39513,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-shared-catalogs-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0d8ab8e7d0c0f49736e130512680355cca196229",
       "identityReviewRequired": false
     },
     {
@@ -39524,8 +39524,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-shipping-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fb5bc46c49b281ca4287a8b7b8297f0a2437e26b",
       "identityReviewRequired": false
     },
     {
@@ -39535,8 +39535,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-social-commerce-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "eea5a2deba094d4b11deee241a2c971061925566",
       "identityReviewRequired": false
     },
     {
@@ -39546,8 +39546,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-store-templates-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "443a38300731d5bac5d825495c57c34dcc3d8c3c",
       "identityReviewRequired": false
     },
     {
@@ -39557,8 +39557,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-subscription-commerce-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "843fba590aaccab0e6df0b274c3bd62c2a291105",
       "identityReviewRequired": false
     },
     {
@@ -39568,8 +39568,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-tax-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d7b73877649fedc222737cb05d9ddce5579c9dd9",
       "identityReviewRequired": false
     },
     {
@@ -39579,8 +39579,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-transfers-and-replenishment-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f801fe8dbf8303e4c4080fc7fe69f33a58f2d21",
       "identityReviewRequired": false
     },
     {
@@ -39590,8 +39590,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-unified-commerce-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e78488143e30fac082fd849e0b009e16d009f04f",
       "identityReviewRequired": false
     },
     {
@@ -39601,8 +39601,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-warehouse-operations-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "75bbebe510328151a62cc96502fcfbedbc8a6358",
       "identityReviewRequired": false
     },
     {
@@ -39612,8 +39612,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-warranty-and-claims-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2ca688d2920cdd223f474c271b2338e0ea818d9e",
       "identityReviewRequired": false
     },
     {
@@ -39623,8 +39623,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-business-workflow-reconciliation-c7cb9c4f-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "972a0b09300afd41006a66ccff7b36f3c2c0fda9",
       "identityReviewRequired": true
     },
     {
@@ -39634,8 +39634,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-executive-insights-0532ffee-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "608ad2436ac4e92b2906a9eff497f72b9a4a591c",
       "identityReviewRequired": true
     },
     {
@@ -39645,8 +39645,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-platform-orchestration-081c1f70-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8263bdc22b20436ae1911f924d47a044448c70ca",
       "identityReviewRequired": true
     },
     {
@@ -39656,8 +39656,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-revenue-and-care-orchestration-40451d50-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e3d3fffc71b94bb560987976e6a2154d7e3e1d9e",
       "identityReviewRequired": true
     },
     {
@@ -39667,8 +39667,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-portals-and-reporting-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "43c74c837eed3b94abe43800d762bef472173b41",
       "identityReviewRequired": false
     },
     {
@@ -46421,8 +46421,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-saved-lists-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "219d3ad74ff85e613f3aa29f5b8ed6dc0155b881",
       "identityReviewRequired": false
     },
     {
@@ -46432,8 +46432,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-search-and-discovery-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a0fc14b70c31155394f086adcfea866cba6334be",
       "identityReviewRequired": false
     },
     {
@@ -46443,8 +46443,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-seller-marketplace-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1ada24ae1ca0255ea03a5aff3b69700c1e38438b",
       "identityReviewRequired": false
     },
     {
@@ -46454,8 +46454,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-shared-catalogs-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5e9f0f5ac7508cf7864935d6e87a3947890e2e45",
       "identityReviewRequired": false
     },
     {
@@ -46465,8 +46465,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-shipping-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9dc5554063c581e8cd7eb6d062c0a01546219453",
       "identityReviewRequired": false
     },
     {
@@ -46476,8 +46476,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-social-commerce-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "18250fca155ba4b1264c6ae8dcc46b59c87524bb",
       "identityReviewRequired": false
     },
     {
@@ -46487,8 +46487,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-store-templates-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c7f0e9c27a5fb631b0e0f9f0661a63d7130fe0eb",
       "identityReviewRequired": false
     },
     {
@@ -46498,8 +46498,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-subscription-commerce-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5b3487b598e3d4921d098fb2b8bc808b6e4d8bd8",
       "identityReviewRequired": false
     },
     {
@@ -46509,8 +46509,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-tax-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6dbc6e2df6c8516a2948276d1df5278f72b9dc32",
       "identityReviewRequired": false
     },
     {
@@ -46520,8 +46520,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-transfers-and-replenishment-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a6ce1f7a68d8d920bed1f05684b5010e0954accc",
       "identityReviewRequired": false
     },
     {
@@ -46531,8 +46531,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-unified-commerce-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0d249fe20ce0686318645e2626aceed1ea73987d",
       "identityReviewRequired": false
     },
     {
@@ -46542,8 +46542,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-warehouse-operations-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "780c2403c258b5aca185904bc869a2a08776065e",
       "identityReviewRequired": false
     },
     {
@@ -46553,8 +46553,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-warranty-and-claims-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "74e573be9473f3764c0775cb4309a073e07d60a0",
       "identityReviewRequired": false
     },
     {
@@ -46564,8 +46564,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-business-workflow-reconciliation-c7cb9c4f-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a46eb027f29412c4f1c93ec17a5b151e4e52912f",
       "identityReviewRequired": true
     },
     {
@@ -46575,8 +46575,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-executive-insights-0532ffee-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e3847201133425f0a3b422a849a91d21d3d903c5",
       "identityReviewRequired": true
     },
     {
@@ -46586,8 +46586,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-platform-orchestration-081c1f70-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "21e2d4d368d334a6da22d00257fad65d3e9d8f90",
       "identityReviewRequired": true
     },
     {
@@ -46597,8 +46597,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-revenue-and-care-orchestration-40451d50-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ffdadff8e1fdd8077742383dbd608a5588a86172",
       "identityReviewRequired": true
     },
     {
@@ -46608,8 +46608,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-portals-and-reporting-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9a39867a2a35b00e1c7af0d05c1bcf21178e027c",
       "identityReviewRequired": false
     },
     {
@@ -53362,8 +53362,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-saved-lists-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a75714b05569314785b42e5f46c66ccd9069cc48",
       "identityReviewRequired": false
     },
     {
@@ -53373,8 +53373,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-search-and-discovery-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fe98ea6bd294f53d11170450c632937c7389a9df",
       "identityReviewRequired": false
     },
     {
@@ -53384,8 +53384,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-seller-marketplace-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "90c7d86bb77ad3c84f0804c8507b3db216199b3b",
       "identityReviewRequired": false
     },
     {
@@ -53395,8 +53395,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-shared-catalogs-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "000cfa79c5d7e9e9f0f1e8a8b47c6be78c4b0fe9",
       "identityReviewRequired": false
     },
     {
@@ -53406,8 +53406,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-shipping-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "32008d67995fe65703601fa6e963255cf2d8fb47",
       "identityReviewRequired": false
     },
     {
@@ -53417,8 +53417,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-social-commerce-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "52414993ac4fa65ac16abd2c13067bd67cc1b8c4",
       "identityReviewRequired": false
     },
     {
@@ -53428,8 +53428,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-store-templates-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cbb85498c93fa5b430b0bc875db7ad9b608338f9",
       "identityReviewRequired": false
     },
     {
@@ -53439,8 +53439,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-subscription-commerce-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "eb1a9f6ea67d02c63987e388767948fb430bb8e5",
       "identityReviewRequired": false
     },
     {
@@ -53450,8 +53450,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-tax-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "18595f313c50d4dc7cdd00d4766f3b668ccde2e6",
       "identityReviewRequired": false
     },
     {
@@ -53461,8 +53461,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-transfers-and-replenishment-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9661faf080894ba4c8bbb9bb7f074d4c52ded6a6",
       "identityReviewRequired": false
     },
     {
@@ -53472,8 +53472,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-unified-commerce-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "59251489678ec9fea3033dfd578d1b3c61506264",
       "identityReviewRequired": false
     },
     {
@@ -53483,8 +53483,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-warehouse-operations-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "20ff3b2933262981bc19e93e1bb48890d3fe8b1b",
       "identityReviewRequired": false
     },
     {
@@ -53494,8 +53494,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-ecommerce-warranty-and-claims-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "af07d7f2baf13ccc8f0709518016551665f1398f",
       "identityReviewRequired": false
     },
     {
@@ -53505,8 +53505,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-business-workflow-reconciliation-c7cb9c4f-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c1ce5c47ff3b404f69357c14e4dd12daefcf3eff",
       "identityReviewRequired": true
     },
     {
@@ -53516,8 +53516,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-executive-insights-0532ffee-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1fb59e843ec68a25775480025d233b2e8a0e0418",
       "identityReviewRequired": true
     },
     {
@@ -53527,8 +53527,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-platform-orchestration-081c1f70-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d11bcfbeff7f89737d9bb4d862c9d85b7769848f",
       "identityReviewRequired": true
     },
     {
@@ -53538,8 +53538,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-planned-liberu-revenue-and-care-orchestration-40451d50-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4d9fb65adea84fa212aebc376604b4adc026616a",
       "identityReviewRequired": true
     },
     {
@@ -53549,8 +53549,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-real-estate-portals-and-reporting-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8af2f81b535edac1eb16e3eb7fef0ef83f4dcb30",
       "identityReviewRequired": false
     },
     {
@@ -60292,8 +60292,8 @@
       "intendedPackageIdentity": "module_ecommerce_sandbox_and_release_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f8bb3739589854f01846b5de49b66017ef6ffd80",
       "identityReviewRequired": false
     },
     {
@@ -60303,8 +60303,8 @@
       "intendedPackageIdentity": "module_ecommerce_saved_lists_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5a6196c595991e190f44d0857100631058b16c1a",
       "identityReviewRequired": false
     },
     {
@@ -60314,8 +60314,8 @@
       "intendedPackageIdentity": "module_ecommerce_search_and_discovery_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3981c927b2013dba9abace08a24b1c06250f8156",
       "identityReviewRequired": false
     },
     {
@@ -60325,8 +60325,8 @@
       "intendedPackageIdentity": "module_ecommerce_seller_marketplace_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "37ad88428ab916d0a59dc14860f2883dbd62d01e",
       "identityReviewRequired": false
     },
     {
@@ -60336,8 +60336,8 @@
       "intendedPackageIdentity": "module_ecommerce_shared_catalogs_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "10ac9b8246a02ec08c6e5ff941040644afa74600",
       "identityReviewRequired": false
     },
     {
@@ -60347,8 +60347,8 @@
       "intendedPackageIdentity": "module_ecommerce_shipping_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8aaac251bd6ebae54f4c13ef7a44b47f95e6612e",
       "identityReviewRequired": false
     },
     {
@@ -60358,8 +60358,8 @@
       "intendedPackageIdentity": "module_ecommerce_social_commerce_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e71f1fe0fcb116dc0b614fea00f61cbd61bacb30",
       "identityReviewRequired": false
     },
     {
@@ -60369,8 +60369,8 @@
       "intendedPackageIdentity": "module_ecommerce_store_templates_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "acd9624d3207bbc9568023638b73633bda570414",
       "identityReviewRequired": false
     },
     {
@@ -60380,8 +60380,8 @@
       "intendedPackageIdentity": "module_ecommerce_subscription_commerce_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c819f2e46ddf9261dec38ae63f9518fb92832f6a",
       "identityReviewRequired": false
     },
     {
@@ -60391,8 +60391,8 @@
       "intendedPackageIdentity": "module_ecommerce_tax_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6c92a92b3347b1a6f00a1d310b8456318900eec5",
       "identityReviewRequired": false
     },
     {
@@ -60402,8 +60402,8 @@
       "intendedPackageIdentity": "module_ecommerce_transfers_and_replenishment_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0cea55bd653530400152af7a4dedabd77be9c979",
       "identityReviewRequired": false
     },
     {
@@ -60413,8 +60413,8 @@
       "intendedPackageIdentity": "module_ecommerce_unified_commerce_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e56829c689c0f7764c7b1b286add390ce15d63d6",
       "identityReviewRequired": false
     },
     {
@@ -60424,8 +60424,8 @@
       "intendedPackageIdentity": "module_ecommerce_warehouse_operations_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3f340f9438aa183b1f41b15bd03cf09e64659cdd",
       "identityReviewRequired": false
     },
     {
@@ -60435,8 +60435,8 @@
       "intendedPackageIdentity": "module_ecommerce_warranty_and_claims_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4db5a65a724f09339518f5e54c4671b9700a205a",
       "identityReviewRequired": false
     },
     {
@@ -60446,8 +60446,8 @@
       "intendedPackageIdentity": "module_planned_liberu_business_workflow_reconciliation_c7cb9c4f_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "583716a8ea227be6ddeac92c7ae91c6ab948e514",
       "identityReviewRequired": true
     },
     {
@@ -60457,8 +60457,8 @@
       "intendedPackageIdentity": "module_planned_liberu_executive_insights_0532ffee_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "25cf757e9008f0fbda866ae0917145853b351105",
       "identityReviewRequired": true
     },
     {
@@ -60468,8 +60468,8 @@
       "intendedPackageIdentity": "module_planned_liberu_platform_orchestration_081c1f70_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8da3515db0236bc8198d0ec807f117c43a9837df",
       "identityReviewRequired": true
     },
     {
@@ -60479,8 +60479,8 @@
       "intendedPackageIdentity": "module_planned_liberu_revenue_and_care_orchestration_40451d50_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5205383110407d04c240b6edcfdc511bbec75239",
       "identityReviewRequired": true
     },
     {
@@ -60490,8 +60490,8 @@
       "intendedPackageIdentity": "module_real_estate_portals_and_reporting_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "569dc0f6c872906e78d00541799f785385c1e437",
       "identityReviewRequired": false
     },
     {
@@ -67233,8 +67233,8 @@
       "intendedPackageIdentity": "module_ecommerce_sandbox_and_release_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1f63bde4b89820c9f265300546b79d5a5481765e",
       "identityReviewRequired": false
     },
     {
@@ -67244,8 +67244,8 @@
       "intendedPackageIdentity": "module_ecommerce_saved_lists_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cdd4b80effa143f77e31022773d96e890a86b2cd",
       "identityReviewRequired": false
     },
     {
@@ -67255,8 +67255,8 @@
       "intendedPackageIdentity": "module_ecommerce_search_and_discovery_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f15c070dd21e4163c001be0f052393ecd6ff1880",
       "identityReviewRequired": false
     },
     {
@@ -67266,8 +67266,8 @@
       "intendedPackageIdentity": "module_ecommerce_seller_marketplace_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8129b9becea22cc8020b1074562161c5c1aebfe0",
       "identityReviewRequired": false
     },
     {
@@ -67277,8 +67277,8 @@
       "intendedPackageIdentity": "module_ecommerce_shared_catalogs_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7afb1a40690531f788907517f150f1f3b12f4d28",
       "identityReviewRequired": false
     },
     {
@@ -67288,8 +67288,8 @@
       "intendedPackageIdentity": "module_ecommerce_shipping_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9930ca8033571c903bfabe5140694859eb4c89c4",
       "identityReviewRequired": false
     },
     {
@@ -67299,8 +67299,8 @@
       "intendedPackageIdentity": "module_ecommerce_social_commerce_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8355a8b8b1e2bab16f78483f78299451ae992d29",
       "identityReviewRequired": false
     },
     {
@@ -67310,8 +67310,8 @@
       "intendedPackageIdentity": "module_ecommerce_store_templates_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8e792ab8c0ff68120ceb52e49f6029701ef6dd99",
       "identityReviewRequired": false
     },
     {
@@ -67321,8 +67321,8 @@
       "intendedPackageIdentity": "module_ecommerce_subscription_commerce_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e836831fdc6d982ad014d8933c0db16e45e406ab",
       "identityReviewRequired": false
     },
     {
@@ -67332,8 +67332,8 @@
       "intendedPackageIdentity": "module_ecommerce_tax_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c770ca3dc78e97171813eead952ad88a802a7288",
       "identityReviewRequired": false
     },
     {
@@ -67343,8 +67343,8 @@
       "intendedPackageIdentity": "module_ecommerce_transfers_and_replenishment_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ac709f727da7d1e731aea11505f439bf9c328ab7",
       "identityReviewRequired": false
     },
     {
@@ -67354,8 +67354,8 @@
       "intendedPackageIdentity": "module_ecommerce_unified_commerce_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3f5a8324b9d1b296e51d98fd86499dfda170ed14",
       "identityReviewRequired": false
     },
     {
@@ -67365,8 +67365,8 @@
       "intendedPackageIdentity": "module_ecommerce_warehouse_operations_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6fffbc0e849a287c8aaf7e33f5c424649a81d5d2",
       "identityReviewRequired": false
     },
     {
@@ -67376,8 +67376,8 @@
       "intendedPackageIdentity": "module_ecommerce_warranty_and_claims_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d22e58798d9f54bee2e3041c2428e821f474aefb",
       "identityReviewRequired": false
     },
     {
@@ -67387,8 +67387,8 @@
       "intendedPackageIdentity": "module_planned_liberu_business_workflow_reconciliation_c7cb9c4f_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b2a7aa37c4799f6c4f5927f5b6d4ec6b99aa3c7d",
       "identityReviewRequired": true
     },
     {
@@ -67398,8 +67398,8 @@
       "intendedPackageIdentity": "module_planned_liberu_executive_insights_0532ffee_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "446930d5b4d70df971ff46f7cde9763e1a90507e",
       "identityReviewRequired": true
     },
     {
@@ -67409,8 +67409,8 @@
       "intendedPackageIdentity": "module_planned_liberu_platform_orchestration_081c1f70_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "99dfa90f1a1d120f3dac0ff03a12f1c7b77c1c21",
       "identityReviewRequired": true
     },
     {
@@ -67420,8 +67420,8 @@
       "intendedPackageIdentity": "module_planned_liberu_revenue_and_care_orchestration_40451d50_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2a8848aa031aa3b6ec63eaab838632fec27330c6",
       "identityReviewRequired": true
     },
     {
@@ -67431,8 +67431,8 @@
       "intendedPackageIdentity": "module_real_estate_portals_and_reporting_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "44487025902cddd8e968c7fbc5d01726a6d5d89c",
       "identityReviewRequired": false
     },
     {
@@ -74174,8 +74174,8 @@
       "intendedPackageIdentity": "module_ecommerce_sandbox_and_release_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0412a49e30c37cdc6a26eb6977ca998702df186d",
       "identityReviewRequired": false
     },
     {
@@ -74185,8 +74185,8 @@
       "intendedPackageIdentity": "module_ecommerce_saved_lists_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fb0c9770059f0c77869ca72fc77e969f4c4c7a86",
       "identityReviewRequired": false
     },
     {
@@ -74196,8 +74196,8 @@
       "intendedPackageIdentity": "module_ecommerce_search_and_discovery_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f7237b3d3a88716cfbef7e5224794288b2e6c15e",
       "identityReviewRequired": false
     },
     {
@@ -74207,8 +74207,8 @@
       "intendedPackageIdentity": "module_ecommerce_seller_marketplace_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d1c3b645740bdc5a319f7438c8bd6f52fd3a1106",
       "identityReviewRequired": false
     },
     {
@@ -74218,8 +74218,8 @@
       "intendedPackageIdentity": "module_ecommerce_shared_catalogs_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d6f62b1613c407882db9dd9106476a2e5df0326a",
       "identityReviewRequired": false
     },
     {
@@ -74229,8 +74229,8 @@
       "intendedPackageIdentity": "module_ecommerce_shipping_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b025c6d7b19d6c5336a06c8a524a549c9e15f931",
       "identityReviewRequired": false
     },
     {
@@ -74240,8 +74240,8 @@
       "intendedPackageIdentity": "module_ecommerce_social_commerce_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1053f48bd3ef3b06d3cd13a3cfed03a8a85a2a5c",
       "identityReviewRequired": false
     },
     {
@@ -74251,8 +74251,8 @@
       "intendedPackageIdentity": "module_ecommerce_store_templates_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d71c57ca437052110891da37ddeaaf10cc4a2881",
       "identityReviewRequired": false
     },
     {
@@ -74262,8 +74262,8 @@
       "intendedPackageIdentity": "module_ecommerce_subscription_commerce_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ad4ff9593a8111978bd0c6c7cc7e41b77985f6ea",
       "identityReviewRequired": false
     },
     {
@@ -74273,8 +74273,8 @@
       "intendedPackageIdentity": "module_ecommerce_tax_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f0b68249875380599c2b13dc37186e613322196e",
       "identityReviewRequired": false
     },
     {
@@ -74284,8 +74284,8 @@
       "intendedPackageIdentity": "module_ecommerce_transfers_and_replenishment_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "052ad6e63bd4b3848deb0df7497214d2a18b19f6",
       "identityReviewRequired": false
     },
     {
@@ -74295,8 +74295,8 @@
       "intendedPackageIdentity": "module_ecommerce_unified_commerce_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "250c2412a0a12119e4cf24e7c9dd1d44eee41c0c",
       "identityReviewRequired": false
     },
     {
@@ -74306,8 +74306,8 @@
       "intendedPackageIdentity": "module_ecommerce_warehouse_operations_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a6407c49b17eb8fd60da5bf3b2cd047f8bbae049",
       "identityReviewRequired": false
     },
     {
@@ -74317,8 +74317,8 @@
       "intendedPackageIdentity": "module_ecommerce_warranty_and_claims_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7c444d63b6a52d2e3df21fe31756c4a785cbccad",
       "identityReviewRequired": false
     },
     {
@@ -74328,8 +74328,8 @@
       "intendedPackageIdentity": "module_planned_liberu_business_workflow_reconciliation_c7cb9c4f_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2d5c91a31966b2d35c30928db90e3c452adebce4",
       "identityReviewRequired": true
     },
     {
@@ -74339,8 +74339,8 @@
       "intendedPackageIdentity": "module_planned_liberu_executive_insights_0532ffee_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "238e827e74f7b9900e13d34e728549317e4b2a45",
       "identityReviewRequired": true
     },
     {
@@ -74350,8 +74350,8 @@
       "intendedPackageIdentity": "module_planned_liberu_platform_orchestration_081c1f70_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "18f6d141e6202fa743b230312d4be1560cf260fd",
       "identityReviewRequired": true
     },
     {
@@ -74361,8 +74361,8 @@
       "intendedPackageIdentity": "module_planned_liberu_revenue_and_care_orchestration_40451d50_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c8571c68f67f1aa203c663d343fb474ad92367e1",
       "identityReviewRequired": true
     },
     {
@@ -74372,7 +74372,7 @@
       "intendedPackageIdentity": "module_real_estate_portals_and_reporting_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
