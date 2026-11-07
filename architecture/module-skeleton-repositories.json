@@ -23728,8 +23728,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-automation-modulation-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "27f967e0cbff100670ca7d3d2256190fe362a20f",
       "identityReviewRequired": false
     },
     {
@@ -23739,8 +23739,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-clip-launcher-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6b0e161c76ebb60ce9dae3ada343c62861b770c7",
       "identityReviewRequired": false
     },
     {
@@ -23750,8 +23750,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-collaboration-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e0d1767cb05e4842d6951d2ed39ed2808a924b7c",
       "identityReviewRequired": false
     },
     {
@@ -23761,8 +23761,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-composition-score-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d6b07fb6fc0b17995cc501c764737010a74c143e",
       "identityReviewRequired": false
     },
     {
@@ -23772,8 +23772,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-controllers-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "af99b58666c483a31116245bb465bf48c5a4883e",
       "identityReviewRequired": false
     },
     {
@@ -23783,8 +23783,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-effects-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3491fd0292b8e784b14300ca3b11082e8b360f51",
       "identityReviewRequired": false
     },
     {
@@ -23794,8 +23794,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-export-mastering-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e4b12e81d605194799b9b9f50ffec892a591aadf",
       "identityReviewRequired": false
     },
     {
@@ -23805,8 +23805,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-instruments-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c370efe8f0859286a9b94bf184c5d67437a6c678",
       "identityReviewRequired": false
     },
     {
@@ -23816,8 +23816,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-live-performance-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bacb22bcc21224ae5ce585bda4dfcb8fc032f83d",
       "identityReviewRequired": false
     },
     {
@@ -23827,8 +23827,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-media-library-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1e266132e8921ee76dc5e09ce1c73fc0b277e191",
       "identityReviewRequired": false
     },
     {
@@ -23838,8 +23838,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-midi-sequencing-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0a678f31eb2091eedeade95d24d71b395cb895b0",
       "identityReviewRequired": false
     },
     {
@@ -23849,8 +23849,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-mixer-routing-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b5bacfb4211d1162c7d74d48578dbd6ba9aee0d0",
       "identityReviewRequired": false
     },
     {
@@ -23860,8 +23860,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-plugin-hosting-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "de023d2511bc0f7f20b28485973ab91480b0868a",
       "identityReviewRequired": false
     },
     {
@@ -23871,8 +23871,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-presets-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f2912a5e441439ed9e78d98a2e39cb5b8261db2e",
       "identityReviewRequired": false
     },
     {
@@ -23882,8 +23882,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-projects-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d2b643a7b4799d57dafa105809bd980956a8b709",
       "identityReviewRequired": false
     },
     {
@@ -23893,8 +23893,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-recording-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "55c22450a8e048b5f4c8a92c3fc896b5a3bb96b9",
       "identityReviewRequired": false
     },
     {
@@ -23904,8 +23904,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-sync-offline-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "139a8fbe5e376b6b3e2a4f47f439092f0941e931",
       "identityReviewRequired": false
     },
     {
@@ -23915,8 +23915,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-tempo-groove-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "304044c73ef05e17f23e7f91eb7771bb1427cde1",
       "identityReviewRequired": false
     },
     {
@@ -30669,8 +30669,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-automation-modulation-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bc56d9365b58e88a4e0dd5c554cc7aae93b50a11",
       "identityReviewRequired": false
     },
     {
@@ -30680,8 +30680,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-clip-launcher-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ee7ce8caed5846465a466e010c75395408f45250",
       "identityReviewRequired": false
     },
     {
@@ -30691,8 +30691,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-collaboration-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "58c4d09b163322bde4992d9aec76269ad8dce53a",
       "identityReviewRequired": false
     },
     {
@@ -30702,8 +30702,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-composition-score-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2ffa71d754d4be5901b125a8622318c14de55f95",
       "identityReviewRequired": false
     },
     {
@@ -30713,8 +30713,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-controllers-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d421e7ac130b6adc63f456fbb17bfd62ca03676b",
       "identityReviewRequired": false
     },
     {
@@ -30724,8 +30724,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-effects-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "459f6371eadaea3f605b1dc19fc842103e664bd0",
       "identityReviewRequired": false
     },
     {
@@ -30735,8 +30735,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-export-mastering-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a45f12923ea155056fbff8a749c372a539ef7034",
       "identityReviewRequired": false
     },
     {
@@ -30746,8 +30746,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-instruments-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3c6fa3bcf7a2b8d426abb1a310c4d199365a04c2",
       "identityReviewRequired": false
     },
     {
@@ -30757,8 +30757,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-live-performance-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "aa19ca532c26d80e2b301b25c0af486e149a926d",
       "identityReviewRequired": false
     },
     {
@@ -30768,8 +30768,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-media-library-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dfcbc70d8004cf262f0b6c3f31872b1282705a5d",
       "identityReviewRequired": false
     },
     {
@@ -30779,8 +30779,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-midi-sequencing-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7cb240e41ab957bcaa50c67bb5e159ba6954fd23",
       "identityReviewRequired": false
     },
     {
@@ -30790,8 +30790,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-mixer-routing-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c26bbe1155c013463f86070d51c76d3fe23543bf",
       "identityReviewRequired": false
     },
     {
@@ -30801,8 +30801,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-plugin-hosting-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2d3509e5dc14b5824c1931597fac87dad5dbe080",
       "identityReviewRequired": false
     },
     {
@@ -30812,8 +30812,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-presets-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "23b12bccf0a13bc66f31f6eb756fda0fc0050340",
       "identityReviewRequired": false
     },
     {
@@ -30823,8 +30823,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-projects-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bfd650010b498e1ee6adbfbd412573d96d295ff4",
       "identityReviewRequired": false
     },
     {
@@ -30834,8 +30834,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-recording-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c0a13d92af954b99e8e9b1e6493cc6db1d30875d",
       "identityReviewRequired": false
     },
     {
@@ -30845,8 +30845,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-sync-offline-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "34ff9701b3bb2d2c68018c3b138cefa93ecc06d4",
       "identityReviewRequired": false
     },
     {
@@ -30856,8 +30856,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-tempo-groove-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a635083cbb621708f96e065e52c2e3f8f55bad78",
       "identityReviewRequired": false
     },
     {
@@ -37610,8 +37610,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-automation-modulation-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f341b1b89718816d178fb9c98bae0eaaea3e33e4",
       "identityReviewRequired": false
     },
     {
@@ -37621,8 +37621,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-clip-launcher-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3b09b7b9f757903325045668f3fac7c03b192a07",
       "identityReviewRequired": false
     },
     {
@@ -37632,8 +37632,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-collaboration-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9eccbf027a1b5b19bb6ff422ddc37103fe76b92b",
       "identityReviewRequired": false
     },
     {
@@ -37643,8 +37643,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-composition-score-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fee6df2ffa1f64741e3f333c636b80609e1724b4",
       "identityReviewRequired": false
     },
     {
@@ -37654,8 +37654,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-controllers-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bffee8a347e9353f0c9416fd85ae75ce40197f22",
       "identityReviewRequired": false
     },
     {
@@ -37665,8 +37665,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-effects-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a66c03d74fc78f2457cd40827e6d22168642ce61",
       "identityReviewRequired": false
     },
     {
@@ -37676,8 +37676,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-export-mastering-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "511509df5d1489ba6295123ecca219311090cbfc",
       "identityReviewRequired": false
     },
     {
@@ -37687,8 +37687,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-instruments-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0309c28c049af96d9992f2b7de1fa7d45ab8e81d",
       "identityReviewRequired": false
     },
     {
@@ -37698,8 +37698,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-live-performance-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "679c22a29dfb9c6b8fcb98a12382cdac51e2f3fb",
       "identityReviewRequired": false
     },
     {
@@ -37709,8 +37709,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-media-library-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "005f977570e63a23739882e2cfbcf2bf63a81553",
       "identityReviewRequired": false
     },
     {
@@ -37720,8 +37720,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-midi-sequencing-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f97019f98c27d2e8a199ed7fdd49e106c3ce4e2a",
       "identityReviewRequired": false
     },
     {
@@ -37731,8 +37731,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-mixer-routing-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3431c6c3b0d82d018a9029b743932c8f54dab12a",
       "identityReviewRequired": false
     },
     {
@@ -37742,8 +37742,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-plugin-hosting-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f60329e9eaebfad15edcfb946742e466158db18f",
       "identityReviewRequired": false
     },
     {
@@ -37753,8 +37753,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-presets-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "12993ed1c1c576195baaf526bf5e4c282f81e356",
       "identityReviewRequired": false
     },
     {
@@ -37764,8 +37764,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-projects-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "66ed7ad5373366602cc80d721f82b18ea21ad25d",
       "identityReviewRequired": false
     },
     {
@@ -37775,8 +37775,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-recording-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "edf489b4c945114351500b5467fee03e239cb42c",
       "identityReviewRequired": false
     },
     {
@@ -37786,8 +37786,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-sync-offline-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2e68476312cbdf9756ed05145d724414112e7877",
       "identityReviewRequired": false
     },
     {
@@ -37797,8 +37797,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-tempo-groove-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "600406041401bbdca41b95a71d72b585c4e54700",
       "identityReviewRequired": false
     },
     {
@@ -44551,8 +44551,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-automation-modulation-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cb7babb239045f4cabdfdc1f34a69a51342c9ea3",
       "identityReviewRequired": false
     },
     {
@@ -44562,8 +44562,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-clip-launcher-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "80e006ab5c1081cf8697244494af157ab8ea9202",
       "identityReviewRequired": false
     },
     {
@@ -44573,8 +44573,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-collaboration-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "16db8c1410c2194cabdab6933549a550db8484a2",
       "identityReviewRequired": false
     },
     {
@@ -44584,8 +44584,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-composition-score-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9305f6311d499424bd72991628eeaca0bb6c9671",
       "identityReviewRequired": false
     },
     {
@@ -44595,8 +44595,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-controllers-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "41fa174021baebeb2f4f975e5142a9d75a86f63a",
       "identityReviewRequired": false
     },
     {
@@ -44606,8 +44606,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-effects-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "02a6148ad105de6851cfa917b25c46958266191e",
       "identityReviewRequired": false
     },
     {
@@ -44617,8 +44617,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-export-mastering-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "193467daa6058236f49a0e68d0e6a7b277821c15",
       "identityReviewRequired": false
     },
     {
@@ -44628,8 +44628,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-instruments-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9186d08152d0550191493e1b7712e3905f59c443",
       "identityReviewRequired": false
     },
     {
@@ -44639,8 +44639,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-live-performance-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fa773d2fe4e1147ca59760f885653fec226cc966",
       "identityReviewRequired": false
     },
     {
@@ -44650,8 +44650,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-media-library-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e6da635ecb239c00b5b752770d992b42e406fb81",
       "identityReviewRequired": false
     },
     {
@@ -44661,8 +44661,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-midi-sequencing-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "07e26043c386c9fc56ddb62a108926205757c43f",
       "identityReviewRequired": false
     },
     {
@@ -44672,8 +44672,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-mixer-routing-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4707579c0598cf4101dda0b0f78dcbd765d738b8",
       "identityReviewRequired": false
     },
     {
@@ -44683,8 +44683,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-plugin-hosting-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "950f142bc913d6ab6ad6b67df88b831c39d429d9",
       "identityReviewRequired": false
     },
     {
@@ -44694,8 +44694,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-presets-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "31787c216c071f42b5ff7ef017a243c882fa5924",
       "identityReviewRequired": false
     },
     {
@@ -44705,8 +44705,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-projects-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e4d95d2d0ed0d56404b6f69043b443bf2fba2c38",
       "identityReviewRequired": false
     },
     {
@@ -44716,8 +44716,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-recording-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fd5fad68e094244ae00ab8e681290e6285f63c01",
       "identityReviewRequired": false
     },
     {
@@ -44727,8 +44727,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-sync-offline-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "01a326c0be4e6e5c5b4c1aa829288b2ea77ed1ea",
       "identityReviewRequired": false
     },
     {
@@ -44738,8 +44738,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-tempo-groove-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d91b4240a1fbee6559e553ac16cf06a6d4db00d6",
       "identityReviewRequired": false
     },
     {
@@ -51492,8 +51492,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-automation-modulation-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "928a645aebc4041c0d554c92ad293efa83d7a667",
       "identityReviewRequired": false
     },
     {
@@ -51503,8 +51503,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-clip-launcher-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5629cf5d78133e193a4af67acd81e51d978114d1",
       "identityReviewRequired": false
     },
     {
@@ -51514,8 +51514,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-collaboration-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0f9442241e6e3a47746b48c37fc5ff32eda42a10",
       "identityReviewRequired": false
     },
     {
@@ -51525,8 +51525,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-composition-score-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c51e87c96501eb5c9bcfc8649049cd184f105d55",
       "identityReviewRequired": false
     },
     {
@@ -51536,8 +51536,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-controllers-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6e530f33b9b229f10da1ced6cb153c8d2d22cb36",
       "identityReviewRequired": false
     },
     {
@@ -51547,8 +51547,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-effects-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0c2ed12beb0c71b06483300a6ce7664a5fed88f1",
       "identityReviewRequired": false
     },
     {
@@ -51558,8 +51558,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-export-mastering-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "122f566e06ad04bb4367445884ac024bae394540",
       "identityReviewRequired": false
     },
     {
@@ -51569,8 +51569,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-instruments-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3fd5e90950dd97d795cf6d140bbb13502b9f88cf",
       "identityReviewRequired": false
     },
     {
@@ -51580,8 +51580,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-live-performance-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dd6c56f765e35b379916518c17ba5ba2ad76afed",
       "identityReviewRequired": false
     },
     {
@@ -51591,8 +51591,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-media-library-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "14427facc213530d169550bc77aca3d882068f87",
       "identityReviewRequired": false
     },
     {
@@ -51602,8 +51602,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-midi-sequencing-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9e7fb217c9d566de90a06fe71c56380358e1c894",
       "identityReviewRequired": false
     },
     {
@@ -51613,8 +51613,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-mixer-routing-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1b2b3bedad9b2fd37e20d26b52ef21da16b80146",
       "identityReviewRequired": false
     },
     {
@@ -51624,8 +51624,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-plugin-hosting-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0cf5da630c661cff1d98ad6d6ab8227627d5d2b2",
       "identityReviewRequired": false
     },
     {
@@ -51635,8 +51635,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-presets-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dfc4c9e51ec80eea8ba5c976f7a4467dc03c37ea",
       "identityReviewRequired": false
     },
     {
@@ -51646,8 +51646,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-projects-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "76dc4f86ee72181d144df455901174c29b3fabc8",
       "identityReviewRequired": false
     },
     {
@@ -51657,8 +51657,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-recording-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c61ff595f3e476f01635e31f4ac391efa6654fff",
       "identityReviewRequired": false
     },
     {
@@ -51668,8 +51668,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-sync-offline-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "86e0b660dc24e664c005f0f45fa38abf6cde61e0",
       "identityReviewRequired": false
     },
     {
@@ -51679,7 +51679,7 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-tempo-groove-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -58422,8 +58422,8 @@
       "intendedPackageIdentity": "module_music_audio_engine_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5e0363eecf0788b8d0e57c88df7ee58418c84453",
       "identityReviewRequired": false
     },
     {
@@ -58433,8 +58433,8 @@
       "intendedPackageIdentity": "module_music_automation_modulation_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ae72d10333c978723ef0f0229141f86211e860b1",
       "identityReviewRequired": false
     },
     {
@@ -58444,8 +58444,8 @@
       "intendedPackageIdentity": "module_music_clip_launcher_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "464787be0c4fe8e2bae50703c2704d3a8ff66662",
       "identityReviewRequired": false
     },
     {
@@ -58455,8 +58455,8 @@
       "intendedPackageIdentity": "module_music_collaboration_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "143ae5900ac51d00664df7e69d17004ee4d6aa46",
       "identityReviewRequired": false
     },
     {
@@ -58466,8 +58466,8 @@
       "intendedPackageIdentity": "module_music_composition_score_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4f17033a0eefb7b29a1749f32c42b2fc1ad45346",
       "identityReviewRequired": false
     },
     {
@@ -58477,8 +58477,8 @@
       "intendedPackageIdentity": "module_music_controllers_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1474ef381e8d33ba050cdf002528bfadbc496622",
       "identityReviewRequired": false
     },
     {
@@ -58488,8 +58488,8 @@
       "intendedPackageIdentity": "module_music_effects_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c9e8f01bdb8787f2f12529a8793b98437e5f5e99",
       "identityReviewRequired": false
     },
     {
@@ -58499,8 +58499,8 @@
       "intendedPackageIdentity": "module_music_export_mastering_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c9e3c176212f86ea0922809741f1fc818d7a3948",
       "identityReviewRequired": false
     },
     {
@@ -58510,8 +58510,8 @@
       "intendedPackageIdentity": "module_music_instruments_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fbcf106cf5064a73d4d16a7cee9f5a99c109ef3c",
       "identityReviewRequired": false
     },
     {
@@ -58521,8 +58521,8 @@
       "intendedPackageIdentity": "module_music_live_performance_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8e592914698ba46e3d54c8f737330b453ed6f0d9",
       "identityReviewRequired": false
     },
     {
@@ -58532,8 +58532,8 @@
       "intendedPackageIdentity": "module_music_media_library_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1ce2df7cd07fe1eb71399f2d80b5fea44f8ad19b",
       "identityReviewRequired": false
     },
     {
@@ -58543,8 +58543,8 @@
       "intendedPackageIdentity": "module_music_midi_sequencing_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bf81d190ecc9f7198bb33b762d3ae7a16a379535",
       "identityReviewRequired": false
     },
     {
@@ -58554,8 +58554,8 @@
       "intendedPackageIdentity": "module_music_mixer_routing_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d501abe713a6c06165420faf6c98d3676333b367",
       "identityReviewRequired": false
     },
     {
@@ -58565,8 +58565,8 @@
       "intendedPackageIdentity": "module_music_plugin_hosting_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8533d6274875469198640d2591761a666f91b01f",
       "identityReviewRequired": false
     },
     {
@@ -58576,8 +58576,8 @@
       "intendedPackageIdentity": "module_music_presets_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dd0cefd92032c8410785992fea7904674590d533",
       "identityReviewRequired": false
     },
     {
@@ -58587,8 +58587,8 @@
       "intendedPackageIdentity": "module_music_projects_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8a9e6e046f5d480cb9668b106300083cc1bceaa4",
       "identityReviewRequired": false
     },
     {
@@ -58598,8 +58598,8 @@
       "intendedPackageIdentity": "module_music_recording_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "422ab9872cbdc36da78f5c232edc3873acf956f7",
       "identityReviewRequired": false
     },
     {
@@ -58609,8 +58609,8 @@
       "intendedPackageIdentity": "module_music_sync_offline_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2005482f428aa00f29df17703e9a953a1cf414e1",
       "identityReviewRequired": false
     },
     {
@@ -65363,8 +65363,8 @@
       "intendedPackageIdentity": "module_music_audio_engine_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5f6a2101848eec6e90e459b2c276b96c07634342",
       "identityReviewRequired": false
     },
     {
@@ -65374,8 +65374,8 @@
       "intendedPackageIdentity": "module_music_automation_modulation_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d7089985245383c753005fcf6862dded91ac4fb8",
       "identityReviewRequired": false
     },
     {
@@ -65385,8 +65385,8 @@
       "intendedPackageIdentity": "module_music_clip_launcher_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8f7c55cec26447f94ee33ae9adcfea37ddb8b1f3",
       "identityReviewRequired": false
     },
     {
@@ -65396,8 +65396,8 @@
       "intendedPackageIdentity": "module_music_collaboration_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f9063fead16013da8a32261c406f163aaa019a78",
       "identityReviewRequired": false
     },
     {
@@ -65407,8 +65407,8 @@
       "intendedPackageIdentity": "module_music_composition_score_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "99d1c621d2f44bca8890e16a4873d287bd9b6991",
       "identityReviewRequired": false
     },
     {
@@ -65418,8 +65418,8 @@
       "intendedPackageIdentity": "module_music_controllers_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fde4400e69e023c341495204e097a46e0bdee8d2",
       "identityReviewRequired": false
     },
     {
@@ -65429,8 +65429,8 @@
       "intendedPackageIdentity": "module_music_effects_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "10b881a4ea0ba16dce655f2d27f33f70aca12e53",
       "identityReviewRequired": false
     },
     {
@@ -65440,8 +65440,8 @@
       "intendedPackageIdentity": "module_music_export_mastering_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2f29288da86eb10117e942c8fed433ff728c6ebf",
       "identityReviewRequired": false
     },
     {
@@ -65451,8 +65451,8 @@
       "intendedPackageIdentity": "module_music_instruments_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0797e7583f6a822b569111177410d0abf359e881",
       "identityReviewRequired": false
     },
     {
@@ -65462,8 +65462,8 @@
       "intendedPackageIdentity": "module_music_live_performance_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c579bbf58bafae5ab5aa1e6250c1e127ae6156ed",
       "identityReviewRequired": false
     },
     {
@@ -65473,8 +65473,8 @@
       "intendedPackageIdentity": "module_music_media_library_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d6416b88bc3f81e0f2460d631ceb3bd88b65a0f7",
       "identityReviewRequired": false
     },
     {
@@ -65484,8 +65484,8 @@
       "intendedPackageIdentity": "module_music_midi_sequencing_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "936af1d99ce89e500079e34cef63bf96ec44b7c2",
       "identityReviewRequired": false
     },
     {
@@ -65495,8 +65495,8 @@
       "intendedPackageIdentity": "module_music_mixer_routing_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "46432b800043f4c66c1e3ece40c4564247551a3b",
       "identityReviewRequired": false
     },
     {
@@ -65506,8 +65506,8 @@
       "intendedPackageIdentity": "module_music_plugin_hosting_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "52c19299b65d1f85eeb0b5518eb29aa95c9b974d",
       "identityReviewRequired": false
     },
     {
@@ -65517,8 +65517,8 @@
       "intendedPackageIdentity": "module_music_presets_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1714a533c1c2a24b7c775d0ef3cf936c591cc2b4",
       "identityReviewRequired": false
     },
     {
@@ -65528,8 +65528,8 @@
       "intendedPackageIdentity": "module_music_projects_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "789a794d6ace77ae8621e5b2330263e9d2d715ad",
       "identityReviewRequired": false
     },
     {
@@ -65539,8 +65539,8 @@
       "intendedPackageIdentity": "module_music_recording_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1ccf6fc9e69c37473073e2b6707d3bc77cd72f67",
       "identityReviewRequired": false
     },
     {
@@ -65550,8 +65550,8 @@
       "intendedPackageIdentity": "module_music_sync_offline_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "01692ab9a5d8d037028a292adb89a850a5cab79a",
       "identityReviewRequired": false
     },
     {
@@ -72304,8 +72304,8 @@
       "intendedPackageIdentity": "module_music_audio_engine_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ccefa7bf46a016a642e8d076305bfe1776f7aa62",
       "identityReviewRequired": false
     },
     {
@@ -72315,8 +72315,8 @@
       "intendedPackageIdentity": "module_music_automation_modulation_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "615cfa8c18988d48b60e13c76d2a27e979cec639",
       "identityReviewRequired": false
     },
     {
@@ -72326,8 +72326,8 @@
       "intendedPackageIdentity": "module_music_clip_launcher_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7ad663468dd6c23c510e3e231d0dcb5a53e9fa8e",
       "identityReviewRequired": false
     },
     {
@@ -72337,8 +72337,8 @@
       "intendedPackageIdentity": "module_music_collaboration_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3b7a0107dbc4b6248b9a85c5c738b8dd4f3daef2",
       "identityReviewRequired": false
     },
     {
@@ -72348,8 +72348,8 @@
       "intendedPackageIdentity": "module_music_composition_score_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3e9fc3ded22f3d41f9701b2deb5453fe4872cd75",
       "identityReviewRequired": false
     },
     {
@@ -72359,8 +72359,8 @@
       "intendedPackageIdentity": "module_music_controllers_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1405fba6d8cbbc9ad1673209fe06aea0011b2b24",
       "identityReviewRequired": false
     },
     {
@@ -72370,8 +72370,8 @@
       "intendedPackageIdentity": "module_music_effects_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "11206948119e95fbeb4952fe52bf9e2912800eaf",
       "identityReviewRequired": false
     },
     {
@@ -72381,8 +72381,8 @@
       "intendedPackageIdentity": "module_music_export_mastering_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0e29dc8fda897f08a492e6dd9e9f3ee4ac8c2be4",
       "identityReviewRequired": false
     },
     {
@@ -72392,8 +72392,8 @@
       "intendedPackageIdentity": "module_music_instruments_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6767bd64409caad316e5a2679e0d6fd2b6a6add0",
       "identityReviewRequired": false
     },
     {
@@ -72403,8 +72403,8 @@
       "intendedPackageIdentity": "module_music_live_performance_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "873b010cd765ea7233226dfeba93dd9800797455",
       "identityReviewRequired": false
     },
     {
@@ -72414,8 +72414,8 @@
       "intendedPackageIdentity": "module_music_media_library_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "20de2a4009f57cf22681f3ac656fe27df7a1eced",
       "identityReviewRequired": false
     },
     {
@@ -72425,8 +72425,8 @@
       "intendedPackageIdentity": "module_music_midi_sequencing_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bef6a2a933bdca45b49b38247c578ebe2363041f",
       "identityReviewRequired": false
     },
     {
@@ -72436,8 +72436,8 @@
       "intendedPackageIdentity": "module_music_mixer_routing_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0cc98ee351390ad22b92e14f8568e5df9b0b2990",
       "identityReviewRequired": false
     },
     {
@@ -72447,8 +72447,8 @@
       "intendedPackageIdentity": "module_music_plugin_hosting_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c0869875875b19be279a800130455db4467ee009",
       "identityReviewRequired": false
     },
     {
@@ -72458,8 +72458,8 @@
       "intendedPackageIdentity": "module_music_presets_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "26569367018c5a4e7a314815d069411764608888",
       "identityReviewRequired": false
     },
     {
@@ -72469,8 +72469,8 @@
       "intendedPackageIdentity": "module_music_projects_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "864f04c36fd8f206ae59e220a690f8592873f565",
       "identityReviewRequired": false
     },
     {
@@ -72480,8 +72480,8 @@
       "intendedPackageIdentity": "module_music_recording_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dbd6fa3c63a479bbb43b6db1084c92e5c72a9d24",
       "identityReviewRequired": false
     },
     {
@@ -72491,8 +72491,8 @@
       "intendedPackageIdentity": "module_music_sync_offline_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f60f30f74797d1ba9f08ed7e01285946377206e4",
       "identityReviewRequired": false
     },
     {
