@@ -23695,8 +23695,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-arrangement-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "697cb0e8b49c5cf22f7d4e883bf2e49f7ff7e1fe",
       "identityReviewRequired": false
     },
     {
@@ -23706,8 +23706,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-audio-devices-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a82c572cac2578ca522e26aebed1706d5d6c6beb",
       "identityReviewRequired": false
     },
     {
@@ -23717,8 +23717,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-audio-engine-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "920bfeefe2af95720135324f7db8be887360749f",
       "identityReviewRequired": false
     },
     {
@@ -25796,8 +25796,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-assets-and-facilities-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a8110f511b397533800755a6f0f007b35e377219",
       "identityReviewRequired": false
     },
     {
@@ -25807,8 +25807,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-controlling-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f514c3a49c5a8e1cb7a08e01855ecc1e1bfc691d",
       "identityReviewRequired": false
     },
     {
@@ -25818,8 +25818,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-data-and-intelligence-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "38bd90feb69f62bd35ac3feaddeec3acb2b1691e",
       "identityReviewRequired": false
     },
     {
@@ -25829,8 +25829,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-enterprise-foundation-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "df75043cca1432306a12aa728a32545963aeb887",
       "identityReviewRequired": false
     },
     {
@@ -25840,8 +25840,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-finance-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "09cfaa4e5937d7fe30f811b3ce8dd908b4ac062c",
       "identityReviewRequired": false
     },
     {
@@ -25851,8 +25851,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-governance-risk-and-compliance-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "535fdd06b4d9ad32456be946350ef5b2d745d4eb",
       "identityReviewRequired": false
     },
     {
@@ -25862,8 +25862,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-hosting-and-cloud-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0b7bb677184d9db63f9d41ff4efe31b4dcac6dc3",
       "identityReviewRequired": false
     },
     {
@@ -25873,8 +25873,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-inventory-and-logistics-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ca7f86857735987016800c796408604fe2d8bf70",
       "identityReviewRequired": false
     },
     {
@@ -25884,8 +25884,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-partners-and-portals-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2608c516e9e31f69aa68c9ae821eb558323e04a2",
       "identityReviewRequired": false
     },
     {
@@ -25895,8 +25895,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-people-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "96888afe87ef119770dec1c153d6a84e1d26ab5e",
       "identityReviewRequired": false
     },
     {
@@ -25906,8 +25906,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-procurement-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "49948ab63c0f2251a0d974415d9b1ba46c893999",
       "identityReviewRequired": false
     },
     {
@@ -25917,8 +25917,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-product-and-engineering-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "842da16bd2ccebdacd46c685875d0851c4e68f64",
       "identityReviewRequired": false
     },
     {
@@ -25928,8 +25928,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-projects-and-services-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "68e4ebf19b461a71a245b3d3780b4cc005b4b01e",
       "identityReviewRequired": false
     },
     {
@@ -25939,8 +25939,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-revenue-operations-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "70ffae07f62023f3e1a63fd172ccc936413ec79c",
       "identityReviewRequired": false
     },
     {
@@ -25950,8 +25950,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-sales-and-crm-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4ed0fbfe0c9e3b654fa62448b5ea943443e7dd42",
       "identityReviewRequired": false
     },
     {
@@ -25961,8 +25961,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-service-management-vue-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-vue-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f96ca45b5a8f34505cdc490ed1f7f8c0ee591455",
       "identityReviewRequired": false
     },
     {
@@ -30636,8 +30636,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-arrangement-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1bf4b3622b6e0bb8b89faf0c645aed5fdae1892d",
       "identityReviewRequired": false
     },
     {
@@ -30647,8 +30647,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-audio-devices-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "94c0d6ede7542428e332eb2815e9ece9d187f61f",
       "identityReviewRequired": false
     },
     {
@@ -30658,8 +30658,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-audio-engine-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "818a8c9a94a67c4b271f2aa47b8b9d5bdcba86a9",
       "identityReviewRequired": false
     },
     {
@@ -32737,8 +32737,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-assets-and-facilities-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b7951de46110b92f490c9d3a8b67488da3930c2d",
       "identityReviewRequired": false
     },
     {
@@ -32748,8 +32748,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-controlling-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ca9dadb1df98874154e9bea9dbbe5af7bd569c42",
       "identityReviewRequired": false
     },
     {
@@ -32759,8 +32759,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-data-and-intelligence-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0db7f370d10487478edb9b14eaf67b98b2149a31",
       "identityReviewRequired": false
     },
     {
@@ -32770,8 +32770,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-enterprise-foundation-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2c2a5d1886d7857285ec62e25afe6eb4c5e2265b",
       "identityReviewRequired": false
     },
     {
@@ -32781,8 +32781,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-finance-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3415889fc8b6eb23939fc29a28e222b6d248f4fc",
       "identityReviewRequired": false
     },
     {
@@ -32792,8 +32792,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-governance-risk-and-compliance-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e9d3bcffe2549b6ed8c63a76d45bed5c87f9b8f8",
       "identityReviewRequired": false
     },
     {
@@ -32803,8 +32803,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-hosting-and-cloud-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "62c2709aa23c7c84db55e8dccfecf767573b0637",
       "identityReviewRequired": false
     },
     {
@@ -32814,8 +32814,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-inventory-and-logistics-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "99898fb089c66534ef3867202a1479fe127779aa",
       "identityReviewRequired": false
     },
     {
@@ -32825,8 +32825,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-partners-and-portals-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6c4184b7a544ab4a06926514e3f89737844b9b13",
       "identityReviewRequired": false
     },
     {
@@ -32836,8 +32836,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-people-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "011c755bc9bd71d11373509e7044cbffe2c5b29e",
       "identityReviewRequired": false
     },
     {
@@ -32847,8 +32847,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-procurement-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "98791d13c0785dbf9679ab7dcdb939875e604ffe",
       "identityReviewRequired": false
     },
     {
@@ -32858,8 +32858,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-product-and-engineering-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "682add7d97aa6c5cd380ec36556530bf5ccc623a",
       "identityReviewRequired": false
     },
     {
@@ -32869,8 +32869,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-projects-and-services-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "54a26c5069fefa825f235997bd47930b3b6af97e",
       "identityReviewRequired": false
     },
     {
@@ -32880,8 +32880,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-revenue-operations-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "055da4fea41c2ca927058b6460277b130c1b72b6",
       "identityReviewRequired": false
     },
     {
@@ -32891,8 +32891,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-sales-and-crm-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8edb2b54520e4abbdb4783d93249f6ef0b2b7529",
       "identityReviewRequired": false
     },
     {
@@ -32902,8 +32902,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-service-management-react-inertia",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-inertia",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "28a02b3ed7b2a196467e37e71493a9eece020c5f",
       "identityReviewRequired": false
     },
     {
@@ -37577,8 +37577,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-arrangement-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f1bfb3aa3cc00ddc9aa9fa0d2166b5f358b13054",
       "identityReviewRequired": false
     },
     {
@@ -37588,8 +37588,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-audio-devices-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8edf186ddce116e6fe907019ce59490cffddb0dc",
       "identityReviewRequired": false
     },
     {
@@ -37599,8 +37599,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-audio-engine-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1e52d9476d464232f4a42881a9431e13c71301b7",
       "identityReviewRequired": false
     },
     {
@@ -39678,8 +39678,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-assets-and-facilities-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f2e721c5015d42473382a43f409bc6df887de7a3",
       "identityReviewRequired": false
     },
     {
@@ -39689,8 +39689,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-controlling-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c8033a293b9abc615087d9f988c3d5a7d69ee1df",
       "identityReviewRequired": false
     },
     {
@@ -39700,8 +39700,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-data-and-intelligence-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "825942bbcccbdbaef8afbb43b85f78efd88bf462",
       "identityReviewRequired": false
     },
     {
@@ -39711,8 +39711,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-enterprise-foundation-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f41f5a05a78a8c6db339af1f9935a934fd7c37de",
       "identityReviewRequired": false
     },
     {
@@ -39722,8 +39722,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-finance-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d96f8ae5df00567d007ae000b0f21e2e87a70c50",
       "identityReviewRequired": false
     },
     {
@@ -39733,8 +39733,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-governance-risk-and-compliance-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5d78ffc18470eb1fa7ed4b9a87d87ddc52251bbf",
       "identityReviewRequired": false
     },
     {
@@ -39744,8 +39744,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-hosting-and-cloud-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6e3bb22c0e932030007648573ea77ea7409f9434",
       "identityReviewRequired": false
     },
     {
@@ -39755,8 +39755,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-inventory-and-logistics-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4478066fa0ee788277f3c9140ce70bd8f55f2814",
       "identityReviewRequired": false
     },
     {
@@ -39766,8 +39766,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-partners-and-portals-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0604627e7d5706b96763674072f5f028ab27ecaa",
       "identityReviewRequired": false
     },
     {
@@ -39777,8 +39777,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-people-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7351da914fdff53402ae1e9c958d587b748487ee",
       "identityReviewRequired": false
     },
     {
@@ -39788,8 +39788,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-procurement-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "80ff65e8996c8cdb0fb35a0099a534ecdd06f290",
       "identityReviewRequired": false
     },
     {
@@ -39799,8 +39799,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-product-and-engineering-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2dd4ad64f80fe16a4597c40b4878162e4c25f705",
       "identityReviewRequired": false
     },
     {
@@ -39810,8 +39810,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-projects-and-services-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "48eea1212f130ebfc63848fe373f6dc8de16f7c3",
       "identityReviewRequired": false
     },
     {
@@ -39821,8 +39821,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-revenue-operations-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1ca7a1aa12faa7b398f369a58a4146b67fe3e8f0",
       "identityReviewRequired": false
     },
     {
@@ -39832,8 +39832,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-sales-and-crm-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "df43a2d57ac240d992ce604bdcb6609215d6c05c",
       "identityReviewRequired": false
     },
     {
@@ -39843,8 +39843,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-service-management-nuxt",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nuxt",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8087056e218e0276136c28b02b72154364f730c0",
       "identityReviewRequired": false
     },
     {
@@ -44518,8 +44518,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-arrangement-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3cc60152f8a23826d868fa712ba070ceb41a7234",
       "identityReviewRequired": false
     },
     {
@@ -44529,8 +44529,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-audio-devices-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9db6b850e53d52c3f5bb274a1550d688bc8edef1",
       "identityReviewRequired": false
     },
     {
@@ -44540,8 +44540,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-audio-engine-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c1dc8f688ccabdc5825b94bb41874191c092a591",
       "identityReviewRequired": false
     },
     {
@@ -46619,8 +46619,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-assets-and-facilities-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e4bda26f338a540426dd476060d25721f35e2b9f",
       "identityReviewRequired": false
     },
     {
@@ -46630,8 +46630,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-controlling-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7f583e02214d3b1caed3d7e195812129d46b6322",
       "identityReviewRequired": false
     },
     {
@@ -46641,8 +46641,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-data-and-intelligence-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "771d8773d7a740a761db7b9af00c902507855d77",
       "identityReviewRequired": false
     },
     {
@@ -46652,8 +46652,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-enterprise-foundation-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9408fa6f0ad75d83b42d6881dfc890105a96180a",
       "identityReviewRequired": false
     },
     {
@@ -46663,8 +46663,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-finance-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "58dabea6ced7db43f2fd6dabbfa05e74226ecbde",
       "identityReviewRequired": false
     },
     {
@@ -46674,8 +46674,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-governance-risk-and-compliance-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6eb5f1b787ca16d84edbeff9354ca4e4611b554f",
       "identityReviewRequired": false
     },
     {
@@ -46685,8 +46685,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-hosting-and-cloud-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d8fe2a5e7f509d6a86447aa77b9052bd44d3de20",
       "identityReviewRequired": false
     },
     {
@@ -46696,8 +46696,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-inventory-and-logistics-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "98184dbd657a2c01acbb1413acb7b4317577880c",
       "identityReviewRequired": false
     },
     {
@@ -46707,8 +46707,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-partners-and-portals-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ad79e4bed0fbbf05ec094b7c1070cf91a4393ac7",
       "identityReviewRequired": false
     },
     {
@@ -46718,8 +46718,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-people-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "79eb39e65a4b5c029bbbcf6cd5a82ac0e1bc5f05",
       "identityReviewRequired": false
     },
     {
@@ -46729,8 +46729,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-procurement-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8cb1157bd990ec73cf02c51657b520feab3b254f",
       "identityReviewRequired": false
     },
     {
@@ -46740,8 +46740,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-product-and-engineering-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d08f6d7932ed33d1ef6857f29ad27858f894ab60",
       "identityReviewRequired": false
     },
     {
@@ -46751,8 +46751,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-projects-and-services-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "dff29bc78d8887fcdd967ed1d0243368b8ef3cc0",
       "identityReviewRequired": false
     },
     {
@@ -46762,8 +46762,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-revenue-operations-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f41853d9385155dbe94c9fd5593d906278a56984",
       "identityReviewRequired": false
     },
     {
@@ -46773,8 +46773,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-sales-and-crm-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4789520b3bc2badf55599181b479c36d5d845e30",
       "identityReviewRequired": false
     },
     {
@@ -46784,8 +46784,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-service-management-nextjs",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-nextjs",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5e5d61a7897ace2fd6e06c2539f7a5e97e19aed6",
       "identityReviewRequired": false
     },
     {
@@ -51459,8 +51459,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-arrangement-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8278da7f583ac464392574ad1aa65c989d10e9a0",
       "identityReviewRequired": false
     },
     {
@@ -51470,8 +51470,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-audio-devices-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e1a9ffdfca35c1409b4a84177786bf6b2a1911cf",
       "identityReviewRequired": false
     },
     {
@@ -51481,8 +51481,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-music-audio-engine-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "409e29a3d97f2380989e39589399c609125a7254",
       "identityReviewRequired": false
     },
     {
@@ -53560,8 +53560,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-assets-and-facilities-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d61c2f29a4f673d00fb03f151e3c6a32ac3cb5c0",
       "identityReviewRequired": false
     },
     {
@@ -53571,8 +53571,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-controlling-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fedea902f4c212da67813a3cda3d6db1b33d49fa",
       "identityReviewRequired": false
     },
     {
@@ -53582,8 +53582,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-data-and-intelligence-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1f7b7d06b78d9ae17d9e03a28bec056430513415",
       "identityReviewRequired": false
     },
     {
@@ -53593,8 +53593,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-enterprise-foundation-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "439f230c558296b03490860cee231a65423933b5",
       "identityReviewRequired": false
     },
     {
@@ -53604,8 +53604,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-finance-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6ca2caa98ccd0eb7344dd821d8dd8ca9cac24b68",
       "identityReviewRequired": false
     },
     {
@@ -53615,8 +53615,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-governance-risk-and-compliance-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fd02f4e404754322c2d41f1fafb097032e72815e",
       "identityReviewRequired": false
     },
     {
@@ -53626,8 +53626,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-hosting-and-cloud-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "24bf2cb7cbfa137302439a0eb9261b8e890c7e40",
       "identityReviewRequired": false
     },
     {
@@ -53637,8 +53637,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-inventory-and-logistics-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f346c2f22f029f624128f0a1204f31c10ae71af9",
       "identityReviewRequired": false
     },
     {
@@ -53648,8 +53648,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-partners-and-portals-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "a1d9c33f9c403185d11220f09b5a96fd471ddc4c",
       "identityReviewRequired": false
     },
     {
@@ -53659,8 +53659,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-people-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "716554bf0b031c31e6f6449d6f329c2bf938f49c",
       "identityReviewRequired": false
     },
     {
@@ -53670,8 +53670,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-procurement-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2c057ead1ad9f539699f7a629c05dc878f980e3e",
       "identityReviewRequired": false
     },
     {
@@ -53681,8 +53681,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-product-and-engineering-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3d1d73b0ff874e6b5d8fa3f97cf2b5d2a53ad218",
       "identityReviewRequired": false
     },
     {
@@ -53692,8 +53692,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-projects-and-services-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "006f26b44575e62b4947f3dba07a5864c09e68c0",
       "identityReviewRequired": false
     },
     {
@@ -53703,8 +53703,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-revenue-operations-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "ea9f93cb9baa1aeb160dfcaad3d19b71ba765fe0",
       "identityReviewRequired": false
     },
     {
@@ -53714,8 +53714,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-sales-and-crm-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9975bcabee127a05fd3280cc2d32bc3651c1b82c",
       "identityReviewRequired": false
     },
     {
@@ -53725,8 +53725,8 @@
       "intendedPackageIdentity": "@liberusoftware/module-sap-service-management-react-native",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-react-native",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "43e66f6242484a94db99e3a95ae3aca63904227b",
       "identityReviewRequired": false
     },
     {
@@ -58400,8 +58400,8 @@
       "intendedPackageIdentity": "module_music_arrangement_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "acd510bc5caad90869f55c62ce007dc8c6b9f589",
       "identityReviewRequired": false
     },
     {
@@ -58411,8 +58411,8 @@
       "intendedPackageIdentity": "module_music_audio_devices_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7807d9139a857dcdbc11d266f33fed93413742a3",
       "identityReviewRequired": false
     },
     {
@@ -58422,7 +58422,7 @@
       "intendedPackageIdentity": "module_music_audio_engine_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
+      "state": "publishing",
       "verifiedCommit": null,
       "identityReviewRequired": false
     },
@@ -60501,8 +60501,8 @@
       "intendedPackageIdentity": "module_sap_assets_and_facilities_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "10fee23402c69bc055b11d4e2a54c5b2c9b8667f",
       "identityReviewRequired": false
     },
     {
@@ -60512,8 +60512,8 @@
       "intendedPackageIdentity": "module_sap_controlling_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "86e77a70b7ce8c70fb5b5ae981dcdfa3e67a925d",
       "identityReviewRequired": false
     },
     {
@@ -60523,8 +60523,8 @@
       "intendedPackageIdentity": "module_sap_data_and_intelligence_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6288a1d62c8ff8f8d0ed37b2dd4a84645709e74f",
       "identityReviewRequired": false
     },
     {
@@ -60534,8 +60534,8 @@
       "intendedPackageIdentity": "module_sap_enterprise_foundation_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f42582c3136a6bf6a8254043ed70076478033f10",
       "identityReviewRequired": false
     },
     {
@@ -60545,8 +60545,8 @@
       "intendedPackageIdentity": "module_sap_finance_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8639f52684e11326cf70b295fb1f0f293a22d0cb",
       "identityReviewRequired": false
     },
     {
@@ -60556,8 +60556,8 @@
       "intendedPackageIdentity": "module_sap_governance_risk_and_compliance_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e8a4e5550f301ecba7d17086cae8201758e4b4a6",
       "identityReviewRequired": false
     },
     {
@@ -60567,8 +60567,8 @@
       "intendedPackageIdentity": "module_sap_hosting_and_cloud_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5188355e9c6c6452318f719c4afe6b03a40f8ec5",
       "identityReviewRequired": false
     },
     {
@@ -60578,8 +60578,8 @@
       "intendedPackageIdentity": "module_sap_inventory_and_logistics_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "c5c87f5fe5c78a276c3a34c0750e1362aec16b6d",
       "identityReviewRequired": false
     },
     {
@@ -60589,8 +60589,8 @@
       "intendedPackageIdentity": "module_sap_partners_and_portals_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9dfd09e4ea6034274f0fb82c8665295d64a2d437",
       "identityReviewRequired": false
     },
     {
@@ -60600,8 +60600,8 @@
       "intendedPackageIdentity": "module_sap_people_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1a4aa5b3d4c05c660c3e0358f9f06d020eac8290",
       "identityReviewRequired": false
     },
     {
@@ -60611,8 +60611,8 @@
       "intendedPackageIdentity": "module_sap_procurement_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "60e82517e659b3322b0d43cc9a818a1e6a5a1a2e",
       "identityReviewRequired": false
     },
     {
@@ -60622,8 +60622,8 @@
       "intendedPackageIdentity": "module_sap_product_and_engineering_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fd4dd84d6c02a1a64c01006019fc79cf646c542c",
       "identityReviewRequired": false
     },
     {
@@ -60633,8 +60633,8 @@
       "intendedPackageIdentity": "module_sap_projects_and_services_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2d86c6213040e1fe5bbccefbdab03be075844258",
       "identityReviewRequired": false
     },
     {
@@ -60644,8 +60644,8 @@
       "intendedPackageIdentity": "module_sap_revenue_operations_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8db7ae1f7066d255ba10dee75ea0142c59bc8b22",
       "identityReviewRequired": false
     },
     {
@@ -60655,8 +60655,8 @@
       "intendedPackageIdentity": "module_sap_sales_and_crm_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d8b2c37f25adbe3642c8f5ad300fc30e518b2c7a",
       "identityReviewRequired": false
     },
     {
@@ -60666,8 +60666,8 @@
       "intendedPackageIdentity": "module_sap_service_management_flutter",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-flutter",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fd7f963c5b81822672810e2273e075a4e3f84e59",
       "identityReviewRequired": false
     },
     {
@@ -65341,8 +65341,8 @@
       "intendedPackageIdentity": "module_music_arrangement_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "3d37d140687c39ef7211050aa619544bf7bac37b",
       "identityReviewRequired": false
     },
     {
@@ -65352,8 +65352,8 @@
       "intendedPackageIdentity": "module_music_audio_devices_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5408e4d126eafbedbab037178a5a1fe4b7bd651a",
       "identityReviewRequired": false
     },
     {
@@ -67442,8 +67442,8 @@
       "intendedPackageIdentity": "module_sap_assets_and_facilities_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fd1523ae689026312962435e71670651ed1a1141",
       "identityReviewRequired": false
     },
     {
@@ -67453,8 +67453,8 @@
       "intendedPackageIdentity": "module_sap_controlling_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "80586f1e8f17cb77da38a949ed1b92377501d627",
       "identityReviewRequired": false
     },
     {
@@ -67464,8 +67464,8 @@
       "intendedPackageIdentity": "module_sap_data_and_intelligence_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0fe5f2163f251e52697d6f345bae1a53e710a260",
       "identityReviewRequired": false
     },
     {
@@ -67475,8 +67475,8 @@
       "intendedPackageIdentity": "module_sap_enterprise_foundation_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8be04328764a5c281c4381d738af62e414bf83f2",
       "identityReviewRequired": false
     },
     {
@@ -67486,8 +67486,8 @@
       "intendedPackageIdentity": "module_sap_finance_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5c675d7f18a0aa7a5c9ef55cd4ea14145c50122b",
       "identityReviewRequired": false
     },
     {
@@ -67497,8 +67497,8 @@
       "intendedPackageIdentity": "module_sap_governance_risk_and_compliance_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "8503f8299ecb36ff4284122b7b410b814bd83be8",
       "identityReviewRequired": false
     },
     {
@@ -67508,8 +67508,8 @@
       "intendedPackageIdentity": "module_sap_hosting_and_cloud_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4d0f651e23128a18f43adff3a46ff8e49f038c05",
       "identityReviewRequired": false
     },
     {
@@ -67519,8 +67519,8 @@
       "intendedPackageIdentity": "module_sap_inventory_and_logistics_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "81bbdcc346a0efea64c2edca6623d324ee889c94",
       "identityReviewRequired": false
     },
     {
@@ -67530,8 +67530,8 @@
       "intendedPackageIdentity": "module_sap_partners_and_portals_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "872fd8450c79bd520d698b269ac98fecef7b510e",
       "identityReviewRequired": false
     },
     {
@@ -67541,8 +67541,8 @@
       "intendedPackageIdentity": "module_sap_people_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "6d961d65eabf2f5de601210ce380329bf55856a7",
       "identityReviewRequired": false
     },
     {
@@ -67552,8 +67552,8 @@
       "intendedPackageIdentity": "module_sap_procurement_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "cb6f0c03c4e36c2b80a0f24e381e98845cdb105f",
       "identityReviewRequired": false
     },
     {
@@ -67563,8 +67563,8 @@
       "intendedPackageIdentity": "module_sap_product_and_engineering_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b76e11d5c447fa16f7bca47bb2c22a6bfa09d280",
       "identityReviewRequired": false
     },
     {
@@ -67574,8 +67574,8 @@
       "intendedPackageIdentity": "module_sap_projects_and_services_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "9ccf9c2691d590b1aadfa07faa177cfb8a87f786",
       "identityReviewRequired": false
     },
     {
@@ -67585,8 +67585,8 @@
       "intendedPackageIdentity": "module_sap_revenue_operations_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d5e71cdd0958e3235ca21972641656a40724cf9d",
       "identityReviewRequired": false
     },
     {
@@ -67596,8 +67596,8 @@
       "intendedPackageIdentity": "module_sap_sales_and_crm_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d8e2a0c89845d20de912a8288b1c4f1ddcc8ff46",
       "identityReviewRequired": false
     },
     {
@@ -67607,8 +67607,8 @@
       "intendedPackageIdentity": "module_sap_service_management_dart_desktop",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-desktop",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "7601cc3857509baae3e1cfcab483cda2d5bf33ae",
       "identityReviewRequired": false
     },
     {
@@ -72282,8 +72282,8 @@
       "intendedPackageIdentity": "module_music_arrangement_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "1bdced66319a4d4fa285e63938b39927e0b59dd4",
       "identityReviewRequired": false
     },
     {
@@ -72293,8 +72293,8 @@
       "intendedPackageIdentity": "module_music_audio_devices_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0242dcfaf67d59d830c0979ad9d7bdc93831a664",
       "identityReviewRequired": false
     },
     {
@@ -74372,8 +74372,8 @@
       "intendedPackageIdentity": "module_real_estate_portals_and_reporting_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "publishing",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "5510a101e4e6004f499195b31422a502746c71c1",
       "identityReviewRequired": false
     },
     {
@@ -74383,8 +74383,8 @@
       "intendedPackageIdentity": "module_sap_assets_and_facilities_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "69696a90cd0e7b8224a8094f19d37f65c6b55b6d",
       "identityReviewRequired": false
     },
     {
@@ -74394,8 +74394,8 @@
       "intendedPackageIdentity": "module_sap_controlling_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "0a68ed8c6a903fface20edcbc18f31a6270abfb4",
       "identityReviewRequired": false
     },
     {
@@ -74405,8 +74405,8 @@
       "intendedPackageIdentity": "module_sap_data_and_intelligence_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "d8c1aef923fabcf7c240922f596895816884a7c5",
       "identityReviewRequired": false
     },
     {
@@ -74416,8 +74416,8 @@
       "intendedPackageIdentity": "module_sap_enterprise_foundation_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "2853513aafa9d31c70fd52f8ed3e5e707137ae0b",
       "identityReviewRequired": false
     },
     {
@@ -74427,8 +74427,8 @@
       "intendedPackageIdentity": "module_sap_finance_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "79542e3e0bd237aa7594c8e295f1e696f87ddf88",
       "identityReviewRequired": false
     },
     {
@@ -74438,8 +74438,8 @@
       "intendedPackageIdentity": "module_sap_governance_risk_and_compliance_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "fb162f910c8903a9b56af6c96cf29db9d62dba1c",
       "identityReviewRequired": false
     },
     {
@@ -74449,8 +74449,8 @@
       "intendedPackageIdentity": "module_sap_hosting_and_cloud_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "568774b23237fa7e3461598a14efeb63aa4f57a1",
       "identityReviewRequired": false
     },
     {
@@ -74460,8 +74460,8 @@
       "intendedPackageIdentity": "module_sap_inventory_and_logistics_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b4081477d44485154688c0b6f5f4dd1792f00526",
       "identityReviewRequired": false
     },
     {
@@ -74471,8 +74471,8 @@
       "intendedPackageIdentity": "module_sap_partners_and_portals_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "054e6e9301a5addff0413dadef7d1952e354adf1",
       "identityReviewRequired": false
     },
     {
@@ -74482,8 +74482,8 @@
       "intendedPackageIdentity": "module_sap_people_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4865a5827f87c8c9c270d028f6249baf686e2c1b",
       "identityReviewRequired": false
     },
     {
@@ -74493,8 +74493,8 @@
       "intendedPackageIdentity": "module_sap_procurement_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "605771df66dfb1a121fdabb5eeaac650e6e9b7a8",
       "identityReviewRequired": false
     },
     {
@@ -74504,8 +74504,8 @@
       "intendedPackageIdentity": "module_sap_product_and_engineering_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "b2b6ac5540d041ff650c435802520fc9ba38db00",
       "identityReviewRequired": false
     },
     {
@@ -74515,8 +74515,8 @@
       "intendedPackageIdentity": "module_sap_projects_and_services_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "f173de116ee36dac9457f25b35daf050281bfb88",
       "identityReviewRequired": false
     },
     {
@@ -74526,8 +74526,8 @@
       "intendedPackageIdentity": "module_sap_revenue_operations_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "4f345b034246aaf21c0de1eae6b6bb8167a25b13",
       "identityReviewRequired": false
     },
     {
@@ -74537,8 +74537,8 @@
       "intendedPackageIdentity": "module_sap_sales_and_crm_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "e00ea29f53d7aa62cffcb0cd9300bef918903229",
       "identityReviewRequired": false
     },
     {
@@ -74548,8 +74548,8 @@
       "intendedPackageIdentity": "module_sap_service_management_dart_mobile",
       "observedPackageIdentity": null,
       "foundation": "module-boilerplate-dart-mobile",
-      "state": "prepared",
-      "verifiedCommit": null,
+      "state": "published",
+      "verifiedCommit": "bf93031c03f05620c5ec7959e1b334ea0a676d05",
       "identityReviewRequired": false
     }
   ]
