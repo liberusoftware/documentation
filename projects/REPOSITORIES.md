@@ -117,3 +117,7 @@ Application templates use `project-`; independent reusable modules use `module-`
 | Flutter · Mobile | [module-boilerplate-flutter](https://github.com/liberusoftware/module-boilerplate-flutter) | Dart/pub |
 | Dart · Desktop | [module-boilerplate-dart-desktop](https://github.com/liberusoftware/module-boilerplate-dart-desktop) | Dart/pub |
 | Dart · Mobile | [module-boilerplate-dart-mobile](https://github.com/liberusoftware/module-boilerplate-dart-mobile) | Dart/pub |
+
+## Implementation wayfinders
+
+Use the [wayfinder guide](IMPLEMENTATION-WAYFINDERS.md) and [issue matrix](IMPLEMENTATION-ISSUES.md) to locate the implementation backlog for each non-Filament technology host. Existing Filament implementation issues are preserved.

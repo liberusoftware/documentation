@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Core API
+# Ecommerce: Core API
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-core). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,15 +6,15 @@
 
 ## Canonical one-to-one API module specification
 
-**Proposed API design identifier:** `module-ecommerce-commerce-core-api`<br>
-**Matching domain module:** `ecommerce-commerce-core`  
+**Proposed API design identifier:** `module-ecommerce-core-api`<br>
+**Matching domain module:** `ecommerce-core`\
 **Application:** Ecommerce  
-**Source feature:** [Commerce Core](../features/commerce-core.md)  
+**Source feature:** [Core](../features/commerce-core.md)\
 **Architecture:** [API.md](../../../architecture/API.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
-This optional API presentation package exposes approved HTTP operations for the Commerce Core domain module. It presents exactly one independent module, delegates all authoritative behavior to that module's public actions/queries/policies, and contains no other module's API logic.
+This optional API presentation package exposes approved HTTP operations for the Core domain module. It presents exactly one independent module, delegates all authoritative behavior to that module's public actions/queries/policies, and contains no other module's API logic.
 
 The domain capability includes:
 
@@ -89,13 +89,13 @@ Every exposed operation must map to one audience, domain query/action, permissio
 - Lint OpenAPI, validate examples, detect implementation drift and breaking changes, and reject path/schema/operation-ID collisions during application aggregation.
 - Test every operation for allowed, unauthenticated, wrong-tenant, insufficient-scope, insufficient-permission, hidden-field, invalid, missing, duplicate, stale, concurrent, throttled, and failure/recovery paths as applicable.
 - Test pagination, filtering, sorting, includes, dates, money, identifiers, enums, idempotency, ETags, async operations, bulk partial failure, and stable Problem Details.
-- Add one-to-one architecture tests proving this package depends on and presents only `ecommerce-commerce-core`.
+- Add one-to-one architecture tests proving this package depends on and presents only `ecommerce-core`.
 - Run independent installation, minimum/current compatibility, security, performance, generated-client smoke, and representative host-composition tests.
 - Run Pest 5 with meaningful owned PHP targeting 100% line coverage; coverage complements contract, mutation, security, and failure assertions.
 
 ## 9. Definition of done
 
-- The package name, manifest, Composer dependency, namespace, route prefix, and OpenAPI ownership all match `ecommerce-commerce-core`.
+- The package name, manifest, Composer dependency, namespace, route prefix, and OpenAPI ownership all match `ecommerce-core`.
 - The audience/operation matrix is complete, least-privilege, documented, and enforced in CI.
 - Schemas, implementation, examples, errors, SDK/client evidence, and documentation agree.
 - Authorization, tenant/field isolation, idempotency/concurrency, limits, audit, observability, compatibility, and recovery tests pass.

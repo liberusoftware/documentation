@@ -1,4 +1,4 @@
-# Commerce Core — end-user guide
+# Core — end-user guide
 
 **Project:** [Liberu Ecommerce](../README.md)
 **Feature specification:** [commerce-core.md](../../../../projects/ecommerce/features/commerce-core.md)
@@ -10,7 +10,7 @@
 
 ## Module-specific scope
 
-The intended **Commerce Core** workspace covers stores, channels, commercial context, order numbering, shared states, settings, capabilities, and domain events.
+The intended **Core** workspace covers stores, channels, commercial context, order numbering, shared states, settings, capabilities, and domain events.
 
 The relevant capability areas are **Stores**, **Channels**, **Commercial context**, **Order numbering**, **Shared states**, **Settings**, **Capabilities**, **Domain events**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 

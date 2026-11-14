@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Customers
+# Ecommerce: Customers
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-customers). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,7 +6,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `module-ecommerce-commerce-customers`
+**Domain module:** `module-ecommerce-customers`\
 **Application:** Ecommerce  
 **Capability group:** Customer and retention modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  
@@ -14,7 +14,7 @@
 
 ## 1. Purpose
 
-The Commerce Customers module owns Commerce profiles, addresses, preferences, tax status, customer groups, tags, lifecycle, and CRM identity references. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
+The Customers module owns Commerce profiles, addresses, preferences, tax status, customer groups, tags, lifecycle, and CRM identity references. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
 
 ## 2. Full feature scope
 
@@ -58,7 +58,7 @@ The Commerce Customers module owns Commerce profiles, addresses, preferences, ta
 
 ### Presentation
 
-- Provide matching optional presentation packages only when required: `module-ecommerce-commerce-customers-filament`, `module-ecommerce-commerce-customers-livewire`, and `module-ecommerce-commerce-customers-api`.
+- Provide matching optional presentation packages only when required: `module-ecommerce-customers-filament`, `module-ecommerce-customers-livewire`, and `module-ecommerce-customers-api`.
 - Each presentation package depends on this module's public boundary and presents no other independent module.
 - Themes may style supported extension points but cannot replace validation, authorization, routes, or domain actions.
 

@@ -1,4 +1,4 @@
-# Commerce Extensions: Next.js presentation plan
+# Extensions: Next.js presentation plan
 
 <!-- nextjs-plan:generated -->
 
@@ -6,7 +6,7 @@
 
 **Adapter group:** `planned:ecommerce:commerce-extensions`.
 
-**Proposed design identifier:** `module-ecommerce-commerce-extensions-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
+**Proposed design identifier:** `module-ecommerce-extensions-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
 ## Scope and ownership
 

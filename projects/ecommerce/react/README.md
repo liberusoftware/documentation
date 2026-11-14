@@ -1,7 +1,7 @@
 # Ecommerce React + Inertia Implementations
 
 <!-- catalogue-status:start -->
-This index preserves **107 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **108 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional React 19.2 + Inertia 3 presentation package for exactly one matching API module.
@@ -24,14 +24,15 @@ Each file defines the optional React 19.2 + Inertia 3 presentation package for e
 | [Catalog Staging React + Inertia](catalog-staging.md) | [Target/source map](../SOURCE-MAPPING.md#catalog-staging) | [core](../core/catalog-staging.md) · [api](../api/catalog-staging.md) · [nextjs](../nextjs/catalog-staging.md) |
 | [Catalog React + Inertia](catalog.md) | [Target/source map](../SOURCE-MAPPING.md#catalog) | [core](../core/catalog.md) · [api](../api/catalog.md) · [nextjs](../nextjs/catalog.md) |
 | [Categories and Navigation React + Inertia](categories-and-navigation.md) | [Target/source map](../SOURCE-MAPPING.md#categories-and-navigation) | [core](../core/categories-and-navigation.md) · [api](../api/categories-and-navigation.md) · [nextjs](../nextjs/categories-and-navigation.md) |
+| [Catering — Laravel Inertia React](catering.md) | [Target/source map](../SOURCE-MAPPING.md#catering) | [core](../core/catering.md) · [api](../api/catering.md) · [nextjs](../nextjs/catering.md) |
 | [Checkout Extensibility React + Inertia](checkout-extensibility.md) | [Target/source map](../SOURCE-MAPPING.md#checkout-extensibility) | [core](../core/checkout-extensibility.md) · [api](../api/checkout-extensibility.md) · [nextjs](../nextjs/checkout-extensibility.md) |
 | [Checkout React + Inertia](checkout.md) | [Target/source map](../SOURCE-MAPPING.md#checkout) | [core](../core/checkout.md) · [api](../api/checkout.md) · [nextjs](../nextjs/checkout.md) |
-| [Commerce Automation Pack React + Inertia](commerce-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-automation-pack) | [core](../core/commerce-automation-pack.md) · [api](../api/commerce-automation-pack.md) · [nextjs](../nextjs/commerce-automation-pack.md) |
-| [Commerce Copilot React + Inertia](commerce-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-copilot) | [core](../core/commerce-copilot.md) · [api](../api/commerce-copilot.md) · [nextjs](../nextjs/commerce-copilot.md) |
-| [Commerce Core React + Inertia](commerce-core.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-core) | [core](../core/commerce-core.md) · [api](../api/commerce-core.md) · [nextjs](../nextjs/commerce-core.md) |
-| [Commerce Customers React + Inertia](commerce-customers.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-customers) | [core](../core/commerce-customers.md) · [api](../api/commerce-customers.md) · [nextjs](../nextjs/commerce-customers.md) |
-| [Commerce Extensions React + Inertia](commerce-extensions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-extensions) | [core](../core/commerce-extensions.md) · [api](../api/commerce-extensions.md) · [nextjs](../nextjs/commerce-extensions.md) |
-| [Commerce Functions React + Inertia](commerce-functions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-functions) | [core](../core/commerce-functions.md) · [api](../api/commerce-functions.md) · [nextjs](../nextjs/commerce-functions.md) |
+| [Automation Pack React + Inertia](commerce-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-automation-pack) | [core](../core/commerce-automation-pack.md) · [api](../api/commerce-automation-pack.md) · [nextjs](../nextjs/commerce-automation-pack.md) |
+| [Copilot React + Inertia](commerce-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-copilot) | [core](../core/commerce-copilot.md) · [api](../api/commerce-copilot.md) · [nextjs](../nextjs/commerce-copilot.md) |
+| [Core React + Inertia](commerce-core.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-core) | [core](../core/commerce-core.md) · [api](../api/commerce-core.md) · [nextjs](../nextjs/commerce-core.md) |
+| [Customers React + Inertia](commerce-customers.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-customers) | [core](../core/commerce-customers.md) · [api](../api/commerce-customers.md) · [nextjs](../nextjs/commerce-customers.md) |
+| [Extensions React + Inertia](commerce-extensions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-extensions) | [core](../core/commerce-extensions.md) · [api](../api/commerce-extensions.md) · [nextjs](../nextjs/commerce-extensions.md) |
+| [Functions React + Inertia](commerce-functions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-functions) | [core](../core/commerce-functions.md) · [api](../api/commerce-functions.md) · [nextjs](../nextjs/commerce-functions.md) |
 | [Commissions and Settlements React + Inertia](commissions-and-settlements.md) | [Target/source map](../SOURCE-MAPPING.md#commissions-and-settlements) | [core](../core/commissions-and-settlements.md) · [api](../api/commissions-and-settlements.md) · [nextjs](../nextjs/commissions-and-settlements.md) |
 | [Companies React + Inertia](companies.md) | [Target/source map](../SOURCE-MAPPING.md#companies) | [core](../core/companies.md) · [api](../api/companies.md) · [nextjs](../nextjs/companies.md) |
 | [Cross-Border React + Inertia](cross-border.md) | [Target/source map](../SOURCE-MAPPING.md#cross-border) | [core](../core/cross-border.md) · [api](../api/cross-border.md) · [nextjs](../nextjs/cross-border.md) |

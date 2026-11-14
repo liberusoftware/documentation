@@ -1,4 +1,4 @@
-# Commerce Functions — end-user guide
+# Functions — end-user guide
 
 **Project:** [Liberu Ecommerce](../README.md)
 **Feature specification:** [commerce-functions.md](../../../../projects/ecommerce/features/commerce-functions.md)
@@ -10,7 +10,7 @@
 
 ## Module-specific scope
 
-The intended **Commerce Functions** workspace covers sandboxed typed hooks for discounts, validation, delivery/payment customization, routing, and transformations with limits and diagnostics.
+The intended **Functions** workspace covers sandboxed typed hooks for discounts, validation, delivery/payment customization, routing, and transformations with limits and diagnostics.
 
 The relevant capability areas are **Sandboxed typed hooks for discounts**, **Validation**, **Delivery/payment customization**, **Routing**, **Transformations with limits and diagnostics**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 

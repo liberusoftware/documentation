@@ -1,7 +1,7 @@
 # Ecommerce Core Modules
 
 <!-- catalogue-status:start -->
-This index preserves **107 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **108 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 This index covers the Laravel 13/PHP 8.5 core Composer packages for the Ecommerce domain. Each module is independently installable, testable, versioned, and usable by enterprise applications, small businesses, and personal users. Presentation adapters consume the core package; they do not own its business rules.
@@ -24,14 +24,15 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Ecommerc
 | [Catalog Staging Core Module](catalog-staging.md) | [Target/source map](../SOURCE-MAPPING.md#catalog-staging) | [api](../api/catalog-staging.md) · [nextjs](../nextjs/catalog-staging.md) |
 | [Catalog Core Module](catalog.md) | [Target/source map](../SOURCE-MAPPING.md#catalog) | [api](../api/catalog.md) · [nextjs](../nextjs/catalog.md) |
 | [Categories And Navigation Core Module](categories-and-navigation.md) | [Target/source map](../SOURCE-MAPPING.md#categories-and-navigation) | [api](../api/categories-and-navigation.md) · [nextjs](../nextjs/categories-and-navigation.md) |
+| [Catering core](catering.md) | [Target/source map](../SOURCE-MAPPING.md#catering) | [api](../api/catering.md) · [nextjs](../nextjs/catering.md) |
 | [Checkout Extensibility Core Module](checkout-extensibility.md) | [Target/source map](../SOURCE-MAPPING.md#checkout-extensibility) | [api](../api/checkout-extensibility.md) · [nextjs](../nextjs/checkout-extensibility.md) |
 | [Checkout Core Module](checkout.md) | [Target/source map](../SOURCE-MAPPING.md#checkout) | [api](../api/checkout.md) · [nextjs](../nextjs/checkout.md) |
-| [Commerce Automation Pack Core Module](commerce-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-automation-pack) | [api](../api/commerce-automation-pack.md) · [nextjs](../nextjs/commerce-automation-pack.md) |
-| [Commerce Copilot Core Module](commerce-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-copilot) | [api](../api/commerce-copilot.md) · [nextjs](../nextjs/commerce-copilot.md) |
-| [Commerce Core Core Module](commerce-core.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-core) | [api](../api/commerce-core.md) · [nextjs](../nextjs/commerce-core.md) |
-| [Commerce Customers Core Module](commerce-customers.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-customers) | [api](../api/commerce-customers.md) · [nextjs](../nextjs/commerce-customers.md) |
-| [Commerce Extensions Core Module](commerce-extensions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-extensions) | [api](../api/commerce-extensions.md) · [nextjs](../nextjs/commerce-extensions.md) |
-| [Commerce Functions Core Module](commerce-functions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-functions) | [api](../api/commerce-functions.md) · [nextjs](../nextjs/commerce-functions.md) |
+| [Automation Pack Core Module](commerce-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-automation-pack) | [api](../api/commerce-automation-pack.md) · [nextjs](../nextjs/commerce-automation-pack.md) |
+| [Copilot Core Module](commerce-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-copilot) | [api](../api/commerce-copilot.md) · [nextjs](../nextjs/commerce-copilot.md) |
+| [Core Core Module](commerce-core.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-core) | [api](../api/commerce-core.md) · [nextjs](../nextjs/commerce-core.md) |
+| [Customers Core Module](commerce-customers.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-customers) | [api](../api/commerce-customers.md) · [nextjs](../nextjs/commerce-customers.md) |
+| [Extensions Core Module](commerce-extensions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-extensions) | [api](../api/commerce-extensions.md) · [nextjs](../nextjs/commerce-extensions.md) |
+| [Functions Core Module](commerce-functions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-functions) | [api](../api/commerce-functions.md) · [nextjs](../nextjs/commerce-functions.md) |
 | [Commissions And Settlements Core Module](commissions-and-settlements.md) | [Target/source map](../SOURCE-MAPPING.md#commissions-and-settlements) | [api](../api/commissions-and-settlements.md) · [nextjs](../nextjs/commissions-and-settlements.md) |
 | [Companies Core Module](companies.md) | [Target/source map](../SOURCE-MAPPING.md#companies) | [api](../api/companies.md) · [nextjs](../nextjs/companies.md) |
 | [Cross Border Core Module](cross-border.md) | [Target/source map](../SOURCE-MAPPING.md#cross-border) | [api](../api/cross-border.md) · [nextjs](../nextjs/cross-border.md) |
@@ -59,7 +60,7 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Ecommerc
 | [Marketplace Channels Core Module](marketplace-channels.md) | [Target/source map](../SOURCE-MAPPING.md#marketplace-channels) | [api](../api/marketplace-channels.md) · [nextjs](../nextjs/marketplace-channels.md) |
 | [Marketplace Orders Core Module](marketplace-orders.md) | [Target/source map](../SOURCE-MAPPING.md#marketplace-orders) | [api](../api/marketplace-orders.md) · [nextjs](../nextjs/marketplace-orders.md) |
 | [Markets Core Module](markets.md) | [Target/source map](../SOURCE-MAPPING.md#markets) | [api](../api/markets.md) · [nextjs](../nextjs/markets.md) |
-| [Membership Commerce Core Module](membership-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#membership-commerce) | [api](../api/membership-commerce.md) · [nextjs](../nextjs/membership-commerce.md) |
+| [Membership Core Module](membership-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#membership-commerce) | [api](../api/membership-commerce.md) · [nextjs](../nextjs/membership-commerce.md) |
 | [Merchandising Intelligence Core Module](merchandising-intelligence.md) | [Target/source map](../SOURCE-MAPPING.md#merchandising-intelligence) | [api](../api/merchandising-intelligence.md) · [nextjs](../nextjs/merchandising-intelligence.md) |
 | [Merchandising Core Module](merchandising.md) | [Target/source map](../SOURCE-MAPPING.md#merchandising) | [api](../api/merchandising.md) · [nextjs](../nextjs/merchandising.md) |
 | [Migration Framework Core Module](migration-framework.md) | [Target/source map](../SOURCE-MAPPING.md#migration-framework) | [api](../api/migration-framework.md) · [nextjs](../nextjs/migration-framework.md) |
@@ -107,11 +108,11 @@ This index covers the Laravel 13/PHP 8.5 core Composer packages for the Ecommerc
 | [Seller Marketplace Core Module](seller-marketplace.md) | [Target/source map](../SOURCE-MAPPING.md#seller-marketplace) | [api](../api/seller-marketplace.md) · [nextjs](../nextjs/seller-marketplace.md) |
 | [Shared Catalogs Core Module](shared-catalogs.md) | [Target/source map](../SOURCE-MAPPING.md#shared-catalogs) | [api](../api/shared-catalogs.md) · [nextjs](../nextjs/shared-catalogs.md) |
 | [Shipping Core Module](shipping.md) | [Target/source map](../SOURCE-MAPPING.md#shipping) | [api](../api/shipping.md) · [nextjs](../nextjs/shipping.md) |
-| [Social Commerce Core Module](social-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#social-commerce) | [api](../api/social-commerce.md) · [nextjs](../nextjs/social-commerce.md) |
+| [Social Core Module](social-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#social-commerce) | [api](../api/social-commerce.md) · [nextjs](../nextjs/social-commerce.md) |
 | [Store Templates Core Module](store-templates.md) | [Target/source map](../SOURCE-MAPPING.md#store-templates) | [api](../api/store-templates.md) · [nextjs](../nextjs/store-templates.md) |
-| [Subscription Commerce Core Module](subscription-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#subscription-commerce) | [api](../api/subscription-commerce.md) · [nextjs](../nextjs/subscription-commerce.md) |
+| [Subscription Core Module](subscription-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#subscription-commerce) | [api](../api/subscription-commerce.md) · [nextjs](../nextjs/subscription-commerce.md) |
 | [Tax Core Module](tax.md) | [Target/source map](../SOURCE-MAPPING.md#tax) | [api](../api/tax.md) · [nextjs](../nextjs/tax.md) |
 | [Transfers And Replenishment Core Module](transfers-and-replenishment.md) | [Target/source map](../SOURCE-MAPPING.md#transfers-and-replenishment) | [api](../api/transfers-and-replenishment.md) · [nextjs](../nextjs/transfers-and-replenishment.md) |
-| [Unified Commerce Core Module](unified-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#unified-commerce) | [api](../api/unified-commerce.md) · [nextjs](../nextjs/unified-commerce.md) |
+| [Unified Core Module](unified-commerce.md) | [Target/source map](../SOURCE-MAPPING.md#unified-commerce) | [api](../api/unified-commerce.md) · [nextjs](../nextjs/unified-commerce.md) |
 | [Warehouse Operations Core Module](warehouse-operations.md) | [Target/source map](../SOURCE-MAPPING.md#warehouse-operations) | [api](../api/warehouse-operations.md) · [nextjs](../nextjs/warehouse-operations.md) |
 | [Warranty And Claims Core Module](warranty-and-claims.md) | [Target/source map](../SOURCE-MAPPING.md#warranty-and-claims) | [api](../api/warranty-and-claims.md) · [nextjs](../nextjs/warranty-and-claims.md) |

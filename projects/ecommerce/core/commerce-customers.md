@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Customers Core Module
+# Ecommerce: Customers Core Module
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-customers). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,11 +6,11 @@
 
 ## Package contract
 
-**Design package identifier:** `module-ecommerce-commerce-customers`
-**Domain specification:** [Commerce Customers](../features/commerce-customers.md)
+**Design package identifier:** `module-ecommerce-customers`\
+**Domain specification:** [Customers](../features/commerce-customers.md)\
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 
-This package is the authoritative, provider-neutral implementation of Commerce Customers. It owns domain behavior and data; optional API, Filament, Livewire, React, Vue, and Nuxt packages translate its public contracts for their surfaces.
+This package is the authoritative, provider-neutral implementation of Customers. It owns domain behavior and data; optional API, Filament, Livewire, React, Vue, and Nuxt packages translate its public contracts for their surfaces.
 
 ## Domain-driven implementation plan
 

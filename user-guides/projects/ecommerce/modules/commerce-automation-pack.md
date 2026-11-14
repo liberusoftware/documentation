@@ -1,4 +1,4 @@
-# Commerce Automation Pack — end-user guide
+# Automation Pack — end-user guide
 
 **Project:** [Liberu Ecommerce](../README.md)
 **Feature specification:** [commerce-automation-pack.md](../../../../projects/ecommerce/features/commerce-automation-pack.md)
@@ -10,7 +10,7 @@
 
 ## Module-specific scope
 
-The intended **Commerce Automation Pack** workspace covers commerce triggers/actions/recipes, versioning, simulation, approvals, idempotency, and generic Automation integration.
+The intended **Automation Pack** workspace covers commerce triggers/actions/recipes, versioning, simulation, approvals, idempotency, and generic Automation integration.
 
 The relevant capability areas are **Commerce triggers/actions/recipes**, **Versioning**, **Simulation**, **Approvals**, **Idempotency**, **Generic Automation integration**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 

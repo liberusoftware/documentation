@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Core Livewire
+# Ecommerce: Core Livewire
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-core). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,10 +6,10 @@
 
 ## Canonical one-to-one Livewire 4 implementation
 
-**Livewire package:** `module-ecommerce-commerce-core-livewire`  
-**Matching domain module:** `ecommerce-commerce-core`  
+**Livewire package:** `module-ecommerce-core-livewire`\
+**Matching domain module:** `ecommerce-core`\
 **Application:** Ecommerce  
-**Source feature:** [Commerce Core](../features/commerce-core.md)  
+**Source feature:** [Core](../features/commerce-core.md)\
 **Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
@@ -29,7 +29,7 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 3. Livewire 4 implementation
 
-- Register a stable `module-ecommerce-commerce-core-livewire` component namespace and service provider; use explicit aliases such as `<livewire:module-ecommerce-commerce-core::component-name />` according to LIVEWIRE.md.
+- Register a stable `module-ecommerce-core-livewire` component namespace and service provider; use explicit aliases such as `<livewire:module-ecommerce-core::component-name />` according to LIVEWIRE.md.
 - Keep reusable components under `src/Components`, full-page components under `src/Pages`, and package views under `resources/views`.
 - Treat public properties, URL state, events, uploads, and action parameters as untrusted input; validate and authorize at the Livewire boundary, then invoke the authoritative domain action/query.
 - Keep public state minimal and non-sensitive, use locked/typed state where supported, and provide loading, validation, authorization, empty, and failure states.
@@ -53,6 +53,6 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 5. Definition of done
 
-- Package identity, namespace, aliases, and dependency match `ecommerce-commerce-core` one-to-one.
+- Package identity, namespace, aliases, and dependency match `ecommerce-core` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.

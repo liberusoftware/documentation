@@ -1,7 +1,7 @@
 # Ecommerce Flutter + Dart Implementations
 
 <!-- catalogue-status:start -->
-This index preserves **107 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **108 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional Flutter + Dart adapter for exactly one matching core/API module.
@@ -24,14 +24,15 @@ Each file defines the optional Flutter + Dart adapter for exactly one matching c
 | [Catalog Staging Flutter + Dart](catalog-staging.md) | [Target/source map](../SOURCE-MAPPING.md#catalog-staging) | [core](../core/catalog-staging.md) · [api](../api/catalog-staging.md) · [nextjs](../nextjs/catalog-staging.md) |
 | [Catalog Flutter + Dart](catalog.md) | [Target/source map](../SOURCE-MAPPING.md#catalog) | [core](../core/catalog.md) · [api](../api/catalog.md) · [nextjs](../nextjs/catalog.md) |
 | [Categories And Navigation Flutter + Dart](categories-and-navigation.md) | [Target/source map](../SOURCE-MAPPING.md#categories-and-navigation) | [core](../core/categories-and-navigation.md) · [api](../api/categories-and-navigation.md) · [nextjs](../nextjs/categories-and-navigation.md) |
+| [Catering — Flutter mobile](catering.md) | [Target/source map](../SOURCE-MAPPING.md#catering) | [core](../core/catering.md) · [api](../api/catering.md) · [nextjs](../nextjs/catering.md) |
 | [Checkout Extensibility Flutter + Dart](checkout-extensibility.md) | [Target/source map](../SOURCE-MAPPING.md#checkout-extensibility) | [core](../core/checkout-extensibility.md) · [api](../api/checkout-extensibility.md) · [nextjs](../nextjs/checkout-extensibility.md) |
 | [Checkout Flutter + Dart](checkout.md) | [Target/source map](../SOURCE-MAPPING.md#checkout) | [core](../core/checkout.md) · [api](../api/checkout.md) · [nextjs](../nextjs/checkout.md) |
-| [Commerce Automation Pack Flutter + Dart](commerce-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-automation-pack) | [core](../core/commerce-automation-pack.md) · [api](../api/commerce-automation-pack.md) · [nextjs](../nextjs/commerce-automation-pack.md) |
-| [Commerce Copilot Flutter + Dart](commerce-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-copilot) | [core](../core/commerce-copilot.md) · [api](../api/commerce-copilot.md) · [nextjs](../nextjs/commerce-copilot.md) |
-| [Commerce Core Flutter + Dart](commerce-core.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-core) | [core](../core/commerce-core.md) · [api](../api/commerce-core.md) · [nextjs](../nextjs/commerce-core.md) |
-| [Commerce Customers Flutter + Dart](commerce-customers.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-customers) | [core](../core/commerce-customers.md) · [api](../api/commerce-customers.md) · [nextjs](../nextjs/commerce-customers.md) |
-| [Commerce Extensions Flutter + Dart](commerce-extensions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-extensions) | [core](../core/commerce-extensions.md) · [api](../api/commerce-extensions.md) · [nextjs](../nextjs/commerce-extensions.md) |
-| [Commerce Functions Flutter + Dart](commerce-functions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-functions) | [core](../core/commerce-functions.md) · [api](../api/commerce-functions.md) · [nextjs](../nextjs/commerce-functions.md) |
+| [Automation Pack Flutter + Dart](commerce-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-automation-pack) | [core](../core/commerce-automation-pack.md) · [api](../api/commerce-automation-pack.md) · [nextjs](../nextjs/commerce-automation-pack.md) |
+| [Copilot Flutter + Dart](commerce-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-copilot) | [core](../core/commerce-copilot.md) · [api](../api/commerce-copilot.md) · [nextjs](../nextjs/commerce-copilot.md) |
+| [Core Flutter + Dart](commerce-core.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-core) | [core](../core/commerce-core.md) · [api](../api/commerce-core.md) · [nextjs](../nextjs/commerce-core.md) |
+| [Customers Flutter + Dart](commerce-customers.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-customers) | [core](../core/commerce-customers.md) · [api](../api/commerce-customers.md) · [nextjs](../nextjs/commerce-customers.md) |
+| [Extensions Flutter + Dart](commerce-extensions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-extensions) | [core](../core/commerce-extensions.md) · [api](../api/commerce-extensions.md) · [nextjs](../nextjs/commerce-extensions.md) |
+| [Functions Flutter + Dart](commerce-functions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-functions) | [core](../core/commerce-functions.md) · [api](../api/commerce-functions.md) · [nextjs](../nextjs/commerce-functions.md) |
 | [Commissions And Settlements Flutter + Dart](commissions-and-settlements.md) | [Target/source map](../SOURCE-MAPPING.md#commissions-and-settlements) | [core](../core/commissions-and-settlements.md) · [api](../api/commissions-and-settlements.md) · [nextjs](../nextjs/commissions-and-settlements.md) |
 | [Companies Flutter + Dart](companies.md) | [Target/source map](../SOURCE-MAPPING.md#companies) | [core](../core/companies.md) · [api](../api/companies.md) · [nextjs](../nextjs/companies.md) |
 | [Cross Border Flutter + Dart](cross-border.md) | [Target/source map](../SOURCE-MAPPING.md#cross-border) | [core](../core/cross-border.md) · [api](../api/cross-border.md) · [nextjs](../nextjs/cross-border.md) |

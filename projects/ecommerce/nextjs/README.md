@@ -24,12 +24,12 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | [Categories and Navigation](../features/categories-and-navigation.md) | [Next.js plan](categories-and-navigation.md) | [This module](categories-and-navigation.md) |
 | [Checkout](../features/checkout.md) | [Next.js plan](checkout.md) | [This module](checkout.md) |
 | [Checkout Extensibility](../features/checkout-extensibility.md) | [Next.js plan](checkout-extensibility.md) | [This module](checkout-extensibility.md) |
-| [Commerce Automation Pack](../features/commerce-automation-pack.md) | [Next.js plan](commerce-automation-pack.md) | [This module](commerce-automation-pack.md) |
-| [Commerce Copilot](../features/commerce-copilot.md) | [Next.js plan](commerce-copilot.md) | [This module](commerce-copilot.md) |
-| [Commerce Core](../features/commerce-core.md) | [Next.js plan](commerce-core.md) | [This module](commerce-core.md) |
-| [Commerce Customers](../features/commerce-customers.md) | [Next.js plan](commerce-customers.md) | [This module](commerce-customers.md) |
-| [Commerce Extensions](../features/commerce-extensions.md) | [Next.js plan](commerce-extensions.md) | [This module](commerce-extensions.md) |
-| [Commerce Functions](../features/commerce-functions.md) | [Next.js plan](commerce-functions.md) | [This module](commerce-functions.md) |
+| [Automation Pack](../features/commerce-automation-pack.md) | [Next.js plan](commerce-automation-pack.md) | [This module](commerce-automation-pack.md) |
+| [Copilot](../features/commerce-copilot.md) | [Next.js plan](commerce-copilot.md) | [This module](commerce-copilot.md) |
+| [Core](../features/commerce-core.md) | [Next.js plan](commerce-core.md) | [This module](commerce-core.md) |
+| [Customers](../features/commerce-customers.md) | [Next.js plan](commerce-customers.md) | [This module](commerce-customers.md) |
+| [Extensions](../features/commerce-extensions.md) | [Next.js plan](commerce-extensions.md) | [This module](commerce-extensions.md) |
+| [Functions](../features/commerce-functions.md) | [Next.js plan](commerce-functions.md) | [This module](commerce-functions.md) |
 | [Commissions and Settlements](../features/commissions-and-settlements.md) | [Next.js plan](commissions-and-settlements.md) | [This module](commissions-and-settlements.md) |
 | [Companies](../features/companies.md) | [Next.js plan](companies.md) | [This module](companies.md) |
 | [Cross-Border](../features/cross-border.md) | [Next.js plan](cross-border.md) | [This module](cross-border.md) |
@@ -115,3 +115,5 @@ Each documented spelling below has a module plan. Multiple spellings or applicat
 | [Warranty and Claims](../features/warranty-and-claims.md) | [Next.js plan](warranty-and-claims.md) | [This module](warranty-and-claims.md) |
 
 See the [Next.js standard](../../../standards/NEXTJS.md), [source map](../SOURCE-MAPPING.md), [npm guide](../../../guides/NPM.md) and [adapter ownership registry](../../../modules/nextjs/OWNERSHIP.md).
+
+- [Catering](catering.md) — event/menu and quotation workflow with privacy and concurrency requirements.

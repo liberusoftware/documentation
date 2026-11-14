@@ -1,16 +1,16 @@
-# Commerce Copilot Flutter + Dart
+# Copilot Flutter + Dart
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-copilot). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
 <!-- source-reconciliation:end -->
 
-**Package:** module-ecommerce-commerce-copilot-flutter
-**Matching core package:** module-ecommerce-commerce-copilot ([implementation](../core/commerce-copilot.md))
-**Matching API package:** module-ecommerce-commerce-copilot-api ([contract](../api/commerce-copilot.md))
+**Package:** module-ecommerce-copilot-flutter\
+**Matching core package:** module-ecommerce-copilot ([implementation](../core/commerce-copilot.md))\
+**Matching API package:** module-ecommerce-copilot-api ([contract](../api/commerce-copilot.md))
 
 ## Implementation plan
 
-This adapter presents Commerce Copilot for the Flutter + Dart surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
+This adapter presents Copilot for the Flutter + Dart surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
 
 - Use sound Dart null safety, typed DTOs, stable Flutter plugins, secure platform storage, and explicit application state models.
 - Preserve the API contract, tenant/team context, field visibility, localization, timezone/currency formatting, and server-side authorization.
@@ -20,6 +20,6 @@ This adapter presents Commerce Copilot for the Flutter + Dart surface. It owns p
 
 ## Verification
 
-Test Commerce Copilot API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
+Test Copilot API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
 
 See [Flutter + Dart standard](../../../standards/FLUTTER.md), [mobile architecture](../../../architecture/MOBILE.md), [Flutter + Dart technology](../../../technologies/FLUTTER.md), [core module](../core/commerce-copilot.md), and [API module](../api/commerce-copilot.md).

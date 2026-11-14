@@ -1,16 +1,16 @@
-# Commerce Customers Flutter + Dart
+# Customers Flutter + Dart
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-customers). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
 <!-- source-reconciliation:end -->
 
-**Package:** module-ecommerce-commerce-customers-flutter
-**Matching core package:** module-ecommerce-commerce-customers ([implementation](../core/commerce-customers.md))
-**Matching API package:** module-ecommerce-commerce-customers-api ([contract](../api/commerce-customers.md))
+**Package:** module-ecommerce-customers-flutter\
+**Matching core package:** module-ecommerce-customers ([implementation](../core/commerce-customers.md))\
+**Matching API package:** module-ecommerce-customers-api ([contract](../api/commerce-customers.md))
 
 ## Implementation plan
 
-This adapter presents Commerce Customers for the Flutter + Dart surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
+This adapter presents Customers for the Flutter + Dart surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
 
 - Use sound Dart null safety, typed DTOs, stable Flutter plugins, secure platform storage, and explicit application state models.
 - Preserve the API contract, tenant/team context, field visibility, localization, timezone/currency formatting, and server-side authorization.
@@ -20,6 +20,6 @@ This adapter presents Commerce Customers for the Flutter + Dart surface. It owns
 
 ## Verification
 
-Test Commerce Customers API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
+Test Customers API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
 
 See [Flutter + Dart standard](../../../standards/FLUTTER.md), [mobile architecture](../../../architecture/MOBILE.md), [Flutter + Dart technology](../../../technologies/FLUTTER.md), [core module](../core/commerce-customers.md), and [API module](../api/commerce-customers.md).

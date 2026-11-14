@@ -1,4 +1,4 @@
-# Commerce Automation Pack: Next.js presentation plan
+# Automation Pack: Next.js presentation plan
 
 <!-- nextjs-plan:generated -->
 
@@ -6,7 +6,7 @@
 
 **Adapter group:** `planned:ecommerce:commerce-automation-pack`.
 
-**Proposed design identifier:** `module-ecommerce-commerce-automation-pack-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
+**Proposed design identifier:** `module-ecommerce-automation-pack-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
 ## Scope and ownership
 

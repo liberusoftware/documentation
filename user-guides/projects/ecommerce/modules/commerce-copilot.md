@@ -1,4 +1,4 @@
-# Commerce Copilot — end-user guide
+# Copilot — end-user guide
 
 **Project:** [Liberu Ecommerce](../README.md)
 **Feature specification:** [commerce-copilot.md](../../../../projects/ecommerce/features/commerce-copilot.md)
@@ -10,7 +10,7 @@
 
 ## Module-specific scope
 
-The intended **Commerce Copilot** workspace covers permission-bounded product/order/customer search, summaries, catalog assistance, safe operational actions, and confirmation.
+The intended **Copilot** workspace covers permission-bounded product/order/customer search, summaries, catalog assistance, safe operational actions, and confirmation.
 
 The relevant capability areas are **Permission-bounded product/order/customer search**, **Summaries**, **Catalog assistance**, **Safe operational actions**, **Confirmation**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 

@@ -1,4 +1,4 @@
-# Commerce Functions: Next.js presentation plan
+# Functions: Next.js presentation plan
 
 <!-- nextjs-plan:generated -->
 
@@ -6,7 +6,7 @@
 
 **Adapter group:** `planned:ecommerce:commerce-functions`.
 
-**Proposed design identifier:** `module-ecommerce-commerce-functions-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
+**Proposed design identifier:** `module-ecommerce-functions-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
 ## Scope and ownership
 

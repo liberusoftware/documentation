@@ -1,4 +1,4 @@
-# Commerce Copilot: Next.js presentation plan
+# Copilot: Next.js presentation plan
 
 <!-- nextjs-plan:generated -->
 
@@ -6,7 +6,7 @@
 
 **Adapter group:** `planned:ecommerce:commerce-copilot`.
 
-**Proposed design identifier:** `module-ecommerce-commerce-copilot-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
+**Proposed design identifier:** `module-ecommerce-copilot-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
 ## Scope and ownership
 

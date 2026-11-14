@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Copilot Vue + Inertia
+# Ecommerce: Copilot Vue + Inertia
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-copilot). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,10 +6,10 @@
 
 ## Canonical one-to-one Vue/Inertia implementation
 
-**Package:** `module-ecommerce-commerce-copilot-vue-inertia`
-**Matching domain module:** `ecommerce-commerce-copilot`
+**Package:** `module-ecommerce-copilot-vue-inertia`\
+**Matching domain module:** `ecommerce-copilot`\
 **Application:** Ecommerce
-**Source feature:** [Commerce Copilot](../features/commerce-copilot.md)
+**Source feature:** [Copilot](../features/commerce-copilot.md)\
 **Architecture:** [VUE-INERTIA.md](../../../standards/VUE.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/commerce-copilot.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
@@ -26,7 +26,7 @@ This optional Vue 3 + Inertia 3 presentation package adapts the matching domain 
 
 ## 3. Vue 3 + Inertia 3 implementation
 
-- Register a stable `module-ecommerce-commerce-copilot-vue-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
+- Register a stable `module-ecommerce-copilot-vue-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
 - Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, composables under `resources/js/composables`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
 - Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
 - Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
@@ -65,6 +65,6 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 
 ## 6. Definition of done
 
-- Package identity, public exports, API dependency, and module dependency match `ecommerce-commerce-copilot` one-to-one.
+- Package identity, public exports, API dependency, and module dependency match `ecommerce-copilot` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.

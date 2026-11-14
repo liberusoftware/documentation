@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Automation Pack
+# Ecommerce: Automation Pack
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-automation-pack). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,7 +6,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `module-ecommerce-commerce-automation-pack`
+**Domain module:** `module-ecommerce-automation-pack`\
 **Application:** Ecommerce  
 **Capability group:** Operations, analytics, and intelligence modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  
@@ -14,7 +14,7 @@
 
 ## 1. Purpose
 
-The Commerce Automation Pack module owns Commerce triggers/actions/recipes, versioning, simulation, approvals, idempotency, and generic Automation integration. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
+The Automation Pack module owns Commerce triggers/actions/recipes, versioning, simulation, approvals, idempotency, and generic Automation integration. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
 
 ## 2. Full feature scope
 
@@ -56,7 +56,7 @@ The Commerce Automation Pack module owns Commerce triggers/actions/recipes, vers
 
 ### Presentation
 
-- Provide matching optional presentation packages only when required: `module-ecommerce-commerce-automation-pack-filament`, `module-ecommerce-commerce-automation-pack-livewire`, and `module-ecommerce-commerce-automation-pack-api`.
+- Provide matching optional presentation packages only when required: `module-ecommerce-automation-pack-filament`, `module-ecommerce-automation-pack-livewire`, and `module-ecommerce-automation-pack-api`.
 - Each presentation package depends on this module's public boundary and presents no other independent module.
 - Themes may style supported extension points but cannot replace validation, authorization, routes, or domain actions.
 

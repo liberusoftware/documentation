@@ -20,14 +20,15 @@ End-user guides for each Ecommerce module.
 | [Catalog Staging](catalog-staging.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#catalog-staging) |
 | [Catalog](catalog.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#catalog) |
 | [Categories AND Navigation](categories-and-navigation.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#categories-and-navigation) |
+| [Catering: requesting and managing an event](catering.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#catering) |
 | [Checkout Extensibility](checkout-extensibility.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#checkout-extensibility) |
 | [Checkout](checkout.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#checkout) |
-| [Commerce Automation Pack](commerce-automation-pack.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-automation-pack) |
-| [Commerce Copilot](commerce-copilot.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-copilot) |
-| [Commerce Core](commerce-core.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-core) |
-| [Commerce Customers](commerce-customers.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-customers) |
-| [Commerce Extensions](commerce-extensions.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-extensions) |
-| [Commerce Functions](commerce-functions.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-functions) |
+| [Automation Pack](commerce-automation-pack.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-automation-pack) |
+| [Copilot](commerce-copilot.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-copilot) |
+| [Core](commerce-core.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-core) |
+| [Customers](commerce-customers.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-customers) |
+| [Extensions](commerce-extensions.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-extensions) |
+| [Functions](commerce-functions.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commerce-functions) |
 | [Commissions AND Settlements](commissions-and-settlements.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#commissions-and-settlements) |
 | [Companies](companies.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#companies) |
 | [Cross Border](cross-border.md) | [Context](../../../../projects/ecommerce/SOURCE-MAPPING.md#cross-border) |

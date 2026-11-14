@@ -1,7 +1,7 @@
 # Ecommerce Nuxt Implementations
 
 <!-- catalogue-status:start -->
-This index preserves **107 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **108 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional Nuxt 4 presentation package for exactly one matching API module.
@@ -24,14 +24,15 @@ Each file defines the optional Nuxt 4 presentation package for exactly one match
 | [Catalog Staging Nuxt](catalog-staging.md) | [Target/source map](../SOURCE-MAPPING.md#catalog-staging) | [core](../core/catalog-staging.md) · [api](../api/catalog-staging.md) · [nextjs](../nextjs/catalog-staging.md) |
 | [Catalog Nuxt](catalog.md) | [Target/source map](../SOURCE-MAPPING.md#catalog) | [core](../core/catalog.md) · [api](../api/catalog.md) · [nextjs](../nextjs/catalog.md) |
 | [Categories and Navigation Nuxt](categories-and-navigation.md) | [Target/source map](../SOURCE-MAPPING.md#categories-and-navigation) | [core](../core/categories-and-navigation.md) · [api](../api/categories-and-navigation.md) · [nextjs](../nextjs/categories-and-navigation.md) |
+| [Catering — Nuxt Vue](catering.md) | [Target/source map](../SOURCE-MAPPING.md#catering) | [core](../core/catering.md) · [api](../api/catering.md) · [nextjs](../nextjs/catering.md) |
 | [Checkout Extensibility Nuxt](checkout-extensibility.md) | [Target/source map](../SOURCE-MAPPING.md#checkout-extensibility) | [core](../core/checkout-extensibility.md) · [api](../api/checkout-extensibility.md) · [nextjs](../nextjs/checkout-extensibility.md) |
 | [Checkout Nuxt](checkout.md) | [Target/source map](../SOURCE-MAPPING.md#checkout) | [core](../core/checkout.md) · [api](../api/checkout.md) · [nextjs](../nextjs/checkout.md) |
-| [Commerce Automation Pack Nuxt](commerce-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-automation-pack) | [core](../core/commerce-automation-pack.md) · [api](../api/commerce-automation-pack.md) · [nextjs](../nextjs/commerce-automation-pack.md) |
-| [Commerce Copilot Nuxt](commerce-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-copilot) | [core](../core/commerce-copilot.md) · [api](../api/commerce-copilot.md) · [nextjs](../nextjs/commerce-copilot.md) |
-| [Commerce Core Nuxt](commerce-core.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-core) | [core](../core/commerce-core.md) · [api](../api/commerce-core.md) · [nextjs](../nextjs/commerce-core.md) |
-| [Commerce Customers Nuxt](commerce-customers.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-customers) | [core](../core/commerce-customers.md) · [api](../api/commerce-customers.md) · [nextjs](../nextjs/commerce-customers.md) |
-| [Commerce Extensions Nuxt](commerce-extensions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-extensions) | [core](../core/commerce-extensions.md) · [api](../api/commerce-extensions.md) · [nextjs](../nextjs/commerce-extensions.md) |
-| [Commerce Functions Nuxt](commerce-functions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-functions) | [core](../core/commerce-functions.md) · [api](../api/commerce-functions.md) · [nextjs](../nextjs/commerce-functions.md) |
+| [Automation Pack Nuxt](commerce-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-automation-pack) | [core](../core/commerce-automation-pack.md) · [api](../api/commerce-automation-pack.md) · [nextjs](../nextjs/commerce-automation-pack.md) |
+| [Copilot Nuxt](commerce-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-copilot) | [core](../core/commerce-copilot.md) · [api](../api/commerce-copilot.md) · [nextjs](../nextjs/commerce-copilot.md) |
+| [Core Nuxt](commerce-core.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-core) | [core](../core/commerce-core.md) · [api](../api/commerce-core.md) · [nextjs](../nextjs/commerce-core.md) |
+| [Customers Nuxt](commerce-customers.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-customers) | [core](../core/commerce-customers.md) · [api](../api/commerce-customers.md) · [nextjs](../nextjs/commerce-customers.md) |
+| [Extensions Nuxt](commerce-extensions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-extensions) | [core](../core/commerce-extensions.md) · [api](../api/commerce-extensions.md) · [nextjs](../nextjs/commerce-extensions.md) |
+| [Functions Nuxt](commerce-functions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-functions) | [core](../core/commerce-functions.md) · [api](../api/commerce-functions.md) · [nextjs](../nextjs/commerce-functions.md) |
 | [Commissions and Settlements Nuxt](commissions-and-settlements.md) | [Target/source map](../SOURCE-MAPPING.md#commissions-and-settlements) | [core](../core/commissions-and-settlements.md) · [api](../api/commissions-and-settlements.md) · [nextjs](../nextjs/commissions-and-settlements.md) |
 | [Companies Nuxt](companies.md) | [Target/source map](../SOURCE-MAPPING.md#companies) | [core](../core/companies.md) · [api](../api/companies.md) · [nextjs](../nextjs/companies.md) |
 | [Cross-Border Nuxt](cross-border.md) | [Target/source map](../SOURCE-MAPPING.md#cross-border) | [core](../core/cross-border.md) · [api](../api/cross-border.md) · [nextjs](../nextjs/cross-border.md) |

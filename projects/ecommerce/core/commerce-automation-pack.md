@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Automation Pack Core Module
+# Ecommerce: Automation Pack Core Module
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-automation-pack). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,11 +6,11 @@
 
 ## Package contract
 
-**Design package identifier:** `module-ecommerce-commerce-automation-pack`
-**Domain specification:** [Commerce Automation Pack](../features/commerce-automation-pack.md)
+**Design package identifier:** `module-ecommerce-automation-pack`\
+**Domain specification:** [Automation Pack](../features/commerce-automation-pack.md)\
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 
-This package is the authoritative, provider-neutral implementation of Commerce Automation Pack. It owns domain behavior and data; optional API, Filament, Livewire, React, Vue, and Nuxt packages translate its public contracts for their surfaces.
+This package is the authoritative, provider-neutral implementation of Automation Pack. It owns domain behavior and data; optional API, Filament, Livewire, React, Vue, and Nuxt packages translate its public contracts for their surfaces.
 
 ## Domain-driven implementation plan
 

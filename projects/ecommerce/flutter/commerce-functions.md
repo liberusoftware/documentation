@@ -1,16 +1,16 @@
-# Commerce Functions Flutter + Dart
+# Functions Flutter + Dart
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-functions). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
 <!-- source-reconciliation:end -->
 
-**Package:** module-ecommerce-commerce-functions-flutter
-**Matching core package:** module-ecommerce-commerce-functions ([implementation](../core/commerce-functions.md))
-**Matching API package:** module-ecommerce-commerce-functions-api ([contract](../api/commerce-functions.md))
+**Package:** module-ecommerce-functions-flutter\
+**Matching core package:** module-ecommerce-functions ([implementation](../core/commerce-functions.md))\
+**Matching API package:** module-ecommerce-functions-api ([contract](../api/commerce-functions.md))
 
 ## Implementation plan
 
-This adapter presents Commerce Functions for the Flutter + Dart surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
+This adapter presents Functions for the Flutter + Dart surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
 
 - Use sound Dart null safety, typed DTOs, stable Flutter plugins, secure platform storage, and explicit application state models.
 - Preserve the API contract, tenant/team context, field visibility, localization, timezone/currency formatting, and server-side authorization.
@@ -20,6 +20,6 @@ This adapter presents Commerce Functions for the Flutter + Dart surface. It owns
 
 ## Verification
 
-Test Commerce Functions API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
+Test Functions API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
 
 See [Flutter + Dart standard](../../../standards/FLUTTER.md), [mobile architecture](../../../architecture/MOBILE.md), [Flutter + Dart technology](../../../technologies/FLUTTER.md), [core module](../core/commerce-functions.md), and [API module](../api/commerce-functions.md).

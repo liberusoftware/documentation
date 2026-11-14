@@ -1,0 +1,38 @@
+# Implementing a product across technologies
+
+The [repository map](REPOSITORIES.md) separates product ownership from delivery technology. Each non-Filament project host has a wayfinder issue with source links, sequencing, technology-specific integration rules and a capability checklist. [The issue matrix](IMPLEMENTATION-ISSUES.md) provides direct links; [the machine-readable register](implementation-wayfinders.json) records the exact repository and issue URLs. Existing `-laravel-filament` implementation programmes are excluded from creation and updates.
+
+## Find the authoritative work
+
+1. Open the product index and its `SOURCE-MAPPING.md`. Catalogue documents include historical spellings; counts of documents are not counts of independent packages or shipped features.
+2. Find the domain owner and observed manifest identity before creating a package. If two spellings resolve to the same exact source identity, implement that boundary once. Similar names alone do not prove equivalence.
+3. Read the core plan, then the API plan if the consumer uses HTTP, then the matching presentation plan. A missing source match is a research task, not permission to discard scope or invent a released contract.
+4. Select a complete user journey, settle dependencies, and implement it with its authorization, failure and recovery paths. Link tests and compatibility evidence before marking a checklist item complete.
+
+## Choose the delivery contract
+
+| Host | Required boundary and acceptance |
+| --- | --- |
+| Laravel Inertia React/Vue | Laravel routes, sessions and CSRF; typed allowlisted page props; server policies and revision conflict recovery. A separate HTTP API is optional for these pages. |
+| Next.js React | Approved API/client contracts, server/client ownership, private rendering/cache boundaries and mutation invalidation. |
+| Nuxt Vue | Approved API/client contracts, authenticated SSR/hydration isolation and private cache rules. |
+| React Native Expo | Typed API, secure device credentials, validated deep links, touch/native accessibility, foreground refresh and explicit offline behavior. |
+| Flutter mobile | Typed Dart API, secure device credentials, native widget semantics, account-isolated drafts and lifecycle/reconnect handling. |
+| Dart mobile | A distinct mobile host/release using shared Flutter/API plans; verify touch navigation, platform lifecycle and secure local state independently. |
+| Dart desktop | A distinct desktop host/release using shared Flutter/API plans; verify keyboard/focus, resizing, multi-window consistency, platform storage and safe printing/export. |
+
+A client never becomes a second domain owner. Shared foundation capabilities remain in their authoritative modules. The host owns composition, routes, authentication context and cross-module workflows; themes own appearance and declared overrides. Keep installed `/modules` and `/themes` in host commits where applicable, including after promotion, with source releases and lockfiles updated together.
+
+## When to split a module issue
+
+Create a focused child when a capability has an approved owner, specific dependencies, a bounded implementation outcome and testable acceptance. Include domain/API/presentation references, public contract changes, security/projection rules, migration impact, failure/retry behavior, operational evidence and exclusions. Link it from the technology wayfinder. Coordinate a shared core/API change in its owning repository rather than filing competing implementations in every client.
+
+The initial wayfinders use per-capability checklists instead of generating thousands of speculative module tickets. Exact observed source aliases are grouped to avoid duplicate implementations. Catering has a focused issue in each non-Filament Ecommerce host because its privacy, revision and conversion requirements are concrete; those issues explicitly block implementation until its upstream boundary decisions are accepted. The existing Filament backlog is left alone.
+
+## Delivery evidence
+
+For each slice, show independent domain/contract/adapter tests, authorization and cross-tenant tests, audience-safe payloads/caches, accessible interaction, revision/conflict and retry evidence, a representative host journey, migration/upgrade behavior and operational recovery guidance. Follow the [coverage policy](../standards/TESTING.md#13-coverage-policy) and its documented extraction exception. Verify a clean locked install and review tracked dependency diffs. Skeleton files and generated clients alone do not demonstrate product parity.
+
+## Maintain the register
+
+Run `python tools/create_project_wayfinders.py --output /tmp/wayfinder-plan.json` to plan without external writes. Review the generated scope, then `python tools/create_project_wayfinders.py --apply` to create missing wayfinders and Catering children. The publisher checks open and closed issues by exact stable title, excludes Filament repositories, fails on duplicate wayfinders, and saves progress after each repository. If interrupted, rerun to reuse created issues rather than duplicate them. Keep titles stable; inspect renamed issues manually before rerunning. Existing issues are reused, not overwritten or reopened. The register records successful issue URLs; a final run must contain all 128 technology hosts before reporting completion.

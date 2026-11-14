@@ -1,16 +1,16 @@
-# Commerce Extensions React Native + Expo
+# Extensions React Native + Expo
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-extensions). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
 <!-- source-reconciliation:end -->
 
-**Package:** module-ecommerce-commerce-extensions-react-native
-**Matching core package:** module-ecommerce-commerce-extensions ([implementation](../core/commerce-extensions.md))
-**Matching API package:** module-ecommerce-commerce-extensions-api ([contract](../api/commerce-extensions.md))
+**Package:** module-ecommerce-extensions-react-native\
+**Matching core package:** module-ecommerce-extensions ([implementation](../core/commerce-extensions.md))\
+**Matching API package:** module-ecommerce-extensions-api ([contract](../api/commerce-extensions.md))
 
 ## Implementation plan
 
-This adapter presents Commerce Extensions for the React Native + Expo surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
+This adapter presents Extensions for the React Native + Expo surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
 
 - Use strict TypeScript, typed navigation, schema-validated API responses, secure Keychain/Keystore storage, and platform permission boundaries.
 - Preserve the API contract, tenant/team context, field visibility, localization, timezone/currency formatting, and server-side authorization.
@@ -20,6 +20,6 @@ This adapter presents Commerce Extensions for the React Native + Expo surface. I
 
 ## Verification
 
-Test Commerce Extensions API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
+Test Extensions API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
 
 See [React Native + Expo standard](../../../standards/REACT-NATIVE.md), [mobile architecture](../../../architecture/MOBILE.md), [React Native + Expo technology](../../../technologies/REACT-NATIVE.md), [core module](../core/commerce-extensions.md), and [API module](../api/commerce-extensions.md).

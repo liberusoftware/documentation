@@ -146,7 +146,7 @@ The current decision, matching `/modules`, is **not to add `/themes` to `.gitign
 - CI performs a clean locked install/build and fails when it produces an unexpected `/themes` diff.
 - Resolve conflicts by selecting the intended lockfile version and reinstalling, not by hand-merging installed theme code.
 
-This tracked-directory policy may change only through an ADR and migration plan. The independent theme repository remains authoritative.
+This is a fleet-wide requirement for consuming hosts, including after package promotion: keep both `/modules` and `/themes` in host commits. A downstream ADR proposing ignored installed copies does not override this requirement. The independent theme repository remains authoritative.
 
 ## 4. Manifest contract
 
@@ -208,6 +208,12 @@ Theme resolution follows: configured surface/tenant/site theme → parent theme 
 - Missing or incompatible themes fall back to a configured safe theme and emit an operational alert.
 - Themes cannot replace authorization, validation, routes, actions, or domain services.
 - Cross-repository use resolves only declared extension points; repository-specific overrides must be isolated, capability-checked, and documented.
+
+### Module default views: required implementation contract
+
+The module-default step is a required runtime contract, not a claim that every existing package already implements it. A presentation-neutral core does not need Blade templates. A module's matching server-rendered presentation package must ship namespaced `resources/views` defaults for its declared renderable surfaces and register them through its service provider. Livewire components may render these templates; domain cores remain free of UI dependencies. Host routes and cross-module pages compose these surfaces; themes supply layouts, tokens and declared overrides.
+
+For each renderable module, test an empty theme resolving the packaged default; child then parent overrides winning in order; a missing module view reaching application fallback; invalid parent cycles failing activation; and tenant/surface isolation. Register only declared view namespaces and prevent request-controlled filesystem paths. Capture the resolved source in diagnostic output without exposing private filesystem paths to users. Foundation modules that expose no renderable surface need no artificial view; record that decision in their adapter README. Track missing defaults as implementation work in the owning package, not as a completed fleet feature.
 
 ## 6. Design tokens
 

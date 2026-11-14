@@ -1,4 +1,4 @@
-# Commerce Core: Next.js presentation plan
+# Core: Next.js presentation plan
 
 <!-- nextjs-plan:generated -->
 
@@ -6,7 +6,7 @@
 
 **Adapter group:** `planned:ecommerce:commerce-core`.
 
-**Proposed design identifier:** `module-ecommerce-commerce-core-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
+**Proposed design identifier:** `module-ecommerce-core-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
 ## Scope and ownership
 

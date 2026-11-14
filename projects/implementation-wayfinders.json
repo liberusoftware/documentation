@@ -1,0 +1,910 @@
+{
+  "status": "published",
+  "excludedSuffix": "-laravel-filament",
+  "wayfinders": [
+    {
+      "repository": "liberusoftware/project-accounting-erp-dart-desktop",
+      "project": "accounting",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: accounting implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-accounting-erp-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-accounting-erp-dart-mobile",
+      "project": "accounting",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: accounting implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-accounting-erp-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-accounting-erp-laravel-inertia-react",
+      "project": "accounting",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: accounting implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-accounting-erp-laravel-inertia-vue",
+      "project": "accounting",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: accounting implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-accounting-erp-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-accounting-erp-mobile-flutter",
+      "project": "accounting",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: accounting implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-accounting-erp-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-accounting-erp-mobile-react",
+      "project": "accounting",
+      "technology": "mobile-react",
+      "title": "Wayfinder: accounting implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-accounting-erp-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-accounting-erp-next-react",
+      "project": "accounting",
+      "technology": "next-react",
+      "title": "Wayfinder: accounting implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-accounting-erp-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-accounting-erp-nuxt-vue",
+      "project": "accounting",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: accounting implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-accounting-erp-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-automation-dart-desktop",
+      "project": "automation",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: automation implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-automation-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-automation-dart-mobile",
+      "project": "automation",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: automation implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-automation-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-automation-laravel-inertia-react",
+      "project": "automation",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: automation implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-automation-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-automation-laravel-inertia-vue",
+      "project": "automation",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: automation implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-automation-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-automation-mobile-flutter",
+      "project": "automation",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: automation implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-automation-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-automation-mobile-react",
+      "project": "automation",
+      "technology": "mobile-react",
+      "title": "Wayfinder: automation implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-automation-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-automation-next-react",
+      "project": "automation",
+      "technology": "next-react",
+      "title": "Wayfinder: automation implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-automation-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-automation-nuxt-vue",
+      "project": "automation",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: automation implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-automation-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-billing-dart-desktop",
+      "project": "billing",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: billing implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-billing-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-billing-dart-mobile",
+      "project": "billing",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: billing implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-billing-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-billing-laravel-inertia-react",
+      "project": "billing",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: billing implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-billing-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-billing-laravel-inertia-vue",
+      "project": "billing",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: billing implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-billing-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-billing-mobile-flutter",
+      "project": "billing",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: billing implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-billing-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-billing-mobile-react",
+      "project": "billing",
+      "technology": "mobile-react",
+      "title": "Wayfinder: billing implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-billing-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-billing-next-react",
+      "project": "billing",
+      "technology": "next-react",
+      "title": "Wayfinder: billing implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-billing-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-billing-nuxt-vue",
+      "project": "billing",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: billing implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-billing-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-boilerplate-dart-desktop",
+      "project": "boilerplate",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: boilerplate implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-boilerplate-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-boilerplate-dart-mobile",
+      "project": "boilerplate",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: boilerplate implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-boilerplate-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-boilerplate-laravel-inertia-react",
+      "project": "boilerplate",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: boilerplate implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-boilerplate-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-boilerplate-laravel-inertia-vue",
+      "project": "boilerplate",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: boilerplate implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-boilerplate-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-boilerplate-mobile-flutter",
+      "project": "boilerplate",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: boilerplate implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-boilerplate-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-boilerplate-mobile-react",
+      "project": "boilerplate",
+      "technology": "mobile-react",
+      "title": "Wayfinder: boilerplate implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-boilerplate-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-boilerplate-next-react",
+      "project": "boilerplate",
+      "technology": "next-react",
+      "title": "Wayfinder: boilerplate implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-boilerplate-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-boilerplate-nuxt-vue",
+      "project": "boilerplate",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: boilerplate implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-boilerplate-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-browser-game-dart-desktop",
+      "project": "browser-game",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: browser-game implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-browser-game-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-browser-game-dart-mobile",
+      "project": "browser-game",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: browser-game implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-browser-game-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-browser-game-laravel-inertia-react",
+      "project": "browser-game",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: browser-game implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-browser-game-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-browser-game-laravel-inertia-vue",
+      "project": "browser-game",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: browser-game implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-browser-game-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-browser-game-mobile-flutter",
+      "project": "browser-game",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: browser-game implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-browser-game-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-browser-game-mobile-react",
+      "project": "browser-game",
+      "technology": "mobile-react",
+      "title": "Wayfinder: browser-game implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-browser-game-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-browser-game-next-react",
+      "project": "browser-game",
+      "technology": "next-react",
+      "title": "Wayfinder: browser-game implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-browser-game-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-browser-game-nuxt-vue",
+      "project": "browser-game",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: browser-game implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-browser-game-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-cms-dart-desktop",
+      "project": "cms",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: cms implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-cms-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-cms-dart-mobile",
+      "project": "cms",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: cms implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-cms-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-cms-laravel-inertia-react",
+      "project": "cms",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: cms implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-cms-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-cms-laravel-inertia-vue",
+      "project": "cms",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: cms implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-cms-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-cms-mobile-flutter",
+      "project": "cms",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: cms implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-cms-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-cms-mobile-react",
+      "project": "cms",
+      "technology": "mobile-react",
+      "title": "Wayfinder: cms implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-cms-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-cms-next-react",
+      "project": "cms",
+      "technology": "next-react",
+      "title": "Wayfinder: cms implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-cms-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-cms-nuxt-vue",
+      "project": "cms",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: cms implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-cms-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-control-panel-dart-desktop",
+      "project": "control-panel",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: control-panel implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-control-panel-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-control-panel-dart-mobile",
+      "project": "control-panel",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: control-panel implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-control-panel-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-control-panel-laravel-inertia-react",
+      "project": "control-panel",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: control-panel implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-control-panel-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-control-panel-laravel-inertia-vue",
+      "project": "control-panel",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: control-panel implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-control-panel-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-control-panel-mobile-flutter",
+      "project": "control-panel",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: control-panel implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-control-panel-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-control-panel-mobile-react",
+      "project": "control-panel",
+      "technology": "mobile-react",
+      "title": "Wayfinder: control-panel implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-control-panel-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-control-panel-next-react",
+      "project": "control-panel",
+      "technology": "next-react",
+      "title": "Wayfinder: control-panel implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-control-panel-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-control-panel-nuxt-vue",
+      "project": "control-panel",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: control-panel implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-control-panel-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-crm-dart-desktop",
+      "project": "crm",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: crm implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-crm-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-crm-dart-mobile",
+      "project": "crm",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: crm implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-crm-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-crm-laravel-inertia-react",
+      "project": "crm",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: crm implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-crm-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-crm-laravel-inertia-vue",
+      "project": "crm",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: crm implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-crm-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-crm-mobile-flutter",
+      "project": "crm",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: crm implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-crm-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-crm-mobile-react",
+      "project": "crm",
+      "technology": "mobile-react",
+      "title": "Wayfinder: crm implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-crm-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-crm-next-react",
+      "project": "crm",
+      "technology": "next-react",
+      "title": "Wayfinder: crm implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-crm-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-crm-nuxt-vue",
+      "project": "crm",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: crm implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-crm-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-ecommerce-dart-desktop",
+      "project": "ecommerce",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: ecommerce implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-ecommerce-dart-desktop/issues/1",
+      "cateringIssue": "https://github.com/liberusoftware/project-ecommerce-dart-desktop/issues/2"
+    },
+    {
+      "repository": "liberusoftware/project-ecommerce-dart-mobile",
+      "project": "ecommerce",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: ecommerce implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-ecommerce-dart-mobile/issues/1",
+      "cateringIssue": "https://github.com/liberusoftware/project-ecommerce-dart-mobile/issues/2"
+    },
+    {
+      "repository": "liberusoftware/project-ecommerce-laravel-inertia-react",
+      "project": "ecommerce",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: ecommerce implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react/issues/1",
+      "cateringIssue": "https://github.com/liberusoftware/project-ecommerce-laravel-inertia-react/issues/2"
+    },
+    {
+      "repository": "liberusoftware/project-ecommerce-laravel-inertia-vue",
+      "project": "ecommerce",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: ecommerce implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue/issues/1",
+      "cateringIssue": "https://github.com/liberusoftware/project-ecommerce-laravel-inertia-vue/issues/2"
+    },
+    {
+      "repository": "liberusoftware/project-ecommerce-mobile-flutter",
+      "project": "ecommerce",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: ecommerce implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-ecommerce-mobile-flutter/issues/1",
+      "cateringIssue": "https://github.com/liberusoftware/project-ecommerce-mobile-flutter/issues/2"
+    },
+    {
+      "repository": "liberusoftware/project-ecommerce-mobile-react",
+      "project": "ecommerce",
+      "technology": "mobile-react",
+      "title": "Wayfinder: ecommerce implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-ecommerce-mobile-react/issues/1",
+      "cateringIssue": "https://github.com/liberusoftware/project-ecommerce-mobile-react/issues/2"
+    },
+    {
+      "repository": "liberusoftware/project-ecommerce-next-react",
+      "project": "ecommerce",
+      "technology": "next-react",
+      "title": "Wayfinder: ecommerce implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-ecommerce-next-react/issues/1",
+      "cateringIssue": "https://github.com/liberusoftware/project-ecommerce-next-react/issues/2"
+    },
+    {
+      "repository": "liberusoftware/project-ecommerce-nuxt-vue",
+      "project": "ecommerce",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: ecommerce implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-ecommerce-nuxt-vue/issues/1",
+      "cateringIssue": "https://github.com/liberusoftware/project-ecommerce-nuxt-vue/issues/2"
+    },
+    {
+      "repository": "liberusoftware/project-enterprise-sap-dart-desktop",
+      "project": "sap",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: sap implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-enterprise-sap-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-enterprise-sap-dart-mobile",
+      "project": "sap",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: sap implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-enterprise-sap-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-enterprise-sap-laravel-inertia-react",
+      "project": "sap",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: sap implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-enterprise-sap-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-enterprise-sap-laravel-inertia-vue",
+      "project": "sap",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: sap implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-enterprise-sap-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-enterprise-sap-mobile-flutter",
+      "project": "sap",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: sap implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-enterprise-sap-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-enterprise-sap-mobile-react",
+      "project": "sap",
+      "technology": "mobile-react",
+      "title": "Wayfinder: sap implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-enterprise-sap-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-enterprise-sap-next-react",
+      "project": "sap",
+      "technology": "next-react",
+      "title": "Wayfinder: sap implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-enterprise-sap-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-enterprise-sap-nuxt-vue",
+      "project": "sap",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: sap implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-enterprise-sap-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-genealogy-dart-desktop",
+      "project": "genealogy",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: genealogy implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-genealogy-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-genealogy-dart-mobile",
+      "project": "genealogy",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: genealogy implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-genealogy-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-genealogy-laravel-inertia-react",
+      "project": "genealogy",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: genealogy implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-genealogy-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-genealogy-laravel-inertia-vue",
+      "project": "genealogy",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: genealogy implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-genealogy-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-genealogy-mobile-flutter",
+      "project": "genealogy",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: genealogy implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-genealogy-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-genealogy-mobile-react",
+      "project": "genealogy",
+      "technology": "mobile-react",
+      "title": "Wayfinder: genealogy implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-genealogy-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-genealogy-next-react",
+      "project": "genealogy",
+      "technology": "next-react",
+      "title": "Wayfinder: genealogy implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-genealogy-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-genealogy-nuxt-vue",
+      "project": "genealogy",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: genealogy implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-genealogy-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-liberu-official-dart-desktop",
+      "project": "liberu",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: liberu implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-liberu-official-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-liberu-official-dart-mobile",
+      "project": "liberu",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: liberu implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-liberu-official-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-liberu-official-laravel-inertia-react",
+      "project": "liberu",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: liberu implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-liberu-official-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-liberu-official-laravel-inertia-vue",
+      "project": "liberu",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: liberu implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-liberu-official-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-liberu-official-mobile-flutter",
+      "project": "liberu",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: liberu implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-liberu-official-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-liberu-official-mobile-react",
+      "project": "liberu",
+      "technology": "mobile-react",
+      "title": "Wayfinder: liberu implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-liberu-official-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-liberu-official-next-react",
+      "project": "liberu",
+      "technology": "next-react",
+      "title": "Wayfinder: liberu implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-liberu-official-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-liberu-official-nuxt-vue",
+      "project": "liberu",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: liberu implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-liberu-official-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-maintenance-dart-desktop",
+      "project": "maintenance",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: maintenance implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-maintenance-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-maintenance-dart-mobile",
+      "project": "maintenance",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: maintenance implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-maintenance-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-maintenance-laravel-inertia-react",
+      "project": "maintenance",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: maintenance implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-maintenance-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-maintenance-laravel-inertia-vue",
+      "project": "maintenance",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: maintenance implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-maintenance-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-maintenance-mobile-flutter",
+      "project": "maintenance",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: maintenance implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-maintenance-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-maintenance-mobile-react",
+      "project": "maintenance",
+      "technology": "mobile-react",
+      "title": "Wayfinder: maintenance implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-maintenance-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-maintenance-next-react",
+      "project": "maintenance",
+      "technology": "next-react",
+      "title": "Wayfinder: maintenance implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-maintenance-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-maintenance-nuxt-vue",
+      "project": "maintenance",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: maintenance implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-maintenance-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-music-daw-dart-desktop",
+      "project": "music",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: music implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-music-daw-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-music-daw-dart-mobile",
+      "project": "music",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: music implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-music-daw-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-music-daw-laravel-inertia-react",
+      "project": "music",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: music implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-music-daw-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-music-daw-laravel-inertia-vue",
+      "project": "music",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: music implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-music-daw-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-music-daw-mobile-flutter",
+      "project": "music",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: music implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-music-daw-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-music-daw-mobile-react",
+      "project": "music",
+      "technology": "mobile-react",
+      "title": "Wayfinder: music implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-music-daw-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-music-daw-next-react",
+      "project": "music",
+      "technology": "next-react",
+      "title": "Wayfinder: music implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-music-daw-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-music-daw-nuxt-vue",
+      "project": "music",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: music implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-music-daw-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-real-estate-dart-desktop",
+      "project": "real-estate",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: real-estate implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-real-estate-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-real-estate-dart-mobile",
+      "project": "real-estate",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: real-estate implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-real-estate-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-real-estate-laravel-inertia-react",
+      "project": "real-estate",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: real-estate implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-real-estate-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-real-estate-laravel-inertia-vue",
+      "project": "real-estate",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: real-estate implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-real-estate-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-real-estate-mobile-flutter",
+      "project": "real-estate",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: real-estate implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-real-estate-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-real-estate-mobile-react",
+      "project": "real-estate",
+      "technology": "mobile-react",
+      "title": "Wayfinder: real-estate implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-real-estate-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-real-estate-next-react",
+      "project": "real-estate",
+      "technology": "next-react",
+      "title": "Wayfinder: real-estate implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-real-estate-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-real-estate-nuxt-vue",
+      "project": "real-estate",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: real-estate implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-real-estate-nuxt-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-social-network-dart-desktop",
+      "project": "social-network",
+      "technology": "dart-desktop",
+      "title": "Wayfinder: social-network implementation for Dart desktop",
+      "url": "https://github.com/liberusoftware/project-social-network-dart-desktop/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-social-network-dart-mobile",
+      "project": "social-network",
+      "technology": "dart-mobile",
+      "title": "Wayfinder: social-network implementation for Dart mobile",
+      "url": "https://github.com/liberusoftware/project-social-network-dart-mobile/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-social-network-laravel-inertia-react",
+      "project": "social-network",
+      "technology": "laravel-inertia-react",
+      "title": "Wayfinder: social-network implementation for Laravel Inertia React",
+      "url": "https://github.com/liberusoftware/project-social-network-laravel-inertia-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-social-network-laravel-inertia-vue",
+      "project": "social-network",
+      "technology": "laravel-inertia-vue",
+      "title": "Wayfinder: social-network implementation for Laravel Inertia Vue",
+      "url": "https://github.com/liberusoftware/project-social-network-laravel-inertia-vue/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-social-network-mobile-flutter",
+      "project": "social-network",
+      "technology": "mobile-flutter",
+      "title": "Wayfinder: social-network implementation for Flutter mobile",
+      "url": "https://github.com/liberusoftware/project-social-network-mobile-flutter/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-social-network-mobile-react",
+      "project": "social-network",
+      "technology": "mobile-react",
+      "title": "Wayfinder: social-network implementation for React Native Expo",
+      "url": "https://github.com/liberusoftware/project-social-network-mobile-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-social-network-next-react",
+      "project": "social-network",
+      "technology": "next-react",
+      "title": "Wayfinder: social-network implementation for Next.js React",
+      "url": "https://github.com/liberusoftware/project-social-network-next-react/issues/1"
+    },
+    {
+      "repository": "liberusoftware/project-social-network-nuxt-vue",
+      "project": "social-network",
+      "technology": "nuxt-vue",
+      "title": "Wayfinder: social-network implementation for Nuxt Vue",
+      "url": "https://github.com/liberusoftware/project-social-network-nuxt-vue/issues/1"
+    }
+  ]
+}

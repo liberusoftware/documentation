@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Functions
+# Ecommerce: Functions
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-functions). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,7 +6,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `module-ecommerce-commerce-functions`
+**Domain module:** `module-ecommerce-functions`\
 **Application:** Ecommerce  
 **Capability group:** Marketplace and platform modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  
@@ -14,7 +14,7 @@
 
 ## 1. Purpose
 
-The Commerce Functions module owns Sandboxed typed hooks for discounts, validation, delivery/payment customization, routing, and transformations with limits and diagnostics. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
+The Functions module owns Sandboxed typed hooks for discounts, validation, delivery/payment customization, routing, and transformations with limits and diagnostics. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
 
 ## 2. Full feature scope
 
@@ -55,7 +55,7 @@ The Commerce Functions module owns Sandboxed typed hooks for discounts, validati
 
 ### Presentation
 
-- Provide matching optional presentation packages only when required: `module-ecommerce-commerce-functions-filament`, `module-ecommerce-commerce-functions-livewire`, and `module-ecommerce-commerce-functions-api`.
+- Provide matching optional presentation packages only when required: `module-ecommerce-functions-filament`, `module-ecommerce-functions-livewire`, and `module-ecommerce-functions-api`.
 - Each presentation package depends on this module's public boundary and presents no other independent module.
 - Themes may style supported extension points but cannot replace validation, authorization, routes, or domain actions.
 

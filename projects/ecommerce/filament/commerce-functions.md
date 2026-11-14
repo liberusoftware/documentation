@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Functions Filament
+# Ecommerce: Functions Filament
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-functions). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,15 +6,15 @@
 
 ## Canonical one-to-one Filament 5 implementation
 
-**Filament package:** `module-ecommerce-commerce-functions-filament`  
-**Matching domain module:** `ecommerce-commerce-functions`  
+**Filament package:** `module-ecommerce-functions-filament`\
+**Matching domain module:** `ecommerce-functions`\
 **Application:** Ecommerce  
-**Source feature:** [Commerce Functions](../features/commerce-functions.md)  
+**Source feature:** [Functions](../features/commerce-functions.md)\
 **Architecture:** [FILAMENT.md](../../../standards/FILAMENT.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
-This optional Filament 5 presentation package presents exactly one independent domain module. It contributes reusable resources, pages, widgets, schemas, tables, infolists, and actions to application-owned panels while delegating authorization, validation, tenancy, persistence, and business rules to the `ecommerce-commerce-functions` public boundary. It must not contain another module's UI or depend on application `App\` classes.
+This optional Filament 5 presentation package presents exactly one independent domain module. It contributes reusable resources, pages, widgets, schemas, tables, infolists, and actions to application-owned panels while delegating authorization, validation, tenancy, persistence, and business rules to the `ecommerce-functions` public boundary. It must not contain another module's UI or depend on application `App\` classes.
 
 ## 2. Module-specific surfaces
 
@@ -26,7 +26,7 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 3. Filament 5 implementation
 
-- Register a stable `module-ecommerce-commerce-functions-filament` plugin and discover only classes in this package's namespace; applications attach it explicitly to each eligible panel.
+- Register a stable `module-ecommerce-functions-filament` plugin and discover only classes in this package's namespace; applications attach it explicitly to each eligible panel.
 - Keep resources under `src/Resources`, resource pages and relation managers beneath their resource, and shared module-local widgets/pages under `src/Widgets` and `src/Pages`.
 - Use Filament 5 schemas, tables, infolists, actions, notifications, authorization hooks, and panel configuration as adapters over domain queries/actions; never duplicate domain invariants in form validation.
 - Resolve actor, tenant, locale, and sensitive-field visibility through trusted application context and fail closed when required context is missing.
@@ -47,6 +47,6 @@ This optional Filament 5 presentation package presents exactly one independent d
 
 ## 5. Definition of done
 
-- Package identity, namespace, plugin ID, and dependency match `ecommerce-commerce-functions` one-to-one.
+- Package identity, namespace, plugin ID, and dependency match `ecommerce-functions` one-to-one.
 - Every required panel surface has an explicit resource/page/widget/action mapping and no undeclared surface is discovered.
 - Production discovery/cache build, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.

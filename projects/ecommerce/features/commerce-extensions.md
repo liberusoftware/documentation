@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Extensions
+# Ecommerce: Extensions
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-extensions). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,7 +6,7 @@
 
 ## Canonical independent module specification
 
-**Domain module:** `module-ecommerce-commerce-extensions`
+**Domain module:** `module-ecommerce-extensions`\
 **Application:** Ecommerce  
 **Capability group:** Marketplace and platform modules  
 **Source scope:** [ECOMMERCE.md](../ECOMMERCE.md)  
@@ -14,7 +14,7 @@
 
 ## 1. Purpose
 
-The Commerce Extensions module owns Extension manifests, install/update/uninstall, scopes, webhooks, functions, UI extensions, compatibility, health, and rollback. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
+The Extensions module owns Extension manifests, install/update/uninstall, scopes, webhooks, functions, UI extensions, compatibility, health, and rollback. It is the authoritative boundary for this capability and must remain independently installable, testable, versioned, enabled, and reusable across compatible Liberu applications.
 
 ## 2. Full feature scope
 
@@ -59,7 +59,7 @@ The Commerce Extensions module owns Extension manifests, install/update/uninstal
 
 ### Presentation
 
-- Provide matching optional presentation packages only when required: `module-ecommerce-commerce-extensions-filament`, `module-ecommerce-commerce-extensions-livewire`, and `module-ecommerce-commerce-extensions-api`.
+- Provide matching optional presentation packages only when required: `module-ecommerce-extensions-filament`, `module-ecommerce-extensions-livewire`, and `module-ecommerce-extensions-api`.
 - Each presentation package depends on this module's public boundary and presents no other independent module.
 - Themes may style supported extension points but cannot replace validation, authorization, routes, or domain actions.
 

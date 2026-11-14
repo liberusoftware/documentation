@@ -1,4 +1,4 @@
-# Commerce Customers — end-user guide
+# Customers — end-user guide
 
 **Project:** [Liberu Ecommerce](../README.md)
 **Feature specification:** [commerce-customers.md](../../../../projects/ecommerce/features/commerce-customers.md)
@@ -10,7 +10,7 @@
 
 ## Module-specific scope
 
-The intended **Commerce Customers** workspace covers commerce profiles, addresses, preferences, tax status, customer groups, tags, lifecycle, and CRM identity references.
+The intended **Customers** workspace covers commerce profiles, addresses, preferences, tax status, customer groups, tags, lifecycle, and CRM identity references.
 
 The relevant capability areas are **Commerce profiles**, **Addresses**, **Preferences**, **Tax status**, **Customer groups**, **Tags**, **Lifecycle**, **CRM identity references**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 

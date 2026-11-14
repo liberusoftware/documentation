@@ -1,4 +1,4 @@
-# Commerce Extensions — end-user guide
+# Extensions — end-user guide
 
 **Project:** [Liberu Ecommerce](../README.md)
 **Feature specification:** [commerce-extensions.md](../../../../projects/ecommerce/features/commerce-extensions.md)
@@ -10,7 +10,7 @@
 
 ## Module-specific scope
 
-The intended **Commerce Extensions** workspace covers extension manifests, install/update/uninstall, scopes, webhooks, functions, UI extensions, compatibility, health, and rollback.
+The intended **Extensions** workspace covers extension manifests, install/update/uninstall, scopes, webhooks, functions, UI extensions, compatibility, health, and rollback.
 
 The relevant capability areas are **Extension manifests**, **Install/update/uninstall**, **Scopes**, **Webhooks**, **Functions**, **UI extensions**, **Compatibility**, **Health**, **Rollback**. Use their actual enabled screens/operations rather than treating every area as an interchangeable create/edit/delete resource.
 

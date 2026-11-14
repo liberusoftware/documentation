@@ -194,7 +194,7 @@ Compatibility claims in manifests and documentation must be generated from or ve
 
 Coverage answers “which executable lines or branches ran?” It does not answer whether assertions are correct, requirements are complete, boundaries are secure, or failures recover safely.
 
-This section is the single source of truth for the coverage scope, the target, and the gate. Every other Liberu document links here instead of restating them. Do not introduce an alternative percentage, scope name, or exclusion list elsewhere.
+This section is the single source of truth for the coverage scope, the target, and the gate. Every other Liberu document links here instead of restating them. The approved host-extraction exception and ratchet are specified in [MODULES.md](../architecture/MODULES.md#extraction-coverage-floor). Do not introduce other percentages, scope names, or exclusion lists elsewhere.
 
 ### Covered scope
 
@@ -213,8 +213,8 @@ Do not exclude difficult domain code merely to improve the percentage. Static CS
 ### Target and gate
 
 - The target is **100% line coverage of meaningful owned PHP**. Generate branch/path coverage as well where the selected driver and toolchain support it reliably.
-- A release must not publish below 100% of release scope. This is the `100% release-scope coverage gate` referenced by [CI](CI.md) and the [deployment documentation](../deployment/README.md).
-- A repository that is not yet at the target sets its CI threshold from current evidence and raises it deliberately toward 100%. A threshold below 100% is a migration state, not a policy.
+- Greenfield releases must not publish below 100% of release scope. Extracted host modules may use the approved 80% minimum and upward-only ratchet in [MODULES.md](../architecture/MODULES.md#extraction-coverage-floor); their release evidence must state the actual coverage, enforced floor, uncovered risks and plan to reach 100%. This is the release-scope coverage gate referenced by [CI](CI.md) and the [deployment documentation](../deployment/README.md).
+- A repository that is not yet at the target sets its CI threshold from current evidence and raises it deliberately toward 100%. A threshold below 100% is a migration state; only the documented extraction exception permits release at the ratcheted floor.
 - Prefer changed-code and critical-package gates alongside the repository threshold. New or changed critical behavior must be thoroughly tested even when the global threshold passes.
 - Treat uncovered high-risk paths as explicit review findings; 100% never waives required contract, failure, security, migration, or composition tests.
 - Do not write empty, redundant, or implementation-coupled tests solely to reach the number. Coverage complements contract, mutation, security, and failure assertions; it does not substitute for them.

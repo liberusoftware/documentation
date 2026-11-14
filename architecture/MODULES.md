@@ -210,7 +210,7 @@ This policy provides visible and reviewable module changes, deterministic deploy
 - security/dependency tooling scans both `/vendor` and `/modules` as appropriate;
 - merge conflicts in generated installed content are resolved by Composer from the intended lockfile, not by hand-merging module code.
 
-This is an explicit current policy and may change only through an ADR with a migration plan. Regardless of tracking policy, the independent module repository remains the source of truth.
+This is a fleet-wide host requirement, including after promotion. Keep `/modules` and `/themes` committed; a downstream ignore-policy ADR does not override it. The independent module repository remains the source of truth.
 
 ## 7. Standard package layout
 
@@ -586,11 +586,15 @@ Every published package's tests execute from that package repository with `compo
 
 Architecture tests inspect every owned production PHP file and catch `App\\` dependencies expressed through imports, inheritance, implementation, instantiation, static references, strings/configuration, and other resolvable class references—not only a narrow source regex. Equivalent rules prevent domain-to-presentation dependencies, provider SDK leakage, and cross-package private access.
 
-Meaningful owned PHP targets 100% line coverage. `composer test:coverage` enforces `--min=100`, produces Clover and HTML reports, and fails when the target is missed. Exclusions are limited to vendor/generated output and files that cannot yield meaningful executable coverage; difficult code is never excluded to improve the number. The 100% result complements rather than replaces assertions, branch/failure tests, mutation testing where valuable, and security/composition evidence.
+Meaningful owned PHP targets 100% line coverage. For greenfield code, `composer test:coverage` enforces `--min=100`; eligible extractions use the documented floor below. Both produce Clover and HTML reports and fail when the enforced floor is missed. Exclusions are limited to vendor/generated output and files that cannot yield meaningful executable coverage; difficult code is never excluded to improve the number. The 100% result complements rather than replaces assertions, branch/failure tests, mutation testing where valuable, and security/composition evidence.
 
 Product repositories add composition tests proving their selected packages, provider adapters, plugins, and cross-package workflows work together. Distribution packages test dependency resolution but contain no implementation tests of their own.
 
 Host coverage configuration uses one maintained source rule for composed module code, such as a supported `modules/*/src` directory pattern, instead of one hardcoded entry per installed module. Package suites remain authoritative; host aggregation supplies composition evidence and must not become the only place module code is tested.
+
+### Extraction coverage floor
+
+Greenfield modules retain `--min=100`. For code extracted from an existing host, an approved extraction record may start at **80% line coverage**, measured over all meaningful owned PHP. Record the baseline, uncovered risks, owner and follow-up work. Set `test:coverage` to at least 80% and ratchet the enforced minimum upward whenever measured coverage improves; never lower it. Newly written domain rules and security-sensitive paths require full behavioral tests. Extraction does not waive tenancy, authorization, architecture, migration or compatibility checks. A module below 80% must add tests before promotion. Publish the floor and actual report in CI and release evidence; the target remains 100%.
 
 ### 24.1 Required repository workflows
 
@@ -599,7 +603,7 @@ Each independent module repository owns these GitHub Actions workflows:
 | Workflow            | Required evidence                                                                                                                       |
 | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
 | `install.yml`       | Clean Composer dependency resolution/install, package bootstrap, manifest validation, minimal-host install, and documented quick start  |
-| `tests.yml`         | Pest 5 unit/feature/contract/integration suites, architecture and security checks, static analysis, and 100% meaningful owned PHP coverage reports |
+| `tests.yml`         | Pest 5 unit/feature/contract/integration suites, architecture and security checks, static analysis, and meaningful owned PHP reports meeting the applicable coverage floor |
 | `compatibility.yml` | Declared minimum/current PHP, Laravel, database, Filament/Livewire where applicable, and representative host combinations               |
 
 Provider sandbox, browser, mutation, performance, migration and full composition jobs may be scheduled or release-gated when expensive, but required evidence completes before release. Workflows call the repository's Composer scripts; they do not require a duplicated scripts package. Coverage reports are uploaded as protected artifacts and the default-branch badge links to maintained results.
@@ -716,7 +720,15 @@ Repositories document the package map and dependency diagram. Applications docum
 
 ## 30. Definition of done
 
-A package is complete when:
+### 30.1 Promotion readiness
+
+Before creating or promoting an independent repository, prove from the tracked host path package: approved ownership and dependency direction; no `App\` or private cross-module access; contained persistence; versioned public contracts; independent test execution; architecture and security checks; the applicable §24 coverage floor; and a clean locked install. Record recent boundary changes and resolve any remaining cross-boundary edits before promotion. Repository existence and a release tag are not prerequisites for this gate.
+
+Promotion creates an authoritative source repository; it does not remove the consuming application's committed `/modules` copy or add it to `.gitignore`. Update the locked dependency and tracked copy together.
+
+### 30.2 Release readiness
+
+After promotion, a package is complete when:
 
 - its capability, category, owner, exclusions, dependencies, and manifest are approved;
 - it is independently installable and does not depend on `App\\`, an unrelated product, provider implementation, or presentation framework;
@@ -726,7 +738,7 @@ A package is complete when:
 - public contracts/events are versioned, documented, and covered by consumer/implementation tests;
 - presentation is optional and complies with `THEMES.md`;
 - architecture, security, compatibility, migration, and product-composition tests pass;
-- its independent Pest 5 suite runs without a host application and meaningful owned PHP reaches the [100% coverage target](../standards/TESTING.md#13-coverage-policy);
+- its independent Pest 5 suite runs without a host application and meaningful owned PHP meets the applicable §24 coverage floor (100% for greenfield; documented extraction ratchet where eligible);
 - logs, metrics, health checks, alerts, runbooks, changelog, and upgrade notes are available;
 - the independent GitHub repository, README, CI workflow, generated coverage report, release tag, and tested-host compatibility evidence are available;
 - a clean locked install places the module in `/modules`, and the consuming repository has no unexpected Composer-generated diff.

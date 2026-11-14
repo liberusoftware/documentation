@@ -1,4 +1,4 @@
-# Commerce Customers: Next.js presentation plan
+# Customers: Next.js presentation plan
 
 <!-- nextjs-plan:generated -->
 
@@ -6,7 +6,7 @@
 
 **Adapter group:** `planned:ecommerce:commerce-customers`.
 
-**Proposed design identifier:** `module-ecommerce-commerce-customers-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
+**Proposed design identifier:** `module-ecommerce-customers-nextjs`. Confirm the actual npm scope/name, exports and peer versions before publishing.
 
 ## Scope and ownership
 

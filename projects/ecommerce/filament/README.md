@@ -1,7 +1,7 @@
 # Ecommerce Filament Implementations
 
 <!-- catalogue-status:start -->
-This index preserves **107 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
+This index preserves **108 module documents/spellings**. Counts are specifications, not released packages or deployed features. Exact source identities and aliases are in the [source map](../SOURCE-MAPPING.md); [shared ownership](../../../architecture/SHARED-MODULES.md) and [Next.js adapter homes](../../../modules/nextjs/OWNERSHIP.md) prevent alternate spellings from becoming competing implementations.
 <!-- catalogue-status:end -->
 
 Each file defines the optional Filament 5 presentation package for exactly one matching domain module.
@@ -24,14 +24,15 @@ Each file defines the optional Filament 5 presentation package for exactly one m
 | [Catalog Staging Filament](catalog-staging.md) | [Target/source map](../SOURCE-MAPPING.md#catalog-staging) | [core](../core/catalog-staging.md) · [api](../api/catalog-staging.md) · [nextjs](../nextjs/catalog-staging.md) |
 | [Catalog Filament](catalog.md) | [Target/source map](../SOURCE-MAPPING.md#catalog) | [core](../core/catalog.md) · [api](../api/catalog.md) · [nextjs](../nextjs/catalog.md) |
 | [Categories and Navigation Filament](categories-and-navigation.md) | [Target/source map](../SOURCE-MAPPING.md#categories-and-navigation) | [core](../core/categories-and-navigation.md) · [api](../api/categories-and-navigation.md) · [nextjs](../nextjs/categories-and-navigation.md) |
+| [Catering — Filament](catering.md) | [Target/source map](../SOURCE-MAPPING.md#catering) | [core](../core/catering.md) · [api](../api/catering.md) · [nextjs](../nextjs/catering.md) |
 | [Checkout Extensibility Filament](checkout-extensibility.md) | [Target/source map](../SOURCE-MAPPING.md#checkout-extensibility) | [core](../core/checkout-extensibility.md) · [api](../api/checkout-extensibility.md) · [nextjs](../nextjs/checkout-extensibility.md) |
 | [Checkout Filament](checkout.md) | [Target/source map](../SOURCE-MAPPING.md#checkout) | [core](../core/checkout.md) · [api](../api/checkout.md) · [nextjs](../nextjs/checkout.md) |
-| [Commerce Automation Pack Filament](commerce-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-automation-pack) | [core](../core/commerce-automation-pack.md) · [api](../api/commerce-automation-pack.md) · [nextjs](../nextjs/commerce-automation-pack.md) |
-| [Commerce Copilot Filament](commerce-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-copilot) | [core](../core/commerce-copilot.md) · [api](../api/commerce-copilot.md) · [nextjs](../nextjs/commerce-copilot.md) |
-| [Commerce Core Filament](commerce-core.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-core) | [core](../core/commerce-core.md) · [api](../api/commerce-core.md) · [nextjs](../nextjs/commerce-core.md) |
-| [Commerce Customers Filament](commerce-customers.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-customers) | [core](../core/commerce-customers.md) · [api](../api/commerce-customers.md) · [nextjs](../nextjs/commerce-customers.md) |
-| [Commerce Extensions Filament](commerce-extensions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-extensions) | [core](../core/commerce-extensions.md) · [api](../api/commerce-extensions.md) · [nextjs](../nextjs/commerce-extensions.md) |
-| [Commerce Functions Filament](commerce-functions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-functions) | [core](../core/commerce-functions.md) · [api](../api/commerce-functions.md) · [nextjs](../nextjs/commerce-functions.md) |
+| [Automation Pack Filament](commerce-automation-pack.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-automation-pack) | [core](../core/commerce-automation-pack.md) · [api](../api/commerce-automation-pack.md) · [nextjs](../nextjs/commerce-automation-pack.md) |
+| [Copilot Filament](commerce-copilot.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-copilot) | [core](../core/commerce-copilot.md) · [api](../api/commerce-copilot.md) · [nextjs](../nextjs/commerce-copilot.md) |
+| [Core Filament](commerce-core.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-core) | [core](../core/commerce-core.md) · [api](../api/commerce-core.md) · [nextjs](../nextjs/commerce-core.md) |
+| [Customers Filament](commerce-customers.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-customers) | [core](../core/commerce-customers.md) · [api](../api/commerce-customers.md) · [nextjs](../nextjs/commerce-customers.md) |
+| [Extensions Filament](commerce-extensions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-extensions) | [core](../core/commerce-extensions.md) · [api](../api/commerce-extensions.md) · [nextjs](../nextjs/commerce-extensions.md) |
+| [Functions Filament](commerce-functions.md) | [Target/source map](../SOURCE-MAPPING.md#commerce-functions) | [core](../core/commerce-functions.md) · [api](../api/commerce-functions.md) · [nextjs](../nextjs/commerce-functions.md) |
 | [Commissions and Settlements Filament](commissions-and-settlements.md) | [Target/source map](../SOURCE-MAPPING.md#commissions-and-settlements) | [core](../core/commissions-and-settlements.md) · [api](../api/commissions-and-settlements.md) · [nextjs](../nextjs/commissions-and-settlements.md) |
 | [Companies Filament](companies.md) | [Target/source map](../SOURCE-MAPPING.md#companies) | [core](../core/companies.md) · [api](../api/companies.md) · [nextjs](../nextjs/companies.md) |
 | [Cross-Border Filament](cross-border.md) | [Target/source map](../SOURCE-MAPPING.md#cross-border) | [core](../core/cross-border.md) · [api](../api/cross-border.md) · [nextjs](../nextjs/cross-border.md) |

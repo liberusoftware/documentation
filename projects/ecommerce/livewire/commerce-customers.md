@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Customers Livewire
+# Ecommerce: Customers Livewire
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-customers). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,10 +6,10 @@
 
 ## Canonical one-to-one Livewire 4 implementation
 
-**Livewire package:** `module-ecommerce-commerce-customers-livewire`  
-**Matching domain module:** `ecommerce-commerce-customers`  
+**Livewire package:** `module-ecommerce-customers-livewire`\
+**Matching domain module:** `ecommerce-customers`\
 **Application:** Ecommerce  
-**Source feature:** [Commerce Customers](../features/commerce-customers.md)  
+**Source feature:** [Customers](../features/commerce-customers.md)\
 **Architecture:** [LIVEWIRE.md](../../../standards/LIVEWIRE.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
@@ -29,7 +29,7 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 3. Livewire 4 implementation
 
-- Register a stable `module-ecommerce-commerce-customers-livewire` component namespace and service provider; use explicit aliases such as `<livewire:module-ecommerce-commerce-customers::component-name />` according to LIVEWIRE.md.
+- Register a stable `module-ecommerce-customers-livewire` component namespace and service provider; use explicit aliases such as `<livewire:module-ecommerce-customers::component-name />` according to LIVEWIRE.md.
 - Keep reusable components under `src/Components`, full-page components under `src/Pages`, and package views under `resources/views`.
 - Treat public properties, URL state, events, uploads, and action parameters as untrusted input; validate and authorize at the Livewire boundary, then invoke the authoritative domain action/query.
 - Keep public state minimal and non-sensitive, use locked/typed state where supported, and provide loading, validation, authorization, empty, and failure states.
@@ -53,6 +53,6 @@ This optional Livewire 4 presentation package provides interactive server-driven
 
 ## 5. Definition of done
 
-- Package identity, namespace, aliases, and dependency match `ecommerce-commerce-customers` one-to-one.
+- Package identity, namespace, aliases, and dependency match `ecommerce-customers` one-to-one.
 - Every required interaction has a named component and view-model/state contract without leaking secrets or domain internals.
 - Installation, registration, authorization, tenant isolation, accessibility, compatibility, and meaningful-PHP coverage gates pass.

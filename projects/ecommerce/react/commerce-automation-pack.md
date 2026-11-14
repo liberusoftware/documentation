@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Automation Pack React + Inertia
+# Ecommerce: Automation Pack React + Inertia
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-automation-pack). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,10 +6,10 @@
 
 ## Canonical one-to-one React/Inertia implementation
 
-**Package:** `module-ecommerce-commerce-automation-pack-react-inertia`
-**Matching domain module:** `ecommerce-commerce-automation-pack`
+**Package:** `module-ecommerce-automation-pack-react-inertia`\
+**Matching domain module:** `ecommerce-automation-pack`\
 **Application:** Ecommerce
-**Source feature:** [Commerce Automation Pack](../features/commerce-automation-pack.md)
+**Source feature:** [Automation Pack](../features/commerce-automation-pack.md)\
 **Architecture:** [REACT.md](../../../standards/REACT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/commerce-automation-pack.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
@@ -27,7 +27,7 @@ This optional React 19.2 + Inertia 3 presentation package adapts the matching do
 
 ## 3. React 19.2 + Inertia 3 implementation
 
-- Register a stable `module-ecommerce-commerce-automation-pack-react-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
+- Register a stable `module-ecommerce-automation-pack-react-inertia` package and expose only explicitly prefixed public exports; applications compose it explicitly.
 - Keep Inertia pages under `resources/js/Pages`, shared UI under `resources/js/Components`, hooks under `resources/js/hooks`, typed contracts under `resources/js/types`, and transport/error adapters under `resources/js/lib`.
 - Use `createInertiaApp`, `Link`, `router`, `useForm`, typed page props, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
 - Resolve actor, team, locale, and sensitive-field visibility through trusted Laravel/API context and fail closed when required context is missing.
@@ -67,6 +67,6 @@ See the [Inertia standard](../../../standards/INERTIA.md), [request lifecycle](h
 
 ## 6. Definition of done
 
-- Package identity, public exports, API dependency, and module dependency match `ecommerce-commerce-automation-pack` one-to-one.
+- Package identity, public exports, API dependency, and module dependency match `ecommerce-automation-pack` one-to-one.
 - Every required route or application surface has an explicit page/component/hook/form/API-action mapping and no undeclared surface is discovered.
 - Production asset/SSR build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.

@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Copilot Nuxt
+# Ecommerce: Copilot Nuxt
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-copilot). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,15 +6,15 @@
 
 ## Canonical one-to-one Nuxt 4 implementation
 
-**Nuxt package:** `module-ecommerce-commerce-copilot-nuxt`
-**Matching domain module:** `ecommerce-commerce-copilot`
+**Nuxt package:** `module-ecommerce-copilot-nuxt`\
+**Matching domain module:** `ecommerce-copilot`\
 **Application:** Ecommerce
-**Source feature:** [Commerce Copilot](../features/commerce-copilot.md)
+**Source feature:** [Copilot](../features/commerce-copilot.md)\
 **Architecture:** [NUXT.md](../../../standards/NUXT.md) · [API.md](../../../architecture/API.md) · [Matching API module](../api/commerce-copilot.md) · [MODULES.md](../../../architecture/MODULES.md) · [TESTING.md](../../../standards/TESTING.md)
 
 ## 1. Purpose and ownership
 
-This optional Nuxt 4 presentation package presents exactly one matching API module. It contributes reusable pages, layouts, components, composables, typed API clients, and actions to application-owned Nuxt applications while delegating authorization, validation, team context, persistence, and business rules to the `ecommerce-commerce-copilot` public API boundary. It must not contain another module's UI or depend on application `App\` classes.
+This optional Nuxt 4 presentation package presents exactly one matching API module. It contributes reusable pages, layouts, components, composables, typed API clients, and actions to application-owned Nuxt applications while delegating authorization, validation, team context, persistence, and business rules to the `ecommerce-copilot` public API boundary. It must not contain another module's UI or depend on application `App\` classes.
 
 ## 2. Module-specific surfaces
 
@@ -26,7 +26,7 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 3. Nuxt 4 implementation
 
-- Register a stable `module-ecommerce-commerce-copilot-nuxt` Nuxt module or layer and expose only prefixed exports from this package; applications compose it explicitly.
+- Register a stable `module-ecommerce-copilot-nuxt` Nuxt module or layer and expose only prefixed exports from this package; applications compose it explicitly.
 - Keep pages under `app/pages`, shared UI under `app/components`, data access under `app/composables`, and typed contracts under `shared/`.
 - Use typed API clients, `useFetch`/`useAsyncData`, composables, route metadata, loading/error states, and accessible components over the matching API contract; never duplicate server-side invariants in client validation.
 - Resolve actor, team, locale, and sensitive-field visibility through trusted API context and fail closed when required context is missing.
@@ -55,6 +55,6 @@ This optional Nuxt 4 presentation package presents exactly one matching API modu
 
 ## 6. Definition of done
 
-- Package identity, public exports, API dependency, and module dependency match `ecommerce-commerce-copilot` one-to-one.
+- Package identity, public exports, API dependency, and module dependency match `ecommerce-copilot` one-to-one.
 - Every required route or application surface has an explicit page/component/composable/API-action mapping and no undeclared surface is discovered.
 - Production build, route generation, API contract compatibility, authorization, team isolation, accessibility, compatibility, and meaningful TypeScript coverage gates pass.

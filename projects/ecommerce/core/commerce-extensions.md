@@ -1,4 +1,4 @@
-# Ecommerce: Commerce Extensions Core Module
+# Ecommerce: Extensions Core Module
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-extensions). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
@@ -6,11 +6,11 @@
 
 ## Package contract
 
-**Design package identifier:** `module-ecommerce-commerce-extensions`
-**Domain specification:** [Commerce Extensions](../features/commerce-extensions.md)
+**Design package identifier:** `module-ecommerce-extensions`\
+**Domain specification:** [Extensions](../features/commerce-extensions.md)\
 **Target:** Laravel 13, PHP 8.5, Composer 2, Pest 5
 
-This package is the authoritative, provider-neutral implementation of Commerce Extensions. It owns domain behavior and data; optional API, Filament, Livewire, React, Vue, and Nuxt packages translate its public contracts for their surfaces.
+This package is the authoritative, provider-neutral implementation of Extensions. It owns domain behavior and data; optional API, Filament, Livewire, React, Vue, and Nuxt packages translate its public contracts for their surfaces.
 
 ## Domain-driven implementation plan
 

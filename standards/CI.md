@@ -8,7 +8,7 @@ This document defines the GitHub Actions workflow policy for Liberu repositories
 
 Every pull request and every push to `main` runs the required validation suite. A successful `main` build may publish an immutable artifact and deploy a non-production environment. It must not deploy production automatically.
 
-Production deployment is release-based. A protected version tag such as `v1.2.3`, or the corresponding GitHub Release, may deploy only after the tagged commit has passed all required checks, including the [100% release-scope coverage gate](TESTING.md#13-coverage-policy), artifact and dependency security checks, deployment verification, and production environment approval. Tags must not be moved or force-updated.
+Production deployment is release-based. A protected version tag such as `1.2.3`, or the corresponding GitHub Release, may deploy only after the tagged commit has passed all required checks, including the [release-scope coverage gate](TESTING.md#13-coverage-policy) (including the documented [extraction ratchet](../architecture/MODULES.md#extraction-coverage-floor) where applicable), artifact and dependency security checks, deployment verification, and production environment approval. Tags must not be moved or force-updated. Use bare SemVer tags matching the repository workflow triggers; verify that all required workflows actually ran for the tagged commit before publishing.
 
 ## Workflow responsibilities
 
@@ -35,7 +35,7 @@ The required checks must cover, as applicable:
 - Dependency, secret, container, and supported security scans.
 - Coverage reports with no unreviewed regression.
 
-The production release gate requires 100% line coverage of the release scope, plus the required branch/path coverage for critical code where supported. [TESTING.md](TESTING.md#13-coverage-policy) defines the release scope, the meaningful owned PHP it is built from, and the exclusions. A failed gate blocks the release. Any exception requires protected maintainer approval and a recorded architecture decision; it must never be hidden by changing the threshold in the workflow.
+The production release gate requires the applicable coverage floor (100% for greenfield code or the approved upward-ratcheting extraction floor), plus the required branch/path coverage for critical code where supported. [TESTING.md](TESTING.md#13-coverage-policy) defines the release scope, the meaningful owned PHP it is built from, and the exclusions. A failed gate blocks the release. Any exception requires protected maintainer approval and a recorded architecture decision; it must never be hidden by changing the threshold in the workflow.
 
 The release workflow must test the exact commit and artifact that it deploys. Do not rebuild from a different commit after approval.
 
@@ -45,7 +45,7 @@ Use these triggers as the default:
 
 - `pull_request` to `main`: required validation only; never expose production secrets to untrusted fork code.
 - `push` to `main`: repeat required validation, publish an immutable non-production artifact, and optionally deploy staging.
-- `push` for protected `v*.*.*` tags or a GitHub Release: run release gates and request production approval.
+- `push` for protected bare SemVer tags matching `[0-9]+.[0-9]+.[0-9]+` or a GitHub Release: run release gates and request production approval.
 - `workflow_dispatch`: support controlled operations, but do not allow it to bypass required checks or environment protection.
 
 Configure GitHub environments as follows:
@@ -75,7 +75,7 @@ on:
     branches: [main]
   push:
     branches: [main]
-    tags: ["v*.*.*"]
+    tags: ["[0-9]+.[0-9]+.[0-9]+"]
   workflow_dispatch:
 
 permissions:
@@ -89,7 +89,7 @@ jobs:
       - run: ./vendor/bin/pest --coverage
 
   production:
-    if: startsWith(github.ref, 'refs/tags/v')
+    if: startsWith(github.ref, 'refs/tags/')
     needs: checks
     runs-on: ubuntu-latest
     environment: production

@@ -1,16 +1,16 @@
-# Commerce Core React Native + Expo
+# Core React Native + Expo
 
 <!-- source-reconciliation:start -->
 **Source reconciliation:** [design-to-source map](../SOURCE-MAPPING.md#commerce-core). Implementation also lives in the [application tree](../SOURCE-APPLICATION.md); preserve this documented module. Requirements and examples below describe the target design; the linked source reference records observed metadata and code, and does not certify release availability or implemented parity.
 <!-- source-reconciliation:end -->
 
-**Package:** module-ecommerce-commerce-core-react-native
-**Matching core package:** module-ecommerce-commerce-core ([implementation](../core/commerce-core.md))
-**Matching API package:** module-ecommerce-commerce-core-api ([contract](../api/commerce-core.md))
+**Package:** module-ecommerce-core-react-native\
+**Matching core package:** module-ecommerce-core ([implementation](../core/commerce-core.md))\
+**Matching API package:** module-ecommerce-core-api ([contract](../api/commerce-core.md))
 
 ## Implementation plan
 
-This adapter presents Commerce Core for the React Native + Expo surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
+This adapter presents Core for the React Native + Expo surface. It owns platform UI, navigation/state integration, device-facing behavior, and client error/recovery mapping; the matching core package remains authoritative for domain rules, persistence, authorization, tenancy, audit, and lifecycle transitions.
 
 - Use strict TypeScript, typed navigation, schema-validated API responses, secure Keychain/Keystore storage, and platform permission boundaries.
 - Preserve the API contract, tenant/team context, field visibility, localization, timezone/currency formatting, and server-side authorization.
@@ -20,6 +20,6 @@ This adapter presents Commerce Core for the React Native + Expo surface. It owns
 
 ## Verification
 
-Test Commerce Core API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
+Test Core API mapping, authorization outcomes, state transitions, lifecycle interruption, permission denial, offline/retry/conflict behavior, accessibility, localization, and signed release builds on supported platforms.
 
 See [React Native + Expo standard](../../../standards/REACT-NATIVE.md), [mobile architecture](../../../architecture/MOBILE.md), [React Native + Expo technology](../../../technologies/REACT-NATIVE.md), [core module](../core/commerce-core.md), and [API module](../api/commerce-core.md).
