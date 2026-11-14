@@ -31,3 +31,5 @@ Technology wayfinders for every non-Filament project host. Each issue contains a
 - [mobile-react](https://github.com/liberusoftware/project-ecommerce-mobile-react/issues/2)
 - [next-react](https://github.com/liberusoftware/project-ecommerce-next-react/issues/2)
 - [nuxt-vue](https://github.com/liberusoftware/project-ecommerce-nuxt-vue/issues/2)
+
+- [Filament Catering epic and core/API/Filament/Livewire slices](ecommerce/catering-filament-issues.json) — the Catering-only extension to the existing Filament programme.

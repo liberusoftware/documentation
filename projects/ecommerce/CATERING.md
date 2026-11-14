@@ -24,4 +24,4 @@ Start with [feature scope](features/catering.md), [core and boundary decisions](
 5. Deliver each selected surface against the shared contracts, with tenant/privacy, accessibility, conflict and retry evidence.
 6. Validate host composition, upgrade/runbook, locked install and committed `/modules` and `/themes` copies.
 
-Use the [project wayfinders](../IMPLEMENTATION-WAYFINDERS.md) for repository tracking. Filament repository issue creation is excluded because its implementation programme already exists.
+Use the [project wayfinders](../IMPLEMENTATION-WAYFINDERS.md) for repository tracking. The existing Filament programme has a separate [Catering epic and core/API/Filament/Livewire issue register](catering-filament-issues.json), linked from its existing wayfinder. Other Filament implementation issues remain outside this addition.

@@ -1,0 +1,11 @@
+{
+  "repository": "liberusoftware/project-ecommerce-laravel-filament",
+  "epic": "https://github.com/liberusoftware/project-ecommerce-laravel-filament/issues/1116",
+  "slices": {
+    "core": "https://github.com/liberusoftware/project-ecommerce-laravel-filament/issues/1117",
+    "api": "https://github.com/liberusoftware/project-ecommerce-laravel-filament/issues/1118",
+    "filament": "https://github.com/liberusoftware/project-ecommerce-laravel-filament/issues/1119",
+    "livewire": "https://github.com/liberusoftware/project-ecommerce-laravel-filament/issues/1120"
+  },
+  "wayfinder": "https://github.com/liberusoftware/project-ecommerce-laravel-filament/issues/925"
+}

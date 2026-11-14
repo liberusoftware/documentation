@@ -1,6 +1,6 @@
 # Implementing a product across technologies
 
-The [repository map](REPOSITORIES.md) separates product ownership from delivery technology. Each non-Filament project host has a wayfinder issue with source links, sequencing, technology-specific integration rules and a capability checklist. [The issue matrix](IMPLEMENTATION-ISSUES.md) provides direct links; [the machine-readable register](implementation-wayfinders.json) records the exact repository and issue URLs. Existing `-laravel-filament` implementation programmes are excluded from creation and updates.
+The [repository map](REPOSITORIES.md) separates product ownership from delivery technology. Each non-Filament project host has a wayfinder issue with source links, sequencing, technology-specific integration rules and a capability checklist. [The issue matrix](IMPLEMENTATION-ISSUES.md) provides direct links; [the machine-readable register](implementation-wayfinders.json) records the exact repository and issue URLs. The general publisher excludes existing `-laravel-filament` programmes. Ecommerce has a separate [Catering-only addition](ecommerce/catering-filament-issues.json), linked from its existing wayfinder; that addition does not revise unrelated programme decisions.
 
 ## Find the authoritative work
 
@@ -27,7 +27,7 @@ A client never becomes a second domain owner. Shared foundation capabilities rem
 
 Create a focused child when a capability has an approved owner, specific dependencies, a bounded implementation outcome and testable acceptance. Include domain/API/presentation references, public contract changes, security/projection rules, migration impact, failure/retry behavior, operational evidence and exclusions. Link it from the technology wayfinder. Coordinate a shared core/API change in its owning repository rather than filing competing implementations in every client.
 
-The initial wayfinders use per-capability checklists instead of generating thousands of speculative module tickets. Exact observed source aliases are grouped to avoid duplicate implementations. Catering has a focused issue in each non-Filament Ecommerce host because its privacy, revision and conversion requirements are concrete; those issues explicitly block implementation until its upstream boundary decisions are accepted. The existing Filament backlog is left alone.
+The initial wayfinders use per-capability checklists instead of generating thousands of speculative module tickets. Exact observed source aliases are grouped to avoid duplicate implementations. Catering has a focused issue in each non-Filament Ecommerce host because its privacy, revision and conversion requirements are concrete; those issues explicitly block implementation until its upstream boundary decisions are accepted. The existing Filament backlog is preserved, with a dedicated Catering epic and core/API/Filament/Livewire slices added separately.
 
 ## Delivery evidence
 
@@ -36,3 +36,5 @@ For each slice, show independent domain/contract/adapter tests, authorization an
 ## Maintain the register
 
 Run `python tools/create_project_wayfinders.py --output /tmp/wayfinder-plan.json` to plan without external writes. Review the generated scope, then `python tools/create_project_wayfinders.py --apply` to create missing wayfinders and Catering children. The publisher checks open and closed issues by exact stable title, excludes Filament repositories, fails on duplicate wayfinders, and saves progress after each repository. If interrupted, rerun to reuse created issues rather than duplicate them. Keep titles stable; inspect renamed issues manually before rerunning. Existing issues are reused, not overwritten or reopened. The register records successful issue URLs; a final run must contain all 128 technology hosts before reporting completion.
+
+For the Catering-only Filament extension, `python tools/add_catering_filament_issues.py` previews the scope and `--apply` creates missing issues and appends their links to existing wayfinder #925. It requires the non-Filament publication to be complete, reuses matching open or closed titles, and preserves the existing wayfinder body. See the [Catering issue register](ecommerce/catering-filament-issues.json).

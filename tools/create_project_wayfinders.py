@@ -129,6 +129,8 @@ def write_issue_index(entries):
     for entry in entries:
         if 'cateringIssue' in entry:
             lines.append(f"- [{entry['technology']}]({entry['cateringIssue']})")
+    if (ROOT/'projects/ecommerce/catering-filament-issues.json').exists():
+        lines += ['', '- [Filament Catering epic and core/API/Filament/Livewire slices](ecommerce/catering-filament-issues.json) — the Catering-only extension to the existing Filament programme.']
     (ROOT/'projects/IMPLEMENTATION-ISSUES.md').write_text('\n'.join(lines)+'\n')
 
 
