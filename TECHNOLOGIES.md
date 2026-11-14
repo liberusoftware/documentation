@@ -25,6 +25,10 @@ These are documented application solutions and target scopes. Source availabilit
 
 The [projects index](projects/README.md) provides the complete local scope directory. Application links above identify the repositories observed in the requested `liberusoftware` organization scan. The enterprise source host is `liberusoftware/project-enterprise-sap-laravel-filament`; its foundation implementation is distinct from the full target domain scope. The [repository standard](architecture/REPOSITORIES.md) governs repository documentation; actual source locations are recorded in the inventory.
 
+## Shared API backends
+
+Each product is gaining a `project-{product}-laravel-api` host that composes its domain modules and HTTP adapters. Next.js, Nuxt, Flutter, React Native and Dart clients consume that backend’s versioned API while retaining independent UI builds and releases. Laravel remains authoritative for authorization, tenancy, business rules and persistence. See the [backend/client guide](guides/LARAVEL-API-BACKENDS.md) and [matching repositories](projects/REPOSITORIES.md#laravel-applications).
+
 ## Delivery technologies
 
 | Technology solution    | Best fit                                                                                        | Repository/documentation links                                                                                                                                                                             |

@@ -1,5 +1,7 @@
 # Liberu Music
 
+**API backend:** [`project-music-daw-laravel-api`](https://github.com/liberusoftware/project-music-daw-laravel-api) is being introduced as this product’s shared Laravel backend for Next.js, Nuxt, Flutter, React Native and Dart mobile/desktop clients. See [backend ownership and integration](../../guides/LARAVEL-API-BACKENDS.md).
+
 **Status: proposed design.** These are requirements and design identifiers, not verified source packages, published artifacts or implemented features.
 
 Start with the [product scope](MUSIC.md), [runtime architecture](ARCHITECTURE.md), [presentation and mobile support](PRESENTATION.md), [foundation adoption](FOUNDATION.md) and [delivery plan](DEVELOPMENT.md).

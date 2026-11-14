@@ -1,6 +1,6 @@
 # Implementing a product across technologies
 
-The [repository map](REPOSITORIES.md) separates product ownership from delivery technology. Each non-Filament project host has a wayfinder issue with source links, sequencing, technology-specific integration rules and a capability checklist. [The issue matrix](IMPLEMENTATION-ISSUES.md) provides direct links; [the machine-readable register](implementation-wayfinders.json) records the exact repository and issue URLs. The general publisher excludes existing `-laravel-filament` programmes. Ecommerce has a separate [Catering-only addition](ecommerce/catering-filament-issues.json), linked from its existing wayfinder; that addition does not revise unrelated programme decisions.
+The [repository map](REPOSITORIES.md) separates product ownership from delivery technology. Each of the 128 independent frontend/Inertia project hosts has a wayfinder issue with source links, sequencing, technology-specific integration rules and a capability checklist. [The issue matrix](IMPLEMENTATION-ISSUES.md) provides direct links; [the machine-readable register](implementation-wayfinders.json) records the exact repository and issue URLs. The general publisher excludes existing `-laravel-filament` programmes. Ecommerce has a separate [Catering-only addition](ecommerce/catering-filament-issues.json), linked from its existing wayfinder; that addition does not revise unrelated programme decisions.
 
 ## Find the authoritative work
 
@@ -8,6 +8,8 @@ The [repository map](REPOSITORIES.md) separates product ownership from delivery 
 2. Find the domain owner and observed manifest identity before creating a package. If two spellings resolve to the same exact source identity, implement that boundary once. Similar names alone do not prove equivalence.
 3. Read the core plan, then the API plan if the consumer uses HTTP, then the matching presentation plan. A missing source match is a research task, not permission to discard scope or invent a released contract.
 4. Select a complete user journey, settle dependencies, and implement it with its authorization, failure and recovery paths. Link tests and compatibility evidence before marking a checklist item complete.
+
+The new `-laravel-api` product hosts provide the shared backend for independent clients; see [backend ownership and integration](../guides/LARAVEL-API-BACKENDS.md). The existing wayfinder publisher covers frontend/Inertia hosts and excludes these API backend repositories.
 
 ## Choose the delivery contract
 

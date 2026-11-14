@@ -1,5 +1,7 @@
 # Billing — Developer Documentation
 
+**API backend:** [`project-billing-laravel-api`](https://github.com/liberusoftware/project-billing-laravel-api) is being introduced as this product’s shared Laravel backend for Next.js, Nuxt, Flutter, React Native and Dart mobile/desktop clients. See [backend ownership and integration](../../guides/LARAVEL-API-BACKENDS.md).
+
 **Scope:** Billing modules
 
 ## Module indexes

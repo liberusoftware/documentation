@@ -2,6 +2,8 @@
 
 This guide gives you the shortest safe path through the Liberu documentation repository. It is for developers, architects, and contributors choosing an application solution, selecting modules, and deciding how a Laravel application is presented.
 
+For an independent web, mobile or desktop client, select the matching product’s `-laravel-api` backend. The [backend/client guide](guides/LARAVEL-API-BACKENDS.md) explains shared domain ownership, HTTP contracts, authentication and separate releases.
+
 ## Start here
 
 1. Read the [technology and solution map](TECHNOLOGIES.md) to choose a solution and delivery technology.

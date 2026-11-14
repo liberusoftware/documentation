@@ -1,5 +1,7 @@
 # Liberu project index
 
+**API backend:** [`project-liberu-official-laravel-api`](https://github.com/liberusoftware/project-liberu-official-laravel-api) is being introduced as this product’s shared Laravel backend for Next.js, Nuxt, Flutter, React Native and Dart mobile/desktop clients. See [backend ownership and integration](../../guides/LARAVEL-API-BACKENDS.md).
+
 This is the navigation index for the Liberu platform project. Start with the [Liberu business platform scope](../LIBERU.md) for business ownership and composition rules, then choose the domain, API, presentation, mobile, or implementation index required for the work.
 
 ## Project scope

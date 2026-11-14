@@ -28,7 +28,7 @@ def gh(*args):
 def targets():
     names = sorted(set(re.findall(r'https://github.com/liberusoftware/(project-[a-z0-9-]+)', (ROOT/'projects/REPOSITORIES.md').read_text())))
     for name in names:
-        if name.endswith('-laravel-filament'):
+        if name.endswith(('-laravel-filament', '-laravel-api')):
             continue
         for suffix, (layer, label, boundary) in LAYERS.items():
             if name.endswith('-'+suffix):

@@ -427,6 +427,8 @@ API resource classes map domain DTOs/read models to the wire contract. They must
 
 ## 20. Application and project APIs
 
+Each `project-{product}-laravel-api` repository is being introduced as that product’s independently deployable HTTP backend for Next.js, Nuxt, Flutter, React Native and Dart clients. It is an application composition root: reusable `module-*-api` adapters retain their one-domain ownership. See the [backend/client guide](../guides/LARAVEL-API-BACKENDS.md) and [repository map](../projects/REPOSITORIES.md#laravel-applications).
+
 A repository-based application composes module APIs through a deliberate API manifest.
 
 1. Select enabled API packages and supported versions.

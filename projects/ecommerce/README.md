@@ -1,5 +1,7 @@
 # Ecommerce — Developer Documentation
 
+**API backend:** [`project-ecommerce-laravel-api`](https://github.com/liberusoftware/project-ecommerce-laravel-api) is being introduced as this product’s shared Laravel backend for Next.js, Nuxt, Flutter, React Native and Dart mobile/desktop clients. See [backend ownership and integration](../../guides/LARAVEL-API-BACKENDS.md).
+
 **Scope:** Ecommerce modules
 
 ## Module indexes

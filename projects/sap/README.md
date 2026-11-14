@@ -1,5 +1,7 @@
 # Enterprise suite developer documentation
 
+**API backend:** [`project-enterprise-sap-laravel-api`](https://github.com/liberusoftware/project-enterprise-sap-laravel-api) is being introduced as this product’s shared Laravel backend for Next.js, Nuxt, Flutter, React Native and Dart mobile/desktop clients. See [backend ownership and integration](../../guides/LARAVEL-API-BACKENDS.md).
+
 Start with the [product scope](SAP.md), then the [composition and delivery design](COMPOSITION.md). Enterprise capability groups compose existing product packages wherever their verified contracts meet the requirement. Package names in specifications remain design identifiers until implementation and release evidence is available.
 
 ## Module and presentation plans
