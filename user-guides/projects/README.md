@@ -1,6 +1,8 @@
 # End-user project guides
 
-Choose the experience that matches the installed product. Each guide links its canonical developer scope and all user-facing module guides.
+Choose the product your organization uses. Each guide links its module guides and developer scope. Many module pages describe intended experiences; check their availability notes and confirm enabled features with your administrator.
+
+New to an application? Begin with [getting started](../GETTING-STARTED.md). For a source-reviewed task example, see [working with CRM sales pipelines](crm/SALES-PIPELINES.md).
 
 | Project | Primary user experience | Module guides |
 | --- | --- | --- |

@@ -4,6 +4,8 @@
 **Canonical developer scope:** [CRM.md](../../../projects/crm/CRM.md)
 **All module journeys:** [Module guides](modules/README.md)
 
+To follow a practical task, start with [working with sales pipelines](SALES-PIPELINES.md). For general navigation and help, see [getting started](../../GETTING-STARTED.md).
+
 ## What users should feel
 
 Staff see a prioritized workday: customer context, next actions, protected outreach, conversations, cases, renewals, and measurable outcomes.

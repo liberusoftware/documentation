@@ -76,6 +76,8 @@ The repository checker verifies that previously tracked Ecommerce documentation 
 
 ## Review a changed module
 
+Use the [implementation evidence standard](../standards/IMPLEMENTATION-EVIDENCE.md) to trace a representative journey across the technologies involved and record the verification level and outstanding gaps.
+
 Read the actual manifest, provider/registration, exported contracts, actions, queries, policies, schemas and migrations. Trace at least the changed user journey from UI/API entry through authoritative behavior and back to the response. Record actor/tenant resolution, input validation, legal transitions, outputs/events, concurrency/retry behavior, and recovery. List concrete differences from the target design instead of presenting planned invariants as implemented guarantees.
 
 For a shared capability, compare all affected consumers and variants. Choose one accountable owner, document supported extension points and data transitions, and link other products to that owner. A tracked installed copy or directory alias is not automatically an independent module. See the [reuse/consolidation guide](../architecture/SHARED-MODULES.md).

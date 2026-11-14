@@ -94,6 +94,12 @@ Use this order when applicable:
 
 Short documents should remain short; omit empty or irrelevant sections.
 
+### End-user task guides
+
+Start with the user's goal and the access or information needed to complete it. Give steps in the order a person performs them, using verified screen labels where available. Explain how to recognize success and what to do when a common problem occurs, including an uncertain submission when relevant. Do not assume drafts, undo, offline support, or a feature exists unless the relevant installation has been verified. If labels or availability vary, say so and explain how to get help.
+
+Separate current, source-reviewed behavior from planned experiences, and say whether a walkthrough was actually tested. Keep implementation details and evidence available through links rather than placing package names or internal code in the task steps. See [getting started for users](../user-guides/GETTING-STARTED.md) and the [CRM sales pipeline example](../user-guides/projects/crm/SALES-PIPELINES.md).
+
 ## 6. Clear and professional writing
 
 - Use active voice: “The worker retries the job,” not “The job will be retried by the worker.”

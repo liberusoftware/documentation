@@ -30,6 +30,7 @@ This folder contains reusable coding, framework, frontend, design, testing, and 
 - [Themes](THEMES.md) — technology-neutral design tokens, theme adapters, assets, and accessibility.
 - [Testing](TESTING.md) — test ownership, quality gates, coverage, compatibility, and CI evidence.
 - [Documentation](DOCUMENTATION.md) — documentation ownership, structure, examples, and maintenance.
+- [Implementation evidence](IMPLEMENTATION-EVIDENCE.md) — trace behavior and verification across technology boundaries.
 - [CI](CI.md) — workflow, release, and deployment checks.
 - [Contributing](CONTRIBUTING.md) — contribution workflow and engineering quality gates.
 
