@@ -14104,7 +14104,7 @@
       "observedPackageIdentity": "liberusoftware/module-cms-accessibility-assistant-filament",
       "foundation": "module-boilerplate-filament",
       "state": "verified-existing",
-      "verifiedCommit": "6c9653876fbbd948de8ed73321337f94492801f2",
+      "verifiedCommit": "e7b70522291b061936c1c724715152a6c50faa93",
       "identityReviewRequired": false
     },
     {
@@ -14125,8 +14125,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-analytics-integration-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-analytics-integration-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "ff167b01775631219951ccab08a839eda8307181",
       "identityReviewRequired": false
     },
     {
@@ -14158,8 +14158,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-backup-and-restore-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-backup-and-restore-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "a4bf69980a5e4b57dfe579046eeea62a29d112b8",
       "identityReviewRequired": false
     },
     {
@@ -14169,8 +14169,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-block-editor-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-block-editor-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "139e245882f5200c9c5bc94fcef811d70412d6d0",
       "identityReviewRequired": false
     },
     {
@@ -14191,8 +14191,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-cache-and-performance-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-cache-and-performance-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "9ef545896980b15c4c2f4be92d89faa83054c4b5",
       "identityReviewRequired": false
     },
     {
@@ -14422,8 +14422,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-drupal-migration-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-drupal-migration-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "6ea0b48279fea8caf75eb54e630e1823e1f63009",
       "identityReviewRequired": false
     },
     {
@@ -14445,7 +14445,7 @@
       "observedPackageIdentity": "liberusoftware/module-cms-events-content-filament",
       "foundation": "module-boilerplate-filament",
       "state": "verified-existing",
-      "verifiedCommit": "d2088af6aecdd2da16de7ac1d3734945a9e7c97f",
+      "verifiedCommit": "ec054877d8bd021945bb1373aabb16a3f6b1365d",
       "identityReviewRequired": false
     },
     {
@@ -14456,7 +14456,7 @@
       "observedPackageIdentity": "liberusoftware/module-cms-experimentation-filament",
       "foundation": "module-boilerplate-filament",
       "state": "verified-existing",
-      "verifiedCommit": "b0ba16c0b3cef6ca6ccc8a32c719ea0eb6bd954a",
+      "verifiedCommit": "e8cddb2d5258ec0fa87a5469dfd27fab07975f7b",
       "identityReviewRequired": false
     },
     {
@@ -14466,8 +14466,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-extension-manager-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-extension-manager-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "5500b906042f80319732109065b23e66e58d1431",
       "identityReviewRequired": false
     },
     {
@@ -14478,7 +14478,7 @@
       "observedPackageIdentity": "liberusoftware/module-cms-extension-marketplace-filament",
       "foundation": "module-boilerplate-filament",
       "state": "verified-existing",
-      "verifiedCommit": "d32b7dea14581f081b8f43c3879f5902fbcff877",
+      "verifiedCommit": "9f5eedba1989aa5089fd7a2ef79578446238e0c9",
       "identityReviewRequired": false
     },
     {
@@ -14521,8 +14521,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-integration-directory-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-integration-directory-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "381551683a87a337da1774b2f47f7f2cb939392f",
       "identityReviewRequired": false
     },
     {
@@ -14532,8 +14532,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-joomla-migration-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-joomla-migration-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "6236981cf4ef4b6153c604073574d1ff091d3f2e",
       "identityReviewRequired": false
     },
     {
@@ -14543,8 +14543,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-layout-builder-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-layout-builder-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "03ff047cc48c5e753d9294e38c1531f313a8e724",
       "identityReviewRequired": false
     },
     {
@@ -14576,8 +14576,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-metadata-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-metadata-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "57dffad6bb080bc6d64f4d106842b7219c26ceb0",
       "identityReviewRequired": false
     },
     {
@@ -14587,8 +14587,8 @@
       "intendedPackageIdentity": "liberusoftware/cms-migration-framework-filament",
       "observedPackageIdentity": "liberusoftware/module-cms-migration-framework-filament",
       "foundation": "module-boilerplate-filament",
-      "state": "existing-error",
-      "verifiedCommit": null,
+      "state": "verified-existing",
+      "verifiedCommit": "3abb9bd610a270afc4b0e81987384dff05a6336f",
       "identityReviewRequired": false
     },
     {
@@ -16436,7 +16436,7 @@
       "observedPackageIdentity": "liberusoftware/module-maintenance-commercial-filament",
       "foundation": "module-boilerplate-filament",
       "state": "verified-existing",
-      "verifiedCommit": "fb433110b09314442cf8792a34e29ab457ededc2",
+      "verifiedCommit": "1015a1bf34f0a0be26332a2e8e5af731d524acc4",
       "identityReviewRequired": false
     },
     {
@@ -16447,7 +16447,7 @@
       "observedPackageIdentity": "liberusoftware/module-maintenance-compliance-filament",
       "foundation": "module-boilerplate-filament",
       "state": "verified-existing",
-      "verifiedCommit": "ef736071d6c4eaf37526321a1e47f05fd6964c90",
+      "verifiedCommit": "b1796d2be250b29619f7ac0808fa67d4a27ac2a2",
       "identityReviewRequired": false
     },
     {
@@ -16513,7 +16513,7 @@
       "observedPackageIdentity": "liberusoftware/module-maintenance-portals-filament",
       "foundation": "module-boilerplate-filament",
       "state": "verified-existing",
-      "verifiedCommit": "135cf798143a3f2c2b4a9026437899bf0f857bf1",
+      "verifiedCommit": "5b055e906d56f08789b4b50fe0c0bc421a9fe0dc",
       "identityReviewRequired": false
     },
     {
@@ -16546,7 +16546,7 @@
       "observedPackageIdentity": "liberusoftware/module-maintenance-reporting-filament",
       "foundation": "module-boilerplate-filament",
       "state": "verified-existing",
-      "verifiedCommit": "3c1e23c0879a73024c6f719e1e464463f77dfab6",
+      "verifiedCommit": "bd064c26d0a96c3d83f67ed19b2ff4c08c592806",
       "identityReviewRequired": false
     },
     {

@@ -6,7 +6,7 @@ The complete matrix contains **5,679 module repository slots**. Of these, 567 we
 
 | Presentation | Catalog | Published skeletons | Verified existing source | Other slots |
 | --- | --- | ---: | ---: | ---: |
-| Laravel · Filament | [631 capabilities](laravel-filament.md) | 177 | 443 | 11 |
+| Laravel · Filament | [631 capabilities](laravel-filament.md) | 177 | 454 | 0 |
 | Laravel · Inertia · Vue | [631 capabilities](laravel-inertia-vue.md) | 631 | 0 | 0 |
 | Laravel · Inertia · React | [631 capabilities](laravel-inertia-react.md) | 630 | 0 | 1 |
 | Nuxt · Vue | [631 capabilities](nuxt-vue.md) | 631 | 0 | 0 |
