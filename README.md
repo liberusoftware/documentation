@@ -2,7 +2,7 @@
 
 This repository is the documentation hub for the Liberu ecosystem: Laravel applications, independent domain modules, APIs, presentation adapters, themes, engineering standards, deployment, and product scopes.
 
-Choose a [project repository and presentation](projects/REPOSITORIES.md) for a ready-to-extend web, mobile or desktop structure. Follow the [implementation wayfinders](projects/IMPLEMENTATION-WAYFINDERS.md) for technology-specific capability backlogs and delivery evidence.
+Choose a [project repository and presentation](projects/REPOSITORIES.md) for a ready-to-extend web, mobile or desktop structure. Follow the [implementation wayfinders](projects/IMPLEMENTATION-WAYFINDERS.md) and [technology specifications](projects/wayfinders/README.md) for capability backlogs, implementation methods and delivery evidence.
 
 Each product is gaining a shared `-laravel-api` backend for its independent Next.js, Nuxt, Flutter, React Native and Dart clients. Read the [backend/client guide](guides/LARAVEL-API-BACKENDS.md) for ownership, contracts and deployment boundaries.
 

@@ -123,4 +123,4 @@ Application templates use `project-`; independent reusable modules use `module-`
 
 ## Implementation wayfinders
 
-Use the [wayfinder guide](IMPLEMENTATION-WAYFINDERS.md) and [issue matrix](IMPLEMENTATION-ISSUES.md) to locate the implementation backlog for each non-Filament technology host. Existing Filament implementation issues are preserved.
+Use the [wayfinder guide](IMPLEMENTATION-WAYFINDERS.md), [technology specifications](wayfinders/README.md) and [issue matrix](IMPLEMENTATION-ISSUES.md) to locate the implementation backlog for each non-Filament technology host. Existing Filament implementation issues are preserved.

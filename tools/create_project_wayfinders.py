@@ -1,23 +1,17 @@
 #!/usr/bin/env python3
-"""Plan or publish resumable project technology wayfinders (never Filament issues)."""
+"""Plan, publish or sync resumable project technology wayfinders (never Filament issues)."""
 import argparse
 import json
 from pathlib import Path
 import re
 import subprocess
+import sys
+import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = 'https://github.com/liberusoftware/documentation/blob/main/'
-LAYERS = {
-    'laravel-inertia-react': ('react', 'Laravel Inertia React', 'Laravel routes, sessions and CSRF own mutations; use allowlisted Inertia props. HTTP API adapters are optional for this surface.'),
-    'laravel-inertia-vue': ('vue', 'Laravel Inertia Vue', 'Laravel routes, sessions and CSRF own mutations; use allowlisted Inertia props. HTTP API adapters are optional for this surface.'),
-    'nuxt-vue': ('nuxt', 'Nuxt Vue', 'Consume reviewed HTTP contracts; isolate authenticated SSR caches and hydration by actor and tenant.'),
-    'next-react': ('nextjs', 'Next.js React', 'Consume reviewed HTTP contracts; specify server/client boundaries, private caching and mutation invalidation.'),
-    'mobile-react': ('react-native', 'React Native Expo', 'Use typed API clients, secure token storage, native accessibility, deep-link validation and explicit online/offline behavior.'),
-    'mobile-flutter': ('flutter', 'Flutter mobile', 'Use typed Dart API clients, secure token storage, native accessibility and lifecycle/reconnect handling.'),
-    'dart-mobile': ('flutter', 'Dart mobile', 'Use the dedicated Dart mobile Flutter host, typed API contracts, secure storage, touch navigation and lifecycle/reconnect handling.'),
-    'dart-desktop': ('flutter', 'Dart desktop', 'Use the dedicated desktop Flutter host, typed API contracts, desktop secure storage, keyboard/focus, resizing, printing/export and multi-window concurrency.'),
-}
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from wayfinder_technologies import BASE, LAYERS, link, write_wayfinder_docs  # noqa: E402
+
 PROJECTS = {'accounting-erp': 'accounting', 'enterprise-sap': 'sap', 'liberu-official': 'liberu', 'music-daw': 'music'}
 
 
@@ -30,11 +24,11 @@ def targets():
     for name in names:
         if name.endswith(('-laravel-filament', '-laravel-api')):
             continue
-        for suffix, (layer, label, boundary) in LAYERS.items():
+        for suffix, (layer, label, profile) in LAYERS.items():
             if name.endswith('-'+suffix):
                 slug = name[len('project-'):-(len(suffix)+1)]
                 project = PROJECTS.get(slug, slug)
-                yield name, project, suffix, layer, label, boundary
+                yield name, project, slug, suffix, layer, label, profile
                 break
         else:
             raise ValueError(f'Unmapped technology: {name}')
@@ -62,31 +56,64 @@ def module_rows(project, layer):
     return '\n'.join(rows)
 
 
-def body(project, suffix, layer, label, boundary):
+def body(project, slug, suffix, layer, label, profile):
     source_guide = 'SOURCE-MAPPING.md' if (ROOT/'projects'/project/'SOURCE-MAPPING.md').exists() else 'ARCHITECTURE.md'
+    api_repo = f'https://github.com/liberusoftware/project-{slug}-laravel-api'
+
+    standards = '\n'.join(f'- [{title}]({link(path)})' for title, path in profile['standards'])
+    guides = '\n'.join(f'- [{title}]({link(path)})' for title, path in profile['guides'])
+    method = '\n'.join(f'{i}. {step}' for i, step in enumerate(profile['method'], 1))
+    spec = profile['spec'].format(adapter=profile['adapter_pattern'])
+    api_block = ''
+    if profile['api_client']:
+        api_block = f'''
+## Product API backend
+
+Independent clients use [{api_repo}]({api_repo}) as the composition root for authorized HTTP access. Configure this application's API base URL to that deployment; the frontend repository URL is not an API endpoint. See [Laravel API backends]({link('guides/LARAVEL-API-BACKENDS.md')}).
+'''
+
     return f'''## User outcome
 
 Deliver the {project} product through {label}, using independently owned domain capabilities and matching optional presentation adapters. This issue is a wayfinder and implementation backlog, not a claim that the skeleton already implements the catalogue.
 
 ## Read first
 
-- [Product index]({BASE}projects/{project}/README.md) and [source/alias reconciliation]({BASE}projects/{project}/{source_guide}).
-- [Technology repository map]({BASE}projects/REPOSITORIES.md), [module boundaries]({BASE}architecture/MODULES.md), [API ownership]({BASE}architecture/API.md), [themes]({BASE}standards/THEMES.md), [testing]({BASE}standards/TESTING.md).
-- [Implementation and issue-splitting guide]({BASE}projects/IMPLEMENTATION-WAYFINDERS.md).
+- [Product index]({link(f'projects/{project}/README.md')}) and [source/alias reconciliation]({link(f'projects/{project}/{source_guide}')}).
+- [Technology repository map]({link('projects/REPOSITORIES.md')}), [module boundaries]({link('architecture/MODULES.md')}), [API ownership]({link('architecture/API.md')}), [testing]({link('standards/TESTING.md')}), [implementation evidence]({link('standards/IMPLEMENTATION-EVIDENCE.md')}).
+- [Implementation and issue-splitting guide]({link('projects/IMPLEMENTATION-WAYFINDERS.md')}).
+- **Full technical specification for this technology:** [wayfinders/{suffix}.md]({link(f'projects/wayfinders/{suffix}.md')}).
+- Boilerplate template: {profile['boilerplate']}
 
+### Technology standards
+{standards}
+
+### Implementation runbooks
+{guides}
+- [Module index for this layer]({link(profile['module_index'])})
+{api_block}
 ## Delivery boundary
 
-{boundary}
+{profile['boundary']}
 
-Reuse Boilerplate identity, authorization, Team/Store or tenant context, localization and other foundation contracts. Do not fork domain rules into this client or recreate shared capabilities. Verify published manifests and public contracts before requiring packages. For Dart hosts the Flutter layer plans supply shared widget/client requirements; desktop/mobile host-specific acceptance remains mandatory.
+Reuse Boilerplate identity, authorization, Team/Store or tenant context, localization and other foundation contracts. Do not fork domain rules into this client or recreate shared capabilities. Verify published manifests and public contracts before requiring packages. Adapter identity pattern: `{profile['adapter_pattern']}`.
 
 Keep installed `/modules` and `/themes` committed in the host wherever those directories apply, including after promotion; source repository releases and host lockfiles/copies move together. Independent source repositories remain authoritative.
+
+## Implementation method
+
+Follow this technology-specific method for every capability slice. Details and examples live in the [full specification]({link(f'projects/wayfinders/{suffix}.md')}) and linked runbooks.
+
+{method}
+
+## Technical specification
+
+{spec}
 
 ## Sequencing
 
 1. Audit the skeleton and current source/aliases; mark existing evidence and unresolved boundaries before writing code.
 2. Approve ownership/dependency decisions; reuse or deliver core and API contracts with independent tests before the consuming UI.
-3. Implement one complete user journey at a time, including policy checks, revisions, errors, empty/loading states, accessibility and recovery.
+3. Execute the implementation method above for one complete user journey, including policy checks, revisions, errors, empty/loading states, accessibility and recovery.
 4. Prove host composition, upgrade behavior, observability and release compatibility; link evidence per capability below.
 
 ## Capability checklist
@@ -103,6 +130,7 @@ Each checkbox links the matching presentation plan (or feature plan if none exis
 - Responsive/native accessibility, localization, timezone/currency behavior and user-facing error recovery are verified.
 - Independent domain/API/adapter tests and at least one host journey pass; use the applicable greenfield or approved extraction coverage floor.
 - Provide operational signals, runbook, migration/upgrade notes and a clean locked installation with no unexpected generated diff.
+- Work followed the technology method and specification linked above (transport, session, package layout and security rules for {label}).
 
 ## Tracking policy
 
@@ -116,7 +144,7 @@ def write_issue_index(entries):
     for entry in entries:
         grouped.setdefault(entry['project'], {})[entry['technology']] = entry
     lines = ['# Project implementation issues', '',
-             'Technology wayfinders for every non-Filament project host. Each issue contains a capability checklist and delivery requirements. Existing Filament programmes remain separate. See the [implementation guide](IMPLEMENTATION-WAYFINDERS.md) and [machine-readable register](implementation-wayfinders.json).', '',
+             'Technology wayfinders for every non-Filament project host. Each issue contains a capability checklist, a technology-specific implementation method and a technical specification summary. Existing Filament programmes remain separate. See the [implementation guide](IMPLEMENTATION-WAYFINDERS.md), [technology specifications](wayfinders/README.md) and [machine-readable register](implementation-wayfinders.json).', '',
              '| Product | '+ ' | '.join(LAYERS[key][1] for key in columns)+' |',
              '| --- | '+ ' | '.join('---' for _ in columns)+' |']
     for project, technologies in sorted(grouped.items()):
@@ -134,40 +162,45 @@ def write_issue_index(entries):
     (ROOT/'projects/IMPLEMENTATION-ISSUES.md').write_text('\n'.join(lines)+'\n')
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--apply', action='store_true', help='Create missing issues in GitHub; default is local planning only')
-    parser.add_argument('--output', type=Path, help='Optional plan/register path; dry runs do not overwrite the published register')
-    args = parser.parse_args()
-    result = []
-    output = args.output or (ROOT/'projects/implementation-wayfinders.json' if args.apply else None)
-    for repo, project, suffix, layer, label, boundary in targets():
-        assert not repo.endswith('-laravel-filament')
-        title = f'Wayfinder: {project} implementation for {label}'
-        entry = {'repository': f'liberusoftware/{repo}', 'project': project, 'technology': suffix, 'title': title}
-        if args.apply:
-            issues = json.loads(gh('issue', 'list', '-R', entry['repository'], '--state', 'all', '--limit', '1000', '--json', 'title,url'))
-            matches = [i for i in issues if i['title'] == title]
-            if len(matches)>1:
-                raise ValueError(f'Duplicate wayfinders: {repo}')
-            if matches:
-                entry['url'] = matches[0]['url']
-            else:
-                completed = subprocess.run(['gh', 'issue', 'create', '-R', entry['repository'], '--title', title, '--body-file', '-'], input=body(project, suffix, layer, label, boundary), text=True, check=True, capture_output=True)
-                entry['url'] = completed.stdout.strip()
-            if project == 'ecommerce':
-                child_title = f'Catering: implement {label} workflow after boundary approval'
-                matches = [i for i in issues if i['title'] == child_title]
-                child_body = f'''## User outcome
+def find_issue(repository, title):
+    issues = json.loads(gh('issue', 'list', '-R', repository, '--state', 'all', '--limit', '1000', '--json', 'number,title,url'))
+    matches = [i for i in issues if i['title'] == title]
+    if len(matches) > 1:
+        raise ValueError(f'Duplicate wayfinders: {repository}')
+    return matches[0] if matches else None, issues
 
-Deliver safe event/menu request, quote review/acceptance and confirmation status in {label}. Parent wayfinder: {entry['url']}.
+
+def edit_issue_body(repository, number, content):
+    with tempfile.NamedTemporaryFile('w', encoding='utf-8', delete=False) as handle:
+        handle.write(content)
+        path = handle.name
+    try:
+        subprocess.run(['gh', 'issue', 'edit', str(number), '-R', repository, '--body-file', path], check=True, capture_output=True, text=True)
+    finally:
+        Path(path).unlink(missing_ok=True)
+
+
+def create_issue(repository, title, content):
+    completed = subprocess.run(
+        ['gh', 'issue', 'create', '-R', repository, '--title', title, '--body-file', '-'],
+        input=content, text=True, check=True, capture_output=True,
+    )
+    return completed.stdout.strip()
+
+
+def catering_body(label, boundary, parent_url, suffix, layer):
+    presentation = suffix if suffix.startswith('dart-') else layer
+    return f'''## User outcome
+
+Deliver safe event/menu request, quote review/acceptance and confirmation status in {label}. Parent wayfinder: {parent_url}.
 
 ## Specifications and dependencies
 
-- [Catering delivery map]({BASE}projects/ecommerce/CATERING.md)
-- [Core ownership, dependencies and unresolved decisions]({BASE}projects/ecommerce/core/catering.md)
-- [API contract]({BASE}projects/ecommerce/api/catering.md)
-- [Presentation plan]({BASE}projects/ecommerce/{suffix if suffix.startswith('dart-') else layer}/catering.md)
+- [Catering delivery map]({link('projects/ecommerce/CATERING.md')})
+- [Core ownership, dependencies and unresolved decisions]({link('projects/ecommerce/core/catering.md')})
+- [API contract]({link('projects/ecommerce/api/catering.md')})
+- [Presentation plan]({link(f'projects/ecommerce/{presentation}/catering.md')})
+- [Technology wayfinder specification]({link(f'projects/wayfinders/{suffix}.md')})
 - Upstream boundary request: https://github.com/liberusoftware/documentation/issues/26
 
 Planning may proceed; schema and implementation are blocked until the core ownership/dependency and quote/booking/order transition decisions are approved. Core and HTTP contracts belong to their existing authoritative owners. {boundary}
@@ -181,16 +214,57 @@ Planning may proceed; schema and implementation are blocked until the core owner
 - Test accessibility, validation, permissions, private fields, revisions, retries and one real host quote-to-order journey. Include pending-conversion telemetry and recovery guidance.
 - Keep applicable `/modules` and `/themes` contents in host commits alongside lockfiles. No copied domain rules, payment SDKs or cross-module writes in presentation code.
 '''
-                if matches:
-                    entry['cateringIssue'] = matches[0]['url']
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--apply', action='store_true', help='Create missing issues in GitHub; default is local planning only')
+    parser.add_argument('--sync', action='store_true', help='Update bodies of existing wayfinder (and Catering) issues to the current template')
+    parser.add_argument('--output', type=Path, help='Optional plan/register path; dry runs do not overwrite the published register')
+    args = parser.parse_args()
+    if args.sync and not args.apply:
+        parser.error('--sync requires --apply')
+
+    write_wayfinder_docs(ROOT)
+    result = []
+    output = args.output or (ROOT/'projects/implementation-wayfinders.json' if args.apply else None)
+    for repo, project, slug, suffix, layer, label, profile in targets():
+        assert not repo.endswith('-laravel-filament')
+        title = f'Wayfinder: {project} implementation for {label}'
+        entry = {'repository': f'liberusoftware/{repo}', 'project': project, 'technology': suffix, 'title': title}
+        content = body(project, slug, suffix, layer, label, profile)
+        if args.apply:
+            match, issues = find_issue(entry['repository'], title)
+            if match:
+                entry['url'] = match['url']
+                entry['number'] = match['number']
+                if args.sync:
+                    edit_issue_body(entry['repository'], match['number'], content)
+                    print(f"synced {entry['url']}", flush=True)
                 else:
-                    entry['cateringIssue'] = subprocess.run(['gh', 'issue', 'create', '-R', entry['repository'], '--title', child_title, '--body-file', '-'], input=child_body, text=True, check=True, capture_output=True).stdout.strip()
-            print(entry['url'], flush=True)
+                    print(f"reuse {entry['url']}", flush=True)
+            else:
+                entry['url'] = create_issue(entry['repository'], title, content)
+                print(f"created {entry['url']}", flush=True)
+            if project == 'ecommerce':
+                child_title = f'Catering: implement {label} workflow after boundary approval'
+                child_matches = [i for i in issues if i['title'] == child_title]
+                if len(child_matches) > 1:
+                    raise ValueError(f'Duplicate Catering issues: {repo}')
+                child_content = catering_body(label, profile['boundary'], entry['url'], suffix, layer)
+                if child_matches:
+                    entry['cateringIssue'] = child_matches[0]['url']
+                    if args.sync:
+                        edit_issue_body(entry['repository'], child_matches[0]['number'], child_content)
+                else:
+                    entry['cateringIssue'] = create_issue(entry['repository'], child_title, child_content)
         result.append(entry)
         if output:
-            output.write_text(json.dumps({'status': 'in_progress' if args.apply else 'planned', 'excludedSuffix': '-laravel-filament', 'wayfinders': result}, indent=2)+'\n')
+            serializable = [{k: v for k, v in item.items() if k != 'number'} for item in result]
+            output.write_text(json.dumps({'status': 'in_progress' if args.apply else 'planned', 'excludedSuffix': '-laravel-filament', 'wayfinders': serializable}, indent=2)+'\n')
     if args.apply:
-        output.write_text(json.dumps({'status': 'published', 'excludedSuffix': '-laravel-filament', 'wayfinders': result}, indent=2)+'\n')
+        serializable = [{k: v for k, v in item.items() if k != 'number'} for item in result]
+        output.write_text(json.dumps({'status': 'published', 'excludedSuffix': '-laravel-filament', 'wayfinders': serializable}, indent=2)+'\n')
         write_issue_index(result)
     print(f'{len(result)} wayfinders; Filament repositories excluded.')
 
