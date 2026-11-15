@@ -1,6 +1,6 @@
 # Project implementation issues
 
-Technology wayfinders for every non-Filament project host. Each issue contains a capability checklist and delivery requirements. Existing Filament programmes remain separate. See the [implementation guide](IMPLEMENTATION-WAYFINDERS.md) and [machine-readable register](implementation-wayfinders.json).
+Technology wayfinders for every non-Filament project host. Each issue contains a capability checklist, a technology-specific implementation method and a technical specification summary. Existing Filament programmes remain separate. See the [implementation guide](IMPLEMENTATION-WAYFINDERS.md), [technology specifications](wayfinders/README.md) and [machine-readable register](implementation-wayfinders.json).
 
 | Product | Laravel Inertia React | Laravel Inertia Vue | Nuxt Vue | Next.js React | React Native Expo | Flutter mobile | Dart mobile | Dart desktop |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

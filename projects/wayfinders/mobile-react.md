@@ -27,7 +27,7 @@ Consume the product `-laravel-api` with typed clients, secure device credentials
 
 1. Start from the React Native Expo Boilerplate; install with the Expo-compatible toolchain; run `expo-doctor`, typecheck and a development build—do not assume Expo Go covers every native module.
 2. Record supported iOS/Android versions, orientations and accessibility requirements; configure bundle IDs, scheme, icons and permissions for this product host.
-3. Point the app at the matching `project-{{product}}-laravel-api` base URL (public config only); implement the reviewed mobile auth contract (PKCE/OAuth or first-party tokens)—never embed confidential secrets.
+3. Point the app at the matching `project-{product}-laravel-api` base URL (public config only); implement the reviewed mobile auth contract (PKCE/OAuth or first-party tokens)—never embed confidential secrets.
 4. Store refresh/session secrets in Keychain/Keystore-backed SecureStore; keep short-lived access tokens in memory where feasible; single-flight refresh; logout revokes and clears scoped caches/queues.
 5. Inject typed API clients per session/workspace; validate every response field; map status codes to typed outcomes; abort in-flight work on context change.
 6. Build native screens (not compressed desktop tables): safe areas, touch targets, screen-reader labels, platform back behavior, deep-link validation.

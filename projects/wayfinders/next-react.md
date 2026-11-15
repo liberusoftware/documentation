@@ -27,7 +27,7 @@ Consume the product `-laravel-api` HTTP contracts from an independently deployed
 ## Robust implementation method
 
 1. Start from the Next.js React Boilerplate (or this product skeleton); `npm ci`; use `.node-version`; run lint, typecheck and production build before feature work.
-2. Set `API_BASE_URL` (server-only) to the matching `project-{{product}}-laravel-api` origin; never put credentials in `NEXT_PUBLIC_*`; mark secret-bearing modules with `server-only`.
+2. Set `API_BASE_URL` (server-only) to the matching `project-{product}-laravel-api` origin; never put credentials in `NEXT_PUBLIC_*`; mark secret-bearing modules with `server-only`.
 3. Choose and document session integration (server cookies/BFF vs token); Laravel re-authorizes every API request; Next entry points authenticate and authorize their own handlers/actions.
 4. Validate/generate DTOs from the published schema; copy allowlisted fields only; preserve pagination, error shapes, conflicts and job/pending semantics.
 5. Own `src/app` routes, layouts, `loading.tsx`/`error.tsx` and deployment; import capability adapters explicitly—no silent global route injection from packages.

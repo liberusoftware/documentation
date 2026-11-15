@@ -27,7 +27,7 @@ Consume the product `-laravel-api` with typed Dart clients, secure device creden
 
 1. Start from the Flutter mobile Boilerplate; use the pinned Flutter/Dart toolchain; `flutter pub get`, `analyze`, `test`, then run on a listed device.
 2. Replace skeleton application IDs/display names/signing with product-owned identifiers; keep `publish_to: none` and commit `pubspec.lock`.
-3. Configure the API base (for example `--dart-define`) to `project-{{product}}-laravel-api`; treat that value as public configuration, not a secret store.
+3. Configure the API base (for example `--dart-define`) to `project-{product}-laravel-api`; treat that value as public configuration, not a secret store.
 4. Implement reviewed mobile auth; store long-lived secrets in platform-secure storage; coordinate refresh in one place; clear credentials and scoped caches on logout.
 5. Separate `data`/`presentation`/`contracts`; inject repositories; widgets emit intent and render state—they do not authorize or open database connections.
 6. Validate JSON into checked DTOs; preserve pagination and error mapping; document real HTTP cancellation behavior (future timeouts alone are insufficient).

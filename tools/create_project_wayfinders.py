@@ -63,7 +63,7 @@ def body(project, slug, suffix, layer, label, profile):
     standards = '\n'.join(f'- [{title}]({link(path)})' for title, path in profile['standards'])
     guides = '\n'.join(f'- [{title}]({link(path)})' for title, path in profile['guides'])
     method = '\n'.join(f'{i}. {step}' for i, step in enumerate(profile['method'], 1))
-    spec = profile['spec'].format(adapter=profile['adapter_pattern'])
+    spec = profile['spec'].replace('{adapter}', profile['adapter_pattern'])
     api_block = ''
     if profile['api_client']:
         api_block = f'''

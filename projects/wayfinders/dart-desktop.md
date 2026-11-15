@@ -28,7 +28,7 @@ A distinct desktop host/release using Flutter/Dart and the product `-laravel-api
 
 1. Treat this repository as a separate desktop application root: independent release identity and OS packaging from mobile hosts.
 2. Use the pinned Flutter/Dart toolchain; enable Linux/macOS/Windows targets as product support requires; `flutter pub get`, `analyze`, `test`.
-3. Point desktop builds at `project-{{product}}-laravel-api`; implement desktop-safe credential storage and session lifecycle for the threat model.
+3. Point desktop builds at `project-{product}-laravel-api`; implement desktop-safe credential storage and session lifecycle for the threat model.
 4. Design for keyboard navigation, focus order, resizing, window close/reopen and optional multi-window concurrency without corrupting drafts.
 5. Inject typed API repositories; validate DTOs; keep domain authority on the server; define print/export as authorized, audience-safe operations.
 6. Deliver one vertical journey with desktop interaction evidence; expand via Flutter-layer plans and SOURCE-MAPPING.md.

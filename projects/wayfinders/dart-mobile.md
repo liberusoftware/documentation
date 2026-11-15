@@ -28,7 +28,7 @@ A distinct mobile host/release using Flutter/Dart and the product `-laravel-api`
 
 1. Treat this repository as a separate mobile application root from `-mobile-flutter`: independent release identity, bundle IDs and store listing.
 2. Use the Flutter/Dart versions pinned in `.flutter-version` / `.fvmrc`; `flutter pub get`, `analyze`, `test`, then run on iOS/Android targets.
-3. Consume `project-{{product}}-laravel-api` with typed clients and secure storage; reuse Flutter-layer plans for widgets/clients while keeping host-specific acceptance mandatory.
+3. Consume `project-{product}-laravel-api` with typed clients and secure storage; reuse Flutter-layer plans for widgets/clients while keeping host-specific acceptance mandatory.
 4. Inject session/transport at composition; keep policy and persistence on the server; validate DTOs and error maps against the published contract.
 5. Verify touch navigation, safe areas, permissions, deep links, background/resume, logout clearing and offline reconciliation on both OS families.
 6. Implement one vertical journey before expanding checklist items; link child issues when ownership and acceptance are actionable.

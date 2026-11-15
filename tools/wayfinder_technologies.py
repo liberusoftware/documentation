@@ -148,7 +148,7 @@ LAYERS = {
             'adapter_pattern': 'module-{capability}-nuxt',
             'method': [
                 'Start from the Nuxt Vue Boilerplate (or this product skeleton); `npm ci` from the lockfile; pin Node from `.node-version`; run typecheck/build before feature work.',
-                'Configure runtime `apiBase` (server-side) to the matching `project-{{product}}-laravel-api` origin; never accept arbitrary upstream URLs from the browser; keep credentials out of `runtimeConfig.public`.',
+                'Configure runtime `apiBase` (server-side) to the matching `project-{product}-laravel-api` origin; never accept arbitrary upstream URLs from the browser; keep credentials out of `runtimeConfig.public`.',
                 'Establish auth/session integration for the deployment (cookie/BFF or token) with CSRF/origin rules; Laravel remains authoritative for policy and tenancy.',
                 'Generate or validate DTOs against the published OpenAPI/schema; map only allowlisted fields; preserve pagination, errors, conflicts and pending-operation semantics.',
                 'Own `app/pages`, layouts and middleware in the application; import reusable Nuxt/Vue adapters explicitly—packages must not install silent global routes.',
@@ -159,7 +159,7 @@ LAYERS = {
             ],
             'spec': '''### Host ownership
 - This repository is an independently deployed Nuxt 4 + Vue 3 client. It is not an Inertia host and does not own domain persistence.
-- The matching `project-{{product}}-laravel-api` composes domain + API adapters and publishes the versioned HTTP contract.
+- The matching `project-{product}-laravel-api` composes domain + API adapters and publishes the versioned HTTP contract.
 - Application owns routes, layouts, runtime config, BFF handlers (if any) and deployment; adapters own capability UI and transport mapping.
 
 ### Transport and session
@@ -207,7 +207,7 @@ LAYERS = {
             'adapter_pattern': 'module-{capability}-nextjs',
             'method': [
                 'Start from the Next.js React Boilerplate (or this product skeleton); `npm ci`; use `.node-version`; run lint, typecheck and production build before feature work.',
-                'Set `API_BASE_URL` (server-only) to the matching `project-{{product}}-laravel-api` origin; never put credentials in `NEXT_PUBLIC_*`; mark secret-bearing modules with `server-only`.',
+                'Set `API_BASE_URL` (server-only) to the matching `project-{product}-laravel-api` origin; never put credentials in `NEXT_PUBLIC_*`; mark secret-bearing modules with `server-only`.',
                 'Choose and document session integration (server cookies/BFF vs token); Laravel re-authorizes every API request; Next entry points authenticate and authorize their own handlers/actions.',
                 'Validate/generate DTOs from the published schema; copy allowlisted fields only; preserve pagination, error shapes, conflicts and job/pending semantics.',
                 'Own `src/app` routes, layouts, `loading.tsx`/`error.tsx` and deployment; import capability adapters explicitly—no silent global route injection from packages.',
@@ -218,7 +218,7 @@ LAYERS = {
             ],
             'spec': '''### Host ownership
 - This repository is an independently deployed Next.js (App Router) + React client. It does not use Inertia and does not own domain persistence.
-- The matching `project-{{product}}-laravel-api` owns authorization, tenancy, business rules and the versioned OpenAPI contract.
+- The matching `project-{product}-laravel-api` owns authorization, tenancy, business rules and the versioned OpenAPI contract.
 - Application owns `app/` routes, middleware/proxy, environment, deployment and auth integration; adapters own capability UI and typed API helpers.
 
 ### Transport and session
@@ -266,7 +266,7 @@ LAYERS = {
             'method': [
                 'Start from the React Native Expo Boilerplate; install with the Expo-compatible toolchain; run `expo-doctor`, typecheck and a development build—do not assume Expo Go covers every native module.',
                 'Record supported iOS/Android versions, orientations and accessibility requirements; configure bundle IDs, scheme, icons and permissions for this product host.',
-                'Point the app at the matching `project-{{product}}-laravel-api` base URL (public config only); implement the reviewed mobile auth contract (PKCE/OAuth or first-party tokens)—never embed confidential secrets.',
+                'Point the app at the matching `project-{product}-laravel-api` base URL (public config only); implement the reviewed mobile auth contract (PKCE/OAuth or first-party tokens)—never embed confidential secrets.',
                 'Store refresh/session secrets in Keychain/Keystore-backed SecureStore; keep short-lived access tokens in memory where feasible; single-flight refresh; logout revokes and clears scoped caches/queues.',
                 'Inject typed API clients per session/workspace; validate every response field; map status codes to typed outcomes; abort in-flight work on context change.',
                 'Build native screens (not compressed desktop tables): safe areas, touch targets, screen-reader labels, platform back behavior, deep-link validation.',
@@ -324,7 +324,7 @@ LAYERS = {
             'method': [
                 'Start from the Flutter mobile Boilerplate; use the pinned Flutter/Dart toolchain; `flutter pub get`, `analyze`, `test`, then run on a listed device.',
                 'Replace skeleton application IDs/display names/signing with product-owned identifiers; keep `publish_to: none` and commit `pubspec.lock`.',
-                'Configure the API base (for example `--dart-define`) to `project-{{product}}-laravel-api`; treat that value as public configuration, not a secret store.',
+                'Configure the API base (for example `--dart-define`) to `project-{product}-laravel-api`; treat that value as public configuration, not a secret store.',
                 'Implement reviewed mobile auth; store long-lived secrets in platform-secure storage; coordinate refresh in one place; clear credentials and scoped caches on logout.',
                 'Separate `data`/`presentation`/`contracts`; inject repositories; widgets emit intent and render state—they do not authorize or open database connections.',
                 'Validate JSON into checked DTOs; preserve pagination and error mapping; document real HTTP cancellation behavior (future timeouts alone are insufficient).',
@@ -383,7 +383,7 @@ LAYERS = {
             'method': [
                 'Treat this repository as a separate mobile application root from `-mobile-flutter`: independent release identity, bundle IDs and store listing.',
                 'Use the Flutter/Dart versions pinned in `.flutter-version` / `.fvmrc`; `flutter pub get`, `analyze`, `test`, then run on iOS/Android targets.',
-                'Consume `project-{{product}}-laravel-api` with typed clients and secure storage; reuse Flutter-layer plans for widgets/clients while keeping host-specific acceptance mandatory.',
+                'Consume `project-{product}-laravel-api` with typed clients and secure storage; reuse Flutter-layer plans for widgets/clients while keeping host-specific acceptance mandatory.',
                 'Inject session/transport at composition; keep policy and persistence on the server; validate DTOs and error maps against the published contract.',
                 'Verify touch navigation, safe areas, permissions, deep links, background/resume, logout clearing and offline reconciliation on both OS families.',
                 'Implement one vertical journey before expanding checklist items; link child issues when ownership and acceptance are actionable.',
@@ -437,7 +437,7 @@ LAYERS = {
             'method': [
                 'Treat this repository as a separate desktop application root: independent release identity and OS packaging from mobile hosts.',
                 'Use the pinned Flutter/Dart toolchain; enable Linux/macOS/Windows targets as product support requires; `flutter pub get`, `analyze`, `test`.',
-                'Point desktop builds at `project-{{product}}-laravel-api`; implement desktop-safe credential storage and session lifecycle for the threat model.',
+                'Point desktop builds at `project-{product}-laravel-api`; implement desktop-safe credential storage and session lifecycle for the threat model.',
                 'Design for keyboard navigation, focus order, resizing, window close/reopen and optional multi-window concurrency without corrupting drafts.',
                 'Inject typed API repositories; validate DTOs; keep domain authority on the server; define print/export as authorized, audience-safe operations.',
                 'Deliver one vertical journey with desktop interaction evidence; expand via Flutter-layer plans and SOURCE-MAPPING.md.',
@@ -509,7 +509,7 @@ def render_wayfinder_doc(suffix: str) -> str:
         '',
         '## Technical specification',
         '',
-        profile['spec'].format(adapter=profile['adapter_pattern']),
+        profile['spec'].replace('{adapter}', profile['adapter_pattern']),
         '',
         '## Related',
         '',

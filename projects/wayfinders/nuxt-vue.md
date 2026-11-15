@@ -27,7 +27,7 @@ Consume the product `-laravel-api` HTTP contracts from an independently deployed
 ## Robust implementation method
 
 1. Start from the Nuxt Vue Boilerplate (or this product skeleton); `npm ci` from the lockfile; pin Node from `.node-version`; run typecheck/build before feature work.
-2. Configure runtime `apiBase` (server-side) to the matching `project-{{product}}-laravel-api` origin; never accept arbitrary upstream URLs from the browser; keep credentials out of `runtimeConfig.public`.
+2. Configure runtime `apiBase` (server-side) to the matching `project-{product}-laravel-api` origin; never accept arbitrary upstream URLs from the browser; keep credentials out of `runtimeConfig.public`.
 3. Establish auth/session integration for the deployment (cookie/BFF or token) with CSRF/origin rules; Laravel remains authoritative for policy and tenancy.
 4. Generate or validate DTOs against the published OpenAPI/schema; map only allowlisted fields; preserve pagination, errors, conflicts and pending-operation semantics.
 5. Own `app/pages`, layouts and middleware in the application; import reusable Nuxt/Vue adapters explicitly—packages must not install silent global routes.
